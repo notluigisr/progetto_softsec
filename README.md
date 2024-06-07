@@ -8,16 +8,15 @@ Il dataset DiverseVul è disponibile a questo link https://drive.google.com/file
 ## Struttura del Repository
 
 - `datasets/`: Contiene i dataset utilizzati per l'analisi e il confronto.
-  - `juliet/`: Juliet dataset con analisi.
-  - `diverseVul/`: DiverseVul dataset con analisi.
 
-- `traditional_methods/`: Contiene gli script e i file di configurazione per l'analisi con strumenti tradizionali.
-  - `cppcheck/`: Script e output di cppcheck.
-  - `flawfinder/`: Script e output di flawfinder.
-  - `clang/`: Script e output di clang.
+- `traditional_methods/`: Contiene gli script, notebook e i file di configurazione per l'analisi con strumenti tradizionali.
 
-- `llm_methods/`: Contiene i quaderni Jupyter e i modelli per l'analisi con LLM.
-  - `T5/`: Quaderni per l'addestramento e l'uso del modello T5.
-  - `CodeBERT/`: Quaderni per l'addestramento e l'uso del modello CodeBERT.
+- `llm_methods/`: Contiene i notebook Jupyter e i modelli per l'analisi con LLM.
+
+- `abstract_syntax_tree/`: Contiene i notebook Jupyter per l'estrazione e analisi del codice sotto forma di AST.
+
+- `resembled_learning/`: Contiene i approcci di resembled learning dei modelli addestrati.
+
+- `comparison/`: Contiene i risultati dei tool e modelli con il notebook in cui viene effettuata una comparazione.
 
 - `README.md`: Questo file, con la descrizione del progetto.
