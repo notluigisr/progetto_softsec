@@ -2,7 +2,7 @@
 
 ## Descrizione del Progetto
 
-Questo progetto ha lo scopo di confrontare l'efficacia e l'efficienza dei metodi tradizionali di rilevazione delle vulnerabilità (cppcheck, flawfinder, clang) con metodi basati su Large Language Models (LLM) come T5 e CodeBERT. L'obiettivo è valutare le prestazioni di questi strumenti nell'identificazione di vulnerabilità nel codice sorgente, analizzando metriche come precisione, recall, F1-score, tempo di esecuzione e utilizzo delle risorse.
+Questo progetto ha lo scopo di confrontare l'efficacia e l'efficienza dei metodi tradizionali di rilevazione delle vulnerabilità (cppcheck, flawfinder, clang) con metodi basati su Large Language Models (LLM) come T5 , CodeBERT, natGen e codeGPT. L'obiettivo è valutare le prestazioni di questi strumenti nell'identificazione di vulnerabilità nel codice sorgente, analizzando metriche come precisione, recall, F1-score, tempo di esecuzione e utilizzo delle risorse.
 
 Il dataset DiverseVul è disponibile a questo link https://drive.google.com/file/d/12IWKhmLhq7qn5B_iXgn5YerOQtkH-6RG/view?usp=sharing
 ## Struttura del Repository
