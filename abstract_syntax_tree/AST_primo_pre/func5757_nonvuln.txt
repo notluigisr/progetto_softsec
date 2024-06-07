@@ -1,0 +1,79 @@
+`-FunctionDecl 0x11f940b48  line:1:12 calipso_doi_add 'int (struct calipso_doi *, struct netlbl_audit *)' static
+  |-ParmVarDecl 0x11f928648 <col:28, col:48> col:48 used doi_def 'struct calipso_doi *'
+  |-ParmVarDecl 0x11f940a28 <line:2:7, col:28> col:28 used audit_info 'struct netlbl_audit *'
+  `-CompoundStmt 0x11f9438c0 <line:3:1, line:46:1>
+    |-DeclStmt 0x11f940d78 <line:4:2, col:23>
+    | `-VarDecl 0x11f940c60 <col:2, col:17> col:6 used ret_val 'int' cinit
+    |   `-UnaryOperator 0x11f940d60 <col:16, col:17> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11f940d48 <col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11f940d28 <col:17> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x11f940f78 <line:7:2, col:32>
+    | |-RecordDecl 0x11f940d90 <col:2, col:9> col:9 struct audit_buffer
+    | `-VarDecl 0x11f940ef8 <col:2, col:23> col:23 used audit_buf 'struct audit_buffer *'
+    |-IfStmt 0x11f941190 <line:12:2, line:13:8>
+    | |-BinaryOperator 0x11f941108 <line:12:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x11f941088 <col:6, col:15> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x11f941050 <col:6> 'struct calipso_doi *' lvalue ParmVar 0x11f928648 'doi_def' 'struct calipso_doi *'
+    | | `-RecoveryExpr 0x11f9410e8 <col:22> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x11f941178 <line:13:3, col:8> 'doi_add_return' 0x11f941128
+    |-CallExpr 0x11f941378 <line:15:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f9412c0 <col:2> 'int ()' Function 0x11f941208 'refcount_set' 'int ()'
+    | |-UnaryOperator 0x11f941340 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x11f941318 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f9412e0 <col:16> 'struct calipso_doi *' lvalue ParmVar 0x11f928648 'doi_def' 'struct calipso_doi *'
+    | `-IntegerLiteral 0x11f941358 <col:35> 'int' 1
+    |-CallExpr 0x11f941538 <line:17:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f941488 <col:2> 'int ()' Function 0x11f9413d0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x11f941520 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f941500 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11f942e28 <line:18:2, line:22:2>
+    | |-CallExpr 0x11f9416c0 <line:18:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11f941640 <col:6> 'int ()' Function 0x11f941588 'calipso_doi_search' 'int ()'
+    | | `-RecoveryExpr 0x11f941698 <col:25, col:34> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f941660 <col:25> 'struct calipso_doi *' lvalue ParmVar 0x11f928648 'doi_def' 'struct calipso_doi *'
+    | `-CompoundStmt 0x11f942e00 <col:40, line:22:2>
+    |   |-CallExpr 0x11f9418c0 <line:19:3, col:37> 'int'
+    |   | |-ImplicitCastExpr 0x11f9418a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11f9417c8 <col:3> 'int ()' Function 0x11f941710 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x11f941890 <col:15, col:16> 'int (*)()' prefix '&' cannot overflow
+    |   |   `-DeclRefExpr 0x11f941840 <col:16> 'int ()' Function 0x11f941588 'calipso_doi_search' 'int ()'
+    |   |-BinaryOperator 0x11f9419c0 <line:20:3, col:14> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x11f9418e8 <col:3> 'int' contains-errors lvalue Var 0x11f940c60 'ret_val' 'int'
+    |   | `-UnaryOperator 0x11f9419a8 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x11f941990 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x11f941970 <col:14> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x11f9419e0 <line:21:3, col:8> 'doi_add_return' 0x11f941128
+    |-BinaryOperator 0x11f943020 <line:25:2, col:12> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11f942fe0 <col:2> 'int' contains-errors lvalue Var 0x11f940c60 'ret_val' 'int'
+    | `-IntegerLiteral 0x11f943000 <col:12> 'int' 0
+    |-LabelStmt 0x11f943188 <line:27:1, col:15> 'doi_add_return'
+    | `-NullStmt 0x11f943180 <col:15>
+    |-IfStmt 0x11f943858 <line:29:2, line:43:2>
+    | |-ImplicitCastExpr 0x11f9431c8 <line:29:6> 'struct audit_buffer *' <LValueToRValue>
+    | | `-DeclRefExpr 0x11f9431a8 <col:6> 'struct audit_buffer *' lvalue Var 0x11f940ef8 'audit_buf' 'struct audit_buffer *'
+    | `-CompoundStmt 0x11f943830 <col:17, line:43:2>
+    |   |-DeclStmt 0x11f943260 <line:30:3, col:23>
+    |   | `-VarDecl 0x11f9431f8 <col:3, col:15> col:15 used type_str 'const char *'
+    |   |-SwitchStmt 0x11f943298 <line:32:3, line:38:3>
+    |   | |-RecoveryExpr 0x11f943278 <line:32:11> 'int' contains-errors
+    |   | `-CompoundStmt 0x11f943448 <col:21, line:38:3>
+    |   |   |-BinaryOperator 0x11f943370 <line:34:4, col:15> 'const char *' '='
+    |   |   | |-DeclRefExpr 0x11f9432c0 <col:4> 'const char *' lvalue Var 0x11f9431f8 'type_str' 'const char *'
+    |   |   | `-ImplicitCastExpr 0x11f943358 <col:15> 'const char *' <NoOp>
+    |   |   |   `-ImplicitCastExpr 0x11f943340 <col:15> 'char *' <ArrayToPointerDecay>
+    |   |   |     `-StringLiteral 0x11f943320 <col:15> 'char[4]' lvalue "STR"
+    |   |   |-BreakStmt 0x11f943390 <line:35:4>
+    |   |   `-DefaultStmt 0x11f943428 <line:36:3, line:37:15>
+    |   |     `-BinaryOperator 0x11f943408 <col:4, col:15> 'const char *' '='
+    |   |       |-DeclRefExpr 0x11f943398 <col:4> 'const char *' lvalue Var 0x11f9431f8 'type_str' 'const char *'
+    |   |       `-ImplicitCastExpr 0x11f9433f0 <col:15> 'const char *' <NoOp>
+    |   |         `-ImplicitCastExpr 0x11f9433d8 <col:15> 'char *' <ArrayToPointerDecay>
+    |   |           `-StringLiteral 0x11f9433b8 <col:15> 'char[4]' lvalue "STR"
+    |   `-CallExpr 0x11f9437f0 <line:42:3, col:26> 'int'
+    |     |-ImplicitCastExpr 0x11f9437d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11f943798 <col:3> 'int ()' Function 0x11f9436e0 'audit_log_end' 'int ()'
+    |     `-ImplicitCastExpr 0x11f943818 <col:17> 'struct audit_buffer *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11f9437b8 <col:17> 'struct audit_buffer *' lvalue Var 0x11f940ef8 'audit_buf' 'struct audit_buffer *'
+    `-ReturnStmt 0x11f9438b0 <line:45:2, col:9>
+      `-ImplicitCastExpr 0x11f943898 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x11f943878 <col:9> 'int' contains-errors lvalue Var 0x11f940c60 'ret_val' 'int'

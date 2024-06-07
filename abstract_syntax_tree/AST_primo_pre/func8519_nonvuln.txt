@@ -1,0 +1,40 @@
+`-FunctionDecl 0x158940b78  line:1:12 invalid io_fallocate 'int (struct io_kiocb *, struct io_kiocb **, int)' static
+  |-ParmVarDecl 0x158928648 <col:25, col:42> col:42 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x158928798 <col:47, col:65> col:65 used nxt 'struct io_kiocb **'
+  |-ParmVarDecl 0x158940a30 <line:2:4, col:9> col:9 invalid force_nonblock 'int'
+  `-CompoundStmt 0x1589418a0 <line:3:1, line:19:1>
+    |-DeclStmt 0x158940ec0 <line:4:2, col:36>
+    | |-RecordDecl 0x158940c38 <col:2, col:9> col:9 struct io_wq_work
+    | |-VarDecl 0x158940da8 <col:2, col:21> col:21 used work 'struct io_wq_work *'
+    | `-VarDecl 0x158940e38 <col:2, col:28> col:28 used old_work 'struct io_wq_work *'
+    |-IfStmt 0x158941308 <line:7:2, line:11:2>
+    | |-RecoveryExpr 0x158940ed8 <line:7:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1589412e0 <col:22, line:11:2>
+    |   |-CallExpr 0x1589410d8 <line:8:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x1589410c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x158941050 <col:3> 'int ()' Function 0x158940f98 'io_put_req' 'int ()'
+    |   | `-ImplicitCastExpr 0x158941100 <col:14> 'struct io_kiocb *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x158941070 <col:14> 'struct io_kiocb *' lvalue ParmVar 0x158928648 'req' 'struct io_kiocb *'
+    |   |-BinaryOperator 0x158941218 <line:9:3, col:20> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x158941178 <col:3, col:13> '<dependent type>' contains-errors lvalue .func
+    |   | | `-RecoveryExpr 0x158941150 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x158941118 <col:3> 'struct io_kiocb *' lvalue ParmVar 0x158928648 'req' 'struct io_kiocb *'
+    |   | `-RecoveryExpr 0x1589411f8 <col:20> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1589412d0 <line:10:3, col:11>
+    |     `-UnaryOperator 0x1589412b8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1589412a0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x158941280 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x158941400 <line:13:2, col:26> 'struct io_wq_work *' contains-errors '='
+    | |-DeclRefExpr 0x158941328 <col:2> 'struct io_wq_work *' lvalue Var 0x158940da8 'work' 'struct io_wq_work *'
+    | `-BinaryOperator 0x1589413e0 <col:9, col:26> 'struct io_wq_work *' contains-errors '='
+    |   |-DeclRefExpr 0x158941348 <col:9> 'struct io_wq_work *' lvalue Var 0x158940e38 'old_work' 'struct io_wq_work *'
+    |   `-UnaryOperator 0x1589413c8 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x1589413a0 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x158941368 <col:21> 'struct io_kiocb *' lvalue ParmVar 0x158928648 'req' 'struct io_kiocb *'
+    |-CallExpr 0x1589415d0 <line:14:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x1589415b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x158941500 <col:2> 'int ()' Function 0x158941448 'io_fallocate_finish' 'int ()'
+    | `-UnaryOperator 0x1589415a0 <col:22, col:23> 'struct io_wq_work **' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x158941520 <col:23> 'struct io_wq_work *' lvalue Var 0x158940da8 'work' 'struct io_wq_work *'
+    `-ReturnStmt 0x158941890 <line:18:2, col:9>
+      `-IntegerLiteral 0x158941870 <col:9> 'int' 0

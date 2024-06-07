@@ -1,0 +1,24 @@
+`-FunctionDecl 0x126928258  line:1:20 invalid ioat_dma_do_interrupt_msix 'int (int, void *)' static
+  |-ParmVarDecl 0x1269280f0 <col:47, col:51> col:51 irq 'int'
+  |-ParmVarDecl 0x126928170 <col:56, col:62> col:62 used data 'void *'
+  `-CompoundStmt 0x126941e58 <line:2:1, line:9:1>
+    |-DeclStmt 0x126928548 <line:3:2, col:38>
+    | |-RecordDecl 0x126928310 <col:2, col:9> col:9 struct ioat_chan_common
+    | `-VarDecl 0x126928478 <col:2, col:34> col:27 used chan 'struct ioat_chan_common *' cinit
+    |   `-ImplicitCastExpr 0x126928518 <col:34> 'struct ioat_chan_common *' <BitCast>
+    |     `-ImplicitCastExpr 0x126928500 <col:34> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1269284e0 <col:34> 'void *' lvalue ParmVar 0x126928170 'data' 'void *'
+    |-IfStmt 0x126941df0 <line:5:2, line:6:39>
+    | |-CallExpr 0x126941c20 <line:5:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1269286c0 <col:6> 'int ()' Function 0x126928608 'test_bit' 'int ()'
+    | | |-RecoveryExpr 0x126941c00 <col:15> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x126941bb8 <col:25, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x126941b90 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1269286f8 <col:26> 'struct ioat_chan_common *' lvalue Var 0x126928478 'chan' 'struct ioat_chan_common *'
+    | `-CallExpr 0x126941dc8 <line:6:3, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x126941d30 <col:3> 'int ()' Function 0x126941c78 'tasklet_schedule' 'int ()'
+    |   `-UnaryOperator 0x126941db0 <col:20, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x126941d88 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x126941d50 <col:21> 'struct ioat_chan_common *' lvalue Var 0x126928478 'chan' 'struct ioat_chan_common *'
+    `-ReturnStmt 0x126941e48 <line:8:2, col:9>
+      `-RecoveryExpr 0x126941e28 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,39 @@
+`-FunctionDecl 0x15b0274d8  line:1:14 invalid udp_seq_next 'void *(struct seq_file *, void *, int *)' static
+  |-ParmVarDecl 0x15b00e248 <col:27, col:44> col:44 used seq 'struct seq_file *'
+  |-ParmVarDecl 0x15b00e2c8 <col:49, col:55> col:55 used v 'void *'
+  |-ParmVarDecl 0x15b00e398 <col:58, col:66> col:66 invalid pos 'int *'
+  `-CompoundStmt 0x15b027de0 <line:2:1, line:12:1>
+    |-DeclStmt 0x15b027788 <line:3:2, col:17>
+    | |-RecordDecl 0x15b027598 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x15b027708 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-IfStmt 0x15b027ce8 <line:5:2, line:8:27> has_else
+    | |-BinaryOperator 0x15b027818 <line:5:6, col:11> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x15b0277a0 <col:6> 'void *' lvalue ParmVar 0x15b00e2c8 'v' 'void *'
+    | | `-RecoveryExpr 0x15b0277f8 <col:11> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x15b027ab8 <line:6:3, col:26> 'struct sock *' '='
+    | | |-DeclRefExpr 0x15b027838 <col:3> 'struct sock *' lvalue Var 0x15b027708 'sk' 'struct sock *'
+    | | `-ImplicitCastExpr 0x15b027aa0 <col:8, col:26> 'struct sock *' <IntegralToPointer>
+    | |   `-CallExpr 0x15b027a58 <col:8, col:26> 'int'
+    | |     |-ImplicitCastExpr 0x15b027a40 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x15b0279b0 <col:8> 'int ()' Function 0x15b0278f8 'udp_get_idx' 'int ()'
+    | |     |-ImplicitCastExpr 0x15b027a88 <col:20> 'struct seq_file *' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x15b0279d0 <col:20> 'struct seq_file *' lvalue ParmVar 0x15b00e248 'seq' 'struct seq_file *'
+    | |     `-IntegerLiteral 0x15b0279f0 <col:25> 'int' 0
+    | `-BinaryOperator 0x15b027cc8 <line:8:3, col:27> 'struct sock *' '='
+    |   |-DeclRefExpr 0x15b027ad8 <col:3> 'struct sock *' lvalue Var 0x15b027708 'sk' 'struct sock *'
+    |   `-ImplicitCastExpr 0x15b027cb0 <col:8, col:27> 'struct sock *' <IntegralToPointer>
+    |     `-CallExpr 0x15b027c50 <col:8, col:27> 'int'
+    |       |-ImplicitCastExpr 0x15b027c38 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15b027bd8 <col:8> 'int ()' Function 0x15b027b20 'udp_get_next' 'int ()'
+    |       |-ImplicitCastExpr 0x15b027c80 <col:21> 'struct seq_file *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x15b027bf8 <col:21> 'struct seq_file *' lvalue ParmVar 0x15b00e248 'seq' 'struct seq_file *'
+    |       `-ImplicitCastExpr 0x15b027c98 <col:26> 'void *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15b027c18 <col:26> 'void *' lvalue ParmVar 0x15b00e2c8 'v' 'void *'
+    |-UnaryOperator 0x15b027d68 <line:10:2, col:5> '<dependent type>' contains-errors prefix '++' cannot overflow
+    | `-UnaryOperator 0x15b027d50 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x15b027d38 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x15b027d18 <col:5> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15b027dd0 <line:11:2, col:9>
+      `-ImplicitCastExpr 0x15b027db8 <col:9> 'void *' <BitCast>
+        `-ImplicitCastExpr 0x15b027da0 <col:9> 'struct sock *' <LValueToRValue>
+          `-DeclRefExpr 0x15b027d80 <col:9> 'struct sock *' lvalue Var 0x15b027708 'sk' 'struct sock *'

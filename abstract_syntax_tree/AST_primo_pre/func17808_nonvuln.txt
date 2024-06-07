@@ -1,0 +1,114 @@
+`-FunctionDecl 0x11e8097f8  line:1:21 invalid sk_prot_alloc 'struct sock *(struct proto *, int, int)' static
+  |-ParmVarDecl 0x11e1286e8 <col:35, col:49> col:49 used prot 'struct proto *'
+  |-ParmVarDecl 0x11e128780 <col:55, col:61> col:61 invalid priority 'int'
+  |-ParmVarDecl 0x11e809600 <line:2:3, col:7> col:7 used family 'int'
+  `-CompoundStmt 0x11e141a20 <line:3:1, line:42:1>
+    |-DeclStmt 0x11e8099b0 <line:4:2, col:17>
+    | `-VarDecl 0x11e809948 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-DeclStmt 0x11e809bb8 <line:5:2, col:25>
+    | |-RecordDecl 0x11e8099c8 <col:2, col:9> col:9 struct kmem_cache
+    | `-VarDecl 0x11e809b38 <col:2, col:21> col:21 used slab 'struct kmem_cache *'
+    |-BinaryOperator 0x11e809c50 <line:7:2, col:15> 'struct kmem_cache *' contains-errors '='
+    | |-DeclRefExpr 0x11e809bd0 <col:2> 'struct kmem_cache *' lvalue Var 0x11e809b38 'slab' 'struct kmem_cache *'
+    | `-RecoveryExpr 0x11e809c28 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11e809bf0 <col:9> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    |-IfStmt 0x11e140ba8 <line:8:2, line:19:40> has_else
+    | |-BinaryOperator 0x11e809ce8 <line:8:6, col:14> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x11e809c70 <col:6> 'struct kmem_cache *' lvalue Var 0x11e809b38 'slab' 'struct kmem_cache *'
+    | | `-RecoveryExpr 0x11e809cc8 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x11e80a530 <col:20, line:18:2>
+    | | |-BinaryOperator 0x11e80a038 <line:9:3, col:53> 'struct sock *' contains-errors '='
+    | | | |-DeclRefExpr 0x11e809d08 <col:3> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | | | `-CallExpr 0x11e80a008 <col:8, col:53> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x11e809e80 <col:8> 'int ()' Function 0x11e809dc8 'kmem_cache_alloc' 'int ()'
+    | | |   |-DeclRefExpr 0x11e809ea0 <col:25> 'struct kmem_cache *' lvalue Var 0x11e809b38 'slab' 'struct kmem_cache *'
+    | | |   `-BinaryOperator 0x11e809fe8 <col:31, col:43> '<dependent type>' contains-errors '&'
+    | | |     |-RecoveryExpr 0x11e809ec0 <col:31> '<dependent type>' contains-errors lvalue
+    | | |     `-UnaryOperator 0x11e809fd0 <col:42, col:43> '<dependent type>' contains-errors prefix '~' cannot overflow
+    | | |       `-ImplicitCastExpr 0x11e809fb8 <col:43> '<dependent type>' contains-errors <LValueToRValue>
+    | | |         `-RecoveryExpr 0x11e809f98 <col:43> '<dependent type>' contains-errors lvalue
+    | | |-IfStmt 0x11e80a0f0 <line:10:3, line:11:11>
+    | | | |-UnaryOperator 0x11e80a090 <line:10:7, col:8> 'int' prefix '!' cannot overflow
+    | | | | `-ImplicitCastExpr 0x11e80a078 <col:8> 'struct sock *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x11e80a058 <col:8> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | | | `-ReturnStmt 0x11e80a0e0 <line:11:4, col:11>
+    | | |   `-ImplicitCastExpr 0x11e80a0c8 <col:11> 'struct sock *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x11e80a0a8 <col:11> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | | `-IfStmt 0x11e80a510 <line:12:3, line:17:3>
+    | |   |-BinaryOperator 0x11e80a188 <line:12:7, col:18> '<dependent type>' contains-errors '&'
+    | |   | |-RecoveryExpr 0x11e80a110 <col:7> '<dependent type>' contains-errors lvalue
+    | |   | `-RecoveryExpr 0x11e80a168 <col:18> '<dependent type>' contains-errors lvalue
+    | |   `-CompoundStmt 0x11e80a4f8 <col:30, line:17:3>
+    | |     `-IfStmt 0x11e80a4c8 <line:13:4, line:16:43> has_else
+    | |       |-RecoveryExpr 0x11e80a1e0 <line:13:8, col:14> '<dependent type>' contains-errors lvalue
+    | |       | `-DeclRefExpr 0x11e80a1a8 <col:8> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    | |       |-CallExpr 0x11e80a2e8 <line:14:5, col:38> '<dependent type>' contains-errors
+    | |       | |-RecoveryExpr 0x11e80a240 <col:5, col:11> '<dependent type>' contains-errors lvalue
+    | |       | | `-DeclRefExpr 0x11e80a208 <col:5> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    | |       | |-DeclRefExpr 0x11e80a268 <col:20> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | |       | `-RecoveryExpr 0x11e80a2c0 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | |       |   `-DeclRefExpr 0x11e80a288 <col:24> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    | |       `-CallExpr 0x11e80a498 <line:16:5, col:43> '<dependent type>' contains-errors
+    | |         |-DeclRefExpr 0x11e80a3f8 <col:5> 'int ()' Function 0x11e80a340 'sk_prot_clear_nulls' 'int ()'
+    | |         |-DeclRefExpr 0x11e80a418 <col:25> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | |         `-RecoveryExpr 0x11e80a470 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    | |           `-DeclRefExpr 0x11e80a438 <col:29> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    | `-BinaryOperator 0x11e140b88 <line:19:3, col:40> 'struct sock *' contains-errors '='
+    |   |-DeclRefExpr 0x11e80a558 <col:3> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    |   `-CallExpr 0x11e140b58 <col:8, col:40> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11e140ab8 <col:8> 'int ()' Function 0x11e140a00 'kmalloc' 'int ()'
+    |     |-RecoveryExpr 0x11e140b10 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x11e140ad8 <col:16> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    |     `-RecoveryExpr 0x11e140b38 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11e141448 <line:21:2, line:30:2>
+    | |-BinaryOperator 0x11e140c50 <line:21:6, col:12> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x11e140bd8 <col:6> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x11e140c30 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11e141418 <col:18, line:30:2>
+    |   |-CallExpr 0x11e140df8 <line:22:3, col:40> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11e140d50 <col:3> 'int ()' Function 0x11e140c98 'kmemcheck_annotate_bitfield' 'int ()'
+    |   | |-DeclRefExpr 0x11e140d70 <col:31> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    |   | `-RecoveryExpr 0x11e140dd8 <col:35> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x11e141028 <line:24:3, line:25:9>
+    |   | |-CallExpr 0x11e140f88 <line:24:7, col:45> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x11e140f08 <col:7> 'int ()' Function 0x11e140e50 'security_sk_alloc' 'int ()'
+    |   | | |-DeclRefExpr 0x11e140f28 <col:25> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    |   | | |-DeclRefExpr 0x11e140f48 <col:29> 'int' lvalue ParmVar 0x11e809600 'family' 'int'
+    |   | | `-RecoveryExpr 0x11e140f68 <col:37> '<dependent type>' contains-errors lvalue
+    |   | `-GotoStmt 0x11e141010 <line:25:4, col:9> 'out_free' 0x11e140fc0
+    |   |-IfStmt 0x11e141250 <line:27:3, line:28:9>
+    |   | |-UnaryOperator 0x11e1411d0 <line:27:7, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x11e1411a8 <col:8, col:34> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x11e141128 <col:8> 'int ()' Function 0x11e141070 'try_module_get' 'int ()'
+    |   | |   `-RecoveryExpr 0x11e141180 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x11e141148 <col:23> 'struct proto *' lvalue ParmVar 0x11e1286e8 'prot' 'struct proto *'
+    |   | `-GotoStmt 0x11e141238 <line:28:4, col:9> 'out_free_sec' 0x11e1411e8
+    |   `-CallExpr 0x11e1413d8 <line:29:3, col:23> 'int'
+    |     |-ImplicitCastExpr 0x11e1413c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11e141350 <col:3> 'int ()' Function 0x11e141298 'sk_tx_queue_clear' 'int ()'
+    |     `-ImplicitCastExpr 0x11e141400 <col:21> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11e141370 <col:21> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    |-ReturnStmt 0x11e1414a0 <line:32:2, col:9>
+    | `-ImplicitCastExpr 0x11e141488 <col:9> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11e141468 <col:9> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    |-LabelStmt 0x11e141628 <line:34:1, line:35:21> 'out_free_sec'
+    | `-CallExpr 0x11e1415e8 <col:2, col:21> 'int'
+    |   |-ImplicitCastExpr 0x11e1415d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11e141590 <col:2> 'int ()' Function 0x11e1414d8 'security_sk_free' 'int ()'
+    |   `-ImplicitCastExpr 0x11e141610 <col:19> 'struct sock *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11e1415b0 <col:19> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+    `-LabelStmt 0x11e141a00 <line:36:1, line:40:11> 'out_free'
+      `-IfStmt 0x11e1419b8 <line:37:2, line:40:11> has_else
+        |-RecoveryExpr 0x11e141668 <line:37:6, col:14> '_Bool' contains-errors
+        |-CallExpr 0x11e1417e0 <line:38:3, col:27> 'int'
+        | |-ImplicitCastExpr 0x11e1417c8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x11e141768 <col:3> 'int ()' Function 0x11e1416b0 'kmem_cache_free' 'int ()'
+        | |-ImplicitCastExpr 0x11e141810 <col:19> 'struct kmem_cache *' <LValueToRValue>
+        | | `-DeclRefExpr 0x11e141788 <col:19> 'struct kmem_cache *' lvalue Var 0x11e809b38 'slab' 'struct kmem_cache *'
+        | `-ImplicitCastExpr 0x11e141828 <col:25> 'struct sock *' <LValueToRValue>
+        |   `-DeclRefExpr 0x11e1417a8 <col:25> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'
+        `-CallExpr 0x11e141978 <line:40:3, col:11> 'int'
+          |-ImplicitCastExpr 0x11e141960 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x11e141920 <col:3> 'int ()' Function 0x11e141868 'kfree' 'int ()'
+          `-ImplicitCastExpr 0x11e1419a0 <col:9> 'struct sock *' <LValueToRValue>
+            `-DeclRefExpr 0x11e141940 <col:9> 'struct sock *' lvalue Var 0x11e809948 'sk' 'struct sock *'

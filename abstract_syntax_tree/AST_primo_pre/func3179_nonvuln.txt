@@ -1,0 +1,72 @@
+`-FunctionDecl 0x13f80d430  line:1:13 invalid __build_flow_key 'void (const struct net *, struct flowi4 *, const struct sock *, const struct iphdr *, int, int, int, int, int)' static
+  |-ParmVarDecl 0x13f00e248 <col:30, col:48> col:48 used net 'const struct net *'
+  |-ParmVarDecl 0x13f80cc28 <col:53, col:68> col:68 used fl4 'struct flowi4 *'
+  |-ParmVarDecl 0x13f80cdf8 <line:2:9, col:28> col:28 used sk 'const struct sock *'
+  |-ParmVarDecl 0x13f80cfc8 <line:3:9, col:29> col:29 used iph 'const struct iphdr *'
+  |-ParmVarDecl 0x13f80d048 <line:4:9, col:13> col:13 used oif 'int'
+  |-ParmVarDecl 0x13f80d0e0 <col:18, col:21> col:21 referenced invalid tos 'int'
+  |-ParmVarDecl 0x13f80d160 <line:5:9, col:12> col:12 referenced invalid prot 'int'
+  |-ParmVarDecl 0x13f80d1e0 <col:18, col:22> col:22 referenced invalid mark 'int'
+  |-ParmVarDecl 0x13f80d260 <col:28, col:32> col:32 used flow_flags 'int'
+  `-CompoundStmt 0x13e9243d0 <line:6:1, line:20:1>
+    |-IfStmt 0x13e923d88 <line:7:2, line:14:2>
+    | |-ImplicitCastExpr 0x13f80d540 <line:7:6> 'const struct sock *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13f80d520 <col:6> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    | `-CompoundStmt 0x13e923d50 <col:10, line:14:2>
+    |   |-DeclStmt 0x13f80d988 <line:8:3, col:45>
+    |   | |-RecordDecl 0x13f80d558 <col:9, col:16> col:16 struct inet_sock
+    |   | `-VarDecl 0x13f80d6c8 <col:3, col:44> col:27 used inet 'const struct inet_sock *' cinit
+    |   |   `-ImplicitCastExpr 0x13f80d958 <col:34, col:44> 'const struct inet_sock *' <IntegralToPointer>
+    |   |     `-CallExpr 0x13f80d918 <col:34, col:44> 'int'
+    |   |       |-ImplicitCastExpr 0x13f80d900 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x13f80d890 <col:34> 'int ()' Function 0x13f80d7d8 'inet_sk' 'int ()'
+    |   |       `-ImplicitCastExpr 0x13f80d940 <col:42> 'const struct sock *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x13f80d8b0 <col:42> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    |   |-BinaryOperator 0x13f80da20 <line:10:3, col:13> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13f80d9a0 <col:3> 'int' lvalue ParmVar 0x13f80d048 'oif' 'int'
+    |   | `-RecoveryExpr 0x13f80d9f8 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13f80d9c0 <col:9> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    |   |-BinaryOperator 0x13f80dae8 <line:11:3, col:14> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13f80da60 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13f80da40 <col:3> 'int' lvalue ParmVar 0x13f80d1e0 'mark' 'int'
+    |   | `-RecoveryExpr 0x13f80dac0 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13f80da88 <col:10> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    |   |-BinaryOperator 0x13e923b50 <line:12:3, col:25> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13f80db28 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13f80db08 <col:3> 'int' lvalue ParmVar 0x13f80d0e0 'tos' 'int'
+    |   | `-CallExpr 0x13e923b10 <col:9, col:25> 'int'
+    |   |   |-ImplicitCastExpr 0x13e923af8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x13e923ab8 <col:9> 'int ()' Function 0x13e923a00 'RT_CONN_FLAGS' 'int ()'
+    |   |   `-ImplicitCastExpr 0x13e923b38 <col:23> 'const struct sock *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13e923ad8 <col:23> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    |   `-BinaryOperator 0x13e923d30 <line:13:3, col:44> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x13e923b90 <col:3> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13e923b70 <col:3> 'int' lvalue ParmVar 0x13f80d160 'prot' 'int'
+    |     `-ConditionalOperator 0x13e923d00 <col:10, col:44> '<dependent type>' contains-errors
+    |       |-RecoveryExpr 0x13e923bf0 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x13e923bb8 <col:10> 'const struct inet_sock *' lvalue Var 0x13f80d6c8 'inet' 'const struct inet_sock *'
+    |       |-RecoveryExpr 0x13e923ce0 <col:26> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x13e923c68 <col:40, col:44> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13e923c30 <col:40> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'
+    `-CallExpr 0x13e924350 <line:15:2, line:19:28> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13e923e88 <line:15:2> 'int ()' Function 0x13e923dd0 'flowi4_init_output' 'int ()'
+      |-DeclRefExpr 0x13e923ea8 <col:21> 'struct flowi4 *' lvalue ParmVar 0x13f80cc28 'fl4' 'struct flowi4 *'
+      |-DeclRefExpr 0x13e923ec8 <col:26> 'int' lvalue ParmVar 0x13f80d048 'oif' 'int'
+      |-RecoveryExpr 0x13e923ee8 <col:31> '<dependent type>' contains-errors lvalue
+      |-RecoveryExpr 0x13e923f08 <col:37> '<dependent type>' contains-errors lvalue
+      |-RecoveryExpr 0x13e9242b8 <line:16:7> '<dependent type>' contains-errors lvalue
+      |-RecoveryExpr 0x13e923f40 <col:26> '<dependent type>' contains-errors lvalue
+      |-DeclRefExpr 0x13e923f60 <line:17:7> 'int' lvalue ParmVar 0x13f80d260 'flow_flags' 'int'
+      |-RecoveryExpr 0x13e923fb8 <line:18:7, col:12> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x13e923f80 <col:7> 'const struct iphdr *' lvalue ParmVar 0x13f80cfc8 'iph' 'const struct iphdr *'
+      |-RecoveryExpr 0x13e924018 <col:19, col:24> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x13e923fe0 <col:19> 'const struct iphdr *' lvalue ParmVar 0x13f80cfc8 'iph' 'const struct iphdr *'
+      |-IntegerLiteral 0x13e924040 <col:31> 'int' 0
+      |-IntegerLiteral 0x13e924060 <col:34> 'int' 0
+      `-CallExpr 0x13e9242f0 <line:19:7, col:27> 'int'
+        |-ImplicitCastExpr 0x13e9242d8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x13e924160 <col:7> 'int ()' Function 0x13e9240a8 'sock_net_uid' 'int ()'
+        |-ImplicitCastExpr 0x13e924320 <col:20> 'const struct net *' <LValueToRValue>
+        | `-DeclRefExpr 0x13e924180 <col:20> 'const struct net *' lvalue ParmVar 0x13f00e248 'net' 'const struct net *'
+        `-ImplicitCastExpr 0x13e924338 <col:25> 'const struct sock *' <LValueToRValue>
+          `-DeclRefExpr 0x13e9241a0 <col:25> 'const struct sock *' lvalue ParmVar 0x13f80cdf8 'sk' 'const struct sock *'

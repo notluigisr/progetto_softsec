@@ -1,0 +1,81 @@
+`-FunctionDecl 0x143940c78  line:1:12 n_tty_ioctl 'int (struct tty_struct *, struct file *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x143928648 <col:24, col:43> col:43 used tty 'struct tty_struct *'
+  |-ParmVarDecl 0x143940a28 <col:48, col:61> col:61 used file 'struct file *'
+  |-ParmVarDecl 0x143940aa8 <line:2:10, col:23> col:23 used cmd 'unsigned int'
+  |-ParmVarDecl 0x143940b28 <col:28, col:42> col:42 used arg 'unsigned long'
+  `-CompoundStmt 0x145008f10 <line:3:1, line:21:1>
+    |-DeclStmt 0x143940fd8 <line:4:2, col:43>
+    | |-RecordDecl 0x143940d88 <col:2, col:9> col:9 struct n_tty_data
+    | `-VarDecl 0x143940ef8 <col:2, col:34> col:21 used ldata 'struct n_tty_data *' cinit
+    |   `-RecoveryExpr 0x143940f98 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x143940f60 <col:29> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+    |-DeclStmt 0x143941070 <line:5:2, col:12>
+    | `-VarDecl 0x143941008 <col:2, col:6> col:6 used retval 'int'
+    `-SwitchStmt 0x1439410c0 <line:7:2, line:20:2>
+      |-ImplicitCastExpr 0x1439410a8 <line:7:10> 'unsigned int' <LValueToRValue>
+      | `-DeclRefExpr 0x143941088 <col:10> 'unsigned int' lvalue ParmVar 0x143940aa8 'cmd' 'unsigned int'
+      `-CompoundStmt 0x145008ed0 <col:15, line:20:2>
+        |-ReturnStmt 0x1439414b8 <line:9:3, col:63>
+        | `-CallExpr 0x143941488 <col:10, col:63> 'int'
+        |   |-ImplicitCastExpr 0x143941470 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x143941230 <col:10> 'int ()' Function 0x143941178 'put_user' 'int ()'
+        |   |-CallExpr 0x1439413b8 <col:19, col:42> 'int'
+        |   | |-ImplicitCastExpr 0x1439413a0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+        |   | | `-DeclRefExpr 0x143941330 <col:19> 'int ()' Function 0x143941278 'tty_chars_in_buffer' 'int ()'
+        |   | `-ImplicitCastExpr 0x1439413e0 <col:39> 'struct tty_struct *' <LValueToRValue>
+        |   |   `-DeclRefExpr 0x143941350 <col:39> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+        |   `-CStyleCastExpr 0x143941448 <col:45, col:60> 'int' <IntegralCast>
+        |     `-ImplicitCastExpr 0x143941430 <col:60> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+        |       `-DeclRefExpr 0x1439413f8 <col:60> 'unsigned long' lvalue ParmVar 0x143940b28 'arg' 'unsigned long'
+        |-CallExpr 0x143941658 <line:11:3, col:33> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1439415c0 <col:3> 'int ()' Function 0x143941508 'down_write' 'int ()'
+        | `-UnaryOperator 0x143941640 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x143941618 <col:15, col:20> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x1439415e0 <col:15> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+        |-IfStmt 0x145008970 <line:12:3, line:15:27> has_else
+        | |-CallExpr 0x1439417b8 <line:12:7, col:19> 'int'
+        | | |-ImplicitCastExpr 0x1439417a0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x143941760 <col:7> 'int ()' Function 0x1439416a8 'L_ICANON' 'int ()'
+        | | `-ImplicitCastExpr 0x1439417e0 <col:16> 'struct tty_struct *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x143941780 <col:16> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+        | |-BinaryOperator 0x143941990 <line:13:4, col:28> 'int' contains-errors '='
+        | | |-DeclRefExpr 0x1439417f8 <col:4> 'int' lvalue Var 0x143941008 'retval' 'int'
+        | | `-CallExpr 0x143941950 <col:13, col:28> 'int' contains-errors
+        | |   |-ImplicitCastExpr 0x143941938 <col:13> 'int (*)()' <FunctionToPointerDecay>
+        | |   | `-DeclRefExpr 0x1439418f8 <col:13> 'int ()' Function 0x143941840 'inq_canon' 'int ()'
+        | |   `-ImplicitCastExpr 0x143941978 <col:23> 'struct n_tty_data *' contains-errors <LValueToRValue>
+        | |     `-DeclRefExpr 0x143941918 <col:23> 'struct n_tty_data *' contains-errors lvalue Var 0x143940ef8 'ldata' 'struct n_tty_data *'
+        | `-BinaryOperator 0x145008950 <line:15:4, col:27> 'int' contains-errors '='
+        |   |-DeclRefExpr 0x1439419b0 <col:4> 'int' lvalue Var 0x143941008 'retval' 'int'
+        |   `-CallExpr 0x145008910 <col:13, col:27> 'int' contains-errors
+        |     |-ImplicitCastExpr 0x1450088f8 <col:13> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x1450088b8 <col:13> 'int ()' Function 0x145008800 'read_cnt' 'int ()'
+        |     `-ImplicitCastExpr 0x145008938 <col:22> 'struct n_tty_data *' contains-errors <LValueToRValue>
+        |       `-DeclRefExpr 0x1450088d8 <col:22> 'struct n_tty_data *' contains-errors lvalue Var 0x143940ef8 'ldata' 'struct n_tty_data *'
+        |-CallExpr 0x145008b18 <line:16:3, col:31> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x145008a80 <col:3> 'int ()' Function 0x1450089c8 'up_write' 'int ()'
+        | `-UnaryOperator 0x145008b00 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x145008ad8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x145008aa0 <col:13> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+        |-ReturnStmt 0x145008c58 <line:17:3, col:54>
+        | `-CallExpr 0x145008c10 <col:10, col:54> 'int'
+        |   |-ImplicitCastExpr 0x145008bf8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x145008b40 <col:10> 'int ()' Function 0x143941178 'put_user' 'int ()'
+        |   |-ImplicitCastExpr 0x145008c40 <col:19> 'int' <LValueToRValue>
+        |   | `-DeclRefExpr 0x145008b60 <col:19> 'int' lvalue Var 0x143941008 'retval' 'int'
+        |   `-CStyleCastExpr 0x145008bd0 <col:27, col:51> 'unsigned int' <IntegralCast>
+        |     `-ImplicitCastExpr 0x145008bb8 <col:51> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+        |       `-DeclRefExpr 0x145008b80 <col:51> 'unsigned long' lvalue ParmVar 0x143940b28 'arg' 'unsigned long'
+        `-DefaultStmt 0x145008eb0 <line:18:2, line:19:48>
+          `-ReturnStmt 0x145008ea0 <col:3, col:48>
+            `-CallExpr 0x145008e00 <col:10, col:48> 'int'
+              |-ImplicitCastExpr 0x145008de8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x145008d48 <col:10> 'int ()' Function 0x145008c90 'n_tty_ioctl_helper' 'int ()'
+              |-ImplicitCastExpr 0x145008e40 <col:29> 'struct tty_struct *' <LValueToRValue>
+              | `-DeclRefExpr 0x145008d68 <col:29> 'struct tty_struct *' lvalue ParmVar 0x143928648 'tty' 'struct tty_struct *'
+              |-ImplicitCastExpr 0x145008e58 <col:34> 'struct file *' <LValueToRValue>
+              | `-DeclRefExpr 0x145008d88 <col:34> 'struct file *' lvalue ParmVar 0x143940a28 'file' 'struct file *'
+              |-ImplicitCastExpr 0x145008e70 <col:40> 'unsigned int' <LValueToRValue>
+              | `-DeclRefExpr 0x145008da8 <col:40> 'unsigned int' lvalue ParmVar 0x143940aa8 'cmd' 'unsigned int'
+              `-ImplicitCastExpr 0x145008e88 <col:45> 'unsigned long' <LValueToRValue>
+                `-DeclRefExpr 0x145008dc8 <col:45> 'unsigned long' lvalue ParmVar 0x143940b28 'arg' 'unsigned long'

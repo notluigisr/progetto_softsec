@@ -1,0 +1,100 @@
+`-FunctionDecl 0x131122830  line:1:13 invalid mincore_pmd_range 'void (struct vm_area_struct *, int *, unsigned long, unsigned long, unsigned char *)' static
+  |-ParmVarDecl 0x13180e248 <col:31, col:54> col:54 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x13180e318 <col:59, col:66> col:66 referenced invalid pud 'int *'
+  |-ParmVarDecl 0x13180e398 <line:2:4, col:18> col:18 used addr 'unsigned long'
+  |-ParmVarDecl 0x131122618 <col:24, col:38> col:38 used end 'unsigned long'
+  |-ParmVarDecl 0x1311226c8 <line:3:4, col:19> col:19 used vec 'unsigned char *'
+  `-CompoundStmt 0x131124dc0 <line:4:1, line:24:1>
+    |-DeclStmt 0x131122980 <line:5:2, col:20>
+    | `-VarDecl 0x131122918 <col:2, col:16> col:16 used next 'unsigned long'
+    |-BinaryOperator 0x131122c00 <line:8:2, col:28> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1311229f0 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1311229d0 <col:2> 'int *' lvalue ParmVar 0x13180e318 'pud' 'int *'
+    | `-CallExpr 0x131122bd0 <col:8, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131122b70 <col:8> 'int ()' Function 0x131122ab8 'pmd_offset' 'int ()'
+    |   |-RecoveryExpr 0x131122b90 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x131122bb0 <col:24> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+    `-DoStmt 0x131124da0 <line:9:2, line:23:42>
+      |-CompoundStmt 0x131124ad8 <line:9:5, line:23:2>
+      | |-BinaryOperator 0x131122e40 <line:10:3, col:32> 'unsigned long' '='
+      | | |-DeclRefExpr 0x131122c20 <col:3> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      | | `-ImplicitCastExpr 0x131122e28 <col:10, col:32> 'unsigned long' <IntegralCast>
+      | |   `-CallExpr 0x131122dc8 <col:10, col:32> 'int'
+      | |     |-ImplicitCastExpr 0x131122db0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+      | |     | `-DeclRefExpr 0x131122d20 <col:10> 'int ()' Function 0x131122c68 'pmd_addr_end' 'int ()'
+      | |     |-ImplicitCastExpr 0x131122df8 <col:23> 'unsigned long' <LValueToRValue>
+      | |     | `-DeclRefExpr 0x131122d40 <col:23> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      | |     `-ImplicitCastExpr 0x131122e10 <col:29> 'unsigned long' <LValueToRValue>
+      | |       `-DeclRefExpr 0x131122d60 <col:29> 'unsigned long' lvalue ParmVar 0x131122618 'end' 'unsigned long'
+      | |-IfStmt 0x1311235b8 <line:11:3, line:17:3>
+      | | |-CallExpr 0x131123040 <line:11:7, col:26> '<dependent type>' contains-errors
+      | | | |-DeclRefExpr 0x131122f40 <col:7> 'int ()' Function 0x131122e88 'pmd_trans_huge' 'int ()'
+      | | | `-UnaryOperator 0x131123028 <col:22, col:23> '<dependent type>' contains-errors prefix '*' cannot overflow
+      | | |   `-ImplicitCastExpr 0x131123010 <col:23> '<dependent type>' contains-errors <LValueToRValue>
+      | | |     `-RecoveryExpr 0x131122ff0 <col:23> '<dependent type>' contains-errors lvalue
+      | | `-CompoundStmt 0x1311235a0 <col:29, line:17:3>
+      | |   `-IfStmt 0x131123580 <line:12:4, line:15:4>
+      | |     |-CallExpr 0x131123288 <line:12:8, col:50> '<dependent type>' contains-errors
+      | |     | |-DeclRefExpr 0x131123148 <col:8> 'int ()' Function 0x131123090 'mincore_huge_pmd' 'int ()'
+      | |     | |-DeclRefExpr 0x131123168 <col:25> 'struct vm_area_struct *' lvalue ParmVar 0x13180e248 'vma' 'struct vm_area_struct *'
+      | |     | |-RecoveryExpr 0x131123268 <col:30> '<dependent type>' contains-errors lvalue
+      | |     | |-DeclRefExpr 0x1311231a0 <col:35> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      | |     | |-DeclRefExpr 0x1311231c0 <col:41> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      | |     | `-DeclRefExpr 0x1311231e0 <col:47> 'unsigned char *' lvalue ParmVar 0x1311226c8 'vec' 'unsigned char *'
+      | |     `-CompoundStmt 0x131123560 <col:53, line:15:4>
+      | |       |-CompoundAssignOperator 0x131123528 <line:13:5, col:29> 'unsigned char *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      | |       | |-DeclRefExpr 0x1311232d0 <col:5> 'unsigned char *' lvalue ParmVar 0x1311226c8 'vec' 'unsigned char *'
+      | |       | `-BinaryOperator 0x131123508 <col:12, col:29> '<dependent type>' contains-errors '>>'
+      | |       |   |-ParenExpr 0x1311234c8 <col:12, col:24> 'unsigned long'
+      | |       |   | `-BinaryOperator 0x1311234a8 <col:13, col:20> 'unsigned long' '-'
+      | |       |   |   |-ImplicitCastExpr 0x131123478 <col:13> 'unsigned long' <LValueToRValue>
+      | |       |   |   | `-DeclRefExpr 0x1311232f0 <col:13> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      | |       |   |   `-ImplicitCastExpr 0x131123490 <col:20> 'unsigned long' <LValueToRValue>
+      | |       |   |     `-DeclRefExpr 0x131123310 <col:20> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      | |       |   `-RecoveryExpr 0x1311234e8 <col:29> '<dependent type>' contains-errors lvalue
+      | |       `-ContinueStmt 0x131123558 <line:14:5>
+      | |-IfStmt 0x131124820 <line:18:3, line:21:47> has_else
+      | | |-CallExpr 0x131124358 <line:18:7, col:32> '<dependent type>' contains-errors
+      | | | |-DeclRefExpr 0x1311242b8 <col:7> 'int ()' Function 0x131124200 'pmd_none_or_clear_bad' 'int ()'
+      | | | `-RecoveryExpr 0x131124338 <col:29> '<dependent type>' contains-errors lvalue
+      | | |-CallExpr 0x131124518 <line:19:4, col:47> 'int'
+      | | | |-ImplicitCastExpr 0x131124500 <col:4> 'int (*)()' <FunctionToPointerDecay>
+      | | | | `-DeclRefExpr 0x131124460 <col:4> 'int ()' Function 0x1311243a8 'mincore_unmapped_range' 'int ()'
+      | | | |-ImplicitCastExpr 0x131124558 <col:27> 'struct vm_area_struct *' <LValueToRValue>
+      | | | | `-DeclRefExpr 0x131124480 <col:27> 'struct vm_area_struct *' lvalue ParmVar 0x13180e248 'vma' 'struct vm_area_struct *'
+      | | | |-ImplicitCastExpr 0x131124570 <col:32> 'unsigned long' <LValueToRValue>
+      | | | | `-DeclRefExpr 0x1311244a0 <col:32> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      | | | |-ImplicitCastExpr 0x131124588 <col:38> 'unsigned long' <LValueToRValue>
+      | | | | `-DeclRefExpr 0x1311244c0 <col:38> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      | | | `-ImplicitCastExpr 0x1311245a0 <col:44> 'unsigned char *' <LValueToRValue>
+      | | |   `-DeclRefExpr 0x1311244e0 <col:44> 'unsigned char *' lvalue ParmVar 0x1311226c8 'vec' 'unsigned char *'
+      | | `-CallExpr 0x1311247d8 <line:21:4, col:47> '<dependent type>' contains-errors
+      | |   |-DeclRefExpr 0x131124698 <col:4> 'int ()' Function 0x1311245e0 'mincore_pte_range' 'int ()'
+      | |   |-DeclRefExpr 0x1311246b8 <col:22> 'struct vm_area_struct *' lvalue ParmVar 0x13180e248 'vma' 'struct vm_area_struct *'
+      | |   |-RecoveryExpr 0x1311247b8 <col:27> '<dependent type>' contains-errors lvalue
+      | |   |-DeclRefExpr 0x1311246f0 <col:32> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      | |   |-DeclRefExpr 0x131124710 <col:38> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      | |   `-DeclRefExpr 0x131124730 <col:44> 'unsigned char *' lvalue ParmVar 0x1311226c8 'vec' 'unsigned char *'
+      | `-CompoundAssignOperator 0x131124aa8 <line:22:3, col:27> 'unsigned char *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      |   |-DeclRefExpr 0x131124850 <col:3> 'unsigned char *' lvalue ParmVar 0x1311226c8 'vec' 'unsigned char *'
+      |   `-BinaryOperator 0x131124a88 <col:10, col:27> '<dependent type>' contains-errors '>>'
+      |     |-ParenExpr 0x131124a48 <col:10, col:22> 'unsigned long'
+      |     | `-BinaryOperator 0x131124a28 <col:11, col:18> 'unsigned long' '-'
+      |     |   |-ImplicitCastExpr 0x1311249f8 <col:11> 'unsigned long' <LValueToRValue>
+      |     |   | `-DeclRefExpr 0x131124870 <col:11> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+      |     |   `-ImplicitCastExpr 0x131124a10 <col:18> 'unsigned long' <LValueToRValue>
+      |     |     `-DeclRefExpr 0x131124890 <col:18> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+      |     `-RecoveryExpr 0x131124a68 <col:27> '<dependent type>' contains-errors lvalue
+      `-BinaryOperator 0x131124d80 <line:23:11, col:39> 'int' contains-errors ','
+        |-BinaryOperator 0x131124d10 <col:11, col:25> 'unsigned long' contains-errors ','
+        | |-UnaryOperator 0x131124cc0 <col:11, col:14> '<dependent type>' contains-errors postfix '++' cannot overflow
+        | | `-RecoveryExpr 0x131124ca0 <col:11> '<dependent type>' contains-errors lvalue
+        | `-BinaryOperator 0x131124cf0 <col:18, col:25> 'unsigned long' '='
+        |   |-DeclRefExpr 0x131124b38 <col:18> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+        |   `-ImplicitCastExpr 0x131124cd8 <col:25> 'unsigned long' <LValueToRValue>
+        |     `-DeclRefExpr 0x131124b58 <col:25> 'unsigned long' lvalue Var 0x131122918 'next' 'unsigned long'
+        `-BinaryOperator 0x131124d60 <col:31, col:39> 'int' '!='
+          |-ImplicitCastExpr 0x131124d30 <col:31> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x131124bd0 <col:31> 'unsigned long' lvalue ParmVar 0x13180e398 'addr' 'unsigned long'
+          `-ImplicitCastExpr 0x131124d48 <col:39> 'unsigned long' <LValueToRValue>
+            `-DeclRefExpr 0x131124bf0 <col:39> 'unsigned long' lvalue ParmVar 0x131122618 'end' 'unsigned long'

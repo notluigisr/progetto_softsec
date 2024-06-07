@@ -1,0 +1,1 @@
+    CImgArgumentException(const char *const format, ...) { _cimg_exception_err("STR",true); }

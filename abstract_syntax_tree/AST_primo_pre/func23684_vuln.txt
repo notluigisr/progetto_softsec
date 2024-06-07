@@ -1,0 +1,43 @@
+`-FunctionDecl 0x13f9392d8  line:1:16 invalid _consolefs_writev 'int (int *, const struct oe_iovec *, int)' static
+  |-ParmVarDecl 0x13f91fb28 <line:2:5, col:14> col:14 invalid desc 'int *'
+  |-ParmVarDecl 0x13f920118 <line:3:5, col:28> col:28 used iov 'const struct oe_iovec *'
+  |-ParmVarDecl 0x13f920198 <line:4:5, col:9> col:9 used iovcnt 'int'
+  `-CompoundStmt 0x13f93a018 <line:5:1, line:31:1>
+    |-DeclStmt 0x13f939468 <line:8:5, col:21>
+    | `-VarDecl 0x13f9393c8 <col:5, col:17> col:11 used buf 'void *' cinit
+    |   `-RecoveryExpr 0x13f939448 <col:17> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x13f939560 <line:9:5, col:23> '<dependent type>' contains-errors lvalue
+    | |-UnaryExprOrTypeTraitExpr 0x13f939540 <col:5, col:12> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x13f939520 <col:12> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x13f9394b8 <col:23> 'int' 0
+    |-IfStmt 0x13f9397c8 <line:11:5, line:12:33>
+    | |-RecoveryExpr 0x13f9395a8 <line:11:9, col:61> '_Bool' contains-errors
+    | `-CallExpr 0x13f9397a0 <line:12:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13f939720 <col:9> 'int ()' Function 0x13f939668 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x13f939780 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13f939b88 <line:15:5, line:16:33>
+    | |-BinaryOperator 0x13f939ac0 <line:15:9, col:54> 'int' contains-errors '!='
+    | | |-CallExpr 0x13f939a80 <col:9, col:49> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x13f9398c8 <col:9> 'int ()' Function 0x13f939810 'oe_iov_pack' 'int ()'
+    | | | |-DeclRefExpr 0x13f9398e8 <col:21> 'const struct oe_iovec *' lvalue ParmVar 0x13f920118 'iov' 'const struct oe_iovec *'
+    | | | |-DeclRefExpr 0x13f939908 <col:26> 'int' lvalue ParmVar 0x13f920198 'iovcnt' 'int'
+    | | | |-UnaryOperator 0x13f939980 <col:34, col:35> 'void **' contains-errors prefix '&' cannot overflow
+    | | | | `-DeclRefExpr 0x13f939928 <col:35> 'void *' contains-errors lvalue Var 0x13f9393c8 'buf' 'void *'
+    | | | `-UnaryOperator 0x13f939a68 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x13f939a48 <col:41> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x13f939a08 <col:54> 'int' 0
+    | `-CallExpr 0x13f939b60 <line:16:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13f939ae0 <col:9> 'int ()' Function 0x13f939668 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x13f939b40 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13f939d80 <line:19:5, line:23:5>
+    | |-RecoveryExpr 0x13f939d30 <line:19:9, line:20:9> '_Bool' contains-errors
+    | `-CompoundStmt 0x13f939d70 <line:21:5, line:23:5>
+    `-LabelStmt 0x13f939ff8 <line:25:1, line:28:20> 'done'
+      `-IfStmt 0x13f939f88 <line:27:5, line:28:20>
+        |-ImplicitCastExpr 0x13f939dc0 <line:27:9> 'void *' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x13f939da0 <col:9> 'void *' contains-errors lvalue Var 0x13f9393c8 'buf' 'void *'
+        `-CallExpr 0x13f939f48 <line:28:9, col:20> 'int' contains-errors
+          |-ImplicitCastExpr 0x13f939f30 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13f939eb8 <col:9> 'int ()' Function 0x13f939e00 'oe_free' 'int ()'
+          `-ImplicitCastExpr 0x13f939f70 <col:17> 'void *' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x13f939ed8 <col:17> 'void *' contains-errors lvalue Var 0x13f9393c8 'buf' 'void *'

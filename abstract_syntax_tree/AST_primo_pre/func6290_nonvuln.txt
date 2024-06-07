@@ -1,0 +1,37 @@
+`-FunctionDecl 0x12d940b48  line:1:12 io_queue_file_removal 'int (struct fixed_file_data *, struct file *)' static
+  |-ParmVarDecl 0x12d928648 <col:34, col:58> col:58 used data 'struct fixed_file_data *'
+  |-ParmVarDecl 0x12d940a28 <line:2:6, col:19> col:19 used file 'struct file *'
+  `-CompoundStmt 0x12e008c10 <line:3:1, line:17:1>
+    |-DeclStmt 0x12d940e38 <line:4:2, col:27>
+    | |-RecordDecl 0x12d940c48 <col:2, col:9> col:9 struct io_file_put
+    | `-VarDecl 0x12d940db8 <col:2, col:22> col:22 used pfile 'struct io_file_put *'
+    |-DeclStmt 0x12d941098 <line:5:2, col:42>
+    | |-RecordDecl 0x12d940e50 <col:2, col:9> col:9 struct percpu_ref
+    | `-VarDecl 0x12d940fb8 <col:2, col:34> col:21 used refs 'struct percpu_ref *' cinit
+    |   `-RecoveryExpr 0x12d941058 <col:28, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d941020 <col:28> 'struct fixed_file_data *' lvalue ParmVar 0x12d928648 'data' 'struct fixed_file_data *'
+    |-DeclStmt 0x12d941298 <line:6:2, col:38>
+    | |-RecordDecl 0x12d9410b0 <col:2, col:9> col:9 struct fixed_file_ref_node
+    | `-VarDecl 0x12d941218 <col:2, col:30> col:30 used ref_node 'struct fixed_file_ref_node *'
+    |-IfStmt 0x12d9415a0 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x12d9414e0 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12d9414c8 <col:7> 'struct io_file_put *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d9414a8 <col:7> 'struct io_file_put *' lvalue Var 0x12d940db8 'pfile' 'struct io_file_put *'
+    | `-ReturnStmt 0x12d941590 <line:10:3, col:11>
+    |   `-UnaryOperator 0x12d941578 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12d941560 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12d941540 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12d9417a0 <line:13:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12d941758 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12d941720 <col:2> 'struct io_file_put *' lvalue Var 0x12d940db8 'pfile' 'struct io_file_put *'
+    | `-DeclRefExpr 0x12d941780 <col:16> 'struct file *' lvalue ParmVar 0x12d940a28 'file' 'struct file *'
+    |-CallExpr 0x12d9419b0 <line:14:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d9418a0 <col:2> 'int ()' Function 0x12d9417e8 'list_add' 'int ()'
+    | |-UnaryOperator 0x12d941920 <col:11, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12d9418f8 <col:12, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12d9418c0 <col:12> 'struct io_file_put *' lvalue Var 0x12d940db8 'pfile' 'struct io_file_put *'
+    | `-UnaryOperator 0x12d941998 <col:25, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12d941970 <col:26, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d941938 <col:26> 'struct fixed_file_ref_node *' lvalue Var 0x12d941218 'ref_node' 'struct fixed_file_ref_node *'
+    `-ReturnStmt 0x12e008c00 <line:16:2, col:9>
+      `-IntegerLiteral 0x12d9419e0 <col:9> 'int' 0

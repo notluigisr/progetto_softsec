@@ -1,0 +1,22 @@
+`-FunctionDecl 0x12e941c98  line:1:14 invalid nonpaging_gva_to_gpa 'int (struct kvm_vcpu *, struct kvm_mmu *, int, int, struct x86_exception *)' static
+  |-ParmVarDecl 0x12e928668 <col:35, col:52> col:52 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x12e941858 <col:58, col:74> col:74 used mmu 'struct kvm_mmu *'
+  |-ParmVarDecl 0x12e9418d8 <line:2:7, col:13> col:13 invalid vaddr 'int'
+  |-ParmVarDecl 0x12e941958 <col:20, col:24> col:24 invalid access 'int'
+  |-ParmVarDecl 0x12e941b28 <line:3:7, col:29> col:29 used exception 'struct x86_exception *'
+  `-CompoundStmt 0x12e9420d8 <line:4:1, line:8:1>
+    |-IfStmt 0x12e941e40 <line:5:2, line:6:27>
+    | |-ImplicitCastExpr 0x12e941d88 <line:5:6> 'struct x86_exception *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12e941d68 <col:6> 'struct x86_exception *' lvalue ParmVar 0x12e941b28 'exception' 'struct x86_exception *'
+    | `-BinaryOperator 0x12e941e20 <line:6:3, col:27> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x12e941dd8 <col:3, col:14> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12e941da0 <col:3> 'struct x86_exception *' lvalue ParmVar 0x12e941b28 'exception' 'struct x86_exception *'
+    |   `-IntegerLiteral 0x12e941e00 <col:27> 'int' 0
+    `-ReturnStmt 0x12e9420c8 <line:7:2, col:62>
+      `-CallExpr 0x12e942080 <col:9, col:62> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12e941fc0 <col:9> 'int ()' Function 0x12e941f08 'kvm_translate_gpa' 'int ()'
+        |-DeclRefExpr 0x12e941fe0 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x12e928668 'vcpu' 'struct kvm_vcpu *'
+        |-DeclRefExpr 0x12e942000 <col:33> 'struct kvm_mmu *' lvalue ParmVar 0x12e941858 'mmu' 'struct kvm_mmu *'
+        |-RecoveryExpr 0x12e942020 <col:38> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x12e942040 <col:45> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x12e942060 <col:53> 'struct x86_exception *' lvalue ParmVar 0x12e941b28 'exception' 'struct x86_exception *'

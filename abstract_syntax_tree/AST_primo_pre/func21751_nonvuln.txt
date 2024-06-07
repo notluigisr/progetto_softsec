@@ -1,0 +1,61 @@
+`-FunctionDecl 0x12f145ad8  line:1:13 invalid __kvm_zap_rmaps 'int (struct kvm *, int, int)' static
+  |-ParmVarDecl 0x12f128668 <col:29, col:41> col:41 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x12f1286e8 <col:46, col:52> col:52 invalid gfn_start 'int'
+  |-ParmVarDecl 0x12f128768 <col:63, col:69> col:69 invalid gfn_end 'int'
+  `-CompoundStmt 0x12f147170 <line:2:1, line:31:1>
+    |-DeclStmt 0x12f145d88 <line:3:2, col:39>
+    | |-RecordDecl 0x12f145b98 <col:8, col:15> col:15 struct kvm_memory_slot
+    | `-VarDecl 0x12f145d08 <col:2, col:32> col:32 used memslot 'const struct kvm_memory_slot *'
+    |-DeclStmt 0x12f145f88 <line:4:2, col:28>
+    | |-RecordDecl 0x12f145da0 <col:2, col:9> col:9 struct kvm_memslots
+    | `-VarDecl 0x12f145f08 <col:2, col:23> col:23 used slots 'struct kvm_memslots *'
+    |-DeclStmt 0x12f146118 <line:5:2, col:30>
+    | |-RecordDecl 0x12f145fa0 <col:2, col:9> col:9 struct kvm_memslot_iter
+    | `-VarDecl 0x12f146098 <col:2, col:26> col:26 invalid iter 'struct kvm_memslot_iter'
+    |-DeclStmt 0x12f1461b0 <line:8:2, col:7>
+    | `-VarDecl 0x12f146148 <col:2, col:6> col:6 used i 'int'
+    |-IfStmt 0x12f146448 <line:10:2, line:11:10>
+    | |-UnaryOperator 0x12f1463e8 <line:10:6, col:34> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x12f1463a8 <col:7, col:34> 'int'
+    | |   |-ImplicitCastExpr 0x12f146390 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x12f146320 <col:7> 'int ()' Function 0x12f146268 'kvm_memslots_have_rmaps' 'int ()'
+    | |   `-ImplicitCastExpr 0x12f1463d0 <col:31> 'struct kvm *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12f146340 <col:31> 'struct kvm *' lvalue ParmVar 0x12f128668 'kvm' 'struct kvm *'
+    | `-ReturnStmt 0x12f146438 <line:11:3, col:10>
+    |   `-RecoveryExpr 0x12f146418 <col:10> '<dependent type>' contains-errors lvalue
+    `-ForStmt 0x12f147138 <line:13:2, line:28:2>
+      |-BinaryOperator 0x12f1464a8 <line:13:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x12f146468 <col:7> 'int' lvalue Var 0x12f146148 'i' 'int'
+      | `-IntegerLiteral 0x12f146488 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x12f146540 <col:14, col:18> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x12f1464c8 <col:14> 'int' lvalue Var 0x12f146148 'i' 'int'
+      | `-RecoveryExpr 0x12f146520 <col:18> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x12f146580 <col:41, col:42> 'int' postfix '++'
+      | `-DeclRefExpr 0x12f146560 <col:41> 'int' lvalue Var 0x12f146148 'i' 'int'
+      `-CompoundStmt 0x12f147110 <col:46, line:28:2>
+        |-BinaryOperator 0x12f146788 <line:14:3, col:32> 'struct kvm_memslots *' '='
+        | |-DeclRefExpr 0x12f146598 <col:3> 'struct kvm_memslots *' lvalue Var 0x12f145f08 'slots' 'struct kvm_memslots *'
+        | `-ImplicitCastExpr 0x12f146770 <col:11, col:32> 'struct kvm_memslots *' <IntegralToPointer>
+        |   `-CallExpr 0x12f146710 <col:11, col:32> 'int'
+        |     |-ImplicitCastExpr 0x12f1466f8 <col:11> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x12f146698 <col:11> 'int ()' Function 0x12f1465e0 '__kvm_memslots' 'int ()'
+        |     |-ImplicitCastExpr 0x12f146740 <col:26> 'struct kvm *' <LValueToRValue>
+        |     | `-DeclRefExpr 0x12f1466b8 <col:26> 'struct kvm *' lvalue ParmVar 0x12f128668 'kvm' 'struct kvm *'
+        |     `-ImplicitCastExpr 0x12f146758 <col:31> 'int' <LValueToRValue>
+        |       `-DeclRefExpr 0x12f1466d8 <col:31> 'int' lvalue Var 0x12f146148 'i' 'int'
+        |-CallExpr 0x12f146940 <line:16:3, col:69> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12f146888 <col:3> 'int ()' Function 0x12f1467d0 'kvm_for_each_memslot_in_gfn_range' 'int ()'
+        | |-UnaryOperator 0x12f1468c8 <col:37, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x12f1468a8 <col:38> '<dependent type>' contains-errors lvalue
+        | |-DeclRefExpr 0x12f1468e0 <col:44> 'struct kvm_memslots *' lvalue Var 0x12f145f08 'slots' 'struct kvm_memslots *'
+        | |-RecoveryExpr 0x12f146900 <col:51> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x12f146920 <col:62> '<dependent type>' contains-errors lvalue
+        `-CompoundStmt 0x12f1470f0 <col:71, line:27:3>
+          |-BinaryOperator 0x12f146a48 <line:17:4, col:19> 'const struct kvm_memory_slot *' contains-errors '='
+          | |-DeclRefExpr 0x12f146980 <col:4> 'const struct kvm_memory_slot *' lvalue Var 0x12f145d08 'memslot' 'const struct kvm_memory_slot *'
+          | `-CXXDependentScopeMemberExpr 0x12f146a00 <col:14, col:19> '<dependent type>' contains-errors lvalue .slot
+          |   `-RecoveryExpr 0x12f1469a0 <col:14> '<dependent type>' contains-errors lvalue
+          `-IfStmt 0x12f146f70 <line:20:4, line:21:5>
+            |-RecoveryExpr 0x12f146f48 <line:20:8, col:33> '_Bool' contains-errors
+            `-ContinueStmt 0x12f146f68 <line:21:5>

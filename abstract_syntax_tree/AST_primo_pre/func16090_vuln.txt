@@ -1,0 +1,25 @@
+`-FunctionDecl 0x134945a38  line:1:6 invalid inode_capable 'int (const struct inode *, int)'
+  |-ParmVarDecl 0x134928668 <col:20, col:40> col:40 used inode 'const struct inode *'
+  |-ParmVarDecl 0x1349286e8 <col:47, col:51> col:51 used cap 'int'
+  `-CompoundStmt 0x134946288 <line:2:1, line:6:1>
+    |-DeclStmt 0x134945ed8 <line:3:2, col:47>
+    | |-RecordDecl 0x134945af0 <col:2, col:9> col:9 struct user_namespace
+    | `-VarDecl 0x134945c58 <col:2, col:46> col:25 used ns 'struct user_namespace *' cinit
+    |   `-ImplicitCastExpr 0x134945ea8 <col:30, col:46> 'struct user_namespace *' <IntegralToPointer>
+    |     `-CallExpr 0x134945e88 <col:30, col:46> 'int'
+    |       `-ImplicitCastExpr 0x134945e70 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x134945e20 <col:30> 'int ()' Function 0x134945d68 'current_user_ns' 'int ()'
+    `-ReturnStmt 0x134946278 <line:5:2, col:65>
+      `-BinaryOperator 0x134946258 <col:9, col:65> 'int' contains-errors '&&'
+        |-CallExpr 0x134946048 <col:9, col:27> 'int'
+        | |-ImplicitCastExpr 0x134946030 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x134945fd0 <col:9> 'int ()' Function 0x134945f18 'ns_capable' 'int ()'
+        | |-ImplicitCastExpr 0x134946078 <col:20> 'struct user_namespace *' <LValueToRValue>
+        | | `-DeclRefExpr 0x134945ff0 <col:20> 'struct user_namespace *' lvalue Var 0x134945c58 'ns' 'struct user_namespace *'
+        | `-ImplicitCastExpr 0x134946090 <col:24> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x134946010 <col:24> 'int' lvalue ParmVar 0x1349286e8 'cap' 'int'
+        `-CallExpr 0x134946228 <col:32, col:65> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x134946188 <col:32> 'int ()' Function 0x1349460d0 'kuid_has_mapping' 'int ()'
+          |-DeclRefExpr 0x1349461a8 <col:49> 'struct user_namespace *' lvalue Var 0x134945c58 'ns' 'struct user_namespace *'
+          `-RecoveryExpr 0x134946200 <col:53, col:60> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x1349461c8 <col:53> 'const struct inode *' lvalue ParmVar 0x134928668 'inode' 'const struct inode *'

@@ -1,0 +1,59 @@
+`-FunctionDecl 0x12b928750  line:1:6 referenced unix_notinflight 'void (struct file *)'
+  |-ParmVarDecl 0x12b928648 <col:23, col:36> col:36 used fp 'struct file *'
+  `-CompoundStmt 0x12b942b90 <line:2:1, line:18:1>
+    |-DeclStmt 0x12b940e48 <line:3:2, col:38>
+    | |-RecordDecl 0x12b940a48 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x12b940bb8 <col:2, col:37> col:15 used s 'struct sock *' cinit
+    |   `-ImplicitCastExpr 0x12b940e18 <col:19, col:37> 'struct sock *' <IntegralToPointer>
+    |     `-CallExpr 0x12b940dd8 <col:19, col:37> 'int'
+    |       |-ImplicitCastExpr 0x12b940dc0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12b940d50 <col:19> 'int ()' Function 0x12b940c98 'unix_get_socket' 'int ()'
+    |       `-ImplicitCastExpr 0x12b940e00 <col:35> 'struct file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12b940d70 <col:35> 'struct file *' lvalue ParmVar 0x12b928648 'fp' 'struct file *'
+    |-CallExpr 0x12b940ff0 <line:5:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b940f40 <col:2> 'int ()' Function 0x12b940e88 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x12b940fd8 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12b940fb8 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12b9428b0 <line:7:2, line:15:2>
+    | |-ImplicitCastExpr 0x12b941038 <line:7:6> 'struct sock *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12b941018 <col:6> 'struct sock *' lvalue Var 0x12b940bb8 's' 'struct sock *'
+    | `-CompoundStmt 0x12b942880 <col:9, line:15:2>
+    |   |-DeclStmt 0x12b9413c8 <line:8:3, col:35>
+    |   | |-RecordDecl 0x12b941050 <col:3, col:10> col:10 struct unix_sock
+    |   | `-VarDecl 0x12b9411b8 <col:3, col:34> col:21 used u 'struct unix_sock *' cinit
+    |   |   `-ImplicitCastExpr 0x12b941398 <col:25, col:34> 'struct unix_sock *' <IntegralToPointer>
+    |   |     `-CallExpr 0x12b941358 <col:25, col:34> 'int'
+    |   |       |-ImplicitCastExpr 0x12b941340 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x12b941300 <col:25> 'int ()' Function 0x12b941248 'unix_sk' 'int ()'
+    |   |       `-ImplicitCastExpr 0x12b941380 <col:33> 'struct sock *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x12b941320 <col:33> 'struct sock *' lvalue Var 0x12b940bb8 's' 'struct sock *'
+    |   |-CallExpr 0x12b941680 <line:10:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12b9414c0 <col:3> 'int ()' Function 0x12b941408 'BUG_ON' 'int ()'
+    |   | `-CallExpr 0x12b941658 <col:10, col:29> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x12b9415c0 <col:10> 'int ()' Function 0x12b941508 'list_empty' 'int ()'
+    |   |   `-UnaryOperator 0x12b941640 <col:21, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x12b941618 <col:22, col:25> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x12b9415e0 <col:22> 'struct unix_sock *' lvalue Var 0x12b9411b8 'u' 'struct unix_sock *'
+    |   |-IfStmt 0x12b942800 <line:12:3, line:13:26>
+    |   | |-CallExpr 0x12b941820 <line:12:7, col:44> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x12b941788 <col:7> 'int ()' Function 0x12b9416d0 'atomic_long_dec_and_test' 'int ()'
+    |   | | `-UnaryOperator 0x12b941808 <col:32, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   `-RecoveryExpr 0x12b9417e0 <col:33, col:36> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x12b9417a8 <col:33> 'struct unix_sock *' lvalue Var 0x12b9411b8 'u' 'struct unix_sock *'
+    |   | `-CallExpr 0x12b9419c0 <line:13:4, col:26> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x12b941928 <col:4> 'int ()' Function 0x12b941870 'list_del_init' 'int ()'
+    |   |   `-UnaryOperator 0x12b9419a8 <col:18, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x12b941980 <col:19, col:22> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x12b941948 <col:19> 'struct unix_sock *' lvalue Var 0x12b9411b8 'u' 'struct unix_sock *'
+    |   `-ImplicitCastExpr 0x12b942868 <line:14:3, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x12b942840 <col:3, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12b942820 <col:3> 'void (struct file *)' Function 0x12b928750 'unix_notinflight' 'void (struct file *)'
+    |-UnaryOperator 0x12b9429c0 <line:16:2, col:33> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x12b942978 <col:2, col:20> '<dependent type>' contains-errors lvalue ->unix_inflight
+    |   `-CXXDependentScopeMemberExpr 0x12b942930 <col:2, col:14> '<dependent type>' contains-errors lvalue ->user
+    |     `-RecoveryExpr 0x12b942908 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12b9428d0 <col:2> 'struct file *' lvalue ParmVar 0x12b928648 'fp' 'struct file *'
+    `-CallExpr 0x12b942b68 <line:17:2, col:27> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12b942ab8 <col:2> 'int ()' Function 0x12b942a00 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x12b942b50 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12b942b30 <col:15> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,44 @@
+`-FunctionDecl 0x10580e038  line:1:15 invalid address_space_translate 'int *(int *, int, int *, int *, int)'
+  |-ParmVarDecl 0x10580dd28 <col:39, col:53> col:53 referenced invalid as 'int *'
+  |-ParmVarDecl 0x10580dda8 <col:57, col:64> col:64 referenced invalid addr 'int'
+  |-ParmVarDecl 0x10580de28 <line:2:39, col:47> col:47 invalid xlat 'int *'
+  |-ParmVarDecl 0x10580dea8 <col:53, col:61> col:61 referenced invalid plen 'int *'
+  |-ParmVarDecl 0x10580df28 <line:3:39, col:44> col:44 invalid is_write 'int'
+  `-CompoundStmt 0x105828038 <line:4:1, line:41:1>
+    |-ImplicitCastExpr 0x10580e180 <line:8:5> '<dependent type>' contains-errors <LValueToRValue>
+    | `-RecoveryExpr 0x10580e158 <col:5> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x10580e138 <col:5> 'int' lvalue ParmVar 0x10580dda8 'addr' 'int'
+    |-BinaryOperator 0x10580e230 <col:12, col:19> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x10580e1b8 <col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x10580e198 <col:12> 'int *' lvalue ParmVar 0x10580dea8 'plen' 'int *'
+    | `-UnaryOperator 0x10580e218 <col:18, col:19> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x10580e200 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x10580e1e0 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x105827418 <line:10:5, col:19> 'int'
+    | `-ImplicitCastExpr 0x105827400 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x10580e3b0 <col:5> 'int ()' Function 0x10580e2f8 'rcu_read_lock' 'int ()'
+    |-ForStmt 0x105827b20 <line:11:5, line:30:5>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | `-CompoundStmt 0x105827b00 <line:11:14, line:30:5>
+    |   |-IfStmt 0x1058277b0 <line:16:9, line:18:9>
+    |   | |-RecoveryExpr 0x105827770 <line:16:13, col:18> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x105827798 <col:29, line:18:9>
+    |   |   `-BreakStmt 0x105827790 <line:17:13>
+    |   `-IfStmt 0x105827a98 <line:24:9, line:27:9>
+    |     |-RecoveryExpr 0x105827a58 <line:24:13, col:43> '_Bool' contains-errors
+    |     `-CompoundStmt 0x105827a80 <col:46, line:27:9>
+    |       `-BreakStmt 0x105827a78 <line:26:13>
+    |-IfStmt 0x105827e00 <line:32:5, line:35:5>
+    | |-RecoveryExpr 0x105827db0 <line:32:9, col:62> '_Bool' contains-errors
+    | `-CompoundStmt 0x105827df0 <col:65, line:35:5>
+    |-BinaryOperator 0x105827ee0 <line:38:5, col:13> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x105827ea8 <col:5, col:6> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x105827e90 <col:6> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x105827e70 <col:6> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x105827ec0 <col:13> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x105828018 <line:39:5, col:21> 'int'
+      `-ImplicitCastExpr 0x105828000 <col:5> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x105827fe0 <col:5> 'int ()' Function 0x105827f28 'rcu_read_unlock' 'int ()'

@@ -1,0 +1,36 @@
+`-FunctionDecl 0x13f941800  line:1:13 invalid vmx_set_virtual_x2apic_mode 'void (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x13f928648 <col:41, col:58> col:58 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x13f9286e0 <col:64, col:69> col:69 invalid set 'int'
+  `-CompoundStmt 0x13f942428 <line:2:1, line:25:1>
+    |-IfStmt 0x13f941c80 <line:6:2, line:8:3>
+    | |-BinaryOperator 0x13f941c50 <line:6:6, line:7:32> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x13f941a98 <line:6:6, col:42> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x13f941a78 <col:7, col:42> 'int'
+    | | |   `-ImplicitCastExpr 0x13f941a60 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |     `-DeclRefExpr 0x13f941a10 <col:7> 'int ()' Function 0x13f941958 'cpu_has_vmx_virtualize_x2apic_mode' 'int ()'
+    | | `-UnaryOperator 0x13f941c38 <line:7:5, col:32> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x13f941c10 <col:6, col:32> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x13f941b90 <col:6> 'int ()' Function 0x13f941ad8 'vmx_vm_has_apicv' 'int ()'
+    | |     `-RecoveryExpr 0x13f941be8 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13f941bb0 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x13f928648 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x13f941c70 <line:8:3>
+    |-IfStmt 0x13f941e50 <line:10:2, line:11:3>
+    | |-UnaryOperator 0x13f941e28 <line:10:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13f941e00 <col:7, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13f941d80 <col:7> 'int ()' Function 0x13f941cc8 'vm_need_tpr_shadow' 'int ()'
+    | |   `-RecoveryExpr 0x13f941dd8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13f941da0 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x13f928648 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x13f941e40 <line:11:3>
+    |-IfStmt 0x13f9420b0 <line:15:2, line:21:2> has_else
+    | |-RecoveryExpr 0x13f941fb0 <line:15:6> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x13f942030 <col:11, line:18:2>
+    | `-CompoundStmt 0x13f9420a0 <col:9, line:21:2>
+    |-CallExpr 0x13f942280 <line:22:2, col:58> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f9421c0 <col:2> 'int ()' Function 0x13f942108 'vmcs_write32' 'int ()'
+    | |-RecoveryExpr 0x13f942240 <col:15> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x13f942260 <col:42> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13f9423e8 <line:24:2, col:25> 'int'
+      |-ImplicitCastExpr 0x13f9423d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13f942390 <col:2> 'int ()' Function 0x13f9422d8 'vmx_set_msr_bitmap' 'int ()'
+      `-ImplicitCastExpr 0x13f942410 <col:21> 'struct kvm_vcpu *' <LValueToRValue>
+        `-DeclRefExpr 0x13f9423b0 <col:21> 'struct kvm_vcpu *' lvalue ParmVar 0x13f928648 'vcpu' 'struct kvm_vcpu *'

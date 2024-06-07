@@ -1,0 +1,12 @@
+`-FunctionDecl 0x14b144d48  line:1:12 referenced partitions_open 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x14b128648 <col:28, col:42> col:42 inode 'struct inode *'
+  |-ParmVarDecl 0x14b144c28 <col:49, col:62> col:62 used file 'struct file *'
+  `-CompoundStmt 0x14b145150 <line:2:1, line:4:1>
+    `-ReturnStmt 0x14b145140 <line:3:2, col:38>
+      `-CallExpr 0x14b1450f8 <col:9, col:38> 'int'
+        |-ImplicitCastExpr 0x14b1450e0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14b144f70 <col:9> 'int ()' Function 0x14b144eb8 'seq_open' 'int ()'
+        |-ImplicitCastExpr 0x14b145128 <col:18> 'struct file *' <LValueToRValue>
+        | `-DeclRefExpr 0x14b144f90 <col:18> 'struct file *' lvalue ParmVar 0x14b144c28 'file' 'struct file *'
+        `-UnaryOperator 0x14b145090 <col:24, col:25> 'int (*)(struct inode *, struct file *)' prefix '&' cannot overflow
+          `-DeclRefExpr 0x14b145010 <col:25> 'int (struct inode *, struct file *)' Function 0x14b144d48 'partitions_open' 'int (struct inode *, struct file *)'

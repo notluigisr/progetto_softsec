@@ -1,0 +1,73 @@
+`-FunctionDecl 0x155826748  line:1:12 smk_ipv4_check 'int (struct sock *, struct sockaddr_in *)' static
+  |-ParmVarDecl 0x15580e248 <col:27, col:40> col:40 used sk 'struct sock *'
+  |-ParmVarDecl 0x155826628 <col:44, col:64> col:64 used sap 'struct sockaddr_in *'
+  `-CompoundStmt 0x155829e10 <line:2:1, line:30:1>
+    |-DeclStmt 0x155826a38 <line:3:2, col:25>
+    | |-RecordDecl 0x155826848 <col:2, col:9> col:9 struct smack_known
+    | `-VarDecl 0x1558269b8 <col:2, col:22> col:22 used skp 'struct smack_known *'
+    |-DeclStmt 0x155826af0 <line:4:2, col:12>
+    | `-VarDecl 0x155826a68 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-IntegerLiteral 0x155826ad0 <col:11> 'int' 0
+    |-DeclStmt 0x155826c00 <line:5:2, col:25>
+    | `-VarDecl 0x155826b98 <col:2, col:22> col:22 used hkp 'struct smack_known *'
+    |-DeclStmt 0x155826e68 <line:6:2, col:44>
+    | |-RecordDecl 0x155826c18 <col:2, col:9> col:9 struct socket_smack
+    | `-VarDecl 0x155826d88 <col:2, col:33> col:23 used ssp 'struct socket_smack *' cinit
+    |   `-RecoveryExpr 0x155826e28 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x155826df0 <col:29> 'struct sock *' lvalue ParmVar 0x15580e248 'sk' 'struct sock *'
+    |-DeclStmt 0x155826ff8 <line:7:2, col:26>
+    | |-RecordDecl 0x155826e80 <col:2, col:9> col:9 struct smk_audit_info
+    | `-VarDecl 0x155826f78 <col:2, col:24> col:24 invalid ad 'struct smk_audit_info'
+    |-CallExpr 0x1558271a8 <line:9:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x155827190 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x155827140 <col:2> 'int ()' Function 0x155827088 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x155827378 <line:10:2, col:32> 'struct smack_known *' '='
+    | |-DeclRefExpr 0x1558271c8 <col:2> 'struct smack_known *' lvalue Var 0x155826b98 'hkp' 'struct smack_known *'
+    | `-ImplicitCastExpr 0x155827360 <col:8, col:32> 'struct smack_known *' <IntegralToPointer>
+    |   `-CallExpr 0x155827320 <col:8, col:32> 'int'
+    |     |-ImplicitCastExpr 0x155827308 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1558272c8 <col:8> 'int ()' Function 0x155827210 'smack_ipv4host_label' 'int ()'
+    |     `-ImplicitCastExpr 0x155827348 <col:29> 'struct sockaddr_in *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1558272e8 <col:29> 'struct sockaddr_in *' lvalue ParmVar 0x155826628 'sap' 'struct sockaddr_in *'
+    |-IfStmt 0x155829c70 <line:11:2, line:26:2>
+    | |-BinaryOperator 0x155827410 <line:11:6, col:13> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x155827398 <col:6> 'struct smack_known *' lvalue Var 0x155826b98 'hkp' 'struct smack_known *'
+    | | `-RecoveryExpr 0x1558273f0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x155829c40 <col:19, line:26:2>
+    |   |-BinaryOperator 0x1558274b0 <line:20:3, col:14> 'struct smack_known *' contains-errors '='
+    |   | |-DeclRefExpr 0x155827430 <col:3> 'struct smack_known *' lvalue Var 0x1558269b8 'skp' 'struct smack_known *'
+    |   | `-RecoveryExpr 0x155827488 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x155827450 <col:9> 'struct socket_smack *' contains-errors lvalue Var 0x155826d88 'ssp' 'struct socket_smack *'
+    |   |-BinaryOperator 0x155829750 <line:21:3, col:43> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1558274d0 <col:3> 'int' lvalue Var 0x155826a68 'rc' 'int'
+    |   | `-CallExpr 0x155829710 <col:8, col:43> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1558275d0 <col:8> 'int ()' Function 0x155827518 'smk_access' 'int ()'
+    |   |   |-DeclRefExpr 0x155829600 <col:19> 'struct smack_known *' lvalue Var 0x1558269b8 'skp' 'struct smack_known *'
+    |   |   |-DeclRefExpr 0x155829620 <col:24> 'struct smack_known *' lvalue Var 0x155826b98 'hkp' 'struct smack_known *'
+    |   |   |-RecoveryExpr 0x1558296f0 <col:29> '<dependent type>' contains-errors lvalue
+    |   |   `-UnaryOperator 0x155829678 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x155829658 <col:41> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x155829a38 <line:22:3, col:50> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x155829770 <col:3> 'int' lvalue Var 0x155826a68 'rc' 'int'
+    |   | `-CallExpr 0x1558299f0 <col:8, col:50> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x155829870 <col:8> 'int ()' Function 0x1558297b8 'smk_bu_note' 'int ()'
+    |   |   |-StringLiteral 0x1558298d0 <col:20> 'char[4]' lvalue "STR"
+    |   |   |-DeclRefExpr 0x1558298f0 <col:27> 'struct smack_known *' lvalue Var 0x1558269b8 'skp' 'struct smack_known *'
+    |   |   |-DeclRefExpr 0x155829910 <col:32> 'struct smack_known *' lvalue Var 0x155826b98 'hkp' 'struct smack_known *'
+    |   |   |-RecoveryExpr 0x1558299d0 <col:37> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x155829948 <col:48> 'int' lvalue Var 0x155826a68 'rc' 'int'
+    |   `-IfStmt 0x155829c20 <line:24:3, line:25:26>
+    |     |-UnaryOperator 0x155829a90 <line:24:7, col:8> 'int' prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x155829a78 <col:8> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x155829a58 <col:8> 'int' lvalue Var 0x155826a68 'rc' 'int'
+    |     `-CallExpr 0x155829be0 <line:25:4, col:26> 'int'
+    |       |-ImplicitCastExpr 0x155829bc8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x155829b88 <col:4> 'int ()' Function 0x155829ad0 'smack_netlbl_delete' 'int ()'
+    |       `-ImplicitCastExpr 0x155829c08 <col:24> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x155829ba8 <col:24> 'struct sock *' lvalue ParmVar 0x15580e248 'sk' 'struct sock *'
+    |-CallExpr 0x155829da8 <line:27:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x155829d90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x155829d70 <col:2> 'int ()' Function 0x155829cb8 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x155829e00 <line:29:2, col:9>
+      `-ImplicitCastExpr 0x155829de8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x155829dc8 <col:9> 'int' lvalue Var 0x155826a68 'rc' 'int'

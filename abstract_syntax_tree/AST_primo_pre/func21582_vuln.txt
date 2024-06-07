@@ -1,0 +1,157 @@
+`-FunctionDecl 0x145008968  line:1:5 invalid mlx4_register_vlan 'int (struct mlx4_dev *, int, int, int *)'
+  |-ParmVarDecl 0x14301a448 <col:24, col:41> col:41 used dev 'struct mlx4_dev *'
+  |-ParmVarDecl 0x14301a4e0 <col:46, col:49> col:49 invalid port 'int'
+  |-ParmVarDecl 0x14301a560 <col:55, col:59> col:59 invalid vlan 'int'
+  |-ParmVarDecl 0x145008818 <col:65, col:70> col:70 used index 'int *'
+  `-CompoundStmt 0x146808700 <line:2:1, line:47:1>
+    |-DeclStmt 0x145008f38 <line:3:2, col:72>
+    | |-RecordDecl 0x145008a30 <col:2, col:9> col:9 struct mlx4_vlan_table
+    | `-VarDecl 0x145008b98 <col:2, col:62> col:26 used table 'struct mlx4_vlan_table *' cinit
+    |   `-UnaryOperator 0x145008f08 <col:34, col:62> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x145008ec0 <col:35, col:62> '<dependent type>' contains-errors lvalue .vlan_table
+    |       `-ArraySubscriptExpr 0x145008ea0 <col:35, col:60> '<dependent type>' contains-errors lvalue
+    |         |-ImplicitCastExpr 0x145008e70 <col:35, col:51> '<dependent type>' contains-errors <LValueToRValue>
+    |         | `-RecoveryExpr 0x145008e28 <col:35, col:51> '<dependent type>' contains-errors lvalue
+    |         |   `-CallExpr 0x145008de8 <col:35, col:48> 'int'
+    |         |     |-ImplicitCastExpr 0x145008dd0 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |         |     | `-DeclRefExpr 0x145008d60 <col:35> 'int ()' Function 0x145008ca8 'mlx4_priv' 'int ()'
+    |         |     `-ImplicitCastExpr 0x145008e10 <col:45> 'struct mlx4_dev *' <LValueToRValue>
+    |         |       `-DeclRefExpr 0x145008d80 <col:45> 'struct mlx4_dev *' lvalue ParmVar 0x14301a448 'dev' 'struct mlx4_dev *'
+    |         `-ImplicitCastExpr 0x145008e88 <col:56> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x145008e50 <col:56> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x145009088 <line:4:2, col:16>
+    | |-VarDecl 0x145008f68 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x145008fe8 <col:2, col:15> col:9 used err 'int' cinit
+    |   `-IntegerLiteral 0x145009050 <col:15> 'int' 0
+    |-DeclStmt 0x145009158 <line:5:2, col:15>
+    | `-VarDecl 0x1450090b8 <col:2, col:14> col:6 used free 'int' cinit
+    |   `-UnaryOperator 0x145009140 <col:13, col:14> 'int' prefix '-'
+    |     `-IntegerLiteral 0x145009120 <col:14> 'int' 1
+    |-CallExpr 0x1450092e8 <line:7:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x145009250 <col:2> 'int ()' Function 0x145009198 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1450092d0 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1450092a8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145009270 <col:14> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |-ForStmt 0x145808c70 <line:8:2, line:22:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x1450093e0 <line:8:30, col:34> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x145009368 <col:30> 'int' lvalue Var 0x145008f68 'i' 'int'
+    | | `-RecoveryExpr 0x1450093c0 <col:34> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x145009420 <col:53, col:54> 'int' postfix '++'
+    | | `-DeclRefExpr 0x145009400 <col:53> 'int' lvalue Var 0x145008f68 'i' 'int'
+    | `-CompoundStmt 0x145808c50 <col:58, line:22:2>
+    |   |-IfStmt 0x1450096a0 <line:9:3, line:12:3>
+    |   | |-BinaryOperator 0x1450095e0 <line:9:7, col:39> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x145009490 <col:7, col:14> 'int' '<'
+    |   | | | |-ImplicitCastExpr 0x145009478 <col:7> 'int' <LValueToRValue>
+    |   | | | | `-DeclRefExpr 0x145009438 <col:7> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    |   | | | `-IntegerLiteral 0x145009458 <col:14> 'int' 0
+    |   | | `-ParenExpr 0x1450095c0 <col:19, col:39> 'int' contains-errors
+    |   | |   `-BinaryOperator 0x1450095a0 <col:20, col:38> 'int' contains-errors '=='
+    |   | |     |-ArraySubscriptExpr 0x145009560 <col:20, col:33> '<dependent type>' contains-errors lvalue
+    |   | |     | |-ImplicitCastExpr 0x145009530 <col:20, col:27> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |     | | `-RecoveryExpr 0x1450094e8 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |   | |     | |   `-DeclRefExpr 0x1450094b0 <col:20> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |   | |     | `-ImplicitCastExpr 0x145009548 <col:32> 'int' <LValueToRValue>
+    |   | |     |   `-DeclRefExpr 0x145009510 <col:32> 'int' lvalue Var 0x145008f68 'i' 'int'
+    |   | |     `-IntegerLiteral 0x145009580 <col:38> 'int' 0
+    |   | `-CompoundStmt 0x145009680 <col:42, line:12:3>
+    |   |   |-BinaryOperator 0x145009658 <line:10:4, col:11> 'int' '='
+    |   |   | |-DeclRefExpr 0x145009600 <col:4> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    |   |   | `-ImplicitCastExpr 0x145009640 <col:11> 'int' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x145009620 <col:11> 'int' lvalue Var 0x145008f68 'i' 'int'
+    |   |   `-ContinueStmt 0x145009678 <line:11:4>
+    |   `-IfStmt 0x145808c30 <line:14:3, line:21:3>
+    |     |-RecoveryExpr 0x1458089f0 <line:14:7, line:16:41> '_Bool' contains-errors
+    |     `-CompoundStmt 0x145808c08 <col:44, line:21:3>
+    |       |-BinaryOperator 0x145808a98 <line:18:4, col:13> 'int' '='
+    |       | |-UnaryOperator 0x145808a48 <col:4, col:5> 'int' lvalue prefix '*' cannot overflow
+    |       | | `-ImplicitCastExpr 0x145808a30 <col:5> 'int *' <LValueToRValue>
+    |       | |   `-DeclRefExpr 0x145808a10 <col:5> 'int *' lvalue ParmVar 0x145008818 'index' 'int *'
+    |       | `-ImplicitCastExpr 0x145808a80 <col:13> 'int' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x145808a60 <col:13> 'int' lvalue Var 0x145008f68 'i' 'int'
+    |       |-UnaryOperator 0x145808b88 <line:19:4, col:19> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |       | `-ArraySubscriptExpr 0x145808b68 <col:6, col:19> '<dependent type>' contains-errors lvalue
+    |       |   |-ImplicitCastExpr 0x145808b38 <col:6, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |       |   | `-RecoveryExpr 0x145808af0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x145808ab8 <col:6> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |       |   `-ImplicitCastExpr 0x145808b50 <col:18> 'int' <LValueToRValue>
+    |       |     `-DeclRefExpr 0x145808b18 <col:18> 'int' lvalue Var 0x145008f68 'i' 'int'
+    |       `-GotoStmt 0x145808bf0 <line:20:4, col:9> 'out' 0x145808ba0
+    |-IfStmt 0x145808eb8 <line:24:2, line:28:2>
+    | |-BinaryOperator 0x145808d68 <line:24:6, col:29> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x145808ce0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x145808ca8 <col:6> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    | | `-RecoveryExpr 0x145808d40 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x145808d08 <col:22> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    | `-CompoundStmt 0x145808e98 <col:34, line:28:2>
+    |   |-BinaryOperator 0x145808e60 <line:26:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x145808d88 <col:3> 'int' lvalue Var 0x145008fe8 'err' 'int'
+    |   | `-UnaryOperator 0x145808e48 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x145808e30 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x145808e10 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x145808e80 <line:27:3, col:8> 'out' 0x145808ba0
+    |-BinaryOperator 0x145808fc8 <line:31:2, col:22> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x145808f88 <col:2, col:18> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x145808f58 <col:2, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x145808f10 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x145808ed8 <col:2> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    | | `-ImplicitCastExpr 0x145808f70 <col:14> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x145808f38 <col:14> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    | `-IntegerLiteral 0x145808fa8 <col:22> 'int' 1
+    |-BinaryOperator 0x1458093d0 <line:34:2, col:58> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1458091d8 <col:2> 'int' lvalue Var 0x145008fe8 'err' 'int'
+    | `-CallExpr 0x145809398 <col:8, col:58> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1458092d8 <col:8> 'int ()' Function 0x145809220 'mlx4_set_port_vlan_table' 'int ()'
+    |   |-DeclRefExpr 0x1458092f8 <col:33> 'struct mlx4_dev *' lvalue ParmVar 0x14301a448 'dev' 'struct mlx4_dev *'
+    |   |-RecoveryExpr 0x145809318 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x145809370 <col:44, col:51> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145809338 <col:44> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |-IfStmt 0x1468083b8 <line:35:2, line:40:2>
+    | |-CallExpr 0x145809528 <line:35:6, col:18> 'int'
+    | | |-ImplicitCastExpr 0x145809510 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1458094d0 <col:6> 'int ()' Function 0x145809418 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x145809550 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1458094f0 <col:15> 'int' lvalue Var 0x145008fe8 'err' 'int'
+    | `-CompoundStmt 0x146808388 <col:21, line:40:2>
+    |   |-CallExpr 0x145809710 <line:36:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x145809648 <col:3> 'int ()' Function 0x145809590 'mlx4_warn' 'int ()'
+    |   | |-DeclRefExpr 0x145809668 <col:13> 'struct mlx4_dev *' lvalue ParmVar 0x14301a448 'dev' 'struct mlx4_dev *'
+    |   | |-StringLiteral 0x1458096d0 <col:18> 'char[4]' lvalue "STR"
+    |   | `-RecoveryExpr 0x1458096f0 <col:25> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x146808240 <line:37:3, col:23> '<dependent type>' contains-errors '='
+    |   | |-ArraySubscriptExpr 0x146808200 <col:3, col:19> '<dependent type>' contains-errors lvalue
+    |   | | |-ImplicitCastExpr 0x1458097c8 <col:3, col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | `-RecoveryExpr 0x145809780 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x145809748 <col:3> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |   | | `-ImplicitCastExpr 0x1458097e0 <col:15> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x1458097a8 <col:15> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    |   | `-IntegerLiteral 0x146808220 <col:23> 'int' 0
+    |   |-BinaryOperator 0x146808350 <line:38:3, col:26> '<dependent type>' contains-errors '='
+    |   | |-ArraySubscriptExpr 0x146808310 <col:3, col:22> '<dependent type>' contains-errors lvalue
+    |   | | |-ImplicitCastExpr 0x1468082e0 <col:3, col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | `-RecoveryExpr 0x146808298 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x146808260 <col:3> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |   | | `-ImplicitCastExpr 0x1468082f8 <col:18> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x1468082c0 <col:18> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    |   | `-IntegerLiteral 0x146808330 <col:26> 'int' 0
+    |   `-GotoStmt 0x146808370 <line:39:3, col:8> 'out' 0x145808ba0
+    |-BinaryOperator 0x146808460 <line:42:2, col:11> 'int' '='
+    | |-UnaryOperator 0x146808410 <col:2, col:3> 'int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x1468083f8 <col:3> 'int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1468083d8 <col:3> 'int *' lvalue ParmVar 0x145008818 'index' 'int *'
+    | `-ImplicitCastExpr 0x146808448 <col:11> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x146808428 <col:11> 'int' lvalue Var 0x1450090b8 'free' 'int'
+    |-UnaryOperator 0x1468084e0 <line:43:2, col:11> '<dependent type>' contains-errors prefix '++' cannot overflow
+    | `-RecoveryExpr 0x1468084b8 <col:4, col:11> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x146808480 <col:4> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    |-LabelStmt 0x146808698 <line:44:1, line:45:28> 'out'
+    | `-CallExpr 0x146808670 <col:2, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1468085d8 <col:2> 'int ()' Function 0x146808520 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x146808658 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x146808630 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1468085f8 <col:16> 'struct mlx4_vlan_table *' contains-errors lvalue Var 0x145008b98 'table' 'struct mlx4_vlan_table *'
+    `-ReturnStmt 0x1468086f0 <line:46:2, col:9>
+      `-ImplicitCastExpr 0x1468086d8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1468086b8 <col:9> 'int' lvalue Var 0x145008fe8 'err' 'int'

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x12480e350  line:1:13 bpf_map_mmap_open 'void (struct vm_area_struct *)' static
+  |-ParmVarDecl 0x12480e248 <col:31, col:54> col:54 used vma 'struct vm_area_struct *'
+  `-CompoundStmt 0x124826e20 <line:2:1, line:10:1>
+    |-DeclStmt 0x1248268e0 <line:3:2, col:50>
+    | |-RecordDecl 0x124826648 <col:2, col:9> col:9 struct bpf_map
+    | `-VarDecl 0x1248267b8 <col:2, col:38> col:18 used map 'struct bpf_map *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x124826880 <col:24, col:38> '<dependent type>' contains-errors lvalue ->private_data
+    |     `-RecoveryExpr 0x124826858 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x124826820 <col:24> 'struct vm_area_struct *' lvalue ParmVar 0x12480e248 'vma' 'struct vm_area_struct *'
+    `-IfStmt 0x124826e00 <line:5:2, line:9:2>
+      |-BinaryOperator 0x1248269c8 <line:5:6, col:22> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x124826930 <col:6, col:11> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x1248268f8 <col:6> 'struct vm_area_struct *' lvalue ParmVar 0x12480e248 'vma' 'struct vm_area_struct *'
+      | `-RecoveryExpr 0x1248269a8 <col:22> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x124826dd8 <col:35, line:9:2>
+        |-CallExpr 0x124826b98 <line:6:3, col:32> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x124826b00 <col:3> 'int ()' Function 0x124826a48 'mutex_lock' 'int ()'
+        | `-UnaryOperator 0x124826b80 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x124826b58 <col:15, col:20> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x124826b20 <col:15> 'struct bpf_map *' contains-errors lvalue Var 0x1248267b8 'map' 'struct bpf_map *'
+        |-UnaryOperator 0x124826c20 <line:7:3, col:16> '<dependent type>' contains-errors postfix '++' cannot overflow
+        | `-RecoveryExpr 0x124826bf8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x124826bc0 <col:3> 'struct bpf_map *' contains-errors lvalue Var 0x1248267b8 'map' 'struct bpf_map *'
+        `-CallExpr 0x124826db0 <line:8:3, col:34> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x124826d18 <col:3> 'int ()' Function 0x124826c60 'mutex_unlock' 'int ()'
+          `-UnaryOperator 0x124826d98 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x124826d70 <col:17, col:22> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x124826d38 <col:17> 'struct bpf_map *' contains-errors lvalue Var 0x1248267b8 'map' 'struct bpf_map *'

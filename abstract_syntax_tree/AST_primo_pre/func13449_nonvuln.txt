@@ -1,0 +1,125 @@
+`-FunctionDecl 0x159128750  line:1:13 edge_close 'void (struct usb_serial_port *)' static
+  |-ParmVarDecl 0x159128648 <col:24, col:48> col:48 used port 'struct usb_serial_port *'
+  `-CompoundStmt 0x1591447d8 <line:2:1, line:38:1>
+    |-DeclStmt 0x159140c38 <line:3:2, col:37>
+    | |-RecordDecl 0x159140a48 <col:2, col:9> col:9 struct edgeport_serial
+    | `-VarDecl 0x159140bb8 <col:2, col:26> col:26 used edge_serial 'struct edgeport_serial *'
+    |-DeclStmt 0x159140e38 <line:4:2, col:33>
+    | |-RecordDecl 0x159140c50 <col:2, col:9> col:9 struct edgeport_port
+    | `-VarDecl 0x159140db8 <col:2, col:24> col:24 used edge_port 'struct edgeport_port *'
+    |-DeclStmt 0x159141098 <line:5:2, col:42>
+    | |-RecordDecl 0x159140e50 <col:2, col:9> col:9 struct usb_serial
+    | `-VarDecl 0x159140fb8 <col:2, col:36> col:21 used serial 'struct usb_serial *' cinit
+    |   `-RecoveryExpr 0x159141058 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159141020 <col:30> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-DeclStmt 0x159141130 <line:6:2, col:21>
+    | `-VarDecl 0x1591410c8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x1591411c8 <line:7:2, col:17>
+    | `-VarDecl 0x159141160 <col:2, col:6> col:6 used port_number 'int'
+    |-BinaryOperator 0x1591413d8 <line:9:2, col:48> 'struct edgeport_serial *' contains-errors '='
+    | |-DeclRefExpr 0x1591411e0 <col:2> 'struct edgeport_serial *' lvalue Var 0x159140bb8 'edge_serial' 'struct edgeport_serial *'
+    | `-CallExpr 0x1591413b0 <col:16, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x159141330 <col:16> 'int ()' Function 0x159141278 'usb_get_serial_data' 'int ()'
+    |   `-RecoveryExpr 0x159141388 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159141350 <col:36> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-BinaryOperator 0x1591415e0 <line:10:2, col:43> 'struct edgeport_port *' '='
+    | |-DeclRefExpr 0x1591413f8 <col:2> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | `-ImplicitCastExpr 0x1591415c8 <col:14, col:43> 'struct edgeport_port *' <IntegralToPointer>
+    |   `-CallExpr 0x159141588 <col:14, col:43> 'int'
+    |     |-ImplicitCastExpr 0x159141570 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1591414f8 <col:14> 'int ()' Function 0x159141440 'usb_get_serial_port_data' 'int ()'
+    |     `-ImplicitCastExpr 0x1591415b0 <col:39> 'struct usb_serial_port *' <LValueToRValue>
+    |       `-DeclRefExpr 0x159141518 <col:39> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-IfStmt 0x159141780 <line:11:2, line:12:3>
+    | |-BinaryOperator 0x159141750 <line:11:6, col:42> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x1591416f0 <col:6, col:21> 'int' contains-errors '=='
+    | | | |-DeclRefExpr 0x159141600 <col:6> 'struct edgeport_serial *' lvalue Var 0x159140bb8 'edge_serial' 'struct edgeport_serial *'
+    | | | `-RecoveryExpr 0x1591416d0 <col:21> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x159141730 <col:29, col:42> 'int' contains-errors '=='
+    | |   |-DeclRefExpr 0x159141658 <col:29> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | |   `-RecoveryExpr 0x159141710 <col:42> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x159141770 <line:12:3>
+    |-BinaryOperator 0x159141820 <line:15:2, col:29> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1591417d8 <col:2, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1591417a0 <col:2> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | `-IntegerLiteral 0x159141800 <col:29> 'int' 1
+    |-CallExpr 0x1591419a0 <line:17:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159141920 <col:2> 'int ()' Function 0x159141868 'usb_kill_urb' 'int ()'
+    | `-RecoveryExpr 0x159141978 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x159141940 <col:15> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-CallExpr 0x159143460 <line:18:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1591419c8 <col:2> 'int ()' Function 0x159141868 'usb_kill_urb' 'int ()'
+    | `-RecoveryExpr 0x159143438 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x159143400 <col:15> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-BinaryOperator 0x159143508 <line:19:2, col:35> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1591434c0 <col:2, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x159143488 <col:2> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | `-IntegerLiteral 0x1591434e8 <col:35> 'int' 0
+    |-CallExpr 0x1591436c0 <line:20:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159143608 <col:2> 'int ()' Function 0x159143550 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x159143688 <col:20, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x159143660 <col:21, col:32> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x159143628 <col:21> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | `-DeclRefExpr 0x1591436a0 <col:41> 'unsigned long' lvalue Var 0x1591410c8 'flags' 'unsigned long'
+    |-CallExpr 0x159143868 <line:21:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1591437d0 <col:2> 'int ()' Function 0x159143718 'kfifo_reset_out' 'int ()'
+    | `-UnaryOperator 0x159143850 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x159143828 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1591437f0 <col:19> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-CallExpr 0x159143a28 <line:22:2, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159143970 <col:2> 'int ()' Function 0x1591438b8 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x1591439f0 <col:25, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1591439c8 <col:26, col:37> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x159143990 <col:26> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | `-DeclRefExpr 0x159143a08 <col:46> 'unsigned long' lvalue Var 0x1591410c8 'flags' 'unsigned long'
+    |-CallExpr 0x159143cf0 <line:24:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159143b38 <col:2> 'int ()' Function 0x159143a80 'dev_dbg' 'int ()'
+    | |-UnaryOperator 0x159143bb8 <col:10, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x159143b90 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x159143b58 <col:11> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    | |-StringLiteral 0x159143c10 <col:22> 'char[4]' lvalue "STR"
+    | `-PredefinedExpr 0x159143cd8 <col:29> 'const char[11]' lvalue __func__
+    |   `-StringLiteral 0x159143cb0 <col:29> 'const char[11]' lvalue "edge_close"
+    |-BinaryOperator 0x159143da8 <line:25:2, col:22> 'int' contains-errors '='
+    | |-DeclRefExpr 0x159143d28 <col:2> 'int' lvalue Var 0x159141160 'port_number' 'int'
+    | `-RecoveryExpr 0x159143d80 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x159143d48 <col:16> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |-CallExpr 0x159144100 <line:29:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159144068 <col:2> 'int ()' Function 0x159143fb0 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1591440e8 <col:13, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1591440c0 <col:14, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159144088 <col:14> 'struct edgeport_serial *' lvalue Var 0x159140bb8 'edge_serial' 'struct edgeport_serial *'
+    |-UnaryOperator 0x1591441d0 <line:30:2, col:28> '<dependent type>' contains-errors prefix '--' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x159144188 <col:4, col:28> '<dependent type>' contains-errors lvalue ->num_ports_open
+    |   `-RecoveryExpr 0x159144160 <col:4, col:15> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159144128 <col:4> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    |-IfStmt 0x159144578 <line:31:2, line:35:2>
+    | |-BinaryOperator 0x1591442b0 <line:31:6, col:48> 'int' contains-errors '<='
+    | | |-CXXDependentScopeMemberExpr 0x159144248 <col:6, col:30> '<dependent type>' contains-errors lvalue ->num_ports_open
+    | | | `-RecoveryExpr 0x159144220 <col:6, col:17> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x1591441e8 <col:6> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    | | `-IntegerLiteral 0x159144290 <col:48> 'int' 0
+    | `-CompoundStmt 0x159144558 <col:51, line:35:2>
+    |   |-CallExpr 0x159144448 <line:33:3, col:55> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1591442d0 <col:3> 'int ()' Function 0x159141868 'usb_kill_urb' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x159144400 <col:16, col:39> '<dependent type>' contains-errors lvalue ->interrupt_in_urb
+    |   |   `-ArraySubscriptExpr 0x1591443d0 <col:16, col:36> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x1591443b8 <col:16, col:30> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-CXXDependentScopeMemberExpr 0x159144350 <col:16, col:30> '<dependent type>' contains-errors lvalue ->port
+    |   |     |   `-RecoveryExpr 0x159144328 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |   |     |     `-DeclRefExpr 0x1591442f0 <col:16> 'struct usb_serial_port *' lvalue ParmVar 0x159128648 'port' 'struct usb_serial_port *'
+    |   |     `-IntegerLiteral 0x159144398 <col:35> 'int' 0
+    |   `-BinaryOperator 0x159144538 <line:34:3, col:44> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x1591444d0 <col:3, col:27> '<dependent type>' contains-errors lvalue ->num_ports_open
+    |     | `-RecoveryExpr 0x1591444a8 <col:3, col:14> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x159144470 <col:3> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+    |     `-IntegerLiteral 0x159144518 <col:44> 'int' 0
+    |-CallExpr 0x159144710 <line:36:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159144678 <col:2> 'int ()' Function 0x1591445c0 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x1591446f8 <col:15, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1591446d0 <col:16, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159144698 <col:16> 'struct edgeport_serial *' lvalue Var 0x159140bb8 'edge_serial' 'struct edgeport_serial *'
+    `-BinaryOperator 0x1591447b8 <line:37:2, col:29> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x159144770 <col:2, col:13> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x159144738 <col:2> 'struct edgeport_port *' lvalue Var 0x159140db8 'edge_port' 'struct edgeport_port *'
+      `-IntegerLiteral 0x159144798 <col:29> 'int' 0

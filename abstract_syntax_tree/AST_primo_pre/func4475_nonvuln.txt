@@ -1,0 +1,84 @@
+`-FunctionDecl 0x14300e188  line:1:5 invalid SSL_get_sigalgs 'int (int *, int, int *, int *, int *, unsigned char *, unsigned char *)'
+  |-ParmVarDecl 0x14300dd28 <col:21, col:26> col:26 invalid s 'int *'
+  |-ParmVarDecl 0x14300dda8 <col:29, col:33> col:33 used idx 'int'
+  |-ParmVarDecl 0x14300de28 <line:2:4, col:9> col:9 used psign 'int *'
+  |-ParmVarDecl 0x14300dea8 <col:16, col:21> col:21 used phash 'int *'
+  |-ParmVarDecl 0x14300df28 <col:28, col:33> col:33 used psignhash 'int *'
+  |-ParmVarDecl 0x14300dfd8 <line:3:4, col:19> col:19 used rsig 'unsigned char *'
+  |-ParmVarDecl 0x14300e058 <col:25, col:40> col:40 used rhash 'unsigned char *'
+  `-CompoundStmt 0x143027ef8 <line:4:2, line:21:2>
+    |-DeclStmt 0x14300e3d0 <line:5:2, col:51>
+    | `-VarDecl 0x14300e2b8 <col:2, col:39> col:23 used psig 'const unsigned char *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14300e388 <col:30, col:39> '<dependent type>' contains-errors lvalue ->peer_sigalgs
+    |     `-CXXDependentScopeMemberExpr 0x14300e340 <col:30, col:33> '<dependent type>' contains-errors lvalue ->cert
+    |       `-RecoveryExpr 0x14300e320 <col:30> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1430274c8 <line:6:2, line:7:10>
+    | |-BinaryOperator 0x143027478 <line:6:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x143027400 <col:6> 'const unsigned char *' contains-errors lvalue Var 0x14300e2b8 'psig' 'const unsigned char *'
+    | | `-RecoveryExpr 0x143027458 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1430274b8 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x143027498 <col:10> 'int' 0
+    |-IfStmt 0x143027dd8 <line:8:2, line:19:3>
+    | |-BinaryOperator 0x143027540 <line:8:6, col:13> 'int' '>='
+    | | |-ImplicitCastExpr 0x143027528 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1430274e8 <col:6> 'int' lvalue ParmVar 0x14300dda8 'idx' 'int'
+    | | `-IntegerLiteral 0x143027508 <col:13> 'int' 0
+    | `-CompoundStmt 0x143027d98 <line:9:3, line:19:3>
+    |   |-CompoundAssignOperator 0x1430275b8 <line:10:3, col:11> 'int' '<<=' ComputeLHSTy='int' ComputeResultTy='int'
+    |   | |-DeclRefExpr 0x143027560 <col:3> 'int' lvalue ParmVar 0x14300dda8 'idx' 'int'
+    |   | `-IntegerLiteral 0x143027580 <col:11> 'int' 1
+    |   |-IfStmt 0x143027760 <line:11:3, line:12:11>
+    |   | |-BinaryOperator 0x143027710 <line:11:7, col:28> 'int' contains-errors '>='
+    |   | | |-ImplicitCastExpr 0x1430276f8 <col:7> 'int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x1430275e8 <col:7> 'int' lvalue ParmVar 0x14300dda8 'idx' 'int'
+    |   | | `-CStyleCastExpr 0x1430276d0 <col:14, col:28> 'int' contains-errors <Dependent>
+    |   | |   `-CXXDependentScopeMemberExpr 0x143027670 <col:19, col:28> '<dependent type>' contains-errors lvalue ->peer_sigalgslen
+    |   | |     `-CXXDependentScopeMemberExpr 0x143027628 <col:19, col:22> '<dependent type>' contains-errors lvalue ->cert
+    |   | |       `-RecoveryExpr 0x143027608 <col:19> '<dependent type>' contains-errors lvalue
+    |   | `-ReturnStmt 0x143027750 <line:12:4, col:11>
+    |   |   `-IntegerLiteral 0x143027730 <col:11> 'int' 0
+    |   |-CompoundAssignOperator 0x1430277d8 <line:13:3, col:11> 'const unsigned char *' contains-errors '+=' ComputeLHSTy='const unsigned char *' ComputeResultTy='const unsigned char *'
+    |   | |-DeclRefExpr 0x143027780 <col:3> 'const unsigned char *' contains-errors lvalue Var 0x14300e2b8 'psig' 'const unsigned char *'
+    |   | `-ImplicitCastExpr 0x1430277c0 <col:11> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1430277a0 <col:11> 'int' lvalue ParmVar 0x14300dda8 'idx' 'int'
+    |   |-IfStmt 0x143027940 <line:14:3, line:15:19>
+    |   | |-ImplicitCastExpr 0x143027828 <line:14:7> 'unsigned char *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x143027808 <col:7> 'unsigned char *' lvalue ParmVar 0x14300e058 'rhash' 'unsigned char *'
+    |   | `-BinaryOperator 0x143027920 <line:15:4, col:19> 'unsigned char' contains-errors '='
+    |   |   |-UnaryOperator 0x143027878 <col:4, col:5> 'unsigned char' lvalue prefix '*' cannot overflow
+    |   |   | `-ImplicitCastExpr 0x143027860 <col:5> 'unsigned char *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x143027840 <col:5> 'unsigned char *' lvalue ParmVar 0x14300e058 'rhash' 'unsigned char *'
+    |   |   `-ImplicitCastExpr 0x143027908 <col:13, col:19> 'unsigned char' contains-errors <LValueToRValue>
+    |   |     `-ArraySubscriptExpr 0x1430278e8 <col:13, col:19> 'const unsigned char' contains-errors lvalue
+    |   |       |-ImplicitCastExpr 0x1430278d0 <col:13> 'const unsigned char *' contains-errors <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x143027890 <col:13> 'const unsigned char *' contains-errors lvalue Var 0x14300e2b8 'psig' 'const unsigned char *'
+    |   |       `-IntegerLiteral 0x1430278b0 <col:18> 'int' 0
+    |   |-IfStmt 0x143027a98 <line:16:3, line:17:18>
+    |   | |-ImplicitCastExpr 0x143027980 <line:16:7> 'unsigned char *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x143027960 <col:7> 'unsigned char *' lvalue ParmVar 0x14300dfd8 'rsig' 'unsigned char *'
+    |   | `-BinaryOperator 0x143027a78 <line:17:4, col:18> 'unsigned char' contains-errors '='
+    |   |   |-UnaryOperator 0x1430279d0 <col:4, col:5> 'unsigned char' lvalue prefix '*' cannot overflow
+    |   |   | `-ImplicitCastExpr 0x1430279b8 <col:5> 'unsigned char *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x143027998 <col:5> 'unsigned char *' lvalue ParmVar 0x14300dfd8 'rsig' 'unsigned char *'
+    |   |   `-ImplicitCastExpr 0x143027a60 <col:12, col:18> 'unsigned char' contains-errors <LValueToRValue>
+    |   |     `-ArraySubscriptExpr 0x143027a40 <col:12, col:18> 'const unsigned char' contains-errors lvalue
+    |   |       |-ImplicitCastExpr 0x143027a28 <col:12> 'const unsigned char *' contains-errors <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x1430279e8 <col:12> 'const unsigned char *' contains-errors lvalue Var 0x14300e2b8 'psig' 'const unsigned char *'
+    |   |       `-IntegerLiteral 0x143027a08 <col:17> 'int' 1
+    |   `-CallExpr 0x143027cf8 <line:18:3, col:51> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x143027ce0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x143027c10 <col:3> 'int ()' Function 0x143027b58 'tls1_lookup_sigalg' 'int ()'
+    |     |-ImplicitCastExpr 0x143027d38 <col:22> 'int *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x143027c30 <col:22> 'int *' lvalue ParmVar 0x14300dea8 'phash' 'int *'
+    |     |-ImplicitCastExpr 0x143027d50 <col:29> 'int *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x143027c50 <col:29> 'int *' lvalue ParmVar 0x14300de28 'psign' 'int *'
+    |     |-ImplicitCastExpr 0x143027d68 <col:36> 'int *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x143027c70 <col:36> 'int *' lvalue ParmVar 0x14300df28 'psignhash' 'int *'
+    |     `-ImplicitCastExpr 0x143027d80 <col:47> 'const unsigned char *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x143027c90 <col:47> 'const unsigned char *' contains-errors lvalue Var 0x14300e2b8 'psig' 'const unsigned char *'
+    `-ReturnStmt 0x143027ee8 <line:20:2, col:36>
+      `-BinaryOperator 0x143027ec8 <col:9, col:36> '<dependent type>' contains-errors '/'
+        |-CXXDependentScopeMemberExpr 0x143027e60 <col:9, col:18> '<dependent type>' contains-errors lvalue ->peer_sigalgslen
+        | `-CXXDependentScopeMemberExpr 0x143027e18 <col:9, col:12> '<dependent type>' contains-errors lvalue ->cert
+        |   `-RecoveryExpr 0x143027df8 <col:9> '<dependent type>' contains-errors lvalue
+        `-IntegerLiteral 0x143027ea8 <col:36> 'int' 2

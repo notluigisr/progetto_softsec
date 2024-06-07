@@ -1,0 +1,25 @@
+`-FunctionDecl 0x13a830f50  line:1:6 sock_rfree 'void (struct sk_buff *)'
+  |-ParmVarDecl 0x13a830e48 <col:17, col:33> col:33 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x13a8545a8 <line:2:1, line:8:1>
+    |-DeclStmt 0x13a854098 <line:3:2, col:27>
+    | |-RecordDecl 0x13a853e48 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x13a853fb8 <col:2, col:25> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x13a854058 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a854020 <col:20> 'struct sk_buff *' lvalue ParmVar 0x13a830e48 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x13a854190 <line:4:2, col:34>
+    | `-VarDecl 0x13a8540c8 <col:2, col:26> col:15 used len 'unsigned int' cinit
+    |   `-RecoveryExpr 0x13a854168 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a854130 <col:21> 'struct sk_buff *' lvalue ParmVar 0x13a830e48 'skb' 'struct sk_buff *'
+    |-CallExpr 0x13a854388 <line:6:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a8542d0 <col:2> 'int ()' Function 0x13a854218 'atomic_sub' 'int ()'
+    | |-DeclRefExpr 0x13a8542f0 <col:13> 'unsigned int' contains-errors lvalue Var 0x13a8540c8 'len' 'unsigned int'
+    | `-UnaryOperator 0x13a854370 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13a854348 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a854310 <col:19> 'struct sock *' contains-errors lvalue Var 0x13a853fb8 'sk' 'struct sock *'
+    `-CallExpr 0x13a854548 <line:7:2, col:25> 'int' contains-errors
+      |-ImplicitCastExpr 0x13a854530 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13a854498 <col:2> 'int ()' Function 0x13a8543e0 'sk_mem_uncharge' 'int ()'
+      |-ImplicitCastExpr 0x13a854578 <col:18> 'struct sock *' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x13a8544b8 <col:18> 'struct sock *' contains-errors lvalue Var 0x13a853fb8 'sk' 'struct sock *'
+      `-ImplicitCastExpr 0x13a854590 <col:22> 'unsigned int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13a8544d8 <col:22> 'unsigned int' contains-errors lvalue Var 0x13a8540c8 'len' 'unsigned int'

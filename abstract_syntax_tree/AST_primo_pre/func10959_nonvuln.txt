@@ -1,0 +1,27 @@
+`-FunctionDecl 0x12c80df98  line:1:22 __atomic_get_pages 'struct page **(void *)' static
+  |-ParmVarDecl 0x12c80dd78 <col:41, col:47> col:47 used addr 'void *'
+  `-CompoundStmt 0x12c827770 <line:2:1, line:8:1>
+    |-DeclStmt 0x12c80e2f8 <line:3:2, col:38>
+    | |-RecordDecl 0x12c80e090 <col:2, col:9> col:9 struct dma_pool
+    | `-VarDecl 0x12c80e1f8 <col:2, col:27> col:19 used pool 'struct dma_pool *' cinit
+    |   `-UnaryOperator 0x12c80e2c8 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12c80e2a8 <col:27> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12c8274e8 <line:4:2, col:35>
+    | `-VarDecl 0x12c827000 <col:2, col:30> col:16 used pages 'struct page **' cinit
+    |   `-RecoveryExpr 0x12c8274c0 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c827068 <col:24> 'struct dma_pool *' contains-errors lvalue Var 0x12c80e1f8 'pool' 'struct dma_pool *'
+    |-DeclStmt 0x12c8276b8 <line:5:2, col:47>
+    | `-VarDecl 0x12c827518 <col:2, col:37> col:6 used offs 'int' cinit
+    |   `-BinaryOperator 0x12c827698 <col:13, col:37> '<dependent type>' contains-errors '>>'
+    |     |-ParenExpr 0x12c827620 <col:13, col:32> '<dependent type>' contains-errors
+    |     | `-BinaryOperator 0x12c827600 <col:14, col:27> '<dependent type>' contains-errors '-'
+    |     |   |-DeclRefExpr 0x12c827580 <col:14> 'void *' lvalue ParmVar 0x12c80dd78 'addr' 'void *'
+    |     |   `-RecoveryExpr 0x12c8275d8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x12c8275a0 <col:21> 'struct dma_pool *' contains-errors lvalue Var 0x12c80e1f8 'pool' 'struct dma_pool *'
+    |     `-RecoveryExpr 0x12c827678 <col:37> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c827760 <line:7:2, col:17>
+      `-BinaryOperator 0x12c827740 <col:9, col:17> 'struct page **' contains-errors '+'
+        |-ImplicitCastExpr 0x12c827710 <col:9> 'struct page **' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x12c8276d0 <col:9> 'struct page **' contains-errors lvalue Var 0x12c827000 'pages' 'struct page **'
+        `-ImplicitCastExpr 0x12c827728 <col:17> 'int' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x12c8276f0 <col:17> 'int' contains-errors lvalue Var 0x12c827518 'offs' 'int'

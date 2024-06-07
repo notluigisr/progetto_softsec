@@ -1,0 +1,65 @@
+`-FunctionDecl 0x14a80de58  line:1:1 referenced invalid ref_stack_index 'int (const int *, long)'
+  |-ParmVarDecl 0x14a80dcf0 <col:17, col:36> col:36 invalid pstack 'const int *'
+  |-ParmVarDecl 0x14a80dd70 <col:44, col:49> col:49 used idx 'long'
+  `-CompoundStmt 0x14a827cf0 <line:2:1, line:19:1>
+    |-BinaryOperator 0x14a80dfb0 <line:3:5, col:22> '<dependent type>' contains-errors '*'
+    | |-RecoveryExpr 0x14a80df30 <col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14a80df10 <col:5> 'int (const int *, long)' Function 0x14a80de58 'ref_stack_index' 'int (const int *, long)'
+    | `-RecoveryExpr 0x14a80df90 <col:22> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14a80e180 <line:4:5, col:44>
+    | `-VarDecl 0x14a80dfe8 <col:5, col:41> col:10 used used 'int' cinit
+    |   `-BinaryOperator 0x14a80e160 <col:17, col:41> '<dependent type>' contains-errors '-'
+    |     |-BinaryOperator 0x14a80e0d8 <col:17, col:29> '<dependent type>' contains-errors '+'
+    |     | |-CXXDependentScopeMemberExpr 0x14a80e070 <col:17, col:25> '<dependent type>' contains-errors lvalue ->p
+    |     | | `-RecoveryExpr 0x14a80e050 <col:17> '<dependent type>' contains-errors lvalue
+    |     | `-IntegerLiteral 0x14a80e0b8 <col:29> 'int' 1
+    |     `-CXXDependentScopeMemberExpr 0x14a80e118 <col:33, col:41> '<dependent type>' contains-errors lvalue ->bot
+    |       `-RecoveryExpr 0x14a80e0f8 <col:33> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a80e270 <line:6:5, line:7:16>
+    | |-BinaryOperator 0x14a80e208 <line:6:9, col:15> 'int' '<'
+    | | |-ImplicitCastExpr 0x14a80e1d8 <col:9> 'long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14a80e198 <col:9> 'long' lvalue ParmVar 0x14a80dd70 'idx' 'long'
+    | | `-ImplicitCastExpr 0x14a80e1f0 <col:15> 'long' <IntegralCast>
+    | |   `-IntegerLiteral 0x14a80e1b8 <col:15> 'int' 0
+    | `-ReturnStmt 0x14a80e260 <line:7:9, col:16>
+    |   `-RecoveryExpr 0x14a80e240 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a827460 <line:8:5, line:9:33>
+    | |-BinaryOperator 0x14a80e318 <line:8:9, col:15> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x14a80e2d0 <col:9> 'long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14a80e290 <col:9> 'long' lvalue ParmVar 0x14a80dd70 'idx' 'long'
+    | | `-ImplicitCastExpr 0x14a80e300 <col:15> 'long' contains-errors <IntegralCast>
+    | |   `-ImplicitCastExpr 0x14a80e2e8 <col:15> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x14a80e2b0 <col:15> 'int' contains-errors lvalue Var 0x14a80dfe8 'used' 'int'
+    | `-ReturnStmt 0x14a827450 <line:9:9, col:33>
+    |   `-RecoveryExpr 0x14a827420 <col:16, col:33> '<dependent type>' contains-errors lvalue
+    |     |-CXXDependentScopeMemberExpr 0x14a80e358 <col:16, col:24> '<dependent type>' contains-errors lvalue ->p
+    |     | `-RecoveryExpr 0x14a80e338 <col:16> '<dependent type>' contains-errors lvalue
+    |     `-ParenExpr 0x14a827400 <col:28, col:33> '<overloaded function type>' lvalue
+    |       `-UnresolvedLookupExpr 0x14a80e3b8 <col:29> '<overloaded function type>' lvalue (no ADL) = 'uint' empty
+    |-NullStmt 0x14a827480 <col:38>
+    `-DoStmt 0x14a827a88 <line:11:5, line:17:25>
+      |-CompoundStmt 0x14a8279b8 <line:11:8, line:17:5>
+      | |-IfStmt 0x14a8275d8 <line:13:9, line:14:20>
+      | | |-BinaryOperator 0x14a827570 <line:13:13, col:23> 'int' contains-errors '=='
+      | | | |-RecoveryExpr 0x14a827550 <col:13> '<dependent type>' contains-errors lvalue
+      | | | `-IntegerLiteral 0x14a827510 <col:23> 'int' 0
+      | | `-ReturnStmt 0x14a8275c8 <line:14:13, col:20>
+      | |   `-RecoveryExpr 0x14a8275a8 <col:20> '<dependent type>' contains-errors lvalue
+      | |-CompoundAssignOperator 0x14a827668 <line:15:9, col:16> 'long' contains-errors '-=' ComputeLHSTy='long' ComputeResultTy='long'
+      | | |-DeclRefExpr 0x14a8275f8 <col:9> 'long' lvalue ParmVar 0x14a80dd70 'idx' 'long'
+      | | `-ImplicitCastExpr 0x14a827650 <col:16> 'long' contains-errors <IntegralCast>
+      | |   `-ImplicitCastExpr 0x14a827638 <col:16> 'int' contains-errors <LValueToRValue>
+      | |     `-DeclRefExpr 0x14a827618 <col:16> 'int' contains-errors lvalue Var 0x14a80dfe8 'used' 'int'
+      | `-BinaryOperator 0x14a827998 <line:16:9, col:36> 'int' contains-errors '='
+      |   |-DeclRefExpr 0x14a827698 <col:9> 'int' contains-errors lvalue Var 0x14a80dfe8 'used' 'int'
+      |   `-CallExpr 0x14a827970 <col:16, col:36> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x14a827810 <col:16> 'int ()' Function 0x14a827758 'r_size' 'int ()'
+      |     `-UnaryOperator 0x14a827958 <col:23, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |       `-CXXDependentScopeMemberExpr 0x14a827910 <col:24, col:32> '<dependent type>' contains-errors lvalue ->used
+      |         `-RecoveryExpr 0x14a8278f0 <col:24> '<dependent type>' contains-errors lvalue
+      `-BinaryOperator 0x14a827a68 <line:17:14, col:21> 'int' contains-errors '>='
+        |-ImplicitCastExpr 0x14a827a20 <col:14> 'long' <LValueToRValue>
+        | `-DeclRefExpr 0x14a8279e0 <col:14> 'long' lvalue ParmVar 0x14a80dd70 'idx' 'long'
+        `-ImplicitCastExpr 0x14a827a50 <col:21> 'long' contains-errors <IntegralCast>
+          `-ImplicitCastExpr 0x14a827a38 <col:21> 'int' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x14a827a00 <col:21> 'int' contains-errors lvalue Var 0x14a80dfe8 'used' 'int'

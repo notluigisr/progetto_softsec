@@ -1,0 +1,125 @@
+`-FunctionDecl 0x102921f48  line:1:1 referenced ext2_xattr_cache_find 'int (struct inode *, struct ext2_xattr_header *)'
+  |-ParmVarDecl 0x102905848 <col:23, col:37> col:37 used inode 'struct inode *'
+  |-ParmVarDecl 0x102921e28 <col:44, col:70> col:70 used header 'struct ext2_xattr_header *'
+  `-CompoundStmt 0x12801d770 <line:2:1, line:46:1>
+    |-DeclStmt 0x102922248 <line:4:2, col:27>
+    | |-RecordDecl 0x102922060 <col:2, col:9> col:9 struct mb_cache_entry
+    | `-VarDecl 0x1029221c8 <col:2, col:25> col:25 used ce 'struct mb_cache_entry *'
+    |-IfStmt 0x102922338 <line:6:2, line:7:10>
+    | |-UnaryOperator 0x1029222d8 <line:6:6, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1029222c0 <col:7, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x102922298 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x102922260 <col:7> 'struct ext2_xattr_header *' lvalue ParmVar 0x102921e28 'header' 'struct ext2_xattr_header *'
+    | `-ReturnStmt 0x102922328 <line:7:3, col:10>
+    |   `-RecoveryExpr 0x102922308 <col:10> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x102922898 <line:9:1, line:11:16> 'again'
+    | `-BinaryOperator 0x102922828 <line:10:2, line:11:16> 'struct mb_cache_entry *' contains-errors '='
+    |   |-DeclRefExpr 0x102922540 <line:10:2> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+    |   `-CallExpr 0x1029227f0 <col:7, line:11:16> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x102922640 <line:10:7> 'int ()' Function 0x102922588 'mb_cache_entry_find_first' 'int ()'
+    |     |-RecoveryExpr 0x1029227b0 <col:33> '<dependent type>' contains-errors lvalue
+    |     |-CXXDependentScopeMemberExpr 0x1029226d8 <col:51, col:64> '<dependent type>' contains-errors lvalue ->s_bdev
+    |     | `-RecoveryExpr 0x1029226b0 <col:51, col:58> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x102922678 <col:51> 'struct inode *' lvalue ParmVar 0x102905848 'inode' 'struct inode *'
+    |     `-RecoveryExpr 0x1029227d0 <line:11:12> '<dependent type>' contains-errors lvalue
+    `-WhileStmt 0x12801d750 <line:12:2, line:44:2>
+      |-ImplicitCastExpr 0x1029228d8 <line:12:9> 'struct mb_cache_entry *' <LValueToRValue>
+      | `-DeclRefExpr 0x1029228b8 <col:9> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+      `-CompoundStmt 0x12801d720 <col:13, line:44:2>
+        |-DeclStmt 0x102922ad8 <line:13:3, col:25>
+        | |-RecordDecl 0x1029228f0 <col:3, col:10> col:10 struct buffer_head
+        | `-VarDecl 0x102922a58 <col:3, col:23> col:23 used bh 'struct buffer_head *'
+        |-IfStmt 0x102923600 <line:15:3, line:19:3>
+        | |-CallExpr 0x102922c58 <line:15:7, col:16> 'int'
+        | | |-ImplicitCastExpr 0x102922c40 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x102922bd0 <col:7> 'int ()' Function 0x102922b18 'IS_ERR' 'int ()'
+        | | `-ImplicitCastExpr 0x102922c80 <col:14> 'struct mb_cache_entry *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x102922bf0 <col:14> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+        | `-CompoundStmt 0x1029235e0 <col:19, line:19:3>
+        |   |-IfStmt 0x1029235b8 <line:16:4, line:17:10>
+        |   | |-BinaryOperator 0x102923580 <line:16:8, col:24> 'int' contains-errors '=='
+        |   | | |-CallExpr 0x1029234f0 <col:8, col:18> 'int'
+        |   | | | |-ImplicitCastExpr 0x1029234d8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+        |   | | | | `-DeclRefExpr 0x102922d78 <col:8> 'int ()' Function 0x102922cc0 'PTR_ERR' 'int ()'
+        |   | | | `-ImplicitCastExpr 0x102923518 <col:16> 'struct mb_cache_entry *' <LValueToRValue>
+        |   | | |   `-DeclRefExpr 0x102922d98 <col:16> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+        |   | | `-UnaryOperator 0x102923568 <col:23, col:24> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |   | |   `-ImplicitCastExpr 0x102923550 <col:24> '<dependent type>' contains-errors <LValueToRValue>
+        |   | |     `-RecoveryExpr 0x102923530 <col:24> '<dependent type>' contains-errors lvalue
+        |   | `-GotoStmt 0x1029235a0 <line:17:5, col:10> 'again' 0x102922848
+        |   `-BreakStmt 0x1029235d8 <line:18:4>
+        |-BinaryOperator 0x102923830 <line:21:3, col:41> 'struct buffer_head *' contains-errors '='
+        | |-DeclRefExpr 0x102923620 <col:3> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+        | `-CallExpr 0x102923800 <col:8, col:41> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x102923720 <col:8> 'int ()' Function 0x102923668 'sb_bread' 'int ()'
+        |   |-RecoveryExpr 0x102923778 <col:17, col:24> '<dependent type>' contains-errors lvalue
+        |   | `-DeclRefExpr 0x102923740 <col:17> 'struct inode *' lvalue ParmVar 0x102905848 'inode' 'struct inode *'
+        |   `-RecoveryExpr 0x1029237d8 <col:30, col:34> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x1029237a0 <col:30> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+        `-IfStmt 0x12801d508 <line:22:3, line:42:3> has_else
+          |-UnaryOperator 0x102923888 <line:22:7, col:8> 'int' prefix '!' cannot overflow
+          | `-ImplicitCastExpr 0x102923870 <col:8> 'struct buffer_head *' <LValueToRValue>
+          |   `-DeclRefExpr 0x102923850 <col:8> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+          |-CompoundStmt 0x102923b88 <col:12, line:26:3>
+          | `-CallExpr 0x102923b40 <line:23:4, line:25:46> '<dependent type>' contains-errors
+          |   |-DeclRefExpr 0x102923980 <line:23:4> 'int ()' Function 0x1029238c8 'ext2_error' 'int ()'
+          |   |-RecoveryExpr 0x1029239d8 <col:15, col:22> '<dependent type>' contains-errors lvalue
+          |   | `-DeclRefExpr 0x1029239a0 <col:15> 'struct inode *' lvalue ParmVar 0x102905848 'inode' 'struct inode *'
+          |   |-StringLiteral 0x102923a00 <col:28> 'char[4]' lvalue "STR"
+          |   |-StringLiteral 0x102923a20 <line:24:5> 'char[4]' lvalue "STR"
+          |   |-RecoveryExpr 0x102923a78 <line:25:5, col:12> '<dependent type>' contains-errors lvalue
+          |   | `-DeclRefExpr 0x102923a40 <col:5> 'struct inode *' lvalue ParmVar 0x102905848 'inode' 'struct inode *'
+          |   `-CStyleCastExpr 0x102923b18 <col:19, col:39> 'unsigned long' contains-errors <Dependent>
+          |     `-RecoveryExpr 0x102923ad8 <col:35, col:39> '<dependent type>' contains-errors lvalue
+          |       `-DeclRefExpr 0x102923aa0 <col:35> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+          `-CompoundStmt 0x12801d4d8 <line:26:10, line:42:3>
+            |-CallExpr 0x102923cd8 <line:27:4, col:18> 'int'
+            | |-ImplicitCastExpr 0x102923cc0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | | `-DeclRefExpr 0x102923c80 <col:4> 'int ()' Function 0x102923bc8 'lock_buffer' 'int ()'
+            | `-ImplicitCastExpr 0x102923d00 <col:16> 'struct buffer_head *' <LValueToRValue>
+            |   `-DeclRefExpr 0x102923ca0 <col:16> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            |-IfStmt 0x12801d1b8 <line:28:4, line:39:4> has_else
+            | |-RecoveryExpr 0x102923fe0 <line:28:8, line:29:8> '_Bool' contains-errors
+            | |-CompoundStmt 0x102924208 <col:33, line:34:4>
+            | `-IfStmt 0x12801d198 <col:11, line:39:4>
+            |   |-UnaryOperator 0x12801cc48 <line:34:15, col:46> 'int' prefix '!' cannot overflow
+            |   | `-CallExpr 0x12801cc00 <col:16, col:46> 'int'
+            |   |   |-ImplicitCastExpr 0x1029243d0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+            |   |   | `-DeclRefExpr 0x1029242f8 <col:16> 'int ()' Function 0x102924240 'ext2_xattr_cmp' 'int ()'
+            |   |   |-ImplicitCastExpr 0x12801cc30 <col:31> 'struct ext2_xattr_header *' <LValueToRValue>
+            |   |   | `-DeclRefExpr 0x102924318 <col:31> 'struct ext2_xattr_header *' lvalue ParmVar 0x102921e28 'header' 'struct ext2_xattr_header *'
+            |   |   `-CallExpr 0x102924390 <col:39, col:45> 'int'
+            |   |     |-ImplicitCastExpr 0x102924378 <col:39> 'int (*)()' <FunctionToPointerDecay>
+            |   |     | `-DeclRefExpr 0x102924338 <col:39> 'int ()' Function 0x102923e40 'HDR' 'int ()'
+            |   |     `-ImplicitCastExpr 0x1029243b8 <col:43> 'struct buffer_head *' <LValueToRValue>
+            |   |       `-DeclRefExpr 0x102924358 <col:43> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            |   `-CompoundStmt 0x12801d170 <col:49, line:39:4>
+            |     |-CallExpr 0x12801cf60 <line:35:5, line:36:35> '<dependent type>' contains-errors
+            |     | |-DeclRefExpr 0x12801cd40 <line:35:5> 'int ()' Function 0x12801cc88 'ea_bdebug' 'int ()'
+            |     | |-DeclRefExpr 0x12801cd60 <col:15> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            |     | |-StringLiteral 0x12801cd80 <col:19> 'char[4]' lvalue "STR"
+            |     | `-CallExpr 0x12801cf38 <line:36:8, col:34> '<dependent type>' contains-errors
+            |     |   |-DeclRefExpr 0x12801ce80 <col:8> 'int ()' Function 0x12801cdc8 'atomic_read' 'int ()'
+            |     |   `-UnaryOperator 0x12801cf20 <col:20, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+            |     |     `-ParenExpr 0x12801cf00 <col:21, col:33> '<dependent type>' contains-errors lvalue
+            |     |       `-RecoveryExpr 0x12801ced8 <col:22, col:26> '<dependent type>' contains-errors lvalue
+            |     |         `-DeclRefExpr 0x12801cea0 <col:22> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            |     |-CallExpr 0x12801d0d0 <line:37:5, col:30> 'int'
+            |     | |-ImplicitCastExpr 0x12801d0b8 <col:5> 'int (*)()' <FunctionToPointerDecay>
+            |     | | `-DeclRefExpr 0x12801d078 <col:5> 'int ()' Function 0x12801cfc0 'mb_cache_entry_release' 'int ()'
+            |     | `-ImplicitCastExpr 0x12801d0f8 <col:28> 'struct mb_cache_entry *' <LValueToRValue>
+            |     |   `-DeclRefExpr 0x12801d098 <col:28> 'struct mb_cache_entry *' lvalue Var 0x1029221c8 'ce' 'struct mb_cache_entry *'
+            |     `-ReturnStmt 0x12801d160 <line:38:5, col:12>
+            |       `-ImplicitCastExpr 0x12801d148 <col:12> 'int' <PointerToIntegral>
+            |         `-ImplicitCastExpr 0x12801d130 <col:12> 'struct buffer_head *' <LValueToRValue>
+            |           `-DeclRefExpr 0x12801d110 <col:12> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            |-CallExpr 0x12801d320 <line:40:4, col:20> 'int'
+            | |-ImplicitCastExpr 0x12801d308 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | | `-DeclRefExpr 0x12801d2c8 <col:4> 'int ()' Function 0x12801d210 'unlock_buffer' 'int ()'
+            | `-ImplicitCastExpr 0x12801d348 <col:18> 'struct buffer_head *' <LValueToRValue>
+            |   `-DeclRefExpr 0x12801d2e8 <col:18> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'
+            `-CallExpr 0x12801d498 <line:41:4, col:13> 'int'
+              |-ImplicitCastExpr 0x12801d480 <col:4> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x12801d440 <col:4> 'int ()' Function 0x12801d388 'brelse' 'int ()'
+              `-ImplicitCastExpr 0x12801d4c0 <col:11> 'struct buffer_head *' <LValueToRValue>
+                `-DeclRefExpr 0x12801d460 <col:11> 'struct buffer_head *' lvalue Var 0x102922a58 'bh' 'struct buffer_head *'

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x1520107f0  line:1:6 invalid DequantizeClassPredictions 'void (const int *, const int, const int, int *)'
+  |-ParmVarDecl 0x1520104f0 <col:33, col:53> col:53 invalid input_class_predictions 'const int *'
+  |-ParmVarDecl 0x152010570 <line:2:33, col:43> col:43 used num_boxes 'const int'
+  |-ParmVarDecl 0x1520105f0 <line:3:33, col:43> col:43 used num_classes_with_background 'const int'
+  |-ParmVarDecl 0x1520106a8 <line:4:33, col:47> col:47 invalid scores 'int *'
+  `-CompoundStmt 0x15202a780 <col:55, line:13:1>
+    |-DeclStmt 0x152010950 <line:5:3, line:6:69>
+    | `-VarDecl 0x1520108d0 <line:5:3, col:9> col:9 quant_zero_point 'float'
+    |-DeclStmt 0x152010a00 <line:7:3, col:80>
+    | `-VarDecl 0x152010980 <col:3, col:9> col:9 quant_scale 'float'
+    |-DeclStmt 0x152010b48 <line:9:3, col:76>
+    | `-VarDecl 0x152010a30 <col:3, col:16> col:16 invalid scores_quant 'const int *'
+    `-ForStmt 0x15202a748 <line:10:3, line:12:3>
+      |-DeclStmt 0x15202a600 <line:10:8, col:19>
+      | `-VarDecl 0x152010b78 <col:8, col:18> col:12 used idx 'int' cinit
+      |   `-IntegerLiteral 0x152010be0 <col:18> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x15202a6e0 <col:21, col:39> 'int' '<'
+      | |-ImplicitCastExpr 0x15202a6c8 <col:21> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x15202a618 <col:21> 'int' lvalue Var 0x152010b78 'idx' 'int'
+      | `-BinaryOperator 0x15202a6a8 <col:27, col:39> 'int' '*'
+      |   |-ImplicitCastExpr 0x15202a678 <col:27> 'int' <LValueToRValue>
+      |   | `-DeclRefExpr 0x15202a638 <col:27> 'const int' lvalue ParmVar 0x152010570 'num_boxes' 'const int'
+      |   `-ImplicitCastExpr 0x15202a690 <col:39> 'int' <LValueToRValue>
+      |     `-DeclRefExpr 0x15202a658 <col:39> 'const int' lvalue ParmVar 0x1520105f0 'num_classes_with_background' 'const int'
+      |-UnaryOperator 0x15202a720 <col:68, col:70> 'int' prefix '++'
+      | `-DeclRefExpr 0x15202a700 <col:70> 'int' lvalue Var 0x152010b78 'idx' 'int'
+      `-CompoundStmt 0x15202a738 <col:75, line:12:3>

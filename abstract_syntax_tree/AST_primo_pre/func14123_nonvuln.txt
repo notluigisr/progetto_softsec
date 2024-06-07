@@ -1,0 +1,86 @@
+`-FunctionDecl 0x12f922748  line:1:5 af_alg_cmsg_send 'int (struct msghdr *, struct af_alg_control *)'
+  |-ParmVarDecl 0x13800e248 <col:22, col:37> col:37 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x12f922628 <col:42, col:65> col:65 used con 'struct af_alg_control *'
+  `-CompoundStmt 0x138027c60 <line:2:1, line:39:1>
+    |-DeclStmt 0x12f922a38 <line:3:2, col:22>
+    | |-RecordDecl 0x12f922848 <col:2, col:9> col:9 struct cmsghdr
+    | `-VarDecl 0x12f9229b8 <col:2, col:18> col:18 used cmsg 'struct cmsghdr *'
+    |-CallExpr 0x12f922c28 <line:5:2, col:28> 'int'
+    | |-ImplicitCastExpr 0x12f922c10 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f922b80 <col:2> 'int ()' Function 0x12f922ac8 'for_each_cmsghdr' 'int ()'
+    | |-ImplicitCastExpr 0x12f922c58 <col:19> 'struct cmsghdr *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12f922ba0 <col:19> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    | `-ImplicitCastExpr 0x12f922c70 <col:25> 'struct msghdr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12f922bc0 <col:25> 'struct msghdr *' lvalue ParmVar 0x13800e248 'msg' 'struct msghdr *'
+    |-CompoundStmt 0x138027c10 <col:30, line:36:2>
+    | |-IfStmt 0x12f922f00 <line:6:3, line:7:12>
+    | | |-UnaryOperator 0x12f922e40 <line:6:7, col:25> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x12f922de0 <col:8, col:25> 'int'
+    | | |   |-ImplicitCastExpr 0x12f922dc8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x12f922d68 <col:8> 'int ()' Function 0x12f922cb0 'CMSG_OK' 'int ()'
+    | | |   |-ImplicitCastExpr 0x12f922e10 <col:16> 'struct msghdr *' <LValueToRValue>
+    | | |   | `-DeclRefExpr 0x12f922d88 <col:16> 'struct msghdr *' lvalue ParmVar 0x13800e248 'msg' 'struct msghdr *'
+    | | |   `-ImplicitCastExpr 0x12f922e28 <col:21> 'struct cmsghdr *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x12f922da8 <col:21> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    | | `-ReturnStmt 0x12f922ef0 <line:7:4, col:12>
+    | |   `-UnaryOperator 0x12f922ed8 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |     `-ImplicitCastExpr 0x12f922ec0 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | |       `-RecoveryExpr 0x12f922ea0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-SwitchStmt 0x12f923070 <line:11:3, line:35:3>
+    |   |-ImplicitCastExpr 0x12f923058 <line:11:11, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x12f923030 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12f922ff8 <col:11> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    |   `-CompoundStmt 0x138027bc8 <col:28, line:35:3>
+    |     |-IfStmt 0x12f9233e8 <line:13:4, line:14:13>
+    |     | |-BinaryOperator 0x12f923320 <line:13:8, col:50> 'int' contains-errors '<'
+    |     | | |-RecoveryExpr 0x12f9230e8 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |     | | | `-DeclRefExpr 0x12f9230b0 <col:8> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    |     | | `-CallExpr 0x12f9232f8 <col:25, col:50> 'int' contains-errors
+    |     | |   |-ImplicitCastExpr 0x12f9232e0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |     | |   | `-DeclRefExpr 0x12f9231f0 <col:25> 'int ()' Function 0x12f923138 'CMSG_LEN' 'int ()'
+    |     | |   `-UnaryExprOrTypeTraitExpr 0x12f9232c0 <col:34, col:49> 'unsigned long' contains-errors sizeof
+    |     | |     `-ParenExpr 0x12f9232a0 <col:40, col:49> '<dependent type>' contains-errors
+    |     | |       `-UnaryOperator 0x12f923288 <col:41, col:47> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     | |         `-ImplicitCastExpr 0x12f923270 <col:42, col:47> '<dependent type>' contains-errors <LValueToRValue>
+    |     | |           `-RecoveryExpr 0x12f923248 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    |     | |             `-DeclRefExpr 0x12f923210 <col:42> 'struct af_alg_control *' lvalue ParmVar 0x12f922628 'con' 'struct af_alg_control *' non_odr_use_unevaluated
+    |     | `-ReturnStmt 0x12f9233d8 <line:14:5, col:13>
+    |     |   `-UnaryOperator 0x12f9233c0 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     |     `-ImplicitCastExpr 0x12f9233a8 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |     |       `-RecoveryExpr 0x12f923388 <col:13> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x138027628 <line:15:4, col:36> '<dependent type>' contains-errors '='
+    |     | |-RecoveryExpr 0x12f923440 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x12f923408 <col:4> 'struct af_alg_control *' lvalue ParmVar 0x12f922628 'con' 'struct af_alg_control *'
+    |     | `-CStyleCastExpr 0x138027600 <col:14, col:36> 'void *' <IntegralToPointer>
+    |     |   `-CallExpr 0x12f9235a0 <col:22, col:36> 'int'
+    |     |     |-ImplicitCastExpr 0x12f923588 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x12f923548 <col:22> 'int ()' Function 0x12f923490 'CMSG_DATA' 'int ()'
+    |     |     `-ImplicitCastExpr 0x12f9235c8 <col:32> 'struct cmsghdr *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x12f923568 <col:32> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    |     |-IfStmt 0x138027950 <line:16:4, line:18:13>
+    |     | |-BinaryOperator 0x138027888 <line:16:8, line:17:29> 'int' contains-errors '<'
+    |     | | |-RecoveryExpr 0x138027680 <line:16:8, col:14> '<dependent type>' contains-errors lvalue
+    |     | | | `-DeclRefExpr 0x138027648 <col:8> 'struct cmsghdr *' lvalue Var 0x12f9229b8 'cmsg' 'struct cmsghdr *'
+    |     | | `-CallExpr 0x138027860 <col:25, line:17:29> '<dependent type>' contains-errors
+    |     | |   |-DeclRefExpr 0x1380276a8 <line:16:25> 'int ()' Function 0x12f923138 'CMSG_LEN' 'int ()'
+    |     | |   `-BinaryOperator 0x138027840 <col:34, line:17:28> '<dependent type>' contains-errors '+'
+    |     | |     |-CXXDependentScopeMemberExpr 0x138027728 <line:16:34, col:43> '<dependent type>' contains-errors lvalue ->ivlen
+    |     | |     | `-RecoveryExpr 0x138027700 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     | |     |   `-DeclRefExpr 0x1380276c8 <col:34> 'struct af_alg_control *' lvalue ParmVar 0x12f922628 'con' 'struct af_alg_control *'
+    |     | |     `-UnaryExprOrTypeTraitExpr 0x138027820 <line:17:13, col:28> 'unsigned long' contains-errors sizeof
+    |     | |       `-ParenExpr 0x138027800 <col:19, col:28> '<dependent type>' contains-errors
+    |     | |         `-UnaryOperator 0x1380277e8 <col:20, col:26> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     | |           `-ImplicitCastExpr 0x1380277d0 <col:21, col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |     | |             `-RecoveryExpr 0x1380277a8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |     | |               `-DeclRefExpr 0x138027770 <col:21> 'struct af_alg_control *' lvalue ParmVar 0x12f922628 'con' 'struct af_alg_control *' non_odr_use_unevaluated
+    |     | `-ReturnStmt 0x138027940 <line:18:5, col:13>
+    |     |   `-UnaryOperator 0x138027928 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     |     `-ImplicitCastExpr 0x138027910 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |     |       `-RecoveryExpr 0x1380278f0 <col:13> '<dependent type>' contains-errors lvalue
+    |     |-BreakStmt 0x138027970 <line:19:4>
+    |     |-BreakStmt 0x138027a90 <line:25:4>
+    |     |-BreakStmt 0x138027b98 <line:31:4>
+    |     `-DefaultStmt 0x138027ba8 <line:33:3, col:10>
+    |       `-NullStmt 0x138027ba0 <col:10>
+    `-ReturnStmt 0x138027c50 <line:38:2, col:9>
+      `-IntegerLiteral 0x138027c30 <col:9> 'int' 0

@@ -1,0 +1,22 @@
+`-FunctionDecl 0x10580ddc8  line:1:1 invalid get16 'int (const int *)'
+  |-ParmVarDecl 0x10580dcf0 <col:8, col:20> col:20 invalid buffer 'const int *'
+  `-CompoundStmt 0x10580e108 <line:2:1, line:7:1>
+    |-DeclStmt 0x10580def8 <line:3:3, col:10>
+    | `-VarDecl 0x10580de90 <col:3, col:9> col:9 used a 'long'
+    |-BinaryOperator 0x10580dfc0 <line:4:3, col:19> 'long' contains-errors '='
+    | |-DeclRefExpr 0x10580df10 <col:3> 'long' lvalue Var 0x10580de90 'a' 'long'
+    | `-BinaryOperator 0x10580dfa0 <col:8, col:19> '<dependent type>' contains-errors '<<'
+    |   |-UnaryOperator 0x10580df68 <col:8, col:9> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x10580df50 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   `-RecoveryExpr 0x10580df30 <col:9> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x10580df80 <col:19> 'int' 8
+    |-CompoundAssignOperator 0x10580e078 <line:5:3, col:16> 'long' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x10580dfe0 <col:3> 'long' lvalue Var 0x10580de90 'a' 'long'
+    | `-ArraySubscriptExpr 0x10580e058 <col:8, col:16> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x10580e040 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x10580e000 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x10580e020 <col:15> 'int' 1
+    `-ReturnStmt 0x10580e0f8 <line:6:3, col:10>
+      `-ImplicitCastExpr 0x10580e0e0 <col:10> 'int' <IntegralCast>
+        `-ImplicitCastExpr 0x10580e0c8 <col:10> 'long' <LValueToRValue>
+          `-DeclRefExpr 0x10580e0a8 <col:10> 'long' lvalue Var 0x10580de90 'a' 'long'

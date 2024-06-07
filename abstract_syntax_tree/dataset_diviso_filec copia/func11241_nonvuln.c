@@ -1,0 +1,1 @@
+  virtual void set_zero(Hybrid_type *val) const { val->real= 0.0; }

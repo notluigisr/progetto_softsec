@@ -1,0 +1,117 @@
+`-FunctionDecl 0x145008348  line:1:12 tipc_udp_recv 'int (struct sock *, struct sk_buff *)' static
+  |-ParmVarDecl 0x144928648 <col:26, col:39> col:39 used sk 'struct sock *'
+  |-ParmVarDecl 0x145008228 <col:43, col:59> col:59 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x14500c828 <line:2:1, line:35:1>
+    |-DeclStmt 0x145008638 <line:3:2, col:23>
+    | |-RecordDecl 0x145008448 <col:2, col:9> col:9 struct udp_bearer
+    | `-VarDecl 0x1450085b8 <col:2, col:21> col:21 used ub 'struct udp_bearer *'
+    |-DeclStmt 0x145008838 <line:4:2, col:23>
+    | |-RecordDecl 0x145008650 <col:2, col:9> col:9 struct tipc_bearer
+    | `-VarDecl 0x1450087b8 <col:2, col:22> col:22 used b 'struct tipc_bearer *'
+    |-DeclStmt 0x145008a38 <line:5:2, col:22>
+    | |-RecordDecl 0x145008850 <col:2, col:9> col:9 struct tipc_msg
+    | `-VarDecl 0x1450089b8 <col:2, col:19> col:19 used hdr 'struct tipc_msg *'
+    |-DeclStmt 0x145008ad0 <line:6:2, col:9>
+    | `-VarDecl 0x145008a68 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x145008d10 <line:8:2, col:38> 'struct udp_bearer *' '='
+    | |-DeclRefExpr 0x145008ae8 <col:2> 'struct udp_bearer *' lvalue Var 0x1450085b8 'ub' 'struct udp_bearer *'
+    | `-ImplicitCastExpr 0x145008cf8 <col:7, col:38> 'struct udp_bearer *' <IntegralToPointer>
+    |   `-CallExpr 0x145008cb8 <col:7, col:38> 'int'
+    |     |-ImplicitCastExpr 0x145008ca0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x145008c30 <col:7> 'int ()' Function 0x145008b78 'rcu_dereference_sk_user_data' 'int ()'
+    |     `-ImplicitCastExpr 0x145008ce0 <col:36> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x145008c50 <col:36> 'struct sock *' lvalue ParmVar 0x144928648 'sk' 'struct sock *'
+    |-IfStmt 0x145008fc0 <line:9:2, line:12:2>
+    | |-UnaryOperator 0x145008d68 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x145008d50 <col:7> 'struct udp_bearer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x145008d30 <col:7> 'struct udp_bearer *' lvalue Var 0x1450085b8 'ub' 'struct udp_bearer *'
+    | `-CompoundStmt 0x145008fa0 <col:11, line:12:2>
+    |   |-CallExpr 0x145008ef8 <line:10:3, col:27> 'int'
+    |   | |-ImplicitCastExpr 0x145008ee0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x145008e60 <col:3> 'int ()' Function 0x145008da8 'pr_err_ratelimited' 'int ()'
+    |   | `-ImplicitCastExpr 0x145008f20 <col:22> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x145008ec0 <col:22> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x145008f88 <line:11:3, col:8> 'out' 0x145008f38
+    |-BinaryOperator 0x1458083b0 <line:14:2, col:19> 'struct tipc_msg *' '='
+    | |-DeclRefExpr 0x145808200 <col:2> 'struct tipc_msg *' lvalue Var 0x1450089b8 'hdr' 'struct tipc_msg *'
+    | `-ImplicitCastExpr 0x145808398 <col:8, col:19> 'struct tipc_msg *' <IntegralToPointer>
+    |   `-CallExpr 0x145808358 <col:8, col:19> 'int'
+    |     |-ImplicitCastExpr 0x145808340 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x145808300 <col:8> 'int ()' Function 0x145808248 'buf_msg' 'int ()'
+    |     `-ImplicitCastExpr 0x145808380 <col:16> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x145808320 <col:16> 'struct sk_buff *' lvalue ParmVar 0x145008228 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x145808578 <line:16:2, col:32> 'struct tipc_bearer *' contains-errors '='
+    | |-DeclRefExpr 0x1458083d0 <col:2> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    | `-CallExpr 0x145808550 <col:6, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1458084d0 <col:6> 'int ()' Function 0x145808418 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x145808528 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1458084f0 <col:22> 'struct udp_bearer *' lvalue Var 0x1450085b8 'ub' 'struct udp_bearer *'
+    |-IfStmt 0x145808600 <line:17:2, line:18:8>
+    | |-UnaryOperator 0x1458085d0 <line:17:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1458085b8 <col:7> 'struct tipc_bearer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x145808598 <col:7> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    | `-GotoStmt 0x1458085e8 <line:18:3, col:8> 'out' 0x145008f38
+    |-IfStmt 0x145808d98 <line:20:2, line:24:2>
+    | |-BinaryOperator 0x145808808 <line:20:6, col:29> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x145808620 <col:6> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    | | `-CallExpr 0x1458087d8 <col:11, col:29> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x145808720 <col:11> 'int ()' Function 0x145808668 'test_bit' 'int ()'
+    | |   |-IntegerLiteral 0x145808740 <col:20> 'int' 0
+    | |   `-UnaryOperator 0x1458087c0 <col:23, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x145808798 <col:24, col:27> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x145808760 <col:24> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    | `-CompoundStmt 0x145808d70 <col:32, line:24:2>
+    |   |-BinaryOperator 0x1458089e8 <line:21:3, col:29> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x1458089a0 <col:3, col:21> '<dependent type>' contains-errors lvalue
+    |   | | `-CallExpr 0x145808960 <col:3, col:18> 'int'
+    |   | |   |-ImplicitCastExpr 0x145808948 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x145808908 <col:3> 'int ()' Function 0x145808850 'TIPC_SKB_CB' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x145808988 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x145808928 <col:15> 'struct sk_buff *' lvalue ParmVar 0x145008228 'skb' 'struct sk_buff *'
+    |   | `-IntegerLiteral 0x1458089c8 <col:29> 'int' 0
+    |   |-CallExpr 0x145808cd8 <line:22:3, col:32> 'int'
+    |   | |-ImplicitCastExpr 0x145808cc0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x145808ae8 <col:3> 'int ()' Function 0x145808a30 'tipc_rcv' 'int ()'
+    |   | |-CallExpr 0x145808c40 <col:12, col:23> 'int'
+    |   | | |-ImplicitCastExpr 0x145808c28 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x145808be8 <col:12> 'int ()' Function 0x145808b30 'sock_net' 'int ()'
+    |   | | `-ImplicitCastExpr 0x145808c68 <col:21> 'struct sock *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x145808c08 <col:21> 'struct sock *' lvalue ParmVar 0x144928648 'sk' 'struct sock *'
+    |   | |-ImplicitCastExpr 0x145808d10 <col:26> 'struct sk_buff *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x145808c80 <col:26> 'struct sk_buff *' lvalue ParmVar 0x145008228 'skb' 'struct sk_buff *'
+    |   | `-ImplicitCastExpr 0x145808d28 <col:31> 'struct tipc_bearer *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x145808ca0 <col:31> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    |   `-ReturnStmt 0x145808d60 <line:23:3, col:10>
+    |     `-IntegerLiteral 0x145808d40 <col:10> 'int' 0
+    |-IfStmt 0x14500c640 <line:26:2, line:30:2>
+    | |-CallExpr 0x145809180 <line:26:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x145808e98 <col:6> 'int ()' Function 0x145808de0 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x145809160 <col:15, col:32> 'int' contains-errors '=='
+    | |   |-CallExpr 0x145809100 <col:15, col:27> 'int'
+    | |   | |-ImplicitCastExpr 0x1458090e8 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x145808f98 <col:15> 'int ()' Function 0x145808ee0 'msg_user' 'int ()'
+    | |   | `-ImplicitCastExpr 0x145809128 <col:24> 'struct tipc_msg *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x145808fb8 <col:24> 'struct tipc_msg *' lvalue Var 0x1450089b8 'hdr' 'struct tipc_msg *'
+    | |   `-RecoveryExpr 0x145809140 <col:32> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14500c620 <col:46, line:30:2>
+    |   |-BinaryOperator 0x14500c590 <line:27:3, col:35> 'int' '='
+    |   | |-DeclRefExpr 0x1458091a8 <col:3> 'int' lvalue Var 0x145008a68 'err' 'int'
+    |   | `-CallExpr 0x14500c530 <col:9, col:35> 'int'
+    |   |   |-ImplicitCastExpr 0x14500c518 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x14500c4b8 <col:9> 'int ()' Function 0x14500c400 'tipc_udp_rcast_disc' 'int ()'
+    |   |   |-ImplicitCastExpr 0x14500c560 <col:29> 'struct tipc_bearer *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x14500c4d8 <col:29> 'struct tipc_bearer *' lvalue Var 0x1450087b8 'b' 'struct tipc_bearer *'
+    |   |   `-ImplicitCastExpr 0x14500c578 <col:32> 'struct sk_buff *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14500c4f8 <col:32> 'struct sk_buff *' lvalue ParmVar 0x145008228 'skb' 'struct sk_buff *'
+    |   `-IfStmt 0x14500c600 <line:28:3, line:29:9>
+    |     |-ImplicitCastExpr 0x14500c5d0 <line:28:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14500c5b0 <col:7> 'int' lvalue Var 0x145008a68 'err' 'int'
+    |     `-GotoStmt 0x14500c5e8 <line:29:4, col:9> 'out' 0x145008f38
+    |-LabelStmt 0x14500c7d8 <line:32:1, line:33:15> 'out'
+    | `-CallExpr 0x14500c798 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x14500c780 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14500c740 <col:2> 'int ()' Function 0x14500c688 'kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x14500c7c0 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14500c760 <col:12> 'struct sk_buff *' lvalue ParmVar 0x145008228 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x14500c818 <line:34:2, col:9>
+      `-IntegerLiteral 0x14500c7f8 <col:9> 'int' 0

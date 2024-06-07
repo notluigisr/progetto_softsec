@@ -1,0 +1,202 @@
+`-FunctionDecl 0x14a027bf0  line:1:13 invalid update_or_create_fnhe 'void (struct fib_nh *, int, int, int, unsigned long)' static
+  |-ParmVarDecl 0x14a00e848 <col:35, col:50> col:50 used nh 'struct fib_nh *'
+  |-ParmVarDecl 0x14a00e8e0 <col:54, col:61> col:61 invalid daddr 'int'
+  |-ParmVarDecl 0x14a00e960 <col:68, col:75> col:75 invalid gw 'int'
+  |-ParmVarDecl 0x14a027a00 <line:2:7, col:11> col:11 invalid pmtu 'int'
+  |-ParmVarDecl 0x14a027a80 <col:17, col:31> col:31 used expires 'unsigned long'
+  `-CompoundStmt 0x14c009778 <line:3:1, line:80:1>
+    |-DeclStmt 0x14a027ea8 <line:4:2, col:31>
+    | |-RecordDecl 0x14a027cc0 <col:2, col:9> col:9 struct fnhe_hash_bucket
+    | `-VarDecl 0x14a027e28 <col:2, col:27> col:27 used hash 'struct fnhe_hash_bucket *'
+    |-DeclStmt 0x14a0280a8 <line:5:2, col:31>
+    | |-RecordDecl 0x14a027ec0 <col:2, col:9> col:9 struct fib_nh_exception
+    | `-VarDecl 0x14a028028 <col:2, col:27> col:27 used fnhe 'struct fib_nh_exception *'
+    |-DeclStmt 0x14a0282a8 <line:6:2, col:19>
+    | |-RecordDecl 0x14a0280c0 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x14a028228 <col:2, col:17> col:17 used rt 'struct rtable *'
+    |-DeclStmt 0x14a028340 <line:7:2, col:16>
+    | `-VarDecl 0x14a0282d8 <col:2, col:15> col:15 used i 'unsigned int'
+    |-DeclStmt 0x14a0283d8 <line:8:2, col:11>
+    | `-VarDecl 0x14a028370 <col:2, col:6> col:6 used depth 'int'
+    |-CallExpr 0x14a028600 <line:11:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a028550 <col:2> 'int ()' Function 0x14a028498 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x14a0285e8 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14a0285c8 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14a0287d0 <line:13:2, col:42> 'struct fnhe_hash_bucket *' contains-errors '='
+    | |-DeclRefExpr 0x14a028628 <col:2> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    | `-CallExpr 0x14a0287a8 <col:9, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a028728 <col:9> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x14a028780 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14a028748 <col:25> 'struct fib_nh *' lvalue ParmVar 0x14a00e848 'nh' 'struct fib_nh *'
+    |-IfStmt 0x14a922ea8 <line:14:2, line:19:2>
+    | |-UnaryOperator 0x14a028828 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a028810 <col:7> 'struct fnhe_hash_bucket *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a0287f0 <col:7> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    | `-CompoundStmt 0x14a922e88 <col:13, line:19:2>
+    |   |-IfStmt 0x14a922cb8 <line:16:3, line:17:9>
+    |   | |-UnaryOperator 0x14a922c38 <line:16:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x14a922c20 <col:8> 'struct fnhe_hash_bucket *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14a922c00 <col:8> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    |   | `-GotoStmt 0x14a922ca0 <line:17:4, col:9> 'out_unlock' 0x14a922c50
+    |   `-CallExpr 0x14a922e58 <line:18:3, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14a922db8 <col:3> 'int ()' Function 0x14a922d00 'rcu_assign_pointer' 'int ()'
+    |     |-RecoveryExpr 0x14a922e10 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x14a922dd8 <col:22> 'struct fib_nh *' lvalue ParmVar 0x14a00e848 'nh' 'struct fib_nh *'
+    |     `-DeclRefExpr 0x14a922e38 <col:41> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    |-CompoundAssignOperator 0x14a922f50 <line:21:2, col:10> 'struct fnhe_hash_bucket *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x14a922ec8 <col:2> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    | `-RecoveryExpr 0x14a922f30 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14a922fc0 <line:23:2, col:10> 'int' '='
+    | |-DeclRefExpr 0x14a922f80 <col:2> 'int' lvalue Var 0x14a028370 'depth' 'int'
+    | `-IntegerLiteral 0x14a922fa0 <col:10> 'int' 0
+    |-ForStmt 0x14a923308 <line:24:2, line:29:2>
+    | |-BinaryOperator 0x14a9230a8 <line:24:7, col:41> 'struct fib_nh_exception *' contains-errors '='
+    | | |-DeclRefExpr 0x14a922fe0 <col:7> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | `-CallExpr 0x14a923080 <col:14, col:41> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14a923000 <col:14> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    | |   `-RecoveryExpr 0x14a923058 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14a923020 <col:30> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x14a9230e8 <col:44> 'struct fib_nh_exception *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14a9230c8 <col:44> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | |-BinaryOperator 0x14a9231c8 <line:25:7, col:45> 'struct fib_nh_exception *' contains-errors '='
+    | | |-DeclRefExpr 0x14a923100 <col:7> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | `-CallExpr 0x14a9231a0 <col:14, col:45> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14a923120 <col:14> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    | |   `-RecoveryExpr 0x14a923178 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14a923140 <col:30> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | `-CompoundStmt 0x14a9232e8 <col:48, line:29:2>
+    |   |-IfStmt 0x14a923290 <line:26:3, line:27:4>
+    |   | |-BinaryOperator 0x14a923268 <line:26:7, col:27> 'int' contains-errors '=='
+    |   | | |-RecoveryExpr 0x14a923220 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x14a9231e8 <col:7> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | | `-RecoveryExpr 0x14a923248 <col:27> '<dependent type>' contains-errors lvalue
+    |   | `-BreakStmt 0x14a923288 <line:27:4>
+    |   `-UnaryOperator 0x14a9232d0 <line:28:3, col:8> 'int' postfix '++'
+    |     `-DeclRefExpr 0x14a9232b0 <col:3> 'int' lvalue Var 0x14a028370 'depth' 'int'
+    |-IfStmt 0x14c0095c0 <line:31:2, line:74:2> has_else
+    | |-ImplicitCastExpr 0x14a923360 <line:31:6> 'struct fib_nh_exception *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14a923340 <col:6> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | |-CompoundStmt 0x14c0082d8 <col:12, line:45:2>
+    | | |-IfStmt 0x14a923438 <line:32:3, line:33:20>
+    | | | |-RecoveryExpr 0x14a923378 <line:32:7> '<dependent type>' contains-errors lvalue
+    | | | `-BinaryOperator 0x14a923418 <line:33:4, col:20> '<dependent type>' contains-errors '='
+    | | |   |-RecoveryExpr 0x14a9233d0 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x14a923398 <col:4> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | |   `-RecoveryExpr 0x14a9233f8 <col:20> '<dependent type>' contains-errors lvalue
+    | | |-IfStmt 0x14a923790 <line:34:3, line:37:3>
+    | | | |-RecoveryExpr 0x14a923458 <line:34:7> '<dependent type>' contains-errors lvalue
+    | | | `-CompoundStmt 0x14a923770 <col:13, line:37:3>
+    | | |   |-BinaryOperator 0x14a9234f8 <line:35:4, col:22> '<dependent type>' contains-errors '='
+    | | |   | |-RecoveryExpr 0x14a9234b0 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    | | |   | | `-DeclRefExpr 0x14a923478 <col:4> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | |   | `-RecoveryExpr 0x14a9234d8 <col:22> '<dependent type>' contains-errors lvalue
+    | | |   `-BinaryOperator 0x14a923750 <line:36:4, col:41> '<dependent type>' contains-errors '='
+    | | |     |-RecoveryExpr 0x14a923550 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    | | |     | `-DeclRefExpr 0x14a923518 <col:4> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | |     `-CallExpr 0x14a923708 <col:25, col:41> 'int'
+    | | |       |-ImplicitCastExpr 0x14a9236f0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    | | |       | `-DeclRefExpr 0x14a923658 <col:25> 'int ()' Function 0x14a9235a0 'max' 'int ()'
+    | | |       |-IntegerLiteral 0x14a923678 <col:29> 'unsigned long' 1
+    | | |       `-ImplicitCastExpr 0x14a923738 <col:34> 'unsigned long' <LValueToRValue>
+    | | |         `-DeclRefExpr 0x14a923698 <col:34> 'unsigned long' lvalue ParmVar 0x14a027a80 'expires' 'unsigned long'
+    | | |-BinaryOperator 0x14a923878 <line:39:3, col:44> 'struct rtable *' contains-errors '='
+    | | | |-DeclRefExpr 0x14a9237b0 <col:3> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | | | `-CallExpr 0x14a923850 <col:8, col:44> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x14a9237d0 <col:8> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    | | |   `-RecoveryExpr 0x14a923828 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14a9237f0 <col:24> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | |-IfStmt 0x14a923a88 <line:40:3, line:41:33>
+    | | | |-ImplicitCastExpr 0x14a9238b8 <line:40:7> 'struct rtable *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14a923898 <col:7> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | | | `-CallExpr 0x14a923a28 <line:41:4, col:33> 'int'
+    | | |   |-ImplicitCastExpr 0x14a923a10 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x14a9239b0 <col:4> 'int ()' Function 0x14a9238f8 'fill_route_from_fnhe' 'int ()'
+    | | |   |-ImplicitCastExpr 0x14a923a58 <col:25> 'struct rtable *' <LValueToRValue>
+    | | |   | `-DeclRefExpr 0x14a9239d0 <col:25> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | | |   `-ImplicitCastExpr 0x14a923a70 <col:29> 'struct fib_nh_exception *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x14a9239f0 <col:29> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | |-BinaryOperator 0x14a923b70 <line:42:3, col:45> 'struct rtable *' contains-errors '='
+    | | | |-DeclRefExpr 0x14a923aa8 <col:3> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | | | `-CallExpr 0x14a923b48 <col:8, col:45> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x14a923ac8 <col:8> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    | | |   `-RecoveryExpr 0x14a923b20 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14a923ae8 <col:24> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | | `-IfStmt 0x14c0082b8 <line:43:3, line:44:33>
+    | |   |-ImplicitCastExpr 0x14a923bb0 <line:43:7> 'struct rtable *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x14a923b90 <col:7> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | |   `-CallExpr 0x14c008258 <line:44:4, col:33> 'int'
+    | |     |-ImplicitCastExpr 0x14c008240 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x14a923bc8 <col:4> 'int ()' Function 0x14a9238f8 'fill_route_from_fnhe' 'int ()'
+    | |     |-ImplicitCastExpr 0x14c008288 <col:25> 'struct rtable *' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x14c008200 <col:25> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    | |     `-ImplicitCastExpr 0x14c0082a0 <col:29> 'struct fib_nh_exception *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x14c008220 <col:29> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    | `-CompoundStmt 0x14c009568 <line:45:9, line:74:2>
+    |   |-IfStmt 0x14c008838 <line:46:3, line:55:3> has_else
+    |   | |-RecoveryExpr 0x14c008338 <line:46:7, col:15> '_Bool' contains-errors
+    |   | |-BinaryOperator 0x14c008508 <line:47:4, col:27> 'struct fib_nh_exception *' '='
+    |   | | |-DeclRefExpr 0x14c008358 <col:4> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | | `-ImplicitCastExpr 0x14c0084f0 <col:11, col:27> 'struct fib_nh_exception *' <IntegralToPointer>
+    |   | |   `-CallExpr 0x14c0084b0 <col:11, col:27> 'int'
+    |   | |     |-ImplicitCastExpr 0x14c008498 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | |     | `-DeclRefExpr 0x14c008458 <col:11> 'int ()' Function 0x14c0083a0 'fnhe_oldest' 'int ()'
+    |   | |     `-ImplicitCastExpr 0x14c0084d8 <col:23> 'struct fnhe_hash_bucket *' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x14c008478 <col:23> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    |   | `-CompoundStmt 0x14c008810 <line:48:8, line:55:3>
+    |   |   |-IfStmt 0x14c008640 <line:50:4, line:51:10>
+    |   |   | |-UnaryOperator 0x14c008610 <line:50:8, col:9> 'int' prefix '!' cannot overflow
+    |   |   | | `-ImplicitCastExpr 0x14c0085f8 <col:9> 'struct fib_nh_exception *' <LValueToRValue>
+    |   |   | |   `-DeclRefExpr 0x14c0085d8 <col:9> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   |   | `-GotoStmt 0x14c008628 <line:51:5, col:10> 'out_unlock' 0x14a922c50
+    |   |   |-BinaryOperator 0x14c008720 <line:53:4, col:28> '<dependent type>' contains-errors '='
+    |   |   | |-RecoveryExpr 0x14c008698 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x14c008660 <col:4> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   |   | `-RecoveryExpr 0x14c0086f8 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x14c0086c0 <col:22> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    |   |   `-CallExpr 0x14c0087e0 <line:54:4, col:40> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x14c008740 <col:4> 'int ()' Function 0x14a922d00 'rcu_assign_pointer' 'int ()'
+    |   |     |-RecoveryExpr 0x14c008798 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |   |     | `-DeclRefExpr 0x14c008760 <col:23> 'struct fnhe_hash_bucket *' lvalue Var 0x14a027e28 'hash' 'struct fnhe_hash_bucket *'
+    |   |     `-DeclRefExpr 0x14c0087c0 <col:36> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   |-BinaryOperator 0x14c008b78 <line:56:3, col:52> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14c0088a0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14c008868 <col:3> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | `-CallExpr 0x14c008b50 <col:22, col:52> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14c0089a8 <col:22> 'int ()' Function 0x14c0088f0 'fnhe_genid' 'int ()'
+    |   |   `-CallExpr 0x14c008b28 <col:33, col:51> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x14c008aa8 <col:33> 'int ()' Function 0x14c0089f0 'dev_net' 'int ()'
+    |   |     `-RecoveryExpr 0x14c008b00 <col:41, col:45> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x14c008ac8 <col:41> 'struct fib_nh *' lvalue ParmVar 0x14a00e848 'nh' 'struct fib_nh *'
+    |   |-BinaryOperator 0x14c008c18 <line:57:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14c008bd0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14c008b98 <col:3> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | `-RecoveryExpr 0x14c008bf8 <col:22> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14c008cb8 <line:58:3, col:19> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14c008c70 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14c008c38 <col:3> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | `-RecoveryExpr 0x14c008c98 <col:19> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14c008d58 <line:59:3, col:21> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14c008d10 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14c008cd8 <col:3> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | `-RecoveryExpr 0x14c008d38 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14c008df8 <line:60:3, col:24> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14c008db0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14c008d78 <col:3> 'struct fib_nh_exception *' lvalue Var 0x14a028028 'fnhe' 'struct fib_nh_exception *'
+    |   | `-DeclRefExpr 0x14c008dd8 <col:24> 'unsigned long' lvalue ParmVar 0x14a027a80 'expires' 'unsigned long'
+    |   |-BinaryOperator 0x14c008ee0 <line:63:3, col:40> 'struct rtable *' contains-errors '='
+    |   | |-DeclRefExpr 0x14c008e18 <col:3> 'struct rtable *' lvalue Var 0x14a028228 'rt' 'struct rtable *'
+    |   | `-CallExpr 0x14c008eb8 <col:8, col:40> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14c008e38 <col:8> 'int ()' Function 0x14a028670 'rcu_dereference' 'int ()'
+    |   |   `-RecoveryExpr 0x14c008e90 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14c008e58 <col:24> 'struct fib_nh *' lvalue ParmVar 0x14a00e848 'nh' 'struct fib_nh *'
+    |   |-CallExpr 0x14c009118 <line:67:3, col:26> 'int'
+    |   | |-ImplicitCastExpr 0x14c009100 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14c0090c0 <col:3> 'int ()' Function 0x14c009008 'for_each_possible_cpu' 'int ()'
+    |   | `-ImplicitCastExpr 0x14c009140 <col:25> 'unsigned int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14c0090e0 <col:25> 'unsigned int' lvalue Var 0x14a0282d8 'i' 'unsigned int'
+    |   `-CompoundStmt 0x14c009550 <col:28, line:73:3>
+    |     `-DeclStmt 0x14c009268 <line:68:4, col:24>
+    |       `-VarDecl 0x14c009200 <col:4, col:18> col:18 invalid __rcu 'struct rtable'
+    `-LabelStmt 0x14c009758 <line:78:1, col:11> 'out_unlock'
+      `-NullStmt 0x14c009750 <col:11>

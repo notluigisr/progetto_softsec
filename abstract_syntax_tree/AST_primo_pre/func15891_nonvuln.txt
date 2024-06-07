@@ -1,0 +1,40 @@
+`-FunctionDecl 0x14a008348  line:1:12 bond_neigh_setup 'int (struct net_device *, struct neigh_parms *)' static
+  |-ParmVarDecl 0x149928648 <col:29, col:48> col:48 used dev 'struct net_device *'
+  |-ParmVarDecl 0x14a008228 <col:53, col:73> col:73 used parms 'struct neigh_parms *'
+  `-CompoundStmt 0x14a008fb8 <line:2:1, line:13:1>
+    |-DeclStmt 0x14a008848 <line:3:2, col:41>
+    | |-RecordDecl 0x14a008448 <col:2, col:9> col:9 struct bonding
+    | `-VarDecl 0x14a0085b8 <col:2, col:40> col:18 used bond 'struct bonding *' cinit
+    |   `-ImplicitCastExpr 0x14a008818 <col:25, col:40> 'struct bonding *' <IntegralToPointer>
+    |     `-CallExpr 0x14a0087d8 <col:25, col:40> 'int'
+    |       |-ImplicitCastExpr 0x14a0087c0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14a008750 <col:25> 'int ()' Function 0x14a008698 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x14a008800 <col:37> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14a008770 <col:37> 'struct net_device *' lvalue ParmVar 0x149928648 'dev' 'struct net_device *'
+    |-DeclStmt 0x14a008aa8 <line:4:2, col:41>
+    | |-RecordDecl 0x14a008860 <col:2, col:9> col:9 struct slave
+    | `-VarDecl 0x14a0089c8 <col:2, col:30> col:16 used slave 'struct slave *' cinit
+    |   `-RecoveryExpr 0x14a008a68 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14a008a30 <col:24> 'struct bonding *' lvalue Var 0x14a0085b8 'bond' 'struct bonding *'
+    |-IfStmt 0x14a008f68 <line:6:2, line:11:2>
+    | |-ImplicitCastExpr 0x14a008ae0 <line:6:6> 'struct slave *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x14a008ac0 <col:6> 'struct slave *' contains-errors lvalue Var 0x14a0089c8 'slave' 'struct slave *'
+    | `-CompoundStmt 0x14a008f48 <col:13, line:11:2>
+    |   |-DeclStmt 0x14a008d90 <line:7:3, line:8:28>
+    |   | |-RecordDecl 0x14a008af8 <line:7:9, col:16> col:16 struct net_device_ops
+    |   | `-VarDecl 0x14a008c68 <col:3, line:8:18> line:7:32 used slave_ops 'const struct net_device_ops *' cinit
+    |   |   `-CXXDependentScopeMemberExpr 0x14a008d30 <line:8:6, col:18> '<dependent type>' contains-errors lvalue ->netdev_ops
+    |   |     `-RecoveryExpr 0x14a008d08 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x14a008cd0 <col:6> 'struct slave *' contains-errors lvalue Var 0x14a0089c8 'slave' 'struct slave *'
+    |   `-IfStmt 0x14a008f28 <line:9:3, line:10:55>
+    |     |-RecoveryExpr 0x14a008de0 <line:9:7, col:18> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x14a008da8 <col:7> 'const struct net_device_ops *' contains-errors lvalue Var 0x14a008c68 'slave_ops' 'const struct net_device_ops *'
+    |     `-ReturnStmt 0x14a008f18 <line:10:4, col:55>
+    |       `-CallExpr 0x14a008ee8 <col:11, col:55> '<dependent type>' contains-errors
+    |         |-RecoveryExpr 0x14a008e40 <col:11, col:22> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x14a008e08 <col:11> 'const struct net_device_ops *' contains-errors lvalue Var 0x14a008c68 'slave_ops' 'const struct net_device_ops *'
+    |         |-RecoveryExpr 0x14a008ea0 <col:38, col:45> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x14a008e68 <col:38> 'struct slave *' contains-errors lvalue Var 0x14a0089c8 'slave' 'struct slave *'
+    |         `-DeclRefExpr 0x14a008ec8 <col:50> 'struct neigh_parms *' lvalue ParmVar 0x14a008228 'parms' 'struct neigh_parms *'
+    `-ReturnStmt 0x14a008fa8 <line:12:2, col:9>
+      `-IntegerLiteral 0x14a008f88 <col:9> 'int' 0

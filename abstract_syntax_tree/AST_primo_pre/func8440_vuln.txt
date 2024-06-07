@@ -1,0 +1,124 @@
+`-FunctionDecl 0x144928750  line:1:13 sas_discover_domain 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x144928648 <col:33, col:53> col:53 used work 'struct work_struct *'
+  `-CompoundStmt 0x1449445e8 <line:2:1, line:57:1>
+    |-DeclStmt 0x144940c38 <line:3:2, col:27>
+    | |-RecordDecl 0x144940a48 <col:2, col:9> col:9 struct domain_device
+    | `-VarDecl 0x144940bb8 <col:2, col:24> col:24 used dev 'struct domain_device *'
+    |-DeclStmt 0x144940cf0 <line:4:2, col:15>
+    | `-VarDecl 0x144940c68 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x144940cd0 <col:14> 'int' 0
+    |-DeclStmt 0x144941108 <line:5:2, col:63>
+    | |-RecordDecl 0x144940d08 <col:2, col:9> col:9 struct sas_discovery_event
+    | `-VarDecl 0x144940e78 <col:2, col:62> col:30 used ev 'struct sas_discovery_event *' cinit
+    |   `-ImplicitCastExpr 0x1449410d8 <col:35, col:62> 'struct sas_discovery_event *' <IntegralToPointer>
+    |     `-CallExpr 0x144941098 <col:35, col:62> 'int'
+    |       |-ImplicitCastExpr 0x144941080 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x144941010 <col:35> 'int ()' Function 0x144940f58 'to_sas_discovery_event' 'int ()'
+    |       `-ImplicitCastExpr 0x1449410c0 <col:58> 'struct work_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x144941030 <col:58> 'struct work_struct *' lvalue ParmVar 0x144928648 'work' 'struct work_struct *'
+    |-DeclStmt 0x144941368 <line:6:2, col:38>
+    | |-RecordDecl 0x144941120 <col:2, col:9> col:9 struct asd_sas_port
+    | `-VarDecl 0x144941288 <col:2, col:34> col:23 used port 'struct asd_sas_port *' cinit
+    |   `-RecoveryExpr 0x144941328 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1449412f0 <col:30> 'struct sas_discovery_event *' lvalue Var 0x144940e78 'ev' 'struct sas_discovery_event *'
+    |-CallExpr 0x1449415a8 <line:8:2, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x144941460 <col:2> 'int ()' Function 0x1449413a8 'clear_bit' 'int ()'
+    | |-RecoveryExpr 0x144941588 <col:12> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x144941540 <col:35, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x1449414f8 <col:36, col:47> '<dependent type>' contains-errors lvalue .pending
+    |     `-RecoveryExpr 0x1449414d0 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x144941498 <col:36> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+    |-IfStmt 0x144941648 <line:10:2, line:11:3>
+    | |-RecoveryExpr 0x144941610 <line:10:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1449415d8 <col:6> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+    | `-ReturnStmt 0x144941638 <line:11:3>
+    |-BinaryOperator 0x144941800 <line:13:2, col:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x144941668 <col:2> 'int' lvalue Var 0x144940c68 'error' 'int'
+    | `-CallExpr 0x1449417c0 <col:10, col:34> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x1449417a8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x144941768 <col:10> 'int ()' Function 0x1449416b0 'sas_get_port_device' 'int ()'
+    |   `-ImplicitCastExpr 0x1449417e8 <col:30> 'struct asd_sas_port *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x144941788 <col:30> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+    |-IfStmt 0x144941868 <line:14:2, line:15:3>
+    | |-ImplicitCastExpr 0x144941840 <line:14:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x144941820 <col:6> 'int' lvalue Var 0x144940c68 'error' 'int'
+    | `-ReturnStmt 0x144941858 <line:15:3>
+    |-BinaryOperator 0x144941908 <line:16:2, col:14> 'struct domain_device *' contains-errors '='
+    | |-DeclRefExpr 0x144941888 <col:2> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+    | `-RecoveryExpr 0x1449418e0 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1449418a8 <col:8> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+    |-CallExpr 0x1449430b0 <line:18:2, line:19:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x144942e10 <line:18:2> 'int ()' Function 0x144941950 'SAS_DPRINTK' 'int ()'
+    | |-StringLiteral 0x144942e70 <col:14> 'char[4]' lvalue "STR"
+    | |-RecoveryExpr 0x144942ec8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x144942e90 <col:21> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+    | `-CallExpr 0x144943088 <line:19:7, col:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144942fd0 <col:7> 'int ()' Function 0x144942f18 'task_pid_nr' 'int ()'
+    |   `-RecoveryExpr 0x144943068 <col:19> '<dependent type>' contains-errors lvalue
+    |-SwitchStmt 0x144943160 <line:21:2, line:42:2>
+    | |-ImplicitCastExpr 0x144943148 <line:21:10, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x144943120 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1449430e8 <col:10> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+    | `-CompoundStmt 0x144943720 <col:25, line:42:2>
+    |   |-BinaryOperator 0x144943338 <line:23:3, col:35> 'int' '='
+    |   | |-DeclRefExpr 0x1449431a0 <col:3> 'int' lvalue Var 0x144940c68 'error' 'int'
+    |   | `-CallExpr 0x1449432f8 <col:11, col:35> 'int'
+    |   |   |-ImplicitCastExpr 0x1449432e0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1449432a0 <col:11> 'int ()' Function 0x1449431e8 'sas_discover_end_dev' 'int ()'
+    |   |   `-ImplicitCastExpr 0x144943320 <col:32> 'struct domain_device *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1449432c0 <col:32> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+    |   |-BreakStmt 0x144943358 <line:24:3>
+    |   |-BinaryOperator 0x144943528 <line:27:3, col:41> 'int' '='
+    |   | |-DeclRefExpr 0x144943390 <col:3> 'int' lvalue Var 0x144940c68 'error' 'int'
+    |   | `-CallExpr 0x1449434e8 <col:11, col:41> 'int'
+    |   |   |-ImplicitCastExpr 0x1449434d0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x144943490 <col:11> 'int ()' Function 0x1449433d8 'sas_discover_root_expander' 'int ()'
+    |   |   `-ImplicitCastExpr 0x144943510 <col:38> 'struct domain_device *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1449434b0 <col:38> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+    |   |-BreakStmt 0x144943548 <line:28:3>
+    |   |-CallExpr 0x1449435c0 <line:35:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x1449435a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x144943568 <col:3> 'int ()' Function 0x144941950 'SAS_DPRINTK' 'int ()'
+    |   | `-ImplicitCastExpr 0x1449435e8 <col:15> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x144943588 <col:15> 'char[4]' lvalue "STR"
+    |   |-DefaultStmt 0x144943628 <line:38:2, col:9>
+    |   | `-NullStmt 0x144943620 <col:9>
+    |   |-CallExpr 0x1449436e8 <line:40:3, col:35> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x144943648 <col:3> 'int ()' Function 0x144941950 'SAS_DPRINTK' 'int ()'
+    |   | |-StringLiteral 0x144943668 <col:15> 'char[4]' lvalue "STR"
+    |   | `-RecoveryExpr 0x1449436c0 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x144943688 <col:22> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+    |   `-BreakStmt 0x144943718 <line:41:3>
+    `-IfStmt 0x1449444e8 <line:44:2, line:53:2>
+      |-ImplicitCastExpr 0x144943790 <line:44:6> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x144943770 <col:6> 'int' lvalue Var 0x144940c68 'error' 'int'
+      `-CompoundStmt 0x1449444a8 <col:13, line:53:2>
+        |-CallExpr 0x144943908 <line:45:3, col:26> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144943888 <col:3> 'int ()' Function 0x1449437d0 'sas_rphy_free' 'int ()'
+        | `-RecoveryExpr 0x1449438e0 <col:17, col:22> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x1449438a8 <col:17> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+        |-CallExpr 0x144943aa8 <line:46:3, col:38> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144943a10 <col:3> 'int ()' Function 0x144943958 'list_del_init' 'int ()'
+        | `-UnaryOperator 0x144943a90 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x144943a68 <col:18, col:23> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144943a30 <col:18> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+        |-CallExpr 0x144943c48 <line:47:3, col:37> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144943bb0 <col:3> 'int ()' Function 0x144943af8 'spin_lock_irq' 'int ()'
+        | `-UnaryOperator 0x144943c30 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x144943c08 <col:18, col:24> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144943bd0 <col:18> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+        |-CallExpr 0x144943d08 <line:48:3, col:36> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144943c70 <col:3> 'int ()' Function 0x144943958 'list_del_init' 'int ()'
+        | `-UnaryOperator 0x144943cf0 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x144943cc8 <col:18, col:23> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144943c90 <col:18> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'
+        |-CallExpr 0x1449442a8 <line:49:3, col:39> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144944210 <col:3> 'int ()' Function 0x144943d58 'spin_unlock_irq' 'int ()'
+        | `-UnaryOperator 0x144944290 <col:19, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x144944268 <col:20, col:26> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144944230 <col:20> 'struct asd_sas_port *' contains-errors lvalue Var 0x144941288 'port' 'struct asd_sas_port *'
+        `-CallExpr 0x144944408 <line:51:3, col:21> 'int'
+          |-ImplicitCastExpr 0x1449443f0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x1449443b0 <col:3> 'int ()' Function 0x1449442f8 'sas_put_device' 'int ()'
+          `-ImplicitCastExpr 0x144944430 <col:18> 'struct domain_device *' <LValueToRValue>
+            `-DeclRefExpr 0x1449443d0 <col:18> 'struct domain_device *' lvalue Var 0x144940bb8 'dev' 'struct domain_device *'

@@ -1,0 +1,76 @@
+`-FunctionDecl 0x122027728  line:1:27 invalid _sctp_make_chunk 'struct sctp_chunk *(const struct sctp_association *, int, int, int, int)' static
+  |-ParmVarDecl 0x12200e2e8 <col:44, col:75> col:75 used asoc 'const struct sctp_association *'
+  |-ParmVarDecl 0x12200e380 <line:2:9, col:14> col:14 invalid type 'int'
+  |-ParmVarDecl 0x122027400 <col:20, col:25> col:25 invalid flags 'int'
+  |-ParmVarDecl 0x122027480 <col:32, col:36> col:36 used paylen 'int'
+  |-ParmVarDecl 0x122027500 <line:3:9, col:15> col:15 invalid gfp 'int'
+  `-CompoundStmt 0x1220298b8 <line:4:1, line:38:1>
+    |-DeclStmt 0x1220279e8 <line:5:2, col:33>
+    | |-RecordDecl 0x1220277f8 <col:2, col:9> col:9 struct sctp_chunkhdr
+    | `-VarDecl 0x122027968 <col:2, col:24> col:24 used chunk_hdr 'struct sctp_chunkhdr *'
+    |-DeclStmt 0x122027af0 <line:6:2, col:27>
+    | `-VarDecl 0x122027a88 <col:2, col:21> col:21 used retval 'struct sctp_chunk *'
+    |-DeclStmt 0x122027cf8 <line:7:2, col:21>
+    | |-RecordDecl 0x122027b08 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x122027c78 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x122027ef8 <line:8:2, col:17>
+    | |-RecordDecl 0x122027d10 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x122027e78 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-IfStmt 0x122028318 <line:12:2, line:13:8>
+    | |-UnaryOperator 0x122028298 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x122028280 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x122028260 <col:7> 'struct sk_buff *' lvalue Var 0x122027c78 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x122028300 <line:13:3, col:8> 'nodata' 0x1220282b0
+    |-BinaryOperator 0x122028be8 <line:17:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x122028ba0 <col:2, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x122028b68 <col:2> 'struct sctp_chunkhdr *' lvalue Var 0x122027968 'chunk_hdr' 'struct sctp_chunkhdr *'
+    | `-RecoveryExpr 0x122028bc8 <col:22> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122028c88 <line:18:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x122028c40 <col:2, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x122028c08 <col:2> 'struct sctp_chunkhdr *' lvalue Var 0x122027968 'chunk_hdr' 'struct sctp_chunkhdr *'
+    | `-RecoveryExpr 0x122028c68 <col:22> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122029018 <line:21:2, col:30> 'struct sock *' contains-errors '='
+    | |-DeclRefExpr 0x122028e78 <col:2> 'struct sock *' lvalue Var 0x122027e78 'sk' 'struct sock *'
+    | `-ConditionalOperator 0x122028fe8 <col:7, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122028e98 <col:7> 'const struct sctp_association *' lvalue ParmVar 0x12200e2e8 'asoc' 'const struct sctp_association *'
+    |   |-CXXDependentScopeMemberExpr 0x122028f18 <col:14, col:25> '<dependent type>' contains-errors lvalue .sk
+    |   | `-RecoveryExpr 0x122028ef0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x122028eb8 <col:14> 'const struct sctp_association *' lvalue ParmVar 0x12200e2e8 'asoc' 'const struct sctp_association *'
+    |   `-RecoveryExpr 0x122028fc8 <col:30> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122029218 <line:22:2, col:43> 'struct sctp_chunk *' contains-errors '='
+    | |-DeclRefExpr 0x122029038 <col:2> 'struct sctp_chunk *' lvalue Var 0x122027a88 'retval' 'struct sctp_chunk *'
+    | `-CallExpr 0x1220291d8 <col:11, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122029138 <col:11> 'int ()' Function 0x122029080 'sctp_chunkify' 'int ()'
+    |   |-DeclRefExpr 0x122029158 <col:25> 'struct sk_buff *' lvalue Var 0x122027c78 'skb' 'struct sk_buff *'
+    |   |-DeclRefExpr 0x122029178 <col:30> 'const struct sctp_association *' lvalue ParmVar 0x12200e2e8 'asoc' 'const struct sctp_association *'
+    |   |-DeclRefExpr 0x122029198 <col:36> 'struct sock *' lvalue Var 0x122027e78 'sk' 'struct sock *'
+    |   `-RecoveryExpr 0x1220291b8 <col:40> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122029470 <line:23:2, line:26:2>
+    | |-UnaryOperator 0x122029270 <line:23:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x122029258 <col:7> 'struct sctp_chunk *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x122029238 <col:7> 'struct sctp_chunk *' lvalue Var 0x122027a88 'retval' 'struct sctp_chunk *'
+    | `-CompoundStmt 0x122029450 <col:15, line:26:2>
+    |   |-CallExpr 0x1220293f8 <line:24:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x1220293e0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x122029368 <col:3> 'int ()' Function 0x1220292b0 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x122029420 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x122029388 <col:13> 'struct sk_buff *' lvalue Var 0x122027c78 'skb' 'struct sk_buff *'
+    |   `-GotoStmt 0x122029438 <line:25:3, col:8> 'nodata' 0x1220282b0
+    |-BinaryOperator 0x122029510 <line:28:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1220294c8 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x122029490 <col:2> 'struct sctp_chunk *' lvalue Var 0x122027a88 'retval' 'struct sctp_chunk *'
+    | `-DeclRefExpr 0x1220294f0 <col:22> 'struct sctp_chunkhdr *' lvalue Var 0x122027968 'chunk_hdr' 'struct sctp_chunkhdr *'
+    |-IfStmt 0x122029828 <line:32:2, line:33:18>
+    | |-CallExpr 0x122029758 <line:32:6, col:35> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1220296f8 <col:6> 'int ()' Function 0x122029640 'sctp_auth_send_cid' 'int ()'
+    | | |-RecoveryExpr 0x122029718 <col:25> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x122029738 <col:31> 'const struct sctp_association *' lvalue ParmVar 0x12200e2e8 'asoc' 'const struct sctp_association *'
+    | `-BinaryOperator 0x122029808 <line:33:3, col:18> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x1220297c0 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x122029788 <col:3> 'struct sctp_chunk *' lvalue Var 0x122027a88 'retval' 'struct sctp_chunk *'
+    |   `-IntegerLiteral 0x1220297e8 <col:18> 'int' 1
+    |-ReturnStmt 0x122029880 <line:35:2, col:9>
+    | `-ImplicitCastExpr 0x122029868 <col:9> 'struct sctp_chunk *' <LValueToRValue>
+    |   `-DeclRefExpr 0x122029848 <col:9> 'struct sctp_chunk *' lvalue Var 0x122027a88 'retval' 'struct sctp_chunk *'
+    `-LabelStmt 0x122029898 <line:36:1, col:7> 'nodata'
+      `-NullStmt 0x122029890 <col:7>

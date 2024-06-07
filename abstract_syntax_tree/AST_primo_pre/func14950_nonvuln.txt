@@ -1,0 +1,33 @@
+`-FunctionDecl 0x150808ee8  line:1:13 invalid io_wq_for_each_worker 'int (struct io_wqe *, int (*)(int *), void *)' static
+  |-ParmVarDecl 0x14780e268 <col:35, col:50> col:50 used wqe 'struct io_wqe *'
+  |-ParmVarDecl 0x150808d20 <line:2:7, <invalid sloc>> col:7 referenced invalid bool 'int (*)(int *)'
+  |-ParmVarDecl 0x150808da0 <line:3:7, col:13> col:13 used data 'void *'
+  `-CompoundStmt 0x147123ce8 <line:4:1, line:20:1>
+    |-DeclStmt 0x150809198 <line:5:2, col:26>
+    | |-RecordDecl 0x150808fa8 <col:2, col:9> col:9 struct io_worker
+    | `-VarDecl 0x150809118 <col:2, col:20> col:20 used worker 'struct io_worker *'
+    |-ImplicitCastExpr 0x1508091f8 <line:6:2> '<dependent type>' contains-errors <LValueToRValue>
+    | `-RecoveryExpr 0x1508091d0 <col:2> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1508091b0 <col:2> 'int (*)(int *)' lvalue ParmVar 0x150808d20 'bool' 'int (*)(int *)'
+    |-CallExpr 0x1508094a8 <line:8:2, col:58> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150809380 <col:2> 'int ()' Function 0x1508092c8 'list_for_each_entry_rcu' 'int ()'
+    | |-DeclRefExpr 0x1508093a0 <col:26> 'struct io_worker *' lvalue Var 0x150809118 'worker' 'struct io_worker *'
+    | |-UnaryOperator 0x150809420 <col:34, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1508093f8 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1508093c0 <col:35> 'struct io_wqe *' lvalue ParmVar 0x14780e268 'wqe' 'struct io_wqe *'
+    | `-RecoveryExpr 0x150809488 <col:50> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x147123c88 <col:60, line:17:2>
+    | `-IfStmt 0x147123c68 <line:9:3, line:16:3>
+    |   |-CallExpr 0x150809648 <line:9:7, col:27> 'int'
+    |   | |-ImplicitCastExpr 0x150809630 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1508095c0 <col:7> 'int ()' Function 0x150809508 'io_worker_get' 'int ()'
+    |   | `-ImplicitCastExpr 0x150809670 <col:21> 'struct io_worker *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1508095e0 <col:21> 'struct io_worker *' lvalue Var 0x150809118 'worker' 'struct io_worker *'
+    |   `-CompoundStmt 0x147123c50 <col:30, line:16:3>
+    |     `-CallExpr 0x1508099d8 <line:13:4, col:28> 'int'
+    |       |-ImplicitCastExpr 0x1508099c0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x150809980 <col:4> 'int ()' Function 0x1508098c8 'io_worker_release' 'int ()'
+    |       `-ImplicitCastExpr 0x147123c00 <col:22> 'struct io_worker *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1508099a0 <col:22> 'struct io_worker *' lvalue Var 0x150809118 'worker' 'struct io_worker *'
+    `-ReturnStmt 0x147123cd8 <line:19:2, col:9>
+      `-RecoveryExpr 0x147123cb8 <col:9> '<dependent type>' contains-errors lvalue

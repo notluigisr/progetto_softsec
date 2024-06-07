@@ -1,0 +1,87 @@
+`-FunctionDecl 0x133140c38  line:1:5 invalid samdb_is_rodc 'int (struct ldb_context *, const struct GUID *, int *)'
+  |-ParmVarDecl 0x133128648 <col:19, col:39> col:39 used sam_ctx 'struct ldb_context *'
+  |-ParmVarDecl 0x133140a28 <col:48, col:67> col:67 used objectGUID 'const struct GUID *'
+  |-ParmVarDecl 0x133140af8 <col:79, col:85> col:85 invalid is_rodc 'int *'
+  `-CompoundStmt 0x133808200 <line:2:1, line:38:1>
+    |-DeclStmt 0x133140ee8 <line:4:2, col:26>
+    | |-RecordDecl 0x133140cf8 <col:2, col:9> col:9 struct ldb_dn
+    | `-VarDecl 0x133140e68 <col:2, col:17> col:17 used config_dn 'struct ldb_dn *'
+    |-DeclStmt 0x133141038 <line:5:2, col:39>
+    | `-VarDecl 0x133140f58 <col:2, col:20> col:14 used attrs 'const char *[]'
+    |-DeclStmt 0x1331410d0 <line:6:2, col:9>
+    | `-VarDecl 0x133141068 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x1331412d8 <line:7:2, col:24>
+    | |-RecordDecl 0x1331410e8 <col:2, col:9> col:9 struct ldb_result
+    | `-VarDecl 0x133141258 <col:2, col:21> col:21 used res 'struct ldb_result *'
+    |-BinaryOperator 0x1331416f8 <line:10:2, col:43> 'struct ldb_dn *' '='
+    | |-DeclRefExpr 0x133141548 <col:2> 'struct ldb_dn *' lvalue Var 0x133140e68 'config_dn' 'struct ldb_dn *'
+    | `-ImplicitCastExpr 0x1331416e0 <col:14, col:43> 'struct ldb_dn *' <IntegralToPointer>
+    |   `-CallExpr 0x1331416a0 <col:14, col:43> 'int'
+    |     |-ImplicitCastExpr 0x133141688 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x133141648 <col:14> 'int ()' Function 0x133141590 'ldb_get_config_basedn' 'int ()'
+    |     `-ImplicitCastExpr 0x1331416c8 <col:36> 'struct ldb_context *' <LValueToRValue>
+    |       `-DeclRefExpr 0x133141668 <col:36> 'struct ldb_context *' lvalue ParmVar 0x133128648 'sam_ctx' 'struct ldb_context *'
+    |-IfStmt 0x133142ec8 <line:11:2, line:14:2>
+    | |-UnaryOperator 0x133141750 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x133141738 <col:7> 'struct ldb_dn *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x133141718 <col:7> 'struct ldb_dn *' lvalue Var 0x133140e68 'config_dn' 'struct ldb_dn *'
+    | `-CompoundStmt 0x133142ea8 <col:18, line:14:2>
+    |   |-CallExpr 0x1331418e0 <line:12:3, col:22> 'int'
+    |   | |-ImplicitCastExpr 0x1331418c8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x133141848 <col:3> 'int ()' Function 0x133141790 'talloc_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x133141908 <col:15> 'struct ldb_context *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1331418a8 <col:15> 'struct ldb_context *' lvalue ParmVar 0x133128648 'sam_ctx' 'struct ldb_context *'
+    |   `-ReturnStmt 0x133142e98 <line:13:3, col:27>
+    |     `-CallExpr 0x133142e58 <col:10, col:27> 'int'
+    |       |-ImplicitCastExpr 0x133142e40 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x133142e00 <col:10> 'int ()' Function 0x133141948 'ldb_operr' 'int ()'
+    |       `-ImplicitCastExpr 0x133142e80 <col:20> 'struct ldb_context *' <LValueToRValue>
+    |         `-DeclRefExpr 0x133142e20 <col:20> 'struct ldb_context *' lvalue ParmVar 0x133128648 'sam_ctx' 'struct ldb_context *'
+    |-BinaryOperator 0x133143490 <line:16:2, line:17:67> 'int' contains-errors '='
+    | |-DeclRefExpr 0x133142ee8 <line:16:2> 'int' lvalue Var 0x133141068 'ret' 'int'
+    | `-CallExpr 0x133143428 <col:8, line:17:67> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x133142fe8 <line:16:8> 'int ()' Function 0x133142f30 'dsdb_search' 'int ()'
+    |   |-DeclRefExpr 0x133143008 <col:20> 'struct ldb_context *' lvalue ParmVar 0x133128648 'sam_ctx' 'struct ldb_context *'
+    |   |-RecoveryExpr 0x133143378 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x1331430c0 <col:38, col:39> 'struct ldb_result **' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x133143040 <col:39> 'struct ldb_result *' lvalue Var 0x133141258 'res' 'struct ldb_result *'
+    |   |-DeclRefExpr 0x1331430d8 <col:44> 'struct ldb_dn *' lvalue Var 0x133140e68 'config_dn' 'struct ldb_dn *'
+    |   |-RecoveryExpr 0x133143398 <col:55> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x133143110 <col:74> 'const char *[]' lvalue Var 0x133140f58 'attrs' 'const char *[]'
+    |   |-RecoveryExpr 0x1331433b8 <line:17:6> '<dependent type>' contains-errors lvalue
+    |   |-StringLiteral 0x133143148 <col:28> 'char[4]' lvalue "STR"
+    |   `-CallExpr 0x1331433f8 <col:35, col:66> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x133143248 <col:35> 'int ()' Function 0x133143190 'GUID_string' 'int ()'
+    |     |-RecoveryExpr 0x1331433d8 <col:47> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x133143280 <col:56> 'const struct GUID *' lvalue ParmVar 0x133140a28 'objectGUID' 'const struct GUID *'
+    |-IfStmt 0x133143610 <line:19:2, line:23:2>
+    | |-BinaryOperator 0x133143528 <line:19:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1331434b0 <col:6> 'int' lvalue Var 0x133141068 'ret' 'int'
+    | | `-RecoveryExpr 0x133143508 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x133143600 <col:37, line:23:2>
+    |-IfStmt 0x133143910 <line:25:2, line:31:2>
+    | |-RecoveryExpr 0x133143650 <line:25:6, col:13> '_Bool' contains-errors
+    | `-CompoundStmt 0x1331438f8 <col:26, line:31:2>
+    |   `-ReturnStmt 0x1331438e8 <line:30:3, col:10>
+    |     `-ImplicitCastExpr 0x1331438d0 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1331438b0 <col:10> 'int' lvalue Var 0x133141068 'ret' 'int'
+    |-BinaryOperator 0x133143c10 <line:33:2, col:56> 'int' contains-errors '='
+    | |-DeclRefExpr 0x133143930 <col:2> 'int' lvalue Var 0x133141068 'ret' 'int'
+    | `-CallExpr 0x133143bd8 <col:8, col:56> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x133143a30 <col:8> 'int ()' Function 0x133143978 'ldb_msg_find_attr_as_bool' 'int ()'
+    |   |-ArraySubscriptExpr 0x133143bb8 <col:34, col:45> '<dependent type>' contains-errors lvalue
+    |   | |-ImplicitCastExpr 0x133143ba0 <col:34, col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | `-RecoveryExpr 0x133143a88 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x133143a50 <col:34> 'struct ldb_result *' lvalue Var 0x133141258 'res' 'struct ldb_result *'
+    |   | `-IntegerLiteral 0x133143ab0 <col:44> 'int' 0
+    |   |-StringLiteral 0x133143b08 <col:48> 'char[4]' lvalue "STR"
+    |   `-IntegerLiteral 0x133143b28 <col:55> 'int' 0
+    `-BinaryOperator 0x133143dc0 <line:34:2, col:22> '<dependent type>' contains-errors '='
+      |-UnaryOperator 0x133143d50 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+      | `-ImplicitCastExpr 0x133143d38 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x133143c30 <col:3> '<dependent type>' contains-errors lvalue
+      `-ParenExpr 0x133143da0 <col:13, col:22> 'int'
+        `-BinaryOperator 0x133143d80 <col:14, col:21> 'int' '=='
+          |-ImplicitCastExpr 0x133143d68 <col:14> 'int' <LValueToRValue>
+          | `-DeclRefExpr 0x133143c80 <col:14> 'int' lvalue Var 0x133141068 'ret' 'int'
+          `-IntegerLiteral 0x133143ca0 <col:21> 'int' 1

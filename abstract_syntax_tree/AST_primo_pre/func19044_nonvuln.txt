@@ -1,0 +1,25 @@
+`-FunctionDecl 0x15500e350  line:1:13 virtbt_tx_done 'void (struct virtqueue *)' static
+  |-ParmVarDecl 0x15500e248 <col:28, col:46> col:46 used vq 'struct virtqueue *'
+  `-CompoundStmt 0x155026d60 <line:2:1, line:8:1>
+    |-DeclStmt 0x155026838 <line:3:2, col:21>
+    | |-RecordDecl 0x155026648 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x1550267b8 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x1550268d0 <line:4:2, col:18>
+    | `-VarDecl 0x155026868 <col:2, col:15> col:15 used len 'unsigned int'
+    `-WhileStmt 0x155026d40 <line:6:2, line:7:16>
+      |-ParenExpr 0x155026ba8 <line:6:9, col:43> 'struct sk_buff *'
+      | `-BinaryOperator 0x155026b88 <col:10, col:42> 'struct sk_buff *' '='
+      |   |-DeclRefExpr 0x1550268e8 <col:10> 'struct sk_buff *' lvalue Var 0x1550267b8 'skb' 'struct sk_buff *'
+      |   `-ImplicitCastExpr 0x155026b70 <col:16, col:42> 'struct sk_buff *' <IntegralToPointer>
+      |     `-CallExpr 0x155026b28 <col:16, col:42> 'int'
+      |       |-ImplicitCastExpr 0x155026b10 <col:16> 'int (*)()' <FunctionToPointerDecay>
+      |       | `-DeclRefExpr 0x155026a30 <col:16> 'int ()' Function 0x155026978 'virtqueue_get_buf' 'int ()'
+      |       |-ImplicitCastExpr 0x155026b58 <col:34> 'struct virtqueue *' <LValueToRValue>
+      |       | `-DeclRefExpr 0x155026a50 <col:34> 'struct virtqueue *' lvalue ParmVar 0x15500e248 'vq' 'struct virtqueue *'
+      |       `-UnaryOperator 0x155026ac0 <col:38, col:39> 'unsigned int *' prefix '&' cannot overflow
+      |         `-DeclRefExpr 0x155026a70 <col:39> 'unsigned int' lvalue Var 0x155026868 'len' 'unsigned int'
+      `-CallExpr 0x155026d00 <line:7:3, col:16> 'int'
+        |-ImplicitCastExpr 0x155026ce8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x155026ca8 <col:3> 'int ()' Function 0x155026bf0 'kfree_skb' 'int ()'
+        `-ImplicitCastExpr 0x155026d28 <col:13> 'struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x155026cc8 <col:13> 'struct sk_buff *' lvalue Var 0x1550267b8 'skb' 'struct sk_buff *'

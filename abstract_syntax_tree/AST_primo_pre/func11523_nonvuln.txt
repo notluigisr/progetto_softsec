@@ -1,0 +1,59 @@
+`-FunctionDecl 0x13980ddc8  line:1:2 invalid __releases 'int (int)'
+  |-ParmVarDecl 0x13980dcf0 <col:13, <invalid sloc>> col:16 invalid 'int'
+  `-CompoundStmt 0x13a808fd8 <line:2:1, line:31:1>
+    |-DeclStmt 0x13980e130 <line:3:2, col:39>
+    | |-RecordDecl 0x13980de78 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x13980dfe8 <col:2, col:36> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13980e0d0 <col:31, col:36> '<dependent type>' contains-errors lvalue ->vma
+    |     `-RecoveryExpr 0x13980e0b0 <col:31> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13980e3d0 <line:5:2, col:20> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13980e2a0 <col:2> 'int ()' Function 0x13980e1e8 'get_page' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x13980e388 <col:11, col:16> '<dependent type>' contains-errors lvalue ->page
+    |   `-RecoveryExpr 0x13980e368 <col:11> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x13a808e68 <line:7:2, line:26:2> has_else
+      |-BinaryOperator 0x139827930 <line:7:6, col:34> 'int' contains-errors '&&'
+      | |-RecoveryExpr 0x139827860 <col:6, col:11> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x139827400 <col:6> 'struct vm_area_struct *' contains-errors lvalue Var 0x13980dfe8 'vma' 'struct vm_area_struct *'
+      | `-CXXDependentScopeMemberExpr 0x1398278e8 <col:21, col:34> '<dependent type>' contains-errors lvalue ->page_mkwrite
+      |   `-RecoveryExpr 0x1398278c0 <col:21, col:26> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x139827888 <col:21> 'struct vm_area_struct *' contains-errors lvalue Var 0x13980dfe8 'vma' 'struct vm_area_struct *'
+      |-CompoundStmt 0x13a808c18 <col:48, line:23:2>
+      | |-DeclStmt 0x1398279d0 <line:8:3, col:10>
+      | | `-VarDecl 0x139827968 <col:3, col:7> col:7 used tmp 'int'
+      | |-CallExpr 0x139827cc8 <line:10:3, col:38> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x139827ac8 <col:3> 'int ()' Function 0x139827a10 'pte_unmap_unlock' 'int ()'
+      | | |-CXXDependentScopeMemberExpr 0x139827c18 <col:20, col:25> '<dependent type>' contains-errors lvalue ->pte
+      | | | `-RecoveryExpr 0x139827bf8 <col:20> '<dependent type>' contains-errors lvalue
+      | | `-CXXDependentScopeMemberExpr 0x139827c80 <col:30, col:35> '<dependent type>' contains-errors lvalue ->ptl
+      | |   `-RecoveryExpr 0x139827c60 <col:30> '<dependent type>' contains-errors lvalue
+      | |-BinaryOperator 0x139827f28 <line:11:3, col:28> 'int' contains-errors '='
+      | | |-DeclRefExpr 0x139827cf8 <col:3> 'int' lvalue Var 0x139827968 'tmp' 'int'
+      | | `-CallExpr 0x139827ee8 <col:9, col:28> 'int' contains-errors
+      | |   |-ImplicitCastExpr 0x139827ed0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+      | |   | `-DeclRefExpr 0x139827df8 <col:9> 'int ()' Function 0x139827d40 'do_page_mkwrite' 'int ()'
+      | |   `-ImplicitCastExpr 0x139827f10 <col:25> 'struct vm_area_struct *' contains-errors <LValueToRValue>
+      | |     `-DeclRefExpr 0x139827e78 <col:25> 'struct vm_area_struct *' contains-errors lvalue Var 0x13980dfe8 'vma' 'struct vm_area_struct *'
+      | |-IfStmt 0x1398283c8 <line:12:3, line:16:3>
+      | | |-RecoveryExpr 0x139828108 <line:12:7, line:13:46> '_Bool' contains-errors
+      | | `-CompoundStmt 0x1398283a8 <col:49, line:16:3>
+      | |   |-CallExpr 0x139828338 <line:14:4, col:22> '<dependent type>' contains-errors
+      | |   | |-DeclRefExpr 0x139828208 <col:4> 'int ()' Function 0x139828150 'put_page' 'int ()'
+      | |   | `-CXXDependentScopeMemberExpr 0x1398282f0 <col:13, col:18> '<dependent type>' contains-errors lvalue ->page
+      | |   |   `-RecoveryExpr 0x1398282d0 <col:13> '<dependent type>' contains-errors lvalue
+      | |   `-ReturnStmt 0x139828398 <line:15:4, col:11>
+      | |     `-ImplicitCastExpr 0x139828380 <col:11> 'int' <LValueToRValue>
+      | |       `-DeclRefExpr 0x139828360 <col:11> 'int' lvalue Var 0x139827968 'tmp' 'int'
+      | |-BinaryOperator 0x13a8089f8 <line:17:3, col:33> 'int' contains-errors '='
+      | | |-DeclRefExpr 0x13a808800 <col:3> 'int' lvalue Var 0x139827968 'tmp' 'int'
+      | | `-CallExpr 0x13a8089b8 <col:9, col:33> 'int' contains-errors
+      | |   |-ImplicitCastExpr 0x13a8089a0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+      | |   | `-DeclRefExpr 0x13a808900 <col:9> 'int ()' Function 0x13a808848 'finish_mkwrite_fault' 'int ()'
+      | |   `-ImplicitCastExpr 0x13a8089e0 <col:30> 'struct vm_area_struct *' contains-errors <LValueToRValue>
+      | |     `-DeclRefExpr 0x13a808980 <col:30> 'struct vm_area_struct *' contains-errors lvalue Var 0x13980dfe8 'vma' 'struct vm_area_struct *'
+      | `-IfStmt 0x13a808bf8 <line:18:3, line:22:3>
+      |   |-RecoveryExpr 0x13a808a58 <line:18:7, col:56> '_Bool' contains-errors
+      |   `-CompoundStmt 0x13a808be0 <col:59, line:22:3>
+      |     `-ReturnStmt 0x13a808bd0 <line:21:4, col:11>
+      |       `-ImplicitCastExpr 0x13a808bb8 <col:11> 'int' <LValueToRValue>
+      |         `-DeclRefExpr 0x13a808b98 <col:11> 'int' lvalue Var 0x139827968 'tmp' 'int'
+      `-CompoundStmt 0x13a808e58 <line:23:9, line:26:2>

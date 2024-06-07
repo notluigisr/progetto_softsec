@@ -1,0 +1,48 @@
+`-FunctionDecl 0x14100e038  line:1:13 get_net_ns_by_id 'struct net *(struct net *, int)'
+  |-ParmVarDecl 0x14100de18 <col:30, col:42> col:42 used net 'struct net *'
+  |-ParmVarDecl 0x14100de98 <col:47, col:51> col:51 used id 'int'
+  `-CompoundStmt 0x14102cd40 <line:2:1, line:17:1>
+    |-DeclStmt 0x14100e1c8 <line:3:2, col:18>
+    | `-VarDecl 0x14100e160 <col:2, col:14> col:14 used peer 'struct net *'
+    |-IfStmt 0x14100e2b8 <line:5:2, line:6:10>
+    | |-BinaryOperator 0x14100e238 <line:5:6, col:11> 'int' '<'
+    | | |-ImplicitCastExpr 0x14100e220 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14100e1e0 <col:6> 'int' lvalue ParmVar 0x14100de98 'id' 'int'
+    | | `-IntegerLiteral 0x14100e200 <col:11> 'int' 0
+    | `-ReturnStmt 0x14100e2a8 <line:6:3, col:10>
+    |   `-RecoveryExpr 0x14100e288 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14102c068 <line:8:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x14102c050 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14102c000 <col:2> 'int ()' Function 0x14100e338 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x14102c620 <line:9:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14102c168 <col:2> 'int ()' Function 0x14102c0b0 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x14102c608 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14102c5e0 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14102c188 <col:16> 'struct net *' lvalue ParmVar 0x14100de18 'net' 'struct net *'
+    |-BinaryOperator 0x14102c830 <line:10:2, col:37> 'struct net *' contains-errors '='
+    | |-DeclRefExpr 0x14102c648 <col:2> 'struct net *' lvalue Var 0x14100e160 'peer' 'struct net *'
+    | `-CallExpr 0x14102c800 <col:9, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14102c748 <col:9> 'int ()' Function 0x14102c690 'idr_find' 'int ()'
+    |   |-UnaryOperator 0x14102c7c8 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14102c7a0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14102c768 <col:19> 'struct net *' lvalue ParmVar 0x14100de18 'net' 'struct net *'
+    |   `-DeclRefExpr 0x14102c7e0 <col:35> 'int' lvalue ParmVar 0x14100de98 'id' 'int'
+    |-IfStmt 0x14102ca00 <line:11:2, line:12:15>
+    | |-ImplicitCastExpr 0x14102c870 <line:11:6> 'struct net *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14102c850 <col:6> 'struct net *' lvalue Var 0x14100e160 'peer' 'struct net *'
+    | `-CallExpr 0x14102c9c0 <line:12:3, col:15> 'int'
+    |   |-ImplicitCastExpr 0x14102c9a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14102c968 <col:3> 'int ()' Function 0x14102c8b0 'get_net' 'int ()'
+    |   `-ImplicitCastExpr 0x14102c9e8 <col:11> 'struct net *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14102c988 <col:11> 'struct net *' lvalue Var 0x14100e160 'peer' 'struct net *'
+    |-CallExpr 0x14102cb98 <line:13:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14102cb00 <col:2> 'int ()' Function 0x14102ca48 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x14102cb80 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14102cb58 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14102cb20 <col:18> 'struct net *' lvalue ParmVar 0x14100de18 'net' 'struct net *'
+    |-CallExpr 0x14102ccd8 <line:14:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x14102ccc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14102cca0 <col:2> 'int ()' Function 0x14102cbe8 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x14102cd30 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x14102cd18 <col:9> 'struct net *' <LValueToRValue>
+        `-DeclRefExpr 0x14102ccf8 <col:9> 'struct net *' lvalue Var 0x14100e160 'peer' 'struct net *'

@@ -1,0 +1,33 @@
+`-FunctionDecl 0x142141830  line:1:13 invalid sctp_cmd_hb_timers_start 'void (int *, struct sctp_association *)' static
+  |-ParmVarDecl 0x142128128 <col:38, col:54> col:54 invalid cmds 'int *'
+  |-ParmVarDecl 0x142128718 <line:2:10, col:35> col:35 used asoc 'struct sctp_association *'
+  `-CompoundStmt 0x142142310 <line:3:1, line:12:1>
+    |-DeclStmt 0x142141ad8 <line:4:2, col:26>
+    | |-RecordDecl 0x1421418e8 <col:2, col:9> col:9 struct sctp_transport
+    | `-VarDecl 0x142141a58 <col:2, col:25> col:25 used t 'struct sctp_transport *'
+    |-CallExpr 0x142141dc0 <line:7:2, col:68> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142141c50 <col:2> 'int ()' Function 0x142141b98 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x142141c70 <col:22> 'struct sctp_transport *' lvalue Var 0x142141a58 't' 'struct sctp_transport *'
+    | |-UnaryOperator 0x142141d38 <col:25, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x142141cf0 <col:26, col:37> '<dependent type>' contains-errors lvalue .transport_addr_list
+    | |   `-RecoveryExpr 0x142141cc8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x142141c90 <col:26> 'struct sctp_association *' lvalue ParmVar 0x142128718 'asoc' 'struct sctp_association *'
+    | `-RecoveryExpr 0x142141da0 <col:58> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x1421422f8 <col:70, line:11:2>
+      `-IfStmt 0x1421422d8 <line:9:3, line:10:25>
+        |-UnaryOperator 0x142142148 <line:9:7, col:57> '<dependent type>' contains-errors prefix '!' cannot overflow
+        | `-CallExpr 0x142142118 <col:8, col:57> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x142141ed8 <col:8> 'int ()' Function 0x142141e20 'mod_timer' 'int ()'
+        |   |-UnaryOperator 0x142141f58 <col:18, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   | `-RecoveryExpr 0x142141f30 <col:19, col:22> '<dependent type>' contains-errors lvalue
+        |   |   `-DeclRefExpr 0x142141ef8 <col:19> 'struct sctp_transport *' lvalue Var 0x142141a58 't' 'struct sctp_transport *'
+        |   `-CallExpr 0x1421420d8 <col:32, col:56> 'int'
+        |     |-ImplicitCastExpr 0x1421420c0 <col:32> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x142142050 <col:32> 'int ()' Function 0x142141f98 'sctp_transport_timeout' 'int ()'
+        |     `-ImplicitCastExpr 0x142142100 <col:55> 'struct sctp_transport *' <LValueToRValue>
+        |       `-DeclRefExpr 0x142142070 <col:55> 'struct sctp_transport *' lvalue Var 0x142141a58 't' 'struct sctp_transport *'
+        `-CallExpr 0x142142298 <line:10:4, col:25> 'int'
+          |-ImplicitCastExpr 0x142142280 <col:4> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x142142240 <col:4> 'int ()' Function 0x142142188 'sctp_transport_hold' 'int ()'
+          `-ImplicitCastExpr 0x1421422c0 <col:24> 'struct sctp_transport *' <LValueToRValue>
+            `-DeclRefExpr 0x142142260 <col:24> 'struct sctp_transport *' lvalue Var 0x142141a58 't' 'struct sctp_transport *'

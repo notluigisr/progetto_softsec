@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12d9418d8  line:1:1 invalid ofpacts_output_to_group 'int (const struct ofpact *, int, int)'
+  |-ParmVarDecl 0x12d928648 <col:25, col:46> col:46 used ofpacts 'const struct ofpact *'
+  |-ParmVarDecl 0x12d9286e0 <col:55, col:62> col:62 invalid ofpacts_len 'int'
+  |-ParmVarDecl 0x12d928760 <line:2:25, col:34> col:34 invalid group_id 'int'
+  `-CompoundStmt 0x12d942130 <line:3:1, line:14:1>
+    |-DeclStmt 0x12d941a90 <line:4:5, col:27>
+    | `-VarDecl 0x12d941a28 <col:5, col:26> col:26 used a 'const struct ofpact *'
+    |-CallExpr 0x12d941c80 <line:6:5, col:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d941c00 <col:5> 'int ()' Function 0x12d941b48 'OFPACT_FOR_EACH_FLATTENED' 'int ()'
+    | |-DeclRefExpr 0x12d941c20 <col:32> 'const struct ofpact *' lvalue Var 0x12d941a28 'a' 'const struct ofpact *'
+    | |-DeclRefExpr 0x12d941c40 <col:35> 'const struct ofpact *' lvalue ParmVar 0x12d928648 'ofpacts' 'const struct ofpact *'
+    | `-RecoveryExpr 0x12d941c60 <col:44> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x12d942100 <col:57, line:11:5>
+      `-IfStmt 0x12d9420e0 <line:7:9, line:10:9>
+        |-BinaryOperator 0x12d942060 <line:7:13, line:8:49> 'int' contains-errors '&&'
+        | |-BinaryOperator 0x12d941fa0 <line:7:13, col:24> 'int' contains-errors '=='
+        | | |-RecoveryExpr 0x12d941cf0 <col:13, col:16> '<dependent type>' contains-errors lvalue
+        | | | `-DeclRefExpr 0x12d941cb8 <col:13> 'const struct ofpact *' lvalue Var 0x12d941a28 'a' 'const struct ofpact *'
+        | | `-RecoveryExpr 0x12d941f80 <col:24> '<dependent type>' contains-errors lvalue
+        | `-BinaryOperator 0x12d942040 <line:8:16, col:49> 'int' contains-errors '=='
+        |   |-RecoveryExpr 0x12d942018 <col:16, col:37> '<dependent type>' contains-errors lvalue
+        |   | `-CallExpr 0x12d941fd8 <col:16, col:34> 'int'
+        |   |   |-ImplicitCastExpr 0x12d941fc0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+        |   |   | `-DeclRefExpr 0x12d941e30 <col:16> 'int ()' Function 0x12d941d78 'ofpact_get_GROUP' 'int ()'
+        |   |   `-ImplicitCastExpr 0x12d942000 <col:33> 'const struct ofpact *' <LValueToRValue>
+        |   |     `-DeclRefExpr 0x12d941e50 <col:33> 'const struct ofpact *' lvalue Var 0x12d941a28 'a' 'const struct ofpact *'
+        |   `-RecoveryExpr 0x12d941f20 <col:49> '<dependent type>' contains-errors lvalue
+        `-CompoundStmt 0x12d9420c8 <col:59, line:10:9>
+          `-ReturnStmt 0x12d9420b8 <line:9:13, col:20>
+            `-RecoveryExpr 0x12d942098 <col:20> '<dependent type>' contains-errors lvalue

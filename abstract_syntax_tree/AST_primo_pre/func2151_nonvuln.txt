@@ -1,0 +1,42 @@
+`-FunctionDecl 0x141826688  line:1:5 generic_ptrace_peekdata 'int (struct task_struct *, unsigned long, unsigned long)'
+  |-ParmVarDecl 0x14180e248 <col:29, col:49> col:49 used tsk 'struct task_struct *'
+  |-ParmVarDecl 0x14180e2c8 <col:54, col:68> col:68 used addr 'unsigned long'
+  |-ParmVarDecl 0x14180e348 <line:2:8, col:22> col:22 used data 'unsigned long'
+  `-CompoundStmt 0x141827010 <line:3:1, line:11:1>
+    |-DeclStmt 0x141826810 <line:4:2, col:19>
+    | `-VarDecl 0x1418267a8 <col:2, col:16> col:16 used tmp 'unsigned long'
+    |-DeclStmt 0x1418268a8 <line:5:2, col:12>
+    | `-VarDecl 0x141826840 <col:2, col:6> col:6 used copied 'int'
+    |-BinaryOperator 0x141826c20 <line:7:2, col:68> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1418268c0 <col:2> 'int' lvalue Var 0x141826840 'copied' 'int'
+    | `-CallExpr 0x141826bd8 <col:11, col:68> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x141826a10 <col:11> 'int ()' Function 0x141826958 'ptrace_access_vm' 'int ()'
+    |   |-DeclRefExpr 0x141826a30 <col:28> 'struct task_struct *' lvalue ParmVar 0x14180e248 'tsk' 'struct task_struct *'
+    |   |-DeclRefExpr 0x141826a50 <col:33> 'unsigned long' lvalue ParmVar 0x14180e2c8 'addr' 'unsigned long'
+    |   |-UnaryOperator 0x141826ac0 <col:39, col:40> 'unsigned long *' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x141826a70 <col:40> 'unsigned long' lvalue Var 0x1418267a8 'tmp' 'unsigned long'
+    |   |-UnaryExprOrTypeTraitExpr 0x141826b18 <col:45, col:55> 'unsigned long' sizeof
+    |   | `-ParenExpr 0x141826af8 <col:51, col:55> 'unsigned long' lvalue
+    |   |   `-DeclRefExpr 0x141826ad8 <col:52> 'unsigned long' lvalue Var 0x1418267a8 'tmp' 'unsigned long' non_odr_use_unevaluated
+    |   `-RecoveryExpr 0x141826bb8 <col:58> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x141826db8 <line:8:2, line:9:11>
+    | |-BinaryOperator 0x141826cf0 <line:8:6, col:26> 'int' '!='
+    | | |-ImplicitCastExpr 0x141826cd8 <col:6> 'unsigned long' <IntegralCast>
+    | | | `-ImplicitCastExpr 0x141826cc0 <col:6> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x141826c40 <col:6> 'int' lvalue Var 0x141826840 'copied' 'int'
+    | | `-UnaryExprOrTypeTraitExpr 0x141826ca0 <col:16, col:26> 'unsigned long' sizeof
+    | |   `-ParenExpr 0x141826c80 <col:22, col:26> 'unsigned long' lvalue
+    | |     `-DeclRefExpr 0x141826c60 <col:23> 'unsigned long' lvalue Var 0x1418267a8 'tmp' 'unsigned long' non_odr_use_unevaluated
+    | `-ReturnStmt 0x141826da8 <line:9:3, col:11>
+    |   `-UnaryOperator 0x141826d90 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x141826d78 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x141826d58 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x141827000 <line:10:2, col:51>
+      `-CallExpr 0x141826fb8 <col:9, col:51> 'int'
+        |-ImplicitCastExpr 0x141826fa0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x141826eb8 <col:9> 'int ()' Function 0x141826e00 'put_user' 'int ()'
+        |-ImplicitCastExpr 0x141826fe8 <col:18> 'unsigned long' <LValueToRValue>
+        | `-DeclRefExpr 0x141826ed8 <col:18> 'unsigned long' lvalue Var 0x1418267a8 'tmp' 'unsigned long'
+        `-CStyleCastExpr 0x141826f48 <col:23, col:47> 'unsigned long' <NoOp>
+          `-ImplicitCastExpr 0x141826f30 <col:47> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+            `-DeclRefExpr 0x141826ef8 <col:47> 'unsigned long' lvalue ParmVar 0x14180e348 'data' 'unsigned long'

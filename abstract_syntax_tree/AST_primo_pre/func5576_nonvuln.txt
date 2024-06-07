@@ -1,0 +1,60 @@
+`-FunctionDecl 0x15002aa00  line:1:13 invalid fq_flow_reset 'void (struct fq *, struct fq_flow *, int)' static
+  |-ParmVarDecl 0x15000e248 <col:27, col:38> col:38 used fq 'struct fq *'
+  |-ParmVarDecl 0x15002a828 <line:2:6, col:22> col:22 used flow 'struct fq_flow *'
+  |-ParmVarDecl 0x15002a8c0 <line:3:6, col:20> col:20 referenced invalid free_func 'int'
+  `-CompoundStmt 0x1510088a8 <line:4:1, line:19:1>
+    |-DeclStmt 0x15002aca8 <line:5:2, col:21>
+    | |-RecordDecl 0x15002aac0 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x15002ac28 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-WhileStmt 0x15002b0e8 <line:7:2, line:8:37>
+    | |-ParenExpr 0x15002af80 <line:7:9, col:41> 'struct sk_buff *'
+    | | `-BinaryOperator 0x15002af60 <col:10, col:40> 'struct sk_buff *' '='
+    | |   |-DeclRefExpr 0x15002acc0 <col:10> 'struct sk_buff *' lvalue Var 0x15002ac28 'skb' 'struct sk_buff *'
+    | |   `-ImplicitCastExpr 0x15002af48 <col:16, col:40> 'struct sk_buff *' <IntegralToPointer>
+    | |     `-CallExpr 0x15002aee8 <col:16, col:40> 'int'
+    | |       |-ImplicitCastExpr 0x15002aed0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x15002ae40 <col:16> 'int ()' Function 0x15002ad88 'fq_flow_dequeue' 'int ()'
+    | |       |-ImplicitCastExpr 0x15002af18 <col:32> 'struct fq *' <LValueToRValue>
+    | |       | `-DeclRefExpr 0x15002ae60 <col:32> 'struct fq *' lvalue ParmVar 0x15000e248 'fq' 'struct fq *'
+    | |       `-ImplicitCastExpr 0x15002af30 <col:36> 'struct fq_flow *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x15002ae80 <col:36> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    | `-CallExpr 0x15002b0a8 <line:8:3, col:37> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x15002afc0 <col:3> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15002afa0 <col:3> 'int' lvalue ParmVar 0x15002a8c0 'free_func' 'int'
+    |   |-DeclRefExpr 0x15002afe8 <col:13> 'struct fq *' lvalue ParmVar 0x15000e248 'fq' 'struct fq *'
+    |   |-RecoveryExpr 0x15002b040 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15002b008 <col:17> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    |   |-DeclRefExpr 0x15002b068 <col:28> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    |   `-DeclRefExpr 0x15002b088 <col:34> 'struct sk_buff *' lvalue Var 0x15002ac28 'skb' 'struct sk_buff *'
+    |-IfStmt 0x15002b460 <line:10:2, line:11:33>
+    | |-UnaryOperator 0x15002b2a8 <line:10:6, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x15002b280 <col:7, col:34> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x15002b1e8 <col:7> 'int ()' Function 0x15002b130 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x15002b268 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x15002b240 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x15002b208 <col:19> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    | `-CallExpr 0x15002b438 <line:11:3, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15002b3a0 <col:3> 'int ()' Function 0x15002b2e8 'list_del_init' 'int ()'
+    |   `-UnaryOperator 0x15002b420 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15002b3f8 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15002b3c0 <col:18> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    |-IfStmt 0x15002b618 <line:13:2, line:14:36>
+    | |-UnaryOperator 0x15002b540 <line:13:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x15002b518 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x15002b480 <col:7> 'int ()' Function 0x15002b130 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x15002b500 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x15002b4d8 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x15002b4a0 <col:19> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    | `-CallExpr 0x15002b5f0 <line:14:3, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15002b558 <col:3> 'int ()' Function 0x15002b2e8 'list_del_init' 'int ()'
+    |   `-UnaryOperator 0x15002b5d8 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15002b5b0 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15002b578 <col:18> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    |-BinaryOperator 0x15002b6f0 <line:16:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15002b670 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15002b638 <col:2> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'
+    | `-RecoveryExpr 0x15002b6d0 <col:14> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x151008880 <line:18:2, col:28> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x151008800 <col:2> 'int ()' Function 0x15002b738 'WARN_ON_ONCE' 'int ()'
+      `-RecoveryExpr 0x151008858 <col:15, col:21> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x151008820 <col:15> 'struct fq_flow *' lvalue ParmVar 0x15002a828 'flow' 'struct fq_flow *'

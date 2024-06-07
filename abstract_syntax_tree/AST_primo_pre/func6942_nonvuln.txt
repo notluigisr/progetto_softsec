@@ -1,0 +1,45 @@
+`-FunctionDecl 0x138141b78  line:1:12 invalid mb86a20s_tune 'int (struct dvb_frontend *, int, unsigned int, unsigned int *, enum fe_status *)' static
+  |-ParmVarDecl 0x138128648 <col:26, col:47> col:47 used fe 'struct dvb_frontend *'
+  |-ParmVarDecl 0x1381286e0 <line:2:4, col:9> col:9 invalid re_tune 'int'
+  |-ParmVarDecl 0x138128760 <line:3:4, col:17> col:17 used mode_flags 'unsigned int'
+  |-ParmVarDecl 0x138141818 <line:4:4, col:18> col:18 delay 'unsigned int *'
+  |-ParmVarDecl 0x138141a08 <line:5:4, col:20> col:20 used status 'enum fe_status *'
+  `-CompoundStmt 0x1381427c0 <line:6:1, line:19:1>
+    |-DeclStmt 0x138141e98 <line:7:2, col:53>
+    | |-RecordDecl 0x138141c48 <col:2, col:9> col:9 struct mb86a20s_state
+    | `-VarDecl 0x138141db8 <col:2, col:37> col:25 used state 'struct mb86a20s_state *' cinit
+    |   `-RecoveryExpr 0x138141e58 <col:33, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138141e20 <col:33> 'struct dvb_frontend *' lvalue ParmVar 0x138128648 'fe' 'struct dvb_frontend *'
+    |-DeclStmt 0x138141f50 <line:8:2, col:12>
+    | `-VarDecl 0x138141ec8 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-IntegerLiteral 0x138141f30 <col:11> 'int' 0
+    |-CallExpr 0x1381422c0 <line:10:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1381420c0 <col:2> 'int ()' Function 0x138142008 'dev_dbg' 'int ()'
+    | |-UnaryOperator 0x138142188 <col:10, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x138142140 <col:11, col:23> '<dependent type>' contains-errors lvalue ->dev
+    | |   `-RecoveryExpr 0x138142118 <col:11, col:18> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1381420e0 <col:11> 'struct mb86a20s_state *' contains-errors lvalue Var 0x138141db8 'state' 'struct mb86a20s_state *'
+    | |-StringLiteral 0x1381421e0 <col:28> 'char[4]' lvalue "STR"
+    | `-PredefinedExpr 0x1381422a8 <col:35> 'const char[14]' lvalue __func__
+    |   `-StringLiteral 0x138142280 <col:35> 'const char[14]' lvalue "mb86a20s_tune"
+    |-IfStmt 0x138142508 <line:12:2, line:13:32>
+    | |-RecoveryExpr 0x1381422f8 <line:12:6> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x1381424e8 <line:13:3, col:32> 'int' '='
+    |   |-DeclRefExpr 0x138142318 <col:3> 'int' lvalue Var 0x138141ec8 'rc' 'int'
+    |   `-CallExpr 0x1381424a8 <col:8, col:32> 'int'
+    |     |-ImplicitCastExpr 0x138142490 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x138142418 <col:8> 'int ()' Function 0x138142360 'mb86a20s_set_frontend' 'int ()'
+    |     `-ImplicitCastExpr 0x1381424d0 <col:30> 'struct dvb_frontend *' <LValueToRValue>
+    |       `-DeclRefExpr 0x138142438 <col:30> 'struct dvb_frontend *' lvalue ParmVar 0x138128648 'fe' 'struct dvb_frontend *'
+    |-IfStmt 0x138142758 <line:15:2, line:16:44>
+    | |-RecoveryExpr 0x138142580 <line:15:6, col:41> '_Bool' contains-errors
+    | `-CallExpr 0x1381426f8 <line:16:3, col:44> 'int'
+    |   |-ImplicitCastExpr 0x1381426e0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x138142680 <col:3> 'int ()' Function 0x1381425c8 'mb86a20s_read_status_and_stats' 'int ()'
+    |   |-ImplicitCastExpr 0x138142728 <col:34> 'struct dvb_frontend *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1381426a0 <col:34> 'struct dvb_frontend *' lvalue ParmVar 0x138128648 'fe' 'struct dvb_frontend *'
+    |   `-ImplicitCastExpr 0x138142740 <col:38> 'enum fe_status *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1381426c0 <col:38> 'enum fe_status *' lvalue ParmVar 0x138141a08 'status' 'enum fe_status *'
+    `-ReturnStmt 0x1381427b0 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x138142798 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x138142778 <col:9> 'int' lvalue Var 0x138141ec8 'rc' 'int'

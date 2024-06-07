@@ -1,0 +1,79 @@
+`-FunctionDecl 0x13a128750  line:1:6 referenced perf_event_disable 'void (struct perf_event *)'
+  |-ParmVarDecl 0x13a128648 <col:25, col:44> col:44 used event 'struct perf_event *'
+  `-CompoundStmt 0x13a142d28 <line:2:1, line:31:1>
+    |-DeclStmt 0x13a140c98 <line:3:2, col:45>
+    | |-RecordDecl 0x13a140a48 <col:2, col:9> col:9 struct perf_event_context
+    | `-VarDecl 0x13a140bb8 <col:2, col:42> col:29 used ctx 'struct perf_event_context *' cinit
+    |   `-RecoveryExpr 0x13a140c58 <col:35, col:42> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a140c20 <col:35> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |-DeclStmt 0x13a140ef8 <line:4:2, col:38>
+    | |-RecordDecl 0x13a140cb0 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13a140e18 <col:2, col:34> col:22 used task 'struct task_struct *' cinit
+    |   `-RecoveryExpr 0x13a140eb8 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a140e80 <col:29> 'struct perf_event_context *' contains-errors lvalue Var 0x13a140bb8 'ctx' 'struct perf_event_context *'
+    |-IfStmt 0x13a141208 <line:6:2, line:10:2>
+    | |-UnaryOperator 0x13a140f48 <line:6:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13a140f30 <col:7> 'struct task_struct *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13a140f10 <col:7> 'struct task_struct *' contains-errors lvalue Var 0x13a140e18 'task' 'struct task_struct *'
+    | `-CompoundStmt 0x13a1411e8 <col:13, line:10:2>
+    |   |-CallExpr 0x13a1411a0 <line:8:3, col:60> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13a141090 <col:3> 'int ()' Function 0x13a140fd8 'cpu_function_call' 'int ()'
+    |   | |-RecoveryExpr 0x13a1410e8 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13a1410b0 <col:21> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |   | |-DeclRefExpr 0x13a141180 <col:33> 'void (struct perf_event *)' Function 0x13a128750 'perf_event_disable' 'void (struct perf_event *)'
+    |   | `-DeclRefExpr 0x13a141128 <col:55> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |   `-ReturnStmt 0x13a1411d8 <line:9:3>
+    |-LabelStmt 0x13a1415b8 <line:12:1, line:14:3> 'retry'
+    | `-IfStmt 0x13a141548 <line:13:2, line:14:3>
+    |   |-UnaryOperator 0x13a141520 <line:13:6, col:59> 'int' contains-errors prefix '!' cannot overflow
+    |   | `-CallExpr 0x13a141438 <col:7, col:59> 'int' contains-errors
+    |   |   |-ImplicitCastExpr 0x13a141420 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x13a141308 <col:7> 'int ()' Function 0x13a141250 'task_function_call' 'int ()'
+    |   |   |-ImplicitCastExpr 0x13a141470 <col:26> 'struct task_struct *' contains-errors <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x13a141328 <col:26> 'struct task_struct *' contains-errors lvalue Var 0x13a140e18 'task' 'struct task_struct *'
+    |   |   |-ImplicitCastExpr 0x13a1414f0 <col:32> 'void (*)(struct perf_event *)' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x13a1413d0 <col:32> 'void (struct perf_event *)' Function 0x13a128750 'perf_event_disable' 'void (struct perf_event *)'
+    |   |   `-ImplicitCastExpr 0x13a141508 <col:54> 'struct perf_event *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13a141360 <col:54> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |   `-ReturnStmt 0x13a141538 <line:14:3>
+    |-CallExpr 0x13a141750 <line:16:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a1416b8 <col:2> 'int ()' Function 0x13a141600 'raw_spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x13a141738 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13a141710 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a1416d8 <col:21> 'struct perf_event_context *' contains-errors lvalue Var 0x13a140bb8 'ctx' 'struct perf_event_context *'
+    |-IfStmt 0x13a1428e0 <line:18:2, line:23:2>
+    | |-BinaryOperator 0x13a141830 <line:18:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x13a1417b0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13a141778 <col:6> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    | | `-RecoveryExpr 0x13a141810 <col:22> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13a1428b8 <col:47, line:23:2>
+    |   |-CallExpr 0x13a1419c8 <line:19:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13a141930 <col:3> 'int ()' Function 0x13a141878 'raw_spin_unlock_irq' 'int ()'
+    |   | `-UnaryOperator 0x13a1419b0 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13a141988 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13a141950 <col:24> 'struct perf_event_context *' contains-errors lvalue Var 0x13a140bb8 'ctx' 'struct perf_event_context *'
+    |   |-BinaryOperator 0x13a142880 <line:21:3, col:15> 'struct task_struct *' contains-errors '='
+    |   | |-DeclRefExpr 0x13a142800 <col:3> 'struct task_struct *' contains-errors lvalue Var 0x13a140e18 'task' 'struct task_struct *'
+    |   | `-RecoveryExpr 0x13a142858 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13a142820 <col:10> 'struct perf_event_context *' contains-errors lvalue Var 0x13a140bb8 'ctx' 'struct perf_event_context *'
+    |   `-GotoStmt 0x13a1428a0 <line:22:3, col:8> 'retry' 0x13a141568
+    |-IfStmt 0x13a142c48 <line:26:2, line:29:2>
+    | |-BinaryOperator 0x13a1429b8 <line:26:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x13a142938 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13a142900 <col:6> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    | | `-RecoveryExpr 0x13a142998 <col:22> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13a142c28 <col:49, line:29:2>
+    |   |-CallExpr 0x13a142b10 <line:27:3, col:27> 'int'
+    |   | |-ImplicitCastExpr 0x13a142af8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13a142ab8 <col:3> 'int ()' Function 0x13a142a00 'update_group_times' 'int ()'
+    |   | `-ImplicitCastExpr 0x13a142b38 <col:22> 'struct perf_event *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13a142ad8 <col:22> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |   `-BinaryOperator 0x13a142c08 <line:28:3, col:18> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x13a142b88 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13a142b50 <col:3> 'struct perf_event *' lvalue ParmVar 0x13a128648 'event' 'struct perf_event *'
+    |     `-RecoveryExpr 0x13a142be8 <col:18> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13a142d00 <line:30:2, col:32> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13a142c68 <col:2> 'int ()' Function 0x13a141878 'raw_spin_unlock_irq' 'int ()'
+      `-UnaryOperator 0x13a142ce8 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13a142cc0 <col:23, col:28> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13a142c88 <col:23> 'struct perf_event_context *' contains-errors lvalue Var 0x13a140bb8 'ctx' 'struct perf_event_context *'

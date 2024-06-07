@@ -1,0 +1,36 @@
+`-FunctionDecl 0x14b854e78  line:1:5 unshare_userns 'int (unsigned long, struct cred **)'
+  |-ParmVarDecl 0x14b83ccd8 <col:20, col:34> col:34 used unshare_flags 'unsigned long'
+  |-ParmVarDecl 0x14b83d328 <col:49, col:63> col:63 used new_cred 'struct cred **'
+  `-CompoundStmt 0x14b8556a8 <line:2:1, line:14:1>
+    |-DeclStmt 0x14b855070 <line:3:2, col:19>
+    | `-VarDecl 0x14b855008 <col:2, col:15> col:15 used cred 'struct cred *'
+    |-IfStmt 0x14b855148 <line:5:2, line:6:10>
+    | |-RecoveryExpr 0x14b8550f8 <line:5:6, col:37> '_Bool' contains-errors
+    | `-ReturnStmt 0x14b855138 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x14b855118 <col:10> 'int' 0
+    |-BinaryOperator 0x14b855340 <line:8:2, col:23> 'struct cred *' '='
+    | |-DeclRefExpr 0x14b855168 <col:2> 'struct cred *' lvalue Var 0x14b855008 'cred' 'struct cred *'
+    | `-ImplicitCastExpr 0x14b855328 <col:9, col:23> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x14b855308 <col:9, col:23> 'int'
+    |     `-ImplicitCastExpr 0x14b8552f0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x14b8552a0 <col:9> 'int ()' Function 0x14b8551e8 'prepare_creds' 'int ()'
+    |-IfStmt 0x14b855458 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x14b855398 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b855380 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b855360 <col:7> 'struct cred *' lvalue Var 0x14b855008 'cred' 'struct cred *'
+    | `-ReturnStmt 0x14b855448 <line:10:3, col:11>
+    |   `-UnaryOperator 0x14b855430 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14b855418 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14b8553f8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14b855500 <line:12:2, col:14> 'struct cred *' '='
+    | |-UnaryOperator 0x14b8554b0 <col:2, col:3> 'struct cred *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x14b855498 <col:3> 'struct cred **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b855478 <col:3> 'struct cred **' lvalue ParmVar 0x14b83d328 'new_cred' 'struct cred **'
+    | `-ImplicitCastExpr 0x14b8554e8 <col:14> 'struct cred *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14b8554c8 <col:14> 'struct cred *' lvalue Var 0x14b855008 'cred' 'struct cred *'
+    `-ReturnStmt 0x14b855698 <line:13:2, col:28>
+      `-CallExpr 0x14b855658 <col:9, col:28> 'int'
+        |-ImplicitCastExpr 0x14b855640 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14b855600 <col:9> 'int ()' Function 0x14b855548 'create_user_ns' 'int ()'
+        `-ImplicitCastExpr 0x14b855680 <col:24> 'struct cred *' <LValueToRValue>
+          `-DeclRefExpr 0x14b855620 <col:24> 'struct cred *' lvalue Var 0x14b855008 'cred' 'struct cred *'

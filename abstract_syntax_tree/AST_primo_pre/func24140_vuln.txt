@@ -1,0 +1,125 @@
+`-FunctionDecl 0x11e128758  line:1:12 referenced ipip6_rcv 'int (struct sk_buff *)' static
+  |-ParmVarDecl 0x11e128648 <col:22, col:38> col:38 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x11e8092a0 <line:2:1, line:45:1>
+    |-DeclStmt 0x11e140c38 <line:3:2, col:19>
+    | |-RecordDecl 0x11e140a50 <col:2, col:9> col:9 struct iphdr
+    | `-VarDecl 0x11e140bb8 <col:2, col:16> col:16 used iph 'struct iphdr *'
+    |-DeclStmt 0x11e140e38 <line:4:2, col:26>
+    | |-RecordDecl 0x11e140c50 <col:2, col:9> col:9 struct ip_tunnel
+    | `-VarDecl 0x11e140db8 <col:2, col:20> col:20 used tunnel 'struct ip_tunnel *'
+    |-IfStmt 0x11e141140 <line:6:2, line:7:8>
+    | |-RecoveryExpr 0x11e1410b8 <line:6:6, col:48> '_Bool' contains-errors
+    | `-GotoStmt 0x11e141128 <line:7:3, col:8> 'out' 0x11e1410d8
+    |-BinaryOperator 0x11e141340 <line:9:2, col:18> 'struct iphdr *' '='
+    | |-DeclRefExpr 0x11e141160 <col:2> 'struct iphdr *' lvalue Var 0x11e140bb8 'iph' 'struct iphdr *'
+    | `-ImplicitCastExpr 0x11e141328 <col:8, col:18> 'struct iphdr *' <IntegralToPointer>
+    |   `-CallExpr 0x11e1412e8 <col:8, col:18> 'int'
+    |     |-ImplicitCastExpr 0x11e1412d0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11e141260 <col:8> 'int ()' Function 0x11e1411a8 'ip_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x11e141310 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11e141280 <col:15> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |-CallExpr 0x11e141570 <line:11:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x11e141558 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e141440 <col:2> 'int ()' Function 0x11e141388 'read_lock' 'int ()'
+    | `-UnaryOperator 0x11e141540 <col:12, col:13> 'int (*)(struct sk_buff *)' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x11e1414b8 <col:13> 'int (struct sk_buff *)' Function 0x11e128758 'ipip6_rcv' 'int (struct sk_buff *)'
+    |-IfStmt 0x11e809038 <line:12:2, line:38:2>
+    | |-BinaryOperator 0x11e1419d0 <line:12:6, line:13:34> 'int' contains-errors '!='
+    | | |-ParenExpr 0x11e141958 <line:12:6, line:13:29> 'struct ip_tunnel *' contains-errors
+    | | | `-BinaryOperator 0x11e141938 <line:12:7, line:13:28> 'struct ip_tunnel *' contains-errors '='
+    | | |   |-DeclRefExpr 0x11e141598 <line:12:7> 'struct ip_tunnel *' lvalue Var 0x11e140db8 'tunnel' 'struct ip_tunnel *'
+    | | |   `-CallExpr 0x11e141900 <col:16, line:13:28> '<dependent type>' contains-errors
+    | | |     |-DeclRefExpr 0x11e141698 <line:12:16> 'int ()' Function 0x11e1415e0 'ipip6_tunnel_lookup' 'int ()'
+    | | |     |-CallExpr 0x11e141818 <col:36, col:52> '<dependent type>' contains-errors
+    | | |     | |-DeclRefExpr 0x11e141798 <col:36> 'int ()' Function 0x11e1416e0 'dev_net' 'int ()'
+    | | |     | `-RecoveryExpr 0x11e1417f0 <col:44, col:49> '<dependent type>' contains-errors lvalue
+    | | |     |   `-DeclRefExpr 0x11e1417b8 <col:44> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    | | |     |-RecoveryExpr 0x11e141878 <line:13:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |     | `-DeclRefExpr 0x11e141840 <col:6> 'struct iphdr *' lvalue Var 0x11e140bb8 'iph' 'struct iphdr *'
+    | | |     `-RecoveryExpr 0x11e1418d8 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x11e1418a0 <col:18> 'struct iphdr *' lvalue Var 0x11e140bb8 'iph' 'struct iphdr *'
+    | | `-RecoveryExpr 0x11e1419b0 <col:34> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11e808fc0 <col:40, line:38:2>
+    |   |-CallExpr 0x11e143f38 <line:14:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x11e143f20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11e143ee0 <col:3> 'int ()' Function 0x11e143e28 'secpath_reset' 'int ()'
+    |   | `-ImplicitCastExpr 0x11e143f60 <col:17> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11e143f00 <col:17> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-BinaryOperator 0x11e144038 <line:15:3, col:26> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11e143fb0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11e143f78 <col:3> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   | `-RecoveryExpr 0x11e144010 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11e143fd8 <col:21> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-CallExpr 0x11e144190 <line:16:3, col:31> 'int'
+    |   | |-ImplicitCastExpr 0x11e144178 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11e144138 <col:3> 'int ()' Function 0x11e144080 'skb_reset_network_header' 'int ()'
+    |   | `-ImplicitCastExpr 0x11e1441b8 <col:28> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11e144158 <col:28> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-BinaryOperator 0x11e144390 <line:17:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11e144348 <col:3, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-CallExpr 0x11e144308 <col:3, col:11> 'int'
+    |   | |   |-ImplicitCastExpr 0x11e1442f0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x11e1442b0 <col:3> 'int ()' Function 0x11e1441f8 'IPCB' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x11e144330 <col:8> 'struct sk_buff *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x11e1442d0 <col:8> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   | `-IntegerLiteral 0x11e144370 <col:22> 'int' 0
+    |   |-IfStmt 0x11e144bd8 <line:21:3, line:27:3>
+    |   | |-RecoveryExpr 0x11e144828 <line:21:7, line:22:38> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x11e144bb0 <col:41, line:27:3>
+    |   |   |-UnaryOperator 0x11e1448f0 <line:23:4, col:26> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   |   | `-CXXDependentScopeMemberExpr 0x11e1448a8 <col:4, col:17> '<dependent type>' contains-errors lvalue .rx_errors
+    |   |   |   `-RecoveryExpr 0x11e144880 <col:4, col:12> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x11e144848 <col:4> 'struct ip_tunnel *' lvalue Var 0x11e140db8 'tunnel' 'struct ip_tunnel *'
+    |   |   |-CallExpr 0x11e144b40 <line:25:4, col:17> 'int'
+    |   |   | |-ImplicitCastExpr 0x11e144b28 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x11e144ae8 <col:4> 'int ()' Function 0x11e144a30 'kfree_skb' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x11e144b68 <col:14> 'struct sk_buff *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x11e144b08 <col:14> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |   `-ReturnStmt 0x11e144ba0 <line:26:4, col:11>
+    |   |     `-IntegerLiteral 0x11e144b80 <col:11> 'int' 0
+    |   |-UnaryOperator 0x11e144ca0 <line:28:3, col:26> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x11e144c58 <col:3, col:16> '<dependent type>' contains-errors lvalue .rx_packets
+    |   |   `-RecoveryExpr 0x11e144c30 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11e144bf8 <col:3> 'struct ip_tunnel *' lvalue Var 0x11e140db8 'tunnel' 'struct ip_tunnel *'
+    |   |-CompoundAssignOperator 0x11e144dc0 <line:29:3, col:33> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-CXXDependentScopeMemberExpr 0x11e144d18 <col:3, col:16> '<dependent type>' contains-errors lvalue .rx_bytes
+    |   | | `-RecoveryExpr 0x11e144cf0 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x11e144cb8 <col:3> 'struct ip_tunnel *' lvalue Var 0x11e140db8 'tunnel' 'struct ip_tunnel *'
+    |   | `-RecoveryExpr 0x11e144d98 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11e144d60 <col:28> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-BinaryOperator 0x11e8088c0 <line:30:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11e808838 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11e808800 <col:3> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   | `-RecoveryExpr 0x11e808898 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11e808860 <col:14> 'struct ip_tunnel *' lvalue Var 0x11e140db8 'tunnel' 'struct ip_tunnel *'
+    |   |-CallExpr 0x11e808a40 <line:31:3, col:23> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11e8089c0 <col:3> 'int ()' Function 0x11e808908 'dst_release' 'int ()'
+    |   | `-RecoveryExpr 0x11e808a18 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11e8089e0 <col:15> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-CallExpr 0x11e808c00 <line:33:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x11e808be8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11e808ba8 <col:3> 'int ()' Function 0x11e808af0 'nf_reset' 'int ()'
+    |   | `-ImplicitCastExpr 0x11e808c28 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11e808bc8 <col:12> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-CallExpr 0x11e808d98 <line:34:3, col:33> 'int'
+    |   | |-ImplicitCastExpr 0x11e808d80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11e808d20 <col:3> 'int ()' Function 0x11e808c68 'ipip6_ecn_decapsulate' 'int ()'
+    |   | |-ImplicitCastExpr 0x11e808dc8 <col:25> 'struct iphdr *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x11e808d40 <col:25> 'struct iphdr *' lvalue Var 0x11e140bb8 'iph' 'struct iphdr *'
+    |   | `-ImplicitCastExpr 0x11e808de0 <col:30> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11e808d60 <col:30> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-CallExpr 0x11e808f30 <line:35:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x11e808f18 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11e808ed8 <col:3> 'int ()' Function 0x11e808e20 'netif_rx' 'int ()'
+    |   | `-ImplicitCastExpr 0x11e808f58 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11e808ef8 <col:12> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   `-ReturnStmt 0x11e808fb0 <line:37:3, col:10>
+    |     `-IntegerLiteral 0x11e808f90 <col:10> 'int' 0
+    |-CallExpr 0x11e8091f0 <line:41:2, col:15> 'int'
+    | |-ImplicitCastExpr 0x11e8091d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e809198 <col:2> 'int ()' Function 0x11e144a30 'kfree_skb' 'int ()'
+    | `-ImplicitCastExpr 0x11e809218 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11e8091b8 <col:12> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    `-LabelStmt 0x11e809280 <line:43:1, line:44:9> 'out'
+      `-ReturnStmt 0x11e809270 <col:2, col:9>
+        `-IntegerLiteral 0x11e809250 <col:9> 'int' 0

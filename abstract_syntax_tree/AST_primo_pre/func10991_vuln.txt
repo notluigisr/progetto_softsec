@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12780e350  line:1:6 referenced unix_inflight 'void (struct file *)'
+  |-ParmVarDecl 0x12780e248 <col:20, col:33> col:33 used fp 'struct file *'
+  `-CompoundStmt 0x127826f08 <line:2:1, line:8:1>
+    |-DeclStmt 0x127826a48 <line:3:2, col:38>
+    | |-RecordDecl 0x127826648 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1278267b8 <col:2, col:37> col:15 used s 'struct sock *' cinit
+    |   `-ImplicitCastExpr 0x127826a18 <col:19, col:37> 'struct sock *' <IntegralToPointer>
+    |     `-CallExpr 0x1278269d8 <col:19, col:37> 'int'
+    |       |-ImplicitCastExpr 0x1278269c0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x127826950 <col:19> 'int ()' Function 0x127826898 'unix_get_socket' 'int ()'
+    |       `-ImplicitCastExpr 0x127826a00 <col:35> 'struct file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x127826970 <col:35> 'struct file *' lvalue ParmVar 0x12780e248 'fp' 'struct file *'
+    `-IfStmt 0x127826ee8 <line:4:2, line:7:2>
+      |-ImplicitCastExpr 0x127826a80 <line:4:5> 'struct sock *' <LValueToRValue>
+      | `-DeclRefExpr 0x127826a60 <col:5> 'struct sock *' lvalue Var 0x1278267b8 's' 'struct sock *'
+      `-CompoundStmt 0x127826ec8 <col:8, line:7:2>
+        |-CallExpr 0x127826d50 <line:5:3, col:35> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x127826b78 <col:3> 'int ()' Function 0x127826ac0 'atomic_inc' 'int ()'
+        | `-UnaryOperator 0x127826d38 <col:14, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x127826d10 <col:15, col:27> '<dependent type>' contains-errors lvalue
+        |     `-CallExpr 0x127826cd0 <col:15, col:24> 'int'
+        |       |-ImplicitCastExpr 0x127826cb8 <col:15> 'int (*)()' <FunctionToPointerDecay>
+        |       | `-DeclRefExpr 0x127826c78 <col:15> 'int ()' Function 0x127826bc0 'unix_sk' 'int ()'
+        |       `-ImplicitCastExpr 0x127826cf8 <col:23> 'struct sock *' <LValueToRValue>
+        |         `-DeclRefExpr 0x127826c98 <col:23> 'struct sock *' lvalue Var 0x1278267b8 's' 'struct sock *'
+        `-CallExpr 0x127826ea0 <line:6:3, col:32> 'int'
+          |-ImplicitCastExpr 0x127826e88 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x127826d78 <col:3> 'int ()' Function 0x127826ac0 'atomic_inc' 'int ()'
+          `-UnaryOperator 0x127826e70 <col:14, col:15> 'void (*)(struct file *)' prefix '&' cannot overflow
+            `-DeclRefExpr 0x127826df0 <col:15> 'void (struct file *)' Function 0x12780e350 'unix_inflight' 'void (struct file *)'

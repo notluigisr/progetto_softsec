@@ -1,0 +1,56 @@
+`-FunctionDecl 0x12f82af98  line:1:1 invalid reply_and_prefetch 'int (struct worker *, struct query_info *, int, struct comm_reply *, int, int, int, struct edns_option *)'
+  |-ParmVarDecl 0x12f80e248 <col:20, col:35> col:35 used worker 'struct worker *'
+  |-ParmVarDecl 0x12f82a828 <col:43, col:62> col:62 used qinfo 'struct query_info *'
+  |-ParmVarDecl 0x12f82a8c0 <line:2:2, col:11> col:11 invalid flags 'int'
+  |-ParmVarDecl 0x12f82aa98 <col:18, col:37> col:37 used repinfo 'struct comm_reply *'
+  |-ParmVarDecl 0x12f82ab18 <col:46, col:53> col:53 invalid leeway 'int'
+  |-ParmVarDecl 0x12f82ab98 <col:61, col:65> col:65 used noreply 'int'
+  |-ParmVarDecl 0x12f82ac18 <line:3:2, col:6> col:6 used rpz_passthru 'int'
+  |-ParmVarDecl 0x12f82ade8 <col:20, col:40> col:40 used opt_list 'struct edns_option *'
+  `-CompoundStmt 0x12f82e160 <line:4:1, line:29:1>
+    |-CStyleCastExpr 0x12f82b0c8 <line:5:2, col:8> 'void' <ToVoid>
+    | `-ImplicitCastExpr 0x12f82b0b0 <col:8> 'struct edns_option *' <LValueToRValue> part_of_explicit_cast
+    |   `-DeclRefExpr 0x12f82b080 <col:8> 'struct edns_option *' lvalue ParmVar 0x12f82ade8 'opt_list' 'struct edns_option *'
+    |-IfStmt 0x12f82b728 <line:7:2, line:14:2>
+    | |-UnaryOperator 0x12f82b128 <line:7:5, col:6> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12f82b110 <col:6> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12f82b0f0 <col:6> 'int' lvalue ParmVar 0x12f82ab98 'noreply' 'int'
+    | `-CompoundStmt 0x12f82b708 <col:15, line:14:2>
+    |   |-IfStmt 0x12f82b540 <line:8:3, line:12:3>
+    |   | |-CXXDependentScopeMemberExpr 0x12f82b1a0 <line:8:6, col:18> '<dependent type>' contains-errors lvalue ->tcp_req_info
+    |   | | `-RecoveryExpr 0x12f82b178 <col:6, col:15> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x12f82b140 <col:6> 'struct comm_reply *' lvalue ParmVar 0x12f82aa98 'repinfo' 'struct comm_reply *'
+    |   | `-CompoundStmt 0x12f82b528 <col:32, line:12:3>
+    |   |   `-CallExpr 0x12f82b4f8 <line:9:4, line:11:23> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x12f82b340 <line:9:4> 'int ()' Function 0x12f82b288 'sldns_buffer_copy' 'int ()'
+    |   |     |-CXXDependentScopeMemberExpr 0x12f82b408 <line:10:5, col:31> '<dependent type>' contains-errors lvalue ->spool_buffer
+    |   |     | `-CXXDependentScopeMemberExpr 0x12f82b3c0 <col:5, col:17> '<dependent type>' contains-errors lvalue ->tcp_req_info
+    |   |     |   `-RecoveryExpr 0x12f82b398 <col:5, col:14> '<dependent type>' contains-errors lvalue
+    |   |     |     `-DeclRefExpr 0x12f82b360 <col:5> 'struct comm_reply *' lvalue ParmVar 0x12f82aa98 'repinfo' 'struct comm_reply *'
+    |   |     `-CXXDependentScopeMemberExpr 0x12f82b4b0 <line:11:5, col:17> '<dependent type>' contains-errors lvalue ->buffer
+    |   |       `-RecoveryExpr 0x12f82b488 <col:5, col:14> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x12f82b450 <col:5> 'struct comm_reply *' lvalue ParmVar 0x12f82aa98 'repinfo' 'struct comm_reply *'
+    |   `-CallExpr 0x12f82b6c8 <line:13:3, col:32> 'int'
+    |     |-ImplicitCastExpr 0x12f82b6b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12f82b640 <col:3> 'int ()' Function 0x12f82b588 'comm_point_send_reply' 'int ()'
+    |     `-ImplicitCastExpr 0x12f82b6f0 <col:25> 'struct comm_reply *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12f82b660 <col:25> 'struct comm_reply *' lvalue ParmVar 0x12f82aa98 'repinfo' 'struct comm_reply *'
+    |-CallExpr 0x12f82dd70 <line:15:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f82dcb8 <col:2> 'int ()' Function 0x12f82dc00 'server_stats_prefetch' 'int ()'
+    | |-UnaryOperator 0x12f82dd38 <col:24, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12f82dd10 <col:25, col:33> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12f82dcd8 <col:25> 'struct worker *' lvalue ParmVar 0x12f80e248 'worker' 'struct worker *'
+    | `-DeclRefExpr 0x12f82dd50 <col:40> 'struct worker *' lvalue ParmVar 0x12f80e248 'worker' 'struct worker *'
+    `-CallExpr 0x12f82e108 <line:27:2, line:28:48> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12f82de80 <line:27:2> 'int ()' Function 0x12f82ddc8 'mesh_new_prefetch' 'int ()'
+      |-CXXDependentScopeMemberExpr 0x12f82df00 <col:20, col:32> '<dependent type>' contains-errors lvalue .mesh
+      | `-RecoveryExpr 0x12f82ded8 <col:20, col:28> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x12f82dea0 <col:20> 'struct worker *' lvalue ParmVar 0x12f80e248 'worker' 'struct worker *'
+      |-DeclRefExpr 0x12f82df48 <col:38> 'struct query_info *' lvalue ParmVar 0x12f82a828 'qinfo' 'struct query_info *'
+      |-RecoveryExpr 0x12f82df68 <col:45> '<dependent type>' contains-errors lvalue
+      |-BinaryOperator 0x12f82e0a8 <col:52, line:28:3> '<dependent type>' contains-errors '+'
+      | |-RecoveryExpr 0x12f82df88 <line:27:52> '<dependent type>' contains-errors lvalue
+      | `-RecoveryExpr 0x12f82e088 <line:28:3> '<dependent type>' contains-errors lvalue
+      |-DeclRefExpr 0x12f82dfe0 <col:24> 'int' lvalue ParmVar 0x12f82ac18 'rpz_passthru' 'int'
+      |-RecoveryExpr 0x12f82e0c8 <col:38> '<dependent type>' contains-errors lvalue
+      `-RecoveryExpr 0x12f82e0e8 <col:44> '<dependent type>' contains-errors lvalue

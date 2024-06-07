@@ -1,0 +1,108 @@
+`-FunctionDecl 0x122026878  line:1:1 max3421_set_address 'int (struct usb_hcd *, struct usb_device *, int, int)'
+  |-ParmVarDecl 0x12200e248 <col:21, col:37> col:37 used hcd 'struct usb_hcd *'
+  |-ParmVarDecl 0x122026628 <col:42, col:61> col:61 used dev 'struct usb_device *'
+  |-ParmVarDecl 0x1220266a8 <col:66, col:70> col:70 used epnum 'int'
+  |-ParmVarDecl 0x122026728 <line:2:7, col:11> col:11 used force_toggles 'int'
+  `-CompoundStmt 0x12202a6b0 <line:3:1, line:39:1>
+    |-DeclStmt 0x122026d88 <line:4:2, col:55>
+    | |-RecordDecl 0x122026988 <col:2, col:9> col:9 struct max3421_hcd
+    | `-VarDecl 0x122026af8 <col:2, col:54> col:22 used max3421_hcd 'struct max3421_hcd *' cinit
+    |   `-ImplicitCastExpr 0x122026d58 <col:36, col:54> 'struct max3421_hcd *' <IntegralToPointer>
+    |     `-CallExpr 0x122026d18 <col:36, col:54> 'int'
+    |       |-ImplicitCastExpr 0x122026d00 <col:36> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x122026c90 <col:36> 'int ()' Function 0x122026bd8 'hcd_to_max3421' 'int ()'
+    |       `-ImplicitCastExpr 0x122026d40 <col:51> 'struct usb_hcd *' <LValueToRValue>
+    |         `-DeclRefExpr 0x122026cb0 <col:51> 'struct usb_hcd *' lvalue ParmVar 0x12200e248 'hcd' 'struct usb_hcd *'
+    |-DeclStmt 0x122026fc8 <line:5:2, col:40>
+    | |-VarDecl 0x122026db8 <col:2, col:6> col:6 used old_epnum 'int'
+    | |-VarDecl 0x122026e38 <col:2, col:17> col:17 used same_ep 'int'
+    | |-VarDecl 0x122026eb8 <col:2, col:26> col:26 used rcvtog 'int'
+    | `-VarDecl 0x122026f38 <col:2, col:34> col:34 used sndtog 'int'
+    |-DeclStmt 0x1220270d0 <line:6:2, col:28>
+    | `-VarDecl 0x122027068 <col:2, col:21> col:21 used old_dev 'struct usb_device *'
+    |-BinaryOperator 0x122027168 <line:9:2, col:25> 'struct usb_device *' contains-errors '='
+    | |-DeclRefExpr 0x1220270e8 <col:2> 'struct usb_device *' lvalue Var 0x122027068 'old_dev' 'struct usb_device *'
+    | `-RecoveryExpr 0x122027140 <col:12, col:25> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x122027108 <col:12> 'struct max3421_hcd *' lvalue Var 0x122026af8 'max3421_hcd' 'struct max3421_hcd *'
+    |-BinaryOperator 0x122027208 <line:10:2, col:27> 'int' contains-errors '='
+    | |-DeclRefExpr 0x122027188 <col:2> 'int' lvalue Var 0x122026db8 'old_epnum' 'int'
+    | `-RecoveryExpr 0x1220271e0 <col:14, col:27> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1220271a8 <col:14> 'struct max3421_hcd *' lvalue Var 0x122026af8 'max3421_hcd' 'struct max3421_hcd *'
+    |-BinaryOperator 0x1220273a8 <line:12:2, col:49> 'int' '='
+    | |-DeclRefExpr 0x122027228 <col:2> 'int' lvalue Var 0x122026e38 'same_ep' 'int'
+    | `-ParenExpr 0x122027388 <col:12, col:49> 'int'
+    |   `-BinaryOperator 0x122027368 <col:13, col:40> 'int' '&&'
+    |     |-BinaryOperator 0x1220272b8 <col:13, col:20> 'int' '=='
+    |     | |-ImplicitCastExpr 0x122027288 <col:13> 'struct usb_device *' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x122027248 <col:13> 'struct usb_device *' lvalue ParmVar 0x122026628 'dev' 'struct usb_device *'
+    |     | `-ImplicitCastExpr 0x1220272a0 <col:20> 'struct usb_device *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x122027268 <col:20> 'struct usb_device *' lvalue Var 0x122027068 'old_dev' 'struct usb_device *'
+    |     `-BinaryOperator 0x122027348 <col:31, col:40> 'int' '=='
+    |       |-ImplicitCastExpr 0x122027318 <col:31> 'int' <LValueToRValue>
+    |       | `-DeclRefExpr 0x1220272d8 <col:31> 'int' lvalue ParmVar 0x1220266a8 'epnum' 'int'
+    |       `-ImplicitCastExpr 0x122027330 <col:40> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x1220272f8 <col:40> 'int' lvalue Var 0x122026db8 'old_epnum' 'int'
+    |-IfStmt 0x122027480 <line:13:2, line:14:3>
+    | |-BinaryOperator 0x122027450 <line:13:6, col:18> 'int' '&&'
+    | | |-ImplicitCastExpr 0x122027438 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1220273c8 <col:6> 'int' lvalue Var 0x122026e38 'same_ep' 'int'
+    | | `-UnaryOperator 0x122027420 <col:17, col:18> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x122027408 <col:18> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1220273e8 <col:18> 'int' lvalue ParmVar 0x122026728 'force_toggles' 'int'
+    | `-ReturnStmt 0x122027470 <line:14:3>
+    |-IfStmt 0x122029df0 <line:16:2, line:26:2>
+    | |-BinaryOperator 0x122027528 <line:16:6, col:18> 'int' '&&'
+    | | |-ImplicitCastExpr 0x122027510 <col:6> 'struct usb_device *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1220274a0 <col:6> 'struct usb_device *' lvalue Var 0x122027068 'old_dev' 'struct usb_device *'
+    | | `-UnaryOperator 0x1220274f8 <col:17, col:18> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x1220274e0 <col:18> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1220274c0 <col:18> 'int' lvalue Var 0x122026e38 'same_ep' 'int'
+    | `-CompoundStmt 0x122029dd0 <col:27, line:26:2>
+    |   |-CallExpr 0x122029c08 <line:24:3, col:46> 'int'
+    |   | |-ImplicitCastExpr 0x122029bf0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x122029b50 <col:3> 'int ()' Function 0x122029a98 'usb_settoggle' 'int ()'
+    |   | |-ImplicitCastExpr 0x122029c48 <col:17> 'struct usb_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x122029b70 <col:17> 'struct usb_device *' lvalue Var 0x122027068 'old_dev' 'struct usb_device *'
+    |   | |-ImplicitCastExpr 0x122029c60 <col:26> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x122029b90 <col:26> 'int' lvalue Var 0x122026db8 'old_epnum' 'int'
+    |   | |-IntegerLiteral 0x122029bb0 <col:37> 'int' 0
+    |   | `-ImplicitCastExpr 0x122029c78 <col:40> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x122029bd0 <col:40> 'int' lvalue Var 0x122026eb8 'rcvtog' 'int'
+    |   `-CallExpr 0x122029d48 <line:25:3, col:46> 'int'
+    |     |-ImplicitCastExpr 0x122029d30 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x122029c90 <col:3> 'int ()' Function 0x122029a98 'usb_settoggle' 'int ()'
+    |     |-ImplicitCastExpr 0x122029d88 <col:17> 'struct usb_device *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x122029cb0 <col:17> 'struct usb_device *' lvalue Var 0x122027068 'old_dev' 'struct usb_device *'
+    |     |-ImplicitCastExpr 0x122029da0 <col:26> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x122029cd0 <col:26> 'int' lvalue Var 0x122026db8 'old_epnum' 'int'
+    |     |-IntegerLiteral 0x122029cf0 <col:37> 'int' 1
+    |     `-ImplicitCastExpr 0x122029db8 <col:40> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x122029d10 <col:40> 'int' lvalue Var 0x122026f38 'sndtog' 'int'
+    |-BinaryOperator 0x12202a010 <line:28:2, col:38> 'int' '='
+    | |-DeclRefExpr 0x122029e10 <col:2> 'int' lvalue Var 0x122026eb8 'rcvtog' 'int'
+    | `-CallExpr 0x122029fa8 <col:11, col:38> 'int'
+    |   |-ImplicitCastExpr 0x122029f90 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x122029f10 <col:11> 'int ()' Function 0x122029e58 'usb_gettoggle' 'int ()'
+    |   |-ImplicitCastExpr 0x122029fe0 <col:25> 'struct usb_device *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x122029f30 <col:25> 'struct usb_device *' lvalue ParmVar 0x122026628 'dev' 'struct usb_device *'
+    |   |-ImplicitCastExpr 0x122029ff8 <col:30> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x122029f50 <col:30> 'int' lvalue ParmVar 0x1220266a8 'epnum' 'int'
+    |   `-IntegerLiteral 0x122029f70 <col:37> 'int' 0
+    |-BinaryOperator 0x12202a150 <line:29:2, col:38> 'int' '='
+    | |-DeclRefExpr 0x12202a030 <col:2> 'int' lvalue Var 0x122026f38 'sndtog' 'int'
+    | `-CallExpr 0x12202a0e8 <col:11, col:38> 'int'
+    |   |-ImplicitCastExpr 0x12202a0d0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12202a050 <col:11> 'int ()' Function 0x122029e58 'usb_gettoggle' 'int ()'
+    |   |-ImplicitCastExpr 0x12202a120 <col:25> 'struct usb_device *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12202a070 <col:25> 'struct usb_device *' lvalue ParmVar 0x122026628 'dev' 'struct usb_device *'
+    |   |-ImplicitCastExpr 0x12202a138 <col:30> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12202a090 <col:30> 'int' lvalue ParmVar 0x1220266a8 'epnum' 'int'
+    |   `-IntegerLiteral 0x12202a0b0 <col:37> 'int' 1
+    |-BinaryOperator 0x12202a430 <line:33:2, col:30> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12202a3e8 <col:2, col:15> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12202a3b0 <col:2> 'struct max3421_hcd *' lvalue Var 0x122026af8 'max3421_hcd' 'struct max3421_hcd *'
+    | `-DeclRefExpr 0x12202a410 <col:30> 'int' lvalue ParmVar 0x1220266a8 'epnum' 'int'
+    `-BinaryOperator 0x12202a5f0 <line:37:2, col:28> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x12202a5a8 <col:2, col:15> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x12202a570 <col:2> 'struct max3421_hcd *' lvalue Var 0x122026af8 'max3421_hcd' 'struct max3421_hcd *'
+      `-DeclRefExpr 0x12202a5d0 <col:28> 'struct usb_device *' lvalue ParmVar 0x122026628 'dev' 'struct usb_device *'

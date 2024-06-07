@@ -1,0 +1,110 @@
+`-FunctionDecl 0x156122600  line:1:13 mp_wait_until_sent 'void (struct tty_struct *, int)' static
+  |-ParmVarDecl 0x15680e248 <col:32, col:51> col:51 used tty 'struct tty_struct *'
+  |-ParmVarDecl 0x15680e2c8 <col:56, col:60> col:60 used timeout 'int'
+  `-CompoundStmt 0x1561245f8 <line:2:1, line:31:1>
+    |-DeclStmt 0x156122948 <line:3:2, col:48>
+    | |-RecordDecl 0x156122700 <col:2, col:9> col:9 struct sb_uart_state
+    | `-VarDecl 0x156122868 <col:2, col:37> col:24 used state 'struct sb_uart_state *' cinit
+    |   `-RecoveryExpr 0x156122908 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1561228d0 <col:32> 'struct tty_struct *' lvalue ParmVar 0x15680e248 'tty' 'struct tty_struct *'
+    |-DeclStmt 0x156122ba8 <line:4:2, col:41>
+    | |-RecordDecl 0x156122960 <col:2, col:9> col:9 struct sb_uart_port
+    | `-VarDecl 0x156122ac8 <col:2, col:37> col:23 used port 'struct sb_uart_port *' cinit
+    |   `-RecoveryExpr 0x156122b68 <col:30, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156122b30 <col:30> 'struct sb_uart_state *' contains-errors lvalue Var 0x156122868 'state' 'struct sb_uart_state *'
+    |-DeclStmt 0x156122cd8 <line:5:2, col:33>
+    | |-VarDecl 0x156122bd8 <col:2, col:16> col:16 used char_time 'unsigned long'
+    | `-VarDecl 0x156122c58 <col:2, col:27> col:27 used expire 'unsigned long'
+    |-IfStmt 0x156122ed0 <line:7:2, line:8:3>
+    | |-BinaryOperator 0x156122ea0 <line:7:6, col:54> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x156122e80 <col:6, col:20> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x156122d28 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x156122cf0 <col:6> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+    | | | `-RecoveryExpr 0x156122e60 <col:20> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x156122e20 <col:36, col:54> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x156122dd8 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x156122da0 <col:36> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+    | |   `-IntegerLiteral 0x156122e00 <col:54> 'int' 0
+    | `-ReturnStmt 0x156122ec0 <line:8:3>
+    |-BinaryOperator 0x1561230f8 <line:11:2, col:26> 'unsigned long' '='
+    | |-DeclRefExpr 0x156123048 <col:2> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    | `-BinaryOperator 0x1561230d8 <col:14, col:26> 'unsigned long' '/'
+    |   |-ImplicitCastExpr 0x1561230a8 <col:14> 'unsigned long' <LValueToRValue>
+    |   | `-DeclRefExpr 0x156123068 <col:14> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    |   `-ImplicitCastExpr 0x1561230c0 <col:26> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x156123088 <col:26> 'int' 5
+    |-IfStmt 0x156123220 <line:12:2, line:13:15>
+    | |-BinaryOperator 0x156123188 <line:12:6, col:19> 'int' '=='
+    | | |-ImplicitCastExpr 0x156123158 <col:6> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x156123118 <col:6> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    | | `-ImplicitCastExpr 0x156123170 <col:19> 'unsigned long' <IntegralCast>
+    | |   `-IntegerLiteral 0x156123138 <col:19> 'int' 0
+    | `-BinaryOperator 0x156123200 <line:13:3, col:15> 'unsigned long' '='
+    |   |-DeclRefExpr 0x1561231a8 <col:3> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    |   `-ImplicitCastExpr 0x1561231e8 <col:15> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x1561231c8 <col:15> 'int' 1
+    |-IfStmt 0x1561233d0 <line:14:2, line:15:15>
+    | |-BinaryOperator 0x156123320 <line:14:6, col:27> 'int' '&&'
+    | | |-ImplicitCastExpr 0x156123308 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x156123240 <col:6> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    | | `-BinaryOperator 0x1561232e8 <col:17, col:27> 'int' '<'
+    | |   |-ImplicitCastExpr 0x1561232d0 <col:17> 'unsigned long' <IntegralCast>
+    | |   | `-ImplicitCastExpr 0x1561232a0 <col:17> 'int' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x156123260 <col:17> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    | |   `-ImplicitCastExpr 0x1561232b8 <col:27> 'unsigned long' <LValueToRValue>
+    | |     `-DeclRefExpr 0x156123280 <col:27> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    | `-BinaryOperator 0x1561233b0 <line:15:3, col:15> 'unsigned long' '='
+    |   |-DeclRefExpr 0x156123340 <col:3> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+    |   `-ImplicitCastExpr 0x156123398 <col:15> 'unsigned long' <IntegralCast>
+    |     `-ImplicitCastExpr 0x156123380 <col:15> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x156123360 <col:15> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    |-IfStmt 0x156123c68 <line:17:2, line:18:23>
+    | |-BinaryOperator 0x156123548 <line:17:6, col:42> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x156123448 <col:6, col:17> 'int' '=='
+    | | | |-ImplicitCastExpr 0x156123430 <col:6> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x1561233f0 <col:6> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    | | | `-IntegerLiteral 0x156123410 <col:17> 'int' 0
+    | | `-BinaryOperator 0x156123528 <col:22, col:42> 'int' contains-errors '>'
+    | |   |-DeclRefExpr 0x156123468 <col:22> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    | |   `-BinaryOperator 0x156123508 <col:32, col:42> '<dependent type>' contains-errors '*'
+    | |     |-IntegerLiteral 0x156123488 <col:32> 'int' 2
+    | |     `-RecoveryExpr 0x1561234e0 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1561234a8 <col:36> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+    | `-BinaryOperator 0x156123c48 <line:18:3, col:23> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x156123568 <col:3> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    |   `-BinaryOperator 0x156123c28 <col:13, col:23> '<dependent type>' contains-errors '*'
+    |     |-IntegerLiteral 0x156123588 <col:13> 'int' 2
+    |     `-RecoveryExpr 0x156123c00 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1561235a8 <col:17> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+    |-BinaryOperator 0x156123d60 <line:20:2, col:21> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x156123c88 <col:2> 'unsigned long' lvalue Var 0x156122c58 'expire' 'unsigned long'
+    | `-BinaryOperator 0x156123d40 <col:11, col:21> '<dependent type>' contains-errors '+'
+    |   |-RecoveryExpr 0x156123d20 <col:11> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x156123cc0 <col:21> 'int' lvalue ParmVar 0x15680e2c8 'timeout' 'int'
+    `-WhileStmt 0x1561245b8 <line:22:2, line:29:2>
+      |-UnaryOperator 0x156123e70 <line:22:9, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x156123e48 <col:10, col:34> '<dependent type>' contains-errors
+      |   |-CXXDependentScopeMemberExpr 0x156123de0 <col:10, col:21> '<dependent type>' contains-errors lvalue ->tx_empty
+      |   | `-RecoveryExpr 0x156123db8 <col:10, col:16> '<dependent type>' contains-errors lvalue
+      |   |   `-DeclRefExpr 0x156123d80 <col:10> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+      |   `-DeclRefExpr 0x156123e28 <col:30> 'struct sb_uart_port *' contains-errors lvalue Var 0x156122ac8 'port' 'struct sb_uart_port *'
+      `-CompoundStmt 0x156124588 <col:37, line:29:2>
+        |-CallExpr 0x156124020 <line:23:3, col:39> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x156123fa0 <col:3> 'int ()' Function 0x156123ee8 'set_current_state' 'int ()'
+        | `-RecoveryExpr 0x156124000 <col:21> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1561241b8 <line:24:3, col:29> 'int'
+        | |-ImplicitCastExpr 0x1561241a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x156124128 <col:3> 'int ()' Function 0x156124070 'schedule_timeout' 'int ()'
+        | `-ImplicitCastExpr 0x1561241e0 <col:20> 'unsigned long' <LValueToRValue>
+        |   `-DeclRefExpr 0x156124148 <col:20> 'unsigned long' lvalue Var 0x156122bd8 'char_time' 'unsigned long'
+        |-IfStmt 0x156124388 <line:25:3, line:26:4>
+        | |-CallExpr 0x156124358 <line:25:7, col:29> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x1561242d8 <col:7> 'int ()' Function 0x156124220 'signal_pending' 'int ()'
+        | | `-RecoveryExpr 0x156124338 <col:22> '<dependent type>' contains-errors lvalue
+        | `-BreakStmt 0x156124380 <line:26:4>
+        `-IfStmt 0x156124568 <line:27:3, line:28:4>
+          |-CallExpr 0x156124530 <line:27:7, col:33> '<dependent type>' contains-errors
+          | |-DeclRefExpr 0x156124488 <col:7> 'int ()' Function 0x1561243d0 'time_after' 'int ()'
+          | |-RecoveryExpr 0x156124510 <col:18> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x1561244c0 <col:27> 'unsigned long' lvalue Var 0x156122c58 'expire' 'unsigned long'
+          `-BreakStmt 0x156124560 <line:28:4>

@@ -1,0 +1,24 @@
+`-FunctionDecl 0x127940be8  line:1:5 ip6_datagram_connect_v6_only 'int (struct sock *, struct sockaddr *, int)'
+  |-ParmVarDecl 0x127928648 <col:34, col:47> col:47 used sk 'struct sock *'
+  |-ParmVarDecl 0x127940a28 <col:51, col:68> col:68 used uaddr 'struct sockaddr *'
+  |-ParmVarDecl 0x127940aa8 <line:2:6, col:10> col:10 used addr_len 'int'
+  `-CompoundStmt 0x1279412b8 <line:3:1, line:8:1>
+    |-IfStmt 0x127941060 <line:5:2, line:6:11>
+    | |-BinaryOperator 0x127940f98 <line:5:6, col:27> 'int' contains-errors '!='
+    | | |-CXXDependentScopeMemberExpr 0x127940f30 <col:6, col:12> '<dependent type>' contains-errors lvalue ->sin6_family
+    | | | `-RecoveryExpr 0x127940f10 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x127940f78 <col:27> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x127941050 <line:6:3, col:11>
+    |   `-UnaryOperator 0x127941038 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x127941020 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x127941000 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1279412a8 <line:7:2, col:49>
+      `-CallExpr 0x127941228 <col:9, col:49> 'int'
+        |-ImplicitCastExpr 0x127941210 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x127941160 <col:9> 'int ()' Function 0x1279410a8 'ip6_datagram_connect' 'int ()'
+        |-ImplicitCastExpr 0x127941260 <col:30> 'struct sock *' <LValueToRValue>
+        | `-DeclRefExpr 0x127941180 <col:30> 'struct sock *' lvalue ParmVar 0x127928648 'sk' 'struct sock *'
+        |-ImplicitCastExpr 0x127941278 <col:34> 'struct sockaddr *' <LValueToRValue>
+        | `-DeclRefExpr 0x1279411a0 <col:34> 'struct sockaddr *' lvalue ParmVar 0x127940a28 'uaddr' 'struct sockaddr *'
+        `-ImplicitCastExpr 0x127941290 <col:41> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x1279411c0 <col:41> 'int' lvalue ParmVar 0x127940aa8 'addr_len' 'int'

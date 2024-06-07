@@ -1,0 +1,133 @@
+`-FunctionDecl 0x130928750  line:1:13 referenced peak_usb_read_bulk_callback 'void (struct urb *)' static
+  |-ParmVarDecl 0x130928648 <col:41, col:53> col:53 used urb 'struct urb *'
+  `-CompoundStmt 0x130948298 <line:2:1, line:61:1>
+    |-DeclStmt 0x130944e98 <line:3:2, col:44>
+    | |-RecordDecl 0x130944c48 <col:2, col:9> col:9 struct peak_usb_device
+    | `-VarDecl 0x130944db8 <col:2, col:37> col:26 used dev 'struct peak_usb_device *' cinit
+    |   `-RecoveryExpr 0x130944e58 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x130944e20 <col:32> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |-DeclStmt 0x130945098 <line:4:2, col:27>
+    | |-RecordDecl 0x130944eb0 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x130945018 <col:2, col:21> col:21 used netdev 'struct net_device *'
+    |-DeclStmt 0x130945130 <line:5:2, col:9>
+    | `-VarDecl 0x1309450c8 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x1309451c8 <line:7:2, col:16> 'struct net_device *' contains-errors '='
+    | |-DeclRefExpr 0x130945148 <col:2> 'struct net_device *' lvalue Var 0x130945018 'netdev' 'struct net_device *'
+    | `-RecoveryExpr 0x1309451a0 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x130945168 <col:11> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |-IfStmt 0x130945400 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x1309453d8 <line:9:6, col:34> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x130945398 <col:7, col:34> 'int'
+    | |   |-ImplicitCastExpr 0x130945380 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x130945310 <col:7> 'int ()' Function 0x130945258 'netif_device_present' 'int ()'
+    | |   `-ImplicitCastExpr 0x1309453c0 <col:28> 'struct net_device *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x130945330 <col:28> 'struct net_device *' lvalue Var 0x130945018 'netdev' 'struct net_device *'
+    | `-ReturnStmt 0x1309453f0 <line:10:3>
+    |-SwitchStmt 0x130945498 <line:13:2, line:29:2>
+    | |-ImplicitCastExpr 0x130945480 <line:13:10, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x130945458 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x130945420 <col:10> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    | `-CompoundStmt 0x130945a40 <col:23, line:29:2>
+    |   |-CaseStmt 0x1309454e0 <line:14:2, line:16:3>
+    |   | |-IntegerLiteral 0x1309454c0 <line:14:7> 'int' 0
+    |   | `-BreakStmt 0x130945508 <line:16:3>
+    |   |-ReturnStmt 0x130945630 <line:22:3>
+    |   |-DefaultStmt 0x1309459b8 <line:24:2, line:27:26>
+    |   | `-IfStmt 0x130945998 <line:25:3, line:27:26>
+    |   |   |-CallExpr 0x130945758 <line:25:7, col:21> 'int'
+    |   |   | `-ImplicitCastExpr 0x130945740 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   `-DeclRefExpr 0x130945720 <col:7> 'int ()' Function 0x130945668 'net_ratelimit' 'int ()'
+    |   |   `-CallExpr 0x130945960 <line:26:4, line:27:26> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x130945858 <line:26:4> 'int ()' Function 0x1309457a0 'netdev_err' 'int ()'
+    |   |     |-DeclRefExpr 0x130945878 <col:15> 'struct net_device *' lvalue Var 0x130945018 'netdev' 'struct net_device *'
+    |   |     |-StringLiteral 0x1309458e0 <line:27:8> 'char[4]' lvalue "STR"
+    |   |     `-RecoveryExpr 0x130945938 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x130945900 <col:15> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |   `-GotoStmt 0x130945a28 <line:28:3, col:8> 'resubmit_urb' 0x1309459d8
+    |-IfStmt 0x130947518 <line:32:2, line:41:2>
+    | |-BinaryOperator 0x130947000 <line:32:6, col:63> 'int' contains-errors '&&'
+    | | |-ParenExpr 0x130945b10 <col:6, col:29> 'int' contains-errors
+    | | | `-BinaryOperator 0x130945af0 <col:7, col:28> 'int' contains-errors '>'
+    | | |   |-RecoveryExpr 0x130945aa8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x130945a70 <col:7> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    | | |   `-IntegerLiteral 0x130945ad0 <col:28> 'int' 0
+    | | `-ParenExpr 0x130945bd8 <col:34, col:63> '<dependent type>' contains-errors lvalue
+    | |   `-CXXDependentScopeMemberExpr 0x130945b90 <col:35, col:49> '<dependent type>' contains-errors lvalue ->dev_decode_buf
+    | |     `-RecoveryExpr 0x130945b68 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x130945b30 <col:35> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    | `-CompoundStmt 0x130947500 <col:66, line:41:2>
+    |   `-IfStmt 0x1309474e0 <line:34:3, line:40:3>
+    |     |-BinaryOperator 0x1309470d8 <line:34:7, col:20> '<dependent type>' contains-errors '&'
+    |     | |-RecoveryExpr 0x130947058 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x130947020 <col:7> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |     | `-RecoveryExpr 0x1309470b8 <col:20> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x1309474c0 <col:44, line:40:3>
+    |       |-BinaryOperator 0x130947230 <line:35:4, col:47> 'int' contains-errors '='
+    |       | |-DeclRefExpr 0x1309470f8 <col:4> 'int' lvalue Var 0x1309450c8 'err' 'int'
+    |       | `-CallExpr 0x130947200 <col:10, col:47> '<dependent type>' contains-errors
+    |       |   |-CXXDependentScopeMemberExpr 0x130947178 <col:10, col:24> '<dependent type>' contains-errors lvalue ->dev_decode_buf
+    |       |   | `-RecoveryExpr 0x130947150 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x130947118 <col:10> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |       |   |-DeclRefExpr 0x1309471c0 <col:39> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |       |   `-DeclRefExpr 0x1309471e0 <col:44> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |       `-IfStmt 0x1309474a0 <line:36:4, line:39:39>
+    |         |-ImplicitCastExpr 0x130947270 <line:36:8> 'int' <LValueToRValue>
+    |         | `-DeclRefExpr 0x130947250 <col:8> 'int' lvalue Var 0x1309450c8 'err' 'int'
+    |         `-CallExpr 0x130947468 <line:37:5, line:39:39> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x130947368 <line:37:5> 'int ()' Function 0x1309472b0 'pcan_dump_mem' 'int ()'
+    |           |-StringLiteral 0x130947388 <col:19> 'char[4]' lvalue "STR"
+    |           |-RecoveryExpr 0x1309473e0 <line:38:12, col:17> '<dependent type>' contains-errors lvalue
+    |           | `-DeclRefExpr 0x1309473a8 <col:12> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |           `-RecoveryExpr 0x130947440 <line:39:12, col:17> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x130947408 <col:12> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |-LabelStmt 0x130947a48 <line:43:1, line:47:35> 'resubmit_urb'
+    | `-CallExpr 0x1309479f0 <line:44:2, line:47:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x130947618 <line:44:2> 'int ()' Function 0x130947560 'usb_fill_bulk_urb' 'int ()'
+    |   |-DeclRefExpr 0x130947638 <col:20> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |   |-RecoveryExpr 0x130947690 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x130947658 <col:25> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |   |-CallExpr 0x130947878 <line:45:3, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x130947798 <col:3> 'int ()' Function 0x1309476e0 'usb_rcvbulkpipe' 'int ()'
+    |   | |-RecoveryExpr 0x1309477f0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1309477b8 <col:19> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |   | `-RecoveryExpr 0x130947850 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x130947818 <col:30> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |   |-RecoveryExpr 0x1309478e0 <line:46:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1309478a8 <col:3> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    |   |-CXXDependentScopeMemberExpr 0x130947968 <col:25, col:39> '<dependent type>' contains-errors lvalue ->rx_buffer_size
+    |   | `-RecoveryExpr 0x130947940 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x130947908 <col:25> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |   |-DeclRefExpr 0x1309479b0 <line:47:3> 'void (struct urb *)' Function 0x130928750 'peak_usb_read_bulk_callback' 'void (struct urb *)'
+    |   `-DeclRefExpr 0x1309479d0 <col:32> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |-CallExpr 0x130947c00 <line:49:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130947b48 <col:2> 'int ()' Function 0x130947a90 'usb_anchor_urb' 'int ()'
+    | |-DeclRefExpr 0x130947b68 <col:17> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    | `-UnaryOperator 0x130947be8 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x130947bc0 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x130947b88 <col:23> 'struct peak_usb_device *' contains-errors lvalue Var 0x130944db8 'dev' 'struct peak_usb_device *'
+    |-IfStmt 0x130947dd0 <line:51:2, line:52:3>
+    | |-UnaryOperator 0x130947da8 <line:51:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x130947d90 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x130947d70 <col:7> 'int' lvalue Var 0x1309450c8 'err' 'int'
+    | `-ReturnStmt 0x130947dc0 <line:52:3>
+    |-CallExpr 0x130947f28 <line:54:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x130947f10 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x130947ed0 <col:2> 'int ()' Function 0x130947e18 'usb_unanchor_urb' 'int ()'
+    | `-ImplicitCastExpr 0x130947f50 <col:19> 'struct urb *' <LValueToRValue>
+    |   `-DeclRefExpr 0x130947ef0 <col:19> 'struct urb *' lvalue ParmVar 0x130928648 'urb' 'struct urb *'
+    `-IfStmt 0x130948268 <line:56:2, line:60:10> has_else
+      |-RecoveryExpr 0x130947f88 <line:56:6, col:14> '_Bool' contains-errors
+      |-CallExpr 0x130948110 <line:57:3, col:29> 'int'
+      | |-ImplicitCastExpr 0x1309480f8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x1309480b8 <col:3> 'int ()' Function 0x130948000 'netif_device_detach' 'int ()'
+      | `-ImplicitCastExpr 0x130948138 <col:23> 'struct net_device *' <LValueToRValue>
+      |   `-DeclRefExpr 0x1309480d8 <col:23> 'struct net_device *' lvalue Var 0x130945018 'netdev' 'struct net_device *'
+      `-CallExpr 0x1309481e8 <line:59:3, line:60:10> 'int'
+        |-ImplicitCastExpr 0x1309481d0 <line:59:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x130948150 <col:3> 'int ()' Function 0x1309457a0 'netdev_err' 'int ()'
+        |-ImplicitCastExpr 0x130948220 <col:14> 'struct net_device *' <LValueToRValue>
+        | `-DeclRefExpr 0x130948170 <col:14> 'struct net_device *' lvalue Var 0x130945018 'netdev' 'struct net_device *'
+        |-ImplicitCastExpr 0x130948238 <col:22> 'char *' <ArrayToPointerDecay>
+        | `-StringLiteral 0x130948190 <col:22> 'char[4]' lvalue "STR"
+        `-ImplicitCastExpr 0x130948250 <line:60:7> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x1309481b0 <col:7> 'int' lvalue Var 0x1309450c8 'err' 'int'

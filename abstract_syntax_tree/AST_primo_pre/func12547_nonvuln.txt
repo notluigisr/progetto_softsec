@@ -1,0 +1,26 @@
+`-FunctionDecl 0x132019dd8  line:1:12 invalid emulator_read_std 'int (struct x86_emulate_ctxt *, int, void *, unsigned int, struct x86_exception *, int)' static
+  |-ParmVarDecl 0x13200a848 <col:30, col:55> col:55 used ctxt 'struct x86_emulate_ctxt *'
+  |-ParmVarDecl 0x13200a8e0 <line:2:9, col:15> col:15 invalid addr 'int'
+  |-ParmVarDecl 0x13200a960 <col:21, col:27> col:27 used val 'void *'
+  |-ParmVarDecl 0x132019a00 <col:32, col:45> col:45 used bytes 'unsigned int'
+  |-ParmVarDecl 0x132019bd8 <line:3:9, col:31> col:31 used exception 'struct x86_exception *'
+  |-ParmVarDecl 0x132019c58 <col:42, col:47> col:47 invalid system 'int'
+  `-CompoundStmt 0x13201a8d8 <line:4:1, line:12:1>
+    |-DeclStmt 0x13201a2d8 <line:5:2, col:44>
+    | |-RecordDecl 0x132019eb0 <col:2, col:9> col:9 struct kvm_vcpu
+    | `-VarDecl 0x13201a018 <col:2, col:43> col:19 used vcpu 'struct kvm_vcpu *' cinit
+    |   `-ImplicitCastExpr 0x13201a2a8 <col:26, col:43> 'struct kvm_vcpu *' <IntegralToPointer>
+    |     `-CallExpr 0x13201a268 <col:26, col:43> 'int'
+    |       |-ImplicitCastExpr 0x13201a250 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13201a1e0 <col:26> 'int ()' Function 0x13201a128 'emul_to_vcpu' 'int ()'
+    |       `-ImplicitCastExpr 0x13201a290 <col:39> 'struct x86_emulate_ctxt *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13201a200 <col:39> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x13200a848 'ctxt' 'struct x86_emulate_ctxt *'
+    `-ReturnStmt 0x13201a8c8 <line:11:2, col:77>
+      `-CallExpr 0x13201a878 <col:9, col:77> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13201a730 <col:9> 'int ()' Function 0x13201a678 'kvm_read_guest_virt_helper' 'int ()'
+        |-RecoveryExpr 0x13201a750 <col:36> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x13201a770 <col:42> 'void *' lvalue ParmVar 0x13200a960 'val' 'void *'
+        |-DeclRefExpr 0x13201a790 <col:47> 'unsigned int' lvalue ParmVar 0x132019a00 'bytes' 'unsigned int'
+        |-DeclRefExpr 0x13201a7b0 <col:54> 'struct kvm_vcpu *' lvalue Var 0x13201a018 'vcpu' 'struct kvm_vcpu *'
+        |-RecoveryExpr 0x13201a858 <col:60> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x13201a7e8 <col:68> 'struct x86_exception *' lvalue ParmVar 0x132019bd8 'exception' 'struct x86_exception *'

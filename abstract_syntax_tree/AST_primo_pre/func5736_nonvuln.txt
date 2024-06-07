@@ -1,0 +1,145 @@
+`-FunctionDecl 0x11f827558  line:1:12 invalid psi_group_change 'int (struct psi_group *, int, unsigned int, unsigned int)' static
+  |-ParmVarDecl 0x11f80e268 <col:29, col:47> col:47 used group 'struct psi_group *'
+  |-ParmVarDecl 0x11f80e2e8 <col:54, col:58> col:58 used cpu 'int'
+  |-ParmVarDecl 0x11f80e368 <line:2:8, col:21> col:21 used clear 'unsigned int'
+  |-ParmVarDecl 0x11f827400 <col:28, col:41> col:41 used set 'unsigned int'
+  `-CompoundStmt 0x11f82acc0 <line:3:1, line:43:1>
+    |-DeclStmt 0x11f827808 <line:4:2, col:30>
+    | |-RecordDecl 0x11f827620 <col:2, col:9> col:9 struct psi_group_cpu
+    | `-VarDecl 0x11f827788 <col:2, col:24> col:24 used groupc 'struct psi_group_cpu *'
+    |-DeclStmt 0x11f827938 <line:5:2, col:19>
+    | |-VarDecl 0x11f827838 <col:2, col:15> col:15 used t 'unsigned int'
+    | `-VarDecl 0x11f8278b8 <col:2, col:18> col:18 used m 'unsigned int'
+    |-DeclStmt 0x11f827ae8 <line:6:2, col:19>
+    | |-EnumDecl 0x11f827950 <col:2, col:7> col:7 psi_states
+    | `-VarDecl 0x11f827a68 <col:2, col:18> col:18 invalid s 'enum psi_states'
+    |-BinaryOperator 0x11f827d50 <line:9:2, col:39> 'struct psi_group_cpu *' contains-errors '='
+    | |-DeclRefExpr 0x11f827b00 <col:2> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    | `-CallExpr 0x11f827d20 <col:11, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11f827c80 <col:11> 'int ()' Function 0x11f827bc8 'per_cpu_ptr' 'int ()'
+    |   |-RecoveryExpr 0x11f827cd8 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x11f827ca0 <col:23> 'struct psi_group *' lvalue ParmVar 0x11f80e268 'group' 'struct psi_group *'
+    |   `-DeclRefExpr 0x11f827d00 <col:36> 'int' lvalue ParmVar 0x11f80e2e8 'cpu' 'int'
+    |-CallExpr 0x11f827ee8 <line:12:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f827e50 <col:2> 'int ()' Function 0x11f827d98 'write_seqcount_begin' 'int ()'
+    | `-UnaryOperator 0x11f827ed0 <col:23, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f827ea8 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f827e70 <col:24> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    |-CallExpr 0x11f8280c0 <line:14:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f827ff0 <col:2> 'int ()' Function 0x11f827f38 'record_times' 'int ()'
+    | |-DeclRefExpr 0x11f828010 <col:15> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    | |-DeclRefExpr 0x11f828030 <col:23> 'int' lvalue ParmVar 0x11f80e2e8 'cpu' 'int'
+    | `-RecoveryExpr 0x11f8280a0 <col:28> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x11f829c68 <line:16:2, line:27:2>
+    | |-BinaryOperator 0x11f8281e8 <line:16:7, col:18> 'unsigned int' ','
+    | | |-BinaryOperator 0x11f828150 <col:7, col:11> 'unsigned int' '='
+    | | | |-DeclRefExpr 0x11f8280f8 <col:7> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | | | `-ImplicitCastExpr 0x11f828138 <col:11> 'unsigned int' <IntegralCast>
+    | | |   `-IntegerLiteral 0x11f828118 <col:11> 'int' 0
+    | | `-BinaryOperator 0x11f8281c8 <col:14, col:18> 'unsigned int' '='
+    | |   |-DeclRefExpr 0x11f828170 <col:14> 'unsigned int' lvalue Var 0x11f8278b8 'm' 'unsigned int'
+    | |   `-ImplicitCastExpr 0x11f8281b0 <col:18> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x11f828190 <col:18> 'unsigned int' lvalue ParmVar 0x11f80e368 'clear' 'unsigned int'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x11f828228 <col:25> 'unsigned int' <LValueToRValue>
+    | | `-DeclRefExpr 0x11f828208 <col:25> 'unsigned int' lvalue Var 0x11f8278b8 'm' 'unsigned int'
+    | |-BinaryOperator 0x11f828390 <col:28, col:45> 'unsigned int' ','
+    | | |-CompoundAssignOperator 0x11f828328 <col:28, col:41> 'unsigned int' '&=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+    | | | |-DeclRefExpr 0x11f828240 <col:28> 'unsigned int' lvalue Var 0x11f8278b8 'm' 'unsigned int'
+    | | | `-ImplicitCastExpr 0x11f828310 <col:33, col:41> 'unsigned int' <IntegralCast>
+    | | |   `-UnaryOperator 0x11f8282f8 <col:33, col:41> 'int' prefix '~' cannot overflow
+    | | |     `-ParenExpr 0x11f8282d8 <col:34, col:41> 'int'
+    | | |       `-BinaryOperator 0x11f8282b8 <col:35, col:40> 'int' '<<'
+    | | |         |-IntegerLiteral 0x11f828260 <col:35> 'int' 1
+    | | |         `-ImplicitCastExpr 0x11f8282a0 <col:40> 'unsigned int' <LValueToRValue>
+    | | |           `-DeclRefExpr 0x11f828280 <col:40> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | | `-UnaryOperator 0x11f828378 <col:44, col:45> 'unsigned int' postfix '++'
+    | |   `-DeclRefExpr 0x11f828358 <col:44> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | `-CompoundStmt 0x11f829c40 <col:49, line:27:2>
+    |   |-IfStmt 0x11f829708 <line:17:3, line:18:4>
+    |   | |-UnaryOperator 0x11f8296e8 <line:17:7, col:21> 'int' prefix '!' cannot overflow
+    |   | | `-ParenExpr 0x11f8296c8 <col:8, col:21> 'unsigned int'
+    |   | |   `-BinaryOperator 0x11f8296a8 <col:9, col:20> 'unsigned int' '&'
+    |   | |     |-ImplicitCastExpr 0x11f829678 <col:9> 'unsigned int' <LValueToRValue>
+    |   | |     | `-DeclRefExpr 0x11f8283b0 <col:9> 'unsigned int' lvalue Var 0x11f8278b8 'm' 'unsigned int'
+    |   | |     `-ImplicitCastExpr 0x11f829690 <col:13, col:20> 'unsigned int' <IntegralCast>
+    |   | |       `-ParenExpr 0x11f829658 <col:13, col:20> 'int'
+    |   | |         `-BinaryOperator 0x11f829638 <col:14, col:19> 'int' '<<'
+    |   | |           |-IntegerLiteral 0x11f8283d0 <col:14> 'int' 1
+    |   | |           `-ImplicitCastExpr 0x11f829620 <col:19> 'unsigned int' <LValueToRValue>
+    |   | |             `-DeclRefExpr 0x11f829600 <col:19> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    |   | `-ContinueStmt 0x11f829700 <line:18:4>
+    |   |-IfStmt 0x11f829b38 <line:19:3, line:25:3>
+    |   | |-BinaryOperator 0x11f8299d0 <line:19:7, col:33> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x11f829960 <col:7, col:27> 'int' contains-errors '=='
+    |   | | | |-ArraySubscriptExpr 0x11f829940 <col:7, col:22> '<dependent type>' contains-errors lvalue
+    |   | | | | |-ImplicitCastExpr 0x11f829910 <col:7, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | | | `-RecoveryExpr 0x11f829760 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    |   | | | | |   `-DeclRefExpr 0x11f829728 <col:7> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    |   | | | | `-ImplicitCastExpr 0x11f829928 <col:21> 'unsigned int' <LValueToRValue>
+    |   | | | |   `-DeclRefExpr 0x11f829788 <col:21> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    |   | | | `-IntegerLiteral 0x11f8297f8 <col:27> 'int' 0
+    |   | | `-UnaryOperator 0x11f8299b8 <col:32, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | |   `-ImplicitCastExpr 0x11f8299a0 <col:33> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |     `-RecoveryExpr 0x11f829980 <col:33> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x11f829b28 <col:42, line:25:3>
+    |   `-UnaryOperator 0x11f829c28 <line:26:3, col:19> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |     `-ArraySubscriptExpr 0x11f829c08 <col:3, col:18> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x11f829bd8 <col:3, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x11f829b90 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x11f829b58 <col:3> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    |       `-ImplicitCastExpr 0x11f829bf0 <col:17> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x11f829bb8 <col:17> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    |-ForStmt 0x11f82a0d0 <line:29:2, line:31:20>
+    | |-BinaryOperator 0x11f829cf8 <line:29:7, col:11> 'unsigned int' '='
+    | | |-DeclRefExpr 0x11f829ca0 <col:7> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | | `-ImplicitCastExpr 0x11f829ce0 <col:11> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x11f829cc0 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x11f829d38 <col:14> 'unsigned int' <LValueToRValue>
+    | | `-DeclRefExpr 0x11f829d18 <col:14> 'unsigned int' lvalue ParmVar 0x11f827400 'set' 'unsigned int'
+    | |-BinaryOperator 0x11f829ea0 <col:19, col:38> 'unsigned int' ','
+    | | |-CompoundAssignOperator 0x11f829e38 <col:19, col:34> 'unsigned int' '&=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+    | | | |-DeclRefExpr 0x11f829d50 <col:19> 'unsigned int' lvalue ParmVar 0x11f827400 'set' 'unsigned int'
+    | | | `-ImplicitCastExpr 0x11f829e20 <col:26, col:34> 'unsigned int' <IntegralCast>
+    | | |   `-UnaryOperator 0x11f829e08 <col:26, col:34> 'int' prefix '~' cannot overflow
+    | | |     `-ParenExpr 0x11f829de8 <col:27, col:34> 'int'
+    | | |       `-BinaryOperator 0x11f829dc8 <col:28, col:33> 'int' '<<'
+    | | |         |-IntegerLiteral 0x11f829d70 <col:28> 'int' 1
+    | | |         `-ImplicitCastExpr 0x11f829db0 <col:33> 'unsigned int' <LValueToRValue>
+    | | |           `-DeclRefExpr 0x11f829d90 <col:33> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | | `-UnaryOperator 0x11f829e88 <col:37, col:38> 'unsigned int' postfix '++'
+    | |   `-DeclRefExpr 0x11f829e68 <col:37> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    | `-IfStmt 0x11f82a0b0 <line:30:3, line:31:20>
+    |   |-BinaryOperator 0x11f829fa8 <line:30:7, col:20> 'unsigned int' '&'
+    |   | |-ImplicitCastExpr 0x11f829f78 <col:7> 'unsigned int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x11f829ec0 <col:7> 'unsigned int' lvalue ParmVar 0x11f827400 'set' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11f829f90 <col:13, col:20> 'unsigned int' <IntegralCast>
+    |   |   `-ParenExpr 0x11f829f58 <col:13, col:20> 'int'
+    |   |     `-BinaryOperator 0x11f829f38 <col:14, col:19> 'int' '<<'
+    |   |       |-IntegerLiteral 0x11f829ee0 <col:14> 'int' 1
+    |   |       `-ImplicitCastExpr 0x11f829f20 <col:19> 'unsigned int' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x11f829f00 <col:19> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    |   `-UnaryOperator 0x11f82a098 <line:31:4, col:20> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |     `-ArraySubscriptExpr 0x11f82a078 <col:4, col:19> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x11f82a048 <col:4, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x11f82a000 <col:4, col:12> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x11f829fc8 <col:4> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'
+    |       `-ImplicitCastExpr 0x11f82a060 <col:18> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x11f82a028 <col:18> 'unsigned int' lvalue Var 0x11f827838 't' 'unsigned int'
+    |-ForStmt 0x11f82a478 <line:34:2, line:37:2>
+    | |-BinaryOperator 0x11f82a148 <line:34:7, col:11> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x11f82a108 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x11f82a128 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x11f82a1e0 <col:14, col:18> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x11f82a168 <col:14> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x11f82a1c0 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x11f82a220 <col:33, col:34> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | | `-RecoveryExpr 0x11f82a200 <col:33> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11f82a468 <col:38, line:37:2>
+    `-CallExpr 0x11f82ac98 <line:40:2, col:33> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x11f82ac00 <col:2> 'int ()' Function 0x11f82a538 'write_seqcount_end' 'int ()'
+      `-UnaryOperator 0x11f82ac80 <col:21, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x11f82ac58 <col:22, col:30> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x11f82ac20 <col:22> 'struct psi_group_cpu *' lvalue Var 0x11f827788 'groupc' 'struct psi_group_cpu *'

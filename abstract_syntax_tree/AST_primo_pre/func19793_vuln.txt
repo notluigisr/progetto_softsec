@@ -1,0 +1,23 @@
+`-FunctionDecl 0x1380266d0  line:1:13 invalid qemu_input_queue_delay 'void (struct QemuInputEventQueueHead *, int *, int)' static
+  |-ParmVarDecl 0x13800e248 <col:36, col:68> col:68 used queue 'struct QemuInputEventQueueHead *'
+  |-ParmVarDecl 0x13800e318 <line:2:36, col:47> col:47 invalid timer 'int *'
+  |-ParmVarDecl 0x13800e398 <col:54, col:63> col:63 invalid delay_ms 'int'
+  `-CompoundStmt 0x138027108 <line:3:1, line:16:1>
+    |-CallExpr 0x138026ba8 <line:10:5, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138026ac0 <col:5> 'int ()' Function 0x138026a08 'QTAILQ_INSERT_TAIL' 'int ()'
+    | |-DeclRefExpr 0x138026ae0 <col:24> 'struct QemuInputEventQueueHead *' lvalue ParmVar 0x13800e248 'queue' 'struct QemuInputEventQueueHead *'
+    | |-RecoveryExpr 0x138026b68 <col:31> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x138026b88 <col:37> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x1380270e8 <line:12:5, line:15:5>
+      |-RecoveryExpr 0x138026bf8 <line:12:9> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x1380270d0 <col:22, line:15:5>
+        `-CallExpr 0x1380270a0 <line:13:9, line:14:35> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x138026cf8 <line:13:9> 'int ()' Function 0x138026c40 'timer_mod' 'int ()'
+          |-CXXDependentScopeMemberExpr 0x138026f88 <col:19, col:25> '<dependent type>' contains-errors lvalue ->timer
+          | `-RecoveryExpr 0x138026f68 <col:19> '<dependent type>' contains-errors lvalue
+          `-BinaryOperator 0x138027080 <col:32, line:14:27> '<dependent type>' contains-errors '+'
+            |-CallExpr 0x138026ff0 <line:13:32, col:68> '<dependent type>' contains-errors
+            | |-DeclRefExpr 0x138026e58 <col:32> 'int ()' Function 0x138026da0 'qemu_clock_get_ms' 'int ()'
+            | `-RecoveryExpr 0x138026fd0 <col:50> '<dependent type>' contains-errors lvalue
+            `-CXXDependentScopeMemberExpr 0x138027038 <line:14:21, col:27> '<dependent type>' contains-errors lvalue ->delay_ms
+              `-RecoveryExpr 0x138027018 <col:21> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,44 @@
+`-FunctionDecl 0x15002aea8  line:1:5 finish_open 'int (struct file *, struct dentry *, int (*)(struct inode *, struct file *), int *)'
+  |-ParmVarDecl 0x15000e248 <col:17, col:30> col:30 used file 'struct file *'
+  |-ParmVarDecl 0x15002a828 <col:36, col:51> col:51 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x15002aca8 <line:2:3, col:44> col:9 used open 'int (*)(struct inode *, struct file *)'
+  |-ParmVarDecl 0x15002ad58 <line:3:3, col:8> col:8 used opened 'int *'
+  `-CompoundStmt 0x15002d578 <line:4:1, line:14:1>
+    |-DeclStmt 0x15002b038 <line:5:2, col:11>
+    | `-VarDecl 0x15002afd0 <col:2, col:6> col:6 used error 'int'
+    |-CallExpr 0x15002b2f0 <line:6:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15002b180 <col:2> 'int ()' Function 0x15002b0c8 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x15002b2d0 <col:9, col:19> '<dependent type>' contains-errors '&'
+    |   |-UnaryOperator 0x15002b298 <col:9, col:10> 'int' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x15002b280 <col:10> 'int *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x15002b1a0 <col:10> 'int *' lvalue ParmVar 0x15002ad58 'opened' 'int *'
+    |   `-RecoveryExpr 0x15002b2b0 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15002b3e0 <line:8:2, col:24> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15002b378 <col:2, col:15> '<dependent type>' contains-errors lvalue .dentry
+    | | `-RecoveryExpr 0x15002b350 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15002b318 <col:2> 'struct file *' lvalue ParmVar 0x15000e248 'file' 'struct file *'
+    | `-DeclRefExpr 0x15002b3c0 <col:24> 'struct dentry *' lvalue ParmVar 0x15002a828 'dentry' 'struct dentry *'
+    |-BinaryOperator 0x15002b748 <line:9:2, col:51> 'int' '='
+    | |-DeclRefExpr 0x15002b400 <col:2> 'int' lvalue Var 0x15002afd0 'error' 'int'
+    | `-CallExpr 0x15002b6e0 <col:10, col:51> 'int'
+    |   |-ImplicitCastExpr 0x15002b6c8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15002b500 <col:10> 'int ()' Function 0x15002b448 'do_dentry_open' 'int ()'
+    |   |-ImplicitCastExpr 0x15002b718 <col:25> 'struct file *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x15002b520 <col:25> 'struct file *' lvalue ParmVar 0x15000e248 'file' 'struct file *'
+    |   |-ImplicitCastExpr 0x15002b730 <col:31> 'int (*)(struct inode *, struct file *)' <LValueToRValue>
+    |   | `-DeclRefExpr 0x15002b540 <col:31> 'int (*)(struct inode *, struct file *)' lvalue ParmVar 0x15002aca8 'open' 'int (*)(struct inode *, struct file *)'
+    |   `-CallExpr 0x15002b6a8 <col:37, col:50> 'int'
+    |     `-ImplicitCastExpr 0x15002b690 <col:37> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x15002b640 <col:37> 'int ()' Function 0x15002b588 'current_cred' 'int ()'
+    |-IfStmt 0x15002d510 <line:10:2, line:11:14>
+    | |-UnaryOperator 0x15002b7a0 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15002b788 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15002b768 <col:7> 'int' lvalue Var 0x15002afd0 'error' 'int'
+    | `-CompoundAssignOperator 0x15002d4e0 <line:11:3, col:14> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-UnaryOperator 0x15002d4a8 <col:3, col:4> 'int' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x15002d490 <col:4> 'int *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x15002b7b8 <col:4> 'int *' lvalue ParmVar 0x15002ad58 'opened' 'int *'
+    |   `-RecoveryExpr 0x15002d4c0 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15002d568 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x15002d550 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x15002d530 <col:9> 'int' lvalue Var 0x15002afd0 'error' 'int'

@@ -1,0 +1,103 @@
+`-FunctionDecl 0x14682b778  line:1:6 invalid f2fs_init_extent_tree 'int (struct inode *, struct f2fs_extent *)'
+  |-ParmVarDecl 0x14680e268 <col:28, col:42> col:42 used inode 'struct inode *'
+  |-ParmVarDecl 0x14682b658 <col:49, col:69> col:69 used i_ext 'struct f2fs_extent *'
+  `-CompoundStmt 0x146122808 <line:2:1, line:37:1>
+    |-DeclStmt 0x14682bc58 <line:3:2, col:45>
+    | |-RecordDecl 0x14682b830 <col:2, col:9> col:9 struct f2fs_sb_info
+    | `-VarDecl 0x14682b998 <col:2, col:44> col:23 used sbi 'struct f2fs_sb_info *' cinit
+    |   `-ImplicitCastExpr 0x14682bc28 <col:29, col:44> 'struct f2fs_sb_info *' <IntegralToPointer>
+    |     `-CallExpr 0x14682bbe8 <col:29, col:44> 'int'
+    |       |-ImplicitCastExpr 0x14682bbd0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14682bb60 <col:29> 'int ()' Function 0x14682baa8 'F2FS_I_SB' 'int ()'
+    |       `-ImplicitCastExpr 0x14682bc10 <col:39> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14682bb80 <col:39> 'struct inode *' lvalue ParmVar 0x14680e268 'inode' 'struct inode *'
+    |-DeclStmt 0x14682be58 <line:4:2, col:24>
+    | |-RecordDecl 0x14682bc70 <col:2, col:9> col:9 struct extent_tree
+    | `-VarDecl 0x14682bdd8 <col:2, col:22> col:22 used et 'struct extent_tree *'
+    |-DeclStmt 0x14682c058 <line:5:2, col:24>
+    | |-RecordDecl 0x14682be70 <col:2, col:9> col:9 struct extent_node
+    | `-VarDecl 0x14682bfd8 <col:2, col:22> col:22 used en 'struct extent_node *'
+    |-DeclStmt 0x14682c1e8 <line:6:2, col:23>
+    | |-RecordDecl 0x14682c070 <col:2, col:9> col:9 struct extent_info
+    | `-VarDecl 0x14682c168 <col:2, col:21> col:21 invalid ei 'struct extent_info'
+    |-IfStmt 0x14682c588 <line:8:2, line:15:2>
+    | |-UnaryOperator 0x14682c378 <line:8:6, col:33> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x14682c338 <col:7, col:33> 'int'
+    | |   |-ImplicitCastExpr 0x14682c320 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14682c2e0 <col:7> 'int ()' Function 0x14682c228 'f2fs_may_extent_tree' 'int ()'
+    | |   `-ImplicitCastExpr 0x14682c360 <col:28> 'struct inode *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14682c300 <col:28> 'struct inode *' lvalue ParmVar 0x14680e268 'inode' 'struct inode *'
+    | `-CompoundStmt 0x14682c570 <col:36, line:15:2>
+    |   `-IfStmt 0x14682c538 <line:10:3, line:13:3>
+    |     |-BinaryOperator 0x14682c410 <line:10:7, col:23> 'int' contains-errors '&&'
+    |     | |-DeclRefExpr 0x14682c390 <col:7> 'struct f2fs_extent *' lvalue ParmVar 0x14682b658 'i_ext' 'struct f2fs_extent *'
+    |     | `-RecoveryExpr 0x14682c3e8 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x14682c3b0 <col:16> 'struct f2fs_extent *' lvalue ParmVar 0x14682b658 'i_ext' 'struct f2fs_extent *'
+    |     `-CompoundStmt 0x14682c518 <col:28, line:13:3>
+    |       |-BinaryOperator 0x14682c4b0 <line:11:4, col:17> '<dependent type>' contains-errors '='
+    |       | |-RecoveryExpr 0x14682c468 <col:4, col:11> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x14682c430 <col:4> 'struct f2fs_extent *' lvalue ParmVar 0x14682b658 'i_ext' 'struct f2fs_extent *'
+    |       | `-IntegerLiteral 0x14682c490 <col:17> 'int' 0
+    |       `-ReturnStmt 0x14682c508 <line:12:4, col:11>
+    |         `-RecoveryExpr 0x14682c4e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14682d168 <line:17:2, col:31> 'struct extent_tree *' '='
+    | |-DeclRefExpr 0x14682c5a8 <col:2> 'struct extent_tree *' lvalue Var 0x14682bdd8 'et' 'struct extent_tree *'
+    | `-ImplicitCastExpr 0x14682d150 <col:7, col:31> 'struct extent_tree *' <IntegralToPointer>
+    |   `-CallExpr 0x14682d110 <col:7, col:31> 'int'
+    |     |-ImplicitCastExpr 0x14682d0f8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14682d0b8 <col:7> 'int ()' Function 0x14682d000 '__grab_extent_tree' 'int ()'
+    |     `-ImplicitCastExpr 0x14682d138 <col:26> 'struct inode *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14682d0d8 <col:26> 'struct inode *' lvalue ParmVar 0x14680e268 'inode' 'struct inode *'
+    |-CallExpr 0x14682d478 <line:22:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14682d400 <col:2> 'int ()' Function 0x14682d348 'get_extent_info' 'int ()'
+    | |-UnaryOperator 0x14682d440 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14682d420 <col:19> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x14682d458 <col:23> 'struct f2fs_extent *' lvalue ParmVar 0x14682b658 'i_ext' 'struct f2fs_extent *'
+    |-CallExpr 0x14682d620 <line:24:2, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14682d588 <col:2> 'int ()' Function 0x14682d4d0 'write_lock' 'int ()'
+    | `-UnaryOperator 0x14682d608 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14682d5e0 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14682d5a8 <col:14> 'struct extent_tree *' lvalue Var 0x14682bdd8 'et' 'struct extent_tree *'
+    |-IfStmt 0x14682d850 <line:25:2, line:26:8>
+    | |-CallExpr 0x14682d7c0 <line:25:6, col:31> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14682d728 <col:6> 'int ()' Function 0x14682d670 'atomic_read' 'int ()'
+    | | `-UnaryOperator 0x14682d7a8 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x14682d780 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14682d748 <col:19> 'struct extent_tree *' lvalue Var 0x14682bdd8 'et' 'struct extent_tree *'
+    | `-GotoStmt 0x14682d838 <line:26:3, col:8> 'out' 0x14682d7e8
+    |-BinaryOperator 0x14682da40 <line:28:2, col:38> 'struct extent_node *' contains-errors '='
+    | |-DeclRefExpr 0x14682d870 <col:2> 'struct extent_node *' lvalue Var 0x14682bfd8 'en' 'struct extent_node *'
+    | `-CallExpr 0x14682da08 <col:7, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14682d970 <col:7> 'int ()' Function 0x14682d8b8 '__init_extent_tree' 'int ()'
+    |   |-DeclRefExpr 0x14682d990 <col:26> 'struct f2fs_sb_info *' lvalue Var 0x14682b998 'sbi' 'struct f2fs_sb_info *'
+    |   |-DeclRefExpr 0x14682d9b0 <col:31> 'struct extent_tree *' lvalue Var 0x14682bdd8 'et' 'struct extent_tree *'
+    |   `-UnaryOperator 0x14682d9f0 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14682d9d0 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x146122628 <line:29:2, line:33:2>
+    | |-ImplicitCastExpr 0x14682da80 <line:29:6> 'struct extent_node *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14682da60 <col:6> 'struct extent_node *' lvalue Var 0x14682bfd8 'en' 'struct extent_node *'
+    | `-CompoundStmt 0x146122600 <col:10, line:33:2>
+    |   |-CallExpr 0x14682dc10 <line:30:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14682db78 <col:3> 'int ()' Function 0x14682dac0 'spin_lock' 'int ()'
+    |   | `-UnaryOperator 0x14682dbf8 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14682dbd0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14682db98 <col:14> 'struct f2fs_sb_info *' lvalue Var 0x14682b998 'sbi' 'struct f2fs_sb_info *'
+    |   |-CallExpr 0x14682de28 <line:31:3, col:45> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14682dd18 <col:3> 'int ()' Function 0x14682dc60 'list_add_tail' 'int ()'
+    |   | |-UnaryOperator 0x14682dd98 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x14682dd70 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14682dd38 <col:18> 'struct extent_node *' lvalue Var 0x14682bfd8 'en' 'struct extent_node *'
+    |   | `-UnaryOperator 0x14682de10 <col:28, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14682dde8 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14682ddb0 <col:29> 'struct f2fs_sb_info *' lvalue Var 0x14682b998 'sbi' 'struct f2fs_sb_info *'
+    |   `-CallExpr 0x14682dfd0 <line:32:3, col:32> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14682df38 <col:3> 'int ()' Function 0x14682de80 'spin_unlock' 'int ()'
+    |     `-UnaryOperator 0x14682dfb8 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14682df90 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14682df58 <col:16> 'struct f2fs_sb_info *' lvalue Var 0x14682b998 'sbi' 'struct f2fs_sb_info *'
+    `-LabelStmt 0x1461227e8 <line:34:1, line:35:24> 'out'
+      `-CallExpr 0x1461227c0 <col:2, col:24> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x146122728 <col:2> 'int ()' Function 0x146122670 'write_unlock' 'int ()'
+        `-UnaryOperator 0x1461227a8 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x146122780 <col:16, col:20> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x146122748 <col:16> 'struct extent_tree *' lvalue Var 0x14682bdd8 'et' 'struct extent_tree *'

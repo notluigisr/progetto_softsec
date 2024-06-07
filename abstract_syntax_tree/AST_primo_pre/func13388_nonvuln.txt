@@ -1,0 +1,34 @@
+`-FunctionDecl 0x156026740  line:1:13 svm_set_gdt 'void (struct kvm_vcpu *, struct desc_ptr *)' static
+  |-ParmVarDecl 0x15600e248 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x156026628 <col:48, col:65> col:65 used dt 'struct desc_ptr *'
+  `-CompoundStmt 0x1560271b8 <line:2:1, line:8:1>
+    |-DeclStmt 0x156026c38 <line:3:2, col:37>
+    | |-RecordDecl 0x156026840 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x1560269a8 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x156026c08 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x156026bc8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x156026bb0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x156026b40 <col:25> 'int ()' Function 0x156026a88 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x156026bf0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x156026b60 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x15600e248 'vcpu' 'struct kvm_vcpu *'
+    |-BinaryOperator 0x156026de8 <line:5:2, col:35> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x156026d40 <col:2, col:23> '<dependent type>' contains-errors lvalue .limit
+    | | `-CXXDependentScopeMemberExpr 0x156026cf8 <col:2, col:18> '<dependent type>' contains-errors lvalue .gdtr
+    | |   `-CXXDependentScopeMemberExpr 0x156026cb0 <col:2, col:13> '<dependent type>' contains-errors lvalue ->save
+    | |     `-RecoveryExpr 0x156026c88 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x156026c50 <col:2> 'struct vcpu_svm *' lvalue Var 0x1560269a8 'svm' 'struct vcpu_svm *'
+    | `-RecoveryExpr 0x156026dc0 <col:31, col:35> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x156026d88 <col:31> 'struct desc_ptr *' lvalue ParmVar 0x156026628 'dt' 'struct desc_ptr *'
+    |-BinaryOperator 0x156026fa0 <line:6:2, col:34> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x156026ef8 <col:2, col:23> '<dependent type>' contains-errors lvalue .base
+    | | `-CXXDependentScopeMemberExpr 0x156026eb0 <col:2, col:18> '<dependent type>' contains-errors lvalue .gdtr
+    | |   `-CXXDependentScopeMemberExpr 0x156026e68 <col:2, col:13> '<dependent type>' contains-errors lvalue ->save
+    | |     `-RecoveryExpr 0x156026e40 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x156026e08 <col:2> 'struct vcpu_svm *' lvalue Var 0x1560269a8 'svm' 'struct vcpu_svm *'
+    | `-RecoveryExpr 0x156026f78 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x156026f40 <col:30> 'struct desc_ptr *' lvalue ParmVar 0x156026628 'dt' 'struct desc_ptr *'
+    `-CallExpr 0x156027188 <line:7:2, col:36> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1560270a0 <col:2> 'int ()' Function 0x156026fe8 'vmcb_mark_dirty' 'int ()'
+      |-RecoveryExpr 0x1560270f8 <col:18, col:23> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x1560270c0 <col:18> 'struct vcpu_svm *' lvalue Var 0x1560269a8 'svm' 'struct vcpu_svm *'
+      `-RecoveryExpr 0x156027168 <col:29> '<dependent type>' contains-errors lvalue

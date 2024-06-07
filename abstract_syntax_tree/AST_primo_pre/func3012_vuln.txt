@@ -1,0 +1,33 @@
+`-FunctionDecl 0x1311418d8  line:1:5 invalid ext4_data_block_valid 'int (struct ext4_sb_info *, int, unsigned int)'
+  |-ParmVarDecl 0x131128648 <col:27, col:48> col:48 used sbi 'struct ext4_sb_info *'
+  |-ParmVarDecl 0x1311286e0 <col:53, col:66> col:66 invalid start_blk 'int'
+  |-ParmVarDecl 0x131128760 <line:2:6, col:19> col:19 used count 'unsigned int'
+  `-CompoundStmt 0x131142360 <line:3:1, line:14:1>
+    |-DeclStmt 0x131141b88 <line:4:2, col:40>
+    | |-RecordDecl 0x131141998 <col:2, col:9> col:9 struct ext4_system_blocks
+    | `-VarDecl 0x131141b08 <col:2, col:29> col:29 used system_blks 'struct ext4_system_blocks *'
+    |-DeclStmt 0x131141c20 <line:5:2, col:9>
+    | `-VarDecl 0x131141bb8 <col:2, col:6> col:6 used ret 'int'
+    |-CallExpr 0x131141df8 <line:8:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x131141de0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x131141d90 <col:2> 'int ()' Function 0x131141cd8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x131141fc0 <line:9:2, col:48> 'struct ext4_system_blocks *' contains-errors '='
+    | |-DeclRefExpr 0x131141e18 <col:2> 'struct ext4_system_blocks *' lvalue Var 0x131141b08 'system_blks' 'struct ext4_system_blocks *'
+    | `-CallExpr 0x131141f98 <col:16, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131141f18 <col:16> 'int ()' Function 0x131141e60 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x131141f70 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x131141f38 <col:32> 'struct ext4_sb_info *' lvalue ParmVar 0x131128648 'sbi' 'struct ext4_sb_info *'
+    |-BinaryOperator 0x1311421c0 <line:10:2, line:11:11> 'int' contains-errors '='
+    | |-DeclRefExpr 0x131141fe0 <line:10:2> 'int' lvalue Var 0x131141bb8 'ret' 'int'
+    | `-CallExpr 0x131142180 <col:8, line:11:11> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1311420e0 <line:10:8> 'int ()' Function 0x131142028 'ext4_data_block_valid_rcu' 'int ()'
+    |   |-DeclRefExpr 0x131142100 <col:34> 'struct ext4_sb_info *' lvalue ParmVar 0x131128648 'sbi' 'struct ext4_sb_info *'
+    |   |-DeclRefExpr 0x131142120 <col:39> 'struct ext4_system_blocks *' lvalue Var 0x131141b08 'system_blks' 'struct ext4_system_blocks *'
+    |   |-RecoveryExpr 0x131142140 <col:52> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x131142160 <line:11:6> 'unsigned int' lvalue ParmVar 0x131128760 'count' 'unsigned int'
+    |-CallExpr 0x1311422f8 <line:12:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1311422e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1311422c0 <col:2> 'int ()' Function 0x131142208 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x131142350 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x131142338 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x131142318 <col:9> 'int' lvalue Var 0x131141bb8 'ret' 'int'

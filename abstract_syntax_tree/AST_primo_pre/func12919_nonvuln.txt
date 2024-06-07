@@ -1,0 +1,64 @@
+`-FunctionDecl 0x133008358  line:1:12 invalid shmem_radix_tree_replace 'int (struct address_space *, int, void *, void *)' static
+  |-ParmVarDecl 0x1320f9448 <col:37, col:59> col:59 used mapping 'struct address_space *'
+  |-ParmVarDecl 0x1320f94e0 <line:2:4, col:12> col:12 invalid index 'int'
+  |-ParmVarDecl 0x1320f9560 <col:19, col:25> col:25 used expected 'void *'
+  |-ParmVarDecl 0x133008200 <col:35, col:41> col:41 used replacement 'void *'
+  `-CompoundStmt 0x132112600 <line:3:1, line:19:1>
+    |-DeclStmt 0x1330084d0 <line:4:2, col:14>
+    | `-VarDecl 0x133008468 <col:2, col:9> col:9 used pslot 'void **'
+    |-DeclStmt 0x1330085a0 <line:5:2, col:19>
+    | `-VarDecl 0x133008500 <col:2, col:15> col:8 used item 'void *' cinit
+    |   `-RecoveryExpr 0x133008580 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1330087c8 <line:7:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x1330087b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x133008710 <col:2> 'int ()' Function 0x133008658 'VM_BUG_ON' 'int ()'
+    | `-UnaryOperator 0x133008768 <col:12, col:13> 'int' prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x133008750 <col:13> 'void *' <LValueToRValue>
+    |     `-DeclRefExpr 0x133008730 <col:13> 'void *' lvalue ParmVar 0x1320f9560 'expected' 'void *'
+    |-BinaryOperator 0x1330089d8 <line:8:2, col:59> 'void **' contains-errors '='
+    | |-DeclRefExpr 0x1330087f0 <col:2> 'void **' lvalue Var 0x133008468 'pslot' 'void **'
+    | `-CallExpr 0x1330089a8 <col:10, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1330088f0 <col:10> 'int ()' Function 0x133008838 'radix_tree_lookup_slot' 'int ()'
+    |   |-UnaryOperator 0x133008970 <col:33, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x133008948 <col:34, col:43> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x133008910 <col:34> 'struct address_space *' lvalue ParmVar 0x1320f9448 'mapping' 'struct address_space *'
+    |   `-RecoveryExpr 0x133008988 <col:54> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x133008c38 <line:9:2, line:11:27>
+    | |-ImplicitCastExpr 0x133008a18 <line:9:6> 'void **' <LValueToRValue>
+    | | `-DeclRefExpr 0x1330089f8 <col:6> 'void **' lvalue Var 0x133008468 'pslot' 'void **'
+    | `-BinaryOperator 0x133008c18 <line:10:3, line:11:27> 'void *' contains-errors '='
+    |   |-DeclRefExpr 0x133008a30 <line:10:3> 'void *' contains-errors lvalue Var 0x133008500 'item' 'void *'
+    |   `-CallExpr 0x133008be8 <col:10, line:11:27> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x133008b30 <line:10:10> 'int ()' Function 0x133008a78 'radix_tree_deref_slot_protected' 'int ()'
+    |     |-DeclRefExpr 0x133008b50 <col:42> 'void **' lvalue Var 0x133008468 'pslot' 'void **'
+    |     `-UnaryOperator 0x133008bd0 <line:11:8, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x133008ba8 <col:9, col:18> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x133008b70 <col:9> 'struct address_space *' lvalue ParmVar 0x1320f9448 'mapping' 'struct address_space *'
+    |-IfStmt 0x133008d90 <line:12:2, line:13:11>
+    | |-BinaryOperator 0x133008cc8 <line:12:6, col:14> 'int' contains-errors '!='
+    | | |-ImplicitCastExpr 0x133008c98 <col:6> 'void *' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x133008c58 <col:6> 'void *' contains-errors lvalue Var 0x133008500 'item' 'void *'
+    | | `-ImplicitCastExpr 0x133008cb0 <col:14> 'void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x133008c78 <col:14> 'void *' lvalue ParmVar 0x1320f9560 'expected' 'void *'
+    | `-ReturnStmt 0x133008d80 <line:13:3, col:11>
+    |   `-UnaryOperator 0x133008d68 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x133008d50 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x133008d30 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x133009168 <line:14:2, line:17:47> has_else
+    | |-ImplicitCastExpr 0x133008dd0 <line:14:6> 'void *' <LValueToRValue>
+    | | `-DeclRefExpr 0x133008db0 <col:6> 'void *' lvalue ParmVar 0x133008200 'replacement' 'void *'
+    | |-CallExpr 0x133008f40 <line:15:3, col:45> 'int'
+    | | |-ImplicitCastExpr 0x133008f28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x133008ec8 <col:3> 'int ()' Function 0x133008e10 'radix_tree_replace_slot' 'int ()'
+    | | |-ImplicitCastExpr 0x133008f70 <col:27> 'void **' <LValueToRValue>
+    | | | `-DeclRefExpr 0x133008ee8 <col:27> 'void **' lvalue Var 0x133008468 'pslot' 'void **'
+    | | `-ImplicitCastExpr 0x133008f88 <col:34> 'void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x133008f08 <col:34> 'void *' lvalue ParmVar 0x133008200 'replacement' 'void *'
+    | `-CallExpr 0x133009138 <line:17:3, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x133009080 <col:3> 'int ()' Function 0x133008fc8 'radix_tree_delete' 'int ()'
+    |   |-UnaryOperator 0x133009100 <col:21, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x1330090d8 <col:22, col:31> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1330090a0 <col:22> 'struct address_space *' lvalue ParmVar 0x1320f9448 'mapping' 'struct address_space *'
+    |   `-RecoveryExpr 0x133009118 <col:42> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1330091b8 <line:18:2, col:9>
+      `-IntegerLiteral 0x133009198 <col:9> 'int' 0

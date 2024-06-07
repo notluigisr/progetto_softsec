@@ -1,0 +1,35 @@
+`-FunctionDecl 0x123928280  line:1:13 invalid check_pointer_type_change 'void (int *, void *)' static
+  |-ParmVarDecl 0x123928128 <col:39, col:49> col:49 invalid notifier 'int *'
+  |-ParmVarDecl 0x1239281a8 <col:59, col:65> col:65 data 'void *'
+  `-CompoundStmt 0x1239426a8 <line:2:1, line:19:1>
+    |-DeclStmt 0x123928748 <line:4:5, col:44>
+    | `-VarDecl 0x123928570 <col:5, col:43> col:9 used absolute 'int' cinit
+    |   `-CallExpr 0x123928728 <col:20, col:43> 'int'
+    |     `-ImplicitCastExpr 0x123928710 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1239286b8 <col:20> 'int ()' Function 0x123928600 'qemu_input_is_absolute' 'int ()'
+    `-IfStmt 0x123942668 <line:6:5, line:17:5>
+      |-BinaryOperator 0x123941af0 <line:6:9, col:81> 'int' contains-errors '&&'
+      | |-CallExpr 0x123941a38 <col:9, col:60> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x1239418b8 <col:9> 'int ()' Function 0x123941800 'vnc_has_feature' 'int ()'
+      | | |-RecoveryExpr 0x1239419f8 <col:25> '<dependent type>' contains-errors lvalue
+      | | `-RecoveryExpr 0x123941a18 <col:29> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x123941ad0 <col:65, col:81> 'int' contains-errors '!='
+      |   |-CXXDependentScopeMemberExpr 0x123941a88 <col:65, col:69> '<dependent type>' contains-errors lvalue ->absolute
+      |   | `-RecoveryExpr 0x123941a68 <col:65> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x123941998 <col:81> 'int' lvalue Var 0x123928570 'absolute' 'int'
+      `-CompoundStmt 0x123942638 <col:91, line:17:5>
+        |-CallExpr 0x123941c70 <line:7:9, col:27> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x123941bf0 <col:9> 'int ()' Function 0x123941b38 'vnc_lock_output' 'int ()'
+        | `-RecoveryExpr 0x123941c50 <col:25> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x123941e38 <line:8:9, col:59> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x123941d78 <col:9> 'int ()' Function 0x123941cc0 'vnc_write_u8' 'int ()'
+        | |-RecoveryExpr 0x123941df8 <col:22> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x123941e18 <col:26> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x123941f10 <line:9:9, col:27> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x123941e68 <col:9> 'int ()' Function 0x123941cc0 'vnc_write_u8' 'int ()'
+        | |-RecoveryExpr 0x123941ef0 <col:22> '<dependent type>' contains-errors lvalue
+        | `-IntegerLiteral 0x123941ea0 <col:26> 'int' 0
+        `-CallExpr 0x1239420c8 <line:10:9, col:28> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x123942020 <col:9> 'int ()' Function 0x123941f68 'vnc_write_u16' 'int ()'
+          |-RecoveryExpr 0x1239420a8 <col:23> '<dependent type>' contains-errors lvalue
+          `-IntegerLiteral 0x123942058 <col:27> 'int' 1

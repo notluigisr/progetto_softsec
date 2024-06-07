@@ -1,0 +1,20 @@
+`-FunctionDecl 0x14e10df40  line:1:6 mnt_set_expiry 'void (struct vfsmount *, struct list_head *)'
+  |-ParmVarDecl 0x14e0f5a48 <col:21, col:38> col:38 used mnt 'struct vfsmount *'
+  |-ParmVarDecl 0x14e10de28 <col:43, col:61> col:61 used expiry_list 'struct list_head *'
+  `-CompoundStmt 0x14e10e638 <line:2:1, line:8:1>
+    |-CallExpr 0x14e10e1d8 <line:3:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x14e10e1c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14e10e170 <col:2> 'int ()' Function 0x14e10e0b8 'namespace_lock' 'int ()'
+    |-CallExpr 0x14e10e4d0 <line:5:2, col:57> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e10e2d8 <col:2> 'int ()' Function 0x14e10e220 'list_add_tail' 'int ()'
+    | |-UnaryOperator 0x14e10e498 <col:16, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14e10e470 <col:17, col:34> '<dependent type>' contains-errors lvalue
+    | |   `-CallExpr 0x14e10e430 <col:17, col:31> 'int'
+    | |     |-ImplicitCastExpr 0x14e10e418 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x14e10e3d8 <col:17> 'int ()' Function 0x14e10e320 'real_mount' 'int ()'
+    | |     `-ImplicitCastExpr 0x14e10e458 <col:28> 'struct vfsmount *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x14e10e3f8 <col:28> 'struct vfsmount *' lvalue ParmVar 0x14e0f5a48 'mnt' 'struct vfsmount *'
+    | `-DeclRefExpr 0x14e10e4b0 <col:46> 'struct list_head *' lvalue ParmVar 0x14e10de28 'expiry_list' 'struct list_head *'
+    `-CallExpr 0x14e10e618 <line:7:2, col:19> 'int'
+      `-ImplicitCastExpr 0x14e10e600 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x14e10e5e0 <col:2> 'int ()' Function 0x14e10e528 'namespace_unlock' 'int ()'

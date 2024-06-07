@@ -1,0 +1,90 @@
+`-FunctionDecl 0x138140a00  line:1:22 scale_rt_capacity 'unsigned long (struct sched_domain *, int)' static
+  |-ParmVarDecl 0x138128648 <col:40, col:61> col:61 sd 'struct sched_domain *'
+  |-ParmVarDecl 0x1381286c8 <col:65, col:69> col:69 used cpu 'int'
+  `-CompoundStmt 0x1300086a0 <line:2:1, line:22:1>
+    |-DeclStmt 0x138140ef8 <line:3:2, col:29>
+    | |-RecordDecl 0x138140b00 <col:2, col:9> col:9 struct rq
+    | `-VarDecl 0x138140c68 <col:2, col:28> col:13 used rq 'struct rq *' cinit
+    |   `-ImplicitCastExpr 0x138140ec8 <col:18, col:28> 'struct rq *' <IntegralToPointer>
+    |     `-CallExpr 0x138140e88 <col:18, col:28> 'int'
+    |       |-ImplicitCastExpr 0x138140e70 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x138140e00 <col:18> 'int ()' Function 0x138140d48 'cpu_rq' 'int ()'
+    |       `-ImplicitCastExpr 0x138140eb0 <col:25> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x138140e20 <col:25> 'int' lvalue ParmVar 0x1381286c8 'cpu' 'int'
+    |-DeclStmt 0x138141120 <line:4:2, col:50>
+    | `-VarDecl 0x138140f28 <col:2, col:49> col:16 used max 'unsigned long' cinit
+    |   `-ImplicitCastExpr 0x138141108 <col:22, col:49> 'unsigned long' <IntegralCast>
+    |     `-CallExpr 0x1381410c8 <col:22, col:49> 'int'
+    |       |-ImplicitCastExpr 0x1381410b0 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x138141070 <col:22> 'int ()' Function 0x138140fb8 'arch_scale_cpu_capacity' 'int ()'
+    |       `-ImplicitCastExpr 0x1381410f0 <col:46> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x138141090 <col:46> 'int' lvalue ParmVar 0x1381286c8 'cpu' 'int'
+    |-DeclStmt 0x138141250 <line:5:2, col:26>
+    | |-VarDecl 0x138141150 <col:2, col:16> col:16 used used 'unsigned long'
+    | `-VarDecl 0x1381411d0 <col:2, col:22> col:22 used free 'unsigned long'
+    |-DeclStmt 0x1381412e8 <line:6:2, col:19>
+    | `-VarDecl 0x138141280 <col:2, col:16> col:16 used irq 'unsigned long'
+    |-BinaryOperator 0x1381414b0 <line:8:2, col:23> 'unsigned long' '='
+    | |-DeclRefExpr 0x138141300 <col:2> 'unsigned long' lvalue Var 0x138141280 'irq' 'unsigned long'
+    | `-ImplicitCastExpr 0x138141498 <col:8, col:23> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x138141458 <col:8, col:23> 'int'
+    |     |-ImplicitCastExpr 0x138141440 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x138141400 <col:8> 'int ()' Function 0x138141348 'cpu_util_irq' 'int ()'
+    |     `-ImplicitCastExpr 0x138141480 <col:21> 'struct rq *' <LValueToRValue>
+    |       `-DeclRefExpr 0x138141420 <col:21> 'struct rq *' lvalue Var 0x138140c68 'rq' 'struct rq *'
+    |-IfStmt 0x1381416e8 <line:10:2, line:11:10>
+    | |-CallExpr 0x138141678 <line:10:6, col:25> 'int'
+    | | |-ImplicitCastExpr 0x138141660 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1381415b0 <col:6> 'int ()' Function 0x1381414f8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x138141640 <col:15, col:22> 'int' '>='
+    | |   |-ImplicitCastExpr 0x138141610 <col:15> 'unsigned long' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x1381415d0 <col:15> 'unsigned long' lvalue Var 0x138141280 'irq' 'unsigned long'
+    | |   `-ImplicitCastExpr 0x138141628 <col:22> 'unsigned long' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1381415f0 <col:22> 'unsigned long' lvalue Var 0x138140f28 'max' 'unsigned long'
+    | `-ReturnStmt 0x1381416d8 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x1381416c0 <col:10> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x1381416a0 <col:10> 'int' 1
+    |-BinaryOperator 0x1381418f8 <line:13:2, col:38> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x138141708 <col:2> 'unsigned long' lvalue Var 0x138141150 'used' 'unsigned long'
+    | `-CallExpr 0x1381418d0 <col:9, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138141808 <col:9> 'int ()' Function 0x138141750 'READ_ONCE' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x138141888 <col:19, col:30> '<dependent type>' contains-errors lvalue .util_avg
+    |     `-RecoveryExpr 0x138141860 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x138141828 <col:19> 'struct rq *' lvalue Var 0x138140c68 'rq' 'struct rq *'
+    |-CompoundAssignOperator 0x130008228 <line:14:2, col:39> 'unsigned long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x138141918 <col:2> 'unsigned long' lvalue Var 0x138141150 'used' 'unsigned long'
+    | `-CallExpr 0x130008200 <col:10, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138141938 <col:10> 'int ()' Function 0x138141750 'READ_ONCE' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x1381419b8 <col:20, col:31> '<dependent type>' contains-errors lvalue .util_avg
+    |     `-RecoveryExpr 0x138141990 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x138141958 <col:20> 'struct rq *' lvalue Var 0x138140c68 'rq' 'struct rq *'
+    |-IfStmt 0x130008390 <line:16:2, line:17:10>
+    | |-CallExpr 0x130008320 <line:16:6, col:26> 'int'
+    | | |-ImplicitCastExpr 0x130008308 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x130008258 <col:6> 'int ()' Function 0x1381414f8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x1300082e8 <col:15, col:23> 'int' '>='
+    | |   |-ImplicitCastExpr 0x1300082b8 <col:15> 'unsigned long' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x130008278 <col:15> 'unsigned long' lvalue Var 0x138141150 'used' 'unsigned long'
+    | |   `-ImplicitCastExpr 0x1300082d0 <col:23> 'unsigned long' <LValueToRValue>
+    | |     `-DeclRefExpr 0x130008298 <col:23> 'unsigned long' lvalue Var 0x138140f28 'max' 'unsigned long'
+    | `-ReturnStmt 0x130008380 <line:17:3, col:10>
+    |   `-ImplicitCastExpr 0x130008368 <col:10> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x130008348 <col:10> 'int' 1
+    |-BinaryOperator 0x130008460 <line:19:2, col:15> 'unsigned long' '='
+    | |-DeclRefExpr 0x1300083b0 <col:2> 'unsigned long' lvalue Var 0x1381411d0 'free' 'unsigned long'
+    | `-BinaryOperator 0x130008440 <col:9, col:15> 'unsigned long' '-'
+    |   |-ImplicitCastExpr 0x130008410 <col:9> 'unsigned long' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1300083d0 <col:9> 'unsigned long' lvalue Var 0x138140f28 'max' 'unsigned long'
+    |   `-ImplicitCastExpr 0x130008428 <col:15> 'unsigned long' <LValueToRValue>
+    |     `-DeclRefExpr 0x1300083f0 <col:15> 'unsigned long' lvalue Var 0x138141150 'used' 'unsigned long'
+    `-ReturnStmt 0x130008690 <line:21:2, col:42>
+      `-ImplicitCastExpr 0x130008678 <col:9, col:42> 'unsigned long' <IntegralCast>
+        `-CallExpr 0x1300085f8 <col:9, col:42> 'int'
+          |-ImplicitCastExpr 0x1300085e0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x130008560 <col:9> 'int ()' Function 0x1300084a8 'scale_irq_capacity' 'int ()'
+          |-ImplicitCastExpr 0x130008630 <col:28> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x130008580 <col:28> 'unsigned long' lvalue Var 0x1381411d0 'free' 'unsigned long'
+          |-ImplicitCastExpr 0x130008648 <col:34> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x1300085a0 <col:34> 'unsigned long' lvalue Var 0x138141280 'irq' 'unsigned long'
+          `-ImplicitCastExpr 0x130008660 <col:39> 'unsigned long' <LValueToRValue>
+            `-DeclRefExpr 0x1300085c0 <col:39> 'unsigned long' lvalue Var 0x138140f28 'max' 'unsigned long'

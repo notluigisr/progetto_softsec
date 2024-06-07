@@ -1,0 +1,25 @@
+`-FunctionDecl 0x13a13f008  line:1:5 invalid ext4_group_desc_csum_verify 'int (struct super_block *, int, struct ext4_group_desc *)'
+  |-ParmVarDecl 0x13a125c48 <col:33, col:53> col:53 used sb 'struct super_block *'
+  |-ParmVarDecl 0x13a125ce0 <col:57, col:63> col:63 invalid block_group 'int'
+  |-ParmVarDecl 0x13a13eec8 <line:2:5, col:29> col:29 used gdp 'struct ext4_group_desc *'
+  `-CompoundStmt 0x13a13f5c0 <line:3:1, line:9:1>
+    |-IfStmt 0x13a13f570 <line:4:2, line:6:10>
+    | |-BinaryOperator 0x13a13f520 <line:4:6, line:5:69> 'int' contains-errors '&&'
+    | | |-CallExpr 0x13a13f2a8 <line:4:6, col:33> 'int'
+    | | | |-ImplicitCastExpr 0x13a13f290 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x13a13f220 <col:6> 'int ()' Function 0x13a13f168 'ext4_has_group_desc_csum' 'int ()'
+    | | | `-ImplicitCastExpr 0x13a13f2d0 <col:31> 'struct super_block *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x13a13f240 <col:31> 'struct super_block *' lvalue ParmVar 0x13a125c48 'sb' 'struct super_block *'
+    | | `-ParenExpr 0x13a13f500 <line:5:6, col:69> 'int' contains-errors
+    | |   `-BinaryOperator 0x13a13f4e0 <col:7, col:68> 'int' contains-errors '!='
+    | |     |-RecoveryExpr 0x13a13f320 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x13a13f2e8 <col:7> 'struct ext4_group_desc *' lvalue ParmVar 0x13a13eec8 'gdp' 'struct ext4_group_desc *'
+    | |     `-CallExpr 0x13a13f4a8 <col:27, col:68> '<dependent type>' contains-errors
+    | |       |-DeclRefExpr 0x13a13f428 <col:27> 'int ()' Function 0x13a13f370 'ext4_group_desc_csum' 'int ()'
+    | |       |-DeclRefExpr 0x13a13f448 <col:48> 'struct super_block *' lvalue ParmVar 0x13a125c48 'sb' 'struct super_block *'
+    | |       |-RecoveryExpr 0x13a13f468 <col:52> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13a13f488 <col:65> 'struct ext4_group_desc *' lvalue ParmVar 0x13a13eec8 'gdp' 'struct ext4_group_desc *'
+    | `-ReturnStmt 0x13a13f560 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x13a13f540 <col:10> 'int' 0
+    `-ReturnStmt 0x13a13f5b0 <line:8:2, col:9>
+      `-IntegerLiteral 0x13a13f590 <col:9> 'int' 1

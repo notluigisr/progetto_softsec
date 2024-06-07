@@ -1,0 +1,1 @@
+  virtual void eoClip(GfxState *state) { }

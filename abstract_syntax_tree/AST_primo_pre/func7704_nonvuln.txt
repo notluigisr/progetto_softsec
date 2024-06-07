@@ -1,0 +1,35 @@
+`-FunctionDecl 0x12400df18  line:1:6 invalid check_string_byte_length 'int (int *, int, int)'
+  |-ParmVarDecl 0x12400dd28 <col:31, col:43> col:43 invalid str 'int *'
+  |-ParmVarDecl 0x12400dda8 <col:48, col:53> col:53 used err_msg 'int'
+  |-ParmVarDecl 0x12400de28 <line:2:31, col:36> col:36 used max_byte_length 'int'
+  `-CompoundStmt 0x124029150 <line:3:1, line:11:1>
+    |-IfStmt 0x12400e0c8 <line:4:3, line:5:12>
+    | |-BinaryOperator 0x12400e060 <line:4:7, col:22> 'int' contains-errors '<='
+    | | |-CXXDependentScopeMemberExpr 0x12400dff8 <col:7, col:12> '<dependent type>' contains-errors lvalue ->length
+    | | | `-RecoveryExpr 0x12400dfd8 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12400e040 <col:22> 'int' lvalue ParmVar 0x12400de28 'max_byte_length' 'int'
+    | `-ReturnStmt 0x12400e0b8 <line:5:5, col:12>
+    |   `-RecoveryExpr 0x12400e098 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1240290c0 <line:7:3, line:8:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12400e240 <line:7:3> 'int ()' Function 0x12400e188 'my_error' 'int ()'
+    | |-RecoveryExpr 0x124028f90 <col:12> '<dependent type>' contains-errors lvalue
+    | |-CallExpr 0x124028fc8 <col:36, col:41> 'int'
+    | | |-ImplicitCastExpr 0x124028fb0 <col:36> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12400e358 <col:36> 'int ()' Function 0x12400e2a0 'MYF' 'int ()'
+    | | `-IntegerLiteral 0x12400e378 <col:40> 'int' 0
+    | |-CXXDependentScopeMemberExpr 0x124028848 <col:44, col:49> '<dependent type>' contains-errors lvalue ->str
+    | | `-RecoveryExpr 0x124028828 <col:44> '<dependent type>' contains-errors lvalue
+    | |-ConditionalOperator 0x124029090 <line:8:12, col:36> 'char *'
+    | | |-ImplicitCastExpr 0x124029048 <col:12> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x124028890 <col:12> 'int' lvalue ParmVar 0x12400dda8 'err_msg' 'int'
+    | | |-ImplicitCastExpr 0x124029078 <col:22, col:32> 'char *' <IntegralToPointer>
+    | | | `-CallExpr 0x124029008 <col:22, col:32> 'int'
+    | | |   |-ImplicitCastExpr 0x124028ff0 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x124028990 <col:22> 'int ()' Function 0x1240288d8 'ER' 'int ()'
+    | | |   `-ImplicitCastExpr 0x124029030 <col:25> 'int' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x1240289b0 <col:25> 'int' lvalue ParmVar 0x12400dda8 'err_msg' 'int'
+    | | `-ImplicitCastExpr 0x124029060 <col:36> 'char *' <ArrayToPointerDecay>
+    | |   `-StringLiteral 0x124028a70 <col:36> 'char[1]' lvalue ""
+    | `-DeclRefExpr 0x124028f28 <col:40> 'int' lvalue ParmVar 0x12400de28 'max_byte_length' 'int'
+    `-ReturnStmt 0x124029140 <line:10:3, col:10>
+      `-RecoveryExpr 0x124029120 <col:10> '<dependent type>' contains-errors lvalue

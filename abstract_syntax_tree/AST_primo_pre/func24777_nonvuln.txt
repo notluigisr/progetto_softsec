@@ -1,0 +1,44 @@
+`-FunctionDecl 0x15b944e00  line:1:13 invalid mark_edge_parents_uninteresting 'void (struct commit *, struct rev_info *, int)' static
+  |-ParmVarDecl 0x15b928648 <col:45, col:60> col:60 used commit 'struct commit *'
+  |-ParmVarDecl 0x15b944c28 <line:2:10, col:27> col:27 used revs 'struct rev_info *'
+  |-ParmVarDecl 0x15b944cc0 <line:3:10, col:23> col:23 referenced invalid show_edge 'int'
+  `-CompoundStmt 0x15b945ab0 <line:4:1, line:17:1>
+    |-DeclStmt 0x15b9450a8 <line:5:2, col:29>
+    | |-RecordDecl 0x15b944ec0 <col:2, col:9> col:9 struct commit_list
+    | `-VarDecl 0x15b945028 <col:2, col:22> col:22 used parents 'struct commit_list *'
+    `-ForStmt 0x15b945a78 <line:7:2, line:16:2>
+      |-BinaryOperator 0x15b945140 <line:7:7, col:25> 'struct commit_list *' contains-errors '='
+      | |-DeclRefExpr 0x15b9450c0 <col:7> 'struct commit_list *' lvalue Var 0x15b945028 'parents' 'struct commit_list *'
+      | `-RecoveryExpr 0x15b945118 <col:17, col:25> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x15b9450e0 <col:17> 'struct commit *' lvalue ParmVar 0x15b928648 'commit' 'struct commit *'
+      |-<<<NULL>>>
+      |-ImplicitCastExpr 0x15b945180 <col:34> 'struct commit_list *' <LValueToRValue>
+      | `-DeclRefExpr 0x15b945160 <col:34> 'struct commit_list *' lvalue Var 0x15b945028 'parents' 'struct commit_list *'
+      |-BinaryOperator 0x15b945218 <col:43, col:62> 'struct commit_list *' contains-errors '='
+      | |-DeclRefExpr 0x15b945198 <col:43> 'struct commit_list *' lvalue Var 0x15b945028 'parents' 'struct commit_list *'
+      | `-RecoveryExpr 0x15b9451f0 <col:53, col:62> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x15b9451b8 <col:53> 'struct commit_list *' lvalue Var 0x15b945028 'parents' 'struct commit_list *'
+      `-CompoundStmt 0x15b945a48 <col:68, line:16:2>
+        |-DeclStmt 0x15b945390 <line:8:3, col:40>
+        | `-VarDecl 0x15b9452c8 <col:3, col:36> col:18 used parent 'struct commit *' cinit
+        |   `-RecoveryExpr 0x15b945368 <col:27, col:36> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x15b945330 <col:27> 'struct commit_list *' lvalue Var 0x15b945028 'parents' 'struct commit_list *'
+        |-IfStmt 0x15b9454b0 <line:9:3, line:10:4>
+        | |-RecoveryExpr 0x15b945488 <line:9:7, col:45> '_Bool' contains-errors
+        | `-ContinueStmt 0x15b9454a8 <line:10:4>
+        |-CallExpr 0x15b9456b0 <line:11:3, col:39> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x15b945630 <col:3> 'int ()' Function 0x15b945578 'mark_tree_uninteresting' 'int ()'
+        | `-RecoveryExpr 0x15b945688 <col:27, col:35> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x15b945650 <col:27> 'struct commit *' contains-errors lvalue Var 0x15b9452c8 'parent' 'struct commit *'
+        `-IfStmt 0x15b945a28 <line:12:3, line:15:3>
+          |-RecoveryExpr 0x15b945818 <line:12:7, col:56> '_Bool' contains-errors
+          `-CompoundStmt 0x15b945a08 <col:59, line:15:3>
+            |-CompoundAssignOperator 0x15b945948 <line:13:4, col:28> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+            | |-CXXDependentScopeMemberExpr 0x15b945898 <col:4, col:19> '<dependent type>' contains-errors lvalue .flags
+            | | `-RecoveryExpr 0x15b945870 <col:4, col:12> '<dependent type>' contains-errors lvalue
+            | |   `-DeclRefExpr 0x15b945838 <col:4> 'struct commit *' contains-errors lvalue Var 0x15b9452c8 'parent' 'struct commit *'
+            | `-RecoveryExpr 0x15b945928 <col:28> '<dependent type>' contains-errors lvalue
+            `-CallExpr 0x15b9459e0 <line:14:4, col:20> '<dependent type>' contains-errors
+              |-RecoveryExpr 0x15b945998 <col:4> '<dependent type>' contains-errors lvalue
+              | `-DeclRefExpr 0x15b945978 <col:4> 'int' lvalue ParmVar 0x15b944cc0 'show_edge' 'int'
+              `-DeclRefExpr 0x15b9459c0 <col:14> 'struct commit *' contains-errors lvalue Var 0x15b9452c8 'parent' 'struct commit *'

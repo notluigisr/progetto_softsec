@@ -1,0 +1,44 @@
+`-FunctionDecl 0x14d8274d8  line:1:5 invalid crypto_rng_reset 'int (struct crypto_rng *, const int *, unsigned int)'
+  |-ParmVarDecl 0x14d80e248 <col:22, col:41> col:41 used tfm 'struct crypto_rng *'
+  |-ParmVarDecl 0x14d80e2e0 <col:46, col:56> col:56 referenced invalid seed 'const int *'
+  |-ParmVarDecl 0x14d80e360 <col:62, col:75> col:75 used slen 'unsigned int'
+  `-CompoundStmt 0x14d828000 <line:2:1, line:19:1>
+    |-DeclStmt 0x14d827648 <line:4:2, col:9>
+    | `-VarDecl 0x14d8275e0 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x14d827cd8 <line:6:2, line:13:2>
+    | |-BinaryOperator 0x14d8276d0 <line:6:6, col:15> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x14d827698 <col:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x14d827680 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x14d827660 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14d8276b0 <col:15> 'unsigned int' lvalue ParmVar 0x14d80e360 'slen' 'unsigned int'
+    | `-CompoundStmt 0x14d827cb0 <col:21, line:13:2>
+    |   |-IfStmt 0x14d827a18 <line:8:3, line:9:12>
+    |   | |-UnaryOperator 0x14d827958 <line:8:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x14d827940 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |   `-RecoveryExpr 0x14d827920 <col:8> '<dependent type>' contains-errors lvalue
+    |   | `-ReturnStmt 0x14d827a08 <line:9:4, col:12>
+    |   |   `-UnaryOperator 0x14d8279f0 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |     `-ImplicitCastExpr 0x14d8279d8 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x14d8279b8 <col:12> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x14d827bc0 <line:11:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14d827b18 <col:3> 'int ()' Function 0x14d827a60 'get_random_bytes' 'int ()'
+    |   | |-RecoveryExpr 0x14d827ba0 <col:20> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14d827b50 <col:25> 'unsigned int' lvalue ParmVar 0x14d80e360 'slen' 'unsigned int'
+    |   `-BinaryOperator 0x14d827c90 <line:12:3, col:10> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x14d827c10 <col:3> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x14d827bf0 <col:3> 'const int *' lvalue ParmVar 0x14d80e2e0 'seed' 'const int *'
+    |     `-RecoveryExpr 0x14d827c70 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14d827e10 <line:15:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14d827cf8 <col:2> 'int' lvalue Var 0x14d8275e0 'err' 'int'
+    | `-CallExpr 0x14d827dd8 <col:8, col:33> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x14d827d50 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14d827d18 <col:8> 'struct crypto_rng *' lvalue ParmVar 0x14d80e248 'tfm' 'struct crypto_rng *'
+    |   |-DeclRefExpr 0x14d827d78 <col:18> 'struct crypto_rng *' lvalue ParmVar 0x14d80e248 'tfm' 'struct crypto_rng *'
+    |   |-RecoveryExpr 0x14d827d98 <col:23> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14d827db8 <col:29> 'unsigned int' lvalue ParmVar 0x14d80e360 'slen' 'unsigned int'
+    |-CallExpr 0x14d827f90 <line:17:2, col:11> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d827f10 <col:2> 'int ()' Function 0x14d827e58 'kfree' 'int ()'
+    | `-RecoveryExpr 0x14d827f70 <col:8> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14d827ff0 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x14d827fd8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14d827fb8 <col:9> 'int' lvalue Var 0x14d8275e0 'err' 'int'

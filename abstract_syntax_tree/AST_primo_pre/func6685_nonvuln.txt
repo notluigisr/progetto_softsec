@@ -1,0 +1,17 @@
+`-FunctionDecl 0x13d128258  line:1:14 invalid alloc_request_simple 'void *(int, void *)' static
+  |-ParmVarDecl 0x13d1280f0 <col:35, col:41> col:41 invalid gfp_mask 'int'
+  |-ParmVarDecl 0x13d128170 <col:51, col:57> col:57 used data 'void *'
+  `-CompoundStmt 0x13d809458 <line:2:1, line:6:1>
+    |-DeclStmt 0x13d128548 <line:3:2, col:32>
+    | |-RecordDecl 0x13d128310 <col:2, col:9> col:9 struct request_queue
+    | `-VarDecl 0x13d128478 <col:2, col:28> col:24 used q 'struct request_queue *' cinit
+    |   `-ImplicitCastExpr 0x13d128518 <col:28> 'struct request_queue *' <BitCast>
+    |     `-ImplicitCastExpr 0x13d128500 <col:28> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13d1284e0 <col:28> 'void *' lvalue ParmVar 0x13d128170 'data' 'void *'
+    `-ReturnStmt 0x13d809448 <line:5:2, col:64>
+      `-CallExpr 0x13d809410 <col:9, col:64> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13d1286c0 <col:9> 'int ()' Function 0x13d128608 'kmem_cache_alloc_node' 'int ()'
+        |-RecoveryExpr 0x13d8093f0 <col:31> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x13d1286f8 <col:47> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x13d809390 <col:57, col:60> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13d128718 <col:57> 'struct request_queue *' lvalue Var 0x13d128478 'q' 'struct request_queue *'

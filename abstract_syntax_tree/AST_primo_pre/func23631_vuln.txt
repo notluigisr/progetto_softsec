@@ -1,0 +1,88 @@
+`-FunctionDecl 0x126044e88  line:1:12 invalid rfcomm_sock_recvmsg 'int (struct kiocb *, struct socket *, struct msghdr *, int, int)' static
+  |-ParmVarDecl 0x12602d848 <col:32, col:46> col:46 used iocb 'struct kiocb *'
+  |-ParmVarDecl 0x126044a28 <col:52, col:67> col:67 used sock 'struct socket *'
+  |-ParmVarDecl 0x126044bf8 <line:2:11, col:26> col:26 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x126044c90 <col:31, col:38> col:38 invalid size 'int'
+  |-ParmVarDecl 0x126044d10 <col:44, col:48> col:48 used flags 'int'
+  `-CompoundStmt 0x12604bf70 <line:3:1, line:24:1>
+    |-DeclStmt 0x1260451a8 <line:4:2, col:28>
+    | |-RecordDecl 0x126044f58 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1260450c8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x126045168 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x126045130 <col:20> 'struct socket *' lvalue ParmVar 0x126044a28 'sock' 'struct socket *'
+    |-DeclStmt 0x1260455f8 <line:5:2, col:43>
+    | |-RecordDecl 0x1260451c0 <col:2, col:9> col:9 struct rfcomm_dlc
+    | `-VarDecl 0x126045328 <col:2, col:40> col:21 used d 'struct rfcomm_dlc *' cinit
+    |   `-RecoveryExpr 0x1260455b8 <col:25, col:40> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x126045578 <col:25, col:37> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x126045560 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1260454f0 <col:25> 'int ()' Function 0x126045438 'rfcomm_pi' 'int ()'
+    |       `-ImplicitCastExpr 0x1260455a0 <col:35> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x126045510 <col:35> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    |-DeclStmt 0x126045690 <line:6:2, col:9>
+    | `-VarDecl 0x126045628 <col:2, col:6> col:6 used len 'int'
+    |-IfStmt 0x12604b290 <line:8:2, line:11:2>
+    | |-CallExpr 0x126045888 <line:8:6, col:54> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x126045788 <col:6> 'int ()' Function 0x1260456d0 'test_and_clear_bit' 'int ()'
+    | | |-RecoveryExpr 0x126045868 <col:25> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x126045820 <col:45, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1260457f8 <col:46, col:49> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1260457c0 <col:46> 'struct rfcomm_dlc *' contains-errors lvalue Var 0x126045328 'd' 'struct rfcomm_dlc *'
+    | `-CompoundStmt 0x12604b270 <col:57, line:11:2>
+    |   |-CallExpr 0x12604b200 <line:9:3, col:22> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x1260459d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x126045998 <col:3> 'int ()' Function 0x1260458e0 'rfcomm_dlc_accept' 'int ()'
+    |   | `-ImplicitCastExpr 0x12604b228 <col:21> 'struct rfcomm_dlc *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1260459b8 <col:21> 'struct rfcomm_dlc *' contains-errors lvalue Var 0x126045328 'd' 'struct rfcomm_dlc *'
+    |   `-ReturnStmt 0x12604b260 <line:10:3, col:10>
+    |     `-IntegerLiteral 0x12604b240 <col:10> 'int' 0
+    |-BinaryOperator 0x12604b4b8 <line:13:2, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12604b2b0 <col:2> 'int' lvalue Var 0x126045628 'len' 'int'
+    | `-CallExpr 0x12604b470 <col:8, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12604b3b0 <col:8> 'int ()' Function 0x12604b2f8 'bt_sock_stream_recvmsg' 'int ()'
+    |   |-DeclRefExpr 0x12604b3d0 <col:31> 'struct kiocb *' lvalue ParmVar 0x12602d848 'iocb' 'struct kiocb *'
+    |   |-DeclRefExpr 0x12604b3f0 <col:37> 'struct socket *' lvalue ParmVar 0x126044a28 'sock' 'struct socket *'
+    |   |-DeclRefExpr 0x12604b410 <col:43> 'struct msghdr *' lvalue ParmVar 0x126044bf8 'msg' 'struct msghdr *'
+    |   |-RecoveryExpr 0x12604b430 <col:48> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12604b450 <col:54> 'int' lvalue ParmVar 0x126044d10 'flags' 'int'
+    |-CallExpr 0x12604b610 <line:15:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12604b5f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12604b5b8 <col:2> 'int ()' Function 0x12604b500 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x12604b638 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12604b5d8 <col:12> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    |-IfStmt 0x12604b908 <line:16:2, line:17:37>
+    | |-RecoveryExpr 0x12604b720 <line:16:6, col:35> '_Bool' contains-errors
+    | `-CallExpr 0x12604b8d8 <line:17:3, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12604b820 <col:3> 'int ()' Function 0x12604b768 'atomic_sub' 'int ()'
+    |   |-DeclRefExpr 0x12604b840 <col:14> 'int' lvalue Var 0x126045628 'len' 'int'
+    |   `-UnaryOperator 0x12604b8c0 <col:19, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12604b898 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12604b860 <col:20> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    |-IfStmt 0x12604bd90 <line:19:2, line:20:43>
+    | |-BinaryOperator 0x12604bb88 <line:19:6, col:60> 'int' contains-errors '<='
+    | | |-CallExpr 0x12604baa0 <col:6, col:36> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12604ba08 <col:6> 'int ()' Function 0x12604b950 'atomic_read' 'int ()'
+    | | | `-UnaryOperator 0x12604ba88 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x12604ba60 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x12604ba28 <col:19> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    | | `-ParenExpr 0x12604bb68 <col:41, col:60> '<dependent type>' contains-errors
+    | |   `-BinaryOperator 0x12604bb48 <col:42, col:59> '<dependent type>' contains-errors '>>'
+    | |     |-RecoveryExpr 0x12604bb00 <col:42, col:46> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x12604bac8 <col:42> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    | |     `-IntegerLiteral 0x12604bb28 <col:59> 'int' 2
+    | `-CallExpr 0x12604bd68 <line:20:3, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12604bc88 <col:3> 'int ()' Function 0x12604bbd0 'rfcomm_dlc_unthrottle' 'int ()'
+    |   `-RecoveryExpr 0x12604bd40 <col:25, col:40> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x12604bd00 <col:25, col:37> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x12604bce8 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12604bca8 <col:25> 'int ()' Function 0x126045438 'rfcomm_pi' 'int ()'
+    |       `-ImplicitCastExpr 0x12604bd28 <col:35> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x12604bcc8 <col:35> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    |-CallExpr 0x12604bee8 <line:21:2, col:17> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12604bed0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12604be90 <col:2> 'int ()' Function 0x12604bdd8 'release_sock' 'int ()'
+    | `-ImplicitCastExpr 0x12604bf10 <col:15> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12604beb0 <col:15> 'struct sock *' contains-errors lvalue Var 0x1260450c8 'sk' 'struct sock *'
+    `-ReturnStmt 0x12604bf60 <line:23:2, col:9>
+      `-ImplicitCastExpr 0x12604bf48 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12604bf28 <col:9> 'int' lvalue Var 0x126045628 'len' 'int'

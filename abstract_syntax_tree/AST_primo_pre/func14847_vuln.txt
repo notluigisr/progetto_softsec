@@ -1,0 +1,61 @@
+`-FunctionDecl 0x150928288  line:1:1 invalid auth_password 'int (int *, const char *)'
+  |-ParmVarDecl 0x150928128 <col:15, col:25> col:25 invalid authctxt 'int *'
+  |-ParmVarDecl 0x1509281a8 <col:35, col:47> col:47 used password 'const char *'
+  `-CompoundStmt 0x150942678 <line:2:1, line:49:1>
+    |-DeclStmt 0x150928590 <line:3:2, col:35>
+    | |-RecordDecl 0x150928340 <col:2, col:9> col:9 struct passwd
+    | `-VarDecl 0x1509284a8 <col:2, col:33> col:18 used pw 'struct passwd *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x150928530 <col:23, col:33> '<dependent type>' contains-errors lvalue ->pw
+    |     `-RecoveryExpr 0x150928510 <col:23> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x150928728 <line:4:2, col:34>
+    | |-VarDecl 0x1509285c0 <col:2, col:6> col:6 used result 'int'
+    | `-VarDecl 0x150928640 <col:2, col:29> col:14 used ok 'int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x1509286c8 <col:19, col:29> '<dependent type>' contains-errors lvalue ->valid
+    |     `-RecoveryExpr 0x1509286a8 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150941e08 <line:10:2, line:11:8>
+    | |-BinaryOperator 0x150941d88 <line:10:6, col:54> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x150941c08 <col:6, col:20> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x150941bc0 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x150928740 <col:6> 'struct passwd *' contains-errors lvalue Var 0x1509284a8 'pw' 'struct passwd *'
+    | | | `-IntegerLiteral 0x150941be8 <col:20> 'int' 0
+    | | `-BinaryOperator 0x150941d68 <col:25, col:54> 'int' contains-errors '!='
+    | |   |-CXXDependentScopeMemberExpr 0x150941d00 <col:25, col:33> '<dependent type>' contains-errors lvalue .permit_root_login
+    | |   | `-RecoveryExpr 0x150941ce0 <col:25> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x150941d48 <col:54> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x150941de8 <line:11:3, col:8> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x150941da8 <col:3> 'int' contains-errors lvalue Var 0x150928640 'ok' 'int'
+    |   `-IntegerLiteral 0x150941dc8 <col:8> 'int' 0
+    |-IfStmt 0x150942178 <line:13:2, line:14:10>
+    | |-BinaryOperator 0x150942128 <line:13:6, col:58> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x150942080 <col:6, col:19> 'int' '=='
+    | | | |-ImplicitCastExpr 0x150942068 <col:6, col:7> 'int' <IntegralCast>
+    | | | | `-ImplicitCastExpr 0x150942050 <col:6, col:7> 'char' <LValueToRValue>
+    | | | |   `-UnaryOperator 0x150942038 <col:6, col:7> 'const char' lvalue prefix '*' cannot overflow
+    | | | |     `-ImplicitCastExpr 0x150942020 <col:7> 'const char *' <LValueToRValue>
+    | | | |       `-DeclRefExpr 0x150941e28 <col:7> 'const char *' lvalue ParmVar 0x1509281a8 'password' 'const char *'
+    | | | `-CharacterLiteral 0x150941e78 <col:19> 'int' 0
+    | | `-BinaryOperator 0x150942108 <col:27, col:58> 'int' contains-errors '=='
+    | |   |-CXXDependentScopeMemberExpr 0x1509420c0 <col:27, col:35> '<dependent type>' contains-errors lvalue .permit_empty_passwd
+    | |   | `-RecoveryExpr 0x1509420a0 <col:27> '<dependent type>' contains-errors lvalue
+    | |   `-IntegerLiteral 0x150941f40 <col:58> 'int' 0
+    | `-ReturnStmt 0x150942168 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x150942148 <col:10> 'int' 0
+    |-BinaryOperator 0x1509423a0 <line:45:2, col:45> 'int' contains-errors '='
+    | |-DeclRefExpr 0x150942198 <col:2> 'int' lvalue Var 0x1509285c0 'result' 'int'
+    | `-CallExpr 0x150942370 <col:11, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150942310 <col:11> 'int ()' Function 0x150942258 'sys_auth_passwd' 'int ()'
+    |   |-RecoveryExpr 0x150942330 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150942350 <col:37> 'const char *' lvalue ParmVar 0x1509281a8 'password' 'const char *'
+    |-IfStmt 0x150942598 <line:46:2, line:47:22>
+    | |-CXXDependentScopeMemberExpr 0x1509423e0 <line:46:6, col:16> '<dependent type>' contains-errors lvalue ->force_pwchange
+    | | `-RecoveryExpr 0x1509423c0 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x150942578 <line:47:3, col:22> 'int'
+    |   `-ImplicitCastExpr 0x150942560 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x150942508 <col:3> 'int ()' Function 0x150942450 'disable_forwarding' 'int ()'
+    `-ReturnStmt 0x150942668 <line:48:2, col:22>
+      `-ParenExpr 0x150942648 <col:9, col:22> 'int' contains-errors
+        `-BinaryOperator 0x150942628 <col:10, col:20> 'int' contains-errors '&&'
+          |-ImplicitCastExpr 0x1509425f8 <col:10> 'int' <LValueToRValue>
+          | `-DeclRefExpr 0x1509425b8 <col:10> 'int' lvalue Var 0x1509285c0 'result' 'int'
+          `-ImplicitCastExpr 0x150942610 <col:20> 'int' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x1509425d8 <col:20> 'int' contains-errors lvalue Var 0x150928640 'ok' 'int'

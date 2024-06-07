@@ -1,0 +1,27 @@
+`-FunctionDecl 0x13d00e358  line:1:5 kvm_iommu_unmap_guest 'int (struct kvm *)'
+  |-ParmVarDecl 0x13d00e248 <col:27, col:39> col:39 used kvm 'struct kvm *'
+  `-CompoundStmt 0x13d02af30 <line:2:1, line:12:1>
+    |-DeclStmt 0x13d02aae0 <line:3:2, col:54>
+    | |-RecordDecl 0x13d02a850 <col:2, col:9> col:9 struct iommu_domain
+    | `-VarDecl 0x13d02a9b8 <col:2, col:42> col:23 used domain 'struct iommu_domain *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13d02aa80 <col:32, col:42> '<dependent type>' contains-errors lvalue .iommu_domain
+    |     `-RecoveryExpr 0x13d02aa58 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13d02aa20 <col:32> 'struct kvm *' lvalue ParmVar 0x13d00e248 'kvm' 'struct kvm *'
+    |-IfStmt 0x13d02ab78 <line:6:2, line:7:10>
+    | |-UnaryOperator 0x13d02ab30 <line:6:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13d02ab18 <col:7> 'struct iommu_domain *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13d02aaf8 <col:7> 'struct iommu_domain *' contains-errors lvalue Var 0x13d02a9b8 'domain' 'struct iommu_domain *'
+    | `-ReturnStmt 0x13d02ab68 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x13d02ab48 <col:10> 'int' 0
+    |-CallExpr 0x13d02ad48 <line:9:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x13d02ad30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13d02acc0 <col:2> 'int ()' Function 0x13d02ac08 'kvm_iommu_unmap_memslots' 'int ()'
+    | `-ImplicitCastExpr 0x13d02ad70 <col:27> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13d02ace0 <col:27> 'struct kvm *' lvalue ParmVar 0x13d00e248 'kvm' 'struct kvm *'
+    |-CallExpr 0x13d02aec0 <line:10:2, col:26> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13d02aea8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13d02ae68 <col:2> 'int ()' Function 0x13d02adb0 'iommu_domain_free' 'int ()'
+    | `-ImplicitCastExpr 0x13d02aee8 <col:20> 'struct iommu_domain *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13d02ae88 <col:20> 'struct iommu_domain *' contains-errors lvalue Var 0x13d02a9b8 'domain' 'struct iommu_domain *'
+    `-ReturnStmt 0x13d02af20 <line:11:2, col:9>
+      `-IntegerLiteral 0x13d02af00 <col:9> 'int' 0

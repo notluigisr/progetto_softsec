@@ -1,0 +1,54 @@
+`-FunctionDecl 0x139928750  line:1:6 __detach_mounts 'void (struct dentry *)'
+  |-ParmVarDecl 0x139928648 <col:22, col:37> col:37 used dentry 'struct dentry *'
+  `-CompoundStmt 0x13a008fe0 <line:2:1, line:20:1>
+    |-DeclStmt 0x139944e38 <line:3:2, col:23>
+    | |-RecordDecl 0x139944c48 <col:2, col:9> col:9 struct mountpoint
+    | `-VarDecl 0x139944db8 <col:2, col:21> col:21 used mp 'struct mountpoint *'
+    |-DeclStmt 0x139945038 <line:4:2, col:19>
+    | |-RecordDecl 0x139944e50 <col:2, col:9> col:9 struct mount
+    | `-VarDecl 0x139944fb8 <col:2, col:16> col:16 used mnt 'struct mount *'
+    |-CallExpr 0x1399451e8 <line:6:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x1399451d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x139945180 <col:2> 'int ()' Function 0x1399450c8 'namespace_lock' 'int ()'
+    |-BinaryOperator 0x1399453b8 <line:7:2, col:31> 'struct mountpoint *' '='
+    | |-DeclRefExpr 0x139945208 <col:2> 'struct mountpoint *' lvalue Var 0x139944db8 'mp' 'struct mountpoint *'
+    | `-ImplicitCastExpr 0x1399453a0 <col:7, col:31> 'struct mountpoint *' <IntegralToPointer>
+    |   `-CallExpr 0x139945360 <col:7, col:31> 'int'
+    |     |-ImplicitCastExpr 0x139945348 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x139945308 <col:7> 'int ()' Function 0x139945250 'lookup_mountpoint' 'int ()'
+    |     `-ImplicitCastExpr 0x139945388 <col:25> 'struct dentry *' <LValueToRValue>
+    |       `-DeclRefExpr 0x139945328 <col:25> 'struct dentry *' lvalue ParmVar 0x139928648 'dentry' 'struct dentry *'
+    |-IfStmt 0x139945490 <line:8:2, line:9:8>
+    | |-UnaryOperator 0x139945410 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1399453f8 <col:7> 'struct mountpoint *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1399453d8 <col:7> 'struct mountpoint *' lvalue Var 0x139944db8 'mp' 'struct mountpoint *'
+    | `-GotoStmt 0x139945478 <line:9:3, col:8> 'out_unlock' 0x139945428
+    |-CallExpr 0x1399455c8 <line:11:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1399455b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x139945590 <col:2> 'int ()' Function 0x1399454d8 'lock_mount_hash' 'int ()'
+    |-WhileStmt 0x139945b38 <line:12:2, line:15:2>
+    | |-UnaryOperator 0x139945788 <line:12:9, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x139945760 <col:10, col:33> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1399456c8 <col:10> 'int ()' Function 0x139945610 'hlist_empty' 'int ()'
+    | |   `-UnaryOperator 0x139945748 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x139945720 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1399456e8 <col:23> 'struct mountpoint *' lvalue Var 0x139944db8 'mp' 'struct mountpoint *'
+    | `-CompoundStmt 0x139945b20 <col:36, line:15:2>
+    |   `-CallExpr 0x139945ad8 <line:14:3, col:21> 'int'
+    |     |-ImplicitCastExpr 0x139945ac0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x139945a60 <col:3> 'int ()' Function 0x1399459a8 'umount_tree' 'int ()'
+    |     |-ImplicitCastExpr 0x139945b08 <col:15> 'struct mount *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x139945a80 <col:15> 'struct mount *' lvalue Var 0x139944fb8 'mnt' 'struct mount *'
+    |     `-IntegerLiteral 0x139945aa0 <col:20> 'int' 0
+    |-CallExpr 0x13a008cf0 <line:16:2, col:20> 'int'
+    | `-ImplicitCastExpr 0x13a008cd8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13a008cb8 <col:2> 'int ()' Function 0x13a008c00 'unlock_mount_hash' 'int ()'
+    |-CallExpr 0x13a008e48 <line:17:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x13a008e30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a008df0 <col:2> 'int ()' Function 0x13a008d38 'put_mountpoint' 'int ()'
+    | `-ImplicitCastExpr 0x13a008e70 <col:17> 'struct mountpoint *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13a008e10 <col:17> 'struct mountpoint *' lvalue Var 0x139944db8 'mp' 'struct mountpoint *'
+    `-LabelStmt 0x13a008fc0 <line:18:1, line:19:19> 'out_unlock'
+      `-CallExpr 0x13a008fa0 <col:2, col:19> 'int'
+        `-ImplicitCastExpr 0x13a008f88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x13a008f68 <col:2> 'int ()' Function 0x13a008eb0 'namespace_unlock' 'int ()'

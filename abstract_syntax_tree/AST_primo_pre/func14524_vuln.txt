@@ -1,0 +1,54 @@
+`-FunctionDecl 0x1248f5348  line:1:12 __sock_diag_rcv_msg 'int (struct sk_buff *, struct nlmsghdr *)' static
+  |-ParmVarDecl 0x123809c48 <col:32, col:48> col:48 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x1248f5228 <col:53, col:70> col:70 used nlh 'struct nlmsghdr *'
+  `-CompoundStmt 0x12301f840 <line:2:1, line:18:1>
+    |-DeclStmt 0x1248f54c8 <line:3:2, col:9>
+    | `-VarDecl 0x1248f5460 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x1248f58d8 <line:4:2, col:45>
+    | |-RecordDecl 0x1248f54e0 <col:2, col:9> col:9 struct sock_diag_req
+    | `-VarDecl 0x1248f5648 <col:2, col:44> col:24 used req 'struct sock_diag_req *' cinit
+    |   `-ImplicitCastExpr 0x1248f58a8 <col:30, col:44> 'struct sock_diag_req *' <IntegralToPointer>
+    |     `-CallExpr 0x1248f5868 <col:30, col:44> 'int'
+    |       |-ImplicitCastExpr 0x1248f5850 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1248f57e0 <col:30> 'int ()' Function 0x1248f5728 'nlmsg_data' 'int ()'
+    |       `-ImplicitCastExpr 0x1248f5890 <col:41> 'struct nlmsghdr *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1248f5800 <col:41> 'struct nlmsghdr *' lvalue ParmVar 0x1248f5228 'nlh' 'struct nlmsghdr *'
+    |-DeclStmt 0x1248f5ad8 <line:5:2, col:38>
+    | |-RecordDecl 0x1248f58f0 <col:8, col:15> col:15 struct sock_diag_handler
+    | `-VarDecl 0x1248f5a58 <col:2, col:34> col:34 used hndl 'const struct sock_diag_handler *'
+    |-IfStmt 0x1248f5da0 <line:7:2, line:8:11>
+    | |-RecoveryExpr 0x1248f5cd8 <line:7:6, col:34> '_Bool' contains-errors
+    | `-ReturnStmt 0x1248f5d90 <line:8:3, col:11>
+    |   `-UnaryOperator 0x1248f5d78 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1248f5d60 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1248f5d40 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1248f5f68 <line:10:2, col:49> 'const struct sock_diag_handler *' contains-errors '='
+    | |-DeclRefExpr 0x1248f5dc0 <col:2> 'const struct sock_diag_handler *' lvalue Var 0x1248f5a58 'hndl' 'const struct sock_diag_handler *'
+    | `-CallExpr 0x1248f5f40 <col:9, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1248f5ec0 <col:9> 'int ()' Function 0x1248f5e08 'sock_diag_lock_handler' 'int ()'
+    |   `-RecoveryExpr 0x1248f5f18 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1248f5ee0 <col:32> 'struct sock_diag_req *' lvalue Var 0x1248f5648 'req' 'struct sock_diag_req *'
+    |-IfStmt 0x12301f650 <line:11:2, line:14:28> has_else
+    | |-BinaryOperator 0x1248f6000 <line:11:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1248f5f88 <col:6> 'const struct sock_diag_handler *' lvalue Var 0x1248f5a58 'hndl' 'const struct sock_diag_handler *'
+    | | `-RecoveryExpr 0x1248f5fe0 <col:14> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x1248f60f8 <line:12:3, col:10> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x1248f6020 <col:3> 'int' lvalue Var 0x1248f5460 'err' 'int'
+    | | `-UnaryOperator 0x1248f60e0 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x1248f60c8 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x1248f60a8 <col:10> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x12301f630 <line:14:3, col:28> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x1248f6118 <col:3> 'int' lvalue Var 0x1248f5460 'err' 'int'
+    |   `-CallExpr 0x12301f600 <col:9, col:28> '<dependent type>' contains-errors
+    |     |-RecoveryExpr 0x1248f6170 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x1248f6138 <col:9> 'const struct sock_diag_handler *' lvalue Var 0x1248f5a58 'hndl' 'const struct sock_diag_handler *'
+    |     |-DeclRefExpr 0x1248f6198 <col:20> 'struct sk_buff *' lvalue ParmVar 0x123809c48 'skb' 'struct sk_buff *'
+    |     `-DeclRefExpr 0x1248f61b8 <col:25> 'struct nlmsghdr *' lvalue ParmVar 0x1248f5228 'nlh' 'struct nlmsghdr *'
+    |-CallExpr 0x12301f7b8 <line:15:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x12301f7a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12301f760 <col:2> 'int ()' Function 0x12301f6a8 'sock_diag_unlock_handler' 'int ()'
+    | `-ImplicitCastExpr 0x12301f7e0 <col:27> 'const struct sock_diag_handler *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12301f780 <col:27> 'const struct sock_diag_handler *' lvalue Var 0x1248f5a58 'hndl' 'const struct sock_diag_handler *'
+    `-ReturnStmt 0x12301f830 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x12301f818 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12301f7f8 <col:9> 'int' lvalue Var 0x1248f5460 'err' 'int'

@@ -1,0 +1,72 @@
+`-FunctionDecl 0x135922c38  line:1:16 invalid wolfssl_send 'int (struct Curl_easy *, int, const void *, int, int *)' static
+  |-ParmVarDecl 0x13600e268 <col:29, col:47> col:47 used data 'struct Curl_easy *'
+  |-ParmVarDecl 0x13600e2e8 <line:2:29, col:33> col:33 used sockindex 'int'
+  |-ParmVarDecl 0x13600e398 <line:3:29, col:41> col:41 used mem 'const void *'
+  |-ParmVarDecl 0x135922a18 <line:4:29, col:36> col:36 invalid len 'int'
+  |-ParmVarDecl 0x135922ac8 <line:5:29, col:39> col:39 invalid curlcode 'int *'
+  `-CompoundStmt 0x135924398 <line:6:1, line:32:1>
+    |-DeclStmt 0x135922f58 <line:7:3, col:40>
+    | |-RecordDecl 0x135922d08 <col:3, col:10> col:10 struct connectdata
+    | `-VarDecl 0x135922e78 <col:3, col:36> col:23 used conn 'struct connectdata *' cinit
+    |   `-RecoveryExpr 0x135922f18 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135922ee0 <col:30> 'struct Curl_easy *' lvalue ParmVar 0x13600e268 'data' 'struct Curl_easy *'
+    |-DeclStmt 0x135923240 <line:8:3, col:59>
+    | |-RecordDecl 0x135922f70 <col:3, col:10> col:10 struct ssl_connect_data
+    | `-VarDecl 0x1359230d8 <col:3, col:58> col:28 used connssl 'struct ssl_connect_data *' cinit
+    |   `-UnaryOperator 0x135923210 <col:38, col:58> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-ArraySubscriptExpr 0x1359231f0 <col:39, col:58> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x1359231c0 <col:39, col:45> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x135923178 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x135923140 <col:39> 'struct connectdata *' contains-errors lvalue Var 0x135922e78 'conn' 'struct connectdata *'
+    |       `-ImplicitCastExpr 0x1359231d8 <col:49> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x1359231a0 <col:49> 'int' lvalue ParmVar 0x13600e2e8 'sockindex' 'int'
+    |-DeclStmt 0x1359234a8 <line:9:3, col:54>
+    | |-RecordDecl 0x135923258 <col:3, col:10> col:10 struct ssl_backend_data
+    | `-VarDecl 0x1359233c8 <col:3, col:47> col:28 used backend 'struct ssl_backend_data *' cinit
+    |   `-RecoveryExpr 0x135923468 <col:38, col:47> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135923430 <col:38> 'struct ssl_connect_data *' contains-errors lvalue Var 0x1359230d8 'connssl' 'struct ssl_connect_data *'
+    |-DeclStmt 0x135923550 <line:10:3, col:42>
+    | `-VarDecl 0x1359234e8 <col:3, col:8> col:8 invalid error_buffer 'char'
+    |-DeclStmt 0x135923758 <line:11:3, col:60>
+    | `-VarDecl 0x135923580 <col:3, col:7> col:7 invalid memlen 'int'
+    |-DeclStmt 0x135923a58 <line:12:3, col:51>
+    | `-VarDecl 0x135923788 <col:3, col:50> col:7 used rc 'int' cinit
+    |   `-CallExpr 0x135923a20 <col:12, col:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x135923950 <col:12> 'int ()' Function 0x135923898 'SSL_write' 'int ()'
+    |     |-RecoveryExpr 0x1359239a8 <col:22, col:31> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x135923970 <col:22> 'struct ssl_backend_data *' contains-errors lvalue Var 0x1359233c8 'backend' 'struct ssl_backend_data *'
+    |     |-DeclRefExpr 0x1359239d0 <col:39> 'const void *' lvalue ParmVar 0x13600e398 'mem' 'const void *'
+    |     `-RecoveryExpr 0x135923a00 <col:44> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x135924330 <line:14:3, line:30:3>
+    | |-BinaryOperator 0x135923ac8 <line:14:6, col:11> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x135923ab0 <col:6> 'int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x135923a70 <col:6> 'int' contains-errors lvalue Var 0x135923788 'rc' 'int'
+    | | `-IntegerLiteral 0x135923a90 <col:11> 'int' 0
+    | `-CompoundStmt 0x135924310 <col:14, line:30:3>
+    |   |-DeclStmt 0x135923d18 <line:15:5, col:49>
+    |   | `-VarDecl 0x135923b00 <col:5, col:48> col:9 used err 'int' cinit
+    |   |   `-CallExpr 0x135923ce8 <col:15, col:48> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x135923c48 <col:15> 'int ()' Function 0x135923b90 'SSL_get_error' 'int ()'
+    |   |     |-RecoveryExpr 0x135923ca0 <col:29, col:38> '<dependent type>' contains-errors lvalue
+    |   |     | `-DeclRefExpr 0x135923c68 <col:29> 'struct ssl_backend_data *' contains-errors lvalue Var 0x1359233c8 'backend' 'struct ssl_backend_data *'
+    |   |     `-DeclRefExpr 0x135923cc8 <col:46> 'int' contains-errors lvalue Var 0x135923788 'rc' 'int'
+    |   `-SwitchStmt 0x135923d68 <line:17:5, line:29:5>
+    |     |-ImplicitCastExpr 0x135923d50 <line:17:12> 'int' contains-errors <LValueToRValue>
+    |     | `-DeclRefExpr 0x135923d30 <col:12> 'int' contains-errors lvalue Var 0x135923b00 'err' 'int'
+    |     `-CompoundStmt 0x1359242e0 <col:17, line:29:5>
+    |       |-BinaryOperator 0x135923ec8 <line:21:7, col:19> '<dependent type>' contains-errors '='
+    |       | |-UnaryOperator 0x135923e90 <col:7, col:8> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       | | `-ImplicitCastExpr 0x135923e78 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |       | |   `-RecoveryExpr 0x135923dc0 <col:8> '<dependent type>' contains-errors lvalue
+    |       | `-RecoveryExpr 0x135923ea8 <col:19> '<dependent type>' contains-errors lvalue
+    |       |-ReturnStmt 0x135923f20 <line:22:7, col:15>
+    |       | `-UnaryOperator 0x135923f08 <col:14, col:15> 'int' prefix '-'
+    |       |   `-IntegerLiteral 0x135923ee8 <col:15> 'int' 1
+    |       |-DefaultStmt 0x135924228 <line:23:5, col:12>
+    |       | `-NullStmt 0x135924220 <col:12>
+    |       `-ReturnStmt 0x1359242d0 <line:28:7, col:15>
+    |         `-UnaryOperator 0x1359242b8 <col:14, col:15> 'int' prefix '-'
+    |           `-IntegerLiteral 0x135924298 <col:15> 'int' 1
+    `-ReturnStmt 0x135924388 <line:31:3, col:10>
+      `-ImplicitCastExpr 0x135924370 <col:10> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x135924350 <col:10> 'int' contains-errors lvalue Var 0x135923788 'rc' 'int'

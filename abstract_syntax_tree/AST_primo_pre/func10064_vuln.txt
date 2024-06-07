@@ -1,0 +1,158 @@
+`-FunctionDecl 0x146107088  line:1:1 invalid get_user_var_name 'int (int *, int)'
+  |-ParmVarDecl 0x146106f28 <col:19, col:29> col:29 invalid xp 'int *'
+  |-ParmVarDecl 0x146106fa8 <col:33, col:37> col:37 used idx 'int'
+  `-CompoundStmt 0x14500a090 <line:2:1, line:87:1>
+    |-DeclStmt 0x1461071c0 <line:3:5, col:24>
+    | `-VarDecl 0x146107158 <col:5, col:19> col:19 used gdone 'long' static
+    |-DeclStmt 0x146107258 <line:4:5, col:24>
+    | `-VarDecl 0x1461071f0 <col:5, col:19> col:19 used bdone 'long' static
+    |-DeclStmt 0x1461072f0 <line:5:5, col:24>
+    | `-VarDecl 0x146107288 <col:5, col:19> col:19 used wdone 'long' static
+    |-DeclStmt 0x146107388 <line:6:5, col:24>
+    | `-VarDecl 0x146107320 <col:5, col:19> col:19 used tdone 'long' static
+    |-DeclStmt 0x146107420 <line:7:5, col:21>
+    | `-VarDecl 0x1461073b8 <col:5, col:17> col:17 used vidx 'int' static
+    |-DeclStmt 0x1461074b8 <line:8:5, col:26>
+    | `-VarDecl 0x146107450 <col:5, col:24> col:24 referenced invalid hi 'int *' static
+    |-IfStmt 0x146120730 <line:11:5, line:15:5>
+    | |-BinaryOperator 0x146107540 <line:11:9, col:16> 'int' '=='
+    | | |-ImplicitCastExpr 0x146107528 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1461074e8 <col:9> 'int' lvalue ParmVar 0x146106fa8 'idx' 'int'
+    | | `-IntegerLiteral 0x146107508 <col:16> 'int' 0
+    | `-CompoundStmt 0x146120710 <line:12:5, line:15:5>
+    |   |-BinaryOperator 0x146120678 <line:13:2, col:33> 'long' '='
+    |   | |-DeclRefExpr 0x146107560 <col:2> 'long' lvalue Var 0x146107158 'gdone' 'long'
+    |   | `-BinaryOperator 0x146120658 <col:10, col:33> 'long' '='
+    |   |   |-DeclRefExpr 0x146107580 <col:10> 'long' lvalue Var 0x1461071f0 'bdone' 'long'
+    |   |   `-BinaryOperator 0x146120638 <col:18, col:33> 'long' '='
+    |   |     |-DeclRefExpr 0x1461075a0 <col:18> 'long' lvalue Var 0x146107288 'wdone' 'long'
+    |   |     `-ImplicitCastExpr 0x146120620 <col:26, col:33> 'long' <IntegralCast>
+    |   |       `-BinaryOperator 0x146120600 <col:26, col:33> 'int' '='
+    |   |         |-DeclRefExpr 0x1461075c0 <col:26> 'int' lvalue Var 0x1461073b8 'vidx' 'int'
+    |   |         `-IntegerLiteral 0x1461075e0 <col:33> 'int' 0
+    |   `-BinaryOperator 0x1461206f0 <line:14:2, col:10> 'long' '='
+    |     |-DeclRefExpr 0x146120698 <col:2> 'long' lvalue Var 0x146107320 'tdone' 'long'
+    |     `-ImplicitCastExpr 0x1461206d8 <col:10> 'long' <IntegralCast>
+    |       `-IntegerLiteral 0x1461206b8 <col:10> 'int' 0
+    |-IfStmt 0x1461211c8 <line:18:5, line:29:5>
+    | |-BinaryOperator 0x146120858 <line:18:9, col:27> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x146120750 <col:9> 'long' lvalue Var 0x146107158 'gdone' 'long'
+    | | `-CXXDependentScopeMemberExpr 0x146120810 <col:17, col:27> '<dependent type>' contains-errors lvalue .ht_used
+    | |   `-RecoveryExpr 0x1461207f0 <col:17> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x146121198 <line:19:5, line:29:5>
+    |   |-IfStmt 0x146120a90 <line:20:2, line:23:8> has_else
+    |   | |-BinaryOperator 0x1461208e8 <line:20:6, col:17> 'int' '=='
+    |   | | |-UnaryOperator 0x146120898 <col:6, col:11> 'long' postfix '++'
+    |   | | | `-DeclRefExpr 0x146120878 <col:6> 'long' lvalue Var 0x146107158 'gdone' 'long'
+    |   | | `-ImplicitCastExpr 0x1461208d0 <col:17> 'long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x1461208b0 <col:17> 'int' 0
+    |   | |-BinaryOperator 0x146120a38 <line:21:6, col:21> '<dependent type>' contains-errors '='
+    |   | | |-RecoveryExpr 0x146120928 <col:6> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x146120908 <col:6> 'int *' lvalue Var 0x146107450 'hi' 'int *'
+    |   | | `-CXXDependentScopeMemberExpr 0x1461209f0 <col:11, col:21> '<dependent type>' contains-errors lvalue .ht_array
+    |   | |   `-RecoveryExpr 0x1461209d0 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x146120a78 <line:23:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x146120a58 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-WhileStmt 0x146120cc0 <line:24:2, line:25:8>
+    |   | |-CallExpr 0x146120c60 <line:24:9, col:26> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x146120c20 <col:9> 'int ()' Function 0x146120b68 'HASHITEM_EMPTY' 'int ()'
+    |   | | `-RecoveryExpr 0x146120c40 <col:24> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x146120ca8 <line:25:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x146120c88 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x146121100 <line:26:2, line:27:47>
+    |   | |-BinaryOperator 0x146120f20 <line:26:6, col:43> 'int' contains-errors '=='
+    |   | | |-CallExpr 0x146120ec8 <col:6, col:38> '<dependent type>' contains-errors
+    |   | | | |-DeclRefExpr 0x146120dc0 <col:6> 'int ()' Function 0x146120d08 'STRNCMP' 'int ()'
+    |   | | | |-StringLiteral 0x146120e20 <col:14> 'char[4]' lvalue "STR"
+    |   | | | |-CXXDependentScopeMemberExpr 0x146120e60 <col:21, col:25> '<dependent type>' contains-errors lvalue ->xp_pattern
+    |   | | | | `-RecoveryExpr 0x146120e40 <col:21> '<dependent type>' contains-errors lvalue
+    |   | | | `-IntegerLiteral 0x146120ea8 <col:37> 'int' 2
+    |   | | `-IntegerLiteral 0x146120f00 <col:43> 'int' 0
+    |   | `-ReturnStmt 0x1461210f0 <line:27:6, col:47>
+    |   |   `-CallExpr 0x1461210c0 <col:13, col:47> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x146121020 <col:13> 'int ()' Function 0x146120f68 'cat_prefix_varname' 'int ()'
+    |   |     |-CharacterLiteral 0x146121040 <col:32> 'int' 103
+    |   |     `-CXXDependentScopeMemberExpr 0x146121078 <col:37, col:41> '<dependent type>' contains-errors lvalue ->hi_key
+    |   |       `-RecoveryExpr 0x146121058 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x146121188 <line:28:2, col:13>
+    |     `-CXXDependentScopeMemberExpr 0x146121140 <col:9, col:13> '<dependent type>' contains-errors lvalue ->hi_key
+    |       `-RecoveryExpr 0x146121120 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1450097f8 <line:38:5, line:47:5>
+    | |-BinaryOperator 0x1461213b0 <line:38:9, col:21> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x1461212a8 <col:9> 'long' lvalue Var 0x1461071f0 'bdone' 'long'
+    | | `-CXXDependentScopeMemberExpr 0x146121368 <col:17, col:21> '<dependent type>' contains-errors lvalue ->ht_used
+    | |   `-RecoveryExpr 0x146121348 <col:17> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1450097d0 <line:39:5, line:47:5>
+    |   |-IfStmt 0x145009600 <line:40:2, line:43:8> has_else
+    |   | |-BinaryOperator 0x146121440 <line:40:6, col:17> 'int' '=='
+    |   | | |-UnaryOperator 0x1461213f0 <col:6, col:11> 'long' postfix '++'
+    |   | | | `-DeclRefExpr 0x1461213d0 <col:6> 'long' lvalue Var 0x1461071f0 'bdone' 'long'
+    |   | | `-ImplicitCastExpr 0x146121428 <col:17> 'long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x146121408 <col:17> 'int' 0
+    |   | |-BinaryOperator 0x146121590 <line:41:6, col:15> '<dependent type>' contains-errors '='
+    |   | | |-RecoveryExpr 0x146121480 <col:6> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x146121460 <col:6> 'int *' lvalue Var 0x146107450 'hi' 'int *'
+    |   | | `-CXXDependentScopeMemberExpr 0x146121548 <col:11, col:15> '<dependent type>' contains-errors lvalue ->ht_array
+    |   | |   `-RecoveryExpr 0x146121528 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x1461215d0 <line:43:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x1461215b0 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-WhileStmt 0x1450096d0 <line:44:2, line:45:8>
+    |   | |-CallExpr 0x145009670 <line:44:9, col:26> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x145009630 <col:9> 'int ()' Function 0x146120b68 'HASHITEM_EMPTY' 'int ()'
+    |   | | `-RecoveryExpr 0x145009650 <col:24> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x1450096b8 <line:45:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x145009698 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1450097c0 <line:46:2, col:43>
+    |     `-CallExpr 0x145009790 <col:9, col:43> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x1450096f0 <col:9> 'int ()' Function 0x146120f68 'cat_prefix_varname' 'int ()'
+    |       |-CharacterLiteral 0x145009710 <col:28> 'int' 98
+    |       `-CXXDependentScopeMemberExpr 0x145009748 <col:33, col:37> '<dependent type>' contains-errors lvalue ->hi_key
+    |         `-RecoveryExpr 0x145009728 <col:33> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x145009b68 <line:56:5, line:65:5>
+    | |-RecoveryExpr 0x145009838 <line:56:9, col:21> '_Bool' contains-errors
+    | `-CompoundStmt 0x145009b40 <line:57:5, line:65:5>
+    |   |-IfStmt 0x145009970 <line:58:2, line:61:8> has_else
+    |   | |-BinaryOperator 0x1450098c8 <line:58:6, col:17> 'int' '=='
+    |   | | |-UnaryOperator 0x145009878 <col:6, col:11> 'long' postfix '++'
+    |   | | | `-DeclRefExpr 0x145009858 <col:6> 'long' lvalue Var 0x146107288 'wdone' 'long'
+    |   | | `-ImplicitCastExpr 0x1450098b0 <col:17> 'long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x145009890 <col:17> 'int' 0
+    |   | |-NullStmt 0x145009968 <line:59:6>
+    |   | `-UnaryOperator 0x145009950 <line:61:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x145009930 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-WhileStmt 0x145009a40 <line:62:2, line:63:8>
+    |   | |-CallExpr 0x1450099e0 <line:62:9, col:26> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x1450099a0 <col:9> 'int ()' Function 0x146120b68 'HASHITEM_EMPTY' 'int ()'
+    |   | | `-RecoveryExpr 0x1450099c0 <col:24> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x145009a28 <line:63:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   |   `-RecoveryExpr 0x145009a08 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x145009b30 <line:64:2, col:43>
+    |     `-CallExpr 0x145009b00 <col:9, col:43> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x145009a60 <col:9> 'int ()' Function 0x146120f68 'cat_prefix_varname' 'int ()'
+    |       |-CharacterLiteral 0x145009a80 <col:28> 'int' 119
+    |       `-CXXDependentScopeMemberExpr 0x145009ab8 <col:33, col:37> '<dependent type>' contains-errors lvalue ->hi_key
+    |         `-RecoveryExpr 0x145009a98 <col:33> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x145009ed8 <line:69:5, line:78:5>
+      |-RecoveryExpr 0x145009ba8 <line:69:9, col:21> '_Bool' contains-errors
+      `-CompoundStmt 0x145009eb0 <line:70:5, line:78:5>
+        |-IfStmt 0x145009ce0 <line:71:2, line:74:8> has_else
+        | |-BinaryOperator 0x145009c38 <line:71:6, col:17> 'int' '=='
+        | | |-UnaryOperator 0x145009be8 <col:6, col:11> 'long' postfix '++'
+        | | | `-DeclRefExpr 0x145009bc8 <col:6> 'long' lvalue Var 0x146107320 'tdone' 'long'
+        | | `-ImplicitCastExpr 0x145009c20 <col:17> 'long' <IntegralCast>
+        | |   `-IntegerLiteral 0x145009c00 <col:17> 'int' 0
+        | |-NullStmt 0x145009cd8 <line:72:6>
+        | `-UnaryOperator 0x145009cc0 <line:74:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+        |   `-RecoveryExpr 0x145009ca0 <col:8> '<dependent type>' contains-errors lvalue
+        |-WhileStmt 0x145009db0 <line:75:2, line:76:8>
+        | |-CallExpr 0x145009d50 <line:75:9, col:26> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x145009d10 <col:9> 'int ()' Function 0x146120b68 'HASHITEM_EMPTY' 'int ()'
+        | | `-RecoveryExpr 0x145009d30 <col:24> '<dependent type>' contains-errors lvalue
+        | `-UnaryOperator 0x145009d98 <line:76:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+        |   `-RecoveryExpr 0x145009d78 <col:8> '<dependent type>' contains-errors lvalue
+        `-ReturnStmt 0x145009ea0 <line:77:2, col:43>
+          `-CallExpr 0x145009e70 <col:9, col:43> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x145009dd0 <col:9> 'int ()' Function 0x146120f68 'cat_prefix_varname' 'int ()'
+            |-CharacterLiteral 0x145009df0 <col:28> 'int' 116
+            `-CXXDependentScopeMemberExpr 0x145009e28 <col:33, col:37> '<dependent type>' contains-errors lvalue ->hi_key
+              `-RecoveryExpr 0x145009e08 <col:33> '<dependent type>' contains-errors lvalue

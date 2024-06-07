@@ -1,0 +1,65 @@
+`-FunctionDecl 0x150140a00  line:1:12 swevent_hlist_get_cpu 'int (struct perf_event *, int)' static
+  |-ParmVarDecl 0x150128648 <col:34, col:53> col:53 event 'struct perf_event *'
+  |-ParmVarDecl 0x1501286c8 <col:60, col:64> col:64 used cpu 'int'
+  `-CompoundStmt 0x150142d20 <line:2:1, line:23:1>
+    |-DeclStmt 0x150140f20 <line:3:2, col:63>
+    | |-RecordDecl 0x150140b00 <col:2, col:9> col:9 struct swevent_htable
+    | `-VarDecl 0x150140c68 <col:2, col:62> col:25 used swhash 'struct swevent_htable *' cinit
+    |   `-UnaryOperator 0x150140ef0 <col:34, col:62> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CallExpr 0x150140ec0 <col:35, col:62> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x150140e00 <col:35> 'int ()' Function 0x150140d48 'per_cpu' 'int ()'
+    |       |-RecoveryExpr 0x150140ea0 <col:43> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x150140e38 <col:59> 'int' lvalue ParmVar 0x1501286c8 'cpu' 'int'
+    |-DeclStmt 0x150140fd8 <line:4:2, col:13>
+    | `-VarDecl 0x150140f50 <col:2, col:12> col:6 used err 'int' cinit
+    |   `-IntegerLiteral 0x150140fb8 <col:12> 'int' 0
+    |-CallExpr 0x150141168 <line:6:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1501410d0 <col:2> 'int ()' Function 0x150141018 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x150141150 <col:13, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150141128 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1501410f0 <col:14> 'struct swevent_htable *' contains-errors lvalue Var 0x150140c68 'swhash' 'struct swevent_htable *'
+    |-IfStmt 0x150142a80 <line:8:2, line:17:2>
+    | |-BinaryOperator 0x1501414c8 <line:8:6, col:52> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x150141338 <col:6, col:33> 'int' contains-errors prefix '!' cannot overflow
+    | | | `-CallExpr 0x1501412f8 <col:7, col:33> 'int' contains-errors
+    | | |   |-ImplicitCastExpr 0x1501412e0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x150141270 <col:7> 'int ()' Function 0x1501411b8 'swevent_hlist_deref' 'int ()'
+    | | |   `-ImplicitCastExpr 0x150141320 <col:27> 'struct swevent_htable *' contains-errors <LValueToRValue>
+    | | |     `-DeclRefExpr 0x150141290 <col:27> 'struct swevent_htable *' contains-errors lvalue Var 0x150140c68 'swhash' 'struct swevent_htable *'
+    | | `-CallExpr 0x150141488 <col:38, col:52> 'int'
+    | |   |-ImplicitCastExpr 0x150141470 <col:38> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x150141430 <col:38> 'int ()' Function 0x150141378 'cpu_online' 'int ()'
+    | |   `-ImplicitCastExpr 0x1501414b0 <col:49> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x150141450 <col:49> 'int' lvalue ParmVar 0x1501286c8 'cpu' 'int'
+    | `-CompoundStmt 0x150142a58 <col:55, line:17:2>
+    |   |-DeclStmt 0x1501416d8 <line:9:3, col:30>
+    |   | |-RecordDecl 0x1501414e8 <col:3, col:10> col:10 struct swevent_hlist
+    |   | `-VarDecl 0x150141658 <col:3, col:25> col:25 used hlist 'struct swevent_hlist *'
+    |   |-IfStmt 0x150142888 <line:12:3, line:15:3>
+    |   | |-UnaryOperator 0x1501418d0 <line:12:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x1501418b8 <col:8> 'struct swevent_hlist *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x150141898 <col:8> 'struct swevent_hlist *' lvalue Var 0x150141658 'hlist' 'struct swevent_hlist *'
+    |   | `-CompoundStmt 0x150142868 <col:15, line:15:3>
+    |   |   |-BinaryOperator 0x1501419c0 <line:13:4, col:11> 'int' contains-errors '='
+    |   |   | |-DeclRefExpr 0x1501418e8 <col:4> 'int' lvalue Var 0x150140f50 'err' 'int'
+    |   |   | `-UnaryOperator 0x1501419a8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |   `-ImplicitCastExpr 0x150141990 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |     `-RecoveryExpr 0x150141970 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-GotoStmt 0x150142850 <line:14:4, col:9> 'exit' 0x150142800
+    |   `-CallExpr 0x150142a28 <line:16:3, col:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x150142988 <col:3> 'int ()' Function 0x1501428d0 'rcu_assign_pointer' 'int ()'
+    |     |-RecoveryExpr 0x1501429e0 <col:22, col:30> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x1501429a8 <col:22> 'struct swevent_htable *' contains-errors lvalue Var 0x150140c68 'swhash' 'struct swevent_htable *'
+    |     `-DeclRefExpr 0x150142a08 <col:45> 'struct swevent_hlist *' lvalue Var 0x150141658 'hlist' 'struct swevent_hlist *'
+    |-UnaryOperator 0x150142b00 <line:18:2, col:24> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | `-RecoveryExpr 0x150142ad8 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150142aa0 <col:2> 'struct swevent_htable *' contains-errors lvalue Var 0x150140c68 'swhash' 'struct swevent_htable *'
+    |-LabelStmt 0x150142cb8 <line:19:1, line:20:35> 'exit'
+    | `-CallExpr 0x150142c90 <col:2, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150142bf8 <col:2> 'int ()' Function 0x150142b40 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x150142c78 <col:15, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x150142c50 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x150142c18 <col:16> 'struct swevent_htable *' contains-errors lvalue Var 0x150140c68 'swhash' 'struct swevent_htable *'
+    `-ReturnStmt 0x150142d10 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x150142cf8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x150142cd8 <col:9> 'int' lvalue Var 0x150140f50 'err' 'int'

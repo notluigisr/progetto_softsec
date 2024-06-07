@@ -1,0 +1,43 @@
+`-FunctionDecl 0x139141838  line:1:1 invalid virgl_resource_attach_backing 'int (int *, struct virtio_gpu_ctrl_command *)'
+  |-ParmVarDecl 0x139128128 <col:31, col:38> col:38 invalid g 'int *'
+  |-ParmVarDecl 0x139128718 <line:2:31, col:63> col:63 used cmd 'struct virtio_gpu_ctrl_command *'
+  `-CompoundStmt 0x139142530 <line:3:1, line:18:1>
+    |-DeclStmt 0x139141a68 <line:4:5, col:53>
+    | |-RecordDecl 0x1391418f0 <col:5, col:12> col:12 struct virtio_gpu_resource_attach_backing
+    | `-VarDecl 0x1391419e8 <col:5, col:47> col:47 invalid att_rb 'struct virtio_gpu_resource_attach_backing'
+    |-DeclStmt 0x139141c68 <line:5:5, col:27>
+    | |-RecordDecl 0x139141a80 <col:5, col:12> col:12 struct iovec
+    | `-VarDecl 0x139141be8 <col:5, col:19> col:19 used res_iovs 'struct iovec *'
+    |-DeclStmt 0x139141d00 <line:6:5, col:12>
+    | `-VarDecl 0x139141c98 <col:5, col:9> col:9 used ret 'int'
+    |-CallExpr 0x139141eb0 <line:8:5, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139141e70 <col:5> 'int ()' Function 0x139141db8 'VUGPU_FILL_CMD' 'int ()'
+    | `-RecoveryExpr 0x139141e90 <col:20> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x139142148 <line:10:5, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x139141ed8 <col:5> 'int' lvalue Var 0x139141c98 'ret' 'int'
+    | `-CallExpr 0x139142108 <col:11, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139141fd8 <col:11> 'int ()' Function 0x139141f20 'vg_create_mapping_iov' 'int ()'
+    |   |-RecoveryExpr 0x139141ff8 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x139142038 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x139142018 <col:37> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x139142050 <col:45> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x139128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   `-UnaryOperator 0x1391420f0 <col:50, col:51> 'struct iovec **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x139142070 <col:51> 'struct iovec *' lvalue Var 0x139141be8 'res_iovs' 'struct iovec *'
+    |-IfStmt 0x1391422e8 <line:11:5, line:14:5>
+    | |-BinaryOperator 0x1391421c0 <line:11:9, col:16> 'int' '!='
+    | | |-ImplicitCastExpr 0x1391421a8 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x139142168 <col:9> 'int' lvalue Var 0x139141c98 'ret' 'int'
+    | | `-IntegerLiteral 0x139142188 <col:16> 'int' 0
+    | `-CompoundStmt 0x1391422c8 <col:19, line:14:5>
+    |   |-BinaryOperator 0x139142298 <line:12:9, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x139142218 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1391421e0 <col:9> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x139128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   | `-RecoveryExpr 0x139142278 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1391422b8 <line:13:9>
+    `-CallExpr 0x1391424f8 <line:16:5, line:17:67> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1391423e8 <line:16:5> 'int ()' Function 0x139142330 'virgl_renderer_resource_attach_iov' 'int ()'
+      |-CXXDependentScopeMemberExpr 0x139142428 <col:40, col:47> '<dependent type>' contains-errors lvalue .resource_id
+      | `-RecoveryExpr 0x139142408 <col:40> '<dependent type>' contains-errors lvalue
+      |-DeclRefExpr 0x139142470 <line:17:40> 'struct iovec *' lvalue Var 0x139141be8 'res_iovs' 'struct iovec *'
+      `-CXXDependentScopeMemberExpr 0x1391424b0 <col:50, col:57> '<dependent type>' contains-errors lvalue .nr_entries
+        `-RecoveryExpr 0x139142490 <col:50> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,26 @@
+`-FunctionDecl 0x122115200  line:1:6 invalid kvm_lapic_set_vapic_addr 'void (struct kvm_vcpu *, int)'
+  |-ParmVarDecl 0x1220fc048 <col:31, col:48> col:48 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x1220fc0e0 <col:54, col:60> col:60 invalid vapic_addr 'int'
+  `-CompoundStmt 0x122115960 <line:2:1, line:8:1>
+    |-BinaryOperator 0x1221153c8 <line:3:2, col:32> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x122115360 <col:2, col:19> '<dependent type>' contains-errors lvalue ->vapic_addr
+    | | `-CXXDependentScopeMemberExpr 0x122115318 <col:2, col:13> '<dependent type>' contains-errors lvalue .apic
+    | |   `-RecoveryExpr 0x1221152f0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1221152b8 <col:2> 'struct kvm_vcpu *' lvalue ParmVar 0x1220fc048 'vcpu' 'struct kvm_vcpu *'
+    | `-RecoveryExpr 0x1221153a8 <col:32> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x122115930 <line:4:2, line:7:63> has_else
+      |-RecoveryExpr 0x1221153e8 <line:4:6> '<dependent type>' contains-errors lvalue
+      |-CallExpr 0x1221156a8 <line:5:3, col:61> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x122115560 <col:3> 'int ()' Function 0x1221154a8 '__set_bit' 'int ()'
+      | |-RecoveryExpr 0x122115688 <col:13> '<dependent type>' contains-errors lvalue
+      | `-UnaryOperator 0x122115640 <col:35, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-CXXDependentScopeMemberExpr 0x1221155f8 <col:36, col:47> '<dependent type>' contains-errors lvalue .apic_attention
+      |     `-RecoveryExpr 0x1221155d0 <col:36, col:42> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x122115598 <col:36> 'struct kvm_vcpu *' lvalue ParmVar 0x1220fc048 'vcpu' 'struct kvm_vcpu *'
+      `-CallExpr 0x122115900 <line:7:3, col:63> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1221157b8 <col:3> 'int ()' Function 0x122115700 '__clear_bit' 'int ()'
+        |-RecoveryExpr 0x1221158e0 <col:15> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x122115898 <col:37, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x122115850 <col:38, col:49> '<dependent type>' contains-errors lvalue .apic_attention
+            `-RecoveryExpr 0x122115828 <col:38, col:44> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x1221157f0 <col:38> 'struct kvm_vcpu *' lvalue ParmVar 0x1220fc048 'vcpu' 'struct kvm_vcpu *'

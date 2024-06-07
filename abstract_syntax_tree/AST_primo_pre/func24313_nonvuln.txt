@@ -1,0 +1,39 @@
+`-FunctionDecl 0x13900ef38  line:1:26 referenced qrtr_node_lookup 'struct qrtr_node *(unsigned int)' static
+  |-ParmVarDecl 0x13900ed78 <col:43, col:56> col:56 used nid 'unsigned int'
+  `-CompoundStmt 0x139028b80 <line:2:1, line:12:1>
+    |-DeclStmt 0x13900f120 <line:3:2, col:24>
+    | `-VarDecl 0x13900f0b8 <col:2, col:20> col:20 used node 'struct qrtr_node *'
+    |-DeclStmt 0x13900f1b8 <line:4:2, col:21>
+    | `-VarDecl 0x13900f150 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x139028098 <line:6:2, col:43> 'int'
+    | |-ImplicitCastExpr 0x139028080 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13900f300 <col:2> 'int ()' Function 0x13900f248 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x139028030 <col:20, col:21> 'struct qrtr_node *(*)(unsigned int)' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x13900f3a0 <col:21> 'struct qrtr_node *(unsigned int)' Function 0x13900ef38 'qrtr_node_lookup' 'struct qrtr_node *(unsigned int)'
+    | `-ImplicitCastExpr 0x1390280c8 <col:38> 'unsigned long' <LValueToRValue>
+    |   `-DeclRefExpr 0x13900f350 <col:38> 'unsigned long' lvalue Var 0x13900f150 'flags' 'unsigned long'
+    |-BinaryOperator 0x139028308 <line:7:2, col:43> 'struct qrtr_node *' contains-errors '='
+    | |-DeclRefExpr 0x1390280e0 <col:2> 'struct qrtr_node *' lvalue Var 0x13900f0b8 'node' 'struct qrtr_node *'
+    | `-CallExpr 0x1390282d8 <col:9, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1390281e0 <col:9> 'int ()' Function 0x139028128 'radix_tree_lookup' 'int ()'
+    |   |-UnaryOperator 0x1390282c0 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x1390282a0 <col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x139028230 <col:40> 'unsigned int' lvalue ParmVar 0x13900ed78 'nid' 'unsigned int'
+    |-BinaryOperator 0x139028900 <line:8:2, col:31> 'struct qrtr_node *' '='
+    | |-DeclRefExpr 0x139028328 <col:2> 'struct qrtr_node *' lvalue Var 0x13900f0b8 'node' 'struct qrtr_node *'
+    | `-ImplicitCastExpr 0x1390284c0 <col:9, col:31> 'struct qrtr_node *' <IntegralToPointer>
+    |   `-CallExpr 0x139028480 <col:9, col:31> 'int'
+    |     |-ImplicitCastExpr 0x139028468 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x139028428 <col:9> 'int ()' Function 0x139028370 'qrtr_node_acquire' 'int ()'
+    |     `-ImplicitCastExpr 0x1390284a8 <col:27> 'struct qrtr_node *' <LValueToRValue>
+    |       `-DeclRefExpr 0x139028448 <col:27> 'struct qrtr_node *' lvalue Var 0x13900f0b8 'node' 'struct qrtr_node *'
+    |-CallExpr 0x139028af0 <line:9:2, col:48> 'int'
+    | |-ImplicitCastExpr 0x139028ad8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x139028a00 <col:2> 'int ()' Function 0x139028948 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x139028ac0 <col:25, col:26> 'struct qrtr_node *(*)(unsigned int)' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x139028aa0 <col:26> 'struct qrtr_node *(unsigned int)' Function 0x13900ef38 'qrtr_node_lookup' 'struct qrtr_node *(unsigned int)'
+    | `-ImplicitCastExpr 0x139028b20 <col:43> 'unsigned long' <LValueToRValue>
+    |   `-DeclRefExpr 0x139028a50 <col:43> 'unsigned long' lvalue Var 0x13900f150 'flags' 'unsigned long'
+    `-ReturnStmt 0x139028b70 <line:11:2, col:9>
+      `-ImplicitCastExpr 0x139028b58 <col:9> 'struct qrtr_node *' <LValueToRValue>
+        `-DeclRefExpr 0x139028b38 <col:9> 'struct qrtr_node *' lvalue Var 0x13900f0b8 'node' 'struct qrtr_node *'

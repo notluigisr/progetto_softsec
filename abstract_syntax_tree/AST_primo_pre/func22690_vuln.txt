@@ -1,0 +1,67 @@
+`-FunctionDecl 0x12c140a00  line:1:12 do_change_type 'int (struct nameidata *, int)' static
+  |-ParmVarDecl 0x12c128648 <col:27, col:45> col:45 used nd 'struct nameidata *'
+  |-ParmVarDecl 0x12c1286c8 <col:49, col:53> col:53 used flag 'int'
+  `-CompoundStmt 0x12c809190 <line:2:1, line:17:1>
+    |-DeclStmt 0x12c140de0 <line:3:2, col:36>
+    | |-RecordDecl 0x12c140b00 <col:2, col:9> col:9 struct vfsmount
+    | |-VarDecl 0x12c140c68 <col:2, col:19> col:19 used m 'struct vfsmount *'
+    | `-VarDecl 0x12c140cf8 <col:2, col:33> col:23 used mnt 'struct vfsmount *' cinit
+    |   `-RecoveryExpr 0x12c140d98 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c140d60 <col:29> 'struct nameidata *' lvalue ParmVar 0x12c128648 'nd' 'struct nameidata *'
+    |-DeclStmt 0x12c140f28 <line:4:2, col:29>
+    | `-VarDecl 0x12c140e10 <col:2, col:23> col:6 used recurse 'int' cinit
+    |   `-BinaryOperator 0x12c140f08 <col:16, col:23> '<dependent type>' contains-errors '&'
+    |     |-DeclRefExpr 0x12c140e78 <col:16> 'int' lvalue ParmVar 0x12c1286c8 'flag' 'int'
+    |     `-RecoveryExpr 0x12c140ee8 <col:23> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12c1410b8 <line:5:2, col:27>
+    | `-VarDecl 0x12c140f58 <col:2, col:21> col:6 used type 'int' cinit
+    |   `-BinaryOperator 0x12c141098 <col:13, col:21> '<dependent type>' contains-errors '&'
+    |     |-DeclRefExpr 0x12c140fc0 <col:13> 'int' lvalue ParmVar 0x12c1286c8 'flag' 'int'
+    |     `-UnaryOperator 0x12c141080 <col:20, col:21> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |       `-ImplicitCastExpr 0x12c141068 <col:21> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x12c141048 <col:21> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c1412a0 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x12c1411d8 <line:7:6, col:29> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x12c141108 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x12c1410d0 <col:6> 'struct nameidata *' lvalue ParmVar 0x12c128648 'nd' 'struct nameidata *'
+    | | `-CXXDependentScopeMemberExpr 0x12c141190 <col:20, col:29> '<dependent type>' contains-errors lvalue ->mnt_root
+    | |   `-RecoveryExpr 0x12c141168 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12c141130 <col:20> 'struct nameidata *' lvalue ParmVar 0x12c128648 'nd' 'struct nameidata *'
+    | `-ReturnStmt 0x12c141290 <line:8:3, col:11>
+    |   `-UnaryOperator 0x12c141278 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12c141260 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12c141240 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12c141480 <line:10:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c1413d0 <col:2> 'int ()' Function 0x12c141318 'down_write' 'int ()'
+    | `-UnaryOperator 0x12c141468 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c141448 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12c141638 <line:11:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c141588 <col:2> 'int ()' Function 0x12c1414d0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x12c141620 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c141600 <col:13> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x12c808db8 <line:12:2, line:13:33>
+    | |-BinaryOperator 0x12c1416b8 <line:12:7, col:11> 'struct vfsmount *' contains-errors '='
+    | | |-DeclRefExpr 0x12c141660 <col:7> 'struct vfsmount *' lvalue Var 0x12c140c68 'm' 'struct vfsmount *'
+    | | `-ImplicitCastExpr 0x12c1416a0 <col:11> 'struct vfsmount *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c141680 <col:11> 'struct vfsmount *' contains-errors lvalue Var 0x12c140cf8 'mnt' 'struct vfsmount *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x12c1416f8 <col:16> 'struct vfsmount *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12c1416d8 <col:16> 'struct vfsmount *' lvalue Var 0x12c140c68 'm' 'struct vfsmount *'
+    | |-<<<NULL>>>
+    | `-CallExpr 0x12c808d58 <line:13:3, col:33> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x12c808d40 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12c808ce0 <col:3> 'int ()' Function 0x12c808c28 'change_mnt_propagation' 'int ()'
+    |   |-ImplicitCastExpr 0x12c808d88 <col:26> 'struct vfsmount *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12c808d00 <col:26> 'struct vfsmount *' lvalue Var 0x12c140c68 'm' 'struct vfsmount *'
+    |   `-ImplicitCastExpr 0x12c808da0 <col:29> 'int' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12c808d20 <col:29> 'int' contains-errors lvalue Var 0x12c140f58 'type' 'int'
+    |-CallExpr 0x12c808f80 <line:14:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c808ed0 <col:2> 'int ()' Function 0x12c808e18 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x12c808f68 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c808f48 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12c809138 <line:15:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c809088 <col:2> 'int ()' Function 0x12c808fd0 'up_write' 'int ()'
+    | `-UnaryOperator 0x12c809120 <col:11, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c809100 <col:12> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c809180 <line:16:2, col:9>
+      `-IntegerLiteral 0x12c809160 <col:9> 'int' 0

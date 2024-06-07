@@ -1,0 +1,82 @@
+`-FunctionDecl 0x11f944c88  line:1:1 nosy_ioctl 'int (struct file *, unsigned int, unsigned long)'
+  |-ParmVarDecl 0x11f928648 <col:12, col:25> col:25 used file 'struct file *'
+  |-ParmVarDecl 0x11f9286c8 <col:31, col:44> col:44 used cmd 'unsigned int'
+  |-ParmVarDecl 0x11f928748 <col:49, col:63> col:63 used arg 'unsigned long'
+  `-CompoundStmt 0x11f949368 <line:2:1, line:44:1>
+    |-DeclStmt 0x11f944fd8 <line:3:2, col:44>
+    | |-RecordDecl 0x11f944d90 <col:2, col:9> col:9 struct client
+    | `-VarDecl 0x11f944ef8 <col:2, col:32> col:17 used client 'struct client *' cinit
+    |   `-RecoveryExpr 0x11f944f98 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f944f60 <col:26> 'struct file *' lvalue ParmVar 0x11f928648 'file' 'struct file *'
+    |-DeclStmt 0x11f945258 <line:5:2, col:25>
+    | |-RecordDecl 0x11f9450e0 <col:2, col:9> col:9 struct nosy_stats
+    | `-VarDecl 0x11f9451d8 <col:2, col:20> col:20 referenced invalid stats 'struct nosy_stats'
+    `-SwitchStmt 0x11f9452a8 <line:7:2, line:43:2>
+      |-ImplicitCastExpr 0x11f945290 <line:7:10> 'unsigned int' <LValueToRValue>
+      | `-DeclRefExpr 0x11f945270 <col:10> 'unsigned int' lvalue ParmVar 0x11f9286c8 'cmd' 'unsigned int'
+      `-CompoundStmt 0x11f9492f0 <col:15, line:43:2>
+        |-CallExpr 0x11f945480 <line:9:3, col:33> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f945400 <col:3> 'int ()' Function 0x11f945348 'spin_lock_irq' 'int ()'
+        | `-RecoveryExpr 0x11f945460 <col:17> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x11f9455e0 <line:10:3, col:45> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x11f9454f0 <col:3, col:9> '<dependent type>' contains-errors lvalue .total_packet_count
+        | | `-RecoveryExpr 0x11f9454c8 <col:3> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x11f9454a8 <col:3> 'struct nosy_stats' lvalue Var 0x11f9451d8 'stats' 'struct nosy_stats'
+        | `-CXXDependentScopeMemberExpr 0x11f945598 <col:30, col:45> '<dependent type>' contains-errors lvalue .total_packet_count
+        |   `-RecoveryExpr 0x11f945570 <col:30, col:38> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x11f945538 <col:30> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        |-BinaryOperator 0x11f945738 <line:11:3, col:45> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x11f945648 <col:3, col:9> '<dependent type>' contains-errors lvalue .lost_packet_count
+        | | `-RecoveryExpr 0x11f945620 <col:3> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x11f945600 <col:3> 'struct nosy_stats' lvalue Var 0x11f9451d8 'stats' 'struct nosy_stats'
+        | `-CXXDependentScopeMemberExpr 0x11f9456f0 <col:30, col:45> '<dependent type>' contains-errors lvalue .lost_packet_count
+        |   `-RecoveryExpr 0x11f9456c8 <col:30, col:38> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x11f945690 <col:30> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        |-CallExpr 0x11f9458b8 <line:12:3, col:35> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f945838 <col:3> 'int ()' Function 0x11f945780 'spin_unlock_irq' 'int ()'
+        | `-RecoveryExpr 0x11f945898 <col:19> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x11f948c00 <line:14:3, line:17:11> has_else
+        | |-CallExpr 0x11f945ac8 <line:14:7, col:61> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x11f9459c0 <col:7> 'int ()' Function 0x11f945908 'copy_to_user' 'int ()'
+        | | |-CStyleCastExpr 0x11f945a28 <col:20, col:36> 'void' <ToVoid>
+        | | | `-ImplicitCastExpr 0x11f945a10 <col:36> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+        | | |   `-DeclRefExpr 0x11f9459e0 <col:36> 'unsigned long' lvalue ParmVar 0x11f928748 'arg' 'unsigned long'
+        | | |-UnaryOperator 0x11f945a70 <col:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | | `-RecoveryExpr 0x11f945a50 <col:42> '<dependent type>' contains-errors lvalue
+        | | `-UnaryExprOrTypeTraitExpr 0x11f945aa8 <col:49, col:56> 'unsigned long' contains-errors sizeof
+        | |   `-RecoveryExpr 0x11f945a88 <col:56> '<dependent type>' contains-errors lvalue
+        | |-ReturnStmt 0x11f945b98 <line:15:4, col:12>
+        | | `-UnaryOperator 0x11f945b80 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        | |   `-ImplicitCastExpr 0x11f945b68 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        | |     `-RecoveryExpr 0x11f945b48 <col:12> '<dependent type>' contains-errors lvalue
+        | `-ReturnStmt 0x11f945bc8 <line:17:4, col:11>
+        |   `-IntegerLiteral 0x11f945ba8 <col:11> 'int' 0
+        |-CallExpr 0x11f948cc8 <line:20:3, col:33> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f948c48 <col:3> 'int ()' Function 0x11f945348 'spin_lock_irq' 'int ()'
+        | `-RecoveryExpr 0x11f948ca8 <col:17> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x11f948f28 <line:21:3, col:58> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f948dd0 <col:3> 'int ()' Function 0x11f948d18 'list_add_tail' 'int ()'
+        | |-UnaryOperator 0x11f948e50 <col:17, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x11f948e28 <col:18, col:26> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x11f948df0 <col:18> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        | `-UnaryOperator 0x11f948f10 <col:32, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-CXXDependentScopeMemberExpr 0x11f948ec8 <col:33, col:47> '<dependent type>' contains-errors lvalue ->client_list
+        |     `-RecoveryExpr 0x11f948ea0 <col:33, col:41> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x11f948e68 <col:33> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        |-ReturnStmt 0x11f948f98 <line:24:3, col:10>
+        | `-IntegerLiteral 0x11f948f78 <col:10> 'int' 0
+        |-CallExpr 0x11f949140 <line:28:3, col:30> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f9490a8 <col:3> 'int ()' Function 0x11f948ff0 'list_del_init' 'int ()'
+        | `-UnaryOperator 0x11f949128 <col:17, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x11f949100 <col:18, col:26> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x11f9490c8 <col:18> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        |-ReturnStmt 0x11f9491a8 <line:31:3, col:10>
+        | `-IntegerLiteral 0x11f949188 <col:10> 'int' 0
+        |-BinaryOperator 0x11f949258 <line:35:3, col:24> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x11f949210 <col:3, col:11> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x11f9491d8 <col:3> 'struct client *' contains-errors lvalue Var 0x11f944ef8 'client' 'struct client *'
+        | `-DeclRefExpr 0x11f949238 <col:24> 'unsigned long' lvalue ParmVar 0x11f928748 'arg' 'unsigned long'
+        |-ReturnStmt 0x11f9492b8 <line:38:3, col:10>
+        | `-IntegerLiteral 0x11f949298 <col:10> 'int' 0
+        `-DefaultStmt 0x11f9492d0 <line:40:2, col:9>
+          `-NullStmt 0x11f9492c8 <col:9>

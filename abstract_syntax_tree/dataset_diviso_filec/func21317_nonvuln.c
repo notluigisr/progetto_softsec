@@ -1,0 +1,1 @@
+  virtual bool supportsHttp10() { return false; }

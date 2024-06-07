@@ -1,0 +1,25 @@
+`-FunctionDecl 0x148140e80  line:1:13 uas_log_cmd_state 'void (struct scsi_cmnd *, const char *, int)' static
+  |-ParmVarDecl 0x148128a48 <col:31, col:49> col:49 used cmnd 'struct scsi_cmnd *'
+  |-ParmVarDecl 0x148128ac8 <col:55, col:67> col:67 used prefix 'const char *'
+  |-ParmVarDecl 0x148128b48 <line:2:10, col:14> col:14 used status 'int'
+  `-CompoundStmt 0x140009a28 <line:3:1, line:23:1>
+    |-DeclStmt 0x148141248 <line:4:2, col:46>
+    | |-RecordDecl 0x148140f88 <col:2, col:9> col:9 struct uas_cmd_info
+    | `-VarDecl 0x1481410f8 <col:2, col:43> col:23 used ci 'struct uas_cmd_info *' cinit
+    |   `-ImplicitCastExpr 0x148141218 <col:28, col:43> 'struct uas_cmd_info *' contains-errors <BitCast>
+    |     `-CStyleCastExpr 0x1481411f0 <col:28, col:43> 'void *' contains-errors <Dependent>
+    |       `-UnaryOperator 0x1481411c0 <col:36, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x148141198 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x148141160 <col:37> 'struct scsi_cmnd *' lvalue ParmVar 0x148128a48 'cmnd' 'struct scsi_cmnd *'
+    |-DeclStmt 0x148141420 <line:5:2, col:51>
+    | `-VarDecl 0x1481412e8 <col:2, col:48> col:23 used cmdinfo 'struct uas_cmd_info *' cinit
+    |   `-ImplicitCastExpr 0x148141408 <col:33, col:48> 'struct uas_cmd_info *' contains-errors <BitCast>
+    |     `-CStyleCastExpr 0x1481413e0 <col:33, col:48> 'void *' contains-errors <Dependent>
+    |       `-UnaryOperator 0x1481413b0 <col:41, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x148141388 <col:42, col:48> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x148141350 <col:42> 'struct scsi_cmnd *' lvalue ParmVar 0x148128a48 'cmnd' 'struct scsi_cmnd *'
+    `-CallExpr 0x1400099e8 <line:22:2, col:25> 'int'
+      |-ImplicitCastExpr 0x1400099d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x140009960 <col:2> 'int ()' Function 0x1400098a8 'scsi_print_command' 'int ()'
+      `-ImplicitCastExpr 0x140009a10 <col:21> 'struct scsi_cmnd *' <LValueToRValue>
+        `-DeclRefExpr 0x140009980 <col:21> 'struct scsi_cmnd *' lvalue ParmVar 0x148128a48 'cmnd' 'struct scsi_cmnd *'

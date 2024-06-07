@@ -1,0 +1,135 @@
+`-FunctionDecl 0x131027438  line:1:5 invalid sr_do_ioctl 'int (int *, struct packet_command *)'
+  |-ParmVarDecl 0x13100dd28 <col:17, col:26> col:26 invalid cd 'int *'
+  |-ParmVarDecl 0x13100e318 <col:30, col:53> col:53 used cgc 'struct packet_command *'
+  `-CompoundStmt 0x1309255e8 <line:2:1, line:71:1>
+    |-DeclStmt 0x1310276d8 <line:3:2, col:26>
+    | |-RecordDecl 0x1310274f0 <col:2, col:9> col:9 struct scsi_device
+    | `-VarDecl 0x131027658 <col:2, col:22> col:22 used SDev 'struct scsi_device *'
+    |-DeclStmt 0x131027868 <line:4:2, col:29>
+    | |-RecordDecl 0x1310276f0 <col:2, col:9> col:9 struct scsi_sense_hdr
+    | `-VarDecl 0x1310277e8 <col:2, col:24> col:24 invalid sshdr 'struct scsi_sense_hdr'
+    |-DeclStmt 0x131027a60 <line:5:2, col:34>
+    | |-VarDecl 0x131027898 <col:2, col:6> col:6 used result 'int'
+    | |-VarDecl 0x131027918 <col:2, col:20> col:14 used err 'int' cinit
+    | | `-IntegerLiteral 0x131027980 <col:20> 'int' 0
+    | `-VarDecl 0x1310279b8 <col:2, col:33> col:23 used retries 'int' cinit
+    |   `-IntegerLiteral 0x131027a20 <col:33> 'int' 0
+    |-BinaryOperator 0x131027b00 <line:7:2, col:13> 'struct scsi_device *' contains-errors '='
+    | |-DeclRefExpr 0x131027a78 <col:2> 'struct scsi_device *' lvalue Var 0x131027658 'SDev' 'struct scsi_device *'
+    | `-CXXDependentScopeMemberExpr 0x131027ab8 <col:9, col:13> '<dependent type>' contains-errors lvalue ->device
+    |   `-RecoveryExpr 0x131027a98 <col:9> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x131027f50 <line:9:7, line:13:2> 'retry'
+    | `-IfStmt 0x131027ee0 <line:10:2, line:13:2>
+    |   |-UnaryOperator 0x131027d48 <line:10:6, col:45> 'int' prefix '!' cannot overflow
+    |   | `-CallExpr 0x131027d08 <col:7, col:45> 'int'
+    |   |   |-ImplicitCastExpr 0x131027cf0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x131027c80 <col:7> 'int ()' Function 0x131027bc8 'scsi_block_when_processing_errors' 'int ()'
+    |   |   `-ImplicitCastExpr 0x131027d30 <col:41> 'struct scsi_device *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x131027ca0 <col:41> 'struct scsi_device *' lvalue Var 0x131027658 'SDev' 'struct scsi_device *'
+    |   `-CompoundStmt 0x131027ec0 <col:48, line:13:2>
+    |     |-BinaryOperator 0x131027e38 <line:11:3, col:10> 'int' contains-errors '='
+    |     | |-DeclRefExpr 0x131027d60 <col:3> 'int' lvalue Var 0x131027918 'err' 'int'
+    |     | `-UnaryOperator 0x131027e20 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     |   `-ImplicitCastExpr 0x131027e08 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     `-RecoveryExpr 0x131027de8 <col:10> '<dependent type>' contains-errors lvalue
+    |     `-GotoStmt 0x131027ea8 <line:12:3, col:8> 'out' 0x131027e58
+    |-BinaryOperator 0x1309243f8 <line:15:2, line:18:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x131027f70 <line:15:2> 'int' lvalue Var 0x131027898 'result' 'int'
+    | `-CallExpr 0x130924378 <col:11, line:18:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131028070 <line:15:11> 'int ()' Function 0x131027fb8 'scsi_execute' 'int ()'
+    |   |-DeclRefExpr 0x131028090 <col:24> 'struct scsi_device *' lvalue Var 0x131027658 'SDev' 'struct scsi_device *'
+    |   |-RecoveryExpr 0x1310280e8 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1310280b0 <col:30> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-RecoveryExpr 0x131028148 <col:40, col:45> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x131028110 <col:40> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-RecoveryExpr 0x1310281a8 <line:16:10, col:15> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x131028170 <col:10> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-RecoveryExpr 0x131028208 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1310281d0 <col:23> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-CStyleCastExpr 0x130924310 <line:17:10, col:32> 'unsigned char *' contains-errors <Dependent>
+    |   | `-RecoveryExpr 0x131028268 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x131028230 <col:27> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-UnaryOperator 0x131028320 <col:39, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x131028300 <col:40> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x131028370 <line:18:10, col:15> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x131028338 <col:10> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   |-RecoveryExpr 0x130924338 <col:24> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x1310283b0 <col:39> 'int' 0
+    |   |-IntegerLiteral 0x1310283d0 <col:42> 'int' 0
+    |   `-RecoveryExpr 0x130924358 <col:45> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1309254c0 <line:21:2, line:65:2>
+    | |-BinaryOperator 0x1309245b0 <line:21:6, col:29> 'int' '!='
+    | | |-CallExpr 0x130924550 <col:6, col:24> 'int'
+    | | | |-ImplicitCastExpr 0x130924538 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x1309244f8 <col:6> 'int ()' Function 0x130924440 'driver_byte' 'int ()'
+    | | | `-ImplicitCastExpr 0x130924578 <col:18> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x130924518 <col:18> 'int' lvalue Var 0x131027898 'result' 'int'
+    | | `-IntegerLiteral 0x130924590 <col:29> 'int' 0
+    | `-CompoundStmt 0x1309254a8 <col:32, line:65:2>
+    |   `-SwitchStmt 0x130924650 <line:22:3, line:64:3>
+    |     |-ImplicitCastExpr 0x130924638 <line:22:11, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-CXXDependentScopeMemberExpr 0x1309245f0 <col:11, col:17> '<dependent type>' contains-errors lvalue .sense_key
+    |     |   `-RecoveryExpr 0x1309245d0 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x130925450 <col:28, line:64:3>
+    |       |-BinaryOperator 0x130924710 <line:24:4, col:20> '<dependent type>' contains-errors '='
+    |       | |-RecoveryExpr 0x1309246c8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x130924690 <col:4> 'struct scsi_device *' lvalue Var 0x131027658 'SDev' 'struct scsi_device *'
+    |       | `-IntegerLiteral 0x1309246f0 <col:20> 'int' 1
+    |       |-IfStmt 0x1309249f0 <line:25:4, line:27:13>
+    |       | |-UnaryOperator 0x1309247a8 <line:25:8, col:14> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |       | | `-ImplicitCastExpr 0x130924790 <col:9, col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |       | |   `-RecoveryExpr 0x130924768 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |       | |     `-DeclRefExpr 0x130924730 <col:9> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |       | `-CallExpr 0x1309249b8 <line:26:5, line:27:13> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x1309248a0 <line:26:5> 'int ()' Function 0x1309247e8 'sr_printk' 'int ()'
+    |       |   |-RecoveryExpr 0x130924998 <col:15> '<dependent type>' contains-errors lvalue
+    |       |   |-RecoveryExpr 0x1309248d8 <col:26> '<dependent type>' contains-errors lvalue
+    |       |   `-StringLiteral 0x130924940 <line:27:8> 'char[4]' lvalue "STR"
+    |       |-IfStmt 0x130924aa0 <line:28:4, line:29:10>
+    |       | |-BinaryOperator 0x130924a68 <line:28:8, col:20> 'int' '<'
+    |       | | |-UnaryOperator 0x130924a30 <col:8, col:15> 'int' postfix '++'
+    |       | | | `-DeclRefExpr 0x130924a10 <col:8> 'int' lvalue Var 0x1310279b8 'retries' 'int'
+    |       | | `-IntegerLiteral 0x130924a48 <col:20> 'int' 10
+    |       | `-GotoStmt 0x130924a88 <line:29:5, col:10> 'retry' 0x131027f00
+    |       |-BinaryOperator 0x130924b98 <line:30:4, col:11> 'int' contains-errors '='
+    |       | |-DeclRefExpr 0x130924ac0 <col:4> 'int' lvalue Var 0x131027918 'err' 'int'
+    |       | `-UnaryOperator 0x130924b80 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       |   `-ImplicitCastExpr 0x130924b68 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       |     `-RecoveryExpr 0x130924b48 <col:11> '<dependent type>' contains-errors lvalue
+    |       |-BreakStmt 0x130924bb8 <line:31:4>
+    |       |-IfStmt 0x1309250b8 <line:33:4, line:48:4>
+    |       | |-BinaryOperator 0x130924d10 <line:33:8, line:34:22> 'int' contains-errors '&&'
+    |       | | |-BinaryOperator 0x130924c48 <line:33:8, col:21> 'int' contains-errors '=='
+    |       | | | |-CXXDependentScopeMemberExpr 0x130924be0 <col:8, col:14> '<dependent type>' contains-errors lvalue .asc
+    |       | | | | `-RecoveryExpr 0x130924bc0 <col:8> '<dependent type>' contains-errors lvalue
+    |       | | | `-IntegerLiteral 0x130924c28 <col:21> 'int' 4
+    |       | | `-BinaryOperator 0x130924cf0 <line:34:8, col:22> 'int' contains-errors '=='
+    |       | |   |-CXXDependentScopeMemberExpr 0x130924c88 <col:8, col:14> '<dependent type>' contains-errors lvalue .ascq
+    |       | |   | `-RecoveryExpr 0x130924c68 <col:8> '<dependent type>' contains-errors lvalue
+    |       | |   `-IntegerLiteral 0x130924cd0 <col:22> 'int' 1
+    |       | `-CompoundStmt 0x1309250a0 <col:28, line:48:4>
+    |       |   `-IfStmt 0x130925070 <line:39:5, line:47:5> has_else
+    |       |     |-BinaryOperator 0x130924e78 <line:39:9, col:21> 'int' '<'
+    |       |     | |-UnaryOperator 0x130924e40 <col:9, col:16> 'int' postfix '++'
+    |       |     | | `-DeclRefExpr 0x130924e20 <col:9> 'int' lvalue Var 0x1310279b8 'retries' 'int'
+    |       |     | `-IntegerLiteral 0x130924e58 <col:21> 'int' 10
+    |       |     |-CompoundStmt 0x130925010 <col:25, line:43:5>
+    |       |     | |-CallExpr 0x130924fd0 <line:41:6, col:14> 'int'
+    |       |     | | |-ImplicitCastExpr 0x130924fb8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |       |     | | | `-DeclRefExpr 0x130924f78 <col:6> 'int ()' Function 0x130924ec0 'ssleep' 'int ()'
+    |       |     | | `-IntegerLiteral 0x130924f98 <col:13> 'int' 2
+    |       |     | `-GotoStmt 0x130924ff8 <line:42:6, col:11> 'retry' 0x131027f00
+    |       |     `-CompoundStmt 0x130925058 <line:43:12, line:47:5>
+    |       |       `-BreakStmt 0x130925050 <line:46:6>
+    |       |-BreakStmt 0x130925248 <line:54:4>
+    |       |-BreakStmt 0x130925400 <line:61:4>
+    |       `-DefaultStmt 0x130925430 <line:62:3, col:10>
+    |         `-NullStmt 0x130925428 <col:10>
+    |-LabelStmt 0x130925580 <line:68:7, line:69:14> 'out'
+    | `-BinaryOperator 0x130925560 <col:2, col:14> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x130925518 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1309254e0 <col:2> 'struct packet_command *' lvalue ParmVar 0x13100e318 'cgc' 'struct packet_command *'
+    |   `-DeclRefExpr 0x130925540 <col:14> 'int' lvalue Var 0x131027918 'err' 'int'
+    `-ReturnStmt 0x1309255d8 <line:70:2, col:9>
+      `-ImplicitCastExpr 0x1309255c0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1309255a0 <col:9> 'int' lvalue Var 0x131027918 'err' 'int'

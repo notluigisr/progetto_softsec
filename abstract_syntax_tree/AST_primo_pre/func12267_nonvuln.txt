@@ -1,0 +1,46 @@
+`-FunctionDecl 0x12a141838  line:1:12 invalid ipc_has_perm 'int (struct kern_ipc_perm *, int)' static
+  |-ParmVarDecl 0x12a128648 <col:25, col:47> col:47 used ipc_perms 'struct kern_ipc_perm *'
+  |-ParmVarDecl 0x12a1286e0 <line:2:4, col:8> col:8 invalid perms 'int'
+  `-CompoundStmt 0x12a1426b0 <line:3:1, line:16:1>
+    |-DeclStmt 0x12a141ad8 <line:4:2, col:34>
+    | |-RecordDecl 0x12a1418f0 <col:2, col:9> col:9 struct ipc_security_struct
+    | `-VarDecl 0x12a141a58 <col:2, col:30> col:30 used isec 'struct ipc_security_struct *'
+    |-DeclStmt 0x12a141c68 <line:5:2, col:29>
+    | |-RecordDecl 0x12a141af0 <col:2, col:9> col:9 struct common_audit_data
+    | `-VarDecl 0x12a141be8 <col:2, col:27> col:27 referenced invalid ad 'struct common_audit_data'
+    |-DeclStmt 0x12a141e60 <line:6:2, col:38>
+    | |-RecordDecl 0x12a141c80 <col:2, col:9> col:9 struct selinux_audit_data
+    | `-VarDecl 0x12a141d78 <col:2, col:28> col:28 referenced invalid sad 'struct selinux_audit_data'
+    |-BinaryOperator 0x12a141ef8 <line:9:2, col:20> 'struct ipc_security_struct *' contains-errors '='
+    | |-DeclRefExpr 0x12a141e78 <col:2> 'struct ipc_security_struct *' lvalue Var 0x12a141a58 'isec' 'struct ipc_security_struct *'
+    | `-RecoveryExpr 0x12a141ed0 <col:9, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12a141e98 <col:9> 'struct kern_ipc_perm *' lvalue ParmVar 0x12a128648 'ipc_perms' 'struct kern_ipc_perm *'
+    |-CallExpr 0x12a142130 <line:11:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a142070 <col:2> 'int ()' Function 0x12a141fb8 'COMMON_AUDIT_DATA_INIT' 'int ()'
+    | |-UnaryOperator 0x12a1420b0 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12a142090 <col:26> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x12a142110 <col:30> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a142228 <line:12:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12a1421a8 <col:2, col:5> '<dependent type>' contains-errors lvalue .selinux_audit_data
+    | | `-RecoveryExpr 0x12a142180 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12a142160 <col:2> 'struct common_audit_data' lvalue Var 0x12a141be8 'ad' 'struct common_audit_data'
+    | `-UnaryOperator 0x12a142210 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12a1421f0 <col:27> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a142380 <line:13:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12a1422d8 <col:2, col:7> '<dependent type>' contains-errors lvalue .ipc_id
+    | | `-CXXDependentScopeMemberExpr 0x12a142290 <col:2, col:5> '<dependent type>' contains-errors lvalue .u
+    | |   `-RecoveryExpr 0x12a142268 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12a142248 <col:2> 'struct common_audit_data' lvalue Var 0x12a141be8 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x12a142358 <col:16, col:27> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12a142320 <col:16> 'struct kern_ipc_perm *' lvalue ParmVar 0x12a128648 'ipc_perms' 'struct kern_ipc_perm *'
+    `-ReturnStmt 0x12a1426a0 <line:15:2, col:62>
+      `-CallExpr 0x12a142658 <col:9, col:62> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12a142480 <col:9> 'int ()' Function 0x12a1423c8 'avc_has_perm' 'int ()'
+        |-RecoveryExpr 0x12a142638 <col:22> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x12a1424f0 <col:27, col:33> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x12a1424b8 <col:27> 'struct ipc_security_struct *' lvalue Var 0x12a141a58 'isec' 'struct ipc_security_struct *'
+        |-RecoveryExpr 0x12a142550 <col:38, col:44> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x12a142518 <col:38> 'struct ipc_security_struct *' lvalue Var 0x12a141a58 'isec' 'struct ipc_security_struct *'
+        |-RecoveryExpr 0x12a142578 <col:52> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x12a1425b8 <col:59, col:60> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x12a142598 <col:60> '<dependent type>' contains-errors lvalue

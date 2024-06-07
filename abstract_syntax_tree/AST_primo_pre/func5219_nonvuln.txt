@@ -1,0 +1,21 @@
+`-FunctionDecl 0x15680e350  line:1:6 kvm_vcpu_uninit 'void (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x15680e248 <col:22, col:39> col:39 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x156826cf8 <line:2:1, line:7:1>
+    |-CallExpr 0x156826940 <line:4:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x156826770 <col:2> 'int ()' Function 0x1568266b8 'put_pid' 'int ()'
+    | `-CallExpr 0x156826910 <col:10, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x156826870 <col:10> 'int ()' Function 0x1568267b8 'rcu_dereference_protected' 'int ()'
+    |   |-RecoveryExpr 0x1568268c8 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x156826890 <col:36> 'struct kvm_vcpu *' lvalue ParmVar 0x15680e248 'vcpu' 'struct kvm_vcpu *'
+    |   `-IntegerLiteral 0x1568268f0 <col:47> 'int' 1
+    |-CallExpr 0x156826ad8 <line:5:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x156826ac0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x156826a48 <col:2> 'int ()' Function 0x156826990 'kvm_arch_vcpu_uninit' 'int ()'
+    | `-ImplicitCastExpr 0x156826b00 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    |   `-DeclRefExpr 0x156826a68 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x15680e248 'vcpu' 'struct kvm_vcpu *'
+    `-CallExpr 0x156826cd0 <line:6:2, col:36> 'int' contains-errors
+      |-ImplicitCastExpr 0x156826cb8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x156826bf8 <col:2> 'int ()' Function 0x156826b40 'free_page' 'int ()'
+      `-CStyleCastExpr 0x156826c90 <col:12, col:33> 'unsigned long' contains-errors <Dependent>
+        `-RecoveryExpr 0x156826c50 <col:27, col:33> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x156826c18 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x15680e248 'vcpu' 'struct kvm_vcpu *'

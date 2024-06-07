@@ -1,0 +1,19 @@
+`-FunctionDecl 0x12300de68  line:1:5 main 'int (int, char **)'
+  |-ParmVarDecl 0x12300dcd8 <col:10, col:14> col:14 used argc 'int'
+  |-ParmVarDecl 0x12300dd88 <col:20, col:27> col:27 used argv 'char **'
+  `-CompoundStmt 0x1238083a8 <line:2:1, line:9:1>
+    |-CallExpr 0x12300e1f8 <line:3:5, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12300e090 <col:5> 'int ()' Function 0x12300dfd8 'g_test_init' 'int ()'
+    | |-UnaryOperator 0x12300e100 <col:17, col:18> 'int *' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x12300e0b0 <col:18> 'int' lvalue ParmVar 0x12300dcd8 'argc' 'int'
+    | |-UnaryOperator 0x12300e170 <col:24, col:25> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x12300e118 <col:25> 'char **' lvalue ParmVar 0x12300dd88 'argv' 'char **'
+    | `-RecoveryExpr 0x12300e1d8 <col:31> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x123808200 <line:5:5, line:6:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12300e310 <line:5:5> 'int ()' Function 0x12300e258 'qtest_add_func' 'int ()'
+    | |-StringLiteral 0x12300e370 <col:20> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x12300e3d8 <line:6:20> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x123808398 <line:8:5, col:23>
+      `-CallExpr 0x123808378 <col:12, col:23> 'int'
+        `-ImplicitCastExpr 0x123808360 <col:12> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x123808310 <col:12> 'int ()' Function 0x123808258 'g_test_run' 'int ()'

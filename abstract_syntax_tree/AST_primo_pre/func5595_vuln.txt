@@ -1,0 +1,69 @@
+`-FunctionDecl 0x140928a38  line:1:1 TEST_P 'int (int, int)'
+  |-ParmVarDecl 0x140928958 <col:8> col:8 WasmTest 'int'
+  |-ParmVarDecl 0x1409288d8 <col:18> col:18 DivByZero 'int'
+  `-CompoundStmt 0x140943878 <col:29, line:37:1>
+    |-RecoveryExpr 0x140928b80 <line:2:3> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x140928bd0 <line:3:3> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x140928c20 <line:4:3> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x140928c70 <line:5:3> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x140928d48 <line:6:3, col:21>
+    | `-VarDecl 0x140928ca8 <col:3, col:16> col:8 scope 'int' auto cinit
+    |   `-RecoveryExpr 0x140928d28 <col:16> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x140928e88 <line:8:3, col:17>
+    | `-VarDecl 0x140928d90 <col:3, col:15> col:8 name 'int' auto cinit
+    |   `-ImplicitCastExpr 0x140928e70 <col:15> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x140928e58 <col:15> 'char *' <ArrayToPointerDecay>
+    |       `-StringLiteral 0x140928e40 <col:15> 'char[1]' lvalue ""
+    |-DeclStmt 0x140928f68 <line:9:3, col:20>
+    | `-VarDecl 0x140928eb8 <col:3, col:18> col:8 root_id 'int' auto cinit
+    |   `-ImplicitCastExpr 0x140928f50 <col:18> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x140928f38 <col:18> 'char *' <ArrayToPointerDecay>
+    |       `-StringLiteral 0x140928f20 <col:18> 'char[1]' lvalue ""
+    |-DeclStmt 0x140941248 <line:10:3, col:18>
+    | `-VarDecl 0x140928f98 <col:3, col:16> col:8 vm_id 'int' auto cinit
+    |   `-ImplicitCastExpr 0x140941230 <col:16> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x140941218 <col:16> 'char *' <ArrayToPointerDecay>
+    |       `-StringLiteral 0x140941200 <col:16> 'char[1]' lvalue ""
+    |-DeclStmt 0x140941328 <line:11:3, col:29>
+    | `-VarDecl 0x140941278 <col:3, col:27> col:8 vm_configuration 'int' auto cinit
+    |   `-ImplicitCastExpr 0x140941310 <col:27> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x1409412f8 <col:27> 'char *' <ArrayToPointerDecay>
+    |       `-StringLiteral 0x1409412e0 <col:27> 'char[1]' lvalue ""
+    |-DeclStmt 0x1409413c0 <line:12:3, line:14:15>
+    | `-VarDecl 0x140941358 <line:12:3, col:8> col:8 plugin 'int' auto
+    |-DeclStmt 0x140941458 <line:15:3, line:17:36>
+    | `-VarDecl 0x1409413f0 <line:15:3, col:8> col:8 used wasm 'int' auto
+    |-DeclStmt 0x140941640 <line:19:3, line:20:14>
+    | `-VarDecl 0x1409415d8 <line:19:3, col:14> col:14 used code 'const int' auto
+    |-CallExpr 0x1409417c0 <line:21:3, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x140941738 <col:3> 'int ()' Function 0x140941680 'EXPECT_FALSE' 'int ()'
+    | `-CallExpr 0x1409417a0 <col:16, col:27> '<dependent type>' contains-errors
+    |   `-RecoveryExpr 0x140941778 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x140941758 <col:16> 'const int' lvalue Var 0x1409415d8 'code' 'const int'
+    |-DeclStmt 0x140941868 <line:22:3, col:59>
+    | `-VarDecl 0x140941800 <col:3, col:8> col:8 used context 'int' auto
+    |-CallExpr 0x140941f10 <line:25:3, col:33> '<dependent type>' contains-errors
+    | |-RecoveryExpr 0x140941e80 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x140941e48 <col:3> 'int' lvalue Var 0x1409413f0 'wasm' 'int'
+    | `-CallExpr 0x140941ef0 <col:20, col:32> '<dependent type>' contains-errors
+    |   `-RecoveryExpr 0x140941ec8 <col:20, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x140941ea8 <col:20> 'int' lvalue Var 0x140941800 'context' 'int'
+    `-IfStmt 0x140943848 <line:27:3, line:36:3> has_else
+      |-BinaryOperator 0x1409420c0 <line:27:7, col:21> 'int' '=='
+      | |-ImplicitCastExpr 0x1409420a8 <col:7, col:16> 'char *' <IntegralToPointer>
+      | | `-CallExpr 0x140942050 <col:7, col:16> 'int'
+      | |   `-ImplicitCastExpr 0x140942038 <col:7> 'int (*)()' <FunctionToPointerDecay>
+      | |     `-DeclRefExpr 0x140942018 <col:7> 'int ()' Function 0x140941f60 'GetParam' 'int ()'
+      | `-ImplicitCastExpr 0x140942090 <col:21> 'char *' <ArrayToPointerDecay>
+      |   `-StringLiteral 0x140942070 <col:21> 'char[4]' lvalue "STR"
+      |-CompoundStmt 0x140943480 <col:28, line:31:3>
+      `-IfStmt 0x140943818 <col:10, line:36:3> has_else
+        |-BinaryOperator 0x140943538 <line:31:14, col:28> 'int' '=='
+        | |-ImplicitCastExpr 0x140943520 <col:14, col:23> 'char *' <IntegralToPointer>
+        | | `-CallExpr 0x1409434c8 <col:14, col:23> 'int'
+        | |   `-ImplicitCastExpr 0x1409434b0 <col:14> 'int (*)()' <FunctionToPointerDecay>
+        | |     `-DeclRefExpr 0x140943490 <col:14> 'int ()' Function 0x140941f60 'GetParam' 'int ()'
+        | `-ImplicitCastExpr 0x140943508 <col:28> 'char *' <ArrayToPointerDecay>
+        |   `-StringLiteral 0x1409434e8 <col:28> 'char[4]' lvalue "STR"
+        |-CompoundStmt 0x1409436f8 <col:35, line:34:3>
+        `-CompoundStmt 0x140943808 <col:10, line:36:3>

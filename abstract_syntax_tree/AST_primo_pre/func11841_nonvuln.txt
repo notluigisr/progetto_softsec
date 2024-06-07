@@ -1,0 +1,30 @@
+`-FunctionDecl 0x11e928758  line:1:12 kvm_vcpu_ready_for_interrupt_injection 'int (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x11e928648 <col:51, col:68> col:68 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x11e941100 <line:2:1, line:8:1>
+    `-ReturnStmt 0x11e9410f0 <line:4:2, line:7:32>
+      `-ParenExpr 0x11e9410d0 <line:4:9, line:7:32> 'int' contains-errors
+        `-BinaryOperator 0x11e9410b0 <line:4:10, line:7:25> 'int' contains-errors '&&'
+          |-BinaryOperator 0x11e940f70 <line:4:10, line:6:36> 'int' '&&'
+          | |-BinaryOperator 0x11e940dc0 <line:4:10, line:5:30> 'int' '&&'
+          | | |-CallExpr 0x11e940c08 <line:4:10, col:41> 'int'
+          | | | |-ImplicitCastExpr 0x11e940bf0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+          | | | | `-DeclRefExpr 0x11e940b80 <col:10> 'int ()' Function 0x11e940ac8 'kvm_arch_interrupt_allowed' 'int ()'
+          | | | `-ImplicitCastExpr 0x11e940c30 <col:37> 'struct kvm_vcpu *' <LValueToRValue>
+          | | |   `-DeclRefExpr 0x11e940ba0 <col:37> 'struct kvm_vcpu *' lvalue ParmVar 0x11e928648 'vcpu' 'struct kvm_vcpu *'
+          | | `-CallExpr 0x11e940d80 <line:5:3, col:30> 'int'
+          | |   |-ImplicitCastExpr 0x11e940d68 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | |   | `-DeclRefExpr 0x11e940d28 <col:3> 'int ()' Function 0x11e940c70 'kvm_cpu_accept_dm_intr' 'int ()'
+          | |   `-ImplicitCastExpr 0x11e940da8 <col:26> 'struct kvm_vcpu *' <LValueToRValue>
+          | |     `-DeclRefExpr 0x11e940d48 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x11e928648 'vcpu' 'struct kvm_vcpu *'
+          | `-UnaryOperator 0x11e940f58 <line:6:3, col:36> 'int' prefix '!' cannot overflow
+          |   `-CallExpr 0x11e940f18 <col:4, col:36> 'int'
+          |     |-ImplicitCastExpr 0x11e940f00 <col:4> 'int (*)()' <FunctionToPointerDecay>
+          |     | `-DeclRefExpr 0x11e940ec0 <col:4> 'int ()' Function 0x11e940e08 'kvm_event_needs_reinjection' 'int ()'
+          |     `-ImplicitCastExpr 0x11e940f40 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+          |       `-DeclRefExpr 0x11e940ee0 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x11e928648 'vcpu' 'struct kvm_vcpu *'
+          `-UnaryOperator 0x11e941098 <line:7:3, col:25> '<dependent type>' contains-errors prefix '!' cannot overflow
+            `-ImplicitCastExpr 0x11e941080 <col:4, col:25> '<dependent type>' contains-errors <LValueToRValue>
+              `-CXXDependentScopeMemberExpr 0x11e941038 <col:4, col:25> '<dependent type>' contains-errors lvalue .pending
+                `-CXXDependentScopeMemberExpr 0x11e940ff0 <col:4, col:15> '<dependent type>' contains-errors lvalue .exception
+                  `-RecoveryExpr 0x11e940fc8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+                    `-DeclRefExpr 0x11e940f90 <col:4> 'struct kvm_vcpu *' lvalue ParmVar 0x11e928648 'vcpu' 'struct kvm_vcpu *'

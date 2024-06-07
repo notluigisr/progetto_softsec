@@ -1,0 +1,63 @@
+`-FunctionDecl 0x12a10a158  line:1:5 rds_rdma_extra_size 'int (struct rds_rdma_args *)'
+  |-ParmVarDecl 0x12a10a048 <col:25, col:47> col:47 used args 'struct rds_rdma_args *'
+  `-CompoundStmt 0x12b008800 <line:2:1, line:29:1>
+    |-DeclStmt 0x12a1225c8 <line:3:2, col:22>
+    | |-RecordDecl 0x12a122450 <col:2, col:9> col:9 struct rds_iovec
+    | `-VarDecl 0x12a122548 <col:2, col:19> col:19 invalid vec 'struct rds_iovec'
+    |-DeclStmt 0x12a122698 <line:4:2, col:26>
+    | `-VarDecl 0x12a122630 <col:2, col:19> col:19 invalid __user 'struct rds_iovec'
+    |-DeclStmt 0x12a122750 <line:5:2, col:19>
+    | `-VarDecl 0x12a1226c8 <col:2, col:18> col:6 used tot_pages 'int' cinit
+    |   `-IntegerLiteral 0x12a122730 <col:18> 'int' 0
+    |-DeclStmt 0x12a1227e8 <line:6:2, col:23>
+    | `-VarDecl 0x12a122780 <col:2, col:15> col:15 used nr_pages 'unsigned int'
+    |-DeclStmt 0x12a122880 <line:7:2, col:16>
+    | `-VarDecl 0x12a122818 <col:2, col:15> col:15 used i 'unsigned int'
+    `-ForStmt 0x12a123290 <line:12:2, line:26:2>
+      |-BinaryOperator 0x12a1229f0 <line:12:7, col:11> 'unsigned int' '='
+      | |-DeclRefExpr 0x12a122998 <col:7> 'unsigned int' lvalue Var 0x12a122818 'i' 'unsigned int'
+      | `-ImplicitCastExpr 0x12a1229d8 <col:11> 'unsigned int' <IntegralCast>
+      |   `-IntegerLiteral 0x12a1229b8 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x12a122a90 <col:14, col:24> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x12a122a10 <col:14> 'unsigned int' lvalue Var 0x12a122818 'i' 'unsigned int'
+      | `-RecoveryExpr 0x12a122a68 <col:18, col:24> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x12a122a30 <col:18> 'struct rds_rdma_args *' lvalue ParmVar 0x12a10a048 'args' 'struct rds_rdma_args *'
+      |-UnaryOperator 0x12a122ad0 <col:34, col:35> 'unsigned int' postfix '++'
+      | `-DeclRefExpr 0x12a122ab0 <col:34> 'unsigned int' lvalue Var 0x12a122818 'i' 'unsigned int'
+      `-CompoundStmt 0x12a123258 <col:39, line:26:2>
+        |-IfStmt 0x12a122d78 <line:13:3, line:15:12>
+        | |-RecoveryExpr 0x12a122cb0 <line:13:7, line:14:32> '_Bool' contains-errors
+        | `-ReturnStmt 0x12a122d68 <line:15:4, col:12>
+        |   `-UnaryOperator 0x12a122d50 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x12a122d38 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-RecoveryExpr 0x12a122d18 <col:12> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x12a122f18 <line:17:3, col:35> 'unsigned int' contains-errors '='
+        | |-DeclRefExpr 0x12a122d98 <col:3> 'unsigned int' lvalue Var 0x12a122780 'nr_pages' 'unsigned int'
+        | `-CallExpr 0x12a122ef0 <col:14, col:35> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x12a122e98 <col:14> 'int ()' Function 0x12a122de0 'rds_pages_in_vec' 'int ()'
+        |   `-UnaryOperator 0x12a122ed8 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x12a122eb8 <col:32> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x12a123070 <line:18:3, line:19:12>
+        | |-BinaryOperator 0x12a122fa8 <line:18:7, col:19> 'int' '=='
+        | | |-ImplicitCastExpr 0x12a122f78 <col:7> 'unsigned int' <LValueToRValue>
+        | | | `-DeclRefExpr 0x12a122f38 <col:7> 'unsigned int' lvalue Var 0x12a122780 'nr_pages' 'unsigned int'
+        | | `-ImplicitCastExpr 0x12a122f90 <col:19> 'unsigned int' <IntegralCast>
+        | |   `-IntegerLiteral 0x12a122f58 <col:19> 'int' 0
+        | `-ReturnStmt 0x12a123060 <line:19:4, col:12>
+        |   `-UnaryOperator 0x12a123048 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x12a123030 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-RecoveryExpr 0x12a123010 <col:12> '<dependent type>' contains-errors lvalue
+        |-CompoundAssignOperator 0x12a1230e8 <line:21:3, col:16> 'int' '+=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+        | |-DeclRefExpr 0x12a123090 <col:3> 'int' lvalue Var 0x12a1226c8 'tot_pages' 'int'
+        | `-ImplicitCastExpr 0x12a1230d0 <col:16> 'unsigned int' <LValueToRValue>
+        |   `-DeclRefExpr 0x12a1230b0 <col:16> 'unsigned int' lvalue Var 0x12a122780 'nr_pages' 'unsigned int'
+        `-IfStmt 0x12a123238 <line:24:3, line:25:12>
+          |-BinaryOperator 0x12a123170 <line:24:7, col:19> 'int' '<'
+          | |-ImplicitCastExpr 0x12a123158 <col:7> 'int' <LValueToRValue>
+          | | `-DeclRefExpr 0x12a123118 <col:7> 'int' lvalue Var 0x12a1226c8 'tot_pages' 'int'
+          | `-IntegerLiteral 0x12a123138 <col:19> 'int' 0
+          `-ReturnStmt 0x12a123228 <line:25:4, col:12>
+            `-UnaryOperator 0x12a123210 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+              `-ImplicitCastExpr 0x12a1231f8 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+                `-RecoveryExpr 0x12a1231d8 <col:12> '<dependent type>' contains-errors lvalue

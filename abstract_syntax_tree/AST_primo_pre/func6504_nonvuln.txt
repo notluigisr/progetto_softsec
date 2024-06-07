@@ -1,0 +1,48 @@
+`-FunctionDecl 0x121826748  line:1:12 mpls_route_del 'int (struct mpls_route_config *, struct netlink_ext_ack *)' static
+  |-ParmVarDecl 0x12180e248 <col:27, col:53> col:53 used cfg 'struct mpls_route_config *'
+  |-ParmVarDecl 0x121826628 <line:2:6, col:30> col:30 used extack 'struct netlink_ext_ack *'
+  `-CompoundStmt 0x1218273e8 <line:3:1, line:18:1>
+    |-DeclStmt 0x121826ae0 <line:4:2, col:41>
+    | |-RecordDecl 0x121826848 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x1218269b8 <col:2, col:35> col:14 used net 'struct net *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x121826a80 <col:20, col:35> '<dependent type>' contains-errors lvalue .nl_net
+    |     `-RecoveryExpr 0x121826a58 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x121826a20 <col:20> 'struct mpls_route_config *' lvalue ParmVar 0x12180e248 'cfg' 'struct mpls_route_config *'
+    |-DeclStmt 0x121826b78 <line:5:2, col:16>
+    | `-VarDecl 0x121826b10 <col:2, col:11> col:11 used index 'unsigned int'
+    |-DeclStmt 0x121826cc0 <line:6:2, col:19>
+    | `-VarDecl 0x121826ba8 <col:2, col:13> col:6 used err 'int' cinit
+    |   `-UnaryOperator 0x121826ca8 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x121826c90 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x121826c70 <col:13> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x121826d58 <line:8:2, col:15> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x121826cd8 <col:2> 'unsigned int' lvalue Var 0x121826b10 'index' 'unsigned int'
+    | `-RecoveryExpr 0x121826d30 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x121826cf8 <col:10> 'struct mpls_route_config *' lvalue ParmVar 0x12180e248 'cfg' 'struct mpls_route_config *'
+    |-IfStmt 0x121827090 <line:10:2, line:11:8>
+    | |-UnaryOperator 0x121827010 <line:10:6, col:40> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x121826fa8 <col:7, col:40> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x121826f90 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x121826e90 <col:7> 'int ()' Function 0x121826dd8 'mpls_label_ok' 'int ()'
+    | |   |-ImplicitCastExpr 0x121826fe0 <col:21> 'struct net *' contains-errors <LValueToRValue>
+    | |   | `-DeclRefExpr 0x121826eb0 <col:21> 'struct net *' contains-errors lvalue Var 0x1218269b8 'net' 'struct net *'
+    | |   |-UnaryOperator 0x121826f20 <col:26, col:27> 'unsigned int *' prefix '&' cannot overflow
+    | |   | `-DeclRefExpr 0x121826ed0 <col:27> 'unsigned int' lvalue Var 0x121826b10 'index' 'unsigned int'
+    | |   `-ImplicitCastExpr 0x121826ff8 <col:34> 'struct netlink_ext_ack *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x121826f38 <col:34> 'struct netlink_ext_ack *' lvalue ParmVar 0x121826628 'extack' 'struct netlink_ext_ack *'
+    | `-GotoStmt 0x121827078 <line:11:3, col:8> 'errout' 0x121827028
+    |-CallExpr 0x1218272e0 <line:13:2, col:53> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121827190 <col:2> 'int ()' Function 0x1218270d8 'mpls_route_update' 'int ()'
+    | |-DeclRefExpr 0x1218271b0 <col:20> 'struct net *' contains-errors lvalue Var 0x1218269b8 'net' 'struct net *'
+    | |-DeclRefExpr 0x1218271d0 <col:25> 'unsigned int' lvalue Var 0x121826b10 'index' 'unsigned int'
+    | |-RecoveryExpr 0x1218272c0 <col:32> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x121827268 <col:38, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x121827240 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x121827208 <col:39> 'struct mpls_route_config *' lvalue ParmVar 0x12180e248 'cfg' 'struct mpls_route_config *'
+    |-BinaryOperator 0x121827360 <line:15:2, col:8> 'int' contains-errors '='
+    | |-DeclRefExpr 0x121827320 <col:2> 'int' contains-errors lvalue Var 0x121826ba8 'err' 'int'
+    | `-IntegerLiteral 0x121827340 <col:8> 'int' 0
+    `-LabelStmt 0x1218273c8 <line:16:1, line:17:9> 'errout'
+      `-ReturnStmt 0x1218273b8 <col:2, col:9>
+        `-ImplicitCastExpr 0x1218273a0 <col:9> 'int' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x121827380 <col:9> 'int' contains-errors lvalue Var 0x121826ba8 'err' 'int'

@@ -1,0 +1,43 @@
+`-FunctionDecl 0x157827568  line:1:12 invalid ext4_dax_pmd_fault 'int (struct vm_area_struct *, unsigned long, int *, unsigned int)' static
+  |-ParmVarDecl 0x15780e248 <col:31, col:54> col:54 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x15780e2c8 <col:59, col:73> col:73 used addr 'unsigned long'
+  |-ParmVarDecl 0x15780e398 <line:2:7, col:14> col:14 invalid pmd 'int *'
+  |-ParmVarDecl 0x157827418 <col:19, col:32> col:32 used flags 'unsigned int'
+  `-CompoundStmt 0x157122ce0 <line:3:1, line:31:1>
+    |-DeclStmt 0x1578276b0 <line:4:2, col:12>
+    | `-VarDecl 0x157827648 <col:2, col:6> col:6 used result 'int'
+    |-DeclStmt 0x157827af0 <line:6:2, col:48>
+    | |-RecordDecl 0x1578276f8 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x157827868 <col:2, col:47> col:16 used inode 'struct inode *' cinit
+    |   `-CallExpr 0x157827ab0 <col:24, col:47> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x157827a30 <col:24> 'int ()' Function 0x157827978 'file_inode' 'int ()'
+    |     `-RecoveryExpr 0x157827a88 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157827a50 <col:35> 'struct vm_area_struct *' lvalue ParmVar 0x15780e248 'vma' 'struct vm_area_struct *'
+    |-DeclStmt 0x157827d58 <line:7:2, col:38>
+    | |-RecordDecl 0x157827b08 <col:2, col:9> col:9 struct super_block
+    | `-VarDecl 0x157827c78 <col:2, col:34> col:22 used sb 'struct super_block *' cinit
+    |   `-RecoveryExpr 0x157827d18 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157827ce0 <col:27> 'struct inode *' contains-errors lvalue Var 0x157827868 'inode' 'struct inode *'
+    |-IfStmt 0x157122620 <line:10:2, line:16:2>
+    | |-RecoveryExpr 0x157827d88 <line:10:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x157122600 <col:13, line:16:2>
+    |   |-CallExpr 0x157827f18 <line:11:3, col:24> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x157827f00 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x157827e88 <col:3> 'int ()' Function 0x157827dd0 'sb_start_pagefault' 'int ()'
+    |   | `-ImplicitCastExpr 0x157827f40 <col:22> 'struct super_block *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x157827ea8 <col:22> 'struct super_block *' contains-errors lvalue Var 0x157827c78 'sb' 'struct super_block *'
+    |   `-CallExpr 0x1578280b8 <line:12:3, col:32> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x157828038 <col:3> 'int ()' Function 0x157827f80 'file_update_time' 'int ()'
+    |     `-RecoveryExpr 0x157828090 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157828058 <col:20> 'struct vm_area_struct *' lvalue ParmVar 0x15780e248 'vma' 'struct vm_area_struct *'
+    |-IfStmt 0x157122c78 <line:24:2, line:28:2>
+    | |-RecoveryExpr 0x157122988 <line:24:6> '_Bool' contains-errors
+    | `-CompoundStmt 0x157122c60 <col:13, line:28:2>
+    |   `-CallExpr 0x157122c20 <line:27:3, col:22> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x157122c08 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x157122bc8 <col:3> 'int ()' Function 0x157122b10 'sb_end_pagefault' 'int ()'
+    |     `-ImplicitCastExpr 0x157122c48 <col:20> 'struct super_block *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x157122be8 <col:20> 'struct super_block *' contains-errors lvalue Var 0x157827c78 'sb' 'struct super_block *'
+    `-ReturnStmt 0x157122cd0 <line:30:2, col:9>
+      `-ImplicitCastExpr 0x157122cb8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x157122c98 <col:9> 'int' lvalue Var 0x157827648 'result' 'int'

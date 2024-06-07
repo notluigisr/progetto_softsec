@@ -1,0 +1,1 @@
+    bool canCreate() override { return current_ < max(); }

@@ -1,0 +1,122 @@
+`-FunctionDecl 0x12f141a18  line:1:13 invalid tcp_dma_try_early_copy 'int (struct sock *, struct sk_buff *, int)' static
+  |-ParmVarDecl 0x12f128668 <col:36, col:49> col:49 used sk 'struct sock *'
+  |-ParmVarDecl 0x12f141858 <col:53, col:69> col:69 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x12f1418d8 <line:2:7, col:11> col:11 used hlen 'int'
+  `-CompoundStmt 0x12f144d68 <line:3:1, line:44:1>
+    |-DeclStmt 0x12f141f08 <line:4:2, col:34>
+    | |-RecordDecl 0x12f141ad8 <col:2, col:9> col:9 struct tcp_sock
+    | `-VarDecl 0x12f141c48 <col:2, col:33> col:19 used tp 'struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x12f141ed8 <col:24, col:33> 'struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x12f141e98 <col:24, col:33> 'int'
+    |       |-ImplicitCastExpr 0x12f141e80 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12f141e10 <col:24> 'int ()' Function 0x12f141d58 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x12f141ec0 <col:31> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12f141e30 <col:31> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    |-DeclStmt 0x12f142040 <line:5:2, col:29>
+    | `-VarDecl 0x12f141f38 <col:2, col:25> col:6 used chunk 'int' cinit
+    |   `-BinaryOperator 0x12f142020 <col:14, col:25> '<dependent type>' contains-errors '-'
+    |     |-RecoveryExpr 0x12f141fd8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12f141fa0 <col:14> 'struct sk_buff *' lvalue ParmVar 0x12f141858 'skb' 'struct sk_buff *'
+    |     `-DeclRefExpr 0x12f142000 <col:25> 'int' lvalue ParmVar 0x12f1418d8 'hlen' 'int'
+    |-DeclStmt 0x12f1420d8 <line:6:2, col:16>
+    | `-VarDecl 0x12f142070 <col:2, col:6> col:6 used dma_cookie 'int'
+    |-IfStmt 0x12f1425f8 <line:12:2, line:13:45>
+    | |-BinaryOperator 0x12f142380 <line:12:6, col:39> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x12f142368 <col:6, col:17> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x12f142350 <col:7, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-CXXDependentScopeMemberExpr 0x12f142210 <col:7, col:17> '<dependent type>' contains-errors lvalue .dma_chan
+    | | |     `-RecoveryExpr 0x12f1421e8 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x12f1421b0 <col:7> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | `-CXXDependentScopeMemberExpr 0x12f1422e8 <col:29, col:39> '<dependent type>' contains-errors lvalue .pinned_list
+    | |   `-RecoveryExpr 0x12f1422c0 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12f142288 <col:29> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | `-BinaryOperator 0x12f1425d8 <line:13:3, col:45> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x12f142400 <col:3, col:13> '<dependent type>' contains-errors lvalue .dma_chan
+    |   | `-RecoveryExpr 0x12f1423d8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12f1423a0 <col:3> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    |   `-CallExpr 0x12f1425b8 <col:24, col:45> 'int'
+    |     `-ImplicitCastExpr 0x12f1425a0 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x12f142528 <col:24> 'int ()' Function 0x12f142470 'net_dma_find_channel' 'int ()'
+    |-IfStmt 0x12f144d10 <line:15:2, line:41:2> has_else
+    | |-BinaryOperator 0x12f1432b8 <line:15:6, col:52> 'int' contains-errors '&&'
+    | | |-CXXDependentScopeMemberExpr 0x12f142678 <col:6, col:16> '<dependent type>' contains-errors lvalue .dma_chan
+    | | | `-RecoveryExpr 0x12f142650 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x12f142618 <col:6> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | `-CallExpr 0x12f143278 <col:28, col:52> 'int'
+    | |   |-ImplicitCastExpr 0x12f143260 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x12f1427a0 <col:28> 'int ()' Function 0x12f1426e8 'skb_csum_unnecessary' 'int ()'
+    | |   `-ImplicitCastExpr 0x12f1432a0 <col:49> 'struct sk_buff *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12f1427c0 <col:49> 'struct sk_buff *' lvalue ParmVar 0x12f141858 'skb' 'struct sk_buff *'
+    | |-CompoundStmt 0x12f144a58 <col:55, line:38:2>
+    | | |-BinaryOperator 0x12f1436a0 <line:17:3, line:20:30> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x12f1432d8 <line:17:3> 'int' lvalue Var 0x12f142070 'dma_cookie' 'int'
+    | | | `-CallExpr 0x12f143650 <col:16, line:20:30> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x12f1433d8 <line:17:16> 'int ()' Function 0x12f143320 'dma_skb_copy_datagram_iovec' 'int ()'
+    | | |   |-CXXDependentScopeMemberExpr 0x12f143458 <col:44, col:54> '<dependent type>' contains-errors lvalue .dma_chan
+    | | |   | `-RecoveryExpr 0x12f143430 <col:44, col:48> '<dependent type>' contains-errors lvalue
+    | | |   |   `-DeclRefExpr 0x12f1433f8 <col:44> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | |   |-DeclRefExpr 0x12f1434a0 <line:18:9> 'struct sk_buff *' lvalue ParmVar 0x12f141858 'skb' 'struct sk_buff *'
+    | | |   |-DeclRefExpr 0x12f1434c0 <col:14> 'int' lvalue ParmVar 0x12f1418d8 'hlen' 'int'
+    | | |   |-CXXDependentScopeMemberExpr 0x12f143540 <line:19:9, col:19> '<dependent type>' contains-errors lvalue .iov
+    | | |   | `-RecoveryExpr 0x12f143518 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    | | |   |   `-DeclRefExpr 0x12f1434e0 <col:9> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | |   |-DeclRefExpr 0x12f143588 <col:24> 'int' contains-errors lvalue Var 0x12f141f38 'chunk' 'int'
+    | | |   `-CXXDependentScopeMemberExpr 0x12f143608 <line:20:9, col:19> '<dependent type>' contains-errors lvalue .pinned_list
+    | | |     `-RecoveryExpr 0x12f1435e0 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x12f1435a8 <col:9> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | |-IfStmt 0x12f1437a0 <line:22:3, line:23:9>
+    | | | |-BinaryOperator 0x12f143718 <line:22:7, col:20> 'int' '<'
+    | | | | |-ImplicitCastExpr 0x12f143700 <col:7> 'int' <LValueToRValue>
+    | | | | | `-DeclRefExpr 0x12f1436c0 <col:7> 'int' lvalue Var 0x12f142070 'dma_cookie' 'int'
+    | | | | `-IntegerLiteral 0x12f1436e0 <col:20> 'int' 0
+    | | | `-GotoStmt 0x12f143788 <line:23:4, col:9> 'out' 0x12f143738
+    | | |-BinaryOperator 0x12f143888 <line:25:3, col:26> '<dependent type>' contains-errors '='
+    | | | |-CXXDependentScopeMemberExpr 0x12f143820 <col:3, col:13> '<dependent type>' contains-errors lvalue .dma_cookie
+    | | | | `-RecoveryExpr 0x12f1437f8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x12f1437c0 <col:3> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | | `-DeclRefExpr 0x12f143868 <col:26> 'int' lvalue Var 0x12f142070 'dma_cookie' 'int'
+    | | |-CompoundAssignOperator 0x12f143970 <line:28:3, col:20> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | | | |-CXXDependentScopeMemberExpr 0x12f143908 <col:3, col:13> '<dependent type>' contains-errors lvalue .len
+    | | | | `-RecoveryExpr 0x12f1438e0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x12f1438a8 <col:3> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | | `-DeclRefExpr 0x12f143950 <col:20> 'int' contains-errors lvalue Var 0x12f141f38 'chunk' 'int'
+    | | |-CompoundAssignOperator 0x12f143a20 <line:29:3, col:21> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | | | |-RecoveryExpr 0x12f1439d8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x12f1439a0 <col:3> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | | | `-DeclRefExpr 0x12f143a00 <col:21> 'int' contains-errors lvalue Var 0x12f141f38 'chunk' 'int'
+    | | |-CallExpr 0x12f143b88 <line:30:3, col:26> 'int'
+    | | | |-ImplicitCastExpr 0x12f143b70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x12f143b30 <col:3> 'int ()' Function 0x12f143a78 'tcp_rcv_space_adjust' 'int ()'
+    | | | `-ImplicitCastExpr 0x12f143bb0 <col:24> 'struct sock *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12f143b50 <col:24> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    | | `-IfStmt 0x12f144a38 <line:32:3, line:37:3>
+    | |   |-RecoveryExpr 0x12f144840 <line:32:7, line:34:62> '_Bool' contains-errors
+    | |   `-CompoundStmt 0x12f144a18 <col:65, line:37:3>
+    | |     |-BinaryOperator 0x12f144928 <line:35:4, col:23> '<dependent type>' contains-errors '='
+    | |     | |-CXXDependentScopeMemberExpr 0x12f1448c0 <col:4, col:14> '<dependent type>' contains-errors lvalue .wakeup
+    | |     | | `-RecoveryExpr 0x12f144898 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    | |     | |   `-DeclRefExpr 0x12f144860 <col:4> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    | |     | `-IntegerLiteral 0x12f144908 <col:23> 'int' 1
+    | |     `-CallExpr 0x12f1449e8 <line:36:4, col:27> '<dependent type>' contains-errors
+    | |       |-RecoveryExpr 0x12f144980 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    | |       | `-DeclRefExpr 0x12f144948 <col:4> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    | |       |-DeclRefExpr 0x12f1449a8 <col:22> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    | |       `-IntegerLiteral 0x12f1449c8 <col:26> 'int' 0
+    | `-IfStmt 0x12f144cf0 <line:38:9, line:41:2>
+    |   |-BinaryOperator 0x12f144af8 <line:38:13, col:21> 'int' contains-errors '>'
+    |   | |-ImplicitCastExpr 0x12f144ae0 <col:13> 'int' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x12f144aa0 <col:13> 'int' contains-errors lvalue Var 0x12f141f38 'chunk' 'int'
+    |   | `-IntegerLiteral 0x12f144ac0 <col:21> 'int' 0
+    |   `-CompoundStmt 0x12f144cd0 <col:24, line:41:2>
+    |     |-BinaryOperator 0x12f144be0 <line:39:3, col:22> '<dependent type>' contains-errors '='
+    |     | |-CXXDependentScopeMemberExpr 0x12f144b78 <col:3, col:13> '<dependent type>' contains-errors lvalue .wakeup
+    |     | | `-RecoveryExpr 0x12f144b50 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x12f144b18 <col:3> 'struct tcp_sock *' lvalue Var 0x12f141c48 'tp' 'struct tcp_sock *'
+    |     | `-IntegerLiteral 0x12f144bc0 <col:22> 'int' 1
+    |     `-CallExpr 0x12f144ca0 <line:40:3, col:26> '<dependent type>' contains-errors
+    |       |-RecoveryExpr 0x12f144c38 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x12f144c00 <col:3> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    |       |-DeclRefExpr 0x12f144c60 <col:21> 'struct sock *' lvalue ParmVar 0x12f128668 'sk' 'struct sock *'
+    |       `-IntegerLiteral 0x12f144c80 <col:25> 'int' 0
+    `-LabelStmt 0x12f144d48 <line:42:1, col:4> 'out'
+      `-NullStmt 0x12f144d40 <col:4>

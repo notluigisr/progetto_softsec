@@ -1,0 +1,29 @@
+`-FunctionDecl 0x125826740  line:1:13 dmar_remove_one_dev_info 'void (struct dmar_domain *, struct device *)' static
+  |-ParmVarDecl 0x12580e248 <col:38, col:58> col:58 domain 'struct dmar_domain *'
+  |-ParmVarDecl 0x125826628 <line:2:10, col:25> col:25 used dev 'struct device *'
+  `-CompoundStmt 0x125827180 <line:3:1, line:11:1>
+    |-DeclStmt 0x125826a28 <line:4:2, col:33>
+    | |-RecordDecl 0x125826840 <col:2, col:9> col:9 struct device_domain_info
+    | `-VarDecl 0x1258269a8 <col:2, col:29> col:29 used info 'struct device_domain_info *'
+    |-DeclStmt 0x125826ac0 <line:5:2, col:21>
+    | `-VarDecl 0x125826a58 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x125826cd8 <line:7:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x125826c00 <col:2> 'int ()' Function 0x125826b48 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x125826cc0 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x125826ca0 <col:21> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x125826c50 <col:41> 'unsigned long' lvalue Var 0x125826a58 'flags' 'unsigned long'
+    |-BinaryOperator 0x125826dd0 <line:8:2, col:23> 'struct device_domain_info *' contains-errors '='
+    | |-DeclRefExpr 0x125826d08 <col:2> 'struct device_domain_info *' lvalue Var 0x1258269a8 'info' 'struct device_domain_info *'
+    | `-CXXDependentScopeMemberExpr 0x125826d88 <col:9, col:23> '<dependent type>' contains-errors lvalue .iommu
+    |   `-RecoveryExpr 0x125826d60 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x125826d28 <col:9> 'struct device *' lvalue ParmVar 0x125826628 'dev' 'struct device *'
+    |-CallExpr 0x125826f58 <line:9:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x125826f40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x125826ed0 <col:2> 'int ()' Function 0x125826e18 '__dmar_remove_one_dev_info' 'int ()'
+    | `-ImplicitCastExpr 0x125826f80 <col:29> 'struct device_domain_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x125826ef0 <col:29> 'struct device_domain_info *' lvalue Var 0x1258269a8 'info' 'struct device_domain_info *'
+    `-CallExpr 0x125827150 <line:10:2, col:51> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x125827078 <col:2> 'int ()' Function 0x125826fc0 'spin_unlock_irqrestore' 'int ()'
+      |-UnaryOperator 0x125827138 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x125827118 <col:26> '<dependent type>' contains-errors lvalue
+      `-DeclRefExpr 0x1258270c8 <col:46> 'unsigned long' lvalue Var 0x125826a58 'flags' 'unsigned long'

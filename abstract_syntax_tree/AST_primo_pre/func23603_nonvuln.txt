@@ -1,0 +1,83 @@
+`-FunctionDecl 0x13380e350  line:1:13 svm_queue_exception 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x13380e248 <col:33, col:50> col:50 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x133827758 <line:2:1, line:31:1>
+    |-DeclStmt 0x133122a48 <line:3:2, col:37>
+    | |-RecordDecl 0x133122648 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x1331227b8 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x133122a18 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x1331229d8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1331229c0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x133122950 <col:25> 'int ()' Function 0x133122898 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x133122a00 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x133122970 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x13380e248 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x133122bd0 <line:4:2, col:39>
+    | `-VarDecl 0x133122a78 <col:2, col:37> col:11 used nr 'unsigned int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x133122b88 <col:16, col:37> '<dependent type>' contains-errors lvalue .nr
+    |     `-CXXDependentScopeMemberExpr 0x133122b40 <col:16, col:27> '<dependent type>' contains-errors lvalue .exception
+    |       `-RecoveryExpr 0x133122b18 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x133122ae0 <col:16> 'struct kvm_vcpu *' lvalue ParmVar 0x13380e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x133122f00 <line:10:2, line:12:3>
+    | |-BinaryOperator 0x133122ed0 <line:10:6, line:11:68> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x133122e38 <line:10:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x133122e20 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x133122e00 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x133122e90 <line:11:6, col:68> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x133122d10 <col:6> 'int ()' Function 0x133122c58 'nested_svm_check_exception' 'int ()'
+    | |   |-DeclRefExpr 0x133122d30 <col:33> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+    | |   |-DeclRefExpr 0x133122d50 <col:38> 'unsigned int' contains-errors lvalue Var 0x133122a78 'nr' 'unsigned int'
+    | |   |-RecoveryExpr 0x133122e50 <col:42> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x133122e70 <col:58> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x133122ef0 <line:12:3>
+    |-CallExpr 0x133123098 <line:14:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x133123000 <col:2> 'int ()' Function 0x133122f48 'kvm_deliver_exception_payload' 'int ()'
+    | `-UnaryOperator 0x133123080 <col:32, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x133123058 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x133123020 <col:33> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+    `-IfStmt 0x133827518 <line:16:2, line:24:2>
+      |-BinaryOperator 0x133123210 <line:16:6, col:26> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x1331231a0 <col:6, col:12> 'int' contains-errors '=='
+      | | |-DeclRefExpr 0x1331230c0 <col:6> 'unsigned int' contains-errors lvalue Var 0x133122a78 'nr' 'unsigned int'
+      | | `-RecoveryExpr 0x133123180 <col:12> '<dependent type>' contains-errors lvalue
+      | `-UnaryOperator 0x1331231f8 <col:25, col:26> '<dependent type>' contains-errors prefix '!' cannot overflow
+      |   `-ImplicitCastExpr 0x1331231e0 <col:26> '<dependent type>' contains-errors <LValueToRValue>
+      |     `-RecoveryExpr 0x1331231c0 <col:26> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x1338274e0 <col:33, line:24:2>
+        |-DeclStmt 0x1331234e8 <line:17:3, col:56>
+        | |-VarDecl 0x133123248 <col:3, col:17> col:17 used rip 'unsigned long'
+        | `-VarDecl 0x1331232c8 <col:3, col:55> col:22 used old_rip 'unsigned long' cinit
+        |   `-CallExpr 0x1331234a8 <col:32, col:55> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x133123410 <col:32> 'int ()' Function 0x133123358 'kvm_rip_read' 'int ()'
+        |     `-UnaryOperator 0x133123490 <col:45, col:51> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |       `-RecoveryExpr 0x133123468 <col:46, col:51> '<dependent type>' contains-errors lvalue
+        |         `-DeclRefExpr 0x133123430 <col:46> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+        |-CStyleCastExpr 0x1338270b0 <line:20:3, col:45> 'void' contains-errors <ToVoid>
+        | `-CallExpr 0x133827078 <col:9, col:45> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1331235e0 <col:9> 'int ()' Function 0x133123528 'skip_emulated_instruction' 'int ()'
+        |   `-UnaryOperator 0x133827060 <col:35, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x133827038 <col:36, col:41> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x133827000 <col:36> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+        |-BinaryOperator 0x1338271b8 <line:21:3, col:32> 'unsigned long' contains-errors '='
+        | |-DeclRefExpr 0x1338270d8 <col:3> 'unsigned long' lvalue Var 0x133123248 'rip' 'unsigned long'
+        | `-CallExpr 0x133827190 <col:9, col:32> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1338270f8 <col:9> 'int ()' Function 0x133123358 'kvm_rip_read' 'int ()'
+        |   `-UnaryOperator 0x133827178 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x133827150 <col:23, col:28> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x133827118 <col:23> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+        |-BinaryOperator 0x1338273b0 <line:22:3, col:44> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x133827210 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x1338271d8 <col:3> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+        | `-BinaryOperator 0x133827390 <col:19, col:44> '<dependent type>' contains-errors '+'
+        |   |-DeclRefExpr 0x133827238 <col:19> 'unsigned long' lvalue Var 0x133123248 'rip' 'unsigned long'
+        |   `-CXXDependentScopeMemberExpr 0x133827348 <col:25, col:44> '<dependent type>' contains-errors lvalue .base
+        |     `-CXXDependentScopeMemberExpr 0x133827300 <col:25, col:41> '<dependent type>' contains-errors lvalue .cs
+        |       `-CXXDependentScopeMemberExpr 0x1338272b8 <col:25, col:36> '<dependent type>' contains-errors lvalue ->save
+        |         `-RecoveryExpr 0x133827290 <col:25, col:30> '<dependent type>' contains-errors lvalue
+        |           `-DeclRefExpr 0x133827258 <col:25> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+        `-BinaryOperator 0x1338274c0 <line:23:3, col:30> '<dependent type>' contains-errors '='
+          |-RecoveryExpr 0x133827408 <col:3, col:8> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x1338273d0 <col:3> 'struct vcpu_svm *' lvalue Var 0x1331227b8 'svm' 'struct vcpu_svm *'
+          `-BinaryOperator 0x1338274a0 <col:24, col:30> 'unsigned long' contains-errors '-'
+            |-ImplicitCastExpr 0x133827470 <col:24> 'unsigned long' <LValueToRValue>
+            | `-DeclRefExpr 0x133827430 <col:24> 'unsigned long' lvalue Var 0x133123248 'rip' 'unsigned long'
+            `-ImplicitCastExpr 0x133827488 <col:30> 'unsigned long' contains-errors <LValueToRValue>
+              `-DeclRefExpr 0x133827450 <col:30> 'unsigned long' contains-errors lvalue Var 0x1331232c8 'old_rip' 'unsigned long'

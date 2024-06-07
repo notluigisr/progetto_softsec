@@ -1,0 +1,59 @@
+`-FunctionDecl 0x152128750  line:1:13 ipmr_destroy_unres 'void (struct mfc_cache *)' static
+  |-ParmVarDecl 0x152128648 <col:32, col:50> col:50 used c 'struct mfc_cache *'
+  `-CompoundStmt 0x152144500 <line:2:1, line:20:1>
+    |-DeclStmt 0x152140c38 <line:3:2, col:21>
+    | |-RecordDecl 0x152140a48 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x152140bb8 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-CallExpr 0x152140e30 <line:5:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152140d80 <col:2> 'int ()' Function 0x152140cc8 'atomic_dec' 'int ()'
+    | `-UnaryOperator 0x152140e18 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x152140df8 <col:14> '<dependent type>' contains-errors lvalue
+    `-WhileStmt 0x1521443c0 <line:7:2, line:17:2>
+      |-ParenExpr 0x1521410c8 <line:7:8, col:53> 'struct sk_buff *' contains-errors
+      | `-BinaryOperator 0x1521410a8 <col:9, col:52> 'struct sk_buff *' contains-errors '='
+      |   |-DeclRefExpr 0x152140e58 <col:9> 'struct sk_buff *' lvalue Var 0x152140bb8 'skb' 'struct sk_buff *'
+      |   `-CallExpr 0x152141080 <col:13, col:52> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x152140f58 <col:13> 'int ()' Function 0x152140ea0 'skb_dequeue' 'int ()'
+      |     `-UnaryOperator 0x152141068 <col:25, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |       `-CXXDependentScopeMemberExpr 0x152141020 <col:26, col:42> '<dependent type>' contains-errors lvalue .unresolved
+      |         `-CXXDependentScopeMemberExpr 0x152140fd8 <col:26, col:36> '<dependent type>' contains-errors lvalue .unres
+      |           `-RecoveryExpr 0x152140fb0 <col:26, col:29> '<dependent type>' contains-errors lvalue
+      |             `-DeclRefExpr 0x152140f78 <col:26> 'struct mfc_cache *' lvalue ParmVar 0x152128648 'c' 'struct mfc_cache *'
+      `-CompoundStmt 0x1521443a8 <col:56, line:17:2>
+        `-IfStmt 0x152144378 <line:8:3, line:16:17> has_else
+          |-BinaryOperator 0x1521411f8 <line:8:7, col:31> 'int' contains-errors '=='
+          | |-CXXDependentScopeMemberExpr 0x152141190 <col:7, col:20> '<dependent type>' contains-errors lvalue ->version
+          | | `-CXXDependentScopeMemberExpr 0x152141148 <col:7, col:15> '<dependent type>' contains-errors lvalue .iph
+          | |   `-RecoveryExpr 0x152141120 <col:7, col:12> '<dependent type>' contains-errors lvalue
+          | |     `-DeclRefExpr 0x1521410e8 <col:7> 'struct sk_buff *' lvalue Var 0x152140bb8 'skb' 'struct sk_buff *'
+          | `-IntegerLiteral 0x1521411d8 <col:31> 'int' 0
+          |-CompoundStmt 0x1521441d0 <col:34, line:15:3>
+          | |-DeclStmt 0x152141620 <line:9:4, col:81>
+          | | |-RecordDecl 0x152141218 <col:4, col:11> col:11 struct nlmsghdr
+          | | `-VarDecl 0x152141388 <col:4, col:21> col:21 used nlh 'struct nlmsghdr *'
+          | |-BinaryOperator 0x1521416f0 <line:10:4, col:22> '<dependent type>' contains-errors '='
+          | | |-RecoveryExpr 0x152141670 <col:4, col:9> '<dependent type>' contains-errors lvalue
+          | | | `-DeclRefExpr 0x152141638 <col:4> 'struct nlmsghdr *' lvalue Var 0x152141388 'nlh' 'struct nlmsghdr *'
+          | | `-RecoveryExpr 0x1521416d0 <col:22> '<dependent type>' contains-errors lvalue
+          | |-CallExpr 0x152143958 <line:12:4, col:32> '<dependent type>' contains-errors
+          | | |-DeclRefExpr 0x1521438b8 <col:4> 'int ()' Function 0x152143800 'skb_trim' 'int ()'
+          | | |-DeclRefExpr 0x1521438d8 <col:13> 'struct sk_buff *' lvalue Var 0x152140bb8 'skb' 'struct sk_buff *'
+          | | `-RecoveryExpr 0x152143930 <col:18, col:23> '<dependent type>' contains-errors lvalue
+          | |   `-DeclRefExpr 0x1521438f8 <col:18> 'struct nlmsghdr *' lvalue Var 0x152141388 'nlh' 'struct nlmsghdr *'
+          | `-BinaryOperator 0x152143ed8 <line:13:4, col:50> '<dependent type>' contains-errors '='
+          |   |-RecoveryExpr 0x152143e60 <col:4, col:41> '<dependent type>' contains-errors lvalue
+          |   | `-ParenExpr 0x152143e40 <col:4, col:38> 'struct nlmsgerr *'
+          |   |   `-CStyleCastExpr 0x152143e18 <col:5, col:37> 'struct nlmsgerr *' <IntegralToPointer>
+          |   |     `-CallExpr 0x152143dd8 <col:23, col:37> 'int'
+          |   |       |-ImplicitCastExpr 0x152143dc0 <col:23> 'int (*)()' <FunctionToPointerDecay>
+          |   |       | `-DeclRefExpr 0x152143a68 <col:23> 'int ()' Function 0x1521439b0 'NLMSG_DATA' 'int ()'
+          |   |       `-ImplicitCastExpr 0x152143e00 <col:34> 'struct nlmsghdr *' <LValueToRValue>
+          |   |         `-DeclRefExpr 0x152143a88 <col:34> 'struct nlmsghdr *' lvalue Var 0x152141388 'nlh' 'struct nlmsghdr *'
+          |   `-UnaryOperator 0x152143ec0 <col:49, col:50> '<dependent type>' contains-errors prefix '-' cannot overflow
+          |     `-ImplicitCastExpr 0x152143ea8 <col:50> '<dependent type>' contains-errors <LValueToRValue>
+          |       `-RecoveryExpr 0x152143e88 <col:50> '<dependent type>' contains-errors lvalue
+          `-CallExpr 0x152144338 <line:16:4, col:17> 'int'
+            |-ImplicitCastExpr 0x152144320 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x1521442e0 <col:4> 'int ()' Function 0x152144228 'kfree_skb' 'int ()'
+            `-ImplicitCastExpr 0x152144360 <col:14> 'struct sk_buff *' <LValueToRValue>
+              `-DeclRefExpr 0x152144300 <col:14> 'struct sk_buff *' lvalue Var 0x152140bb8 'skb' 'struct sk_buff *'

@@ -1,0 +1,61 @@
+`-FunctionDecl 0x15486a218  line:1:6 invalid __tlb_remove_page_size 'int (struct mmu_gather *, struct page *, int)'
+  |-ParmVarDecl 0x154868868 <col:29, col:48> col:48 used tlb 'struct mmu_gather *'
+  |-ParmVarDecl 0x15486a058 <col:53, col:66> col:66 used page 'struct page *'
+  |-ParmVarDecl 0x15486a0d8 <col:72, col:76> col:76 used page_size 'int'
+  `-CompoundStmt 0x155808910 <line:2:1, line:19:1>
+    |-DeclStmt 0x15486a4c8 <line:3:2, col:32>
+    | |-RecordDecl 0x15486a2d8 <col:2, col:9> col:9 struct mmu_gather_batch
+    | `-VarDecl 0x15486a448 <col:2, col:27> col:27 used batch 'struct mmu_gather_batch *'
+    |-CallExpr 0x15486a6f0 <line:5:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15486a640 <col:2> 'int ()' Function 0x15486a588 'VM_BUG_ON' 'int ()'
+    | `-UnaryOperator 0x15486a6d8 <col:12, col:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x15486a6c0 <col:13, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x15486a698 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15486a660 <col:13> 'struct mmu_gather *' lvalue ParmVar 0x154868868 'tlb' 'struct mmu_gather *'
+    |-CallExpr 0x15486a8b8 <line:6:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15486a7f8 <col:2> 'int ()' Function 0x15486a740 'VM_WARN_ON' 'int ()'
+    | `-BinaryOperator 0x15486a898 <col:13, col:31> 'int' contains-errors '!='
+    |   |-RecoveryExpr 0x15486a850 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15486a818 <col:13> 'struct mmu_gather *' lvalue ParmVar 0x154868868 'tlb' 'struct mmu_gather *'
+    |   `-DeclRefExpr 0x15486a878 <col:31> 'int' lvalue ParmVar 0x15486a0d8 'page_size' 'int'
+    |-BinaryOperator 0x15486a960 <line:8:2, col:15> 'struct mmu_gather_batch *' contains-errors '='
+    | |-DeclRefExpr 0x15486a8e0 <col:2> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    | `-RecoveryExpr 0x15486a938 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15486a900 <col:10> 'struct mmu_gather *' lvalue ParmVar 0x154868868 'tlb' 'struct mmu_gather *'
+    |-BinaryOperator 0x15486aab0 <line:10:2, col:30> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x15486aa70 <col:2, col:26> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x15486aa58 <col:2, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x15486a9b8 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x15486a980 <col:2> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    | | `-UnaryOperator 0x15486aa40 <col:15, col:24> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | |   `-RecoveryExpr 0x15486aa18 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15486a9e0 <col:15> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    | `-DeclRefExpr 0x15486aa90 <col:30> 'struct page *' lvalue ParmVar 0x15486a058 'page' 'struct page *'
+    |-IfStmt 0x15486ae98 <line:11:2, line:15:2>
+    | |-BinaryOperator 0x15486ab90 <line:11:6, col:26> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x15486ab08 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15486aad0 <col:6> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    | | `-RecoveryExpr 0x15486ab68 <col:19, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15486ab30 <col:19> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    | `-CompoundStmt 0x15486ae78 <col:31, line:15:2>
+    |   |-IfStmt 0x15486adb8 <line:12:3, line:13:11>
+    |   | |-UnaryOperator 0x15486ad58 <line:12:7, col:26> 'int' prefix '!' cannot overflow
+    |   | | `-CallExpr 0x15486ad18 <col:8, col:26> 'int'
+    |   | |   |-ImplicitCastExpr 0x15486ad00 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x15486ac90 <col:8> 'int ()' Function 0x15486abd8 'tlb_next_batch' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x15486ad40 <col:23> 'struct mmu_gather *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x15486acb0 <col:23> 'struct mmu_gather *' lvalue ParmVar 0x154868868 'tlb' 'struct mmu_gather *'
+    |   | `-ReturnStmt 0x15486ada8 <line:13:4, col:11>
+    |   |   `-RecoveryExpr 0x15486ad88 <col:11> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x15486ae58 <line:14:3, col:16> 'struct mmu_gather_batch *' contains-errors '='
+    |     |-DeclRefExpr 0x15486add8 <col:3> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+    |     `-RecoveryExpr 0x15486ae30 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15486adf8 <col:11> 'struct mmu_gather *' lvalue ParmVar 0x154868868 'tlb' 'struct mmu_gather *'
+    `-CallExpr 0x1558088c8 <line:16:2, col:45> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15486af98 <col:2> 'int ()' Function 0x15486aee0 'VM_BUG_ON_PAGE' 'int ()'
+      |-BinaryOperator 0x155808888 <col:17, col:36> 'int' contains-errors '>'
+      | |-RecoveryExpr 0x155808800 <col:17, col:24> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x15486afb8 <col:17> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+      | `-RecoveryExpr 0x155808860 <col:29, col:36> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x155808828 <col:29> 'struct mmu_gather_batch *' lvalue Var 0x15486a448 'batch' 'struct mmu_gather_batch *'
+      `-DeclRefExpr 0x1558088a8 <col:41> 'struct page *' lvalue ParmVar 0x15486a058 'page' 'struct page *'

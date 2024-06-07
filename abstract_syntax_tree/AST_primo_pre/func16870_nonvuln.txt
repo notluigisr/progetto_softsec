@@ -1,0 +1,43 @@
+`-FunctionDecl 0x14a940a00  line:1:5 sas_change_queue_depth 'int (struct scsi_device *, int)'
+  |-ParmVarDecl 0x14a928648 <col:28, col:48> col:48 used sdev 'struct scsi_device *'
+  |-ParmVarDecl 0x14a9286c8 <col:54, col:58> col:58 used depth 'int'
+  `-CompoundStmt 0x14a9415b0 <line:2:1, line:11:1>
+    |-DeclStmt 0x14a940ef8 <line:3:2, col:54>
+    | |-RecordDecl 0x14a940b00 <col:2, col:9> col:9 struct domain_device
+    | `-VarDecl 0x14a940c68 <col:2, col:53> col:24 used dev 'struct domain_device *' cinit
+    |   `-ImplicitCastExpr 0x14a940ec8 <col:30, col:53> 'struct domain_device *' <IntegralToPointer>
+    |     `-CallExpr 0x14a940e88 <col:30, col:53> 'int'
+    |       |-ImplicitCastExpr 0x14a940e70 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14a940e00 <col:30> 'int ()' Function 0x14a940d48 'sdev_to_domain_dev' 'int ()'
+    |       `-ImplicitCastExpr 0x14a940eb0 <col:49> 'struct scsi_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14a940e20 <col:49> 'struct scsi_device *' lvalue ParmVar 0x14a928648 'sdev' 'struct scsi_device *'
+    |-IfStmt 0x14a9412b8 <line:5:2, line:6:64>
+    | |-CallExpr 0x14a941048 <line:5:6, col:21> 'int'
+    | | |-ImplicitCastExpr 0x14a941030 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14a940ff0 <col:6> 'int ()' Function 0x14a940f38 'dev_is_sata' 'int ()'
+    | | `-ImplicitCastExpr 0x14a941070 <col:18> 'struct domain_device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a941010 <col:18> 'struct domain_device *' lvalue Var 0x14a940c68 'dev' 'struct domain_device *'
+    | `-ReturnStmt 0x14a9412a8 <line:6:3, col:64>
+    |   `-CallExpr 0x14a941270 <col:10, col:64> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14a941168 <col:10> 'int ()' Function 0x14a9410b0 '__ata_change_queue_depth' 'int ()'
+    |     |-CXXDependentScopeMemberExpr 0x14a9411e8 <col:35, col:49> '<dependent type>' contains-errors lvalue .ap
+    |     | `-RecoveryExpr 0x14a9411c0 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x14a941188 <col:35> 'struct domain_device *' lvalue Var 0x14a940c68 'dev' 'struct domain_device *'
+    |     |-DeclRefExpr 0x14a941230 <col:53> 'struct scsi_device *' lvalue ParmVar 0x14a928648 'sdev' 'struct scsi_device *'
+    |     `-DeclRefExpr 0x14a941250 <col:59> 'int' lvalue ParmVar 0x14a9286c8 'depth' 'int'
+    |-IfStmt 0x14a9413c8 <line:8:2, line:9:11>
+    | |-UnaryOperator 0x14a941350 <line:8:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a941338 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x14a941310 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14a9412d8 <col:7> 'struct scsi_device *' lvalue ParmVar 0x14a928648 'sdev' 'struct scsi_device *'
+    | `-BinaryOperator 0x14a9413a8 <line:9:3, col:11> 'int' '='
+    |   |-DeclRefExpr 0x14a941368 <col:3> 'int' lvalue ParmVar 0x14a9286c8 'depth' 'int'
+    |   `-IntegerLiteral 0x14a941388 <col:11> 'int' 1
+    `-ReturnStmt 0x14a9415a0 <line:10:2, col:44>
+      `-CallExpr 0x14a941540 <col:9, col:44> 'int'
+        |-ImplicitCastExpr 0x14a941528 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14a9414c8 <col:9> 'int ()' Function 0x14a941410 'scsi_change_queue_depth' 'int ()'
+        |-ImplicitCastExpr 0x14a941570 <col:33> 'struct scsi_device *' <LValueToRValue>
+        | `-DeclRefExpr 0x14a9414e8 <col:33> 'struct scsi_device *' lvalue ParmVar 0x14a928648 'sdev' 'struct scsi_device *'
+        `-ImplicitCastExpr 0x14a941588 <col:39> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x14a941508 <col:39> 'int' lvalue ParmVar 0x14a9286c8 'depth' 'int'

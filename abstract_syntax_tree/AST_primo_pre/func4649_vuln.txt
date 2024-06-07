@@ -1,0 +1,59 @@
+`-FunctionDecl 0x12800e350  line:1:13 sas_destruct_devices 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x12800e248 <col:34, col:54> col:54 used work 'struct work_struct *'
+  `-CompoundStmt 0x128029730 <line:2:1, line:16:1>
+    |-DeclStmt 0x1280268d0 <line:3:2, col:31>
+    | |-RecordDecl 0x128026648 <col:2, col:9> col:9 struct domain_device
+    | |-VarDecl 0x1280267b8 <col:2, col:24> col:24 used dev 'struct domain_device *'
+    | `-VarDecl 0x128026848 <col:2, col:30> col:30 used n 'struct domain_device *'
+    |-DeclStmt 0x128026ce8 <line:4:2, col:63>
+    | |-RecordDecl 0x1280268e8 <col:2, col:9> col:9 struct sas_discovery_event
+    | `-VarDecl 0x128026a58 <col:2, col:62> col:30 used ev 'struct sas_discovery_event *' cinit
+    |   `-ImplicitCastExpr 0x128026cb8 <col:35, col:62> 'struct sas_discovery_event *' <IntegralToPointer>
+    |     `-CallExpr 0x128026c78 <col:35, col:62> 'int'
+    |       |-ImplicitCastExpr 0x128026c60 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x128026bf0 <col:35> 'int ()' Function 0x128026b38 'to_sas_discovery_event' 'int ()'
+    |       `-ImplicitCastExpr 0x128026ca0 <col:58> 'struct work_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x128026c10 <col:58> 'struct work_struct *' lvalue ParmVar 0x12800e248 'work' 'struct work_struct *'
+    |-DeclStmt 0x128026f48 <line:5:2, col:38>
+    | |-RecordDecl 0x128026d00 <col:2, col:9> col:9 struct asd_sas_port
+    | `-VarDecl 0x128026e68 <col:2, col:34> col:23 used port 'struct asd_sas_port *' cinit
+    |   `-RecoveryExpr 0x128026f08 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x128026ed0 <col:30> 'struct sas_discovery_event *' lvalue Var 0x128026a58 'ev' 'struct sas_discovery_event *'
+    |-CallExpr 0x128027188 <line:7:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128027040 <col:2> 'int ()' Function 0x128026f88 'clear_bit' 'int ()'
+    | |-RecoveryExpr 0x128027168 <col:12> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x128027120 <col:28, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x1280270d8 <col:29, col:40> '<dependent type>' contains-errors lvalue .pending
+    |     `-RecoveryExpr 0x1280270b0 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x128027078 <col:29> 'struct asd_sas_port *' contains-errors lvalue Var 0x128026e68 'port' 'struct asd_sas_port *'
+    |-CallExpr 0x1280273e8 <line:9:2, col:71> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128027298 <col:2> 'int ()' Function 0x1280271e0 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x1280272b8 <col:27> 'struct domain_device *' lvalue Var 0x1280267b8 'dev' 'struct domain_device *'
+    | |-DeclRefExpr 0x1280272d8 <col:32> 'struct domain_device *' lvalue Var 0x128026848 'n' 'struct domain_device *'
+    | |-UnaryOperator 0x128027358 <col:35, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x128027330 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1280272f8 <col:36> 'struct asd_sas_port *' contains-errors lvalue Var 0x128026e68 'port' 'struct asd_sas_port *'
+    | `-RecoveryExpr 0x1280273c8 <col:56> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x128029700 <col:73, line:15:2>
+      |-CallExpr 0x1280275a0 <line:10:3, col:38> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x128027508 <col:3> 'int ()' Function 0x128027450 'list_del_init' 'int ()'
+      | `-UnaryOperator 0x128027588 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x128027560 <col:18, col:23> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x128027528 <col:18> 'struct domain_device *' lvalue Var 0x1280267b8 'dev' 'struct domain_device *'
+      |-CallExpr 0x128029398 <line:12:3, col:38> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1280292b8 <col:3> 'int ()' Function 0x128029200 'sas_remove_children' 'int ()'
+      | `-UnaryOperator 0x128029380 <col:23, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-CXXDependentScopeMemberExpr 0x128029338 <col:24, col:35> '<dependent type>' contains-errors lvalue ->dev
+      |     `-RecoveryExpr 0x128029310 <col:24, col:29> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x1280292d8 <col:24> 'struct domain_device *' lvalue Var 0x1280267b8 'dev' 'struct domain_device *'
+      |-CallExpr 0x128029520 <line:13:3, col:28> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1280294a0 <col:3> 'int ()' Function 0x1280293e8 'sas_rphy_delete' 'int ()'
+      | `-RecoveryExpr 0x1280294f8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1280294c0 <col:19> 'struct domain_device *' lvalue Var 0x1280267b8 'dev' 'struct domain_device *'
+      `-CallExpr 0x1280296a0 <line:14:3, col:38> 'int' contains-errors
+        |-ImplicitCastExpr 0x128029688 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x128029628 <col:3> 'int ()' Function 0x128029570 'sas_unregister_common_dev' 'int ()'
+        |-ImplicitCastExpr 0x1280296d0 <col:29> 'struct asd_sas_port *' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x128029648 <col:29> 'struct asd_sas_port *' contains-errors lvalue Var 0x128026e68 'port' 'struct asd_sas_port *'
+        `-ImplicitCastExpr 0x1280296e8 <col:35> 'struct domain_device *' <LValueToRValue>
+          `-DeclRefExpr 0x128029668 <col:35> 'struct domain_device *' lvalue Var 0x1280267b8 'dev' 'struct domain_device *'

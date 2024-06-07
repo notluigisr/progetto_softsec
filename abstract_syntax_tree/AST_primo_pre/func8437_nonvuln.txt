@@ -1,0 +1,33 @@
+`-FunctionDecl 0x107027438  line:1:14 invalid cgroup_procs_start 'void *(struct seq_file *, int *)' static
+  |-ParmVarDecl 0x10700e248 <col:33, col:50> col:50 used s 'struct seq_file *'
+  |-ParmVarDecl 0x10700e318 <col:53, col:61> col:61 invalid pos 'int *'
+  `-CompoundStmt 0x107027f40 <line:2:1, line:11:1>
+    |-DeclStmt 0x107027928 <line:3:2, col:42>
+    | |-RecordDecl 0x1070274f0 <col:2, col:9> col:9 struct cgroup
+    | `-VarDecl 0x107027658 <col:2, col:36> col:17 used cgrp 'struct cgroup *' cinit
+    |   `-RecoveryExpr 0x1070278e8 <col:24, col:36> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x1070278a8 <col:24, col:33> 'int'
+    |       |-ImplicitCastExpr 0x107027890 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x107027820 <col:24> 'int ()' Function 0x107027768 'seq_css' 'int ()'
+    |       `-ImplicitCastExpr 0x1070278d0 <col:32> 'struct seq_file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x107027840 <col:32> 'struct seq_file *' lvalue ParmVar 0x10700e248 's' 'struct seq_file *'
+    |-IfStmt 0x107027cb0 <line:6:2, line:7:29>
+    | |-CallExpr 0x107027a78 <line:6:6, col:29> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x107027a60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x107027a20 <col:6> 'int ()' Function 0x107027968 'cgroup_is_threaded' 'int ()'
+    | | `-ImplicitCastExpr 0x107027aa0 <col:25> 'struct cgroup *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x107027a40 <col:25> 'struct cgroup *' contains-errors lvalue Var 0x107027658 'cgrp' 'struct cgroup *'
+    | `-ReturnStmt 0x107027ca0 <line:7:3, col:29>
+    |   `-CallExpr 0x107027c78 <col:10, col:29> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x107027b98 <col:10> 'int ()' Function 0x107027ae0 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x107027c60 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x107027c48 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x107027c28 <col:19> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x107027f30 <line:9:2, line:10:32>
+      `-CallExpr 0x107027ef8 <line:9:9, line:10:32> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x107027db0 <line:9:9> 'int ()' Function 0x107027cf8 '__cgroup_procs_start' 'int ()'
+        |-DeclRefExpr 0x107027dd0 <col:30> 'struct seq_file *' lvalue ParmVar 0x10700e248 's' 'struct seq_file *'
+        |-RecoveryExpr 0x107027df0 <col:33> '<dependent type>' contains-errors lvalue
+        `-BinaryOperator 0x107027ed8 <col:38, line:10:10> '<dependent type>' contains-errors '|'
+          |-RecoveryExpr 0x107027e98 <line:9:38> '<dependent type>' contains-errors lvalue
+          `-RecoveryExpr 0x107027eb8 <line:10:10> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,1 @@
+static inline bool tm_active_with_altivec(struct task_struct *tsk) { return false; }

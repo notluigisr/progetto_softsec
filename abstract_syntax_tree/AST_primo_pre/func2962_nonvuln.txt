@@ -1,0 +1,20 @@
+`-FunctionDecl 0x125140b40  line:1:13 wait_current_trans_commit_start_and_unblock 'void (struct btrfs_root *, struct btrfs_transaction *)' static
+  |-ParmVarDecl 0x125128648 <col:57, col:76> col:76 used root 'struct btrfs_root *'
+  |-ParmVarDecl 0x125140a28 <line:2:7, col:33> col:33 used trans 'struct btrfs_transaction *'
+  `-CompoundStmt 0x125141018 <line:3:1, line:6:1>
+    `-CallExpr 0x125140fe8 <line:4:2, line:5:65> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x125140d70 <line:4:2> 'int ()' Function 0x125140cb8 'wait_event' 'int ()'
+      |-CXXDependentScopeMemberExpr 0x125140df0 <col:13, col:28> '<dependent type>' contains-errors lvalue ->transaction_wait
+      | `-RecoveryExpr 0x125140dc8 <col:13, col:19> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x125140d90 <col:13> 'struct btrfs_root *' lvalue ParmVar 0x125128648 'root' 'struct btrfs_root *'
+      `-BinaryOperator 0x125140fc8 <line:5:6, col:64> 'int' contains-errors '||'
+        |-RecoveryExpr 0x125140e70 <col:6, col:13> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x125140e38 <col:6> 'struct btrfs_transaction *' lvalue ParmVar 0x125140a28 'trans' 'struct btrfs_transaction *'
+        `-ParenExpr 0x125140fa8 <col:28, col:64> 'int' contains-errors
+          `-BinaryOperator 0x125140f88 <col:29, col:57> 'int' contains-errors '&&'
+            |-RecoveryExpr 0x125140ed0 <col:29, col:36> '<dependent type>' contains-errors lvalue
+            | `-DeclRefExpr 0x125140e98 <col:29> 'struct btrfs_transaction *' lvalue ParmVar 0x125140a28 'trans' 'struct btrfs_transaction *'
+            `-UnaryOperator 0x125140f70 <col:49, col:57> '<dependent type>' contains-errors prefix '!' cannot overflow
+              `-ImplicitCastExpr 0x125140f58 <col:50, col:57> '<dependent type>' contains-errors <LValueToRValue>
+                `-RecoveryExpr 0x125140f30 <col:50, col:57> '<dependent type>' contains-errors lvalue
+                  `-DeclRefExpr 0x125140ef8 <col:50> 'struct btrfs_transaction *' lvalue ParmVar 0x125140a28 'trans' 'struct btrfs_transaction *'

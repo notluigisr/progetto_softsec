@@ -1,0 +1,164 @@
+`-FunctionDecl 0x139008348  line:1:5 line6_init_pcm 'int (struct usb_line6 *, struct line6_pcm_properties *)'
+  |-ParmVarDecl 0x138928e48 <col:20, col:38> col:38 used line6 'struct usb_line6 *'
+  |-ParmVarDecl 0x139008228 <line:2:6, col:35> col:35 used properties 'struct line6_pcm_properties *'
+  `-CompoundStmt 0x13a009088 <line:3:1, line:61:1>
+    |-DeclStmt 0x139008560 <line:4:2, col:12>
+    | |-VarDecl 0x139008460 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x1390084e0 <col:2, col:9> col:9 used err 'int'
+    |-DeclStmt 0x1390086a0 <line:5:2, col:50>
+    | `-VarDecl 0x139008590 <col:2, col:40> col:11 used ep_read 'unsigned int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x139008658 <col:21, col:40> '<dependent type>' contains-errors lvalue ->ep_audio_r
+    |     `-RecoveryExpr 0x139008630 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1390085f8 <col:21> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |-DeclStmt 0x1390087e0 <line:6:2, col:51>
+    | `-VarDecl 0x1390086d0 <col:2, col:41> col:11 used ep_write 'unsigned int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x139008798 <col:22, col:41> '<dependent type>' contains-errors lvalue ->ep_audio_w
+    |     `-RecoveryExpr 0x139008770 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x139008738 <col:22> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |-DeclStmt 0x1390089e8 <line:7:2, col:21>
+    | |-RecordDecl 0x1390087f8 <col:2, col:9> col:9 struct snd_pcm
+    | `-VarDecl 0x139008968 <col:2, col:18> col:18 used pcm 'struct snd_pcm *'
+    |-DeclStmt 0x139008be8 <line:8:2, col:32>
+    | |-RecordDecl 0x139008a00 <col:2, col:9> col:9 struct snd_line6_pcm
+    | `-VarDecl 0x139008b68 <col:2, col:24> col:24 used line6pcm 'struct snd_line6_pcm *'
+    |-IfStmt 0x139008d48 <line:10:2, line:11:10>
+    | |-RecoveryExpr 0x139008cf8 <line:10:6, col:55> '_Bool' contains-errors
+    | `-ReturnStmt 0x139008d38 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x139008d18 <col:10> 'int' 0
+    |-BinaryOperator 0x139009010 <line:13:2, col:37> 'int' '='
+    | |-DeclRefExpr 0x139008d68 <col:2> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | `-CallExpr 0x139008fc8 <col:8, col:37> 'int'
+    |   |-ImplicitCastExpr 0x139008fb0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x139008ea0 <col:8> 'int ()' Function 0x139008de8 'snd_line6_new_pcm' 'int ()'
+    |   |-ImplicitCastExpr 0x139008ff8 <col:26> 'struct usb_line6 *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x139008ec0 <col:26> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |   `-UnaryOperator 0x139008f60 <col:33, col:34> 'struct snd_pcm **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x139008ee0 <col:34> 'struct snd_pcm *' lvalue Var 0x139008968 'pcm' 'struct snd_pcm *'
+    |-IfStmt 0x1390090f0 <line:14:2, line:15:10>
+    | |-BinaryOperator 0x139009088 <line:14:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x139009070 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x139009030 <col:6> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | | `-IntegerLiteral 0x139009050 <col:12> 'int' 0
+    | `-ReturnStmt 0x1390090e0 <line:15:3, col:10>
+    |   `-ImplicitCastExpr 0x1390090c8 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1390090a8 <col:10> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    |-IfStmt 0x1389421b0 <line:18:2, line:19:11>
+    | |-UnaryOperator 0x1389420f0 <line:18:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1389420d8 <col:7> 'struct snd_line6_pcm *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1389420b8 <col:7> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-ReturnStmt 0x1389421a0 <line:19:3, col:11>
+    |   `-UnaryOperator 0x138942188 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x138942170 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x138942150 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x138942348 <line:21:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1389422b0 <col:2> 'int ()' Function 0x1389421f8 'mutex_init' 'int ()'
+    | `-UnaryOperator 0x138942330 <col:13, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x138942308 <col:14, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1389422d0 <col:14> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-BinaryOperator 0x1389423f0 <line:22:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1389423a8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138942370 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-DeclRefExpr 0x1389423d0 <col:18> 'struct snd_pcm *' lvalue Var 0x139008968 'pcm' 'struct snd_pcm *'
+    |-BinaryOperator 0x138942490 <line:23:2, col:25> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x138942448 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138942410 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-DeclRefExpr 0x138942470 <col:25> 'struct line6_pcm_properties *' lvalue ParmVar 0x139008228 'properties' 'struct line6_pcm_properties *'
+    |-BinaryOperator 0x138942660 <line:24:2, col:64> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x138942548 <col:2, col:29> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x138942530 <col:2, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x1389424e8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x1389424b0 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | | `-IntegerLiteral 0x138942510 <col:28> 'int' 0
+    | `-BinaryOperator 0x138942640 <col:33, col:64> '<dependent type>' contains-errors '='
+    |   |-ArraySubscriptExpr 0x138942600 <col:33, col:60> '<dependent type>' contains-errors lvalue
+    |   | |-ImplicitCastExpr 0x1389425e8 <col:33, col:43> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | `-RecoveryExpr 0x1389425a0 <col:33, col:43> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x138942568 <col:33> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |   | `-IntegerLiteral 0x1389425c8 <col:59> 'int' 1
+    |   `-IntegerLiteral 0x138942620 <col:64> 'int' 255
+    |-BinaryOperator 0x138942700 <line:25:2, col:29> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1389426b8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138942680 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-IntegerLiteral 0x1389426e0 <col:29> 'int' 255
+    |-BinaryOperator 0x1389427a0 <line:26:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x138942758 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138942720 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-DeclRefExpr 0x138942780 <col:20> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |-BinaryOperator 0x138942b88 <line:28:2, line:30:46> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1389427f8 <line:28:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1389427c0 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-CallExpr 0x138942b50 <line:29:3, line:30:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138942900 <line:29:3> 'int ()' Function 0x138942848 'usb_maxpacket' 'int ()'
+    |   |-RecoveryExpr 0x138942958 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x138942920 <col:17> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |   |-CallExpr 0x138942b00 <line:30:4, col:42> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x138942a60 <col:4> 'int ()' Function 0x1389429a8 'usb_rcvisocpipe' 'int ()'
+    |   | |-RecoveryExpr 0x138942ab8 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x138942a80 <col:20> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |   | `-DeclRefExpr 0x138942ae0 <col:35> 'unsigned int' contains-errors lvalue Var 0x139008590 'ep_read' 'unsigned int'
+    |   `-IntegerLiteral 0x138942b30 <col:45> 'int' 0
+    |-BinaryOperator 0x138942e90 <line:31:2, line:33:47> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x138942be0 <line:31:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138942ba8 <col:2> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    | `-CallExpr 0x138942e58 <line:32:3, line:33:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138942c08 <line:32:3> 'int ()' Function 0x138942848 'usb_maxpacket' 'int ()'
+    |   |-RecoveryExpr 0x138942c60 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x138942c28 <col:17> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |   |-CallExpr 0x138942e08 <line:33:4, col:43> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x138942d68 <col:4> 'int ()' Function 0x138942cb0 'usb_sndisocpipe' 'int ()'
+    |   | |-RecoveryExpr 0x138942dc0 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x138942d88 <col:20> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    |   | `-DeclRefExpr 0x138942de8 <col:35> 'unsigned int' contains-errors lvalue Var 0x1390086d0 'ep_write' 'unsigned int'
+    |   `-IntegerLiteral 0x138942e38 <col:46> 'int' 1
+    |-CallExpr 0x13a008288 <line:35:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138942f90 <col:2> 'int ()' Function 0x138942ed8 'spin_lock_init' 'int ()'
+    | `-UnaryOperator 0x13a008270 <col:17, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13a008228 <col:18, col:32> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x13a008200 <col:18, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x138942fb0 <col:18> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-CallExpr 0x13a008390 <line:36:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a0082b0 <col:2> 'int ()' Function 0x138942ed8 'spin_lock_init' 'int ()'
+    | `-UnaryOperator 0x13a008378 <col:17, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13a008330 <col:18, col:31> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x13a008308 <col:18, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13a0082d0 <col:18> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-BinaryOperator 0x13a008498 <line:39:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13a008450 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13a008418 <col:2> 'struct usb_line6 *' lvalue ParmVar 0x138928e48 'line6' 'struct usb_line6 *'
+    | `-DeclRefExpr 0x13a008478 <col:20> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-BinaryOperator 0x13a008538 <line:41:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13a0084f0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13a0084b8 <col:2> 'struct snd_pcm *' lvalue Var 0x139008968 'pcm' 'struct snd_pcm *'
+    | `-DeclRefExpr 0x13a008518 <col:22> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-BinaryOperator 0x13a008750 <line:44:2, col:44> 'int' '='
+    | |-DeclRefExpr 0x13a0085b8 <col:2> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | `-CallExpr 0x13a008710 <col:8, col:44> 'int'
+    |   |-ImplicitCastExpr 0x13a0086f8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13a0086b8 <col:8> 'int ()' Function 0x13a008600 'line6_create_audio_out_urbs' 'int ()'
+    |   `-ImplicitCastExpr 0x13a008738 <col:36> 'struct snd_line6_pcm *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13a0086d8 <col:36> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-IfStmt 0x13a008830 <line:45:2, line:46:10>
+    | |-BinaryOperator 0x13a0087c8 <line:45:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x13a0087b0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13a008770 <col:6> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | | `-IntegerLiteral 0x13a008790 <col:12> 'int' 0
+    | `-ReturnStmt 0x13a008820 <line:46:3, col:10>
+    |   `-ImplicitCastExpr 0x13a008808 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13a0087e8 <col:10> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    |-BinaryOperator 0x13a0089e8 <line:48:2, col:43> 'int' '='
+    | |-DeclRefExpr 0x13a008850 <col:2> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | `-CallExpr 0x13a0089a8 <col:8, col:43> 'int'
+    |   |-ImplicitCastExpr 0x13a008990 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13a008950 <col:8> 'int ()' Function 0x13a008898 'line6_create_audio_in_urbs' 'int ()'
+    |   `-ImplicitCastExpr 0x13a0089d0 <col:35> 'struct snd_line6_pcm *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13a008970 <col:35> 'struct snd_line6_pcm *' lvalue Var 0x139008b68 'line6pcm' 'struct snd_line6_pcm *'
+    |-IfStmt 0x13a008ac8 <line:49:2, line:50:10>
+    | |-BinaryOperator 0x13a008a60 <line:49:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x13a008a48 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13a008a08 <col:6> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    | | `-IntegerLiteral 0x13a008a28 <col:12> 'int' 0
+    | `-ReturnStmt 0x13a008ab8 <line:50:3, col:10>
+    |   `-ImplicitCastExpr 0x13a008aa0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13a008a80 <col:10> 'int' lvalue Var 0x1390084e0 'err' 'int'
+    `-ReturnStmt 0x13a009078 <line:60:2, col:9>
+      `-IntegerLiteral 0x13a009058 <col:9> 'int' 0

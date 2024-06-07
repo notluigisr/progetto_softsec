@@ -1,0 +1,118 @@
+`-FunctionDecl 0x14c940b48  line:1:1 rb_try_to_discard 'int (struct ring_buffer_per_cpu *, struct ring_buffer_event *)'
+  |-ParmVarDecl 0x14c928648 <col:19, col:47> col:47 used cpu_buffer 'struct ring_buffer_per_cpu *'
+  |-ParmVarDecl 0x14c940a28 <line:2:5, col:31> col:31 used event 'struct ring_buffer_event *'
+  `-CompoundStmt 0x14c9455b0 <line:3:1, line:33:1>
+    |-DeclStmt 0x14c940d60 <line:4:2, col:36>
+    | |-VarDecl 0x14c940c60 <col:2, col:16> col:16 used new_index 'unsigned long'
+    | `-VarDecl 0x14c940ce0 <col:2, col:27> col:27 used old_index 'unsigned long'
+    |-DeclStmt 0x14c940f68 <line:5:2, col:27>
+    | |-RecordDecl 0x14c940d78 <col:2, col:9> col:9 struct buffer_page
+    | `-VarDecl 0x14c940ee8 <col:2, col:22> col:22 used bpage 'struct buffer_page *'
+    |-DeclStmt 0x14c941000 <line:6:2, col:21>
+    | `-VarDecl 0x14c940f98 <col:2, col:16> col:16 used index 'unsigned long'
+    |-DeclStmt 0x14c941098 <line:7:2, col:20>
+    | `-VarDecl 0x14c941030 <col:2, col:16> col:16 used addr 'unsigned long'
+    |-BinaryOperator 0x14c9412e0 <line:9:2, col:34> 'unsigned long' '='
+    | |-DeclRefExpr 0x14c9410b0 <col:2> 'unsigned long' lvalue Var 0x14c940c60 'new_index' 'unsigned long'
+    | `-ImplicitCastExpr 0x14c9412c8 <col:14, col:34> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x14c941288 <col:14, col:34> 'int'
+    |     |-ImplicitCastExpr 0x14c941270 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14c941200 <col:14> 'int ()' Function 0x14c941148 'rb_event_index' 'int ()'
+    |     `-ImplicitCastExpr 0x14c9412b0 <col:29> 'struct ring_buffer_event *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14c941220 <col:29> 'struct ring_buffer_event *' lvalue ParmVar 0x14c940a28 'event' 'struct ring_buffer_event *'
+    |-BinaryOperator 0x14c941508 <line:10:2, col:50> 'unsigned long' '='
+    | |-DeclRefExpr 0x14c941300 <col:2> 'unsigned long' lvalue Var 0x14c940ce0 'old_index' 'unsigned long'
+    | `-BinaryOperator 0x14c9414e8 <col:14, col:50> 'unsigned long' '+'
+    |   |-ImplicitCastExpr 0x14c9414b8 <col:14> 'unsigned long' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14c941320 <col:14> 'unsigned long' lvalue Var 0x14c940c60 'new_index' 'unsigned long'
+    |   `-ImplicitCastExpr 0x14c9414d0 <col:26, col:50> 'unsigned long' <IntegralCast>
+    |     `-CallExpr 0x14c941478 <col:26, col:50> 'int'
+    |       |-ImplicitCastExpr 0x14c941460 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14c941420 <col:26> 'int ()' Function 0x14c941368 'rb_event_ts_length' 'int ()'
+    |       `-ImplicitCastExpr 0x14c9414a0 <col:45> 'struct ring_buffer_event *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14c941440 <col:45> 'struct ring_buffer_event *' lvalue ParmVar 0x14c940a28 'event' 'struct ring_buffer_event *'
+    |-BinaryOperator 0x14c9415c0 <line:11:2, col:24> 'unsigned long' '='
+    | |-DeclRefExpr 0x14c941528 <col:2> 'unsigned long' lvalue Var 0x14c941030 'addr' 'unsigned long'
+    | `-CStyleCastExpr 0x14c941598 <col:9, col:24> 'unsigned long' <PointerToIntegral>
+    |   `-ImplicitCastExpr 0x14c941580 <col:24> 'struct ring_buffer_event *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x14c941548 <col:24> 'struct ring_buffer_event *' lvalue ParmVar 0x14c940a28 'event' 'struct ring_buffer_event *'
+    |-CompoundAssignOperator 0x14c941668 <line:12:2, col:10> 'unsigned long' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x14c9415e0 <col:2> 'unsigned long' lvalue Var 0x14c941030 'addr' 'unsigned long'
+    | `-RecoveryExpr 0x14c941648 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14c941840 <line:14:2, col:41> 'struct buffer_page *' contains-errors '='
+    | |-DeclRefExpr 0x14c941698 <col:2> 'struct buffer_page *' lvalue Var 0x14c940ee8 'bpage' 'struct buffer_page *'
+    | `-CallExpr 0x14c941818 <col:10, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c941798 <col:10> 'int ()' Function 0x14c9416e0 'READ_ONCE' 'int ()'
+    |   `-RecoveryExpr 0x14c9417f0 <col:20, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c9417b8 <col:20> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x14c928648 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-IfStmt 0x14c945560 <line:16:2, line:29:2>
+    | |-BinaryOperator 0x14c9449c0 <line:16:6, col:61> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x14c941938 <col:6, col:29> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x14c941898 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x14c941860 <col:6> 'struct buffer_page *' lvalue Var 0x14c940ee8 'bpage' 'struct buffer_page *'
+    | | | `-CStyleCastExpr 0x14c941910 <col:21, col:29> 'void *' <IntegralToPointer>
+    | | |   `-ImplicitCastExpr 0x14c9418f8 <col:29> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    | | |     `-DeclRefExpr 0x14c9418c0 <col:29> 'unsigned long' lvalue Var 0x14c941030 'addr' 'unsigned long'
+    | | `-BinaryOperator 0x14c9449a0 <col:37, col:61> 'int' '=='
+    | |   |-ImplicitCastExpr 0x14c944988 <col:37, col:56> 'unsigned long' <IntegralCast>
+    | |   | `-CallExpr 0x14c944910 <col:37, col:56> 'int'
+    | |   |   |-ImplicitCastExpr 0x14c9448f8 <col:37> 'int (*)()' <FunctionToPointerDecay>
+    | |   |   | `-DeclRefExpr 0x14c9448b8 <col:37> 'int ()' Function 0x14c944800 'rb_page_write' 'int ()'
+    | |   |   `-ImplicitCastExpr 0x14c944938 <col:51> 'struct buffer_page *' <LValueToRValue>
+    | |   |     `-DeclRefExpr 0x14c9448d8 <col:51> 'struct buffer_page *' lvalue Var 0x14c940ee8 'bpage' 'struct buffer_page *'
+    | |   `-ImplicitCastExpr 0x14c944970 <col:61> 'unsigned long' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14c944950 <col:61> 'unsigned long' lvalue Var 0x14c940ce0 'old_index' 'unsigned long'
+    | `-CompoundStmt 0x14c945520 <col:72, line:29:2>
+    |   |-DeclStmt 0x14c944cd8 <line:17:3, line:18:46>
+    |   | `-VarDecl 0x14c9449f8 <line:17:3, line:18:33> line:17:17 used write_mask 'unsigned long' cinit
+    |   |   `-BinaryOperator 0x14c944cb8 <line:18:4, col:33> '<dependent type>' contains-errors '&'
+    |   |     |-CallExpr 0x14c944bd8 <col:4, col:28> '<dependent type>' contains-errors
+    |   |     | |-DeclRefExpr 0x14c944b40 <col:4> 'int ()' Function 0x14c944a88 'local_read' 'int ()'
+    |   |     | `-UnaryOperator 0x14c944bc0 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     |   `-RecoveryExpr 0x14c944b98 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |   |     |     `-DeclRefExpr 0x14c944b60 <col:16> 'struct buffer_page *' lvalue Var 0x14c940ee8 'bpage' 'struct buffer_page *'
+    |   |     `-UnaryOperator 0x14c944ca0 <col:32, col:33> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   |       `-ImplicitCastExpr 0x14c944c88 <col:33> '<dependent type>' contains-errors <LValueToRValue>
+    |   |         `-RecoveryExpr 0x14c944c68 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-DeclStmt 0x14c944f00 <line:19:3, col:54>
+    |   | `-VarDecl 0x14c944d08 <col:3, col:53> col:17 used event_length 'unsigned long' cinit
+    |   |   `-ImplicitCastExpr 0x14c944ee8 <col:32, col:53> 'unsigned long' <IntegralCast>
+    |   |     `-CallExpr 0x14c944ea8 <col:32, col:53> 'int'
+    |   |       |-ImplicitCastExpr 0x14c944e90 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x14c944e50 <col:32> 'int ()' Function 0x14c944d98 'rb_event_length' 'int ()'
+    |   |       `-ImplicitCastExpr 0x14c944ed0 <col:48> 'struct ring_buffer_event *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x14c944e70 <col:48> 'struct ring_buffer_event *' lvalue ParmVar 0x14c940a28 'event' 'struct ring_buffer_event *'
+    |   |-CompoundAssignOperator 0x14c944f70 <line:21:3, col:16> 'unsigned long' contains-errors '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   | |-DeclRefExpr 0x14c944f18 <col:3> 'unsigned long' lvalue Var 0x14c940ce0 'old_index' 'unsigned long'
+    |   | `-ImplicitCastExpr 0x14c944f58 <col:16> 'unsigned long' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14c944f38 <col:16> 'unsigned long' contains-errors lvalue Var 0x14c9449f8 'write_mask' 'unsigned long'
+    |   |-CompoundAssignOperator 0x14c944ff8 <line:22:3, col:16> 'unsigned long' contains-errors '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   | |-DeclRefExpr 0x14c944fa0 <col:3> 'unsigned long' lvalue Var 0x14c940c60 'new_index' 'unsigned long'
+    |   | `-ImplicitCastExpr 0x14c944fe0 <col:16> 'unsigned long' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14c944fc0 <col:16> 'unsigned long' contains-errors lvalue Var 0x14c9449f8 'write_mask' 'unsigned long'
+    |   |-BinaryOperator 0x14c945238 <line:23:3, col:60> 'unsigned long' contains-errors '='
+    |   | |-DeclRefExpr 0x14c945028 <col:3> 'unsigned long' lvalue Var 0x14c940f98 'index' 'unsigned long'
+    |   | `-CallExpr 0x14c945200 <col:11, col:60> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14c945128 <col:11> 'int ()' Function 0x14c945070 'local_cmpxchg' 'int ()'
+    |   |   |-UnaryOperator 0x14c9451a8 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | `-RecoveryExpr 0x14c945180 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x14c945148 <col:26> 'struct buffer_page *' lvalue Var 0x14c940ee8 'bpage' 'struct buffer_page *'
+    |   |   |-DeclRefExpr 0x14c9451c0 <col:40> 'unsigned long' lvalue Var 0x14c940ce0 'old_index' 'unsigned long'
+    |   |   `-DeclRefExpr 0x14c9451e0 <col:51> 'unsigned long' lvalue Var 0x14c940c60 'new_index' 'unsigned long'
+    |   `-IfStmt 0x14c945500 <line:24:3, line:28:3>
+    |     |-BinaryOperator 0x14c9452c8 <line:24:7, col:16> 'int' '=='
+    |     | |-ImplicitCastExpr 0x14c945298 <col:7> 'unsigned long' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x14c945258 <col:7> 'unsigned long' lvalue Var 0x14c940f98 'index' 'unsigned long'
+    |     | `-ImplicitCastExpr 0x14c9452b0 <col:16> 'unsigned long' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x14c945278 <col:16> 'unsigned long' lvalue Var 0x14c940ce0 'old_index' 'unsigned long'
+    |     `-CompoundStmt 0x14c9454e0 <col:27, line:28:3>
+    |       |-CallExpr 0x14c945480 <line:26:4, col:54> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x14c9453c8 <col:4> 'int ()' Function 0x14c945310 'local_sub' 'int ()'
+    |       | |-DeclRefExpr 0x14c9453e8 <col:14> 'unsigned long' lvalue Var 0x14c944d08 'event_length' 'unsigned long'
+    |       | `-UnaryOperator 0x14c945468 <col:28, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   `-RecoveryExpr 0x14c945440 <col:29, col:41> '<dependent type>' contains-errors lvalue
+    |       |     `-DeclRefExpr 0x14c945408 <col:29> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x14c928648 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |       `-ReturnStmt 0x14c9454d0 <line:27:4, col:11>
+    |         `-IntegerLiteral 0x14c9454b0 <col:11> 'int' 1
+    `-ReturnStmt 0x14c9455a0 <line:32:2, col:9>
+      `-IntegerLiteral 0x14c945580 <col:9> 'int' 0

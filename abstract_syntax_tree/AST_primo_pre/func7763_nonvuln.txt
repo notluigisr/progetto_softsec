@@ -1,0 +1,30 @@
+`-FunctionDecl 0x14b00ddf8  line:1:12 invalid bdrv_get_cluster_size 'int (int *)' static
+  |-ParmVarDecl 0x14b00dd28 <col:34, col:52> col:52 invalid bs 'int *'
+  `-CompoundStmt 0x14b027a38 <line:2:1, line:12:1>
+    |-DeclStmt 0x14b00df28 <line:4:5, col:12>
+    | `-VarDecl 0x14b00dec0 <col:5, col:9> col:9 used ret 'int'
+    |-BinaryOperator 0x14b00e1e8 <line:6:5, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14b00df40 <col:5> 'int' lvalue Var 0x14b00dec0 'ret' 'int'
+    | `-CallExpr 0x14b00e1b8 <col:11, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b00e0c0 <col:11> 'int ()' Function 0x14b00e008 'bdrv_get_info' 'int ()'
+    |   |-RecoveryExpr 0x14b00e0e0 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x14b00e1a0 <col:29, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14b00e180 <col:30> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x14b027a08 <line:7:5, line:11:5> has_else
+      |-BinaryOperator 0x14b027868 <line:7:9, col:40> 'int' contains-errors '||'
+      | |-BinaryOperator 0x14b00e390 <col:9, col:15> 'int' '<'
+      | | |-ImplicitCastExpr 0x14b00e378 <col:9> 'int' <LValueToRValue>
+      | | | `-DeclRefExpr 0x14b00e208 <col:9> 'int' lvalue Var 0x14b00dec0 'ret' 'int'
+      | | `-IntegerLiteral 0x14b00e228 <col:15> 'int' 0
+      | `-BinaryOperator 0x14b027848 <col:20, col:40> 'int' contains-errors '=='
+      |   |-CXXDependentScopeMemberExpr 0x14b027800 <col:20, col:24> '<dependent type>' contains-errors lvalue .cluster_size
+      |   | `-RecoveryExpr 0x14b00e3b0 <col:20> '<dependent type>' contains-errors lvalue
+      |   `-IntegerLiteral 0x14b00e2e0 <col:40> 'int' 0
+      |-CompoundStmt 0x14b027900 <col:43, line:9:5>
+      | `-ReturnStmt 0x14b0278f0 <line:8:9, col:20>
+      |   `-CXXDependentScopeMemberExpr 0x14b0278a8 <col:16, col:20> '<dependent type>' contains-errors lvalue ->request_alignment
+      |     `-RecoveryExpr 0x14b027888 <col:16> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x14b0279f0 <line:9:12, line:11:5>
+        `-ReturnStmt 0x14b0279e0 <line:10:9, col:20>
+          `-CXXDependentScopeMemberExpr 0x14b027998 <col:16, col:20> '<dependent type>' contains-errors lvalue .cluster_size
+            `-RecoveryExpr 0x14b027978 <col:16> '<dependent type>' contains-errors lvalue

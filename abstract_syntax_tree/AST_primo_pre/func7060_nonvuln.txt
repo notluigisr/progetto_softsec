@@ -1,0 +1,20 @@
+`-FunctionDecl 0x13e941800  line:1:20 invalid tcp_stream_memory_free 'int (const struct sock *)' static inline
+  |-ParmVarDecl 0x13e928668 <col:43, col:62> col:62 used sk 'const struct sock *'
+  `-CompoundStmt 0x13e941f48 <line:2:1, line:7:1>
+    |-DeclStmt 0x13e941cd8 <line:3:2, col:40>
+    | |-RecordDecl 0x13e9418b0 <col:8, col:15> col:15 struct tcp_sock
+    | `-VarDecl 0x13e941a18 <col:2, col:39> col:25 used tp 'const struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x13e941ca8 <col:30, col:39> 'const struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x13e941c68 <col:30, col:39> 'int'
+    |       |-ImplicitCastExpr 0x13e941c50 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13e941be0 <col:30> 'int ()' Function 0x13e941b28 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x13e941c90 <col:37> 'const struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13e941c00 <col:37> 'const struct sock *' lvalue ParmVar 0x13e928668 'sk' 'const struct sock *'
+    `-ReturnStmt 0x13e941f38 <line:6:2, col:45>
+      `-BinaryOperator 0x13e941f18 <col:9, col:45> 'int' contains-errors '<'
+        |-RecoveryExpr 0x13e941ea0 <col:9> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x13e941ed8 <col:25, col:45> 'int'
+          |-ImplicitCastExpr 0x13e941ec0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13e941de8 <col:25> 'int ()' Function 0x13e941d30 'tcp_notsent_lowat' 'int ()'
+          `-ImplicitCastExpr 0x13e941f00 <col:43> 'const struct tcp_sock *' <LValueToRValue>
+            `-DeclRefExpr 0x13e941e08 <col:43> 'const struct tcp_sock *' lvalue Var 0x13e941a18 'tp' 'const struct tcp_sock *'

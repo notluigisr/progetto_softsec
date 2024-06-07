@@ -1,0 +1,64 @@
+`-FunctionDecl 0x147144e78  line:1:13 sock_do_ioctl 'long (struct net *, struct socket *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x147128648 <col:27, col:39> col:39 used net 'struct net *'
+  |-ParmVarDecl 0x147144c28 <col:44, col:59> col:59 used sock 'struct socket *'
+  |-ParmVarDecl 0x147144ca8 <line:2:6, col:19> col:19 used cmd 'unsigned int'
+  |-ParmVarDecl 0x147144d28 <col:24, col:38> col:38 used arg 'unsigned long'
+  `-CompoundStmt 0x147148b28 <line:3:1, line:33:1>
+    |-DeclStmt 0x147145008 <line:4:2, col:9>
+    | `-VarDecl 0x147144fa0 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x147145098 <line:5:2, col:14>
+    | `-VarDecl 0x147145030 <col:2, col:7> col:7 invalid __user 'void'
+    |-BinaryOperator 0x147145210 <line:7:2, col:39> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1471450b0 <col:2> 'int' lvalue Var 0x147144fa0 'err' 'int'
+    | `-CallExpr 0x1471451d8 <col:8, col:39> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x147145130 <col:8, col:19> '<dependent type>' contains-errors lvalue ->ioctl
+    |   | `-RecoveryExpr 0x147145108 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1471450d0 <col:8> 'struct socket *' lvalue ParmVar 0x147144c28 'sock' 'struct socket *'
+    |   |-DeclRefExpr 0x147145178 <col:25> 'struct socket *' lvalue ParmVar 0x147144c28 'sock' 'struct socket *'
+    |   |-DeclRefExpr 0x147145198 <col:31> 'unsigned int' lvalue ParmVar 0x147144ca8 'cmd' 'unsigned int'
+    |   `-DeclRefExpr 0x1471451b8 <col:36> 'unsigned long' lvalue ParmVar 0x147144d28 'arg' 'unsigned long'
+    |-IfStmt 0x1471453a0 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x147145320 <line:10:6, col:14> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x147145230 <col:6> 'int' lvalue Var 0x147144fa0 'err' 'int'
+    | | `-UnaryOperator 0x147145308 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x1471452f0 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x1471452d0 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x147145390 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x147145378 <col:10> 'long' <IntegralCast>
+    |     `-ImplicitCastExpr 0x147145360 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x147145340 <col:10> 'int' lvalue Var 0x147144fa0 'err' 'int'
+    |-IfStmt 0x147148a98 <line:13:2, line:31:2> has_else
+    | |-BinaryOperator 0x147145438 <line:13:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1471453c0 <col:6> 'unsigned int' lvalue ParmVar 0x147144ca8 'cmd' 'unsigned int'
+    | | `-RecoveryExpr 0x147145418 <col:13> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x147148548 <col:26, line:22:2>
+    | | |-DeclStmt 0x1471455d8 <line:14:3, col:20>
+    | | | |-RecordDecl 0x147145458 <col:3, col:10> col:10 struct ifconf
+    | | | `-VarDecl 0x147145558 <col:3, col:17> col:17 invalid ifc 'struct ifconf'
+    | | |-IfStmt 0x1471458a8 <line:15:3, line:16:12>
+    | | | |-RecoveryExpr 0x1471457e0 <line:15:7, col:55> '_Bool' contains-errors
+    | | | `-ReturnStmt 0x147145898 <line:16:4, col:12>
+    | | |   `-UnaryOperator 0x147145880 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | | |     `-ImplicitCastExpr 0x147145868 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |       `-RecoveryExpr 0x147145848 <col:12> '<dependent type>' contains-errors lvalue
+    | | |-CallExpr 0x147145a18 <line:17:3, col:13> 'int'
+    | | | `-ImplicitCastExpr 0x147145a00 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | |   `-DeclRefExpr 0x1471459a8 <col:3> 'int ()' Function 0x1471458f0 'rtnl_lock' 'int ()'
+    | | |-CallExpr 0x147148210 <line:19:3, col:15> 'int'
+    | | | `-ImplicitCastExpr 0x1471481f8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | |   `-DeclRefExpr 0x1471481d8 <col:3> 'int ()' Function 0x147148120 'rtnl_unlock' 'int ()'
+    | | `-IfStmt 0x147148528 <line:20:3, line:21:11>
+    | |   |-RecoveryExpr 0x147148410 <line:20:7, col:61> '_Bool' contains-errors
+    | |   `-BinaryOperator 0x147148508 <line:21:4, col:11> 'int' contains-errors '='
+    | |     |-DeclRefExpr 0x147148430 <col:4> 'int' lvalue Var 0x147144fa0 'err' 'int'
+    | |     `-UnaryOperator 0x1471484f0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |       `-ImplicitCastExpr 0x1471484d8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |         `-RecoveryExpr 0x1471484b8 <col:11> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x147148a80 <line:22:9, line:31:2>
+    |   `-DeclStmt 0x1471486f8 <line:23:3, col:19>
+    |     |-RecordDecl 0x147148580 <col:3, col:10> col:10 struct ifreq
+    |     `-VarDecl 0x147148678 <col:3, col:16> col:16 invalid ifr 'struct ifreq'
+    `-ReturnStmt 0x147148b18 <line:32:2, col:9>
+      `-ImplicitCastExpr 0x147148b00 <col:9> 'long' <IntegralCast>
+        `-ImplicitCastExpr 0x147148ae8 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x147148ac8 <col:9> 'int' lvalue Var 0x147144fa0 'err' 'int'

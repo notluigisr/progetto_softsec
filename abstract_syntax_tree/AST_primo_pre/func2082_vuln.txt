@@ -1,0 +1,45 @@
+`-FunctionDecl 0x13e145a38  line:1:12 invalid atusb_read_reg 'int (struct atusb *, int)' static
+  |-ParmVarDecl 0x13e128648 <col:27, col:41> col:41 used atusb 'struct atusb *'
+  |-ParmVarDecl 0x13e1286e0 <col:48, col:56> col:56 invalid reg 'int'
+  `-CompoundStmt 0x13e146888 <line:2:1, line:12:1>
+    |-DeclStmt 0x13e145d38 <line:3:2, col:45>
+    | |-RecordDecl 0x13e145af0 <col:2, col:9> col:9 struct usb_device
+    | `-VarDecl 0x13e145c58 <col:2, col:38> col:21 used usb_dev 'struct usb_device *' cinit
+    |   `-RecoveryExpr 0x13e145cf8 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e145cc0 <col:31> 'struct atusb *' lvalue ParmVar 0x13e128648 'atusb' 'struct atusb *'
+    |-DeclStmt 0x13e145dd0 <line:4:2, col:9>
+    | `-VarDecl 0x13e145d68 <col:2, col:6> col:6 used ret 'int'
+    |-CallExpr 0x13e146060 <line:7:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13e145f40 <col:2> 'int ()' Function 0x13e145e88 'dev_dbg' 'int ()'
+    | |-UnaryOperator 0x13e145fc0 <col:10, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13e145f98 <col:11, col:20> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13e145f60 <col:11> 'struct usb_device *' contains-errors lvalue Var 0x13e145c58 'usb_dev' 'struct usb_device *'
+    | |-StringLiteral 0x13e146020 <col:25> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x13e146040 <col:32> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13e1466b8 <line:8:2, line:10:28> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13e146098 <line:8:2> 'int' lvalue Var 0x13e145d68 'ret' 'int'
+    | `-CallExpr 0x13e146650 <col:8, line:10:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13e146198 <line:8:8> 'int ()' Function 0x13e1460e0 'atusb_control_msg' 'int ()'
+    |   |-DeclRefExpr 0x13e1461b8 <col:26> 'struct atusb *' lvalue ParmVar 0x13e128648 'atusb' 'struct atusb *'
+    |   |-CallExpr 0x13e146590 <col:33, col:59> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x13e146578 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13e1462b8 <col:33> 'int ()' Function 0x13e146200 'usb_rcvctrlpipe' 'int ()'
+    |   | |-ImplicitCastExpr 0x13e1465c0 <col:49> 'struct usb_device *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13e1462d8 <col:49> 'struct usb_device *' contains-errors lvalue Var 0x13e145c58 'usb_dev' 'struct usb_device *'
+    |   | `-IntegerLiteral 0x13e1462f8 <col:58> 'int' 0
+    |   |-RecoveryExpr 0x13e1465d8 <line:9:5> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x13e1465f8 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x13e1463e0 <line:10:5> 'int' 0
+    |   |-RecoveryExpr 0x13e146400 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x13e146638 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x13e146618 <col:14> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x13e146450 <col:21> 'int' 1
+    |   `-IntegerLiteral 0x13e146470 <col:24> 'int' 1000
+    `-ReturnStmt 0x13e146878 <line:11:2, col:28>
+      `-ConditionalOperator 0x13e146848 <col:9, col:28> '<dependent type>' contains-errors
+        |-BinaryOperator 0x13e146808 <col:9, col:16> 'int' '>='
+        | |-ImplicitCastExpr 0x13e1467f0 <col:9> 'int' <LValueToRValue>
+        | | `-DeclRefExpr 0x13e1466d8 <col:9> 'int' lvalue Var 0x13e145d68 'ret' 'int'
+        | `-IntegerLiteral 0x13e1466f8 <col:16> 'int' 0
+        |-RecoveryExpr 0x13e146828 <col:20> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x13e146768 <col:28> 'int' lvalue Var 0x13e145d68 'ret' 'int'

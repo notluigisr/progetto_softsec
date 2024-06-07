@@ -1,0 +1,79 @@
+`-FunctionDecl 0x120128758  line:1:5 ping_init_sock 'int (struct sock *)'
+  |-ParmVarDecl 0x120128648 <col:20, col:33> col:33 used sk 'struct sock *'
+  `-CompoundStmt 0x120148598 <line:2:1, line:25:1>
+    |-DeclStmt 0x120140e48 <line:3:2, col:32>
+    | |-RecordDecl 0x120140a50 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x120140bb8 <col:2, col:31> col:14 used net 'struct net *' cinit
+    |   `-ImplicitCastExpr 0x120140e18 <col:20, col:31> 'struct net *' <IntegralToPointer>
+    |     `-CallExpr 0x120140dd8 <col:20, col:31> 'int'
+    |       |-ImplicitCastExpr 0x120140dc0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x120140d50 <col:20> 'int ()' Function 0x120140c98 'sock_net' 'int ()'
+    |       `-ImplicitCastExpr 0x120140e00 <col:29> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x120140d70 <col:29> 'struct sock *' lvalue ParmVar 0x120128648 'sk' 'struct sock *'
+    |-DeclStmt 0x120141198 <line:5:2, col:54>
+    | |-RecordDecl 0x120140e60 <col:2, col:9> col:9 struct group_info
+    | `-VarDecl 0x120140fc8 <col:2, col:53> col:21 used group_info 'struct group_info *' cinit
+    |   `-ImplicitCastExpr 0x120141168 <col:34, col:53> 'struct group_info *' <IntegralToPointer>
+    |     `-CallExpr 0x120141148 <col:34, col:53> 'int'
+    |       `-ImplicitCastExpr 0x120141130 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x120141110 <col:34> 'int ()' Function 0x120141058 'get_current_groups' 'int ()'
+    |-DeclStmt 0x1201413b0 <line:6:2, col:39>
+    | |-VarDecl 0x1201411c8 <col:2, col:6> col:6 used i 'int'
+    | |-VarDecl 0x120141248 <col:2, col:9> col:9 used j 'int'
+    | `-VarDecl 0x1201412c8 <col:2, col:32> col:12 used count 'int' cinit
+    |   `-RecoveryExpr 0x120141368 <col:20, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x120141330 <col:20> 'struct group_info *' lvalue Var 0x120140fc8 'group_info' 'struct group_info *'
+    |-CallExpr 0x1201415f0 <line:9:2, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1201414a8 <col:2> 'int ()' Function 0x1201413f0 'inet_get_ping_group_range_net' 'int ()'
+    | |-DeclRefExpr 0x1201414c8 <col:32> 'struct net *' lvalue Var 0x120140bb8 'net' 'struct net *'
+    | |-UnaryOperator 0x1201415a0 <col:37, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x120141580 <col:38> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x1201415d8 <col:43, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1201415b8 <col:44> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x120141958 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x120141908 <line:10:6, col:48> 'int' contains-errors '&&'
+    | | |-CallExpr 0x120141868 <col:6, col:24> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x120141708 <col:6> 'int ()' Function 0x120141650 'gid_lte' 'int ()'
+    | | | |-RecoveryExpr 0x120141828 <col:14> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x120141848 <col:19> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x1201418d8 <col:29, col:48> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x120141788 <col:29> 'int ()' Function 0x120141650 'gid_lte' 'int ()'
+    | |   |-RecoveryExpr 0x120141898 <col:37> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x1201418b8 <col:44> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x120141948 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x120141928 <col:10> 'int' 0
+    `-ForStmt 0x120148560 <line:13:2, line:22:2>
+      |-BinaryOperator 0x1201419b8 <line:13:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x120141978 <col:7> 'int' lvalue Var 0x1201411c8 'i' 'int'
+      | `-IntegerLiteral 0x120141998 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x120148060 <col:14, col:30> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x1201419d8 <col:14> 'int' lvalue Var 0x1201411c8 'i' 'int'
+      | `-RecoveryExpr 0x120148038 <col:18, col:30> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x120148000 <col:18> 'struct group_info *' lvalue Var 0x120140fc8 'group_info' 'struct group_info *'
+      |-UnaryOperator 0x1201480a0 <col:39, col:40> 'int' postfix '++'
+      | `-DeclRefExpr 0x120148080 <col:39> 'int' lvalue Var 0x1201411c8 'i' 'int'
+      `-CompoundStmt 0x120148538 <col:44, line:22:2>
+        |-DeclStmt 0x120148270 <line:14:3, col:54>
+        | `-VarDecl 0x1201480d0 <col:3, col:7> col:7 used cp_count 'int'
+        |-ForStmt 0x120148478 <line:15:3, line:19:3>
+        | |-BinaryOperator 0x1201482c8 <line:15:8, col:12> 'int' '='
+        | | |-DeclRefExpr 0x120148288 <col:8> 'int' lvalue Var 0x120141248 'j' 'int'
+        | | `-IntegerLiteral 0x1201482a8 <col:12> 'int' 0
+        | |-<<<NULL>>>
+        | |-BinaryOperator 0x120148358 <col:15, col:19> 'int' '<'
+        | | |-ImplicitCastExpr 0x120148328 <col:15> 'int' <LValueToRValue>
+        | | | `-DeclRefExpr 0x1201482e8 <col:15> 'int' lvalue Var 0x120141248 'j' 'int'
+        | | `-ImplicitCastExpr 0x120148340 <col:19> 'int' <LValueToRValue>
+        | |   `-DeclRefExpr 0x120148308 <col:19> 'int' lvalue Var 0x1201480d0 'cp_count' 'int'
+        | |-UnaryOperator 0x120148398 <col:29, col:30> 'int' postfix '++'
+        | | `-DeclRefExpr 0x120148378 <col:29> 'int' lvalue Var 0x120141248 'j' 'int'
+        | `-CompoundStmt 0x120148460 <col:34, line:19:3>
+        |   `-IfStmt 0x120148440 <line:17:4, line:18:12>
+        |     |-RecoveryExpr 0x1201483f0 <line:17:8, col:46> '_Bool' contains-errors
+        |     `-ReturnStmt 0x120148430 <line:18:5, col:12>
+        |       `-IntegerLiteral 0x120148410 <col:12> 'int' 0
+        `-CompoundAssignOperator 0x120148508 <line:21:3, col:12> 'int' contains-errors '-=' ComputeLHSTy='int' ComputeResultTy='int'
+          |-DeclRefExpr 0x1201484b0 <col:3> 'int' contains-errors lvalue Var 0x1201412c8 'count' 'int'
+          `-ImplicitCastExpr 0x1201484f0 <col:12> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x1201484d0 <col:12> 'int' lvalue Var 0x1201480d0 'cp_count' 'int'

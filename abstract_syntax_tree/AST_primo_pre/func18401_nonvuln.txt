@@ -1,0 +1,26 @@
+`-FunctionDecl 0x153826688  line:1:1 ep0_fasync 'int (int, struct file *, int)'
+  |-ParmVarDecl 0x15380dcd8 <col:13, col:17> col:17 used f 'int'
+  |-ParmVarDecl 0x15380e2c8 <col:20, col:33> col:33 used fd 'struct file *'
+  |-ParmVarDecl 0x15380e348 <col:37, col:41> col:41 used on 'int'
+  `-CompoundStmt 0x153826e90 <line:2:1, line:7:1>
+    |-DeclStmt 0x1538269d8 <line:3:2, col:42>
+    | |-RecordDecl 0x153826790 <col:2, col:9> col:9 struct dev_data
+    | `-VarDecl 0x1538268f8 <col:2, col:30> col:20 used dev 'struct dev_data *' cinit
+    |   `-RecoveryExpr 0x153826998 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153826960 <col:26> 'struct file *' lvalue ParmVar 0x15380e2c8 'fd' 'struct file *'
+    |-CallExpr 0x153826c08 <line:5:2, col:20> 'int' contains-errors
+    | |-ImplicitCastExpr 0x153826bf0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x153826b20 <col:2> 'int ()' Function 0x153826a68 'VDEBUG' 'int ()'
+    | |-ImplicitCastExpr 0x153826c38 <col:10> 'struct dev_data *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x153826b40 <col:10> 'struct dev_data *' contains-errors lvalue Var 0x1538268f8 'dev' 'struct dev_data *'
+    | `-ImplicitCastExpr 0x153826c50 <col:15> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x153826ba0 <col:15> 'char[4]' lvalue "STR"
+    `-ReturnStmt 0x153826e80 <line:6:2, col:47>
+      `-CallExpr 0x153826e40 <col:9, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x153826d48 <col:9> 'int ()' Function 0x153826c90 'fasync_helper' 'int ()'
+        |-DeclRefExpr 0x153826d68 <col:24> 'int' lvalue ParmVar 0x15380dcd8 'f' 'int'
+        |-DeclRefExpr 0x153826d88 <col:27> 'struct file *' lvalue ParmVar 0x15380e2c8 'fd' 'struct file *'
+        |-DeclRefExpr 0x153826da8 <col:31> 'int' lvalue ParmVar 0x15380e348 'on' 'int'
+        `-UnaryOperator 0x153826e28 <col:35, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x153826e00 <col:36, col:41> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x153826dc8 <col:36> 'struct dev_data *' contains-errors lvalue Var 0x1538268f8 'dev' 'struct dev_data *'

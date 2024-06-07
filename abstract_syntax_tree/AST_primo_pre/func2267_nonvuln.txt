@@ -1,0 +1,152 @@
+`-FunctionDecl 0x12f941348  line:1:5 intel_iommu_enable_pasid 'int (struct intel_iommu *, struct intel_svm_dev *)'
+  |-ParmVarDecl 0x12f928e48 <col:30, col:50> col:50 used iommu 'struct intel_iommu *'
+  |-ParmVarDecl 0x12f941228 <col:57, col:79> col:79 used sdev 'struct intel_svm_dev *'
+  `-CompoundStmt 0x138008ea8 <line:2:1, line:75:1>
+    |-DeclStmt 0x12f941638 <line:3:2, col:33>
+    | |-RecordDecl 0x12f941448 <col:2, col:9> col:9 struct device_domain_info
+    | `-VarDecl 0x12f9415b8 <col:2, col:29> col:29 used info 'struct device_domain_info *'
+    |-DeclStmt 0x12f941838 <line:4:2, col:31>
+    | |-RecordDecl 0x12f941650 <col:2, col:9> col:9 struct context_entry
+    | `-VarDecl 0x12f9417b8 <col:2, col:24> col:24 used context 'struct context_entry *'
+    |-DeclStmt 0x12f941a38 <line:5:2, col:28>
+    | |-RecordDecl 0x12f941850 <col:2, col:9> col:9 struct dmar_domain
+    | `-VarDecl 0x12f9419b8 <col:2, col:22> col:22 used domain 'struct dmar_domain *'
+    |-DeclStmt 0x12f941ad0 <line:6:2, col:21>
+    | `-VarDecl 0x12f941a68 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x12f941b80 <line:8:2, col:9>
+    | `-VarDecl 0x12f941b18 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x12f941d78 <line:10:2, col:45> 'struct dmar_domain *' contains-errors '='
+    | |-DeclRefExpr 0x12f941b98 <col:2> 'struct dmar_domain *' lvalue Var 0x12f9419b8 'domain' 'struct dmar_domain *'
+    | `-CallExpr 0x12f941d50 <col:11, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12f941cd0 <col:11> 'int ()' Function 0x12f941c18 'get_valid_domain_for_dev' 'int ()'
+    |   `-RecoveryExpr 0x12f941d28 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f941cf0 <col:36> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    |-IfStmt 0x12f941e90 <line:11:2, line:12:11>
+    | |-UnaryOperator 0x12f941dd0 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12f941db8 <col:7> 'struct dmar_domain *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12f941d98 <col:7> 'struct dmar_domain *' lvalue Var 0x12f9419b8 'domain' 'struct dmar_domain *'
+    | `-ReturnStmt 0x12f941e80 <line:12:3, col:11>
+    |   `-UnaryOperator 0x12f941e68 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12f941e50 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12f941e30 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12f942068 <line:14:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f941f90 <col:2> 'int ()' Function 0x12f941ed8 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x12f942050 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12f942030 <col:21> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x12f941fe0 <col:41> 'unsigned long' lvalue Var 0x12f941a68 'flags' 'unsigned long'
+    |-CallExpr 0x12f943018 <line:15:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f942178 <col:2> 'int ()' Function 0x12f9420c0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x12f943000 <col:12, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12f9421d0 <col:13, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f942198 <col:13> 'struct intel_iommu *' lvalue ParmVar 0x12f928e48 'iommu' 'struct intel_iommu *'
+    |-BinaryOperator 0x12f943118 <line:17:2, col:9> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12f943040 <col:2> 'int' lvalue Var 0x12f941b18 'ret' 'int'
+    | `-UnaryOperator 0x12f943100 <col:8, col:9> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x12f9430e8 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x12f9430c8 <col:9> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12f943248 <line:18:2, col:29> 'struct device_domain_info *' contains-errors '='
+    | |-DeclRefExpr 0x12f943138 <col:2> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    | `-CXXDependentScopeMemberExpr 0x12f943200 <col:9, col:29> '<dependent type>' contains-errors lvalue .iommu
+    |   `-CXXDependentScopeMemberExpr 0x12f9431b8 <col:9, col:20> '<dependent type>' contains-errors lvalue ->archdata
+    |     `-RecoveryExpr 0x12f943190 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f943158 <col:9> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    |-IfStmt 0x12f9433d0 <line:19:2, line:20:8>
+    | |-BinaryOperator 0x12f943348 <line:19:6, col:22> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x12f9432a0 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x12f943288 <col:7> 'struct device_domain_info *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12f943268 <col:7> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    | | `-UnaryOperator 0x12f943330 <col:15, col:22> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x12f943318 <col:16, col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x12f9432f0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x12f9432b8 <col:16> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    | `-GotoStmt 0x12f9433b8 <line:20:3, col:8> 'out' 0x12f943368
+    |-BinaryOperator 0x12f943650 <line:22:2, col:63> 'struct context_entry *' contains-errors '='
+    | |-DeclRefExpr 0x12f9433f0 <col:2> 'struct context_entry *' lvalue Var 0x12f9417b8 'context' 'struct context_entry *'
+    | `-CallExpr 0x12f943610 <col:12, col:63> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12f9434f0 <col:12> 'int ()' Function 0x12f943438 'iommu_context_addr' 'int ()'
+    |   |-DeclRefExpr 0x12f943510 <col:31> 'struct intel_iommu *' lvalue ParmVar 0x12f928e48 'iommu' 'struct intel_iommu *'
+    |   |-RecoveryExpr 0x12f943568 <col:38, col:44> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12f943530 <col:38> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |   |-RecoveryExpr 0x12f9435c8 <col:49, col:55> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12f943590 <col:49> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |   `-IntegerLiteral 0x12f9435f0 <col:62> 'int' 0
+    |-IfStmt 0x12f943848 <line:23:2, line:24:8>
+    | |-CallExpr 0x12f943808 <line:23:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x12f9437f0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12f943750 <col:6> 'int ()' Function 0x12f943698 'WARN_ON' 'int ()'
+    | | `-UnaryOperator 0x12f9437a8 <col:14, col:15> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x12f943790 <col:15> 'struct context_entry *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12f943770 <col:15> 'struct context_entry *' lvalue Var 0x12f9417b8 'context' 'struct context_entry *'
+    | `-GotoStmt 0x12f943830 <line:24:3, col:8> 'out' 0x12f943368
+    |-BinaryOperator 0x12f943a30 <line:28:2, col:45> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12f9438f8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12f9438c0 <col:2> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    | `-ArraySubscriptExpr 0x12f943a10 <col:14, col:45> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x12f9439e0 <col:14, col:22> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x12f943958 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12f943920 <col:14> 'struct dmar_domain *' lvalue Var 0x12f9419b8 'domain' 'struct dmar_domain *'
+    |   `-ImplicitCastExpr 0x12f9439f8 <col:32, col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x12f9439b8 <col:32, col:39> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f943980 <col:32> 'struct intel_iommu *' lvalue ParmVar 0x12f928e48 'iommu' 'struct intel_iommu *'
+    |-BinaryOperator 0x12f943ca0 <line:29:2, col:46> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12f943a88 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12f943a50 <col:2> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    | `-CallExpr 0x12f943c70 <col:14, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12f943b90 <col:14> 'int ()' Function 0x12f943ad8 'PCI_DEVID' 'int ()'
+    |   |-RecoveryExpr 0x12f943be8 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12f943bb0 <col:24> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |   `-RecoveryExpr 0x12f943c48 <col:35, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f943c10 <col:35> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |-IfStmt 0x138008570 <line:31:2, line:56:2>
+    | |-RecoveryExpr 0x12f943cc0 <line:31:6, col:31> '_Bool' contains-errors
+    | `-CompoundStmt 0x138008548 <col:34, line:56:2>
+    |   |-CallExpr 0x12f943f08 <line:37:3, col:7> 'int'
+    |   | `-ImplicitCastExpr 0x12f943ef0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x12f943ed0 <col:3> 'int ()' Function 0x12f943e18 'wmb' 'int ()'
+    |   |-IfStmt 0x138008230 <line:39:3, line:45:3>
+    |   | |-RecoveryExpr 0x12f943f48 <line:39:7, col:66> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x138008220 <col:69, line:45:3>
+    |   `-CallExpr 0x1380083a0 <line:52:3, col:7> 'int'
+    |     `-ImplicitCastExpr 0x138008388 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x138008368 <col:3> 'int ()' Function 0x12f943e18 'wmb' 'int ()'
+    |-IfStmt 0x138008798 <line:59:2, line:60:30>
+    | |-UnaryOperator 0x138008608 <line:59:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1380085f0 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1380085c8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x138008590 <col:7> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    | `-CallExpr 0x138008758 <line:60:3, col:30> 'int'
+    |   |-ImplicitCastExpr 0x138008740 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x138008700 <col:3> 'int ()' Function 0x138008648 'iommu_enable_dev_iotlb' 'int ()'
+    |   `-ImplicitCastExpr 0x138008780 <col:26> 'struct device_domain_info *' <LValueToRValue>
+    |     `-DeclRefExpr 0x138008720 <col:26> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |-IfStmt 0x138008b00 <line:62:2, line:67:2>
+    | |-RecoveryExpr 0x1380087f0 <line:62:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1380087b8 <col:6> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    | `-CompoundStmt 0x138008ad8 <col:25, line:67:2>
+    |   |-BinaryOperator 0x138008898 <line:63:3, col:21> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x138008850 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x138008818 <col:3> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    |   | `-IntegerLiteral 0x138008878 <col:21> 'int' 1
+    |   |-BinaryOperator 0x138008978 <line:64:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x1380088f0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1380088b8 <col:3> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    |   | `-RecoveryExpr 0x138008950 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x138008918 <col:16> 'struct device_domain_info *' lvalue Var 0x12f9415b8 'info' 'struct device_domain_info *'
+    |   `-IfStmt 0x138008ab8 <line:65:3, line:66:17>
+    |     |-RecoveryExpr 0x1380089f8 <line:65:7, col:21> '_Bool' contains-errors
+    |     `-BinaryOperator 0x138008a98 <line:66:4, col:17> '<dependent type>' contains-errors '='
+    |       |-RecoveryExpr 0x138008a50 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x138008a18 <col:4> 'struct intel_svm_dev *' lvalue ParmVar 0x12f941228 'sdev' 'struct intel_svm_dev *'
+    |       `-IntegerLiteral 0x138008a78 <col:17> 'int' 0
+    |-BinaryOperator 0x138008b60 <line:68:2, col:8> 'int' '='
+    | |-DeclRefExpr 0x138008b20 <col:2> 'int' lvalue Var 0x12f941b18 'ret' 'int'
+    | `-IntegerLiteral 0x138008b40 <col:8> 'int' 0
+    |-LabelStmt 0x138008d20 <line:70:2, line:71:26> 'out'
+    | `-CallExpr 0x138008cf8 <col:2, col:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138008c60 <col:2> 'int ()' Function 0x138008ba8 'spin_unlock' 'int ()'
+    |   `-UnaryOperator 0x138008ce0 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x138008cb8 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x138008c80 <col:15> 'struct intel_iommu *' lvalue ParmVar 0x12f928e48 'iommu' 'struct intel_iommu *'
+    `-ReturnStmt 0x138008e98 <line:74:2, col:9>
+      `-ImplicitCastExpr 0x138008e80 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x138008e60 <col:9> 'int' lvalue Var 0x12f941b18 'ret' 'int'

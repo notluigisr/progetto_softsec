@@ -1,0 +1,26 @@
+`-FunctionDecl 0x11f00df38  line:1:21 get_busid_priv 'struct bus_id_priv *(const char *)'
+  |-ParmVarDecl 0x11f00dd78 <col:36, col:48> col:48 used busid 'const char *'
+  `-CompoundStmt 0x11f0278e8 <line:2:1, line:13:1>
+    |-DeclStmt 0x11f00e0b0 <line:3:2, col:9>
+    | `-VarDecl 0x11f00e048 <col:2, col:6> col:6 used idx 'int'
+    |-DeclStmt 0x11f00e210 <line:4:2, col:32>
+    | `-VarDecl 0x11f00e158 <col:2, col:28> col:22 used bid 'struct bus_id_priv *' cinit
+    |   `-RecoveryExpr 0x11f00e1f0 <col:28> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11f027400 <line:6:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f00e340 <col:2> 'int ()' Function 0x11f00e288 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x11f00e3d8 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f00e3b8 <col:13> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11f0275f8 <line:7:2, col:27> 'int' '='
+    | |-DeclRefExpr 0x11f027428 <col:2> 'int' lvalue Var 0x11f00e048 'idx' 'int'
+    | `-CallExpr 0x11f0275b8 <col:8, col:27> 'int'
+    |   |-ImplicitCastExpr 0x11f0275a0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11f027528 <col:8> 'int ()' Function 0x11f027470 'get_busid_idx' 'int ()'
+    |   `-ImplicitCastExpr 0x11f0275e0 <col:22> 'const char *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11f027548 <col:22> 'const char *' lvalue ParmVar 0x11f00dd78 'busid' 'const char *'
+    |-CallExpr 0x11f027878 <line:10:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f0277c8 <col:2> 'int ()' Function 0x11f027710 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x11f027860 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f027840 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x11f0278d8 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x11f0278c0 <col:9> 'struct bus_id_priv *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x11f0278a0 <col:9> 'struct bus_id_priv *' contains-errors lvalue Var 0x11f00e158 'bid' 'struct bus_id_priv *'

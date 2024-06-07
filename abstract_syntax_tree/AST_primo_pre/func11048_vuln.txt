@@ -1,0 +1,114 @@
+`-FunctionDecl 0x12400e358  line:1:12 check_unsafe_exec 'int (struct linux_binprm *)' static
+  |-ParmVarDecl 0x12400e248 <col:30, col:51> col:51 used bprm 'struct linux_binprm *'
+  `-CompoundStmt 0x12402a118 <line:2:1, line:35:1>
+    |-DeclStmt 0x124026920 <line:3:2, col:37>
+    | |-RecordDecl 0x124026650 <col:2, col:9> col:9 struct task_struct
+    | |-VarDecl 0x1240267b8 <col:2, col:26> col:22 used p 'struct task_struct *' cinit
+    | | `-RecoveryExpr 0x124026850 <col:26> '<dependent type>' contains-errors lvalue
+    | `-VarDecl 0x124026898 <col:2, col:36> col:36 used t 'struct task_struct *'
+    |-DeclStmt 0x1240269b8 <line:4:2, col:15>
+    | `-VarDecl 0x124026950 <col:2, col:11> col:11 used n_fs 'unsigned int'
+    |-DeclStmt 0x124026a70 <line:5:2, col:13>
+    | `-VarDecl 0x1240269e8 <col:2, col:12> col:6 used res 'int' cinit
+    |   `-IntegerLiteral 0x124026a50 <col:12> 'int' 0
+    |-IfStmt 0x124026df8 <line:7:2, line:12:2>
+    | |-RecoveryExpr 0x124026ac0 <line:7:6, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x124026a88 <col:6> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    | `-CompoundStmt 0x124026de0 <col:17, line:12:2>
+    |   `-IfStmt 0x124026db0 <line:8:3, line:11:20> has_else
+    |     |-BinaryOperator 0x124026ba0 <line:8:7, col:19> '<dependent type>' contains-errors '&'
+    |     | |-RecoveryExpr 0x124026b20 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x124026ae8 <col:7> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    |     | `-RecoveryExpr 0x124026b80 <col:19> '<dependent type>' contains-errors lvalue
+    |     |-CompoundAssignOperator 0x124026c88 <line:9:4, col:20> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-RecoveryExpr 0x124026bf8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x124026bc0 <col:4> 'struct linux_binprm *' lvalue ParmVar 0x12400e248 'bprm' 'struct linux_binprm *'
+    |     | `-RecoveryExpr 0x124026c68 <col:20> '<dependent type>' contains-errors lvalue
+    |     `-CompoundAssignOperator 0x124026d80 <line:11:4, col:20> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       |-RecoveryExpr 0x124026cf0 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x124026cb8 <col:4> 'struct linux_binprm *' lvalue ParmVar 0x12400e248 'bprm' 'struct linux_binprm *'
+    |       `-RecoveryExpr 0x124026d60 <col:20> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x124026e70 <line:14:2, col:9> 'unsigned int' '='
+    | |-DeclRefExpr 0x124026e18 <col:2> 'unsigned int' lvalue Var 0x124026950 'n_fs' 'unsigned int'
+    | `-ImplicitCastExpr 0x124026e58 <col:9> 'unsigned int' <IntegralCast>
+    |   `-IntegerLiteral 0x124026e38 <col:9> 'int' 1
+    |-CallExpr 0x124027080 <line:15:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124026fa0 <col:2> 'int ()' Function 0x124026ee8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x124027068 <col:12, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x124027020 <col:13, col:20> '<dependent type>' contains-errors lvalue ->lock
+    |     `-RecoveryExpr 0x124026ff8 <col:13, col:16> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x124026fc0 <col:13> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    |-CallExpr 0x1240271f8 <line:16:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1240271e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x124027188 <col:2> 'int ()' Function 0x1240270d0 'rcu_read_lock' 'int ()'
+    |-ForStmt 0x1240298b8 <line:17:2, line:20:2>
+    | |-BinaryOperator 0x1240273c8 <line:17:7, col:24> 'struct task_struct *' contains-errors '='
+    | | |-DeclRefExpr 0x124027218 <col:7> 'struct task_struct *' lvalue Var 0x124026898 't' 'struct task_struct *'
+    | | `-ImplicitCastExpr 0x1240273b0 <col:11, col:24> 'struct task_struct *' contains-errors <IntegralToPointer>
+    | |   `-CallExpr 0x124027370 <col:11, col:24> 'int' contains-errors
+    | |     |-ImplicitCastExpr 0x124027358 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x124027318 <col:11> 'int ()' Function 0x124027260 'next_thread' 'int ()'
+    | |     `-ImplicitCastExpr 0x124027398 <col:23> 'struct task_struct *' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x124027338 <col:23> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x124027458 <col:27, col:32> 'int' contains-errors '!='
+    | | |-ImplicitCastExpr 0x124027428 <col:27> 'struct task_struct *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1240273e8 <col:27> 'struct task_struct *' lvalue Var 0x124026898 't' 'struct task_struct *'
+    | | `-ImplicitCastExpr 0x124027440 <col:32> 'struct task_struct *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x124027408 <col:32> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    | |-BinaryOperator 0x124027548 <col:35, col:52> 'struct task_struct *' '='
+    | | |-DeclRefExpr 0x124027478 <col:35> 'struct task_struct *' lvalue Var 0x124026898 't' 'struct task_struct *'
+    | | `-ImplicitCastExpr 0x124027530 <col:39, col:52> 'struct task_struct *' <IntegralToPointer>
+    | |   `-CallExpr 0x1240274f0 <col:39, col:52> 'int'
+    | |     |-ImplicitCastExpr 0x1240274d8 <col:39> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x124027498 <col:39> 'int ()' Function 0x124027260 'next_thread' 'int ()'
+    | |     `-ImplicitCastExpr 0x124027518 <col:51> 'struct task_struct *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x1240274b8 <col:51> 'struct task_struct *' lvalue Var 0x124026898 't' 'struct task_struct *'
+    | `-CompoundStmt 0x1240298a0 <col:55, line:20:2>
+    |   `-IfStmt 0x124029880 <line:18:3, line:19:8>
+    |     |-BinaryOperator 0x124029828 <line:18:7, col:19> 'int' contains-errors '=='
+    |     | |-RecoveryExpr 0x1240275a0 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x124027568 <col:7> 'struct task_struct *' lvalue Var 0x124026898 't' 'struct task_struct *'
+    |     | `-RecoveryExpr 0x124029800 <col:16, col:19> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x1240275c8 <col:16> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    |     `-UnaryOperator 0x124029868 <line:19:4, col:8> 'unsigned int' postfix '++'
+    |       `-DeclRefExpr 0x124029848 <col:4> 'unsigned int' lvalue Var 0x124026950 'n_fs' 'unsigned int'
+    |-CallExpr 0x124029a08 <line:21:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1240299f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1240299d0 <col:2> 'int ()' Function 0x124029918 'rcu_read_unlock' 'int ()'
+    |-IfStmt 0x124029eb8 <line:23:2, line:31:2> has_else
+    | |-BinaryOperator 0x124029af0 <line:23:6, col:21> 'int' contains-errors '>'
+    | | |-CXXDependentScopeMemberExpr 0x124029a88 <col:6, col:13> '<dependent type>' contains-errors lvalue ->users
+    | | | `-RecoveryExpr 0x124029a60 <col:6, col:9> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x124029a28 <col:6> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    | | `-DeclRefExpr 0x124029ad0 <col:21> 'unsigned int' lvalue Var 0x124026950 'n_fs' 'unsigned int'
+    | |-CompoundStmt 0x124029c08 <col:27, line:25:2>
+    | | `-CompoundAssignOperator 0x124029bd8 <line:24:3, col:19> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |   |-RecoveryExpr 0x124029b48 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x124029b10 <col:3> 'struct linux_binprm *' lvalue ParmVar 0x12400e248 'bprm' 'struct linux_binprm *'
+    | |   `-RecoveryExpr 0x124029bb8 <col:19> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x124029ea0 <line:25:9, line:31:2>
+    |   `-IfStmt 0x124029e80 <line:27:3, line:30:3>
+    |     |-UnaryOperator 0x124029d00 <line:27:7, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x124029ce8 <col:8, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   `-CXXDependentScopeMemberExpr 0x124029ca0 <col:8, col:15> '<dependent type>' contains-errors lvalue ->in_exec
+    |     |     `-RecoveryExpr 0x124029c78 <col:8, col:11> '<dependent type>' contains-errors lvalue
+    |     |       `-DeclRefExpr 0x124029c40 <col:8> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    |     `-CompoundStmt 0x124029e60 <col:24, line:30:3>
+    |       |-BinaryOperator 0x124029de0 <line:28:4, col:21> '<dependent type>' contains-errors '='
+    |       | |-CXXDependentScopeMemberExpr 0x124029d78 <col:4, col:11> '<dependent type>' contains-errors lvalue ->in_exec
+    |       | | `-RecoveryExpr 0x124029d50 <col:4, col:7> '<dependent type>' contains-errors lvalue
+    |       | |   `-DeclRefExpr 0x124029d18 <col:4> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    |       | `-IntegerLiteral 0x124029dc0 <col:21> 'int' 1
+    |       `-BinaryOperator 0x124029e40 <line:29:4, col:10> 'int' '='
+    |         |-DeclRefExpr 0x124029e00 <col:4> 'int' lvalue Var 0x1240269e8 'res' 'int'
+    |         `-IntegerLiteral 0x124029e20 <col:10> 'int' 1
+    |-CallExpr 0x12402a0a8 <line:32:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124029fc8 <col:2> 'int ()' Function 0x124029f10 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x12402a090 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12402a048 <col:15, col:22> '<dependent type>' contains-errors lvalue ->lock
+    |     `-RecoveryExpr 0x12402a020 <col:15, col:18> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x124029fe8 <col:15> 'struct task_struct *' contains-errors lvalue Var 0x1240267b8 'p' 'struct task_struct *'
+    `-ReturnStmt 0x12402a108 <line:34:2, col:9>
+      `-ImplicitCastExpr 0x12402a0f0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12402a0d0 <col:9> 'int' lvalue Var 0x1240269e8 'res' 'int'

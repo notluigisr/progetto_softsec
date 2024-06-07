@@ -1,0 +1,23 @@
+`-FunctionDecl 0x136808378  line:1:13 invalid list_has_conn 'int (struct list_head *, struct rds_connection *)' static
+  |-ParmVarDecl 0x136128668 <col:27, col:45> col:45 used list 'struct list_head *'
+  |-ParmVarDecl 0x136808258 <col:51, col:74> col:74 used conn 'struct rds_connection *'
+  `-CompoundStmt 0x136808ad8 <line:2:1, line:10:1>
+    |-DeclStmt 0x1368086b0 <line:3:2, col:37>
+    | |-RecordDecl 0x136808430 <col:2, col:9> col:9 struct rds_tcp_connection
+    | |-VarDecl 0x136808598 <col:2, col:29> col:29 used tc 'struct rds_tcp_connection *'
+    | `-VarDecl 0x136808628 <col:2, col:34> col:34 used _tc 'struct rds_tcp_connection *'
+    |-CallExpr 0x136808918 <line:5:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136808820 <col:2> 'int ()' Function 0x136808768 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x136808840 <col:27> 'struct rds_tcp_connection *' lvalue Var 0x136808598 'tc' 'struct rds_tcp_connection *'
+    | |-DeclRefExpr 0x136808860 <col:31> 'struct rds_tcp_connection *' lvalue Var 0x136808628 '_tc' 'struct rds_tcp_connection *'
+    | |-DeclRefExpr 0x136808880 <col:36> 'struct list_head *' lvalue ParmVar 0x136128668 'list' 'struct list_head *'
+    | `-RecoveryExpr 0x1368088f8 <col:42> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x136808aa8 <col:54, line:8:2>
+      `-IfStmt 0x136808a88 <line:6:3, line:7:11>
+        |-BinaryOperator 0x136808a20 <line:6:7, col:31> 'int' contains-errors '=='
+        | |-CXXDependentScopeMemberExpr 0x1368089b8 <col:7, col:20> '<dependent type>' contains-errors lvalue ->cp_conn
+        | | `-RecoveryExpr 0x136808990 <col:7, col:11> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x136808958 <col:7> 'struct rds_tcp_connection *' lvalue Var 0x136808598 'tc' 'struct rds_tcp_connection *'
+        | `-DeclRefExpr 0x136808a00 <col:31> 'struct rds_connection *' lvalue ParmVar 0x136808258 'conn' 'struct rds_connection *'
+        `-ReturnStmt 0x136808a78 <line:7:4, col:11>
+          `-RecoveryExpr 0x136808a58 <col:11> '<dependent type>' contains-errors lvalue

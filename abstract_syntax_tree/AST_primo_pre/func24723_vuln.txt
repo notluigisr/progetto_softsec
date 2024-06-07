@@ -1,0 +1,187 @@
+`-FunctionDecl 0x154140118  line:1:12 geneve_xmit_skb 'int (struct sk_buff *, struct net_device *, struct geneve_dev *, const struct ip_tunnel_info *)' static
+  |-ParmVarDecl 0x154127848 <col:28, col:44> col:44 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x15413fc28 <col:49, col:68> col:68 used dev 'struct net_device *'
+  |-ParmVarDecl 0x15413fdf8 <line:2:7, col:26> col:26 used geneve 'struct geneve_dev *'
+  |-ParmVarDecl 0x15413ffc8 <line:3:7, col:36> col:36 used info 'const struct ip_tunnel_info *'
+  `-CompoundStmt 0x154813fe0 <line:4:1, line:84:1>
+    |-DeclStmt 0x1541405e0 <line:6:2, col:58>
+    | |-RecordDecl 0x154140240 <col:2, col:9> col:9 struct geneve_sock
+    | `-VarDecl 0x1541403a8 <col:2, col:57> col:22 used gs4 'struct geneve_sock *' cinit
+    |   `-CallExpr 0x1541405a0 <col:28, col:57> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x154140520 <col:28> 'int ()' Function 0x154140468 'rcu_dereference' 'int ()'
+    |     `-RecoveryExpr 0x154140578 <col:44, col:52> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x154140540 <col:44> 'struct geneve_dev *' lvalue ParmVar 0x15413fdf8 'geneve' 'struct geneve_dev *'
+    |-DeclStmt 0x154140860 <line:7:2, col:46>
+    | |-RecordDecl 0x1541405f8 <col:8, col:15> col:15 struct ip_tunnel_key
+    | `-VarDecl 0x154140768 <col:2, col:43> col:30 used key 'const struct ip_tunnel_key *' cinit
+    |   `-UnaryOperator 0x154140830 <col:36, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x154140808 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1541407d0 <col:37> 'const struct ip_tunnel_info *' lvalue ParmVar 0x15413ffc8 'info' 'const struct ip_tunnel_info *'
+    |-DeclStmt 0x154140a68 <line:8:2, col:19>
+    | |-RecordDecl 0x154140878 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x1541409e8 <col:2, col:17> col:17 used rt 'struct rtable *'
+    |-DeclStmt 0x154141a00 <line:9:2, col:19>
+    | |-RecordDecl 0x154140a80 <col:2, col:9> col:9 struct flowi4
+    | `-VarDecl 0x154140b78 <col:2, col:16> col:16 invalid fl4 'struct flowi4'
+    |-DeclStmt 0x154141a98 <line:13:2, col:9>
+    | `-VarDecl 0x154141a30 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x154141cd0 <line:15:2, col:49> 'struct rtable *' contains-errors '='
+    | |-DeclRefExpr 0x154141ab0 <col:2> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    | `-CallExpr 0x154141c88 <col:7, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x154141bb0 <col:7> 'int ()' Function 0x154141af8 'geneve_get_v4_rt' 'int ()'
+    |   |-DeclRefExpr 0x154141bd0 <col:24> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |   |-DeclRefExpr 0x154141bf0 <col:29> 'struct net_device *' lvalue ParmVar 0x15413fc28 'dev' 'struct net_device *'
+    |   |-DeclRefExpr 0x154141c10 <col:34> 'struct geneve_sock *' contains-errors lvalue Var 0x1541403a8 'gs4' 'struct geneve_sock *'
+    |   |-UnaryOperator 0x154141c50 <col:39, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x154141c30 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x154141c68 <col:45> 'const struct ip_tunnel_info *' lvalue ParmVar 0x15413ffc8 'info' 'const struct ip_tunnel_info *'
+    |-IfStmt 0x154142020 <line:16:2, line:17:20>
+    | |-CallExpr 0x154141e58 <line:16:6, col:15> 'int'
+    | | |-ImplicitCastExpr 0x154141e40 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x154141dd0 <col:6> 'int ()' Function 0x154141d18 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x154141e80 <col:13> 'struct rtable *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x154141df0 <col:13> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    | `-ReturnStmt 0x154142010 <line:17:3, col:20>
+    |   `-CallExpr 0x154141fd0 <col:10, col:20> 'int'
+    |     |-ImplicitCastExpr 0x154141fb8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x154141f78 <col:10> 'int ()' Function 0x154141ec0 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x154141ff8 <col:18> 'struct rtable *' <LValueToRValue>
+    |       `-DeclRefExpr 0x154141f98 <col:18> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    |-BinaryOperator 0x154142540 <line:19:2, line:21:38> 'int' contains-errors '='
+    | |-DeclRefExpr 0x154142040 <line:19:2> 'int' lvalue Var 0x154141a30 'err' 'int'
+    | `-CallExpr 0x154142500 <col:8, line:21:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x154142140 <line:19:8> 'int ()' Function 0x154142088 'skb_tunnel_check_pmtu' 'int ()'
+    |   |-DeclRefExpr 0x154142160 <col:30> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |   |-UnaryOperator 0x1541421e0 <col:35, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x1541421b8 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x154142180 <col:36> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    |   |-BinaryOperator 0x154142488 <line:20:9, col:34> '<dependent type>' contains-errors '+'
+    |   | |-RecoveryExpr 0x154142468 <col:9> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x154142248 <col:28, col:34> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x154142210 <col:28> 'const struct ip_tunnel_info *' lvalue ParmVar 0x15413ffc8 'info' 'const struct ip_tunnel_info *'
+    |   `-CallExpr 0x1541424c0 <line:21:9, col:37> 'int'
+    |     |-ImplicitCastExpr 0x1541424a8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x154142370 <col:9> 'int ()' Function 0x1541422b8 'netif_is_any_bridge_port' 'int ()'
+    |     `-ImplicitCastExpr 0x1541424e8 <col:34> 'struct net_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x154142390 <col:34> 'struct net_device *' lvalue ParmVar 0x15413fc28 'dev' 'struct net_device *'
+    |-IfStmt 0x154810888 <line:22:2, line:43:2> has_else
+    | |-BinaryOperator 0x1541425b8 <line:22:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x1541425a0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x154142560 <col:6> 'int' lvalue Var 0x154141a30 'err' 'int'
+    | | `-IntegerLiteral 0x154142580 <col:12> 'int' 0
+    | |-CompoundStmt 0x1541427c0 <col:15, line:25:2>
+    | | |-CallExpr 0x154142750 <line:23:3, col:23> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1541426b8 <col:3> 'int ()' Function 0x154142600 'dst_release' 'int ()'
+    | | | `-UnaryOperator 0x154142738 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x154142710 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x1541426d8 <col:16> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    | | `-ReturnStmt 0x1541427b0 <line:24:3, col:10>
+    | |   `-ImplicitCastExpr 0x154142798 <col:10> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x154142778 <col:10> 'int' lvalue Var 0x154141a30 'err' 'int'
+    | `-IfStmt 0x154810868 <line:25:9, line:43:2>
+    |   |-ImplicitCastExpr 0x154142800 <line:25:13> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1541427e0 <col:13> 'int' lvalue Var 0x154141a30 'err' 'int'
+    |   `-CompoundStmt 0x154810820 <col:18, line:43:2>
+    |     |-DeclStmt 0x154142940 <line:26:3, col:30>
+    |     | `-VarDecl 0x1541428d8 <col:3, col:26> col:26 used info 'struct ip_tunnel_info *'
+    |     |-BinaryOperator 0x15480fd68 <line:28:3, col:29> 'struct ip_tunnel_info *' '='
+    |     | |-DeclRefExpr 0x154142958 <col:3> 'struct ip_tunnel_info *' lvalue Var 0x1541428d8 'info' 'struct ip_tunnel_info *'
+    |     | `-ImplicitCastExpr 0x15480fd50 <col:10, col:29> 'struct ip_tunnel_info *' <IntegralToPointer>
+    |     |   `-CallExpr 0x15480fd10 <col:10, col:29> 'int'
+    |     |     |-ImplicitCastExpr 0x15480fcf8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x15480fcb8 <col:10> 'int ()' Function 0x15480fc00 'skb_tunnel_info' 'int ()'
+    |     |     `-ImplicitCastExpr 0x15480fd38 <col:26> 'struct sk_buff *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x15480fcd8 <col:26> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |     |-IfStmt 0x154810160 <line:29:3, line:32:3>
+    |     | |-ImplicitCastExpr 0x15480fda8 <line:29:7> 'struct ip_tunnel_info *' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x15480fd88 <col:7> 'struct ip_tunnel_info *' lvalue Var 0x1541428d8 'info' 'struct ip_tunnel_info *'
+    |     | `-CompoundStmt 0x154810140 <col:13, line:32:3>
+    |     |   |-BinaryOperator 0x15480ff60 <line:30:4, col:31> '<dependent type>' contains-errors '='
+    |     |   | |-CXXDependentScopeMemberExpr 0x15480feb0 <col:4, col:21> '<dependent type>' contains-errors lvalue .dst
+    |     |   | | `-CXXDependentScopeMemberExpr 0x15480fe68 <col:4, col:16> '<dependent type>' contains-errors lvalue .ipv4
+    |     |   | |   `-CXXDependentScopeMemberExpr 0x15480fe20 <col:4, col:14> '<dependent type>' contains-errors lvalue .u
+    |     |   | |     `-RecoveryExpr 0x15480fdf8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     |   | |       `-DeclRefExpr 0x15480fdc0 <col:4> 'struct ip_tunnel_info *' lvalue Var 0x1541428d8 'info' 'struct ip_tunnel_info *'
+    |     |   | `-CXXDependentScopeMemberExpr 0x15480ff18 <col:27, col:31> '<dependent type>' contains-errors lvalue .saddr
+    |     |   |   `-RecoveryExpr 0x15480fef8 <col:27> '<dependent type>' contains-errors lvalue
+    |     |   `-BinaryOperator 0x154810120 <line:31:4, col:31> '<dependent type>' contains-errors '='
+    |     |     |-CXXDependentScopeMemberExpr 0x154810070 <col:4, col:21> '<dependent type>' contains-errors lvalue .src
+    |     |     | `-CXXDependentScopeMemberExpr 0x154810028 <col:4, col:16> '<dependent type>' contains-errors lvalue .ipv4
+    |     |     |   `-CXXDependentScopeMemberExpr 0x15480ffe0 <col:4, col:14> '<dependent type>' contains-errors lvalue .u
+    |     |     |     `-RecoveryExpr 0x15480ffb8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     |     |       `-DeclRefExpr 0x15480ff80 <col:4> 'struct ip_tunnel_info *' lvalue Var 0x1541428d8 'info' 'struct ip_tunnel_info *'
+    |     |     `-CXXDependentScopeMemberExpr 0x1548100d8 <col:27, col:31> '<dependent type>' contains-errors lvalue .daddr
+    |     |       `-RecoveryExpr 0x1548100b8 <col:27> '<dependent type>' contains-errors lvalue
+    |     |-IfStmt 0x154810398 <line:34:3, line:37:3>
+    |     | |-RecoveryExpr 0x1548102a0 <line:34:7, col:35> '_Bool' contains-errors
+    |     | `-CompoundStmt 0x154810380 <col:38, line:37:3>
+    |     |   `-CallExpr 0x154810358 <line:35:4, col:24> '<dependent type>' contains-errors
+    |     |     |-DeclRefExpr 0x1548102c0 <col:4> 'int ()' Function 0x154142600 'dst_release' 'int ()'
+    |     |     `-UnaryOperator 0x154810340 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     |       `-RecoveryExpr 0x154810318 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |     |         `-DeclRefExpr 0x1548102e0 <col:17> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    |     |-BinaryOperator 0x1548105c8 <line:39:3, col:50> '<dependent type>' contains-errors '='
+    |     | |-RecoveryExpr 0x1548103f0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x1548103b8 <col:3> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |     | `-CallExpr 0x154810598 <col:19, col:50> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x1548104f8 <col:19> 'int ()' Function 0x154810440 'eth_type_trans' 'int ()'
+    |     |   |-DeclRefExpr 0x154810518 <col:34> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |     |   `-RecoveryExpr 0x154810570 <col:39, col:47> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x154810538 <col:39> 'struct geneve_dev *' lvalue ParmVar 0x15413fdf8 'geneve' 'struct geneve_dev *'
+    |     |-CallExpr 0x154810720 <line:40:3, col:15> 'int'
+    |     | |-ImplicitCastExpr 0x154810708 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x1548106c8 <col:3> 'int ()' Function 0x154810610 'netif_rx' 'int ()'
+    |     | `-ImplicitCastExpr 0x154810748 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x1548106e8 <col:12> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |     `-CallExpr 0x1548107f8 <line:41:3, col:23> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x154810760 <col:3> 'int ()' Function 0x154142600 'dst_release' 'int ()'
+    |       `-UnaryOperator 0x1548107e0 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x1548107b8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x154810780 <col:16> 'struct rtable *' lvalue Var 0x1541409e8 'rt' 'struct rtable *'
+    |-IfStmt 0x1548122e0 <line:46:2, line:73:2> has_else
+    | |-CXXDependentScopeMemberExpr 0x154810ab8 <line:46:6, col:18> '<dependent type>' contains-errors lvalue .collect_md
+    | | `-RecoveryExpr 0x154810a90 <col:6, col:14> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x154810a58 <col:6> 'struct geneve_dev *' lvalue ParmVar 0x15413fdf8 'geneve' 'struct geneve_dev *'
+    | |-CompoundStmt 0x154811010 <col:30, line:51:2>
+    | `-CompoundStmt 0x1548122c8 <col:9, line:73:2>
+    |   `-IfStmt 0x154812298 <line:59:3, line:72:3> has_else
+    |     |-RecoveryExpr 0x154811700 <line:59:7, col:25> '_Bool' contains-errors
+    |     |-CompoundStmt 0x154811740 <col:40, line:61:3>
+    |     `-IfStmt 0x154812278 <col:10, line:72:3>
+    |       |-RecoveryExpr 0x1548117f8 <line:61:14, col:32> '_Bool' contains-errors
+    |       `-CompoundStmt 0x154812258 <col:51, line:72:3>
+    |         |-DeclStmt 0x154811b98 <line:62:4, col:37>
+    |         | |-RecordDecl 0x154811818 <col:4, col:11> col:11 struct ethhdr
+    |         | `-VarDecl 0x154811988 <col:4, col:36> col:19 used eth 'struct ethhdr *' cinit
+    |         |   `-ImplicitCastExpr 0x154811b68 <col:25, col:36> 'struct ethhdr *' <IntegralToPointer>
+    |         |     `-CallExpr 0x154811b28 <col:25, col:36> 'int'
+    |         |       |-ImplicitCastExpr 0x154811b10 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |         |       | `-DeclRefExpr 0x154811ad0 <col:25> 'int ()' Function 0x154811a18 'eth_hdr' 'int ()'
+    |         |       `-ImplicitCastExpr 0x154811b50 <col:33> 'struct sk_buff *' <LValueToRValue>
+    |         |         `-DeclRefExpr 0x154811af0 <col:33> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |         `-IfStmt 0x154812228 <line:64:4, line:71:4> has_else
+    |           |-RecoveryExpr 0x154811d60 <line:64:8, col:31> '_Bool' contains-errors
+    |           |-CompoundStmt 0x154811da0 <col:43, line:66:4>
+    |           `-IfStmt 0x154812208 <col:11, line:71:4>
+    |             |-RecoveryExpr 0x154811e58 <line:66:15, col:38> '_Bool' contains-errors
+    |             `-CompoundStmt 0x1548121f0 <col:48, line:71:4>
+    |               `-DeclStmt 0x154812118 <line:67:5, col:36>
+    |                 |-RecordDecl 0x154811e78 <col:5, col:12> col:12 struct iphdr
+    |                 `-VarDecl 0x154811fe8 <col:5, col:35> col:19 used iph 'struct iphdr *' cinit
+    |                   `-ImplicitCastExpr 0x1548120e8 <col:25, col:35> 'struct iphdr *' <IntegralToPointer>
+    |                     `-CallExpr 0x1548120a8 <col:25, col:35> 'int'
+    |                       |-ImplicitCastExpr 0x154812090 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |                       | `-DeclRefExpr 0x154812050 <col:25> 'int ()' Function 0x154810c88 'ip_hdr' 'int ()'
+    |                       `-ImplicitCastExpr 0x1548120d0 <col:32> 'struct sk_buff *' <LValueToRValue>
+    |                         `-DeclRefExpr 0x154812070 <col:32> 'struct sk_buff *' lvalue ParmVar 0x154127848 'skb' 'struct sk_buff *'
+    |-IfStmt 0x1548127a8 <line:76:2, line:77:10>
+    | |-CallExpr 0x154812720 <line:76:6, col:18> 'int'
+    | | |-ImplicitCastExpr 0x154812708 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1548126c8 <col:6> 'int ()' Function 0x154812610 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x154812748 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1548126e8 <col:15> 'int' lvalue Var 0x154141a30 'err' 'int'
+    | `-ReturnStmt 0x154812798 <line:77:3, col:10>
+    |   `-ImplicitCastExpr 0x154812780 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x154812760 <col:10> 'int' lvalue Var 0x154141a30 'err' 'int'
+    `-ReturnStmt 0x154813fd0 <line:83:2, col:9>
+      `-IntegerLiteral 0x154813fb0 <col:9> 'int' 0

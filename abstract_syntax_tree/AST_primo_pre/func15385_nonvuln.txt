@@ -1,0 +1,49 @@
+`-FunctionDecl 0x15c026748  line:1:12 ip6gre_rcv 'int (struct sk_buff *, const struct tnl_ptk_info *)' static
+  |-ParmVarDecl 0x15c00e248 <col:23, col:39> col:39 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x15c026628 <col:44, col:71> col:71 used tpi 'const struct tnl_ptk_info *'
+  `-CompoundStmt 0x15c0275a0 <line:2:1, line:17:1>
+    |-DeclStmt 0x15c026a38 <line:3:2, col:29>
+    | |-RecordDecl 0x15c026848 <col:8, col:15> col:15 struct ipv6hdr
+    | `-VarDecl 0x15c0269b8 <col:2, col:24> col:24 used ipv6h 'const struct ipv6hdr *'
+    |-DeclStmt 0x15c026c38 <line:4:2, col:24>
+    | |-RecordDecl 0x15c026a50 <col:2, col:9> col:9 struct ip6_tnl
+    | `-VarDecl 0x15c026bb8 <col:2, col:18> col:18 used tunnel 'struct ip6_tnl *'
+    |-BinaryOperator 0x15c026e80 <line:6:2, col:22> 'const struct ipv6hdr *' '='
+    | |-DeclRefExpr 0x15c026c50 <col:2> 'const struct ipv6hdr *' lvalue Var 0x15c0269b8 'ipv6h' 'const struct ipv6hdr *'
+    | `-ImplicitCastExpr 0x15c026e68 <col:10, col:22> 'const struct ipv6hdr *' <IntegralToPointer>
+    |   `-CallExpr 0x15c026e28 <col:10, col:22> 'int'
+    |     |-ImplicitCastExpr 0x15c026e10 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15c026da0 <col:10> 'int ()' Function 0x15c026ce8 'ipv6_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x15c026e50 <col:19> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x15c026dc0 <col:19> 'struct sk_buff *' lvalue ParmVar 0x15c00e248 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x15c027218 <line:7:2, line:9:21> 'struct ip6_tnl *' contains-errors '='
+    | |-DeclRefExpr 0x15c026ea0 <line:7:2> 'struct ip6_tnl *' lvalue Var 0x15c026bb8 'tunnel' 'struct ip6_tnl *'
+    | `-CallExpr 0x15c0271d0 <col:11, line:9:21> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c026fa0 <line:7:11> 'int ()' Function 0x15c026ee8 'ip6gre_tunnel_lookup' 'int ()'
+    |   |-RecoveryExpr 0x15c026ff8 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15c026fc0 <col:32> 'struct sk_buff *' lvalue ParmVar 0x15c00e248 'skb' 'struct sk_buff *'
+    |   |-UnaryOperator 0x15c027080 <line:8:11, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x15c027058 <col:12, col:19> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x15c027020 <col:12> 'const struct ipv6hdr *' lvalue Var 0x15c0269b8 'ipv6h' 'const struct ipv6hdr *'
+    |   |-UnaryOperator 0x15c0270f8 <col:26, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x15c0270d0 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x15c027098 <col:27> 'const struct ipv6hdr *' lvalue Var 0x15c0269b8 'ipv6h' 'const struct ipv6hdr *'
+    |   |-RecoveryExpr 0x15c027148 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15c027110 <col:41> 'const struct tnl_ptk_info *' lvalue ParmVar 0x15c026628 'tpi' 'const struct tnl_ptk_info *'
+    |   `-RecoveryExpr 0x15c0271a8 <line:9:11, col:16> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c027170 <col:11> 'const struct tnl_ptk_info *' lvalue ParmVar 0x15c026628 'tpi' 'const struct tnl_ptk_info *'
+    |-IfStmt 0x15c027538 <line:10:2, line:14:2>
+    | |-ImplicitCastExpr 0x15c027258 <line:10:6> 'struct ip6_tnl *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c027238 <col:6> 'struct ip6_tnl *' lvalue Var 0x15c026bb8 'tunnel' 'struct ip6_tnl *'
+    | `-CompoundStmt 0x15c027518 <col:14, line:14:2>
+    |   |-CallExpr 0x15c027488 <line:11:3, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15c027350 <col:3> 'int ()' Function 0x15c027298 'ip6_tnl_rcv' 'int ()'
+    |   | |-DeclRefExpr 0x15c027370 <col:15> 'struct ip6_tnl *' lvalue Var 0x15c026bb8 'tunnel' 'struct ip6_tnl *'
+    |   | |-DeclRefExpr 0x15c027390 <col:23> 'struct sk_buff *' lvalue ParmVar 0x15c00e248 'skb' 'struct sk_buff *'
+    |   | |-DeclRefExpr 0x15c0273b0 <col:28> 'const struct tnl_ptk_info *' lvalue ParmVar 0x15c026628 'tpi' 'const struct tnl_ptk_info *'
+    |   | |-RecoveryExpr 0x15c027448 <col:33> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x15c027468 <col:39> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x15c027508 <line:13:3, col:10>
+    |     `-RecoveryExpr 0x15c0274e8 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15c027590 <line:16:2, col:9>
+      `-RecoveryExpr 0x15c027570 <col:9> '<dependent type>' contains-errors lvalue

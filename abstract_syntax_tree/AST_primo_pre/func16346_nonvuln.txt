@@ -1,0 +1,114 @@
+`-FunctionDecl 0x148026a38  line:1:12 pppoe_disc_rcv 'int (struct sk_buff *, struct net_device *, struct packet_type *, struct net_device *)' static
+  |-ParmVarDecl 0x14800e248 <col:27, col:43> col:43 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x148026628 <col:48, col:67> col:67 used dev 'struct net_device *'
+  |-ParmVarDecl 0x1480267f8 <line:2:6, col:26> col:26 pt 'struct packet_type *'
+  |-ParmVarDecl 0x1480268e8 <col:30, col:49> col:49 orig_dev 'struct net_device *'
+  `-CompoundStmt 0x150122d68 <line:4:1, line:41:1>
+    |-DeclStmt 0x148026d38 <line:5:2, col:22>
+    | |-RecordDecl 0x148026b48 <col:2, col:9> col:9 struct pppoe_hdr
+    | `-VarDecl 0x148026cb8 <col:2, col:20> col:20 used ph 'struct pppoe_hdr *'
+    |-DeclStmt 0x148026f38 <line:6:2, col:23>
+    | |-RecordDecl 0x148026d50 <col:2, col:9> col:9 struct pppox_sock
+    | `-VarDecl 0x148026eb8 <col:2, col:21> col:21 used po 'struct pppox_sock *'
+    |-DeclStmt 0x148027138 <line:7:2, col:22>
+    | |-RecordDecl 0x148026f50 <col:2, col:9> col:9 struct pppoe_net
+    | `-VarDecl 0x1480270b8 <col:2, col:20> col:20 used pn 'struct pppoe_net *'
+    |-BinaryOperator 0x148027398 <line:9:2, col:39> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x148027150 <col:2> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x148027368 <col:8, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1480272a0 <col:8> 'int ()' Function 0x1480271e8 'skb_share_check' 'int ()'
+    |   |-DeclRefExpr 0x1480272c0 <col:24> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x148027348 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x148027470 <line:10:2, line:11:8>
+    | |-UnaryOperator 0x1480273f0 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1480273d8 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1480273b8 <col:7> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x148027458 <line:11:3, col:8> 'out' 0x148027408
+    |-IfStmt 0x148808288 <line:13:2, line:14:8>
+    | |-RecoveryExpr 0x148808200 <line:13:6, col:50> '_Bool' contains-errors
+    | `-GotoStmt 0x148808270 <line:14:3, col:8> 'abort' 0x148808220
+    |-BinaryOperator 0x148808490 <line:16:2, col:20> 'struct pppoe_hdr *' '='
+    | |-DeclRefExpr 0x1488082a8 <col:2> 'struct pppoe_hdr *' lvalue Var 0x148026cb8 'ph' 'struct pppoe_hdr *'
+    | `-ImplicitCastExpr 0x148808478 <col:7, col:20> 'struct pppoe_hdr *' <IntegralToPointer>
+    |   `-CallExpr 0x148808438 <col:7, col:20> 'int'
+    |     |-ImplicitCastExpr 0x148808420 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1488083a8 <col:7> 'int ()' Function 0x1488082f0 'pppoe_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x148808460 <col:17> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1488083c8 <col:17> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    |-IfStmt 0x1488085a0 <line:17:2, line:18:8>
+    | |-BinaryOperator 0x148808568 <line:17:6, col:18> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x1488084e8 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x1488084b0 <col:6> 'struct pppoe_hdr *' lvalue Var 0x148026cb8 'ph' 'struct pppoe_hdr *'
+    | | `-RecoveryExpr 0x148808548 <col:18> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x148808588 <line:18:3, col:8> 'abort' 0x148808220
+    |-BinaryOperator 0x1488088b0 <line:20:2, col:32> 'struct pppoe_net *' '='
+    | |-DeclRefExpr 0x1488085c0 <col:2> 'struct pppoe_net *' lvalue Var 0x1480270b8 'pn' 'struct pppoe_net *'
+    | `-ImplicitCastExpr 0x148808898 <col:7, col:32> 'struct pppoe_net *' <IntegralToPointer>
+    |   `-CallExpr 0x148808870 <col:7, col:32> 'int'
+    |     |-ImplicitCastExpr 0x148808858 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1488086c0 <col:7> 'int ()' Function 0x148808608 'pppoe_pernet' 'int ()'
+    |     `-CallExpr 0x148808818 <col:20, col:31> 'int'
+    |       |-ImplicitCastExpr 0x148808800 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1488087c0 <col:20> 'int ()' Function 0x148808708 'dev_net' 'int ()'
+    |       `-ImplicitCastExpr 0x148808840 <col:28> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1488087e0 <col:28> 'struct net_device *' lvalue ParmVar 0x148026628 'dev' 'struct net_device *'
+    |-BinaryOperator 0x148808cb0 <line:21:2, col:65> 'struct pppox_sock *' contains-errors '='
+    | |-DeclRefExpr 0x1488088d0 <col:2> 'struct pppox_sock *' lvalue Var 0x148026eb8 'po' 'struct pppox_sock *'
+    | `-CallExpr 0x148808c70 <col:7, col:65> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1488089d0 <col:7> 'int ()' Function 0x148808918 'get_item' 'int ()'
+    |   |-DeclRefExpr 0x1488089f0 <col:16> 'struct pppoe_net *' lvalue Var 0x1480270b8 'pn' 'struct pppoe_net *'
+    |   |-RecoveryExpr 0x148808a48 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x148808a10 <col:20> 'struct pppoe_hdr *' lvalue Var 0x148026cb8 'ph' 'struct pppoe_hdr *'
+    |   |-RecoveryExpr 0x148808be8 <col:29, col:43> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x148808ba8 <col:29, col:40> 'int'
+    |   |   |-ImplicitCastExpr 0x148808b90 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x148808b50 <col:29> 'int ()' Function 0x148808a98 'eth_hdr' 'int ()'
+    |   |   `-ImplicitCastExpr 0x148808bd0 <col:37> 'struct sk_buff *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x148808b70 <col:37> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x148808c48 <col:53, col:58> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148808c10 <col:53> 'struct net_device *' lvalue ParmVar 0x148026628 'dev' 'struct net_device *'
+    |-IfStmt 0x150122b88 <line:22:2, line:35:2>
+    | |-ImplicitCastExpr 0x148808cf0 <line:22:6> 'struct pppox_sock *' <LValueToRValue>
+    | | `-DeclRefExpr 0x148808cd0 <col:6> 'struct pppox_sock *' lvalue Var 0x148026eb8 'po' 'struct pppox_sock *'
+    | `-CompoundStmt 0x150122b50 <col:10, line:35:2>
+    |   |-DeclStmt 0x148809088 <line:23:3, col:33>
+    |   | |-RecordDecl 0x148808d08 <col:3, col:10> col:10 struct sock
+    |   | `-VarDecl 0x148808e78 <col:3, col:32> col:16 used sk 'struct sock *' cinit
+    |   |   `-ImplicitCastExpr 0x148809058 <col:21, col:32> 'struct sock *' <IntegralToPointer>
+    |   |     `-CallExpr 0x148809018 <col:21, col:32> 'int'
+    |   |       |-ImplicitCastExpr 0x148809000 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x148808fc0 <col:21> 'int ()' Function 0x148808f08 'sk_pppox' 'int ()'
+    |   |       `-ImplicitCastExpr 0x148809040 <col:30> 'struct pppox_sock *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x148808fe0 <col:30> 'struct pppox_sock *' lvalue Var 0x148026eb8 'po' 'struct pppox_sock *'
+    |   |-CallExpr 0x1488091d8 <line:25:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x1488091c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x148809180 <col:3> 'int ()' Function 0x1488090c8 'bh_lock_sock' 'int ()'
+    |   | `-ImplicitCastExpr 0x150122600 <col:16> 'struct sock *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1488091a0 <col:16> 'struct sock *' lvalue Var 0x148808e78 'sk' 'struct sock *'
+    |   |-IfStmt 0x150122840 <line:28:3, line:31:3>
+    |   | |-BinaryOperator 0x1501227b0 <line:28:7, col:33> 'int' '=='
+    |   | | |-CallExpr 0x150122750 <col:7, col:28> 'int'
+    |   | | | |-ImplicitCastExpr 0x150122738 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | | `-DeclRefExpr 0x1501226f8 <col:7> 'int ()' Function 0x150122640 'sock_owned_by_user' 'int ()'
+    |   | | | `-ImplicitCastExpr 0x150122778 <col:26> 'struct sock *' <LValueToRValue>
+    |   | | |   `-DeclRefExpr 0x150122718 <col:26> 'struct sock *' lvalue Var 0x148808e78 'sk' 'struct sock *'
+    |   | | `-IntegerLiteral 0x150122790 <col:33> 'int' 0
+    |   | `-CompoundStmt 0x150122830 <col:36, line:31:3>
+    |   |-CallExpr 0x150122998 <line:33:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x150122980 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x150122940 <col:3> 'int ()' Function 0x150122888 'bh_unlock_sock' 'int ()'
+    |   | `-ImplicitCastExpr 0x1501229c0 <col:18> 'struct sock *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x150122960 <col:18> 'struct sock *' lvalue Var 0x148808e78 'sk' 'struct sock *'
+    |   `-CallExpr 0x150122b10 <line:34:3, col:14> 'int'
+    |     |-ImplicitCastExpr 0x150122af8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x150122ab8 <col:3> 'int ()' Function 0x150122a00 'sock_put' 'int ()'
+    |     `-ImplicitCastExpr 0x150122b38 <col:12> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x150122ad8 <col:12> 'struct sock *' lvalue Var 0x148808e78 'sk' 'struct sock *'
+    |-LabelStmt 0x150122d20 <line:37:1, line:38:15> 'abort'
+    | `-CallExpr 0x150122ce0 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x150122cc8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x150122c88 <col:2> 'int ()' Function 0x150122bd0 'kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x150122d08 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x150122ca8 <col:12> 'struct sk_buff *' lvalue ParmVar 0x14800e248 'skb' 'struct sk_buff *'
+    `-LabelStmt 0x150122d48 <line:39:1, col:4> 'out'
+      `-NullStmt 0x150122d40 <col:4>

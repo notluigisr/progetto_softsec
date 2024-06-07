@@ -1,0 +1,41 @@
+`-FunctionDecl 0x131830b10  line:1:13 invalid bnprint 'void (int *, const char *, const int *)' static
+  |-ParmVarDecl 0x131830928 <col:21, col:27> col:27 invalid out 'int *'
+  |-ParmVarDecl 0x1318309a8 <col:32, col:44> col:44 used name 'const char *'
+  |-ParmVarDecl 0x131830a28 <col:50, col:64> col:64 invalid b 'const int *'
+  `-CompoundStmt 0x13184d838 <line:2:2, line:11:2>
+    |-DeclStmt 0x131830c80 <line:3:2, col:20>
+    | `-VarDecl 0x131830c18 <col:2, col:17> col:17 used tmp 'unsigned char *'
+    |-DeclStmt 0x131830d18 <line:4:2, col:9>
+    | `-VarDecl 0x131830cb0 <col:2, col:6> col:6 used len 'int'
+    |-BinaryOperator 0x131830f18 <line:5:2, col:22> 'int' contains-errors '='
+    | |-DeclRefExpr 0x131830d30 <col:2> 'int' lvalue Var 0x131830cb0 'len' 'int'
+    | `-CallExpr 0x131830ef0 <col:8, col:22> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131830eb0 <col:8> 'int ()' Function 0x131830df8 'BN_num_bytes' 'int ()'
+    |   `-RecoveryExpr 0x131830ed0 <col:21> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13184d1c0 <line:6:2, col:26> 'unsigned char *' '='
+    | |-DeclRefExpr 0x131830f38 <col:2> 'unsigned char *' lvalue Var 0x131830c18 'tmp' 'unsigned char *'
+    | `-ImplicitCastExpr 0x13184cd88 <col:8, col:26> 'unsigned char *' <IntegralToPointer>
+    |   `-CallExpr 0x13184cd48 <col:8, col:26> 'int'
+    |     |-ImplicitCastExpr 0x13184cd30 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13184ccb8 <col:8> 'int ()' Function 0x13184cc00 'OPENSSL_malloc' 'int ()'
+    |     `-ImplicitCastExpr 0x13184cd70 <col:23> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x13184ccd8 <col:23> 'int' lvalue Var 0x131830cb0 'len' 'int'
+    |-CallExpr 0x13184d320 <line:7:2, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13184d2c0 <col:2> 'int ()' Function 0x13184d208 'BN_bn2bin' 'int ()'
+    | |-RecoveryExpr 0x13184d2e0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x13184d300 <col:15> 'unsigned char *' lvalue Var 0x131830c18 'tmp' 'unsigned char *'
+    |-CallExpr 0x13184d4f0 <line:8:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13184d430 <col:2> 'int ()' Function 0x13184d378 'fprintf' 'int ()'
+    | |-RecoveryExpr 0x13184d450 <col:10> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x13184d4b0 <col:15> 'char[4]' lvalue "STR"
+    | `-DeclRefExpr 0x13184d4d0 <col:22> 'const char *' lvalue ParmVar 0x1318309a8 'name' 'const char *'
+    |-CallExpr 0x13184d688 <line:9:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13184d608 <col:2> 'int ()' Function 0x13184d550 'hexprint' 'int ()'
+    | |-RecoveryExpr 0x13184d628 <col:11> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x13184d648 <col:16> 'unsigned char *' lvalue Var 0x131830c18 'tmp' 'unsigned char *'
+    | `-DeclRefExpr 0x13184d668 <col:21> 'int' lvalue Var 0x131830cb0 'len' 'int'
+    `-CallExpr 0x13184d7f8 <line:10:2, col:18> 'int'
+      |-ImplicitCastExpr 0x13184d7e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13184d7a0 <col:2> 'int ()' Function 0x13184d6e8 'OPENSSL_free' 'int ()'
+      `-ImplicitCastExpr 0x13184d820 <col:15> 'unsigned char *' <LValueToRValue>
+        `-DeclRefExpr 0x13184d7c0 <col:15> 'unsigned char *' lvalue Var 0x131830c18 'tmp' 'unsigned char *'

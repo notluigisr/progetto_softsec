@@ -1,0 +1,33 @@
+`-FunctionDecl 0x15a940a38  line:1:1 ms_subtract_diff 'int (struct timeval *, int *)'
+  |-ParmVarDecl 0x15a928648 <col:18, col:34> col:34 used start 'struct timeval *'
+  |-ParmVarDecl 0x15a9286f8 <col:41, col:46> col:46 used ms 'int *'
+  `-CompoundStmt 0x15a941258 <line:2:1, line:8:1>
+    |-DeclStmt 0x15a940c98 <line:3:2, col:29>
+    | |-VarDecl 0x15a940b90 <col:2, col:17> col:17 invalid diff 'struct timeval'
+    | `-VarDecl 0x15a940c18 <col:2, col:23> col:23 invalid finish 'struct timeval'
+    |-CallExpr 0x15a940e38 <line:5:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a940de0 <col:2> 'int ()' Function 0x15a940d28 'monotime_tv' 'int ()'
+    | `-UnaryOperator 0x15a940e20 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x15a940e00 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a940ff0 <line:6:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a940f40 <col:2> 'int ()' Function 0x15a940e88 'timersub' 'int ()'
+    | |-UnaryOperator 0x15a940f80 <col:11, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15a940f60 <col:12> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x15a940f98 <col:20> 'struct timeval *' lvalue ParmVar 0x15a928648 'start' 'struct timeval *'
+    | `-UnaryOperator 0x15a940fd8 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x15a940fb8 <col:28> '<dependent type>' contains-errors lvalue
+    `-CompoundAssignOperator 0x15a941228 <line:7:2, col:52> 'int' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      |-UnaryOperator 0x15a941060 <col:2, col:3> 'int' lvalue prefix '*' cannot overflow
+      | `-ImplicitCastExpr 0x15a941048 <col:3> 'int *' <LValueToRValue>
+      |   `-DeclRefExpr 0x15a941028 <col:3> 'int *' lvalue ParmVar 0x15a9286f8 'ms' 'int *'
+      `-BinaryOperator 0x15a941208 <col:9, col:52> '<dependent type>' contains-errors '+'
+        |-ParenExpr 0x15a941120 <col:9, col:28> '<dependent type>' contains-errors
+        | `-BinaryOperator 0x15a941100 <col:10, col:24> '<dependent type>' contains-errors '*'
+        |   |-CXXDependentScopeMemberExpr 0x15a941098 <col:10, col:15> '<dependent type>' contains-errors lvalue .tv_sec
+        |   | `-RecoveryExpr 0x15a941078 <col:10> '<dependent type>' contains-errors lvalue
+        |   `-IntegerLiteral 0x15a9410e0 <col:24> 'int' 1000
+        `-ParenExpr 0x15a9411e8 <col:32, col:52> '<dependent type>' contains-errors
+          `-BinaryOperator 0x15a9411c8 <col:33, col:48> '<dependent type>' contains-errors '/'
+            |-CXXDependentScopeMemberExpr 0x15a941160 <col:33, col:38> '<dependent type>' contains-errors lvalue .tv_usec
+            | `-RecoveryExpr 0x15a941140 <col:33> '<dependent type>' contains-errors lvalue
+            `-IntegerLiteral 0x15a9411a8 <col:48> 'int' 1000

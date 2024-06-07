@@ -1,0 +1,21 @@
+`-FunctionDecl 0x14e141a88  line:1:13 invalid states_equal 'int (struct bpf_verifier_env *, struct bpf_verifier_state *, struct bpf_verifier_state *)' static
+  |-ParmVarDecl 0x14e128668 <col:26, col:51> col:51 env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x14e141858 <line:2:5, col:32> col:32 used old 'struct bpf_verifier_state *'
+  |-ParmVarDecl 0x14e141948 <line:3:5, col:32> col:32 used cur 'struct bpf_verifier_state *'
+  `-CompoundStmt 0x14e1426b8 <line:4:1, line:18:1>
+    |-DeclStmt 0x14e141bc8 <line:5:2, col:7>
+    | `-VarDecl 0x14e141b60 <col:2, col:6> col:6 used i 'int'
+    |-ForStmt 0x14e142638 <line:11:2, line:16:2>
+    | |-BinaryOperator 0x14e141d18 <line:11:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x14e141cd8 <col:7> 'int' lvalue Var 0x14e141b60 'i' 'int'
+    | | `-IntegerLiteral 0x14e141cf8 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14e141db8 <col:14, col:24> 'int' contains-errors '<='
+    | | |-DeclRefExpr 0x14e141d38 <col:14> 'int' lvalue Var 0x14e141b60 'i' 'int'
+    | | `-RecoveryExpr 0x14e141d90 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14e141d58 <col:19> 'struct bpf_verifier_state *' lvalue ParmVar 0x14e141858 'old' 'struct bpf_verifier_state *'
+    | |-UnaryOperator 0x14e141df8 <col:34, col:35> 'int' postfix '++'
+    | | `-DeclRefExpr 0x14e141dd8 <col:34> 'int' lvalue Var 0x14e141b60 'i' 'int'
+    | `-CompoundStmt 0x14e142628 <col:39, line:16:2>
+    `-ReturnStmt 0x14e1426a8 <line:17:2, col:9>
+      `-RecoveryExpr 0x14e142688 <col:9> '<dependent type>' contains-errors lvalue

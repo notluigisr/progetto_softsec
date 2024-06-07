@@ -1,0 +1,36 @@
+`-FunctionDecl 0x143928190  line:1:13 __xen_evtchn_do_upcall 'void (void)' static
+  `-CompoundStmt 0x143946538 <line:2:1, line:16:1>
+    |-DeclStmt 0x143928640 <line:3:2, col:57>
+    | |-RecordDecl 0x143928280 <col:2, col:9> col:9 struct vcpu_info
+    | `-VarDecl 0x1439283e8 <col:2, col:56> col:20 used vcpu_info 'struct vcpu_info *' cinit
+    |   `-CallExpr 0x143928600 <col:32, col:56> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x143928580 <col:32> 'int ()' Function 0x1439284c8 '__this_cpu_read' 'int ()'
+    |     `-RecoveryExpr 0x1439285e0 <col:48> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x143945a68 <line:4:2, col:30>
+    | `-VarDecl 0x143928670 <col:2, col:29> col:6 used cpu 'int' cinit
+    |   `-CallExpr 0x143945a48 <col:12, col:29> 'int'
+    |     `-ImplicitCastExpr 0x143945a30 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1439287b8 <col:12> 'int ()' Function 0x143928700 'smp_processor_id' 'int ()'
+    `-DoStmt 0x143946518 <line:6:2, line:15:43>
+      |-CompoundStmt 0x143946488 <line:6:5, line:15:2>
+      | |-BinaryOperator 0x143945f28 <line:7:3, col:38> '<dependent type>' contains-errors '='
+      | | |-RecoveryExpr 0x143945ee0 <col:3, col:14> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x143945a80 <col:3> 'struct vcpu_info *' contains-errors lvalue Var 0x1439283e8 'vcpu_info' 'struct vcpu_info *'
+      | | `-IntegerLiteral 0x143945f08 <col:38> 'int' 0
+      | |-CallExpr 0x143946080 <line:9:3, col:31> 'int'
+      | | |-ImplicitCastExpr 0x143946068 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | | | `-DeclRefExpr 0x143946028 <col:3> 'int ()' Function 0x143945f70 'xen_evtchn_handle_events' 'int ()'
+      | | `-ImplicitCastExpr 0x1439460a8 <col:28> 'int' <LValueToRValue>
+      | |   `-DeclRefExpr 0x143946048 <col:28> 'int' lvalue Var 0x143928670 'cpu' 'int'
+      | |-CallExpr 0x143946328 <line:11:3, col:26> 'int'
+      | | |-ImplicitCastExpr 0x143946310 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | | | `-DeclRefExpr 0x1439461a0 <col:3> 'int ()' Function 0x1439460e8 'BUG_ON' 'int ()'
+      | | `-UnaryOperator 0x1439462f8 <col:10, col:25> 'int' prefix '!' cannot overflow
+      | |   `-CallExpr 0x1439462d8 <col:11, col:25> 'int'
+      | |     `-ImplicitCastExpr 0x1439462c0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+      | |       `-DeclRefExpr 0x1439462a0 <col:11> 'int ()' Function 0x1439461e8 'irqs_disabled' 'int ()'
+      | `-CallExpr 0x143946468 <line:13:3, col:12> 'int'
+      |   `-ImplicitCastExpr 0x143946450 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      |     `-DeclRefExpr 0x143946430 <col:3> 'int ()' Function 0x143946378 'virt_rmb' 'int ()'
+      `-RecoveryExpr 0x1439464f0 <line:15:11, col:22> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x1439464b8 <col:11> 'struct vcpu_info *' contains-errors lvalue Var 0x1439283e8 'vcpu_info' 'struct vcpu_info *'

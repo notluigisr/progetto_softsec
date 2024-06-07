@@ -1,0 +1,2 @@
+    ListeningStartedDialer(Handler aHandler, AnyP::PortCfgPointer &aPortCfg, const Ipc::FdNoteId note, const Subscription::Pointer &aSub):
+        handler(aHandler), portCfg(aPortCfg), portTypeNote(note), sub(aSub) {}

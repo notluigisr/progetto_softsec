@@ -1,0 +1,1 @@
+    void incNumConnections() override { ++num_listener_connections_; }

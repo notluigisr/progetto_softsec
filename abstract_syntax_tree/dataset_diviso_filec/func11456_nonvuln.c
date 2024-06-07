@@ -1,0 +1,1 @@
+    Network::ConnectionBalancer& connectionBalancer() override { return connection_balancer_; }

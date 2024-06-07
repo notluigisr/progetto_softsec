@@ -1,0 +1,110 @@
+`-FunctionDecl 0x14a940de8  line:1:1 invalid virtio_pci_read 'int (struct vmctx *, int, struct pci_vdev *, int, int, int)'
+  |-ParmVarDecl 0x14a928648 <col:17, col:31> col:31 used ctx 'struct vmctx *'
+  |-ParmVarDecl 0x14a9286c8 <col:36, col:40> col:40 used vcpu 'int'
+  |-ParmVarDecl 0x14a940ac8 <col:46, col:63> col:63 used dev 'struct pci_vdev *'
+  |-ParmVarDecl 0x14a940b48 <line:2:3, col:7> col:7 used baridx 'int'
+  |-ParmVarDecl 0x14a940be0 <col:15, col:24> col:24 invalid offset 'int'
+  |-ParmVarDecl 0x14a940c60 <col:32, col:36> col:36 used size 'int'
+  `-CompoundStmt 0x14b008d88 <line:3:1, line:28:1>
+    |-DeclStmt 0x14a941108 <line:4:2, col:37>
+    | |-RecordDecl 0x14a940ec0 <col:2, col:9> col:9 struct virtio_base
+    | `-VarDecl 0x14a941028 <col:2, col:34> col:22 used base 'struct virtio_base *' cinit
+    |   `-RecoveryExpr 0x14a9410c8 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14a941090 <col:29> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |-IfStmt 0x14a941858 <line:6:2, line:11:2>
+    | |-BinaryOperator 0x14a9411d8 <line:6:6, col:20> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x14a941158 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14a941120 <col:6> 'struct virtio_base *' contains-errors lvalue Var 0x14a941028 'base' 'struct virtio_base *'
+    | | `-RecoveryExpr 0x14a9411b8 <col:20> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14a941840 <col:37, line:11:2>
+    |   `-IfStmt 0x14a941820 <line:7:3, line:10:3>
+    |     |-BinaryOperator 0x14a941640 <line:7:7, line:8:37> 'int' '||'
+    |     | |-BinaryOperator 0x14a941450 <line:7:7, col:39> 'int' '=='
+    |     | | |-ImplicitCastExpr 0x14a941438 <col:7> 'int' <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x14a9411f8 <col:7> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    |     | | `-CallExpr 0x14a9413f8 <col:17, col:39> 'int'
+    |     | |   |-ImplicitCastExpr 0x14a9413e0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |     | |   | `-DeclRefExpr 0x14a941370 <col:17> 'int ()' Function 0x14a9412b8 'pci_msix_table_bar' 'int ()'
+    |     | |   `-ImplicitCastExpr 0x14a941420 <col:36> 'struct pci_vdev *' <LValueToRValue>
+    |     | |     `-DeclRefExpr 0x14a941390 <col:36> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |     | `-BinaryOperator 0x14a941620 <line:8:7, col:37> 'int' '=='
+    |     |   |-ImplicitCastExpr 0x14a941608 <col:7> 'int' <LValueToRValue>
+    |     |   | `-DeclRefExpr 0x14a941470 <col:7> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    |     |   `-CallExpr 0x14a9415c8 <col:17, col:37> 'int'
+    |     |     |-ImplicitCastExpr 0x14a9415b0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x14a941570 <col:17> 'int ()' Function 0x14a9414b8 'pci_msix_pba_bar' 'int ()'
+    |     |     `-ImplicitCastExpr 0x14a9415f0 <col:34> 'struct pci_vdev *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x14a941590 <col:34> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |     `-CompoundStmt 0x14a941808 <col:40, line:10:3>
+    |       `-ReturnStmt 0x14a9417f8 <line:9:4, col:48>
+    |         `-CallExpr 0x14a9417c0 <col:11, col:48> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x14a941740 <col:11> 'int ()' Function 0x14a941688 'pci_emul_msix_tread' 'int ()'
+    |           |-DeclRefExpr 0x14a941760 <col:31> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |           |-RecoveryExpr 0x14a941780 <col:36> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x14a9417a0 <col:44> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+    |-IfStmt 0x14b008340 <line:13:2, line:15:16>
+    | |-BinaryOperator 0x14a9418f8 <line:13:6, col:22> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14a941878 <col:6> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    | | `-RecoveryExpr 0x14a9418d0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14a941898 <col:16> 'struct virtio_base *' contains-errors lvalue Var 0x14a941028 'base' 'struct virtio_base *'
+    | `-ReturnStmt 0x14b008330 <line:14:3, line:15:16>
+    |   `-CallExpr 0x14b0082e0 <line:14:10, line:15:16> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b008200 <line:14:10> 'int ()' Function 0x14a941940 'virtio_pci_legacy_read' 'int ()'
+    |     |-DeclRefExpr 0x14b008220 <col:33> 'struct vmctx *' lvalue ParmVar 0x14a928648 'ctx' 'struct vmctx *'
+    |     |-DeclRefExpr 0x14b008240 <col:38> 'int' lvalue ParmVar 0x14a9286c8 'vcpu' 'int'
+    |     |-DeclRefExpr 0x14b008260 <col:44> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |     |-DeclRefExpr 0x14b008280 <col:49> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    |     |-RecoveryExpr 0x14b0082a0 <line:15:4> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b0082c0 <col:12> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+    |-IfStmt 0x14b008620 <line:17:2, line:19:16>
+    | |-BinaryOperator 0x14b0083e0 <line:17:6, col:22> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14b008360 <col:6> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    | | `-RecoveryExpr 0x14b0083b8 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b008380 <col:16> 'struct virtio_base *' contains-errors lvalue Var 0x14a941028 'base' 'struct virtio_base *'
+    | `-ReturnStmt 0x14b008610 <line:18:3, line:19:16>
+    |   `-CallExpr 0x14b0085c0 <line:18:10, line:19:16> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b0084e0 <line:18:10> 'int ()' Function 0x14b008428 'virtio_pci_modern_mmio_read' 'int ()'
+    |     |-DeclRefExpr 0x14b008500 <col:38> 'struct vmctx *' lvalue ParmVar 0x14a928648 'ctx' 'struct vmctx *'
+    |     |-DeclRefExpr 0x14b008520 <col:43> 'int' lvalue ParmVar 0x14a9286c8 'vcpu' 'int'
+    |     |-DeclRefExpr 0x14b008540 <col:49> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |     |-DeclRefExpr 0x14b008560 <col:54> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    |     |-RecoveryExpr 0x14b008580 <line:19:4> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b0085a0 <col:12> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+    |-IfStmt 0x14b008900 <line:21:2, line:23:16>
+    | |-BinaryOperator 0x14b0086c0 <line:21:6, col:22> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14b008640 <col:6> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    | | `-RecoveryExpr 0x14b008698 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b008660 <col:16> 'struct virtio_base *' contains-errors lvalue Var 0x14a941028 'base' 'struct virtio_base *'
+    | `-ReturnStmt 0x14b0088f0 <line:22:3, line:23:16>
+    |   `-CallExpr 0x14b0088a0 <line:22:10, line:23:16> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b0087c0 <line:22:10> 'int ()' Function 0x14b008708 'virtio_pci_modern_pio_read' 'int ()'
+    |     |-DeclRefExpr 0x14b0087e0 <col:37> 'struct vmctx *' lvalue ParmVar 0x14a928648 'ctx' 'struct vmctx *'
+    |     |-DeclRefExpr 0x14b008800 <col:42> 'int' lvalue ParmVar 0x14a9286c8 'vcpu' 'int'
+    |     |-DeclRefExpr 0x14b008820 <col:48> 'struct pci_vdev *' lvalue ParmVar 0x14a940ac8 'dev' 'struct pci_vdev *'
+    |     |-DeclRefExpr 0x14b008840 <col:53> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    |     |-RecoveryExpr 0x14b008860 <line:23:4> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b008880 <col:12> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+    |-CallExpr 0x14b008b48 <line:25:2, line:26:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008a00 <line:25:2> 'int ()' Function 0x14b008948 'pr_err' 'int ()'
+    | |-StringLiteral 0x14b008a60 <col:9> 'char[4]' lvalue "STR"
+    | |-CXXDependentScopeMemberExpr 0x14b008ae0 <line:26:3, col:15> '<dependent type>' contains-errors lvalue ->name
+    | | `-RecoveryExpr 0x14b008ab8 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b008a80 <col:3> 'struct virtio_base *' contains-errors lvalue Var 0x14a941028 'base' 'struct virtio_base *'
+    | `-DeclRefExpr 0x14b008b28 <col:21> 'int' lvalue ParmVar 0x14a940b48 'baridx' 'int'
+    `-ReturnStmt 0x14b008d78 <line:27:2, col:49>
+      `-ImplicitCastExpr 0x14b008d60 <col:9, col:49> 'int' <IntegralCast>
+        `-ConditionalOperator 0x14b008d30 <col:9, col:49> 'unsigned int'
+          |-BinaryOperator 0x14b008bd8 <col:9, col:17> 'int' '=='
+          | |-ImplicitCastExpr 0x14b008bc0 <col:9> 'int' <LValueToRValue>
+          | | `-DeclRefExpr 0x14b008b80 <col:9> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+          | `-IntegerLiteral 0x14b008ba0 <col:17> 'int' 1
+          |-ImplicitCastExpr 0x14b008d18 <col:21> 'unsigned int' <IntegralCast>
+          | `-IntegerLiteral 0x14b008bf8 <col:21> 'int' 255
+          `-ConditionalOperator 0x14b008ce8 <col:28, col:49> 'unsigned int'
+            |-BinaryOperator 0x14b008c70 <col:28, col:36> 'int' '=='
+            | |-ImplicitCastExpr 0x14b008c58 <col:28> 'int' <LValueToRValue>
+            | | `-DeclRefExpr 0x14b008c18 <col:28> 'int' lvalue ParmVar 0x14a940c60 'size' 'int'
+            | `-IntegerLiteral 0x14b008c38 <col:36> 'int' 2
+            |-ImplicitCastExpr 0x14b008cd0 <col:40> 'unsigned int' <IntegralCast>
+            | `-IntegerLiteral 0x14b008c90 <col:40> 'int' 65535
+            `-IntegerLiteral 0x14b008cb0 <col:49> 'unsigned int' 4294967295

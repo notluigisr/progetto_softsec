@@ -1,0 +1,40 @@
+`-FunctionDecl 0x143026f28  line:1:12 fsck_msg_type 'int (enum fsck_msg_id, struct fsck_options *)' static
+  |-ParmVarDecl 0x1430101f8 <col:26, col:43> col:43 invalid msg_id 'enum fsck_msg_id'
+  |-ParmVarDecl 0x143026e00 <line:2:2, col:23> col:23 used options 'struct fsck_options *'
+  `-CompoundStmt 0x1430277e0 <line:3:1, line:17:1>
+    |-DeclStmt 0x1430270a8 <line:4:2, col:14>
+    | `-VarDecl 0x143027040 <col:2, col:6> col:6 used msg_type 'int'
+    |-CallExpr 0x143027370 <line:6:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1430271f0 <col:2> 'int ()' Function 0x143027138 'assert' 'int ()'
+    | `-BinaryOperator 0x143027350 <col:9, col:33> 'int' contains-errors '&&'
+    |   |-BinaryOperator 0x143027250 <col:9, col:19> 'int' contains-errors '>='
+    |   | |-RecoveryExpr 0x143027210 <col:9> '<dependent type>' contains-errors lvalue
+    |   | `-IntegerLiteral 0x143027230 <col:19> 'int' 0
+    |   `-BinaryOperator 0x143027330 <col:24, col:33> 'int' contains-errors '<'
+    |     |-RecoveryExpr 0x143027270 <col:24> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x143027310 <col:33> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x143027768 <line:8:2, line:14:2> has_else
+    | |-RecoveryExpr 0x1430273d0 <line:8:6, col:15> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x143027398 <col:6> 'struct fsck_options *' lvalue ParmVar 0x143026e00 'options' 'struct fsck_options *'
+    | |-BinaryOperator 0x1430274e8 <line:9:3, col:38> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x1430273f8 <col:3> 'int' lvalue Var 0x143027040 'msg_type' 'int'
+    | | `-ArraySubscriptExpr 0x1430274c8 <col:14, col:38> '<dependent type>' contains-errors lvalue
+    | |   |-ImplicitCastExpr 0x143027498 <col:14, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | `-RecoveryExpr 0x143027450 <col:14, col:23> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x143027418 <col:14> 'struct fsck_options *' lvalue ParmVar 0x143026e00 'options' 'struct fsck_options *'
+    | |   `-ImplicitCastExpr 0x1430274b0 <col:32> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x143027478 <col:32> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x143027750 <line:10:7, line:14:2>
+    |   `-IfStmt 0x143027730 <line:12:3, line:13:15>
+    |     |-BinaryOperator 0x143027678 <line:12:7, col:38> 'int' contains-errors '&&'
+    |     | |-RecoveryExpr 0x143027598 <col:7, col:16> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x143027560 <col:7> 'struct fsck_options *' lvalue ParmVar 0x143026e00 'options' 'struct fsck_options *'
+    |     | `-BinaryOperator 0x143027658 <col:26, col:38> 'int' contains-errors '=='
+    |     |   |-DeclRefExpr 0x1430275c0 <col:26> 'int' lvalue Var 0x143027040 'msg_type' 'int'
+    |     |   `-RecoveryExpr 0x143027638 <col:38> '<dependent type>' contains-errors lvalue
+    |     `-BinaryOperator 0x143027710 <line:13:4, col:15> 'int' contains-errors '='
+    |       |-DeclRefExpr 0x143027698 <col:4> 'int' lvalue Var 0x143027040 'msg_type' 'int'
+    |       `-RecoveryExpr 0x1430276f0 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1430277d0 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x1430277b8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x143027798 <col:9> 'int' lvalue Var 0x143027040 'msg_type' 'int'

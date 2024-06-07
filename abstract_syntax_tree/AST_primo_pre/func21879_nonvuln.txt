@@ -1,0 +1,24 @@
+`-FunctionDecl 0x122827438  line:1:12 invalid veth_set_rx_csum 'int (struct net_device *, int)' static
+  |-ParmVarDecl 0x12280e248 <col:29, col:48> col:48 used dev 'struct net_device *'
+  |-ParmVarDecl 0x12280e2e0 <col:53, col:57> col:57 invalid data 'int'
+  `-CompoundStmt 0x122827b30 <line:2:1, line:8:1>
+    |-DeclStmt 0x1228276d8 <line:3:2, col:24>
+    | |-RecordDecl 0x1228274f0 <col:2, col:9> col:9 struct veth_priv
+    | `-VarDecl 0x122827658 <col:2, col:20> col:20 used priv 'struct veth_priv *'
+    |-BinaryOperator 0x122827950 <line:5:2, col:24> 'struct veth_priv *' '='
+    | |-DeclRefExpr 0x1228276f0 <col:2> 'struct veth_priv *' lvalue Var 0x122827658 'priv' 'struct veth_priv *'
+    | `-ImplicitCastExpr 0x122827938 <col:9, col:24> 'struct veth_priv *' <IntegralToPointer>
+    |   `-CallExpr 0x1228278f8 <col:9, col:24> 'int'
+    |     |-ImplicitCastExpr 0x1228278e0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x122827870 <col:9> 'int ()' Function 0x1228277b8 'netdev_priv' 'int ()'
+    |     `-ImplicitCastExpr 0x122827920 <col:21> 'struct net_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x122827890 <col:21> 'struct net_device *' lvalue ParmVar 0x12280e248 'dev' 'struct net_device *'
+    |-BinaryOperator 0x122827ae0 <line:6:2, col:50> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1228279a8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x122827970 <col:2> 'struct veth_priv *' lvalue Var 0x122827658 'priv' 'struct veth_priv *'
+    | `-ConditionalOperator 0x122827ab0 <col:20, col:50> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x1228279d0 <col:20> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x122827a70 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x122827a90 <col:50> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x122827b20 <line:7:2, col:9>
+      `-IntegerLiteral 0x122827b00 <col:9> 'int' 0

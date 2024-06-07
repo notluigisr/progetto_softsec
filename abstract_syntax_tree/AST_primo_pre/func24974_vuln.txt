@@ -1,0 +1,63 @@
+`-FunctionDecl 0x140026848  line:1:1 vhost_user_set_vring_base 'int (struct virtio_net **, struct VhostUserMsg *, int)'
+  |-ParmVarDecl 0x14000e2a8 <col:27, col:47> col:47 used pdev 'struct virtio_net **'
+  |-ParmVarDecl 0x140026688 <line:2:4, col:25> col:25 used msg 'struct VhostUserMsg *'
+  |-ParmVarDecl 0x140026708 <line:3:4, col:8> col:8 main_fd 'int'
+  `-CompoundStmt 0x14100b208 <line:4:1, line:22:1>
+    |-DeclStmt 0x140026aa8 <line:5:2, col:32>
+    | `-VarDecl 0x1400269d8 <col:2, col:28> col:21 used dev 'struct virtio_net *' cinit
+    |   `-ImplicitCastExpr 0x140026a90 <col:27, col:28> 'struct virtio_net *' <LValueToRValue>
+    |     `-UnaryOperator 0x140026a78 <col:27, col:28> 'struct virtio_net *' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x140026a60 <col:28> 'struct virtio_net **' <LValueToRValue>
+    |         `-DeclRefExpr 0x140026a40 <col:28> 'struct virtio_net **' lvalue ParmVar 0x14000e2a8 'pdev' 'struct virtio_net **'
+    |-DeclStmt 0x140026e48 <line:6:2, col:71>
+    | |-RecordDecl 0x140026ac0 <col:2, col:9> col:9 struct vhost_virtqueue
+    | `-VarDecl 0x140026c28 <col:2, col:70> col:26 used vq 'struct vhost_virtqueue *' cinit
+    |   `-ArraySubscriptExpr 0x140026e10 <col:31, col:70> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x140026de0 <col:31, col:36> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x140026cc8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x140026c90 <col:31> 'struct virtio_net *' lvalue Var 0x1400269d8 'dev' 'struct virtio_net *'
+    |     `-ImplicitCastExpr 0x140026df8 <col:46, col:65> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-CXXDependentScopeMemberExpr 0x140026d98 <col:46, col:65> '<dependent type>' contains-errors lvalue .index
+    |         `-CXXDependentScopeMemberExpr 0x140026d50 <col:46, col:59> '<dependent type>' contains-errors lvalue .state
+    |           `-RecoveryExpr 0x140026d28 <col:46, col:51> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x140026cf0 <col:46> 'struct VhostUserMsg *' lvalue ParmVar 0x140026688 'msg' 'struct VhostUserMsg *'
+    |-IfStmt 0x14100b190 <line:9:2, line:19:2> has_else
+    | |-CallExpr 0x140027018 <line:9:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x140027000 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x140026f90 <col:6> 'int ()' Function 0x140026ed8 'vq_is_packed' 'int ()'
+    | | `-ImplicitCastExpr 0x140027040 <col:19> 'struct virtio_net *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x140026fb0 <col:19> 'struct virtio_net *' lvalue Var 0x1400269d8 'dev' 'struct virtio_net *'
+    | |-CompoundStmt 0x140027468 <col:25, line:16:2>
+    | | |-BinaryOperator 0x140027170 <line:11:3, col:30> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x140027090 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x140027058 <col:3> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    | | | `-BinaryOperator 0x140027150 <col:24, col:30> '<dependent type>' contains-errors '&'
+    | | |   |-RecoveryExpr 0x140027130 <col:24> '<dependent type>' contains-errors lvalue
+    | | |   `-IntegerLiteral 0x1400270d0 <col:30> 'int' 32767
+    | | |-BinaryOperator 0x140027368 <line:14:3, col:27> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x1400272e0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x1400272a8 <col:3> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    | | | `-RecoveryExpr 0x140027340 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x140027308 <col:23> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    | | `-BinaryOperator 0x140027448 <line:15:3, col:31> '<dependent type>' contains-errors '='
+    | |   |-RecoveryExpr 0x1400273c0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x140027388 <col:3> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    | |   `-RecoveryExpr 0x140027420 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1400273e8 <col:27> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    | `-CompoundStmt 0x14100b170 <line:16:9, line:19:2>
+    |   |-BinaryOperator 0x1400275e0 <line:17:3, col:42> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x1400274c8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x140027490 <col:3> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    |   | `-CXXDependentScopeMemberExpr 0x140027598 <col:23, col:42> '<dependent type>' contains-errors lvalue .num
+    |   |   `-CXXDependentScopeMemberExpr 0x140027550 <col:23, col:36> '<dependent type>' contains-errors lvalue .state
+    |   |     `-RecoveryExpr 0x140027528 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x1400274f0 <col:23> 'struct VhostUserMsg *' lvalue ParmVar 0x140026688 'msg' 'struct VhostUserMsg *'
+    |   `-BinaryOperator 0x14100b150 <line:18:3, col:43> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x14100b038 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x14100b000 <col:3> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x140026c28 'vq' 'struct vhost_virtqueue *'
+    |     `-CXXDependentScopeMemberExpr 0x14100b108 <col:24, col:43> '<dependent type>' contains-errors lvalue .num
+    |       `-CXXDependentScopeMemberExpr 0x14100b0c0 <col:24, col:37> '<dependent type>' contains-errors lvalue .state
+    |         `-RecoveryExpr 0x14100b098 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x14100b060 <col:24> 'struct VhostUserMsg *' lvalue ParmVar 0x140026688 'msg' 'struct VhostUserMsg *'
+    `-ReturnStmt 0x14100b1f8 <line:21:2, col:9>
+      `-RecoveryExpr 0x14100b1d8 <col:9> '<dependent type>' contains-errors lvalue

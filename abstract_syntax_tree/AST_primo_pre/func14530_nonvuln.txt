@@ -1,0 +1,87 @@
+`-FunctionDecl 0x151940a00  line:1:13 verify_event 'void (struct ring_buffer_per_cpu *, void *)' static
+  |-ParmVarDecl 0x151928648 <col:26, col:54> col:54 used cpu_buffer 'struct ring_buffer_per_cpu *'
+  |-ParmVarDecl 0x1519286c8 <line:2:5, col:11> col:11 used event 'void *'
+  `-CompoundStmt 0x152008bd0 <line:3:1, line:26:1>
+    |-DeclStmt 0x151940d48 <line:4:2, col:52>
+    | |-RecordDecl 0x151940b00 <col:2, col:9> col:9 struct buffer_page
+    | `-VarDecl 0x151940c68 <col:2, col:41> col:22 used page 'struct buffer_page *' cinit
+    |   `-RecoveryExpr 0x151940d08 <col:29, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x151940cd0 <col:29> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x151928648 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x151941028 <line:5:2, col:66>
+    | `-VarDecl 0x151940de8 <col:2, col:65> col:22 used tail_page 'struct buffer_page *' cinit
+    |   `-CallExpr 0x151941000 <col:34, col:65> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x151940f80 <col:34> 'int ()' Function 0x151940ec8 'READ_ONCE' 'int ()'
+    |     `-RecoveryExpr 0x151940fd8 <col:44, col:56> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x151940fa0 <col:44> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x151928648 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x151941228 <line:6:2, col:24>
+    | |-RecordDecl 0x151941040 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x1519411a8 <col:2, col:20> col:20 used next 'struct list_head *'
+    |-DeclStmt 0x151941358 <line:7:2, col:20>
+    | |-VarDecl 0x151941258 <col:2, col:7> col:7 used commit 'long'
+    | `-VarDecl 0x1519412d8 <col:2, col:15> col:15 used write 'long'
+    |-DeclStmt 0x151941468 <line:8:2, col:43>
+    | `-VarDecl 0x151941388 <col:2, col:38> col:16 used addr 'unsigned long' cinit
+    |   `-CStyleCastExpr 0x151941440 <col:23, col:38> 'unsigned long' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x151941428 <col:38> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x1519413f0 <col:38> 'void *' lvalue ParmVar 0x1519286c8 'event' 'void *'
+    |-DeclStmt 0x151941520 <line:10:2, col:14>
+    | `-VarDecl 0x151941498 <col:2, col:13> col:6 used stop 'int' cinit
+    |   `-IntegerLiteral 0x151941500 <col:13> 'int' 0
+    |-DoStmt 0x152008b30 <line:13:2, line:24:16>
+    | |-CompoundStmt 0x152008a68 <line:13:5, line:24:2>
+    | | |-BinaryOperator 0x152008200 <line:16:3, col:42> 'long' contains-errors '='
+    | | | |-DeclRefExpr 0x1519417e8 <col:3> 'long' lvalue Var 0x151941258 'commit' 'long'
+    | | | `-CallExpr 0x1519419c8 <col:12, col:42> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1519418e8 <col:12> 'int ()' Function 0x151941830 'local_read' 'int ()'
+    | | |   `-UnaryOperator 0x1519419b0 <col:23, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |     `-CXXDependentScopeMemberExpr 0x151941968 <col:24, col:36> '<dependent type>' contains-errors lvalue ->commit
+    | | |       `-RecoveryExpr 0x151941940 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | | |         `-DeclRefExpr 0x151941908 <col:24> 'struct buffer_page *' contains-errors lvalue Var 0x151940c68 'page' 'struct buffer_page *'
+    | | |-BinaryOperator 0x152008300 <line:17:3, col:34> 'long' contains-errors '='
+    | | | |-DeclRefExpr 0x152008220 <col:3> 'long' lvalue Var 0x1519412d8 'write' 'long'
+    | | | `-CallExpr 0x1520082d8 <col:11, col:34> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x152008240 <col:11> 'int ()' Function 0x151941830 'local_read' 'int ()'
+    | | |   `-UnaryOperator 0x1520082c0 <col:22, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |     `-RecoveryExpr 0x152008298 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x152008260 <col:23> 'struct buffer_page *' contains-errors lvalue Var 0x151940c68 'page' 'struct buffer_page *'
+    | | |-IfStmt 0x1520086e0 <line:18:3, line:20:4>
+    | | | |-BinaryOperator 0x1520086b0 <line:18:7, line:19:52> 'int' contains-errors '&&'
+    | | | | |-BinaryOperator 0x1520084c8 <line:18:7, col:54> 'int' contains-errors '>='
+    | | | | | |-ImplicitCastExpr 0x1520084b0 <col:7> 'unsigned long' <LValueToRValue>
+    | | | | | | `-DeclRefExpr 0x152008320 <col:7> 'unsigned long' lvalue Var 0x151941388 'addr' 'unsigned long'
+    | | | | | `-CStyleCastExpr 0x152008488 <col:15, col:54> 'unsigned long' contains-errors <Dependent>
+    | | | | |   `-UnaryOperator 0x152008458 <col:30, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | |     `-ArraySubscriptExpr 0x152008438 <col:31, col:54> '<dependent type>' contains-errors lvalue
+    | | | | |       |-ImplicitCastExpr 0x152008408 <col:31, col:43> '<dependent type>' contains-errors <LValueToRValue>
+    | | | | |       | `-CXXDependentScopeMemberExpr 0x1520083a0 <col:31, col:43> '<dependent type>' contains-errors lvalue ->data
+    | | | | |       |   `-RecoveryExpr 0x152008378 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    | | | | |       |     `-DeclRefExpr 0x152008340 <col:31> 'struct buffer_page *' contains-errors lvalue Var 0x151940c68 'page' 'struct buffer_page *'
+    | | | | |       `-ImplicitCastExpr 0x152008420 <col:48> 'long' <LValueToRValue>
+    | | | | |         `-DeclRefExpr 0x1520083e8 <col:48> 'long' lvalue Var 0x151941258 'commit' 'long'
+    | | | | `-BinaryOperator 0x152008690 <line:19:7, col:52> 'int' contains-errors '<'
+    | | | |   |-ImplicitCastExpr 0x152008678 <col:7> 'unsigned long' <LValueToRValue>
+    | | | |   | `-DeclRefExpr 0x1520084e8 <col:7> 'unsigned long' lvalue Var 0x151941388 'addr' 'unsigned long'
+    | | | |   `-CStyleCastExpr 0x152008650 <col:14, col:52> 'unsigned long' contains-errors <Dependent>
+    | | | |     `-UnaryOperator 0x152008620 <col:29, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | |       `-ArraySubscriptExpr 0x152008600 <col:30, col:52> '<dependent type>' contains-errors lvalue
+    | | | |         |-ImplicitCastExpr 0x1520085d0 <col:30, col:42> '<dependent type>' contains-errors <LValueToRValue>
+    | | | |         | `-CXXDependentScopeMemberExpr 0x152008568 <col:30, col:42> '<dependent type>' contains-errors lvalue ->data
+    | | | |         |   `-RecoveryExpr 0x152008540 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | | | |         |     `-DeclRefExpr 0x152008508 <col:30> 'struct buffer_page *' contains-errors lvalue Var 0x151940c68 'page' 'struct buffer_page *'
+    | | | |         `-ImplicitCastExpr 0x1520085e8 <col:47> 'long' <LValueToRValue>
+    | | | |           `-DeclRefExpr 0x1520085b0 <col:47> 'long' lvalue Var 0x1519412d8 'write' 'long'
+    | | | `-ReturnStmt 0x1520086d0 <line:20:4>
+    | | `-BinaryOperator 0x1520088f0 <line:22:3, col:38> 'struct list_head *' contains-errors '='
+    | |   |-DeclRefExpr 0x152008700 <col:3> 'struct list_head *' lvalue Var 0x1519411a8 'next' 'struct list_head *'
+    | |   `-CallExpr 0x1520088c8 <col:10, col:38> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x152008800 <col:10> 'int ()' Function 0x152008748 'rb_list_head' 'int ()'
+    | |     `-CXXDependentScopeMemberExpr 0x152008880 <col:23, col:34> '<dependent type>' contains-errors lvalue .next
+    | |       `-RecoveryExpr 0x152008858 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x152008820 <col:23> 'struct buffer_page *' contains-errors lvalue Var 0x151940c68 'page' 'struct buffer_page *'
+    | `-UnaryOperator 0x152008b18 <line:24:11, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x152008b00 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x152008ae0 <col:12> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x152008ba8 <line:25:2, col:16> 'int'
+      |-ImplicitCastExpr 0x152008b90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x152008b50 <col:2> 'int ()' Function 0x1519415f0 'WARN_ON_ONCE' 'int ()'
+      `-IntegerLiteral 0x152008b70 <col:15> 'int' 1

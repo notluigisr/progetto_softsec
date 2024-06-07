@@ -1,0 +1,29 @@
+`-FunctionDecl 0x13d00e350  line:1:6 rcuwait_wake_up 'void (struct rcuwait *)'
+  |-ParmVarDecl 0x13d00e248 <col:22, col:38> col:38 used w 'struct rcuwait *'
+  `-CompoundStmt 0x13d027010 <line:2:1, line:15:1>
+    |-DeclStmt 0x13d026838 <line:3:2, col:26>
+    | |-RecordDecl 0x13d026648 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13d0267b8 <col:2, col:22> col:22 used task 'struct task_struct *'
+    |-CallExpr 0x13d0269e8 <line:5:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x13d0269d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13d026980 <col:2> 'int ()' Function 0x13d0268c8 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x13d026b20 <line:8:2, col:10> 'int'
+    | `-ImplicitCastExpr 0x13d026b08 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13d026ae8 <col:2> 'int ()' Function 0x13d026a30 'smp_rmb' 'int ()'
+    |-BinaryOperator 0x13d026ce8 <line:11:2, col:32> 'struct task_struct *' contains-errors '='
+    | |-DeclRefExpr 0x13d026b40 <col:2> 'struct task_struct *' lvalue Var 0x13d0267b8 'task' 'struct task_struct *'
+    | `-CallExpr 0x13d026cc0 <col:9, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13d026c40 <col:9> 'int ()' Function 0x13d026b88 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x13d026c98 <col:25, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d026c60 <col:25> 'struct rcuwait *' lvalue ParmVar 0x13d00e248 'w' 'struct rcuwait *'
+    |-IfStmt 0x13d026eb8 <line:12:2, line:13:23>
+    | |-ImplicitCastExpr 0x13d026d28 <line:12:6> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13d026d08 <col:6> 'struct task_struct *' lvalue Var 0x13d0267b8 'task' 'struct task_struct *'
+    | `-CallExpr 0x13d026e78 <line:13:3, col:23> 'int'
+    |   |-ImplicitCastExpr 0x13d026e60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13d026e20 <col:3> 'int ()' Function 0x13d026d68 'wake_up_process' 'int ()'
+    |   `-ImplicitCastExpr 0x13d026ea0 <col:19> 'struct task_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13d026e40 <col:19> 'struct task_struct *' lvalue Var 0x13d0267b8 'task' 'struct task_struct *'
+    `-CallExpr 0x13d026ff0 <line:14:2, col:18> 'int'
+      `-ImplicitCastExpr 0x13d026fd8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x13d026fb8 <col:2> 'int ()' Function 0x13d026f00 'rcu_read_unlock' 'int ()'

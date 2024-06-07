@@ -1,0 +1,42 @@
+`-FunctionDecl 0x15480de00  line:1:7 invalid verifyDirectoryPermissions 'void (const int)'
+  |-ParmVarDecl 0x15480dcf0 <col:34, <invalid sloc>> col:47 invalid 'const int'
+  `-CompoundStmt 0x154828958 <col:54, line:16:2>
+    |-CallExpr 0x15480e078 <line:2:3, col:15> 'int'
+    | `-ImplicitCastExpr 0x15480e060 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15480e010 <col:3> 'int ()' Function 0x15480df58 'TRACE_POINT' 'int ()'
+    |-DeclStmt 0x154827e88 <line:3:3, col:18>
+    | |-RecordDecl 0x15480e098 <col:3, col:10> col:10 struct stat
+    | `-VarDecl 0x15480e198 <col:3, col:15> col:15 invalid buf 'struct stat'
+    `-IfStmt 0x154828928 <line:5:3, line:15:3> has_else
+      |-BinaryOperator 0x154828198 <line:5:7, col:36> 'int' contains-errors '=='
+      | |-CallExpr 0x154828168 <col:7, col:30> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x154827f80 <col:7> 'int ()' Function 0x154827ec8 'stat' 'int ()'
+      | | |-CallExpr 0x154828148 <col:12, col:23> '<dependent type>' contains-errors
+      | | | `-CXXDependentScopeMemberExpr 0x154828100 <col:12, col:17> '<dependent type>' contains-errors lvalue .c_str
+      | | |   `-RecoveryExpr 0x1548280e0 <col:12> '<dependent type>' contains-errors lvalue
+      | | `-UnaryOperator 0x154828040 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | |   `-RecoveryExpr 0x154828020 <col:27> '<dependent type>' contains-errors lvalue
+      | `-UnaryOperator 0x1548280a8 <col:35, col:36> 'int' prefix '-'
+      |   `-IntegerLiteral 0x154828088 <col:36> 'int' 1
+      |-CompoundStmt 0x154828288 <col:39, line:8:3>
+      | `-DeclStmt 0x154828270 <line:6:4, col:17>
+      |   `-VarDecl 0x1548281d0 <col:4, col:12> col:8 e 'int' cinit
+      |     `-RecoveryExpr 0x154828250 <col:12> '<dependent type>' contains-errors lvalue
+      `-IfStmt 0x1548288f8 <line:8:10, line:15:3> has_else
+        |-RecoveryExpr 0x1548284f8 <line:8:14, col:62> '_Bool' contains-errors
+        |-CompoundStmt 0x154828518 <col:65, line:11:3>
+        `-IfStmt 0x1548288d8 <col:10, line:15:3>
+          |-BinaryOperator 0x1548288a8 <line:11:14, col:63> 'int' contains-errors '||'
+          | |-BinaryOperator 0x1548286c8 <col:14, col:36> 'int' contains-errors '!='
+          | | |-CXXDependentScopeMemberExpr 0x154828548 <col:14, col:18> '<dependent type>' contains-errors lvalue .st_uid
+          | | | `-RecoveryExpr 0x154828528 <col:14> '<dependent type>' contains-errors lvalue
+          | | `-CallExpr 0x1548286a8 <col:28, col:36> 'int'
+          | |   `-ImplicitCastExpr 0x154828690 <col:28> 'int (*)()' <FunctionToPointerDecay>
+          | |     `-DeclRefExpr 0x154828670 <col:28> 'int ()' Function 0x1548285b8 'geteuid' 'int ()'
+          | `-BinaryOperator 0x154828888 <col:41, col:63> 'int' contains-errors '!='
+          |   |-CXXDependentScopeMemberExpr 0x154828708 <col:41, col:45> '<dependent type>' contains-errors lvalue .st_gid
+          |   | `-RecoveryExpr 0x1548286e8 <col:41> '<dependent type>' contains-errors lvalue
+          |   `-CallExpr 0x154828868 <col:55, col:63> 'int'
+          |     `-ImplicitCastExpr 0x154828850 <col:55> 'int (*)()' <FunctionToPointerDecay>
+          |       `-DeclRefExpr 0x154828830 <col:55> 'int ()' Function 0x154828778 'getegid' 'int ()'
+          `-CompoundStmt 0x1548288c8 <col:66, line:15:3>

@@ -1,0 +1,31 @@
+`-FunctionDecl 0x138144e40  line:1:13 sev_unpin_memory 'void (struct kvm *, struct page **, unsigned long)' static
+  |-ParmVarDecl 0x138128648 <col:30, col:42> col:42 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x138144c88 <col:47, col:61> col:61 used pages 'struct page **'
+  |-ParmVarDecl 0x138144d08 <line:2:9, col:23> col:23 used npages 'unsigned long'
+  `-CompoundStmt 0x138145768 <line:3:1, line:9:1>
+    |-DeclStmt 0x138145370 <line:4:2, col:55>
+    | |-RecordDecl 0x138144f48 <col:2, col:9> col:9 struct kvm_sev_info
+    | `-VarDecl 0x1381450b8 <col:2, col:47> col:23 used sev 'struct kvm_sev_info *' cinit
+    |   `-UnaryOperator 0x138145340 <col:29, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x138145318 <col:30, col:47> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x1381452d8 <col:30, col:44> 'int'
+    |         |-ImplicitCastExpr 0x1381452c0 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x138145250 <col:30> 'int ()' Function 0x138145198 'to_kvm_svm' 'int ()'
+    |         `-ImplicitCastExpr 0x138145300 <col:41> 'struct kvm *' <LValueToRValue>
+    |           `-DeclRefExpr 0x138145270 <col:41> 'struct kvm *' lvalue ParmVar 0x138128648 'kvm' 'struct kvm *'
+    |-CallExpr 0x1381454e0 <line:6:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x1381454c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x138145468 <col:2> 'int ()' Function 0x1381453b0 'unpin_user_pages' 'int ()'
+    | |-ImplicitCastExpr 0x138145510 <col:19> 'struct page **' <LValueToRValue>
+    | | `-DeclRefExpr 0x138145488 <col:19> 'struct page **' lvalue ParmVar 0x138144c88 'pages' 'struct page **'
+    | `-ImplicitCastExpr 0x138145528 <col:26> 'unsigned long' <LValueToRValue>
+    |   `-DeclRefExpr 0x1381454a8 <col:26> 'unsigned long' lvalue ParmVar 0x138144d08 'npages' 'unsigned long'
+    |-CallExpr 0x138145678 <line:7:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x138145660 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x138145620 <col:2> 'int ()' Function 0x138145568 'kvfree' 'int ()'
+    | `-ImplicitCastExpr 0x1381456a0 <col:9> 'struct page **' <LValueToRValue>
+    |   `-DeclRefExpr 0x138145640 <col:9> 'struct page **' lvalue ParmVar 0x138144c88 'pages' 'struct page **'
+    `-CompoundAssignOperator 0x138145738 <line:8:2, col:23> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      |-RecoveryExpr 0x1381456f0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x1381456b8 <col:2> 'struct kvm_sev_info *' contains-errors lvalue Var 0x1381450b8 'sev' 'struct kvm_sev_info *'
+      `-DeclRefExpr 0x138145718 <col:23> 'unsigned long' lvalue ParmVar 0x138144d08 'npages' 'unsigned long'

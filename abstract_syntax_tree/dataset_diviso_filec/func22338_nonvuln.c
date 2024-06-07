@@ -1,0 +1,1 @@
+  inline ha_rows num_deleted() const { return deleted; }

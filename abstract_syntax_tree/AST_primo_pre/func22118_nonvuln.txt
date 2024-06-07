@@ -1,0 +1,39 @@
+`-FunctionDecl 0x124008378  line:1:13 invalid gfar_new_page 'int (struct gfar_priv_rx_q *, struct gfar_rx_buff *)' static
+  |-ParmVarDecl 0x123928668 <col:27, col:50> col:50 used rxq 'struct gfar_priv_rx_q *'
+  |-ParmVarDecl 0x124008258 <col:55, col:76> col:76 used rxb 'struct gfar_rx_buff *'
+  `-CompoundStmt 0x12400f280 <line:2:1, line:22:1>
+    |-DeclStmt 0x124008618 <line:3:2, col:19>
+    | |-RecordDecl 0x124008430 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x124008598 <col:2, col:15> col:15 used page 'struct page *'
+    |-BinaryOperator 0x124008850 <line:6:2, col:24> 'struct page *' '='
+    | |-DeclRefExpr 0x124008630 <col:2> 'struct page *' lvalue Var 0x124008598 'page' 'struct page *'
+    | `-ImplicitCastExpr 0x124008838 <col:9, col:24> 'struct page *' <IntegralToPointer>
+    |   `-CallExpr 0x124008818 <col:9, col:24> 'int'
+    |     `-ImplicitCastExpr 0x124008800 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1240087b0 <col:9> 'int ()' Function 0x1240086f8 'dev_alloc_page' 'int ()'
+    |-IfStmt 0x124009040 <line:11:2, line:15:2>
+    | |-CallExpr 0x124008e70 <line:11:6, col:48> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x124008c30 <col:6> 'int ()' Function 0x124008898 'unlikely' 'int ()'
+    | | `-CallExpr 0x124008e40 <col:15, col:47> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x124008d30 <col:15> 'int ()' Function 0x124008c78 'dma_mapping_error' 'int ()'
+    | |   |-RecoveryExpr 0x124008d88 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x124008d50 <col:33> 'struct gfar_priv_rx_q *' lvalue ParmVar 0x123928668 'rxq' 'struct gfar_priv_rx_q *'
+    | |   `-RecoveryExpr 0x124008e20 <col:43> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x124009028 <col:51, line:15:2>
+    |   `-CallExpr 0x124008fd0 <line:12:3, col:19> 'int'
+    |     |-ImplicitCastExpr 0x124008fb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x124008f78 <col:3> 'int ()' Function 0x124008ec0 '__free_page' 'int ()'
+    |     `-ImplicitCastExpr 0x124008ff8 <col:15> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x124008f98 <col:15> 'struct page *' lvalue Var 0x124008598 'page' 'struct page *'
+    |-BinaryOperator 0x124009118 <line:17:2, col:13> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x124009098 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x124009060 <col:2> 'struct gfar_rx_buff *' lvalue ParmVar 0x124008258 'rxb' 'struct gfar_rx_buff *'
+    | `-RecoveryExpr 0x1240090f8 <col:13> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1240091b8 <line:18:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x124009170 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x124009138 <col:2> 'struct gfar_rx_buff *' lvalue ParmVar 0x124008258 'rxb' 'struct gfar_rx_buff *'
+    | `-DeclRefExpr 0x124009198 <col:14> 'struct page *' lvalue Var 0x124008598 'page' 'struct page *'
+    `-BinaryOperator 0x12400f260 <line:19:2, col:21> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x12400f218 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x1240091d8 <col:2> 'struct gfar_rx_buff *' lvalue ParmVar 0x124008258 'rxb' 'struct gfar_rx_buff *'
+      `-IntegerLiteral 0x12400f240 <col:21> 'int' 0

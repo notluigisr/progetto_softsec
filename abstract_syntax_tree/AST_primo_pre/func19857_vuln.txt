@@ -1,0 +1,53 @@
+`-FunctionDecl 0x15d0082d8  line:1:16 invalid _hostsock_recvmsg 'int (int *, struct oe_msghdr *, int)' static
+  |-ParmVarDecl 0x15b928128 <line:2:5, col:14> col:14 referenced invalid sock_ 'int *'
+  |-ParmVarDecl 0x15b928718 <line:3:5, col:23> col:23 used msg 'struct oe_msghdr *'
+  |-ParmVarDecl 0x15b928798 <line:4:5, col:9> col:9 used flags 'int'
+  `-CompoundStmt 0x15b943228 <line:5:1, line:53:1>
+    |-BinaryOperator 0x15d008658 <line:7:5, col:36> '<dependent type>' contains-errors '='
+    | |-BinaryOperator 0x15d008638 <col:5, col:13> '<dependent type>' contains-errors '*'
+    | | |-RecoveryExpr 0x15d0083b8 <col:5> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15d008398 <col:5> 'int *' lvalue ParmVar 0x15b928128 'sock_' 'int *'
+    | | `-RecoveryExpr 0x15d008618 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x15d0085b0 <col:20, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15d008570 <col:20> 'int ()' Function 0x15d0084b8 '_cast_sock' 'int ()'
+    |   `-RecoveryExpr 0x15d008590 <col:31> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15d008750 <line:9:5, col:21>
+    | `-VarDecl 0x15d0086b0 <col:5, col:17> col:11 used buf 'void *' cinit
+    |   `-RecoveryExpr 0x15d008730 <col:17> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x15d008848 <line:10:5, col:23> '<dependent type>' contains-errors lvalue
+    | |-UnaryExprOrTypeTraitExpr 0x15d008828 <col:5, col:12> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x15d008808 <col:12> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x15d0087a0 <col:23> 'int' 0
+    |-IfStmt 0x15d008da8 <line:13:5, line:14:33>
+    | |-BinaryOperator 0x15d008c00 <line:13:9, col:59> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x15d008b70 <col:9, col:19> 'int' contains-errors '||'
+    | | | |-UnaryOperator 0x15d008b28 <col:9, col:10> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | | `-ImplicitCastExpr 0x15d008b10 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | | |   `-RecoveryExpr 0x15d008af0 <col:10> '<dependent type>' contains-errors lvalue
+    | | | `-UnaryOperator 0x15d008b58 <col:18, col:19> 'int' prefix '!' cannot overflow
+    | | |   `-ImplicitCastExpr 0x15d008b40 <col:19> 'struct oe_msghdr *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x15d0088c0 <col:19> 'struct oe_msghdr *' lvalue ParmVar 0x15b928718 'msg' 'struct oe_msghdr *'
+    | | `-ParenExpr 0x15d008be0 <col:26, col:59> 'int' contains-errors
+    | |   `-BinaryOperator 0x15d008bc0 <col:27, col:52> 'int' contains-errors '&&'
+    | |     |-RecoveryExpr 0x15d008968 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x15d008930 <col:27> 'struct oe_msghdr *' lvalue ParmVar 0x15b928718 'msg' 'struct oe_msghdr *'
+    | |     `-UnaryOperator 0x15d008ba8 <col:46, col:52> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |       `-ImplicitCastExpr 0x15d008b90 <col:47, col:52> '<dependent type>' contains-errors <LValueToRValue>
+    | |         `-RecoveryExpr 0x15d0089c8 <col:47, col:52> '<dependent type>' contains-errors lvalue
+    | |           `-DeclRefExpr 0x15d008990 <col:47> 'struct oe_msghdr *' lvalue ParmVar 0x15b928718 'msg' 'struct oe_msghdr *'
+    | `-CallExpr 0x15d008d80 <line:14:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15d008d00 <col:9> 'int ()' Function 0x15d008c48 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x15d008d60 <col:24> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x15b942d18 <line:21:5, line:41:5>
+    | `-IfStmt 0x15b942c80 <line:22:9, line:37:9>
+    |   |-RecoveryExpr 0x15b942c30 <line:22:13, line:34:27> '_Bool' contains-errors
+    |   `-CompoundStmt 0x15b942c70 <line:35:9, line:37:9>
+    `-LabelStmt 0x15b943208 <line:47:1, line:50:20> 'done'
+      `-IfStmt 0x15b943198 <line:49:5, line:50:20>
+        |-ImplicitCastExpr 0x15b942fd0 <line:49:9> 'void *' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x15b942fb0 <col:9> 'void *' contains-errors lvalue Var 0x15d0086b0 'buf' 'void *'
+        `-CallExpr 0x15b943158 <line:50:9, col:20> 'int' contains-errors
+          |-ImplicitCastExpr 0x15b943140 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x15b9430c8 <col:9> 'int ()' Function 0x15b943010 'oe_free' 'int ()'
+          `-ImplicitCastExpr 0x15b943180 <col:17> 'void *' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x15b9430e8 <col:17> 'void *' contains-errors lvalue Var 0x15d0086b0 'buf' 'void *'

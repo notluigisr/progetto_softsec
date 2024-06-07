@@ -1,0 +1,41 @@
+`-FunctionDecl 0x13390b6c8  line:1:1 invalid logical_read_xlog_page 'int (int *, int, int, int, char *, int *)'
+  |-ParmVarDecl 0x13390b328 <col:24, col:41> col:41 invalid state 'int *'
+  |-ParmVarDecl 0x13390b3a8 <col:48, col:59> col:59 invalid targetPagePtr 'int'
+  |-ParmVarDecl 0x13390b428 <col:74, col:78> col:78 used reqLen 'int'
+  |-ParmVarDecl 0x13390b4a8 <line:2:5, col:16> col:16 invalid targetRecPtr 'int'
+  |-ParmVarDecl 0x13390b528 <col:30, col:36> col:36 used cur_page 'char *'
+  |-ParmVarDecl 0x13390b5a8 <col:46, col:58> col:58 invalid pageTLI 'int *'
+  `-CompoundStmt 0x133925098 <line:3:1, line:24:1>
+    |-DeclStmt 0x13390b820 <line:5:2, col:13>
+    | `-VarDecl 0x13390b7b8 <col:2, col:8> col:8 used count 'int'
+    |-IfStmt 0x133924e38 <line:11:2, line:18:22> has_else
+    | |-BinaryOperator 0x133924b38 <line:11:6, col:37> 'int' contains-errors '<='
+    | | |-BinaryOperator 0x133924af8 <col:6, col:22> '<dependent type>' contains-errors '+'
+    | | | |-RecoveryExpr 0x133924a48 <col:6> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x133924ad8 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x133924b18 <col:37> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x133924bd0 <line:12:3, col:11> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x133924b58 <col:3> 'int' lvalue Var 0x13390b7b8 'count' 'int'
+    | | `-RecoveryExpr 0x133924bb0 <col:11> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x133924e08 <line:14:7, line:18:22> has_else
+    |   |-BinaryOperator 0x133924ca8 <line:14:11, col:36> 'int' contains-errors '>'
+    |   | |-BinaryOperator 0x133924c30 <col:11, col:27> '<dependent type>' contains-errors '+'
+    |   | | |-RecoveryExpr 0x133924bf0 <col:11> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x133924c10 <col:27> 'int' lvalue ParmVar 0x13390b428 'reqLen' 'int'
+    |   | `-RecoveryExpr 0x133924c88 <col:36> '<dependent type>' contains-errors lvalue
+    |   |-ReturnStmt 0x133924d00 <line:15:3, col:11>
+    |   | `-UnaryOperator 0x133924ce8 <col:10, col:11> 'int' prefix '-'
+    |   |   `-IntegerLiteral 0x133924cc8 <col:11> 'int' 1
+    |   `-BinaryOperator 0x133924de8 <line:18:3, col:22> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x133924d10 <col:3> 'int' lvalue Var 0x13390b7b8 'count' 'int'
+    |     `-BinaryOperator 0x133924dc8 <col:11, col:22> '<dependent type>' contains-errors '-'
+    |       |-RecoveryExpr 0x133924da8 <col:11> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x133924d48 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x133925018 <line:21:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x133924f48 <col:2> 'int ()' Function 0x133924e90 'XLogRead' 'int ()'
+    | |-DeclRefExpr 0x133924f68 <col:11> 'char *' lvalue ParmVar 0x13390b528 'cur_page' 'char *'
+    | |-RecoveryExpr 0x133924f88 <col:21> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x133924ff8 <col:36> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x133925088 <line:23:2, col:9>
+      `-ImplicitCastExpr 0x133925070 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x133925050 <col:9> 'int' lvalue Var 0x13390b7b8 'count' 'int'

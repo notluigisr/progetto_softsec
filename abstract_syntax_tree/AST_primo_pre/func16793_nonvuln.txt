@@ -1,0 +1,33 @@
+`-FunctionDecl 0x13480e350  line:1:13 scrub_missing_raid56_end_io 'void (struct bio *)' static
+  |-ParmVarDecl 0x13480e248 <col:41, col:53> col:53 used bio 'struct bio *'
+  `-CompoundStmt 0x13482b270 <line:2:1, line:12:1>
+    |-DeclStmt 0x13482aa98 <line:3:2, col:46>
+    | |-RecordDecl 0x13482a848 <col:2, col:9> col:9 struct scrub_block
+    | `-VarDecl 0x13482a9b8 <col:2, col:36> col:22 used sblock 'struct scrub_block *' cinit
+    |   `-RecoveryExpr 0x13482aa58 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13482aa20 <col:31> 'struct bio *' lvalue ParmVar 0x13480e248 'bio' 'struct bio *'
+    |-DeclStmt 0x13482ad40 <line:4:2, col:55>
+    | |-RecordDecl 0x13482aab0 <col:2, col:9> col:9 struct btrfs_fs_info
+    | `-VarDecl 0x13482ac18 <col:2, col:48> col:24 used fs_info 'struct btrfs_fs_info *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13482ace0 <col:34, col:48> '<dependent type>' contains-errors lvalue ->fs_info
+    |     `-RecoveryExpr 0x13482acb8 <col:34, col:42> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13482ac80 <col:34> 'struct scrub_block *' contains-errors lvalue Var 0x13482a9b8 'sblock' 'struct scrub_block *'
+    |-IfStmt 0x13482ae58 <line:6:2, line:7:30>
+    | |-RecoveryExpr 0x13482ad90 <line:6:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13482ad58 <col:6> 'struct bio *' lvalue ParmVar 0x13480e248 'bio' 'struct bio *'
+    | `-BinaryOperator 0x13482ae38 <line:7:3, col:30> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x13482adf0 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x13482adb8 <col:3> 'struct scrub_block *' contains-errors lvalue Var 0x13482a9b8 'sblock' 'struct scrub_block *'
+    |   `-IntegerLiteral 0x13482ae18 <col:30> 'int' 0
+    |-CallExpr 0x13482b028 <line:9:2, col:13> 'int'
+    | |-ImplicitCastExpr 0x13482b010 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13482afa0 <col:2> 'int ()' Function 0x13482aee8 'bio_put' 'int ()'
+    | `-ImplicitCastExpr 0x13482b050 <col:10> 'struct bio *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13482afc0 <col:10> 'struct bio *' lvalue ParmVar 0x13480e248 'bio' 'struct bio *'
+    `-CallExpr 0x13482b240 <line:11:2, col:56> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13482b148 <col:2> 'int ()' Function 0x13482b090 'btrfs_queue_work' 'int ()'
+      |-RecoveryExpr 0x13482b1a0 <col:19, col:28> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x13482b168 <col:19> 'struct btrfs_fs_info *' contains-errors lvalue Var 0x13482ac18 'fs_info' 'struct btrfs_fs_info *'
+      `-UnaryOperator 0x13482b228 <col:43, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13482b200 <col:44, col:52> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13482b1c8 <col:44> 'struct scrub_block *' contains-errors lvalue Var 0x13482a9b8 'sblock' 'struct scrub_block *'

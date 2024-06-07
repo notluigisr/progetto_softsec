@@ -1,0 +1,25 @@
+`-FunctionDecl 0x1380274d8  line:1:5 invalid kill_proc_info 'int (int, struct siginfo *, int)'
+  |-ParmVarDecl 0x13800dcd8 <col:20, col:24> col:24 used sig 'int'
+  |-ParmVarDecl 0x13800e2c8 <col:29, col:45> col:45 used info 'struct siginfo *'
+  |-ParmVarDecl 0x13800e360 <col:51, col:57> col:57 invalid pid 'int'
+  `-CompoundStmt 0x138027c98 <line:2:1, line:8:1>
+    |-DeclStmt 0x138027618 <line:3:2, col:11>
+    | `-VarDecl 0x1380275b0 <col:2, col:6> col:6 used error 'int'
+    |-CallExpr 0x1380277f8 <line:4:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1380277e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x138027790 <col:2> 'int ()' Function 0x1380276d8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x138027af8 <line:5:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x138027818 <col:2> 'int' lvalue Var 0x1380275b0 'error' 'int'
+    | `-CallExpr 0x138027ac0 <col:10, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138027918 <col:10> 'int ()' Function 0x138027860 'kill_pid_info' 'int ()'
+    |   |-DeclRefExpr 0x138027938 <col:24> 'int' lvalue ParmVar 0x13800dcd8 'sig' 'int'
+    |   |-DeclRefExpr 0x138027958 <col:29> 'struct siginfo *' lvalue ParmVar 0x13800e2c8 'info' 'struct siginfo *'
+    |   `-CallExpr 0x138027a98 <col:35, col:48> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x138027a58 <col:35> 'int ()' Function 0x1380279a0 'find_vpid' 'int ()'
+    |     `-RecoveryExpr 0x138027a78 <col:45> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x138027c30 <line:6:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x138027c18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x138027bf8 <col:2> 'int ()' Function 0x138027b40 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x138027c88 <line:7:2, col:9>
+      `-ImplicitCastExpr 0x138027c70 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x138027c50 <col:9> 'int' lvalue Var 0x1380275b0 'error' 'int'

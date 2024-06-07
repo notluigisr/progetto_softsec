@@ -1,0 +1,28 @@
+`-FunctionDecl 0x13e808200  line:1:20 switch_fpu_prepare 'void (struct fpu *, int)' static inline
+  |-ParmVarDecl 0x13e128648 <col:39, col:51> col:51 used old_fpu 'struct fpu *'
+  |-ParmVarDecl 0x13e1286c8 <col:60, col:64> col:64 used cpu 'int'
+  `-CompoundStmt 0x13e808a50 <line:2:1, line:12:1>
+    `-IfStmt 0x13e808a30 <line:3:2, line:11:2>
+      |-RecoveryExpr 0x13e808528 <line:3:6, col:70> '_Bool' contains-errors
+      `-CompoundStmt 0x13e808a10 <col:73, line:11:2>
+        |-IfStmt 0x13e808868 <line:4:3, line:7:24> has_else
+        | |-UnaryOperator 0x13e8086f8 <line:4:7, col:38> 'int' prefix '!' cannot overflow
+        | | `-CallExpr 0x13e8086b8 <col:8, col:38> 'int'
+        | |   |-ImplicitCastExpr 0x13e8086a0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+        | |   | `-DeclRefExpr 0x13e808628 <col:8> 'int ()' Function 0x13e808570 'copy_fpregs_to_fpstate' 'int ()'
+        | |   `-ImplicitCastExpr 0x13e8086e0 <col:31> 'struct fpu *' <LValueToRValue>
+        | |     `-DeclRefExpr 0x13e808648 <col:31> 'struct fpu *' lvalue ParmVar 0x13e128648 'old_fpu' 'struct fpu *'
+        | |-BinaryOperator 0x13e8087a8 <line:5:4, col:25> '<dependent type>' contains-errors '='
+        | | |-RecoveryExpr 0x13e808748 <col:4, col:13> '<dependent type>' contains-errors lvalue
+        | | | `-DeclRefExpr 0x13e808710 <col:4> 'struct fpu *' lvalue ParmVar 0x13e128648 'old_fpu' 'struct fpu *'
+        | | `-UnaryOperator 0x13e808790 <col:24, col:25> 'int' prefix '-'
+        | |   `-IntegerLiteral 0x13e808770 <col:25> 'int' 1
+        | `-BinaryOperator 0x13e808848 <line:7:4, col:24> '<dependent type>' contains-errors '='
+        |   |-RecoveryExpr 0x13e808800 <col:4, col:13> '<dependent type>' contains-errors lvalue
+        |   | `-DeclRefExpr 0x13e8087c8 <col:4> 'struct fpu *' lvalue ParmVar 0x13e128648 'old_fpu' 'struct fpu *'
+        |   `-DeclRefExpr 0x13e808828 <col:24> 'int' lvalue ParmVar 0x13e1286c8 'cpu' 'int'
+        `-CallExpr 0x13e8089d0 <line:10:3, col:41> 'int'
+          |-ImplicitCastExpr 0x13e8089b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13e808978 <col:3> 'int ()' Function 0x13e8088c0 'trace_x86_fpu_regs_deactivated' 'int ()'
+          `-ImplicitCastExpr 0x13e8089f8 <col:34> 'struct fpu *' <LValueToRValue>
+            `-DeclRefExpr 0x13e808998 <col:34> 'struct fpu *' lvalue ParmVar 0x13e128648 'old_fpu' 'struct fpu *'

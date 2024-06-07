@@ -1,0 +1,82 @@
+`-FunctionDecl 0x14e141048  line:1:1 acl_fetch_hdr_val 'int (struct proxy *, struct session *, void *, char *, struct acl_expr *, struct acl_test *)'
+  |-ParmVarDecl 0x14e128648 <col:19, col:33> col:33 px 'struct proxy *'
+  |-ParmVarDecl 0x14e140a28 <col:37, col:53> col:53 l4 'struct session *'
+  |-ParmVarDecl 0x14e140aa8 <col:57, col:63> col:63 used l7 'void *'
+  |-ParmVarDecl 0x14e140b28 <col:67, col:73> col:73 used sol 'char *'
+  |-ParmVarDecl 0x14e140cf8 <line:2:19, col:36> col:36 used expr 'struct acl_expr *'
+  |-ParmVarDecl 0x14e140ec8 <col:42, col:59> col:59 used test 'struct acl_test *'
+  `-CompoundStmt 0x14e143648 <line:3:1, line:25:1>
+    |-DeclStmt 0x14e1413a8 <line:4:2, col:27>
+    | |-RecordDecl 0x14e141168 <col:2, col:9> col:9 struct http_txn
+    | `-VarDecl 0x14e1412d8 <col:2, col:25> col:19 used txn 'struct http_txn *' cinit
+    |   `-ImplicitCastExpr 0x14e141378 <col:25> 'struct http_txn *' <BitCast>
+    |     `-ImplicitCastExpr 0x14e141360 <col:25> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14e141340 <col:25> 'void *' lvalue ParmVar 0x14e140aa8 'l7' 'void *'
+    |-DeclStmt 0x14e141620 <line:5:2, col:37>
+    | |-RecordDecl 0x14e1413c0 <col:2, col:9> col:9 struct hdr_idx
+    | `-VarDecl 0x14e141528 <col:2, col:30> col:18 used idx 'struct hdr_idx *' cinit
+    |   `-UnaryOperator 0x14e1415f0 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14e1415c8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14e141590 <col:25> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+    |-DeclStmt 0x14e141988 <line:6:2, col:53>
+    | |-RecordDecl 0x14e141638 <col:2, col:9> col:9 struct hdr_ctx
+    | `-VarDecl 0x14e1417a8 <col:2, col:52> col:18 used ctx 'struct hdr_ctx *' cinit
+    |   `-CStyleCastExpr 0x14e141948 <col:24, col:52> 'struct hdr_ctx *' contains-errors <Dependent>
+    |     `-CXXDependentScopeMemberExpr 0x14e141870 <col:42, col:52> '<dependent type>' contains-errors lvalue .a
+    |       `-RecoveryExpr 0x14e141848 <col:42, col:48> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14e141810 <col:42> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'
+    |-IfStmt 0x14e142a30 <line:8:2, line:9:10>
+    | |-UnaryOperator 0x14e1419d8 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14e1419c0 <col:7> 'struct http_txn *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14e1419a0 <col:7> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+    | `-ReturnStmt 0x14e142a20 <line:9:3, col:10>
+    |   `-IntegerLiteral 0x14e142a00 <col:10> 'int' 0
+    |-IfStmt 0x14e142bc0 <line:11:2, line:13:14>
+    | |-RecoveryExpr 0x14e142b00 <line:11:6, col:43> '_Bool' contains-errors
+    | `-BinaryOperator 0x14e142ba0 <line:13:3, col:14> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x14e142b58 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14e142b20 <col:3> 'struct hdr_ctx *' contains-errors lvalue Var 0x14e1417a8 'ctx' 'struct hdr_ctx *'
+    |   `-IntegerLiteral 0x14e142b80 <col:14> 'int' 0
+    |-IfStmt 0x14e143440 <line:15:2, line:20:2>
+    | |-CallExpr 0x14e142e78 <line:15:6, col:67> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14e142cf0 <col:6> 'int ()' Function 0x14e142c38 'http_find_header2' 'int ()'
+    | | |-CXXDependentScopeMemberExpr 0x14e142d70 <col:24, col:34> '<dependent type>' contains-errors lvalue .str
+    | | | `-RecoveryExpr 0x14e142d48 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14e142d10 <col:24> 'struct acl_expr *' lvalue ParmVar 0x14e140cf8 'expr' 'struct acl_expr *'
+    | | |-RecoveryExpr 0x14e142df0 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14e142db8 <col:39> 'struct acl_expr *' lvalue ParmVar 0x14e140cf8 'expr' 'struct acl_expr *'
+    | | |-DeclRefExpr 0x14e142e18 <col:54> 'char *' lvalue ParmVar 0x14e140b28 'sol' 'char *'
+    | | |-DeclRefExpr 0x14e142e38 <col:59> 'struct hdr_idx *' contains-errors lvalue Var 0x14e141528 'idx' 'struct hdr_idx *'
+    | | `-DeclRefExpr 0x14e142e58 <col:64> 'struct hdr_ctx *' contains-errors lvalue Var 0x14e1417a8 'ctx' 'struct hdr_ctx *'
+    | `-CompoundStmt 0x14e143410 <col:70, line:20:2>
+    |   |-CompoundAssignOperator 0x14e142f88 <line:16:3, col:18> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x14e142ef8 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14e142ec0 <col:3> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'
+    |   | `-RecoveryExpr 0x14e142f68 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-CompoundAssignOperator 0x14e143080 <line:17:3, col:18> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x14e142ff0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14e142fb8 <col:3> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'
+    |   | `-RecoveryExpr 0x14e143060 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14e1433c0 <line:18:3, col:60> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14e1430e8 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14e1430b0 <col:3> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'
+    |   | `-CallExpr 0x14e143390 <col:13, col:60> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14e1431f0 <col:13> 'int ()' Function 0x14e143138 'strl2ic' 'int ()'
+    |   |   |-BinaryOperator 0x14e143310 <col:21, col:46> '<dependent type>' contains-errors '+'
+    |   |   | |-CStyleCastExpr 0x14e143288 <col:21, col:34> 'char *' contains-errors <Dependent>
+    |   |   | | `-RecoveryExpr 0x14e143248 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |   |   | |   `-DeclRefExpr 0x14e143210 <col:29> 'struct hdr_ctx *' contains-errors lvalue Var 0x14e1417a8 'ctx' 'struct hdr_ctx *'
+    |   |   | `-RecoveryExpr 0x14e1432e8 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x14e1432b0 <col:41> 'struct hdr_ctx *' contains-errors lvalue Var 0x14e1417a8 'ctx' 'struct hdr_ctx *'
+    |   |   `-RecoveryExpr 0x14e143368 <col:51, col:56> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14e143330 <col:51> 'struct hdr_ctx *' contains-errors lvalue Var 0x14e1417a8 'ctx' 'struct hdr_ctx *'
+    |   `-ReturnStmt 0x14e143400 <line:19:3, col:10>
+    |     `-IntegerLiteral 0x14e1433e0 <col:10> 'int' 1
+    |-CompoundAssignOperator 0x14e143588 <line:22:2, col:18> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x14e143498 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e143460 <col:2> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'
+    | `-UnaryOperator 0x14e143570 <col:17, col:18> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   `-ImplicitCastExpr 0x14e143558 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x14e143538 <col:18> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14e143638 <line:24:2, col:9>
+      `-IntegerLiteral 0x14e143618 <col:9> 'int' 0

@@ -1,0 +1,29 @@
+`-FunctionDecl 0x14b1281d8  line:1:12 selinux_tun_dev_alloc_security 'int (void **)' static
+  |-ParmVarDecl 0x14b128108 <col:43, col:50> col:50 used security 'void **'
+  `-CompoundStmt 0x14b141ed8 <line:2:1, line:12:1>
+    |-DeclStmt 0x14b1284b8 <line:3:2, col:36>
+    | |-RecordDecl 0x14b1282d0 <col:2, col:9> col:9 struct tun_security_struct
+    | `-VarDecl 0x14b128438 <col:2, col:30> col:30 used tunsec 'struct tun_security_struct *'
+    |-IfStmt 0x14b141be0 <line:6:2, line:7:11>
+    | |-UnaryOperator 0x14b141b20 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b141b08 <col:7> 'struct tun_security_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b141ae8 <col:7> 'struct tun_security_struct *' lvalue Var 0x14b128438 'tunsec' 'struct tun_security_struct *'
+    | `-ReturnStmt 0x14b141bd0 <line:7:3, col:11>
+    |   `-UnaryOperator 0x14b141bb8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14b141ba0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14b141b80 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14b141dc8 <line:8:2, col:28> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14b141c38 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14b141c00 <col:2> 'struct tun_security_struct *' lvalue Var 0x14b128438 'tunsec' 'struct tun_security_struct *'
+    | `-CallExpr 0x14b141da8 <col:16, col:28> 'int'
+    |   `-ImplicitCastExpr 0x14b141d90 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x14b141d40 <col:16> 'int ()' Function 0x14b141c88 'current_sid' 'int ()'
+    |-BinaryOperator 0x14b141e88 <line:10:2, col:14> 'void *' '='
+    | |-UnaryOperator 0x14b141e20 <col:2, col:3> 'void *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x14b141e08 <col:3> 'void **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b141de8 <col:3> 'void **' lvalue ParmVar 0x14b128108 'security' 'void **'
+    | `-ImplicitCastExpr 0x14b141e70 <col:14> 'void *' <BitCast>
+    |   `-ImplicitCastExpr 0x14b141e58 <col:14> 'struct tun_security_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14b141e38 <col:14> 'struct tun_security_struct *' lvalue Var 0x14b128438 'tunsec' 'struct tun_security_struct *'
+    `-ReturnStmt 0x14b141ec8 <line:11:2, col:9>
+      `-IntegerLiteral 0x14b141ea8 <col:9> 'int' 0

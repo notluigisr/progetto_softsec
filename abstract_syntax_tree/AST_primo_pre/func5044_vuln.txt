@@ -1,0 +1,38 @@
+`-FunctionDecl 0x142808368  line:1:14 invalid set_iovec_field 'char *(struct iovec *, int *, const char *, const char *)' static
+  |-ParmVarDecl 0x142128648 <col:30, col:44> col:44 used iovec 'struct iovec *'
+  |-ParmVarDecl 0x142128718 <col:51, col:59> col:59 invalid n_iovec 'int *'
+  |-ParmVarDecl 0x142128798 <col:68, col:80> col:80 used field 'const char *'
+  |-ParmVarDecl 0x142808218 <col:87, col:99> col:99 used value 'const char *'
+  `-CompoundStmt 0x142808a98 <col:106, line:8:1>
+    |-DeclStmt 0x1428084b0 <line:2:9, col:16>
+    | `-VarDecl 0x142808448 <col:9, col:15> col:15 used x 'char *'
+    |-BinaryOperator 0x142808760 <line:4:9, col:35> 'char *' '='
+    | |-DeclRefExpr 0x1428084c8 <col:9> 'char *' lvalue Var 0x142808448 'x' 'char *'
+    | `-ImplicitCastExpr 0x142808748 <col:13, col:35> 'char *' <IntegralToPointer>
+    |   `-CallExpr 0x1428086e8 <col:13, col:35> 'int'
+    |     |-ImplicitCastExpr 0x1428086d0 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142808640 <col:13> 'int ()' Function 0x142808588 'strappend' 'int ()'
+    |     |-ImplicitCastExpr 0x142808718 <col:23> 'const char *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x142808660 <col:23> 'const char *' lvalue ParmVar 0x142128798 'field' 'const char *'
+    |     `-ImplicitCastExpr 0x142808730 <col:30> 'const char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142808680 <col:30> 'const char *' lvalue ParmVar 0x142808218 'value' 'const char *'
+    |-IfStmt 0x142808a30 <line:5:9, line:6:58>
+    | |-ImplicitCastExpr 0x1428087a0 <line:5:13> 'char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x142808780 <col:13> 'char *' lvalue Var 0x142808448 'x' 'char *'
+    | `-BinaryOperator 0x142808a10 <line:6:17, col:58> '<dependent type>' contains-errors '='
+    |   |-ArraySubscriptExpr 0x142808878 <col:17, col:35> '<dependent type>' contains-errors lvalue
+    |   | |-ImplicitCastExpr 0x142808860 <col:17> 'struct iovec *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1428087b8 <col:17> 'struct iovec *' lvalue ParmVar 0x142128648 'iovec' 'struct iovec *'
+    |   | `-UnaryOperator 0x142808848 <col:23, col:33> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   |   `-ParenExpr 0x142808828 <col:23, col:32> '<dependent type>' contains-errors
+    |   |     `-UnaryOperator 0x142808810 <col:24, col:25> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |       `-ImplicitCastExpr 0x1428087f8 <col:25> '<dependent type>' contains-errors <LValueToRValue>
+    |   |         `-RecoveryExpr 0x1428087d8 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x1428089d0 <col:39, col:58> 'int'
+    |     |-ImplicitCastExpr 0x1428089b8 <col:39> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142808978 <col:39> 'int ()' Function 0x1428088c0 'IOVEC_MAKE_STRING' 'int ()'
+    |     `-ImplicitCastExpr 0x1428089f8 <col:57> 'char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142808998 <col:57> 'char *' lvalue Var 0x142808448 'x' 'char *'
+    `-ReturnStmt 0x142808a88 <line:7:9, col:16>
+      `-ImplicitCastExpr 0x142808a70 <col:16> 'char *' <LValueToRValue>
+        `-DeclRefExpr 0x142808a50 <col:16> 'char *' lvalue Var 0x142808448 'x' 'char *'

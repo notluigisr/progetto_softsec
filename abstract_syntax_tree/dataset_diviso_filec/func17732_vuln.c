@@ -1,0 +1,63 @@
+Status ShapeRefiner::InferShapesForFunctionSubNode(
+    const Node* node, InferenceContext* outer_context) {
+  TF_RETURN_IF_ERROR(AddNodeInternal(node, outer_context));
+  InferenceContext* node_context = CHECK_NOTNULL(GetContext(node));
+
+  if (StringPiece(node->type_string()) == kArgOp) {
+    
+    
+    
+
+    int index;
+    TF_RETURN_IF_ERROR(GetNodeAttr(AttrSlice(node->def()), "STR", &index));
+
+    if (index < 0 || outer_context->num_inputs() <= index) {
+      return errors::Internal(
+          "STR", index,
+          "STR");
+    }
+
+    
+    
+    if (outer_context->input(index).SameHandle(ShapeHandle())) {
+      VLOG(1) << "STR"
+              << "STR";
+      node_context->set_output(0, node_context->UnknownShape());
+    } else {
+      node_context->set_output(0, outer_context->input(index));
+    }
+
+    auto* resource = outer_context->input_handle_shapes_and_types(index);
+    if (resource) {
+      node_context->set_output_handle_shapes_and_types(0, *resource);
+    }
+  } else if (StringPiece(node->type_string()) == kRetvalOp) {
+    
+    
+    
+
+    int index;
+    TF_RETURN_IF_ERROR(GetNodeAttr(AttrSlice(node->def()), "STR", &index));
+
+    if (index < 0 || outer_context->num_outputs() <= index) {
+      return errors::Internal(
+          "STR", index,
+          "STR");
+    }
+
+    
+    
+    ShapeHandle handle;
+    TensorShapeProto proto;
+    node_context->ShapeHandleToProto(node_context->input(0), &proto);
+    TF_RETURN_IF_ERROR(outer_context->MakeShapeFromShapeProto(proto, &handle));
+    outer_context->set_output(index, handle);
+
+    auto* resource = node_context->input_handle_shapes_and_types(0);
+    if (resource) {
+      outer_context->set_output_handle_shapes_and_types(index, *resource);
+    }
+  }
+
+  return Status::OK();
+}

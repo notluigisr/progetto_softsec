@@ -1,0 +1,145 @@
+`-FunctionDecl 0x1360267e8  line:1:12 semctl_down 'int (struct ipc_namespace *, int, int, int, int)' static
+  |-ParmVarDecl 0x13600e248 <col:24, col:46> col:46 used ns 'struct ipc_namespace *'
+  |-ParmVarDecl 0x13600e2c8 <col:50, col:54> col:54 used semid 'int'
+  |-ParmVarDecl 0x13600e348 <line:2:10, col:14> col:14 used cmd 'int'
+  |-ParmVarDecl 0x136026600 <col:19, col:23> col:23 used version 'int'
+  |-ParmVarDecl 0x136026678 <col:32, col:37> col:37 __user 'int'
+  `-CompoundStmt 0x13700a450 <line:3:1, line:50:1>
+    |-DeclStmt 0x136026ae8 <line:4:2, col:23>
+    | |-RecordDecl 0x136026900 <col:2, col:9> col:9 struct sem_array
+    | `-VarDecl 0x136026a68 <col:2, col:20> col:20 used sma 'struct sem_array *'
+    |-DeclStmt 0x136026b80 <line:5:2, col:9>
+    | `-VarDecl 0x136026b18 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x136026d18 <line:6:2, col:27>
+    | |-RecordDecl 0x136026b98 <col:2, col:9> col:9 struct semid64_ds
+    | `-VarDecl 0x136026c98 <col:2, col:20> col:20 invalid semid64 'struct semid64_ds'
+    |-DeclStmt 0x136026f18 <line:7:2, col:28>
+    | |-RecordDecl 0x136026d30 <col:2, col:9> col:9 struct kern_ipc_perm
+    | `-VarDecl 0x136026e98 <col:2, col:24> col:24 used ipcp 'struct kern_ipc_perm *'
+    |-IfStmt 0x1360272f0 <line:9:2, line:12:2>
+    | |-BinaryOperator 0x136026fc0 <line:9:5, col:12> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x136026f30 <col:5> 'int' lvalue ParmVar 0x13600e348 'cmd' 'int'
+    | | `-RecoveryExpr 0x136026fa0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1360272d8 <col:21, line:12:2>
+    |   `-IfStmt 0x1360272b8 <line:10:3, line:11:12>
+    |     |-CallExpr 0x1360271d8 <line:10:7, col:48> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x1360270f0 <col:7> 'int ()' Function 0x136027038 'copy_semid_from_user' 'int ()'
+    |     | |-UnaryOperator 0x136027130 <col:28, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | | `-RecoveryExpr 0x136027110 <col:29> '<dependent type>' contains-errors lvalue
+    |     | |-RecoveryExpr 0x1360271b8 <col:38> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x136027160 <col:41> 'int' lvalue ParmVar 0x136026600 'version' 'int'
+    |     `-ReturnStmt 0x1360272a8 <line:11:4, col:12>
+    |       `-UnaryOperator 0x136027290 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x136027278 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x136027258 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x137008d58 <line:14:2, line:15:31> 'struct kern_ipc_perm *' contains-errors '='
+    | |-DeclRefExpr 0x136027310 <line:14:2> 'struct kern_ipc_perm *' lvalue Var 0x136026e98 'ipcp' 'struct kern_ipc_perm *'
+    | `-CallExpr 0x137008d08 <col:9, line:15:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x136027410 <line:14:9> 'int ()' Function 0x136027358 'ipcctl_pre_down_nolock' 'int ()'
+    |   |-DeclRefExpr 0x136027430 <col:32> 'struct ipc_namespace *' lvalue ParmVar 0x13600e248 'ns' 'struct ipc_namespace *'
+    |   |-RecoveryExpr 0x137008c00 <col:48, col:47> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x1360275b8 <col:37, col:47> 'int'
+    |   |   |-ImplicitCastExpr 0x1360275a0 <col:37> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x136027530 <col:37> 'int ()' Function 0x136027478 'sem_ids' 'int ()'
+    |   |   `-ImplicitCastExpr 0x1360275e0 <col:45> 'struct ipc_namespace *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x136027550 <col:45> 'struct ipc_namespace *' lvalue ParmVar 0x13600e248 'ns' 'struct ipc_namespace *'
+    |   |-DeclRefExpr 0x137008c28 <col:50> 'int' lvalue ParmVar 0x13600e2c8 'semid' 'int'
+    |   |-DeclRefExpr 0x137008c48 <col:57> 'int' lvalue ParmVar 0x13600e348 'cmd' 'int'
+    |   |-UnaryOperator 0x137008cd0 <line:15:11, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x137008c88 <col:12, col:20> '<dependent type>' contains-errors lvalue .sem_perm
+    |   |   `-RecoveryExpr 0x137008c68 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x137008ce8 <col:30> 'int' 0
+    |-IfStmt 0x137009078 <line:16:2, line:17:22>
+    | |-CallExpr 0x137008eb0 <line:16:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x137008e98 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x137008e58 <col:6> 'int ()' Function 0x137008da0 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x137008ed8 <col:13> 'struct kern_ipc_perm *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x137008e78 <col:13> 'struct kern_ipc_perm *' lvalue Var 0x136026e98 'ipcp' 'struct kern_ipc_perm *'
+    | `-ReturnStmt 0x137009068 <line:17:3, col:22>
+    |   `-CallExpr 0x137009028 <col:10, col:22> 'int'
+    |     |-ImplicitCastExpr 0x137009010 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x137008fd0 <col:10> 'int ()' Function 0x137008f18 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x137009050 <col:18> 'struct kern_ipc_perm *' <LValueToRValue>
+    |       `-DeclRefExpr 0x137008ff0 <col:18> 'struct kern_ipc_perm *' lvalue Var 0x136026e98 'ipcp' 'struct kern_ipc_perm *'
+    |-BinaryOperator 0x1370093c8 <line:21:2, col:36> 'int' '='
+    | |-DeclRefExpr 0x1370091f0 <col:2> 'int' lvalue Var 0x136026b18 'err' 'int'
+    | `-CallExpr 0x137009368 <col:8, col:36> 'int'
+    |   |-ImplicitCastExpr 0x137009350 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1370092f0 <col:8> 'int ()' Function 0x137009238 'security_sem_semctl' 'int ()'
+    |   |-ImplicitCastExpr 0x137009398 <col:28> 'struct sem_array *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x137009310 <col:28> 'struct sem_array *' lvalue Var 0x136026a68 'sma' 'struct sem_array *'
+    |   `-ImplicitCastExpr 0x1370093b0 <col:33> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x137009330 <col:33> 'int' lvalue ParmVar 0x13600e348 'cmd' 'int'
+    |-IfStmt 0x1370095e0 <line:22:2, line:25:2>
+    | |-ImplicitCastExpr 0x137009408 <line:22:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x1370093e8 <col:6> 'int' lvalue Var 0x136026b18 'err' 'int'
+    | `-CompoundStmt 0x1370095c0 <col:11, line:25:2>
+    |   |-CallExpr 0x137009538 <line:23:3, col:19> 'int'
+    |   | `-ImplicitCastExpr 0x137009520 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x137009500 <col:3> 'int ()' Function 0x137009448 'rcu_read_unlock' 'int ()'
+    |   `-GotoStmt 0x1370095a8 <line:24:3, col:8> 'out_unlock' 0x137009558
+    |-SwitchStmt 0x137009638 <line:27:2, line:43:2>
+    | |-ImplicitCastExpr 0x137009620 <line:27:9> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x137009600 <col:9> 'int' lvalue ParmVar 0x13600e348 'cmd' 'int'
+    | `-CompoundStmt 0x137009ff0 <col:13, line:43:2>
+    |   |-CallExpr 0x1370097f0 <line:29:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x137009758 <col:3> 'int ()' Function 0x1370096a0 'ipc_lock_object' 'int ()'
+    |   | `-UnaryOperator 0x1370097d8 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1370097b0 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x137009778 <col:20> 'struct sem_array *' lvalue Var 0x136026a68 'sma' 'struct sem_array *'
+    |   |-CallExpr 0x137009970 <line:30:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x137009958 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1370098f8 <col:3> 'int ()' Function 0x137009840 'freeary' 'int ()'
+    |   | |-ImplicitCastExpr 0x1370099a0 <col:11> 'struct ipc_namespace *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x137009918 <col:11> 'struct ipc_namespace *' lvalue ParmVar 0x13600e248 'ns' 'struct ipc_namespace *'
+    |   | `-ImplicitCastExpr 0x1370099b8 <col:15> 'struct kern_ipc_perm *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x137009938 <col:15> 'struct kern_ipc_perm *' lvalue Var 0x136026e98 'ipcp' 'struct kern_ipc_perm *'
+    |   |-GotoStmt 0x137009a20 <line:31:3, col:8> 'out_up' 0x1370099d0
+    |   |-CallExpr 0x137009ad0 <line:33:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x137009a38 <col:3> 'int ()' Function 0x1370096a0 'ipc_lock_object' 'int ()'
+    |   | `-UnaryOperator 0x137009ab8 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x137009a90 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x137009a58 <col:20> 'struct sem_array *' lvalue Var 0x136026a68 'sma' 'struct sem_array *'
+    |   |-BinaryOperator 0x137009cf0 <line:34:3, col:48> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x137009af8 <col:3> 'int' lvalue Var 0x136026b18 'err' 'int'
+    |   | `-CallExpr 0x137009cc0 <col:9, col:48> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x137009c00 <col:9> 'int ()' Function 0x137009b40 'ipc_update_perm' 'int ()'
+    |   |   |-UnaryOperator 0x137009c88 <col:25, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | `-CXXDependentScopeMemberExpr 0x137009c40 <col:26, col:34> '<dependent type>' contains-errors lvalue .sem_perm
+    |   |   |   `-RecoveryExpr 0x137009c20 <col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x137009ca0 <col:44> 'struct kern_ipc_perm *' lvalue Var 0x136026e98 'ipcp' 'struct kern_ipc_perm *'
+    |   |-IfStmt 0x137009d60 <line:35:3, line:36:9>
+    |   | |-ImplicitCastExpr 0x137009d30 <line:35:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x137009d10 <col:7> 'int' lvalue Var 0x136026b18 'err' 'int'
+    |   | `-GotoStmt 0x137009d48 <line:36:4, col:9> 'out_unlock' 0x137009558
+    |   |-BinaryOperator 0x137009f18 <line:37:3, col:32> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x137009db8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x137009d80 <col:3> 'struct sem_array *' lvalue Var 0x136026a68 'sma' 'struct sem_array *'
+    |   | `-CallExpr 0x137009ef8 <col:20, col:32> 'int'
+    |   |   `-ImplicitCastExpr 0x137009ee0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x137009ec0 <col:20> 'int ()' Function 0x137009e08 'get_seconds' 'int ()'
+    |   |-BreakStmt 0x137009f38 <line:38:3>
+    |   |-DefaultStmt 0x137009f98 <line:39:2, line:40:19>
+    |   | `-CallExpr 0x137009f78 <col:3, col:19> 'int'
+    |   |   `-ImplicitCastExpr 0x137009f60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x137009f40 <col:3> 'int ()' Function 0x137009448 'rcu_read_unlock' 'int ()'
+    |   `-GotoStmt 0x137009fd8 <line:42:3, col:8> 'out_up' 0x1370099d0
+    |-LabelStmt 0x13700a1c8 <line:45:1, line:46:16> 'out_unlock'
+    | `-CallExpr 0x13700a188 <col:2, col:16> 'int'
+    |   |-ImplicitCastExpr 0x13700a170 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13700a130 <col:2> 'int ()' Function 0x13700a078 'sem_unlock' 'int ()'
+    |   `-ImplicitCastExpr 0x13700a1b0 <col:13> 'struct sem_array *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13700a150 <col:13> 'struct sem_array *' lvalue Var 0x136026a68 'sma' 'struct sem_array *'
+    |-LabelStmt 0x13700a3e8 <line:47:1, line:48:32> 'out_up'
+    | `-CallExpr 0x13700a3c0 <col:2, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13700a2c8 <col:2> 'int ()' Function 0x13700a210 'up_write' 'int ()'
+    |   `-UnaryOperator 0x13700a3a8 <col:11, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x13700a380 <col:12, col:24> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x13700a340 <col:12, col:22> 'int'
+    |         |-ImplicitCastExpr 0x13700a328 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x13700a2e8 <col:12> 'int ()' Function 0x136027478 'sem_ids' 'int ()'
+    |         `-ImplicitCastExpr 0x13700a368 <col:20> 'struct ipc_namespace *' <LValueToRValue>
+    |           `-DeclRefExpr 0x13700a308 <col:20> 'struct ipc_namespace *' lvalue ParmVar 0x13600e248 'ns' 'struct ipc_namespace *'
+    `-ReturnStmt 0x13700a440 <line:49:2, col:9>
+      `-ImplicitCastExpr 0x13700a428 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13700a408 <col:9> 'int' lvalue Var 0x136026b18 'err' 'int'

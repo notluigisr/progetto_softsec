@@ -1,0 +1,20 @@
+`-FunctionDecl 0x1361281c8  line:1:7 invalid fstat_st_size_or_die 'int (int)'
+  |-ParmVarDecl 0x1361280f0 <col:28, col:32> col:32 used fd 'int'
+  `-CompoundStmt 0x136141cc0 <line:2:1, line:7:1>
+    |-DeclStmt 0x136141818 <line:3:5, col:24>
+    | |-RecordDecl 0x136128278 <col:5, col:12> col:12 struct stat
+    | `-VarDecl 0x136128378 <col:5, col:17> col:17 invalid statbuf 'struct stat'
+    |-IfStmt 0x136141c28 <line:4:5, line:5:33>
+    | |-CallExpr 0x136141a08 <line:4:9, col:27> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x136141990 <col:9> 'int ()' Function 0x1361418d8 'fstat' 'int ()'
+    | | |-DeclRefExpr 0x1361419b0 <col:15> 'int' lvalue ParmVar 0x1361280f0 'fd' 'int'
+    | | `-UnaryOperator 0x1361419f0 <col:19, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1361419d0 <col:20> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x136141be8 <line:5:9, col:33> 'int'
+    |   |-ImplicitCastExpr 0x136141bd0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x136141b18 <col:9> 'int ()' Function 0x136141a60 'perror_msg_and_die' 'int ()'
+    |   `-ImplicitCastExpr 0x136141c10 <col:28> 'char *' <ArrayToPointerDecay>
+    |     `-StringLiteral 0x136141b80 <col:28> 'char[4]' lvalue "STR"
+    `-ReturnStmt 0x136141cb0 <line:6:5, col:20>
+      `-CXXDependentScopeMemberExpr 0x136141c68 <col:12, col:20> '<dependent type>' contains-errors lvalue .st_size
+        `-RecoveryExpr 0x136141c48 <col:12> '<dependent type>' contains-errors lvalue

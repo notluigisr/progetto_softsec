@@ -1,0 +1,67 @@
+`-FunctionDecl 0x134940a88  line:1:12 selinux_sb_kern_mount 'int (struct super_block *, int, void *)' static
+  |-ParmVarDecl 0x134928648 <col:34, col:54> col:54 used sb 'struct super_block *'
+  |-ParmVarDecl 0x1349286c8 <col:58, col:62> col:62 used flags 'int'
+  |-ParmVarDecl 0x134928748 <col:69, col:75> col:75 used data 'void *'
+  `-CompoundStmt 0x134947350 <line:2:1, line:20:1>
+    |-DeclStmt 0x134940f48 <line:3:2, col:42>
+    | |-RecordDecl 0x134940b90 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x134940cf8 <col:2, col:41> col:21 used cred 'const struct cred *' cinit
+    |   `-ImplicitCastExpr 0x134940f18 <col:28, col:41> 'const struct cred *' <IntegralToPointer>
+    |     `-CallExpr 0x134940ef8 <col:28, col:41> 'int'
+    |       `-ImplicitCastExpr 0x134940ee0 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x134940e90 <col:28> 'int ()' Function 0x134940dd8 'current_cred' 'int ()'
+    |-DeclStmt 0x1349410d8 <line:4:2, col:29>
+    | |-RecordDecl 0x134940f60 <col:2, col:9> col:9 struct common_audit_data
+    | `-VarDecl 0x134941058 <col:2, col:27> col:27 referenced invalid ad 'struct common_audit_data'
+    |-DeclStmt 0x1349412d0 <line:5:2, col:38>
+    | |-RecordDecl 0x1349410f0 <col:2, col:9> col:9 struct selinux_audit_data
+    | `-VarDecl 0x1349411e8 <col:2, col:28> col:28 invalid sad 'struct selinux_audit_data'
+    |-DeclStmt 0x134941368 <line:6:2, col:8>
+    | `-VarDecl 0x134941300 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x134941558 <line:8:2, col:33> 'int' '='
+    | |-DeclRefExpr 0x134941380 <col:2> 'int' lvalue Var 0x134941300 'rc' 'int'
+    | `-CallExpr 0x1349414f8 <col:7, col:33> 'int'
+    |   |-ImplicitCastExpr 0x1349414e0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x134941480 <col:7> 'int ()' Function 0x1349413c8 'superblock_doinit' 'int ()'
+    |   |-ImplicitCastExpr 0x134941528 <col:25> 'struct super_block *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1349414a0 <col:25> 'struct super_block *' lvalue ParmVar 0x134928648 'sb' 'struct super_block *'
+    |   `-ImplicitCastExpr 0x134941540 <col:29> 'void *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1349414c0 <col:29> 'void *' lvalue ParmVar 0x134928748 'data' 'void *'
+    |-IfStmt 0x1349415f8 <line:9:2, line:10:10>
+    | |-ImplicitCastExpr 0x134941598 <line:9:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x134941578 <col:6> 'int' lvalue Var 0x134941300 'rc' 'int'
+    | `-ReturnStmt 0x1349415e8 <line:10:3, col:10>
+    |   `-ImplicitCastExpr 0x1349415d0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1349415b0 <col:10> 'int' lvalue Var 0x134941300 'rc' 'int'
+    |-IfStmt 0x1349416e0 <line:13:2, line:14:10>
+    | |-BinaryOperator 0x134941690 <line:13:6, col:14> '<dependent type>' contains-errors '&'
+    | | |-DeclRefExpr 0x134941618 <col:6> 'int' lvalue ParmVar 0x1349286c8 'flags' 'int'
+    | | `-RecoveryExpr 0x134941670 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1349416d0 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x1349416b0 <col:10> 'int' 0
+    |-CallExpr 0x1349418a0 <line:16:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1349417e0 <col:2> 'int ()' Function 0x134941728 'COMMON_AUDIT_DATA_INIT' 'int ()'
+    | |-UnaryOperator 0x134941820 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x134941800 <col:26> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x134941880 <col:30> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x134941998 <line:17:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x134941918 <col:2, col:5> '<dependent type>' contains-errors lvalue .selinux_audit_data
+    | | `-RecoveryExpr 0x1349418f0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1349418d0 <col:2> 'struct common_audit_data' lvalue Var 0x134941058 'ad' 'struct common_audit_data'
+    | `-UnaryOperator 0x134941980 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x134941960 <col:27> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1349470f0 <line:18:2, col:20> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x134947048 <col:2, col:7> '<dependent type>' contains-errors lvalue .dentry
+    | | `-CXXDependentScopeMemberExpr 0x134947000 <col:2, col:5> '<dependent type>' contains-errors lvalue .u
+    | |   `-RecoveryExpr 0x1349419d8 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1349419b8 <col:2> 'struct common_audit_data' lvalue Var 0x134941058 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x1349470c8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x134947090 <col:16> 'struct super_block *' lvalue ParmVar 0x134928648 'sb' 'struct super_block *'
+    `-ReturnStmt 0x134947340 <line:19:2, col:61>
+      `-CallExpr 0x134947300 <col:9, col:61> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1349471f0 <col:9> 'int ()' Function 0x134947138 'superblock_has_perm' 'int ()'
+        |-DeclRefExpr 0x134947210 <col:29> 'const struct cred *' lvalue Var 0x134940cf8 'cred' 'const struct cred *'
+        |-DeclRefExpr 0x134947230 <col:35> 'struct super_block *' lvalue ParmVar 0x134928648 'sb' 'struct super_block *'
+        |-RecoveryExpr 0x1349472e0 <col:39> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x134947288 <col:58, col:59> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x134947268 <col:59> '<dependent type>' contains-errors lvalue

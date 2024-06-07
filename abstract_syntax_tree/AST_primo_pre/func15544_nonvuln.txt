@@ -1,0 +1,30 @@
+`-FunctionDecl 0x1280269c8  line:1:12 invalid assess_ambient_capabilities 'int (const struct security_assessor *, const struct security_info *, const void *, int *, char **)' static
+  |-ParmVarDecl 0x12800e248 <line:2:17, col:49> col:49 a 'const struct security_assessor *'
+  |-ParmVarDecl 0x128026628 <line:3:17, col:45> col:45 used info 'const struct security_info *'
+  |-ParmVarDecl 0x1280266d8 <line:4:17, col:29> col:29 data 'const void *'
+  |-ParmVarDecl 0x1280267a8 <line:5:17, col:27> col:27 invalid ret_badness 'int *'
+  |-ParmVarDecl 0x128026858 <line:6:17, col:24> col:24 used ret_description 'char **'
+  `-CompoundStmt 0x128026f90 <col:41, line:15:1>
+    |-CallExpr 0x128026c30 <line:8:9, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128026bf0 <col:9> 'int ()' Function 0x128026b38 'assert' 'int ()'
+    | `-RecoveryExpr 0x128026c10 <col:16> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x128026ce8 <line:9:9, col:31> 'int'
+    | |-ImplicitCastExpr 0x128026cd0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x128026c58 <col:9> 'int ()' Function 0x128026b38 'assert' 'int ()'
+    | `-ImplicitCastExpr 0x128026d10 <col:16> 'char **' <LValueToRValue>
+    |   `-DeclRefExpr 0x128026c78 <col:16> 'char **' lvalue ParmVar 0x128026858 'ret_description' 'char **'
+    |-BinaryOperator 0x128026e18 <line:11:9, col:54> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x128026d60 <col:9, col:10> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x128026d48 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x128026d28 <col:10> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x128026df8 <col:24, col:54> 'int' contains-errors '!='
+    |   |-RecoveryExpr 0x128026db0 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x128026d78 <col:24> 'const struct security_info *' lvalue ParmVar 0x128026628 'info' 'const struct security_info *'
+    |   `-IntegerLiteral 0x128026dd8 <col:54> 'int' 0
+    |-BinaryOperator 0x128026f40 <line:12:9, col:28> 'char *' contains-errors '='
+    | |-UnaryOperator 0x128026f08 <col:9, col:10> 'char *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x128026ef0 <col:10> 'char **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x128026e38 <col:10> 'char **' lvalue ParmVar 0x128026858 'ret_description' 'char **'
+    | `-RecoveryExpr 0x128026f20 <col:28> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x128026f80 <line:14:9, col:16>
+      `-IntegerLiteral 0x128026f60 <col:16> 'int' 0

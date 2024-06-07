@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12b00e350  line:1:13 io_kill_timeouts 'void (struct io_ring_ctx *)' static
+  |-ParmVarDecl 0x12b00e248 <col:30, col:50> col:50 used ctx 'struct io_ring_ctx *'
+  `-CompoundStmt 0x12b027088 <line:2:1, line:9:1>
+    |-DeclStmt 0x12b0268d0 <line:3:2, col:28>
+    | |-RecordDecl 0x12b026648 <col:2, col:9> col:9 struct io_kiocb
+    | |-VarDecl 0x12b0267b8 <col:2, col:19> col:19 used req 'struct io_kiocb *'
+    | `-VarDecl 0x12b026848 <col:2, col:25> col:25 used tmp 'struct io_kiocb *'
+    |-CallExpr 0x12b026aa8 <line:5:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b026a10 <col:2> 'int ()' Function 0x12b026958 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x12b026a90 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12b026a68 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12b026a30 <col:17> 'struct io_ring_ctx *' lvalue ParmVar 0x12b00e248 'ctx' 'struct io_ring_ctx *'
+    |-CallExpr 0x12b026d00 <line:6:2, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b026bb0 <col:2> 'int ()' Function 0x12b026af8 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x12b026bd0 <col:27> 'struct io_kiocb *' lvalue Var 0x12b0267b8 'req' 'struct io_kiocb *'
+    | |-DeclRefExpr 0x12b026bf0 <col:32> 'struct io_kiocb *' lvalue Var 0x12b026848 'tmp' 'struct io_kiocb *'
+    | |-UnaryOperator 0x12b026c70 <col:37, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12b026c48 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12b026c10 <col:38> 'struct io_ring_ctx *' lvalue ParmVar 0x12b00e248 'ctx' 'struct io_ring_ctx *'
+    | `-RecoveryExpr 0x12b026ce0 <col:57> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12b026ea8 <line:7:3, col:22> 'int'
+    | |-ImplicitCastExpr 0x12b026e90 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12b026e20 <col:3> 'int ()' Function 0x12b026d68 'io_kill_timeout' 'int ()'
+    | `-ImplicitCastExpr 0x12b026ed0 <col:19> 'struct io_kiocb *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12b026e40 <col:19> 'struct io_kiocb *' lvalue Var 0x12b0267b8 'req' 'struct io_kiocb *'
+    `-CallExpr 0x12b027060 <line:8:2, col:39> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12b026fc8 <col:2> 'int ()' Function 0x12b026f10 'spin_unlock_irq' 'int ()'
+      `-UnaryOperator 0x12b027048 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12b027020 <col:19, col:24> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12b026fe8 <col:19> 'struct io_ring_ctx *' lvalue ParmVar 0x12b00e248 'ctx' 'struct io_ring_ctx *'

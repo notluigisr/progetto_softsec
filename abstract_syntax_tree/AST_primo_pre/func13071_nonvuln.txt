@@ -1,0 +1,35 @@
+`-FunctionDecl 0x12a122638  line:1:1 invalid xfs_inode_item_committed 'int (struct xfs_log_item *, int)'
+  |-ParmVarDecl 0x12a80e248 <line:2:2, col:23> col:23 used lip 'struct xfs_log_item *'
+  |-ParmVarDecl 0x12a80e2e0 <line:3:2, col:13> col:13 invalid lsn 'int'
+  `-CompoundStmt 0x12a1231a0 <line:4:1, line:13:1>
+    |-DeclStmt 0x12a122b18 <line:5:2, col:50>
+    | |-RecordDecl 0x12a1226f0 <col:2, col:9> col:9 struct xfs_inode_log_item
+    | `-VarDecl 0x12a122858 <col:2, col:49> col:29 used iip 'struct xfs_inode_log_item *' cinit
+    |   `-ImplicitCastExpr 0x12a122ae8 <col:35, col:49> 'struct xfs_inode_log_item *' <IntegralToPointer>
+    |     `-CallExpr 0x12a122aa8 <col:35, col:49> 'int'
+    |       |-ImplicitCastExpr 0x12a122a90 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12a122a20 <col:35> 'int ()' Function 0x12a122968 'INODE_ITEM' 'int ()'
+    |       `-ImplicitCastExpr 0x12a122ad0 <col:46> 'struct xfs_log_item *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12a122a40 <col:46> 'struct xfs_log_item *' lvalue ParmVar 0x12a80e248 'lip' 'struct xfs_log_item *'
+    |-DeclStmt 0x12a122d78 <line:6:2, col:39>
+    | |-RecordDecl 0x12a122b30 <col:2, col:9> col:9 struct xfs_inode
+    | `-VarDecl 0x12a122c98 <col:2, col:30> col:20 used ip 'struct xfs_inode *' cinit
+    |   `-RecoveryExpr 0x12a122d38 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a122d00 <col:25> 'struct xfs_inode_log_item *' lvalue Var 0x12a122858 'iip' 'struct xfs_inode_log_item *'
+    |-IfStmt 0x12a123150 <line:8:2, line:11:2>
+    | |-CallExpr 0x12a122f18 <line:8:6, col:36> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12a122e70 <col:6> 'int ()' Function 0x12a122db8 'xfs_iflags_test' 'int ()'
+    | | |-DeclRefExpr 0x12a122e90 <col:22> 'struct xfs_inode *' contains-errors lvalue Var 0x12a122c98 'ip' 'struct xfs_inode *'
+    | | `-RecoveryExpr 0x12a122ef8 <col:26> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12a123130 <col:39, line:11:2>
+    |   |-CallExpr 0x12a1230a0 <line:9:3, col:30> 'int'
+    |   | |-ImplicitCastExpr 0x12a123088 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12a123028 <col:3> 'int ()' Function 0x12a122f70 'xfs_inode_item_unpin' 'int ()'
+    |   | |-ImplicitCastExpr 0x12a1230d0 <col:24> 'struct xfs_log_item *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x12a123048 <col:24> 'struct xfs_log_item *' lvalue ParmVar 0x12a80e248 'lip' 'struct xfs_log_item *'
+    |   | `-IntegerLiteral 0x12a123068 <col:29> 'int' 0
+    |   `-ReturnStmt 0x12a123120 <line:10:3, col:11>
+    |     `-UnaryOperator 0x12a123108 <col:10, col:11> 'int' prefix '-'
+    |       `-IntegerLiteral 0x12a1230e8 <col:11> 'int' 1
+    `-ReturnStmt 0x12a123190 <line:12:2, col:9>
+      `-RecoveryExpr 0x12a123170 <col:9> '<dependent type>' contains-errors lvalue

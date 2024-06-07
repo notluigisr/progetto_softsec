@@ -1,0 +1,117 @@
+`-FunctionDecl 0x16000c540  line:1:6 tipc_sk_rcv 'void (struct net *, struct sk_buff_head *)'
+  |-ParmVarDecl 0x15780a848 <col:18, col:30> col:30 used net 'struct net *'
+  |-ParmVarDecl 0x16000c428 <col:35, col:56> col:56 used inputq 'struct sk_buff_head *'
+  `-CompoundStmt 0x16100a890 <line:2:1, line:45:1>
+    |-DeclStmt 0x16000c6f8 <line:3:2, col:27>
+    | `-VarDecl 0x16000c690 <col:2, col:22> col:22 invalid xmitq 'struct sk_buff_head'
+    |-DeclStmt 0x16000c7a8 <line:5:2, col:9>
+    | `-VarDecl 0x16000c740 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x16000c9a8 <line:6:2, col:23>
+    | |-RecordDecl 0x16000c7c0 <col:2, col:9> col:9 struct tipc_sock
+    | `-VarDecl 0x16000c928 <col:2, col:20> col:20 used tsk 'struct tipc_sock *'
+    |-DeclStmt 0x16000cba8 <line:7:2, col:17>
+    | |-RecordDecl 0x16000c9c0 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x16000cb28 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-DeclStmt 0x16000cda8 <line:8:2, col:21>
+    | |-RecordDecl 0x16000cbc0 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x16000cd28 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-CallExpr 0x16000cf28 <line:10:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x16000ced0 <col:2> 'int ()' Function 0x16000ce18 '__skb_queue_head_init' 'int ()'
+    | `-UnaryOperator 0x16000cf10 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x16000cef0 <col:25> '<dependent type>' contains-errors lvalue
+    `-WhileStmt 0x16100a870 <line:11:2, line:44:2>
+      |-CallExpr 0x16000d0b8 <line:11:9, col:29> 'int'
+      | |-ImplicitCastExpr 0x16000d0a0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x16000d030 <col:9> 'int ()' Function 0x16000cf78 'skb_queue_len' 'int ()'
+      | `-ImplicitCastExpr 0x16000d0e0 <col:23> 'struct sk_buff_head *' <LValueToRValue>
+      |   `-DeclRefExpr 0x16000d050 <col:23> 'struct sk_buff_head *' lvalue ParmVar 0x16000c428 'inputq' 'struct sk_buff_head *'
+      `-CompoundStmt 0x16100a830 <col:32, line:44:2>
+        |-BinaryOperator 0x161008c70 <line:13:3, col:34> 'struct tipc_sock *' contains-errors '='
+        | |-DeclRefExpr 0x16000d260 <col:3> 'struct tipc_sock *' lvalue Var 0x16000c928 'tsk' 'struct tipc_sock *'
+        | `-CallExpr 0x161008c40 <col:9, col:34> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x16000d360 <col:9> 'int ()' Function 0x16000d2a8 'tipc_sk_lookup' 'int ()'
+        |   |-DeclRefExpr 0x16000d380 <col:24> 'struct net *' lvalue ParmVar 0x15780a848 'net' 'struct net *'
+        |   `-RecoveryExpr 0x161008c20 <col:29> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x1610099e0 <line:15:3, line:25:3>
+        | |-CallExpr 0x161008dc8 <line:15:7, col:17> 'int'
+        | | |-ImplicitCastExpr 0x161008db0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x161008d70 <col:7> 'int ()' Function 0x161008cb8 'likely' 'int ()'
+        | | `-ImplicitCastExpr 0x161008df0 <col:14> 'struct tipc_sock *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x161008d90 <col:14> 'struct tipc_sock *' lvalue Var 0x16000c928 'tsk' 'struct tipc_sock *'
+        | `-CompoundStmt 0x1610099a8 <col:20, line:25:3>
+        |   |-BinaryOperator 0x161008ea0 <line:16:4, col:15> 'struct sock *' contains-errors '='
+        |   | |-DeclRefExpr 0x161008e08 <col:4> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   | `-UnaryOperator 0x161008e88 <col:9, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   |   `-RecoveryExpr 0x161008e60 <col:10, col:15> '<dependent type>' contains-errors lvalue
+        |   |     `-DeclRefExpr 0x161008e28 <col:10> 'struct tipc_sock *' lvalue Var 0x16000c928 'tsk' 'struct tipc_sock *'
+        |   |-IfStmt 0x161009528 <line:17:4, line:20:4>
+        |   | |-CallExpr 0x1610090c8 <line:17:8, col:50> '<dependent type>' contains-errors
+        |   | | |-DeclRefExpr 0x161008ec0 <col:8> 'int ()' Function 0x161008cb8 'likely' 'int ()'
+        |   | | `-CallExpr 0x1610090a0 <col:15, col:49> '<dependent type>' contains-errors
+        |   | |   |-DeclRefExpr 0x161008fc0 <col:15> 'int ()' Function 0x161008f08 'spin_trylock_bh' 'int ()'
+        |   | |   `-UnaryOperator 0x161009088 <col:31, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   | |     `-CXXDependentScopeMemberExpr 0x161009040 <col:32, col:44> '<dependent type>' contains-errors lvalue .slock
+        |   | |       `-RecoveryExpr 0x161009018 <col:32, col:36> '<dependent type>' contains-errors lvalue
+        |   | |         `-DeclRefExpr 0x161008fe0 <col:32> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   | `-CompoundStmt 0x161009508 <col:53, line:20:4>
+        |   |   |-CallExpr 0x1610092e0 <line:18:5, col:46> '<dependent type>' contains-errors
+        |   |   | |-DeclRefExpr 0x1610091d0 <col:5> 'int ()' Function 0x161009118 'tipc_sk_enqueue' 'int ()'
+        |   |   | |-DeclRefExpr 0x1610091f0 <col:21> 'struct sk_buff_head *' lvalue ParmVar 0x16000c428 'inputq' 'struct sk_buff_head *'
+        |   |   | |-DeclRefExpr 0x161009210 <col:29> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   |   | |-RecoveryExpr 0x1610092c0 <col:33> '<dependent type>' contains-errors lvalue
+        |   |   | `-UnaryOperator 0x161009268 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   |   |   `-RecoveryExpr 0x161009248 <col:41> '<dependent type>' contains-errors lvalue
+        |   |   `-CallExpr 0x1610094e0 <line:19:5, col:38> '<dependent type>' contains-errors
+        |   |     |-DeclRefExpr 0x161009400 <col:5> 'int ()' Function 0x161009348 'spin_unlock_bh' 'int ()'
+        |   |     `-UnaryOperator 0x1610094c8 <col:20, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   |       `-CXXDependentScopeMemberExpr 0x161009480 <col:21, col:33> '<dependent type>' contains-errors lvalue .slock
+        |   |         `-RecoveryExpr 0x161009458 <col:21, col:25> '<dependent type>' contains-errors lvalue
+        |   |           `-DeclRefExpr 0x161009420 <col:21> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   |-CallExpr 0x1610097f8 <line:22:4, col:45> '<dependent type>' contains-errors
+        |   | |-DeclRefExpr 0x161009628 <col:4> 'int ()' Function 0x161009570 'tipc_node_distr_xmit' 'int ()'
+        |   | |-CallExpr 0x161009780 <col:25, col:36> 'int'
+        |   | | |-ImplicitCastExpr 0x161009768 <col:25> 'int (*)()' <FunctionToPointerDecay>
+        |   | | | `-DeclRefExpr 0x161009728 <col:25> 'int ()' Function 0x161009670 'sock_net' 'int ()'
+        |   | | `-ImplicitCastExpr 0x1610097a8 <col:34> 'struct sock *' <LValueToRValue>
+        |   | |   `-DeclRefExpr 0x161009748 <col:34> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   | `-UnaryOperator 0x1610097e0 <col:39, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   |   `-RecoveryExpr 0x1610097c0 <col:40> '<dependent type>' contains-errors lvalue
+        |   |-CallExpr 0x161009960 <line:23:4, col:15> 'int'
+        |   | |-ImplicitCastExpr 0x161009948 <col:4> 'int (*)()' <FunctionToPointerDecay>
+        |   | | `-DeclRefExpr 0x161009908 <col:4> 'int ()' Function 0x161009850 'sock_put' 'int ()'
+        |   | `-ImplicitCastExpr 0x161009988 <col:13> 'struct sock *' <LValueToRValue>
+        |   |   `-DeclRefExpr 0x161009928 <col:13> 'struct sock *' lvalue Var 0x16000cb28 'sk' 'struct sock *'
+        |   `-ContinueStmt 0x1610099a0 <line:24:4>
+        |-IfStmt 0x161009ba0 <line:28:3, line:29:4>
+        | |-UnaryOperator 0x161009b78 <line:28:7, col:8> 'int' prefix '!' cannot overflow
+        | | `-ImplicitCastExpr 0x161009b60 <col:8> 'struct sk_buff *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x161009b40 <col:8> 'struct sk_buff *' lvalue Var 0x16000cd28 'skb' 'struct sk_buff *'
+        | `-ReturnStmt 0x161009b90 <line:29:4>
+        |-IfStmt 0x161009e90 <line:33:3, line:34:9>
+        | |-CallExpr 0x161009dc0 <line:33:7, col:42> 'int'
+        | | |-ImplicitCastExpr 0x161009da8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x161009ce0 <col:7> 'int ()' Function 0x161009c28 'tipc_msg_lookup_dest' 'int ()'
+        | | |-ImplicitCastExpr 0x161009df8 <col:28> 'struct net *' <LValueToRValue>
+        | | | `-DeclRefExpr 0x161009d00 <col:28> 'struct net *' lvalue ParmVar 0x15780a848 'net' 'struct net *'
+        | | |-ImplicitCastExpr 0x161009e10 <col:33> 'struct sk_buff *' <LValueToRValue>
+        | | | `-DeclRefExpr 0x161009d20 <col:33> 'struct sk_buff *' lvalue Var 0x16000cd28 'skb' 'struct sk_buff *'
+        | | `-UnaryOperator 0x161009d90 <col:38, col:39> 'int *' prefix '&' cannot overflow
+        | |   `-DeclRefExpr 0x161009d40 <col:39> 'int' lvalue Var 0x16000c740 'err' 'int'
+        | `-GotoStmt 0x161009e78 <line:34:4, col:9> 'xmit' 0x161009e28
+        |-IfStmt 0x16100a270 <line:37:3, line:38:4>
+        | |-UnaryOperator 0x16100a250 <line:37:7, col:54> 'int' prefix '!' cannot overflow
+        | | `-CallExpr 0x16100a200 <col:8, col:54> 'int'
+        | |   |-ImplicitCastExpr 0x16100a1e8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+        | |   | `-DeclRefExpr 0x161009f90 <col:8> 'int ()' Function 0x161009ed8 'tipc_msg_reverse' 'int ()'
+        | |   |-CallExpr 0x16100a0e8 <col:25, col:42> 'int'
+        | |   | |-ImplicitCastExpr 0x16100a0d0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+        | |   | | `-DeclRefExpr 0x16100a090 <col:25> 'int ()' Function 0x161009fd8 'tipc_own_addr' 'int ()'
+        | |   | `-ImplicitCastExpr 0x16100a110 <col:39> 'struct net *' <LValueToRValue>
+        | |   |   `-DeclRefExpr 0x16100a0b0 <col:39> 'struct net *' lvalue ParmVar 0x15780a848 'net' 'struct net *'
+        | |   |-UnaryOperator 0x16100a1b0 <col:45, col:46> 'struct sk_buff **' prefix '&' cannot overflow
+        | |   | `-DeclRefExpr 0x16100a128 <col:46> 'struct sk_buff *' lvalue Var 0x16000cd28 'skb' 'struct sk_buff *'
+        | |   `-ImplicitCastExpr 0x16100a238 <col:51> 'int' <LValueToRValue>
+        | |     `-DeclRefExpr 0x16100a1c8 <col:51> 'int' lvalue Var 0x16000c740 'err' 'int'
+        | `-ContinueStmt 0x16100a268 <line:38:4>
+        `-LabelStmt 0x16100a6d0 <line:41:1, col:5> 'xmit'
+          `-NullStmt 0x16100a6c8 <col:5>

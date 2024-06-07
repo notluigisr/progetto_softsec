@@ -1,0 +1,52 @@
+`-FunctionDecl 0x14d928750  line:1:13 update_db_bp_intercept 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x14d928648 <col:36, col:53> col:53 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x14d941888 <line:2:1, line:19:1>
+    |-DeclStmt 0x14d940e48 <line:3:2, col:37>
+    | |-RecordDecl 0x14d940a48 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x14d940bb8 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x14d940e18 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x14d940dd8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x14d940dc0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14d940d50 <col:25> 'int ()' Function 0x14d940c98 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x14d940e00 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14d940d70 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x14d928648 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x14d940fe8 <line:5:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d940f40 <col:2> 'int ()' Function 0x14d940e88 'clr_exception_intercept' 'int ()'
+    | |-DeclRefExpr 0x14d940f60 <col:26> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+    | `-RecoveryExpr 0x14d940fc8 <col:31> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14d9410c0 <line:6:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d941018 <col:2> 'int ()' Function 0x14d940e88 'clr_exception_intercept' 'int ()'
+    | |-DeclRefExpr 0x14d941038 <col:26> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+    | `-RecoveryExpr 0x14d9410a0 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d941308 <line:8:2, line:9:41>
+    | |-RecoveryExpr 0x14d941128 <line:8:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14d9410f0 <col:6> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+    | `-CallExpr 0x14d9412d8 <line:9:3, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14d941230 <col:3> 'int ()' Function 0x14d941178 'set_exception_intercept' 'int ()'
+    |   |-DeclRefExpr 0x14d941250 <col:27> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+    |   `-RecoveryExpr 0x14d9412b8 <col:32> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x14d941858 <line:11:2, line:18:23> has_else
+      |-BinaryOperator 0x14d9413e0 <line:11:6, col:26> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x14d941360 <col:6, col:12> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x14d941328 <col:6> 'struct kvm_vcpu *' lvalue ParmVar 0x14d928648 'vcpu' 'struct kvm_vcpu *'
+      | `-RecoveryExpr 0x14d9413c0 <col:26> '<dependent type>' contains-errors lvalue
+      |-CompoundStmt 0x14d941798 <col:47, line:17:2>
+      | |-IfStmt 0x14d9415a8 <line:12:3, line:14:42>
+      | | |-RecoveryExpr 0x14d9414b0 <line:12:7, line:13:56> '_Bool' contains-errors
+      | | `-CallExpr 0x14d941578 <line:14:4, col:42> '<dependent type>' contains-errors
+      | |   |-DeclRefExpr 0x14d9414d0 <col:4> 'int ()' Function 0x14d941178 'set_exception_intercept' 'int ()'
+      | |   |-DeclRefExpr 0x14d9414f0 <col:28> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+      | |   `-RecoveryExpr 0x14d941558 <col:33> '<dependent type>' contains-errors lvalue
+      | `-IfStmt 0x14d941778 <line:15:3, line:16:42>
+      |   |-BinaryOperator 0x14d941680 <line:15:7, col:27> '<dependent type>' contains-errors '&'
+      |   | |-RecoveryExpr 0x14d941600 <col:7, col:13> '<dependent type>' contains-errors lvalue
+      |   | | `-DeclRefExpr 0x14d9415c8 <col:7> 'struct kvm_vcpu *' lvalue ParmVar 0x14d928648 'vcpu' 'struct kvm_vcpu *'
+      |   | `-RecoveryExpr 0x14d941660 <col:27> '<dependent type>' contains-errors lvalue
+      |   `-CallExpr 0x14d941748 <line:16:4, col:42> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x14d9416a0 <col:4> 'int ()' Function 0x14d941178 'set_exception_intercept' 'int ()'
+      |     |-DeclRefExpr 0x14d9416c0 <col:28> 'struct vcpu_svm *' lvalue Var 0x14d940bb8 'svm' 'struct vcpu_svm *'
+      |     `-RecoveryExpr 0x14d941728 <col:33> '<dependent type>' contains-errors lvalue
+      `-BinaryOperator 0x14d941838 <line:18:3, col:23> '<dependent type>' contains-errors '='
+        |-RecoveryExpr 0x14d9417f0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x14d9417b8 <col:3> 'struct kvm_vcpu *' lvalue ParmVar 0x14d928648 'vcpu' 'struct kvm_vcpu *'
+        `-IntegerLiteral 0x14d941818 <col:23> 'int' 0

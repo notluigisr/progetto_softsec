@@ -1,0 +1,57 @@
+`-FunctionDecl 0x152013f50  line:1:6 referenced iscsi_host_remove 'void (struct Scsi_Host *)'
+  |-ParmVarDecl 0x152013e48 <col:24, col:42> col:42 used shost 'struct Scsi_Host *'
+  `-CompoundStmt 0x15203caf8 <line:2:1, line:17:1>
+    |-DeclStmt 0x15203a248 <line:3:2, col:46>
+    | |-RecordDecl 0x152039e48 <col:2, col:9> col:9 struct iscsi_host
+    | `-VarDecl 0x152039fb8 <col:2, col:45> col:21 used ihost 'struct iscsi_host *' cinit
+    |   `-ImplicitCastExpr 0x15203a218 <col:29, col:45> 'struct iscsi_host *' <IntegralToPointer>
+    |     `-CallExpr 0x15203a1d8 <col:29, col:45> 'int'
+    |       |-ImplicitCastExpr 0x15203a1c0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15203a150 <col:29> 'int ()' Function 0x15203a098 'shost_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x15203a200 <col:40> 'struct Scsi_Host *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15203a170 <col:40> 'struct Scsi_Host *' lvalue ParmVar 0x152013e48 'shost' 'struct Scsi_Host *'
+    |-DeclStmt 0x15203a2e0 <line:4:2, col:21>
+    | `-VarDecl 0x15203a278 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x15203a490 <line:6:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15203a3d8 <col:2> 'int ()' Function 0x15203a320 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x15203a458 <col:20, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15203a430 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15203a3f8 <col:21> 'struct iscsi_host *' lvalue Var 0x152039fb8 'ihost' 'struct iscsi_host *'
+    | `-DeclRefExpr 0x15203a470 <col:34> 'unsigned long' lvalue Var 0x15203a278 'flags' 'unsigned long'
+    |-BinaryOperator 0x15203a578 <line:7:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15203a4f8 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15203a4c0 <col:2> 'struct iscsi_host *' lvalue Var 0x152039fb8 'ihost' 'struct iscsi_host *'
+    | `-RecoveryExpr 0x15203a558 <col:17> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15203a730 <line:8:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15203a678 <col:2> 'int ()' Function 0x15203a5c0 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x15203a6f8 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15203a6d0 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15203a698 <col:26> 'struct iscsi_host *' lvalue Var 0x152039fb8 'ihost' 'struct iscsi_host *'
+    | `-DeclRefExpr 0x15203a710 <col:39> 'unsigned long' lvalue Var 0x15203a278 'flags' 'unsigned long'
+    |-CallExpr 0x15203a900 <line:10:2, col:62> 'int'
+    | |-ImplicitCastExpr 0x15203a8e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15203a840 <col:2> 'int ()' Function 0x15203a788 'iscsi_host_for_each_session' 'int ()'
+    | |-ImplicitCastExpr 0x15203a930 <col:30> 'struct Scsi_Host *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15203a860 <col:30> 'struct Scsi_Host *' lvalue ParmVar 0x152013e48 'shost' 'struct Scsi_Host *'
+    | `-ImplicitCastExpr 0x15203a9b0 <col:37> 'void (*)(struct Scsi_Host *)' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15203a8c8 <col:37> 'void (struct Scsi_Host *)' Function 0x152013f50 'iscsi_host_remove' 'void (struct Scsi_Host *)'
+    |-CallExpr 0x15203abc8 <line:11:2, line:12:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15203aaa8 <line:11:2> 'int ()' Function 0x15203a9f0 'wait_event_interruptible' 'int ()'
+    | |-RecoveryExpr 0x15203ab00 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15203aac8 <col:27> 'struct iscsi_host *' lvalue Var 0x152039fb8 'ihost' 'struct iscsi_host *'
+    | `-BinaryOperator 0x15203aba8 <line:12:6, col:29> 'int' contains-errors '=='
+    |   |-RecoveryExpr 0x15203ab60 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15203ab28 <col:6> 'struct iscsi_host *' lvalue Var 0x152039fb8 'ihost' 'struct iscsi_host *'
+    |   `-IntegerLiteral 0x15203ab88 <col:29> 'int' 0
+    |-IfStmt 0x15203c960 <line:13:2, line:14:24>
+    | |-CallExpr 0x15203ad58 <line:13:6, col:28> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x15203acd8 <col:6> 'int ()' Function 0x15203ac20 'signal_pending' 'int ()'
+    | | `-RecoveryExpr 0x15203ad38 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x15203c938 <line:14:3, col:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15203c8b8 <col:3> 'int ()' Function 0x15203c800 'flush_signals' 'int ()'
+    |   `-RecoveryExpr 0x15203c918 <col:17> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x15203cab8 <line:16:2, col:24> 'int'
+      |-ImplicitCastExpr 0x15203caa0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x15203ca60 <col:2> 'int ()' Function 0x15203c9a8 'scsi_remove_host' 'int ()'
+      `-ImplicitCastExpr 0x15203cae0 <col:19> 'struct Scsi_Host *' <LValueToRValue>
+        `-DeclRefExpr 0x15203ca80 <col:19> 'struct Scsi_Host *' lvalue ParmVar 0x152013e48 'shost' 'struct Scsi_Host *'

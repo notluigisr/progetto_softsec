@@ -1,0 +1,22 @@
+`-FunctionDecl 0x153841b78  line:1:13 invalid has_locked_children 'int (struct mount *, struct dentry *)' static
+  |-ParmVarDecl 0x15580e268 <col:33, col:47> col:47 used mnt 'struct mount *'
+  |-ParmVarDecl 0x153841a58 <col:52, col:67> col:67 used dentry 'struct dentry *'
+  `-CompoundStmt 0x153842370 <line:2:1, line:12:1>
+    |-DeclStmt 0x153841d20 <line:3:2, col:21>
+    | `-VarDecl 0x153841cb8 <col:2, col:16> col:16 used child 'struct mount *'
+    |-CallExpr 0x153841fb8 <line:4:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153841e90 <col:2> 'int ()' Function 0x153841dd8 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x153841eb0 <col:22> 'struct mount *' lvalue Var 0x153841cb8 'child' 'struct mount *'
+    | |-UnaryOperator 0x153841f30 <col:29, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x153841f08 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x153841ed0 <col:30> 'struct mount *' lvalue ParmVar 0x15580e268 'mnt' 'struct mount *'
+    | `-RecoveryExpr 0x153841f98 <col:47> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x153842340 <col:58, line:10:2>
+      `-IfStmt 0x153842320 <line:8:3, line:9:11>
+        |-BinaryOperator 0x1538422b8 <line:8:7, col:30> '<dependent type>' contains-errors '&'
+        | |-CXXDependentScopeMemberExpr 0x153842218 <col:7, col:18> '<dependent type>' contains-errors lvalue .mnt_flags
+        | | `-RecoveryExpr 0x1538421f0 <col:7, col:14> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x1538421b8 <col:7> 'struct mount *' lvalue Var 0x153841cb8 'child' 'struct mount *'
+        | `-RecoveryExpr 0x153842298 <col:30> '<dependent type>' contains-errors lvalue
+        `-ReturnStmt 0x153842310 <line:9:4, col:11>
+          `-RecoveryExpr 0x1538422f0 <col:11> '<dependent type>' contains-errors lvalue

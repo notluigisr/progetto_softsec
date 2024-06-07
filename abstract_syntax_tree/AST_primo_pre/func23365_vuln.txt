@@ -1,0 +1,56 @@
+`-FunctionDecl 0x152128288  line:1:23 invalid get_signature 'const int *(const int *, int *)' static
+  |-ParmVarDecl 0x1521280f0 <col:37, col:52> col:52 invalid asn1_sig 'const int *'
+  |-ParmVarDecl 0x1521281a8 <col:62, col:67> col:67 used len 'int *'
+  `-CompoundStmt 0x152141f68 <line:2:1, line:17:1>
+    |-DeclStmt 0x1521283e0 <line:3:5, col:19>
+    | `-VarDecl 0x152128358 <col:5, col:18> col:9 used offset 'int' cinit
+    |   `-IntegerLiteral 0x1521283c0 <col:18> 'int' 0
+    |-DeclStmt 0x152128490 <line:4:5, col:30>
+    | `-VarDecl 0x152128410 <col:5, col:20> col:20 referenced invalid ptr 'const int *'
+    |-IfStmt 0x152141a40 <line:6:5, line:8:14>
+    | |-BinaryOperator 0x1521419b8 <line:6:9, line:7:59> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x152141940 <line:6:9, col:59> 'int' contains-errors '<'
+    | | | |-CallExpr 0x152141908 <col:9, col:55> '<dependent type>' contains-errors
+    | | | | |-DeclRefExpr 0x152128600 <col:9> 'int ()' Function 0x152128548 'asn1_next_obj' 'int ()'
+    | | | | |-RecoveryExpr 0x152128620 <col:23> '<dependent type>' contains-errors lvalue
+    | | | | |-UnaryOperator 0x152128660 <col:33, col:34> 'int *' prefix '&' cannot overflow
+    | | | | | `-DeclRefExpr 0x152128640 <col:34> 'int' lvalue Var 0x152128358 'offset' 'int'
+    | | | | `-RecoveryExpr 0x1521418e8 <col:42> '<dependent type>' contains-errors lvalue
+    | | | `-IntegerLiteral 0x1521286c8 <col:59> 'int' 0
+    | | `-CallExpr 0x152141980 <line:7:13, col:59> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x152141800 <col:13> 'int ()' Function 0x152128730 'asn1_skip_obj' 'int ()'
+    | |   |-RecoveryExpr 0x152141820 <col:27> '<dependent type>' contains-errors lvalue
+    | |   |-UnaryOperator 0x152141860 <col:37, col:38> 'int *' prefix '&' cannot overflow
+    | |   | `-DeclRefExpr 0x152141840 <col:38> 'int' lvalue Var 0x152128358 'offset' 'int'
+    | |   `-RecoveryExpr 0x152141960 <col:46> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x152141a28 <line:8:9, col:14> 'end_get_sig' 0x1521419d8
+    |-IfStmt 0x152141bf0 <line:10:5, line:11:14>
+    | |-BinaryOperator 0x152141bb8 <line:10:9, col:31> 'int' contains-errors '!='
+    | | |-ArraySubscriptExpr 0x152141b78 <col:9, col:26> '<dependent type>' contains-errors lvalue
+    | | | |-ImplicitCastExpr 0x152141b60 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    | | | | `-RecoveryExpr 0x152141a60 <col:9> '<dependent type>' contains-errors lvalue
+    | | | `-UnaryOperator 0x152141aa0 <col:18, col:24> 'int' postfix '++'
+    | | |   `-DeclRefExpr 0x152141a80 <col:18> 'int' lvalue Var 0x152128358 'offset' 'int'
+    | | `-RecoveryExpr 0x152141b98 <col:31> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x152141bd8 <line:11:9, col:14> 'end_get_sig' 0x1521419d8
+    |-BinaryOperator 0x152141de8 <line:12:5, col:45> 'int' contains-errors '='
+    | |-UnaryOperator 0x152141c48 <col:5, col:6> 'int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x152141c30 <col:6> 'int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152141c10 <col:6> 'int *' lvalue ParmVar 0x1521281a8 'len' 'int *'
+    | `-CallExpr 0x152141db8 <col:12, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152141d40 <col:12> 'int ()' Function 0x152141c88 'get_asn1_length' 'int ()'
+    |   |-RecoveryExpr 0x152141d60 <col:28> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x152141da0 <col:38, col:39> 'int *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x152141d80 <col:39> 'int' lvalue Var 0x152128358 'offset' 'int'
+    |-BinaryOperator 0x152141ef8 <line:13:5, col:27> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152141e28 <col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152141e08 <col:5> 'const int *' lvalue Var 0x152128410 'ptr' 'const int *'
+    | `-UnaryOperator 0x152141ee0 <col:11, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-ArraySubscriptExpr 0x152141ec0 <col:12, col:27> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x152141e90 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x152141e50 <col:12> '<dependent type>' contains-errors lvalue
+    |     `-ImplicitCastExpr 0x152141ea8 <col:21> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x152141e70 <col:21> 'int' lvalue Var 0x152128358 'offset' 'int'
+    `-LabelStmt 0x152141f48 <line:15:1, line:16:12> 'end_get_sig'
+      `-ReturnStmt 0x152141f38 <col:5, col:12>
+        `-RecoveryExpr 0x152141f18 <col:12> '<dependent type>' contains-errors lvalue

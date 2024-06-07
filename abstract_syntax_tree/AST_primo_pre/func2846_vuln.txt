@@ -1,0 +1,42 @@
+`-FunctionDecl 0x12d944cb8  line:1:18 collect_mounts 'struct vfsmount *(struct path *)'
+  |-ParmVarDecl 0x12d9286e8 <col:33, col:46> col:46 used path 'struct path *'
+  `-CompoundStmt 0x12d945ac8 <line:2:1, line:11:1>
+    |-DeclStmt 0x12d944f98 <line:3:2, col:20>
+    | |-RecordDecl 0x12d944db0 <col:2, col:9> col:9 struct mount
+    | `-VarDecl 0x12d944f18 <col:2, col:16> col:16 used tree 'struct mount *'
+    |-CallExpr 0x12d945148 <line:4:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x12d945130 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12d9450e0 <col:2> 'int ()' Function 0x12d945028 'namespace_lock' 'int ()'
+    |-BinaryOperator 0x12d9455b0 <line:5:2, line:6:29> 'struct mount *' contains-errors '='
+    | |-DeclRefExpr 0x12d945168 <line:5:2> 'struct mount *' lvalue Var 0x12d944f18 'tree' 'struct mount *'
+    | `-CallExpr 0x12d945578 <col:9, line:6:29> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d945268 <line:5:9> 'int ()' Function 0x12d9451b0 'copy_tree' 'int ()'
+    |   |-CallExpr 0x12d9453e8 <col:19, col:39> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12d945368 <col:19> 'int ()' Function 0x12d9452b0 'real_mount' 'int ()'
+    |   | `-RecoveryExpr 0x12d9453c0 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12d945388 <col:30> 'struct path *' lvalue ParmVar 0x12d9286e8 'path' 'struct path *'
+    |   |-RecoveryExpr 0x12d945448 <col:42, col:48> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12d945410 <col:42> 'struct path *' lvalue ParmVar 0x12d9286e8 'path' 'struct path *'
+    |   `-BinaryOperator 0x12d945558 <line:6:5, col:19> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x12d945518 <col:5> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x12d945538 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12d9456e8 <line:7:2, col:19> 'int'
+    | `-ImplicitCastExpr 0x12d9456d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12d9456b0 <col:2> 'int ()' Function 0x12d9455f8 'namespace_unlock' 'int ()'
+    |-IfStmt 0x12d945a20 <line:8:2, line:9:23>
+    | |-CallExpr 0x12d945840 <line:8:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x12d945828 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12d9457e8 <col:6> 'int ()' Function 0x12d945730 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x12d945868 <col:13> 'struct mount *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d945808 <col:13> 'struct mount *' lvalue Var 0x12d944f18 'tree' 'struct mount *'
+    | `-ReturnStmt 0x12d945a10 <line:9:3, col:23>
+    |   `-ImplicitCastExpr 0x12d9459f8 <col:10, col:23> 'struct vfsmount *' <IntegralToPointer>
+    |     `-CallExpr 0x12d9459b8 <col:10, col:23> 'int'
+    |       |-ImplicitCastExpr 0x12d9459a0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12d945960 <col:10> 'int ()' Function 0x12d9458a8 'ERR_CAST' 'int ()'
+    |       `-ImplicitCastExpr 0x12d9459e0 <col:19> 'struct mount *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d945980 <col:19> 'struct mount *' lvalue Var 0x12d944f18 'tree' 'struct mount *'
+    `-ReturnStmt 0x12d945ab8 <line:10:2, col:16>
+      `-UnaryOperator 0x12d945aa0 <col:9, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12d945a78 <col:10, col:16> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12d945a40 <col:10> 'struct mount *' lvalue Var 0x12d944f18 'tree' 'struct mount *'

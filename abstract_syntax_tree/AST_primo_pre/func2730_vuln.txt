@@ -1,0 +1,26 @@
+`-FunctionDecl 0x14780ddf8  line:1:20 invalid bson_malloc 'int *(int)'
+  |-ParmVarDecl 0x14780dcf0 <col:33, col:37> col:37 used size 'int'
+  `-CompoundStmt 0x147827890 <col:44, line:6:1>
+    |-DeclStmt 0x14780df28 <line:2:5, col:12>
+    | `-VarDecl 0x14780dec0 <col:5, col:11> col:11 used p 'void *'
+    |-BinaryOperator 0x1478275e0 <line:3:5, col:32> 'void *' '='
+    | |-DeclRefExpr 0x14780df40 <col:5> 'void *' lvalue Var 0x14780dec0 'p' 'void *'
+    | `-ImplicitCastExpr 0x14780e188 <col:9, col:32> 'void *' <IntegralToPointer>
+    |   `-CallExpr 0x14780e148 <col:9, col:32> 'int'
+    |     |-ImplicitCastExpr 0x14780e130 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14780e0c0 <col:9> 'int ()' Function 0x14780e008 'bson_malloc_func' 'int ()'
+    |     `-ImplicitCastExpr 0x14780e170 <col:27> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x14780e0e0 <col:27> 'int' lvalue ParmVar 0x14780dcf0 'size' 'int'
+    |-CallExpr 0x1478277e8 <line:4:5, col:32> 'int'
+    | |-ImplicitCastExpr 0x1478277d0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1478276e0 <col:5> 'int ()' Function 0x147827628 'bson_fatal_msg' 'int ()'
+    | |-UnaryOperator 0x147827750 <col:21, col:23> 'int' prefix '!' cannot overflow
+    | | `-UnaryOperator 0x147827738 <col:22, col:23> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x147827720 <col:23> 'void *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x147827700 <col:23> 'void *' lvalue Var 0x14780dec0 'p' 'void *'
+    | `-ImplicitCastExpr 0x147827818 <col:26> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x1478277b0 <col:26> 'char[4]' lvalue "STR"
+    `-ReturnStmt 0x147827880 <line:5:5, col:12>
+      `-ImplicitCastExpr 0x147827868 <col:12> 'int *' <BitCast>
+        `-ImplicitCastExpr 0x147827850 <col:12> 'void *' <LValueToRValue>
+          `-DeclRefExpr 0x147827830 <col:12> 'void *' lvalue Var 0x14780dec0 'p' 'void *'

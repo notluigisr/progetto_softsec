@@ -1,0 +1,27 @@
+`-FunctionDecl 0x14c00a950  line:1:6 i915_gem_context_close 'void (struct drm_file *)'
+  |-ParmVarDecl 0x14c00a848 <col:29, col:46> col:46 used file 'struct drm_file *'
+  `-CompoundStmt 0x14c023528 <line:2:1, line:9:1>
+    |-DeclStmt 0x14c022e98 <line:3:2, col:61>
+    | |-RecordDecl 0x14c022c48 <col:2, col:9> col:9 struct drm_i915_file_private
+    | `-VarDecl 0x14c022db8 <col:2, col:50> col:32 used file_priv 'struct drm_i915_file_private *' cinit
+    |   `-RecoveryExpr 0x14c022e58 <col:44, col:50> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c022e20 <col:44> 'struct drm_file *' lvalue ParmVar 0x14c00a848 'file' 'struct drm_file *'
+    |-CallExpr 0x14c023108 <line:5:2, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c022fe0 <col:2> 'int ()' Function 0x14c022f28 'lockdep_assert_held' 'int ()'
+    | `-UnaryOperator 0x14c0230f0 <col:22, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14c0230a8 <col:23, col:48> '<dependent type>' contains-errors lvalue .struct_mutex
+    |     `-CXXDependentScopeMemberExpr 0x14c023060 <col:23, col:44> '<dependent type>' contains-errors lvalue ->drm
+    |       `-RecoveryExpr 0x14c023038 <col:23, col:34> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14c023000 <col:23> 'struct drm_i915_file_private *' contains-errors lvalue Var 0x14c022db8 'file_priv' 'struct drm_i915_file_private *'
+    |-CallExpr 0x14c023350 <line:7:2, col:65> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c023210 <col:2> 'int ()' Function 0x14c023158 'idr_for_each' 'int ()'
+    | |-UnaryOperator 0x14c023290 <col:15, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14c023268 <col:16, col:27> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14c023230 <col:16> 'struct drm_i915_file_private *' contains-errors lvalue Var 0x14c022db8 'file_priv' 'struct drm_i915_file_private *'
+    | |-RecoveryExpr 0x14c023310 <col:40> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x14c023330 <col:61> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x14c023500 <line:8:2, col:37> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14c023468 <col:2> 'int ()' Function 0x14c0233b0 'idr_destroy' 'int ()'
+      `-UnaryOperator 0x14c0234e8 <col:14, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14c0234c0 <col:15, col:26> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14c023488 <col:15> 'struct drm_i915_file_private *' contains-errors lvalue Var 0x14c022db8 'file_priv' 'struct drm_i915_file_private *'

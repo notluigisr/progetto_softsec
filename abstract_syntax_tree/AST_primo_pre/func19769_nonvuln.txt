@@ -1,0 +1,31 @@
+`-FunctionDecl 0x125026600  line:1:6 kvm_arch_vcpu_load 'void (struct kvm_vcpu *, int)'
+  |-ParmVarDecl 0x12500e248 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x12500e2c8 <col:48, col:52> col:52 used cpu 'int'
+  `-CompoundStmt 0x125026f70 <line:2:1, line:11:1>
+    |-BinaryOperator 0x125026780 <line:3:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x125026738 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x125026700 <col:2> 'struct kvm_vcpu *' lvalue ParmVar 0x12500e248 'vcpu' 'struct kvm_vcpu *'
+    | `-DeclRefExpr 0x125026760 <col:14> 'int' lvalue ParmVar 0x12500e2c8 'cpu' 'int'
+    |-BinaryOperator 0x125026a38 <line:4:2, col:63> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x125026800 <col:2, col:13> '<dependent type>' contains-errors lvalue .host_cpu_context
+    | | `-RecoveryExpr 0x1250267d8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1250267a0 <col:2> 'struct kvm_vcpu *' lvalue ParmVar 0x12500e248 'vcpu' 'struct kvm_vcpu *'
+    | `-CallExpr 0x125026a10 <col:32, col:63> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x125026970 <col:32> 'int ()' Function 0x1250268b8 'this_cpu_ptr' 'int ()'
+    |   `-RecoveryExpr 0x1250269f0 <col:45> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x125026dd8 <line:7:2, line:8:19>
+    | |-CallExpr 0x125026c38 <line:7:6, col:70> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x125026b38 <col:6> 'int ()' Function 0x125026a80 'cpumask_test_and_clear_cpu' 'int ()'
+    | | |-DeclRefExpr 0x125026b58 <col:33> 'int' lvalue ParmVar 0x12500e2c8 'cpu' 'int'
+    | | `-UnaryOperator 0x125026c20 <col:38, col:50> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-CXXDependentScopeMemberExpr 0x125026bd8 <col:39, col:50> '<dependent type>' contains-errors lvalue .require_dcache_flush
+    | |     `-RecoveryExpr 0x125026bb0 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x125026b78 <col:39> 'struct kvm_vcpu *' lvalue ParmVar 0x12500e248 'vcpu' 'struct kvm_vcpu *'
+    | `-CallExpr 0x125026db8 <line:8:3, col:19> 'int'
+    |   `-ImplicitCastExpr 0x125026da0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x125026d48 <col:3> 'int ()' Function 0x125026c90 'flush_cache_all' 'int ()'
+    `-CallExpr 0x125026f30 <line:10:2, col:31> 'int'
+      |-ImplicitCastExpr 0x125026f18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x125026ed8 <col:2> 'int ()' Function 0x125026e20 'kvm_arm_set_running_vcpu' 'int ()'
+      `-ImplicitCastExpr 0x125026f58 <col:27> 'struct kvm_vcpu *' <LValueToRValue>
+        `-DeclRefExpr 0x125026ef8 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x12500e248 'vcpu' 'struct kvm_vcpu *'

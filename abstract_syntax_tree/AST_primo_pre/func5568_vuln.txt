@@ -1,0 +1,67 @@
+`-FunctionDecl 0x145941b78  line:1:20 invalid sctp_sf_eat_fwd_tsn_fast 'int (const struct sctp_endpoint *, const struct sctp_association *, const int, void *, int *)'
+  |-ParmVarDecl 0x145928668 <line:2:2, col:30> col:30 used ep 'const struct sctp_endpoint *'
+  |-ParmVarDecl 0x145941858 <line:3:2, col:33> col:33 used asoc 'const struct sctp_association *'
+  |-ParmVarDecl 0x1459418d8 <line:4:2, col:23> col:23 invalid type 'const int'
+  |-ParmVarDecl 0x145941958 <line:5:2, col:8> col:8 used arg 'void *'
+  |-ParmVarDecl 0x145941a08 <line:6:2, col:18> col:18 invalid commands 'int *'
+  `-CompoundStmt 0x146009110 <line:7:1, line:51:1>
+    |-DeclStmt 0x145941e88 <line:8:2, col:32>
+    | |-RecordDecl 0x145941c48 <col:2, col:9> col:9 struct sctp_chunk
+    | `-VarDecl 0x145941db8 <col:2, col:29> col:21 used chunk 'struct sctp_chunk *' cinit
+    |   `-ImplicitCastExpr 0x145941e58 <col:29> 'struct sctp_chunk *' <BitCast>
+    |     `-ImplicitCastExpr 0x145941e40 <col:29> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x145941e20 <col:29> 'void *' lvalue ParmVar 0x145941958 'arg' 'void *'
+    |-DeclStmt 0x145942088 <line:9:2, col:36>
+    | |-RecordDecl 0x145941ea0 <col:2, col:9> col:9 struct sctp_fwdtsn_hdr
+    | `-VarDecl 0x145942008 <col:2, col:26> col:26 used fwdtsn_hdr 'struct sctp_fwdtsn_hdr *'
+    |-IfStmt 0x145943878 <line:13:2, line:17:2>
+    | |-UnaryOperator 0x145942308 <line:13:6, col:35> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x1459422a8 <col:7, col:35> 'int'
+    | |   |-ImplicitCastExpr 0x145942290 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x145942200 <col:7> 'int ()' Function 0x145942148 'sctp_vtag_verify' 'int ()'
+    | |   |-ImplicitCastExpr 0x1459422d8 <col:24> 'struct sctp_chunk *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x145942220 <col:24> 'struct sctp_chunk *' lvalue Var 0x145941db8 'chunk' 'struct sctp_chunk *'
+    | |   `-ImplicitCastExpr 0x1459422f0 <col:31> 'const struct sctp_association *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x145942240 <col:31> 'const struct sctp_association *' lvalue ParmVar 0x145941858 'asoc' 'const struct sctp_association *'
+    | `-CompoundStmt 0x145943858 <col:38, line:17:2>
+    |   |-CallExpr 0x145942620 <line:14:3, line:15:16> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x145942400 <line:14:3> 'int ()' Function 0x145942348 'sctp_add_cmd_sf' 'int ()'
+    |   | |-RecoveryExpr 0x145942420 <col:19> '<dependent type>' contains-errors lvalue
+    |   | |-RecoveryExpr 0x1459425c8 <col:29> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x145942600 <line:15:5, col:15> 'int'
+    |   |   `-ImplicitCastExpr 0x1459425e8 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x145942538 <col:5> 'int ()' Function 0x145942480 'SCTP_NULL' 'int ()'
+    |   `-ReturnStmt 0x145943848 <line:16:3, col:56>
+    |     `-CallExpr 0x145943800 <col:10, col:56> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x145942738 <col:10> 'int ()' Function 0x145942680 'sctp_sf_pdiscard' 'int ()'
+    |       |-DeclRefExpr 0x145942758 <col:27> 'const struct sctp_endpoint *' lvalue ParmVar 0x145928668 'ep' 'const struct sctp_endpoint *'
+    |       |-DeclRefExpr 0x145942778 <col:31> 'const struct sctp_association *' lvalue ParmVar 0x145941858 'asoc' 'const struct sctp_association *'
+    |       |-RecoveryExpr 0x145942798 <col:37> '<dependent type>' contains-errors lvalue
+    |       |-DeclRefExpr 0x1459427b8 <col:43> 'void *' lvalue ParmVar 0x145941958 'arg' 'void *'
+    |       `-RecoveryExpr 0x1459427d8 <col:48> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x145943cd0 <line:20:2, line:22:17>
+    | |-RecoveryExpr 0x145943ab8 <line:20:6, col:70> '_Bool' contains-errors
+    | `-ReturnStmt 0x145943cc0 <line:21:3, line:22:17>
+    |   `-CallExpr 0x145943c78 <line:21:10, line:22:17> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x145943bb8 <line:21:10> 'int ()' Function 0x145943b00 'sctp_sf_violation_chunklen' 'int ()'
+    |     |-DeclRefExpr 0x145943bd8 <col:37> 'const struct sctp_endpoint *' lvalue ParmVar 0x145928668 'ep' 'const struct sctp_endpoint *'
+    |     |-DeclRefExpr 0x145943bf8 <col:41> 'const struct sctp_association *' lvalue ParmVar 0x145941858 'asoc' 'const struct sctp_association *'
+    |     |-RecoveryExpr 0x145943c18 <col:47> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x145943c38 <col:53> 'void *' lvalue ParmVar 0x145941958 'arg' 'void *'
+    |     `-RecoveryExpr 0x145943c58 <line:22:9> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x145943e70 <line:24:2, col:53> 'struct sctp_fwdtsn_hdr *' contains-errors '='
+    | |-DeclRefExpr 0x145943cf0 <col:2> 'struct sctp_fwdtsn_hdr *' lvalue Var 0x145942008 'fwdtsn_hdr' 'struct sctp_fwdtsn_hdr *'
+    | `-CStyleCastExpr 0x145943e48 <col:15, col:53> 'struct sctp_fwdtsn_hdr *' contains-errors <Dependent>
+    |   `-CXXDependentScopeMemberExpr 0x145943d70 <col:41, col:53> '<dependent type>' contains-errors lvalue ->data
+    |     `-RecoveryExpr 0x145943d48 <col:41, col:48> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x145943d10 <col:41> 'struct sctp_chunk *' lvalue Var 0x145941db8 'chunk' 'struct sctp_chunk *'
+    |-BinaryOperator 0x145943f58 <line:25:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x145943ef0 <col:2, col:14> '<dependent type>' contains-errors lvalue .fwdtsn_hdr
+    | | `-RecoveryExpr 0x145943ec8 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x145943e90 <col:2> 'struct sctp_chunk *' lvalue Var 0x145941db8 'chunk' 'struct sctp_chunk *'
+    | `-DeclRefExpr 0x145943f38 <col:27> 'struct sctp_fwdtsn_hdr *' lvalue Var 0x145942008 'fwdtsn_hdr' 'struct sctp_fwdtsn_hdr *'
+    |-IfStmt 0x146008a40 <line:34:2, line:35:8>
+    | |-RecoveryExpr 0x1460089b8 <line:34:6, col:52> '_Bool' contains-errors
+    | `-GotoStmt 0x146008a28 <line:35:3, col:8> 'gen_shutdown' 0x1460089d8
+    `-LabelStmt 0x146008e38 <line:43:1, col:13> 'gen_shutdown'
+      `-NullStmt 0x146008e30 <col:13>

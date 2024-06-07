@@ -1,0 +1,89 @@
+`-FunctionDecl 0x13c830f58  line:1:12 nft_flush_table 'int (struct nft_ctx *)' static
+  |-ParmVarDecl 0x13c830e48 <col:28, col:44> col:44 used ctx 'struct nft_ctx *'
+  `-CompoundStmt 0x13c8574f8 <line:2:1, line:32:1>
+    |-DeclStmt 0x13c853ed0 <line:3:2, col:9>
+    | `-VarDecl 0x13c853e68 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x13c854170 <line:4:2, col:30>
+    | |-RecordDecl 0x13c853ee8 <col:2, col:9> col:9 struct nft_chain
+    | |-VarDecl 0x13c854058 <col:2, col:20> col:20 used chain 'struct nft_chain *'
+    | `-VarDecl 0x13c8540e8 <col:2, col:28> col:28 used nc 'struct nft_chain *'
+    |-DeclStmt 0x13c854410 <line:5:2, col:26>
+    | |-RecordDecl 0x13c854188 <col:2, col:9> col:9 struct nft_set
+    | |-VarDecl 0x13c8542f8 <col:2, col:18> col:18 used set 'struct nft_set *'
+    | `-VarDecl 0x13c854388 <col:2, col:24> col:24 used ns 'struct nft_set *'
+    |-CallExpr 0x13c8546e8 <line:7:2, col:63> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c854550 <col:2> 'int ()' Function 0x13c854498 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x13c854570 <col:27> 'struct nft_chain *' lvalue Var 0x13c854058 'chain' 'struct nft_chain *'
+    | |-DeclRefExpr 0x13c854590 <col:34> 'struct nft_chain *' lvalue Var 0x13c8540e8 'nc' 'struct nft_chain *'
+    | |-UnaryOperator 0x13c854658 <col:38, col:51> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x13c854610 <col:39, col:51> '<dependent type>' contains-errors lvalue ->chains
+    | |   `-RecoveryExpr 0x13c8545e8 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13c8545b0 <col:39> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | `-RecoveryExpr 0x13c8546c8 <col:59> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x13c854d20 <col:65, line:17:2>
+    | |-BinaryOperator 0x13c8547a8 <line:8:3, col:16> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x13c854760 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13c854728 <col:3> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | | `-DeclRefExpr 0x13c854788 <col:16> 'struct nft_chain *' lvalue Var 0x13c854058 'chain' 'struct nft_chain *'
+    | |-BinaryOperator 0x13c854998 <line:10:3, col:33> 'int' '='
+    | | |-DeclRefExpr 0x13c8547c8 <col:3> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    | | `-CallExpr 0x13c854958 <col:9, col:33> 'int'
+    | |   |-ImplicitCastExpr 0x13c854940 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13c8548c8 <col:9> 'int ()' Function 0x13c854810 'nft_delrule_by_chain' 'int ()'
+    | |   `-ImplicitCastExpr 0x13c854980 <col:30> 'struct nft_ctx *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c8548e8 <col:30> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | |-IfStmt 0x13c854a98 <line:11:3, line:12:9>
+    | | |-BinaryOperator 0x13c854a10 <line:11:7, col:13> 'int' '<'
+    | | | |-ImplicitCastExpr 0x13c8549f8 <col:7> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x13c8549b8 <col:7> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    | | | `-IntegerLiteral 0x13c8549d8 <col:13> 'int' 0
+    | | `-GotoStmt 0x13c854a80 <line:12:4, col:9> 'out' 0x13c854a30
+    | |-BinaryOperator 0x13c854c50 <line:14:3, col:25> 'int' '='
+    | | |-DeclRefExpr 0x13c854ab8 <col:3> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    | | `-CallExpr 0x13c854c10 <col:9, col:25> 'int'
+    | |   |-ImplicitCastExpr 0x13c854bf8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13c854bb8 <col:9> 'int ()' Function 0x13c854b00 'nft_delchain' 'int ()'
+    | |   `-ImplicitCastExpr 0x13c854c38 <col:22> 'struct nft_ctx *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c854bd8 <col:22> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | `-IfStmt 0x13c854d00 <line:15:3, line:16:9>
+    |   |-BinaryOperator 0x13c854cc8 <line:15:7, col:13> 'int' '<'
+    |   | |-ImplicitCastExpr 0x13c854cb0 <col:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13c854c70 <col:7> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    |   | `-IntegerLiteral 0x13c854c90 <col:13> 'int' 0
+    |   `-GotoStmt 0x13c854ce8 <line:16:4, col:9> 'out' 0x13c854a30
+    |-CallExpr 0x13c856d00 <line:19:2, col:59> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c854d58 <col:2> 'int ()' Function 0x13c854498 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x13c854d78 <col:27> 'struct nft_set *' lvalue Var 0x13c8542f8 'set' 'struct nft_set *'
+    | |-DeclRefExpr 0x13c854d98 <col:32> 'struct nft_set *' lvalue Var 0x13c854388 'ns' 'struct nft_set *'
+    | |-UnaryOperator 0x13c856c70 <col:36, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x13c856c28 <col:37, col:49> '<dependent type>' contains-errors lvalue ->sets
+    | |   `-RecoveryExpr 0x13c856c00 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13c854db8 <col:37> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | `-RecoveryExpr 0x13c856ce0 <col:55> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x13c8572b8 <col:61, line:27:2>
+    | |-BinaryOperator 0x13c8571e8 <line:24:3, col:28> 'int' '='
+    | | |-DeclRefExpr 0x13c857010 <col:3> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    | | `-CallExpr 0x13c857188 <col:9, col:28> 'int'
+    | |   |-ImplicitCastExpr 0x13c857170 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13c857110 <col:9> 'int ()' Function 0x13c857058 'nft_delset' 'int ()'
+    | |   |-ImplicitCastExpr 0x13c8571b8 <col:20> 'struct nft_ctx *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x13c857130 <col:20> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    | |   `-ImplicitCastExpr 0x13c8571d0 <col:25> 'struct nft_set *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c857150 <col:25> 'struct nft_set *' lvalue Var 0x13c8542f8 'set' 'struct nft_set *'
+    | `-IfStmt 0x13c857298 <line:25:3, line:26:9>
+    |   |-BinaryOperator 0x13c857260 <line:25:7, col:13> 'int' '<'
+    |   | |-ImplicitCastExpr 0x13c857248 <col:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13c857208 <col:7> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    |   | `-IntegerLiteral 0x13c857228 <col:13> 'int' 0
+    |   `-GotoStmt 0x13c857280 <line:26:4, col:9> 'out' 0x13c854a30
+    |-BinaryOperator 0x13c857470 <line:29:2, col:24> 'int' '='
+    | |-DeclRefExpr 0x13c8572d8 <col:2> 'int' lvalue Var 0x13c853e68 'err' 'int'
+    | `-CallExpr 0x13c857430 <col:8, col:24> 'int'
+    |   |-ImplicitCastExpr 0x13c857418 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13c8573d8 <col:8> 'int ()' Function 0x13c857320 'nft_deltable' 'int ()'
+    |   `-ImplicitCastExpr 0x13c857458 <col:21> 'struct nft_ctx *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13c8573f8 <col:21> 'struct nft_ctx *' lvalue ParmVar 0x13c830e48 'ctx' 'struct nft_ctx *'
+    `-LabelStmt 0x13c8574d8 <line:30:1, line:31:9> 'out'
+      `-ReturnStmt 0x13c8574c8 <col:2, col:9>
+        `-ImplicitCastExpr 0x13c8574b0 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x13c857490 <col:9> 'int' lvalue Var 0x13c853e68 'err' 'int'

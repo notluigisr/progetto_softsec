@@ -1,0 +1,74 @@
+`-FunctionDecl 0x13980e358  line:1:12 gp_interception 'int (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x13980e248 <col:28, col:45> col:45 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x139829c20 <line:2:1, line:31:1>
+    |-DeclStmt 0x139826a48 <line:3:2, col:37>
+    | |-RecordDecl 0x139826650 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x1398267b8 <col:2, col:36> col:19 svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x139826a18 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x1398269d8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1398269c0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x139826950 <col:25> 'int ()' Function 0x139826898 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x139826a00 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x139826970 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x139826ae0 <line:5:2, col:12>
+    | `-VarDecl 0x139826a78 <col:2, col:6> col:6 used opcode 'int'
+    |-IfStmt 0x139826b98 <line:8:2, line:9:8>
+    | |-RecoveryExpr 0x139826b10 <line:8:6> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x139826b80 <line:9:3, col:8> 'reinject' 0x139826b30
+    |-IfStmt 0x139826e60 <line:12:2, line:13:8>
+    | |-BinaryOperator 0x139826e28 <line:12:6, col:59> 'int' contains-errors '!='
+    | | |-CallExpr 0x139826dc8 <col:6, col:54> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x139826c98 <col:6> 'int ()' Function 0x139826be0 'x86_decode_emulated_instruction' 'int ()'
+    | | | |-DeclRefExpr 0x139826cb8 <col:38> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    | | | |-IntegerLiteral 0x139826cd8 <col:44> 'int' 0
+    | | | |-RecoveryExpr 0x139826da8 <col:47> '<dependent type>' contains-errors lvalue
+    | | | `-IntegerLiteral 0x139826d10 <col:53> 'int' 0
+    | | `-RecoveryExpr 0x139826e08 <col:59> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x139826e48 <line:13:3, col:8> 'reinject' 0x139826b30
+    |-BinaryOperator 0x139827018 <line:15:2, col:32> 'int' '='
+    | |-DeclRefExpr 0x139826e80 <col:2> 'int' lvalue Var 0x139826a78 'opcode' 'int'
+    | `-CallExpr 0x139826fd8 <col:11, col:32> 'int'
+    |   |-ImplicitCastExpr 0x139826fc0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x139826f80 <col:11> 'int ()' Function 0x139826ec8 'svm_instr_opcode' 'int ()'
+    |   `-ImplicitCastExpr 0x139827000 <col:28> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x139826fa0 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x1398299a0 <line:17:2, line:26:40> has_else
+    | |-BinaryOperator 0x1398270b0 <line:17:6, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x139827038 <col:6> 'int' lvalue Var 0x139826a78 'opcode' 'int'
+    | | `-RecoveryExpr 0x139827090 <col:16> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x139827590 <col:32, line:25:2>
+    | | |-IfStmt 0x139827180 <line:18:3, line:19:9>
+    | | | |-UnaryOperator 0x139827150 <line:18:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | | `-ImplicitCastExpr 0x139827138 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    | | | |   `-RecoveryExpr 0x139827118 <col:8> '<dependent type>' contains-errors lvalue
+    | | | `-GotoStmt 0x139827168 <line:19:4, col:9> 'reinject' 0x139826b30
+    | | `-IfStmt 0x139827570 <line:22:3, line:24:44>
+    | |   |-UnaryOperator 0x139827318 <line:22:7, col:26> 'int' prefix '!' cannot overflow
+    | |   | `-CallExpr 0x1398272d8 <col:8, col:26> 'int'
+    | |   |   |-ImplicitCastExpr 0x1398272c0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | |   |   | `-DeclRefExpr 0x139827280 <col:8> 'int ()' Function 0x1398271c8 'is_guest_mode' 'int ()'
+    | |   |   `-ImplicitCastExpr 0x139827300 <col:22> 'struct kvm_vcpu *' <LValueToRValue>
+    | |   |     `-DeclRefExpr 0x1398272a0 <col:22> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    | |   `-ReturnStmt 0x139827560 <line:23:4, line:24:44>
+    | |     `-CallExpr 0x139827530 <line:23:11, line:24:44> '<dependent type>' contains-errors
+    | |       |-DeclRefExpr 0x139827410 <line:23:11> 'int ()' Function 0x139827358 'kvm_emulate_instruction' 'int ()'
+    | |       |-DeclRefExpr 0x139827430 <col:35> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    | |       `-BinaryOperator 0x139827510 <line:24:5, col:26> '<dependent type>' contains-errors '|'
+    | |         |-RecoveryExpr 0x1398274d0 <col:5> '<dependent type>' contains-errors lvalue
+    | |         `-RecoveryExpr 0x1398274f0 <col:26> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x139829990 <line:26:3, col:40>
+    |   `-CallExpr 0x139829930 <col:10, col:40> 'int'
+    |     |-ImplicitCastExpr 0x139829918 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1398298b8 <col:10> 'int ()' Function 0x139829800 'emulate_svm_instr' 'int ()'
+    |     |-ImplicitCastExpr 0x139829960 <col:28> 'struct kvm_vcpu *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1398298d8 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    |     `-ImplicitCastExpr 0x139829978 <col:34> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1398298f8 <col:34> 'int' lvalue Var 0x139826a78 'opcode' 'int'
+    |-LabelStmt 0x139829bd0 <line:28:1, line:29:51> 'reinject'
+    | `-CallExpr 0x139829b98 <col:2, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139829ab0 <col:2> 'int ()' Function 0x1398299f8 'kvm_queue_exception_e' 'int ()'
+    |   |-DeclRefExpr 0x139829ad0 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x13980e248 'vcpu' 'struct kvm_vcpu *'
+    |   |-RecoveryExpr 0x139829b58 <col:30> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x139829b78 <col:41> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x139829c10 <line:30:2, col:9>
+      `-IntegerLiteral 0x139829bf0 <col:9> 'int' 1

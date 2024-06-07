@@ -1,0 +1,60 @@
+`-FunctionDecl 0x12a1283a8  line:1:14 invalid ResizeOutputTensor 'int (int *, const int *, const int *, int *)'
+  |-ParmVarDecl 0x12a128128 <col:33, col:48> col:48 invalid context 'int *'
+  |-ParmVarDecl 0x12a1281a8 <line:2:33, col:53> col:53 invalid data 'const int *'
+  |-ParmVarDecl 0x12a128228 <line:3:33, col:53> col:53 invalid segment_ids 'const int *'
+  |-ParmVarDecl 0x12a1282a8 <line:4:33, col:47> col:47 invalid output 'int *'
+  `-CompoundStmt 0x12a142258 <col:55, line:17:1>
+    |-DeclStmt 0x12a128528 <line:5:3, col:21>
+    | `-VarDecl 0x12a128488 <col:3, col:20> col:7 used max_index 'int' cinit
+    |   `-UnaryOperator 0x12a128510 <col:19, col:20> 'int' prefix '-'
+    |     `-IntegerLiteral 0x12a1284f0 <col:20> 'int' 1
+    |-DeclStmt 0x12a1286c8 <line:6:3, col:57>
+    | `-VarDecl 0x12a128558 <col:3, col:56> col:13 used segment_id_size 'const int' cinit
+    |   `-ArraySubscriptExpr 0x12a1286a8 <col:31, col:56> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x12a128690 <col:31, col:50> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-CXXDependentScopeMemberExpr 0x12a128628 <col:31, col:50> '<dependent type>' contains-errors lvalue ->data
+    |     |   `-CXXDependentScopeMemberExpr 0x12a1285e0 <col:31, col:44> '<dependent type>' contains-errors lvalue ->dims
+    |     |     `-RecoveryExpr 0x12a1285c0 <col:31> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x12a128670 <col:55> 'int' 0
+    |-IfStmt 0x12a141930 <line:7:3, line:9:3>
+    | |-BinaryOperator 0x12a128738 <line:7:7, col:25> 'int' contains-errors '>'
+    | | |-ImplicitCastExpr 0x12a128720 <col:7> 'int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x12a1286e0 <col:7> 'const int' contains-errors lvalue Var 0x12a128558 'segment_id_size' 'const int'
+    | | `-IntegerLiteral 0x12a128700 <col:25> 'int' 0
+    | `-CompoundStmt 0x12a141918 <col:28, line:9:3>
+    |   `-BinaryOperator 0x12a1418f8 <line:8:5, col:58> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x12a128758 <col:5> 'int' lvalue Var 0x12a128488 'max_index' 'int'
+    |     `-ArraySubscriptExpr 0x12a1418d8 <col:17, col:58> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x12a1418c0 <col:17, col:35> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-CXXDependentScopeMemberExpr 0x12a141800 <col:17, col:35> '<dependent type>' contains-errors lvalue .i32
+    |       |   `-CXXDependentScopeMemberExpr 0x12a128798 <col:17, col:30> '<dependent type>' contains-errors lvalue ->data
+    |       |     `-RecoveryExpr 0x12a128778 <col:17> '<dependent type>' contains-errors lvalue
+    |       `-BinaryOperator 0x12a1418a0 <col:39, col:57> 'int' contains-errors '-'
+    |         |-ImplicitCastExpr 0x12a141888 <col:39> 'int' contains-errors <LValueToRValue>
+    |         | `-DeclRefExpr 0x12a141848 <col:39> 'const int' contains-errors lvalue Var 0x12a128558 'segment_id_size' 'const int'
+    |         `-IntegerLiteral 0x12a141868 <col:57> 'int' 1
+    |-DeclStmt 0x12a141b98 <line:10:3, col:44>
+    | `-VarDecl 0x12a141968 <col:3, col:43> col:13 used data_rank 'const int' cinit
+    |   `-CallExpr 0x12a141b70 <col:25, col:43> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12a141b30 <col:25> 'int ()' Function 0x12a141a78 'NumDimensions' 'int ()'
+    |     `-RecoveryExpr 0x12a141b50 <col:39> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x12a1420c0 <line:13:3, line:15:3>
+    | |-DeclStmt 0x12a141e90 <line:13:8, col:17>
+    | | `-VarDecl 0x12a141e08 <col:8, col:16> col:12 used i 'int' cinit
+    | |   `-IntegerLiteral 0x12a141e70 <col:16> 'int' 1
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x12a141f18 <col:19, col:23> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x12a141ee8 <col:19> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12a141ea8 <col:19> 'int' lvalue Var 0x12a141e08 'i' 'int'
+    | | `-ImplicitCastExpr 0x12a141f00 <col:23> 'int' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a141ec8 <col:23> 'const int' contains-errors lvalue Var 0x12a141968 'data_rank' 'const int'
+    | |-UnaryOperator 0x12a141f58 <col:34, col:36> 'int' prefix '++'
+    | | `-DeclRefExpr 0x12a141f38 <col:36> 'int' lvalue Var 0x12a141e08 'i' 'int'
+    | `-CompoundStmt 0x12a1420b0 <col:39, line:15:3>
+    `-ReturnStmt 0x12a142248 <line:16:3, col:61>
+      `-CallExpr 0x12a142210 <col:10, col:61> '<dependent type>' contains-errors
+        |-CXXDependentScopeMemberExpr 0x12a142118 <col:10, col:19> '<dependent type>' contains-errors lvalue ->ResizeTensor
+        | `-RecoveryExpr 0x12a1420f8 <col:10> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x12a142160 <col:32> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x12a142180 <col:41> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x12a1421f0 <col:49> '<dependent type>' contains-errors lvalue

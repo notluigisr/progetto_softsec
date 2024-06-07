@@ -1,0 +1,1 @@
+  uint64_t range() const { return range_; }

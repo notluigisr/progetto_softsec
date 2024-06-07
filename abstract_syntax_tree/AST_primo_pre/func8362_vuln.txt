@@ -1,0 +1,79 @@
+`-FunctionDecl 0x14900df68  line:1:1 referenced invalid push_symbol 'int (int, char, int, int)'
+  |-ParmVarDecl 0x14900dcf0 <col:13, col:17> col:17 invalid str 'int'
+  |-ParmVarDecl 0x14900dd68 <col:22, col:27> col:27 used symbol 'char'
+  |-ParmVarDecl 0x14900dde8 <col:35, col:39> col:39 width 'int'
+  |-ParmVarDecl 0x14900de68 <col:46, col:50> col:50 used n 'int'
+  `-CompoundStmt 0x14902a040 <line:2:1, line:19:1>
+    |-DeclStmt 0x14900e1d0 <line:3:5, col:20>
+    | |-VarDecl 0x14900e0d0 <col:5, col:15> col:10 used buf 'char[2]'
+    | `-VarDecl 0x14900e150 <col:5, col:19> col:19 used p 'char *'
+    |-DeclStmt 0x14900e268 <line:4:5, col:10>
+    | `-VarDecl 0x14900e200 <col:5, col:9> col:9 used i 'int'
+    |-ForStmt 0x149029808 <line:12:5, line:13:38>
+    | |-BinaryOperator 0x14900e390 <line:12:10, col:14> 'int' '='
+    | | |-DeclRefExpr 0x14900e350 <col:10> 'int' lvalue Var 0x14900e200 'i' 'int'
+    | | `-IntegerLiteral 0x14900e370 <col:14> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x1490292b8 <col:17, col:27> 'int' '&&'
+    | | |-BinaryOperator 0x149029218 <col:17, col:21> 'int' '<'
+    | | | |-ImplicitCastExpr 0x149029200 <col:17> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14900e3b0 <col:17> 'int' lvalue Var 0x14900e200 'i' 'int'
+    | | | `-IntegerLiteral 0x14900e3d0 <col:21> 'int' 2
+    | | `-ImplicitCastExpr 0x1490292a0 <col:26, col:27> 'int' <IntegralCast>
+    | |   `-ImplicitCastExpr 0x149029288 <col:26, col:27> 'char' <LValueToRValue>
+    | |     `-UnaryOperator 0x149029270 <col:26, col:27> 'char' lvalue prefix '*' cannot overflow
+    | |       `-ImplicitCastExpr 0x149029258 <col:27> 'char *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x149029238 <col:27> 'char *' lvalue Var 0x14900e150 'p' 'char *'
+    | |-BinaryOperator 0x149029348 <col:30, col:36> 'char *' ','
+    | | |-UnaryOperator 0x1490292f8 <col:30, col:31> 'int' postfix '++'
+    | | | `-DeclRefExpr 0x1490292d8 <col:30> 'int' lvalue Var 0x14900e200 'i' 'int'
+    | | `-UnaryOperator 0x149029330 <col:35, col:36> 'char *' postfix '++'
+    | |   `-DeclRefExpr 0x149029310 <col:35> 'char *' lvalue Var 0x14900e150 'p' 'char *'
+    | `-BinaryOperator 0x1490297e8 <line:13:2, col:38> 'char' contains-errors '='
+    |   |-ArraySubscriptExpr 0x1490296a8 <col:2, col:7> 'char' lvalue
+    |   | |-ImplicitCastExpr 0x149029678 <col:2> 'char *' <ArrayToPointerDecay>
+    |   | | `-DeclRefExpr 0x149029368 <col:2> 'char[2]' lvalue Var 0x14900e0d0 'buf' 'char[2]'
+    |   | `-ImplicitCastExpr 0x149029690 <col:6> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x149029388 <col:6> 'int' lvalue Var 0x14900e200 'i' 'int'
+    |   `-ConditionalOperator 0x1490297b8 <col:11, col:38> '<dependent type>' contains-errors
+    |     |-ParenExpr 0x149029748 <col:11, col:21> 'int'
+    |     | `-BinaryOperator 0x149029728 <col:12, col:18> 'int' '=='
+    |     |   |-ImplicitCastExpr 0x149029710 <col:12, col:13> 'int' <IntegralCast>
+    |     |   | `-ImplicitCastExpr 0x1490296f8 <col:12, col:13> 'char' <LValueToRValue>
+    |     |   |   `-UnaryOperator 0x1490296e0 <col:12, col:13> 'char' lvalue prefix '*' cannot overflow
+    |     |   |     `-ImplicitCastExpr 0x1490296c8 <col:13> 'char *' <LValueToRValue>
+    |     |   |       `-DeclRefExpr 0x1490293f8 <col:13> 'char *' lvalue Var 0x14900e150 'p' 'char *'
+    |     |   `-CharacterLiteral 0x149029448 <col:18> 'int' 32
+    |     |-RecoveryExpr 0x149029768 <col:25> '<dependent type>' contains-errors lvalue
+    |     `-UnaryOperator 0x1490297a0 <col:37, col:38> 'char' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x149029788 <col:38> 'char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1490294e8 <col:38> 'char *' lvalue Var 0x14900e150 'p' 'char *'
+    |-CallExpr 0x149029c20 <line:15:5, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1490299a0 <col:5> 'int ()' Function 0x1490298e8 'Strcat' 'int ()'
+    | |-RecoveryExpr 0x1490299c0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x149029ba8 <col:17, col:38> 'int'
+    |   |-ImplicitCastExpr 0x149029b90 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x149029ac0 <col:17> 'int ()' Function 0x149029a08 'Sprintf' 'int ()'
+    |   |-ImplicitCastExpr 0x149029bd8 <col:25> 'char *' <ArrayToPointerDecay>
+    |   | `-StringLiteral 0x149029b20 <col:25> 'char[4]' lvalue "STR"
+    |   `-ImplicitCastExpr 0x149029c08 <col:32> 'int' <IntegralCast>
+    |     `-ImplicitCastExpr 0x149029bf0 <col:32> 'char' <LValueToRValue>
+    |       `-DeclRefExpr 0x149029b40 <col:32> 'char' lvalue ParmVar 0x14900dd68 'symbol' 'char'
+    |-ForStmt 0x149029e98 <line:16:5, line:17:28>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x149029ca8 <line:16:12, col:16> 'int' '>'
+    | | |-ImplicitCastExpr 0x149029c90 <col:12> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x149029c50 <col:12> 'int' lvalue ParmVar 0x14900de68 'n' 'int'
+    | | `-IntegerLiteral 0x149029c70 <col:16> 'int' 0
+    | |-UnaryOperator 0x149029ce8 <col:19, col:20> 'int' postfix '--'
+    | | `-DeclRefExpr 0x149029cc8 <col:19> 'int' lvalue ParmVar 0x14900de68 'n' 'int'
+    | `-CallExpr 0x149029e60 <line:17:2, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149029de0 <col:2> 'int ()' Function 0x149029d28 'Strcat_charp_n' 'int ()'
+    |   |-RecoveryExpr 0x149029e00 <col:17> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x149029e20 <col:22> 'char[2]' lvalue Var 0x14900e0d0 'buf' 'char[2]'
+    |   `-DeclRefExpr 0x149029e40 <col:27> 'int' lvalue Var 0x14900e200 'i' 'int'
+    `-CallExpr 0x14902a010 <line:18:5, col:28> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x149029fb0 <col:5> 'int ()' Function 0x149029ef8 'Strcat_charp' 'int ()'
+      |-RecoveryExpr 0x149029fd0 <col:18> '<dependent type>' contains-errors lvalue
+      `-StringLiteral 0x149029ff0 <col:23> 'char[4]' lvalue "STR"

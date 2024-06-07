@@ -1,0 +1,74 @@
+`-FunctionDecl 0x147008838  line:1:13 invalid msr_write_intercepted_l01 'int (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x146928668 <col:39, col:56> col:56 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x1469286e8 <col:62, col:66> col:66 referenced invalid msr 'int'
+  `-CompoundStmt 0x1470095f8 <line:2:1, line:19:1>
+    |-DeclStmt 0x1470089a0 <line:3:2, col:27>
+    | `-VarDecl 0x147008938 <col:2, col:17> col:17 used msr_bitmap 'unsigned long *'
+    |-DeclStmt 0x147008a88 <line:4:2, col:31>
+    | `-VarDecl 0x1470089d0 <col:2, col:30> col:6 used f 'int' cinit
+    |   `-ImplicitCastExpr 0x147008a70 <col:10, col:30> 'int' <IntegralCast>
+    |     `-UnaryExprOrTypeTraitExpr 0x147008a50 <col:10, col:30> 'unsigned long' sizeof 'unsigned long'
+    |-IfStmt 0x147008ce8 <line:6:2, line:7:10>
+    | |-UnaryOperator 0x147008c88 <line:6:6, col:30> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x147008c68 <col:7, col:30> 'int'
+    | |   `-ImplicitCastExpr 0x147008c50 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x147008c00 <col:7> 'int ()' Function 0x147008b48 'cpu_has_vmx_msr_bitmap' 'int ()'
+    | `-ReturnStmt 0x147008cd8 <line:7:3, col:10>
+    |   `-RecoveryExpr 0x147008cb8 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x147008f10 <line:9:2, col:36> 'unsigned long *' contains-errors '='
+    | |-DeclRefExpr 0x147008d08 <col:2> 'unsigned long *' lvalue Var 0x147008938 'msr_bitmap' 'unsigned long *'
+    | `-CXXDependentScopeMemberExpr 0x147008ec8 <col:15, col:36> '<dependent type>' contains-errors lvalue .msr_bitmap
+    |   `-RecoveryExpr 0x147008ea0 <col:15, col:29> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x147008e60 <col:15, col:26> 'int'
+    |       |-ImplicitCastExpr 0x147008e48 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x147008e08 <col:15> 'int ()' Function 0x147008d50 'to_vmx' 'int ()'
+    |       `-ImplicitCastExpr 0x147008e88 <col:22> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x147008e28 <col:22> 'struct kvm_vcpu *' lvalue ParmVar 0x146928668 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x147009580 <line:11:2, line:16:2> has_else
+    | |-BinaryOperator 0x147008f70 <line:11:6, col:13> 'int' contains-errors '<='
+    | | |-RecoveryExpr 0x147008f30 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x147008f50 <col:13> 'int' 8191
+    | |-CompoundStmt 0x1470091f0 <col:21, line:13:2>
+    | | `-ReturnStmt 0x1470091e0 <line:12:3, col:48>
+    | |   `-UnaryOperator 0x1470091c8 <col:10, col:48> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |     `-UnaryOperator 0x1470091b0 <col:11, col:48> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |       `-CallExpr 0x147009180 <col:12, col:48> '<dependent type>' contains-errors
+    | |         |-DeclRefExpr 0x147009070 <col:12> 'int ()' Function 0x147008fb8 'test_bit' 'int ()'
+    | |         |-RecoveryExpr 0x147009090 <col:21> '<dependent type>' contains-errors lvalue
+    | |         `-BinaryOperator 0x147009160 <col:26, col:47> 'unsigned long *' '+'
+    | |           |-ImplicitCastExpr 0x147009148 <col:26> 'unsigned long *' <LValueToRValue>
+    | |           | `-DeclRefExpr 0x1470090b0 <col:26> 'unsigned long *' lvalue Var 0x147008938 'msr_bitmap' 'unsigned long *'
+    | |           `-BinaryOperator 0x147009128 <col:39, col:47> 'int' '/'
+    | |             |-IntegerLiteral 0x1470090d0 <col:39> 'int' 2048
+    | |             `-ImplicitCastExpr 0x147009110 <col:47> 'int' <LValueToRValue>
+    | |               `-DeclRefExpr 0x1470090f0 <col:47> 'int' lvalue Var 0x1470089d0 'f' 'int'
+    | `-IfStmt 0x147009560 <line:13:9, line:16:2>
+    |   |-BinaryOperator 0x147009308 <line:13:13, col:54> 'int' contains-errors '&&'
+    |   | |-ParenExpr 0x147009268 <col:13, col:31> 'int' contains-errors
+    |   | | `-BinaryOperator 0x147009248 <col:14, col:21> 'int' contains-errors '>='
+    |   | |   |-RecoveryExpr 0x147009208 <col:14> '<dependent type>' contains-errors lvalue
+    |   | |   `-IntegerLiteral 0x147009228 <col:21> 'unsigned int' 3221225472
+    |   | `-ParenExpr 0x1470092e8 <col:36, col:54> 'int' contains-errors
+    |   |   `-BinaryOperator 0x1470092c8 <col:37, col:44> 'int' contains-errors '<='
+    |   |     |-RecoveryExpr 0x147009288 <col:37> '<dependent type>' contains-errors lvalue
+    |   |     `-IntegerLiteral 0x1470092a8 <col:44> 'unsigned int' 3221233663
+    |   `-CompoundStmt 0x147009540 <col:57, line:16:2>
+    |     |-CompoundAssignOperator 0x147009390 <line:14:3, col:10> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-RecoveryExpr 0x147009348 <col:3> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x147009328 <col:3> 'int' lvalue ParmVar 0x1469286e8 'msr' 'int'
+    |     | `-IntegerLiteral 0x147009370 <col:10> 'int' 8191
+    |     `-ReturnStmt 0x147009530 <line:15:3, col:48>
+    |       `-UnaryOperator 0x147009518 <col:10, col:48> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |         `-UnaryOperator 0x147009500 <col:11, col:48> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |           `-CallExpr 0x1470094d0 <col:12, col:48> '<dependent type>' contains-errors
+    |             |-DeclRefExpr 0x1470093c0 <col:12> 'int ()' Function 0x147008fb8 'test_bit' 'int ()'
+    |             |-RecoveryExpr 0x1470093e0 <col:21> '<dependent type>' contains-errors lvalue
+    |             `-BinaryOperator 0x1470094b0 <col:26, col:47> 'unsigned long *' '+'
+    |               |-ImplicitCastExpr 0x147009498 <col:26> 'unsigned long *' <LValueToRValue>
+    |               | `-DeclRefExpr 0x147009400 <col:26> 'unsigned long *' lvalue Var 0x147008938 'msr_bitmap' 'unsigned long *'
+    |               `-BinaryOperator 0x147009478 <col:39, col:47> 'int' '/'
+    |                 |-IntegerLiteral 0x147009420 <col:39> 'int' 3072
+    |                 `-ImplicitCastExpr 0x147009460 <col:47> 'int' <LValueToRValue>
+    |                   `-DeclRefExpr 0x147009440 <col:47> 'int' lvalue Var 0x1470089d0 'f' 'int'
+    `-ReturnStmt 0x1470095e8 <line:18:2, col:9>
+      `-RecoveryExpr 0x1470095c8 <col:9> '<dependent type>' contains-errors lvalue

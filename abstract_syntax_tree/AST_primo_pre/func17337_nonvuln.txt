@@ -1,0 +1,181 @@
+`-FunctionDecl 0x11d854238  line:1:12 packet_rcv_fanout 'int (struct sk_buff *, struct net_device *, struct packet_type *, struct net_device *)' static
+  |-ParmVarDecl 0x11d83d248 <col:30, col:46> col:46 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x11d853e28 <col:51, col:70> col:70 used dev 'struct net_device *'
+  |-ParmVarDecl 0x11d853ff8 <line:2:9, col:29> col:29 used pt 'struct packet_type *'
+  |-ParmVarDecl 0x11d8540e8 <col:33, col:52> col:52 used orig_dev 'struct net_device *'
+  `-CompoundStmt 0x11f808ad8 <line:3:1, line:51:1>
+    |-DeclStmt 0x11d854598 <line:4:2, col:46>
+    | |-RecordDecl 0x11d854348 <col:2, col:9> col:9 struct packet_fanout
+    | `-VarDecl 0x11d8544b8 <col:2, col:32> col:24 used f 'struct packet_fanout *' cinit
+    |   `-RecoveryExpr 0x11d854558 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11d854520 <col:28> 'struct packet_type *' lvalue ParmVar 0x11d853ff8 'pt' 'struct packet_type *'
+    |-DeclStmt 0x11d854808 <line:5:2, col:46>
+    | `-VarDecl 0x11d8545c8 <col:2, col:45> col:15 used num 'unsigned int' cinit
+    |   `-CallExpr 0x11d8547e0 <col:21, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d854760 <col:21> 'int ()' Function 0x11d8546a8 'READ_ONCE' 'int ()'
+    |     `-RecoveryExpr 0x11d8547b8 <col:31, col:34> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11d854780 <col:31> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |-DeclStmt 0x11d854ba8 <line:6:2, col:38>
+    | |-RecordDecl 0x11d854820 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x11d854988 <col:2, col:37> col:14 used net 'struct net *' cinit
+    |   `-CallExpr 0x11d854b68 <col:20, col:37> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d854ad0 <col:20> 'int ()' Function 0x11d854a18 'read_pnet' 'int ()'
+    |     `-UnaryOperator 0x11d854b50 <col:30, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x11d854b28 <col:31, col:34> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x11d854af0 <col:31> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |-DeclStmt 0x11d854da8 <line:7:2, col:24>
+    | |-RecordDecl 0x11d854bc0 <col:2, col:9> col:9 struct packet_sock
+    | `-VarDecl 0x11d854d28 <col:2, col:22> col:22 used po 'struct packet_sock *'
+    |-DeclStmt 0x11d85a468 <line:8:2, col:18>
+    | `-VarDecl 0x11d85a400 <col:2, col:15> col:15 used idx 'unsigned int'
+    |-IfStmt 0x11d85a9f8 <line:10:2, line:13:2>
+    | |-BinaryOperator 0x11d85a810 <line:10:6, col:37> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x11d85a7a8 <col:6, col:31> 'int' contains-errors prefix '!' cannot overflow
+    | | | `-CallExpr 0x11d85a760 <col:7, col:31> 'int' contains-errors
+    | | |   |-ImplicitCastExpr 0x11d85a748 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x11d85a560 <col:7> 'int ()' Function 0x11d85a4a8 'net_eq' 'int ()'
+    | | |   |-CallExpr 0x11d85a6e8 <col:14, col:25> 'int'
+    | | |   | |-ImplicitCastExpr 0x11d85a6d0 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | | `-DeclRefExpr 0x11d85a660 <col:14> 'int ()' Function 0x11d85a5a8 'dev_net' 'int ()'
+    | | |   | `-ImplicitCastExpr 0x11d85a710 <col:22> 'struct net_device *' <LValueToRValue>
+    | | |   |   `-DeclRefExpr 0x11d85a680 <col:22> 'struct net_device *' lvalue ParmVar 0x11d853e28 'dev' 'struct net_device *'
+    | | |   `-ImplicitCastExpr 0x11d85a790 <col:28> 'struct net *' contains-errors <LValueToRValue>
+    | | |     `-DeclRefExpr 0x11d85a728 <col:28> 'struct net *' contains-errors lvalue Var 0x11d854988 'net' 'struct net *'
+    | | `-UnaryOperator 0x11d85a7f8 <col:36, col:37> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x11d85a7e0 <col:37> 'unsigned int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x11d85a7c0 <col:37> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    | `-CompoundStmt 0x11d85a9d8 <col:42, line:13:2>
+    |   |-CallExpr 0x11d85a968 <line:11:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x11d85a950 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11d85a910 <col:3> 'int ()' Function 0x11d85a858 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x11d85a990 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11d85a930 <col:13> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   `-ReturnStmt 0x11d85a9c8 <line:12:3, col:10>
+    |     `-IntegerLiteral 0x11d85a9a8 <col:10> 'int' 0
+    |-IfStmt 0x11d85aed8 <line:15:2, line:19:2>
+    | |-CallExpr 0x11d85aba0 <line:15:6, col:50> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11d85aaf8 <col:6> 'int ()' Function 0x11d85aa40 'fanout_has_flag' 'int ()'
+    | | |-DeclRefExpr 0x11d85ab18 <col:22> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    | | `-RecoveryExpr 0x11d85ab80 <col:25> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11d85aeb8 <col:53, line:19:2>
+    |   |-BinaryOperator 0x11d85adf8 <line:16:3, col:54> 'struct sk_buff *' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85abd0 <col:3> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   | `-CallExpr 0x11d85adc0 <col:9, col:54> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x11d85acd0 <col:9> 'int ()' Function 0x11d85ac18 'ip_check_defrag' 'int ()'
+    |   |   |-DeclRefExpr 0x11d85acf0 <col:25> 'struct net *' contains-errors lvalue Var 0x11d854988 'net' 'struct net *'
+    |   |   |-DeclRefExpr 0x11d85ad10 <col:30> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |   `-RecoveryExpr 0x11d85ada0 <col:35> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x11d85ae98 <line:17:3, line:18:11>
+    |     |-UnaryOperator 0x11d85ae50 <line:17:7, col:8> 'int' prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x11d85ae38 <col:8> 'struct sk_buff *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x11d85ae18 <col:8> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |     `-ReturnStmt 0x11d85ae88 <line:18:4, col:11>
+    |       `-IntegerLiteral 0x11d85ae68 <col:11> 'int' 0
+    |-SwitchStmt 0x11d85af70 <line:20:2, line:44:2>
+    | |-ImplicitCastExpr 0x11d85af58 <line:20:10, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x11d85af30 <col:10, col:13> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d85aef8 <col:10> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    | `-CompoundStmt 0x11d85c9f8 <col:19, line:44:2>
+    |   |-DefaultStmt 0x11d85b200 <line:22:2, line:23:38>
+    |   | `-BinaryOperator 0x11d85b1e0 <col:3, col:38> 'unsigned int' contains-errors '='
+    |   |   |-DeclRefExpr 0x11d85afb0 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   |   `-ImplicitCastExpr 0x11d85b1c8 <col:9, col:38> 'unsigned int' contains-errors <IntegralCast>
+    |   |     `-CallExpr 0x11d85b148 <col:9, col:38> 'int' contains-errors
+    |   |       |-ImplicitCastExpr 0x11d85b130 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x11d85b0b0 <col:9> 'int ()' Function 0x11d85aff8 'fanout_demux_hash' 'int ()'
+    |   |       |-ImplicitCastExpr 0x11d85b180 <col:27> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x11d85b0d0 <col:27> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |       |-ImplicitCastExpr 0x11d85b198 <col:30> 'struct sk_buff *' <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x11d85b0f0 <col:30> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |       `-ImplicitCastExpr 0x11d85b1b0 <col:35> 'unsigned int' contains-errors <LValueToRValue>
+    |   |         `-DeclRefExpr 0x11d85b110 <col:35> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   |-BreakStmt 0x11d85b220 <line:24:3>
+    |   |-BinaryOperator 0x11d85be98 <line:26:3, col:36> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85b240 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11d85be80 <col:9, col:36> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-CallExpr 0x11d85be00 <col:9, col:36> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d85b3c0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d85b340 <col:9> 'int ()' Function 0x11d85b288 'fanout_demux_lb' 'int ()'
+    |   |     |-ImplicitCastExpr 0x11d85be38 <col:25> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85b360 <col:25> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |     |-ImplicitCastExpr 0x11d85be50 <col:28> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85b380 <col:28> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x11d85be68 <col:33> 'unsigned int' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d85b3a0 <col:33> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   |-BreakStmt 0x11d85beb8 <line:27:3>
+    |   |-BinaryOperator 0x11d85c108 <line:29:3, col:37> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85bed8 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11d85c0f0 <col:9, col:37> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-CallExpr 0x11d85c070 <col:9, col:37> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d85c058 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d85bfd8 <col:9> 'int ()' Function 0x11d85bf20 'fanout_demux_cpu' 'int ()'
+    |   |     |-ImplicitCastExpr 0x11d85c0a8 <col:26> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85bff8 <col:26> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |     |-ImplicitCastExpr 0x11d85c0c0 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c018 <col:29> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x11d85c0d8 <col:34> 'unsigned int' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d85c038 <col:34> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   |-BreakStmt 0x11d85c128 <line:30:3>
+    |   |-BinaryOperator 0x11d85c378 <line:32:3, col:37> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85c148 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11d85c360 <col:9, col:37> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-CallExpr 0x11d85c2e0 <col:9, col:37> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d85c2c8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d85c248 <col:9> 'int ()' Function 0x11d85c190 'fanout_demux_rnd' 'int ()'
+    |   |     |-ImplicitCastExpr 0x11d85c318 <col:26> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c268 <col:26> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |     |-ImplicitCastExpr 0x11d85c330 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c288 <col:29> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x11d85c348 <col:34> 'unsigned int' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d85c2a8 <col:34> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   |-BreakStmt 0x11d85c398 <line:33:3>
+    |   |-BinaryOperator 0x11d85c5d0 <line:35:3, col:36> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85c3a0 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11d85c5b8 <col:9, col:36> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-CallExpr 0x11d85c538 <col:9, col:36> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d85c520 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d85c4a0 <col:9> 'int ()' Function 0x11d85c3e8 'fanout_demux_qm' 'int ()'
+    |   |     |-ImplicitCastExpr 0x11d85c570 <col:25> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c4c0 <col:25> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |     |-ImplicitCastExpr 0x11d85c588 <col:28> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c4e0 <col:28> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x11d85c5a0 <col:33> 'unsigned int' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d85c500 <col:33> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   |-BreakStmt 0x11d85c5f0 <line:36:3>
+    |   |-BreakStmt 0x11d85c798 <line:39:3>
+    |   |-BinaryOperator 0x11d85c9d0 <line:42:3, col:37> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x11d85c7a0 <col:3> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x11d85c9b8 <col:9, col:37> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-CallExpr 0x11d85c938 <col:9, col:37> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d85c920 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d85c8a0 <col:9> 'int ()' Function 0x11d85c7e8 'fanout_demux_bpf' 'int ()'
+    |   |     |-ImplicitCastExpr 0x11d85c970 <col:26> 'struct packet_fanout *' contains-errors <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c8c0 <col:26> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |   |     |-ImplicitCastExpr 0x11d85c988 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x11d85c8e0 <col:29> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x11d85c9a0 <col:34> 'unsigned int' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d85c900 <col:34> 'unsigned int' contains-errors lvalue Var 0x11d8545c8 'num' 'unsigned int'
+    |   `-BreakStmt 0x11d85c9f0 <line:43:3>
+    |-BinaryOperator 0x11f8088e8 <line:49:2, col:42> 'struct packet_sock *' contains-errors '='
+    | |-DeclRefExpr 0x11d85cb90 <col:2> 'struct packet_sock *' lvalue Var 0x11d854d28 'po' 'struct packet_sock *'
+    | `-CallExpr 0x11f8088c0 <col:7, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11d85cc90 <col:7> 'int ()' Function 0x11d85cbd8 'pkt_sk' 'int ()'
+    |   `-CallExpr 0x11f808898 <col:14, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d85cd90 <col:14> 'int ()' Function 0x11d85ccd8 'rcu_dereference' 'int ()'
+    |     `-ArraySubscriptExpr 0x11f808878 <col:30, col:40> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x11f808848 <col:30, col:33> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x11f808800 <col:30, col:33> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x11d85cdb0 <col:30> 'struct packet_fanout *' contains-errors lvalue Var 0x11d8544b8 'f' 'struct packet_fanout *'
+    |       `-ImplicitCastExpr 0x11f808860 <col:37> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x11f808828 <col:37> 'unsigned int' lvalue Var 0x11d85a400 'idx' 'unsigned int'
+    `-ReturnStmt 0x11f808ac8 <line:50:2, col:62>
+      `-CallExpr 0x11f808a88 <col:9, col:62> '<dependent type>' contains-errors
+        |-CXXDependentScopeMemberExpr 0x11f808968 <col:9, col:23> '<dependent type>' contains-errors lvalue .func
+        | `-RecoveryExpr 0x11f808940 <col:9, col:13> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x11f808908 <col:9> 'struct packet_sock *' lvalue Var 0x11d854d28 'po' 'struct packet_sock *'
+        |-DeclRefExpr 0x11f8089b0 <col:28> 'struct sk_buff *' lvalue ParmVar 0x11d83d248 'skb' 'struct sk_buff *'
+        |-DeclRefExpr 0x11f8089d0 <col:33> 'struct net_device *' lvalue ParmVar 0x11d853e28 'dev' 'struct net_device *'
+        |-UnaryOperator 0x11f808a50 <col:38, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x11f808a28 <col:39, col:43> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x11f8089f0 <col:39> 'struct packet_sock *' lvalue Var 0x11d854d28 'po' 'struct packet_sock *'
+        `-DeclRefExpr 0x11f808a68 <col:54> 'struct net_device *' lvalue ParmVar 0x11d8540e8 'orig_dev' 'struct net_device *'

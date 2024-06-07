@@ -1,0 +1,1 @@
+  ~Switch_to_definer_security_ctx() { m_thd->security_ctx = m_sctx; }

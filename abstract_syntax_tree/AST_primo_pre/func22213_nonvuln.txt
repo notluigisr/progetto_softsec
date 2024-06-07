@@ -1,0 +1,18 @@
+`-FunctionDecl 0x13f141800  line:1:13 invalid tcp_snd_una_update 'void (struct tcp_sock *, int)' static
+  |-ParmVarDecl 0x13f128648 <col:32, col:49> col:49 used tp 'struct tcp_sock *'
+  |-ParmVarDecl 0x13f1286e0 <col:53, col:57> col:57 invalid ack 'int'
+  `-CompoundStmt 0x13f141e08 <line:2:1, line:8:1>
+    |-CallExpr 0x13f141c48 <line:5:2, col:36> 'int'
+    | |-ImplicitCastExpr 0x13f141c30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13f141a10 <col:2> 'int ()' Function 0x13f141958 'sock_owned_by_me' 'int ()'
+    | `-CStyleCastExpr 0x13f141bd0 <col:19, col:34> 'struct sock *' <BitCast>
+    |   `-ImplicitCastExpr 0x13f141bb8 <col:34> 'struct tcp_sock *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x13f141ad0 <col:34> 'struct tcp_sock *' lvalue ParmVar 0x13f128648 'tp' 'struct tcp_sock *'
+    |-CompoundAssignOperator 0x13f141d38 <line:6:2, col:21> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x13f141ca8 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13f141c70 <col:2> 'struct tcp_sock *' lvalue ParmVar 0x13f128648 'tp' 'struct tcp_sock *'
+    | `-RecoveryExpr 0x13f141d18 <col:21> '<dependent type>' contains-errors lvalue
+    `-BinaryOperator 0x13f141de8 <line:7:2, col:16> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x13f141da0 <col:2, col:6> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x13f141d68 <col:2> 'struct tcp_sock *' lvalue ParmVar 0x13f128648 'tp' 'struct tcp_sock *'
+      `-RecoveryExpr 0x13f141dc8 <col:16> '<dependent type>' contains-errors lvalue

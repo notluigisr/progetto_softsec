@@ -1,0 +1,32 @@
+`-FunctionDecl 0x14c00e350  line:1:13 pcpu_map_extend_workfn 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x14c00e248 <col:36, col:56> col:56 used work 'struct work_struct *'
+  `-CompoundStmt 0x14c027238 <line:2:1, line:13:1>
+    |-DeclStmt 0x14c0269c0 <line:3:2, line:4:23>
+    | |-RecordDecl 0x14c026648 <line:3:2, col:9> col:9 struct pcpu_chunk
+    | `-VarDecl 0x14c0267b8 <col:2, col:21> col:21 used chunk 'struct pcpu_chunk *'
+    |-DeclStmt 0x14c026a58 <line:5:2, col:15>
+    | `-VarDecl 0x14c0269f0 <col:2, col:6> col:6 used new_alloc 'int'
+    |-CallExpr 0x14c026c00 <line:7:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c026b50 <col:2> 'int ()' Function 0x14c026a98 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x14c026be8 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c026bc8 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14c026e20 <line:8:2, col:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14c026c28 <col:2> 'int' lvalue Var 0x14c0269f0 'new_alloc' 'int'
+    | `-CallExpr 0x14c026df0 <col:14, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c026d28 <col:14> 'int ()' Function 0x14c026c70 'pcpu_need_to_extend' 'int ()'
+    |   |-DeclRefExpr 0x14c026d48 <col:34> 'struct pcpu_chunk *' lvalue Var 0x14c0267b8 'chunk' 'struct pcpu_chunk *'
+    |   `-RecoveryExpr 0x14c026dd0 <col:41> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14c026fd0 <line:9:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c026f20 <col:2> 'int ()' Function 0x14c026e68 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x14c026fb8 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c026f98 <col:19> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x14c027218 <line:11:2, line:12:40>
+      |-ImplicitCastExpr 0x14c027018 <line:11:6> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x14c026ff8 <col:6> 'int' lvalue Var 0x14c0269f0 'new_alloc' 'int'
+      `-CallExpr 0x14c0271b8 <line:12:3, col:40> 'int'
+        |-ImplicitCastExpr 0x14c0271a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14c027110 <col:3> 'int ()' Function 0x14c027058 'pcpu_extend_area_map' 'int ()'
+        |-ImplicitCastExpr 0x14c0271e8 <col:24> 'struct pcpu_chunk *' <LValueToRValue>
+        | `-DeclRefExpr 0x14c027130 <col:24> 'struct pcpu_chunk *' lvalue Var 0x14c0267b8 'chunk' 'struct pcpu_chunk *'
+        `-ImplicitCastExpr 0x14c027200 <col:31> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x14c027150 <col:31> 'int' lvalue Var 0x14c0269f0 'new_alloc' 'int'

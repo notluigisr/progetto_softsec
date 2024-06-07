@@ -1,0 +1,1 @@
+OwnedImpl::OwnedImpl(const Instance& data) : OwnedImpl() { add(data); }

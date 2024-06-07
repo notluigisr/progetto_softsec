@@ -1,0 +1,54 @@
+`-FunctionDecl 0x134941978  line:1:16 invalid ocfs2_direct_IO 'int (struct kiocb *, struct iov_iter *)' static
+  |-ParmVarDecl 0x134928668 <col:32, col:46> col:46 used iocb 'struct kiocb *'
+  |-ParmVarDecl 0x134941858 <col:52, col:69> col:69 used iter 'struct iov_iter *'
+  `-CompoundStmt 0x134947268 <line:2:1, line:25:1>
+    |-DeclStmt 0x134941c78 <line:3:2, col:35>
+    | |-RecordDecl 0x134941a30 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x134941b98 <col:2, col:28> col:15 used file 'struct file *' cinit
+    |   `-RecoveryExpr 0x134941c38 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x134941c00 <col:22> 'struct kiocb *' lvalue ParmVar 0x134928668 'iocb' 'struct kiocb *'
+    |-DeclStmt 0x134941f20 <line:4:2, col:45>
+    | |-RecordDecl 0x134941c90 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x134941df8 <col:2, col:41> col:16 used inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x134941ec0 <col:24, col:41> '<dependent type>' contains-errors lvalue ->host
+    |     `-RecoveryExpr 0x134941e98 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x134941e60 <col:24> 'struct file *' contains-errors lvalue Var 0x134941b98 'file' 'struct file *'
+    |-DeclStmt 0x134942330 <line:5:2, col:49>
+    | |-RecordDecl 0x134941f38 <col:2, col:9> col:9 struct ocfs2_super
+    | `-VarDecl 0x1349420a8 <col:2, col:48> col:22 used osb 'struct ocfs2_super *' cinit
+    |   `-CallExpr 0x1349422f0 <col:28, col:48> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x134942270 <col:28> 'int ()' Function 0x1349421b8 'OCFS2_SB' 'int ()'
+    |     `-RecoveryExpr 0x1349422c8 <col:37, col:44> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x134942290 <col:37> 'struct inode *' contains-errors lvalue Var 0x134941df8 'inode' 'struct inode *'
+    |-IfStmt 0x1349426b0 <line:9:2, line:10:10>
+    | |-BinaryOperator 0x134942660 <line:9:6, col:40> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x134942618 <col:6, col:22> '<dependent type>' contains-errors lvalue
+    | | | `-CallExpr 0x1349425d8 <col:6, col:19> 'int' contains-errors
+    | | |   |-ImplicitCastExpr 0x1349425c0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x134942440 <col:6> 'int ()' Function 0x134942388 'OCFS2_I' 'int ()'
+    | | |   `-ImplicitCastExpr 0x134942600 <col:14> 'struct inode *' contains-errors <LValueToRValue>
+    | | |     `-DeclRefExpr 0x134942460 <col:14> 'struct inode *' contains-errors lvalue Var 0x134941df8 'inode' 'struct inode *'
+    | | `-RecoveryExpr 0x134942640 <col:40> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1349426a0 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x134942680 <col:10> 'int' 0
+    `-IfStmt 0x134946d50 <line:13:2, line:15:10>
+      |-BinaryOperator 0x134946d00 <line:13:6, line:14:36> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x134946b50 <line:13:6, col:52> 'int' contains-errors '>'
+      | | |-BinaryOperator 0x134942790 <col:6, col:27> '<dependent type>' contains-errors '+'
+      | | | |-RecoveryExpr 0x134942708 <col:6, col:12> '<dependent type>' contains-errors lvalue
+      | | | | `-DeclRefExpr 0x1349426d0 <col:6> 'struct kiocb *' lvalue ParmVar 0x134928668 'iocb' 'struct kiocb *'
+      | | | `-RecoveryExpr 0x134942768 <col:21, col:27> '<dependent type>' contains-errors lvalue
+      | | |   `-DeclRefExpr 0x134942730 <col:21> 'struct iov_iter *' lvalue ParmVar 0x134941858 'iter' 'struct iov_iter *'
+      | | `-CallExpr 0x134946b10 <col:35, col:52> 'int' contains-errors
+      | |   |-ImplicitCastExpr 0x134946af8 <col:35> 'int (*)()' <FunctionToPointerDecay>
+      | |   | `-DeclRefExpr 0x134946ab8 <col:35> 'int ()' Function 0x134946a00 'i_size_read' 'int ()'
+      | |   `-ImplicitCastExpr 0x134946b38 <col:47> 'struct inode *' contains-errors <LValueToRValue>
+      | |     `-DeclRefExpr 0x134946ad8 <col:47> 'struct inode *' contains-errors lvalue Var 0x134941df8 'inode' 'struct inode *'
+      | `-UnaryOperator 0x134946ce8 <line:14:6, col:36> 'int' contains-errors prefix '!' cannot overflow
+      |   `-CallExpr 0x134946ca8 <col:7, col:36> 'int' contains-errors
+      |     |-ImplicitCastExpr 0x134946c90 <col:7> 'int (*)()' <FunctionToPointerDecay>
+      |     | `-DeclRefExpr 0x134946c50 <col:7> 'int ()' Function 0x134946b98 'ocfs2_supports_append_dio' 'int ()'
+      |     `-ImplicitCastExpr 0x134946cd0 <col:33> 'struct ocfs2_super *' contains-errors <LValueToRValue>
+      |       `-DeclRefExpr 0x134946c70 <col:33> 'struct ocfs2_super *' contains-errors lvalue Var 0x1349420a8 'osb' 'struct ocfs2_super *'
+      `-ReturnStmt 0x134946d40 <line:15:3, col:10>
+        `-IntegerLiteral 0x134946d20 <col:10> 'int' 0

@@ -1,0 +1,59 @@
+`-FunctionDecl 0x12f128750  line:1:6 kvm_lapic_sync_to_vapic 'void (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x12f128648 <col:30, col:47> col:47 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x12f809ab8 <line:2:1, line:23:1>
+    |-DeclStmt 0x12f140b78 <line:4:2, col:22>
+    | |-VarDecl 0x12f140a78 <col:2, col:6> col:6 used max_irr 'int'
+    | `-VarDecl 0x12f140af8 <col:2, col:15> col:15 used max_isr 'int'
+    |-DeclStmt 0x12f140e20 <line:5:2, col:42>
+    | |-RecordDecl 0x12f140b90 <col:2, col:9> col:9 struct kvm_lapic
+    | `-VarDecl 0x12f140cf8 <col:2, col:38> col:20 used apic 'struct kvm_lapic *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12f140dc0 <col:27, col:38> '<dependent type>' contains-errors lvalue .apic
+    |     `-RecoveryExpr 0x12f140d98 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f140d60 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x12f128648 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x12f140ff8 <line:7:2, col:38> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12f140fe0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f140f50 <col:2> 'int ()' Function 0x12f140e98 'apic_sync_pv_eoi_to_guest' 'int ()'
+    | |-ImplicitCastExpr 0x12f141028 <col:28> 'struct kvm_vcpu *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12f140f70 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x12f128648 'vcpu' 'struct kvm_vcpu *'
+    | `-ImplicitCastExpr 0x12f141040 <col:34> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12f140f90 <col:34> 'struct kvm_lapic *' contains-errors lvalue Var 0x12f140cf8 'apic' 'struct kvm_lapic *'
+    |-IfStmt 0x12f1412f0 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x12f1412c8 <line:9:6, col:64> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12f141298 <col:7, col:64> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12f141138 <col:7> 'int ()' Function 0x12f141080 'test_bit' 'int ()'
+    | |   |-RecoveryExpr 0x12f141278 <col:16> '<dependent type>' contains-errors lvalue
+    | |   `-UnaryOperator 0x12f141218 <col:38, col:50> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-CXXDependentScopeMemberExpr 0x12f1411d0 <col:39, col:50> '<dependent type>' contains-errors lvalue .apic_attention
+    | |       `-RecoveryExpr 0x12f1411a8 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x12f141170 <col:39> 'struct kvm_vcpu *' lvalue ParmVar 0x12f128648 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x12f1412e0 <line:10:3>
+    |-BinaryOperator 0x12f141650 <line:13:2, col:38> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12f1414b8 <col:2> 'int' lvalue Var 0x12f140a78 'max_irr' 'int'
+    | `-CallExpr 0x12f141610 <col:12, col:38> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x12f1415f8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12f1415b8 <col:12> 'int ()' Function 0x12f141500 'apic_find_highest_irr' 'int ()'
+    |   `-ImplicitCastExpr 0x12f141638 <col:34> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12f1415d8 <col:34> 'struct kvm_lapic *' contains-errors lvalue Var 0x12f140cf8 'apic' 'struct kvm_lapic *'
+    |-IfStmt 0x12f141748 <line:14:2, line:15:13>
+    | |-BinaryOperator 0x12f1416c8 <line:14:6, col:16> 'int' '<'
+    | | |-ImplicitCastExpr 0x12f1416b0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12f141670 <col:6> 'int' lvalue Var 0x12f140a78 'max_irr' 'int'
+    | | `-IntegerLiteral 0x12f141690 <col:16> 'int' 0
+    | `-BinaryOperator 0x12f141728 <line:15:3, col:13> 'int' '='
+    |   |-DeclRefExpr 0x12f1416e8 <col:3> 'int' lvalue Var 0x12f140a78 'max_irr' 'int'
+    |   `-IntegerLiteral 0x12f141708 <col:13> 'int' 0
+    |-BinaryOperator 0x12f141900 <line:16:2, col:38> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12f141768 <col:2> 'int' lvalue Var 0x12f140af8 'max_isr' 'int'
+    | `-CallExpr 0x12f1418c0 <col:12, col:38> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x12f1418a8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12f141868 <col:12> 'int ()' Function 0x12f1417b0 'apic_find_highest_isr' 'int ()'
+    |   `-ImplicitCastExpr 0x12f1418e8 <col:34> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12f141888 <col:34> 'struct kvm_lapic *' contains-errors lvalue Var 0x12f140cf8 'apic' 'struct kvm_lapic *'
+    `-IfStmt 0x12f809600 <line:17:2, line:18:13>
+      |-BinaryOperator 0x12f141978 <line:17:6, col:16> 'int' '<'
+      | |-ImplicitCastExpr 0x12f141960 <col:6> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x12f141920 <col:6> 'int' lvalue Var 0x12f140af8 'max_isr' 'int'
+      | `-IntegerLiteral 0x12f141940 <col:16> 'int' 0
+      `-BinaryOperator 0x12f1419d8 <line:18:3, col:13> 'int' '='
+        |-DeclRefExpr 0x12f141998 <col:3> 'int' lvalue Var 0x12f140af8 'max_isr' 'int'
+        `-IntegerLiteral 0x12f1419b8 <col:13> 'int' 0

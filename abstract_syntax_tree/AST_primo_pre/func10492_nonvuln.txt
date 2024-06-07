@@ -1,0 +1,45 @@
+`-FunctionDecl 0x1220274d8  line:1:1 invalid dse_get_entry_copy 'int (struct dse *, const int *, int)'
+  |-ParmVarDecl 0x12200e248 <col:20, col:32> col:32 used pdse 'struct dse *'
+  |-ParmVarDecl 0x12200e2e0 <col:38, col:54> col:54 invalid dn 'const int *'
+  |-ParmVarDecl 0x12200e360 <col:58, col:62> col:62 used use_lock 'int'
+  `-CompoundStmt 0x122028280 <line:2:1, line:20:1>
+    |-DeclStmt 0x1220277b8 <line:4:5, col:23>
+    | |-RecordDecl 0x1220275c8 <col:5, col:12> col:12 struct dse_node
+    | `-VarDecl 0x122027738 <col:5, col:22> col:22 used n 'struct dse_node *'
+    |-IfStmt 0x122027b20 <line:6:5, line:8:5>
+    | |-BinaryOperator 0x1220278e8 <line:6:9, col:43> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x1220278c8 <col:9, col:21> 'int' contains-errors '=='
+    | | | |-DeclRefExpr 0x1220277d0 <col:9> 'int' lvalue ParmVar 0x12200e360 'use_lock' 'int'
+    | | | `-RecoveryExpr 0x1220278a8 <col:21> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x122027860 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122027828 <col:37> 'struct dse *' lvalue ParmVar 0x12200e248 'pdse' 'struct dse *'
+    | `-CompoundStmt 0x122027b08 <col:55, line:8:5>
+    |   `-CallExpr 0x122027ae0 <line:7:9, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122027a60 <col:9> 'int ()' Function 0x1220279a8 'slapi_rwlock_rdlock' 'int ()'
+    |     `-RecoveryExpr 0x122027ab8 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x122027a80 <col:29> 'struct dse *' lvalue ParmVar 0x12200e248 'pdse' 'struct dse *'
+    |-BinaryOperator 0x122027cd0 <line:10:5, col:31> 'struct dse_node *' contains-errors '='
+    | |-DeclRefExpr 0x122027b40 <col:5> 'struct dse_node *' lvalue Var 0x122027738 'n' 'struct dse_node *'
+    | `-CallExpr 0x122027ca0 <col:9, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122027c40 <col:9> 'int ()' Function 0x122027b88 'dse_find_node' 'int ()'
+    |   |-DeclRefExpr 0x122027c60 <col:23> 'struct dse *' lvalue ParmVar 0x12200e248 'pdse' 'struct dse *'
+    |   `-RecoveryExpr 0x122027c80 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122027f20 <line:11:5, line:13:5>
+    | |-BinaryOperator 0x122027d68 <line:11:9, col:14> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x122027cf0 <col:9> 'struct dse_node *' lvalue Var 0x122027738 'n' 'struct dse_node *'
+    | | `-RecoveryExpr 0x122027d48 <col:14> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x122027f10 <col:20, line:13:5>
+    |-IfStmt 0x122028218 <line:15:5, line:17:5>
+    | |-BinaryOperator 0x122028058 <line:15:9, col:43> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x122028038 <col:9, col:21> 'int' contains-errors '=='
+    | | | |-DeclRefExpr 0x122027f40 <col:9> 'int' lvalue ParmVar 0x12200e360 'use_lock' 'int'
+    | | | `-RecoveryExpr 0x122028018 <col:21> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x122027fd0 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122027f98 <col:37> 'struct dse *' lvalue ParmVar 0x12200e248 'pdse' 'struct dse *'
+    | `-CompoundStmt 0x122028200 <col:55, line:17:5>
+    |   `-CallExpr 0x1220281d8 <line:16:9, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122028158 <col:9> 'int ()' Function 0x1220280a0 'slapi_rwlock_unlock' 'int ()'
+    |     `-RecoveryExpr 0x1220281b0 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x122028178 <col:29> 'struct dse *' lvalue ParmVar 0x12200e248 'pdse' 'struct dse *'
+    `-ReturnStmt 0x122028270 <line:19:5, col:12>
+      `-RecoveryExpr 0x122028250 <col:12> '<dependent type>' contains-errors lvalue

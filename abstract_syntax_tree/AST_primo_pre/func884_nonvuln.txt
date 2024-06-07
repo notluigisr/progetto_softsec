@@ -1,0 +1,34 @@
+`-FunctionDecl 0x123928750  line:2:6 referenced napi_hash_add 'void (struct napi_struct *)'
+  |-ParmVarDecl 0x123928648 <col:20, col:40> col:40 used napi 'struct napi_struct *'
+  `-CompoundStmt 0x123942930 <line:3:1, line:20:31>
+    |-IfStmt 0x123940f00 <line:4:2, line:6:3>
+    | |-BinaryOperator 0x123940ed0 <line:4:6, line:5:54> 'int' contains-errors '||'
+    | | |-CallExpr 0x123940e50 <line:4:6, col:52> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x123940b70 <col:6> 'int ()' Function 0x123940ab8 'test_bit' 'int ()'
+    | | | |-RecoveryExpr 0x123940e30 <col:15> '<dependent type>' contains-errors lvalue
+    | | | `-UnaryOperator 0x123940c08 <col:40, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x123940be0 <col:41, col:47> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x123940ba8 <col:41> 'struct napi_struct *' lvalue ParmVar 0x123928648 'napi' 'struct napi_struct *'
+    | | `-CallExpr 0x123940ea0 <line:5:6, col:54> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x123940d30 <col:6> 'int ()' Function 0x123940c78 'test_and_set_bit' 'int ()'
+    | |   |-RecoveryExpr 0x123940e80 <col:23> '<dependent type>' contains-errors lvalue
+    | |   `-UnaryOperator 0x123940dc8 <col:42, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x123940da0 <col:43, col:49> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x123940d68 <col:43> 'struct napi_struct *' lvalue ParmVar 0x123928648 'napi' 'struct napi_struct *'
+    | `-ReturnStmt 0x123940ef0 <line:6:3>
+    |-CallExpr 0x123941168 <line:8:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x123941150 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x123941000 <col:2> 'int ()' Function 0x123940f48 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x123941100 <col:12, col:13> 'void (*)(struct napi_struct *)' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x123941078 <col:13> 'void (struct napi_struct *)' Function 0x123928750 'napi_hash_add' 'void (struct napi_struct *)'
+    |-DoStmt 0x123941640 <line:11:2, line:14:34>
+    | |-CompoundStmt 0x123941478 <line:11:5, line:14:2>
+    | `-CallExpr 0x123941600 <col:11, col:33> 'int'
+    |   |-ImplicitCastExpr 0x1239415e8 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x123941568 <col:11> 'int ()' Function 0x1239414b0 'napi_by_id' 'int ()'
+    |   `-ImplicitCastExpr 0x123941628 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x1239415c8 <col:22> 'int ()' Function 0x1239414b0 'napi_by_id' 'int ()'
+    `-BinaryOperator 0x123941718 <line:15:2, col:18> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x123941698 <col:2, col:8> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x123941660 <col:2> 'struct napi_struct *' lvalue ParmVar 0x123928648 'napi' 'struct napi_struct *'
+      `-DeclRefExpr 0x1239416f8 <col:18> 'int ()' Function 0x1239414b0 'napi_by_id' 'int ()'

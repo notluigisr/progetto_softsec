@@ -1,0 +1,30 @@
+`-FunctionDecl 0x10380e350  line:1:13 flush_tx_queue 'void (struct tty_struct *)' static
+  |-ParmVarDecl 0x10380e248 <col:28, col:47> col:47 used tty 'struct tty_struct *'
+  `-CompoundStmt 0x103827048 <line:2:1, line:8:1>
+    |-DeclStmt 0x103826a48 <line:3:2, col:41>
+    | |-RecordDecl 0x103826648 <col:2, col:9> col:9 struct n_hdlc
+    | `-VarDecl 0x1038267b8 <col:2, col:40> col:17 used n_hdlc 'struct n_hdlc *' cinit
+    |   `-ImplicitCastExpr 0x103826a18 <col:26, col:40> 'struct n_hdlc *' <IntegralToPointer>
+    |     `-CallExpr 0x1038269d8 <col:26, col:40> 'int'
+    |       |-ImplicitCastExpr 0x1038269c0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x103826950 <col:26> 'int ()' Function 0x103826898 'tty2n_hdlc' 'int ()'
+    |       `-ImplicitCastExpr 0x103826a00 <col:37> 'struct tty_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x103826970 <col:37> 'struct tty_struct *' lvalue ParmVar 0x10380e248 'tty' 'struct tty_struct *'
+    |-DeclStmt 0x103826c48 <line:4:2, col:24>
+    | |-RecordDecl 0x103826a60 <col:2, col:9> col:9 struct n_hdlc_buf
+    | `-VarDecl 0x103826bc8 <col:2, col:21> col:21 used buf 'struct n_hdlc_buf *'
+    `-WhileStmt 0x103827028 <line:6:2, line:7:48>
+      |-ParenExpr 0x103826e40 <line:6:9, col:52> 'struct n_hdlc_buf *' contains-errors
+      | `-BinaryOperator 0x103826e20 <col:10, col:51> 'struct n_hdlc_buf *' contains-errors '='
+      |   |-DeclRefExpr 0x103826c60 <col:10> 'struct n_hdlc_buf *' lvalue Var 0x103826bc8 'buf' 'struct n_hdlc_buf *'
+      |   `-CallExpr 0x103826df8 <col:16, col:51> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x103826d60 <col:16> 'int ()' Function 0x103826ca8 'n_hdlc_buf_get' 'int ()'
+      |     `-UnaryOperator 0x103826de0 <col:31, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |       `-RecoveryExpr 0x103826db8 <col:32, col:40> '<dependent type>' contains-errors lvalue
+      |         `-DeclRefExpr 0x103826d80 <col:32> 'struct n_hdlc *' lvalue Var 0x1038267b8 'n_hdlc' 'struct n_hdlc *'
+      `-CallExpr 0x103826ff8 <line:7:3, col:48> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x103826f40 <col:3> 'int ()' Function 0x103826e88 'n_hdlc_buf_put' 'int ()'
+        |-UnaryOperator 0x103826fc0 <col:18, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x103826f98 <col:19, col:27> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x103826f60 <col:19> 'struct n_hdlc *' lvalue Var 0x1038267b8 'n_hdlc' 'struct n_hdlc *'
+        `-DeclRefExpr 0x103826fd8 <col:45> 'struct n_hdlc_buf *' lvalue Var 0x103826bc8 'buf' 'struct n_hdlc_buf *'

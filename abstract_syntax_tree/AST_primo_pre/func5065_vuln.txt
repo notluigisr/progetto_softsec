@@ -1,0 +1,97 @@
+`-FunctionDecl 0x13892a2f8  line:1:17 invalid update_uint32_t_value 'int (int *, struct ldb_context *, struct ldb_message *, struct ldb_message *, const char *, int, int *)' static
+  |-ParmVarDecl 0x138910728 <col:39, col:51> col:51 invalid mem_ctx 'int *'
+  |-ParmVarDecl 0x138910d18 <line:2:11, col:31> col:31 used sam_ldb 'struct ldb_context *'
+  |-ParmVarDecl 0x138929ee8 <line:3:11, col:31> col:31 used orig 'struct ldb_message *'
+  |-ParmVarDecl 0x138929fd8 <line:4:11, col:31> col:31 used dest 'struct ldb_message *'
+  |-ParmVarDecl 0x13892a058 <line:5:11, col:23> col:23 used attribute 'const char *'
+  |-ParmVarDecl 0x13892a0d8 <line:6:11, col:20> col:20 invalid value 'int'
+  |-ParmVarDecl 0x13892a158 <line:7:11, col:21> col:21 invalid orig_value 'int *'
+  `-CompoundStmt 0x13892d628 <line:8:1, line:52:1>
+    |-DeclStmt 0x13892a5c8 <line:9:2, col:32>
+    | |-RecordDecl 0x13892a3d8 <col:8, col:15> col:15 struct ldb_val
+    | `-VarDecl 0x13892a548 <col:2, col:24> col:24 used orig_val 'const struct ldb_val *'
+    |-DeclStmt 0x13892a698 <line:11:2, col:24>
+    | `-VarDecl 0x13892a5f8 <col:2, col:23> col:15 used flags 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x13892a680 <col:23> 'unsigned int' <IntegralCast>
+    |     `-IntegerLiteral 0x13892a660 <col:23> 'int' 0
+    |-DeclStmt 0x13892a730 <line:12:2, col:9>
+    | `-VarDecl 0x13892a6c8 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x13892a7e8 <line:13:2, col:15>
+    | `-VarDecl 0x13892a760 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x13892a7c8 <col:14> 'int' 0
+    |-BinaryOperator 0x13892aaa0 <line:15:2, col:49> 'const struct ldb_val *' '='
+    | |-DeclRefExpr 0x13892a800 <col:2> 'const struct ldb_val *' lvalue Var 0x13892a548 'orig_val' 'const struct ldb_val *'
+    | `-ImplicitCastExpr 0x13892aa88 <col:13, col:49> 'const struct ldb_val *' <IntegralToPointer>
+    |   `-CallExpr 0x13892aa28 <col:13, col:49> 'int'
+    |     |-ImplicitCastExpr 0x13892aa10 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13892a980 <col:13> 'int ()' Function 0x13892a8c8 'ldb_msg_find_ldb_val' 'int ()'
+    |     |-ImplicitCastExpr 0x13892aa58 <col:34> 'struct ldb_message *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13892a9a0 <col:34> 'struct ldb_message *' lvalue ParmVar 0x138929ee8 'orig' 'struct ldb_message *'
+    |     `-ImplicitCastExpr 0x13892aa70 <col:40> 'const char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13892a9c0 <col:40> 'const char *' lvalue ParmVar 0x13892a058 'attribute' 'const char *'
+    |-IfStmt 0x13892cde0 <line:16:2, line:30:2> has_else
+    | |-BinaryOperator 0x13892aba0 <line:16:6, col:30> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x13892aaf8 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x13892aae0 <col:7> 'const struct ldb_val *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x13892aac0 <col:7> 'const struct ldb_val *' lvalue Var 0x13892a548 'orig_val' 'const struct ldb_val *'
+    | | `-UnaryOperator 0x13892ab88 <col:19, col:30> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x13892ab70 <col:20, col:30> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x13892ab48 <col:20, col:30> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13892ab10 <col:20> 'const struct ldb_val *' lvalue Var 0x13892a548 'orig_val' 'const struct ldb_val *'
+    | |-CompoundStmt 0x13892ac58 <col:36, line:20:2>
+    | | `-BinaryOperator 0x13892ac38 <line:18:3, col:11> 'unsigned int' contains-errors '='
+    | |   |-DeclRefExpr 0x13892abc0 <col:3> 'unsigned int' lvalue Var 0x13892a5f8 'flags' 'unsigned int'
+    | |   `-RecoveryExpr 0x13892ac18 <col:11> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13892cdc8 <line:20:9, line:30:2>
+    |   `-IfStmt 0x13892cda8 <line:26:3, line:29:3>
+    |     |-BinaryOperator 0x13892ccd8 <line:26:7, col:34> 'int' contains-errors '||'
+    |     | |-BinaryOperator 0x13892cc78 <col:7, col:16> 'int' '!='
+    |     | | |-ImplicitCastExpr 0x13892cc60 <col:7> 'int' <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x13892cb38 <col:7> 'int' lvalue Var 0x13892a760 'error' 'int'
+    |     | | `-IntegerLiteral 0x13892cb58 <col:16> 'int' 0
+    |     | `-BinaryOperator 0x13892ccb8 <col:21, col:34> 'int' contains-errors '!='
+    |     |   |-RecoveryExpr 0x13892cc98 <col:21> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x13892cbc8 <col:34> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x13892cd90 <col:41, line:29:3>
+    |       `-BinaryOperator 0x13892cd70 <line:28:4, col:12> 'unsigned int' contains-errors '='
+    |         |-DeclRefExpr 0x13892ccf8 <col:4> 'unsigned int' lvalue Var 0x13892a5f8 'flags' 'unsigned int'
+    |         `-RecoveryExpr 0x13892cd50 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13892cf20 <line:32:2, line:35:2>
+    | |-BinaryOperator 0x13892ce80 <line:32:6, col:15> 'int' '=='
+    | | |-ImplicitCastExpr 0x13892ce50 <col:6> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13892ce10 <col:6> 'unsigned int' lvalue Var 0x13892a5f8 'flags' 'unsigned int'
+    | | `-ImplicitCastExpr 0x13892ce68 <col:15> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x13892ce30 <col:15> 'int' 0
+    | `-CompoundStmt 0x13892cf08 <col:18, line:35:2>
+    |   `-GotoStmt 0x13892cef0 <line:34:3, col:8> 'done' 0x13892cea0
+    |-BinaryOperator 0x13892d198 <line:37:2, col:54> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13892cf40 <col:2> 'int' lvalue Var 0x13892a6c8 'ret' 'int'
+    | `-CallExpr 0x13892d158 <col:8, col:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13892d040 <col:8> 'int ()' Function 0x13892cf88 'ldb_msg_add_empty' 'int ()'
+    |   |-DeclRefExpr 0x13892d060 <col:26> 'struct ldb_message *' lvalue ParmVar 0x138929fd8 'dest' 'struct ldb_message *'
+    |   |-DeclRefExpr 0x13892d080 <col:32> 'const char *' lvalue ParmVar 0x13892a058 'attribute' 'const char *'
+    |   |-DeclRefExpr 0x13892d0a0 <col:43> 'unsigned int' lvalue Var 0x13892a5f8 'flags' 'unsigned int'
+    |   `-RecoveryExpr 0x13892d138 <col:50> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13892d2b0 <line:38:2, line:40:2>
+    | |-BinaryOperator 0x13892d230 <line:38:6, col:13> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x13892d1b8 <col:6> 'int' lvalue Var 0x13892a6c8 'ret' 'int'
+    | | `-RecoveryExpr 0x13892d210 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13892d298 <col:26, line:40:2>
+    |   `-ReturnStmt 0x13892d288 <line:39:3, col:10>
+    |     `-RecoveryExpr 0x13892d268 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13892d4d8 <line:42:2, col:64> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13892d2d0 <col:2> 'int' lvalue Var 0x13892a6c8 'ret' 'int'
+    | `-CallExpr 0x13892d490 <col:8, col:64> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13892d3d0 <col:8> 'int ()' Function 0x13892d318 'samdb_msg_add_uint' 'int ()'
+    |   |-DeclRefExpr 0x13892d3f0 <col:27> 'struct ldb_context *' lvalue ParmVar 0x138910d18 'sam_ldb' 'struct ldb_context *'
+    |   |-DeclRefExpr 0x13892d410 <col:36> 'struct ldb_message *' lvalue ParmVar 0x138929fd8 'dest' 'struct ldb_message *'
+    |   |-DeclRefExpr 0x13892d430 <col:42> 'struct ldb_message *' lvalue ParmVar 0x138929fd8 'dest' 'struct ldb_message *'
+    |   |-DeclRefExpr 0x13892d450 <col:48> 'const char *' lvalue ParmVar 0x13892a058 'attribute' 'const char *'
+    |   `-RecoveryExpr 0x13892d470 <col:59> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13892d548 <line:43:2, line:45:2>
+    | |-RecoveryExpr 0x13892d518 <line:43:6, col:13> '_Bool' contains-errors
+    | `-CompoundStmt 0x13892d538 <col:26, line:45:2>
+    `-LabelStmt 0x13892d608 <line:47:1, line:50:2> 'done'
+      `-IfStmt 0x13892d5e8 <line:48:2, line:50:2>
+        |-RecoveryExpr 0x13892d568 <line:48:6> '<dependent type>' contains-errors lvalue
+        `-CompoundStmt 0x13892d5d8 <col:18, line:50:2>

@@ -1,0 +1,27 @@
+`-FunctionDecl 0x124928750  line:1:13 hub_pm_barrier_for_all_ports 'void (struct usb_hub *)' static
+  |-ParmVarDecl 0x124928648 <col:42, col:58> col:58 used hub 'struct usb_hub *'
+  `-CompoundStmt 0x124940f40 <line:2:1, line:7:1>
+    |-DeclStmt 0x124940ac8 <line:3:2, col:7>
+    | `-VarDecl 0x124940a60 <col:2, col:6> col:6 used i 'int'
+    `-ForStmt 0x124940f08 <line:5:2, line:6:41>
+      |-BinaryOperator 0x124940b20 <line:5:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x124940ae0 <col:7> 'int' lvalue Var 0x124940a60 'i' 'int'
+      | `-IntegerLiteral 0x124940b00 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x124940c08 <col:14, col:29> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x124940b40 <col:14> 'int' lvalue Var 0x124940a60 'i' 'int'
+      | `-CXXDependentScopeMemberExpr 0x124940bc0 <col:18, col:29> '<dependent type>' contains-errors lvalue ->maxchild
+      |   `-RecoveryExpr 0x124940b98 <col:18, col:23> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x124940b60 <col:18> 'struct usb_hub *' lvalue ParmVar 0x124928648 'hub' 'struct usb_hub *'
+      |-UnaryOperator 0x124940c48 <col:39, col:41> 'int' prefix '++'
+      | `-DeclRefExpr 0x124940c28 <col:41> 'int' lvalue Var 0x124940a60 'i' 'int'
+      `-CallExpr 0x124940ee0 <line:6:3, col:41> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x124940d90 <col:3> 'int ()' Function 0x124940cd8 'pm_runtime_barrier' 'int ()'
+        `-UnaryOperator 0x124940ec8 <col:22, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x124940e80 <col:23, col:38> '<dependent type>' contains-errors lvalue ->dev
+            `-ArraySubscriptExpr 0x124940e60 <col:23, col:35> '<dependent type>' contains-errors lvalue
+              |-ImplicitCastExpr 0x124940e30 <col:23, col:28> '<dependent type>' contains-errors <LValueToRValue>
+              | `-RecoveryExpr 0x124940de8 <col:23, col:28> '<dependent type>' contains-errors lvalue
+              |   `-DeclRefExpr 0x124940db0 <col:23> 'struct usb_hub *' lvalue ParmVar 0x124928648 'hub' 'struct usb_hub *'
+              `-ImplicitCastExpr 0x124940e48 <col:34> 'int' <LValueToRValue>
+                `-DeclRefExpr 0x124940e10 <col:34> 'int' lvalue Var 0x124940a60 'i' 'int'

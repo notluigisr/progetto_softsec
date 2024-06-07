@@ -1,0 +1,1 @@
+  inline void clear_last_stmt() { last_stmt= NULL; }

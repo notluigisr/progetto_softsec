@@ -1,0 +1,62 @@
+`-FunctionDecl 0x120128750  line:1:6 posixtimer_rearm 'void (struct siginfo *)'
+  |-ParmVarDecl 0x120128648 <col:23, col:39> col:39 used info 'struct siginfo *'
+  `-CompoundStmt 0x1201417a8 <line:2:1, line:22:1>
+    |-DeclStmt 0x120140c38 <line:3:2, col:23>
+    | |-RecordDecl 0x120140a48 <col:2, col:9> col:9 struct k_itimer
+    | `-VarDecl 0x120140bb8 <col:2, col:19> col:19 used timr 'struct k_itimer *'
+    |-DeclStmt 0x120140cd0 <line:4:2, col:21>
+    | `-VarDecl 0x120140c68 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-BinaryOperator 0x120140f48 <line:6:2, col:40> 'struct k_itimer *' contains-errors '='
+    | |-DeclRefExpr 0x120140ce8 <col:2> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    | `-CallExpr 0x120140f18 <col:9, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x120140e30 <col:9> 'int ()' Function 0x120140d78 'lock_timer' 'int ()'
+    |   |-RecoveryExpr 0x120140e88 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x120140e50 <col:20> 'struct siginfo *' lvalue ParmVar 0x120128648 'info' 'struct siginfo *'
+    |   `-UnaryOperator 0x120140f00 <col:34, col:35> 'unsigned long *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x120140eb0 <col:35> 'unsigned long' lvalue Var 0x120140c68 'flags' 'unsigned long'
+    |-IfStmt 0x120140fc8 <line:7:2, line:8:3>
+    | |-UnaryOperator 0x120140fa0 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x120140f88 <col:7> 'struct k_itimer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x120140f68 <col:7> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    | `-ReturnStmt 0x120140fb8 <line:8:3>
+    |-IfStmt 0x120141598 <line:10:2, line:19:2>
+    | |-BinaryOperator 0x1201410a8 <line:10:6, col:40> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x120141020 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x120140fe8 <col:6> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    | | `-RecoveryExpr 0x120141080 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x120141048 <col:34> 'struct siginfo *' lvalue ParmVar 0x120128648 'info' 'struct siginfo *'
+    | `-CompoundStmt 0x120141558 <col:56, line:19:2>
+    |   |-CallExpr 0x120141190 <line:11:3, col:33> '<dependent type>' contains-errors
+    |   | |-CXXDependentScopeMemberExpr 0x120141128 <col:3, col:17> '<dependent type>' contains-errors lvalue ->timer_rearm
+    |   | | `-RecoveryExpr 0x120141100 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x1201410c8 <col:3> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   | `-DeclRefExpr 0x120141170 <col:29> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   |-BinaryOperator 0x120141238 <line:13:3, col:21> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x1201411f0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1201411b8 <col:3> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   | `-IntegerLiteral 0x120141218 <col:21> 'int' 1
+    |   |-BinaryOperator 0x120141318 <line:14:3, col:33> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x120141290 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x120141258 <col:3> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   | `-RecoveryExpr 0x1201412f0 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1201412b8 <col:27> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   |-BinaryOperator 0x1201413d0 <line:15:3, col:23> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x120141370 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x120141338 <col:3> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   | `-UnaryOperator 0x1201413b8 <col:22, col:23> 'int' prefix '-'
+    |   |   `-IntegerLiteral 0x120141398 <col:23> 'int' 1
+    |   |-UnaryOperator 0x120141450 <line:16:3, col:11> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |   | `-RecoveryExpr 0x120141428 <col:5, col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1201413f0 <col:5> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    |   `-CompoundAssignOperator 0x120141528 <line:18:3, col:29> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x1201414a0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x120141468 <col:3> 'struct siginfo *' lvalue ParmVar 0x120128648 'info' 'struct siginfo *'
+    |     `-RecoveryExpr 0x120141500 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1201414c8 <col:23> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+    `-CallExpr 0x120141748 <line:21:2, col:26> 'int'
+      |-ImplicitCastExpr 0x120141730 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x120141698 <col:2> 'int ()' Function 0x1201415e0 'unlock_timer' 'int ()'
+      |-ImplicitCastExpr 0x120141778 <col:15> 'struct k_itimer *' <LValueToRValue>
+      | `-DeclRefExpr 0x1201416b8 <col:15> 'struct k_itimer *' lvalue Var 0x120140bb8 'timr' 'struct k_itimer *'
+      `-ImplicitCastExpr 0x120141790 <col:21> 'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0x1201416d8 <col:21> 'unsigned long' lvalue Var 0x120140c68 'flags' 'unsigned long'

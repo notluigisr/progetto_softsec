@@ -1,0 +1,102 @@
+`-FunctionDecl 0x148026600  line:1:13 brcmf_msgbuf_process_event 'void (struct brcmf_msgbuf *, void *)' static
+  |-ParmVarDecl 0x14800e248 <col:40, col:61> col:61 used msgbuf 'struct brcmf_msgbuf *'
+  |-ParmVarDecl 0x14800e2c8 <col:69, col:75> col:75 used buf 'void *'
+  `-CompoundStmt 0x150123828 <line:2:1, line:40:1>
+    |-DeclStmt 0x1480268e8 <line:3:2, col:31>
+    | |-RecordDecl 0x148026700 <col:2, col:9> col:9 struct msgbuf_rx_event
+    | `-VarDecl 0x148026868 <col:2, col:26> col:26 used event 'struct msgbuf_rx_event *'
+    |-DeclStmt 0x148026b08 <line:6:2, col:21>
+    | |-RecordDecl 0x148026918 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x148026a88 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x148026d08 <line:7:2, col:22>
+    | |-RecordDecl 0x148026b20 <col:2, col:9> col:9 struct brcmf_if
+    | `-VarDecl 0x148026c88 <col:2, col:19> col:19 used ifp 'struct brcmf_if *'
+    |-BinaryOperator 0x148026e28 <line:9:2, col:36> 'struct msgbuf_rx_event *' '='
+    | |-DeclRefExpr 0x148026d20 <col:2> 'struct msgbuf_rx_event *' lvalue Var 0x148026868 'event' 'struct msgbuf_rx_event *'
+    | `-CStyleCastExpr 0x148026e00 <col:10, col:36> 'struct msgbuf_rx_event *' <BitCast>
+    |   `-ImplicitCastExpr 0x148026de8 <col:36> 'void *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x148026d40 <col:36> 'void *' lvalue ParmVar 0x14800e2c8 'buf' 'void *'
+    |-IfStmt 0x1480272b0 <line:13:2, line:14:23>
+    | |-RecoveryExpr 0x148027210 <line:13:6, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1480271d8 <col:6> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    | `-UnaryOperator 0x148027298 <line:14:3, col:23> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   `-RecoveryExpr 0x148027270 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148027238 <col:3> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |-CallExpr 0x148027438 <line:15:2, col:38> 'int'
+    | |-ImplicitCastExpr 0x148027420 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1480273b0 <col:2> 'int ()' Function 0x1480272f8 'brcmf_msgbuf_rxbuf_event_post' 'int ()'
+    | `-ImplicitCastExpr 0x148027460 <col:32> 'struct brcmf_msgbuf *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1480273d0 <col:32> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |-BinaryOperator 0x1501227b8 <line:17:2, line:18:32> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x148027478 <line:17:2> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x150122780 <col:8, line:18:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148027578 <line:17:8> 'int ()' Function 0x1480274c0 'brcmf_msgbuf_get_pktid' 'int ()'
+    |   |-CXXDependentScopeMemberExpr 0x150122648 <col:31, col:53> '<dependent type>' contains-errors lvalue ->dev
+    |   | `-CXXDependentScopeMemberExpr 0x150122600 <col:31, col:45> '<dependent type>' contains-errors lvalue ->bus_if
+    |   |   `-RecoveryExpr 0x1480275d0 <col:31, col:39> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x148027598 <col:31> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |   |-RecoveryExpr 0x1501226c8 <line:18:10, col:18> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x150122690 <col:10> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |   `-RecoveryExpr 0x150122760 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150122838 <line:19:2, line:20:3>
+    | |-UnaryOperator 0x150122810 <line:19:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1501227f8 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1501227d8 <col:7> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x150122828 <line:20:3>
+    |-IfStmt 0x150122a68 <line:22:2, line:23:38>
+    | |-RecoveryExpr 0x150122890 <line:22:6, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x150122858 <col:6> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    | `-CallExpr 0x150122a38 <line:23:3, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150122998 <col:3> 'int ()' Function 0x1501228e0 'skb_pull' 'int ()'
+    |   |-DeclRefExpr 0x1501229b8 <col:12> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x150122a10 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1501229d8 <col:17> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |-CallExpr 0x150122c10 <line:25:2, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150122b68 <col:2> 'int ()' Function 0x150122ab0 'skb_trim' 'int ()'
+    | |-DeclRefExpr 0x150122b88 <col:11> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x150122bf0 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150122e98 <line:27:2, col:52> 'struct brcmf_if *' contains-errors '='
+    | |-DeclRefExpr 0x150122c40 <col:2> 'struct brcmf_if *' lvalue Var 0x148026c88 'ifp' 'struct brcmf_if *'
+    | `-CallExpr 0x150122e68 <col:8, col:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150122d40 <col:8> 'int ()' Function 0x150122c88 'brcmf_get_ifp' 'int ()'
+    |   |-RecoveryExpr 0x150122d98 <col:22, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x150122d60 <col:22> 'struct brcmf_msgbuf *' lvalue ParmVar 0x14800e248 'msgbuf' 'struct brcmf_msgbuf *'
+    |   `-CXXDependentScopeMemberExpr 0x150122e20 <col:36, col:47> '<dependent type>' contains-errors lvalue .ifidx
+    |     `-RecoveryExpr 0x150122df8 <col:36, col:43> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x150122dc0 <col:36> 'struct msgbuf_rx_event *' lvalue Var 0x148026868 'event' 'struct msgbuf_rx_event *'
+    |-IfStmt 0x150123280 <line:28:2, line:32:2>
+    | |-BinaryOperator 0x150122f98 <line:28:6, col:20> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x150122ef0 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x150122ed8 <col:7> 'struct brcmf_if *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x150122eb8 <col:7> 'struct brcmf_if *' lvalue Var 0x148026c88 'ifp' 'struct brcmf_if *'
+    | | `-UnaryOperator 0x150122f80 <col:14, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x150122f68 <col:15, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x150122f40 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x150122f08 <col:15> 'struct brcmf_if *' lvalue Var 0x148026c88 'ifp' 'struct brcmf_if *'
+    | `-CompoundStmt 0x150123260 <col:26, line:32:2>
+    |   |-CallExpr 0x1501231c8 <line:29:3, line:30:22> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x150123098 <line:29:3> 'int ()' Function 0x150122fe0 'brcmf_err' 'int ()'
+    |   | |-StringLiteral 0x150123100 <col:13> 'char[4]' lvalue "STR"
+    |   | `-CXXDependentScopeMemberExpr 0x150123180 <line:30:6, col:17> '<dependent type>' contains-errors lvalue .ifidx
+    |   |   `-RecoveryExpr 0x150123158 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x150123120 <col:6> 'struct msgbuf_rx_event *' lvalue Var 0x148026868 'event' 'struct msgbuf_rx_event *'
+    |   `-GotoStmt 0x150123248 <line:31:3, col:8> 'exit' 0x1501231f8
+    |-BinaryOperator 0x1501234b0 <line:34:2, col:47> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1501232d8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1501232a0 <col:2> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x150123480 <col:18, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1501233e0 <col:18> 'int ()' Function 0x150123328 'eth_type_trans' 'int ()'
+    |   |-DeclRefExpr 0x150123400 <col:33> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x150123458 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x150123420 <col:38> 'struct brcmf_if *' lvalue Var 0x148026c88 'ifp' 'struct brcmf_if *'
+    |-CallExpr 0x150123660 <line:36:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1501235b0 <col:2> 'int ()' Function 0x1501234f8 'brcmf_fweh_process_skb' 'int ()'
+    | |-RecoveryExpr 0x150123618 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1501235d0 <col:25> 'struct brcmf_if *' lvalue Var 0x148026c88 'ifp' 'struct brcmf_if *'
+    | `-DeclRefExpr 0x150123640 <col:36> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'
+    `-LabelStmt 0x150123808 <line:38:1, line:39:28> 'exit'
+      `-CallExpr 0x1501237c8 <col:2, col:28> 'int'
+        |-ImplicitCastExpr 0x1501237b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x150123770 <col:2> 'int ()' Function 0x1501236b8 'brcmu_pkt_buf_free_skb' 'int ()'
+        `-ImplicitCastExpr 0x1501237f0 <col:25> 'struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x150123790 <col:25> 'struct sk_buff *' lvalue Var 0x148026a88 'skb' 'struct sk_buff *'

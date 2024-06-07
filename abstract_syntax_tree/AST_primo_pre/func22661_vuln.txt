@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12200df48  line:1:16 invalid _epoll_write 'int (int *, const void *, int)' static
+  |-ParmVarDecl 0x12200dd28 <col:29, col:38> col:38 referenced invalid epoll_ 'int *'
+  |-ParmVarDecl 0x12200ddd8 <col:46, col:58> col:58 used buf 'const void *'
+  |-ParmVarDecl 0x12200de58 <col:63, col:70> col:70 invalid count 'int'
+  `-CompoundStmt 0x1220278e8 <line:2:1, line:14:1>
+    |-BinaryOperator 0x12200e2c8 <line:4:5, col:40> '<dependent type>' contains-errors '='
+    | |-BinaryOperator 0x12200e2a8 <col:5, col:14> '<dependent type>' contains-errors '*'
+    | | |-RecoveryExpr 0x12200e028 <col:5> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x12200e008 <col:5> 'int *' lvalue ParmVar 0x12200dd28 'epoll_' 'int *'
+    | | `-RecoveryExpr 0x12200e288 <col:14> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x12200e220 <col:22, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12200e1e0 <col:22> 'int ()' Function 0x12200e128 '_cast_epoll' 'int ()'
+    |   `-RecoveryExpr 0x12200e200 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122027810 <line:9:5, line:10:33>
+    | |-BinaryOperator 0x122027668 <line:9:9, col:69> 'int' contains-errors '!='
+    | | |-CallExpr 0x122027608 <col:9, col:64> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x122027400 <col:9> 'int ()' Function 0x12200e330 'oe_syscall_write_ocall' 'int ()'
+    | | | |-UnaryOperator 0x122027588 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x122027568 <col:33> '<dependent type>' contains-errors lvalue
+    | | | |-CXXDependentScopeMemberExpr 0x1220275c0 <col:38, col:45> '<dependent type>' contains-errors lvalue ->host_fd
+    | | | | `-RecoveryExpr 0x1220275a0 <col:38> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x1220274b0 <col:54> 'const void *' lvalue ParmVar 0x12200ddd8 'buf' 'const void *'
+    | | | `-RecoveryExpr 0x1220274d0 <col:59> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x122027648 <col:69> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x1220277e8 <line:10:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122027768 <col:9> 'int ()' Function 0x1220276b0 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x1220277c8 <col:24> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x1220278c8 <line:12:1, line:13:12> 'done'
+      `-ReturnStmt 0x122027868 <col:5, col:12>
+        `-RecoveryExpr 0x122027848 <col:12> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,30 @@
+`-FunctionDecl 0x121940c08  line:1:12 invalid ipc_alloc_security 'int (struct task_struct *, struct kern_ipc_perm *, int)' static
+  |-ParmVarDecl 0x121928648 <col:31, col:51> col:51 used task 'struct task_struct *'
+  |-ParmVarDecl 0x121940a28 <line:2:10, col:32> col:32 used perm 'struct kern_ipc_perm *'
+  |-ParmVarDecl 0x121940ac0 <line:3:10, col:14> col:14 invalid sclass 'int'
+  `-CompoundStmt 0x1219415e0 <line:4:1, line:18:1>
+    |-DeclStmt 0x121940eb8 <line:5:2, col:34>
+    | |-RecordDecl 0x121940cc8 <col:2, col:9> col:9 struct ipc_security_struct
+    | `-VarDecl 0x121940e38 <col:2, col:30> col:30 used isec 'struct ipc_security_struct *'
+    |-IfStmt 0x1219411d0 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x121941110 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1219410f8 <col:7> 'struct ipc_security_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1219410d8 <col:7> 'struct ipc_security_struct *' lvalue Var 0x121940e38 'isec' 'struct ipc_security_struct *'
+    | `-ReturnStmt 0x1219411c0 <line:10:3, col:11>
+    |   `-UnaryOperator 0x1219411a8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x121941190 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x121941170 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x121941418 <line:13:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1219413d0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x121941398 <col:2> 'struct ipc_security_struct *' lvalue Var 0x121940e38 'isec' 'struct ipc_security_struct *'
+    | `-RecoveryExpr 0x1219413f8 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1219414f0 <line:14:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x121941470 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x121941438 <col:2> 'struct ipc_security_struct *' lvalue Var 0x121940e38 'isec' 'struct ipc_security_struct *'
+    | `-RecoveryExpr 0x1219414d0 <col:14> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x121941590 <line:15:2, col:19> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x121941548 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x121941510 <col:2> 'struct kern_ipc_perm *' lvalue ParmVar 0x121940a28 'perm' 'struct kern_ipc_perm *'
+    | `-DeclRefExpr 0x121941570 <col:19> 'struct ipc_security_struct *' lvalue Var 0x121940e38 'isec' 'struct ipc_security_struct *'
+    `-ReturnStmt 0x1219415d0 <line:17:2, col:9>
+      `-IntegerLiteral 0x1219415b0 <col:9> 'int' 0

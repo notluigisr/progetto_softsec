@@ -1,0 +1,28 @@
+`-FunctionDecl 0x12f144c78  line:1:5 peernet2id 'int (struct net *, struct net *)'
+  |-ParmVarDecl 0x12f128648 <col:16, col:28> col:28 used net 'struct net *'
+  |-ParmVarDecl 0x12f128738 <col:33, col:45> col:45 used peer 'struct net *'
+  `-CompoundStmt 0x12f145410 <line:2:1, line:9:1>
+    |-DeclStmt 0x12f144df8 <line:3:2, col:8>
+    | `-VarDecl 0x12f144d90 <col:2, col:6> col:6 used id 'int'
+    |-CallExpr 0x12f144fd8 <line:5:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f144f40 <col:2> 'int ()' Function 0x12f144e88 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x12f144fc0 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12f144f98 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f144f60 <col:16> 'struct net *' lvalue ParmVar 0x12f128648 'net' 'struct net *'
+    |-BinaryOperator 0x12f145208 <line:6:2, col:29> 'int' '='
+    | |-DeclRefExpr 0x12f145000 <col:2> 'int' lvalue Var 0x12f144d90 'id' 'int'
+    | `-CallExpr 0x12f1451a8 <col:7, col:29> 'int'
+    |   |-ImplicitCastExpr 0x12f145190 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12f145100 <col:7> 'int ()' Function 0x12f145048 '__peernet2id' 'int ()'
+    |   |-ImplicitCastExpr 0x12f1451d8 <col:20> 'struct net *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12f145120 <col:20> 'struct net *' lvalue ParmVar 0x12f128648 'net' 'struct net *'
+    |   `-ImplicitCastExpr 0x12f1451f0 <col:25> 'struct net *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12f145140 <col:25> 'struct net *' lvalue ParmVar 0x12f128738 'peer' 'struct net *'
+    |-CallExpr 0x12f1453a0 <line:7:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f145308 <col:2> 'int ()' Function 0x12f145250 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x12f145388 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12f145360 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f145328 <col:18> 'struct net *' lvalue ParmVar 0x12f128648 'net' 'struct net *'
+    `-ReturnStmt 0x12f145400 <line:8:2, col:9>
+      `-ImplicitCastExpr 0x12f1453e8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12f1453c8 <col:9> 'int' lvalue Var 0x12f144d90 'id' 'int'

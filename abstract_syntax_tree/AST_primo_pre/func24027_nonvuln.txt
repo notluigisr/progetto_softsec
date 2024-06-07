@@ -1,0 +1,79 @@
+`-FunctionDecl 0x13a80e358  line:1:5 reuse_swap_page 'int (struct page *)'
+  |-ParmVarDecl 0x13a80e248 <col:21, col:34> col:34 used page 'struct page *'
+  `-CompoundStmt 0x13a1228f8 <line:2:1, line:17:1>
+    |-DeclStmt 0x13a82a8d0 <line:3:2, col:11>
+    | `-VarDecl 0x13a82a868 <col:2, col:6> col:6 used count 'int'
+    |-CallExpr 0x13a82ac08 <line:5:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x13a82abf0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a82aa10 <col:2> 'int ()' Function 0x13a82a958 'VM_BUG_ON' 'int ()'
+    | `-UnaryOperator 0x13a82abd8 <col:12, col:28> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x13a82ab98 <col:13, col:28> 'int'
+    |     |-ImplicitCastExpr 0x13a82ab80 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13a82ab10 <col:13> 'int ()' Function 0x13a82aa58 'PageLocked' 'int ()'
+    |     `-ImplicitCastExpr 0x13a82abc0 <col:24> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13a82ab30 <col:24> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    |-IfStmt 0x13a82af18 <line:6:2, line:7:10>
+    | |-CallExpr 0x13a82aec0 <line:6:6, col:28> 'int'
+    | | |-ImplicitCastExpr 0x13a82aea8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13a82ad10 <col:6> 'int ()' Function 0x13a82ac58 'unlikely' 'int ()'
+    | | `-CallExpr 0x13a82ae68 <col:15, col:27> 'int'
+    | |   |-ImplicitCastExpr 0x13a82ae50 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13a82ae10 <col:15> 'int ()' Function 0x13a82ad58 'PageKsm' 'int ()'
+    | |   `-ImplicitCastExpr 0x13a82ae90 <col:23> 'struct page *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13a82ae30 <col:23> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    | `-ReturnStmt 0x13a82af08 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x13a82aee8 <col:10> 'int' 0
+    |-BinaryOperator 0x13a82b0d0 <line:8:2, col:28> 'int' '='
+    | |-DeclRefExpr 0x13a82af38 <col:2> 'int' lvalue Var 0x13a82a868 'count' 'int'
+    | `-CallExpr 0x13a82b090 <col:10, col:28> 'int'
+    |   |-ImplicitCastExpr 0x13a82b078 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13a82b038 <col:10> 'int ()' Function 0x13a82af80 'page_mapcount' 'int ()'
+    |   `-ImplicitCastExpr 0x13a82b0b8 <col:24> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13a82b058 <col:24> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    |-IfStmt 0x13a122850 <line:9:2, line:15:2>
+    | |-BinaryOperator 0x13a82b2e0 <line:9:6, col:38> 'int' '&&'
+    | | |-BinaryOperator 0x13a82b148 <col:6, col:15> 'int' '<='
+    | | | |-ImplicitCastExpr 0x13a82b130 <col:6> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x13a82b0f0 <col:6> 'int' lvalue Var 0x13a82a868 'count' 'int'
+    | | | `-IntegerLiteral 0x13a82b110 <col:15> 'int' 1
+    | | `-CallExpr 0x13a82b2a0 <col:20, col:38> 'int'
+    | |   |-ImplicitCastExpr 0x13a82b288 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13a82b248 <col:20> 'int ()' Function 0x13a82b190 'PageSwapCache' 'int ()'
+    | |   `-ImplicitCastExpr 0x13a82b2c8 <col:34> 'struct page *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13a82b268 <col:34> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    | `-CompoundStmt 0x13a122830 <col:41, line:15:2>
+    |   |-CompoundAssignOperator 0x13a82b498 <line:10:3, col:31> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |   | |-DeclRefExpr 0x13a82b300 <col:3> 'int' lvalue Var 0x13a82a868 'count' 'int'
+    |   | `-CallExpr 0x13a82b458 <col:12, col:31> 'int'
+    |   |   |-ImplicitCastExpr 0x13a82b440 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x13a82b400 <col:12> 'int ()' Function 0x13a82b348 'page_swapcount' 'int ()'
+    |   |   `-ImplicitCastExpr 0x13a82b480 <col:27> 'struct page *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13a82b420 <col:27> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    |   `-IfStmt 0x13a122810 <line:11:3, line:14:3>
+    |     |-BinaryOperator 0x13a82b6d0 <line:11:7, col:40> 'int' '&&'
+    |     | |-BinaryOperator 0x13a82b520 <col:7, col:16> 'int' '=='
+    |     | | |-ImplicitCastExpr 0x13a82b508 <col:7> 'int' <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x13a82b4c8 <col:7> 'int' lvalue Var 0x13a82a868 'count' 'int'
+    |     | | `-IntegerLiteral 0x13a82b4e8 <col:16> 'int' 1
+    |     | `-UnaryOperator 0x13a82b6b8 <col:21, col:40> 'int' prefix '!' cannot overflow
+    |     |   `-CallExpr 0x13a82b678 <col:22, col:40> 'int'
+    |     |     |-ImplicitCastExpr 0x13a82b660 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x13a82b620 <col:22> 'int ()' Function 0x13a82b568 'PageWriteback' 'int ()'
+    |     |     `-ImplicitCastExpr 0x13a82b6a0 <col:36> 'struct page *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x13a82b640 <col:36> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    |     `-CompoundStmt 0x13a1227f0 <col:43, line:14:3>
+    |       |-CallExpr 0x13a122638 <line:12:4, col:31> 'int'
+    |       | |-ImplicitCastExpr 0x13a122620 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x13a82b7d0 <col:4> 'int ()' Function 0x13a82b718 'delete_from_swap_cache' 'int ()'
+    |       | `-ImplicitCastExpr 0x13a122660 <col:27> 'struct page *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x13a122600 <col:27> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    |       `-CallExpr 0x13a1227b0 <line:13:4, col:21> 'int'
+    |         |-ImplicitCastExpr 0x13a122798 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x13a122758 <col:4> 'int ()' Function 0x13a1226a0 'SetPageDirty' 'int ()'
+    |         `-ImplicitCastExpr 0x13a1227d8 <col:17> 'struct page *' <LValueToRValue>
+    |           `-DeclRefExpr 0x13a122778 <col:17> 'struct page *' lvalue ParmVar 0x13a80e248 'page' 'struct page *'
+    `-ReturnStmt 0x13a1228e8 <line:16:2, col:18>
+      `-BinaryOperator 0x13a1228c8 <col:9, col:18> 'int' '<='
+        |-ImplicitCastExpr 0x13a1228b0 <col:9> 'int' <LValueToRValue>
+        | `-DeclRefExpr 0x13a122870 <col:9> 'int' lvalue Var 0x13a82a868 'count' 'int'
+        `-IntegerLiteral 0x13a122890 <col:18> 'int' 1

@@ -1,0 +1,51 @@
+`-FunctionDecl 0x125940b28  line:1:1 invalid get_counters 'int (const struct xt_table_info *, int)'
+  |-ParmVarDecl 0x125928648 <col:14, col:42> col:42 used t 'const struct xt_table_info *'
+  |-ParmVarDecl 0x125940a00 <line:2:7, col:26> col:26 invalid counters 'int'
+  `-CompoundStmt 0x125943e00 <line:3:1, line:28:1>
+    |-DeclStmt 0x125940dc8 <line:4:2, col:24>
+    | |-RecordDecl 0x125940be0 <col:2, col:9> col:9 struct ipt_entry
+    | `-VarDecl 0x125940d48 <col:2, col:20> col:20 used iter 'struct ipt_entry *'
+    |-DeclStmt 0x125940e60 <line:5:2, col:18>
+    | `-VarDecl 0x125940df8 <col:2, col:15> col:15 used cpu 'unsigned int'
+    |-DeclStmt 0x125940ef8 <line:6:2, col:16>
+    | `-VarDecl 0x125940e90 <col:2, col:15> col:15 used i 'unsigned int'
+    |-CallExpr 0x125941108 <line:8:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x1259410f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x125941080 <col:2> 'int ()' Function 0x125940fc8 'for_each_possible_cpu' 'int ()'
+    | `-ImplicitCastExpr 0x125941130 <col:24> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x1259410a0 <col:24> 'unsigned int' lvalue Var 0x125940df8 'cpu' 'unsigned int'
+    `-CompoundStmt 0x125943dd8 <col:29, line:27:2>
+      |-BinaryOperator 0x125941338 <line:11:3, col:7> 'unsigned int' '='
+      | |-DeclRefExpr 0x1259412e0 <col:3> 'unsigned int' lvalue Var 0x125940e90 'i' 'unsigned int'
+      | `-ImplicitCastExpr 0x125941320 <col:7> 'unsigned int' <IntegralCast>
+      |   `-IntegerLiteral 0x125941300 <col:7> 'int' 0
+      |-CallExpr 0x125941538 <line:12:3, col:45> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x125941438 <col:3> 'int ()' Function 0x125941380 'xt_entry_foreach' 'int ()'
+      | |-DeclRefExpr 0x125941458 <col:20> 'struct ipt_entry *' lvalue Var 0x125940d48 'iter' 'struct ipt_entry *'
+      | |-RecoveryExpr 0x1259414b0 <col:26, col:29> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x125941478 <col:26> 'const struct xt_table_info *' lvalue ParmVar 0x125928648 't' 'const struct xt_table_info *'
+      | `-RecoveryExpr 0x125941510 <col:38, col:41> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1259414d8 <col:38> 'const struct xt_table_info *' lvalue ParmVar 0x125928648 't' 'const struct xt_table_info *'
+      `-CompoundStmt 0x125943da0 <col:47, line:26:3>
+        |-DeclStmt 0x125941690 <line:13:4, col:27>
+        | `-VarDecl 0x125941628 <col:4, col:24> col:24 used tmp 'struct xt_counters *'
+        |-DeclStmt 0x125941728 <line:15:4, col:22>
+        | `-VarDecl 0x1259416c0 <col:4, col:17> col:17 used start 'unsigned int'
+        |-BinaryOperator 0x125941928 <line:17:4, col:53> 'struct xt_counters *' contains-errors '='
+        | |-DeclRefExpr 0x125941740 <col:4> 'struct xt_counters *' lvalue Var 0x125941628 'tmp' 'struct xt_counters *'
+        | `-CallExpr 0x1259418f8 <col:10, col:53> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x125941840 <col:10> 'int ()' Function 0x125941788 'xt_get_per_cpu_counter' 'int ()'
+        |   |-UnaryOperator 0x1259418c0 <col:33, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   | `-RecoveryExpr 0x125941898 <col:34, col:40> '<dependent type>' contains-errors lvalue
+        |   |   `-DeclRefExpr 0x125941860 <col:34> 'struct ipt_entry *' lvalue Var 0x125940d48 'iter' 'struct ipt_entry *'
+        |   `-DeclRefExpr 0x1259418d8 <col:50> 'unsigned int' lvalue Var 0x125940df8 'cpu' 'unsigned int'
+        |-DoStmt 0x125943bb8 <line:18:4, line:22:42>
+        | |-CompoundStmt 0x125943a60 <line:18:7, line:22:4>
+        | | `-BinaryOperator 0x125943980 <line:19:5, col:34> 'unsigned int' contains-errors '='
+        | |   |-DeclRefExpr 0x125941948 <col:5> 'unsigned int' lvalue Var 0x1259416c0 'start' 'unsigned int'
+        | |   `-CallExpr 0x125943958 <col:13, col:34> '<dependent type>' contains-errors
+        | |     |-DeclRefExpr 0x1259438b8 <col:13> 'int ()' Function 0x125943800 'read_seqcount_begin' 'int ()'
+        | |     `-RecoveryExpr 0x125943938 <col:33> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x125943b98 <line:22:13, col:41> '_Bool' contains-errors
+        `-UnaryOperator 0x125943d88 <line:25:4, col:6> 'unsigned int' prefix '++'
+          `-DeclRefExpr 0x125943d68 <col:6> 'unsigned int' lvalue Var 0x125940e90 'i' 'unsigned int'

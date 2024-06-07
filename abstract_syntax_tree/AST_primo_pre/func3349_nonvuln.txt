@@ -1,0 +1,82 @@
+`-FunctionDecl 0x13a141838  line:1:1 invalid vg_resource_attach_backing 'int (int *, struct virtio_gpu_ctrl_command *)'
+  |-ParmVarDecl 0x13a128128 <col:28, col:35> col:35 invalid g 'int *'
+  |-ParmVarDecl 0x13a128718 <line:2:28, col:60> col:60 used cmd 'struct virtio_gpu_ctrl_command *'
+  `-CompoundStmt 0x13a142d88 <line:3:1, line:31:1>
+    |-DeclStmt 0x13a141ad8 <line:4:5, col:43>
+    | |-RecordDecl 0x13a1418f0 <col:5, col:12> col:12 struct virtio_gpu_simple_resource
+    | `-VarDecl 0x13a141a58 <col:5, col:40> col:40 used res 'struct virtio_gpu_simple_resource *'
+    |-DeclStmt 0x13a141c68 <line:5:5, col:49>
+    | |-RecordDecl 0x13a141af0 <col:5, col:12> col:12 struct virtio_gpu_resource_attach_backing
+    | `-VarDecl 0x13a141be8 <col:5, col:47> col:47 invalid ab 'struct virtio_gpu_resource_attach_backing'
+    |-DeclStmt 0x13a141d00 <line:6:5, col:12>
+    | `-VarDecl 0x13a141c98 <col:5, col:9> col:9 used ret 'int'
+    |-CallExpr 0x13a141eb0 <line:8:5, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a141e70 <col:5> 'int ()' Function 0x13a141db8 'VUGPU_FILL_CMD' 'int ()'
+    | `-RecoveryExpr 0x13a141e90 <col:20> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13a142070 <line:9:5, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a141fb8 <col:5> 'int ()' Function 0x13a141f00 'virtio_gpu_bswap_32' 'int ()'
+    | |-UnaryOperator 0x13a141ff8 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13a141fd8 <col:26> '<dependent type>' contains-errors lvalue
+    | `-UnaryExprOrTypeTraitExpr 0x13a142050 <col:30, col:39> 'unsigned long' contains-errors sizeof
+    |   `-ParenExpr 0x13a142030 <col:36, col:39> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x13a142010 <col:37> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13a142278 <line:11:5, col:53> 'struct virtio_gpu_simple_resource *' contains-errors '='
+    | |-DeclRefExpr 0x13a1420a0 <col:5> 'struct virtio_gpu_simple_resource *' lvalue Var 0x13a141a58 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CallExpr 0x13a142248 <col:11, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13a1421a0 <col:11> 'int ()' Function 0x13a1420e8 'virtio_gpu_find_resource' 'int ()'
+    |   |-RecoveryExpr 0x13a1421c0 <col:36> '<dependent type>' contains-errors lvalue
+    |   `-CXXDependentScopeMemberExpr 0x13a142200 <col:39, col:42> '<dependent type>' contains-errors lvalue .resource_id
+    |     `-RecoveryExpr 0x13a1421e0 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13a1426d0 <line:12:5, line:17:5>
+    | |-UnaryOperator 0x13a1422d0 <line:12:9, col:10> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13a1422b8 <col:10> 'struct virtio_gpu_simple_resource *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13a142298 <col:10> 'struct virtio_gpu_simple_resource *' lvalue Var 0x13a141a58 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CompoundStmt 0x13a1426a8 <col:15, line:17:5>
+    |   |-CallExpr 0x13a142588 <line:13:9, line:14:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13a1423c8 <line:13:9> 'int ()' Function 0x13a142310 'g_critical' 'int ()'
+    |   | |-StringLiteral 0x13a142430 <col:20> 'char[4]' lvalue "STR"
+    |   | |-PredefinedExpr 0x13a142508 <line:14:20> 'const char[27]' lvalue __func__
+    |   | | `-StringLiteral 0x13a1424d0 <col:20> 'const char[27]' lvalue "vg_resource_attach_backing"
+    |   | `-CXXDependentScopeMemberExpr 0x13a142540 <col:30, col:33> '<dependent type>' contains-errors lvalue .resource_id
+    |   |   `-RecoveryExpr 0x13a142520 <col:30> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x13a142678 <line:15:9, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13a1425f8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13a1425c0 <col:9> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x13a128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   | `-RecoveryExpr 0x13a142658 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x13a142698 <line:16:9>
+    |-IfStmt 0x13a142870 <line:19:5, line:22:5>
+    | |-RecoveryExpr 0x13a142728 <line:19:9, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13a1426f0 <col:9> 'struct virtio_gpu_simple_resource *' lvalue Var 0x13a141a58 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CompoundStmt 0x13a142850 <col:19, line:22:5>
+    |   |-BinaryOperator 0x13a142820 <line:20:9, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13a142788 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13a142750 <col:9> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x13a128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   | `-RecoveryExpr 0x13a142800 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x13a142840 <line:21:9>
+    |-BinaryOperator 0x13a142ae0 <line:24:5, col:55> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13a142890 <col:5> 'int' lvalue Var 0x13a141c98 'ret' 'int'
+    | `-CallExpr 0x13a142aa0 <col:11, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13a142990 <col:11> 'int ()' Function 0x13a1428d8 'vg_create_mapping_iov' 'int ()'
+    |   |-RecoveryExpr 0x13a1429b0 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x13a1429f0 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x13a1429d0 <col:37> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x13a142a08 <col:41> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x13a128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   `-UnaryOperator 0x13a142a88 <col:46, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x13a142a60 <col:47, col:52> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13a142a28 <col:47> 'struct virtio_gpu_simple_resource *' lvalue Var 0x13a141a58 'res' 'struct virtio_gpu_simple_resource *'
+    |-IfStmt 0x13a142c80 <line:25:5, line:28:5>
+    | |-BinaryOperator 0x13a142b58 <line:25:9, col:16> 'int' '!='
+    | | |-ImplicitCastExpr 0x13a142b40 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13a142b00 <col:9> 'int' lvalue Var 0x13a141c98 'ret' 'int'
+    | | `-IntegerLiteral 0x13a142b20 <col:16> 'int' 0
+    | `-CompoundStmt 0x13a142c60 <col:19, line:28:5>
+    |   |-BinaryOperator 0x13a142c30 <line:26:9, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13a142bb0 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13a142b78 <col:9> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x13a128718 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   | `-RecoveryExpr 0x13a142c10 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x13a142c50 <line:27:9>
+    `-BinaryOperator 0x13a142d68 <line:30:5, col:23> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x13a142cd8 <col:5, col:10> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x13a142ca0 <col:5> 'struct virtio_gpu_simple_resource *' lvalue Var 0x13a141a58 'res' 'struct virtio_gpu_simple_resource *'
+      `-CXXDependentScopeMemberExpr 0x13a142d20 <col:20, col:23> '<dependent type>' contains-errors lvalue .nr_entries
+        `-RecoveryExpr 0x13a142d00 <col:20> '<dependent type>' contains-errors lvalue

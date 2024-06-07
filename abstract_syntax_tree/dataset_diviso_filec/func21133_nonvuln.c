@@ -1,0 +1,3 @@
+  ~RGWPutLC() override {
+    free(data);
+  }

@@ -1,0 +1,22 @@
+`-FunctionDecl 0x157940a88  line:1:12 linear_ioctl 'int (struct dm_target *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x157928648 <col:25, col:43> col:43 used ti 'struct dm_target *'
+  |-ParmVarDecl 0x1579286c8 <col:47, col:60> col:60 used cmd 'unsigned int'
+  |-ParmVarDecl 0x157928748 <line:2:4, col:18> col:18 used arg 'unsigned long'
+  `-CompoundStmt 0x1579411d0 <line:3:1, line:6:1>
+    |-DeclStmt 0x157940e88 <line:4:2, col:55>
+    | |-RecordDecl 0x157940b90 <col:2, col:9> col:9 struct linear_c
+    | `-VarDecl 0x157940cf8 <col:2, col:48> col:19 used lc 'struct linear_c *' cinit
+    |   `-CStyleCastExpr 0x157940e48 <col:24, col:48> 'struct linear_c *' contains-errors <Dependent>
+    |     `-RecoveryExpr 0x157940d98 <col:44, col:48> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157940d60 <col:44> 'struct dm_target *' lvalue ParmVar 0x157928648 'ti' 'struct dm_target *'
+    `-ReturnStmt 0x1579411c0 <line:5:2, col:69>
+      `-CallExpr 0x157941180 <col:9, col:69> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x157940fd0 <col:9> 'int ()' Function 0x157940f18 '__blkdev_driver_ioctl' 'int ()'
+        |-CXXDependentScopeMemberExpr 0x157941050 <col:31, col:40> '<dependent type>' contains-errors lvalue ->bdev
+        | `-RecoveryExpr 0x157941028 <col:31, col:35> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x157940ff0 <col:31> 'struct linear_c *' contains-errors lvalue Var 0x157940cf8 'lc' 'struct linear_c *'
+        |-CXXDependentScopeMemberExpr 0x1579410f8 <col:46, col:55> '<dependent type>' contains-errors lvalue ->mode
+        | `-RecoveryExpr 0x1579410d0 <col:46, col:50> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x157941098 <col:46> 'struct linear_c *' contains-errors lvalue Var 0x157940cf8 'lc' 'struct linear_c *'
+        |-DeclRefExpr 0x157941140 <col:61> 'unsigned int' lvalue ParmVar 0x1579286c8 'cmd' 'unsigned int'
+        `-DeclRefExpr 0x157941160 <col:66> 'unsigned long' lvalue ParmVar 0x157928748 'arg' 'unsigned long'

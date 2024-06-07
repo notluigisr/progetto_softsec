@@ -1,0 +1,53 @@
+`-FunctionDecl 0x1288e1600  line:1:12 proc_pid_permission 'int (struct inode *, int)' static
+  |-ParmVarDecl 0x1288c5848 <col:32, col:46> col:46 used inode 'struct inode *'
+  |-ParmVarDecl 0x1288c58c8 <col:53, col:57> col:57 used mask 'int'
+  `-CompoundStmt 0x1288e3428 <line:2:1, line:20:1>
+    |-DeclStmt 0x1288e1990 <line:3:2, col:52>
+    | |-RecordDecl 0x1288e1700 <col:2, col:9> col:9 struct pid_namespace
+    | `-VarDecl 0x1288e1868 <col:2, col:43> col:24 used pid 'struct pid_namespace *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x1288e1930 <col:30, col:43> '<dependent type>' contains-errors lvalue ->s_fs_info
+    |     `-RecoveryExpr 0x1288e1908 <col:30, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1288e18d0 <col:30> 'struct inode *' lvalue ParmVar 0x1288c5848 'inode' 'struct inode *'
+    |-DeclStmt 0x1288e1b98 <line:4:2, col:26>
+    | |-RecordDecl 0x1288e19a8 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x1288e1b18 <col:2, col:22> col:22 used task 'struct task_struct *'
+    |-BinaryOperator 0x1288e1de0 <line:7:2, col:28> 'struct task_struct *' '='
+    | |-DeclRefExpr 0x1288e1bc8 <col:2> 'struct task_struct *' lvalue Var 0x1288e1b18 'task' 'struct task_struct *'
+    | `-ImplicitCastExpr 0x1288e1dc8 <col:9, col:28> 'struct task_struct *' <IntegralToPointer>
+    |   `-CallExpr 0x1288e1d88 <col:9, col:28> 'int'
+    |     |-ImplicitCastExpr 0x1288e1d70 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1288e1d00 <col:9> 'int ()' Function 0x1288e1c48 'get_proc_task' 'int ()'
+    |     `-ImplicitCastExpr 0x1288e1db0 <col:23> 'struct inode *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1288e1d20 <col:23> 'struct inode *' lvalue ParmVar 0x1288c5848 'inode' 'struct inode *'
+    |-CallExpr 0x1288e2118 <line:9:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x1288e2100 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1288e20c0 <col:2> 'int ()' Function 0x1288e2008 'put_task_struct' 'int ()'
+    | `-ImplicitCastExpr 0x1288e2140 <col:18> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1288e20e0 <col:18> 'struct task_struct *' lvalue Var 0x1288e1b18 'task' 'struct task_struct *'
+    |-IfStmt 0x1288e2438 <line:11:2, line:18:2>
+    | |-UnaryOperator 0x1288e21d8 <line:11:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1288e21c0 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1288e21a0 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1288e2418 <col:18, line:18:2>
+    |   |-IfStmt 0x1288e2350 <line:12:3, line:15:3>
+    |   | |-BinaryOperator 0x1288e2270 <line:12:7, col:24> 'int' contains-errors '=='
+    |   | | |-RecoveryExpr 0x1288e2228 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x1288e21f0 <col:7> 'struct pid_namespace *' contains-errors lvalue Var 0x1288e1868 'pid' 'struct pid_namespace *'
+    |   | | `-IntegerLiteral 0x1288e2250 <col:24> 'int' 2
+    |   | `-CompoundStmt 0x1288e2338 <col:27, line:15:3>
+    |   |   `-ReturnStmt 0x1288e2328 <line:14:4, col:12>
+    |   |     `-UnaryOperator 0x1288e2310 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |       `-ImplicitCastExpr 0x1288e22f8 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |         `-RecoveryExpr 0x1288e22d8 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1288e2408 <line:17:3, col:11>
+    |     `-UnaryOperator 0x1288e23f0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1288e23d8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1288e23b8 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1288e3418 <line:19:2, col:39>
+      `-CallExpr 0x1288e25b0 <col:9, col:39> 'int'
+        |-ImplicitCastExpr 0x1288e2598 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1288e2538 <col:9> 'int ()' Function 0x1288e2480 'generic_permission' 'int ()'
+        |-ImplicitCastExpr 0x1288e25e0 <col:28> 'struct inode *' <LValueToRValue>
+        | `-DeclRefExpr 0x1288e2558 <col:28> 'struct inode *' lvalue ParmVar 0x1288c5848 'inode' 'struct inode *'
+        `-ImplicitCastExpr 0x1288e3400 <col:35> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x1288e2578 <col:35> 'int' lvalue ParmVar 0x1288c58c8 'mask' 'int'

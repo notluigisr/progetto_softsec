@@ -1,0 +1,75 @@
+`-FunctionDecl 0x153026688  line:1:12 tipc_ioctl 'int (struct socket *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x15300e248 <col:23, col:38> col:38 used sock 'struct socket *'
+  |-ParmVarDecl 0x15300e2c8 <col:44, col:57> col:57 used cmd 'unsigned int'
+  |-ParmVarDecl 0x15300e348 <col:62, col:76> col:76 used arg 'unsigned long'
+  `-CompoundStmt 0x15302c6f0 <line:2:1, line:22:1>
+    |-DeclStmt 0x1530269d8 <line:3:2, col:28>
+    | |-RecordDecl 0x153026790 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1530268f8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x153026998 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153026960 <col:20> 'struct socket *' lvalue ParmVar 0x15300e248 'sock' 'struct socket *'
+    |-DeclStmt 0x153026b68 <line:4:2, col:29>
+    | |-RecordDecl 0x1530269f0 <col:2, col:9> col:9 struct tipc_sioc_ln_req
+    | `-VarDecl 0x153026ae8 <col:2, col:26> col:26 invalid lnr 'struct tipc_sioc_ln_req'
+    |-DeclStmt 0x153026bf8 <line:5:2, col:14>
+    | `-VarDecl 0x153026b90 <col:2, col:7> col:7 invalid __user 'void'
+    `-SwitchStmt 0x153026c48 <line:7:2, line:21:2>
+      |-ImplicitCastExpr 0x153026c30 <line:7:10> 'unsigned int' <LValueToRValue>
+      | `-DeclRefExpr 0x153026c10 <col:10> 'unsigned int' lvalue ParmVar 0x15300e2c8 'cmd' 'unsigned int'
+      `-CompoundStmt 0x15302c6c0 <col:15, line:21:2>
+        |-IfStmt 0x153026fb8 <line:9:3, line:10:12>
+        | |-CallExpr 0x153026ed8 <line:9:7, col:45> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x153026db0 <col:7> 'int ()' Function 0x153026cf8 'copy_from_user' 'int ()'
+        | | |-UnaryOperator 0x153026df0 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | | `-RecoveryExpr 0x153026dd0 <col:23> '<dependent type>' contains-errors lvalue
+        | | |-DeclRefExpr 0x153026eb8 <col:28> 'unsigned long' lvalue ParmVar 0x15300e348 'arg' 'unsigned long'
+        | | `-UnaryExprOrTypeTraitExpr 0x153026e60 <col:34, col:44> 'unsigned long' contains-errors sizeof
+        | |   `-ParenExpr 0x153026e40 <col:40, col:44> '<dependent type>' contains-errors lvalue
+        | |     `-RecoveryExpr 0x153026e20 <col:41> '<dependent type>' contains-errors lvalue
+        | `-ReturnStmt 0x153026fa8 <line:10:4, col:12>
+        |   `-UnaryOperator 0x153026f90 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x153026f78 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-RecoveryExpr 0x153026f58 <col:12> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x15302c530 <line:11:3, line:17:3>
+        | |-UnaryOperator 0x153027590 <line:11:7, line:13:42> '<dependent type>' contains-errors prefix '!' cannot overflow
+        | | `-CallExpr 0x153027548 <line:11:8, line:13:42> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x1530270b8 <line:11:8> 'int ()' Function 0x153027000 'tipc_node_get_linkname' 'int ()'
+        | |   |-CallExpr 0x1530274e8 <col:31, col:42> 'int' contains-errors
+        | |   | |-ImplicitCastExpr 0x1530274d0 <col:31> 'int (*)()' <FunctionToPointerDecay>
+        | |   | | `-DeclRefExpr 0x1530271b8 <col:31> 'int ()' Function 0x153027100 'sock_net' 'int ()'
+        | |   | `-ImplicitCastExpr 0x153027510 <col:40> 'struct sock *' contains-errors <LValueToRValue>
+        | |   |   `-DeclRefExpr 0x1530271d8 <col:40> 'struct sock *' contains-errors lvalue Var 0x1530268f8 'sk' 'struct sock *'
+        | |   |-BinaryOperator 0x153027310 <line:12:10, col:26> '<dependent type>' contains-errors '&'
+        | |   | |-CXXDependentScopeMemberExpr 0x1530272a8 <col:10, col:14> '<dependent type>' contains-errors lvalue .bearer_id
+        | |   | | `-RecoveryExpr 0x153027288 <col:10> '<dependent type>' contains-errors lvalue
+        | |   | `-IntegerLiteral 0x1530272f0 <col:26> 'int' 65535
+        | |   |-CXXDependentScopeMemberExpr 0x153027350 <col:34, col:38> '<dependent type>' contains-errors lvalue .peer
+        | |   | `-RecoveryExpr 0x153027330 <col:34> '<dependent type>' contains-errors lvalue
+        | |   |-CXXDependentScopeMemberExpr 0x1530273b8 <line:13:10, col:14> '<dependent type>' contains-errors lvalue .linkname
+        | |   | `-RecoveryExpr 0x153027398 <col:10> '<dependent type>' contains-errors lvalue
+        | |   `-RecoveryExpr 0x153027528 <col:24> '<dependent type>' contains-errors lvalue
+        | `-CompoundStmt 0x15302c510 <col:45, line:17:3>
+        |   |-IfStmt 0x15302c4c0 <line:14:4, line:15:13>
+        |   | |-CallExpr 0x15302c3e0 <line:14:8, col:44> '<dependent type>' contains-errors
+        |   | | |-DeclRefExpr 0x15302c2b8 <col:8> 'int ()' Function 0x15302c200 'copy_to_user' 'int ()'
+        |   | | |-DeclRefExpr 0x15302c3c0 <col:21> 'unsigned long' lvalue ParmVar 0x15300e348 'arg' 'unsigned long'
+        |   | | |-UnaryOperator 0x15302c310 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   | | | `-RecoveryExpr 0x15302c2f0 <col:28> '<dependent type>' contains-errors lvalue
+        |   | | `-UnaryExprOrTypeTraitExpr 0x15302c368 <col:33, col:43> 'unsigned long' contains-errors sizeof
+        |   | |   `-ParenExpr 0x15302c348 <col:39, col:43> '<dependent type>' contains-errors lvalue
+        |   | |     `-RecoveryExpr 0x15302c328 <col:40> '<dependent type>' contains-errors lvalue
+        |   | `-ReturnStmt 0x15302c4b0 <line:15:5, col:13>
+        |   |   `-UnaryOperator 0x15302c498 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |   |     `-ImplicitCastExpr 0x15302c480 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+        |   |       `-RecoveryExpr 0x15302c460 <col:13> '<dependent type>' contains-errors lvalue
+        |   `-ReturnStmt 0x15302c500 <line:16:4, col:11>
+        |     `-IntegerLiteral 0x15302c4e0 <col:11> 'int' 0
+        |-ReturnStmt 0x15302c5e8 <line:18:3, col:11>
+        | `-UnaryOperator 0x15302c5d0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |   `-ImplicitCastExpr 0x15302c5b8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+        |     `-RecoveryExpr 0x15302c598 <col:11> '<dependent type>' contains-errors lvalue
+        `-DefaultStmt 0x15302c6a0 <line:19:2, line:20:11>
+          `-ReturnStmt 0x15302c690 <col:3, col:11>
+            `-UnaryOperator 0x15302c678 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+              `-ImplicitCastExpr 0x15302c660 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+                `-RecoveryExpr 0x15302c640 <col:11> '<dependent type>' contains-errors lvalue

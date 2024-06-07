@@ -1,0 +1,126 @@
+`-FunctionDecl 0x127144e98  line:1:1 invalid v9fs_vfs_getattr_dotl 'int (const struct path *, struct kstat *, int, unsigned int)'
+  |-ParmVarDecl 0x127128648 <col:23, col:42> col:42 used path 'const struct path *'
+  |-ParmVarDecl 0x127144c28 <col:48, col:62> col:62 used stat 'struct kstat *'
+  |-ParmVarDecl 0x127144cc0 <line:2:4, col:8> col:8 invalid request_mask 'int'
+  |-ParmVarDecl 0x127144d40 <col:22, col:35> col:35 flags 'unsigned int'
+  `-CompoundStmt 0x127146020 <line:3:1, line:32:1>
+    |-DeclStmt 0x1271451a8 <line:4:2, col:38>
+    | |-RecordDecl 0x127144f60 <col:2, col:9> col:9 struct dentry
+    | `-VarDecl 0x1271450c8 <col:2, col:32> col:17 used dentry 'struct dentry *' cinit
+    |   `-RecoveryExpr 0x127145168 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x127145130 <col:26> 'const struct path *' lvalue ParmVar 0x127128648 'path' 'const struct path *'
+    |-DeclStmt 0x1271453a8 <line:5:2, col:33>
+    | |-RecordDecl 0x1271451c0 <col:2, col:9> col:9 struct v9fs_session_info
+    | `-VarDecl 0x127145328 <col:2, col:28> col:28 used v9ses 'struct v9fs_session_info *'
+    |-DeclStmt 0x1271455a8 <line:6:2, col:20>
+    | |-RecordDecl 0x1271453c0 <col:2, col:9> col:9 struct p9_fid
+    | `-VarDecl 0x127145528 <col:2, col:17> col:17 used fid 'struct p9_fid *'
+    |-DeclStmt 0x1271457a8 <line:7:2, col:25>
+    | |-RecordDecl 0x1271455c0 <col:2, col:9> col:9 struct p9_stat_dotl
+    | `-VarDecl 0x127145728 <col:2, col:23> col:23 used st 'struct p9_stat_dotl *'
+    |-CallExpr 0x127145a38 <line:9:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x127145920 <col:2> 'int ()' Function 0x127145868 'p9_debug' 'int ()'
+    | |-RecoveryExpr 0x127145a18 <col:11> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x1271459a0 <col:25> 'char[4]' lvalue "STR"
+    | `-DeclRefExpr 0x1271459c0 <col:32> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    |-BinaryOperator 0x127809058 <line:10:2, col:34> 'struct v9fs_session_info *' contains-errors '='
+    | |-DeclRefExpr 0x127145a70 <col:2> 'struct v9fs_session_info *' lvalue Var 0x127145328 'v9ses' 'struct v9fs_session_info *'
+    | `-ImplicitCastExpr 0x127809040 <col:10, col:34> 'struct v9fs_session_info *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x127809000 <col:10, col:34> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x127145be0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x127145b70 <col:10> 'int ()' Function 0x127145ab8 'v9fs_dentry2v9ses' 'int ()'
+    |     `-ImplicitCastExpr 0x127809028 <col:28> 'struct dentry *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x127145b90 <col:28> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    |-IfStmt 0x1278095b0 <line:11:2, line:14:2>
+    | |-BinaryOperator 0x127809248 <line:11:6, col:53> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x1278091e8 <col:6, col:22> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x1278090b0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x127809078 <col:6> 'struct v9fs_session_info *' lvalue Var 0x127145328 'v9ses' 'struct v9fs_session_info *'
+    | | | `-RecoveryExpr 0x1278091c8 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x127809228 <col:37, col:53> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x127809148 <col:37, col:44> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x127809110 <col:37> 'struct v9fs_session_info *' lvalue Var 0x127145328 'v9ses' 'struct v9fs_session_info *'
+    | |   `-RecoveryExpr 0x127809208 <col:53> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x127809590 <col:68, line:14:2>
+    |   |-CallExpr 0x127809518 <line:12:3, col:41> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x127809500 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x127809348 <col:3> 'int ()' Function 0x127809290 'generic_fillattr' 'int ()'
+    |   | |-CallExpr 0x1278094a0 <col:20, col:34> 'int' contains-errors
+    |   | | |-ImplicitCastExpr 0x127809488 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x127809448 <col:20> 'int ()' Function 0x127809390 'd_inode' 'int ()'
+    |   | | `-ImplicitCastExpr 0x1278094c8 <col:28> 'struct dentry *' contains-errors <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x127809468 <col:28> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    |   | `-ImplicitCastExpr 0x127809548 <col:37> 'struct kstat *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1278094e0 <col:37> 'struct kstat *' lvalue ParmVar 0x127144c28 'stat' 'struct kstat *'
+    |   `-ReturnStmt 0x127809580 <line:13:3, col:10>
+    |     `-IntegerLiteral 0x127809560 <col:10> 'int' 0
+    |-BinaryOperator 0x127809780 <line:15:2, col:30> 'struct p9_fid *' contains-errors '='
+    | |-DeclRefExpr 0x1278095d0 <col:2> 'struct p9_fid *' lvalue Var 0x127145528 'fid' 'struct p9_fid *'
+    | `-ImplicitCastExpr 0x127809768 <col:8, col:30> 'struct p9_fid *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x127809728 <col:8, col:30> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x127809710 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1278096d0 <col:8> 'int ()' Function 0x127809618 'v9fs_fid_lookup' 'int ()'
+    |     `-ImplicitCastExpr 0x127809750 <col:24> 'struct dentry *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x1278096f0 <col:24> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    |-IfStmt 0x127809aa0 <line:16:2, line:17:21>
+    | |-CallExpr 0x1278098d8 <line:16:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x1278098c0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x127809880 <col:6> 'int ()' Function 0x1278097c8 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x127809900 <col:13> 'struct p9_fid *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1278098a0 <col:13> 'struct p9_fid *' lvalue Var 0x127145528 'fid' 'struct p9_fid *'
+    | `-ReturnStmt 0x127809a90 <line:17:3, col:21>
+    |   `-CallExpr 0x127809a50 <col:10, col:21> 'int'
+    |     |-ImplicitCastExpr 0x127809a38 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1278099f8 <col:10> 'int ()' Function 0x127809940 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x127809a78 <col:18> 'struct p9_fid *' <LValueToRValue>
+    |       `-DeclRefExpr 0x127809a18 <col:18> 'struct p9_fid *' lvalue Var 0x127145528 'fid' 'struct p9_fid *'
+    |-BinaryOperator 0x127809cb8 <line:21:2, col:47> 'struct p9_stat_dotl *' contains-errors '='
+    | |-DeclRefExpr 0x127809ac0 <col:2> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    | `-CallExpr 0x127809c88 <col:7, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127809bc0 <col:7> 'int ()' Function 0x127809b08 'p9_client_getattr_dotl' 'int ()'
+    |   |-DeclRefExpr 0x127809be0 <col:30> 'struct p9_fid *' lvalue Var 0x127145528 'fid' 'struct p9_fid *'
+    |   `-RecoveryExpr 0x127809c68 <col:35> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x127809e18 <line:22:2, line:23:20>
+    | |-CallExpr 0x127809d30 <line:22:6, col:15> 'int'
+    | | |-ImplicitCastExpr 0x127809d18 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x127809cd8 <col:6> 'int ()' Function 0x1278097c8 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x127809d58 <col:13> 'struct p9_stat_dotl *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x127809cf8 <col:13> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    | `-ReturnStmt 0x127809e08 <line:23:3, col:20>
+    |   `-CallExpr 0x127809dc8 <col:10, col:20> 'int'
+    |     |-ImplicitCastExpr 0x127809db0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x127809d70 <col:10> 'int ()' Function 0x127809940 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x127809df0 <col:18> 'struct p9_stat_dotl *' <LValueToRValue>
+    |       `-DeclRefExpr 0x127809d90 <col:18> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    |-CallExpr 0x127145c18 <line:25:2, col:42> 'int' contains-errors
+    | |-ImplicitCastExpr 0x127145c00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x127809f18 <col:2> 'int ()' Function 0x127809e60 'v9fs_stat2inode_dotl' 'int ()'
+    | |-ImplicitCastExpr 0x127145c48 <col:23> 'struct p9_stat_dotl *' <LValueToRValue>
+    | | `-DeclRefExpr 0x127809f38 <col:23> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    | `-CallExpr 0x127809fb0 <col:27, col:41> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x127809f98 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x127809f58 <col:27> 'int ()' Function 0x127809390 'd_inode' 'int ()'
+    |   `-ImplicitCastExpr 0x127809fd8 <col:35> 'struct dentry *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x127809f78 <col:35> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    |-CallExpr 0x127145d50 <line:26:2, col:40> 'int' contains-errors
+    | |-ImplicitCastExpr 0x127145d38 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x127145c60 <col:2> 'int ()' Function 0x127809290 'generic_fillattr' 'int ()'
+    | |-CallExpr 0x127145cd8 <col:19, col:33> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x127145cc0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x127145c80 <col:19> 'int ()' Function 0x127809390 'd_inode' 'int ()'
+    | | `-ImplicitCastExpr 0x127145d00 <col:27> 'struct dentry *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x127145ca0 <col:27> 'struct dentry *' contains-errors lvalue Var 0x1271450c8 'dentry' 'struct dentry *'
+    | `-ImplicitCastExpr 0x127145d80 <col:36> 'struct kstat *' <LValueToRValue>
+    |   `-DeclRefExpr 0x127145d18 <col:36> 'struct kstat *' lvalue ParmVar 0x127144c28 'stat' 'struct kstat *'
+    |-BinaryOperator 0x127145e58 <line:28:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x127145dd0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x127145d98 <col:2> 'struct kstat *' lvalue ParmVar 0x127144c28 'stat' 'struct kstat *'
+    | `-RecoveryExpr 0x127145e30 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x127145df8 <col:18> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    |-CallExpr 0x127145fb0 <line:30:2, col:10> 'int'
+    | |-ImplicitCastExpr 0x127145f98 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x127145f58 <col:2> 'int ()' Function 0x127145ea0 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x127145fd8 <col:8> 'struct p9_stat_dotl *' <LValueToRValue>
+    |   `-DeclRefExpr 0x127145f78 <col:8> 'struct p9_stat_dotl *' lvalue Var 0x127145728 'st' 'struct p9_stat_dotl *'
+    `-ReturnStmt 0x127146010 <line:31:2, col:9>
+      `-IntegerLiteral 0x127145ff0 <col:9> 'int' 0

@@ -1,0 +1,38 @@
+`-FunctionDecl 0x12780df18  line:1:15 invalid GetOutput 'int *(int *, const int *, int)'
+  |-ParmVarDecl 0x12780dd28 <col:25, col:40> col:40 invalid context 'int *'
+  |-ParmVarDecl 0x12780dda8 <col:49, col:67> col:67 invalid node 'const int *'
+  |-ParmVarDecl 0x12780de28 <line:2:25, col:29> col:29 used index 'int'
+  `-CompoundStmt 0x127827940 <col:36, line:8:1>
+    `-IfStmt 0x127827910 <line:3:3, line:7:3> has_else
+      |-BinaryOperator 0x12780e098 <line:3:7, col:27> 'int' contains-errors '!='
+      | |-CXXDependentScopeMemberExpr 0x12780dff8 <col:7, col:16> '<dependent type>' contains-errors lvalue ->tensors
+      | | `-RecoveryExpr 0x12780dfd8 <col:7> '<dependent type>' contains-errors lvalue
+      | `-RecoveryExpr 0x12780e078 <col:27> '<dependent type>' contains-errors lvalue
+      |-CompoundStmt 0x12780e2b8 <col:36, line:5:3>
+      | `-ReturnStmt 0x12780e2a8 <line:4:5, col:56>
+      |   `-UnaryOperator 0x12780e290 <col:12, col:56> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-ArraySubscriptExpr 0x12780e270 <col:13, col:56> '<dependent type>' contains-errors lvalue
+      |       |-ImplicitCastExpr 0x12780e240 <col:13, col:22> '<dependent type>' contains-errors <LValueToRValue>
+      |       | `-CXXDependentScopeMemberExpr 0x12780e0d8 <col:13, col:22> '<dependent type>' contains-errors lvalue ->tensors
+      |       |   `-RecoveryExpr 0x12780e0b8 <col:13> '<dependent type>' contains-errors lvalue
+      |       `-ImplicitCastExpr 0x12780e258 <col:30, col:55> '<dependent type>' contains-errors <LValueToRValue>
+      |         `-ArraySubscriptExpr 0x12780e220 <col:30, col:55> '<dependent type>' contains-errors lvalue
+      |           |-ImplicitCastExpr 0x12780e1f0 <col:30, col:45> '<dependent type>' contains-errors <LValueToRValue>
+      |           | `-CXXDependentScopeMemberExpr 0x12780e188 <col:30, col:45> '<dependent type>' contains-errors lvalue ->data
+      |           |   `-CXXDependentScopeMemberExpr 0x12780e140 <col:30, col:36> '<dependent type>' contains-errors lvalue ->outputs
+      |           |     `-RecoveryExpr 0x12780e120 <col:30> '<dependent type>' contains-errors lvalue
+      |           `-ImplicitCastExpr 0x12780e208 <col:50> 'int' <LValueToRValue>
+      |             `-DeclRefExpr 0x12780e1d0 <col:50> 'int' lvalue ParmVar 0x12780de28 'index' 'int'
+      `-CompoundStmt 0x1278278f8 <line:5:10, line:7:3>
+        `-ReturnStmt 0x1278278e8 <line:6:5, col:66>
+          `-CallExpr 0x1278278b8 <col:12, col:66> '<dependent type>' contains-errors
+            |-CXXDependentScopeMemberExpr 0x12780e2f0 <col:12, col:21> '<dependent type>' contains-errors lvalue ->GetTensor
+            | `-RecoveryExpr 0x12780e2d0 <col:12> '<dependent type>' contains-errors lvalue
+            |-RecoveryExpr 0x12780e338 <col:31> '<dependent type>' contains-errors lvalue
+            `-ArraySubscriptExpr 0x127827898 <col:40, col:65> '<dependent type>' contains-errors lvalue
+              |-ImplicitCastExpr 0x127827868 <col:40, col:55> '<dependent type>' contains-errors <LValueToRValue>
+              | `-CXXDependentScopeMemberExpr 0x127827800 <col:40, col:55> '<dependent type>' contains-errors lvalue ->data
+              |   `-CXXDependentScopeMemberExpr 0x12780e378 <col:40, col:46> '<dependent type>' contains-errors lvalue ->outputs
+              |     `-RecoveryExpr 0x12780e358 <col:40> '<dependent type>' contains-errors lvalue
+              `-ImplicitCastExpr 0x127827880 <col:60> 'int' <LValueToRValue>
+                `-DeclRefExpr 0x127827848 <col:60> 'int' lvalue ParmVar 0x12780de28 'index' 'int'

@@ -1,0 +1,29 @@
+`-FunctionDecl 0x12d141a88  line:1:5 invalid follow_pte_pmd 'int (struct mm_struct *, unsigned long, int **, int **, int **)'
+  |-ParmVarDecl 0x12d128648 <col:20, col:38> col:38 used mm 'struct mm_struct *'
+  |-ParmVarDecl 0x12d1286c8 <col:42, col:56> col:56 used address 'unsigned long'
+  |-ParmVarDecl 0x12d141800 <line:2:9, col:17> col:17 invalid ptepp 'int **'
+  |-ParmVarDecl 0x12d141888 <col:24, col:32> col:32 invalid pmdpp 'int **'
+  |-ParmVarDecl 0x12d141910 <col:39, col:52> col:52 invalid ptlp 'int **'
+  `-CompoundStmt 0x12d1420d0 <line:3:1, line:11:1>
+    |-DeclStmt 0x12d141bd8 <line:4:2, col:9>
+    | `-VarDecl 0x12d141b70 <col:2, col:6> col:6 used res 'int'
+    |-CStyleCastExpr 0x12d142060 <line:7:2, line:9:15> 'void' contains-errors <ToVoid>
+    | `-CallExpr 0x12d142020 <line:7:9, line:9:15> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d141d50 <line:7:9> 'int ()' Function 0x12d141c98 '__cond_lock' 'int ()'
+    |   |-UnaryOperator 0x12d141da8 <col:21, col:22> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x12d141d90 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   `-RecoveryExpr 0x12d141d70 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x12d142008 <line:8:7, line:9:14> 'int' contains-errors prefix '!' cannot overflow
+    |     `-ParenExpr 0x12d141fe8 <line:8:8, line:9:14> 'int' contains-errors
+    |       `-BinaryOperator 0x12d141fc8 <line:8:9, line:9:13> 'int' contains-errors '='
+    |         |-DeclRefExpr 0x12d141dc0 <line:8:9> 'int' lvalue Var 0x12d141b70 'res' 'int'
+    |         `-CallExpr 0x12d141f80 <col:15, line:9:13> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x12d141ec0 <line:8:15> 'int ()' Function 0x12d141e08 '__follow_pte_pmd' 'int ()'
+    |           |-DeclRefExpr 0x12d141ee0 <col:32> 'struct mm_struct *' lvalue ParmVar 0x12d128648 'mm' 'struct mm_struct *'
+    |           |-DeclRefExpr 0x12d141f00 <col:36> 'unsigned long' lvalue ParmVar 0x12d1286c8 'address' 'unsigned long'
+    |           |-RecoveryExpr 0x12d141f20 <col:45> '<dependent type>' contains-errors lvalue
+    |           |-RecoveryExpr 0x12d141f40 <col:52> '<dependent type>' contains-errors lvalue
+    |           `-RecoveryExpr 0x12d141f60 <line:9:9> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12d1420c0 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x12d1420a8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12d142088 <col:9> 'int' lvalue Var 0x12d141b70 'res' 'int'

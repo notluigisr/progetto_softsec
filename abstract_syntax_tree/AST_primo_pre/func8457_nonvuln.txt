@@ -1,0 +1,20 @@
+`-FunctionDecl 0x156120550  line:1:13 device_link_drop_managed 'void (struct device_link *)' static
+  |-ParmVarDecl 0x156120448 <col:38, col:58> col:58 used link 'struct device_link *'
+  `-CompoundStmt 0x156138df8 <line:2:1, line:6:1>
+    |-CompoundAssignOperator 0x156138988 <line:3:2, col:18> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x156138880 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x156138848 <col:2> 'struct device_link *' lvalue ParmVar 0x156120448 'link' 'struct device_link *'
+    | `-UnaryOperator 0x156138970 <col:17, col:18> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   `-ImplicitCastExpr 0x156138958 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x156138938 <col:18> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x156138bb8 <line:4:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x156138ad0 <col:2> 'int ()' Function 0x156138a18 'WRITE_ONCE' 'int ()'
+    | |-RecoveryExpr 0x156138b28 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x156138af0 <col:13> 'struct device_link *' lvalue ParmVar 0x156120448 'link' 'struct device_link *'
+    | `-RecoveryExpr 0x156138b98 <col:27> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x156138dc8 <line:5:2, col:41> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x156138cc8 <col:2> 'int ()' Function 0x156138c10 'kref_put' 'int ()'
+      |-UnaryOperator 0x156138d48 <col:11, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x156138d20 <col:12, col:18> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x156138ce8 <col:12> 'struct device_link *' lvalue ParmVar 0x156120448 'link' 'struct device_link *'
+      `-RecoveryExpr 0x156138da8 <col:24> '<dependent type>' contains-errors lvalue

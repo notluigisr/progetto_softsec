@@ -1,0 +1,47 @@
+`-FunctionDecl 0x122928288  line:2:12 invalid kvm_stat_data_get 'int (void *, int *)' static
+  |-ParmVarDecl 0x1229280d8 <col:30, col:36> col:36 used data 'void *'
+  |-ParmVarDecl 0x1229281a8 <col:42, col:47> col:47 invalid val 'int *'
+  `-CompoundStmt 0x122943330 <line:3:1, line:18:11>
+    |-DeclStmt 0x122928458 <line:4:2, col:17>
+    | `-VarDecl 0x122928358 <col:2, col:11> col:6 used r 'int' cinit
+    |   `-UnaryOperator 0x122928440 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x122928428 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x122928408 <col:11> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x122928740 <line:5:2, col:64>
+    | |-RecordDecl 0x122928470 <col:2, col:9> col:9 struct kvm_stat_data
+    | `-VarDecl 0x1229285d8 <col:2, col:60> col:24 used stat_data 'struct kvm_stat_data *' cinit
+    |   `-CStyleCastExpr 0x122928700 <col:36, col:60> 'struct kvm_stat_data *' <BitCast>
+    |     `-ImplicitCastExpr 0x1229286e8 <col:60> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x122928640 <col:60> 'void *' lvalue ParmVar 0x1229280d8 'data' 'void *'
+    |-SwitchStmt 0x122942c00 <line:7:2, line:16:2>
+    | |-ImplicitCastExpr 0x122942be8 <line:7:10, col:21> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x122942bc0 <col:10, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122928758 <col:10> 'struct kvm_stat_data *' lvalue Var 0x1229285d8 'stat_data' 'struct kvm_stat_data *'
+    | `-CompoundStmt 0x1229432b8 <col:27, line:16:2>
+    |   |-BinaryOperator 0x122942f88 <line:9:3, line:10:39> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x122942c40 <line:9:3> 'int' contains-errors lvalue Var 0x122928358 'r' 'int'
+    |   | `-CallExpr 0x122942f50 <col:7, line:10:39> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x122942dc0 <line:9:7> 'int ()' Function 0x122942d08 'kvm_get_stat_per_vm' 'int ()'
+    |   |   |-RecoveryExpr 0x122942e18 <col:27, col:38> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x122942de0 <col:27> 'struct kvm_stat_data *' lvalue Var 0x1229285d8 'stat_data' 'struct kvm_stat_data *'
+    |   |   |-CXXDependentScopeMemberExpr 0x122942ee8 <line:10:6, col:28> '<dependent type>' contains-errors lvalue .offset
+    |   |   | `-CXXDependentScopeMemberExpr 0x122942ea0 <col:6, col:23> '<dependent type>' contains-errors lvalue ->desc
+    |   |   |   `-RecoveryExpr 0x122942e78 <col:6, col:17> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x122942e40 <col:6> 'struct kvm_stat_data *' lvalue Var 0x1229285d8 'stat_data' 'struct kvm_stat_data *'
+    |   |   `-RecoveryExpr 0x122942f30 <col:36> '<dependent type>' contains-errors lvalue
+    |   |-BreakStmt 0x122942fa8 <line:11:3>
+    |   |-BinaryOperator 0x122943290 <line:13:3, line:14:41> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x122942fc8 <line:13:3> 'int' contains-errors lvalue Var 0x122928358 'r' 'int'
+    |   | `-CallExpr 0x122943258 <col:7, line:14:41> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1229430c8 <line:13:7> 'int ()' Function 0x122943010 'kvm_get_stat_per_vcpu' 'int ()'
+    |   |   |-RecoveryExpr 0x122943120 <col:29, col:40> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x1229430e8 <col:29> 'struct kvm_stat_data *' lvalue Var 0x1229285d8 'stat_data' 'struct kvm_stat_data *'
+    |   |   |-CXXDependentScopeMemberExpr 0x1229431f0 <line:14:8, col:30> '<dependent type>' contains-errors lvalue .offset
+    |   |   | `-CXXDependentScopeMemberExpr 0x1229431a8 <col:8, col:25> '<dependent type>' contains-errors lvalue ->desc
+    |   |   |   `-RecoveryExpr 0x122943180 <col:8, col:19> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x122943148 <col:8> 'struct kvm_stat_data *' lvalue Var 0x1229285d8 'stat_data' 'struct kvm_stat_data *'
+    |   |   `-RecoveryExpr 0x122943238 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-BreakStmt 0x1229432b0 <line:15:3>
+    `-ReturnStmt 0x122943320 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x122943308 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x1229432e8 <col:9> 'int' contains-errors lvalue Var 0x122928358 'r' 'int'

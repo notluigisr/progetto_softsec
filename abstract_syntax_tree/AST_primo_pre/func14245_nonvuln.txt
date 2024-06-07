@@ -1,0 +1,74 @@
+`-FunctionDecl 0x12c141e68  line:1:12 invalid tc_chain_notify_delete 'int (const struct tcf_proto_ops *, void *, int, struct tcf_block *, struct sk_buff *, int, int, int)' static
+  |-ParmVarDecl 0x12c128648 <col:35, col:63> col:63 used tmplt_ops 'const struct tcf_proto_ops *'
+  |-ParmVarDecl 0x12c1286c8 <line:2:7, col:13> col:13 used tmplt_priv 'void *'
+  |-ParmVarDecl 0x12c128760 <col:25, col:29> col:29 invalid chain_index 'int'
+  |-ParmVarDecl 0x12c141968 <line:3:7, col:25> col:25 used block 'struct tcf_block *'
+  |-ParmVarDecl 0x12c141b38 <col:32, col:48> col:48 oskb 'struct sk_buff *'
+  |-ParmVarDecl 0x12c141bb8 <line:4:7, col:11> col:11 invalid seq 'int'
+  |-ParmVarDecl 0x12c141c38 <col:16, col:20> col:20 invalid flags 'int'
+  |-ParmVarDecl 0x12c141cb8 <col:27, col:32> col:32 invalid unicast 'int'
+  `-CompoundStmt 0x12c1473e0 <line:5:1, line:24:1>
+    |-DeclStmt 0x12c142198 <line:7:2, col:30>
+    | |-RecordDecl 0x12c141f50 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x12c1420b8 <col:2, col:27> col:14 used net 'struct net *' cinit
+    |   `-RecoveryExpr 0x12c142158 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c142120 <col:20> 'struct tcf_block *' lvalue ParmVar 0x12c141968 'block' 'struct tcf_block *'
+    |-DeclStmt 0x12c1422a0 <line:8:2, col:21>
+    | `-VarDecl 0x12c142238 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-BinaryOperator 0x12c142540 <line:10:2, col:44> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x12c1422b8 <col:2> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x12c142510 <col:8, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c142430 <col:8> 'int ()' Function 0x12c142378 'alloc_skb' 'int ()'
+    |   |-RecoveryExpr 0x12c1424d0 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x12c1424f0 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c142658 <line:11:2, line:12:11>
+    | |-UnaryOperator 0x12c142598 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12c142580 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c142560 <col:7> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x12c142648 <line:12:3, col:11>
+    |   `-UnaryOperator 0x12c142630 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12c142618 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12c1425f8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c146ea0 <line:14:2, line:18:2>
+    | |-BinaryOperator 0x12c146c10 <line:14:6, line:15:55> 'int' contains-errors '<='
+    | | |-CallExpr 0x12c146ba0 <line:14:6, line:15:50> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12c142758 <line:14:6> 'int ()' Function 0x12c1426a0 'tc_chain_fill_node' 'int ()'
+    | | | |-DeclRefExpr 0x12c142778 <col:25> 'const struct tcf_proto_ops *' lvalue ParmVar 0x12c128648 'tmplt_ops' 'const struct tcf_proto_ops *'
+    | | | |-DeclRefExpr 0x12c142798 <col:36> 'void *' lvalue ParmVar 0x12c1286c8 'tmplt_priv' 'void *'
+    | | | |-RecoveryExpr 0x12c1427b8 <col:48> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x12c1427d8 <col:61> 'struct net *' contains-errors lvalue Var 0x12c1420b8 'net' 'struct net *'
+    | | | |-DeclRefExpr 0x12c146a00 <col:66> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+    | | | |-DeclRefExpr 0x12c146a20 <line:15:11> 'struct tcf_block *' lvalue ParmVar 0x12c141968 'block' 'struct tcf_block *'
+    | | | |-RecoveryExpr 0x12c146b60 <col:18> '<dependent type>' contains-errors lvalue
+    | | | |-RecoveryExpr 0x12c146a58 <col:26> '<dependent type>' contains-errors lvalue
+    | | | |-RecoveryExpr 0x12c146a78 <col:31> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x12c146b80 <col:38> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x12c146b20 <col:55> 'int' 0
+    | `-CompoundStmt 0x12c146e80 <col:58, line:18:2>
+    |   |-CallExpr 0x12c146d98 <line:16:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x12c146d80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12c146d10 <col:3> 'int ()' Function 0x12c146c58 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x12c146dc0 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x12c146d30 <col:13> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+    |   `-ReturnStmt 0x12c146e70 <line:17:3, col:11>
+    |     `-UnaryOperator 0x12c146e58 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x12c146e40 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x12c146e20 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c1470d8 <line:20:2, line:21:39>
+    | |-RecoveryExpr 0x12c146ec0 <line:20:6> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12c1470c8 <line:21:3, col:39>
+    |   `-CallExpr 0x12c147090 <col:10, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12c146fc0 <col:10> 'int ()' Function 0x12c146f08 'rtnl_unicast' 'int ()'
+    |     |-DeclRefExpr 0x12c146fe0 <col:23> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+    |     |-DeclRefExpr 0x12c147000 <col:28> 'struct net *' contains-errors lvalue Var 0x12c1420b8 'net' 'struct net *'
+    |     `-RecoveryExpr 0x12c147070 <col:33> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c1473d0 <line:23:2, col:72>
+      `-CallExpr 0x12c147388 <col:9, col:72> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12c1471d8 <col:9> 'int ()' Function 0x12c147120 'rtnetlink_send' 'int ()'
+        |-DeclRefExpr 0x12c1471f8 <col:24> 'struct sk_buff *' lvalue Var 0x12c142238 'skb' 'struct sk_buff *'
+        |-DeclRefExpr 0x12c147218 <col:29> 'struct net *' contains-errors lvalue Var 0x12c1420b8 'net' 'struct net *'
+        |-RecoveryExpr 0x12c147308 <col:34> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x12c147328 <col:42> '<dependent type>' contains-errors lvalue
+        `-BinaryOperator 0x12c147368 <col:54, col:62> '<dependent type>' contains-errors '&'
+          |-RecoveryExpr 0x12c147268 <col:54> '<dependent type>' contains-errors lvalue
+          `-RecoveryExpr 0x12c147348 <col:62> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,40 @@
+`-FunctionDecl 0x15982b638  line:1:21 invalid hiddev_poll 'unsigned int (struct file *, int *)' static
+  |-ParmVarDecl 0x15980e248 <col:33, col:46> col:46 used file 'struct file *'
+  |-ParmVarDecl 0x15980e318 <col:52, col:64> col:64 invalid wait 'int *'
+  `-CompoundStmt 0x15982bfc8 <line:2:1, line:11:1>
+    |-DeclStmt 0x15982b938 <line:3:2, col:47>
+    | |-RecordDecl 0x15982b6f0 <col:2, col:9> col:9 struct hiddev_list
+    | `-VarDecl 0x15982b858 <col:2, col:35> col:22 used list 'struct hiddev_list *' cinit
+    |   `-RecoveryExpr 0x15982b8f8 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15982b8c0 <col:29> 'struct file *' lvalue ParmVar 0x15980e248 'file' 'struct file *'
+    |-CallExpr 0x15982bbd0 <line:5:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15982bab0 <col:2> 'int ()' Function 0x15982b9f8 'poll_wait' 'int ()'
+    | |-DeclRefExpr 0x15982bad0 <col:12> 'struct file *' lvalue ParmVar 0x15980e248 'file' 'struct file *'
+    | |-UnaryOperator 0x15982bb98 <col:18, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x15982bb50 <col:19, col:33> '<dependent type>' contains-errors lvalue ->wait
+    | |   `-RecoveryExpr 0x15982bb28 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15982baf0 <col:19> 'struct hiddev_list *' contains-errors lvalue Var 0x15982b858 'list' 'struct hiddev_list *'
+    | `-RecoveryExpr 0x15982bbb0 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15982bda8 <line:6:2, line:7:19>
+    | |-BinaryOperator 0x15982bcc8 <line:6:6, col:26> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x15982bc40 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15982bc08 <col:6> 'struct hiddev_list *' contains-errors lvalue Var 0x15982b858 'list' 'struct hiddev_list *'
+    | | `-RecoveryExpr 0x15982bca0 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15982bc68 <col:20> 'struct hiddev_list *' contains-errors lvalue Var 0x15982b858 'list' 'struct hiddev_list *'
+    | `-ReturnStmt 0x15982bd98 <line:7:3, col:19>
+    |   `-BinaryOperator 0x15982bd78 <col:10, col:19> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x15982bd38 <col:10> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x15982bd58 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15982bf60 <line:8:2, line:9:20>
+    | |-UnaryOperator 0x15982be88 <line:8:6, col:21> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15982be70 <col:7, col:21> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x15982be28 <col:7, col:21> '<dependent type>' contains-errors lvalue ->exist
+    | |     `-RecoveryExpr 0x15982be00 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x15982bdc8 <col:7> 'struct hiddev_list *' contains-errors lvalue Var 0x15982b858 'list' 'struct hiddev_list *'
+    | `-ReturnStmt 0x15982bf50 <line:9:3, col:20>
+    |   `-BinaryOperator 0x15982bf30 <col:10, col:20> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x15982bef0 <col:10> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x15982bf10 <col:20> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15982bfb8 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x15982bfa0 <col:9> 'unsigned int' <IntegralCast>
+        `-IntegerLiteral 0x15982bf80 <col:9> 'int' 0

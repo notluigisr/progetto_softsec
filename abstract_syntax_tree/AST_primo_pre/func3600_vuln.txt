@@ -1,0 +1,120 @@
+`-FunctionDecl 0x121854438  line:1:21 invalid unix_dgram_poll 'unsigned int (struct file *, struct socket *, int *)' static
+  |-ParmVarDecl 0x12203d048 <col:37, col:50> col:50 used file 'struct file *'
+  |-ParmVarDecl 0x121854228 <col:56, col:71> col:71 used sock 'struct socket *'
+  |-ParmVarDecl 0x1218542f8 <line:2:9, col:21> col:21 invalid wait 'int *'
+  `-CompoundStmt 0x122011f58 <line:3:1, line:54:1>
+    |-DeclStmt 0x1218547e0 <line:4:2, col:36>
+    | |-RecordDecl 0x1218544f8 <col:2, col:9> col:9 struct sock
+    | |-VarDecl 0x121854668 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    | | `-RecoveryExpr 0x121854708 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1218546d0 <col:20> 'struct socket *' lvalue ParmVar 0x121854228 'sock' 'struct socket *'
+    | `-VarDecl 0x121854758 <col:2, col:31> col:31 used other 'struct sock *'
+    |-DeclStmt 0x121854910 <line:5:2, col:29>
+    | |-VarDecl 0x121854810 <col:2, col:15> col:15 used mask 'unsigned int'
+    | `-VarDecl 0x121854890 <col:2, col:21> col:21 used writable 'unsigned int'
+    |-CallExpr 0x121854c88 <line:7:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121854a80 <col:2> 'int ()' Function 0x1218549c8 'sock_poll_wait' 'int ()'
+    | |-DeclRefExpr 0x121854aa0 <col:17> 'struct file *' lvalue ParmVar 0x12203d048 'file' 'struct file *'
+    | |-CallExpr 0x121854c28 <col:23, col:34> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x121854c10 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x121854ba0 <col:23> 'int ()' Function 0x121854ae8 'sk_sleep' 'int ()'
+    | | `-ImplicitCastExpr 0x121854c50 <col:32> 'struct sock *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x121854bc0 <col:32> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    | `-RecoveryExpr 0x121854c68 <col:37> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x121854d18 <line:8:2, col:9> 'unsigned int' '='
+    | |-DeclRefExpr 0x121854cc0 <col:2> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'
+    | `-ImplicitCastExpr 0x121854d00 <col:9> 'unsigned int' <IntegralCast>
+    |   `-IntegerLiteral 0x121854ce0 <col:9> 'int' 0
+    |-IfStmt 0x122010a08 <line:15:2, line:16:32>
+    | |-BinaryOperator 0x122010840 <line:15:6, col:24> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x1218551b0 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x121855178 <col:6> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x122010820 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundAssignOperator 0x1220109d8 <line:16:3, col:32> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x122010860 <col:3> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'
+    |   `-BinaryOperator 0x1220109b8 <col:11, col:32> '<dependent type>' contains-errors '|'
+    |     |-BinaryOperator 0x122010978 <col:11, col:23> '<dependent type>' contains-errors '|'
+    |     | |-RecoveryExpr 0x122010938 <col:11> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x122010958 <col:23> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x122010998 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122010bb8 <line:17:2, line:18:11>
+    | |-BinaryOperator 0x122010ae0 <line:17:6, col:25> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x122010a60 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x122010a28 <col:6> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x122010ac0 <col:25> '<dependent type>' contains-errors lvalue
+    | `-CompoundAssignOperator 0x122010b88 <line:18:3, col:11> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x122010b00 <col:3> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'
+    |   `-RecoveryExpr 0x122010b68 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122010ef0 <line:25:2, line:31:2>
+    | |-RecoveryExpr 0x122010d30 <line:25:6, col:21> '_Bool' contains-errors
+    | `-CompoundStmt 0x122010ed8 <col:37, line:31:2>
+    |   `-IfStmt 0x122010eb8 <line:29:3, line:30:11>
+    |     |-RecoveryExpr 0x122010e50 <line:29:7, col:23> '_Bool' contains-errors
+    |     `-ReturnStmt 0x122010ea8 <line:30:4, col:11>
+    |       `-ImplicitCastExpr 0x122010e90 <col:11> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x122010e70 <col:11> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'
+    |-IfStmt 0x1220110c0 <line:34:2, line:35:10>
+    | |-RecoveryExpr 0x122011058 <line:34:6, col:69> '_Bool' contains-errors
+    | `-ReturnStmt 0x1220110b0 <line:35:3, col:10>
+    |   `-ImplicitCastExpr 0x122011098 <col:10> 'unsigned int' <LValueToRValue>
+    |     `-DeclRefExpr 0x122011078 <col:10> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'
+    |-BinaryOperator 0x122011290 <line:37:2, col:29> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x1220110e0 <col:2> 'unsigned int' lvalue Var 0x121854890 'writable' 'unsigned int'
+    | `-ImplicitCastExpr 0x122011278 <col:13, col:29> 'unsigned int' contains-errors <IntegralCast>
+    |   `-CallExpr 0x122011238 <col:13, col:29> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x122011220 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1220111e0 <col:13> 'int ()' Function 0x122011128 'unix_writable' 'int ()'
+    |     `-ImplicitCastExpr 0x122011260 <col:27> 'struct sock *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x122011200 <col:27> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    |-BinaryOperator 0x122011460 <line:38:2, col:26> 'struct sock *' contains-errors '='
+    | |-DeclRefExpr 0x1220112b0 <col:2> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    | `-ImplicitCastExpr 0x122011448 <col:10, col:26> 'struct sock *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x122011408 <col:10, col:26> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x1220113f0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1220113b0 <col:10> 'int ()' Function 0x1220112f8 'unix_peer_get' 'int ()'
+    |     `-ImplicitCastExpr 0x122011430 <col:24> 'struct sock *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x1220113d0 <col:24> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    |-IfStmt 0x122011cd8 <line:39:2, line:46:2>
+    | |-ImplicitCastExpr 0x1220114a0 <line:39:6> 'struct sock *' <LValueToRValue>
+    | | `-DeclRefExpr 0x122011480 <col:6> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    | `-CompoundStmt 0x122011cb8 <col:13, line:46:2>
+    |   |-IfStmt 0x122011b20 <line:40:3, line:44:3>
+    |   | |-BinaryOperator 0x122011680 <line:40:7, col:27> 'int' contains-errors '!='
+    |   | | |-ImplicitCastExpr 0x122011668 <col:7, col:22> 'struct sock *' <IntegralToPointer>
+    |   | | | `-CallExpr 0x1220115f0 <col:7, col:22> 'int'
+    |   | | |   |-ImplicitCastExpr 0x1220115d8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | |   | `-DeclRefExpr 0x122011598 <col:7> 'int ()' Function 0x1220114e0 'unix_peer' 'int ()'
+    |   | | |   `-ImplicitCastExpr 0x122011618 <col:17> 'struct sock *' <LValueToRValue>
+    |   | | |     `-DeclRefExpr 0x1220115b8 <col:17> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    |   | | `-ImplicitCastExpr 0x122011650 <col:27> 'struct sock *' contains-errors <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x122011630 <col:27> 'struct sock *' contains-errors lvalue Var 0x121854668 'sk' 'struct sock *'
+    |   | `-CompoundStmt 0x122011b00 <col:31, line:44:3>
+    |   |   |-CallExpr 0x1220118b8 <line:41:4, col:57> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x1220116a0 <col:4> 'int ()' Function 0x1218549c8 'sock_poll_wait' 'int ()'
+    |   |   | |-DeclRefExpr 0x1220116c0 <col:19> 'struct file *' lvalue ParmVar 0x12203d048 'file' 'struct file *'
+    |   |   | |-UnaryOperator 0x122011880 <col:25, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | | `-RecoveryExpr 0x122011858 <col:26, col:42> '<dependent type>' contains-errors lvalue
+    |   |   | |   `-CallExpr 0x122011818 <col:26, col:39> 'int'
+    |   |   | |     |-ImplicitCastExpr 0x122011800 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | |     | `-DeclRefExpr 0x1220117c0 <col:26> 'int ()' Function 0x122011708 'unix_sk' 'int ()'
+    |   |   | |     `-ImplicitCastExpr 0x122011840 <col:34> 'struct sock *' <LValueToRValue>
+    |   |   | |       `-DeclRefExpr 0x1220117e0 <col:34> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    |   |   | `-RecoveryExpr 0x122011898 <col:53> '<dependent type>' contains-errors lvalue
+    |   |   `-IfStmt 0x122011ae0 <line:42:4, line:43:16>
+    |   |     |-CallExpr 0x122011a28 <line:42:8, col:29> 'int'
+    |   |     | |-ImplicitCastExpr 0x122011a10 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | | `-DeclRefExpr 0x1220119d0 <col:8> 'int ()' Function 0x122011918 'unix_recvq_full' 'int ()'
+    |   |     | `-ImplicitCastExpr 0x122011a50 <col:24> 'struct sock *' <LValueToRValue>
+    |   |     |   `-DeclRefExpr 0x1220119f0 <col:24> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    |   |     `-BinaryOperator 0x122011ac0 <line:43:5, col:16> 'unsigned int' '='
+    |   |       |-DeclRefExpr 0x122011a68 <col:5> 'unsigned int' lvalue Var 0x121854890 'writable' 'unsigned int'
+    |   |       `-ImplicitCastExpr 0x122011aa8 <col:16> 'unsigned int' <IntegralCast>
+    |   |         `-IntegerLiteral 0x122011a88 <col:16> 'int' 0
+    |   `-CallExpr 0x122011c78 <line:45:3, col:17> 'int'
+    |     |-ImplicitCastExpr 0x122011c60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x122011c20 <col:3> 'int ()' Function 0x122011b68 'sock_put' 'int ()'
+    |     `-ImplicitCastExpr 0x122011ca0 <col:12> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x122011c40 <col:12> 'struct sock *' lvalue Var 0x121854758 'other' 'struct sock *'
+    `-ReturnStmt 0x122011f48 <line:53:2, col:9>
+      `-ImplicitCastExpr 0x122011f30 <col:9> 'unsigned int' <LValueToRValue>
+        `-DeclRefExpr 0x122011f10 <col:9> 'unsigned int' lvalue Var 0x121854810 'mask' 'unsigned int'

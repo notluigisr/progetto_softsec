@@ -1,0 +1,48 @@
+`-FunctionDecl 0x15800e838  line:1:12 copy_from_user_mmap_sem 'int (void *, int)' static
+  |-ParmVarDecl 0x15800e6d8 <col:36, col:42> col:42 used dst 'void *'
+  |-ParmVarDecl 0x15800e750 <col:47, col:58> col:58 __user 'int'
+  `-CompoundStmt 0x158028b50 <line:2:1, line:17:1>
+    |-DeclStmt 0x15800e9b8 <line:3:2, col:13>
+    | `-VarDecl 0x15800e950 <col:2, col:6> col:6 used partial 'int'
+    |-CallExpr 0x15800eb68 <line:5:2, col:20> 'int'
+    | `-ImplicitCastExpr 0x15800eb50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15800eb00 <col:2> 'int ()' Function 0x15800ea48 'pagefault_disable' 'int ()'
+    |-BinaryOperator 0x15800edc8 <line:6:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15800eb88 <col:2> 'int' lvalue Var 0x15800e950 'partial' 'int'
+    | `-CallExpr 0x15800ed90 <col:12, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15800ec88 <col:12> 'int ()' Function 0x15800ebd0 '__copy_from_user_inatomic' 'int ()'
+    |   |-DeclRefExpr 0x15800eca8 <col:38> 'void *' lvalue ParmVar 0x15800e6d8 'dst' 'void *'
+    |   |-RecoveryExpr 0x15800ed50 <col:43> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x15800ed70 <col:48> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x158028118 <line:7:2, col:19> 'int'
+    | `-ImplicitCastExpr 0x158028100 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1580280e0 <col:2> 'int ()' Function 0x158028028 'pagefault_enable' 'int ()'
+    |-IfStmt 0x158028ae8 <line:10:2, line:14:2>
+    | |-CallExpr 0x158028270 <line:10:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x158028258 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x158028218 <col:6> 'int ()' Function 0x158028160 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x158028298 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x158028238 <col:15> 'int' lvalue Var 0x15800e950 'partial' 'int'
+    | `-CompoundStmt 0x158028ac0 <col:25, line:14:2>
+    |   |-CallExpr 0x158028560 <line:11:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x158028390 <col:3> 'int ()' Function 0x1580282d8 'up_read' 'int ()'
+    |   | `-UnaryOperator 0x158028548 <col:11, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x158028500 <col:12, col:25> '<dependent type>' contains-errors lvalue ->mmap_sem
+    |   |     `-CXXDependentScopeMemberExpr 0x1580284b8 <col:12, col:21> '<dependent type>' contains-errors lvalue ->mm
+    |   |       `-RecoveryExpr 0x158028498 <col:12> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x1580287c8 <line:12:3, col:39> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x158028588 <col:3> 'int' lvalue Var 0x15800e950 'partial' 'int'
+    |   | `-CallExpr 0x158028790 <col:13, col:39> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x158028688 <col:13> 'int ()' Function 0x1580285d0 'copy_from_user' 'int ()'
+    |   |   |-DeclRefExpr 0x1580286a8 <col:28> 'void *' lvalue ParmVar 0x15800e6d8 'dst' 'void *'
+    |   |   |-RecoveryExpr 0x158028750 <col:33> '<dependent type>' contains-errors lvalue
+    |   |   `-RecoveryExpr 0x158028770 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x158028a98 <line:13:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1580288c8 <col:3> 'int ()' Function 0x158028810 'down_read' 'int ()'
+    |     `-UnaryOperator 0x158028a80 <col:13, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x158028a38 <col:14, col:27> '<dependent type>' contains-errors lvalue ->mmap_sem
+    |         `-CXXDependentScopeMemberExpr 0x1580289f0 <col:14, col:23> '<dependent type>' contains-errors lvalue ->mm
+    |           `-RecoveryExpr 0x1580289d0 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x158028b40 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x158028b28 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x158028b08 <col:9> 'int' lvalue Var 0x15800e950 'partial' 'int'

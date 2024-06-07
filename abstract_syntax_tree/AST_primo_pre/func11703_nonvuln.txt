@@ -1,0 +1,69 @@
+`-FunctionDecl 0x1350b8800  line:1:12 svm_enter_smm 'int (struct kvm_vcpu *, char *)' static
+  |-ParmVarDecl 0x1350a0448 <col:26, col:43> col:43 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x1350a04c8 <col:49, col:55> col:55 used smstate 'char *'
+  `-CompoundStmt 0x1350bbcc0 <line:2:1, line:34:1>
+    |-DeclStmt 0x1350b8cf8 <line:3:2, col:37>
+    | |-RecordDecl 0x1350b8900 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x1350b8a68 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x1350b8cc8 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x1350b8c88 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1350b8c70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1350b8c00 <col:25> 'int ()' Function 0x1350b8b48 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x1350b8cb0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1350b8c20 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x1350a0448 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x1350b8e88 <line:4:2, col:30>
+    | |-RecordDecl 0x1350b8d10 <col:2, col:9> col:9 struct kvm_host_map
+    | `-VarDecl 0x1350b8e08 <col:2, col:22> col:22 invalid map_save 'struct kvm_host_map'
+    |-DeclStmt 0x1350b8f20 <line:5:2, col:9>
+    | `-VarDecl 0x1350b8eb8 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x1350bbc70 <line:7:2, line:32:2>
+    | |-CallExpr 0x1350b9070 <line:7:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x1350b9058 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1350b9018 <col:6> 'int ()' Function 0x1350b8f60 'is_guest_mode' 'int ()'
+    | | `-ImplicitCastExpr 0x1350b9098 <col:20> 'struct kvm_vcpu *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1350b9038 <col:20> 'struct kvm_vcpu *' lvalue ParmVar 0x1350a0448 'vcpu' 'struct kvm_vcpu *'
+    | `-CompoundStmt 0x1350bbc30 <col:27, line:32:2>
+    |   |-CallExpr 0x1350b9288 <line:9:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1350b9190 <col:3> 'int ()' Function 0x1350b90d8 'put_smstate' 'int ()'
+    |   | |-RecoveryExpr 0x1350b9268 <col:15> '<dependent type>' contains-errors lvalue
+    |   | |-DeclRefExpr 0x1350b91c8 <col:20> 'char *' lvalue ParmVar 0x1350a04c8 'smstate' 'char *'
+    |   | |-IntegerLiteral 0x1350b91e8 <col:29> 'int' 32472
+    |   | `-IntegerLiteral 0x1350b9208 <col:37> 'int' 1
+    |   |-CallExpr 0x1350b9448 <line:11:3, col:59> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1350b92c8 <col:3> 'int ()' Function 0x1350b90d8 'put_smstate' 'int ()'
+    |   | |-RecoveryExpr 0x1350b9428 <col:15> '<dependent type>' contains-errors lvalue
+    |   | |-DeclRefExpr 0x1350b9300 <col:20> 'char *' lvalue ParmVar 0x1350a04c8 'smstate' 'char *'
+    |   | |-IntegerLiteral 0x1350b9320 <col:29> 'int' 32480
+    |   | `-CXXDependentScopeMemberExpr 0x1350b93a0 <col:37, col:49> '<dependent type>' contains-errors lvalue .vmcb12_gpa
+    |   |   `-RecoveryExpr 0x1350b9378 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1350b9340 <col:37> 'struct vcpu_svm *' lvalue Var 0x1350b8a68 'svm' 'struct vcpu_svm *'
+    |   |-BinaryOperator 0x1350bb148 <line:17:3, col:30> 'int' '='
+    |   | |-DeclRefExpr 0x1350bafb0 <col:3> 'int' lvalue Var 0x1350b8eb8 'ret' 'int'
+    |   | `-CallExpr 0x1350bb108 <col:9, col:30> 'int'
+    |   |   |-ImplicitCastExpr 0x1350bb0f0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1350bb0b0 <col:9> 'int ()' Function 0x1350baff8 'nested_svm_vmexit' 'int ()'
+    |   |   `-ImplicitCastExpr 0x1350bb130 <col:27> 'struct vcpu_svm *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1350bb0d0 <col:27> 'struct vcpu_svm *' lvalue Var 0x1350b8a68 'svm' 'struct vcpu_svm *'
+    |   |-IfStmt 0x1350bb1e8 <line:18:3, line:19:11>
+    |   | |-ImplicitCastExpr 0x1350bb188 <line:18:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1350bb168 <col:7> 'int' lvalue Var 0x1350b8eb8 'ret' 'int'
+    |   | `-ReturnStmt 0x1350bb1d8 <line:19:4, col:11>
+    |   |   `-ImplicitCastExpr 0x1350bb1c0 <col:11> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1350bb1a0 <col:11> 'int' lvalue Var 0x1350b8eb8 'ret' 'int'
+    |   |-IfStmt 0x1350bb5b8 <line:22:3, line:24:11>
+    |   | |-RecoveryExpr 0x1350bb568 <line:22:7, line:23:21> '_Bool' contains-errors
+    |   | `-ReturnStmt 0x1350bb5a8 <line:24:4, col:11>
+    |   |   `-IntegerLiteral 0x1350bb588 <col:11> 'int' 1
+    |   `-CallExpr 0x1350bbaa8 <line:28:3, line:29:32> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1350bb8d8 <line:28:3> 'int ()' Function 0x1350bb820 'svm_copy_vmrun_state' 'int ()'
+    |     |-BinaryOperator 0x1350bb980 <col:24, col:39> '<dependent type>' contains-errors '+'
+    |     | |-CXXDependentScopeMemberExpr 0x1350bb918 <col:24, col:33> '<dependent type>' contains-errors lvalue .hva
+    |     | | `-RecoveryExpr 0x1350bb8f8 <col:24> '<dependent type>' contains-errors lvalue
+    |     | `-IntegerLiteral 0x1350bb960 <col:39> 'int' 1024
+    |     `-UnaryOperator 0x1350bba90 <line:29:10, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x1350bba48 <col:11, col:28> '<dependent type>' contains-errors lvalue ->save
+    |         `-CXXDependentScopeMemberExpr 0x1350bba00 <col:11, col:23> '<dependent type>' contains-errors lvalue .ptr
+    |           `-RecoveryExpr 0x1350bb9d8 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x1350bb9a0 <col:11> 'struct vcpu_svm *' lvalue Var 0x1350b8a68 'svm' 'struct vcpu_svm *'
+    `-ReturnStmt 0x1350bbcb0 <line:33:2, col:9>
+      `-IntegerLiteral 0x1350bbc90 <col:9> 'int' 0

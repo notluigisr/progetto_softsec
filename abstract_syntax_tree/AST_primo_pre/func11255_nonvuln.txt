@@ -1,0 +1,172 @@
+`-FunctionDecl 0x152941838  line:2:16 invalid xps_rxqs_show 'int (struct netdev_queue *, char *)' static
+  |-ParmVarDecl 0x152928668 <col:30, col:51> col:51 used queue 'struct netdev_queue *'
+  |-ParmVarDecl 0x1529286e8 <col:58, col:64> col:64 used buf 'char *'
+  `-CompoundStmt 0x1529452e8 <line:3:1, line:48:41>
+    |-DeclStmt 0x152941b38 <line:4:2, col:37>
+    | |-RecordDecl 0x1529418f0 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x152941a58 <col:2, col:34> col:21 used dev 'struct net_device *' cinit
+    |   `-RecoveryExpr 0x152941af8 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152941ac0 <col:27> 'struct netdev_queue *' lvalue ParmVar 0x152928668 'queue' 'struct netdev_queue *'
+    |-DeclStmt 0x152941d38 <line:5:2, col:31>
+    | |-RecordDecl 0x152941b50 <col:2, col:9> col:9 struct xps_dev_maps
+    | `-VarDecl 0x152941cb8 <col:2, col:23> col:23 used dev_maps 'struct xps_dev_maps *'
+    |-DeclStmt 0x152941e98 <line:6:2, col:28>
+    | |-VarDecl 0x152941d98 <col:2, col:17> col:17 used mask 'unsigned long *'
+    | `-VarDecl 0x152941e18 <col:2, col:23> col:23 used index 'unsigned long'
+    |-DeclStmt 0x152942118 <line:7:2, col:32>
+    | |-VarDecl 0x152941ec8 <col:2, col:6> col:6 used j 'int'
+    | |-VarDecl 0x152941f48 <col:2, col:9> col:9 used len 'int'
+    | |-VarDecl 0x152941fc8 <col:2, col:23> col:14 used num_tc 'int' cinit
+    | | `-IntegerLiteral 0x152942030 <col:23> 'int' 1
+    | `-VarDecl 0x152942068 <col:2, col:31> col:26 used tc 'int' cinit
+    |   `-IntegerLiteral 0x1529420d0 <col:31> 'int' 0
+    |-BinaryOperator 0x152942390 <line:9:2, col:38> 'unsigned long' '='
+    | |-DeclRefExpr 0x152942130 <col:2> 'unsigned long' lvalue Var 0x152941e18 'index' 'unsigned long'
+    | `-ImplicitCastExpr 0x152942378 <col:10, col:38> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x152942338 <col:10, col:38> 'int'
+    |     |-ImplicitCastExpr 0x152942320 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1529422b0 <col:10> 'int ()' Function 0x1529421f8 'get_netdev_queue_index' 'int ()'
+    |     `-ImplicitCastExpr 0x152942360 <col:33> 'struct netdev_queue *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1529422d0 <col:33> 'struct netdev_queue *' lvalue ParmVar 0x152928668 'queue' 'struct netdev_queue *'
+    |-IfStmt 0x152943428 <line:11:2, line:16:2>
+    | |-RecoveryExpr 0x1529423e8 <line:11:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1529423b0 <col:6> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    | `-CompoundStmt 0x152943400 <col:19, line:16:2>
+    |   |-BinaryOperator 0x152942490 <line:12:3, col:17> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x152942410 <col:3> 'int' lvalue Var 0x152941fc8 'num_tc' 'int'
+    |   | `-RecoveryExpr 0x152942468 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x152942430 <col:12> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    |   |-BinaryOperator 0x152942688 <line:13:3, col:35> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1529424b0 <col:3> 'int' lvalue Var 0x152942068 'tc' 'int'
+    |   | `-CallExpr 0x152942628 <col:8, col:35> 'int' contains-errors
+    |   |   |-ImplicitCastExpr 0x152942610 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1529425b0 <col:8> 'int ()' Function 0x1529424f8 'netdev_txq_to_tc' 'int ()'
+    |   |   |-ImplicitCastExpr 0x152942658 <col:25> 'struct net_device *' contains-errors <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x1529425d0 <col:25> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    |   |   `-ImplicitCastExpr 0x152942670 <col:30> 'unsigned long' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1529425f0 <col:30> 'unsigned long' lvalue Var 0x152941e18 'index' 'unsigned long'
+    |   `-IfStmt 0x1529427c8 <line:14:3, line:15:12>
+    |     |-BinaryOperator 0x152942700 <line:14:7, col:12> 'int' '<'
+    |     | |-ImplicitCastExpr 0x1529426e8 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x1529426a8 <col:7> 'int' lvalue Var 0x152942068 'tc' 'int'
+    |     | `-IntegerLiteral 0x1529426c8 <col:12> 'int' 0
+    |     `-ReturnStmt 0x1529427b8 <line:15:4, col:12>
+    |       `-UnaryOperator 0x1529427a0 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x152942788 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x152942768 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x152943680 <line:17:2, col:53> 'unsigned long *' contains-errors '='
+    | |-DeclRefExpr 0x152943448 <col:2> 'unsigned long *' lvalue Var 0x152941d98 'mask' 'unsigned long *'
+    | `-CallExpr 0x152943650 <col:9, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152943548 <col:9> 'int ()' Function 0x152943490 'bitmap_zalloc' 'int ()'
+    |   |-RecoveryExpr 0x1529435a0 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x152943568 <col:23> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    |   `-RecoveryExpr 0x152943630 <col:43> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152943798 <line:18:2, line:19:11>
+    | |-UnaryOperator 0x1529436d8 <line:18:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1529436c0 <col:7> 'unsigned long *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1529436a0 <col:7> 'unsigned long *' lvalue Var 0x152941d98 'mask' 'unsigned long *'
+    | `-ReturnStmt 0x152943788 <line:19:3, col:11>
+    |   `-UnaryOperator 0x152943770 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x152943758 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x152943738 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1529438d0 <line:21:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1529438b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x152943898 <col:2> 'int ()' Function 0x1529437e0 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x152943a98 <line:22:2, col:46> 'struct xps_dev_maps *' contains-errors '='
+    | |-DeclRefExpr 0x1529438f0 <col:2> 'struct xps_dev_maps *' lvalue Var 0x152941cb8 'dev_maps' 'struct xps_dev_maps *'
+    | `-CallExpr 0x152943a70 <col:13, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1529439f0 <col:13> 'int ()' Function 0x152943938 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x152943a48 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152943a10 <col:29> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    |-IfStmt 0x152943b70 <line:23:2, line:24:8>
+    | |-UnaryOperator 0x152943af0 <line:23:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x152943ad8 <col:7> 'struct xps_dev_maps *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152943ab8 <col:7> 'struct xps_dev_maps *' lvalue Var 0x152941cb8 'dev_maps' 'struct xps_dev_maps *'
+    | `-GotoStmt 0x152943b58 <line:24:3, col:8> 'out_no_maps' 0x152943b08
+    |-ForStmt 0x152944de0 <line:26:2, line:41:2>
+    | |-BinaryOperator 0x152943be8 <line:26:7, col:12> 'int' '='
+    | | |-DeclRefExpr 0x152943b90 <col:7> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    | | `-UnaryOperator 0x152943bd0 <col:11, col:12> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x152943bb0 <col:12> 'int' 1
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x152943f50 <col:15, line:27:16> 'int' contains-errors ','
+    | | |-BinaryOperator 0x152943f30 <line:26:15, col:66> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x152943c08 <col:15> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    | | | `-CallExpr 0x152943ef8 <col:19, col:66> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x152943d08 <col:19> 'int ()' Function 0x152943c50 'netif_attrmask_next' 'int ()'
+    | | |   |-DeclRefExpr 0x152943d28 <col:39> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    | | |   |-RecoveryExpr 0x152943ed8 <col:42> '<dependent type>' contains-errors lvalue
+    | | |   `-RecoveryExpr 0x152943d98 <col:48, col:53> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x152943d60 <col:48> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    | | `-BinaryOperator 0x152943e98 <line:27:7, col:16> 'int' contains-errors '<'
+    | |   |-DeclRefExpr 0x152943e18 <col:7> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    | |   `-RecoveryExpr 0x152943e70 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x152943e38 <col:11> 'struct net_device *' contains-errors lvalue Var 0x152941a58 'dev' 'struct net_device *'
+    | |-<<<NULL>>>
+    | `-CompoundStmt 0x152944da8 <col:32, line:41:2>
+    |   |-DeclStmt 0x152944170 <line:28:3, col:31>
+    |   | |-VarDecl 0x152943f88 <col:3, col:7> col:7 used i 'int'
+    |   | `-VarDecl 0x152944008 <col:3, col:29> col:10 used tci 'int' cinit
+    |   |   `-BinaryOperator 0x152944138 <col:16, col:29> 'int' '+'
+    |   |     |-BinaryOperator 0x1529440e0 <col:16, col:20> 'int' '*'
+    |   |     | |-ImplicitCastExpr 0x1529440b0 <col:16> 'int' <LValueToRValue>
+    |   |     | | `-DeclRefExpr 0x152944070 <col:16> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    |   |     | `-ImplicitCastExpr 0x1529440c8 <col:20> 'int' <LValueToRValue>
+    |   |     |   `-DeclRefExpr 0x152944090 <col:20> 'int' lvalue Var 0x152941fc8 'num_tc' 'int'
+    |   |     `-ImplicitCastExpr 0x152944120 <col:29> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x152944100 <col:29> 'int' lvalue Var 0x152942068 'tc' 'int'
+    |   |-DeclStmt 0x152944378 <line:29:3, col:22>
+    |   | |-RecordDecl 0x152944188 <col:3, col:10> col:10 struct xps_map
+    |   | `-VarDecl 0x1529442f8 <col:3, col:19> col:19 used map 'struct xps_map *'
+    |   |-BinaryOperator 0x1529448d8 <line:31:3, col:48> 'struct xps_map *' contains-errors '='
+    |   | |-DeclRefExpr 0x152944390 <col:3> 'struct xps_map *' lvalue Var 0x1529442f8 'map' 'struct xps_map *'
+    |   | `-CallExpr 0x1529448b0 <col:9, col:48> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1529443b0 <col:9> 'int ()' Function 0x152943938 'rcu_dereference' 'int ()'
+    |   |   `-ArraySubscriptExpr 0x152944890 <col:25, col:47> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x152944860 <col:25, col:35> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-RecoveryExpr 0x152944818 <col:25, col:35> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x1529443d0 <col:25> 'struct xps_dev_maps *' lvalue Var 0x152941cb8 'dev_maps' 'struct xps_dev_maps *'
+    |   |     `-ImplicitCastExpr 0x152944878 <col:44> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x152944840 <col:44> 'int' lvalue Var 0x152944008 'tci' 'int'
+    |   |-IfStmt 0x152944950 <line:32:3, line:33:4>
+    |   | |-UnaryOperator 0x152944930 <line:32:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x152944918 <col:8> 'struct xps_map *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x1529448f8 <col:8> 'struct xps_map *' lvalue Var 0x1529442f8 'map' 'struct xps_map *'
+    |   | `-ContinueStmt 0x152944948 <line:33:4>
+    |   `-ForStmt 0x152944d70 <line:35:3, line:40:3>
+    |     |-BinaryOperator 0x1529449f0 <line:35:8, col:17> 'int' contains-errors '='
+    |     | |-DeclRefExpr 0x152944970 <col:8> 'int' lvalue Var 0x152943f88 'i' 'int'
+    |     | `-RecoveryExpr 0x1529449c8 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x152944990 <col:12> 'struct xps_map *' lvalue Var 0x1529442f8 'map' 'struct xps_map *'
+    |     |-<<<NULL>>>
+    |     |-UnaryOperator 0x152944a30 <col:22, col:23> 'int' postfix '--'
+    |     | `-DeclRefExpr 0x152944a10 <col:22> 'int' lvalue Var 0x152943f88 'i' 'int'
+    |     |-<<<NULL>>>
+    |     `-CompoundStmt 0x152944d58 <col:28, line:40:3>
+    |       `-IfStmt 0x152944d38 <line:36:4, line:39:4>
+    |         |-BinaryOperator 0x152944b38 <line:36:8, col:26> 'int' contains-errors '=='
+    |         | |-ArraySubscriptExpr 0x152944af8 <col:8, col:21> '<dependent type>' contains-errors lvalue
+    |         | | |-ImplicitCastExpr 0x152944ac8 <col:8, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |         | | | `-RecoveryExpr 0x152944a80 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |         | | |   `-DeclRefExpr 0x152944a48 <col:8> 'struct xps_map *' lvalue Var 0x1529442f8 'map' 'struct xps_map *'
+    |         | | `-ImplicitCastExpr 0x152944ae0 <col:20> 'int' <LValueToRValue>
+    |         | |   `-DeclRefExpr 0x152944aa8 <col:20> 'int' lvalue Var 0x152943f88 'i' 'int'
+    |         | `-DeclRefExpr 0x152944b18 <col:26> 'unsigned long' lvalue Var 0x152941e18 'index' 'unsigned long'
+    |         `-CompoundStmt 0x152944d18 <col:33, line:39:4>
+    |           |-CallExpr 0x152944cb0 <line:37:5, col:20> 'int'
+    |           | |-ImplicitCastExpr 0x152944c98 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |           | | `-DeclRefExpr 0x152944c38 <col:5> 'int ()' Function 0x152944b80 'set_bit' 'int ()'
+    |           | |-ImplicitCastExpr 0x152944ce0 <col:13> 'int' <LValueToRValue>
+    |           | | `-DeclRefExpr 0x152944c58 <col:13> 'int' lvalue Var 0x152941ec8 'j' 'int'
+    |           | `-ImplicitCastExpr 0x152944cf8 <col:16> 'unsigned long *' <LValueToRValue>
+    |           |   `-DeclRefExpr 0x152944c78 <col:16> 'unsigned long *' lvalue Var 0x152941d98 'mask' 'unsigned long *'
+    |           `-BreakStmt 0x152944d10 <line:38:5>
+    |-LabelStmt 0x152944f50 <line:42:1, line:43:18> 'out_no_maps'
+    | `-CallExpr 0x152944f30 <col:2, col:18> 'int'
+    |   `-ImplicitCastExpr 0x152944f18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x152944ef8 <col:2> 'int ()' Function 0x152944e40 'rcu_read_unlock' 'int ()'
+    `-CallExpr 0x152945268 <line:46:2, col:18> 'int'
+      |-ImplicitCastExpr 0x152945250 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x152945210 <col:2> 'int ()' Function 0x152945158 'bitmap_free' 'int ()'
+      `-ImplicitCastExpr 0x152945290 <col:14> 'unsigned long *' <LValueToRValue>
+        `-DeclRefExpr 0x152945230 <col:14> 'unsigned long *' lvalue Var 0x152941d98 'mask' 'unsigned long *'

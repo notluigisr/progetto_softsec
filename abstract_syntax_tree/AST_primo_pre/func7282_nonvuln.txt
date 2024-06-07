@@ -1,0 +1,72 @@
+`-FunctionDecl 0x14d826600  line:1:1 xfs_destroy_ioend 'int (struct xfs_ioend *, int)'
+  |-ParmVarDecl 0x14d80e248 <line:2:2, col:20> col:20 used ioend 'struct xfs_ioend *'
+  |-ParmVarDecl 0x14d80e2c8 <line:3:2, col:8> col:8 used error 'int'
+  `-CompoundStmt 0x14d8291e8 <line:4:1, line:25:1>
+    |-DeclStmt 0x14d826948 <line:5:2, col:40>
+    | |-RecordDecl 0x14d826700 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x14d826868 <col:2, col:32> col:17 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x14d826908 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14d8268d0 <col:25> 'struct xfs_ioend *' lvalue ParmVar 0x14d80e248 'ioend' 'struct xfs_ioend *'
+    |-DeclStmt 0x14d826ba8 <line:6:2, col:35>
+    | |-RecordDecl 0x14d826960 <col:2, col:9> col:9 struct bio
+    | `-VarDecl 0x14d826ac8 <col:2, col:29> col:15 used last 'struct bio *' cinit
+    |   `-RecoveryExpr 0x14d826b68 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14d826b30 <col:22> 'struct xfs_ioend *' lvalue ParmVar 0x14d80e248 'ioend' 'struct xfs_ioend *'
+    |-DeclStmt 0x14d826d58 <line:7:2, col:25>
+    | |-VarDecl 0x14d826c48 <col:2, col:15> col:15 used bio 'struct bio *'
+    | `-VarDecl 0x14d826cd8 <col:2, col:21> col:21 used next 'struct bio *'
+    `-ForStmt 0x14d8291b0 <line:9:2, line:24:2>
+      |-BinaryOperator 0x14d826e08 <line:9:7, col:21> 'struct bio *' contains-errors '='
+      | |-DeclRefExpr 0x14d826d70 <col:7> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+      | `-UnaryOperator 0x14d826df0 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x14d826dc8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x14d826d90 <col:14> 'struct xfs_ioend *' lvalue ParmVar 0x14d80e248 'ioend' 'struct xfs_ioend *'
+      |-<<<NULL>>>
+      |-ImplicitCastExpr 0x14d826e48 <col:36> 'struct bio *' <LValueToRValue>
+      | `-DeclRefExpr 0x14d826e28 <col:36> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+      |-BinaryOperator 0x14d826eb8 <col:41, col:47> 'struct bio *' '='
+      | |-DeclRefExpr 0x14d826e60 <col:41> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+      | `-ImplicitCastExpr 0x14d826ea0 <col:47> 'struct bio *' <LValueToRValue>
+      |   `-DeclRefExpr 0x14d826e80 <col:47> 'struct bio *' lvalue Var 0x14d826cd8 'next' 'struct bio *'
+      `-CompoundStmt 0x14d829170 <col:53, line:24:2>
+        |-DeclStmt 0x14d8270c8 <line:10:3, col:23>
+        | |-RecordDecl 0x14d826ed8 <col:3, col:10> col:10 struct bio_vec
+        | `-VarDecl 0x14d827048 <col:3, col:19> col:19 used bvec 'struct bio_vec *'
+        |-DeclStmt 0x14d827160 <line:11:3, col:9>
+        | `-VarDecl 0x14d8270f8 <col:3, col:8> col:8 used i 'int'
+        |-IfStmt 0x14d827358 <line:14:3, line:17:16> has_else
+        | |-BinaryOperator 0x14d8271e8 <line:14:7, col:14> 'int' contains-errors '=='
+        | | |-ImplicitCastExpr 0x14d8271b8 <col:7> 'struct bio *' <LValueToRValue>
+        | | | `-DeclRefExpr 0x14d827178 <col:7> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+        | | `-ImplicitCastExpr 0x14d8271d0 <col:14> 'struct bio *' contains-errors <LValueToRValue>
+        | |   `-DeclRefExpr 0x14d827198 <col:14> 'struct bio *' contains-errors lvalue Var 0x14d826ac8 'last' 'struct bio *'
+        | |-BinaryOperator 0x14d827298 <line:15:4, col:11> 'struct bio *' contains-errors '='
+        | | |-DeclRefExpr 0x14d827208 <col:4> 'struct bio *' lvalue Var 0x14d826cd8 'next' 'struct bio *'
+        | | `-RecoveryExpr 0x14d827278 <col:11> '<dependent type>' contains-errors lvalue
+        | `-BinaryOperator 0x14d827338 <line:17:4, col:16> 'struct bio *' contains-errors '='
+        |   |-DeclRefExpr 0x14d8272b8 <col:4> 'struct bio *' lvalue Var 0x14d826cd8 'next' 'struct bio *'
+        |   `-RecoveryExpr 0x14d827310 <col:11, col:16> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x14d8272d8 <col:11> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+        |-CallExpr 0x14d827568 <line:20:3, col:40> 'int'
+        | |-ImplicitCastExpr 0x14d827550 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x14d8274a0 <col:3> 'int ()' Function 0x14d8273e8 'bio_for_each_segment_all' 'int ()'
+        | |-ImplicitCastExpr 0x14d8275a0 <col:28> 'struct bio_vec *' <LValueToRValue>
+        | | `-DeclRefExpr 0x14d8274c0 <col:28> 'struct bio_vec *' lvalue Var 0x14d827048 'bvec' 'struct bio_vec *'
+        | |-ImplicitCastExpr 0x14d8275b8 <col:34> 'struct bio *' <LValueToRValue>
+        | | `-DeclRefExpr 0x14d8274e0 <col:34> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'
+        | `-ImplicitCastExpr 0x14d8275d0 <col:39> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x14d827500 <col:39> 'int' lvalue Var 0x14d8270f8 'i' 'int'
+        |-CallExpr 0x14d828f78 <line:21:4, col:48> 'int' contains-errors
+        | |-ImplicitCastExpr 0x14d828f60 <col:4> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x14d828ee0 <col:4> 'int ()' Function 0x14d828e28 'xfs_finish_page_writeback' 'int ()'
+        | |-ImplicitCastExpr 0x14d828fb0 <col:30> 'struct inode *' contains-errors <LValueToRValue>
+        | | `-DeclRefExpr 0x14d828f00 <col:30> 'struct inode *' contains-errors lvalue Var 0x14d826868 'inode' 'struct inode *'
+        | |-ImplicitCastExpr 0x14d828fc8 <col:37> 'struct bio_vec *' <LValueToRValue>
+        | | `-DeclRefExpr 0x14d828f20 <col:37> 'struct bio_vec *' lvalue Var 0x14d827048 'bvec' 'struct bio_vec *'
+        | `-ImplicitCastExpr 0x14d828fe0 <col:43> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x14d828f40 <col:43> 'int' lvalue ParmVar 0x14d80e2c8 'error' 'int'
+        `-CallExpr 0x14d829130 <line:23:3, col:14> 'int'
+          |-ImplicitCastExpr 0x14d829118 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x14d8290d8 <col:3> 'int ()' Function 0x14d829020 'bio_put' 'int ()'
+          `-ImplicitCastExpr 0x14d829158 <col:11> 'struct bio *' <LValueToRValue>
+            `-DeclRefExpr 0x14d8290f8 <col:11> 'struct bio *' lvalue Var 0x14d826c48 'bio' 'struct bio *'

@@ -1,0 +1,30 @@
+`-FunctionDecl 0x14f00e350  line:1:6 ring_buffer_record_off 'void (struct ring_buffer *)'
+  |-ParmVarDecl 0x14f00e248 <col:29, col:49> col:49 used buffer 'struct ring_buffer *'
+  `-CompoundStmt 0x14f026d08 <line:2:1, line:10:1>
+    |-DeclStmt 0x14f0266c8 <line:3:2, col:17>
+    | `-VarDecl 0x14f026660 <col:2, col:15> col:15 used rd 'unsigned int'
+    |-DeclStmt 0x14f026760 <line:4:2, col:21>
+    | `-VarDecl 0x14f0266f8 <col:2, col:15> col:15 used new_rd 'unsigned int'
+    `-DoStmt 0x14f026ce8 <line:6:2, line:9:69>
+      |-CompoundStmt 0x14f026a98 <line:6:5, line:9:2>
+      | |-BinaryOperator 0x14f026980 <line:7:3, col:44> 'unsigned int' contains-errors '='
+      | | |-DeclRefExpr 0x14f026778 <col:3> 'unsigned int' lvalue Var 0x14f026660 'rd' 'unsigned int'
+      | | `-CallExpr 0x14f026958 <col:8, col:44> '<dependent type>' contains-errors
+      | |   |-DeclRefExpr 0x14f0268c0 <col:8> 'int ()' Function 0x14f026808 'atomic_read' 'int ()'
+      | |   `-UnaryOperator 0x14f026940 <col:20, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | |     `-RecoveryExpr 0x14f026918 <col:21, col:29> '<dependent type>' contains-errors lvalue
+      | |       `-DeclRefExpr 0x14f0268e0 <col:21> 'struct ring_buffer *' lvalue ParmVar 0x14f00e248 'buffer' 'struct ring_buffer *'
+      | `-BinaryOperator 0x14f026a78 <line:8:3, col:17> 'unsigned int' contains-errors '='
+      |   |-DeclRefExpr 0x14f0269a0 <col:3> 'unsigned int' lvalue Var 0x14f0266f8 'new_rd' 'unsigned int'
+      |   `-BinaryOperator 0x14f026a58 <col:12, col:17> '<dependent type>' contains-errors '|'
+      |     |-DeclRefExpr 0x14f0269c0 <col:12> 'unsigned int' lvalue Var 0x14f026660 'rd' 'unsigned int'
+      |     `-RecoveryExpr 0x14f026a38 <col:17> '<dependent type>' contains-errors lvalue
+      `-BinaryOperator 0x14f026cc8 <line:9:11, col:67> 'int' contains-errors '!='
+        |-CallExpr 0x14f026c70 <col:11, col:62> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x14f026b98 <col:11> 'int ()' Function 0x14f026ae0 'atomic_cmpxchg' 'int ()'
+        | |-UnaryOperator 0x14f026c18 <col:26, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x14f026bf0 <col:27, col:35> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x14f026bb8 <col:27> 'struct ring_buffer *' lvalue ParmVar 0x14f00e248 'buffer' 'struct ring_buffer *'
+        | |-DeclRefExpr 0x14f026c30 <col:52> 'unsigned int' lvalue Var 0x14f026660 'rd' 'unsigned int'
+        | `-DeclRefExpr 0x14f026c50 <col:56> 'unsigned int' lvalue Var 0x14f0266f8 'new_rd' 'unsigned int'
+        `-DeclRefExpr 0x14f026ca8 <col:67> 'unsigned int' lvalue Var 0x14f026660 'rd' 'unsigned int'

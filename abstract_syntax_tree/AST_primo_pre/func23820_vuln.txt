@@ -1,0 +1,16 @@
+`-FunctionDecl 0x15a826740  line:1:13 frag_kfree_skb 'void (struct netns_frags *, struct sk_buff *)' static
+  |-ParmVarDecl 0x15a80e248 <col:28, col:48> col:48 used nf 'struct netns_frags *'
+  |-ParmVarDecl 0x15a826628 <col:52, col:68> col:68 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x15a826c48 <line:2:1, line:5:1>
+    |-CallExpr 0x15a826a68 <line:3:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a826970 <col:2> 'int ()' Function 0x15a8268b8 'atomic_sub' 'int ()'
+    | |-RecoveryExpr 0x15a8269c8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15a826990 <col:13> 'struct sk_buff *' lvalue ParmVar 0x15a826628 'skb' 'struct sk_buff *'
+    | `-UnaryOperator 0x15a826a50 <col:28, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x15a826a28 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15a8269f0 <col:29> 'struct netns_frags *' lvalue ParmVar 0x15a80e248 'nf' 'struct netns_frags *'
+    `-CallExpr 0x15a826c08 <line:4:2, col:15> 'int'
+      |-ImplicitCastExpr 0x15a826bf0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x15a826b78 <col:2> 'int ()' Function 0x15a826ac0 'kfree_skb' 'int ()'
+      `-ImplicitCastExpr 0x15a826c30 <col:12> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x15a826b98 <col:12> 'struct sk_buff *' lvalue ParmVar 0x15a826628 'skb' 'struct sk_buff *'

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x15b827438  line:1:13 invalid dma_chan_is_local 'int (struct dma_chan *, int)' static
+  |-ParmVarDecl 0x15b80e268 <col:31, col:48> col:48 used chan 'struct dma_chan *'
+  |-ParmVarDecl 0x15b80e2e8 <col:54, col:58> col:58 used cpu 'int'
+  `-CompoundStmt 0x15b827bc8 <line:2:1, line:5:1>
+    |-DeclStmt 0x15b8277c0 <line:3:2, col:43>
+    | `-VarDecl 0x15b827508 <col:2, col:42> col:6 used node 'int' cinit
+    |   `-CallExpr 0x15b827798 <col:13, col:42> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x15b8276d0 <col:13> 'int ()' Function 0x15b827618 'dev_to_node' 'int ()'
+    |     `-CXXDependentScopeMemberExpr 0x15b827750 <col:25, col:39> '<dependent type>' contains-errors lvalue ->dev
+    |       `-RecoveryExpr 0x15b827728 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x15b8276f0 <col:25> 'struct dma_chan *' lvalue ParmVar 0x15b80e268 'chan' 'struct dma_chan *'
+    `-ReturnStmt 0x15b827bb8 <line:4:2, col:66>
+      `-BinaryOperator 0x15b827b98 <col:9, col:66> 'int' contains-errors '||'
+        |-BinaryOperator 0x15b827848 <col:9, col:18> 'int' contains-errors '=='
+        | |-ImplicitCastExpr 0x15b827830 <col:9> 'int' contains-errors <LValueToRValue>
+        | | `-DeclRefExpr 0x15b8277d8 <col:9> 'int' contains-errors lvalue Var 0x15b827508 'node' 'int'
+        | `-UnaryOperator 0x15b827818 <col:17, col:18> 'int' prefix '-'
+        |   `-IntegerLiteral 0x15b8277f8 <col:18> 'int' 1
+        `-CallExpr 0x15b827b50 <col:23, col:66> 'int' contains-errors
+          |-ImplicitCastExpr 0x15b827b38 <col:23> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x15b827948 <col:23> 'int ()' Function 0x15b827890 'cpumask_test_cpu' 'int ()'
+          |-ImplicitCastExpr 0x15b827b80 <col:40> 'int' <LValueToRValue>
+          | `-DeclRefExpr 0x15b827968 <col:40> 'int' lvalue ParmVar 0x15b80e2e8 'cpu' 'int'
+          `-CallExpr 0x15b827af8 <col:45, col:65> 'int' contains-errors
+            |-ImplicitCastExpr 0x15b827ae0 <col:45> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x15b827a68 <col:45> 'int ()' Function 0x15b8279b0 'cpumask_of_node' 'int ()'
+            `-ImplicitCastExpr 0x15b827b20 <col:61> 'int' contains-errors <LValueToRValue>
+              `-DeclRefExpr 0x15b827a88 <col:61> 'int' contains-errors lvalue Var 0x15b827508 'node' 'int'

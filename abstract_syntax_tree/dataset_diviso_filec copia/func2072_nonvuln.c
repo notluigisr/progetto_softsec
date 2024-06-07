@@ -1,0 +1,1 @@
+static inline int cache_setup_of_node(unsigned int cpu) { return 0; }

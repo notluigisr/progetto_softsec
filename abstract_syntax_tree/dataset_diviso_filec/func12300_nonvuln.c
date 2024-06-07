@@ -1,0 +1,1 @@
+  virtual int is_killed() { return killed; }

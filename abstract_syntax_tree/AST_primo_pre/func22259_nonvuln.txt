@@ -1,0 +1,58 @@
+`-FunctionDecl 0x143940b48  line:1:12 nl80211_get_wiphy 'int (struct sk_buff *, struct genl_info *)' static
+  |-ParmVarDecl 0x143928648 <col:30, col:46> col:46 skb 'struct sk_buff *'
+  |-ParmVarDecl 0x143940a28 <col:51, col:69> col:69 used info 'struct genl_info *'
+  `-CompoundStmt 0x1450096a8 <line:2:1, line:16:1>
+    |-DeclStmt 0x143940d40 <line:3:2, col:21>
+    | `-VarDecl 0x143940cd8 <col:2, col:18> col:18 used msg 'struct sk_buff *'
+    |-DeclStmt 0x143941000 <line:4:2, col:60>
+    | |-RecordDecl 0x143940d58 <col:2, col:9> col:9 struct cfg80211_registered_device
+    | `-VarDecl 0x143940ec8 <col:2, col:59> col:37 used dev 'struct cfg80211_registered_device *' cinit
+    |   `-ArraySubscriptExpr 0x143940fc8 <col:43, col:59> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x143940fb0 <col:43, col:49> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x143940f68 <col:43, col:49> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x143940f30 <col:43> 'struct genl_info *' lvalue ParmVar 0x143940a28 'info' 'struct genl_info *'
+    |     `-IntegerLiteral 0x143940f90 <col:58> 'int' 0
+    |-BinaryOperator 0x143941270 <line:6:2, col:48> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x143941018 <col:2> 'struct sk_buff *' lvalue Var 0x143940cd8 'msg' 'struct sk_buff *'
+    | `-CallExpr 0x143941240 <col:8, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143941160 <col:8> 'int ()' Function 0x1439410a8 'nlmsg_new' 'int ()'
+    |   |-RecoveryExpr 0x143941200 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x143941220 <col:38> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x143941388 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x1439412c8 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1439412b0 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x143941290 <col:7> 'struct sk_buff *' lvalue Var 0x143940cd8 'msg' 'struct sk_buff *'
+    | `-ReturnStmt 0x143941378 <line:8:3, col:11>
+    |   `-UnaryOperator 0x143941360 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x143941348 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x143941328 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1439418c0 <line:10:2, line:13:2>
+    | |-BinaryOperator 0x143941630 <line:10:6, col:70> 'int' contains-errors '<'
+    | | |-CallExpr 0x1439415c8 <col:6, col:66> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x143941488 <col:6> 'int ()' Function 0x1439413d0 'nl80211_send_wiphy' 'int ()'
+    | | | |-DeclRefExpr 0x1439414a8 <col:25> 'struct sk_buff *' lvalue Var 0x143940cd8 'msg' 'struct sk_buff *'
+    | | | |-RecoveryExpr 0x143941500 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x1439414c8 <col:30> 'struct genl_info *' lvalue ParmVar 0x143940a28 'info' 'struct genl_info *'
+    | | | |-RecoveryExpr 0x143941560 <col:45, col:51> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x143941528 <col:45> 'struct genl_info *' lvalue ParmVar 0x143940a28 'info' 'struct genl_info *'
+    | | | |-IntegerLiteral 0x143941588 <col:60> 'int' 0
+    | | | `-DeclRefExpr 0x1439415a8 <col:63> 'struct cfg80211_registered_device *' contains-errors lvalue Var 0x143940ec8 'dev' 'struct cfg80211_registered_device *'
+    | | `-IntegerLiteral 0x143941610 <col:70> 'int' 0
+    | `-CompoundStmt 0x1439418a0 <col:73, line:13:2>
+    |   |-CallExpr 0x1439417b8 <line:11:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x1439417a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x143941730 <col:3> 'int ()' Function 0x143941678 'nlmsg_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x1439417e0 <col:14> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x143941750 <col:14> 'struct sk_buff *' lvalue Var 0x143940cd8 'msg' 'struct sk_buff *'
+    |   `-ReturnStmt 0x143941890 <line:12:3, col:11>
+    |     `-UnaryOperator 0x143941878 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x143941860 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x143941840 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x145009698 <line:15:2, col:32>
+      `-CallExpr 0x145009638 <col:9, col:32> 'int'
+        |-ImplicitCastExpr 0x145009620 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1439419c0 <col:9> 'int ()' Function 0x143941908 'genlmsg_reply' 'int ()'
+        |-ImplicitCastExpr 0x145009668 <col:23> 'struct sk_buff *' <LValueToRValue>
+        | `-DeclRefExpr 0x1439419e0 <col:23> 'struct sk_buff *' lvalue Var 0x143940cd8 'msg' 'struct sk_buff *'
+        `-ImplicitCastExpr 0x145009680 <col:28> 'struct genl_info *' <LValueToRValue>
+          `-DeclRefExpr 0x145009600 <col:28> 'struct genl_info *' lvalue ParmVar 0x143940a28 'info' 'struct genl_info *'

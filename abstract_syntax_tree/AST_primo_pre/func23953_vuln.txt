@@ -1,0 +1,56 @@
+`-FunctionDecl 0x143141978  line:1:16 invalid qrtr_tun_write_iter 'int (struct kiocb *, struct iov_iter *)' static
+  |-ParmVarDecl 0x143128668 <col:36, col:50> col:50 used iocb 'struct kiocb *'
+  |-ParmVarDecl 0x143141858 <col:56, col:73> col:73 used from 'struct iov_iter *'
+  `-CompoundStmt 0x143142c78 <line:2:1, line:19:1>
+    |-DeclStmt 0x143141c78 <line:3:2, col:35>
+    | |-RecordDecl 0x143141a30 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x143141b98 <col:2, col:28> col:15 used filp 'struct file *' cinit
+    |   `-RecoveryExpr 0x143141c38 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x143141c00 <col:22> 'struct kiocb *' lvalue ParmVar 0x143128668 'iocb' 'struct kiocb *'
+    |-DeclStmt 0x143141ed8 <line:4:2, col:43>
+    | |-RecordDecl 0x143141c90 <col:2, col:9> col:9 struct qrtr_tun
+    | `-VarDecl 0x143141df8 <col:2, col:31> col:19 used tun 'struct qrtr_tun *' cinit
+    |   `-RecoveryExpr 0x143141e98 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x143141e60 <col:25> 'struct file *' contains-errors lvalue Var 0x143141b98 'filp' 'struct file *'
+    |-RecoveryExpr 0x143142228 <line:5:2, col:34> '<dependent type>' contains-errors lvalue
+    | |-UnaryExprOrTypeTraitExpr 0x1431421b0 <col:2, col:9> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x143142190 <col:9> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x1431421e8 <col:15, col:34> 'int'
+    |   |-ImplicitCastExpr 0x1431421d0 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x143142080 <col:15> 'int ()' Function 0x143141fc8 'iov_iter_count' 'int ()'
+    |   `-ImplicitCastExpr 0x143142210 <col:30> 'struct iov_iter *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1431420a0 <col:30> 'struct iov_iter *' lvalue ParmVar 0x143141858 'from' 'struct iov_iter *'
+    |-DeclStmt 0x1431422d8 <line:7:2, col:12>
+    | `-VarDecl 0x143142270 <col:2, col:8> col:8 used kbuf 'void *'
+    |-BinaryOperator 0x143142500 <line:9:2, col:32> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x1431422f0 <col:2> 'void *' lvalue Var 0x143142270 'kbuf' 'void *'
+    | `-CallExpr 0x1431424d0 <col:9, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1431423f0 <col:9> 'int ()' Function 0x143142338 'kzalloc' 'int ()'
+    |   |-RecoveryExpr 0x143142490 <col:17> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1431424b0 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x143142618 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x143142558 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x143142540 <col:7> 'void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x143142520 <col:7> 'void *' lvalue Var 0x143142270 'kbuf' 'void *'
+    | `-ReturnStmt 0x143142608 <line:11:3, col:11>
+    |   `-UnaryOperator 0x1431425f0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1431425d8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1431425b8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1431428f8 <line:13:2, line:14:11>
+    | |-UnaryOperator 0x143142838 <line:13:6, col:42> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x143142800 <col:7, col:42> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x143142718 <col:7> 'int ()' Function 0x143142660 'copy_from_iter_full' 'int ()'
+    | |   |-DeclRefExpr 0x143142738 <col:27> 'void *' lvalue Var 0x143142270 'kbuf' 'void *'
+    | |   |-RecoveryExpr 0x1431427e0 <col:33> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x143142770 <col:38> 'struct iov_iter *' lvalue ParmVar 0x143141858 'from' 'struct iov_iter *'
+    | `-ReturnStmt 0x1431428e8 <line:14:3, col:11>
+    |   `-UnaryOperator 0x1431428d0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1431428b8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x143142898 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x143142c68 <line:18:2, col:25>
+      `-ConditionalOperator 0x143142c38 <col:9, col:25> '<dependent type>' contains-errors
+        |-BinaryOperator 0x143142bd8 <col:9, col:15> 'int' contains-errors '<'
+        | |-RecoveryExpr 0x143142bb8 <col:9> '<dependent type>' contains-errors lvalue
+        | `-IntegerLiteral 0x143142b18 <col:15> 'int' 0
+        |-RecoveryExpr 0x143142bf8 <col:19> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x143142c18 <col:25> '<dependent type>' contains-errors lvalue

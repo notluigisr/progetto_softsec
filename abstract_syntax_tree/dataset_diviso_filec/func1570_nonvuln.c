@@ -1,0 +1,1 @@
+  void visit(NotPredicate & ) override { name = "STR"; }

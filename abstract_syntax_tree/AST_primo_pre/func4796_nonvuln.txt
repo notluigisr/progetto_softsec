@@ -1,0 +1,38 @@
+`-FunctionDecl 0x1550268c8  line:1:12 kvm_vcpu_ioctl_set_cpuid2 'int (struct kvm_vcpu *, struct kvm_cpuid2 *, struct kvm_cpuid_entry2)' static
+  |-ParmVarDecl 0x15500e248 <col:38, col:55> col:55 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x155026628 <line:2:10, col:29> col:29 used cpuid 'struct kvm_cpuid2 *'
+  |-ParmVarDecl 0x155026788 <line:3:10, col:34> col:34 invalid __user 'struct kvm_cpuid_entry2'
+  `-CompoundStmt 0x1550272a8 <line:4:1, line:19:1>
+    |-DeclStmt 0x155026a50 <line:5:2, col:7>
+    | `-VarDecl 0x1550269e8 <col:2, col:6> col:6 used r 'int'
+    |-BinaryOperator 0x155026b58 <line:7:2, col:7> 'int' contains-errors '='
+    | |-DeclRefExpr 0x155026a68 <col:2> 'int' lvalue Var 0x1550269e8 'r' 'int'
+    | `-UnaryOperator 0x155026b40 <col:6, col:7> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x155026b28 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x155026b08 <col:7> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155026cb8 <line:8:2, line:9:8>
+    | |-BinaryOperator 0x155026c30 <line:8:6, col:20> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x155026bb0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x155026b78 <col:6> 'struct kvm_cpuid2 *' lvalue ParmVar 0x155026628 'cpuid' 'struct kvm_cpuid2 *'
+    | | `-RecoveryExpr 0x155026c10 <col:20> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x155026ca0 <line:9:3, col:8> 'out' 0x155026c50
+    |-BinaryOperator 0x155026db0 <line:10:2, col:7> 'int' contains-errors '='
+    | |-DeclRefExpr 0x155026cd8 <col:2> 'int' lvalue Var 0x1550269e8 'r' 'int'
+    | `-UnaryOperator 0x155026d98 <col:6, col:7> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x155026d80 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x155026d60 <col:7> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1550270c8 <line:11:2, line:13:8>
+    | |-RecoveryExpr 0x155027090 <line:11:6, line:12:52> '_Bool' contains-errors
+    | `-GotoStmt 0x1550270b0 <line:13:3, col:8> 'out' 0x155026c50
+    |-BinaryOperator 0x1550271f0 <line:14:2, col:33> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x155027148 <col:2, col:13> '<dependent type>' contains-errors lvalue .cpuid_nent
+    | | `-RecoveryExpr 0x155027120 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1550270e8 <col:2> 'struct kvm_vcpu *' lvalue ParmVar 0x15500e248 'vcpu' 'struct kvm_vcpu *'
+    | `-RecoveryExpr 0x1550271c8 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x155027190 <col:26> 'struct kvm_cpuid2 *' lvalue ParmVar 0x155026628 'cpuid' 'struct kvm_cpuid2 *'
+    |-ReturnStmt 0x155027230 <line:15:2, col:9>
+    | `-IntegerLiteral 0x155027210 <col:9> 'int' 0
+    `-LabelStmt 0x155027288 <line:17:1, line:18:9> 'out'
+      `-ReturnStmt 0x155027278 <col:2, col:9>
+        `-ImplicitCastExpr 0x155027260 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x155027240 <col:9> 'int' lvalue Var 0x1550269e8 'r' 'int'

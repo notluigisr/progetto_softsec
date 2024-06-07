@@ -1,0 +1,34 @@
+`-FunctionDecl 0x159128758  line:1:12 skcipher_encrypt_ablkcipher 'int (struct skcipher_request *)' static
+  |-ParmVarDecl 0x159128648 <col:40, col:65> col:65 used req 'struct skcipher_request *'
+  `-CompoundStmt 0x159141670 <line:2:1, line:8:1>
+    |-DeclStmt 0x159140e48 <line:3:2, col:64>
+    | |-RecordDecl 0x159140a50 <col:2, col:9> col:9 struct crypto_skcipher
+    | `-VarDecl 0x159140bb8 <col:2, col:63> col:26 used skcipher 'struct crypto_skcipher *' cinit
+    |   `-ImplicitCastExpr 0x159140e18 <col:37, col:63> 'struct crypto_skcipher *' <IntegralToPointer>
+    |     `-CallExpr 0x159140dd8 <col:37, col:63> 'int'
+    |       |-ImplicitCastExpr 0x159140dc0 <col:37> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x159140d50 <col:37> 'int ()' Function 0x159140c98 'crypto_skcipher_reqtfm' 'int ()'
+    |       `-ImplicitCastExpr 0x159140e00 <col:60> 'struct skcipher_request *' <LValueToRValue>
+    |         `-DeclRefExpr 0x159140d70 <col:60> 'struct skcipher_request *' lvalue ParmVar 0x159128648 'req' 'struct skcipher_request *'
+    |-DeclStmt 0x1591411d8 <line:4:2, col:56>
+    | |-RecordDecl 0x159140e60 <col:2, col:9> col:9 struct crypto_tfm
+    | `-VarDecl 0x159140fc8 <col:2, col:55> col:21 used tfm 'struct crypto_tfm *' cinit
+    |   `-ImplicitCastExpr 0x1591411a8 <col:27, col:55> 'struct crypto_tfm *' <IntegralToPointer>
+    |     `-CallExpr 0x159141168 <col:27, col:55> 'int'
+    |       |-ImplicitCastExpr 0x159141150 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x159141110 <col:27> 'int ()' Function 0x159141058 'crypto_skcipher_tfm' 'int ()'
+    |       `-ImplicitCastExpr 0x159141190 <col:47> 'struct crypto_skcipher *' <LValueToRValue>
+    |         `-DeclRefExpr 0x159141130 <col:47> 'struct crypto_skcipher *' lvalue Var 0x159140bb8 'skcipher' 'struct crypto_skcipher *'
+    |-DeclStmt 0x159141498 <line:5:2, col:62>
+    | |-RecordDecl 0x1591411f0 <col:2, col:9> col:9 struct ablkcipher_alg
+    | `-VarDecl 0x159141358 <col:2, col:48> col:25 used alg 'struct ablkcipher_alg *' cinit
+    |   `-UnaryOperator 0x159141468 <col:31, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x159141420 <col:32, col:48> '<dependent type>' contains-errors lvalue ->cra_ablkcipher
+    |       `-RecoveryExpr 0x1591413f8 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x1591413c0 <col:32> 'struct crypto_tfm *' lvalue Var 0x159140fc8 'tfm' 'struct crypto_tfm *'
+    `-ReturnStmt 0x159141660 <line:7:2, col:52>
+      `-CallExpr 0x159141630 <col:9, col:52> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x159141590 <col:9> 'int ()' Function 0x1591414d8 'skcipher_crypt_ablkcipher' 'int ()'
+        |-DeclRefExpr 0x1591415b0 <col:35> 'struct skcipher_request *' lvalue ParmVar 0x159128648 'req' 'struct skcipher_request *'
+        `-RecoveryExpr 0x159141608 <col:40, col:45> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1591415d0 <col:40> 'struct ablkcipher_alg *' contains-errors lvalue Var 0x159141358 'alg' 'struct ablkcipher_alg *'

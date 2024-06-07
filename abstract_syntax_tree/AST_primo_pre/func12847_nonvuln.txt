@@ -1,0 +1,50 @@
+`-FunctionDecl 0x11e928750  line:1:13 start_sw_tscdeadline 'void (struct kvm_lapic *)' static
+  |-ParmVarDecl 0x11e928648 <col:34, col:52> col:52 used apic 'struct kvm_lapic *'
+  `-CompoundStmt 0x11e943228 <line:2:1, line:32:1>
+    |-DeclStmt 0x11e940cb0 <line:3:2, col:47>
+    | |-RecordDecl 0x11e940a48 <col:2, col:9> col:9 struct kvm_timer
+    | `-VarDecl 0x11e940bb8 <col:2, col:36> col:20 used ktimer 'struct kvm_timer *' cinit
+    |   `-UnaryOperator 0x11e940c80 <col:29, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x11e940c58 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11e940c20 <col:30> 'struct kvm_lapic *' lvalue ParmVar 0x11e928648 'apic' 'struct kvm_lapic *'
+    |-ImplicitCastExpr 0x11e940d00 <line:6:2> 'struct kvm_timer *' contains-errors <LValueToRValue>
+    | `-DeclRefExpr 0x11e940ce0 <col:2> 'struct kvm_timer *' contains-errors lvalue Var 0x11e940bb8 'ktimer' 'struct kvm_timer *'
+    |-DeclStmt 0x11e940f68 <line:7:2, col:36>
+    | |-RecordDecl 0x11e940d18 <col:2, col:9> col:9 struct kvm_vcpu
+    | `-VarDecl 0x11e940e88 <col:2, col:32> col:19 used vcpu 'struct kvm_vcpu *' cinit
+    |   `-RecoveryExpr 0x11e940f28 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11e940ef0 <col:26> 'struct kvm_lapic *' lvalue ParmVar 0x11e928648 'apic' 'struct kvm_lapic *'
+    |-DeclStmt 0x11e9410a8 <line:8:2, col:57>
+    | `-VarDecl 0x11e940f98 <col:2, col:42> col:16 used this_tsc_khz 'unsigned long' cinit
+    |   `-CXXDependentScopeMemberExpr 0x11e941060 <col:31, col:42> '<dependent type>' contains-errors lvalue .virtual_tsc_khz
+    |     `-RecoveryExpr 0x11e941038 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11e941000 <col:31> 'struct kvm_vcpu *' contains-errors lvalue Var 0x11e940e88 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x11e941140 <line:9:2, col:21>
+    | `-VarDecl 0x11e9410d8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-ImplicitCastExpr 0x11e941178 <line:10:2> 'struct kvm_timer *' contains-errors <LValueToRValue>
+    | `-DeclRefExpr 0x11e941158 <col:2> 'struct kvm_timer *' contains-errors lvalue Var 0x11e940bb8 'ktimer' 'struct kvm_timer *'
+    |-IfStmt 0x11e941478 <line:12:2, line:13:3>
+    | |-CallExpr 0x11e941440 <line:12:6, col:44> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11e9412a0 <col:6> 'int ()' Function 0x11e9411e8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x11e941420 <col:15, col:32> 'int' contains-errors '||'
+    | |   |-UnaryOperator 0x11e9413d8 <col:15, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x11e9413c0 <col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |   `-RecoveryExpr 0x11e9413a0 <col:16> '<dependent type>' contains-errors lvalue
+    | |   `-UnaryOperator 0x11e941408 <col:31, col:32> 'int' contains-errors prefix '!' cannot overflow
+    | |     `-ImplicitCastExpr 0x11e9413f0 <col:32> 'unsigned long' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x11e941308 <col:32> 'unsigned long' contains-errors lvalue Var 0x11e940f98 'this_tsc_khz' 'unsigned long'
+    | `-ReturnStmt 0x11e941468 <line:13:3>
+    |-CallExpr 0x11e941608 <line:15:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x11e9415f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e941578 <col:2> 'int ()' Function 0x11e9414c0 'local_irq_save' 'int ()'
+    | `-ImplicitCastExpr 0x11e941630 <col:17> 'unsigned long' <LValueToRValue>
+    |   `-DeclRefExpr 0x11e941598 <col:17> 'unsigned long' lvalue Var 0x11e9410d8 'flags' 'unsigned long'
+    |-IfStmt 0x11e943080 <line:23:2, line:29:3> has_else
+    | |-RecoveryExpr 0x11e942b50 <line:23:6, line:24:52> '_Bool' contains-errors
+    | |-CompoundStmt 0x11e942f48 <col:55, line:28:2>
+    | `-NullStmt 0x11e943078 <line:29:3>
+    `-CallExpr 0x11e9431e8 <line:31:2, col:25> 'int'
+      |-ImplicitCastExpr 0x11e9431d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x11e943190 <col:2> 'int ()' Function 0x11e9430d8 'local_irq_restore' 'int ()'
+      `-ImplicitCastExpr 0x11e943210 <col:20> 'unsigned long' <LValueToRValue>
+        `-DeclRefExpr 0x11e9431b0 <col:20> 'unsigned long' lvalue Var 0x11e9410d8 'flags' 'unsigned long'

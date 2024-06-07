@@ -1,0 +1,19 @@
+`-FunctionDecl 0x14800e350  line:1:20 sem_getref_and_unlock 'void (struct sem_array *)' static inline
+  |-ParmVarDecl 0x14800e248 <col:42, col:60> col:60 used sma 'struct sem_array *'
+  `-CompoundStmt 0x148026b48 <line:2:1, line:5:1>
+    |-CallExpr 0x148026968 <line:3:2, col:35> 'int'
+    | |-ImplicitCastExpr 0x148026950 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148026770 <col:2> 'int ()' Function 0x1480266b8 'WARN_ON_ONCE' 'int ()'
+    | `-UnaryOperator 0x148026938 <col:15, col:34> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x1480268f8 <col:16, col:34> 'int'
+    |     |-ImplicitCastExpr 0x1480268e0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x148026870 <col:16> 'int ()' Function 0x1480267b8 'ipc_rcu_getref' 'int ()'
+    |     `-ImplicitCastExpr 0x148026920 <col:31> 'struct sem_array *' <LValueToRValue>
+    |       `-DeclRefExpr 0x148026890 <col:31> 'struct sem_array *' lvalue ParmVar 0x14800e248 'sma' 'struct sem_array *'
+    `-CallExpr 0x148026b00 <line:4:2, col:20> 'int'
+      |-ImplicitCastExpr 0x148026ae8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x148026a70 <col:2> 'int ()' Function 0x1480269b8 'sem_unlock' 'int ()'
+      |-ImplicitCastExpr 0x148026b30 <col:13> 'struct sem_array *' <LValueToRValue>
+      | `-DeclRefExpr 0x148026a90 <col:13> 'struct sem_array *' lvalue ParmVar 0x14800e248 'sma' 'struct sem_array *'
+      `-UnaryOperator 0x148026ad0 <col:18, col:19> 'int' prefix '-'
+        `-IntegerLiteral 0x148026ab0 <col:19> 'int' 1

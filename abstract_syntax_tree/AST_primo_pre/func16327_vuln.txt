@@ -1,0 +1,72 @@
+`-FunctionDecl 0x12680e350  line:1:13 oom_reap_task 'void (struct task_struct *)' static
+  |-ParmVarDecl 0x12680e248 <col:27, col:47> col:47 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x12780b018 <line:2:1, line:27:1>
+    |-DeclStmt 0x1278082e8 <line:3:2, col:18>
+    | `-VarDecl 0x127808260 <col:2, col:17> col:6 used attempts 'int' cinit
+    |   `-IntegerLiteral 0x1278082c8 <col:17> 'int' 0
+    |-DeclStmt 0x127808590 <line:4:2, col:44>
+    | |-RecordDecl 0x127808300 <col:2, col:9> col:9 struct mm_struct
+    | `-VarDecl 0x127808468 <col:2, col:38> col:20 used mm 'struct mm_struct *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x127808530 <col:25, col:38> '<dependent type>' contains-errors lvalue ->oom_mm
+    |     `-RecoveryExpr 0x127808508 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1278084d0 <col:25> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'
+    |-WhileStmt 0x127808b58 <line:7:2, line:8:30>
+    | |-BinaryOperator 0x127808950 <line:7:9, col:73> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x1278088a0 <col:9, col:22> 'int' contains-errors '<'
+    | | | |-UnaryOperator 0x1278085c8 <col:9, col:17> 'int' postfix '++'
+    | | | | `-DeclRefExpr 0x1278085a8 <col:9> 'int' lvalue Var 0x127808260 'attempts' 'int'
+    | | | `-RecoveryExpr 0x127808880 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x127808938 <col:46, col:73> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x1278088d8 <col:47, col:73> 'int' contains-errors
+    | |     |-ImplicitCastExpr 0x1278088c0 <col:47> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x127808740 <col:47> 'int ()' Function 0x127808688 '__oom_reap_task_mm' 'int ()'
+    | |     |-ImplicitCastExpr 0x127808908 <col:66> 'struct task_struct *' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x127808760 <col:66> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'
+    | |     `-ImplicitCastExpr 0x127808920 <col:71> 'struct mm_struct *' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x127808780 <col:71> 'struct mm_struct *' contains-errors lvalue Var 0x127808468 'mm' 'struct mm_struct *'
+    | `-CallExpr 0x127808b30 <line:8:3, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127808a50 <col:3> 'int ()' Function 0x127808998 'schedule_timeout_idle' 'int ()'
+    |   `-BinaryOperator 0x127808b10 <col:25, col:28> '<dependent type>' contains-errors '/'
+    |     |-RecoveryExpr 0x127808af0 <col:25> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x127808a88 <col:28> 'int' 10
+    |-IfStmt 0x127808ec8 <line:10:2, line:12:8>
+    | |-BinaryOperator 0x127808e40 <line:10:6, line:11:39> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x127808dd0 <line:10:6, col:18> 'int' contains-errors '<='
+    | | | |-DeclRefExpr 0x127808b78 <col:6> 'int' lvalue Var 0x127808260 'attempts' 'int'
+    | | | `-RecoveryExpr 0x127808db0 <col:18> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x127808e10 <line:11:6, col:39> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x127808cb0 <col:6> 'int ()' Function 0x127808bf8 'test_bit' 'int ()'
+    | |   |-RecoveryExpr 0x127808df0 <col:15> '<dependent type>' contains-errors lvalue
+    | |   `-UnaryOperator 0x127808d48 <col:29, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x127808d20 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x127808ce8 <col:30> 'struct mm_struct *' contains-errors lvalue Var 0x127808468 'mm' 'struct mm_struct *'
+    | `-GotoStmt 0x127808eb0 <line:12:3, col:8> 'done' 0x127808e60
+    |-CallExpr 0x12780aa28 <line:15:2, line:16:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x127808fc8 <line:15:2> 'int ()' Function 0x127808f10 'pr_info' 'int ()'
+    | |-StringLiteral 0x127809030 <col:10> 'char[4]' lvalue "STR"
+    | |-CallExpr 0x127809188 <line:16:3, col:18> 'int'
+    | | |-ImplicitCastExpr 0x127809170 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x127809130 <col:3> 'int ()' Function 0x127809078 'task_pid_nr' 'int ()'
+    | | `-ImplicitCastExpr 0x1278091b0 <col:15> 'struct task_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x127809150 <col:15> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'
+    | `-RecoveryExpr 0x12780aa00 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1278091c8 <col:21> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'
+    |-CallExpr 0x12780ab78 <line:17:2, col:23> 'int'
+    | `-ImplicitCastExpr 0x12780ab60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12780ab40 <col:2> 'int ()' Function 0x12780aa88 'debug_show_all_locks' 'int ()'
+    |-LabelStmt 0x12780ac70 <line:19:1, line:20:25> 'done'
+    | `-BinaryOperator 0x12780ac50 <col:2, col:25> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x12780abd0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12780ab98 <col:2> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'
+    |   `-RecoveryExpr 0x12780ac30 <col:25> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12780ae70 <line:23:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12780ad70 <col:2> 'int ()' Function 0x12780acb8 'set_bit' 'int ()'
+    | |-RecoveryExpr 0x12780ae50 <col:10> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x12780ae08 <col:24, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12780ade0 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12780ada8 <col:25> 'struct mm_struct *' contains-errors lvalue Var 0x127808468 'mm' 'struct mm_struct *'
+    `-CallExpr 0x12780afd8 <line:26:2, col:21> 'int'
+      |-ImplicitCastExpr 0x12780afc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12780af80 <col:2> 'int ()' Function 0x12780aec8 'put_task_struct' 'int ()'
+      `-ImplicitCastExpr 0x12780b000 <col:18> 'struct task_struct *' <LValueToRValue>
+        `-DeclRefExpr 0x12780afa0 <col:18> 'struct task_struct *' lvalue ParmVar 0x12680e248 'tsk' 'struct task_struct *'

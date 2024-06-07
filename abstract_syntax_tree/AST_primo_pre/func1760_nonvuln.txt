@@ -1,0 +1,72 @@
+`-FunctionDecl 0x1279289f0  line:1:21 invalid _slurm_rpc_job_notify 'void (int *)' static inline
+  |-ParmVarDecl 0x127928928 <col:43, col:57> col:57 invalid msg 'int *'
+  `-CompoundStmt 0x127944948 <line:2:1, line:68:1>
+    |-DeclStmt 0x127928b20 <line:3:2, col:16>
+    | `-VarDecl 0x127928ab8 <col:2, col:6> col:6 used error_code 'int'
+    |-DeclStmt 0x127928d58 <line:10:2, col:28>
+    | |-RecordDecl 0x127928b68 <col:2, col:9> col:9 struct job_record
+    | `-VarDecl 0x127928cd8 <col:2, col:21> col:21 used job_ptr 'struct job_record *'
+    |-CallExpr 0x127928fb8 <line:14:2, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x127928ed0 <col:2> 'int ()' Function 0x127928e18 'debug' 'int ()'
+    | |-StringLiteral 0x127928f30 <col:8> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x127928f98 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x127942160 <line:17:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1279420e0 <col:2> 'int ()' Function 0x127942028 'lock_slurmctld' 'int ()'
+    | `-RecoveryExpr 0x127942140 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1279423e0 <line:18:2, col:46> 'struct job_record *' contains-errors '='
+    | |-DeclRefExpr 0x127942188 <col:2> 'struct job_record *' lvalue Var 0x127928cd8 'job_ptr' 'struct job_record *'
+    | `-CallExpr 0x1279423b8 <col:12, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127942288 <col:12> 'int ()' Function 0x1279421d0 'find_job_record' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x127942370 <col:28, col:40> '<dependent type>' contains-errors lvalue ->job_id
+    |     `-RecoveryExpr 0x127942350 <col:28> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x127942920 <line:21:2, line:25:2>
+    | |-BinaryOperator 0x1279427d8 <line:21:6, line:22:62> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x1279426c0 <line:21:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1279426a8 <col:7> 'struct job_record *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x127942400 <col:7> 'struct job_record *' lvalue Var 0x127928cd8 'job_ptr' 'struct job_record *'
+    | | `-UnaryOperator 0x1279427c0 <line:22:6, col:62> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x127942780 <col:7, col:62> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x127942530 <col:7> 'int ()' Function 0x127942478 '_route_msg_to_origin' 'int ()'
+    | |     |-RecoveryExpr 0x127942550 <col:28> '<dependent type>' contains-errors lvalue
+    | |     |-RecoveryExpr 0x1279426d8 <col:33> '<dependent type>' contains-errors lvalue
+    | |     |-CXXDependentScopeMemberExpr 0x127942718 <col:39, col:51> '<dependent type>' contains-errors lvalue ->job_id
+    | |     | `-RecoveryExpr 0x1279426f8 <col:39> '<dependent type>' contains-errors lvalue
+    | |     `-RecoveryExpr 0x127942760 <col:59> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x127942908 <col:65, line:25:2>
+    |   `-ReturnStmt 0x1279428f8 <line:24:3>
+    |-IfStmt 0x127943e58 <line:27:2, line:63:2> has_else
+    | |-UnaryOperator 0x127942978 <line:27:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x127942960 <col:7> 'struct job_record *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x127942940 <col:7> 'struct job_record *' lvalue Var 0x127928cd8 'job_ptr' 'struct job_record *'
+    | |-NullStmt 0x127943e50 <line:28:3>
+    | `-IfStmt 0x127943e20 <line:29:7, line:63:2> has_else
+    |   |-RecoveryExpr 0x127942ee0 <line:29:11, line:35:32> '_Bool' contains-errors
+    |   |-CompoundStmt 0x1279439e8 <col:35, line:56:2>
+    |   | |-IfStmt 0x1279437b0 <line:41:3, line:50:3>
+    |   | | |-RecoveryExpr 0x1279430d0 <line:41:7> '_Bool' contains-errors
+    |   | | `-CompoundStmt 0x127943790 <col:12, line:50:3>
+    |   | |   |-CallExpr 0x127943740 <line:48:4, col:20> 'int'
+    |   | |   | |-ImplicitCastExpr 0x127943728 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | | `-DeclRefExpr 0x1279436e8 <col:4> 'int ()' Function 0x127943630 'END_TIMER2' 'int ()'
+    |   | |   | `-ImplicitCastExpr 0x127943768 <col:15> 'char *' <ArrayToPointerDecay>
+    |   | |   |   `-StringLiteral 0x127943708 <col:15> 'char[4]' lvalue "STR"
+    |   | |   `-ReturnStmt 0x127943780 <line:49:4>
+    |   | `-CallExpr 0x127943998 <line:52:3, line:53:43> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1279438b0 <line:52:3> 'int ()' Function 0x1279437f8 'error' 'int ()'
+    |   |   |-StringLiteral 0x1279438d0 <col:9> 'char[4]' lvalue "STR"
+    |   |   `-CXXDependentScopeMemberExpr 0x127943950 <line:53:9, col:31> '<dependent type>' contains-errors lvalue ->cluster_lock
+    |   |     `-RecoveryExpr 0x127943928 <col:9, col:18> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x1279438f0 <col:9> 'struct job_record *' lvalue Var 0x127928cd8 'job_ptr' 'struct job_record *'
+    |   `-IfStmt 0x127943df0 <line:56:9, line:63:2> has_else
+    |     |-RecoveryExpr 0x127943b68 <line:56:13, col:65> '_Bool' contains-errors
+    |     |-NullStmt 0x127943de8 <line:57:3>
+    |     `-CompoundStmt 0x127943dd8 <line:58:7, line:63:2>
+    |-CallExpr 0x127943f00 <line:66:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x127943ee8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x127943ea8 <col:2> 'int ()' Function 0x127943630 'END_TIMER2' 'int ()'
+    | `-ImplicitCastExpr 0x127943f28 <col:13> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x127943ec8 <col:13> 'char[4]' lvalue "STR"
+    `-CallExpr 0x127944918 <line:67:2, col:35> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1279448b8 <col:2> 'int ()' Function 0x127944800 'slurm_send_rc_msg' 'int ()'
+      |-RecoveryExpr 0x1279448d8 <col:20> '<dependent type>' contains-errors lvalue
+      `-DeclRefExpr 0x1279448f8 <col:25> 'int' lvalue Var 0x127928ab8 'error_code' 'int'

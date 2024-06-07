@@ -1,0 +1,1 @@
+  uint32_t op_mask() override { return RGW_OP_TYPE_READ; }

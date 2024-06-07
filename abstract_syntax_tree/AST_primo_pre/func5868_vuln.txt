@@ -1,0 +1,70 @@
+`-FunctionDecl 0x1289418d8  line:1:16 invalid rebind_store 'int (struct device_driver *, const char *, int)' static
+  |-ParmVarDecl 0x128928668 <col:29, col:51> col:51 dev 'struct device_driver *'
+  |-ParmVarDecl 0x1289286e8 <col:56, col:68> col:68 used buf 'const char *'
+  |-ParmVarDecl 0x128928768 <line:2:6, col:13> col:13 invalid count 'int'
+  `-CompoundStmt 0x128943fc0 <line:3:1, line:29:1>
+    |-DeclStmt 0x128941a18 <line:4:2, col:9>
+    | `-VarDecl 0x1289419b0 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x128941ab0 <line:5:2, col:9>
+    | `-VarDecl 0x128941a48 <col:2, col:6> col:6 used len 'int'
+    |-DeclStmt 0x128941cb8 <line:6:2, col:25>
+    | |-RecordDecl 0x128941ac8 <col:2, col:9> col:9 struct bus_id_priv
+    | `-VarDecl 0x128941c38 <col:2, col:22> col:22 used bid 'struct bus_id_priv *'
+    |-BinaryOperator 0x128941f48 <line:9:2, col:31> 'int' contains-errors '='
+    | |-DeclRefExpr 0x128941cd0 <col:2> 'int' lvalue Var 0x128941a48 'len' 'int'
+    | `-CallExpr 0x128941f18 <col:8, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x128941e50 <col:8> 'int ()' Function 0x128941d98 'strnlen' 'int ()'
+    |   |-DeclRefExpr 0x128941e70 <col:16> 'const char *' lvalue ParmVar 0x1289286e8 'buf' 'const char *'
+    |   `-RecoveryExpr 0x128941ef8 <col:21> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x128942088 <line:11:2, line:12:11>
+    | |-RecoveryExpr 0x128941fc0 <line:11:6, col:24> '_Bool' contains-errors
+    | `-ReturnStmt 0x128942078 <line:12:3, col:11>
+    |   `-UnaryOperator 0x128942060 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x128942048 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x128942028 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x128942290 <line:14:2, col:26> 'struct bus_id_priv *' '='
+    | |-DeclRefExpr 0x1289420a8 <col:2> 'struct bus_id_priv *' lvalue Var 0x128941c38 'bid' 'struct bus_id_priv *'
+    | `-ImplicitCastExpr 0x128942278 <col:8, col:26> 'struct bus_id_priv *' <IntegralToPointer>
+    |   `-CallExpr 0x128942238 <col:8, col:26> 'int'
+    |     |-ImplicitCastExpr 0x128942220 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1289421a8 <col:8> 'int ()' Function 0x1289420f0 'get_busid_priv' 'int ()'
+    |     `-ImplicitCastExpr 0x128942260 <col:23> 'const char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1289421c8 <col:23> 'const char *' lvalue ParmVar 0x1289286e8 'buf' 'const char *'
+    |-IfStmt 0x1289423a8 <line:15:2, line:16:11>
+    | |-UnaryOperator 0x1289422e8 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1289422d0 <col:7> 'struct bus_id_priv *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1289422b0 <col:7> 'struct bus_id_priv *' lvalue Var 0x128941c38 'bid' 'struct bus_id_priv *'
+    | `-ReturnStmt 0x128942398 <line:16:3, col:11>
+    |   `-UnaryOperator 0x128942380 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x128942368 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x128942348 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x128942480 <line:19:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x128942400 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1289423c8 <col:2> 'struct bus_id_priv *' lvalue Var 0x128941c38 'bid' 'struct bus_id_priv *'
+    | `-RecoveryExpr 0x128942460 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1289426b8 <line:21:2, col:35> 'int' '='
+    | |-DeclRefExpr 0x1289424a0 <col:2> 'int' lvalue Var 0x1289419b0 'ret' 'int'
+    | `-CallExpr 0x128942670 <col:8, col:35> 'int'
+    |   |-ImplicitCastExpr 0x128942658 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1289425a0 <col:8> 'int ()' Function 0x1289424e8 'do_rebind' 'int ()'
+    |   |-CStyleCastExpr 0x128942610 <col:18, col:27> 'char *' <NoOp>
+    |   | `-ImplicitCastExpr 0x1289425f8 <col:27> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |   |   `-DeclRefExpr 0x1289425c0 <col:27> 'const char *' lvalue ParmVar 0x1289286e8 'buf' 'const char *'
+    |   `-ImplicitCastExpr 0x1289426a0 <col:32> 'struct bus_id_priv *' <LValueToRValue>
+    |     `-DeclRefExpr 0x128942638 <col:32> 'struct bus_id_priv *' lvalue Var 0x128941c38 'bid' 'struct bus_id_priv *'
+    |-IfStmt 0x128942798 <line:22:2, line:23:10>
+    | |-BinaryOperator 0x128942730 <line:22:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x128942718 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1289426d8 <col:6> 'int' lvalue Var 0x1289419b0 'ret' 'int'
+    | | `-IntegerLiteral 0x1289426f8 <col:12> 'int' 0
+    | `-ReturnStmt 0x128942788 <line:23:3, col:10>
+    |   `-ImplicitCastExpr 0x128942770 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x128942750 <col:10> 'int' lvalue Var 0x1289419b0 'ret' 'int'
+    |-CallExpr 0x128943f68 <line:26:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x128943f50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x128943eb8 <col:2> 'int ()' Function 0x128943e00 'del_match_busid' 'int ()'
+    | `-CStyleCastExpr 0x128943f28 <col:18, col:27> 'char *' <NoOp>
+    |   `-ImplicitCastExpr 0x128943f10 <col:27> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x128943ed8 <col:27> 'const char *' lvalue ParmVar 0x1289286e8 'buf' 'const char *'
+    `-ReturnStmt 0x128943fb0 <line:28:2, col:9>
+      `-RecoveryExpr 0x128943f90 <col:9> '<dependent type>' contains-errors lvalue

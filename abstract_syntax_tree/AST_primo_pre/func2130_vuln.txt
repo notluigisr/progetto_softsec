@@ -1,0 +1,64 @@
+`-FunctionDecl 0x1400275d8  line:1:1 invalid get_uncompressed_data 'int (struct archive_read *, const void **, int, int)'
+  |-ParmVarDecl 0x14000e248 <col:23, col:44> col:44 used a 'struct archive_read *'
+  |-ParmVarDecl 0x14000e328 <col:47, col:60> col:60 used buff 'const void **'
+  |-ParmVarDecl 0x140027400 <col:66, col:73> col:73 referenced invalid size 'int'
+  |-ParmVarDecl 0x140027480 <line:2:5, col:12> col:12 invalid minimum 'int'
+  `-CompoundStmt 0x1481233d8 <line:3:1, line:48:1>
+    |-DeclStmt 0x1400279e8 <line:4:2, col:53>
+    | |-RecordDecl 0x1400276a0 <col:2, col:9> col:9 struct _7zip
+    | `-VarDecl 0x140027808 <col:2, col:49> col:16 used zip 'struct _7zip *' cinit
+    |   `-CStyleCastExpr 0x1400279a8 <col:22, col:49> 'struct _7zip *' contains-errors <Dependent>
+    |     `-CXXDependentScopeMemberExpr 0x1400278d0 <col:38, col:49> '<dependent type>' contains-errors lvalue ->data
+    |       `-RecoveryExpr 0x1400278a8 <col:38, col:41> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x140027870 <col:38> 'struct archive_read *' lvalue ParmVar 0x14000e248 'a' 'struct archive_read *'
+    `-IfStmt 0x148123348 <line:7:2, line:45:2> has_else
+      |-BinaryOperator 0x140027c50 <line:7:6, col:63> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x140027bd0 <col:6, col:20> 'int' contains-errors '=='
+      | | |-RecoveryExpr 0x140027a38 <col:6, col:11> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x140027a00 <col:6> 'struct _7zip *' contains-errors lvalue Var 0x140027808 'zip' 'struct _7zip *'
+      | | `-RecoveryExpr 0x140027bb0 <col:20> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x140027c30 <col:32, col:63> 'int' contains-errors '=='
+      |   |-RecoveryExpr 0x140027ad0 <col:32, col:37> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x140027a98 <col:32> 'struct _7zip *' contains-errors lvalue Var 0x140027808 'zip' 'struct _7zip *'
+      |   `-CStyleCastExpr 0x140027c08 <col:47, col:63> 'unsigned long' <IntegralCast>
+      |     `-UnaryOperator 0x140027b18 <col:62, col:63> 'int' prefix '-'
+      |       `-IntegerLiteral 0x140027af8 <col:63> 'int' 1
+      |-CompoundStmt 0x148122d20 <col:66, line:26:2>
+      | |-BinaryOperator 0x140027fd8 <line:11:3, col:50> 'const void *' contains-errors '='
+      | | |-UnaryOperator 0x140027f50 <col:3, col:4> 'const void *' lvalue prefix '*' cannot overflow
+      | | | `-ImplicitCastExpr 0x140027f38 <col:4> 'const void **' <LValueToRValue>
+      | | |   `-DeclRefExpr 0x140027c70 <col:4> 'const void **' lvalue ParmVar 0x14000e328 'buff' 'const void **'
+      | | `-CallExpr 0x140027fa0 <col:11, col:50> '<dependent type>' contains-errors
+      | |   |-DeclRefExpr 0x140027e20 <col:11> 'int ()' Function 0x140027d68 '__archive_read_ahead' 'int ()'
+      | |   |-DeclRefExpr 0x140027e40 <col:32> 'struct archive_read *' lvalue ParmVar 0x14000e248 'a' 'struct archive_read *'
+      | |   |-IntegerLiteral 0x140027e60 <col:35> 'int' 1
+      | |   `-UnaryOperator 0x140027f88 <col:38, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | |     `-RecoveryExpr 0x140027f68 <col:39> '<dependent type>' contains-errors lvalue
+      | `-IfStmt 0x140028340 <line:12:3, line:17:3>
+      |   |-BinaryOperator 0x140028070 <line:12:7, col:22> 'int' contains-errors '<='
+      |   | |-RecoveryExpr 0x140028050 <col:7> '<dependent type>' contains-errors lvalue
+      |   | `-IntegerLiteral 0x140028010 <col:22> 'int' 0
+      |   `-CompoundStmt 0x140028328 <col:25, line:17:3>
+      |     `-CallExpr 0x1400282d8 <line:13:4, line:15:13> '<dependent type>' contains-errors
+      |       |-DeclRefExpr 0x140028170 <line:13:4> 'int ()' Function 0x1400280b8 'archive_set_error' 'int ()'
+      |       |-UnaryOperator 0x1400281f0 <col:22, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |       | `-RecoveryExpr 0x1400281c8 <col:23, col:26> '<dependent type>' contains-errors lvalue
+      |       |   `-DeclRefExpr 0x140028190 <col:23> 'struct archive_read *' lvalue ParmVar 0x14000e248 'a' 'struct archive_read *'
+      |       |-RecoveryExpr 0x1400282b8 <line:14:8> '<dependent type>' contains-errors lvalue
+      |       `-StringLiteral 0x140028260 <line:15:8> 'char[4]' lvalue "STR"
+      `-IfStmt 0x148123318 <line:26:9, line:45:2> has_else
+        |-RecoveryExpr 0x148122da0 <line:26:13, col:49> '_Bool' contains-errors
+        |-CompoundStmt 0x148122e98 <col:55, line:31:2>
+        `-CompoundStmt 0x1481232f8 <col:9, line:45:2>
+          |-IfStmt 0x148123108 <line:33:3, line:37:3>
+          | |-BinaryOperator 0x148122f28 <line:33:7, col:22> 'int' contains-errors '>'
+          | | |-RecoveryExpr 0x148122ea8 <col:7> '<dependent type>' contains-errors lvalue
+          | | `-RecoveryExpr 0x148122f00 <col:17, col:22> '<dependent type>' contains-errors lvalue
+          | |   `-DeclRefExpr 0x148122ec8 <col:17> 'struct _7zip *' contains-errors lvalue Var 0x140027808 'zip' 'struct _7zip *'
+          | `-CompoundStmt 0x1481230f8 <col:59, line:37:3>
+          `-BinaryOperator 0x148123278 <line:43:3, col:16> 'const void *' contains-errors '='
+            |-UnaryOperator 0x148123200 <col:3, col:4> 'const void *' lvalue prefix '*' cannot overflow
+            | `-ImplicitCastExpr 0x1481231e8 <col:4> 'const void **' <LValueToRValue>
+            |   `-DeclRefExpr 0x1481231c8 <col:4> 'const void **' lvalue ParmVar 0x14000e328 'buff' 'const void **'
+            `-RecoveryExpr 0x148123250 <col:11, col:16> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x148123218 <col:11> 'struct _7zip *' contains-errors lvalue Var 0x140027808 'zip' 'struct _7zip *'

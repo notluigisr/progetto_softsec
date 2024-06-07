@@ -1,0 +1,47 @@
+`-FunctionDecl 0x12782a948  line:1:12 fuse_readpage 'int (struct file *, struct page *)' static
+  |-ParmVarDecl 0x12780e248 <col:26, col:39> col:39 used file 'struct file *'
+  |-ParmVarDecl 0x12782a828 <col:45, col:58> col:58 used page 'struct page *'
+  `-CompoundStmt 0x12782b650 <line:2:1, line:15:1>
+    |-DeclStmt 0x12782ace0 <line:3:2, col:43>
+    | |-RecordDecl 0x12782aa48 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x12782abb8 <col:2, col:39> col:16 used inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12782ac80 <col:24, col:39> '<dependent type>' contains-errors lvalue ->host
+    |     `-RecoveryExpr 0x12782ac58 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12782ac20 <col:24> 'struct page *' lvalue ParmVar 0x12782a828 'page' 'struct page *'
+    |-DeclStmt 0x12782ad78 <line:4:2, col:9>
+    | `-VarDecl 0x12782ad10 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x12782ae80 <line:6:2, col:9> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12782ad90 <col:2> 'int' lvalue Var 0x12782ad10 'err' 'int'
+    | `-UnaryOperator 0x12782ae68 <col:8, col:9> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x12782ae50 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x12782ae30 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12782b0e0 <line:7:2, line:8:8>
+    | |-CallExpr 0x12782b038 <line:7:6, col:24> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x12782b020 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12782afb0 <col:6> 'int ()' Function 0x12782aef8 'is_bad_inode' 'int ()'
+    | | `-ImplicitCastExpr 0x12782b060 <col:19> 'struct inode *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x12782afd0 <col:19> 'struct inode *' contains-errors lvalue Var 0x12782abb8 'inode' 'struct inode *'
+    | `-GotoStmt 0x12782b0c8 <line:8:3, col:8> 'out' 0x12782b078
+    |-BinaryOperator 0x12782b2d8 <line:10:2, col:35> 'int' '='
+    | |-DeclRefExpr 0x12782b100 <col:2> 'int' lvalue Var 0x12782ad10 'err' 'int'
+    | `-CallExpr 0x12782b278 <col:8, col:35> 'int'
+    |   |-ImplicitCastExpr 0x12782b260 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12782b200 <col:8> 'int ()' Function 0x12782b148 'fuse_do_readpage' 'int ()'
+    |   |-ImplicitCastExpr 0x12782b2a8 <col:25> 'struct file *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12782b220 <col:25> 'struct file *' lvalue ParmVar 0x12780e248 'file' 'struct file *'
+    |   `-ImplicitCastExpr 0x12782b2c0 <col:31> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12782b240 <col:31> 'struct page *' lvalue ParmVar 0x12782a828 'page' 'struct page *'
+    |-CallExpr 0x12782b430 <line:11:2, col:29> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12782b418 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12782b3d8 <col:2> 'int ()' Function 0x12782b320 'fuse_invalidate_atime' 'int ()'
+    | `-ImplicitCastExpr 0x12782b458 <col:24> 'struct inode *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12782b3f8 <col:24> 'struct inode *' contains-errors lvalue Var 0x12782abb8 'inode' 'struct inode *'
+    |-LabelStmt 0x12782b5e8 <line:12:2, line:13:18> 'out'
+    | `-CallExpr 0x12782b5a8 <col:2, col:18> 'int'
+    |   |-ImplicitCastExpr 0x12782b590 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12782b550 <col:2> 'int ()' Function 0x12782b498 'unlock_page' 'int ()'
+    |   `-ImplicitCastExpr 0x12782b5d0 <col:14> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12782b570 <col:14> 'struct page *' lvalue ParmVar 0x12782a828 'page' 'struct page *'
+    `-ReturnStmt 0x12782b640 <line:14:2, col:9>
+      `-ImplicitCastExpr 0x12782b628 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12782b608 <col:9> 'int' lvalue Var 0x12782ad10 'err' 'int'

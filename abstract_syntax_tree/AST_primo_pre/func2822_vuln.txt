@@ -1,0 +1,25 @@
+`-FunctionDecl 0x14900de68  line:1:5 main 'int (int, char **)'
+  |-ParmVarDecl 0x14900dcd8 <col:10, col:14> col:14 used argc 'int'
+  |-ParmVarDecl 0x14900dd88 <col:20, col:27> col:27 used argv 'char **'
+  `-CompoundStmt 0x149027b38 <col:33, line:17:1>
+    |-CallExpr 0x14900e1f8 <line:2:5, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14900e090 <col:5> 'int ()' Function 0x14900dfd8 'g_test_init' 'int ()'
+    | |-UnaryOperator 0x14900e100 <col:17, col:18> 'int *' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x14900e0b0 <col:18> 'int' lvalue ParmVar 0x14900dcd8 'argc' 'int'
+    | |-UnaryOperator 0x14900e170 <col:24, col:25> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x14900e118 <col:25> 'char **' lvalue ParmVar 0x14900dd88 'argv' 'char **'
+    | `-RecoveryExpr 0x14900e1d8 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1490279d0 <line:4:5, line:7:5>
+    | |-CallExpr 0x14900e3d8 <line:4:9, col:21> 'int'
+    | | |-ImplicitCastExpr 0x14900e3c0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14900e310 <col:9> 'int ()' Function 0x14900e258 'getenv' 'int ()'
+    | | `-ImplicitCastExpr 0x149027800 <col:16> 'char *' <ArrayToPointerDecay>
+    | |   `-StringLiteral 0x14900e370 <col:16> 'char[4]' lvalue "STR"
+    | `-CompoundStmt 0x1490279b8 <col:24, line:7:5>
+    |   `-CallExpr 0x149027990 <line:6:9, col:32> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x149027910 <col:9> 'int ()' Function 0x149027858 'vnc_util_set_debug' 'int ()'
+    |     `-RecoveryExpr 0x149027970 <col:28> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x149027b28 <line:16:5, col:23>
+      `-CallExpr 0x149027b08 <col:12, col:23> 'int'
+        `-ImplicitCastExpr 0x149027af0 <col:12> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x149027ad0 <col:12> 'int ()' Function 0x149027a18 'g_test_run' 'int ()'

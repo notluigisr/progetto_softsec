@@ -1,0 +1,50 @@
+`-FunctionDecl 0x12580dee8  line:1:12 invalid put_chars 'int (int, const char *, int)' static
+  |-ParmVarDecl 0x12580dcf0 <col:22, col:26> col:26 invalid vtermno 'int'
+  |-ParmVarDecl 0x12580dd70 <col:35, col:47> col:47 used buf 'const char *'
+  |-ParmVarDecl 0x12580ddf0 <col:52, col:56> col:56 used count 'int'
+  `-CompoundStmt 0x12582c518 <line:2:1, line:15:1>
+    |-DeclStmt 0x12580e198 <line:3:2, col:19>
+    | |-RecordDecl 0x12580dfa8 <col:2, col:9> col:9 struct port
+    | `-VarDecl 0x12580e118 <col:2, col:15> col:15 used port 'struct port *'
+    |-DeclStmt 0x12582b968 <line:4:2, col:26>
+    | |-RecordDecl 0x12580e1b0 <col:2, col:9> col:9 struct scatterlist
+    | `-VarDecl 0x12582b8e8 <col:2, col:21> col:21 invalid sg 'int'
+    |-IfStmt 0x12582bd30 <line:6:2, line:7:45>
+    | |-CallExpr 0x12582bb60 <line:6:6, col:30> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12582bae0 <col:6> 'int ()' Function 0x12582ba28 'unlikely' 'int ()'
+    | | `-RecoveryExpr 0x12582bb40 <col:15> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12582bd20 <line:7:3, col:45>
+    |   `-CallExpr 0x12582bce8 <col:10, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12582bc68 <col:10> 'int ()' Function 0x12582bbb0 'early_put_chars' 'int ()'
+    |     |-RecoveryExpr 0x12582bc88 <col:26> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x12582bca8 <col:35> 'const char *' lvalue ParmVar 0x12580dd70 'buf' 'const char *'
+    |     `-DeclRefExpr 0x12582bcc8 <col:40> 'int' lvalue ParmVar 0x12580ddf0 'count' 'int'
+    |-BinaryOperator 0x12582beb8 <line:9:2, col:37> 'struct port *' contains-errors '='
+    | |-DeclRefExpr 0x12582bd50 <col:2> 'struct port *' lvalue Var 0x12580e118 'port' 'struct port *'
+    | `-CallExpr 0x12582be90 <col:9, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12582be50 <col:9> 'int ()' Function 0x12582bd98 'find_port_by_vtermno' 'int ()'
+    |   `-RecoveryExpr 0x12582be70 <col:30> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12582bfd0 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x12582bf10 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12582bef8 <col:7> 'struct port *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12582bed8 <col:7> 'struct port *' lvalue Var 0x12580e118 'port' 'struct port *'
+    | `-ReturnStmt 0x12582bfc0 <line:11:3, col:11>
+    |   `-UnaryOperator 0x12582bfa8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12582bf90 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12582bf70 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12582c150 <line:13:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12582c0d0 <col:2> 'int ()' Function 0x12582c018 'sg_init_one' 'int ()'
+    | |-RecoveryExpr 0x12582c0f0 <col:14> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x12582c110 <col:18> 'const char *' lvalue ParmVar 0x12580dd70 'buf' 'const char *'
+    | `-DeclRefExpr 0x12582c130 <col:23> 'int' lvalue ParmVar 0x12580ddf0 'count' 'int'
+    `-ReturnStmt 0x12582c508 <line:14:2, col:62>
+      `-CallExpr 0x12582c4b8 <col:9, col:62> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12582c268 <col:9> 'int ()' Function 0x12582c1b0 '__send_to_port' 'int ()'
+        |-DeclRefExpr 0x12582c288 <col:24> 'struct port *' lvalue Var 0x12580e118 'port' 'struct port *'
+        |-RecoveryExpr 0x12582c2a8 <col:30> '<dependent type>' contains-errors lvalue
+        |-IntegerLiteral 0x12582c2c8 <col:34> 'int' 1
+        |-DeclRefExpr 0x12582c2e8 <col:37> 'int' lvalue ParmVar 0x12580ddf0 'count' 'int'
+        |-CStyleCastExpr 0x12582c470 <col:44, col:52> 'void *' <BitCast>
+        | `-ImplicitCastExpr 0x12582c458 <col:52> 'const char *' <LValueToRValue> part_of_explicit_cast
+        |   `-DeclRefExpr 0x12582c308 <col:52> 'const char *' lvalue ParmVar 0x12580dd70 'buf' 'const char *'
+        `-RecoveryExpr 0x12582c498 <col:57> '<dependent type>' contains-errors lvalue

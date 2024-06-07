@@ -1,0 +1,31 @@
+`-FunctionDecl 0x12f827558  line:1:5 invalid brcmf_iovar_data_set 'int (struct device *, char *, void *, int)'
+  |-ParmVarDecl 0x12f80e268 <col:26, col:41> col:41 used dev 'struct device *'
+  |-ParmVarDecl 0x12f80e2e8 <col:46, col:52> col:52 used name 'char *'
+  |-ParmVarDecl 0x12f80e368 <col:58, col:64> col:64 used data 'void *'
+  |-ParmVarDecl 0x12f827400 <col:70, col:74> col:74 invalid len 'int'
+  `-CompoundStmt 0x12f827f30 <line:2:1, line:7:1>
+    |-DeclStmt 0x12f827a48 <line:3:2, col:49>
+    | |-RecordDecl 0x12f827620 <col:2, col:9> col:9 struct brcmf_bus
+    | `-VarDecl 0x12f827788 <col:2, col:48> col:20 used bus_if 'struct brcmf_bus *' cinit
+    |   `-ImplicitCastExpr 0x12f827a18 <col:29, col:48> 'struct brcmf_bus *' <IntegralToPointer>
+    |     `-CallExpr 0x12f8279d8 <col:29, col:48> 'int'
+    |       |-ImplicitCastExpr 0x12f8279c0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12f827950 <col:29> 'int ()' Function 0x12f827898 'dev_get_drvdata' 'int ()'
+    |       `-ImplicitCastExpr 0x12f827a00 <col:45> 'struct device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12f827970 <col:45> 'struct device *' lvalue ParmVar 0x12f80e268 'dev' 'struct device *'
+    |-DeclStmt 0x12f827d48 <line:4:2, col:48>
+    | |-RecordDecl 0x12f827a60 <col:2, col:9> col:9 struct brcmf_if
+    | `-VarDecl 0x12f827bc8 <col:2, col:47> col:19 used ifp 'struct brcmf_if *' cinit
+    |   `-ArraySubscriptExpr 0x12f827d10 <col:25, col:47> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x12f827cf8 <col:25, col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-CXXDependentScopeMemberExpr 0x12f827c90 <col:25, col:39> '<dependent type>' contains-errors lvalue ->iflist
+    |     |   `-RecoveryExpr 0x12f827c68 <col:25, col:33> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x12f827c30 <col:25> 'struct brcmf_bus *' lvalue Var 0x12f827788 'bus_if' 'struct brcmf_bus *'
+    |     `-IntegerLiteral 0x12f827cd8 <col:46> 'int' 0
+    `-ReturnStmt 0x12f827f20 <line:6:2, col:54>
+      `-CallExpr 0x12f827ee0 <col:9, col:54> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12f827e40 <col:9> 'int ()' Function 0x12f827d88 'brcmf_fil_iovar_data_set' 'int ()'
+        |-DeclRefExpr 0x12f827e60 <col:34> 'struct brcmf_if *' contains-errors lvalue Var 0x12f827bc8 'ifp' 'struct brcmf_if *'
+        |-DeclRefExpr 0x12f827e80 <col:39> 'char *' lvalue ParmVar 0x12f80e2e8 'name' 'char *'
+        |-DeclRefExpr 0x12f827ea0 <col:45> 'void *' lvalue ParmVar 0x12f80e368 'data' 'void *'
+        `-RecoveryExpr 0x12f827ec0 <col:51> '<dependent type>' contains-errors lvalue

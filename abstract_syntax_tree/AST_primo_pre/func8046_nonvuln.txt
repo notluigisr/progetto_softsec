@@ -1,0 +1,42 @@
+`-FunctionDecl 0x147141800  line:1:6 invalid sco_connect_cfm 'void (struct hci_conn *, int)'
+  |-ParmVarDecl 0x147128648 <col:22, col:39> col:39 used hcon 'struct hci_conn *'
+  |-ParmVarDecl 0x1471286e0 <col:45, col:50> col:50 invalid status 'int'
+  `-CompoundStmt 0x1471424a0 <line:2:1, line:12:1>
+    |-CallExpr 0x147141b48 <line:3:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147141a10 <col:2> 'int ()' Function 0x147141958 'BT_DBG' 'int ()'
+    | |-StringLiteral 0x147141a70 <col:9> 'char[4]' lvalue "STR"
+    | |-DeclRefExpr 0x147141a90 <col:16> 'struct hci_conn *' lvalue ParmVar 0x147128648 'hcon' 'struct hci_conn *'
+    | |-UnaryOperator 0x147141b10 <col:22, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x147141ae8 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x147141ab0 <col:23> 'struct hci_conn *' lvalue ParmVar 0x147128648 'hcon' 'struct hci_conn *'
+    | `-RecoveryExpr 0x147141b28 <col:34> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x147142470 <line:4:2, line:11:41> has_else
+      |-UnaryOperator 0x147141bc0 <line:4:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-ImplicitCastExpr 0x147141ba8 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x147141b88 <col:7> '<dependent type>' contains-errors lvalue
+      |-CompoundStmt 0x1471421b0 <col:15, line:10:2>
+      | |-DeclStmt 0x147141dc8 <line:5:3, col:24>
+      | | |-RecordDecl 0x147141bd8 <col:3, col:10> col:10 struct sco_conn
+      | | `-VarDecl 0x147141d48 <col:3, col:20> col:20 used conn 'struct sco_conn *'
+      | |-BinaryOperator 0x147141fc0 <line:7:3, col:27> 'struct sco_conn *' '='
+      | | |-DeclRefExpr 0x147141de0 <col:3> 'struct sco_conn *' lvalue Var 0x147141d48 'conn' 'struct sco_conn *'
+      | | `-ImplicitCastExpr 0x147141fa8 <col:10, col:27> 'struct sco_conn *' <IntegralToPointer>
+      | |   `-CallExpr 0x147141f68 <col:10, col:27> 'int'
+      | |     |-ImplicitCastExpr 0x147141f50 <col:10> 'int (*)()' <FunctionToPointerDecay>
+      | |     | `-DeclRefExpr 0x147141ee0 <col:10> 'int ()' Function 0x147141e28 'sco_conn_add' 'int ()'
+      | |     `-ImplicitCastExpr 0x147141f90 <col:23> 'struct hci_conn *' <LValueToRValue>
+      | |       `-DeclRefExpr 0x147141f00 <col:23> 'struct hci_conn *' lvalue ParmVar 0x147128648 'hcon' 'struct hci_conn *'
+      | `-IfStmt 0x147142190 <line:8:3, line:9:23>
+      |   |-ImplicitCastExpr 0x147142000 <line:8:7> 'struct sco_conn *' <LValueToRValue>
+      |   | `-DeclRefExpr 0x147141fe0 <col:7> 'struct sco_conn *' lvalue Var 0x147141d48 'conn' 'struct sco_conn *'
+      |   `-CallExpr 0x147142150 <line:9:4, col:23> 'int'
+      |     |-ImplicitCastExpr 0x147142138 <col:4> 'int (*)()' <FunctionToPointerDecay>
+      |     | `-DeclRefExpr 0x1471420f8 <col:4> 'int ()' Function 0x147142040 'sco_conn_ready' 'int ()'
+      |     `-ImplicitCastExpr 0x147142178 <col:19> 'struct sco_conn *' <LValueToRValue>
+      |       `-DeclRefExpr 0x147142118 <col:19> 'struct sco_conn *' lvalue Var 0x147141d48 'conn' 'struct sco_conn *'
+      `-CallExpr 0x147142440 <line:11:3, col:41> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1471422b8 <col:3> 'int ()' Function 0x147142200 'sco_conn_del' 'int ()'
+        |-DeclRefExpr 0x1471422d8 <col:16> 'struct hci_conn *' lvalue ParmVar 0x147128648 'hcon' 'struct hci_conn *'
+        `-CallExpr 0x147142418 <col:22, col:40> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1471423d8 <col:22> 'int ()' Function 0x147142320 'bt_to_errno' 'int ()'
+          `-RecoveryExpr 0x1471423f8 <col:34> '<dependent type>' contains-errors lvalue

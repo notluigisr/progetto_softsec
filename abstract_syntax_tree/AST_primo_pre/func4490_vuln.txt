@@ -1,0 +1,93 @@
+`-FunctionDecl 0x155808428  line:1:12 check_btf_info 'int (struct bpf_verifier_env *, const union bpf_attr *, union bpf_attr)' static
+  |-ParmVarDecl 0x155128648 <col:27, col:52> col:52 used env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x155808228 <line:2:6, col:28> col:28 used attr 'const union bpf_attr *'
+  |-ParmVarDecl 0x1558082e0 <line:3:6, col:21> col:21 invalid __user 'union bpf_attr'
+  `-CompoundStmt 0x15580a348 <line:4:1, line:28:1>
+    |-DeclStmt 0x155808718 <line:5:2, col:17>
+    | |-RecordDecl 0x155808530 <col:2, col:9> col:9 struct btf
+    | `-VarDecl 0x155808698 <col:2, col:14> col:14 used btf 'struct btf *'
+    |-DeclStmt 0x1558087b0 <line:6:2, col:9>
+    | `-VarDecl 0x155808748 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x155808c10 <line:8:2, line:12:2>
+    | |-BinaryOperator 0x1558088e8 <line:8:6, col:37> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x155808840 <col:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x155808828 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x155808800 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x1558087c8 <col:7> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    | | `-UnaryOperator 0x1558088d0 <col:30, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x1558088b8 <col:31, col:37> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x155808890 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x155808858 <col:31> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    | `-CompoundStmt 0x155808bf0 <col:52, line:12:2>
+    |   |-IfStmt 0x155808ba0 <line:9:3, line:10:12>
+    |   | |-CallExpr 0x155808ab8 <line:9:7, col:32> 'int'
+    |   | | |-ImplicitCastExpr 0x155808aa0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x155808a30 <col:7> 'int ()' Function 0x155808978 'check_abnormal_return' 'int ()'
+    |   | | `-ImplicitCastExpr 0x155808ae0 <col:29> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x155808a50 <col:29> 'struct bpf_verifier_env *' lvalue ParmVar 0x155128648 'env' 'struct bpf_verifier_env *'
+    |   | `-ReturnStmt 0x155808b90 <line:10:4, col:12>
+    |   |   `-UnaryOperator 0x155808b78 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |     `-ImplicitCastExpr 0x155808b60 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x155808b40 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x155808be0 <line:11:3, col:10>
+    |     `-IntegerLiteral 0x155808bc0 <col:10> 'int' 0
+    |-BinaryOperator 0x155808dd8 <line:14:2, col:39> 'struct btf *' contains-errors '='
+    | |-DeclRefExpr 0x155808c30 <col:2> 'struct btf *' lvalue Var 0x155808698 'btf' 'struct btf *'
+    | `-CallExpr 0x155808db0 <col:8, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x155808d30 <col:8> 'int ()' Function 0x155808c78 'btf_get_by_fd' 'int ()'
+    |   `-RecoveryExpr 0x155808d88 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x155808d50 <col:22> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    |-IfStmt 0x1558090f8 <line:15:2, line:16:21>
+    | |-CallExpr 0x155808f30 <line:15:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x155808f18 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x155808ed8 <col:6> 'int ()' Function 0x155808e20 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x155808f58 <col:13> 'struct btf *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x155808ef8 <col:13> 'struct btf *' lvalue Var 0x155808698 'btf' 'struct btf *'
+    | `-ReturnStmt 0x1558090e8 <line:16:3, col:21>
+    |   `-CallExpr 0x1558090a8 <col:10, col:21> 'int'
+    |     |-ImplicitCastExpr 0x155809090 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x155809050 <col:10> 'int ()' Function 0x155808f98 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x1558090d0 <col:18> 'struct btf *' <LValueToRValue>
+    |       `-DeclRefExpr 0x155809070 <col:18> 'struct btf *' lvalue Var 0x155808698 'btf' 'struct btf *'
+    |-BinaryOperator 0x155809c68 <line:17:2, col:24> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x155809c00 <col:2, col:18> '<dependent type>' contains-errors lvalue ->btf
+    | | `-CXXDependentScopeMemberExpr 0x155809178 <col:2, col:13> '<dependent type>' contains-errors lvalue ->aux
+    | |   `-RecoveryExpr 0x155809150 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x155809118 <col:2> 'struct bpf_verifier_env *' lvalue ParmVar 0x155128648 'env' 'struct bpf_verifier_env *'
+    | `-DeclRefExpr 0x155809c48 <col:24> 'struct btf *' lvalue Var 0x155808698 'btf' 'struct btf *'
+    |-BinaryOperator 0x155809f10 <line:19:2, col:39> 'int' '='
+    | |-DeclRefExpr 0x155809c88 <col:2> 'int' lvalue Var 0x155808748 'err' 'int'
+    | `-CallExpr 0x155809e90 <col:8, col:39> 'int'
+    |   |-ImplicitCastExpr 0x155809e78 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x155809d88 <col:8> 'int ()' Function 0x155809cd0 'check_btf_func' 'int ()'
+    |   |-ImplicitCastExpr 0x155809ec8 <col:23> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x155809da8 <col:23> 'struct bpf_verifier_env *' lvalue ParmVar 0x155128648 'env' 'struct bpf_verifier_env *'
+    |   |-ImplicitCastExpr 0x155809ee0 <col:28> 'const union bpf_attr *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x155809dc8 <col:28> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    |   `-ImplicitCastExpr 0x155809ef8 <col:34> 'const union bpf_attr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x155809e58 <col:34> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    |-IfStmt 0x155809fb0 <line:20:2, line:21:10>
+    | |-ImplicitCastExpr 0x155809f50 <line:20:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x155809f30 <col:6> 'int' lvalue Var 0x155808748 'err' 'int'
+    | `-ReturnStmt 0x155809fa0 <line:21:3, col:10>
+    |   `-ImplicitCastExpr 0x155809f88 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x155809f68 <col:10> 'int' lvalue Var 0x155808748 'err' 'int'
+    |-BinaryOperator 0x15580a258 <line:23:2, col:39> 'int' '='
+    | |-DeclRefExpr 0x155809fd0 <col:2> 'int' lvalue Var 0x155808748 'err' 'int'
+    | `-CallExpr 0x15580a1d8 <col:8, col:39> 'int'
+    |   |-ImplicitCastExpr 0x15580a1c0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15580a0d0 <col:8> 'int ()' Function 0x15580a018 'check_btf_line' 'int ()'
+    |   |-ImplicitCastExpr 0x15580a210 <col:23> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x15580a0f0 <col:23> 'struct bpf_verifier_env *' lvalue ParmVar 0x155128648 'env' 'struct bpf_verifier_env *'
+    |   |-ImplicitCastExpr 0x15580a228 <col:28> 'const union bpf_attr *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x15580a110 <col:28> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    |   `-ImplicitCastExpr 0x15580a240 <col:34> 'const union bpf_attr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x15580a1a0 <col:34> 'const union bpf_attr *' lvalue ParmVar 0x155808228 'attr' 'const union bpf_attr *'
+    |-IfStmt 0x15580a2f8 <line:24:2, line:25:10>
+    | |-ImplicitCastExpr 0x15580a298 <line:24:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x15580a278 <col:6> 'int' lvalue Var 0x155808748 'err' 'int'
+    | `-ReturnStmt 0x15580a2e8 <line:25:3, col:10>
+    |   `-ImplicitCastExpr 0x15580a2d0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x15580a2b0 <col:10> 'int' lvalue Var 0x155808748 'err' 'int'
+    `-ReturnStmt 0x15580a338 <line:27:2, col:9>
+      `-IntegerLiteral 0x15580a318 <col:9> 'int' 0

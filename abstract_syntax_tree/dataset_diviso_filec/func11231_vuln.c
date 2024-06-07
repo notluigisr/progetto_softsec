@@ -1,0 +1,53 @@
+png_set_PLTE(png_structrp png_ptr, png_inforp info_ptr,
+    png_const_colorp palette, int num_palette)
+{
+
+   png_uint_32 max_palette_length;
+
+   png_debug1(1, "STR");
+
+   if (png_ptr == NULL || info_ptr == NULL)
+      return;
+
+   max_palette_length = (png_ptr->color_type == PNG_COLOR_TYPE_PALETTE) ?
+      (1 << png_ptr->bit_depth) : PNG_MAX_PALETTE_LENGTH;
+
+   if (num_palette < 0 || num_palette > max_palette_length)
+   {
+      if (info_ptr->color_type == PNG_COLOR_TYPE_PALETTE)
+         png_error(png_ptr, "STR");
+
+      else
+      {
+         png_warning(png_ptr, "STR");
+
+         return;
+      }
+   }
+
+   if ((num_palette > 0 && palette == NULL) ||
+      (num_palette == 0
+#        ifdef PNG_MNG_FEATURES_SUPPORTED
+            && (png_ptr->mng_features_permitted & PNG_FLAG_MNG_EMPTY_PLTE) == 0
+#        endif
+      ))
+   {
+      png_error(png_ptr, "STR");
+   }
+
+   
+   png_free_data(png_ptr, info_ptr, PNG_FREE_PLTE, 0);
+
+   
+   png_ptr->palette = png_voidcast(png_colorp, png_calloc(png_ptr,
+       PNG_MAX_PALETTE_LENGTH * (sizeof (png_color))));
+
+   if (num_palette > 0)
+      memcpy(png_ptr->palette, palette, num_palette * (sizeof (png_color)));
+   info_ptr->palette = png_ptr->palette;
+   info_ptr->num_palette = png_ptr->num_palette = (png_uint_16)num_palette;
+
+   info_ptr->free_me |= PNG_FREE_PLTE;
+
+   info_ptr->valid |= PNG_INFO_PLTE;
+}

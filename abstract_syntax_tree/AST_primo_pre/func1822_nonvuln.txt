@@ -1,0 +1,47 @@
+`-FunctionDecl 0x157940c08  line:1:1 parse_NOTE 'int (const char *, struct ofpbuf *, enum ofputil_protocol *)'
+  |-ParmVarDecl 0x1579280d8 <col:12, col:24> col:24 used arg 'const char *'
+  |-ParmVarDecl 0x1579286c8 <col:29, col:44> col:44 used ofpacts 'struct ofpbuf *'
+  |-ParmVarDecl 0x157940ac8 <line:2:12, col:35> col:35 usable_protocols 'enum ofputil_protocol *'
+  `-CompoundStmt 0x157943040 <line:3:1, line:15:1>
+    |-BinaryOperator 0x157940e20 <line:4:5, col:33> 'unsigned long' contains-errors '='
+    | |-UnaryExprOrTypeTraitExpr 0x157940e00 <col:5, col:12> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x157940de0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x157940d98 <col:24, col:33> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x157940d60 <col:24> 'struct ofpbuf *' lvalue ParmVar 0x1579286c8 'ofpacts' 'struct ofpbuf *'
+    |-CallExpr 0x157940fd8 <line:5:5, col:28> 'int'
+    | |-ImplicitCastExpr 0x157940fc0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x157940f50 <col:5> 'int ()' Function 0x157940e98 'ofpact_put_NOTE' 'int ()'
+    | `-ImplicitCastExpr 0x157941000 <col:21> 'struct ofpbuf *' <LValueToRValue>
+    |   `-DeclRefExpr 0x157940f70 <col:21> 'struct ofpbuf *' lvalue ParmVar 0x1579286c8 'ofpacts' 'struct ofpbuf *'
+    |-BinaryOperator 0x157941240 <line:6:5, col:44> 'const char *' contains-errors '='
+    | |-DeclRefExpr 0x157941018 <col:5> 'const char *' lvalue ParmVar 0x1579280d8 'arg' 'const char *'
+    | `-CallExpr 0x157941208 <col:11, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x157941118 <col:11> 'int ()' Function 0x157941060 'ofpbuf_put_hex' 'int ()'
+    |   |-DeclRefExpr 0x157941138 <col:26> 'struct ofpbuf *' lvalue ParmVar 0x1579286c8 'ofpacts' 'struct ofpbuf *'
+    |   |-DeclRefExpr 0x157941158 <col:35> 'const char *' lvalue ParmVar 0x1579280d8 'arg' 'const char *'
+    |   `-RecoveryExpr 0x1579411e8 <col:40> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1579414d0 <line:7:5, line:9:5>
+    | |-ImplicitCastExpr 0x1579412d8 <line:7:9, col:14> 'char' <LValueToRValue>
+    | | `-ArraySubscriptExpr 0x1579412b8 <col:9, col:14> 'const char' lvalue
+    | |   |-ImplicitCastExpr 0x1579412a0 <col:9> 'const char *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x157941260 <col:9> 'const char *' lvalue ParmVar 0x1579280d8 'arg' 'const char *'
+    | |   `-IntegerLiteral 0x157941280 <col:13> 'int' 0
+    | `-CompoundStmt 0x1579414b8 <col:17, line:9:5>
+    |   `-ReturnStmt 0x1579414a8 <line:8:9, col:29>
+    |     `-CallExpr 0x157941468 <col:16, col:29> 'int'
+    |       |-ImplicitCastExpr 0x157941450 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1579413d0 <col:16> 'int ()' Function 0x157941318 'xstrdup' 'int ()'
+    |       `-ImplicitCastExpr 0x157941490 <col:24> 'char *' <ArrayToPointerDecay>
+    |         `-StringLiteral 0x157941430 <col:24> 'char[4]' lvalue "STR"
+    |-DeclStmt 0x157941860 <line:10:5, line:11:62>
+    | |-RecordDecl 0x1579414f0 <line:10:5, col:12> col:12 struct ofpact_note
+    | `-VarDecl 0x157941658 <col:5, col:25> col:25 used note 'struct ofpact_note *'
+    |-CallExpr 0x157942fb0 <line:13:5, col:38> 'int'
+    | |-ImplicitCastExpr 0x157942f98 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x157942eb8 <col:5> 'int ()' Function 0x157942e00 'ofpact_finish_NOTE' 'int ()'
+    | |-ImplicitCastExpr 0x157942fe0 <col:24> 'struct ofpbuf *' <LValueToRValue>
+    | | `-DeclRefExpr 0x157942ed8 <col:24> 'struct ofpbuf *' lvalue ParmVar 0x1579286c8 'ofpacts' 'struct ofpbuf *'
+    | `-UnaryOperator 0x157942f80 <col:33, col:34> 'struct ofpact_note **' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x157942ef8 <col:34> 'struct ofpact_note *' lvalue Var 0x157941658 'note' 'struct ofpact_note *'
+    `-ReturnStmt 0x157943030 <line:14:5, col:12>
+      `-RecoveryExpr 0x157943010 <col:12> '<dependent type>' contains-errors lvalue

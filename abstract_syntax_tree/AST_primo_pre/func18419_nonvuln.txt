@@ -1,0 +1,126 @@
+`-FunctionDecl 0x14a9281c8  line:1:12 invalid wake_futex_pi 'int (int)' static
+  |-ParmVarDecl 0x14a9280f0 <col:26, col:30> col:30 invalid __user 'int'
+  `-CompoundStmt 0x14b00a100 <line:2:1, line:50:1>
+    |-DeclStmt 0x14a928468 <line:3:2, col:31>
+    | |-RecordDecl 0x14a928278 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x14a9283e8 <col:2, col:22> col:22 used new_owner 'struct task_struct *'
+    |-DeclStmt 0x14a928730 <line:4:2, col:50>
+    | |-RecordDecl 0x14a928480 <col:2, col:9> col:9 struct futex_pi_state
+    | `-VarDecl 0x14a9285e8 <col:2, col:42> col:25 used pi_state 'struct futex_pi_state *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14a9286d0 <col:36, col:42> '<dependent type>' contains-errors lvalue ->pi_state
+    |     `-RecoveryExpr 0x14a9286b0 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a941840 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x14a928780 <line:7:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a928768 <col:7> 'struct futex_pi_state *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a928748 <col:7> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    | `-ReturnStmt 0x14a941830 <line:8:3, col:11>
+    |   `-UnaryOperator 0x14a941818 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14a941800 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14a9287e0 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14a941ec8 <line:10:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a9419c0 <col:2> 'int ()' Function 0x14a941908 'raw_spin_lock' 'int ()'
+    | `-UnaryOperator 0x14a941eb0 <col:16, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14a941e68 <col:17, col:36> '<dependent type>' contains-errors lvalue .wait_lock
+    |     `-RecoveryExpr 0x14a941e40 <col:17, col:27> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14a9419e0 <col:17> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-BinaryOperator 0x14a9420b0 <line:11:2, col:53> 'struct task_struct *' contains-errors '='
+    | |-DeclRefExpr 0x14a941ef0 <col:2> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    | `-CallExpr 0x14a942088 <col:14, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a941ff0 <col:14> 'int ()' Function 0x14a941f38 'rt_mutex_next_owner' 'int ()'
+    |   `-UnaryOperator 0x14a942070 <col:34, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14a942048 <col:35, col:45> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14a942010 <col:35> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-IfStmt 0x14a942248 <line:14:2, line:15:21>
+    | |-UnaryOperator 0x14a942108 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a9420f0 <col:7> 'struct task_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a9420d0 <col:7> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    | `-BinaryOperator 0x14a942228 <line:15:3, col:21> 'struct task_struct *' contains-errors '='
+    |   |-DeclRefExpr 0x14a942120 <col:3> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    |   `-CXXDependentScopeMemberExpr 0x14a9421e0 <col:15, col:21> '<dependent type>' contains-errors lvalue ->task
+    |     `-RecoveryExpr 0x14a9421c0 <col:15> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14b008468 <line:18:2, line:33:2>
+    | |-RecoveryExpr 0x14a9422b8 <line:18:6, col:31> '_Bool' contains-errors
+    | `-CompoundStmt 0x14b008448 <col:34, line:33:2>
+    |   |-DeclStmt 0x14a942378 <line:19:3, col:14>
+    |   | `-VarDecl 0x14a9422f0 <col:3, col:13> col:7 used ret 'int' cinit
+    |   |   `-IntegerLiteral 0x14a942358 <col:13> 'int' 0
+    |   `-IfStmt 0x14b008428 <line:29:3, line:32:3>
+    |     |-ImplicitCastExpr 0x14a942798 <line:29:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14a942778 <col:7> 'int' lvalue Var 0x14a9422f0 'ret' 'int'
+    |     `-CompoundStmt 0x14b008408 <col:12, line:32:3>
+    |       |-CallExpr 0x14b008398 <line:30:4, col:49> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x14b0082b8 <col:4> 'int ()' Function 0x14b008200 'raw_spin_unlock' 'int ()'
+    |       | `-UnaryOperator 0x14b008380 <col:20, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   `-CXXDependentScopeMemberExpr 0x14b008338 <col:21, col:40> '<dependent type>' contains-errors lvalue .wait_lock
+    |       |     `-RecoveryExpr 0x14b008310 <col:21, col:31> '<dependent type>' contains-errors lvalue
+    |       |       `-DeclRefExpr 0x14b0082d8 <col:21> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |       `-ReturnStmt 0x14b0083f8 <line:31:4, col:11>
+    |         `-ImplicitCastExpr 0x14b0083e0 <col:11> 'int' <LValueToRValue>
+    |           `-DeclRefExpr 0x14b0083c0 <col:11> 'int' lvalue Var 0x14a9422f0 'ret' 'int'
+    |-CallExpr 0x14b008648 <line:35:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008568 <col:2> 'int ()' Function 0x14b0084b0 'raw_spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x14b008630 <col:20, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14b0085e8 <col:21, col:38> '<dependent type>' contains-errors lvalue ->pi_lock
+    |     `-RecoveryExpr 0x14b0085c0 <col:21, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b008588 <col:21> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b008910 <line:36:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008750 <col:2> 'int ()' Function 0x14b008698 'WARN_ON' 'int ()'
+    | `-CallExpr 0x14b0088e8 <col:10, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b008850 <col:10> 'int ()' Function 0x14b008798 'list_empty' 'int ()'
+    |   `-UnaryOperator 0x14b0088d0 <col:21, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14b0088a8 <col:22, col:32> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b008870 <col:22> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b008ab0 <line:37:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008a18 <col:2> 'int ()' Function 0x14b008960 'list_del_init' 'int ()'
+    | `-UnaryOperator 0x14b008a98 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b008a70 <col:17, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b008a38 <col:17> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b008c98 <line:38:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008bb8 <col:2> 'int ()' Function 0x14b008b00 'raw_spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x14b008c80 <col:22, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14b008c38 <col:23, col:40> '<dependent type>' contains-errors lvalue ->pi_lock
+    |     `-RecoveryExpr 0x14b008c10 <col:23, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b008bd8 <col:23> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b008d58 <line:40:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008cc0 <col:2> 'int ()' Function 0x14b0084b0 'raw_spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x14b008d40 <col:20, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b008d18 <col:21, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b008ce0 <col:21> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    |-CallExpr 0x14b008e78 <line:41:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008d80 <col:2> 'int ()' Function 0x14b008698 'WARN_ON' 'int ()'
+    | `-UnaryOperator 0x14b008e60 <col:10, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-CallExpr 0x14b008e38 <col:11, col:37> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b008da0 <col:11> 'int ()' Function 0x14b008798 'list_empty' 'int ()'
+    |     `-UnaryOperator 0x14b008e20 <col:22, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14b008df8 <col:23, col:33> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14b008dc0 <col:23> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b009090 <line:42:2, col:53> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b008f80 <col:2> 'int ()' Function 0x14b008ec8 'list_add' 'int ()'
+    | |-UnaryOperator 0x14b009000 <col:11, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14b008fd8 <col:12, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b008fa0 <col:12> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    | `-UnaryOperator 0x14b009078 <col:28, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b009050 <col:29, col:40> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b009018 <col:29> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    |-BinaryOperator 0x14b009140 <line:43:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14b0090f8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14b0090c0 <col:2> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    | `-DeclRefExpr 0x14b009120 <col:20> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    |-CallExpr 0x14b009e00 <line:44:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b009160 <col:2> 'int ()' Function 0x14b008b00 'raw_spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x14b0091e0 <col:22, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b0091b8 <col:23, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b009180 <col:23> 'struct task_struct *' lvalue Var 0x14a9283e8 'new_owner' 'struct task_struct *'
+    |-CallExpr 0x14b009f08 <line:46:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b009e28 <col:2> 'int ()' Function 0x14b008200 'raw_spin_unlock' 'int ()'
+    | `-UnaryOperator 0x14b009ef0 <col:18, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14b009ea8 <col:19, col:38> '<dependent type>' contains-errors lvalue .wait_lock
+    |     `-RecoveryExpr 0x14b009e80 <col:19, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b009e48 <col:19> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    |-CallExpr 0x14b00a0a8 <line:47:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b00a010 <col:2> 'int ()' Function 0x14b009f58 'rt_mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14b00a090 <col:18, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b00a068 <col:19, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b00a030 <col:19> 'struct futex_pi_state *' contains-errors lvalue Var 0x14a9285e8 'pi_state' 'struct futex_pi_state *'
+    `-ReturnStmt 0x14b00a0f0 <line:49:2, col:9>
+      `-IntegerLiteral 0x14b00a0d0 <col:9> 'int' 0

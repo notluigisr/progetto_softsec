@@ -1,0 +1,77 @@
+`-FunctionDecl 0x1298267e8  line:1:12 h2_rcv_buf 'int (struct conn_stream *, struct buffer *, int)' static
+  |-ParmVarDecl 0x12980e248 <col:23, col:43> col:43 used cs 'struct conn_stream *'
+  |-ParmVarDecl 0x129826628 <col:47, col:62> col:62 used buf 'struct buffer *'
+  |-ParmVarDecl 0x1298266a8 <col:67, col:71> col:71 used count 'int'
+  `-CompoundStmt 0x12982d2f8 <line:2:1, line:29:1>
+    |-DeclStmt 0x129826b38 <line:3:2, col:27>
+    | |-RecordDecl 0x1298268f0 <col:2, col:9> col:9 struct h2s
+    | `-VarDecl 0x129826a58 <col:2, col:24> col:14 used h2s 'struct h2s *' cinit
+    |   `-RecoveryExpr 0x129826af8 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129826ac0 <col:20> 'struct conn_stream *' lvalue ParmVar 0x12980e248 'cs' 'struct conn_stream *'
+    |-DeclStmt 0x129826d98 <line:4:2, col:28>
+    | |-RecordDecl 0x129826b50 <col:2, col:9> col:9 struct h2c
+    | `-VarDecl 0x129826cb8 <col:2, col:25> col:14 used h2c 'struct h2c *' cinit
+    |   `-RecoveryExpr 0x129826d58 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129826d20 <col:20> 'struct h2s *' contains-errors lvalue Var 0x129826a58 'h2s' 'struct h2s *'
+    |-DeclStmt 0x129826e50 <line:5:2, col:13>
+    | `-VarDecl 0x129826dc8 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x129826e30 <col:12> 'int' 0
+    |-IfStmt 0x129826f88 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x129826f38 <line:7:6, col:18> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x129826ea0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x129826e68 <col:6> 'struct h2c *' contains-errors lvalue Var 0x129826cb8 'h2c' 'struct h2c *'
+    | | `-RecoveryExpr 0x129826f18 <col:18> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x129826f78 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x129826f58 <col:10> 'int' 0
+    |-IfStmt 0x1298270b8 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x129827068 <line:10:6, col:23> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x129826fe0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x129826fa8 <col:6> 'struct h2c *' contains-errors lvalue Var 0x129826cb8 'h2c' 'struct h2c *'
+    | | `-RecoveryExpr 0x129827040 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x129827008 <col:18> 'struct h2s *' contains-errors lvalue Var 0x129826a58 'h2s' 'struct h2s *'
+    | `-ReturnStmt 0x1298270a8 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x129827088 <col:10> 'int' 0
+    |-IfStmt 0x1298271e0 <line:13:2, line:14:10>
+    | |-UnaryOperator 0x129827198 <line:13:6, col:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x129827180 <col:7, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x129827138 <col:7, col:18> '<dependent type>' contains-errors lvalue ->size
+    | |     `-RecoveryExpr 0x129827110 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1298270d8 <col:7> 'struct h2c *' contains-errors lvalue Var 0x129826cb8 'h2c' 'struct h2c *'
+    | `-ReturnStmt 0x1298271d0 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x1298271b0 <col:10> 'int' 0
+    |-SwitchStmt 0x129827278 <line:16:2, line:27:2>
+    | |-ImplicitCastExpr 0x129827260 <line:16:10, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x129827238 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x129827200 <col:10> 'struct h2c *' contains-errors lvalue Var 0x129826cb8 'h2c' 'struct h2c *'
+    | `-CompoundStmt 0x12982d278 <col:20, line:27:2>
+    |   |-BinaryOperator 0x129827538 <line:18:3, col:46> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1298272b8 <col:3> 'int' lvalue Var 0x129826dc8 'ret' 'int'
+    |   | `-CallExpr 0x1298274b8 <col:9, col:46> 'int' contains-errors
+    |   |   |-ImplicitCastExpr 0x1298274a0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1298273f0 <col:9> 'int ()' Function 0x129827338 'h2_frt_decode_headers' 'int ()'
+    |   |   |-ImplicitCastExpr 0x1298274f0 <col:31> 'struct h2s *' contains-errors <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x129827410 <col:31> 'struct h2s *' contains-errors lvalue Var 0x129826a58 'h2s' 'struct h2s *'
+    |   |   |-ImplicitCastExpr 0x129827508 <col:36> 'struct buffer *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x129827430 <col:36> 'struct buffer *' lvalue ParmVar 0x129826628 'buf' 'struct buffer *'
+    |   |   `-ImplicitCastExpr 0x129827520 <col:41> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x129827450 <col:41> 'int' lvalue ParmVar 0x1298266a8 'count' 'int'
+    |   |-BreakStmt 0x129827558 <line:19:3>
+    |   |-BinaryOperator 0x12982d1d0 <line:22:3, col:45> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x129827578 <col:3> 'int' lvalue Var 0x129826dc8 'ret' 'int'
+    |   | `-CallExpr 0x12982d150 <col:9, col:45> 'int' contains-errors
+    |   |   |-ImplicitCastExpr 0x12982d138 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x12982d0b8 <col:9> 'int ()' Function 0x12982d000 'h2_frt_transfer_data' 'int ()'
+    |   |   |-ImplicitCastExpr 0x12982d188 <col:30> 'struct h2s *' contains-errors <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x12982d0d8 <col:30> 'struct h2s *' contains-errors lvalue Var 0x129826a58 'h2s' 'struct h2s *'
+    |   |   |-ImplicitCastExpr 0x12982d1a0 <col:35> 'struct buffer *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x12982d0f8 <col:35> 'struct buffer *' lvalue ParmVar 0x129826628 'buf' 'struct buffer *'
+    |   |   `-ImplicitCastExpr 0x12982d1b8 <col:40> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x12982d118 <col:40> 'int' lvalue ParmVar 0x1298266a8 'count' 'int'
+    |   |-BreakStmt 0x12982d1f0 <line:23:3>
+    |   `-DefaultStmt 0x12982d258 <line:25:2, line:26:9>
+    |     `-BinaryOperator 0x12982d238 <col:3, col:9> 'int' '='
+    |       |-DeclRefExpr 0x12982d1f8 <col:3> 'int' lvalue Var 0x129826dc8 'ret' 'int'
+    |       `-IntegerLiteral 0x12982d218 <col:9> 'int' 0
+    `-ReturnStmt 0x12982d2e8 <line:28:2, col:9>
+      `-ImplicitCastExpr 0x12982d2d0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12982d2b0 <col:9> 'int' lvalue Var 0x129826dc8 'ret' 'int'

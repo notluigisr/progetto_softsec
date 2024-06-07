@@ -1,0 +1,22 @@
+`-FunctionDecl 0x158140b40  line:1:13 rpc_wake_up_task_queue_locked 'void (struct rpc_wait_queue *, struct rpc_task *)' static
+  |-ParmVarDecl 0x158128648 <col:43, col:66> col:66 used queue 'struct rpc_wait_queue *'
+  |-ParmVarDecl 0x158140a28 <col:73, col:90> col:90 used task 'struct rpc_task *'
+  `-CompoundStmt 0x1581410d0 <line:2:1, line:5:1>
+    `-IfStmt 0x1581410b0 <line:3:2, line:4:36>
+      |-BinaryOperator 0x158140ed8 <line:3:6, col:51> 'int' contains-errors '&&'
+      | |-CallExpr 0x158140df8 <col:6, col:24> 'int'
+      | | |-ImplicitCastExpr 0x158140de0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | | `-DeclRefExpr 0x158140d70 <col:6> 'int ()' Function 0x158140cb8 'RPC_IS_QUEUED' 'int ()'
+      | | `-ImplicitCastExpr 0x158140e20 <col:20> 'struct rpc_task *' <LValueToRValue>
+      | |   `-DeclRefExpr 0x158140d90 <col:20> 'struct rpc_task *' lvalue ParmVar 0x158140a28 'task' 'struct rpc_task *'
+      | `-BinaryOperator 0x158140eb8 <col:29, col:51> 'int' contains-errors '=='
+      |   |-RecoveryExpr 0x158140e70 <col:29, col:35> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x158140e38 <col:29> 'struct rpc_task *' lvalue ParmVar 0x158140a28 'task' 'struct rpc_task *'
+      |   `-DeclRefExpr 0x158140e98 <col:51> 'struct rpc_wait_queue *' lvalue ParmVar 0x158128648 'queue' 'struct rpc_wait_queue *'
+      `-CallExpr 0x158141050 <line:4:3, col:36> 'int'
+        |-ImplicitCastExpr 0x158141038 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x158140fd8 <col:3> 'int ()' Function 0x158140f20 '__rpc_do_wake_up_task' 'int ()'
+        |-ImplicitCastExpr 0x158141080 <col:25> 'struct rpc_wait_queue *' <LValueToRValue>
+        | `-DeclRefExpr 0x158140ff8 <col:25> 'struct rpc_wait_queue *' lvalue ParmVar 0x158128648 'queue' 'struct rpc_wait_queue *'
+        `-ImplicitCastExpr 0x158141098 <col:32> 'struct rpc_task *' <LValueToRValue>
+          `-DeclRefExpr 0x158141018 <col:32> 'struct rpc_task *' lvalue ParmVar 0x158140a28 'task' 'struct rpc_task *'

@@ -1,0 +1,1 @@
+  QInt16(const int16_t v) : value(v) {}

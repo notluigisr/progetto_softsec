@@ -1,0 +1,31 @@
+`-FunctionDecl 0x13000ddd8  line:1:7 invalid MakeTemporaryFile 'int *(void)'
+  `-CompoundStmt 0x13080a140 <col:31, line:27:1>
+    |-DeclStmt 0x13000df30 <line:5:5, col:15>
+    | `-VarDecl 0x13000dec8 <col:5, col:12> col:12 used loc 'char *'
+    |-DeclStmt 0x13000e2b0 <line:6:5, col:48>
+    | `-VarDecl 0x13000df60 <col:5, col:47> col:9 used fd 'int' cinit
+    |   `-CallExpr 0x13000e278 <col:14, col:47> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13000e120 <col:14> 'int ()' Function 0x13000e068 'g_file_open_tmp' 'int ()'
+    |     |-StringLiteral 0x13000e180 <col:30> 'char[4]' lvalue "STR"
+    |     |-UnaryOperator 0x13000e1f0 <col:37, col:38> 'char **' prefix '&' cannot overflow
+    |     | `-DeclRefExpr 0x13000e1a0 <col:38> 'char *' lvalue Var 0x13000dec8 'loc' 'char *'
+    |     `-RecoveryExpr 0x13000e258 <col:43> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13080a0d8 <line:8:5, line:12:5>
+    | |-BinaryOperator 0x13000e338 <line:8:9, col:16> 'int' contains-errors '!='
+    | | |-ImplicitCastExpr 0x13000e320 <col:9> 'int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x13000e2c8 <col:9> 'int' contains-errors lvalue Var 0x13000df60 'fd' 'int'
+    | | `-UnaryOperator 0x13000e308 <col:15, col:16> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x13000e2e8 <col:16> 'int' 1
+    | `-CompoundStmt 0x13080a0b8 <col:19, line:12:5>
+    |   |-CallExpr 0x130809f00 <line:10:9, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x130809ee8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x130809ea8 <col:9> 'int ()' Function 0x130809df0 'g_unlink' 'int ()'
+    |   | `-ImplicitCastExpr 0x130809f28 <col:18> 'char *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x130809ec8 <col:18> 'char *' lvalue Var 0x13000dec8 'loc' 'char *'
+    |   `-CallExpr 0x13080a078 <line:11:9, col:19> 'int'
+    |     |-ImplicitCastExpr 0x13080a060 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13080a020 <col:9> 'int ()' Function 0x130809f68 'g_free' 'int ()'
+    |     `-ImplicitCastExpr 0x13080a0a0 <col:16> 'char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13080a040 <col:16> 'char *' lvalue Var 0x13000dec8 'loc' 'char *'
+    `-ReturnStmt 0x13080a130 <line:26:5, col:12>
+      `-RecoveryExpr 0x13080a110 <col:12> '<dependent type>' contains-errors lvalue

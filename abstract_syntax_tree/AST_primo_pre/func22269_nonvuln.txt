@@ -1,0 +1,122 @@
+`-FunctionDecl 0x15300e358  line:1:5 cgroup1_get_tree 'int (struct fs_context *)'
+  |-ParmVarDecl 0x15300e248 <col:22, col:41> col:41 used fc 'struct fs_context *'
+  `-CompoundStmt 0x1529245f8 <line:2:1, line:33:1>
+    |-DeclStmt 0x153026a48 <line:3:2, col:55>
+    | |-RecordDecl 0x153026650 <col:2, col:9> col:9 struct cgroup_fs_context
+    | `-VarDecl 0x1530267b8 <col:2, col:54> col:28 used ctx 'struct cgroup_fs_context *' cinit
+    |   `-ImplicitCastExpr 0x153026a18 <col:34, col:54> 'struct cgroup_fs_context *' <IntegralToPointer>
+    |     `-CallExpr 0x1530269d8 <col:34, col:54> 'int'
+    |       |-ImplicitCastExpr 0x1530269c0 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x153026950 <col:34> 'int ()' Function 0x153026898 'cgroup_fc2context' 'int ()'
+    |       `-ImplicitCastExpr 0x153026a00 <col:52> 'struct fs_context *' <LValueToRValue>
+    |         `-DeclRefExpr 0x153026970 <col:52> 'struct fs_context *' lvalue ParmVar 0x15300e248 'fc' 'struct fs_context *'
+    |-DeclStmt 0x153026ae0 <line:4:2, col:9>
+    | `-VarDecl 0x153026a78 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x153026e10 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x153026d50 <line:7:6, col:49> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x153026d20 <col:7, col:49> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x153026bd8 <col:7> 'int ()' Function 0x153026b20 'ns_capable' 'int ()'
+    | |   |-CXXDependentScopeMemberExpr 0x153026c58 <col:18, col:27> '<dependent type>' contains-errors lvalue ->user_ns
+    | |   | `-RecoveryExpr 0x153026c30 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x153026bf8 <col:18> 'struct cgroup_fs_context *' lvalue Var 0x1530267b8 'ctx' 'struct cgroup_fs_context *'
+    | |   `-RecoveryExpr 0x153026d00 <col:36> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x153026e00 <line:8:3, col:11>
+    |   `-UnaryOperator 0x153026de8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x153026dd0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x153026db0 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x153027050 <line:10:2, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153026f10 <col:2> 'int ()' Function 0x153026e58 'cgroup_lock_and_drain_offline' 'int ()'
+    | `-UnaryOperator 0x153027038 <col:32, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x153026ff0 <col:33, col:47> '<dependent type>' contains-errors lvalue .cgrp
+    |     `-RecoveryExpr 0x153026fd0 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x153027210 <line:12:2, col:30> 'int' '='
+    | |-DeclRefExpr 0x153027078 <col:2> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    | `-CallExpr 0x1530271d0 <col:8, col:30> 'int'
+    |   |-ImplicitCastExpr 0x1530271b8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x153027178 <col:8> 'int ()' Function 0x1530270c0 'cgroup1_root_to_use' 'int ()'
+    |   `-ImplicitCastExpr 0x1530271f8 <col:28> 'struct fs_context *' <LValueToRValue>
+    |     `-DeclRefExpr 0x153027198 <col:28> 'struct fs_context *' lvalue ParmVar 0x15300e248 'fc' 'struct fs_context *'
+    |-IfStmt 0x153027590 <line:13:2, line:14:9>
+    | |-BinaryOperator 0x153027510 <line:13:6, col:66> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x153027268 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x153027250 <col:7> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x153027230 <col:7> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    | | `-UnaryOperator 0x1530274f8 <col:14, col:66> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x1530274d0 <col:15, col:66> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x153027360 <col:15> 'int ()' Function 0x1530272a8 'percpu_ref_tryget_live' 'int ()'
+    | |     `-UnaryOperator 0x1530274b8 <col:38, col:60> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |       `-CXXDependentScopeMemberExpr 0x153027470 <col:39, col:60> '<dependent type>' contains-errors lvalue .refcnt
+    | |         `-CXXDependentScopeMemberExpr 0x153027428 <col:39, col:55> '<dependent type>' contains-errors lvalue .self
+    | |           `-CXXDependentScopeMemberExpr 0x1530273e0 <col:39, col:50> '<dependent type>' contains-errors lvalue ->cgrp
+    | |             `-RecoveryExpr 0x1530273b8 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    | |               `-DeclRefExpr 0x153027380 <col:39> 'struct cgroup_fs_context *' lvalue Var 0x1530267b8 'ctx' 'struct cgroup_fs_context *'
+    | `-BinaryOperator 0x153027570 <line:14:3, col:9> 'int' '='
+    |   |-DeclRefExpr 0x153027530 <col:3> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    |   `-IntegerLiteral 0x153027550 <col:9> 'int' 1
+    |-CallExpr 0x152923568 <line:16:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1529234b8 <col:2> 'int ()' Function 0x152923400 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x152923550 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x152923530 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152923798 <line:18:2, line:19:30>
+    | |-UnaryOperator 0x1529235c8 <line:18:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1529235b0 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152923590 <col:7> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    | `-BinaryOperator 0x152923778 <line:19:3, col:30> 'int' '='
+    |   |-DeclRefExpr 0x1529235e0 <col:3> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    |   `-CallExpr 0x152923738 <col:9, col:30> 'int'
+    |     |-ImplicitCastExpr 0x152923720 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1529236e0 <col:9> 'int ()' Function 0x152923628 'cgroup_do_get_tree' 'int ()'
+    |     `-ImplicitCastExpr 0x152923760 <col:28> 'struct fs_context *' <LValueToRValue>
+    |       `-DeclRefExpr 0x152923700 <col:28> 'struct fs_context *' lvalue ParmVar 0x15300e248 'fc' 'struct fs_context *'
+    |-IfStmt 0x1529240d8 <line:21:2, line:26:2>
+    | |-BinaryOperator 0x152923a80 <line:21:6, col:62> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x1529237f0 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1529237d8 <col:7> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x1529237b8 <col:7> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    | | `-CallExpr 0x152923a58 <col:14, col:62> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1529238e8 <col:14> 'int ()' Function 0x152923830 'percpu_ref_is_dying' 'int ()'
+    | |   `-UnaryOperator 0x152923a40 <col:34, col:56> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-CXXDependentScopeMemberExpr 0x1529239f8 <col:35, col:56> '<dependent type>' contains-errors lvalue .refcnt
+    | |       `-CXXDependentScopeMemberExpr 0x1529239b0 <col:35, col:51> '<dependent type>' contains-errors lvalue .self
+    | |         `-CXXDependentScopeMemberExpr 0x152923968 <col:35, col:46> '<dependent type>' contains-errors lvalue ->cgrp
+    | |           `-RecoveryExpr 0x152923940 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    | |             `-DeclRefExpr 0x152923908 <col:35> 'struct cgroup_fs_context *' lvalue Var 0x1530267b8 'ctx' 'struct cgroup_fs_context *'
+    | `-CompoundStmt 0x1529240a8 <col:65, line:26:2>
+    |   |-DeclStmt 0x152923d30 <line:22:3, col:42>
+    |   | |-RecordDecl 0x152923aa0 <col:3, col:10> col:10 struct super_block
+    |   | `-VarDecl 0x152923c08 <col:3, col:38> col:23 used sb 'struct super_block *' cinit
+    |   |   `-CXXDependentScopeMemberExpr 0x152923cd0 <col:28, col:38> '<dependent type>' contains-errors lvalue ->d_sb
+    |   |     `-RecoveryExpr 0x152923ca8 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x152923c70 <col:28> 'struct fs_context *' lvalue ParmVar 0x15300e248 'fc' 'struct fs_context *'
+    |   |-CallExpr 0x152923ea8 <line:23:3, col:16> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x152923e28 <col:3> 'int ()' Function 0x152923d70 'dput' 'int ()'
+    |   | `-RecoveryExpr 0x152923e80 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x152923e48 <col:8> 'struct fs_context *' lvalue ParmVar 0x15300e248 'fc' 'struct fs_context *'
+    |   |-CallExpr 0x152924008 <line:24:3, col:29> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x152923ff0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x152923fb0 <col:3> 'int ()' Function 0x152923ef8 'deactivate_locked_super' 'int ()'
+    |   | `-ImplicitCastExpr 0x152924030 <col:27> 'struct super_block *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x152923fd0 <col:27> 'struct super_block *' contains-errors lvalue Var 0x152923c08 'sb' 'struct super_block *'
+    |   `-BinaryOperator 0x152924088 <line:25:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x152924048 <col:3> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    |     `-IntegerLiteral 0x152924068 <col:9> 'int' 1
+    |-IfStmt 0x152924590 <line:28:2, line:31:2>
+    | |-CallExpr 0x152924288 <line:28:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x152924270 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1529241d8 <col:6> 'int ()' Function 0x152924120 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x152924250 <col:15, col:21> 'int' '>'
+    | |   |-ImplicitCastExpr 0x152924238 <col:15> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x1529241f8 <col:15> 'int' lvalue Var 0x153026a78 'ret' 'int'
+    | |   `-IntegerLiteral 0x152924218 <col:21> 'int' 0
+    | `-CompoundStmt 0x152924570 <col:25, line:31:2>
+    |   |-CallExpr 0x152924400 <line:29:3, col:12> 'int'
+    |   | |-ImplicitCastExpr 0x1529243d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x152924390 <col:3> 'int ()' Function 0x1529242d8 'msleep' 'int ()'
+    |   | `-IntegerLiteral 0x1529243b0 <col:10> 'int' 10
+    |   `-ReturnStmt 0x152924560 <line:30:3, col:26>
+    |     `-CallExpr 0x152924540 <col:10, col:26> 'int'
+    |       `-ImplicitCastExpr 0x152924528 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x152924508 <col:10> 'int ()' Function 0x152924450 'restart_syscall' 'int ()'
+    `-ReturnStmt 0x1529245e8 <line:32:2, col:9>
+      `-ImplicitCastExpr 0x1529245d0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1529245b0 <col:9> 'int' lvalue Var 0x153026a78 'ret' 'int'

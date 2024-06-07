@@ -1,0 +1,75 @@
+`-FunctionDecl 0x1520274d8  line:1:12 invalid vhost_iotlb_miss 'int (struct vhost_virtqueue *, int, int)' static
+  |-ParmVarDecl 0x15200e248 <col:29, col:53> col:53 used vq 'struct vhost_virtqueue *'
+  |-ParmVarDecl 0x15200e2e0 <col:57, col:61> col:61 invalid iova 'int'
+  |-ParmVarDecl 0x15200e360 <col:67, col:71> col:71 used access 'int'
+  `-CompoundStmt 0x152029280 <line:2:1, line:26:1>
+    |-DeclStmt 0x1520277e8 <line:3:2, col:33>
+    | |-RecordDecl 0x152027598 <col:2, col:9> col:9 struct vhost_dev
+    | `-VarDecl 0x152027708 <col:2, col:30> col:20 used dev 'struct vhost_dev *' cinit
+    |   `-RecoveryExpr 0x1520277a8 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152027770 <col:26> 'struct vhost_virtqueue *' lvalue ParmVar 0x15200e248 'vq' 'struct vhost_virtqueue *'
+    |-DeclStmt 0x1520279e8 <line:4:2, col:29>
+    | |-RecordDecl 0x152027800 <col:2, col:9> col:9 struct vhost_msg_node
+    | `-VarDecl 0x152027968 <col:2, col:25> col:25 used node 'struct vhost_msg_node *'
+    |-DeclStmt 0x152027be8 <line:5:2, col:29>
+    | |-RecordDecl 0x152027a00 <col:2, col:9> col:9 struct vhost_iotlb_msg
+    | `-VarDecl 0x152027b68 <col:2, col:26> col:26 used msg 'struct vhost_iotlb_msg *'
+    |-BinaryOperator 0x152027f48 <line:8:2, col:68> 'struct vhost_msg_node *' contains-errors '='
+    | |-DeclRefExpr 0x152027c00 <col:2> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    | `-CallExpr 0x152027f18 <col:9, col:68> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152027d80 <col:9> 'int ()' Function 0x152027cc8 'vhost_new_msg' 'int ()'
+    |   |-DeclRefExpr 0x152027da0 <col:23> 'struct vhost_virtqueue *' lvalue ParmVar 0x15200e248 'vq' 'struct vhost_virtqueue *'
+    |   `-ConditionalOperator 0x152027ee8 <col:27, col:53> '<dependent type>' contains-errors
+    |     |-RecoveryExpr 0x152027e88 <col:27> '<dependent type>' contains-errors lvalue
+    |     |-RecoveryExpr 0x152027ea8 <col:32> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x152027ec8 <col:53> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152028060 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x152027fa0 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x152027f88 <col:7> 'struct vhost_msg_node *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152027f68 <col:7> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    | `-ReturnStmt 0x152028050 <line:10:3, col:11>
+    |   `-UnaryOperator 0x152028038 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x152028020 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x152028000 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152028e18 <line:12:2, line:17:2> has_else
+    | |-RecoveryExpr 0x152028098 <line:12:6> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x1520282d8 <col:10, line:15:2>
+    | | |-BinaryOperator 0x1520281b8 <line:13:3, col:23> '<dependent type>' contains-errors '='
+    | | | |-CXXDependentScopeMemberExpr 0x152028118 <col:3, col:16> '<dependent type>' contains-errors lvalue .type
+    | | | | `-RecoveryExpr 0x1520280f0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x1520280b8 <col:3> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    | | | `-RecoveryExpr 0x152028198 <col:23> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x1520282b8 <line:14:3, col:23> 'struct vhost_iotlb_msg *' contains-errors '='
+    | |   |-DeclRefExpr 0x1520281d8 <col:3> 'struct vhost_iotlb_msg *' lvalue Var 0x152027b68 'msg' 'struct vhost_iotlb_msg *'
+    | |   `-UnaryOperator 0x1520282a0 <col:9, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-CXXDependentScopeMemberExpr 0x152028258 <col:10, col:23> '<dependent type>' contains-errors lvalue .iotlb
+    | |       `-RecoveryExpr 0x152028230 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x1520281f8 <col:10> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    | `-CompoundStmt 0x152028e00 <line:15:9, line:17:2>
+    |   `-BinaryOperator 0x1520283d8 <line:16:3, col:20> 'struct vhost_iotlb_msg *' contains-errors '='
+    |     |-DeclRefExpr 0x1520282f8 <col:3> 'struct vhost_iotlb_msg *' lvalue Var 0x152027b68 'msg' 'struct vhost_iotlb_msg *'
+    |     `-UnaryOperator 0x1520283c0 <col:9, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x152028378 <col:10, col:20> '<dependent type>' contains-errors lvalue .iotlb
+    |         `-RecoveryExpr 0x152028350 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x152028318 <col:10> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    |-BinaryOperator 0x152028f00 <line:19:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152028e80 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152028e48 <col:2> 'struct vhost_iotlb_msg *' lvalue Var 0x152027b68 'msg' 'struct vhost_iotlb_msg *'
+    | `-RecoveryExpr 0x152028ee0 <col:14> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x152028fa0 <line:20:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152028f58 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152028f20 <col:2> 'struct vhost_iotlb_msg *' lvalue Var 0x152027b68 'msg' 'struct vhost_iotlb_msg *'
+    | `-RecoveryExpr 0x152028f80 <col:14> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x152029040 <line:21:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152028ff8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152028fc0 <col:2> 'struct vhost_iotlb_msg *' lvalue Var 0x152027b68 'msg' 'struct vhost_iotlb_msg *'
+    | `-DeclRefExpr 0x152029020 <col:14> 'int' lvalue ParmVar 0x15200e360 'access' 'int'
+    |-CallExpr 0x152029218 <line:23:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152029140 <col:2> 'int ()' Function 0x152029088 'vhost_enqueue_msg' 'int ()'
+    | |-DeclRefExpr 0x152029160 <col:20> 'struct vhost_dev *' contains-errors lvalue Var 0x152027708 'dev' 'struct vhost_dev *'
+    | |-UnaryOperator 0x1520291e0 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1520291b8 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x152029180 <col:26> 'struct vhost_dev *' contains-errors lvalue Var 0x152027708 'dev' 'struct vhost_dev *'
+    | `-DeclRefExpr 0x1520291f8 <col:42> 'struct vhost_msg_node *' lvalue Var 0x152027968 'node' 'struct vhost_msg_node *'
+    `-ReturnStmt 0x152029270 <line:25:2, col:9>
+      `-IntegerLiteral 0x152029250 <col:9> 'int' 0

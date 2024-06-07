@@ -1,0 +1,48 @@
+`-FunctionDecl 0x129128750  line:1:6 mlock_vma_page 'void (struct page *)'
+  |-ParmVarDecl 0x129128648 <col:21, col:34> col:34 used page 'struct page *'
+  `-CompoundStmt 0x129145bb8 <line:2:1, line:12:1>
+    |-CallExpr 0x129144f68 <line:3:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x129144f50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129144d70 <col:2> 'int ()' Function 0x129144cb8 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x129144f38 <col:9, col:25> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x129144ef8 <col:10, col:25> 'int'
+    |     |-ImplicitCastExpr 0x129144ee0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x129144e70 <col:10> 'int ()' Function 0x129144db8 'PageLocked' 'int ()'
+    |     `-ImplicitCastExpr 0x129144f20 <col:21> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x129144e90 <col:21> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'
+    `-IfStmt 0x129145b98 <line:5:2, line:11:2>
+      |-UnaryOperator 0x129145108 <line:5:6, col:30> 'int' prefix '!' cannot overflow
+      | `-CallExpr 0x1291450c8 <col:7, col:30> 'int'
+      |   |-ImplicitCastExpr 0x1291450b0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x129145070 <col:7> 'int ()' Function 0x129144fb8 'TestSetPageMlocked' 'int ()'
+      |   `-ImplicitCastExpr 0x1291450f0 <col:26> 'struct page *' <LValueToRValue>
+      |     `-DeclRefExpr 0x129145090 <col:26> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'
+      `-CompoundStmt 0x129145b70 <col:33, line:11:2>
+        |-CallExpr 0x129145688 <line:6:3, line:7:29> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x129145200 <line:6:3> 'int ()' Function 0x129145148 'mod_zone_page_state' 'int ()'
+        | |-CallExpr 0x1291455d0 <col:23, col:37> 'int'
+        | | |-ImplicitCastExpr 0x1291455b8 <col:23> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x129145300 <col:23> 'int ()' Function 0x129145248 'page_zone' 'int ()'
+        | | `-ImplicitCastExpr 0x1291455f8 <col:33> 'struct page *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x129145320 <col:33> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'
+        | |-RecoveryExpr 0x129145610 <col:40> '<dependent type>' contains-errors lvalue
+        | `-CallExpr 0x129145648 <line:7:9, col:28> 'int'
+        |   |-ImplicitCastExpr 0x129145630 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x129145490 <col:9> 'int ()' Function 0x1291453d8 'hpage_nr_pages' 'int ()'
+        |   `-ImplicitCastExpr 0x129145670 <col:24> 'struct page *' <LValueToRValue>
+        |     `-DeclRefExpr 0x1291454b0 <col:24> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'
+        |-CallExpr 0x129145820 <line:8:3, col:39> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1291457a0 <col:3> 'int ()' Function 0x1291456e8 'count_vm_event' 'int ()'
+        | `-RecoveryExpr 0x129145800 <col:18> '<dependent type>' contains-errors lvalue
+        `-IfStmt 0x129145b50 <line:9:3, line:10:25>
+          |-UnaryOperator 0x1291459c0 <line:9:7, col:29> 'int' prefix '!' cannot overflow
+          | `-CallExpr 0x129145980 <col:8, col:29> 'int'
+          |   |-ImplicitCastExpr 0x129145968 <col:8> 'int (*)()' <FunctionToPointerDecay>
+          |   | `-DeclRefExpr 0x129145928 <col:8> 'int ()' Function 0x129145870 'isolate_lru_page' 'int ()'
+          |   `-ImplicitCastExpr 0x1291459a8 <col:25> 'struct page *' <LValueToRValue>
+          |     `-DeclRefExpr 0x129145948 <col:25> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'
+          `-CallExpr 0x129145b10 <line:10:4, col:25> 'int'
+            |-ImplicitCastExpr 0x129145af8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x129145ab8 <col:4> 'int ()' Function 0x129145a00 'putback_lru_page' 'int ()'
+            `-ImplicitCastExpr 0x129145b38 <col:21> 'struct page *' <LValueToRValue>
+              `-DeclRefExpr 0x129145ad8 <col:21> 'struct page *' lvalue ParmVar 0x129128648 'page' 'struct page *'

@@ -1,0 +1,32 @@
+`-FunctionDecl 0x133008568  line:1:13 invalid access_pmceid 'int (struct kvm_vcpu *, struct sys_reg_params *, const struct sys_reg_desc *)' static
+  |-ParmVarDecl 0x13200e268 <col:27, col:44> col:44 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x133008258 <col:50, col:73> col:73 used p 'struct sys_reg_params *'
+  |-ParmVarDecl 0x133008428 <line:2:6, col:33> col:33 used r 'const struct sys_reg_desc *'
+  `-CompoundStmt 0x133009138 <line:3:1, line:22:1>
+    |-IfStmt 0x133008a68 <line:6:2, line:7:32>
+    | |-UnaryOperator 0x133008848 <line:6:6, col:32> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x133008808 <col:7, col:32> 'int'
+    | |   |-ImplicitCastExpr 0x1330087f0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x133008780 <col:7> 'int ()' Function 0x1330086c8 'kvm_arm_pmu_v3_ready' 'int ()'
+    | |   `-ImplicitCastExpr 0x133008830 <col:28> 'struct kvm_vcpu *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1330087a0 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x13200e268 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x133008a58 <line:7:3, col:32>
+    |   `-CallExpr 0x1330089d8 <col:10, col:32> 'int'
+    |     |-ImplicitCastExpr 0x1330089c0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x133008940 <col:10> 'int ()' Function 0x133008888 'trap_raz_wi' 'int ()'
+    |     |-ImplicitCastExpr 0x133008a10 <col:22> 'struct kvm_vcpu *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x133008960 <col:22> 'struct kvm_vcpu *' lvalue ParmVar 0x13200e268 'vcpu' 'struct kvm_vcpu *'
+    |     |-ImplicitCastExpr 0x133008a28 <col:28> 'struct sys_reg_params *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x133008980 <col:28> 'struct sys_reg_params *' lvalue ParmVar 0x133008258 'p' 'struct sys_reg_params *'
+    |     `-ImplicitCastExpr 0x133008a40 <col:31> 'const struct sys_reg_desc *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1330089a0 <col:31> 'const struct sys_reg_desc *' lvalue ParmVar 0x133008428 'r' 'const struct sys_reg_desc *'
+    |-CallExpr 0x133008be8 <line:9:2, col:20> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x133008b68 <col:2> 'int ()' Function 0x133008ab0 'BUG_ON' 'int ()'
+    | `-RecoveryExpr 0x133008bc0 <col:9, col:12> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x133008b88 <col:9> 'struct sys_reg_params *' lvalue ParmVar 0x133008258 'p' 'struct sys_reg_params *'
+    |-BinaryOperator 0x1330090d0 <line:19:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x133009050 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x133009018 <col:2> 'struct sys_reg_params *' lvalue ParmVar 0x133008258 'p' 'struct sys_reg_params *'
+    | `-RecoveryExpr 0x1330090b0 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x133009128 <line:21:2, col:9>
+      `-RecoveryExpr 0x133009108 <col:9> '<dependent type>' contains-errors lvalue

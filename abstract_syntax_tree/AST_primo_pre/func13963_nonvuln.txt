@@ -1,0 +1,39 @@
+`-FunctionDecl 0x151808238  line:1:12 invalid map_id_up 'int (struct uid_gid_map *, int)' static
+  |-ParmVarDecl 0x15100e268 <col:22, col:42> col:42 used map 'struct uid_gid_map *'
+  |-ParmVarDecl 0x15100e2e8 <col:47, col:51> col:51 referenced invalid id 'int'
+  `-CompoundStmt 0x151808f70 <line:2:1, line:22:1>
+    |-DeclStmt 0x151808408 <line:3:2, col:23>
+    | |-VarDecl 0x151808308 <col:2, col:11> col:11 used idx 'unsigned int'
+    | `-VarDecl 0x151808388 <col:2, col:16> col:16 used extents 'unsigned int'
+    |-BinaryOperator 0x1518084a0 <line:7:2, col:17> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x151808420 <col:2> 'unsigned int' lvalue Var 0x151808388 'extents' 'unsigned int'
+    | `-RecoveryExpr 0x151808478 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x151808440 <col:12> 'struct uid_gid_map *' lvalue ParmVar 0x15100e268 'map' 'struct uid_gid_map *'
+    |-CallExpr 0x151808688 <line:8:2, col:27> 'int'
+    | `-ImplicitCastExpr 0x151808670 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x151808620 <col:2> 'int ()' Function 0x151808568 'smp_read_barrier_depends' 'int ()'
+    |-ForStmt 0x151808c40 <line:9:2, line:14:2>
+    | |-BinaryOperator 0x151808700 <line:9:7, col:13> 'unsigned int' '='
+    | | |-DeclRefExpr 0x1518086a8 <col:7> 'unsigned int' lvalue Var 0x151808308 'idx' 'unsigned int'
+    | | `-ImplicitCastExpr 0x1518086e8 <col:13> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x1518086c8 <col:13> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x151808790 <col:16, col:22> 'int' '<'
+    | | |-ImplicitCastExpr 0x151808760 <col:16> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x151808720 <col:16> 'unsigned int' lvalue Var 0x151808308 'idx' 'unsigned int'
+    | | `-ImplicitCastExpr 0x151808778 <col:22> 'unsigned int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x151808740 <col:22> 'unsigned int' lvalue Var 0x151808388 'extents' 'unsigned int'
+    | |-UnaryOperator 0x1518087d0 <col:31, col:34> 'unsigned int' postfix '++'
+    | | `-DeclRefExpr 0x1518087b0 <col:31> 'unsigned int' lvalue Var 0x151808308 'idx' 'unsigned int'
+    | `-CompoundStmt 0x151808c28 <col:38, line:14:2>
+    |   `-IfStmt 0x151808c08 <line:12:3, line:13:4>
+    |     |-BinaryOperator 0x151808be0 <line:12:7, col:28> 'int' contains-errors '&&'
+    |     | |-BinaryOperator 0x151808b80 <col:7, col:13> 'int' contains-errors '>='
+    |     | | |-RecoveryExpr 0x151808a90 <col:7> '<dependent type>' contains-errors lvalue
+    |     | | `-RecoveryExpr 0x151808b60 <col:13> '<dependent type>' contains-errors lvalue
+    |     | `-BinaryOperator 0x151808bc0 <col:22, col:28> 'int' contains-errors '<='
+    |     |   |-RecoveryExpr 0x151808ae8 <col:22> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x151808ba0 <col:28> '<dependent type>' contains-errors lvalue
+    |     `-BreakStmt 0x151808c00 <line:13:4>
+    `-ReturnStmt 0x151808f60 <line:21:2, col:9>
+      `-RecoveryExpr 0x151808f40 <col:9> '<dependent type>' contains-errors lvalue

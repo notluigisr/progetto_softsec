@@ -1,0 +1,98 @@
+`-FunctionDecl 0x11d940df0  line:1:13 invalid bt_tags_for_each 'void (struct blk_mq_tags *, struct blk_mq_bitmap_tags *, unsigned int, int *, void *, int)' static
+  |-ParmVarDecl 0x11d928648 <col:30, col:50> col:50 used tags 'struct blk_mq_tags *'
+  |-ParmVarDecl 0x11d940a28 <line:2:3, col:30> col:30 used bt 'struct blk_mq_bitmap_tags *'
+  |-ParmVarDecl 0x11d940aa8 <col:34, col:47> col:47 used off 'unsigned int'
+  |-ParmVarDecl 0x11d940b78 <line:3:3, col:21> col:21 referenced invalid fn 'int *'
+  |-ParmVarDecl 0x11d940bf8 <col:25, col:31> col:31 used data 'void *'
+  |-ParmVarDecl 0x11d940c78 <col:37, col:42> col:42 invalid reserved 'int'
+  `-CompoundStmt 0x11d943070 <line:4:1, line:22:1>
+    |-DeclStmt 0x11d9410b8 <line:5:2, col:20>
+    | |-RecordDecl 0x11d940ec8 <col:2, col:9> col:9 struct request
+    | `-VarDecl 0x11d941038 <col:2, col:18> col:18 used rq 'struct request *'
+    |-DeclStmt 0x11d9411e8 <line:6:2, col:12>
+    | |-VarDecl 0x11d9410e8 <col:2, col:6> col:6 used bit 'int'
+    | `-VarDecl 0x11d941168 <col:2, col:11> col:11 used i 'int'
+    |-IfStmt 0x11d9412a0 <line:8:2, line:9:3>
+    | |-UnaryOperator 0x11d941278 <line:8:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11d941260 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x11d941238 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11d941200 <col:7> 'struct blk_mq_tags *' lvalue ParmVar 0x11d928648 'tags' 'struct blk_mq_tags *'
+    | `-ReturnStmt 0x11d941290 <line:9:3>
+    `-ForStmt 0x11d943038 <line:10:2, line:21:2>
+      |-BinaryOperator 0x11d941300 <line:10:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x11d9412c0 <col:7> 'int' lvalue Var 0x11d941168 'i' 'int'
+      | `-IntegerLiteral 0x11d9412e0 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x11d9413a0 <col:14, col:22> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x11d941320 <col:14> 'int' lvalue Var 0x11d941168 'i' 'int'
+      | `-RecoveryExpr 0x11d941378 <col:18, col:22> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x11d941340 <col:18> 'struct blk_mq_bitmap_tags *' lvalue ParmVar 0x11d940a28 'bt' 'struct blk_mq_bitmap_tags *'
+      |-UnaryOperator 0x11d9413e0 <col:30, col:31> 'int' postfix '++'
+      | `-DeclRefExpr 0x11d9413c0 <col:30> 'int' lvalue Var 0x11d941168 'i' 'int'
+      `-CompoundStmt 0x11d943010 <col:35, line:21:2>
+        |-DeclStmt 0x11d9416d0 <line:11:3, col:44>
+        | |-RecordDecl 0x11d9413f8 <col:3, col:10> col:10 struct blk_align_bitmap
+        | `-VarDecl 0x11d941568 <col:3, col:43> col:28 used bm 'struct blk_align_bitmap *' cinit
+        |   `-UnaryOperator 0x11d9416a0 <col:33, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-ArraySubscriptExpr 0x11d941680 <col:34, col:43> '<dependent type>' contains-errors lvalue
+        |       |-ImplicitCastExpr 0x11d941650 <col:34, col:38> '<dependent type>' contains-errors <LValueToRValue>
+        |       | `-RecoveryExpr 0x11d941608 <col:34, col:38> '<dependent type>' contains-errors lvalue
+        |       |   `-DeclRefExpr 0x11d9415d0 <col:34> 'struct blk_mq_bitmap_tags *' lvalue ParmVar 0x11d940a28 'bt' 'struct blk_mq_bitmap_tags *'
+        |       `-ImplicitCastExpr 0x11d941668 <col:42> 'int' <LValueToRValue>
+        |         `-DeclRefExpr 0x11d941630 <col:42> 'int' lvalue Var 0x11d941168 'i' 'int'
+        |-ForStmt 0x11d942ec8 <line:13:3, line:18:3>
+        | |-BinaryOperator 0x11d941988 <line:13:8, col:49> 'int' contains-errors '='
+        | | |-DeclRefExpr 0x11d9416e8 <col:8> 'int' lvalue Var 0x11d9410e8 'bit' 'int'
+        | | `-CallExpr 0x11d941958 <col:14, col:49> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x11d941860 <col:14> 'int ()' Function 0x11d9417a8 'find_first_bit' 'int ()'
+        | |   |-UnaryOperator 0x11d9418e0 <col:29, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   | `-RecoveryExpr 0x11d9418b8 <col:30, col:34> '<dependent type>' contains-errors lvalue
+        | |   |   `-DeclRefExpr 0x11d941880 <col:30> 'struct blk_align_bitmap *' contains-errors lvalue Var 0x11d941568 'bm' 'struct blk_align_bitmap *'
+        | |   `-RecoveryExpr 0x11d941930 <col:40, col:44> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x11d9418f8 <col:40> 'struct blk_align_bitmap *' contains-errors lvalue Var 0x11d941568 'bm' 'struct blk_align_bitmap *'
+        | |-<<<NULL>>>
+        | |-BinaryOperator 0x11d942828 <line:14:8, col:18> 'int' contains-errors '<'
+        | | |-DeclRefExpr 0x11d9419a8 <col:8> 'int' lvalue Var 0x11d9410e8 'bit' 'int'
+        | | `-RecoveryExpr 0x11d942800 <col:14, col:18> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x11d9419c8 <col:14> 'struct blk_align_bitmap *' contains-errors lvalue Var 0x11d941568 'bm' 'struct blk_align_bitmap *'
+        | |-BinaryOperator 0x11d942af0 <line:15:8, col:57> 'int' contains-errors '='
+        | | |-DeclRefExpr 0x11d942848 <col:8> 'int' lvalue Var 0x11d9410e8 'bit' 'int'
+        | | `-CallExpr 0x11d942ab8 <col:14, col:57> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x11d942948 <col:14> 'int ()' Function 0x11d942890 'find_next_bit' 'int ()'
+        | |   |-UnaryOperator 0x11d9429c8 <col:28, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   | `-RecoveryExpr 0x11d9429a0 <col:29, col:33> '<dependent type>' contains-errors lvalue
+        | |   |   `-DeclRefExpr 0x11d942968 <col:29> 'struct blk_align_bitmap *' contains-errors lvalue Var 0x11d941568 'bm' 'struct blk_align_bitmap *'
+        | |   |-RecoveryExpr 0x11d942a18 <col:39, col:43> '<dependent type>' contains-errors lvalue
+        | |   | `-DeclRefExpr 0x11d9429e0 <col:39> 'struct blk_align_bitmap *' contains-errors lvalue Var 0x11d941568 'bm' 'struct blk_align_bitmap *'
+        | |   `-BinaryOperator 0x11d942a98 <col:50, col:56> 'int' '+'
+        | |     |-ImplicitCastExpr 0x11d942a80 <col:50> 'int' <LValueToRValue>
+        | |     | `-DeclRefExpr 0x11d942a40 <col:50> 'int' lvalue Var 0x11d9410e8 'bit' 'int'
+        | |     `-IntegerLiteral 0x11d942a60 <col:56> 'int' 1
+        | `-CompoundStmt 0x11d942ea8 <col:60, line:18:3>
+        |   |-BinaryOperator 0x11d942da8 <line:16:4, col:41> 'struct request *' '='
+        |   | |-DeclRefExpr 0x11d942b10 <col:4> 'struct request *' lvalue Var 0x11d941038 'rq' 'struct request *'
+        |   | `-ImplicitCastExpr 0x11d942d90 <col:9, col:41> 'struct request *' <IntegralToPointer>
+        |   |   `-CallExpr 0x11d942d48 <col:9, col:41> 'int'
+        |   |     |-ImplicitCastExpr 0x11d942d30 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        |   |     | `-DeclRefExpr 0x11d942c10 <col:9> 'int ()' Function 0x11d942b58 'blk_mq_tag_to_rq' 'int ()'
+        |   |     |-ImplicitCastExpr 0x11d942d78 <col:26> 'struct blk_mq_tags *' <LValueToRValue>
+        |   |     | `-DeclRefExpr 0x11d942c30 <col:26> 'struct blk_mq_tags *' lvalue ParmVar 0x11d928648 'tags' 'struct blk_mq_tags *'
+        |   |     `-BinaryOperator 0x11d942cd8 <col:32, col:38> 'unsigned int' '+'
+        |   |       |-ImplicitCastExpr 0x11d942c90 <col:32> 'unsigned int' <LValueToRValue>
+        |   |       | `-DeclRefExpr 0x11d942c50 <col:32> 'unsigned int' lvalue ParmVar 0x11d940aa8 'off' 'unsigned int'
+        |   |       `-ImplicitCastExpr 0x11d942cc0 <col:38> 'unsigned int' <IntegralCast>
+        |   |         `-ImplicitCastExpr 0x11d942ca8 <col:38> 'int' <LValueToRValue>
+        |   |           `-DeclRefExpr 0x11d942c70 <col:38> 'int' lvalue Var 0x11d9410e8 'bit' 'int'
+        |   `-CallExpr 0x11d942e70 <line:17:4, col:25> '<dependent type>' contains-errors
+        |     |-RecoveryExpr 0x11d942de8 <col:4> '<dependent type>' contains-errors lvalue
+        |     | `-DeclRefExpr 0x11d942dc8 <col:4> 'int *' lvalue ParmVar 0x11d940b78 'fn' 'int *'
+        |     |-DeclRefExpr 0x11d942e10 <col:7> 'struct request *' lvalue Var 0x11d941038 'rq' 'struct request *'
+        |     |-DeclRefExpr 0x11d942e30 <col:11> 'void *' lvalue ParmVar 0x11d940bf8 'data' 'void *'
+        |     `-RecoveryExpr 0x11d942e50 <col:17> '<dependent type>' contains-errors lvalue
+        `-CompoundAssignOperator 0x11d942fe0 <line:20:3, col:33> 'unsigned int' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          |-DeclRefExpr 0x11d942f00 <col:3> 'unsigned int' lvalue ParmVar 0x11d940aa8 'off' 'unsigned int'
+          `-ParenExpr 0x11d942fc0 <col:10, col:33> '<dependent type>' contains-errors
+            `-BinaryOperator 0x11d942fa0 <col:11, col:20> '<dependent type>' contains-errors '<<'
+              |-IntegerLiteral 0x11d942f20 <col:11> 'int' 1
+              `-RecoveryExpr 0x11d942f78 <col:16, col:20> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x11d942f40 <col:16> 'struct blk_mq_bitmap_tags *' lvalue ParmVar 0x11d940a28 'bt' 'struct blk_mq_bitmap_tags *'

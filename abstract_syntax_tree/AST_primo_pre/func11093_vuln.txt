@@ -1,0 +1,43 @@
+`-FunctionDecl 0x11f928758  line:1:1 ath10k_usb_alloc_urb_from_pipe 'int (struct ath10k_usb_pipe *)'
+  |-ParmVarDecl 0x11f928648 <col:32, col:56> col:56 used pipe 'struct ath10k_usb_pipe *'
+  `-CompoundStmt 0x11f9417b0 <line:2:1, line:16:1>
+    |-DeclStmt 0x11f940c88 <line:3:2, col:47>
+    | |-RecordDecl 0x11f940a50 <col:2, col:9> col:9 struct ath10k_urb_context
+    | `-VarDecl 0x11f940bb8 <col:2, col:43> col:29 used urb_context 'struct ath10k_urb_context *' cinit
+    |   `-RecoveryExpr 0x11f940c50 <col:43> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x11f940d20 <line:4:2, col:21>
+    | `-VarDecl 0x11f940cb8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x11f940f50 <line:6:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f940e50 <col:2> 'int ()' Function 0x11f940d98 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x11f940f18 <col:20, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x11f940ed0 <col:21, col:35> '<dependent type>' contains-errors lvalue ->cs_lock
+    | |   `-RecoveryExpr 0x11f940ea8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11f940e70 <col:21> 'struct ath10k_usb_pipe *' lvalue ParmVar 0x11f928648 'pipe' 'struct ath10k_usb_pipe *'
+    | `-DeclRefExpr 0x11f940f30 <col:44> 'unsigned long' lvalue Var 0x11f940cb8 'flags' 'unsigned long'
+    |-IfStmt 0x11f941520 <line:7:2, line:12:2>
+    | |-UnaryOperator 0x11f941120 <line:7:6, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x11f9410f8 <col:7, col:38> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x11f941060 <col:7> 'int ()' Function 0x11f940fa8 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x11f9410e0 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x11f9410b8 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x11f941080 <col:19> 'struct ath10k_usb_pipe *' lvalue ParmVar 0x11f928648 'pipe' 'struct ath10k_usb_pipe *'
+    | `-CompoundStmt 0x11f941500 <col:41, line:12:2>
+    |   |-CallExpr 0x11f941460 <line:10:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11f9413c8 <col:3> 'int ()' Function 0x11f941310 'list_del' 'int ()'
+    |   | `-UnaryOperator 0x11f941448 <col:12, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x11f941420 <col:13, col:26> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11f9413e8 <col:13> 'struct ath10k_urb_context *' contains-errors lvalue Var 0x11f940bb8 'urb_context' 'struct ath10k_urb_context *'
+    |   `-UnaryOperator 0x11f9414e8 <line:11:3, col:16> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |     `-RecoveryExpr 0x11f9414c0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11f941488 <col:3> 'struct ath10k_usb_pipe *' lvalue ParmVar 0x11f928648 'pipe' 'struct ath10k_usb_pipe *'
+    |-CallExpr 0x11f941720 <line:13:2, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f941620 <col:2> 'int ()' Function 0x11f941568 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x11f9416e8 <col:25, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x11f9416a0 <col:26, col:40> '<dependent type>' contains-errors lvalue ->cs_lock
+    | |   `-RecoveryExpr 0x11f941678 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11f941640 <col:26> 'struct ath10k_usb_pipe *' lvalue ParmVar 0x11f928648 'pipe' 'struct ath10k_usb_pipe *'
+    | `-DeclRefExpr 0x11f941700 <col:49> 'unsigned long' lvalue Var 0x11f940cb8 'flags' 'unsigned long'
+    `-ReturnStmt 0x11f9417a0 <line:15:2, col:9>
+      `-ImplicitCastExpr 0x11f941788 <col:9> 'int' contains-errors <PointerToIntegral>
+        `-ImplicitCastExpr 0x11f941770 <col:9> 'struct ath10k_urb_context *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x11f941750 <col:9> 'struct ath10k_urb_context *' contains-errors lvalue Var 0x11f940bb8 'urb_context' 'struct ath10k_urb_context *'

@@ -1,0 +1,101 @@
+`-FunctionDecl 0x150141838  line:1:12 invalid calipso_doi_remove 'int (int, struct netlbl_audit *)' static
+  |-ParmVarDecl 0x1501280f0 <col:31, col:35> col:35 invalid doi 'int'
+  |-ParmVarDecl 0x1501286e8 <col:40, col:61> col:61 used audit_info 'struct netlbl_audit *'
+  `-CompoundStmt 0x1501434c8 <line:2:1, line:35:1>
+    |-DeclStmt 0x150141970 <line:3:2, col:13>
+    | `-VarDecl 0x150141908 <col:2, col:6> col:6 used ret_val 'int'
+    |-DeclStmt 0x150141b78 <line:4:2, col:29>
+    | |-RecordDecl 0x150141988 <col:2, col:9> col:9 struct calipso_doi
+    | `-VarDecl 0x150141af8 <col:2, col:22> col:22 used doi_def 'struct calipso_doi *'
+    |-DeclStmt 0x150141d78 <line:5:2, col:32>
+    | |-RecordDecl 0x150141b90 <col:2, col:9> col:9 struct audit_buffer
+    | `-VarDecl 0x150141cf8 <col:2, col:23> col:23 used audit_buf 'struct audit_buffer *'
+    |-CallExpr 0x150141fa0 <line:7:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150141ef0 <col:2> 'int ()' Function 0x150141e38 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x150141f88 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150141f68 <col:13> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150142130 <line:8:2, col:34> 'struct calipso_doi *' contains-errors '='
+    | |-DeclRefExpr 0x150141fc8 <col:2> 'struct calipso_doi *' lvalue Var 0x150141af8 'doi_def' 'struct calipso_doi *'
+    | `-CallExpr 0x150142108 <col:12, col:34> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1501420c8 <col:12> 'int ()' Function 0x150142010 'calipso_doi_search' 'int ()'
+    |   `-RecoveryExpr 0x1501420e8 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150142530 <line:9:2, line:13:2>
+    | |-UnaryOperator 0x150142188 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x150142170 <col:7> 'struct calipso_doi *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150142150 <col:7> 'struct calipso_doi *' lvalue Var 0x150141af8 'doi_def' 'struct calipso_doi *'
+    | `-CompoundStmt 0x150142508 <col:16, line:13:2>
+    |   |-CallExpr 0x150142380 <line:10:3, col:37> 'int'
+    |   | |-ImplicitCastExpr 0x150142368 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x150142280 <col:3> 'int ()' Function 0x1501421c8 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x150142350 <col:15, col:16> 'int (*)()' prefix '&' cannot overflow
+    |   |   `-DeclRefExpr 0x1501422f8 <col:16> 'int ()' Function 0x150142010 'calipso_doi_search' 'int ()'
+    |   |-BinaryOperator 0x150142480 <line:11:3, col:14> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1501423a8 <col:3> 'int' lvalue Var 0x150141908 'ret_val' 'int'
+    |   | `-UnaryOperator 0x150142468 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x150142450 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x150142430 <col:14> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x1501424f0 <line:12:3, col:8> 'doi_remove_return' 0x1501424a0
+    |-IfStmt 0x150142938 <line:14:2, line:18:2>
+    | |-UnaryOperator 0x1501426f0 <line:14:6, col:47> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x1501426c8 <col:7, col:47> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x150142630 <col:7> 'int ()' Function 0x150142578 'refcount_dec_and_test' 'int ()'
+    | |   `-UnaryOperator 0x1501426b0 <col:29, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x150142688 <col:30, col:39> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x150142650 <col:30> 'struct calipso_doi *' lvalue Var 0x150141af8 'doi_def' 'struct calipso_doi *'
+    | `-CompoundStmt 0x150142910 <col:50, line:18:2>
+    |   |-CallExpr 0x1501427d0 <line:15:3, col:37> 'int'
+    |   | |-ImplicitCastExpr 0x1501427b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x150142708 <col:3> 'int ()' Function 0x1501421c8 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x1501427a0 <col:15, col:16> 'int (*)()' prefix '&' cannot overflow
+    |   |   `-DeclRefExpr 0x150142780 <col:16> 'int ()' Function 0x150142010 'calipso_doi_search' 'int ()'
+    |   |-BinaryOperator 0x1501428d8 <line:16:3, col:14> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x150142800 <col:3> 'int' lvalue Var 0x150141908 'ret_val' 'int'
+    |   | `-UnaryOperator 0x1501428c0 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x1501428a8 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x150142888 <col:14> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x1501428f8 <line:17:3, col:8> 'doi_remove_return' 0x1501424a0
+    |-CallExpr 0x150142ad0 <line:19:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150142a38 <col:2> 'int ()' Function 0x150142980 'list_del_rcu' 'int ()'
+    | `-UnaryOperator 0x150142ab8 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150142a90 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x150142a58 <col:16> 'struct calipso_doi *' lvalue Var 0x150141af8 'doi_def' 'struct calipso_doi *'
+    |-CallExpr 0x150142bc0 <line:20:2, col:36> 'int'
+    | |-ImplicitCastExpr 0x150142ba8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x150142af8 <col:2> 'int ()' Function 0x1501421c8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x150142b90 <col:14, col:15> 'int (*)()' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x150142b70 <col:15> 'int ()' Function 0x150142010 'calipso_doi_search' 'int ()'
+    |-CallExpr 0x150142dc8 <line:22:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150142cc8 <col:2> 'int ()' Function 0x150142c10 'call_rcu' 'int ()'
+    | |-UnaryOperator 0x150142d48 <col:11, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x150142d20 <col:12, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150142ce8 <col:12> 'struct calipso_doi *' lvalue Var 0x150141af8 'doi_def' 'struct calipso_doi *'
+    | `-DeclRefExpr 0x150142da8 <col:26> 'int ()' Function 0x150142010 'calipso_doi_search' 'int ()'
+    |-BinaryOperator 0x150142e38 <line:23:2, col:12> 'int' '='
+    | |-DeclRefExpr 0x150142df8 <col:2> 'int' lvalue Var 0x150141908 'ret_val' 'int'
+    | `-IntegerLiteral 0x150142e18 <col:12> 'int' 0
+    |-LabelStmt 0x150142fa0 <line:25:1, col:18> 'doi_remove_return'
+    | `-NullStmt 0x150142f98 <col:18>
+    |-IfStmt 0x150143460 <line:27:2, line:32:2>
+    | |-ImplicitCastExpr 0x150142fe0 <line:27:6> 'struct audit_buffer *' <LValueToRValue>
+    | | `-DeclRefExpr 0x150142fc0 <col:6> 'struct audit_buffer *' lvalue Var 0x150141cf8 'audit_buf' 'struct audit_buffer *'
+    | `-CompoundStmt 0x150143440 <col:17, line:32:2>
+    |   |-CallExpr 0x150143288 <line:28:3, line:30:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1501430d8 <line:28:3> 'int ()' Function 0x150143020 'audit_log_format' 'int ()'
+    |   | |-DeclRefExpr 0x1501430f8 <col:20> 'struct audit_buffer *' lvalue Var 0x150141cf8 'audit_buf' 'struct audit_buffer *'
+    |   | |-StringLiteral 0x150143160 <line:29:6> 'char[4]' lvalue "STR"
+    |   | |-RecoveryExpr 0x150143180 <line:30:6> '<dependent type>' contains-errors lvalue
+    |   | `-ConditionalOperator 0x150143258 <col:11, col:30> 'int'
+    |   |   |-BinaryOperator 0x1501431f8 <col:11, col:22> 'int' '=='
+    |   |   | |-ImplicitCastExpr 0x1501431e0 <col:11> 'int' <LValueToRValue>
+    |   |   | | `-DeclRefExpr 0x1501431a0 <col:11> 'int' lvalue Var 0x150141908 'ret_val' 'int'
+    |   |   | `-IntegerLiteral 0x1501431c0 <col:22> 'int' 0
+    |   |   |-IntegerLiteral 0x150143218 <col:26> 'int' 1
+    |   |   `-IntegerLiteral 0x150143238 <col:30> 'int' 0
+    |   `-CallExpr 0x150143400 <line:31:3, col:26> 'int'
+    |     |-ImplicitCastExpr 0x1501433e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1501433a8 <col:3> 'int ()' Function 0x1501432f0 'audit_log_end' 'int ()'
+    |     `-ImplicitCastExpr 0x150143428 <col:17> 'struct audit_buffer *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1501433c8 <col:17> 'struct audit_buffer *' lvalue Var 0x150141cf8 'audit_buf' 'struct audit_buffer *'
+    `-ReturnStmt 0x1501434b8 <line:34:2, col:9>
+      `-ImplicitCastExpr 0x1501434a0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x150143480 <col:9> 'int' lvalue Var 0x150141908 'ret_val' 'int'

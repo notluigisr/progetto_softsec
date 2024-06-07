@@ -1,0 +1,79 @@
+`-FunctionDecl 0x155140c98  line:1:12 invalid erspan_tun_opt_from_nlattr 'int (const struct nlattr *, struct sw_flow_match *, int, int)' static
+  |-ParmVarDecl 0x155128648 <col:39, col:60> col:60 used a 'const struct nlattr *'
+  |-ParmVarDecl 0x155140a28 <line:2:11, col:33> col:33 used match 'struct sw_flow_match *'
+  |-ParmVarDecl 0x155140ac0 <col:40, col:45> col:45 invalid is_mask 'int'
+  |-ParmVarDecl 0x155140b40 <line:3:11, col:16> col:16 invalid log 'int'
+  `-CompoundStmt 0x1551445d8 <line:4:1, line:26:1>
+    |-DeclStmt 0x155140de0 <line:5:2, col:30>
+    | `-VarDecl 0x155140d78 <col:2, col:16> col:16 used opt_key_offset 'unsigned long'
+    |-IfStmt 0x155141828 <line:10:2, line:14:2>
+    | |-BinaryOperator 0x1551413f8 <line:10:6, col:46> 'int' contains-errors '>'
+    | | |-ImplicitCastExpr 0x1551413e0 <col:6, col:15> 'unsigned long' <IntegralCast>
+    | | | `-CallExpr 0x1551412b8 <col:6, col:15> 'int'
+    | | |   |-ImplicitCastExpr 0x1551412a0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x155141230 <col:6> 'int ()' Function 0x155141178 'nla_len' 'int ()'
+    | | |   `-ImplicitCastExpr 0x1551412e0 <col:14> 'const struct nlattr *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x155141250 <col:14> 'const struct nlattr *' lvalue ParmVar 0x155128648 'a' 'const struct nlattr *'
+    | | `-UnaryExprOrTypeTraitExpr 0x1551413c0 <col:19, col:46> 'unsigned long' contains-errors sizeof
+    | |   `-ParenExpr 0x1551413a0 <col:25, col:46> '<dependent type>' contains-errors lvalue
+    | |     `-CXXDependentScopeMemberExpr 0x155141358 <col:26, col:38> '<dependent type>' contains-errors lvalue ->tun_opts
+    | |       `-RecoveryExpr 0x155141330 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x1551412f8 <col:26> 'struct sw_flow_match *' lvalue ParmVar 0x155140a28 'match' 'struct sw_flow_match *' non_odr_use_unevaluated
+    | `-CompoundStmt 0x155141808 <col:49, line:14:2>
+    |   |-CallExpr 0x155141720 <line:11:3, line:12:46> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1551414f8 <line:11:3> 'int ()' Function 0x155141440 'OVS_NLERR' 'int ()'
+    |   | |-RecoveryExpr 0x155141518 <col:13> '<dependent type>' contains-errors lvalue
+    |   | |-StringLiteral 0x155141580 <col:18> 'char[4]' lvalue "STR"
+    |   | |-CallExpr 0x1551415f8 <line:12:6, col:15> 'int'
+    |   | | |-ImplicitCastExpr 0x1551415e0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x1551415a0 <col:6> 'int ()' Function 0x155141178 'nla_len' 'int ()'
+    |   | | `-ImplicitCastExpr 0x155141620 <col:14> 'const struct nlattr *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x1551415c0 <col:14> 'const struct nlattr *' lvalue ParmVar 0x155128648 'a' 'const struct nlattr *'
+    |   | `-UnaryExprOrTypeTraitExpr 0x155141700 <col:18, col:45> 'unsigned long' contains-errors sizeof
+    |   |   `-ParenExpr 0x1551416e0 <col:24, col:45> '<dependent type>' contains-errors lvalue
+    |   |     `-CXXDependentScopeMemberExpr 0x155141698 <col:25, col:37> '<dependent type>' contains-errors lvalue ->tun_opts
+    |   |       `-RecoveryExpr 0x155141670 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x155141638 <col:25> 'struct sw_flow_match *' lvalue ParmVar 0x155140a28 'match' 'struct sw_flow_match *' non_odr_use_unevaluated
+    |   `-ReturnStmt 0x1551417f8 <line:13:3, col:11>
+    |     `-UnaryOperator 0x1551417e0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1551417c8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1551417a8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155143f90 <line:16:2, line:20:50> has_else
+    | |-UnaryOperator 0x155141880 <line:16:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x155141868 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x155141848 <col:7> '<dependent type>' contains-errors lvalue
+    | |-NullStmt 0x155143f88 <line:17:3>
+    | `-CallExpr 0x155143f48 <line:20:3, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x155143e38 <col:3> 'int ()' Function 0x1551418c0 'SW_FLOW_KEY_PUT' 'int ()'
+    |   |-DeclRefExpr 0x155143e58 <col:19> 'struct sw_flow_match *' lvalue ParmVar 0x155140a28 'match' 'struct sw_flow_match *'
+    |   |-RecoveryExpr 0x155143f08 <col:26> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x155143e90 <col:40> 'int' 255
+    |   `-RecoveryExpr 0x155143f28 <col:46> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1551441d0 <line:22:2, col:49> 'unsigned long' '='
+    | |-DeclRefExpr 0x155143fc0 <col:2> 'unsigned long' lvalue Var 0x155140d78 'opt_key_offset' 'unsigned long'
+    | `-ImplicitCastExpr 0x1551441b8 <col:19, col:49> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x155144190 <col:19, col:49> 'int'
+    |     |-ImplicitCastExpr 0x155144178 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1551440c0 <col:19> 'int ()' Function 0x155144008 'TUN_METADATA_OFFSET' 'int ()'
+    |     `-CallExpr 0x155144138 <col:39, col:48> 'int'
+    |       |-ImplicitCastExpr 0x155144120 <col:39> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1551440e0 <col:39> 'int ()' Function 0x155141178 'nla_len' 'int ()'
+    |       `-ImplicitCastExpr 0x155144160 <col:47> 'const struct nlattr *' <LValueToRValue>
+    |         `-DeclRefExpr 0x155144100 <col:47> 'const struct nlattr *' lvalue ParmVar 0x155128648 'a' 'const struct nlattr *'
+    |-CallExpr 0x155144560 <line:23:2, line:24:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1551442d0 <line:23:2> 'int ()' Function 0x155144218 'SW_FLOW_KEY_MEMCPY_OFFSET' 'int ()'
+    | |-DeclRefExpr 0x1551442f0 <col:28> 'struct sw_flow_match *' lvalue ParmVar 0x155140a28 'match' 'struct sw_flow_match *'
+    | |-DeclRefExpr 0x155144310 <col:35> 'unsigned long' lvalue Var 0x155140d78 'opt_key_offset' 'unsigned long'
+    | |-CallExpr 0x155144468 <col:51, col:61> 'int'
+    | | |-ImplicitCastExpr 0x155144450 <col:51> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x155144410 <col:51> 'int ()' Function 0x155144358 'nla_data' 'int ()'
+    | | `-ImplicitCastExpr 0x155144490 <col:60> 'const struct nlattr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x155144430 <col:60> 'const struct nlattr *' lvalue ParmVar 0x155128648 'a' 'const struct nlattr *'
+    | |-CallExpr 0x155144500 <line:24:7, col:16> 'int'
+    | | |-ImplicitCastExpr 0x1551444e8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1551444a8 <col:7> 'int ()' Function 0x155141178 'nla_len' 'int ()'
+    | | `-ImplicitCastExpr 0x155144528 <col:15> 'const struct nlattr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1551444c8 <col:15> 'const struct nlattr *' lvalue ParmVar 0x155128648 'a' 'const struct nlattr *'
+    | `-RecoveryExpr 0x155144540 <col:19> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1551445c8 <line:25:2, col:9>
+      `-IntegerLiteral 0x1551445a8 <col:9> 'int' 0

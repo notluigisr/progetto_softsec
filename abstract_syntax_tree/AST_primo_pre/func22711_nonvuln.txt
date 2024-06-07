@@ -1,0 +1,58 @@
+`-FunctionDecl 0x14f902df0  line:1:6 invalid plugin_thdvar_cleanup 'void (int *)'
+  |-ParmVarDecl 0x14f902d28 <col:28, col:33> col:33 invalid thd 'int *'
+  `-CompoundStmt 0x14f91d1a8 <line:2:1, line:26:1>
+    |-DeclStmt 0x14f902f20 <line:3:3, col:11>
+    | `-VarDecl 0x14f902eb8 <col:3, col:8> col:8 used idx 'int'
+    |-CallExpr 0x14f903178 <line:5:3, col:19> 'int'
+    | |-ImplicitCastExpr 0x14f903160 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f9030b0 <col:3> 'int ()' Function 0x14f902ff8 'DBUG_ENTER' 'int ()'
+    | `-ImplicitCastExpr 0x14f9031a0 <col:14> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x14f903110 <col:14> 'char[4]' lvalue "STR"
+    |-CallExpr 0x14f903348 <line:7:3, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f903298 <col:3> 'int ()' Function 0x14f9031e0 'mysql_mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14f903330 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f903310 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f91c578 <line:9:3, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f91c4b8 <col:3> 'int ()' Function 0x14f91c400 'unlock_variables' 'int ()'
+    | |-RecoveryExpr 0x14f91c4d8 <col:20> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x14f91c560 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14f91c518 <col:26, col:31> '<dependent type>' contains-errors lvalue ->variables
+    |     `-RecoveryExpr 0x14f91c4f8 <col:26> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f91c728 <line:10:3, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f91c688 <col:3> 'int ()' Function 0x14f91c5d0 'cleanup_variables' 'int ()'
+    | `-UnaryOperator 0x14f91c710 <col:21, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14f91c6c8 <col:22, col:27> '<dependent type>' contains-errors lvalue ->variables
+    |     `-RecoveryExpr 0x14f91c6a8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14f91cd60 <line:12:3, line:18:3>
+    | |-ParenExpr 0x14f91c888 <line:12:7, col:39> 'int' contains-errors
+    | | `-BinaryOperator 0x14f91c868 <col:8, col:31> 'int' contains-errors '='
+    | |   |-DeclRefExpr 0x14f91c750 <col:8> 'int' lvalue Var 0x14f902eb8 'idx' 'int'
+    | |   `-CXXDependentScopeMemberExpr 0x14f91c820 <col:13, col:31> '<dependent type>' contains-errors lvalue .elements
+    | |     `-CXXDependentScopeMemberExpr 0x14f91c7d8 <col:13, col:23> '<dependent type>' contains-errors lvalue ->plugins
+    | |       `-CXXDependentScopeMemberExpr 0x14f91c790 <col:13, col:18> '<dependent type>' contains-errors lvalue ->lex
+    | |         `-RecoveryExpr 0x14f91c770 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14f91cd40 <line:13:3, line:18:3>
+    |   |-CallExpr 0x14f91ca58 <line:15:5, col:26> 'int'
+    |   | |-ImplicitCastExpr 0x14f91ca40 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14f91c9e0 <col:5> 'int ()' Function 0x14f91c928 'DBUG_PRINT' 'int ()'
+    |   | |-ImplicitCastExpr 0x14f91ca88 <col:16> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x14f91ca00 <col:16> 'char[4]' lvalue "STR"
+    |   | `-ImplicitCastExpr 0x14f91caa0 <col:23> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14f91ca20 <col:23> 'int' lvalue Var 0x14f902eb8 'idx' 'int'
+    |   `-WhileStmt 0x14f91cd20 <line:16:5, line:17:41>
+    |     |-RecoveryExpr 0x14f91cad0 <line:16:12, col:47> '_Bool' contains-errors
+    |     `-CallExpr 0x14f91ccf0 <line:17:7, col:41> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14f91cbd0 <col:7> 'int ()' Function 0x14f91cb18 'intern_plugin_unlock' 'int ()'
+    |       |-RecoveryExpr 0x14f91cc80 <col:28> '<dependent type>' contains-errors lvalue
+    |       `-UnaryOperator 0x14f91ccd8 <col:34, col:39> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |         `-UnaryOperator 0x14f91ccc0 <col:35, col:39> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |           `-RecoveryExpr 0x14f91cca0 <col:35> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f91ce98 <line:20:3, col:16> 'int'
+    | `-ImplicitCastExpr 0x14f91ce80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14f91ce60 <col:3> 'int ()' Function 0x14f91cda8 'reap_plugins' 'int ()'
+    `-CallExpr 0x14f91d180 <line:23:3, col:35> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f91d098 <col:3> 'int ()' Function 0x14f91cfe0 'reset_dynamic' 'int ()'
+      `-UnaryOperator 0x14f91d168 <col:17, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x14f91d120 <col:18, col:28> '<dependent type>' contains-errors lvalue ->plugins
+          `-CXXDependentScopeMemberExpr 0x14f91d0d8 <col:18, col:23> '<dependent type>' contains-errors lvalue ->lex
+            `-RecoveryExpr 0x14f91d0b8 <col:18> '<dependent type>' contains-errors lvalue

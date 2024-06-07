@@ -1,0 +1,28 @@
+`-FunctionDecl 0x132128198  line:1:18 ustime 'long long (void)' static
+  `-CompoundStmt 0x132140f70 <col:31, line:9:1>
+    |-DeclStmt 0x132140a48 <line:2:5, col:22>
+    | |-RecordDecl 0x132128288 <col:5, col:12> col:12 struct timeval
+    | `-VarDecl 0x132128388 <col:5, col:20> col:20 invalid tv 'struct timeval'
+    |-DeclStmt 0x132140ae0 <line:3:5, col:18>
+    | `-VarDecl 0x132140a78 <col:5, col:15> col:15 used ust 'long long'
+    |-CallExpr 0x132140ce0 <line:5:5, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x132140c20 <col:5> 'int ()' Function 0x132140b68 'gettimeofday' 'int ()'
+    | |-UnaryOperator 0x132140c60 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x132140c40 <col:19> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x132140cc0 <col:23> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x132140e50 <line:6:5, col:36> 'long long' contains-errors '='
+    | |-DeclRefExpr 0x132140d10 <col:5> 'long long' lvalue Var 0x132140a78 'ust' 'long long'
+    | `-BinaryOperator 0x132140e30 <col:11, col:36> 'long long' contains-errors '*'
+    |   |-ParenExpr 0x132140dd8 <col:11, col:32> 'long long' contains-errors
+    |   | `-CStyleCastExpr 0x132140db0 <col:12, col:26> 'long long' contains-errors <Dependent>
+    |   |   `-CXXDependentScopeMemberExpr 0x132140d50 <col:23, col:26> '<dependent type>' contains-errors lvalue .tv_sec
+    |   |     `-RecoveryExpr 0x132140d30 <col:23> '<dependent type>' contains-errors lvalue
+    |   `-ImplicitCastExpr 0x132140e18 <col:36> 'long long' <IntegralCast>
+    |     `-IntegerLiteral 0x132140df8 <col:36> 'int' 1000000
+    |-CompoundAssignOperator 0x132140ef8 <line:7:5, col:15> 'long long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x132140e70 <col:5> 'long long' lvalue Var 0x132140a78 'ust' 'long long'
+    | `-CXXDependentScopeMemberExpr 0x132140eb0 <col:12, col:15> '<dependent type>' contains-errors lvalue .tv_usec
+    |   `-RecoveryExpr 0x132140e90 <col:12> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x132140f60 <line:8:5, col:12>
+      `-ImplicitCastExpr 0x132140f48 <col:12> 'long long' <LValueToRValue>
+        `-DeclRefExpr 0x132140f28 <col:12> 'long long' lvalue Var 0x132140a78 'ust' 'long long'

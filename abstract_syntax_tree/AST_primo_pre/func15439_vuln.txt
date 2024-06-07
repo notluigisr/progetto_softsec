@@ -1,0 +1,65 @@
+`-FunctionDecl 0x13d141838  line:1:1 invalid search_memslots 'int (struct kvm_memslots *, int)'
+  |-ParmVarDecl 0x13d128648 <col:17, col:38> col:38 used slots 'struct kvm_memslots *'
+  |-ParmVarDecl 0x13d1286e0 <col:45, col:51> col:51 invalid gfn 'int'
+  `-CompoundStmt 0x13d142ab8 <line:2:1, line:27:1>
+    |-DeclStmt 0x13d141a88 <line:3:2, col:40>
+    | |-VarDecl 0x13d141908 <col:2, col:14> col:6 used start 'int' cinit
+    | | `-IntegerLiteral 0x13d141970 <col:14> 'int' 0
+    | `-VarDecl 0x13d1419a8 <col:2, col:30> col:17 used end 'int' cinit
+    |   `-RecoveryExpr 0x13d141a48 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d141a10 <col:23> 'struct kvm_memslots *' lvalue ParmVar 0x13d128648 'slots' 'struct kvm_memslots *'
+    |-DeclStmt 0x13d141d40 <line:4:2, col:42>
+    | `-VarDecl 0x13d141ab8 <col:2, col:41> col:6 used slot 'int' cinit
+    |   `-CallExpr 0x13d141d18 <col:13, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13d141c80 <col:13> 'int ()' Function 0x13d141bc8 'atomic_read' 'int ()'
+    |     `-UnaryOperator 0x13d141d00 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x13d141cd8 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13d141ca0 <col:26> 'struct kvm_memslots *' lvalue ParmVar 0x13d128648 'slots' 'struct kvm_memslots *'
+    |-DeclStmt 0x13d141fa8 <line:5:2, col:52>
+    | |-RecordDecl 0x13d141d58 <col:2, col:9> col:9 struct kvm_memory_slot
+    | `-VarDecl 0x13d141ec8 <col:2, col:44> col:26 used memslots 'struct kvm_memory_slot *' cinit
+    |   `-RecoveryExpr 0x13d141f68 <col:37, col:44> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d141f30 <col:37> 'struct kvm_memslots *' lvalue ParmVar 0x13d128648 'slots' 'struct kvm_memslots *'
+    |-WhileStmt 0x13d142628 <line:11:2, line:18:2>
+    | |-BinaryOperator 0x13d142250 <line:11:9, col:17> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x13d142220 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13d1421e0 <col:9> 'int' lvalue Var 0x13d141908 'start' 'int'
+    | | `-ImplicitCastExpr 0x13d142238 <col:17> 'int' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13d142200 <col:17> 'int' contains-errors lvalue Var 0x13d1419a8 'end' 'int'
+    | `-CompoundStmt 0x13d142608 <col:22, line:18:2>
+    |   |-BinaryOperator 0x13d1423d8 <line:12:3, col:34> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13d142270 <col:3> 'int' contains-errors lvalue Var 0x13d141ab8 'slot' 'int'
+    |   | `-BinaryOperator 0x13d1423b8 <col:10, col:34> 'int' contains-errors '+'
+    |   |   |-ImplicitCastExpr 0x13d1423a0 <col:10> 'int' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x13d142290 <col:10> 'int' lvalue Var 0x13d141908 'start' 'int'
+    |   |   `-BinaryOperator 0x13d142380 <col:18, col:34> 'int' contains-errors '/'
+    |   |     |-ParenExpr 0x13d142340 <col:18, col:30> 'int' contains-errors
+    |   |     | `-BinaryOperator 0x13d142320 <col:19, col:25> 'int' contains-errors '-'
+    |   |     |   |-ImplicitCastExpr 0x13d1422f0 <col:19> 'int' contains-errors <LValueToRValue>
+    |   |     |   | `-DeclRefExpr 0x13d1422b0 <col:19> 'int' contains-errors lvalue Var 0x13d1419a8 'end' 'int'
+    |   |     |   `-ImplicitCastExpr 0x13d142308 <col:25> 'int' <LValueToRValue>
+    |   |     |     `-DeclRefExpr 0x13d1422d0 <col:25> 'int' lvalue Var 0x13d141908 'start' 'int'
+    |   |     `-IntegerLiteral 0x13d142360 <col:34> 'int' 2
+    |   `-IfStmt 0x13d1425d8 <line:14:3, line:17:19> has_else
+    |     |-RecoveryExpr 0x13d142488 <line:14:7, col:29> '_Bool' contains-errors
+    |     |-BinaryOperator 0x13d142500 <line:15:4, col:10> 'int' contains-errors '='
+    |     | |-DeclRefExpr 0x13d1424a8 <col:4> 'int' contains-errors lvalue Var 0x13d1419a8 'end' 'int'
+    |     | `-ImplicitCastExpr 0x13d1424e8 <col:10> 'int' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x13d1424c8 <col:10> 'int' contains-errors lvalue Var 0x13d141ab8 'slot' 'int'
+    |     `-BinaryOperator 0x13d1425b8 <line:17:4, col:19> 'int' contains-errors '='
+    |       |-DeclRefExpr 0x13d142520 <col:4> 'int' lvalue Var 0x13d141908 'start' 'int'
+    |       `-BinaryOperator 0x13d142598 <col:12, col:19> 'int' contains-errors '+'
+    |         |-ImplicitCastExpr 0x13d142580 <col:12> 'int' contains-errors <LValueToRValue>
+    |         | `-DeclRefExpr 0x13d142540 <col:12> 'int' contains-errors lvalue Var 0x13d141ab8 'slot' 'int'
+    |         `-IntegerLiteral 0x13d142560 <col:19> 'int' 1
+    |-IfStmt 0x13d142a50 <line:20:2, line:24:2>
+    | |-RecoveryExpr 0x13d1427d8 <line:20:6, line:21:55> '_Bool' contains-errors
+    | `-CompoundStmt 0x13d142a38 <col:63, line:24:2>
+    |   `-CallExpr 0x13d142998 <line:22:3, col:37> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13d1428e0 <col:3> 'int ()' Function 0x13d142828 'atomic_set' 'int ()'
+    |     |-UnaryOperator 0x13d142960 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x13d142938 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x13d142900 <col:15> 'struct kvm_memslots *' lvalue ParmVar 0x13d128648 'slots' 'struct kvm_memslots *'
+    |     `-DeclRefExpr 0x13d142978 <col:32> 'int' lvalue Var 0x13d141908 'start' 'int'
+    `-ReturnStmt 0x13d142aa8 <line:26:2, col:9>
+      `-RecoveryExpr 0x13d142a88 <col:9> '<dependent type>' contains-errors lvalue

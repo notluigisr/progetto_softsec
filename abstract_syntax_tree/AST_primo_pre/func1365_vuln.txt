@@ -1,0 +1,65 @@
+`-FunctionDecl 0x13b941978  line:1:16 invalid fuse_file_write_iter 'int (struct kiocb *, struct iov_iter *)' static
+  |-ParmVarDecl 0x13b928668 <col:37, col:51> col:51 used iocb 'struct kiocb *'
+  |-ParmVarDecl 0x13b941858 <col:57, col:74> col:74 used from 'struct iov_iter *'
+  `-CompoundStmt 0x13c009560 <line:2:1, line:17:1>
+    |-DeclStmt 0x13b941c78 <line:3:2, col:35>
+    | |-RecordDecl 0x13b941a30 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x13b941b98 <col:2, col:28> col:15 used file 'struct file *' cinit
+    |   `-RecoveryExpr 0x13b941c38 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b941c00 <col:22> 'struct kiocb *' lvalue ParmVar 0x13b928668 'iocb' 'struct kiocb *'
+    |-DeclStmt 0x13b941ed8 <line:4:2, col:43>
+    | |-RecordDecl 0x13b941c90 <col:2, col:9> col:9 struct fuse_file
+    | `-VarDecl 0x13b941df8 <col:2, col:31> col:20 used ff 'struct fuse_file *' cinit
+    |   `-RecoveryExpr 0x13b941e98 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b941e60 <col:25> 'struct file *' contains-errors lvalue Var 0x13b941b98 'file' 'struct file *'
+    |-DeclStmt 0x13b942318 <line:5:2, col:40>
+    | |-RecordDecl 0x13b941ef0 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x13b942058 <col:2, col:39> col:16 used inode 'struct inode *' cinit
+    |   `-ImplicitCastExpr 0x13b9422e8 <col:24, col:39> 'struct inode *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x13b9422a8 <col:24, col:39> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x13b942290 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13b942220 <col:24> 'int ()' Function 0x13b942168 'file_inode' 'int ()'
+    |       `-ImplicitCastExpr 0x13b9422d0 <col:35> 'struct file *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x13b942240 <col:35> 'struct file *' contains-errors lvalue Var 0x13b941b98 'file' 'struct file *'
+    |-IfStmt 0x13b942550 <line:7:2, line:8:11>
+    | |-CallExpr 0x13b942468 <line:7:6, col:24> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x13b942450 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13b942410 <col:6> 'int ()' Function 0x13b942358 'is_bad_inode' 'int ()'
+    | | `-ImplicitCastExpr 0x13b942490 <col:19> 'struct inode *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b942430 <col:19> 'struct inode *' contains-errors lvalue Var 0x13b942058 'inode' 'struct inode *'
+    | `-ReturnStmt 0x13b942540 <line:8:3, col:11>
+    |   `-UnaryOperator 0x13b942528 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13b942510 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13b9424f0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13c0090c8 <line:10:2, line:11:40>
+    | |-CallExpr 0x13b9426a8 <line:10:6, col:23> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x13b942690 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13b942650 <col:6> 'int ()' Function 0x13b942598 'FUSE_IS_DAX' 'int ()'
+    | | `-ImplicitCastExpr 0x13b9426d0 <col:18> 'struct inode *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b942670 <col:18> 'struct inode *' contains-errors lvalue Var 0x13b942058 'inode' 'struct inode *'
+    | `-ReturnStmt 0x13c0090b8 <line:11:3, col:40>
+    |   `-CallExpr 0x13c009058 <col:10, col:40> 'int'
+    |     |-ImplicitCastExpr 0x13c009040 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13b9427c8 <col:10> 'int ()' Function 0x13b942710 'fuse_dax_write_iter' 'int ()'
+    |     |-ImplicitCastExpr 0x13c009088 <col:30> 'struct kiocb *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13c009000 <col:30> 'struct kiocb *' lvalue ParmVar 0x13b928668 'iocb' 'struct kiocb *'
+    |     `-ImplicitCastExpr 0x13c0090a0 <col:36> 'struct iov_iter *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13c009020 <col:36> 'struct iov_iter *' lvalue ParmVar 0x13b941858 'from' 'struct iov_iter *'
+    `-IfStmt 0x13c009530 <line:13:2, line:16:43> has_else
+      |-RecoveryExpr 0x13c009180 <line:13:6, col:40> '_Bool' contains-errors
+      |-ReturnStmt 0x13c009358 <line:14:3, col:42>
+      | `-CallExpr 0x13c0092f8 <col:10, col:42> 'int'
+      |   |-ImplicitCastExpr 0x13c0092e0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x13c009280 <col:10> 'int ()' Function 0x13c0091c8 'fuse_cache_write_iter' 'int ()'
+      |   |-ImplicitCastExpr 0x13c009328 <col:32> 'struct kiocb *' <LValueToRValue>
+      |   | `-DeclRefExpr 0x13c0092a0 <col:32> 'struct kiocb *' lvalue ParmVar 0x13b928668 'iocb' 'struct kiocb *'
+      |   `-ImplicitCastExpr 0x13c009340 <col:38> 'struct iov_iter *' <LValueToRValue>
+      |     `-DeclRefExpr 0x13c0092c0 <col:38> 'struct iov_iter *' lvalue ParmVar 0x13b941858 'from' 'struct iov_iter *'
+      `-ReturnStmt 0x13c009520 <line:16:3, col:43>
+        `-CallExpr 0x13c0094c0 <col:10, col:43> 'int'
+          |-ImplicitCastExpr 0x13c0094a8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13c009448 <col:10> 'int ()' Function 0x13c009390 'fuse_direct_write_iter' 'int ()'
+          |-ImplicitCastExpr 0x13c0094f0 <col:33> 'struct kiocb *' <LValueToRValue>
+          | `-DeclRefExpr 0x13c009468 <col:33> 'struct kiocb *' lvalue ParmVar 0x13b928668 'iocb' 'struct kiocb *'
+          `-ImplicitCastExpr 0x13c009508 <col:39> 'struct iov_iter *' <LValueToRValue>
+            `-DeclRefExpr 0x13c009488 <col:39> 'struct iov_iter *' lvalue ParmVar 0x13b941858 'from' 'struct iov_iter *'

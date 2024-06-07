@@ -1,0 +1,46 @@
+`-FunctionDecl 0x145128318  line:1:1 invalid __wake_up_sync 'int (int *, unsigned int, int)'
+  |-ParmVarDecl 0x145128128 <col:16, col:35> col:35 invalid q 'int *'
+  |-ParmVarDecl 0x1451281a8 <col:38, col:51> col:51 used mode 'unsigned int'
+  |-ParmVarDecl 0x145128228 <col:57, col:61> col:61 used nr_exclusive 'int'
+  `-CompoundStmt 0x145141ea8 <line:2:1, line:15:1>
+    |-DeclStmt 0x145128458 <line:3:2, col:21>
+    | `-VarDecl 0x1451283f0 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x145128510 <line:4:2, col:14>
+    | `-VarDecl 0x145128488 <col:2, col:13> col:6 used sync 'int' cinit
+    |   `-IntegerLiteral 0x1451284f0 <col:13> 'int' 1
+    |-IfStmt 0x145128728 <line:6:2, line:7:3>
+    | |-CallExpr 0x1451286f0 <line:6:6, col:17> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x145128680 <col:6> 'int ()' Function 0x1451285c8 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x1451286d8 <col:15, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x1451286c0 <col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x1451286a0 <col:16> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x145128718 <line:7:3>
+    |-IfStmt 0x1451418a0 <line:9:2, line:10:10>
+    | |-CallExpr 0x145141818 <line:9:6, col:28> 'int'
+    | | |-ImplicitCastExpr 0x145141800 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x145128748 <col:6> 'int ()' Function 0x1451285c8 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x1451287a0 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x145128788 <col:16> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x145128768 <col:16> 'int' lvalue ParmVar 0x145128228 'nr_exclusive' 'int'
+    | `-BinaryOperator 0x145141880 <line:10:3, col:10> 'int' '='
+    |   |-DeclRefExpr 0x145141840 <col:3> 'int' lvalue Var 0x145128488 'sync' 'int'
+    |   `-IntegerLiteral 0x145141860 <col:10> 'int' 0
+    |-CallExpr 0x145141a60 <line:12:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1451419a0 <col:2> 'int ()' Function 0x1451418e8 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x145141a28 <col:20, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x1451419e0 <col:21, col:24> '<dependent type>' contains-errors lvalue ->lock
+    | |   `-RecoveryExpr 0x1451419c0 <col:21> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x145141a40 <col:30> 'unsigned long' lvalue Var 0x1451283f0 'flags' 'unsigned long'
+    |-CallExpr 0x145141c90 <line:13:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x145141b70 <col:2> 'int ()' Function 0x145141ab8 '__wake_up_common' 'int ()'
+    | |-RecoveryExpr 0x145141b90 <col:19> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x145141bb0 <col:22> 'unsigned int' lvalue ParmVar 0x1451281a8 'mode' 'unsigned int'
+    | |-DeclRefExpr 0x145141bd0 <col:28> 'int' lvalue ParmVar 0x145128228 'nr_exclusive' 'int'
+    | |-DeclRefExpr 0x145141bf0 <col:42> 'int' lvalue Var 0x145128488 'sync' 'int'
+    | `-RecoveryExpr 0x145141c70 <col:48> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x145141e78 <line:14:2, col:40> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x145141db8 <col:2> 'int ()' Function 0x145141d00 'spin_unlock_irqrestore' 'int ()'
+      |-UnaryOperator 0x145141e40 <col:25, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-CXXDependentScopeMemberExpr 0x145141df8 <col:26, col:29> '<dependent type>' contains-errors lvalue ->lock
+      |   `-RecoveryExpr 0x145141dd8 <col:26> '<dependent type>' contains-errors lvalue
+      `-DeclRefExpr 0x145141e58 <col:35> 'unsigned long' lvalue Var 0x1451283f0 'flags' 'unsigned long'

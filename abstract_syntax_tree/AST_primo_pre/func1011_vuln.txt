@@ -1,0 +1,104 @@
+`-FunctionDecl 0x130808718  line:1:1 h2_end_headers 'int (struct worker *, struct h2_sess *, struct req *, struct h2_req *)'
+  |-ParmVarDecl 0x12780e248 <col:16, col:31> col:31 used wrk 'struct worker *'
+  |-ParmVarDecl 0x130808228 <col:36, col:52> col:52 used h2 'struct h2_sess *'
+  |-ParmVarDecl 0x1308083f8 <line:2:5, col:17> col:17 used req 'struct req *'
+  |-ParmVarDecl 0x1308085c8 <col:22, col:37> col:37 used r2 'struct h2_req *'
+  `-CompoundStmt 0x130811b58 <line:3:1, line:58:1>
+    |-CallExpr 0x1308089d8 <line:6:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x1308089c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x130808950 <col:2> 'int ()' Function 0x130808898 'ASSERT_RXTHR' 'int ()'
+    | `-ImplicitCastExpr 0x130808a00 <col:15> 'struct h2_sess *' <LValueToRValue>
+    |   `-DeclRefExpr 0x130808970 <col:15> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    |-CallExpr 0x130808c18 <line:7:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130808af8 <col:2> 'int ()' Function 0x130808a40 'assert' 'int ()'
+    | `-BinaryOperator 0x130808bf8 <col:9, col:22> 'int' contains-errors '=='
+    |   |-RecoveryExpr 0x130808b50 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x130808b18 <col:9> 'struct h2_req *' lvalue ParmVar 0x1308085c8 'r2' 'struct h2_req *'
+    |   `-RecoveryExpr 0x130808bd8 <col:22> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x130808df0 <line:8:2, col:26> 'struct h2_sess *' '='
+    | |-DeclRefExpr 0x130808c40 <col:2> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    | `-ImplicitCastExpr 0x130808dd8 <col:8, col:26> 'struct h2_sess *' <IntegralToPointer>
+    |   `-CallExpr 0x130808d98 <col:8, col:26> 'int'
+    |     |-ImplicitCastExpr 0x130808d80 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x130808d40 <col:8> 'int ()' Function 0x130808c88 'h2h_decode_fini' 'int ()'
+    |     `-ImplicitCastExpr 0x130808dc0 <col:24> 'struct h2_sess *' <LValueToRValue>
+    |       `-DeclRefExpr 0x130808d60 <col:24> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    |-BinaryOperator 0x130808ec8 <line:9:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x130808e48 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x130808e10 <col:2> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    | `-RecoveryExpr 0x130808ea8 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x130810720 <line:10:2, line:17:2>
+    | |-BinaryOperator 0x130808f98 <line:10:6, col:13> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x130808f58 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x130808f78 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1308106e8 <col:19, line:17:2>
+    |   |-CallExpr 0x130809178 <line:11:3, col:26> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x130809098 <col:3> 'int ()' Function 0x130808fe0 'Lck_Lock' 'int ()'
+    |   | `-UnaryOperator 0x130809160 <col:12, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x130809118 <col:13, col:23> '<dependent type>' contains-errors lvalue ->mtx
+    |   |     `-RecoveryExpr 0x1308090f0 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x1308090b8 <col:13> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    |   |-CallExpr 0x1308100d8 <line:12:3, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13080feb8 <col:3> 'int ()' Function 0x13080fe00 'VSLb' 'int ()'
+    |   | |-RecoveryExpr 0x13080ff10 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13080fed8 <col:8> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    |   | |-RecoveryExpr 0x130810050 <col:17> '<dependent type>' contains-errors lvalue
+    |   | |-StringLiteral 0x13080ff90 <col:28> 'char[4]' lvalue "STR"
+    |   | `-CXXDependentScopeMemberExpr 0x130810090 <col:35, col:40> '<dependent type>' contains-errors lvalue ->name
+    |   |   `-RecoveryExpr 0x130810070 <col:35> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x1308102d8 <line:13:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1308101f8 <col:3> 'int ()' Function 0x130810140 'Lck_Unlock' 'int ()'
+    |   | `-UnaryOperator 0x1308102c0 <col:14, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x130810278 <col:15, col:25> '<dependent type>' contains-errors lvalue ->mtx
+    |   |     `-RecoveryExpr 0x130810250 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x130810218 <col:15> 'struct h2_sess *' lvalue ParmVar 0x130808228 'h2' 'struct h2_sess *'
+    |   |-CallExpr 0x130810508 <line:14:3, col:37> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x130810300 <col:3> 'int ()' Function 0x130808a40 'assert' 'int ()'
+    |   | `-UnaryOperator 0x1308104f0 <col:10, col:36> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |   `-CallExpr 0x1308104c8 <col:11, col:36> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x130810400 <col:11> 'int ()' Function 0x130810348 'WS_IsReserved' 'int ()'
+    |   |     `-CXXDependentScopeMemberExpr 0x130810480 <col:25, col:34> '<dependent type>' contains-errors lvalue ->ws
+    |   |       `-RecoveryExpr 0x130810458 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x130810420 <col:25> 'struct h2_req *' lvalue ParmVar 0x1308085c8 'r2' 'struct h2_req *'
+    |   `-CallExpr 0x130810688 <line:15:3, col:21> 'int'
+    |     |-ImplicitCastExpr 0x130810670 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x130810610 <col:3> 'int ()' Function 0x130810558 'h2_del_req' 'int ()'
+    |     |-ImplicitCastExpr 0x1308106b8 <col:14> 'struct worker *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x130810630 <col:14> 'struct worker *' lvalue ParmVar 0x12780e248 'wrk' 'struct worker *'
+    |     `-ImplicitCastExpr 0x1308106d0 <col:19> 'struct h2_req *' <LValueToRValue>
+    |       `-DeclRefExpr 0x130810650 <col:19> 'struct h2_req *' lvalue ParmVar 0x1308085c8 'r2' 'struct h2_req *'
+    |-CallExpr 0x1308108e0 <line:18:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130810820 <col:2> 'int ()' Function 0x130810768 'VSLb_ts_req' 'int ()'
+    | |-DeclRefExpr 0x130810840 <col:14> 'struct req *' lvalue ParmVar 0x1308083f8 'req' 'struct req *'
+    | |-StringLiteral 0x130810860 <col:19> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x1308108b8 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x130810880 <col:26> 'struct req *' lvalue ParmVar 0x1308083f8 'req' 'struct req *'
+    |-IfStmt 0x130811038 <line:25:2, line:36:2> has_else
+    | |-RecoveryExpr 0x130810af8 <line:25:6, col:30> '_Bool' contains-errors
+    | |-CompoundStmt 0x130810d58 <col:36, line:30:2>
+    | `-CompoundStmt 0x130811028 <col:9, line:36:2>
+    |-IfStmt 0x1308111e0 <line:38:2, line:41:2>
+    | |-RecoveryExpr 0x130811110 <line:38:6, col:42> '_Bool' contains-errors
+    | `-CompoundStmt 0x1308111d0 <col:48, line:41:2>
+    |-IfStmt 0x130811378 <line:42:2, line:45:2>
+    | |-RecoveryExpr 0x1308112a8 <line:42:6, col:39> '_Bool' contains-errors
+    | `-CompoundStmt 0x130811368 <col:45, line:45:2>
+    |-BinaryOperator 0x130811710 <line:50:2, col:20> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1308116a8 <col:2, col:13> '<dependent type>' contains-errors lvalue ->priv
+    | | `-RecoveryExpr 0x130811680 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x130811648 <col:2> 'struct req *' lvalue ParmVar 0x1308083f8 'req' 'struct req *'
+    | `-DeclRefExpr 0x1308116f0 <col:20> 'struct req *' lvalue ParmVar 0x1308083f8 'req' 'struct req *'
+    |-BinaryOperator 0x1308117b0 <line:51:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x130811768 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x130811730 <col:2> 'struct h2_req *' lvalue ParmVar 0x1308085c8 'r2' 'struct h2_req *'
+    | `-IntegerLiteral 0x130811790 <col:18> 'int' 1
+    |-IfStmt 0x130811ae8 <line:52:2, line:56:2>
+    | |-RecoveryExpr 0x1308119b0 <line:52:6, col:57> '_Bool' contains-errors
+    | `-CompoundStmt 0x130811ad0 <col:60, line:56:2>
+    |   `-BinaryOperator 0x130811a50 <line:53:3, col:19> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x130811a08 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x1308119d0 <col:3> 'struct h2_req *' lvalue ParmVar 0x1308085c8 'r2' 'struct h2_req *'
+    |     `-IntegerLiteral 0x130811a30 <col:19> 'int' 0
+    `-ReturnStmt 0x130811b48 <line:57:2, col:11>
+      `-ParenExpr 0x130811b28 <col:9, col:11> 'int'
+        `-IntegerLiteral 0x130811b08 <col:10> 'int' 0

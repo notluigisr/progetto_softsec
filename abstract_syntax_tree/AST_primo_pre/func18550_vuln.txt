@@ -1,0 +1,40 @@
+`-FunctionDecl 0x1401281c8  line:1:5 referenced invalid sched_clock_cpu 'int (int)'
+  |-ParmVarDecl 0x1401280f0 <col:21, col:25> col:25 used cpu 'int'
+  `-CompoundStmt 0x140142790 <line:2:1, line:22:1>
+    |-DeclStmt 0x140128468 <line:3:2, col:30>
+    | |-RecordDecl 0x140128278 <col:2, col:9> col:9 struct sched_clock_data
+    | `-VarDecl 0x1401283e8 <col:2, col:27> col:27 used scd 'struct sched_clock_data *'
+    |-IfStmt 0x1401287b0 <line:6:2, line:7:22>
+    | |-CallExpr 0x140128648 <line:6:6, col:25> 'int'
+    | | `-ImplicitCastExpr 0x140128630 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | |   `-DeclRefExpr 0x1401285e0 <col:6> 'int ()' Function 0x140128528 'sched_clock_stable' 'int ()'
+    | `-ReturnStmt 0x1401287a0 <line:7:3, col:22>
+    |   `-CallExpr 0x140128780 <col:10, col:22> 'int'
+    |     `-ImplicitCastExpr 0x140128768 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x140128748 <col:10> 'int ()' Function 0x140128690 'sched_clock' 'int ()'
+    |-IfStmt 0x140141a40 <line:9:2, line:10:10>
+    | |-CallExpr 0x1401419d0 <line:9:6, col:35> 'int'
+    | | |-ImplicitCastExpr 0x1401419b8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1401418b8 <col:6> 'int ()' Function 0x140141800 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x1401419a0 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x140141988 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x140141968 <col:16> 'int ()' Function 0x140128528 'sched_clock_stable' 'int ()'
+    | `-ReturnStmt 0x140141a30 <line:10:3, col:10>
+    |   `-ImplicitCastExpr 0x140141a18 <col:10> 'int' <IntegralCast>
+    |     `-IntegerLiteral 0x1401419f8 <col:10> 'unsigned long long' 0
+    |-CallExpr 0x140141b78 <line:12:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x140141b60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x140141b40 <col:2> 'int ()' Function 0x140141a88 'preempt_disable' 'int ()'
+    |-BinaryOperator 0x140142170 <line:13:2, col:19> 'struct sched_clock_data *' '='
+    | |-DeclRefExpr 0x140141b98 <col:2> 'struct sched_clock_data *' lvalue Var 0x1401283e8 'scd' 'struct sched_clock_data *'
+    | `-ImplicitCastExpr 0x140141d30 <col:8, col:19> 'struct sched_clock_data *' <IntegralToPointer>
+    |   `-CallExpr 0x140141cf0 <col:8, col:19> 'int'
+    |     |-ImplicitCastExpr 0x140141cd8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x140141c98 <col:8> 'int ()' Function 0x140141be0 'cpu_sdc' 'int ()'
+    |     `-ImplicitCastExpr 0x140141d18 <col:16> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x140141cb8 <col:16> 'int' lvalue ParmVar 0x1401280f0 'cpu' 'int'
+    |-CallExpr 0x140142728 <line:19:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x140142710 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1401426f0 <col:2> 'int ()' Function 0x140142638 'preempt_enable' 'int ()'
+    `-ReturnStmt 0x140142780 <line:21:2, col:9>
+      `-RecoveryExpr 0x140142760 <col:9> '<dependent type>' contains-errors lvalue

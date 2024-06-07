@@ -1,0 +1,55 @@
+`-FunctionDecl 0x15200e0c8  line:1:10 invalid paravirt_patch_call 'unsigned int (void *, const void *, int, unsigned long, int, unsigned int)'
+  |-ParmVarDecl 0x15200dcd8 <col:30, col:36> col:36 used insnbuf 'void *'
+  |-ParmVarDecl 0x15200dd88 <line:2:9, col:21> col:21 used target 'const void *'
+  |-ParmVarDecl 0x15200de20 <col:29, col:33> col:33 invalid tgt_clobbers 'int'
+  |-ParmVarDecl 0x15200dea0 <line:3:9, col:23> col:23 used addr 'unsigned long'
+  |-ParmVarDecl 0x15200df20 <col:29, col:33> col:33 invalid site_clobbers 'int'
+  |-ParmVarDecl 0x15200dfa0 <line:4:9, col:18> col:18 used len 'unsigned int'
+  `-CompoundStmt 0x152027f88 <line:5:1, line:19:1>
+    |-DeclStmt 0x15200e3d8 <line:6:2, col:28>
+    | |-RecordDecl 0x15200e1a0 <col:2, col:9> col:9 struct branch
+    | `-VarDecl 0x15200e308 <col:2, col:21> col:17 used b 'struct branch *' cinit
+    |   `-ImplicitCastExpr 0x15200e3a8 <col:21> 'struct branch *' <BitCast>
+    |     `-ImplicitCastExpr 0x15200e390 <col:21> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x15200e370 <col:21> 'void *' lvalue ParmVar 0x15200dcd8 'insnbuf' 'void *'
+    |-DeclStmt 0x1520275c8 <line:7:2, col:56>
+    | `-VarDecl 0x152027418 <col:2, col:55> col:16 used delta 'unsigned long' cinit
+    |   `-BinaryOperator 0x1520275a8 <col:24, col:55> 'unsigned long' '-'
+    |     |-CStyleCastExpr 0x1520274d0 <col:24, col:39> 'unsigned long' <PointerToIntegral>
+    |     | `-ImplicitCastExpr 0x1520274b8 <col:39> 'const void *' <LValueToRValue> part_of_explicit_cast
+    |     |   `-DeclRefExpr 0x152027480 <col:39> 'const void *' lvalue ParmVar 0x15200dd88 'target' 'const void *'
+    |     `-ParenExpr 0x152027588 <col:48, col:55> 'unsigned long'
+    |       `-BinaryOperator 0x152027568 <col:49, col:54> 'unsigned long' '+'
+    |         |-ImplicitCastExpr 0x152027538 <col:49> 'unsigned long' <LValueToRValue>
+    |         | `-DeclRefExpr 0x1520274f8 <col:49> 'unsigned long' lvalue ParmVar 0x15200dea0 'addr' 'unsigned long'
+    |         `-ImplicitCastExpr 0x152027550 <col:54> 'unsigned long' <IntegralCast>
+    |           `-IntegerLiteral 0x152027518 <col:54> 'int' 5
+    |-IfStmt 0x1520276b8 <line:9:2, line:10:10>
+    | |-BinaryOperator 0x152027650 <line:9:6, col:22> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x1520275e0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x152027638 <col:21, col:22> '<dependent type>' contains-errors prefix '~' cannot overflow
+    | |   `-ImplicitCastExpr 0x152027620 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x152027600 <col:22> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1520276a8 <line:10:3, col:10>
+    |   `-ImplicitCastExpr 0x152027690 <col:10> 'unsigned int' <LValueToRValue>
+    |     `-DeclRefExpr 0x152027670 <col:10> 'unsigned int' lvalue ParmVar 0x15200dfa0 'len' 'unsigned int'
+    |-IfStmt 0x1520277b0 <line:11:2, line:12:10>
+    | |-BinaryOperator 0x152027748 <line:11:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x152027718 <col:6> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1520276d8 <col:6> 'unsigned int' lvalue ParmVar 0x15200dfa0 'len' 'unsigned int'
+    | | `-ImplicitCastExpr 0x152027730 <col:12> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x1520276f8 <col:12> 'int' 5
+    | `-ReturnStmt 0x1520277a0 <line:12:3, col:10>
+    |   `-ImplicitCastExpr 0x152027788 <col:10> 'unsigned int' <LValueToRValue>
+    |     `-DeclRefExpr 0x152027768 <col:10> 'unsigned int' lvalue ParmVar 0x15200dfa0 'len' 'unsigned int'
+    |-BinaryOperator 0x152027c78 <line:14:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152027c30 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1520277d0 <col:2> 'struct branch *' lvalue Var 0x15200e308 'b' 'struct branch *'
+    | `-IntegerLiteral 0x152027c58 <col:14> 'int' 232
+    |-BinaryOperator 0x152027d18 <line:15:2, col:13> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152027cd0 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152027c98 <col:2> 'struct branch *' lvalue Var 0x15200e308 'b' 'struct branch *'
+    | `-DeclRefExpr 0x152027cf8 <col:13> 'unsigned long' lvalue Var 0x152027418 'delta' 'unsigned long'
+    `-ReturnStmt 0x152027f78 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x152027f60 <col:9> 'unsigned int' <IntegralCast>
+        `-IntegerLiteral 0x152027f40 <col:9> 'int' 5

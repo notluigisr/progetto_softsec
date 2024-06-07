@@ -1,0 +1,82 @@
+`-FunctionDecl 0x1589283a8  line:1:1 invalid xcf_load_tile 'int (int *, int *, int *, const int *)'
+  |-ParmVarDecl 0x158928128 <col:16, col:31> col:31 invalid info 'int *'
+  |-ParmVarDecl 0x1589281a8 <line:2:16, col:31> col:31 invalid buffer 'int *'
+  |-ParmVarDecl 0x158928228 <line:3:16, col:31> col:31 invalid tile_rect 'int *'
+  |-ParmVarDecl 0x1589282a8 <line:4:16, col:31> col:31 invalid format 'const int *'
+  `-CompoundStmt 0x148808b70 <line:5:1, line:29:1>
+    |-DeclStmt 0x1589286b8 <line:6:3, col:63>
+    | `-VarDecl 0x158928488 <col:3, col:62> col:11 used bpp 'int' cinit
+    |   `-CallExpr 0x158928690 <col:23, col:62> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x158928650 <col:23> 'int ()' Function 0x158928598 'babl_format_get_bytes_per_pixel' 'int ()'
+    |     `-RecoveryExpr 0x158928670 <col:56> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x158941888 <line:7:3, col:65>
+    | `-VarDecl 0x1589286e8 <col:3, col:59> col:11 used tile_size 'int' cinit
+    |   `-BinaryOperator 0x158941868 <col:23, col:59> '<dependent type>' contains-errors '*'
+    |     |-BinaryOperator 0x1589287d8 <col:23, col:40> '<dependent type>' contains-errors '*'
+    |     | |-DeclRefExpr 0x158928750 <col:23> 'int' contains-errors lvalue Var 0x158928488 'bpp' 'int'
+    |     | `-CXXDependentScopeMemberExpr 0x158928790 <col:29, col:40> '<dependent type>' contains-errors lvalue ->width
+    |     |   `-RecoveryExpr 0x158928770 <col:29> '<dependent type>' contains-errors lvalue
+    |     `-CXXDependentScopeMemberExpr 0x158941820 <col:48, col:59> '<dependent type>' contains-errors lvalue ->height
+    |       `-RecoveryExpr 0x158941800 <col:48> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x158941f00 <line:8:3, col:43>
+    | `-VarDecl 0x1589418b8 <col:3, col:42> col:11 used tile_data 'char *' cinit
+    |   `-ImplicitCastExpr 0x158941ac8 <col:23, col:42> 'char *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x158941a88 <col:23, col:42> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x158941a70 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x158941a00 <col:23> 'int ()' Function 0x158941948 'g_alloca' 'int ()'
+    |       `-ImplicitCastExpr 0x158941ab0 <col:33> 'int' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x158941a20 <col:33> 'int' contains-errors lvalue Var 0x1589286e8 'tile_size' 'int'
+    |-IfStmt 0x158942668 <line:10:3, line:20:5> has_else
+    | |-BinaryOperator 0x158941fa0 <line:10:7, col:29> 'int' contains-errors '<='
+    | | |-CXXDependentScopeMemberExpr 0x158941f38 <col:7, col:13> '<dependent type>' contains-errors lvalue ->file_version
+    | | | `-RecoveryExpr 0x158941f18 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x158941f80 <col:29> 'int' 11
+    | |-CompoundStmt 0x158942158 <line:11:5, line:13:5>
+    | | `-CallExpr 0x158942120 <line:12:7, col:48> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1589420a0 <col:7> 'int ()' Function 0x158941fe8 'xcf_read_int8' 'int ()'
+    | |   |-RecoveryExpr 0x1589420c0 <col:22> '<dependent type>' contains-errors lvalue
+    | |   |-DeclRefExpr 0x1589420e0 <col:28> 'char *' contains-errors lvalue Var 0x1589418b8 'tile_data' 'char *'
+    | |   `-DeclRefExpr 0x158942100 <col:39> 'int' contains-errors lvalue Var 0x1589286e8 'tile_size' 'int'
+    | `-CompoundStmt 0x158942648 <line:15:5, line:20:5>
+    |   |-DeclStmt 0x158942338 <line:16:7, col:64>
+    |   | `-VarDecl 0x158942188 <col:7, col:63> col:12 used n_components 'int' cinit
+    |   |   `-CallExpr 0x158942310 <col:27, col:63> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x1589422d0 <col:27> 'int ()' Function 0x158942218 'babl_format_get_n_components' 'int ()'
+    |   |     `-RecoveryExpr 0x1589422f0 <col:57> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x158942608 <line:18:7, line:19:57> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x158942430 <line:18:7> 'int ()' Function 0x158942378 'xcf_read_component' 'int ()'
+    |     |-RecoveryExpr 0x158942450 <col:27> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x1589424e0 <col:33, col:39> 'int' contains-errors '/'
+    |     | |-ImplicitCastExpr 0x1589424b0 <col:33> 'int' contains-errors <LValueToRValue>
+    |     | | `-DeclRefExpr 0x158942470 <col:33> 'int' contains-errors lvalue Var 0x158928488 'bpp' 'int'
+    |     | `-ImplicitCastExpr 0x1589424c8 <col:39> 'int' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x158942490 <col:39> 'int' contains-errors lvalue Var 0x158942188 'n_components' 'int'
+    |     |-DeclRefExpr 0x158942500 <col:53> 'char *' contains-errors lvalue Var 0x1589418b8 'tile_data' 'char *'
+    |     `-BinaryOperator 0x1589425e8 <line:19:27, col:45> 'int' contains-errors '*'
+    |       |-BinaryOperator 0x158942590 <col:27, col:39> 'int' contains-errors '/'
+    |       | |-ImplicitCastExpr 0x158942560 <col:27> 'int' contains-errors <LValueToRValue>
+    |       | | `-DeclRefExpr 0x158942520 <col:27> 'int' contains-errors lvalue Var 0x1589286e8 'tile_size' 'int'
+    |       | `-ImplicitCastExpr 0x158942578 <col:39> 'int' contains-errors <LValueToRValue>
+    |       |   `-DeclRefExpr 0x158942540 <col:39> 'int' contains-errors lvalue Var 0x158928488 'bpp' 'int'
+    |       `-ImplicitCastExpr 0x1589425d0 <col:45> 'int' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x1589425b0 <col:45> 'int' contains-errors lvalue Var 0x158942188 'n_components' 'int'
+    |-IfStmt 0x148808b08 <line:22:3, line:26:5>
+    | |-UnaryOperator 0x148808860 <line:22:7, col:47> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x148808800 <col:9, col:47> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x1589427d8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x158942778 <col:9> 'int ()' Function 0x1589426c0 'xcf_data_is_zero' 'int ()'
+    | |   |-ImplicitCastExpr 0x148808830 <col:27> 'char *' contains-errors <LValueToRValue>
+    | |   | `-DeclRefExpr 0x158942798 <col:27> 'char *' contains-errors lvalue Var 0x1589418b8 'tile_data' 'char *'
+    | |   `-ImplicitCastExpr 0x148808848 <col:38> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x1589427b8 <col:38> 'int' contains-errors lvalue Var 0x1589286e8 'tile_size' 'int'
+    | `-CompoundStmt 0x148808af0 <line:23:5, line:26:5>
+    |   `-CallExpr 0x148808aa0 <line:24:7, line:25:43> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x148808958 <line:24:7> 'int ()' Function 0x1488088a0 'gegl_buffer_set' 'int ()'
+    |     |-RecoveryExpr 0x148808978 <col:24> '<dependent type>' contains-errors lvalue
+    |     |-RecoveryExpr 0x148808998 <col:32> '<dependent type>' contains-errors lvalue
+    |     |-IntegerLiteral 0x1488089b8 <col:43> 'int' 0
+    |     |-RecoveryExpr 0x1488089d8 <col:46> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x1488089f8 <col:54> 'char *' contains-errors lvalue Var 0x1589418b8 'tile_data' 'char *'
+    |     `-RecoveryExpr 0x148808a80 <line:25:24> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x148808b60 <line:28:3, col:10>
+      `-RecoveryExpr 0x148808b40 <col:10> '<dependent type>' contains-errors lvalue

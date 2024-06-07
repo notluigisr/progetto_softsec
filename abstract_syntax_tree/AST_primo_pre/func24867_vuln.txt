@@ -1,0 +1,99 @@
+`-FunctionDecl 0x157128758  line:1:1 SMB2_sess_establish_session 'int (struct SMB2_sess_data *)'
+  |-ParmVarDecl 0x157128648 <col:29, col:52> col:52 used sess_data 'struct SMB2_sess_data *'
+  `-CompoundStmt 0x157143338 <line:2:1, line:36:1>
+    |-DeclStmt 0x157140af0 <line:3:2, col:12>
+    | `-VarDecl 0x157140a68 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-IntegerLiteral 0x157140ad0 <col:11> 'int' 0
+    |-DeclStmt 0x157140d58 <line:4:2, col:39>
+    | |-RecordDecl 0x157140b08 <col:2, col:9> col:9 struct cifs_ses
+    | `-VarDecl 0x157140c78 <col:2, col:36> col:19 used ses 'struct cifs_ses *' cinit
+    |   `-RecoveryExpr 0x157140d18 <col:25, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157140ce0 <col:25> 'struct SMB2_sess_data *' lvalue ParmVar 0x157128648 'sess_data' 'struct SMB2_sess_data *'
+    |-CallExpr 0x157140f80 <line:6:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x157140ea0 <col:2> 'int ()' Function 0x157140de8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x157140f68 <col:13, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x157140f20 <col:14, col:27> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |     `-RecoveryExpr 0x157140ef8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157140ec0 <col:14> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |-IfStmt 0x1571428e0 <line:7:2, line:17:2>
+    | |-BinaryOperator 0x157141140 <line:7:6, col:45> 'int' contains-errors '&&'
+    | | |-CXXDependentScopeMemberExpr 0x157141008 <col:6, col:19> '<dependent type>' contains-errors lvalue ->sign
+    | | | `-RecoveryExpr 0x157140fe0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x157140fa8 <col:6> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    | | `-CXXDependentScopeMemberExpr 0x1571410f8 <col:27, col:45> '<dependent type>' contains-errors lvalue ->generate_signingkey
+    | |   `-CXXDependentScopeMemberExpr 0x1571410b0 <col:27, col:40> '<dependent type>' contains-errors lvalue ->ops
+    | |     `-RecoveryExpr 0x157141088 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x157141050 <col:27> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    | `-CompoundStmt 0x1571428b0 <col:66, line:17:2>
+    |   |-BinaryOperator 0x1571412b8 <line:8:3, col:49> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x157141160 <col:3> 'int' lvalue Var 0x157140a68 'rc' 'int'
+    |   | `-CallExpr 0x157141290 <col:8, col:49> '<dependent type>' contains-errors
+    |   |   |-CXXDependentScopeMemberExpr 0x157141228 <col:8, col:26> '<dependent type>' contains-errors lvalue ->generate_signingkey
+    |   |   | `-CXXDependentScopeMemberExpr 0x1571411e0 <col:8, col:21> '<dependent type>' contains-errors lvalue ->ops
+    |   |   |   `-RecoveryExpr 0x1571411b8 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x157141180 <col:8> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   |   `-DeclRefExpr 0x157141270 <col:46> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   |-CallExpr 0x157141480 <line:9:3, col:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1571413b8 <col:3> 'int ()' Function 0x157141300 'kfree' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x157141438 <col:9, col:23> '<dependent type>' contains-errors lvalue .response
+    |   |   `-RecoveryExpr 0x157141410 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1571413d8 <col:9> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   |-BinaryOperator 0x1571415a8 <line:10:3, col:28> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x157141508 <col:3, col:17> '<dependent type>' contains-errors lvalue .response
+    |   | | `-RecoveryExpr 0x1571414e0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x1571414a8 <col:3> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   | `-RecoveryExpr 0x157141588 <col:28> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x157142890 <line:11:3, line:16:3>
+    |     |-ImplicitCastExpr 0x1571415e8 <line:11:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1571415c8 <col:7> 'int' lvalue Var 0x157140a68 'rc' 'int'
+    |     `-CompoundStmt 0x157142868 <col:11, line:16:3>
+    |       |-CallExpr 0x1571417d0 <line:12:4, line:13:10> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x1571416e0 <line:12:4> 'int ()' Function 0x157141628 'cifs_dbg' 'int ()'
+    |       | |-RecoveryExpr 0x1571417b0 <col:13> '<dependent type>' contains-errors lvalue
+    |       | `-StringLiteral 0x157141760 <line:13:5> 'char[4]' lvalue "STR"
+    |       |-CallExpr 0x1571419c0 <line:14:4, col:40> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x1571418e0 <col:4> 'int ()' Function 0x157141828 'mutex_unlock' 'int ()'
+    |       | `-UnaryOperator 0x1571419a8 <col:17, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   `-CXXDependentScopeMemberExpr 0x157141960 <col:18, col:31> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |       |     `-RecoveryExpr 0x157141938 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |       |       `-DeclRefExpr 0x157141900 <col:18> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |       `-GotoStmt 0x157142850 <line:15:4, col:9> 'keygen_exit' 0x157142800
+    |-IfStmt 0x157142c00 <line:18:2, line:21:2>
+    | |-UnaryOperator 0x1571429c0 <line:18:6, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1571429a8 <col:7, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x157142960 <col:7, col:20> '<dependent type>' contains-errors lvalue ->session_estab
+    | |     `-RecoveryExpr 0x157142938 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x157142900 <col:7> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    | `-CompoundStmt 0x157142be0 <col:35, line:21:2>
+    |   |-BinaryOperator 0x157142aa0 <line:19:3, col:34> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x157142a38 <col:3, col:16> '<dependent type>' contains-errors lvalue ->sequence_number
+    |   | | `-RecoveryExpr 0x157142a10 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x1571429d8 <col:3> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   | `-IntegerLiteral 0x157142a80 <col:34> 'int' 2
+    |   `-BinaryOperator 0x157142bc0 <line:20:3, col:32> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x157142b20 <col:3, col:16> '<dependent type>' contains-errors lvalue ->session_estab
+    |     | `-RecoveryExpr 0x157142af8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x157142ac0 <col:3> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |     `-RecoveryExpr 0x157142ba0 <col:32> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x157142d00 <line:22:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x157142c20 <col:2> 'int ()' Function 0x157141828 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x157142ce8 <col:15, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x157142ca0 <col:16, col:29> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |     `-RecoveryExpr 0x157142c78 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157142c40 <col:16> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |-LabelStmt 0x1571432d0 <line:30:1, line:34:2> 'keygen_exit'
+    | `-IfStmt 0x1571432b0 <line:31:2, line:34:2>
+    |   |-UnaryOperator 0x1571430e8 <line:31:6, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | `-ImplicitCastExpr 0x1571430d0 <col:7, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   `-CXXDependentScopeMemberExpr 0x157143088 <col:7, col:20> '<dependent type>' contains-errors lvalue ->sign
+    |   |     `-RecoveryExpr 0x157143060 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x157143028 <col:7> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    |   `-CompoundStmt 0x157143298 <col:26, line:34:2>
+    |     `-CallExpr 0x1571431c8 <line:32:3, col:31> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x157143100 <col:3> 'int ()' Function 0x157141300 'kfree' 'int ()'
+    |       `-CXXDependentScopeMemberExpr 0x157143180 <col:9, col:23> '<dependent type>' contains-errors lvalue .response
+    |         `-RecoveryExpr 0x157143158 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x157143120 <col:9> 'struct cifs_ses *' contains-errors lvalue Var 0x157140c78 'ses' 'struct cifs_ses *'
+    `-ReturnStmt 0x157143328 <line:35:2, col:9>
+      `-ImplicitCastExpr 0x157143310 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1571432f0 <col:9> 'int' lvalue Var 0x157140a68 'rc' 'int'

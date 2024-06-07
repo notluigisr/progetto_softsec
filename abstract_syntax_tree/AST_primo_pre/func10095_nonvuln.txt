@@ -1,0 +1,37 @@
+`-FunctionDecl 0x14800dd90  line:1:13 sched_dl_do_global 'void (void)' static
+  `-CompoundStmt 0x1480283b8 <line:2:1, line:21:1>
+    |-DeclStmt 0x14800df18 <line:4:2, col:9>
+    | `-VarDecl 0x14800deb0 <col:2, col:6> col:6 used cpu 'int'
+    |-DeclStmt 0x14800dfb0 <line:5:2, col:21>
+    | `-VarDecl 0x14800df48 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x148027730 <line:14:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x148027718 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1480276d8 <col:2> 'int ()' Function 0x148027620 'for_each_possible_cpu' 'int ()'
+    | `-ImplicitCastExpr 0x148027758 <col:24> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x1480276f8 <col:24> 'int' lvalue Var 0x14800deb0 'cpu' 'int'
+    `-CompoundStmt 0x148028388 <col:29, line:20:2>
+      |-DeclStmt 0x148027f08 <line:15:3, col:37>
+      | |-RecordDecl 0x148027770 <col:3, col:10> col:10 struct dl_bw
+      | `-VarDecl 0x1480278d8 <col:3, col:36> col:17 used dl_b 'struct dl_bw *' cinit
+      |   `-ImplicitCastExpr 0x148027ab8 <col:24, col:36> 'struct dl_bw *' <IntegralToPointer>
+      |     `-CallExpr 0x148027a78 <col:24, col:36> 'int'
+      |       |-ImplicitCastExpr 0x148027a60 <col:24> 'int (*)()' <FunctionToPointerDecay>
+      |       | `-DeclRefExpr 0x148027a20 <col:24> 'int ()' Function 0x148027968 'dl_bw_of' 'int ()'
+      |       `-ImplicitCastExpr 0x148027aa0 <col:33> 'int' <LValueToRValue>
+      |         `-DeclRefExpr 0x148027a40 <col:33> 'int' lvalue Var 0x14800deb0 'cpu' 'int'
+      |-CallExpr 0x1480280b8 <line:17:3, col:43> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x148028000 <col:3> 'int ()' Function 0x148027f48 'raw_spin_lock_irqsave' 'int ()'
+      | |-UnaryOperator 0x148028080 <col:25, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | | `-RecoveryExpr 0x148028058 <col:26, col:32> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x148028020 <col:26> 'struct dl_bw *' lvalue Var 0x1480278d8 'dl_b' 'struct dl_bw *'
+      | `-DeclRefExpr 0x148028098 <col:38> 'unsigned long' lvalue Var 0x14800df48 'flags' 'unsigned long'
+      |-BinaryOperator 0x1480281a0 <line:18:3, col:14> '<dependent type>' contains-errors '='
+      | |-RecoveryExpr 0x148028120 <col:3, col:9> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x1480280e8 <col:3> 'struct dl_bw *' lvalue Var 0x1480278d8 'dl_b' 'struct dl_bw *'
+      | `-RecoveryExpr 0x148028180 <col:14> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x148028358 <line:19:3, col:48> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1480282a0 <col:3> 'int ()' Function 0x1480281e8 'raw_spin_unlock_irqrestore' 'int ()'
+        |-UnaryOperator 0x148028320 <col:30, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x1480282f8 <col:31, col:37> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x1480282c0 <col:31> 'struct dl_bw *' lvalue Var 0x1480278d8 'dl_b' 'struct dl_bw *'
+        `-DeclRefExpr 0x148028338 <col:43> 'unsigned long' lvalue Var 0x14800df48 'flags' 'unsigned long'

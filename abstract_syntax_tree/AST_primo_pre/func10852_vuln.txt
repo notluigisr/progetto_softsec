@@ -1,0 +1,63 @@
+`-FunctionDecl 0x13a128750  line:1:13 prune_one 'void (struct audit_tree *)' static
+  |-ParmVarDecl 0x13a128648 <col:23, col:42> col:42 used victim 'struct audit_tree *'
+  `-CompoundStmt 0x13b808ec8 <line:2:1, line:20:1>
+    |-CallExpr 0x13a140c20 <line:3:2, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a140b70 <col:2> 'int ()' Function 0x13a140ab8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x13a140c08 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13a140be8 <col:13> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x13b808c58 <line:4:2, line:17:2>
+    | |-UnaryOperator 0x13a140de8 <line:4:9, col:36> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13a140dc0 <col:10, col:36> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13a140d28 <col:10> 'int ()' Function 0x13a140c70 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x13a140da8 <col:21, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x13a140d80 <col:22, col:30> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13a140d48 <col:22> 'struct audit_tree *' lvalue ParmVar 0x13a128648 'victim' 'struct audit_tree *'
+    | `-CompoundStmt 0x13b808c08 <col:39, line:17:2>
+    |   |-DeclStmt 0x13a140fe8 <line:5:3, col:17>
+    |   | |-RecordDecl 0x13a140e00 <col:3, col:10> col:10 struct node
+    |   | `-VarDecl 0x13a140f68 <col:3, col:16> col:16 used p 'struct node *'
+    |   |-DeclStmt 0x13a1411e8 <line:6:3, col:28>
+    |   | |-RecordDecl 0x13a141000 <col:3, col:10> col:10 struct audit_chunk
+    |   | `-VarDecl 0x13a141168 <col:3, col:23> col:23 used chunk 'struct audit_chunk *'
+    |   |-BinaryOperator 0x13a1415c0 <line:9:3, col:23> 'struct audit_chunk *' '='
+    |   | |-DeclRefExpr 0x13a1413e0 <col:3> 'struct audit_chunk *' lvalue Var 0x13a141168 'chunk' 'struct audit_chunk *'
+    |   | `-ImplicitCastExpr 0x13a1415a8 <col:11, col:23> 'struct audit_chunk *' <IntegralToPointer>
+    |   |   `-CallExpr 0x13a141568 <col:11, col:23> 'int'
+    |   |     |-ImplicitCastExpr 0x13a141550 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x13a1414e0 <col:11> 'int ()' Function 0x13a141428 'find_chunk' 'int ()'
+    |   |     `-ImplicitCastExpr 0x13a141590 <col:22> 'struct node *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x13a141500 <col:22> 'struct node *' lvalue Var 0x13a140f68 'p' 'struct node *'
+    |   |-CallExpr 0x13a141758 <line:10:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13a1416c0 <col:3> 'int ()' Function 0x13a141608 'get_inotify_watch' 'int ()'
+    |   | `-UnaryOperator 0x13a141740 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13a141718 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13a1416e0 <col:22> 'struct audit_chunk *' lvalue Var 0x13a141168 'chunk' 'struct audit_chunk *'
+    |   |-CallExpr 0x13a141910 <line:11:3, col:25> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13a141860 <col:3> 'int ()' Function 0x13a1417a8 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x13a1418f8 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13a1418d8 <col:16> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x13b808930 <line:13:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x13b808918 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13b8088b8 <col:3> 'int ()' Function 0x13b808800 'untag_chunk' 'int ()'
+    |   | |-ImplicitCastExpr 0x13b808960 <col:15> 'struct audit_chunk *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13b8088d8 <col:15> 'struct audit_chunk *' lvalue Var 0x13a141168 'chunk' 'struct audit_chunk *'
+    |   | `-ImplicitCastExpr 0x13b808978 <col:22> 'struct node *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13b8088f8 <col:22> 'struct node *' lvalue Var 0x13a140f68 'p' 'struct node *'
+    |   |-CallExpr 0x13b808b08 <line:15:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13b808a70 <col:3> 'int ()' Function 0x13b8089b8 'put_inotify_watch' 'int ()'
+    |   | `-UnaryOperator 0x13b808af0 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13b808ac8 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13b808a90 <col:22> 'struct audit_chunk *' lvalue Var 0x13a141168 'chunk' 'struct audit_chunk *'
+    |   `-CallExpr 0x13b808be0 <line:16:3, col:23> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b808b30 <col:3> 'int ()' Function 0x13a140ab8 'spin_lock' 'int ()'
+    |     `-UnaryOperator 0x13b808bc8 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x13b808ba8 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13b808d28 <line:18:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b808c78 <col:2> 'int ()' Function 0x13a1417a8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x13b808d10 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13b808cf0 <col:15> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13b808e88 <line:19:2, col:17> 'int'
+      |-ImplicitCastExpr 0x13b808e70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13b808e30 <col:2> 'int ()' Function 0x13b808d78 'put_tree' 'int ()'
+      `-ImplicitCastExpr 0x13b808eb0 <col:11> 'struct audit_tree *' <LValueToRValue>
+        `-DeclRefExpr 0x13b808e50 <col:11> 'struct audit_tree *' lvalue ParmVar 0x13a128648 'victim' 'struct audit_tree *'

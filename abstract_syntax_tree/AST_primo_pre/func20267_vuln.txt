@@ -1,0 +1,89 @@
+`-FunctionDecl 0x123009088  line:1:11 invalid quota_compare_and_update 'int (int, enum quota_type, int *)'
+  |-ParmVarDecl 0x1229280f0 <col:36, col:48> col:48 invalid qctx 'int'
+  |-ParmVarDecl 0x122928698 <col:54, col:70> col:70 invalid qtype 'enum quota_type'
+  |-ParmVarDecl 0x122928748 <line:2:8, col:13> col:13 used usage_inconsistent 'int *'
+  `-CompoundStmt 0x12300b3e0 <line:3:1, line:52:1>
+    |-DeclStmt 0x1230092c8 <line:4:2, col:24>
+    | |-RecordDecl 0x123009148 <col:2, col:9> col:9 struct quota_handle
+    | `-VarDecl 0x123009248 <col:2, col:22> col:22 invalid qh 'struct quota_handle'
+    |-DeclStmt 0x123009458 <line:5:2, col:35>
+    | |-RecordDecl 0x1230092e0 <col:2, col:9> col:9 struct scan_dquots_data
+    | `-VarDecl 0x1230093d8 <col:2, col:26> col:26 referenced invalid scan_data 'struct scan_dquots_data'
+    |-DeclStmt 0x123009658 <line:6:2, col:18>
+    | |-RecordDecl 0x123009470 <col:2, col:9> col:9 struct dquot
+    | `-VarDecl 0x1230095d8 <col:2, col:16> col:16 used dq 'struct dquot *'
+    |-IfStmt 0x123009878 <line:11:2, line:12:8>
+    | |-UnaryOperator 0x1230097f8 <line:11:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1230097e0 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1230097c0 <col:7> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x123009860 <line:12:3, col:8> 'out' 0x123009810
+    |-IfStmt 0x123009db0 <line:15:2, line:18:2>
+    | |-RecoveryExpr 0x123009b68 <line:15:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x123009d90 <col:11, line:18:2>
+    |   |-CallExpr 0x123009d38 <line:16:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x123009d20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x123009c68 <col:3> 'int ()' Function 0x123009bb0 'log_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x123009d60 <col:13> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x123009cd0 <col:13> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x123009d78 <line:17:3, col:8> 'out' 0x123009810
+    |-BinaryOperator 0x123009f38 <line:20:2, col:47> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123009e18 <col:2, col:12> '<dependent type>' contains-errors lvalue .quota_dict
+    | | `-RecoveryExpr 0x123009df0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123009dd0 <col:2> 'struct scan_dquots_data' lvalue Var 0x1230093d8 'scan_data' 'struct scan_dquots_data'
+    | `-ArraySubscriptExpr 0x123009f18 <col:25, col:47> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x123009ee8 <col:25, col:31> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-CXXDependentScopeMemberExpr 0x123009e80 <col:25, col:31> '<dependent type>' contains-errors lvalue ->quota_dict
+    |   |   `-RecoveryExpr 0x123009e60 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-ImplicitCastExpr 0x123009f00 <col:42> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x123009ec8 <col:42> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122941820 <line:21:2, col:28> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123009fa0 <col:2, col:12> '<dependent type>' contains-errors lvalue .update_limits
+    | | `-RecoveryExpr 0x123009f78 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123009f58 <col:2> 'struct scan_dquots_data' lvalue Var 0x1230093d8 'scan_data' 'struct scan_dquots_data'
+    | `-IntegerLiteral 0x122941800 <col:28> 'int' 1
+    |-BinaryOperator 0x1229418f0 <line:22:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x122941888 <col:2, col:12> '<dependent type>' contains-errors lvalue .update_usage
+    | | `-RecoveryExpr 0x122941860 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122941840 <col:2> 'struct scan_dquots_data' lvalue Var 0x1230093d8 'scan_data' 'struct scan_dquots_data'
+    | `-IntegerLiteral 0x1229418d0 <col:27> 'int' 0
+    |-BinaryOperator 0x1229419c0 <line:23:2, col:32> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x122941958 <col:2, col:12> '<dependent type>' contains-errors lvalue .check_consistency
+    | | `-RecoveryExpr 0x122941930 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122941910 <col:2> 'struct scan_dquots_data' lvalue Var 0x1230093d8 'scan_data' 'struct scan_dquots_data'
+    | `-IntegerLiteral 0x1229419a0 <col:32> 'int' 1
+    |-BinaryOperator 0x122941a90 <line:24:2, col:36> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x122941a28 <col:2, col:12> '<dependent type>' contains-errors lvalue .usage_is_inconsistent
+    | | `-RecoveryExpr 0x122941a00 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1229419e0 <col:2> 'struct scan_dquots_data' lvalue Var 0x1230093d8 'scan_data' 'struct scan_dquots_data'
+    | `-IntegerLiteral 0x122941a70 <col:36> 'int' 0
+    |-IfStmt 0x122941d78 <line:26:2, line:29:2>
+    | |-RecoveryExpr 0x122941c38 <line:26:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x122941d58 <col:11, line:29:2>
+    |   |-CallExpr 0x122941cb0 <line:27:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x122941c98 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x122941c58 <col:3> 'int ()' Function 0x123009bb0 'log_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x122941cd8 <col:13> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x122941c78 <col:13> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x122941d40 <line:28:3, col:8> 'out_close_qh' 0x122941cf0
+    |-BinaryOperator 0x122942598 <line:41:2, col:34> 'int' contains-errors '='
+    | |-UnaryOperator 0x122942518 <col:2, col:3> 'int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x122942500 <col:3> 'int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1229424e0 <col:3> 'int *' lvalue ParmVar 0x122928748 'usage_inconsistent' 'int *'
+    | `-CXXDependentScopeMemberExpr 0x122942550 <col:24, col:34> '<dependent type>' contains-errors lvalue .usage_is_inconsistent
+    |   `-RecoveryExpr 0x122942530 <col:24> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x122942748 <line:43:1, col:13> 'out_close_qh'
+    | `-NullStmt 0x122942740 <col:13>
+    |-IfStmt 0x12300b398 <line:45:2, line:49:2>
+    | |-RecoveryExpr 0x122942768 <line:45:6> '_Bool' contains-errors
+    | `-CompoundStmt 0x12300b380 <col:11, line:49:2>
+    |   `-IfStmt 0x12300b360 <line:47:3, line:48:38>
+    |     |-CXXDependentScopeMemberExpr 0x12300b140 <line:47:7, col:16> '<dependent type>' contains-errors lvalue .e2_file
+    |     | `-CXXDependentScopeMemberExpr 0x12300b0f8 <col:7, col:10> '<dependent type>' contains-errors lvalue .qh_qf
+    |     |   `-RecoveryExpr 0x12300b0d8 <col:7> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x12300b338 <line:48:4, col:38> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x12300b268 <col:4> 'int ()' Function 0x12300b1b0 'ext2fs_file_close' 'int ()'
+    |       `-CXXDependentScopeMemberExpr 0x12300b2f0 <col:22, col:31> '<dependent type>' contains-errors lvalue .e2_file
+    |         `-CXXDependentScopeMemberExpr 0x12300b2a8 <col:22, col:25> '<dependent type>' contains-errors lvalue .qh_qf
+    |           `-RecoveryExpr 0x12300b288 <col:22> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x12300b3c0 <line:50:1, col:4> 'out'
+      `-NullStmt 0x12300b3b8 <col:4>

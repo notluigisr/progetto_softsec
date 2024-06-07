@@ -1,0 +1,52 @@
+`-FunctionDecl 0x126110c38  line:1:1 invalid virtio_gpu_resource_detach_backing 'int (int *, struct virtio_gpu_ctrl_command *)'
+  |-ParmVarDecl 0x1260f7528 <col:36, col:47> col:47 invalid g 'int *'
+  |-ParmVarDecl 0x1260f7b18 <line:2:36, col:68> col:68 used cmd 'struct virtio_gpu_ctrl_command *'
+  `-CompoundStmt 0x12583b588 <line:3:1, line:18:1>
+    |-DeclStmt 0x126110ed8 <line:4:5, col:43>
+    | |-RecordDecl 0x126110cf0 <col:5, col:12> col:12 struct virtio_gpu_simple_resource
+    | `-VarDecl 0x126110e58 <col:5, col:40> col:40 used res 'struct virtio_gpu_simple_resource *'
+    |-DeclStmt 0x126111068 <line:5:5, col:53>
+    | |-RecordDecl 0x126110ef0 <col:5, col:12> col:12 struct virtio_gpu_resource_detach_backing
+    | `-VarDecl 0x126110fe8 <col:5, col:47> col:47 invalid detach 'struct virtio_gpu_resource_detach_backing'
+    |-CallExpr 0x126111220 <line:7:5, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1261111e0 <col:5> 'int ()' Function 0x126111128 'VIRTIO_GPU_FILL_CMD' 'int ()'
+    | `-RecoveryExpr 0x126111200 <col:25> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1261113b0 <line:8:5, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x126111328 <col:5> 'int ()' Function 0x126111270 'trace_virtio_gpu_cmd_res_back_detach' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x126111368 <col:42, col:49> '<dependent type>' contains-errors lvalue .resource_id
+    |   `-RecoveryExpr 0x126111348 <col:42> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1261115b0 <line:10:5, col:57> 'struct virtio_gpu_simple_resource *' contains-errors '='
+    | |-DeclRefExpr 0x1261113d8 <col:5> 'struct virtio_gpu_simple_resource *' lvalue Var 0x126110e58 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CallExpr 0x126111580 <col:11, col:57> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1261114d8 <col:11> 'int ()' Function 0x126111420 'virtio_gpu_find_resource' 'int ()'
+    |   |-RecoveryExpr 0x1261114f8 <col:36> '<dependent type>' contains-errors lvalue
+    |   `-CXXDependentScopeMemberExpr 0x126111538 <col:39, col:46> '<dependent type>' contains-errors lvalue .resource_id
+    |     `-RecoveryExpr 0x126111518 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x126111b40 <line:11:5, line:16:5>
+    | |-BinaryOperator 0x1261116b0 <line:11:9, col:23> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x126111608 <col:9, col:10> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1261115f0 <col:10> 'struct virtio_gpu_simple_resource *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x1261115d0 <col:10> 'struct virtio_gpu_simple_resource *' lvalue Var 0x126110e58 'res' 'struct virtio_gpu_simple_resource *'
+    | | `-UnaryOperator 0x126111698 <col:17, col:23> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x126111680 <col:18, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x126111658 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x126111620 <col:18> 'struct virtio_gpu_simple_resource *' lvalue Var 0x126110e58 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CompoundStmt 0x126111b18 <col:28, line:16:5>
+    |   |-CallExpr 0x1261119f0 <line:12:9, line:13:51> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1261117b0 <line:12:9> 'int ()' Function 0x1261116f8 'qemu_log_mask' 'int ()'
+    |   | |-RecoveryExpr 0x1261119d0 <col:23> '<dependent type>' contains-errors lvalue
+    |   | |-StringLiteral 0x126111830 <col:40> 'char[4]' lvalue "STR"
+    |   | |-PredefinedExpr 0x126111910 <line:13:23> 'const char[35]' lvalue __func__
+    |   | | `-StringLiteral 0x1261118d0 <col:23> 'const char[35]' lvalue "virtio_gpu_resource_detach_backing"
+    |   | `-CXXDependentScopeMemberExpr 0x126111948 <col:33, col:40> '<dependent type>' contains-errors lvalue .resource_id
+    |   |   `-RecoveryExpr 0x126111928 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x126111ae8 <line:14:9, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x126111a68 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x126111a30 <col:9> 'struct virtio_gpu_ctrl_command *' lvalue ParmVar 0x1260f7b18 'cmd' 'struct virtio_gpu_ctrl_command *'
+    |   | `-RecoveryExpr 0x126111ac8 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x126111b08 <line:15:9>
+    `-CallExpr 0x12583b548 <line:17:5, col:35> 'int'
+      |-ImplicitCastExpr 0x12583b530 <col:5> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12583b4b8 <col:5> 'int ()' Function 0x12583b400 'virtio_gpu_cleanup_mapping' 'int ()'
+      `-ImplicitCastExpr 0x12583b570 <col:32> 'struct virtio_gpu_simple_resource *' <LValueToRValue>
+        `-DeclRefExpr 0x12583b4d8 <col:32> 'struct virtio_gpu_simple_resource *' lvalue Var 0x126110e58 'res' 'struct virtio_gpu_simple_resource *'

@@ -1,0 +1,33 @@
+`-FunctionDecl 0x14300e358  line:1:5 pit_has_pending_timer 'int (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x14300e248 <col:27, col:44> col:44 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x143026ee8 <line:2:1, line:8:1>
+    |-DeclStmt 0x143026928 <line:3:2, col:44>
+    | |-RecordDecl 0x143026650 <col:2, col:9> col:9 struct kvm_pit
+    | `-VarDecl 0x1430267b8 <col:2, col:40> col:18 used pit 'struct kvm_pit *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x1430268c8 <col:24, col:40> '<dependent type>' contains-errors lvalue .vpit
+    |     `-CXXDependentScopeMemberExpr 0x143026880 <col:24, col:35> '<dependent type>' contains-errors lvalue ->arch
+    |       `-RecoveryExpr 0x143026858 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x143026820 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x14300e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x143026e98 <line:5:2, line:6:55>
+    | |-BinaryOperator 0x143026c38 <line:5:6, col:53> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x143026b70 <col:6, col:33> 'int' contains-errors '&&'
+    | | | |-ImplicitCastExpr 0x143026b58 <col:6> 'struct kvm_pit *' contains-errors <LValueToRValue>
+    | | | | `-DeclRefExpr 0x143026940 <col:6> 'struct kvm_pit *' contains-errors lvalue Var 0x1430267b8 'pit' 'struct kvm_pit *'
+    | | | `-CallExpr 0x143026b18 <col:13, col:33> 'int'
+    | | |   |-ImplicitCastExpr 0x143026b00 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x143026a90 <col:13> 'int ()' Function 0x1430269d8 'kvm_vcpu_is_bsp' 'int ()'
+    | | |   `-ImplicitCastExpr 0x143026b40 <col:29> 'struct kvm_vcpu *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x143026ab0 <col:29> 'struct kvm_vcpu *' lvalue ParmVar 0x14300e248 'vcpu' 'struct kvm_vcpu *'
+    | | `-CXXDependentScopeMemberExpr 0x143026bf0 <col:38, col:53> '<dependent type>' contains-errors lvalue .irq_ack
+    | |   `-RecoveryExpr 0x143026bc8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x143026b90 <col:38> 'struct kvm_pit *' contains-errors lvalue Var 0x1430267b8 'pit' 'struct kvm_pit *'
+    | `-ReturnStmt 0x143026e88 <line:6:3, col:55>
+    |   `-CallExpr 0x143026e60 <col:10, col:55> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x143026d38 <col:10> 'int ()' Function 0x143026c80 'atomic_read' 'int ()'
+    |     `-UnaryOperator 0x143026e48 <col:22, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x143026e00 <col:23, col:48> '<dependent type>' contains-errors lvalue .pending
+    |         `-CXXDependentScopeMemberExpr 0x143026db8 <col:23, col:38> '<dependent type>' contains-errors lvalue .pit_timer
+    |           `-RecoveryExpr 0x143026d90 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x143026d58 <col:23> 'struct kvm_pit *' contains-errors lvalue Var 0x1430267b8 'pit' 'struct kvm_pit *'
+    `-ReturnStmt 0x143026ed8 <line:7:2, col:9>
+      `-IntegerLiteral 0x143026eb8 <col:9> 'int' 0

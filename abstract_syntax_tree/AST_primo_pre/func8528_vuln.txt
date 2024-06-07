@@ -1,0 +1,51 @@
+`-FunctionDecl 0x15780df18  line:1:1 invalid on_handler_vanished 'int (int *, const char *, int)'
+  |-ParmVarDecl 0x15780dd28 <col:21, col:38> col:38 invalid connection 'int *'
+  |-ParmVarDecl 0x15780dda8 <line:2:7, col:24> col:24 name 'const char *'
+  |-ParmVarDecl 0x15780de28 <line:3:7, col:24> col:24 invalid user_data 'int'
+  `-CompoundStmt 0x16000a550 <line:4:1, line:19:1>
+    |-DeclStmt 0x15780e1e8 <line:5:2, col:43>
+    | |-RecordDecl 0x15780dfd8 <col:2, col:9> col:9 struct tcmur_handler
+    | `-VarDecl 0x15780e148 <col:2, col:34> col:24 used handler 'struct tcmur_handler *' cinit
+    |   `-RecoveryExpr 0x15780e1b0 <col:34> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x160008a80 <line:6:2, col:42>
+    | |-RecordDecl 0x15780e200 <col:2, col:9> col:9 struct dbus_info
+    | `-VarDecl 0x15780e368 <col:2, col:36> col:20 used info 'struct dbus_info *' cinit
+    |   `-RecoveryExpr 0x160008a40 <col:27, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15780e3d0 <col:27> 'struct tcmur_handler *' contains-errors lvalue Var 0x15780e148 'handler' 'struct tcmur_handler *'
+    |-IfStmt 0x160009418 <line:8:2, line:16:2>
+    | |-RecoveryExpr 0x160008ad0 <line:8:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x160008a98 <col:6> 'struct dbus_info *' contains-errors lvalue Var 0x15780e368 'info' 'struct dbus_info *'
+    | `-CompoundStmt 0x1600093e8 <col:33, line:16:2>
+    |   |-DeclStmt 0x160008b78 <line:9:3, col:15>
+    |   | `-VarDecl 0x160008b10 <col:3, col:9> col:9 used reason 'char *'
+    |   |-BinaryOperator 0x160008e28 <line:10:3, line:12:21> 'char *' contains-errors '='
+    |   | |-DeclRefExpr 0x160008b90 <line:10:3> 'char *' lvalue Var 0x160008b10 'reason' 'char *'
+    |   | `-CallExpr 0x160008df8 <col:12, line:12:21> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x160008d10 <line:10:12> 'int ()' Function 0x160008c58 'g_strdup_printf' 'int ()'
+    |   |   |-StringLiteral 0x160008d70 <col:28, line:11:5> 'char[7]' lvalue "STRSTR"
+    |   |   `-RecoveryExpr 0x160008dd0 <line:12:5, col:14> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x160008d98 <col:5> 'struct tcmur_handler *' contains-errors lvalue Var 0x15780e148 'handler' 'struct tcmur_handler *'
+    |   |-CallExpr 0x160009208 <line:13:3, line:14:43> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x160008f28 <line:13:3> 'int ()' Function 0x160008e70 'g_dbus_method_invocation_return_value' 'int ()'
+    |   | |-RecoveryExpr 0x160008f80 <col:41, col:47> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x160008f48 <col:41> 'struct dbus_info *' contains-errors lvalue Var 0x15780e368 'info' 'struct dbus_info *'
+    |   | `-CallExpr 0x1600091d0 <line:14:8, col:42> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x160009088 <col:8> 'int ()' Function 0x160008fd0 'g_variant_new' 'int ()'
+    |   |   |-StringLiteral 0x1600090f0 <col:22> 'char[4]' lvalue "STR"
+    |   |   |-RecoveryExpr 0x1600091b0 <col:29> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x160009128 <col:36> 'char *' lvalue Var 0x160008b10 'reason' 'char *'
+    |   `-CallExpr 0x1600093a8 <line:15:3, col:16> 'int'
+    |     |-ImplicitCastExpr 0x160009390 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x160009318 <col:3> 'int ()' Function 0x160009260 'g_free' 'int ()'
+    |     `-ImplicitCastExpr 0x1600093d0 <col:10> 'char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x160009338 <col:10> 'char *' lvalue Var 0x160008b10 'reason' 'char *'
+    |-CallExpr 0x160009570 <line:17:2, col:34> 'int' contains-errors
+    | |-ImplicitCastExpr 0x160009558 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x160009518 <col:2> 'int ()' Function 0x160009460 'tcmur_unregister_handler' 'int ()'
+    | `-ImplicitCastExpr 0x160009598 <col:27> 'struct tcmur_handler *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x160009538 <col:27> 'struct tcmur_handler *' contains-errors lvalue Var 0x15780e148 'handler' 'struct tcmur_handler *'
+    `-CallExpr 0x16000a510 <line:18:2, col:31> 'int' contains-errors
+      |-ImplicitCastExpr 0x16000a4f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x16000a4b8 <col:2> 'int ()' Function 0x16000a400 'dbus_unexport_handler' 'int ()'
+      `-ImplicitCastExpr 0x16000a538 <col:24> 'struct tcmur_handler *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x16000a4d8 <col:24> 'struct tcmur_handler *' contains-errors lvalue Var 0x15780e148 'handler' 'struct tcmur_handler *'

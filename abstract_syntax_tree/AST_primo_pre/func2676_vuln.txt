@@ -1,0 +1,81 @@
+`-FunctionDecl 0x13a140cf8  line:1:5 ip_ra_control 'int (struct sock *, unsigned char, void (*)(struct sock *))'
+  |-ParmVarDecl 0x13a128648 <col:19, col:32> col:32 used sk 'struct sock *'
+  |-ParmVarDecl 0x13a1286c8 <col:36, col:50> col:50 used on 'unsigned char'
+  |-ParmVarDecl 0x13a140bb8 <line:2:5, col:37> col:12 used destructor 'void (*)(struct sock *)'
+  `-CompoundStmt 0x13b809a80 <line:3:1, line:50:1>
+    |-DeclStmt 0x13a141080 <line:4:2, col:33>
+    | |-RecordDecl 0x13a140e00 <col:2, col:9> col:9 struct ip_ra_chain
+    | |-VarDecl 0x13a140f68 <col:2, col:22> col:22 used ra 'struct ip_ra_chain *'
+    | `-VarDecl 0x13a140ff8 <col:2, col:27> col:27 used new_ra 'struct ip_ra_chain *'
+    |-DeclStmt 0x13a141158 <line:5:2, col:27>
+    | `-VarDecl 0x13a1410f0 <col:2, col:21> col:21 invalid __rcu 'struct ip_ra_chain'
+    |-DeclStmt 0x13a141568 <line:6:2, col:32>
+    | |-RecordDecl 0x13a141170 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x13a1412d8 <col:2, col:31> col:14 used net 'struct net *' cinit
+    |   `-ImplicitCastExpr 0x13a141538 <col:20, col:31> 'struct net *' <IntegralToPointer>
+    |     `-CallExpr 0x13a1414f8 <col:20, col:31> 'int'
+    |       |-ImplicitCastExpr 0x13a1414e0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13a141470 <col:20> 'int ()' Function 0x13a1413b8 'sock_net' 'int ()'
+    |       `-ImplicitCastExpr 0x13a141520 <col:29> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13a141490 <col:29> 'struct sock *' lvalue ParmVar 0x13a128648 'sk' 'struct sock *'
+    |-IfStmt 0x13a1419d8 <line:8:2, line:9:11>
+    | |-BinaryOperator 0x13a141910 <line:8:6, col:58> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x13a141830 <col:6, col:21> 'int' contains-errors '!='
+    | | | |-RecoveryExpr 0x13a1415b8 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x13a141580 <col:6> 'struct sock *' lvalue ParmVar 0x13a128648 'sk' 'struct sock *'
+    | | | `-RecoveryExpr 0x13a141810 <col:21> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x13a1418f0 <col:33, col:58> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x13a1418a8 <col:33, col:46> '<dependent type>' contains-errors lvalue
+    | |   | `-CallExpr 0x13a141868 <col:33, col:43> 'int'
+    | |   |   |-ImplicitCastExpr 0x13a141850 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    | |   |   | `-DeclRefExpr 0x13a1416f8 <col:33> 'int ()' Function 0x13a141640 'inet_sk' 'int ()'
+    | |   |   `-ImplicitCastExpr 0x13a141890 <col:41> 'struct sock *' <LValueToRValue>
+    | |   |     `-DeclRefExpr 0x13a141718 <col:41> 'struct sock *' lvalue ParmVar 0x13a128648 'sk' 'struct sock *'
+    | |   `-RecoveryExpr 0x13a1418d0 <col:58> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x13a1419c8 <line:9:3, col:11>
+    |   `-UnaryOperator 0x13a1419b0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13a141998 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13a141978 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13a80a9a0 <line:13:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a80a8c0 <col:2> 'int ()' Function 0x13a80a808 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13a80a988 <col:13, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13a80a940 <col:14, col:24> '<dependent type>' contains-errors lvalue .ra_mutex
+    |     `-RecoveryExpr 0x13a80a918 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13a80a8e0 <col:14> 'struct net *' lvalue Var 0x13a1412d8 'net' 'struct net *'
+    |-IfStmt 0x13b809480 <line:37:2, line:40:2>
+    | |-UnaryOperator 0x13b809348 <line:37:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13b809330 <col:7> 'struct ip_ra_chain *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b809310 <col:7> 'struct ip_ra_chain *' lvalue Var 0x13a140ff8 'new_ra' 'struct ip_ra_chain *'
+    | `-CompoundStmt 0x13b809468 <col:15, line:40:2>
+    |   `-CallExpr 0x13b809440 <line:38:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b809360 <col:3> 'int ()' Function 0x13a80b0d8 'mutex_unlock' 'int ()'
+    |     `-UnaryOperator 0x13b809428 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x13b8093e0 <col:17, col:27> '<dependent type>' contains-errors lvalue .ra_mutex
+    |         `-RecoveryExpr 0x13b8093b8 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13b809380 <col:17> 'struct net *' lvalue Var 0x13a1412d8 'net' 'struct net *'
+    |-BinaryOperator 0x13b809520 <line:41:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13b8094d8 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b8094a0 <col:2> 'struct ip_ra_chain *' lvalue Var 0x13a140ff8 'new_ra' 'struct ip_ra_chain *'
+    | `-DeclRefExpr 0x13b809500 <col:15> 'struct sock *' lvalue ParmVar 0x13a128648 'sk' 'struct sock *'
+    |-BinaryOperator 0x13b8095c0 <line:42:2, col:23> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13b809578 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b809540 <col:2> 'struct ip_ra_chain *' lvalue Var 0x13a140ff8 'new_ra' 'struct ip_ra_chain *'
+    | `-DeclRefExpr 0x13b8095a0 <col:23> 'void (*)(struct sock *)' lvalue ParmVar 0x13a140bb8 'destructor' 'void (*)(struct sock *)'
+    |-CallExpr 0x13b809680 <line:44:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b8095e0 <col:2> 'int ()' Function 0x13a80b4d8 'RCU_INIT_POINTER' 'int ()'
+    | |-RecoveryExpr 0x13b809638 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b809600 <col:19> 'struct ip_ra_chain *' lvalue Var 0x13a140ff8 'new_ra' 'struct ip_ra_chain *'
+    | `-DeclRefExpr 0x13b809660 <col:33> 'struct ip_ra_chain *' lvalue Var 0x13a140f68 'ra' 'struct ip_ra_chain *'
+    |-CallExpr 0x13b809908 <line:46:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x13b8098f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13b8098b0 <col:2> 'int ()' Function 0x13b8097f8 'sock_hold' 'int ()'
+    | `-ImplicitCastExpr 0x13b809930 <col:12> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13b8098d0 <col:12> 'struct sock *' lvalue ParmVar 0x13a128648 'sk' 'struct sock *'
+    |-CallExpr 0x13b809a28 <line:47:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b809948 <col:2> 'int ()' Function 0x13a80b0d8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x13b809a10 <col:15, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13b8099c8 <col:16, col:26> '<dependent type>' contains-errors lvalue .ra_mutex
+    |     `-RecoveryExpr 0x13b8099a0 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13b809968 <col:16> 'struct net *' lvalue Var 0x13a1412d8 'net' 'struct net *'
+    `-ReturnStmt 0x13b809a70 <line:49:2, col:9>
+      `-IntegerLiteral 0x13b809a50 <col:9> 'int' 0

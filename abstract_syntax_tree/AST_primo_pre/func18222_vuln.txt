@@ -1,0 +1,61 @@
+`-FunctionDecl 0x14280df38  line:1:18 invalid _quicklistNodeAllowMerge 'int (const int *, const int *, const int)'
+  |-ParmVarDecl 0x14280dcf0 <col:43, col:64> col:64 invalid a 'const int *'
+  |-ParmVarDecl 0x14280dd70 <line:2:43, col:64> col:64 invalid b 'const int *'
+  |-ParmVarDecl 0x14280ddf0 <line:3:43, col:53> col:53 used fill 'const int'
+  `-CompoundStmt 0x142122db0 <col:59, line:17:1>
+    |-IfStmt 0x14280e0e8 <line:4:5, line:5:16>
+    | |-BinaryOperator 0x14280e098 <line:4:9, col:16> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x14280e030 <col:9, col:10> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x14280e018 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x14280dff8 <col:10> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x14280e080 <col:15, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x14280e068 <col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x14280e048 <col:16> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14280e0d8 <line:5:9, col:16>
+    |   `-IntegerLiteral 0x14280e0b8 <col:16> 'int' 0
+    |-DeclStmt 0x14280e2b8 <line:8:5, col:47>
+    | `-VarDecl 0x14280e120 <col:5, col:45> col:18 used merge_sz 'unsigned int' cinit
+    |   `-BinaryOperator 0x14280e298 <col:29, col:45> '<dependent type>' contains-errors '-'
+    |     |-BinaryOperator 0x14280e258 <col:29, col:40> '<dependent type>' contains-errors '+'
+    |     | |-CXXDependentScopeMemberExpr 0x14280e1a8 <col:29, col:32> '<dependent type>' contains-errors lvalue ->sz
+    |     | | `-RecoveryExpr 0x14280e188 <col:29> '<dependent type>' contains-errors lvalue
+    |     | `-CXXDependentScopeMemberExpr 0x14280e210 <col:37, col:40> '<dependent type>' contains-errors lvalue ->sz
+    |     |   `-RecoveryExpr 0x14280e1f0 <col:37> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x14280e278 <col:45> 'int' 11
+    `-IfStmt 0x142122d80 <line:9:5, line:16:16> has_else
+      |-CallExpr 0x1421228e0 <line:9:9, col:78> 'int' contains-errors
+      | |-ImplicitCastExpr 0x1421228c8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x1421226b8 <col:9> 'int ()' Function 0x142122600 'likely' 'int ()'
+      | `-CallExpr 0x142122868 <col:16, col:77> 'int' contains-errors
+      |   |-ImplicitCastExpr 0x142122850 <col:16> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x1421227b8 <col:16> 'int ()' Function 0x142122700 '_quicklistNodeSizeMeetsOptimizationRequirement' 'int ()'
+      |   |-ImplicitCastExpr 0x142122898 <col:63> 'unsigned int' contains-errors <LValueToRValue>
+      |   | `-DeclRefExpr 0x1421227d8 <col:63> 'unsigned int' contains-errors lvalue Var 0x14280e120 'merge_sz' 'unsigned int'
+      |   `-ImplicitCastExpr 0x1421228b0 <col:73> 'int' <LValueToRValue>
+      |     `-DeclRefExpr 0x1421227f8 <col:73> 'const int' lvalue ParmVar 0x14280ddf0 'fill' 'const int'
+      |-ReturnStmt 0x142122928 <line:10:9, col:16>
+      | `-IntegerLiteral 0x142122908 <col:16> 'int' 1
+      `-IfStmt 0x142122d50 <line:11:10, line:16:16> has_else
+        |-UnaryOperator 0x142122ab0 <line:11:14, col:44> 'int' contains-errors prefix '!' cannot overflow
+        | `-CallExpr 0x142122a70 <col:15, col:44> 'int' contains-errors
+        |   |-ImplicitCastExpr 0x142122a58 <col:15> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x142122a18 <col:15> 'int ()' Function 0x142122960 'sizeMeetsSafetyLimit' 'int ()'
+        |   `-ImplicitCastExpr 0x142122a98 <col:36> 'unsigned int' contains-errors <LValueToRValue>
+        |     `-DeclRefExpr 0x142122a38 <col:36> 'unsigned int' contains-errors lvalue Var 0x14280e120 'merge_sz' 'unsigned int'
+        |-ReturnStmt 0x142122ae8 <line:12:9, col:16>
+        | `-IntegerLiteral 0x142122ac8 <col:16> 'int' 0
+        `-IfStmt 0x142122d20 <line:13:10, line:16:16> has_else
+          |-BinaryOperator 0x142122ca0 <line:13:14, col:44> 'int' contains-errors '<='
+          | |-CStyleCastExpr 0x142122c40 <col:14, col:39> 'int' contains-errors <Dependent>
+          | | `-ParenExpr 0x142122c20 <col:19, col:39> '<dependent type>' contains-errors
+          | |   `-BinaryOperator 0x142122bc8 <col:20, col:34> '<dependent type>' contains-errors '+'
+          | |     |-CXXDependentScopeMemberExpr 0x142122b18 <col:20, col:23> '<dependent type>' contains-errors lvalue ->count
+          | |     | `-RecoveryExpr 0x142122af8 <col:20> '<dependent type>' contains-errors lvalue
+          | |     `-CXXDependentScopeMemberExpr 0x142122b80 <col:31, col:34> '<dependent type>' contains-errors lvalue ->count
+          | |       `-RecoveryExpr 0x142122b60 <col:31> '<dependent type>' contains-errors lvalue
+          | `-ImplicitCastExpr 0x142122c88 <col:44> 'int' <LValueToRValue>
+          |   `-DeclRefExpr 0x142122c68 <col:44> 'const int' lvalue ParmVar 0x14280ddf0 'fill' 'const int'
+          |-ReturnStmt 0x142122ce0 <line:14:9, col:16>
+          | `-IntegerLiteral 0x142122cc0 <col:16> 'int' 1
+          `-ReturnStmt 0x142122d10 <line:16:9, col:16>
+            `-IntegerLiteral 0x142122cf0 <col:16> 'int' 0

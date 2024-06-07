@@ -1,0 +1,44 @@
+`-FunctionDecl 0x123128288  line:1:14 invalid Prepare 'int (int *, int *)'
+  |-ParmVarDecl 0x123128128 <col:22, col:37> col:37 invalid context 'int *'
+  |-ParmVarDecl 0x1231281a8 <col:46, col:58> col:58 invalid node 'int *'
+  `-CompoundStmt 0x1231426b0 <col:64, line:23:1>
+    |-CallExpr 0x123128648 <line:2:3, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1231284a0 <col:3> 'int ()' Function 0x1231283e8 'TF_LITE_ENSURE_EQ' 'int ()'
+    | |-RecoveryExpr 0x1231284c0 <col:21> '<dependent type>' contains-errors lvalue
+    | |-CallExpr 0x123128600 <col:30, col:44> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1231285c0 <col:30> 'int ()' Function 0x123128508 'NumInputs' 'int ()'
+    | | `-RecoveryExpr 0x1231285e0 <col:40> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x123128628 <col:47> 'int' 1
+    |-CallExpr 0x123141848 <line:3:3, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123128680 <col:3> 'int ()' Function 0x1231283e8 'TF_LITE_ENSURE_EQ' 'int ()'
+    | |-RecoveryExpr 0x1231286a0 <col:21> '<dependent type>' contains-errors lvalue
+    | |-CallExpr 0x123141800 <col:30, col:45> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1231287a0 <col:30> 'int ()' Function 0x1231286e8 'NumOutputs' 'int ()'
+    | | `-RecoveryExpr 0x1231287c0 <col:41> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x123141828 <col:48> 'int' 1
+    |-DeclStmt 0x123141a90 <line:4:3, col:68>
+    | `-VarDecl 0x123141898 <col:3, col:23> col:23 invalid input 'const int *'
+    |-DeclStmt 0x123141c70 <line:6:3, col:41>
+    | `-VarDecl 0x123141b40 <col:3, col:37> col:7 used input_dims_size 'int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x123141c28 <col:25, col:37> '<dependent type>' contains-errors lvalue ->size
+    |     `-RecoveryExpr 0x123141c08 <col:25> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x123141e20 <line:7:3, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123141d68 <col:3> 'int ()' Function 0x123141cb0 'TF_LITE_ENSURE' 'int ()'
+    | |-RecoveryExpr 0x123141d88 <col:18> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x123141e00 <col:27, col:46> 'int' contains-errors '>='
+    |   |-ImplicitCastExpr 0x123141de8 <col:27> 'int' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x123141da8 <col:27> 'int' contains-errors lvalue Var 0x123141b40 'input_dims_size' 'int'
+    |   `-IntegerLiteral 0x123141dc8 <col:46> 'int' 1
+    `-ForStmt 0x1231423d0 <line:12:3, line:14:3>
+      |-DeclStmt 0x1231422a0 <line:12:8, col:17>
+      | `-VarDecl 0x123142218 <col:8, col:16> col:12 used i 'int' cinit
+      |   `-IntegerLiteral 0x123142280 <col:16> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x123142328 <col:19, col:23> 'int' contains-errors '<'
+      | |-ImplicitCastExpr 0x1231422f8 <col:19> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x1231422b8 <col:19> 'int' lvalue Var 0x123142218 'i' 'int'
+      | `-ImplicitCastExpr 0x123142310 <col:23> 'int' contains-errors <LValueToRValue>
+      |   `-DeclRefExpr 0x1231422d8 <col:23> 'int' contains-errors lvalue Var 0x123141b40 'input_dims_size' 'int'
+      |-UnaryOperator 0x123142368 <col:40, col:41> 'int' postfix '++'
+      | `-DeclRefExpr 0x123142348 <col:40> 'int' lvalue Var 0x123142218 'i' 'int'
+      `-CompoundStmt 0x1231423c0 <col:45, line:14:3>

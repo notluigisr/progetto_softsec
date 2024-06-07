@@ -1,0 +1,40 @@
+`-FunctionDecl 0x156043600  line:1:1 mii_wait_link 'int (struct net_device *, int)'
+  |-ParmVarDecl 0x156020448 <col:16, col:35> col:35 used dev 'struct net_device *'
+  |-ParmVarDecl 0x1560204c8 <col:40, col:44> col:44 used wait 'int'
+  `-CompoundStmt 0x156044170 <line:2:1, line:17:1>
+    |-DeclStmt 0x156043798 <line:4:2, col:14>
+    | `-VarDecl 0x156043730 <col:2, col:6> col:6 used phy_addr 'int'
+    |-DeclStmt 0x156043998 <line:5:2, col:27>
+    | |-RecordDecl 0x1560437b0 <col:2, col:9> col:9 struct netdev_private
+    | `-VarDecl 0x156043918 <col:2, col:25> col:25 used np 'struct netdev_private *'
+    |-BinaryOperator 0x156043bc0 <line:7:2, col:22> 'struct netdev_private *' '='
+    | |-DeclRefExpr 0x1560439b0 <col:2> 'struct netdev_private *' lvalue Var 0x156043918 'np' 'struct netdev_private *'
+    | `-ImplicitCastExpr 0x156043ba8 <col:7, col:22> 'struct netdev_private *' <IntegralToPointer>
+    |   `-CallExpr 0x156043b68 <col:7, col:22> 'int'
+    |     |-ImplicitCastExpr 0x156043b50 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x156043ae0 <col:7> 'int ()' Function 0x156043a28 'netdev_priv' 'int ()'
+    |     `-ImplicitCastExpr 0x156043b90 <col:19> 'struct net_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x156043b00 <col:19> 'struct net_device *' lvalue ParmVar 0x156020448 'dev' 'struct net_device *'
+    |-BinaryOperator 0x156043c60 <line:8:2, col:17> 'int' contains-errors '='
+    | |-DeclRefExpr 0x156043be0 <col:2> 'int' lvalue Var 0x156043730 'phy_addr' 'int'
+    | `-RecoveryExpr 0x156043c38 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x156043c00 <col:13> 'struct netdev_private *' lvalue Var 0x156043918 'np' 'struct netdev_private *'
+    |-DoStmt 0x156044108 <line:10:2, line:15:21>
+    | |-CompoundStmt 0x156044070 <line:10:5, line:15:2>
+    | | |-IfStmt 0x156043ef0 <line:12:3, line:13:11>
+    | | | |-BinaryOperator 0x156043ea0 <line:12:7, col:14> '<dependent type>' contains-errors '&'
+    | | | | |-RecoveryExpr 0x156043e60 <col:7> '<dependent type>' contains-errors lvalue
+    | | | | `-RecoveryExpr 0x156043e80 <col:14> '<dependent type>' contains-errors lvalue
+    | | | `-ReturnStmt 0x156043ee0 <line:13:4, col:11>
+    | | |   `-IntegerLiteral 0x156043ec0 <col:11> 'int' 0
+    | | `-CallExpr 0x156044048 <line:14:3, col:12> 'int'
+    | |   |-ImplicitCastExpr 0x156044030 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x156043ff0 <col:3> 'int ()' Function 0x156043f38 'mdelay' 'int ()'
+    | |   `-IntegerLiteral 0x156044010 <col:11> 'int' 1
+    | `-BinaryOperator 0x1560440e8 <line:15:11, col:20> 'int' '>'
+    |   |-UnaryOperator 0x1560440b0 <col:11, col:13> 'int' prefix '--'
+    |   | `-DeclRefExpr 0x156044090 <col:13> 'int' lvalue ParmVar 0x1560204c8 'wait' 'int'
+    |   `-IntegerLiteral 0x1560440c8 <col:20> 'int' 0
+    `-ReturnStmt 0x156044160 <line:16:2, col:10>
+      `-UnaryOperator 0x156044148 <col:9, col:10> 'int' prefix '-'
+        `-IntegerLiteral 0x156044128 <col:10> 'int' 1

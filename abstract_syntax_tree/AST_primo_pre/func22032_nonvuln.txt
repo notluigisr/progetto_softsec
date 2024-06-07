@@ -1,0 +1,82 @@
+`-FunctionDecl 0x12a026818  line:1:23 invalid cache_alloc_pfmemalloc 'void *(struct kmem_cache *, struct kmem_cache_node *, int)' static inline
+  |-ParmVarDecl 0x12a00e268 <col:46, col:65> col:65 used cachep 'struct kmem_cache *'
+  |-ParmVarDecl 0x12a026658 <line:2:5, col:29> col:29 used n 'struct kmem_cache_node *'
+  |-ParmVarDecl 0x12a0266d8 <col:32, col:38> col:38 invalid flags 'int'
+  `-CompoundStmt 0x12a0290a8 <line:3:1, line:27:1>
+    |-DeclStmt 0x12a026ac8 <line:4:2, col:19>
+    | |-RecordDecl 0x12a0268d8 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x12a026a48 <col:2, col:15> col:15 used page 'struct page *'
+    |-DeclStmt 0x12a026b60 <line:5:2, col:11>
+    | `-VarDecl 0x12a026af8 <col:2, col:8> col:8 used obj 'void *'
+    |-DeclStmt 0x12a026c30 <line:6:2, col:19>
+    | `-VarDecl 0x12a026b90 <col:2, col:15> col:8 used list 'void *' cinit
+    |   `-RecoveryExpr 0x12a026c10 <col:15> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a026e68 <line:8:2, line:9:10>
+    | |-UnaryOperator 0x12a026e08 <line:8:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12a026de0 <col:7, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12a026da0 <col:7> 'int ()' Function 0x12a026ce8 'gfp_pfmemalloc_allowed' 'int ()'
+    | |   `-RecoveryExpr 0x12a026dc0 <col:30> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a026e58 <line:9:3, col:10>
+    |   `-RecoveryExpr 0x12a026e38 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12a027000 <line:11:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a026f68 <col:2> 'int ()' Function 0x12a026eb0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x12a026fe8 <col:12, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12a026fc0 <col:13, col:16> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a026f88 <col:13> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    |-BinaryOperator 0x12a027220 <line:12:2, col:31> 'struct page *' contains-errors '='
+    | |-DeclRefExpr 0x12a027028 <col:2> 'struct page *' lvalue Var 0x12a026a48 'page' 'struct page *'
+    | `-CallExpr 0x12a0271f0 <col:9, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a027128 <col:9> 'int ()' Function 0x12a027070 'get_first_slab' 'int ()'
+    |   |-DeclRefExpr 0x12a027148 <col:24> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    |   `-RecoveryExpr 0x12a0271d0 <col:27> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a027498 <line:13:2, line:16:2>
+    | |-UnaryOperator 0x12a027278 <line:13:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a027260 <col:7> 'struct page *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a027240 <col:7> 'struct page *' lvalue Var 0x12a026a48 'page' 'struct page *'
+    | `-CompoundStmt 0x12a027478 <col:13, line:16:2>
+    |   |-CallExpr 0x12a027408 <line:14:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12a027370 <col:3> 'int ()' Function 0x12a0272b8 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x12a0273f0 <col:15, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x12a0273c8 <col:16, col:19> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x12a027390 <col:16> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    |   `-ReturnStmt 0x12a027468 <line:15:3, col:10>
+    |     `-RecoveryExpr 0x12a027448 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a028ae0 <line:18:2, col:33> 'void *' '='
+    | |-DeclRefExpr 0x12a0274b8 <col:2> 'void *' lvalue Var 0x12a026af8 'obj' 'void *'
+    | `-ImplicitCastExpr 0x12a028ac8 <col:8, col:33> 'void *' <IntegralToPointer>
+    |   `-CallExpr 0x12a028a68 <col:8, col:33> 'int'
+    |     |-ImplicitCastExpr 0x12a028a50 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a0275b8 <col:8> 'int ()' Function 0x12a027500 'slab_get_obj' 'int ()'
+    |     |-ImplicitCastExpr 0x12a028a98 <col:21> 'struct kmem_cache *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a0275d8 <col:21> 'struct kmem_cache *' lvalue ParmVar 0x12a00e268 'cachep' 'struct kmem_cache *'
+    |     `-ImplicitCastExpr 0x12a028ab0 <col:29> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a028a00 <col:29> 'struct page *' lvalue Var 0x12a026a48 'page' 'struct page *'
+    |-UnaryOperator 0x12a028b60 <line:19:2, col:17> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | `-RecoveryExpr 0x12a028b38 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12a028b00 <col:2> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    |-CallExpr 0x12a028d60 <line:21:2, col:40> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12a028d48 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a028c58 <col:2> 'int ()' Function 0x12a028ba0 'fixup_slab_list' 'int ()'
+    | |-ImplicitCastExpr 0x12a028da0 <col:18> 'struct kmem_cache *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a028c78 <col:18> 'struct kmem_cache *' lvalue ParmVar 0x12a00e268 'cachep' 'struct kmem_cache *'
+    | |-ImplicitCastExpr 0x12a028db8 <col:26> 'struct kmem_cache_node *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a028c98 <col:26> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    | |-ImplicitCastExpr 0x12a028dd0 <col:29> 'struct page *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a028cb8 <col:29> 'struct page *' lvalue Var 0x12a026a48 'page' 'struct page *'
+    | `-UnaryOperator 0x12a028d30 <col:35, col:36> 'void **' contains-errors prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x12a028cd8 <col:36> 'void *' contains-errors lvalue Var 0x12a026b90 'list' 'void *'
+    |-CallExpr 0x12a028e80 <line:23:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a028de8 <col:2> 'int ()' Function 0x12a0272b8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x12a028e68 <col:14, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12a028e40 <col:15, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a028e08 <col:15> 'struct kmem_cache_node *' lvalue ParmVar 0x12a026658 'n' 'struct kmem_cache_node *'
+    |-CallExpr 0x12a029018 <line:24:2, col:39> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12a029000 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a028f88 <col:2> 'int ()' Function 0x12a028ed0 'fixup_objfreelist_debug' 'int ()'
+    | |-ImplicitCastExpr 0x12a029048 <col:26> 'struct kmem_cache *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a028fa8 <col:26> 'struct kmem_cache *' lvalue ParmVar 0x12a00e268 'cachep' 'struct kmem_cache *'
+    | `-UnaryOperator 0x12a028fe8 <col:34, col:35> 'void **' contains-errors prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x12a028fc8 <col:35> 'void *' contains-errors lvalue Var 0x12a026b90 'list' 'void *'
+    `-ReturnStmt 0x12a029098 <line:26:2, col:9>
+      `-ImplicitCastExpr 0x12a029080 <col:9> 'void *' <LValueToRValue>
+        `-DeclRefExpr 0x12a029060 <col:9> 'void *' lvalue Var 0x12a026af8 'obj' 'void *'

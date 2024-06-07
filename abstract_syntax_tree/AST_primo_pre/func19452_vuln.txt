@@ -1,0 +1,31 @@
+`-FunctionDecl 0x123141958  line:1:19 invalid read_foo 'int (struct grub_disk *, int, int, char *)' static
+  |-ParmVarDecl 0x123128668 <col:29, col:47> col:47 used disk 'struct grub_disk *'
+  |-ParmVarDecl 0x1231286e8 <col:53, col:70> col:70 invalid sector 'int'
+  |-ParmVarDecl 0x123128768 <col:78, col:90> col:90 invalid size 'int'
+  |-ParmVarDecl 0x123141800 <col:96, col:102> col:102 buf 'char *'
+  `-CompoundStmt 0x1231422a8 <col:107, line:16:1>
+    |-IfStmt 0x123142248 <line:2:2, line:14:23> has_else
+    | |-BinaryOperator 0x123141a98 <line:2:6, col:14> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x123141a20 <col:6> 'struct grub_disk *' lvalue ParmVar 0x123128668 'disk' 'struct grub_disk *'
+    | | `-RecoveryExpr 0x123141a78 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x123141fc0 <col:20, line:14:2>
+    | | |-DeclStmt 0x123141b58 <line:3:3, col:28>
+    | | | `-VarDecl 0x123141ad0 <col:3, col:25> col:13 used blocksize 'const int' cinit
+    | | |   `-IntegerLiteral 0x123141b38 <col:25> 'int' 512
+    | | |-DeclStmt 0x123141bf0 <line:4:3, col:10>
+    | | | `-VarDecl 0x123141b88 <col:3, col:7> col:7 used ret 'int'
+    | | `-IfStmt 0x123141fa0 <line:10:3, line:11:11>
+    | |   |-BinaryOperator 0x123141f50 <line:10:7, col:15> 'int' '=='
+    | |   | |-ImplicitCastExpr 0x123141f38 <col:7> 'int' <LValueToRValue>
+    | |   | | `-DeclRefExpr 0x123141ee0 <col:7> 'int' lvalue Var 0x123141b88 'ret' 'int'
+    | |   | `-UnaryOperator 0x123141f20 <col:14, col:15> 'int' prefix '-'
+    | |   |   `-IntegerLiteral 0x123141f00 <col:15> 'int' 1
+    | |   `-ReturnStmt 0x123141f90 <line:11:4, col:11>
+    | |     `-IntegerLiteral 0x123141f70 <col:11> 'int' 1
+    | `-CallExpr 0x123142208 <line:14:9, col:23> 'int'
+    |   |-ImplicitCastExpr 0x1231421f0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x123142140 <col:9> 'int ()' Function 0x123142088 'eprintf' 'int ()'
+    |   `-ImplicitCastExpr 0x123142230 <col:18> 'char *' <ArrayToPointerDecay>
+    |     `-StringLiteral 0x1231421a0 <col:18> 'char[4]' lvalue "STR"
+    `-ReturnStmt 0x123142298 <line:15:2, col:9>
+      `-IntegerLiteral 0x123142278 <col:9> 'int' 0

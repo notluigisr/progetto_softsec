@@ -1,0 +1,97 @@
+`-FunctionDecl 0x143008238  line:1:12 bpf_map_do_batch 'int (const union bpf_attr *, union bpf_attr)' static
+  |-ParmVarDecl 0x142103248 <col:29, col:51> col:51 used attr 'const union bpf_attr *'
+  |-ParmVarDecl 0x142103300 <line:2:8, col:23> col:23 invalid __user 'union bpf_attr'
+  `-CompoundStmt 0x14181ed58 <line:4:1, line:43:1>
+    |-DeclStmt 0x143008528 <line:5:2, col:21>
+    | |-RecordDecl 0x143008338 <col:2, col:9> col:9 struct bpf_map
+    | `-VarDecl 0x1430084a8 <col:2, col:18> col:18 used map 'struct bpf_map *'
+    |-DeclStmt 0x143008658 <line:6:2, col:14>
+    | |-VarDecl 0x143008558 <col:2, col:6> col:6 used err 'int'
+    | `-VarDecl 0x1430085d8 <col:2, col:11> col:11 used ufd 'int'
+    |-DeclStmt 0x1430087e8 <line:7:2, col:13>
+    | |-RecordDecl 0x143008670 <col:2, col:9> col:9 struct fd
+    | `-VarDecl 0x143008768 <col:2, col:12> col:12 referenced invalid f 'struct fd'
+    |-IfStmt 0x143008a80 <line:9:2, line:10:11>
+    | |-CallExpr 0x1430089b0 <line:9:6, col:30> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x143008930 <col:6> 'int ()' Function 0x143008878 'CHECK_ATTR' 'int ()'
+    | | `-RecoveryExpr 0x143008990 <col:17> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x143008a70 <line:10:3, col:11>
+    |   `-UnaryOperator 0x143008a58 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x143008a40 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x143008a20 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x143008b68 <line:12:2, col:20> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143008aa0 <col:2> 'int' lvalue Var 0x1430085d8 'ufd' 'int'
+    | `-CXXDependentScopeMemberExpr 0x143008b20 <col:8, col:20> '<dependent type>' contains-errors lvalue .map_fd
+    |   `-RecoveryExpr 0x143008af8 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x143008ac0 <col:8> 'const union bpf_attr *' lvalue ParmVar 0x142103248 'attr' 'const union bpf_attr *'
+    |-BinaryOperator 0x143008d78 <line:13:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x143008ba8 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x143008b88 <col:2> 'struct fd' lvalue Var 0x143008768 'f' 'struct fd'
+    | `-CallExpr 0x143008d38 <col:6, col:15> 'int'
+    |   |-ImplicitCastExpr 0x143008d20 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x143008cb0 <col:6> 'int ()' Function 0x143008bf8 'fdget' 'int ()'
+    |   `-ImplicitCastExpr 0x143008d60 <col:12> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x143008cd0 <col:12> 'int' lvalue Var 0x1430085d8 'ufd' 'int'
+    |-BinaryOperator 0x143008f00 <line:14:2, col:23> 'struct bpf_map *' contains-errors '='
+    | |-DeclRefExpr 0x143008d98 <col:2> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    | `-CallExpr 0x143008ed8 <col:8, col:23> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143008e98 <col:8> 'int ()' Function 0x143008de0 '__bpf_map_get' 'int ()'
+    |   `-RecoveryExpr 0x143008eb8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14181e028 <line:15:2, line:16:21>
+    | |-CallExpr 0x143009058 <line:15:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x143009040 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x143009000 <col:6> 'int ()' Function 0x143008f48 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x143009080 <col:13> 'struct bpf_map *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x143009020 <col:13> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    | `-ReturnStmt 0x14181e018 <line:16:3, col:21>
+    |   `-CallExpr 0x1430091d0 <col:10, col:21> 'int'
+    |     |-ImplicitCastExpr 0x1430091b8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x143009178 <col:10> 'int ()' Function 0x1430090c0 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x14181e000 <col:18> 'struct bpf_map *' <LValueToRValue>
+    |       `-DeclRefExpr 0x143009198 <col:18> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    |-IfStmt 0x14181e450 <line:18:2, line:23:2>
+    | |-RecoveryExpr 0x14181e2b0 <line:18:6, line:20:50> '_Bool' contains-errors
+    | `-CompoundStmt 0x14181e430 <col:53, line:23:2>
+    |   |-BinaryOperator 0x14181e3a8 <line:21:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14181e2d0 <col:3> 'int' lvalue Var 0x143008558 'err' 'int'
+    |   | `-UnaryOperator 0x14181e390 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14181e378 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14181e358 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14181e418 <line:22:3, col:8> 'err_put' 0x14181e3c8
+    |-IfStmt 0x14181e5f8 <line:25:2, line:29:2>
+    | |-RecoveryExpr 0x14181e588 <line:25:6, line:26:51> '_Bool' contains-errors
+    | `-CompoundStmt 0x14181e5e0 <col:54, line:29:2>
+    |   `-GotoStmt 0x14181e5c8 <line:28:3, col:8> 'err_put' 0x14181e3c8
+    |-IfStmt 0x14181eb78 <line:31:2, line:38:42> has_else
+    | |-RecoveryExpr 0x14181e618 <line:31:6, col:13> '_Bool' contains-errors
+    | |-CallExpr 0x14181e7e0 <line:32:3, col:42> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14181e718 <col:3> 'int ()' Function 0x14181e660 'BPF_DO_BATCH' 'int ()'
+    | | `-CXXDependentScopeMemberExpr 0x14181e798 <col:16, col:26> '<dependent type>' contains-errors lvalue ->map_lookup_batch
+    | |   `-RecoveryExpr 0x14181e770 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14181e738 <col:16> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    | `-IfStmt 0x14181eb48 <line:33:7, line:38:42> has_else
+    |   |-RecoveryExpr 0x14181e808 <line:33:11, col:18> '_Bool' contains-errors
+    |   |-CallExpr 0x14181e8f0 <line:34:3, col:53> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14181e828 <col:3> 'int ()' Function 0x14181e660 'BPF_DO_BATCH' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x14181e8a8 <col:16, col:26> '<dependent type>' contains-errors lvalue ->map_lookup_and_delete_batch
+    |   |   `-RecoveryExpr 0x14181e880 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14181e848 <col:16> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    |   `-IfStmt 0x14181eb18 <line:35:7, line:38:42> has_else
+    |     |-RecoveryExpr 0x14181e918 <line:35:11, col:18> '_Bool' contains-errors
+    |     |-CallExpr 0x14181ea00 <line:36:3, col:42> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x14181e938 <col:3> 'int ()' Function 0x14181e660 'BPF_DO_BATCH' 'int ()'
+    |     | `-CXXDependentScopeMemberExpr 0x14181e9b8 <col:16, col:26> '<dependent type>' contains-errors lvalue ->map_update_batch
+    |     |   `-RecoveryExpr 0x14181e990 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x14181e958 <col:16> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    |     `-CallExpr 0x14181eaf0 <line:38:3, col:42> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14181ea28 <col:3> 'int ()' Function 0x14181e660 'BPF_DO_BATCH' 'int ()'
+    |       `-CXXDependentScopeMemberExpr 0x14181eaa8 <col:16, col:26> '<dependent type>' contains-errors lvalue ->map_delete_batch
+    |         `-RecoveryExpr 0x14181ea80 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x14181ea48 <col:16> 'struct bpf_map *' lvalue Var 0x1430084a8 'map' 'struct bpf_map *'
+    |-LabelStmt 0x14181ecf0 <line:40:1, line:41:9> 'err_put'
+    | `-CallExpr 0x14181ecc8 <col:2, col:9> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14181ec88 <col:2> 'int ()' Function 0x14181ebd0 'fdput' 'int ()'
+    |   `-RecoveryExpr 0x14181eca8 <col:8> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14181ed48 <line:42:2, col:9>
+      `-ImplicitCastExpr 0x14181ed30 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14181ed10 <col:9> 'int' lvalue Var 0x143008558 'err' 'int'

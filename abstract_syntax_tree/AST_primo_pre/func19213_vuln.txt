@@ -1,0 +1,63 @@
+`-FunctionDecl 0x125140b40  line:1:13 tcp_send_challenge_ack 'void (struct sock *, const struct sk_buff *)' static
+  |-ParmVarDecl 0x125128648 <col:36, col:49> col:49 used sk 'struct sock *'
+  |-ParmVarDecl 0x125140a28 <col:53, col:75> col:75 used skb 'const struct sk_buff *'
+  `-CompoundStmt 0x125143670 <line:2:1, line:25:1>
+    |-DeclStmt 0x125140cd8 <line:4:2, col:32>
+    | `-VarDecl 0x125140c70 <col:2, col:13> col:13 referenced invalid challenge_timestamp 'int' static
+    |-DeclStmt 0x125140d70 <line:5:2, col:37>
+    | `-VarDecl 0x125140d08 <col:2, col:22> col:22 used challenge_count 'unsigned int' static
+    |-DeclStmt 0x125141168 <line:6:2, col:34>
+    | |-RecordDecl 0x125140d88 <col:2, col:9> col:9 struct tcp_sock
+    | `-VarDecl 0x125140ef8 <col:2, col:33> col:19 used tp 'struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x125141138 <col:24, col:33> 'struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x1251410f8 <col:24, col:33> 'int'
+    |       |-ImplicitCastExpr 0x1251410e0 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x125141070 <col:24> 'int ()' Function 0x125140fb8 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x125141120 <col:31> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x125141090 <col:31> 'struct sock *' lvalue ParmVar 0x125128648 'sk' 'struct sock *'
+    |-IfStmt 0x125141608 <line:10:2, line:13:3>
+    | |-CallExpr 0x1251415b8 <line:10:6, line:12:28> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x125141260 <line:10:6> 'int ()' Function 0x1251411a8 'tcp_oow_rate_limited' 'int ()'
+    | | |-CallExpr 0x125141558 <col:27, col:38> 'int'
+    | | | |-ImplicitCastExpr 0x125141540 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x125141360 <col:27> 'int ()' Function 0x1251412a8 'sock_net' 'int ()'
+    | | | `-ImplicitCastExpr 0x125141580 <col:36> 'struct sock *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x125141380 <col:36> 'struct sock *' lvalue ParmVar 0x125128648 'sk' 'struct sock *'
+    | | |-DeclRefExpr 0x1251413f8 <col:41> 'const struct sk_buff *' lvalue ParmVar 0x125140a28 'skb' 'const struct sk_buff *'
+    | | |-RecoveryExpr 0x125141598 <line:11:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x125141490 <line:12:6, col:11> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x125141468 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x125141430 <col:7> 'struct tcp_sock *' lvalue Var 0x125140ef8 'tp' 'struct tcp_sock *'
+    | `-ReturnStmt 0x1251415f8 <line:13:3>
+    |-IfStmt 0x125141868 <line:17:2, line:20:2>
+    | |-BinaryOperator 0x1251416f0 <line:17:6, col:13> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x1251416d0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x125141690 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x125141848 <col:34, line:20:2>
+    |   |-BinaryOperator 0x1251417b0 <line:18:3, col:25> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x125141730 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x125141710 <col:3> 'int' lvalue Var 0x125140c70 'challenge_timestamp' 'int'
+    |   | `-RecoveryExpr 0x125141790 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x125141828 <line:19:3, col:21> 'unsigned int' '='
+    |     |-DeclRefExpr 0x1251417d0 <col:3> 'unsigned int' lvalue Var 0x125140d08 'challenge_count' 'unsigned int'
+    |     `-ImplicitCastExpr 0x125141810 <col:21> 'unsigned int' <IntegralCast>
+    |       `-IntegerLiteral 0x1251417f0 <col:21> 'int' 0
+    `-IfStmt 0x125143650 <line:21:2, line:24:2>
+      |-BinaryOperator 0x125141918 <line:21:6, col:27> 'int' contains-errors '<='
+      | |-UnaryOperator 0x1251418a8 <col:6, col:8> 'unsigned int' prefix '++'
+      | | `-DeclRefExpr 0x125141888 <col:8> 'unsigned int' lvalue Var 0x125140d08 'challenge_count' 'unsigned int'
+      | `-RecoveryExpr 0x1251418f8 <col:27> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x125143630 <col:59, line:24:2>
+        |-CallExpr 0x125143488 <line:22:3, col:56> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1251432b8 <col:3> 'int ()' Function 0x125143200 'NET_INC_STATS' 'int ()'
+        | |-CallExpr 0x125143428 <col:17, col:28> 'int'
+        | | |-ImplicitCastExpr 0x125143410 <col:17> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x1251432d8 <col:17> 'int ()' Function 0x1251412a8 'sock_net' 'int ()'
+        | | `-ImplicitCastExpr 0x125143450 <col:26> 'struct sock *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x1251432f8 <col:26> 'struct sock *' lvalue ParmVar 0x125128648 'sk' 'struct sock *'
+        | `-RecoveryExpr 0x125143468 <col:31> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x1251435f0 <line:23:3, col:18> 'int'
+          |-ImplicitCastExpr 0x1251435d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x125143598 <col:3> 'int ()' Function 0x1251434e0 'tcp_send_ack' 'int ()'
+          `-ImplicitCastExpr 0x125143618 <col:16> 'struct sock *' <LValueToRValue>
+            `-DeclRefExpr 0x1251435b8 <col:16> 'struct sock *' lvalue ParmVar 0x125128648 'sk' 'struct sock *'

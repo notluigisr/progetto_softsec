@@ -1,0 +1,1 @@
+  enum sub_select_type get_linkage() { return linkage; }

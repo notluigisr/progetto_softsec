@@ -1,0 +1,46 @@
+`-FunctionDecl 0x144121b58  line:1:5 zap_other_threads 'int (struct task_struct *)'
+  |-ParmVarDecl 0x144121a48 <col:23, col:43> col:43 used p 'struct task_struct *'
+  `-CompoundStmt 0x14413a9e8 <line:2:1, line:20:1>
+    |-DeclStmt 0x144139f78 <line:3:2, col:27>
+    | `-VarDecl 0x144139ed8 <col:2, col:26> col:22 used t 'struct task_struct *' cinit
+    |   `-ImplicitCastExpr 0x144139f60 <col:26> 'struct task_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x144139f40 <col:26> 'struct task_struct *' lvalue ParmVar 0x144121a48 'p' 'struct task_struct *'
+    |-DeclStmt 0x14413a030 <line:4:2, col:15>
+    | `-VarDecl 0x144139fa8 <col:2, col:14> col:6 used count 'int' cinit
+    |   `-IntegerLiteral 0x14413a010 <col:14> 'int' 0
+    |-BinaryOperator 0x14413a110 <line:6:2, col:32> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14413a0a8 <col:2, col:13> '<dependent type>' contains-errors lvalue ->group_stop_count
+    | | `-RecoveryExpr 0x14413a080 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14413a048 <col:2> 'struct task_struct *' lvalue ParmVar 0x144121a48 'p' 'struct task_struct *'
+    | `-IntegerLiteral 0x14413a0f0 <col:32> 'int' 0
+    |-CallExpr 0x14413a308 <line:8:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x14413a2f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14413a260 <col:2> 'int ()' Function 0x14413a1a8 'while_each_thread' 'int ()'
+    | |-ImplicitCastExpr 0x14413a338 <col:20> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14413a280 <col:20> 'struct task_struct *' lvalue ParmVar 0x144121a48 'p' 'struct task_struct *'
+    | `-ImplicitCastExpr 0x14413a350 <col:23> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14413a2a0 <col:23> 'struct task_struct *' lvalue Var 0x144139ed8 't' 'struct task_struct *'
+    |-CompoundStmt 0x14413a970 <col:26, line:17:2>
+    | |-CallExpr 0x14413a4a0 <line:9:3, col:34> 'int'
+    | | |-ImplicitCastExpr 0x14413a488 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14413a448 <col:3> 'int ()' Function 0x14413a390 'task_clear_group_stop_pending' 'int ()'
+    | | `-ImplicitCastExpr 0x14413a4c8 <col:33> 'struct task_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14413a468 <col:33> 'struct task_struct *' lvalue Var 0x144139ed8 't' 'struct task_struct *'
+    | |-UnaryOperator 0x14413a500 <line:10:3, col:8> 'int' postfix '++'
+    | | `-DeclRefExpr 0x14413a4e0 <col:3> 'int' lvalue Var 0x144139fa8 'count' 'int'
+    | |-CallExpr 0x14413a7a0 <line:15:3, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14413a658 <col:3> 'int ()' Function 0x14413a5a0 'sigaddset' 'int ()'
+    | | |-UnaryOperator 0x14413a720 <col:13, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-CXXDependentScopeMemberExpr 0x14413a6d8 <col:14, col:25> '<dependent type>' contains-errors lvalue .signal
+    | | |   `-RecoveryExpr 0x14413a6b0 <col:14, col:17> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14413a678 <col:14> 'struct task_struct *' lvalue Var 0x144139ed8 't' 'struct task_struct *'
+    | | `-RecoveryExpr 0x14413a780 <col:33> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14413a928 <line:16:3, col:22> 'int'
+    |   |-ImplicitCastExpr 0x14413a910 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14413a8b0 <col:3> 'int ()' Function 0x14413a7f8 'signal_wake_up' 'int ()'
+    |   |-ImplicitCastExpr 0x14413a958 <col:18> 'struct task_struct *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14413a8d0 <col:18> 'struct task_struct *' lvalue Var 0x144139ed8 't' 'struct task_struct *'
+    |   `-IntegerLiteral 0x14413a8f0 <col:21> 'int' 1
+    `-ReturnStmt 0x14413a9d8 <line:19:2, col:9>
+      `-ImplicitCastExpr 0x14413a9c0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14413a9a0 <col:9> 'int' lvalue Var 0x144139fa8 'count' 'int'

@@ -1,0 +1,38 @@
+`-FunctionDecl 0x12b826768  line:1:17 blk_mq_tag_to_rq 'struct request *(struct blk_mq_tags *, unsigned int)'
+  |-ParmVarDecl 0x12b80e2e8 <col:34, col:54> col:54 used tags 'struct blk_mq_tags *'
+  |-ParmVarDecl 0x12b80e368 <col:60, col:73> col:73 used tag 'unsigned int'
+  `-CompoundStmt 0x12b8271a8 <line:2:1, line:11:1>
+    |-DeclStmt 0x12b826a30 <line:3:2, col:37>
+    | `-VarDecl 0x12b8268f8 <col:2, col:36> col:18 used rq 'struct request *' cinit
+    |   `-ArraySubscriptExpr 0x12b826a10 <col:23, col:36> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x12b8269e0 <col:23, col:29> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x12b826998 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x12b826960 <col:23> 'struct blk_mq_tags *' lvalue ParmVar 0x12b80e2e8 'tags' 'struct blk_mq_tags *'
+    |     `-ImplicitCastExpr 0x12b8269f8 <col:33> 'unsigned int' <LValueToRValue>
+    |       `-DeclRefExpr 0x12b8269c0 <col:33> 'unsigned int' lvalue ParmVar 0x12b80e368 'tag' 'unsigned int'
+    |-DeclStmt 0x12b826e78 <line:5:2, col:69>
+    | |-RecordDecl 0x12b826a48 <col:2, col:9> col:9 struct blk_flush_queue
+    | `-VarDecl 0x12b826bb8 <col:2, col:68> col:26 used fq 'struct blk_flush_queue *' cinit
+    |   `-CallExpr 0x12b826e30 <col:31, col:68> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12b826d50 <col:31> 'int ()' Function 0x12b826c98 'blk_get_flush_queue' 'int ()'
+    |     |-RecoveryExpr 0x12b826da8 <col:51, col:55> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12b826d70 <col:51> 'struct request *' contains-errors lvalue Var 0x12b8268f8 'rq' 'struct request *'
+    |     `-RecoveryExpr 0x12b826e08 <col:58, col:62> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12b826dd0 <col:58> 'struct request *' contains-errors lvalue Var 0x12b8268f8 'rq' 'struct request *'
+    |-IfStmt 0x12b827118 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x12b8270b8 <line:7:6, col:35> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12b827038 <col:7, col:35> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x12b827020 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x12b826f70 <col:7> 'int ()' Function 0x12b826eb8 'is_flush_request' 'int ()'
+    | |   |-ImplicitCastExpr 0x12b827070 <col:24> 'struct request *' contains-errors <LValueToRValue>
+    | |   | `-DeclRefExpr 0x12b826f90 <col:24> 'struct request *' contains-errors lvalue Var 0x12b8268f8 'rq' 'struct request *'
+    | |   |-ImplicitCastExpr 0x12b827088 <col:28> 'struct blk_flush_queue *' contains-errors <LValueToRValue>
+    | |   | `-DeclRefExpr 0x12b826fb0 <col:28> 'struct blk_flush_queue *' contains-errors lvalue Var 0x12b826bb8 'fq' 'struct blk_flush_queue *'
+    | |   `-ImplicitCastExpr 0x12b8270a0 <col:32> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12b826fd0 <col:32> 'unsigned int' lvalue ParmVar 0x12b80e368 'tag' 'unsigned int'
+    | `-ReturnStmt 0x12b827108 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x12b8270f0 <col:10> 'struct request *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12b8270d0 <col:10> 'struct request *' contains-errors lvalue Var 0x12b8268f8 'rq' 'struct request *'
+    `-ReturnStmt 0x12b827198 <line:10:2, col:13>
+      `-RecoveryExpr 0x12b827170 <col:9, col:13> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x12b827138 <col:9> 'struct blk_flush_queue *' contains-errors lvalue Var 0x12b826bb8 'fq' 'struct blk_flush_queue *'

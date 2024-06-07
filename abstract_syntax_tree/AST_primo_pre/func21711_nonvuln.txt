@@ -1,0 +1,23 @@
+`-FunctionDecl 0x132941838  line:1:17 invalid imap_multi_statemach 'int (struct connectdata *, int *)' static
+  |-ParmVarDecl 0x132928668 <col:38, col:58> col:58 used conn 'struct connectdata *'
+  |-ParmVarDecl 0x132928718 <col:64, col:70> col:70 invalid done 'int *'
+  `-CompoundStmt 0x132942428 <line:2:1, line:16:1>
+    |-DeclStmt 0x132941b98 <line:4:3, col:47>
+    | |-RecordDecl 0x1329418f0 <col:3, col:10> col:10 struct imap_conn
+    | `-VarDecl 0x132941a58 <col:3, col:42> col:21 used imapc 'struct imap_conn *' cinit
+    |   `-UnaryOperator 0x132941b68 <col:29, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x132941b20 <col:30, col:42> '<dependent type>' contains-errors lvalue .imapc
+    |       `-RecoveryExpr 0x132941af8 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x132941ac0 <col:30> 'struct connectdata *' lvalue ParmVar 0x132928668 'conn' 'struct connectdata *'
+    `-IfStmt 0x132942160 <line:6:3, line:10:3>
+      |-RecoveryExpr 0x132941d20 <line:6:6, col:54> '_Bool' contains-errors
+      `-CompoundStmt 0x132942148 <col:63, line:10:3>
+        `-IfStmt 0x132942128 <line:8:5, line:9:14>
+          |-BinaryOperator 0x1329420c0 <line:8:8, col:26> 'int' contains-errors '||'
+          | |-RecoveryExpr 0x132942070 <col:8> '<dependent type>' contains-errors lvalue
+          | `-UnaryOperator 0x1329420a8 <col:18, col:26> '<dependent type>' contains-errors prefix '!' cannot overflow
+          |   `-ImplicitCastExpr 0x132942090 <col:19, col:26> '<dependent type>' contains-errors <LValueToRValue>
+          |     `-RecoveryExpr 0x132941ff8 <col:19, col:26> '<dependent type>' contains-errors lvalue
+          |       `-DeclRefExpr 0x132941fc0 <col:19> 'struct imap_conn *' contains-errors lvalue Var 0x132941a58 'imapc' 'struct imap_conn *'
+          `-ReturnStmt 0x132942118 <line:9:7, col:14>
+            `-RecoveryExpr 0x1329420f8 <col:14> '<dependent type>' contains-errors lvalue

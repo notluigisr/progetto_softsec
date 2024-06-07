@@ -1,0 +1,33 @@
+`-FunctionDecl 0x105027438  line:1:12 invalid audit_netlink_ok 'int (struct sk_buff *, int)' static
+  |-ParmVarDecl 0x10500e248 <col:29, col:45> col:45 skb 'struct sk_buff *'
+  |-ParmVarDecl 0x10500e2e0 <col:50, col:54> col:54 invalid msg_type 'int'
+  `-CompoundStmt 0x105027f68 <line:2:1, line:45:1>
+    |-DeclStmt 0x105027590 <line:3:2, col:13>
+    | `-VarDecl 0x105027508 <col:2, col:12> col:6 used err 'int' cinit
+    |   `-IntegerLiteral 0x105027570 <col:12> 'int' 0
+    |-IfStmt 0x105027948 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x105027880 <line:7:6, col:28> 'int' contains-errors '!='
+    | | |-CallExpr 0x105027828 <col:6, col:22> 'int'
+    | | | `-ImplicitCastExpr 0x105027810 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | |   `-DeclRefExpr 0x105027700 <col:6> 'int ()' Function 0x105027648 'current_user_ns' 'int ()'
+    | | `-UnaryOperator 0x105027868 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x105027848 <col:28> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x105027938 <line:8:3, col:11>
+    |   `-UnaryOperator 0x105027920 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x105027908 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1050278e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-SwitchStmt 0x1050279a0 <line:10:2, line:42:2>
+    | |-ImplicitCastExpr 0x105027988 <line:10:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x105027968 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x105027ef0 <col:20, line:42:2>
+    |   |-ReturnStmt 0x105027aa8 <line:14:3, col:11>
+    |   | `-UnaryOperator 0x105027a90 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x105027a78 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x105027a58 <col:11> '<dependent type>' contains-errors lvalue
+    |   |-BreakStmt 0x105027e38 <line:33:3>
+    |   |-BreakStmt 0x105027ea0 <line:39:3>
+    |   `-DefaultStmt 0x105027ed0 <line:40:2, col:9>
+    |     `-NullStmt 0x105027ec8 <col:9>
+    `-ReturnStmt 0x105027f58 <line:44:2, col:9>
+      `-ImplicitCastExpr 0x105027f40 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x105027f20 <col:9> 'int' lvalue Var 0x105027508 'err' 'int'

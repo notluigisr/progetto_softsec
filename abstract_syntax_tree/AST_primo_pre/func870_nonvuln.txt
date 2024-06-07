@@ -1,0 +1,85 @@
+`-FunctionDecl 0x13502a888  line:1:12 dio_bio_end_aio 'int (struct bio *, unsigned int, int)' static
+  |-ParmVarDecl 0x13500e248 <col:28, col:40> col:40 used bio 'struct bio *'
+  |-ParmVarDecl 0x13500e2c8 <col:45, col:58> col:58 bytes_done 'unsigned int'
+  |-ParmVarDecl 0x13500e348 <col:70, col:74> col:74 error 'int'
+  `-CompoundStmt 0x134922c68 <line:2:1, line:26:1>
+    |-DeclStmt 0x13502abd8 <line:3:2, col:35>
+    | |-RecordDecl 0x13502a990 <col:2, col:9> col:9 struct dio
+    | `-VarDecl 0x13502aaf8 <col:2, col:25> col:14 used dio 'struct dio *' cinit
+    |   `-RecoveryExpr 0x13502ab98 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13502ab60 <col:20> 'struct bio *' lvalue ParmVar 0x13500e248 'bio' 'struct bio *'
+    |-DeclStmt 0x13502ac70 <line:4:2, col:25>
+    | `-VarDecl 0x13502ac08 <col:2, col:16> col:16 used remaining 'unsigned long'
+    |-DeclStmt 0x13502ad08 <line:5:2, col:21>
+    | `-VarDecl 0x13502aca0 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-IfStmt 0x13502adb0 <line:7:2, line:8:10>
+    | |-RecoveryExpr 0x13502ad58 <line:7:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13502ad20 <col:6> 'struct bio *' lvalue ParmVar 0x13500e248 'bio' 'struct bio *'
+    | `-ReturnStmt 0x13502ada0 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x13502ad80 <col:10> 'int' 1
+    |-CallExpr 0x13502afa8 <line:11:2, col:27> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13502af90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13502af00 <col:2> 'int ()' Function 0x13502ae48 'dio_bio_complete' 'int ()'
+    | |-ImplicitCastExpr 0x13502afd8 <col:19> 'struct dio *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x13502af20 <col:19> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    | `-ImplicitCastExpr 0x13502aff0 <col:24> 'struct bio *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13502af40 <col:24> 'struct bio *' lvalue ParmVar 0x13500e248 'bio' 'struct bio *'
+    |-CallExpr 0x13502b1a0 <line:13:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13502b0e8 <col:2> 'int ()' Function 0x13502b030 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x13502b168 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13502b140 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13502b108 <col:21> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    | `-DeclRefExpr 0x13502b180 <col:36> 'unsigned long' lvalue Var 0x13502aca0 'flags' 'unsigned long'
+    |-BinaryOperator 0x13502b268 <line:14:2, col:21> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x13502b1d0 <col:2> 'unsigned long' lvalue Var 0x13502ac08 'remaining' 'unsigned long'
+    | `-UnaryOperator 0x13502b250 <col:14, col:21> '<dependent type>' contains-errors prefix '--' cannot overflow
+    |   `-RecoveryExpr 0x13502b228 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13502b1f0 <col:16> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    |-IfStmt 0x13502b520 <line:15:2, line:16:30>
+    | |-BinaryOperator 0x13502b378 <line:15:6, col:29> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x13502b2f8 <col:6, col:19> 'int' '=='
+    | | | |-ImplicitCastExpr 0x13502b2c8 <col:6> 'unsigned long' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x13502b288 <col:6> 'unsigned long' lvalue Var 0x13502ac08 'remaining' 'unsigned long'
+    | | | `-ImplicitCastExpr 0x13502b2e0 <col:19> 'unsigned long' <IntegralCast>
+    | | |   `-IntegerLiteral 0x13502b2a8 <col:19> 'int' 1
+    | | `-RecoveryExpr 0x13502b350 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13502b318 <col:24> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    | `-CallExpr 0x13502b4f8 <line:16:3, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13502b478 <col:3> 'int ()' Function 0x13502b3c0 'wake_up_process' 'int ()'
+    |   `-RecoveryExpr 0x13502b4d0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13502b498 <col:19> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    |-CallExpr 0x13502b6d8 <line:17:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13502b620 <col:2> 'int ()' Function 0x13502b568 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x13502b6a0 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13502b678 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13502b640 <col:26> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    | `-DeclRefExpr 0x13502b6b8 <col:41> 'unsigned long' lvalue Var 0x13502aca0 'flags' 'unsigned long'
+    |-IfStmt 0x134922c18 <line:19:2, line:23:2>
+    | |-BinaryOperator 0x13502b778 <line:19:6, col:19> 'int' '=='
+    | | |-ImplicitCastExpr 0x13502b748 <col:6> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13502b708 <col:6> 'unsigned long' lvalue Var 0x13502ac08 'remaining' 'unsigned long'
+    | | `-ImplicitCastExpr 0x13502b760 <col:19> 'unsigned long' <IntegralCast>
+    | |   `-IntegerLiteral 0x13502b728 <col:19> 'int' 0
+    | `-CompoundStmt 0x134922bf0 <col:22, line:23:2>
+    |   |-DeclStmt 0x134922888 <line:20:3, col:52>
+    |   | `-VarDecl 0x134922600 <col:3, col:51> col:7 used ret 'int' cinit
+    |   |   `-CallExpr 0x134922850 <col:13, col:51> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x134922748 <col:13> 'int ()' Function 0x134922690 'dio_complete' 'int ()'
+    |   |     |-DeclRefExpr 0x134922768 <col:26> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    |   |     |-CXXDependentScopeMemberExpr 0x1349227e8 <col:31, col:42> '<dependent type>' contains-errors lvalue ->ki_pos
+    |   |     | `-RecoveryExpr 0x1349227c0 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x134922788 <col:31> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    |   |     `-IntegerLiteral 0x134922830 <col:50> 'int' 0
+    |   |-CallExpr 0x134922a40 <line:21:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x134922980 <col:3> 'int ()' Function 0x1349228c8 'aio_complete' 'int ()'
+    |   | |-RecoveryExpr 0x1349229d8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1349229a0 <col:16> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    |   | |-DeclRefExpr 0x134922a00 <col:27> 'int' contains-errors lvalue Var 0x134922600 'ret' 'int'
+    |   | `-IntegerLiteral 0x134922a20 <col:32> 'int' 0
+    |   `-CallExpr 0x134922bb0 <line:22:3, col:12> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x134922b98 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x134922b58 <col:3> 'int ()' Function 0x134922aa0 'kfree' 'int ()'
+    |     `-ImplicitCastExpr 0x134922bd8 <col:9> 'struct dio *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x134922b78 <col:9> 'struct dio *' contains-errors lvalue Var 0x13502aaf8 'dio' 'struct dio *'
+    `-ReturnStmt 0x134922c58 <line:25:2, col:9>
+      `-IntegerLiteral 0x134922c38 <col:9> 'int' 0

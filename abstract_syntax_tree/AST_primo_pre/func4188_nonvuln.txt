@@ -1,0 +1,48 @@
+`-FunctionDecl 0x139808320  line:1:13 invalid get_counters 'void (const struct xt_table_info *, int)' static
+  |-ParmVarDecl 0x139128648 <col:26, col:54> col:54 used t 'const struct xt_table_info *'
+  |-ParmVarDecl 0x139808200 <line:2:5, col:24> col:24 invalid counters 'int'
+  `-CompoundStmt 0x139140e08 <line:3:1, line:26:1>
+    |-DeclStmt 0x1398085c8 <line:4:2, col:25>
+    | |-RecordDecl 0x1398083d8 <col:2, col:9> col:9 struct arpt_entry
+    | `-VarDecl 0x139808548 <col:2, col:21> col:21 used iter 'struct arpt_entry *'
+    |-DeclStmt 0x139808660 <line:5:2, col:18>
+    | `-VarDecl 0x1398085f8 <col:2, col:15> col:15 used cpu 'unsigned int'
+    |-DeclStmt 0x1398086f8 <line:6:2, col:16>
+    | `-VarDecl 0x139808690 <col:2, col:15> col:15 used i 'unsigned int'
+    |-CallExpr 0x139808908 <line:8:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x1398088f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x139808880 <col:2> 'int ()' Function 0x1398087c8 'for_each_possible_cpu' 'int ()'
+    | `-ImplicitCastExpr 0x139808930 <col:24> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x1398088a0 <col:24> 'unsigned int' lvalue Var 0x1398085f8 'cpu' 'unsigned int'
+    `-CompoundStmt 0x139140de0 <col:29, line:25:2>
+      |-BinaryOperator 0x139808b80 <line:11:3, col:7> 'unsigned int' '='
+      | |-DeclRefExpr 0x139808b28 <col:3> 'unsigned int' lvalue Var 0x139808690 'i' 'unsigned int'
+      | `-ImplicitCastExpr 0x139808b68 <col:7> 'unsigned int' <IntegralCast>
+      |   `-IntegerLiteral 0x139808b48 <col:7> 'int' 0
+      |-CallExpr 0x139808df0 <line:12:3, col:50> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x139808c80 <col:3> 'int ()' Function 0x139808bc8 'xt_entry_foreach' 'int ()'
+      | |-DeclRefExpr 0x139808ca0 <col:20> 'struct arpt_entry *' lvalue Var 0x139808548 'iter' 'struct arpt_entry *'
+      | |-ArraySubscriptExpr 0x139808d70 <col:26, col:40> '<dependent type>' contains-errors lvalue
+      | | |-ImplicitCastExpr 0x139808d40 <col:26, col:29> '<dependent type>' contains-errors <LValueToRValue>
+      | | | `-RecoveryExpr 0x139808cf8 <col:26, col:29> '<dependent type>' contains-errors lvalue
+      | | |   `-DeclRefExpr 0x139808cc0 <col:26> 'const struct xt_table_info *' lvalue ParmVar 0x139128648 't' 'const struct xt_table_info *'
+      | | `-ImplicitCastExpr 0x139808d58 <col:37> 'unsigned int' <LValueToRValue>
+      | |   `-DeclRefExpr 0x139808d20 <col:37> 'unsigned int' lvalue Var 0x1398085f8 'cpu' 'unsigned int'
+      | `-RecoveryExpr 0x139808dc8 <col:43, col:46> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x139808d90 <col:43> 'const struct xt_table_info *' lvalue ParmVar 0x139128648 't' 'const struct xt_table_info *'
+      `-CompoundStmt 0x139140db8 <col:52, line:24:3>
+        |-DeclStmt 0x139808ea8 <line:14:4, col:22>
+        | `-VarDecl 0x139808e40 <col:4, col:17> col:17 used start 'unsigned int'
+        |-DoStmt 0x139140bd0 <line:16:4, line:20:39>
+        | |-CompoundStmt 0x139140a00 <line:16:7, line:20:4>
+        | | `-BinaryOperator 0x139809088 <line:17:5, col:31> 'unsigned int' contains-errors '='
+        | |   |-DeclRefExpr 0x139808ec0 <col:5> 'unsigned int' lvalue Var 0x139808e40 'start' 'unsigned int'
+        | |   `-CallExpr 0x139809060 <col:13, col:31> '<dependent type>' contains-errors
+        | |     |-DeclRefExpr 0x139808fc0 <col:13> 'int ()' Function 0x139808f08 'read_seqbegin' 'int ()'
+        | |     `-RecoveryExpr 0x139809040 <col:27> '<dependent type>' contains-errors lvalue
+        | `-CallExpr 0x139140ba0 <line:20:13, col:38> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x139140af8 <col:13> 'int ()' Function 0x139140a40 'read_seqretry' 'int ()'
+        |   |-RecoveryExpr 0x139140b80 <col:27> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x139140b30 <col:33> 'unsigned int' lvalue Var 0x139808e40 'start' 'unsigned int'
+        `-UnaryOperator 0x139140da0 <line:23:4, col:6> 'unsigned int' prefix '++'
+          `-DeclRefExpr 0x139140d80 <col:6> 'unsigned int' lvalue Var 0x139808690 'i' 'unsigned int'

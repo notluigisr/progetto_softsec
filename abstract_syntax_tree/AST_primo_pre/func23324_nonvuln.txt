@@ -1,0 +1,15 @@
+`-FunctionDecl 0x11f9418d8  line:1:12 invalid emulator_get_msr 'int (struct x86_emulate_ctxt *, int, int *)' static
+  |-ParmVarDecl 0x11f928648 <col:29, col:54> col:54 used ctxt 'struct x86_emulate_ctxt *'
+  |-ParmVarDecl 0x11f9286e0 <line:2:8, col:12> col:12 invalid msr_index 'int'
+  |-ParmVarDecl 0x11f928798 <col:23, col:28> col:28 invalid pdata 'int *'
+  `-CompoundStmt 0x11f941d40 <line:3:1, line:5:1>
+    `-ReturnStmt 0x11f941d30 <line:4:2, col:57>
+      `-CallExpr 0x11f941cf8 <col:9, col:57> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x11f941af0 <col:9> 'int ()' Function 0x11f941a38 'kvm_get_msr' 'int ()'
+        |-CallExpr 0x11f941c78 <col:21, col:38> 'int'
+        | |-ImplicitCastExpr 0x11f941c60 <col:21> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x11f941bf0 <col:21> 'int ()' Function 0x11f941b38 'emul_to_vcpu' 'int ()'
+        | `-ImplicitCastExpr 0x11f941ca0 <col:34> 'struct x86_emulate_ctxt *' <LValueToRValue>
+        |   `-DeclRefExpr 0x11f941c10 <col:34> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x11f928648 'ctxt' 'struct x86_emulate_ctxt *'
+        |-RecoveryExpr 0x11f941cb8 <col:41> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x11f941cd8 <col:52> '<dependent type>' contains-errors lvalue

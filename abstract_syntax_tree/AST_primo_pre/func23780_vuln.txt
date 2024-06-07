@@ -1,0 +1,60 @@
+`-FunctionDecl 0x15b940df8  line:1:12 fuse_rename2 'int (struct inode *, struct dentry *, struct inode *, struct dentry *, unsigned int)' static
+  |-ParmVarDecl 0x15b928648 <col:25, col:39> col:39 used olddir 'struct inode *'
+  |-ParmVarDecl 0x15b940a28 <col:47, col:62> col:62 used oldent 'struct dentry *'
+  |-ParmVarDecl 0x15b940b18 <line:2:4, col:18> col:18 used newdir 'struct inode *'
+  |-ParmVarDecl 0x15b940c08 <col:26, col:41> col:41 used newent 'struct dentry *'
+  |-ParmVarDecl 0x15b940c88 <line:3:4, col:17> col:17 used flags 'unsigned int'
+  `-CompoundStmt 0x14c008dc0 <line:4:1, line:29:1>
+    |-DeclStmt 0x15b941308 <line:5:2, col:46>
+    | |-RecordDecl 0x15b940f10 <col:2, col:9> col:9 struct fuse_conn
+    | `-VarDecl 0x15b941078 <col:2, col:45> col:20 used fc 'struct fuse_conn *' cinit
+    |   `-ImplicitCastExpr 0x15b9412d8 <col:25, col:45> 'struct fuse_conn *' <IntegralToPointer>
+    |     `-CallExpr 0x15b941298 <col:25, col:45> 'int'
+    |       |-ImplicitCastExpr 0x15b941280 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15b941210 <col:25> 'int ()' Function 0x15b941158 'get_fuse_conn' 'int ()'
+    |       `-ImplicitCastExpr 0x15b9412c0 <col:39> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15b941230 <col:39> 'struct inode *' lvalue ParmVar 0x15b928648 'olddir' 'struct inode *'
+    |-DeclStmt 0x15b9413a0 <line:6:2, col:9>
+    | `-VarDecl 0x15b941338 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x15b941528 <line:8:2, line:9:11>
+    | |-RecoveryExpr 0x15b941460 <line:8:6, col:68> '_Bool' contains-errors
+    | `-ReturnStmt 0x15b941518 <line:9:3, col:11>
+    |   `-UnaryOperator 0x15b941500 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15b9414e8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15b9414c8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14c008d48 <line:11:2, line:26:2> has_else
+    | |-ImplicitCastExpr 0x15b941568 <line:11:6> 'unsigned int' <LValueToRValue>
+    | | `-DeclRefExpr 0x15b941548 <col:6> 'unsigned int' lvalue ParmVar 0x15b940c88 'flags' 'unsigned int'
+    | |-CompoundStmt 0x14c008b28 <col:13, line:22:2>
+    | | |-IfStmt 0x15b941748 <line:12:3, line:13:12>
+    | | | |-BinaryOperator 0x15b941680 <line:12:7, col:37> 'int' contains-errors '||'
+    | | | | |-RecoveryExpr 0x15b9415b8 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | | | | | `-DeclRefExpr 0x15b941580 <col:7> 'struct fuse_conn *' lvalue Var 0x15b941078 'fc' 'struct fuse_conn *'
+    | | | | `-BinaryOperator 0x15b941660 <col:25, col:37> 'int' contains-errors '<'
+    | | | |   |-RecoveryExpr 0x15b941618 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    | | | |   | `-DeclRefExpr 0x15b9415e0 <col:25> 'struct fuse_conn *' lvalue Var 0x15b941078 'fc' 'struct fuse_conn *'
+    | | | |   `-IntegerLiteral 0x15b941640 <col:37> 'int' 23
+    | | | `-ReturnStmt 0x15b941738 <line:13:4, col:12>
+    | | |   `-UnaryOperator 0x15b941720 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | | |     `-ImplicitCastExpr 0x15b941708 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |       `-RecoveryExpr 0x15b9416e8 <col:12> '<dependent type>' contains-errors lvalue
+    | | `-IfStmt 0x14c008b08 <line:18:3, line:21:3>
+    | |   |-BinaryOperator 0x14c008930 <line:18:7, col:15> 'int' contains-errors '=='
+    | |   | |-DeclRefExpr 0x14c008858 <col:7> 'int' lvalue Var 0x15b941338 'err' 'int'
+    | |   | `-UnaryOperator 0x14c008918 <col:14, col:15> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   |   `-ImplicitCastExpr 0x14c008900 <col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |     `-RecoveryExpr 0x14c0088e0 <col:15> '<dependent type>' contains-errors lvalue
+    | |   `-CompoundStmt 0x14c008ae8 <col:23, line:21:3>
+    | |     |-BinaryOperator 0x14c0089d0 <line:19:4, col:21> '<dependent type>' contains-errors '='
+    | |     | |-RecoveryExpr 0x14c008988 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    | |     | | `-DeclRefExpr 0x14c008950 <col:4> 'struct fuse_conn *' lvalue Var 0x15b941078 'fc' 'struct fuse_conn *'
+    | |     | `-IntegerLiteral 0x14c0089b0 <col:21> 'int' 1
+    | |     `-BinaryOperator 0x14c008ac8 <line:20:4, col:11> 'int' contains-errors '='
+    | |       |-DeclRefExpr 0x14c0089f0 <col:4> 'int' lvalue Var 0x15b941338 'err' 'int'
+    | |       `-UnaryOperator 0x14c008ab0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |         `-ImplicitCastExpr 0x14c008a98 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |           `-RecoveryExpr 0x14c008a78 <col:11> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14c008d38 <line:22:9, line:26:2>
+    `-ReturnStmt 0x14c008db0 <line:28:2, col:9>
+      `-ImplicitCastExpr 0x14c008d98 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14c008d78 <col:9> 'int' lvalue Var 0x15b941338 'err' 'int'

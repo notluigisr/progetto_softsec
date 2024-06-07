@@ -1,0 +1,50 @@
+`-FunctionDecl 0x133941800  line:1:13 invalid ptrace_freeze_traced 'int (struct task_struct *)' static
+  |-ParmVarDecl 0x133928668 <col:34, col:54> col:54 used task 'struct task_struct *'
+  `-CompoundStmt 0x1339425e0 <line:2:1, line:18:1>
+    |-IfStmt 0x1339419d0 <line:6:2, line:7:10>
+    | |-BinaryOperator 0x133941968 <line:6:6, col:21> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x1339418e8 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x1339418b0 <col:6> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    | | `-RecoveryExpr 0x133941948 <col:21> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1339419c0 <line:7:3, col:10>
+    |   `-RecoveryExpr 0x1339419a0 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x133941c30 <line:9:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x133941b50 <col:2> 'int ()' Function 0x133941a98 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x133941c18 <col:16, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x133941bd0 <col:17, col:32> '<dependent type>' contains-errors lvalue ->siglock
+    |     `-RecoveryExpr 0x133941ba8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x133941b70 <col:17> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    |-IfStmt 0x133942390 <line:10:2, line:14:2>
+    | |-BinaryOperator 0x133942148 <line:10:6, line:11:34> 'int' '&&'
+    | | |-BinaryOperator 0x133941f98 <line:10:6, col:61> 'int' '&&'
+    | | | |-CallExpr 0x133941dc8 <col:6, col:25> 'int'
+    | | | | |-ImplicitCastExpr 0x133941db0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | `-DeclRefExpr 0x133941d38 <col:6> 'int ()' Function 0x133941c80 'task_is_traced' 'int ()'
+    | | | | `-ImplicitCastExpr 0x133941df0 <col:21> 'struct task_struct *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x133941d58 <col:21> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    | | | `-UnaryOperator 0x133941f80 <col:30, col:61> 'int' prefix '!' cannot overflow
+    | | |   `-CallExpr 0x133941f40 <col:31, col:61> 'int'
+    | | |     |-ImplicitCastExpr 0x133941f28 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | `-DeclRefExpr 0x133941ee8 <col:31> 'int ()' Function 0x133941e30 'looks_like_a_spurious_pid' 'int ()'
+    | | |     `-ImplicitCastExpr 0x133941f68 <col:57> 'struct task_struct *' <LValueToRValue>
+    | | |       `-DeclRefExpr 0x133941f08 <col:57> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    | | `-UnaryOperator 0x133942130 <line:11:6, col:34> 'int' prefix '!' cannot overflow
+    | |   `-CallExpr 0x1339420f0 <col:7, col:34> 'int'
+    | |     |-ImplicitCastExpr 0x1339420d8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x133942098 <col:7> 'int ()' Function 0x133941fe0 '__fatal_signal_pending' 'int ()'
+    | |     `-ImplicitCastExpr 0x133942118 <col:30> 'struct task_struct *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x1339420b8 <col:30> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    | `-CompoundStmt 0x133942378 <col:37, line:14:2>
+    |   `-CallExpr 0x133942330 <line:12:3, col:42> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x133942248 <col:3> 'int ()' Function 0x133942190 'WRITE_ONCE' 'int ()'
+    |     |-RecoveryExpr 0x1339422a0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x133942268 <col:14> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    |     `-RecoveryExpr 0x133942310 <col:29> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x133942570 <line:15:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x133942490 <col:2> 'int ()' Function 0x1339423d8 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x133942558 <col:18, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x133942510 <col:19, col:34> '<dependent type>' contains-errors lvalue ->siglock
+    |     `-RecoveryExpr 0x1339424e8 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1339424b0 <col:19> 'struct task_struct *' lvalue ParmVar 0x133928668 'task' 'struct task_struct *'
+    `-ReturnStmt 0x1339425d0 <line:17:2, col:9>
+      `-RecoveryExpr 0x1339425b0 <col:9> '<dependent type>' contains-errors lvalue

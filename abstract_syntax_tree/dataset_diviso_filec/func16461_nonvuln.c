@@ -1,0 +1,1 @@
+void Downstream::set_request_header_sent(bool f) { request_header_sent_ = f; }

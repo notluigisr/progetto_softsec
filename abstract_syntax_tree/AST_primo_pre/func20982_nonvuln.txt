@@ -1,0 +1,31 @@
+`-FunctionDecl 0x14a00df18  line:1:12 invalid emit_code 'int *(int *, int, unsigned int)' static
+  |-ParmVarDecl 0x14a00dd28 <col:22, col:26> col:26 invalid ptr 'int *'
+  |-ParmVarDecl 0x14a00dda8 <col:31, col:35> col:35 invalid bytes 'int'
+  |-ParmVarDecl 0x14a00de28 <col:42, col:55> col:55 used len 'unsigned int'
+  `-CompoundStmt 0x14a027ea0 <line:2:1, line:12:1>
+    |-IfStmt 0x14a027e00 <line:3:2, line:10:2> has_else
+    | |-BinaryOperator 0x14a00e048 <line:3:6, col:13> 'int' '=='
+    | | |-ImplicitCastExpr 0x14a00e018 <col:6> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14a00dfd8 <col:6> 'unsigned int' lvalue ParmVar 0x14a00de28 'len' 'unsigned int'
+    | | `-ImplicitCastExpr 0x14a00e030 <col:13> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x14a00dff8 <col:13> 'int' 1
+    | |-BinaryOperator 0x14a00e0d8 <line:4:3, col:10> '<dependent type>' contains-errors '='
+    | | |-UnaryOperator 0x14a00e0a0 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | | `-ImplicitCastExpr 0x14a00e088 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x14a00e068 <col:4> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14a00e0b8 <col:10> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x14a00e3b8 <line:5:7, line:10:2> has_else
+    |   |-BinaryOperator 0x14a00e168 <line:5:11, col:18> 'int' '=='
+    |   | |-ImplicitCastExpr 0x14a00e138 <col:11> 'unsigned int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x14a00e0f8 <col:11> 'unsigned int' lvalue ParmVar 0x14a00de28 'len' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x14a00e150 <col:18> 'unsigned int' <IntegralCast>
+    |   |   `-IntegerLiteral 0x14a00e118 <col:18> 'int' 2
+    |   |-NullStmt 0x14a00e3b0 <line:6:3>
+    |   `-CompoundStmt 0x14a00e398 <line:7:7, line:10:2>
+    |     `-CallExpr 0x14a00e378 <line:9:3, col:11> 'int'
+    |       `-ImplicitCastExpr 0x14a00e360 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x14a00e310 <col:3> 'int ()' Function 0x14a00e258 'barrier' 'int ()'
+    `-ReturnStmt 0x14a027e90 <line:11:2, col:15>
+      `-BinaryOperator 0x14a027e70 <col:9, col:15> '<dependent type>' contains-errors '+'
+        |-RecoveryExpr 0x14a027e30 <col:9> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x14a027e50 <col:15> 'unsigned int' lvalue ParmVar 0x14a00de28 'len' 'unsigned int'

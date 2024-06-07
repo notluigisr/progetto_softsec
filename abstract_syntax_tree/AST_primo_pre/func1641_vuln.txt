@@ -1,0 +1,160 @@
+`-FunctionDecl 0x14b008688  line:1:12 invalid rose_recvmsg 'int (struct kiocb *, struct socket *, struct msghdr *, int, int)' static
+  |-ParmVarDecl 0x14a928e48 <col:25, col:39> col:39 iocb 'struct kiocb *'
+  |-ParmVarDecl 0x14b008228 <col:45, col:60> col:60 used sock 'struct socket *'
+  |-ParmVarDecl 0x14b0083f8 <line:2:4, col:19> col:19 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x14b008490 <col:24, col:31> col:31 invalid size 'int'
+  |-ParmVarDecl 0x14b008510 <col:37, col:41> col:41 used flags 'int'
+  `-CompoundStmt 0x14a944848 <line:3:1, line:61:1>
+    |-DeclStmt 0x14b0089a8 <line:4:2, col:28>
+    | |-RecordDecl 0x14b008758 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x14b0088c8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x14b008968 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b008930 <col:20> 'struct socket *' lvalue ParmVar 0x14b008228 'sock' 'struct socket *'
+    |-DeclStmt 0x14b008de8 <line:5:2, col:38>
+    | |-RecordDecl 0x14b0089c0 <col:2, col:9> col:9 struct rose_sock
+    | `-VarDecl 0x14b008b28 <col:2, col:37> col:20 used rose 'struct rose_sock *' cinit
+    |   `-ImplicitCastExpr 0x14b008db8 <col:27, col:37> 'struct rose_sock *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x14b008d78 <col:27, col:37> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x14b008d60 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14b008cf0 <col:27> 'int ()' Function 0x14b008c38 'rose_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x14b008da0 <col:35> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x14b008d10 <col:35> 'struct sock *' contains-errors lvalue Var 0x14b0088c8 'sk' 'struct sock *'
+    |-DeclStmt 0x14b0090f8 <line:6:2, col:69>
+    | |-RecordDecl 0x14b008e00 <col:2, col:9> col:9 struct sockaddr_rose
+    | `-VarDecl 0x14b008f68 <col:2, col:61> col:24 used srose 'struct sockaddr_rose *' cinit
+    |   `-CStyleCastExpr 0x14b0090b8 <col:32, col:61> 'struct sockaddr_rose *' contains-errors <Dependent>
+    |     `-RecoveryExpr 0x14b009008 <col:56, col:61> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b008fd0 <col:56> 'struct msghdr *' lvalue ParmVar 0x14b0083f8 'msg' 'struct msghdr *'
+    |-UnaryExprOrTypeTraitExpr 0x14b009180 <line:7:2, col:9> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x14b009160 <col:9> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14a942268 <line:8:2, col:23>
+    | `-VarDecl 0x14a942200 <col:2, col:17> col:17 used asmptr 'unsigned char *'
+    |-DeclStmt 0x14a942468 <line:9:2, col:21>
+    | |-RecordDecl 0x14a942280 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x14a9423e8 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x14a942620 <line:10:2, col:17>
+    | |-VarDecl 0x14a942498 <col:2, col:6> col:6 used n 'int'
+    | |-VarDecl 0x14a942518 <col:2, col:9> col:9 used er 'int'
+    | `-VarDecl 0x14a942598 <col:2, col:13> col:13 used qbit 'int'
+    |-IfStmt 0x14a9427e8 <line:13:2, line:14:11>
+    | |-BinaryOperator 0x14a9426f0 <line:13:6, col:22> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x14a942670 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14a942638 <col:6> 'struct sock *' contains-errors lvalue Var 0x14b0088c8 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x14a9426d0 <col:22> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14a9427d8 <line:14:3, col:11>
+    |   `-UnaryOperator 0x14a9427c0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14a9427a8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14a942758 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a942b78 <line:17:2, line:18:10>
+    | |-RecoveryExpr 0x14a942b10 <line:17:6, col:89> '_Bool' contains-errors
+    | `-ReturnStmt 0x14a942b68 <line:18:3, col:10>
+    |   `-ImplicitCastExpr 0x14a942b50 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x14a942b30 <col:10> 'int' lvalue Var 0x14a942518 'er' 'int'
+    |-CallExpr 0x14a942e80 <line:22:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a942dd8 <col:2> 'int ()' Function 0x14a942d20 'skb_pull' 'int ()'
+    | |-DeclRefExpr 0x14a942df8 <col:11> 'struct sk_buff *' lvalue Var 0x14a9423e8 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x14a942e60 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a943200 <line:24:2, line:27:2>
+    | |-RecoveryExpr 0x14a942ee8 <line:24:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14a942eb0 <col:6> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    | `-CompoundStmt 0x14a9431c8 <col:22, line:27:2>
+    |   |-BinaryOperator 0x14a9430e8 <line:25:3, col:28> 'unsigned char *' '='
+    |   | |-DeclRefExpr 0x14a942f10 <col:3> 'unsigned char *' lvalue Var 0x14a942200 'asmptr' 'unsigned char *'
+    |   | `-ImplicitCastExpr 0x14a9430d0 <col:13, col:28> 'unsigned char *' <IntegralToPointer>
+    |   |   `-CallExpr 0x14a943088 <col:13, col:28> 'int'
+    |   |     |-ImplicitCastExpr 0x14a943070 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x14a943010 <col:13> 'int ()' Function 0x14a942f58 'skb_push' 'int ()'
+    |   |     |-ImplicitCastExpr 0x14a9430b8 <col:22> 'struct sk_buff *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x14a943030 <col:22> 'struct sk_buff *' lvalue Var 0x14a9423e8 'skb' 'struct sk_buff *'
+    |   |     `-IntegerLiteral 0x14a943050 <col:27> 'int' 1
+    |   `-BinaryOperator 0x14a9431a8 <line:26:3, col:13> 'unsigned char' '='
+    |     |-UnaryOperator 0x14a943140 <col:3, col:4> 'unsigned char' lvalue prefix '*' cannot overflow
+    |     | `-ImplicitCastExpr 0x14a943128 <col:4> 'unsigned char *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x14a943108 <col:4> 'unsigned char *' lvalue Var 0x14a942200 'asmptr' 'unsigned char *'
+    |     `-ImplicitCastExpr 0x14a943190 <col:13> 'unsigned char' <IntegralCast>
+    |       `-ImplicitCastExpr 0x14a943178 <col:13> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x14a943158 <col:13> 'int' lvalue Var 0x14a942598 'qbit' 'int'
+    |-CallExpr 0x14a943358 <line:29:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x14a943340 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a943300 <col:2> 'int ()' Function 0x14a943248 'skb_reset_transport_header' 'int ()'
+    | `-ImplicitCastExpr 0x14a943380 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a943320 <col:29> 'struct sk_buff *' lvalue Var 0x14a9423e8 'skb' 'struct sk_buff *'
+    |-IfStmt 0x14a9434c8 <line:32:2, line:35:2>
+    | |-RecoveryExpr 0x14a943418 <line:32:6, col:15> '_Bool' contains-errors
+    | `-CompoundStmt 0x14a9434b8 <col:21, line:35:2>
+    |-IfStmt 0x14a944670 <line:39:2, line:56:2>
+    | |-RecoveryExpr 0x14a9436a8 <line:39:6, col:15> '_Bool' contains-errors
+    | `-CompoundStmt 0x14a944640 <col:21, line:56:2>
+    |   |-BinaryOperator 0x14a9437e8 <line:41:3, col:31> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14a943760 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14a943728 <col:3> 'struct sockaddr_rose *' contains-errors lvalue Var 0x14b008f68 'srose' 'struct sockaddr_rose *'
+    |   | `-RecoveryExpr 0x14a9437c0 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14a943788 <col:25> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |   |-BinaryOperator 0x14a9438c8 <line:42:3, col:31> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14a943840 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14a943808 <col:3> 'struct sockaddr_rose *' contains-errors lvalue Var 0x14b008f68 'srose' 'struct sockaddr_rose *'
+    |   | `-RecoveryExpr 0x14a9438a0 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14a943868 <col:25> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |   |-BinaryOperator 0x14a9439a8 <line:43:3, col:31> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14a943920 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14a9438e8 <col:3> 'struct sockaddr_rose *' contains-errors lvalue Var 0x14b008f68 'srose' 'struct sockaddr_rose *'
+    |   | `-RecoveryExpr 0x14a943980 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14a943948 <col:25> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |   `-IfStmt 0x14a944610 <line:44:3, line:55:3> has_else
+    |     |-RecoveryExpr 0x14a943b28 <line:44:7, col:59> '_Bool' contains-errors
+    |     |-CompoundStmt 0x14a944248 <col:62, line:49:3>
+    |     | |-DeclStmt 0x14a943dc0 <line:45:4, col:86>
+    |     | | `-VarDecl 0x14a943c08 <col:4, col:78> col:31 used full_srose 'struct full_sockaddr_rose *' cinit
+    |     | |   `-CStyleCastExpr 0x14a943d98 <col:44, col:78> 'struct full_sockaddr_rose *' contains-errors <Dependent>
+    |     | |     `-RecoveryExpr 0x14a943ca8 <col:73, col:78> '<dependent type>' contains-errors lvalue
+    |     | |       `-DeclRefExpr 0x14a943c70 <col:73> 'struct msghdr *' lvalue ParmVar 0x14b0083f8 'msg' 'struct msghdr *'
+    |     | `-ForStmt 0x14a944190 <line:46:4, line:47:52>
+    |     |   |-BinaryOperator 0x14a943e18 <line:46:9, col:13> 'int' '='
+    |     |   | |-DeclRefExpr 0x14a943dd8 <col:9> 'int' lvalue Var 0x14a942498 'n' 'int'
+    |     |   | `-IntegerLiteral 0x14a943df8 <col:13> 'int' 0
+    |     |   |-<<<NULL>>>
+    |     |   |-BinaryOperator 0x14a943eb8 <col:17, col:27> 'int' contains-errors '<'
+    |     |   | |-DeclRefExpr 0x14a943e38 <col:17> 'int' lvalue Var 0x14a942498 'n' 'int'
+    |     |   | `-RecoveryExpr 0x14a943e90 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |     |   |   `-DeclRefExpr 0x14a943e58 <col:21> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |     |   |-UnaryOperator 0x14a943ef8 <col:41, col:42> 'int' postfix '++'
+    |     |   | `-DeclRefExpr 0x14a943ed8 <col:41> 'int' lvalue Var 0x14a942498 'n' 'int'
+    |     |   `-BinaryOperator 0x14a944170 <line:47:5, col:52> '<dependent type>' contains-errors '='
+    |     |     |-ArraySubscriptExpr 0x14a944100 <col:5, col:30> '<dependent type>' contains-errors lvalue
+    |     |     | |-ImplicitCastExpr 0x14a9440d0 <col:5, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     | | `-RecoveryExpr 0x14a943f48 <col:5, col:17> '<dependent type>' contains-errors lvalue
+    |     |     | |   `-DeclRefExpr 0x14a943f10 <col:5> 'struct full_sockaddr_rose *' contains-errors lvalue Var 0x14a943c08 'full_srose' 'struct full_sockaddr_rose *'
+    |     |     | `-ImplicitCastExpr 0x14a9440e8 <col:29> 'int' <LValueToRValue>
+    |     |     |   `-DeclRefExpr 0x14a943f70 <col:29> 'int' lvalue Var 0x14a942498 'n' 'int'
+    |     |     `-ArraySubscriptExpr 0x14a944150 <col:34, col:52> '<dependent type>' contains-errors lvalue
+    |     |       |-ImplicitCastExpr 0x14a944120 <col:34, col:40> '<dependent type>' contains-errors <LValueToRValue>
+    |     |       | `-RecoveryExpr 0x14a944018 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |     |       |   `-DeclRefExpr 0x14a943fe0 <col:34> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |     |       `-ImplicitCastExpr 0x14a944138 <col:51> 'int' <LValueToRValue>
+    |     |         `-DeclRefExpr 0x14a944040 <col:51> 'int' lvalue Var 0x14a942498 'n' 'int'
+    |     `-CompoundStmt 0x14a9445f8 <line:49:10, line:55:3>
+    |       `-IfStmt 0x14a944558 <line:50:4, line:53:4>
+    |         |-BinaryOperator 0x14a9442e8 <line:50:8, col:29> 'int' contains-errors '>='
+    |         | |-RecoveryExpr 0x14a9442a0 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |         | | `-DeclRefExpr 0x14a944268 <col:8> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |         | `-IntegerLiteral 0x14a9442c8 <col:29> 'int' 1
+    |         `-CompoundStmt 0x14a944538 <col:32, line:53:4>
+    |           |-BinaryOperator 0x14a944388 <line:51:5, col:27> '<dependent type>' contains-errors '='
+    |           | |-RecoveryExpr 0x14a944340 <col:5, col:12> '<dependent type>' contains-errors lvalue
+    |           | | `-DeclRefExpr 0x14a944308 <col:5> 'struct sockaddr_rose *' contains-errors lvalue Var 0x14b008f68 'srose' 'struct sockaddr_rose *'
+    |           | `-IntegerLiteral 0x14a944368 <col:27> 'int' 1
+    |           `-BinaryOperator 0x14a944518 <line:52:5, col:43> '<dependent type>' contains-errors '='
+    |             |-RecoveryExpr 0x14a9443e0 <col:5, col:12> '<dependent type>' contains-errors lvalue
+    |             | `-DeclRefExpr 0x14a9443a8 <col:5> 'struct sockaddr_rose *' contains-errors lvalue Var 0x14b008f68 'srose' 'struct sockaddr_rose *'
+    |             `-ArraySubscriptExpr 0x14a9444f8 <col:25, col:43> '<dependent type>' contains-errors lvalue
+    |               |-ImplicitCastExpr 0x14a9444e0 <col:25, col:31> '<dependent type>' contains-errors <LValueToRValue>
+    |               | `-RecoveryExpr 0x14a944440 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |               |   `-DeclRefExpr 0x14a944408 <col:25> 'struct rose_sock *' contains-errors lvalue Var 0x14b008b28 'rose' 'struct rose_sock *'
+    |               `-IntegerLiteral 0x14a944468 <col:42> 'int' 0
+    `-CallExpr 0x14a9447e8 <line:58:2, col:27> 'int' contains-errors
+      |-ImplicitCastExpr 0x14a9447d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x14a944770 <col:2> 'int ()' Function 0x14a9446b8 'skb_free_datagram' 'int ()'
+      |-ImplicitCastExpr 0x14a944818 <col:20> 'struct sock *' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x14a944790 <col:20> 'struct sock *' contains-errors lvalue Var 0x14b0088c8 'sk' 'struct sock *'
+      `-ImplicitCastExpr 0x14a944830 <col:24> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x14a9447b0 <col:24> 'struct sk_buff *' lvalue Var 0x14a9423e8 'skb' 'struct sk_buff *'

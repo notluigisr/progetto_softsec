@@ -1,0 +1,125 @@
+`-FunctionDecl 0x150141a88  line:1:5 invalid avcodec_fill_audio_frame 'int (int *, int, enum AVSampleFormat, const int *, int, int)'
+  |-ParmVarDecl 0x150128128 <col:30, col:39> col:39 referenced invalid frame 'int *'
+  |-ParmVarDecl 0x1501281a8 <col:46, col:50> col:50 used nb_channels 'int'
+  |-ParmVarDecl 0x150128748 <line:2:30, col:50> col:50 invalid sample_fmt 'enum AVSampleFormat'
+  |-ParmVarDecl 0x150141800 <col:62, col:77> col:77 invalid buf 'const int *'
+  |-ParmVarDecl 0x150141880 <line:3:30, col:34> col:34 used buf_size 'int'
+  |-ParmVarDecl 0x150141900 <col:44, col:48> col:48 used align 'int'
+  `-CompoundStmt 0x150144140 <line:4:1, line:35:1>
+    |-DeclStmt 0x150141da8 <line:5:5, col:41>
+    | |-VarDecl 0x150141b78 <col:5, col:9> col:9 used ch 'int'
+    | |-VarDecl 0x150141bf8 <col:5, col:13> col:13 used planar 'int'
+    | |-VarDecl 0x150141c78 <col:5, col:21> col:21 used needed_size 'int'
+    | `-VarDecl 0x150141cf8 <col:5, col:40> col:34 used ret 'int' cinit
+    |   `-IntegerLiteral 0x150141d60 <col:40> 'int' 0
+    |-BinaryOperator 0x150142110 <line:7:5, line:9:51> 'int' contains-errors '='
+    | |-DeclRefExpr 0x150141dc0 <line:7:5> 'int' lvalue Var 0x150141c78 'needed_size' 'int'
+    | `-CallExpr 0x1501420c8 <col:19, line:9:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150141f40 <line:7:19> 'int ()' Function 0x150141e88 'av_samples_get_buffer_size' 'int ()'
+    |   |-RecoveryExpr 0x1501420a8 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x150141f78 <col:52> 'int' lvalue ParmVar 0x1501281a8 'nb_channels' 'int'
+    |   |-CXXDependentScopeMemberExpr 0x150141fb8 <line:8:46, col:53> '<dependent type>' contains-errors lvalue ->nb_samples
+    |   | `-RecoveryExpr 0x150141f98 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x150142000 <col:65> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150142020 <line:9:46> 'int' lvalue ParmVar 0x150141900 'align' 'int'
+    |-IfStmt 0x150142358 <line:10:5, line:11:30>
+    | |-BinaryOperator 0x1501421a0 <line:10:9, col:20> 'int' '<'
+    | | |-ImplicitCastExpr 0x150142170 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x150142130 <col:9> 'int' lvalue ParmVar 0x150141880 'buf_size' 'int'
+    | | `-ImplicitCastExpr 0x150142188 <col:20> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150142150 <col:20> 'int' lvalue Var 0x150141c78 'needed_size' 'int'
+    | `-ReturnStmt 0x150142348 <line:11:9, col:30>
+    |   `-CallExpr 0x150142320 <col:16, col:30> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1501422a0 <col:16> 'int ()' Function 0x1501421e8 'AVERROR' 'int ()'
+    |     `-RecoveryExpr 0x150142300 <col:24> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1501424e0 <line:13:5, col:48> 'int' contains-errors '='
+    | |-DeclRefExpr 0x150142378 <col:5> 'int' lvalue Var 0x150141bf8 'planar' 'int'
+    | `-CallExpr 0x1501424b8 <col:14, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150142478 <col:14> 'int ()' Function 0x1501423c0 'av_sample_fmt_is_planar' 'int ()'
+    |   `-RecoveryExpr 0x150142498 <col:38> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150143568 <line:14:5, line:20:5> has_else
+    | |-BinaryOperator 0x1501425d8 <line:14:9, col:33> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x150142500 <col:9> 'int' lvalue Var 0x150141bf8 'planar' 'int'
+    | | `-BinaryOperator 0x1501425b8 <col:19, col:33> 'int' contains-errors '>'
+    | |   |-DeclRefExpr 0x150142520 <col:19> 'int' lvalue ParmVar 0x1501281a8 'nb_channels' 'int'
+    | |   `-RecoveryExpr 0x150142598 <col:33> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x150143420 <col:55, line:18:5>
+    | | `-IfStmt 0x150143400 <line:15:9, line:17:34>
+    | |   |-UnaryOperator 0x150143330 <line:15:13, line:16:79> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   | `-ParenExpr 0x150143310 <line:15:14, line:16:79> '<dependent type>' contains-errors
+    | |   |   `-BinaryOperator 0x1501432f0 <line:15:15, line:16:78> '<dependent type>' contains-errors '='
+    | |   |     |-CXXDependentScopeMemberExpr 0x150142618 <line:15:15, col:22> '<dependent type>' contains-errors lvalue ->extended_data
+    | |   |     | `-RecoveryExpr 0x1501425f8 <col:15> '<dependent type>' contains-errors lvalue
+    | |   |     `-CallExpr 0x1501432a8 <col:38, line:16:78> 'int' contains-errors
+    | |   |       |-ImplicitCastExpr 0x150143290 <line:15:38> 'int (*)()' <FunctionToPointerDecay>
+    | |   |       | `-DeclRefExpr 0x150142740 <col:38> 'int ()' Function 0x150142688 'av_mallocz_array' 'int ()'
+    | |   |       |-ImplicitCastExpr 0x1501432d8 <col:55> 'int' <LValueToRValue>
+    | |   |       | `-DeclRefExpr 0x150142760 <col:55> 'int' lvalue ParmVar 0x1501281a8 'nb_channels' 'int'
+    | |   |       `-UnaryExprOrTypeTraitExpr 0x150143238 <line:16:49, col:77> 'unsigned long' contains-errors sizeof
+    | |   |         `-ParenExpr 0x150143218 <col:55, col:77> '<dependent type>' contains-errors
+    | |   |           `-UnaryOperator 0x150143200 <col:56, col:64> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   |             `-ImplicitCastExpr 0x1501427e8 <col:57, col:64> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |               `-CXXDependentScopeMemberExpr 0x1501427a0 <col:57, col:64> '<dependent type>' contains-errors lvalue ->extended_data
+    | |   |                 `-RecoveryExpr 0x150142780 <col:57> '<dependent type>' contains-errors lvalue
+    | |   `-ReturnStmt 0x1501433f0 <line:17:13, col:34>
+    | |     `-CallExpr 0x1501433c8 <col:20, col:34> '<dependent type>' contains-errors
+    | |       |-DeclRefExpr 0x150143348 <col:20> 'int ()' Function 0x1501421e8 'AVERROR' 'int ()'
+    | |       `-RecoveryExpr 0x1501433a8 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x150143550 <line:18:12, line:20:5>
+    |   `-BinaryOperator 0x150143530 <line:19:9, col:39> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x150143480 <col:9, col:16> '<dependent type>' contains-errors lvalue ->extended_data
+    |     | `-RecoveryExpr 0x150143458 <col:9> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x150143438 <col:9> 'int *' lvalue ParmVar 0x150128128 'frame' 'int *'
+    |     `-CXXDependentScopeMemberExpr 0x1501434e8 <col:32, col:39> '<dependent type>' contains-errors lvalue ->data
+    |       `-RecoveryExpr 0x1501434c8 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150143c50 <line:22:5, line:28:5>
+    | |-RecoveryExpr 0x150143910 <line:22:9, line:24:61> '_Bool' contains-errors
+    | `-CompoundStmt 0x150143c30 <col:64, line:28:5>
+    |   |-IfStmt 0x150143bc8 <line:25:9, line:26:43>
+    |   | |-BinaryOperator 0x150143a00 <line:25:13, col:44> 'int' contains-errors '!='
+    |   | | |-CXXDependentScopeMemberExpr 0x150143950 <col:13, col:20> '<dependent type>' contains-errors lvalue ->extended_data
+    |   | | | `-RecoveryExpr 0x150143930 <col:13> '<dependent type>' contains-errors lvalue
+    |   | | `-CXXDependentScopeMemberExpr 0x1501439b8 <col:37, col:44> '<dependent type>' contains-errors lvalue ->data
+    |   | |   `-RecoveryExpr 0x150143998 <col:37> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x150143ba0 <line:26:13, col:43> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x150143b00 <col:13> 'int ()' Function 0x150143a48 'av_freep' 'int ()'
+    |   |   `-UnaryOperator 0x150143b88 <col:22, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-CXXDependentScopeMemberExpr 0x150143b40 <col:23, col:30> '<dependent type>' contains-errors lvalue ->extended_data
+    |   |       `-RecoveryExpr 0x150143b20 <col:23> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x150143c20 <line:27:9, col:16>
+    |     `-ImplicitCastExpr 0x150143c08 <col:16> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x150143be8 <col:16> 'int' lvalue Var 0x150141cf8 'ret' 'int'
+    |-IfStmt 0x1501440d8 <line:29:5, line:32:5>
+    | |-BinaryOperator 0x150143d40 <line:29:9, col:40> 'int' contains-errors '!='
+    | | |-CXXDependentScopeMemberExpr 0x150143c90 <col:9, col:16> '<dependent type>' contains-errors lvalue ->extended_data
+    | | | `-RecoveryExpr 0x150143c70 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-CXXDependentScopeMemberExpr 0x150143cf8 <col:33, col:40> '<dependent type>' contains-errors lvalue ->data
+    | |   `-RecoveryExpr 0x150143cd8 <col:33> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1501440c0 <col:46, line:32:5>
+    |   `-ForStmt 0x150144088 <line:30:9, line:31:54>
+    |     |-BinaryOperator 0x150143da0 <line:30:14, col:19> 'int' '='
+    |     | |-DeclRefExpr 0x150143d60 <col:14> 'int' lvalue Var 0x150141b78 'ch' 'int'
+    |     | `-IntegerLiteral 0x150143d80 <col:19> 'int' 0
+    |     |-<<<NULL>>>
+    |     |-BinaryOperator 0x150143e38 <col:22, col:27> 'int' contains-errors '<'
+    |     | |-DeclRefExpr 0x150143dc0 <col:22> 'int' lvalue Var 0x150141b78 'ch' 'int'
+    |     | `-RecoveryExpr 0x150143e18 <col:27> '<dependent type>' contains-errors lvalue
+    |     |-UnaryOperator 0x150143e78 <col:49, col:51> 'int' postfix '++'
+    |     | `-DeclRefExpr 0x150143e58 <col:49> 'int' lvalue Var 0x150141b78 'ch' 'int'
+    |     `-BinaryOperator 0x150144068 <line:31:13, col:54> '<dependent type>' contains-errors '='
+    |       |-ArraySubscriptExpr 0x150143f70 <col:13, col:27> '<dependent type>' contains-errors lvalue
+    |       | |-ImplicitCastExpr 0x150143f40 <col:13, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |       | | `-CXXDependentScopeMemberExpr 0x150143ed8 <col:13, col:20> '<dependent type>' contains-errors lvalue ->data
+    |       | |   `-RecoveryExpr 0x150143eb0 <col:13> '<dependent type>' contains-errors lvalue
+    |       | |     `-DeclRefExpr 0x150143e90 <col:13> 'int *' lvalue ParmVar 0x150128128 'frame' 'int *'
+    |       | `-ImplicitCastExpr 0x150143f58 <col:25> 'int' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x150143f20 <col:25> 'int' lvalue Var 0x150141b78 'ch' 'int'
+    |       `-ArraySubscriptExpr 0x150144048 <col:31, col:54> '<dependent type>' contains-errors lvalue
+    |         |-ImplicitCastExpr 0x150144018 <col:31, col:38> '<dependent type>' contains-errors <LValueToRValue>
+    |         | `-CXXDependentScopeMemberExpr 0x150143fb0 <col:31, col:38> '<dependent type>' contains-errors lvalue ->extended_data
+    |         |   `-RecoveryExpr 0x150143f90 <col:31> '<dependent type>' contains-errors lvalue
+    |         `-ImplicitCastExpr 0x150144030 <col:52> 'int' <LValueToRValue>
+    |           `-DeclRefExpr 0x150143ff8 <col:52> 'int' lvalue Var 0x150141b78 'ch' 'int'
+    `-ReturnStmt 0x150144130 <line:34:5, col:12>
+      `-ImplicitCastExpr 0x150144118 <col:12> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1501440f8 <col:12> 'int' lvalue Var 0x150141cf8 'ret' 'int'

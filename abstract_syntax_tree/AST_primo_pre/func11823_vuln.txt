@@ -1,0 +1,40 @@
+`-FunctionDecl 0x141827438  line:1:1 invalid virgl_cmd_get_capset 'int (int *, struct virtio_gpu_ctrl_command *)'
+  |-ParmVarDecl 0x14180dd28 <col:22, col:29> col:29 invalid g 'int *'
+  |-ParmVarDecl 0x14180e318 <line:2:22, col:54> col:54 used cmd 'struct virtio_gpu_ctrl_command *'
+  `-CompoundStmt 0x143008a48 <line:3:1, line:20:1>
+    |-DeclStmt 0x141827668 <line:4:5, col:36>
+    | |-RecordDecl 0x1418274f0 <col:5, col:12> col:12 struct virtio_gpu_get_capset
+    | `-VarDecl 0x1418275e8 <col:5, col:34> col:34 invalid gc 'struct virtio_gpu_get_capset'
+    |-DeclStmt 0x141827868 <line:5:5, col:40>
+    | |-RecordDecl 0x141827680 <col:5, col:12> col:12 struct virtio_gpu_resp_capset
+    | `-VarDecl 0x1418277e8 <col:5, col:36> col:36 used resp 'struct virtio_gpu_resp_capset *'
+    |-CallExpr 0x141827a20 <line:8:5, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1418279e0 <col:5> 'int ()' Function 0x141827928 'VUGPU_FILL_CMD' 'int ()'
+    | `-RecoveryExpr 0x141827a00 <col:20> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x141827cb8 <line:10:5, line:11:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141827b28 <line:10:5> 'int ()' Function 0x141827a70 'virgl_renderer_get_cap_set' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x141827b68 <col:32, col:35> '<dependent type>' contains-errors lvalue .capset_id
+    | | `-RecoveryExpr 0x141827b48 <col:32> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x141827c68 <col:46, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x141827c48 <col:47> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x141827ca0 <line:11:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x141827c80 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x141827f98 <line:14:5, col:22> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x141827ef8 <col:5, col:15> '<dependent type>' contains-errors lvalue .type
+    | | `-RecoveryExpr 0x141827ed0 <col:5, col:11> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x141827e98 <col:5> 'struct virtio_gpu_resp_capset *' lvalue Var 0x1418277e8 'resp' 'struct virtio_gpu_resp_capset *'
+    | `-RecoveryExpr 0x141827f78 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x141828228 <line:15:5, line:17:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141828098 <line:15:5> 'int ()' Function 0x141827fe0 'virgl_renderer_fill_caps' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x1418280d8 <col:30, col:33> '<dependent type>' contains-errors lvalue .capset_id
+    | | `-RecoveryExpr 0x1418280b8 <col:30> '<dependent type>' contains-errors lvalue
+    | |-CXXDependentScopeMemberExpr 0x141828140 <line:16:30, col:33> '<dependent type>' contains-errors lvalue .capset_version
+    | | `-RecoveryExpr 0x141828120 <col:30> '<dependent type>' contains-errors lvalue
+    | `-CStyleCastExpr 0x141828200 <line:17:30, col:44> 'void *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x1418281c0 <col:38, col:44> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x141828188 <col:38> 'struct virtio_gpu_resp_capset *' lvalue Var 0x1418277e8 'resp' 'struct virtio_gpu_resp_capset *'
+    `-CallExpr 0x143008a08 <line:19:5, col:16> 'int'
+      |-ImplicitCastExpr 0x1430089f0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x143008980 <col:5> 'int ()' Function 0x1430088c8 'g_free' 'int ()'
+      `-ImplicitCastExpr 0x143008a30 <col:12> 'struct virtio_gpu_resp_capset *' <LValueToRValue>
+        `-DeclRefExpr 0x1430089a0 <col:12> 'struct virtio_gpu_resp_capset *' lvalue Var 0x1418277e8 'resp' 'struct virtio_gpu_resp_capset *'

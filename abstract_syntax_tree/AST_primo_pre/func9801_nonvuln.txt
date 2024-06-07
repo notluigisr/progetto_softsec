@@ -1,0 +1,54 @@
+`-FunctionDecl 0x143140d18  line:1:12 do_insn_fetch 'int (struct x86_emulate_ctxt *, struct x86_emulate_ops *, unsigned long, void *, unsigned int)' static
+  |-ParmVarDecl 0x143128648 <col:26, col:51> col:51 used ctxt 'struct x86_emulate_ctxt *'
+  |-ParmVarDecl 0x143140a28 <line:2:5, col:29> col:29 used ops 'struct x86_emulate_ops *'
+  |-ParmVarDecl 0x143140aa8 <line:3:5, col:19> col:19 used eip 'unsigned long'
+  |-ParmVarDecl 0x143140b28 <col:24, col:30> col:30 used dest 'void *'
+  |-ParmVarDecl 0x143140ba8 <col:36, col:45> col:45 used size 'unsigned int'
+  `-CompoundStmt 0x1431415e8 <line:4:1, line:17:1>
+    |-DeclStmt 0x143140ed0 <line:5:2, col:12>
+    | `-VarDecl 0x143140e48 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-IntegerLiteral 0x143140eb0 <col:11> 'int' 0
+    |-IfStmt 0x1431410f8 <line:8:2, line:9:10>
+    | |-BinaryOperator 0x143141078 <line:8:6, col:43> 'int' contains-errors '>'
+    | | |-BinaryOperator 0x143141038 <col:6, col:32> '<dependent type>' contains-errors '-'
+    | | | |-BinaryOperator 0x143140f70 <col:6, col:12> 'unsigned long' '+'
+    | | | | |-ImplicitCastExpr 0x143140f28 <col:6> 'unsigned long' <LValueToRValue>
+    | | | | | `-DeclRefExpr 0x143140ee8 <col:6> 'unsigned long' lvalue ParmVar 0x143140aa8 'eip' 'unsigned long'
+    | | | | `-ImplicitCastExpr 0x143140f58 <col:12> 'unsigned long' <IntegralCast>
+    | | | |   `-ImplicitCastExpr 0x143140f40 <col:12> 'unsigned int' <LValueToRValue>
+    | | | |     `-DeclRefExpr 0x143140f08 <col:12> 'unsigned int' lvalue ParmVar 0x143140ba8 'size' 'unsigned int'
+    | | | `-CXXDependentScopeMemberExpr 0x143140ff0 <col:19, col:32> '<dependent type>' contains-errors lvalue .eip_orig
+    | | |   `-RecoveryExpr 0x143140fc8 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x143140f90 <col:19> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x143128648 'ctxt' 'struct x86_emulate_ctxt *'
+    | | `-IntegerLiteral 0x143141058 <col:43> 'int' 15
+    | `-ReturnStmt 0x1431410e8 <line:9:3, col:10>
+    |   `-RecoveryExpr 0x1431410c8 <col:10> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x143141198 <line:10:2, col:15> 'unsigned long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x143141118 <col:2> 'unsigned long' lvalue ParmVar 0x143140aa8 'eip' 'unsigned long'
+    | `-RecoveryExpr 0x143141170 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x143141138 <col:9> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x143128648 'ctxt' 'struct x86_emulate_ctxt *'
+    |-WhileStmt 0x143141598 <line:11:2, line:15:2>
+    | |-UnaryOperator 0x1431411e8 <line:11:9, col:13> 'unsigned int' postfix '--'
+    | | `-DeclRefExpr 0x1431411c8 <col:9> 'unsigned int' lvalue ParmVar 0x143140ba8 'size' 'unsigned int'
+    | `-CompoundStmt 0x143141578 <col:17, line:15:2>
+    |   |-BinaryOperator 0x1431414b8 <line:12:3, col:51> 'int' '='
+    |   | |-DeclRefExpr 0x143141200 <col:3> 'int' lvalue Var 0x143140e48 'rc' 'int'
+    |   | `-CallExpr 0x143141448 <col:8, col:51> 'int'
+    |   |   |-ImplicitCastExpr 0x143141430 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x143141330 <col:8> 'int ()' Function 0x143141278 'do_fetch_insn_byte' 'int ()'
+    |   |   |-ImplicitCastExpr 0x143141488 <col:27> 'struct x86_emulate_ctxt *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x143141350 <col:27> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x143128648 'ctxt' 'struct x86_emulate_ctxt *'
+    |   |   |-ImplicitCastExpr 0x1431414a0 <col:33> 'struct x86_emulate_ops *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x143141370 <col:33> 'struct x86_emulate_ops *' lvalue ParmVar 0x143140a28 'ops' 'struct x86_emulate_ops *'
+    |   |   |-UnaryOperator 0x1431413b0 <col:38, col:41> 'unsigned long' postfix '++'
+    |   |   | `-DeclRefExpr 0x143141390 <col:38> 'unsigned long' lvalue ParmVar 0x143140aa8 'eip' 'unsigned long'
+    |   |   `-UnaryOperator 0x1431413e8 <col:45, col:49> 'void *' postfix '++'
+    |   |     `-DeclRefExpr 0x1431413c8 <col:45> 'void *' lvalue ParmVar 0x143140b28 'dest' 'void *'
+    |   `-IfStmt 0x143141558 <line:13:3, line:14:11>
+    |     |-ImplicitCastExpr 0x1431414f8 <line:13:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1431414d8 <col:7> 'int' lvalue Var 0x143140e48 'rc' 'int'
+    |     `-ReturnStmt 0x143141548 <line:14:4, col:11>
+    |       `-ImplicitCastExpr 0x143141530 <col:11> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x143141510 <col:11> 'int' lvalue Var 0x143140e48 'rc' 'int'
+    `-ReturnStmt 0x1431415d8 <line:16:2, col:9>
+      `-IntegerLiteral 0x1431415b8 <col:9> 'int' 0

@@ -1,0 +1,79 @@
+`-FunctionDecl 0x14582b638  line:1:6 invalid kvm_make_all_cpus_request 'int (struct kvm *, unsigned int)'
+  |-ParmVarDecl 0x14580e268 <col:32, col:44> col:44 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x14580e2e8 <col:49, col:62> col:62 used req 'unsigned int'
+  `-CompoundStmt 0x14582ec58 <line:2:1, line:31:1>
+    |-DeclStmt 0x14582b890 <line:3:2, col:16>
+    | |-VarDecl 0x14582b708 <col:2, col:6> col:6 used i 'int'
+    | |-VarDecl 0x14582b788 <col:2, col:9> col:9 used cpu 'int'
+    | `-VarDecl 0x14582b808 <col:2, col:14> col:14 used me 'int'
+    |-DeclStmt 0x14582ba98 <line:6:2, col:23>
+    | |-RecordDecl 0x14582b8a8 <col:2, col:9> col:9 struct kvm_vcpu
+    | `-VarDecl 0x14582ba18 <col:2, col:19> col:19 used vcpu 'struct kvm_vcpu *'
+    |-CallExpr 0x14582be10 <line:8:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14582bc10 <col:2> 'int ()' Function 0x14582bb58 'zalloc_cpumask_var' 'int ()'
+    | |-UnaryOperator 0x14582bdd8 <col:21, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14582bdb8 <col:22> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x14582bdf0 <col:28> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14582bfc8 <line:10:2, col:15> 'int' '='
+    | |-DeclRefExpr 0x14582be40 <col:2> 'int' lvalue Var 0x14582b808 'me' 'int'
+    | `-CallExpr 0x14582bfa8 <col:7, col:15> 'int'
+    |   `-ImplicitCastExpr 0x14582bf90 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x14582bf40 <col:7> 'int ()' Function 0x14582be88 'get_cpu' 'int ()'
+    |-CallExpr 0x14582c160 <line:11:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x14582c148 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14582c0c8 <col:2> 'int ()' Function 0x14582c010 'kvm_for_each_vcpu' 'int ()'
+    | |-ImplicitCastExpr 0x14582c198 <col:20> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14582c0e8 <col:20> 'int' lvalue Var 0x14582b708 'i' 'int'
+    | |-ImplicitCastExpr 0x14582c1b0 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14582c108 <col:23> 'struct kvm_vcpu *' lvalue Var 0x14582ba18 'vcpu' 'struct kvm_vcpu *'
+    | `-ImplicitCastExpr 0x14582c1c8 <col:29> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14582c128 <col:29> 'struct kvm *' lvalue ParmVar 0x14580e268 'kvm' 'struct kvm *'
+    |-CompoundStmt 0x14582e530 <col:34, line:21:2>
+    | |-CallExpr 0x14582c338 <line:12:3, col:29> 'int'
+    | | |-ImplicitCastExpr 0x14582c320 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14582c2c0 <col:3> 'int ()' Function 0x14582c208 'kvm_make_request' 'int ()'
+    | | |-ImplicitCastExpr 0x14582c368 <col:20> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14582c2e0 <col:20> 'unsigned int' lvalue ParmVar 0x14580e2e8 'req' 'unsigned int'
+    | | `-ImplicitCastExpr 0x14582c380 <col:25> 'struct kvm_vcpu *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14582c300 <col:25> 'struct kvm_vcpu *' lvalue Var 0x14582ba18 'vcpu' 'struct kvm_vcpu *'
+    | |-BinaryOperator 0x14582c418 <line:13:3, col:15> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x14582c398 <col:3> 'int' lvalue Var 0x14582b788 'cpu' 'int'
+    | | `-RecoveryExpr 0x14582c3f0 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14582c3b8 <col:9> 'struct kvm_vcpu *' lvalue Var 0x14582ba18 'vcpu' 'struct kvm_vcpu *'
+    | |-CallExpr 0x14582c550 <line:16:3, col:24> 'int'
+    | | `-ImplicitCastExpr 0x14582c538 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   `-DeclRefExpr 0x14582c518 <col:3> 'int ()' Function 0x14582c460 'smp_mb__after_atomic' 'int ()'
+    | `-IfStmt 0x14582e510 <line:18:3, line:20:29>
+    |   |-BinaryOperator 0x14582e2f0 <line:18:7, line:19:46> 'int' contains-errors '&&'
+    |   | |-BinaryOperator 0x14582e238 <line:18:7, col:43> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x14582e1c8 <col:7, col:31> 'int' contains-errors '&&'
+    |   | | | |-BinaryOperator 0x14582e170 <col:7, col:15> 'int' contains-errors '!='
+    |   | | | | |-RecoveryExpr 0x14582e130 <col:7> '<dependent type>' contains-errors lvalue
+    |   | | | | `-RecoveryExpr 0x14582e150 <col:15> '<dependent type>' contains-errors lvalue
+    |   | | | `-BinaryOperator 0x14582e1a8 <col:23, col:31> 'int' '!='
+    |   | | |   |-ImplicitCastExpr 0x14582e190 <col:23> 'int' <LValueToRValue>
+    |   | | |   | `-DeclRefExpr 0x14582c5c0 <col:23> 'int' lvalue Var 0x14582b788 'cpu' 'int'
+    |   | | |   `-UnaryOperator 0x14582de00 <col:30, col:31> 'int' prefix '-'
+    |   | | |     `-IntegerLiteral 0x14582c5e0 <col:31> 'int' 1
+    |   | | `-BinaryOperator 0x14582e218 <col:36, col:43> 'int' '!='
+    |   | |   |-ImplicitCastExpr 0x14582e1e8 <col:36> 'int' <LValueToRValue>
+    |   | |   | `-DeclRefExpr 0x14582de70 <col:36> 'int' lvalue Var 0x14582b788 'cpu' 'int'
+    |   | |   `-ImplicitCastExpr 0x14582e200 <col:43> 'int' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x14582de90 <col:43> 'int' lvalue Var 0x14582b808 'me' 'int'
+    |   | `-BinaryOperator 0x14582e2d0 <line:19:9, col:46> 'int' contains-errors '!='
+    |   |   |-CallExpr 0x14582e270 <col:9, col:41> 'int'
+    |   |   | |-ImplicitCastExpr 0x14582e258 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x14582e000 <col:9> 'int ()' Function 0x14582df48 'kvm_vcpu_exiting_guest_mode' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x14582e298 <col:37> 'struct kvm_vcpu *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x14582e020 <col:37> 'struct kvm_vcpu *' lvalue Var 0x14582ba18 'vcpu' 'struct kvm_vcpu *'
+    |   |   `-RecoveryExpr 0x14582e2b0 <col:46> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x14582e4b0 <line:20:4, col:29> 'int'
+    |     |-ImplicitCastExpr 0x14582e498 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14582e3f0 <col:4> 'int ()' Function 0x14582e338 'cpumask_set_cpu' 'int ()'
+    |     |-ImplicitCastExpr 0x14582e4e0 <col:20> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14582e410 <col:20> 'int' lvalue Var 0x14582b788 'cpu' 'int'
+    |     `-ImplicitCastExpr 0x14582e4f8 <col:25> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x14582e478 <col:25> 'int' lvalue Var 0x14582b788 'cpu' 'int'
+    `-CallExpr 0x14582eb38 <line:28:2, col:10> 'int'
+      `-ImplicitCastExpr 0x14582eb20 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x14582eb00 <col:2> 'int ()' Function 0x14582ea48 'put_cpu' 'int ()'

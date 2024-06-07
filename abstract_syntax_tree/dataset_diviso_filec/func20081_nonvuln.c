@@ -1,0 +1,1 @@
+  uint64_t cb_subsampling_vert() const { return cb_subsampling_vert_; }

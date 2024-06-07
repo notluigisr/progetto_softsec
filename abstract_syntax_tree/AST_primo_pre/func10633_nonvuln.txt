@@ -1,0 +1,74 @@
+`-FunctionDecl 0x121808378  line:1:12 referenced invalid tcp_tso_acked 'int (struct sock *, struct sk_buff *)' static
+  |-ParmVarDecl 0x12100e268 <col:26, col:39> col:39 used sk 'struct sock *'
+  |-ParmVarDecl 0x121808258 <col:43, col:59> col:59 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x121027948 <line:2:1, line:19:1>
+    |-DeclStmt 0x121808858 <line:3:2, col:34>
+    | |-RecordDecl 0x121808430 <col:2, col:9> col:9 struct tcp_sock
+    | `-VarDecl 0x121808598 <col:2, col:33> col:19 used tp 'struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x121808828 <col:24, col:33> 'struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x1218087e8 <col:24, col:33> 'int'
+    |       |-ImplicitCastExpr 0x1218087d0 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x121808760 <col:24> 'int ()' Function 0x1218086a8 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x121808810 <col:31> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x121808780 <col:31> 'struct sock *' lvalue ParmVar 0x12100e268 'sk' 'struct sock *'
+    |-CallExpr 0x121808cb8 <line:6:2, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121808950 <col:2> 'int ()' Function 0x121808898 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x121808ca0 <col:9, col:53> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-CallExpr 0x121808c70 <col:10, col:53> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x121808a50 <col:10> 'int ()' Function 0x121808998 'after' 'int ()'
+    |     |-RecoveryExpr 0x121808be8 <col:16, col:33> '<dependent type>' contains-errors lvalue
+    |     | `-CallExpr 0x121808ba8 <col:16, col:30> 'int'
+    |     |   |-ImplicitCastExpr 0x121808b90 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x121808b50 <col:16> 'int ()' Function 0x121808a98 'TCP_SKB_CB' 'int ()'
+    |     |   `-ImplicitCastExpr 0x121808bd0 <col:27> 'struct sk_buff *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x121808b70 <col:27> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    |     `-RecoveryExpr 0x121808c48 <col:42, col:46> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x121808c10 <col:42> 'struct tcp_sock *' lvalue Var 0x121808598 'tp' 'struct tcp_sock *'
+    |-IfStmt 0x121809140 <line:9:2, line:10:10>
+    | |-CallExpr 0x1218090d8 <line:9:6, col:63> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x121808f38 <col:6> 'int ()' Function 0x121808e80 'tcp_trim_head' 'int ()'
+    | | |-DeclRefExpr 0x121808f58 <col:20> 'struct sock *' lvalue ParmVar 0x12100e268 'sk' 'struct sock *'
+    | | |-DeclRefExpr 0x121808f78 <col:24> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    | | `-BinaryOperator 0x1218090b8 <col:29, col:60> '<dependent type>' contains-errors '-'
+    | |   |-RecoveryExpr 0x121808fd0 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x121808f98 <col:29> 'struct tcp_sock *' lvalue Var 0x121808598 'tp' 'struct tcp_sock *'
+    | |   `-RecoveryExpr 0x121809090 <col:43, col:60> '<dependent type>' contains-errors lvalue
+    | |     `-CallExpr 0x121809050 <col:43, col:57> 'int'
+    | |       |-ImplicitCastExpr 0x121809038 <col:43> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x121808ff8 <col:43> 'int ()' Function 0x121808a98 'TCP_SKB_CB' 'int ()'
+    | |       `-ImplicitCastExpr 0x121809078 <col:54> 'struct sk_buff *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x121809018 <col:54> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x121809130 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x121809110 <col:10> 'int' 0
+    |-IfStmt 0x1210278c0 <line:13:2, line:16:2>
+    | |-RecoveryExpr 0x121027438 <line:13:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1210278a0 <col:21, line:16:2>
+    |   |-CallExpr 0x121027568 <line:14:3, col:34> 'int'
+    |   | |-ImplicitCastExpr 0x121027550 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x121027458 <col:3> 'int ()' Function 0x121808898 'BUG_ON' 'int ()'
+    |   | `-BinaryOperator 0x121027530 <col:10, col:33> 'int' '=='
+    |   |   |-CallExpr 0x1210274d0 <col:10, col:28> 'int'
+    |   |   | |-ImplicitCastExpr 0x1210274b8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x121027478 <col:10> 'int ()' Function 0x121808d08 'tcp_skb_pcount' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x1210274f8 <col:25> 'struct sk_buff *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x121027498 <col:25> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    |   |   `-IntegerLiteral 0x121027510 <col:33> 'int' 0
+    |   `-CallExpr 0x121027878 <line:15:3, col:65> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x121027590 <col:3> 'int ()' Function 0x121808898 'BUG_ON' 'int ()'
+    |     `-UnaryOperator 0x121027860 <col:10, col:64> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |       `-CallExpr 0x121027830 <col:11, col:64> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x121027690 <col:11> 'int ()' Function 0x1210275d8 'before' 'int ()'
+    |         |-RecoveryExpr 0x121027748 <col:18, col:35> '<dependent type>' contains-errors lvalue
+    |         | `-CallExpr 0x121027708 <col:18, col:32> 'int'
+    |         |   |-ImplicitCastExpr 0x1210276f0 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |         |   | `-DeclRefExpr 0x1210276b0 <col:18> 'int ()' Function 0x121808a98 'TCP_SKB_CB' 'int ()'
+    |         |   `-ImplicitCastExpr 0x121027730 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |         |     `-DeclRefExpr 0x1210276d0 <col:29> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    |         `-RecoveryExpr 0x121027808 <col:40, col:57> '<dependent type>' contains-errors lvalue
+    |           `-CallExpr 0x1210277c8 <col:40, col:54> 'int'
+    |             |-ImplicitCastExpr 0x1210277b0 <col:40> 'int (*)()' <FunctionToPointerDecay>
+    |             | `-DeclRefExpr 0x121027770 <col:40> 'int ()' Function 0x121808a98 'TCP_SKB_CB' 'int ()'
+    |             `-ImplicitCastExpr 0x1210277f0 <col:51> 'struct sk_buff *' <LValueToRValue>
+    |               `-DeclRefExpr 0x121027790 <col:51> 'struct sk_buff *' lvalue ParmVar 0x121808258 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x121027938 <line:18:2, col:9>
+      `-RecoveryExpr 0x121027918 <col:9> '<dependent type>' contains-errors lvalue

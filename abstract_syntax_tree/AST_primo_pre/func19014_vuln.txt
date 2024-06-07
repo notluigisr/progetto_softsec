@@ -1,0 +1,26 @@
+`-FunctionDecl 0x141945b78  line:1:12 invalid sched_slice 'int (struct cfs_rq *, struct sched_entity *)' static
+  |-ParmVarDecl 0x141928668 <col:24, col:39> col:39 used cfs_rq 'struct cfs_rq *'
+  |-ParmVarDecl 0x141945a58 <col:47, col:68> col:68 used se 'struct sched_entity *'
+  `-CompoundStmt 0x141946378 <line:2:1, line:14:1>
+    |-CallExpr 0x141945e18 <line:5:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x141945e00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x141945d90 <col:2> 'int ()' Function 0x141945cd8 'for_each_sched_entity' 'int ()'
+    | `-ImplicitCastExpr 0x141945e40 <col:24> 'struct sched_entity *' <LValueToRValue>
+    |   `-DeclRefExpr 0x141945db0 <col:24> 'struct sched_entity *' lvalue ParmVar 0x141945a58 'se' 'struct sched_entity *'
+    |-CompoundStmt 0x141946310 <col:28, line:10:2>
+    | |-BinaryOperator 0x141946008 <line:6:3, col:24> 'struct cfs_rq *' '='
+    | | |-DeclRefExpr 0x141945e58 <col:3> 'struct cfs_rq *' lvalue ParmVar 0x141928668 'cfs_rq' 'struct cfs_rq *'
+    | | `-ImplicitCastExpr 0x141945ff0 <col:12, col:24> 'struct cfs_rq *' <IntegralToPointer>
+    | |   `-CallExpr 0x141945fb0 <col:12, col:24> 'int'
+    | |     |-ImplicitCastExpr 0x141945f98 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x141945f58 <col:12> 'int ()' Function 0x141945ea0 'cfs_rq_of' 'int ()'
+    | |     `-ImplicitCastExpr 0x141945fd8 <col:22> 'struct sched_entity *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x141945f78 <col:22> 'struct sched_entity *' lvalue ParmVar 0x141945a58 'se' 'struct sched_entity *'
+    | `-CallExpr 0x1419462e0 <line:9:3, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1419461b0 <col:3> 'int ()' Function 0x1419460f8 'do_div' 'int ()'
+    |   |-RecoveryExpr 0x1419462c0 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-CXXDependentScopeMemberExpr 0x141946248 <col:17, col:30> '<dependent type>' contains-errors lvalue .weight
+    |     `-RecoveryExpr 0x141946220 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1419461e8 <col:17> 'struct cfs_rq *' lvalue ParmVar 0x141928668 'cfs_rq' 'struct cfs_rq *'
+    `-ReturnStmt 0x141946368 <line:13:2, col:9>
+      `-RecoveryExpr 0x141946348 <col:9> '<dependent type>' contains-errors lvalue

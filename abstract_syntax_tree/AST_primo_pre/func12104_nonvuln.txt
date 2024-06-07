@@ -1,0 +1,15 @@
+`-FunctionDecl 0x10302a800  line:1:19 is_inode_flag_set 'int (struct inode *, int)' static inline
+  |-ParmVarDecl 0x10300e248 <col:37, col:51> col:51 used inode 'struct inode *'
+  |-ParmVarDecl 0x10300e2c8 <col:58, col:62> col:62 used flag 'int'
+  `-CompoundStmt 0x10302ac98 <line:2:1, line:4:1>
+    `-ReturnStmt 0x10302ac88 <line:3:2, col:45>
+      `-CallExpr 0x10302ac58 <col:9, col:45> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x10302aa30 <col:9> 'int ()' Function 0x10302a978 'test_bit' 'int ()'
+        |-DeclRefExpr 0x10302aa50 <col:18> 'int' lvalue ParmVar 0x10300e2c8 'flag' 'int'
+        `-UnaryOperator 0x10302ac40 <col:24, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x10302ac18 <col:25, col:40> '<dependent type>' contains-errors lvalue
+            `-CallExpr 0x10302abd8 <col:25, col:37> 'int'
+              |-ImplicitCastExpr 0x10302abc0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x10302ab50 <col:25> 'int ()' Function 0x10302aa98 'F2FS_I' 'int ()'
+              `-ImplicitCastExpr 0x10302ac00 <col:32> 'struct inode *' <LValueToRValue>
+                `-DeclRefExpr 0x10302ab70 <col:32> 'struct inode *' lvalue ParmVar 0x10300e248 'inode' 'struct inode *'

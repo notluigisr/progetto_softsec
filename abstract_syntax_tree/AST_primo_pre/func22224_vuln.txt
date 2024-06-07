@@ -1,0 +1,152 @@
+`-FunctionDecl 0x137913540  line:1:13 icmp_reply 'void (struct icmp_bxm *, struct sk_buff *)' static
+  |-ParmVarDecl 0x1378fb048 <col:24, col:41> col:41 used icmp_param 'struct icmp_bxm *'
+  |-ParmVarDecl 0x137913428 <col:53, col:69> col:69 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x14781dde0 <line:2:1, line:47:1>
+    |-DeclStmt 0x1379137b8 <line:3:2, col:24>
+    | |-RecordDecl 0x137913640 <col:2, col:9> col:9 struct ipcm_cookie
+    | `-VarDecl 0x137913738 <col:2, col:21> col:21 referenced invalid ipc 'struct ipcm_cookie'
+    |-DeclStmt 0x137913bc8 <line:4:2, col:37>
+    | |-RecordDecl 0x1379137d0 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x137913938 <col:2, col:36> col:17 used rt 'struct rtable *' cinit
+    |   `-ImplicitCastExpr 0x137913b98 <col:22, col:36> 'struct rtable *' <IntegralToPointer>
+    |     `-CallExpr 0x137913b58 <col:22, col:36> 'int'
+    |       |-ImplicitCastExpr 0x137913b40 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x137913ad0 <col:22> 'int ()' Function 0x137913a18 'skb_rtable' 'int ()'
+    |       `-ImplicitCastExpr 0x137913b80 <col:33> 'struct sk_buff *' <LValueToRValue>
+    |         `-DeclRefExpr 0x137913af0 <col:33> 'struct sk_buff *' lvalue ParmVar 0x137913428 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x137913f98 <line:5:2, col:40>
+    | |-RecordDecl 0x137913be0 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x137913d48 <col:2, col:39> col:14 used net 'struct net *' cinit
+    |   `-CallExpr 0x137913f58 <col:20, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x137913e90 <col:20> 'int ()' Function 0x137913dd8 'dev_net' 'int ()'
+    |     `-CXXDependentScopeMemberExpr 0x137913f10 <col:28, col:36> '<dependent type>' contains-errors lvalue .dev
+    |       `-RecoveryExpr 0x137913ee8 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x137913eb0 <col:28> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    |-DeclStmt 0x137914198 <line:6:2, col:17>
+    | |-RecordDecl 0x137913fb0 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x137914118 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-DeclStmt 0x137914398 <line:7:2, col:24>
+    | |-RecordDecl 0x1379141b0 <col:2, col:9> col:9 struct inet_sock
+    | `-VarDecl 0x137914318 <col:2, col:20> col:20 used inet 'struct inet_sock *'
+    |-IfStmt 0x14781bbb0 <line:10:2, line:11:3>
+    | |-CallExpr 0x14781bb70 <line:10:6, col:49> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14781bab8 <col:6> 'int ()' Function 0x14781ba00 'ip_options_echo' 'int ()'
+    | | |-UnaryOperator 0x14781bb38 <col:22, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-RecoveryExpr 0x14781bb10 <col:23, col:35> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14781bad8 <col:23> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    | | `-DeclRefExpr 0x14781bb50 <col:46> 'struct sk_buff *' lvalue ParmVar 0x137913428 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x14781bba0 <line:11:3>
+    |-BinaryOperator 0x14781bd80 <line:13:2, col:25> 'struct sock *' contains-errors '='
+    | |-DeclRefExpr 0x14781bbd0 <col:2> 'struct sock *' lvalue Var 0x137914118 'sk' 'struct sock *'
+    | `-ImplicitCastExpr 0x14781bd68 <col:7, col:25> 'struct sock *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x14781bd28 <col:7, col:25> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x14781bd10 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14781bcd0 <col:7> 'int ()' Function 0x14781bc18 'icmp_xmit_lock' 'int ()'
+    |     `-ImplicitCastExpr 0x14781bd50 <col:22> 'struct net *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x14781bcf0 <col:22> 'struct net *' contains-errors lvalue Var 0x137913d48 'net' 'struct net *'
+    |-IfStmt 0x14781be48 <line:14:2, line:15:3>
+    | |-BinaryOperator 0x14781be18 <line:14:6, col:12> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14781bda0 <col:6> 'struct sock *' lvalue Var 0x137914118 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x14781bdf8 <col:12> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14781be38 <line:15:3>
+    |-BinaryOperator 0x14781c018 <line:16:2, col:19> 'struct inet_sock *' '='
+    | |-DeclRefExpr 0x14781be68 <col:2> 'struct inet_sock *' lvalue Var 0x137914318 'inet' 'struct inet_sock *'
+    | `-ImplicitCastExpr 0x14781c000 <col:9, col:19> 'struct inet_sock *' <IntegralToPointer>
+    |   `-CallExpr 0x14781bfc0 <col:9, col:19> 'int'
+    |     |-ImplicitCastExpr 0x14781bfa8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14781bf68 <col:9> 'int ()' Function 0x14781beb0 'inet_sk' 'int ()'
+    |     `-ImplicitCastExpr 0x14781bfe8 <col:17> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14781bf88 <col:17> 'struct sock *' lvalue Var 0x137914118 'sk' 'struct sock *'
+    |-BinaryOperator 0x14781c148 <line:18:2, col:36> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14781c0e0 <col:2, col:25> '<dependent type>' contains-errors lvalue .checksum
+    | | `-CXXDependentScopeMemberExpr 0x14781c098 <col:2, col:19> '<dependent type>' contains-errors lvalue .icmph
+    | |   `-RecoveryExpr 0x14781c070 <col:2, col:14> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14781c038 <col:2> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    | `-IntegerLiteral 0x14781c128 <col:36> 'int' 0
+    |-BinaryOperator 0x14781c368 <line:20:2, col:27> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14781c1a0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14781c168 <col:2> 'struct inet_sock *' lvalue Var 0x137914318 'inet' 'struct inet_sock *'
+    | `-RecoveryExpr 0x14781c340 <col:14, col:27> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x14781c300 <col:14, col:24> 'int'
+    |     |-ImplicitCastExpr 0x14781c2e8 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14781c2a8 <col:14> 'int ()' Function 0x14781c1f0 'ip_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x14781c328 <col:21> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14781c2c8 <col:21> 'struct sk_buff *' lvalue ParmVar 0x137913428 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x14781c558 <line:22:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14781c4b8 <col:2, col:6> '<dependent type>' contains-errors lvalue .opt
+    | | `-RecoveryExpr 0x14781c490 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14781c470 <col:2> 'struct ipcm_cookie' lvalue Var 0x137913738 'ipc' 'struct ipcm_cookie'
+    | `-RecoveryExpr 0x14781c538 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14781c628 <line:23:2, col:17> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14781c5c0 <col:2, col:6> '<dependent type>' contains-errors lvalue .tx_flags
+    | | `-RecoveryExpr 0x14781c598 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14781c578 <col:2> 'struct ipcm_cookie' lvalue Var 0x137913738 'ipc' 'struct ipcm_cookie'
+    | `-IntegerLiteral 0x14781c608 <col:17> 'int' 0
+    |-IfStmt 0x14781c988 <line:24:2, line:28:2>
+    | |-CXXDependentScopeMemberExpr 0x14781c6a8 <line:24:6, col:28> '<dependent type>' contains-errors lvalue .optlen
+    | | `-RecoveryExpr 0x14781c680 <col:6, col:18> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14781c648 <col:6> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    | `-CompoundStmt 0x14781c970 <col:36, line:28:2>
+    |   `-BinaryOperator 0x14781c7f8 <line:25:3, col:26> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x14781c738 <col:3, col:7> '<dependent type>' contains-errors lvalue .opt
+    |     | `-RecoveryExpr 0x14781c710 <col:3> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x14781c6f0 <col:3> 'struct ipcm_cookie' lvalue Var 0x137913738 'ipc' 'struct ipcm_cookie'
+    |     `-UnaryOperator 0x14781c7e0 <col:13, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14781c7b8 <col:14, col:26> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14781c780 <col:14> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    |-CompoundStmt 0x14781d4d0 <line:29:2, line:40:2>
+    | |-DeclStmt 0x14781ce40 <line:30:3, line:35:4>
+    | | |-RecordDecl 0x14781ca00 <line:30:3, col:10> col:10 struct flowi4
+    | | `-VarDecl 0x14781caf8 <col:3, col:17> col:17 invalid fl4 'struct flowi4'
+    | |-CallExpr 0x14781d0d8 <line:36:3, col:56> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14781cf38 <col:3> 'int ()' Function 0x14781ce80 'security_skb_classify_flow' 'int ()'
+    | | |-DeclRefExpr 0x14781cf58 <col:30> 'struct sk_buff *' lvalue ParmVar 0x137913428 'skb' 'struct sk_buff *'
+    | | `-CallExpr 0x14781d0b0 <col:35, col:55> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14781d058 <col:35> 'int ()' Function 0x14781cfa0 'flowi4_to_flowi' 'int ()'
+    | |   `-UnaryOperator 0x14781d098 <col:51, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x14781d078 <col:52> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x14781d2b0 <line:37:3, col:37> 'struct rtable *' contains-errors '='
+    | | |-DeclRefExpr 0x14781d108 <col:3> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    | | `-CallExpr 0x14781d280 <col:8, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14781d208 <col:8> 'int ()' Function 0x14781d150 'ip_route_output_key' 'int ()'
+    | |   |-DeclRefExpr 0x14781d228 <col:28> 'struct net *' contains-errors lvalue Var 0x137913d48 'net' 'struct net *'
+    | |   `-UnaryOperator 0x14781d268 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x14781d248 <col:34> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x14781d4b0 <line:38:3, line:39:9>
+    |   |-CallExpr 0x14781d408 <line:38:7, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x14781d3f0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14781d3b0 <col:7> 'int ()' Function 0x14781d2f8 'IS_ERR' 'int ()'
+    |   | `-ImplicitCastExpr 0x14781d430 <col:14> 'struct rtable *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14781d3d0 <col:14> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    |   `-GotoStmt 0x14781d498 <line:39:4, col:9> 'out_unlock' 0x14781d448
+    |-IfStmt 0x14781dab0 <line:41:2, line:43:40>
+    | |-CallExpr 0x14781d820 <line:41:6, line:42:38> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14781d5e0 <line:41:6> 'int ()' Function 0x14781d528 'icmpv4_xrlim_allow' 'int ()'
+    | | |-DeclRefExpr 0x14781d600 <col:25> 'struct net *' contains-errors lvalue Var 0x137913d48 'net' 'struct net *'
+    | | |-DeclRefExpr 0x14781d620 <col:30> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    | | |-CXXDependentScopeMemberExpr 0x14781d6e8 <col:34, col:57> '<dependent type>' contains-errors lvalue .type
+    | | | `-CXXDependentScopeMemberExpr 0x14781d6a0 <col:34, col:51> '<dependent type>' contains-errors lvalue .icmph
+    | | |   `-RecoveryExpr 0x14781d678 <col:34, col:46> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14781d640 <col:34> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    | | `-CXXDependentScopeMemberExpr 0x14781d7d8 <line:42:11, col:34> '<dependent type>' contains-errors lvalue .code
+    | |   `-CXXDependentScopeMemberExpr 0x14781d790 <col:11, col:28> '<dependent type>' contains-errors lvalue .icmph
+    | |     `-RecoveryExpr 0x14781d768 <col:11, col:23> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x14781d730 <col:11> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    | `-CallExpr 0x14781da78 <line:43:3, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14781d940 <col:3> 'int ()' Function 0x14781d888 'icmp_push_reply' 'int ()'
+    |   |-DeclRefExpr 0x14781d960 <col:19> 'struct icmp_bxm *' lvalue ParmVar 0x1378fb048 'icmp_param' 'struct icmp_bxm *'
+    |   |-UnaryOperator 0x14781d9a0 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14781d980 <col:32> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x14781da60 <col:37, col:38> 'struct rtable **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x14781d9b8 <col:38> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    |-CallExpr 0x14781dc08 <line:44:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x14781dbf0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14781dbb0 <col:2> 'int ()' Function 0x14781daf8 'ip_rt_put' 'int ()'
+    | `-ImplicitCastExpr 0x14781dc30 <col:12> 'struct rtable *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14781dbd0 <col:12> 'struct rtable *' lvalue Var 0x137913938 'rt' 'struct rtable *'
+    `-LabelStmt 0x14781ddc0 <line:45:1, line:46:21> 'out_unlock'
+      `-CallExpr 0x14781dd80 <col:2, col:21> 'int'
+        |-ImplicitCastExpr 0x14781dd68 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14781dd28 <col:2> 'int ()' Function 0x14781dc70 'icmp_xmit_unlock' 'int ()'
+        `-ImplicitCastExpr 0x14781dda8 <col:19> 'struct sock *' <LValueToRValue>
+          `-DeclRefExpr 0x14781dd48 <col:19> 'struct sock *' lvalue Var 0x137914118 'sk' 'struct sock *'

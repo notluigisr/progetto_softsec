@@ -1,0 +1,45 @@
+`-FunctionDecl 0x14b026600  line:1:13 sev_flush_encrypted_page 'void (struct kvm_vcpu *, void *)' static
+  |-ParmVarDecl 0x14b00e248 <col:38, col:55> col:55 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x14b00e2c8 <col:61, col:67> col:67 used va 'void *'
+  `-CompoundStmt 0x14b0274b8 <line:2:1, line:22:1>
+    |-DeclStmt 0x14b0269e8 <line:3:2, col:49>
+    | `-VarDecl 0x14b026718 <col:2, col:45> col:6 used asid 'int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14b0269a0 <col:13, col:45> '<dependent type>' contains-errors lvalue .asid
+    |     `-CXXDependentScopeMemberExpr 0x14b026958 <col:13, col:36> '<dependent type>' contains-errors lvalue ->sev_info
+    |       `-CallExpr 0x14b026930 <col:13, col:33> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x14b0268b0 <col:13> 'int ()' Function 0x14b0267f8 'to_kvm_svm' 'int ()'
+    |         `-RecoveryExpr 0x14b026908 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x14b0268d0 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x14b00e248 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x14b026af8 <line:6:2, col:40>
+    | `-VarDecl 0x14b026a18 <col:2, col:38> col:16 used addr 'unsigned long' cinit
+    |   `-CStyleCastExpr 0x14b026ad0 <col:23, col:38> 'unsigned long' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x14b026ab8 <col:38> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x14b026a80 <col:38> 'void *' lvalue ParmVar 0x14b00e2c8 'va' 'void *'
+    |-IfStmt 0x14b026e80 <line:9:2, line:12:2>
+    | |-CallExpr 0x14b026c70 <line:9:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14b026bf0 <col:6> 'int ()' Function 0x14b026b38 'boot_cpu_has' 'int ()'
+    | | `-RecoveryExpr 0x14b026c50 <col:19> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14b026e60 <col:46, line:12:2>
+    |   |-CallExpr 0x14b026e20 <line:10:3, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b026d78 <col:3> 'int ()' Function 0x14b026cc0 'clflush_cache_range' 'int ()'
+    |   | |-DeclRefExpr 0x14b026d98 <col:23> 'void *' lvalue ParmVar 0x14b00e2c8 'va' 'void *'
+    |   | `-RecoveryExpr 0x14b026e00 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x14b026e50 <line:11:3>
+    |-IfStmt 0x14b027300 <line:15:2, line:16:8>
+    | |-CallExpr 0x14b027270 <line:15:6, col:68> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14b026f80 <col:6> 'int ()' Function 0x14b026ec8 'WARN_ON_ONCE' 'int ()'
+    | | `-CallExpr 0x14b027240 <col:19, col:67> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14b027080 <col:19> 'int ()' Function 0x14b026fc8 'wrmsrl_safe' 'int ()'
+    | |   |-RecoveryExpr 0x14b0271b8 <col:31> '<dependent type>' contains-errors lvalue
+    | |   `-BinaryOperator 0x14b027220 <col:56, col:63> 'unsigned long' contains-errors '|'
+    | |     |-ImplicitCastExpr 0x14b0271d8 <col:56> 'unsigned long' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x14b0270b8 <col:56> 'unsigned long' lvalue Var 0x14b026a18 'addr' 'unsigned long'
+    | |     `-ImplicitCastExpr 0x14b027208 <col:63> 'unsigned long' contains-errors <IntegralCast>
+    | |       `-ImplicitCastExpr 0x14b0271f0 <col:63> 'int' contains-errors <LValueToRValue>
+    | |         `-DeclRefExpr 0x14b0270d8 <col:63> 'int' contains-errors lvalue Var 0x14b026718 'asid' 'int'
+    | `-GotoStmt 0x14b0272e8 <line:16:3, col:8> 'do_wbinvd' 0x14b027298
+    |-ReturnStmt 0x14b027320 <line:18:2>
+    `-LabelStmt 0x14b027498 <line:20:1, line:21:21> 'do_wbinvd'
+      `-CallExpr 0x14b027478 <col:2, col:21> 'int'
+        `-ImplicitCastExpr 0x14b027460 <col:2> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x14b027410 <col:2> 'int ()' Function 0x14b027358 'wbinvd_on_all_cpus' 'int ()'

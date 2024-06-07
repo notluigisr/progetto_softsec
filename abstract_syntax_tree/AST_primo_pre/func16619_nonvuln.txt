@@ -1,0 +1,28 @@
+`-FunctionDecl 0x14001f488  line:1:13 invalid getnum 'int (int *, const char *)' static
+  |-ParmVarDecl 0x14001f328 <col:20, col:26> col:26 invalid a 'int *'
+  |-ParmVarDecl 0x14001f3a8 <col:29, col:41> col:41 used s 'const char *'
+  `-CompoundStmt 0x14001f968 <col:44, line:9:1>
+    |-IfStmt 0x14001f5d8 <line:2:2, line:4:2>
+    | |-UnaryOperator 0x14001f578 <line:2:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14001f560 <col:7> 'const char *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14001f540 <col:7> 'const char *' lvalue ParmVar 0x14001f3a8 's' 'const char *'
+    | `-CompoundStmt 0x14001f5c0 <col:10, line:4:2>
+    |   `-ReturnStmt 0x14001f5b0 <line:3:3, col:10>
+    |     `-IntegerLiteral 0x14001f590 <col:10> 'int' 0
+    |-IfStmt 0x14001f700 <line:5:2, line:7:2>
+    | |-BinaryOperator 0x14001f690 <line:5:6, col:12> 'int' '=='
+    | | |-ImplicitCastExpr 0x14001f678 <col:6, col:7> 'int' <IntegralCast>
+    | | | `-ImplicitCastExpr 0x14001f660 <col:6, col:7> 'char' <LValueToRValue>
+    | | |   `-UnaryOperator 0x14001f630 <col:6, col:7> 'const char' lvalue prefix '*' cannot overflow
+    | | |     `-ImplicitCastExpr 0x14001f618 <col:7> 'const char *' <LValueToRValue>
+    | | |       `-DeclRefExpr 0x14001f5f8 <col:7> 'const char *' lvalue ParmVar 0x14001f3a8 's' 'const char *'
+    | | `-CharacterLiteral 0x14001f648 <col:12> 'int' 36
+    | `-CompoundStmt 0x14001f6e8 <col:17, line:7:2>
+    |   `-UnaryOperator 0x14001f6d0 <line:6:3, col:4> 'const char *' postfix '++'
+    |     `-DeclRefExpr 0x14001f6b0 <col:3> 'const char *' lvalue ParmVar 0x14001f3a8 's' 'const char *'
+    `-ReturnStmt 0x14001f958 <line:8:2, col:30>
+      `-CallExpr 0x14001f928 <col:9, col:30> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14001f880 <col:9> 'int ()' Function 0x14001f7c8 'r_num_math' 'int ()'
+        |-CXXDependentScopeMemberExpr 0x14001f8c0 <col:21, col:24> '<dependent type>' contains-errors lvalue ->num
+        | `-RecoveryExpr 0x14001f8a0 <col:21> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x14001f908 <col:29> 'const char *' lvalue ParmVar 0x14001f3a8 's' 'const char *'

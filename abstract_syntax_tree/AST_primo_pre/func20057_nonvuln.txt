@@ -1,0 +1,19 @@
+`-FunctionDecl 0x13e9418d8  line:1:7 invalid dev_seq_next 'void *(struct seq_file *, void *, int *)'
+  |-ParmVarDecl 0x13e928648 <col:20, col:37> col:37 used seq 'struct seq_file *'
+  |-ParmVarDecl 0x13e9286c8 <col:42, col:48> col:48 used v 'void *'
+  |-ParmVarDecl 0x13e928798 <col:51, col:59> col:59 invalid pos 'int *'
+  `-CompoundStmt 0x13e942390 <line:2:1, line:9:1>
+    |-DeclStmt 0x13e942170 <line:3:2, line:5:46>
+    | |-RecordDecl 0x13e941998 <line:3:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x13e941b08 <col:2, col:21> col:21 used dev 'struct net_device *'
+    |-UnaryOperator 0x13e9421d8 <line:7:2, col:5> '<dependent type>' contains-errors prefix '++' cannot overflow
+    | `-UnaryOperator 0x13e9421c0 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x13e9421a8 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x13e942188 <col:5> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13e942380 <line:8:2, col:28>
+      `-ImplicitCastExpr 0x13e942368 <col:9, col:28> 'void *' <IntegralToPointer>
+        `-CallExpr 0x13e942328 <col:9, col:28> 'int'
+          |-ImplicitCastExpr 0x13e942310 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13e9422d0 <col:9> 'int ()' Function 0x13e942218 'rcu_dereference' 'int ()'
+          `-ImplicitCastExpr 0x13e942350 <col:25> 'struct net_device *' <LValueToRValue>
+            `-DeclRefExpr 0x13e9422f0 <col:25> 'struct net_device *' lvalue Var 0x13e941b08 'dev' 'struct net_device *'

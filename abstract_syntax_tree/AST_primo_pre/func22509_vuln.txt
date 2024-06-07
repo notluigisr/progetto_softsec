@@ -1,0 +1,28 @@
+`-FunctionDecl 0x14880e350  line:1:13 referenced mctp_serial_close 'void (struct tty_struct *)' static
+  |-ParmVarDecl 0x14880e248 <col:31, col:50> col:50 used tty 'struct tty_struct *'
+  `-CompoundStmt 0x148826fd0 <line:2:1, line:9:1>
+    |-DeclStmt 0x148826898 <line:3:2, col:42>
+    | |-RecordDecl 0x148826648 <col:2, col:9> col:9 struct mctp_serial
+    | `-VarDecl 0x1488267b8 <col:2, col:33> col:22 used dev 'struct mctp_serial *' cinit
+    |   `-RecoveryExpr 0x148826858 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148826820 <col:28> 'struct tty_struct *' lvalue ParmVar 0x14880e248 'tty' 'struct tty_struct *'
+    |-DeclStmt 0x148826990 <line:4:2, col:20>
+    | `-VarDecl 0x1488268c8 <col:2, col:17> col:6 used idx 'int' cinit
+    |   `-RecoveryExpr 0x148826968 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148826930 <col:12> 'struct mctp_serial *' contains-errors lvalue Var 0x1488267b8 'dev' 'struct mctp_serial *'
+    |-CallExpr 0x148826b50 <line:6:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x148826ad0 <col:2> 'int ()' Function 0x148826a18 'unregister_netdev' 'int ()'
+    | `-RecoveryExpr 0x148826b28 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x148826af0 <col:20> 'struct mctp_serial *' contains-errors lvalue Var 0x1488267b8 'dev' 'struct mctp_serial *'
+    |-CallExpr 0x148826cf0 <line:7:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x148826c58 <col:2> 'int ()' Function 0x148826ba0 'cancel_work_sync' 'int ()'
+    | `-UnaryOperator 0x148826cd8 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x148826cb0 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148826c78 <col:20> 'struct mctp_serial *' contains-errors lvalue Var 0x1488267b8 'dev' 'struct mctp_serial *'
+    `-CallExpr 0x148826f88 <line:8:2, col:32> 'int' contains-errors
+      |-ImplicitCastExpr 0x148826f70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x148826df8 <col:2> 'int ()' Function 0x148826d40 'ida_free' 'int ()'
+      |-UnaryOperator 0x148826f20 <col:11, col:12> 'void (*)(struct tty_struct *)' prefix '&' cannot overflow
+      | `-DeclRefExpr 0x148826e98 <col:12> 'void (struct tty_struct *)' Function 0x14880e350 'mctp_serial_close' 'void (struct tty_struct *)'
+      `-ImplicitCastExpr 0x148826fb8 <col:29> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x148826e48 <col:29> 'int' contains-errors lvalue Var 0x1488268c8 'idx' 'int'

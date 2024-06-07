@@ -1,0 +1,1 @@
+Router::RouteConstSharedPtr ActiveStreamFilterBase::route() { return route(nullptr); }

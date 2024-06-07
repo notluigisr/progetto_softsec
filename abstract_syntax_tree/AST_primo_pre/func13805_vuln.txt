@@ -1,0 +1,35 @@
+`-FunctionDecl 0x11e940a30  line:1:6 referenced psi_trigger_replace 'void (void **, struct psi_trigger *)'
+  |-ParmVarDecl 0x11e928108 <col:26, col:33> col:33 used trigger_ptr 'void **'
+  |-ParmVarDecl 0x11e9286f8 <col:46, col:66> col:66 used new 'struct psi_trigger *'
+  `-CompoundStmt 0x11e941370 <line:2:1, line:11:1>
+    |-DeclStmt 0x11e940ca0 <line:3:2, col:40>
+    | `-VarDecl 0x11e940bb8 <col:2, col:29> col:22 used old 'struct psi_trigger *' cinit
+    |   `-ImplicitCastExpr 0x11e940c88 <col:28, col:29> 'struct psi_trigger *' <BitCast>
+    |     `-ImplicitCastExpr 0x11e940c70 <col:28, col:29> 'void *' <LValueToRValue>
+    |       `-UnaryOperator 0x11e940c58 <col:28, col:29> 'void *' lvalue prefix '*' cannot overflow
+    |         `-ImplicitCastExpr 0x11e940c40 <col:29> 'void **' <LValueToRValue>
+    |           `-DeclRefExpr 0x11e940c20 <col:29> 'void **' lvalue ParmVar 0x11e928108 'trigger_ptr' 'void **'
+    |-IfStmt 0x11e940ec8 <line:5:2, line:6:3>
+    | |-CallExpr 0x11e940e90 <line:5:6, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11e940de0 <col:6> 'int ()' Function 0x11e940d28 'static_branch_likely' 'int ()'
+    | | `-UnaryOperator 0x11e940e78 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x11e940e58 <col:28> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x11e940eb8 <line:6:3>
+    |-CallExpr 0x11e9410a8 <line:8:2, col:38> 'int'
+    | |-ImplicitCastExpr 0x11e941090 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e940fc8 <col:2> 'int ()' Function 0x11e940f10 'rcu_assign_pointer' 'int ()'
+    | |-ImplicitCastExpr 0x11e9410d8 <col:21, col:22> 'void *' <LValueToRValue>
+    | | `-UnaryOperator 0x11e941020 <col:21, col:22> 'void *' lvalue prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x11e941008 <col:22> 'void **' <LValueToRValue>
+    | |     `-DeclRefExpr 0x11e940fe8 <col:22> 'void **' lvalue ParmVar 0x11e928108 'trigger_ptr' 'void **'
+    | `-ImplicitCastExpr 0x11e9410f0 <col:35> 'struct psi_trigger *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11e941038 <col:35> 'struct psi_trigger *' lvalue ParmVar 0x11e9286f8 'new' 'struct psi_trigger *'
+    `-IfStmt 0x11e941350 <line:9:2, line:10:47>
+      |-ImplicitCastExpr 0x11e941128 <line:9:6> 'struct psi_trigger *' <LValueToRValue>
+      | `-DeclRefExpr 0x11e941108 <col:6> 'struct psi_trigger *' lvalue Var 0x11e940bb8 'old' 'struct psi_trigger *'
+      `-CallExpr 0x11e941320 <line:10:3, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x11e941220 <col:3> 'int ()' Function 0x11e941168 'kref_put' 'int ()'
+        |-UnaryOperator 0x11e9412a0 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x11e941278 <col:13, col:18> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x11e941240 <col:13> 'struct psi_trigger *' lvalue Var 0x11e940bb8 'old' 'struct psi_trigger *'
+        `-DeclRefExpr 0x11e941300 <col:28> 'void (void **, struct psi_trigger *)' Function 0x11e940a30 'psi_trigger_replace' 'void (void **, struct psi_trigger *)'

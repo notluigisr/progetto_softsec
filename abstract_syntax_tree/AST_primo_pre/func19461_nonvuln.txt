@@ -1,0 +1,130 @@
+`-FunctionDecl 0x14902bb98  line:1:12 invalid ext4_ext_create_new_leaf 'int (int *, struct inode *, unsigned int, unsigned int, struct ext4_ext_path **, struct ext4_extent *)' static
+  |-ParmVarDecl 0x14900dd28 <col:37, col:47> col:47 invalid handle 'int *'
+  |-ParmVarDecl 0x14900e318 <col:55, col:69> col:69 used inode 'struct inode *'
+  |-ParmVarDecl 0x14900e398 <line:2:9, col:22> col:22 used mb_flags 'unsigned int'
+  |-ParmVarDecl 0x14902b618 <line:3:9, col:22> col:22 used gb_flags 'unsigned int'
+  |-ParmVarDecl 0x14902b848 <line:4:9, col:32> col:32 used ppath 'struct ext4_ext_path **'
+  |-ParmVarDecl 0x14902ba18 <line:5:9, col:29> col:29 used newext 'struct ext4_extent *'
+  `-CompoundStmt 0x148922de0 <line:6:1, line:59:1>
+    |-DeclStmt 0x14902bdc8 <line:7:2, col:37>
+    | `-VarDecl 0x14902bcf8 <col:2, col:32> col:24 used path 'struct ext4_ext_path *' cinit
+    |   `-ImplicitCastExpr 0x14902bdb0 <col:31, col:32> 'struct ext4_ext_path *' <LValueToRValue>
+    |     `-UnaryOperator 0x14902bd98 <col:31, col:32> 'struct ext4_ext_path *' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x14902bd80 <col:32> 'struct ext4_ext_path **' <LValueToRValue>
+    |         `-DeclRefExpr 0x14902bd60 <col:32> 'struct ext4_ext_path **' lvalue ParmVar 0x14902b848 'ppath' 'struct ext4_ext_path **'
+    |-DeclStmt 0x14902be70 <line:8:2, col:28>
+    | `-VarDecl 0x14902be08 <col:2, col:24> col:24 used curp 'struct ext4_ext_path *'
+    |-DeclStmt 0x14902c048 <line:9:2, col:23>
+    | |-VarDecl 0x14902bea0 <col:2, col:6> col:6 used depth 'int'
+    | |-VarDecl 0x14902bf20 <col:2, col:13> col:13 used i 'int'
+    | `-VarDecl 0x14902bfa0 <col:2, col:22> col:16 used err 'int' cinit
+    |   `-IntegerLiteral 0x14902c008 <col:22> 'int' 0
+    |-LabelStmt 0x14902c358 <line:11:1, line:12:29> 'repeat'
+    | `-BinaryOperator 0x14902c2e8 <col:2, col:29> 'int' '='
+    |   |-DeclRefExpr 0x14902c060 <col:2> 'int' lvalue Var 0x14902bf20 'i' 'int'
+    |   `-BinaryOperator 0x14902c2c8 <col:6, col:29> 'int' '='
+    |     |-DeclRefExpr 0x14902c080 <col:6> 'int' lvalue Var 0x14902bea0 'depth' 'int'
+    |     `-CallExpr 0x14902c288 <col:14, col:29> 'int'
+    |       |-ImplicitCastExpr 0x14902c270 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14902c200 <col:14> 'int ()' Function 0x14902c148 'ext_depth' 'int ()'
+    |       `-ImplicitCastExpr 0x14902c2b0 <col:24> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14902c220 <col:24> 'struct inode *' lvalue ParmVar 0x14900e318 'inode' 'struct inode *'
+    |-BinaryOperator 0x14902c438 <line:15:2, col:16> 'struct ext4_ext_path *' contains-errors '='
+    | |-DeclRefExpr 0x14902c378 <col:2> 'struct ext4_ext_path *' lvalue Var 0x14902be08 'curp' 'struct ext4_ext_path *'
+    | `-RecoveryExpr 0x14902c408 <col:9, col:16> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x14902c398 <col:9> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    |   `-DeclRefExpr 0x14902c3b8 <col:16> 'int' lvalue Var 0x14902bea0 'depth' 'int'
+    |-WhileStmt 0x14902d148 <line:16:2, line:19:2>
+    | |-BinaryOperator 0x14902d070 <line:16:9, col:42> 'int' '&&'
+    | | |-BinaryOperator 0x14902c4b0 <col:9, col:13> 'int' '>'
+    | | | |-ImplicitCastExpr 0x14902c498 <col:9> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14902c458 <col:9> 'int' lvalue Var 0x14902bf20 'i' 'int'
+    | | | `-IntegerLiteral 0x14902c478 <col:13> 'int' 0
+    | | `-UnaryOperator 0x14902d058 <col:18, col:42> 'int' prefix '!' cannot overflow
+    | |   `-CallExpr 0x14902d018 <col:19, col:42> 'int'
+    | |     |-ImplicitCastExpr 0x14902d000 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x14902c5b0 <col:19> 'int ()' Function 0x14902c4f8 'EXT_HAS_FREE_INDEX' 'int ()'
+    | |     `-ImplicitCastExpr 0x14902d040 <col:38> 'struct ext4_ext_path *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x14902c5d0 <col:38> 'struct ext4_ext_path *' lvalue Var 0x14902be08 'curp' 'struct ext4_ext_path *'
+    | `-CompoundStmt 0x14902d128 <col:45, line:19:2>
+    |   |-UnaryOperator 0x14902d0b0 <line:17:3, col:4> 'int' postfix '--'
+    |   | `-DeclRefExpr 0x14902d090 <col:3> 'int' lvalue Var 0x14902bf20 'i' 'int'
+    |   `-ImplicitCastExpr 0x14902d110 <line:18:3, col:7> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x14902d0e8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14902d0c8 <col:3> 'struct ext4_ext_path *' lvalue Var 0x14902be08 'curp' 'struct ext4_ext_path *'
+    |-IfStmt 0x148922d48 <line:22:2, line:55:2> has_else
+    | |-CallExpr 0x14902d1c0 <line:22:6, col:29> 'int'
+    | | |-ImplicitCastExpr 0x14902d1a8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14902d168 <col:6> 'int ()' Function 0x14902c4f8 'EXT_HAS_FREE_INDEX' 'int ()'
+    | | `-ImplicitCastExpr 0x14902d1e8 <col:25> 'struct ext4_ext_path *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14902d188 <col:25> 'struct ext4_ext_path *' lvalue Var 0x14902be08 'curp' 'struct ext4_ext_path *'
+    | |-CompoundStmt 0x14902d9f8 <col:32, line:34:2>
+    | | |-BinaryOperator 0x14902d430 <line:24:3, col:64> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x14902d200 <col:3> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    | | | `-CallExpr 0x14902d3e0 <col:9, col:64> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x14902d300 <col:9> 'int ()' Function 0x14902d248 'ext4_ext_split' 'int ()'
+    | | |   |-RecoveryExpr 0x14902d320 <col:24> '<dependent type>' contains-errors lvalue
+    | | |   |-DeclRefExpr 0x14902d340 <col:32> 'struct inode *' lvalue ParmVar 0x14900e318 'inode' 'struct inode *'
+    | | |   |-DeclRefExpr 0x14902d360 <col:39> 'unsigned int' lvalue ParmVar 0x14900e398 'mb_flags' 'unsigned int'
+    | | |   |-DeclRefExpr 0x14902d380 <col:49> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    | | |   |-DeclRefExpr 0x14902d3a0 <col:55> 'struct ext4_extent *' lvalue ParmVar 0x14902ba18 'newext' 'struct ext4_extent *'
+    | | |   `-DeclRefExpr 0x14902d3c0 <col:63> 'int' lvalue Var 0x14902bf20 'i' 'int'
+    | | |-IfStmt 0x14902d4f0 <line:25:3, line:26:9>
+    | | | |-ImplicitCastExpr 0x14902d470 <line:25:7> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14902d450 <col:7> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    | | | `-GotoStmt 0x14902d4d8 <line:26:4, col:9> 'out' 0x14902d488
+    | | `-IfStmt 0x14902d9d8 <line:32:3, line:33:22>
+    | |   |-CallExpr 0x14902d7e0 <line:32:7, col:18> 'int'
+    | |   | |-ImplicitCastExpr 0x14902d7c8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x14902d788 <col:7> 'int ()' Function 0x14902d6d0 'IS_ERR' 'int ()'
+    | |   | `-ImplicitCastExpr 0x14902d808 <col:14> 'struct ext4_ext_path *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x14902d7a8 <col:14> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    | |   `-BinaryOperator 0x14902d9b8 <line:33:4, col:22> 'int' '='
+    | |     |-DeclRefExpr 0x14902d820 <col:4> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    | |     `-CallExpr 0x14902d978 <col:10, col:22> 'int'
+    | |       |-ImplicitCastExpr 0x14902d960 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x14902d920 <col:10> 'int ()' Function 0x14902d868 'PTR_ERR' 'int ()'
+    | |       `-ImplicitCastExpr 0x14902d9a0 <col:18> 'struct ext4_ext_path *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x14902d940 <col:18> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    | `-CompoundStmt 0x148922d10 <line:34:9, line:55:2>
+    |   |-BinaryOperator 0x14902dbd8 <line:36:3, col:54> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14902da20 <col:3> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    |   | `-CallExpr 0x14902dba0 <col:9, col:54> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14902db20 <col:9> 'int ()' Function 0x14902da68 'ext4_ext_grow_indepth' 'int ()'
+    |   |   |-RecoveryExpr 0x14902db40 <col:31> '<dependent type>' contains-errors lvalue
+    |   |   |-DeclRefExpr 0x14902db60 <col:39> 'struct inode *' lvalue ParmVar 0x14900e318 'inode' 'struct inode *'
+    |   |   `-DeclRefExpr 0x14902db80 <col:46> 'unsigned int' lvalue ParmVar 0x14900e398 'mb_flags' 'unsigned int'
+    |   |-IfStmt 0x14902dc48 <line:37:3, line:38:9>
+    |   | |-ImplicitCastExpr 0x14902dc18 <line:37:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x14902dbf8 <col:7> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    |   | `-GotoStmt 0x14902dc30 <line:38:4, col:9> 'out' 0x14902d488
+    |   |-IfStmt 0x14902dec8 <line:44:3, line:47:3>
+    |   | |-CallExpr 0x14902dd78 <line:44:7, col:18> 'int'
+    |   | | |-ImplicitCastExpr 0x14902dd60 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x14902dd20 <col:7> 'int ()' Function 0x14902d6d0 'IS_ERR' 'int ()'
+    |   | | `-ImplicitCastExpr 0x14902dda0 <col:14> 'struct ext4_ext_path *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14902dd40 <col:14> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    |   | `-CompoundStmt 0x14902dea8 <col:21, line:47:3>
+    |   |   |-BinaryOperator 0x14902de70 <line:45:4, col:22> 'int' '='
+    |   |   | |-DeclRefExpr 0x14902ddb8 <col:4> 'int' lvalue Var 0x14902bfa0 'err' 'int'
+    |   |   | `-CallExpr 0x14902de30 <col:10, col:22> 'int'
+    |   |   |   |-ImplicitCastExpr 0x14902de18 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   | `-DeclRefExpr 0x14902ddd8 <col:10> 'int ()' Function 0x14902d868 'PTR_ERR' 'int ()'
+    |   |   |   `-ImplicitCastExpr 0x14902de58 <col:18> 'struct ext4_ext_path *' <LValueToRValue>
+    |   |   |     `-DeclRefExpr 0x14902ddf8 <col:18> 'struct ext4_ext_path *' lvalue Var 0x14902bcf8 'path' 'struct ext4_ext_path *'
+    |   |   `-GotoStmt 0x14902de90 <line:46:4, col:9> 'out' 0x14902d488
+    |   |-BinaryOperator 0x14902dfa0 <line:50:3, col:26> 'int' '='
+    |   | |-DeclRefExpr 0x14902dee8 <col:3> 'int' lvalue Var 0x14902bea0 'depth' 'int'
+    |   | `-CallExpr 0x14902df60 <col:11, col:26> 'int'
+    |   |   |-ImplicitCastExpr 0x14902df48 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x14902df08 <col:11> 'int ()' Function 0x14902c148 'ext_depth' 'int ()'
+    |   |   `-ImplicitCastExpr 0x14902df88 <col:21> 'struct inode *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14902df28 <col:21> 'struct inode *' lvalue ParmVar 0x14900e318 'inode' 'struct inode *'
+    |   `-IfStmt 0x148922cf0 <line:51:3, line:54:3>
+    |     |-RecoveryExpr 0x148922ca0 <line:51:7, col:59> '_Bool' contains-errors
+    |     `-CompoundStmt 0x148922cd8 <col:67, line:54:3>
+    |       `-GotoStmt 0x148922cc0 <line:53:4, col:9> 'repeat' 0x14902c308
+    `-LabelStmt 0x148922dc0 <line:57:1, line:58:9> 'out'
+      `-ReturnStmt 0x148922db0 <col:2, col:9>
+        `-ImplicitCastExpr 0x148922d98 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x148922d78 <col:9> 'int' lvalue Var 0x14902bfa0 'err' 'int'

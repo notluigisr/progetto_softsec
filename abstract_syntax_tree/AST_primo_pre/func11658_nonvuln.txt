@@ -1,0 +1,83 @@
+`-FunctionDecl 0x1240082d8  line:1:16 invalid srpt_tpg_attrib_srp_sq_size_store 'int (struct config_item *, const char *, int)' static
+  |-ParmVarDecl 0x12380e268 <col:50, col:70> col:70 used item 'struct config_item *'
+  |-ParmVarDecl 0x12380e2e8 <line:2:3, col:15> col:15 used page 'const char *'
+  |-ParmVarDecl 0x12380e368 <col:21, col:28> col:28 invalid count 'int'
+  `-CompoundStmt 0x123828c28 <line:3:1, line:27:1>
+    |-DeclStmt 0x1240087c8 <line:4:2, col:54>
+    | |-RecordDecl 0x124008398 <col:2, col:9> col:9 struct se_portal_group
+    | `-VarDecl 0x124008508 <col:2, col:53> col:26 used se_tpg 'struct se_portal_group *' cinit
+    |   `-ImplicitCastExpr 0x124008798 <col:35, col:53> 'struct se_portal_group *' <IntegralToPointer>
+    |     `-CallExpr 0x124008758 <col:35, col:53> 'int'
+    |       |-ImplicitCastExpr 0x124008740 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1240086d0 <col:35> 'int ()' Function 0x124008618 'attrib_to_tpg' 'int ()'
+    |       `-ImplicitCastExpr 0x124008780 <col:49> 'struct config_item *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1240086f0 <col:49> 'struct config_item *' lvalue ParmVar 0x12380e268 'item' 'struct config_item *'
+    |-DeclStmt 0x124008b00 <line:5:2, col:78>
+    | |-RecordDecl 0x1240087e0 <col:2, col:9> col:9 struct srpt_port
+    | `-VarDecl 0x124008948 <col:2, col:20> col:20 used sport 'struct srpt_port *'
+    |-DeclStmt 0x124008b98 <line:6:2, col:19>
+    | `-VarDecl 0x124008b30 <col:2, col:16> col:16 used val 'unsigned long'
+    |-DeclStmt 0x124008c30 <line:7:2, col:9>
+    | `-VarDecl 0x124008bc8 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x124008e80 <line:9:2, col:30> 'int' '='
+    | |-DeclRefExpr 0x124008c48 <col:2> 'int' lvalue Var 0x124008bc8 'ret' 'int'
+    | `-CallExpr 0x124008e30 <col:8, col:30> 'int'
+    |   |-ImplicitCastExpr 0x124008e18 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x124008d48 <col:8> 'int ()' Function 0x124008c90 'kstrtoul' 'int ()'
+    |   |-ImplicitCastExpr 0x124008e68 <col:17> 'const char *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x124008d68 <col:17> 'const char *' lvalue ParmVar 0x12380e2e8 'page' 'const char *'
+    |   |-IntegerLiteral 0x124008d88 <col:23> 'int' 0
+    |   `-UnaryOperator 0x124008e00 <col:26, col:27> 'unsigned long *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x124008da8 <col:27> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    |-IfStmt 0x1240091e0 <line:10:2, line:13:2>
+    | |-BinaryOperator 0x124008ef8 <line:10:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x124008ee0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x124008ea0 <col:6> 'int' lvalue Var 0x124008bc8 'ret' 'int'
+    | | `-IntegerLiteral 0x124008ec0 <col:12> 'int' 0
+    | `-CompoundStmt 0x1240091c0 <col:15, line:13:2>
+    |   |-CallExpr 0x1240090b8 <line:11:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x1240090a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x124008ff8 <col:3> 'int ()' Function 0x124008f40 'pr_err' 'int ()'
+    |   | |-ImplicitCastExpr 0x1240090e8 <col:10> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x124009060 <col:10> 'char[4]' lvalue "STR"
+    |   | `-ImplicitCastExpr 0x124009100 <col:17> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x124009080 <col:17> 'int' lvalue Var 0x124008bc8 'ret' 'int'
+    |   `-ReturnStmt 0x1240091b0 <line:12:3, col:11>
+    |     `-UnaryOperator 0x124009198 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x124009180 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x124009160 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x123828868 <line:14:2, line:18:2>
+    | |-BinaryOperator 0x123828678 <line:14:6, col:12> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x123828600 <col:6> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    | | `-RecoveryExpr 0x123828658 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x123828848 <col:31, line:18:2>
+    |   |-CallExpr 0x123828768 <line:15:3, line:16:21> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x123828698 <line:15:3> 'int ()' Function 0x124008f40 'pr_err' 'int ()'
+    |   | |-StringLiteral 0x1238286b8 <col:10> 'char[4]' lvalue "STR"
+    |   | |-DeclRefExpr 0x1238286d8 <col:17> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    |   | `-RecoveryExpr 0x123828748 <line:16:4> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x123828838 <line:17:3, col:11>
+    |     `-UnaryOperator 0x123828820 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x123828808 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1238287e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x123828af0 <line:19:2, line:23:2>
+    | |-BinaryOperator 0x123828900 <line:19:6, col:12> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x123828888 <col:6> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    | | `-RecoveryExpr 0x1238288e0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x123828ad0 <col:31, line:23:2>
+    |   |-CallExpr 0x1238289f0 <line:20:3, line:21:21> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x123828920 <line:20:3> 'int ()' Function 0x124008f40 'pr_err' 'int ()'
+    |   | |-StringLiteral 0x123828940 <col:10> 'char[4]' lvalue "STR"
+    |   | |-DeclRefExpr 0x123828960 <col:17> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    |   | `-RecoveryExpr 0x1238289d0 <line:21:4> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x123828ac0 <line:22:3, col:11>
+    |     `-UnaryOperator 0x123828aa8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x123828a90 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x123828a70 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x123828bd8 <line:24:2, col:35> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123828b70 <col:2, col:21> '<dependent type>' contains-errors lvalue .srp_sq_size
+    | | `-RecoveryExpr 0x123828b48 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123828b10 <col:2> 'struct srpt_port *' lvalue Var 0x124008948 'sport' 'struct srpt_port *'
+    | `-DeclRefExpr 0x123828bb8 <col:35> 'unsigned long' lvalue Var 0x124008b30 'val' 'unsigned long'
+    `-ReturnStmt 0x123828c18 <line:26:2, col:9>
+      `-RecoveryExpr 0x123828bf8 <col:9> '<dependent type>' contains-errors lvalue

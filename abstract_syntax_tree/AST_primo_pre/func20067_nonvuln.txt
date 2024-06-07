@@ -1,0 +1,49 @@
+`-FunctionDecl 0x11e815e88  line:1:5 invalid __ext3_journal_stop 'int (const char *, int *)'
+  |-ParmVarDecl 0x11e815cd8 <col:25, col:37> col:37 used where 'const char *'
+  |-ParmVarDecl 0x11e815da8 <col:44, col:54> col:54 invalid handle 'int *'
+  `-CompoundStmt 0x11e82fc20 <line:2:1, line:16:1>
+    |-DeclStmt 0x11e816128 <line:3:2, col:24>
+    | |-RecordDecl 0x11e815f40 <col:2, col:9> col:9 struct super_block
+    | `-VarDecl 0x11e8160a8 <col:2, col:22> col:22 used sb 'struct super_block *'
+    |-DeclStmt 0x11e8161c0 <line:4:2, col:9>
+    | `-VarDecl 0x11e816158 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x11e816258 <line:5:2, col:8>
+    | `-VarDecl 0x11e8161f0 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x11e816388 <line:7:2, col:41> 'struct super_block *' contains-errors '='
+    | |-DeclRefExpr 0x11e816270 <col:2> 'struct super_block *' lvalue Var 0x11e8160a8 'sb' 'struct super_block *'
+    | `-CXXDependentScopeMemberExpr 0x11e816340 <col:7, col:41> '<dependent type>' contains-errors lvalue ->j_private
+    |   `-CXXDependentScopeMemberExpr 0x11e8162f8 <col:7, col:30> '<dependent type>' contains-errors lvalue ->t_journal
+    |     `-CXXDependentScopeMemberExpr 0x11e8162b0 <col:7, col:15> '<dependent type>' contains-errors lvalue ->h_transaction
+    |       `-RecoveryExpr 0x11e816290 <col:7> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11e82f648 <line:8:2, col:16> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11e8163a8 <col:2> 'int' lvalue Var 0x11e816158 'err' 'int'
+    | `-CXXDependentScopeMemberExpr 0x11e82f600 <col:8, col:16> '<dependent type>' contains-errors lvalue ->h_err
+    |   `-RecoveryExpr 0x11e8163c8 <col:8> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11e82f848 <line:9:2, col:26> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11e82f668 <col:2> 'int' lvalue Var 0x11e8161f0 'rc' 'int'
+    | `-CallExpr 0x11e82f820 <col:7, col:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e82f7e0 <col:7> 'int ()' Function 0x11e82f728 'journal_stop' 'int ()'
+    |   `-RecoveryExpr 0x11e82f800 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11e82f930 <line:11:2, line:12:9>
+    | |-UnaryOperator 0x11e82f8a0 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11e82f888 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11e82f868 <col:7> 'int' lvalue Var 0x11e816158 'err' 'int'
+    | `-BinaryOperator 0x11e82f910 <line:12:3, col:9> 'int' '='
+    |   |-DeclRefExpr 0x11e82f8b8 <col:3> 'int' lvalue Var 0x11e816158 'err' 'int'
+    |   `-ImplicitCastExpr 0x11e82f8f8 <col:9> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x11e82f8d8 <col:9> 'int' lvalue Var 0x11e8161f0 'rc' 'int'
+    |-IfStmt 0x11e82fbb8 <line:13:2, line:14:34>
+    | |-ImplicitCastExpr 0x11e82f970 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x11e82f950 <col:6> 'int' lvalue Var 0x11e816158 'err' 'int'
+    | `-CallExpr 0x11e82fb38 <line:14:3, col:34> 'int'
+    |   |-ImplicitCastExpr 0x11e82fb20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11e82fa68 <col:3> 'int ()' Function 0x11e82f9b0 '__ext3_std_error' 'int ()'
+    |   |-ImplicitCastExpr 0x11e82fb70 <col:20> 'struct super_block *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x11e82fa88 <col:20> 'struct super_block *' lvalue Var 0x11e8160a8 'sb' 'struct super_block *'
+    |   |-ImplicitCastExpr 0x11e82fb88 <col:24> 'const char *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x11e82faa8 <col:24> 'const char *' lvalue ParmVar 0x11e815cd8 'where' 'const char *'
+    |   `-ImplicitCastExpr 0x11e82fba0 <col:31> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x11e82fac8 <col:31> 'int' lvalue Var 0x11e816158 'err' 'int'
+    `-ReturnStmt 0x11e82fc10 <line:15:2, col:9>
+      `-ImplicitCastExpr 0x11e82fbf8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x11e82fbd8 <col:9> 'int' lvalue Var 0x11e816158 'err' 'int'

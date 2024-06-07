@@ -1,0 +1,78 @@
+`-FunctionDecl 0x15c140d68  line:1:1 invalid generic_file_splice_write 'int (struct pipe_inode_info *, struct file *, int *, int, unsigned int)'
+  |-ParmVarDecl 0x15c128648 <col:27, col:51> col:51 used pipe 'struct pipe_inode_info *'
+  |-ParmVarDecl 0x15c140a28 <col:57, col:70> col:70 used out 'struct file *'
+  |-ParmVarDecl 0x15c140af8 <line:2:6, col:14> col:14 invalid ppos 'int *'
+  |-ParmVarDecl 0x15c140b78 <col:20, col:27> col:27 invalid len 'int'
+  |-ParmVarDecl 0x15c140bf8 <col:32, col:45> col:45 used flags 'unsigned int'
+  `-CompoundStmt 0x15c1435f0 <line:3:1, line:35:1>
+    |-DeclStmt 0x15c141088 <line:4:2, col:48>
+    | |-RecordDecl 0x15c140e38 <col:2, col:9> col:9 struct address_space
+    | `-VarDecl 0x15c140fa8 <col:2, col:39> col:24 used mapping 'struct address_space *' cinit
+    |   `-RecoveryExpr 0x15c141048 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c141010 <col:34> 'struct file *' lvalue ParmVar 0x15c140a28 'out' 'struct file *'
+    |-DeclStmt 0x15c1412e8 <line:5:2, col:37>
+    | |-RecordDecl 0x15c1410a0 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x15c141208 <col:2, col:33> col:16 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x15c1412a8 <col:24, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c141270 <col:24> 'struct address_space *' contains-errors lvalue Var 0x15c140fa8 'mapping' 'struct address_space *'
+    |-DeclStmt 0x15c141380 <line:7:2, col:9>
+    | `-VarDecl 0x15c141318 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x15c1415b8 <line:9:2, col:40> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c141398 <col:2> 'int' lvalue Var 0x15c141318 'err' 'int'
+    | `-CallExpr 0x15c141590 <col:8, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c141510 <col:8> 'int ()' Function 0x15c141458 'should_remove_suid' 'int ()'
+    |   `-RecoveryExpr 0x15c141568 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c141530 <col:27> 'struct file *' lvalue ParmVar 0x15c140a28 'out' 'struct file *'
+    |-IfStmt 0x15c142c18 <line:10:2, line:16:2>
+    | |-CallExpr 0x15c141748 <line:10:6, col:18> 'int'
+    | | |-ImplicitCastExpr 0x15c141730 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x15c1416b8 <col:6> 'int ()' Function 0x15c141600 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x15c141770 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c1416d8 <col:15> 'int' lvalue Var 0x15c141318 'err' 'int'
+    | `-CompoundStmt 0x15c142be8 <col:21, line:16:2>
+    |   |-CallExpr 0x15c141900 <line:11:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15c141868 <col:3> 'int ()' Function 0x15c1417b0 'mutex_lock' 'int ()'
+    |   | `-UnaryOperator 0x15c1418e8 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x15c1418c0 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x15c141888 <col:15> 'struct inode *' contains-errors lvalue Var 0x15c141208 'inode' 'struct inode *'
+    |   |-BinaryOperator 0x15c142988 <line:12:3, col:41> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x15c141928 <col:3> 'int' lvalue Var 0x15c141318 'err' 'int'
+    |   | `-CallExpr 0x15c142958 <col:9, col:41> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x15c1428b8 <col:9> 'int ()' Function 0x15c142800 '__remove_suid' 'int ()'
+    |   |   |-RecoveryExpr 0x15c142910 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x15c1428d8 <col:23> 'struct file *' lvalue ParmVar 0x15c140a28 'out' 'struct file *'
+    |   |   `-DeclRefExpr 0x15c142938 <col:38> 'int' lvalue Var 0x15c141318 'err' 'int'
+    |   |-CallExpr 0x15c142b20 <line:13:3, col:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15c142a88 <col:3> 'int ()' Function 0x15c1429d0 'mutex_unlock' 'int ()'
+    |   | `-UnaryOperator 0x15c142b08 <col:16, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x15c142ae0 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x15c142aa8 <col:17> 'struct inode *' contains-errors lvalue Var 0x15c141208 'inode' 'struct inode *'
+    |   `-IfStmt 0x15c142bc8 <line:14:3, line:15:11>
+    |     |-ImplicitCastExpr 0x15c142b68 <line:14:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x15c142b48 <col:7> 'int' lvalue Var 0x15c141318 'err' 'int'
+    |     `-ReturnStmt 0x15c142bb8 <line:15:4, col:11>
+    |       `-ImplicitCastExpr 0x15c142ba0 <col:11> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x15c142b80 <col:11> 'int' lvalue Var 0x15c141318 'err' 'int'
+    `-IfStmt 0x15c1435d0 <line:19:2, line:32:2>
+      |-BinaryOperator 0x15c142eb8 <line:19:6, col:12> 'int' contains-errors '>'
+      | |-RecoveryExpr 0x15c142e98 <col:6> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x15c142e58 <col:12> 'int' 0
+      `-CompoundStmt 0x15c1435b0 <col:15, line:32:2>
+        |-CompoundAssignOperator 0x15c142ff0 <line:20:3, col:12> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        | |-UnaryOperator 0x15c142fb8 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+        | | `-ImplicitCastExpr 0x15c142fa0 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+        | |   `-RecoveryExpr 0x15c142ed8 <col:4> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x15c142fd0 <col:12> '<dependent type>' contains-errors lvalue
+        `-IfStmt 0x15c143590 <line:23:3, line:31:3>
+          |-RecoveryExpr 0x15c143218 <line:23:7, col:57> '_Bool' contains-errors
+          `-CompoundStmt 0x15c143570 <col:60, line:31:3>
+            |-CallExpr 0x15c1432d0 <line:24:4, col:30> '<dependent type>' contains-errors
+            | |-DeclRefExpr 0x15c143238 <col:4> 'int ()' Function 0x15c1417b0 'mutex_lock' 'int ()'
+            | `-UnaryOperator 0x15c1432b8 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+            |   `-RecoveryExpr 0x15c143290 <col:16, col:23> '<dependent type>' contains-errors lvalue
+            |     `-DeclRefExpr 0x15c143258 <col:16> 'struct inode *' contains-errors lvalue Var 0x15c141208 'inode' 'struct inode *'
+            `-CallExpr 0x15c1434f0 <line:27:4, col:32> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x15c143458 <col:4> 'int ()' Function 0x15c1429d0 'mutex_unlock' 'int ()'
+              `-UnaryOperator 0x15c1434d8 <col:17, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+                `-RecoveryExpr 0x15c1434b0 <col:18, col:25> '<dependent type>' contains-errors lvalue
+                  `-DeclRefExpr 0x15c143478 <col:18> 'struct inode *' contains-errors lvalue Var 0x15c141208 'inode' 'struct inode *'

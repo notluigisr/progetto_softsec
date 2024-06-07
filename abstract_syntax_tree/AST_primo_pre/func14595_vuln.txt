@@ -1,0 +1,19 @@
+`-FunctionDecl 0x15500de88  line:1:1 invalid ds_init 'int (int *, int)'
+  |-ParmVarDecl 0x15500dd28 <col:10, col:26> col:26 referenced invalid string 'int *'
+  |-ParmVarDecl 0x15500dda8 <col:34, col:38> col:38 used size 'int'
+  `-CompoundStmt 0x155028748 <line:2:1, line:5:1>
+    |-BinaryOperator 0x15500dff0 <line:3:3, col:23> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15500df88 <col:3, col:11> '<dependent type>' contains-errors lvalue ->ds_length
+    | | `-RecoveryExpr 0x15500df60 <col:3> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15500df40 <col:3> 'int *' lvalue ParmVar 0x15500dd28 'string' 'int *'
+    | `-DeclRefExpr 0x15500dfd0 <col:23> 'int' lvalue ParmVar 0x15500dda8 'size' 'int'
+    `-BinaryOperator 0x155028728 <line:4:3, col:45> '<dependent type>' contains-errors '='
+      |-CXXDependentScopeMemberExpr 0x15500e058 <col:3, col:11> '<dependent type>' contains-errors lvalue ->ds_string
+      | `-RecoveryExpr 0x15500e030 <col:3> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x15500e010 <col:3> 'int *' lvalue ParmVar 0x15500dd28 'string' 'int *'
+      `-CStyleCastExpr 0x155028700 <col:23, col:45> 'char *' <IntegralToPointer>
+        `-CallExpr 0x15500e288 <col:32, col:45> 'int'
+          |-ImplicitCastExpr 0x15500e270 <col:32> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x15500e200 <col:32> 'int ()' Function 0x15500e148 'xmalloc' 'int ()'
+          `-ImplicitCastExpr 0x15500e2b0 <col:41> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x15500e220 <col:41> 'int' lvalue ParmVar 0x15500dda8 'size' 'int'

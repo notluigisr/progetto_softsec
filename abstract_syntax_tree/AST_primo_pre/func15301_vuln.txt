@@ -1,0 +1,51 @@
+`-FunctionDecl 0x136826740  line:1:13 llc_cmsg_rcv 'void (struct msghdr *, struct sk_buff *)' static
+  |-ParmVarDecl 0x13680e248 <col:26, col:41> col:41 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x136826628 <col:46, col:62> col:62 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x136829928 <line:2:1, line:13:1>
+    |-DeclStmt 0x136826c00 <line:3:2, col:40>
+    | |-RecordDecl 0x136826840 <col:2, col:9> col:9 struct llc_sock
+    | `-VarDecl 0x1368269a8 <col:2, col:39> col:19 used llc 'struct llc_sock *' cinit
+    |   `-CallExpr 0x136826bc0 <col:25, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x136826b40 <col:25> 'int ()' Function 0x136826a88 'llc_sk' 'int ()'
+    |     `-RecoveryExpr 0x136826b98 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x136826b60 <col:32> 'struct sk_buff *' lvalue ParmVar 0x136826628 'skb' 'struct sk_buff *'
+    `-IfStmt 0x136829908 <line:5:2, line:12:2>
+      |-BinaryOperator 0x136826cd0 <line:5:6, col:24> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x136826c50 <col:6, col:11> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x136826c18 <col:6> 'struct llc_sock *' contains-errors lvalue Var 0x1368269a8 'llc' 'struct llc_sock *'
+      | `-RecoveryExpr 0x136826cb0 <col:24> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x1368298d0 <col:42, line:12:2>
+        |-DeclStmt 0x136826e68 <line:6:3, col:26>
+        | |-RecordDecl 0x136826cf0 <col:3, col:10> col:10 struct llc_pktinfo
+        | `-VarDecl 0x136826de8 <col:3, col:22> col:22 referenced invalid info 'struct llc_pktinfo'
+        |-BinaryOperator 0x136827048 <line:8:3, col:44> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x136826ec8 <col:3, col:8> '<dependent type>' contains-errors lvalue .lpi_ifindex
+        | | `-RecoveryExpr 0x136826ea0 <col:3> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x136826e80 <col:3> 'struct llc_pktinfo' lvalue Var 0x136826de8 'info' 'struct llc_pktinfo'
+        | `-CXXDependentScopeMemberExpr 0x136827000 <col:22, col:44> '<dependent type>' contains-errors lvalue ->ifindex
+        |   `-CXXDependentScopeMemberExpr 0x136826fb8 <col:22, col:39> '<dependent type>' contains-errors lvalue ->dev
+        |     `-CallExpr 0x136826f90 <col:22, col:36> '<dependent type>' contains-errors
+        |       |-DeclRefExpr 0x136826f10 <col:22> 'int ()' Function 0x136826a88 'llc_sk' 'int ()'
+        |       `-RecoveryExpr 0x136826f68 <col:29, col:34> '<dependent type>' contains-errors lvalue
+        |         `-DeclRefExpr 0x136826f30 <col:29> 'struct sk_buff *' lvalue ParmVar 0x136826628 'skb' 'struct sk_buff *'
+        |-CallExpr 0x136827208 <line:9:3, col:41> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x136827148 <col:3> 'int ()' Function 0x136827090 'llc_pdu_decode_dsap' 'int ()'
+        | |-DeclRefExpr 0x136827168 <col:23> 'struct sk_buff *' lvalue ParmVar 0x136826628 'skb' 'struct sk_buff *'
+        | `-UnaryOperator 0x1368271f0 <col:28, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-CXXDependentScopeMemberExpr 0x1368271a8 <col:29, col:34> '<dependent type>' contains-errors lvalue .lpi_sap
+        |     `-RecoveryExpr 0x136827188 <col:29> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1368273c0 <line:10:3, col:38> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x136827318 <col:3> 'int ()' Function 0x136827260 'llc_pdu_decode_da' 'int ()'
+        | |-DeclRefExpr 0x136827338 <col:21> 'struct sk_buff *' lvalue ParmVar 0x136826628 'skb' 'struct sk_buff *'
+        | `-CXXDependentScopeMemberExpr 0x136827378 <col:26, col:31> '<dependent type>' contains-errors lvalue .lpi_mac
+        |   `-RecoveryExpr 0x136827358 <col:26> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x136829888 <line:11:3, col:62> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1368274d0 <col:3> 'int ()' Function 0x136827418 'put_cmsg' 'int ()'
+          |-DeclRefExpr 0x1368274f0 <col:12> 'struct msghdr *' lvalue ParmVar 0x13680e248 'msg' 'struct msghdr *'
+          |-RecoveryExpr 0x136829848 <col:17> '<dependent type>' contains-errors lvalue
+          |-RecoveryExpr 0x136829868 <col:26> '<dependent type>' contains-errors lvalue
+          |-UnaryExprOrTypeTraitExpr 0x136827580 <col:43, col:54> 'unsigned long' contains-errors sizeof
+          | `-ParenExpr 0x136827560 <col:49, col:54> '<dependent type>' contains-errors lvalue
+          |   `-RecoveryExpr 0x136827540 <col:50> '<dependent type>' contains-errors lvalue
+          `-UnaryOperator 0x1368275c0 <col:57, col:58> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x1368275a0 <col:58> '<dependent type>' contains-errors lvalue

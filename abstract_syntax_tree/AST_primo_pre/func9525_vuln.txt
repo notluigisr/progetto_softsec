@@ -1,0 +1,17 @@
+`-FunctionDecl 0x105826600  line:1:6 show_ip 'void (struct pt_regs *, const char *)'
+  |-ParmVarDecl 0x10580e248 <col:14, col:30> col:30 used regs 'struct pt_regs *'
+  |-ParmVarDecl 0x10580e2c8 <col:36, col:48> col:48 used loglvl 'const char *'
+  `-CompoundStmt 0x105826c00 <line:2:1, line:9:1>
+    `-CallExpr 0x105826a58 <line:6:2, col:55> 'int' contains-errors
+      |-ImplicitCastExpr 0x105826a40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x105826830 <col:2> 'int ()' Function 0x105826778 'printk' 'int ()'
+      |-ImplicitCastExpr 0x105826a98 <col:9> 'char *' <ArrayToPointerDecay>
+      | `-StringLiteral 0x105826890 <col:9> 'char[4]' lvalue "STR"
+      |-ImplicitCastExpr 0x105826ab0 <col:16> 'const char *' <LValueToRValue>
+      | `-DeclRefExpr 0x1058268b0 <col:16> 'const char *' lvalue ParmVar 0x10580e2c8 'loglvl' 'const char *'
+      |-CStyleCastExpr 0x105826948 <col:24, col:35> 'int' contains-errors <Dependent>
+      | `-RecoveryExpr 0x105826908 <col:29, col:35> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1058268d0 <col:29> 'struct pt_regs *' lvalue ParmVar 0x10580e248 'regs' 'struct pt_regs *'
+      `-CStyleCastExpr 0x1058269e8 <col:39, col:53> 'void *' contains-errors <Dependent>
+        `-RecoveryExpr 0x1058269a8 <col:47, col:53> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x105826970 <col:47> 'struct pt_regs *' lvalue ParmVar 0x10580e248 'regs' 'struct pt_regs *'

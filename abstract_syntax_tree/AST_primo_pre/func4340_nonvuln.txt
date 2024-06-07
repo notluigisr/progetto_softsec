@@ -1,0 +1,54 @@
+`-FunctionDecl 0x136026600  line:1:13 svm_set_cr4 'void (struct kvm_vcpu *, unsigned long)' static
+  |-ParmVarDecl 0x13600e248 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x13600e2c8 <col:48, col:62> col:62 used cr4 'unsigned long'
+  `-CompoundStmt 0x136027498 <line:2:1, line:14:1>
+    |-DeclStmt 0x136026a20 <line:3:2, col:55>
+    | `-VarDecl 0x136026718 <col:2, col:44> col:16 used host_cr4_mce 'unsigned long' cinit
+    |   `-BinaryOperator 0x136026a00 <col:31, col:44> '<dependent type>' contains-errors '&'
+    |     |-CallExpr 0x1360269c0 <col:31, col:40> 'int'
+    |     | `-ImplicitCastExpr 0x1360269a8 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    |     |   `-DeclRefExpr 0x1360268b0 <col:31> 'int ()' Function 0x1360267f8 'read_cr4' 'int ()'
+    |     `-RecoveryExpr 0x1360269e0 <col:44> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x136026ce8 <line:4:2, col:54>
+    | `-VarDecl 0x136026a50 <col:2, col:51> col:16 used old_cr4 'unsigned long' cinit
+    |   `-CXXDependentScopeMemberExpr 0x136026ca0 <col:26, col:51> '<dependent type>' contains-errors lvalue .cr4
+    |     `-CXXDependentScopeMemberExpr 0x136026c58 <col:26, col:46> '<dependent type>' contains-errors lvalue ->save
+    |       `-RecoveryExpr 0x136026c30 <col:26, col:40> '<dependent type>' contains-errors lvalue
+    |         `-CallExpr 0x136026bf0 <col:26, col:37> 'int'
+    |           |-ImplicitCastExpr 0x136026bd8 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |           | `-DeclRefExpr 0x136026b98 <col:26> 'int ()' Function 0x136026ae0 'to_svm' 'int ()'
+    |           `-ImplicitCastExpr 0x136026c18 <col:33> 'struct kvm_vcpu *' <LValueToRValue>
+    |             `-DeclRefExpr 0x136026bb8 <col:33> 'struct kvm_vcpu *' lvalue ParmVar 0x13600e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x136027008 <line:6:2, line:7:22>
+    | |-RecoveryExpr 0x136026e70 <line:6:6, col:51> '_Bool' contains-errors
+    | `-CallExpr 0x136026fc8 <line:7:3, col:22> 'int'
+    |   |-ImplicitCastExpr 0x136026fb0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x136026f70 <col:3> 'int ()' Function 0x136026eb8 'force_new_asid' 'int ()'
+    |   `-ImplicitCastExpr 0x136026ff0 <col:18> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x136026f90 <col:18> 'struct kvm_vcpu *' lvalue ParmVar 0x13600e248 'vcpu' 'struct kvm_vcpu *'
+    |-BinaryOperator 0x1360270f0 <line:9:2, col:19> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x136027088 <col:2, col:13> '<dependent type>' contains-errors lvalue .cr4
+    | | `-RecoveryExpr 0x136027060 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x136027028 <col:2> 'struct kvm_vcpu *' lvalue ParmVar 0x13600e248 'vcpu' 'struct kvm_vcpu *'
+    | `-DeclRefExpr 0x1360270d0 <col:19> 'unsigned long' lvalue ParmVar 0x13600e2c8 'cr4' 'unsigned long'
+    |-IfStmt 0x136027260 <line:10:2, line:11:10>
+    | |-UnaryOperator 0x136027190 <line:10:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x136027178 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x136027158 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundAssignOperator 0x136027230 <line:11:3, col:10> 'unsigned long' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x1360271a8 <col:3> 'unsigned long' lvalue ParmVar 0x13600e2c8 'cr4' 'unsigned long'
+    |   `-RecoveryExpr 0x136027210 <col:10> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x1360272d8 <line:12:2, col:9> 'unsigned long' contains-errors '|=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    | |-DeclRefExpr 0x136027280 <col:2> 'unsigned long' lvalue ParmVar 0x13600e2c8 'cr4' 'unsigned long'
+    | `-ImplicitCastExpr 0x1360272c0 <col:9> 'unsigned long' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x1360272a0 <col:9> 'unsigned long' contains-errors lvalue Var 0x136026718 'host_cr4_mce' 'unsigned long'
+    `-BinaryOperator 0x136027478 <line:13:2, col:33> '<dependent type>' contains-errors '='
+      |-CXXDependentScopeMemberExpr 0x136027410 <col:2, col:27> '<dependent type>' contains-errors lvalue .cr4
+      | `-CXXDependentScopeMemberExpr 0x1360273c8 <col:2, col:22> '<dependent type>' contains-errors lvalue ->save
+      |   `-RecoveryExpr 0x1360273a0 <col:2, col:16> '<dependent type>' contains-errors lvalue
+      |     `-CallExpr 0x136027360 <col:2, col:13> 'int'
+      |       |-ImplicitCastExpr 0x136027348 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      |       | `-DeclRefExpr 0x136027308 <col:2> 'int ()' Function 0x136026ae0 'to_svm' 'int ()'
+      |       `-ImplicitCastExpr 0x136027388 <col:9> 'struct kvm_vcpu *' <LValueToRValue>
+      |         `-DeclRefExpr 0x136027328 <col:9> 'struct kvm_vcpu *' lvalue ParmVar 0x13600e248 'vcpu' 'struct kvm_vcpu *'
+      `-DeclRefExpr 0x136027458 <col:33> 'unsigned long' lvalue ParmVar 0x13600e2c8 'cr4' 'unsigned long'

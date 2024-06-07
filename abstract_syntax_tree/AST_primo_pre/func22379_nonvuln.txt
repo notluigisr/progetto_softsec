@@ -1,0 +1,28 @@
+`-FunctionDecl 0x13b140b40  line:1:13 tcf_block_remove 'void (struct tcf_block *, struct net *)' static
+  |-ParmVarDecl 0x13b128648 <col:30, col:48> col:48 used block 'struct tcf_block *'
+  |-ParmVarDecl 0x13b140a28 <col:55, col:67> col:67 used net 'struct net *'
+  `-CompoundStmt 0x13b141590 <line:2:1, line:8:1>
+    |-DeclStmt 0x13b141030 <line:3:2, col:51>
+    | |-RecordDecl 0x13b140c40 <col:2, col:9> col:9 struct tcf_net
+    | `-VarDecl 0x13b140da8 <col:2, col:50> col:18 used tn 'struct tcf_net *' cinit
+    |   `-CallExpr 0x13b140fe8 <col:23, col:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b140f40 <col:23> 'int ()' Function 0x13b140e88 'net_generic' 'int ()'
+    |     |-DeclRefExpr 0x13b140f60 <col:35> 'struct net *' lvalue ParmVar 0x13b140a28 'net' 'struct net *'
+    |     `-RecoveryExpr 0x13b140fc8 <col:40> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13b1411c0 <line:5:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b141128 <col:2> 'int ()' Function 0x13b141070 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x13b1411a8 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13b141180 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b141148 <col:13> 'struct tcf_net *' contains-errors lvalue Var 0x13b140da8 'tn' 'struct tcf_net *'
+    |-CallExpr 0x13b1413c0 <line:6:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b1412c8 <col:2> 'int ()' Function 0x13b141210 'idr_remove' 'int ()'
+    | |-UnaryOperator 0x13b141348 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13b141320 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13b1412e8 <col:14> 'struct tcf_net *' contains-errors lvalue Var 0x13b140da8 'tn' 'struct tcf_net *'
+    | `-RecoveryExpr 0x13b141398 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13b141360 <col:23> 'struct tcf_block *' lvalue ParmVar 0x13b128648 'block' 'struct tcf_block *'
+    `-CallExpr 0x13b141568 <line:7:2, col:27> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13b1414d0 <col:2> 'int ()' Function 0x13b141418 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x13b141550 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13b141528 <col:15, col:19> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13b1414f0 <col:15> 'struct tcf_net *' contains-errors lvalue Var 0x13b140da8 'tn' 'struct tcf_net *'

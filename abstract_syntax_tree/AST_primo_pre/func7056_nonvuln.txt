@@ -1,0 +1,16 @@
+`-FunctionDecl 0x150140ab8  line:1:22 dm_get_queue_limits 'struct queue_limits *(struct mapped_device *)'
+  |-ParmVarDecl 0x1501286e8 <col:42, col:64> col:64 used md 'struct mapped_device *'
+  `-CompoundStmt 0x150140fb0 <line:2:1, line:5:1>
+    |-CallExpr 0x150140eb8 <line:3:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150140ce0 <col:2> 'int ()' Function 0x150140c28 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x150140ea0 <col:9, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-CallExpr 0x150140e78 <col:10, col:34> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x150140de0 <col:10> 'int ()' Function 0x150140d28 'atomic_read' 'int ()'
+    |     `-UnaryOperator 0x150140e60 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x150140e38 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x150140e00 <col:23> 'struct mapped_device *' lvalue ParmVar 0x1501286e8 'md' 'struct mapped_device *'
+    `-ReturnStmt 0x150140fa0 <line:4:2, col:21>
+      `-UnaryOperator 0x150140f88 <col:9, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x150140f40 <col:10, col:21> '<dependent type>' contains-errors lvalue ->limits
+          `-RecoveryExpr 0x150140f18 <col:10, col:14> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x150140ee0 <col:10> 'struct mapped_device *' lvalue ParmVar 0x1501286e8 'md' 'struct mapped_device *'

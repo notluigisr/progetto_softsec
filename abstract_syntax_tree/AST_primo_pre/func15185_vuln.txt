@@ -1,0 +1,39 @@
+`-FunctionDecl 0x12c928758  line:1:5 detach_capi_ctr 'int (struct capi_ctr *)'
+  |-ParmVarDecl 0x12c928648 <col:21, col:38> col:38 used ctr 'struct capi_ctr *'
+  `-CompoundStmt 0x12c9417c0 <line:2:1, line:26:1>
+    |-DeclStmt 0x12c940af0 <line:3:2, col:13>
+    | `-VarDecl 0x12c940a68 <col:2, col:12> col:6 used err 'int' cinit
+    |   `-IntegerLiteral 0x12c940ad0 <col:12> 'int' 0
+    |-CallExpr 0x12c940ce0 <line:5:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c940c30 <col:2> 'int ()' Function 0x12c940b78 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12c940cc8 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c940ca8 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12c940e90 <line:7:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c940de8 <col:2> 'int ()' Function 0x12c940d30 'ctr_down' 'int ()'
+    | |-DeclRefExpr 0x12c940e08 <col:11> 'struct capi_ctr *' lvalue ParmVar 0x12c928648 'ctr' 'struct capi_ctr *'
+    | `-RecoveryExpr 0x12c940e70 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c941138 <line:9:2, line:12:2>
+    | |-RecoveryExpr 0x12c940f98 <line:9:6, col:39> '_Bool' contains-errors
+    | `-CompoundStmt 0x12c941118 <col:44, line:12:2>
+    |   |-BinaryOperator 0x12c941090 <line:10:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12c940fb8 <col:3> 'int' lvalue Var 0x12c940a68 'err' 'int'
+    |   | `-UnaryOperator 0x12c941078 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x12c941060 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x12c941040 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x12c941100 <line:11:3, col:8> 'unlock_out' 0x12c9410b0
+    |-IfStmt 0x12c941468 <line:16:2, line:17:38>
+    | |-RecoveryExpr 0x12c941248 <line:16:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12c941210 <col:6> 'struct capi_ctr *' lvalue ParmVar 0x12c928648 'ctr' 'struct capi_ctr *'
+    | `-CallExpr 0x12c941438 <line:17:3, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c941350 <col:3> 'int ()' Function 0x12c941298 'remove_proc_entry' 'int ()'
+    |   |-RecoveryExpr 0x12c9413a8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12c941370 <col:21> 'struct capi_ctr *' lvalue ParmVar 0x12c928648 'ctr' 'struct capi_ctr *'
+    |   `-RecoveryExpr 0x12c941418 <col:34> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x12c941758 <line:22:1, line:23:36> 'unlock_out'
+    | `-CallExpr 0x12c941730 <col:2, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c941680 <col:2> 'int ()' Function 0x12c9415c8 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x12c941718 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12c9416f8 <col:16> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c9417b0 <line:25:2, col:9>
+      `-ImplicitCastExpr 0x12c941798 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12c941778 <col:9> 'int' lvalue Var 0x12c940a68 'err' 'int'

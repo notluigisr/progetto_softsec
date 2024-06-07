@@ -1,0 +1,82 @@
+`-FunctionDecl 0x145826670  line:1:13 copy_peercred 'void (struct sock *, struct sock *)' static
+  |-ParmVarDecl 0x14580e248 <col:27, col:40> col:40 used sk 'struct sock *'
+  |-ParmVarDecl 0x14580e338 <col:44, col:57> col:57 used peersk 'struct sock *'
+  `-CompoundStmt 0x147009350 <line:2:1, line:23:1>
+    |-DeclStmt 0x145826958 <line:3:2, col:29>
+    | |-RecordDecl 0x145826770 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x1458268d8 <col:2, col:21> col:21 used old_cred 'const struct cred *'
+    |-DeclStmt 0x145826b58 <line:4:2, col:21>
+    | |-RecordDecl 0x145826970 <col:2, col:9> col:9 struct pid
+    | `-VarDecl 0x145826ad8 <col:2, col:14> col:14 used old_pid 'struct pid *'
+    |-IfStmt 0x145827230 <line:6:2, line:12:2> has_else
+    | |-BinaryOperator 0x145826be0 <line:6:6, col:11> 'int' '<'
+    | | |-ImplicitCastExpr 0x145826bb0 <col:6> 'struct sock *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x145826b70 <col:6> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    | | `-ImplicitCastExpr 0x145826bc8 <col:11> 'struct sock *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x145826b90 <col:11> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    | |-CompoundStmt 0x145827000 <col:19, line:9:2>
+    | | |-CallExpr 0x145826dc8 <line:7:3, col:30> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x145826d30 <col:3> 'int ()' Function 0x145826c78 'spin_lock' 'int ()'
+    | | | `-UnaryOperator 0x145826db0 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x145826d88 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x145826d50 <col:14> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    | | `-CallExpr 0x145826fd0 <line:8:3, col:63> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x145826ed0 <col:3> 'int ()' Function 0x145826e18 'spin_lock_nested' 'int ()'
+    | |   |-UnaryOperator 0x145826f50 <col:20, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-RecoveryExpr 0x145826f28 <col:21, col:29> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x145826ef0 <col:21> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    | |   `-RecoveryExpr 0x145826fb0 <col:43> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x145827210 <line:9:9, line:12:2>
+    |   |-CallExpr 0x1458270b8 <line:10:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x145827020 <col:3> 'int ()' Function 0x145826c78 'spin_lock' 'int ()'
+    |   | `-UnaryOperator 0x1458270a0 <col:13, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x145827078 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x145827040 <col:14> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    |   `-CallExpr 0x1458271e0 <line:11:3, col:59> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1458270e0 <col:3> 'int ()' Function 0x145826e18 'spin_lock_nested' 'int ()'
+    |     |-UnaryOperator 0x145827160 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x145827138 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x145827100 <col:21> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |     `-RecoveryExpr 0x1458271c0 <col:39> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1458272e0 <line:13:2, col:16> 'struct pid *' contains-errors '='
+    | |-DeclRefExpr 0x145827260 <col:2> 'struct pid *' lvalue Var 0x145826ad8 'old_pid' 'struct pid *'
+    | `-RecoveryExpr 0x1458272b8 <col:12, col:16> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x145827280 <col:12> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |-BinaryOperator 0x145827380 <line:14:2, col:17> 'const struct cred *' contains-errors '='
+    | |-DeclRefExpr 0x145827300 <col:2> 'const struct cred *' lvalue Var 0x1458268d8 'old_cred' 'const struct cred *'
+    | `-RecoveryExpr 0x145827358 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x145827320 <col:13> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |-BinaryOperator 0x145827588 <line:15:2, col:48> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1458273d8 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1458273a0 <col:2> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    | `-CallExpr 0x145827560 <col:21, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1458274e0 <col:21> 'int ()' Function 0x145827428 'get_pid' 'int ()'
+    |   `-RecoveryExpr 0x145827538 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145827500 <col:29> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    |-BinaryOperator 0x147008db0 <line:16:2, col:50> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x147008c00 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1458275a8 <col:2> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    | `-CallExpr 0x147008d88 <col:21, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147008d08 <col:21> 'int ()' Function 0x147008c50 'get_cred' 'int ()'
+    |   `-RecoveryExpr 0x147008d60 <col:30, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147008d28 <col:30> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    |-CallExpr 0x147008f48 <line:18:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147008eb0 <col:2> 'int ()' Function 0x147008df8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x147008f30 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x147008f08 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147008ed0 <col:15> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |-CallExpr 0x147009008 <line:19:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147008f70 <col:2> 'int ()' Function 0x147008df8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x147008ff0 <col:14, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x147008fc8 <col:15, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147008f90 <col:15> 'struct sock *' lvalue ParmVar 0x14580e338 'peersk' 'struct sock *'
+    |-CallExpr 0x147009198 <line:21:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x147009180 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x147009110 <col:2> 'int ()' Function 0x147009058 'put_pid' 'int ()'
+    | `-ImplicitCastExpr 0x1470091c0 <col:10> 'struct pid *' <LValueToRValue>
+    |   `-DeclRefExpr 0x147009130 <col:10> 'struct pid *' lvalue Var 0x145826ad8 'old_pid' 'struct pid *'
+    `-CallExpr 0x147009310 <line:22:2, col:19> 'int'
+      |-ImplicitCastExpr 0x1470092f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x1470092b8 <col:2> 'int ()' Function 0x147009200 'put_cred' 'int ()'
+      `-ImplicitCastExpr 0x147009338 <col:11> 'const struct cred *' <LValueToRValue>
+        `-DeclRefExpr 0x1470092d8 <col:11> 'const struct cred *' lvalue Var 0x1458268d8 'old_cred' 'const struct cred *'

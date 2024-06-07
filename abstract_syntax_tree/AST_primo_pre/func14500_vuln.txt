@@ -1,0 +1,32 @@
+`-FunctionDecl 0x142026748  line:1:12 omninet_open 'int (struct tty_struct *, struct usb_serial_port *)' static
+  |-ParmVarDecl 0x14200e248 <col:25, col:44> col:44 used tty 'struct tty_struct *'
+  |-ParmVarDecl 0x142026628 <col:49, col:73> col:73 used port 'struct usb_serial_port *'
+  `-CompoundStmt 0x1420270c8 <line:2:1, line:10:1>
+    |-DeclStmt 0x142026a98 <line:3:2, col:42>
+    | |-RecordDecl 0x142026848 <col:2, col:9> col:9 struct usb_serial
+    | `-VarDecl 0x1420269b8 <col:2, col:36> col:21 used serial 'struct usb_serial *' cinit
+    |   `-RecoveryExpr 0x142026a58 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x142026a20 <col:30> 'struct usb_serial_port *' lvalue ParmVar 0x142026628 'port' 'struct usb_serial_port *'
+    |-DeclStmt 0x142026ba0 <line:4:2, col:31>
+    | `-VarDecl 0x142026b38 <col:2, col:26> col:26 used wport 'struct usb_serial_port *'
+    |-BinaryOperator 0x142026c90 <line:6:2, col:24> 'struct usb_serial_port *' contains-errors '='
+    | |-DeclRefExpr 0x142026bb8 <col:2> 'struct usb_serial_port *' lvalue Var 0x142026b38 'wport' 'struct usb_serial_port *'
+    | `-ArraySubscriptExpr 0x142026c70 <col:10, col:24> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x142026c58 <col:10, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x142026c10 <col:10, col:18> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x142026bd8 <col:10> 'struct usb_serial *' contains-errors lvalue Var 0x1420269b8 'serial' 'struct usb_serial *'
+    |   `-IntegerLiteral 0x142026c38 <col:23> 'int' 1
+    |-CallExpr 0x142026e98 <line:7:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142026de0 <col:2> 'int ()' Function 0x142026d28 'tty_port_tty_set' 'int ()'
+    | |-UnaryOperator 0x142026e60 <col:19, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x142026e38 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x142026e00 <col:20> 'struct usb_serial_port *' lvalue Var 0x142026b38 'wport' 'struct usb_serial_port *'
+    | `-DeclRefExpr 0x142026e78 <col:33> 'struct tty_struct *' lvalue ParmVar 0x14200e248 'tty' 'struct tty_struct *'
+    `-ReturnStmt 0x1420270b8 <line:9:2, col:42>
+      `-CallExpr 0x142027058 <col:9, col:42> 'int'
+        |-ImplicitCastExpr 0x142027040 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x142026fa8 <col:9> 'int ()' Function 0x142026ef0 'usb_serial_generic_open' 'int ()'
+        |-ImplicitCastExpr 0x142027088 <col:33> 'struct tty_struct *' <LValueToRValue>
+        | `-DeclRefExpr 0x142026fc8 <col:33> 'struct tty_struct *' lvalue ParmVar 0x14200e248 'tty' 'struct tty_struct *'
+        `-ImplicitCastExpr 0x1420270a0 <col:38> 'struct usb_serial_port *' <LValueToRValue>
+          `-DeclRefExpr 0x142026fe8 <col:38> 'struct usb_serial_port *' lvalue ParmVar 0x142026628 'port' 'struct usb_serial_port *'

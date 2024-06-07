@@ -1,0 +1,34 @@
+`-FunctionDecl 0x12680df18  line:1:1 invalid congestion_control_note_cell_sent 'int (int *, const int *, const int *)'
+  |-ParmVarDecl 0x12680dd28 <col:35, col:57> col:57 referenced invalid cc 'int *'
+  |-ParmVarDecl 0x12680dda8 <line:2:35, col:52> col:52 invalid circ 'const int *'
+  |-ParmVarDecl 0x12680de28 <line:3:35, col:55> col:55 invalid cpath 'const int *'
+  `-CompoundStmt 0x127808658 <line:4:1, line:19:1>
+    |-CallExpr 0x12680e170 <line:5:3, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12680e130 <col:3> 'int ()' Function 0x12680e078 'tor_assert' 'int ()'
+    | `-RecoveryExpr 0x12680e150 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12680e1d8 <line:6:3, col:16> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12680e198 <col:3> 'int ()' Function 0x12680e078 'tor_assert' 'int ()'
+    | `-RecoveryExpr 0x12680e1b8 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x127808290 <line:9:3, line:12:3>
+    | |-UnaryOperator 0x12680e370 <line:9:7, col:48> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12680e340 <col:8, col:48> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12680e2e0 <col:8> 'int ()' Function 0x12680e228 'circuit_sent_cell_for_sendme' 'int ()'
+    | |   |-RecoveryExpr 0x12680e300 <col:37> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x12680e320 <col:43> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x127808270 <col:51, line:12:3>
+    |   |-UnaryOperator 0x127808248 <line:10:5, col:17> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x127808200 <col:5, col:9> '<dependent type>' contains-errors lvalue ->inflight
+    |   |   `-RecoveryExpr 0x12680e3a8 <col:5> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x12680e388 <col:5> 'int *' lvalue ParmVar 0x12680dd28 'cc' 'int *'
+    |   `-ReturnStmt 0x127808260 <line:11:5>
+    |-UnaryOperator 0x127808340 <line:14:3, col:15> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x1278082f8 <col:3, col:7> '<dependent type>' contains-errors lvalue ->inflight
+    |   `-RecoveryExpr 0x1278082d0 <col:3> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1278082b0 <col:3> 'int *' lvalue ParmVar 0x12680dd28 'cc' 'int *'
+    `-CallExpr 0x127808628 <line:17:3, line:18:45> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x127808438 <line:17:3> 'int ()' Function 0x127808380 'enqueue_timestamp' 'int ()'
+      |-CXXDependentScopeMemberExpr 0x127808478 <col:21, col:25> '<dependent type>' contains-errors lvalue ->sendme_pending_timestamps
+      | `-RecoveryExpr 0x127808458 <col:21> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x127808608 <line:18:21, col:44> 'int'
+        `-ImplicitCastExpr 0x1278085f0 <col:21> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x1278085a0 <col:21> 'int ()' Function 0x1278084e8 'monotime_absolute_usec' 'int ()'

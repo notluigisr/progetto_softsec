@@ -1,0 +1,149 @@
+`-FunctionDecl 0x14f140c98  line:1:36 referenced css_create 'struct cgroup_subsys_state *(struct cgroup *, struct cgroup_subsys *)' static
+  |-ParmVarDecl 0x14f1286e8 <col:47, col:62> col:62 used cgrp 'struct cgroup *'
+  |-ParmVarDecl 0x14f140ac8 <line:2:12, col:34> col:34 used ss 'struct cgroup_subsys *'
+  `-CompoundStmt 0x14f1457a8 <line:3:1, line:45:1>
+    |-DeclStmt 0x14f1410a0 <line:4:2, col:45>
+    | `-VarDecl 0x14f140e28 <col:2, col:44> col:17 used parent 'struct cgroup *' cinit
+    |   `-ImplicitCastExpr 0x14f141088 <col:26, col:44> 'struct cgroup *' <IntegralToPointer>
+    |     `-CallExpr 0x14f141048 <col:26, col:44> 'int'
+    |       |-ImplicitCastExpr 0x14f141030 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14f140fc0 <col:26> 'int ()' Function 0x14f140f08 'cgroup_parent' 'int ()'
+    |       `-ImplicitCastExpr 0x14f141070 <col:40> 'struct cgroup *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14f140fe0 <col:40> 'struct cgroup *' lvalue ParmVar 0x14f1286e8 'cgrp' 'struct cgroup *'
+    |-DeclStmt 0x14f141380 <line:5:2, col:65>
+    | `-VarDecl 0x14f141148 <col:2, col:64> col:30 used parent_css 'struct cgroup_subsys_state *' cinit
+    |   `-ImplicitCastExpr 0x14f141368 <col:43, col:64> 'struct cgroup_subsys_state *' <IntegralToPointer>
+    |     `-CallExpr 0x14f141308 <col:43, col:64> 'int'
+    |       |-ImplicitCastExpr 0x14f1412f0 <col:43> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14f141290 <col:43> 'int ()' Function 0x14f1411d8 'cgroup_css' 'int ()'
+    |       |-ImplicitCastExpr 0x14f141338 <col:54> 'struct cgroup *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x14f1412b0 <col:54> 'struct cgroup *' lvalue Var 0x14f140e28 'parent' 'struct cgroup *'
+    |       `-ImplicitCastExpr 0x14f141350 <col:62> 'struct cgroup_subsys *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14f1412d0 <col:62> 'struct cgroup_subsys *' lvalue ParmVar 0x14f140ac8 'ss' 'struct cgroup_subsys *'
+    |-DeclStmt 0x14f141428 <line:6:2, col:33>
+    | `-VarDecl 0x14f1413c0 <col:2, col:30> col:30 used css 'struct cgroup_subsys_state *'
+    |-DeclStmt 0x14f1414c0 <line:7:2, col:9>
+    | `-VarDecl 0x14f141458 <col:2, col:6> col:6 used err 'int'
+    |-CallExpr 0x14f141668 <line:9:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f1415b8 <col:2> 'int ()' Function 0x14f141500 'lockdep_assert_held' 'int ()'
+    | `-UnaryOperator 0x14f141650 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f141630 <col:23> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14f141758 <line:11:2, col:32> 'struct cgroup_subsys_state *' contains-errors '='
+    | |-DeclRefExpr 0x14f141690 <col:2> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-CallExpr 0x14f141730 <col:8, col:32> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x14f1416e8 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14f1416b0 <col:8> 'struct cgroup_subsys *' lvalue ParmVar 0x14f140ac8 'ss' 'struct cgroup_subsys *'
+    |   `-DeclRefExpr 0x14f141710 <col:22> 'struct cgroup_subsys_state *' lvalue Var 0x14f141148 'parent_css' 'struct cgroup_subsys_state *'
+    |-IfStmt 0x14f142e20 <line:12:2, line:13:24>
+    | |-UnaryOperator 0x14f1417b0 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14f141798 <col:7> 'struct cgroup_subsys_state *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14f141778 <col:7> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-BinaryOperator 0x14f142e00 <line:13:3, col:24> 'struct cgroup_subsys_state *' contains-errors '='
+    |   |-DeclRefExpr 0x14f1417c8 <col:3> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |   `-CallExpr 0x14f1419c8 <col:9, col:24> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14f1418c8 <col:9> 'int ()' Function 0x14f141810 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x14f1419b0 <col:17, col:18> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x14f141998 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x14f141978 <col:18> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14f143000 <line:14:2, line:15:10>
+    | |-CallExpr 0x14f142f78 <line:14:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x14f142f60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14f142f20 <col:6> 'int ()' Function 0x14f142e68 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14f142fa0 <col:13> 'struct cgroup_subsys_state *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14f142f40 <col:13> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-ReturnStmt 0x14f142ff0 <line:15:3, col:10>
+    |   `-ImplicitCastExpr 0x14f142fd8 <col:10> 'struct cgroup_subsys_state *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14f142fb8 <col:10> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |-CallExpr 0x14f143198 <line:17:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x14f143180 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f143100 <col:2> 'int ()' Function 0x14f143048 'init_and_link_css' 'int ()'
+    | |-ImplicitCastExpr 0x14f1431d0 <col:20> 'struct cgroup_subsys_state *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f143120 <col:20> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | |-ImplicitCastExpr 0x14f1431e8 <col:25> 'struct cgroup_subsys *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f143140 <col:25> 'struct cgroup_subsys *' lvalue ParmVar 0x14f140ac8 'ss' 'struct cgroup_subsys *'
+    | `-ImplicitCastExpr 0x14f143200 <col:29> 'struct cgroup *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f143160 <col:29> 'struct cgroup *' lvalue ParmVar 0x14f1286e8 'cgrp' 'struct cgroup *'
+    |-BinaryOperator 0x14f143500 <line:19:2, col:64> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14f143218 <col:2> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | `-CallExpr 0x14f1434c0 <col:8, col:64> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f143318 <col:8> 'int ()' Function 0x14f143260 'percpu_ref_init' 'int ()'
+    |   |-UnaryOperator 0x14f143398 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14f143370 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14f143338 <col:25> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |   |-RecoveryExpr 0x14f143480 <col:38> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x14f1433c8 <col:51> 'int' 0
+    |   `-RecoveryExpr 0x14f1434a0 <col:54> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14f1435c0 <line:20:2, line:21:8>
+    | |-ImplicitCastExpr 0x14f143540 <line:20:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f143520 <col:6> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | `-GotoStmt 0x14f1435a8 <line:21:3, col:8> 'err_free_css' 0x14f143558
+    |-BinaryOperator 0x14f1438d8 <line:23:2, col:61> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14f1435e0 <col:2> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | `-CallExpr 0x14f143890 <col:8, col:61> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f1436e0 <col:8> 'int ()' Function 0x14f143628 'cgroup_idr_alloc' 'int ()'
+    |   |-UnaryOperator 0x14f143760 <col:25, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14f143738 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14f143700 <col:26> 'struct cgroup_subsys *' lvalue ParmVar 0x14f140ac8 'ss' 'struct cgroup_subsys *'
+    |   |-RecoveryExpr 0x14f143850 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x14f143790 <col:45> 'int' 2
+    |   |-IntegerLiteral 0x14f1437b0 <col:48> 'int' 0
+    |   `-RecoveryExpr 0x14f143870 <col:51> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14f143988 <line:24:2, line:25:8>
+    | |-BinaryOperator 0x14f143950 <line:24:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x14f143938 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14f1438f8 <col:6> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | | `-IntegerLiteral 0x14f143918 <col:12> 'int' 0
+    | `-GotoStmt 0x14f143970 <line:25:3, col:8> 'err_free_css' 0x14f143558
+    |-BinaryOperator 0x14f143a28 <line:26:2, col:12> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14f1439e0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14f1439a8 <col:2> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-DeclRefExpr 0x14f143a08 <col:12> 'int' lvalue Var 0x14f141458 'err' 'int'
+    |-CallExpr 0x14f143c38 <line:29:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f143b28 <col:2> 'int ()' Function 0x14f143a70 'list_add_tail_rcu' 'int ()'
+    | |-UnaryOperator 0x14f143ba8 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14f143b80 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14f143b48 <col:21> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-UnaryOperator 0x14f143c20 <col:35, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f143bf8 <col:36, col:48> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f143bc0 <col:36> 'struct cgroup_subsys_state *' lvalue Var 0x14f141148 'parent_css' 'struct cgroup_subsys_state *'
+    |-CallExpr 0x14f144e60 <line:30:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f143d48 <col:2> 'int ()' Function 0x14f143c90 'cgroup_idr_replace' 'int ()'
+    | |-UnaryOperator 0x14f143dc8 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14f143da0 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14f143d68 <col:22> 'struct cgroup_subsys *' lvalue ParmVar 0x14f140ac8 'ss' 'struct cgroup_subsys *'
+    | |-DeclRefExpr 0x14f143de0 <col:35> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    | `-RecoveryExpr 0x14f144e38 <col:40, col:45> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14f144e00 <col:40> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |-BinaryOperator 0x14f145030 <line:32:2, col:22> 'int' '='
+    | |-DeclRefExpr 0x14f144e98 <col:2> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | `-CallExpr 0x14f144ff0 <col:8, col:22> 'int'
+    |   |-ImplicitCastExpr 0x14f144fd8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14f144f98 <col:8> 'int ()' Function 0x14f144ee0 'online_css' 'int ()'
+    |   `-ImplicitCastExpr 0x14f145018 <col:19> 'struct cgroup_subsys_state *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14f144fb8 <col:19> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |-IfStmt 0x14f1450f0 <line:33:2, line:34:8>
+    | |-ImplicitCastExpr 0x14f145070 <line:33:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f145050 <col:6> 'int' lvalue Var 0x14f141458 'err' 'int'
+    | `-GotoStmt 0x14f1450d8 <line:34:3, col:8> 'err_list_del' 0x14f145088
+    |-ReturnStmt 0x14f145148 <line:36:2, col:9>
+    | `-ImplicitCastExpr 0x14f145130 <col:9> 'struct cgroup_subsys_state *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f145110 <col:9> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |-LabelStmt 0x14f1452f8 <line:38:1, line:39:28> 'err_list_del'
+    | `-CallExpr 0x14f1452d0 <col:2, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f145238 <col:2> 'int ()' Function 0x14f145180 'list_del_rcu' 'int ()'
+    |   `-UnaryOperator 0x14f1452b8 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14f145290 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14f145258 <col:16> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    |-LabelStmt 0x14f1453d8 <line:40:1, line:41:35> 'err_free_css'
+    | `-CallExpr 0x14f1453b0 <col:2, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f145318 <col:2> 'int ()' Function 0x14f145180 'list_del_rcu' 'int ()'
+    |   `-UnaryOperator 0x14f145398 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14f145370 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14f145338 <col:16> 'struct cgroup_subsys_state *' lvalue Var 0x14f1413c0 'css' 'struct cgroup_subsys_state *'
+    `-ReturnStmt 0x14f145798 <line:44:2, col:20>
+      `-ImplicitCastExpr 0x14f145780 <col:9, col:20> 'struct cgroup_subsys_state *' <IntegralToPointer>
+        `-CallExpr 0x14f145740 <col:9, col:20> 'int'
+          |-ImplicitCastExpr 0x14f145728 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x14f1456e8 <col:9> 'int ()' Function 0x14f141810 'ERR_PTR' 'int ()'
+          `-ImplicitCastExpr 0x14f145768 <col:17> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x14f145708 <col:17> 'int' lvalue Var 0x14f141458 'err' 'int'

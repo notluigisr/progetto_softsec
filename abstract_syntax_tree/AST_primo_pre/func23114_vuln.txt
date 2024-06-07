@@ -1,0 +1,78 @@
+`-FunctionDecl 0x15c043400  line:1:19 __tcp_mtu_to_mss 'int (struct sock *, int)' static inline
+  |-ParmVarDecl 0x15c01f848 <col:36, col:49> col:49 used sk 'struct sock *'
+  |-ParmVarDecl 0x15c01f8c8 <col:53, col:57> col:57 used pmtu 'int'
+  `-CompoundStmt 0x15c046ec0 <line:2:1, line:29:1>
+    |-DeclStmt 0x15c0438f8 <line:3:2, col:40>
+    | |-RecordDecl 0x15c043500 <col:8, col:15> col:15 struct tcp_sock
+    | `-VarDecl 0x15c043668 <col:2, col:39> col:25 used tp 'const struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x15c0438c8 <col:30, col:39> 'const struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x15c043888 <col:30, col:39> 'int'
+    |       |-ImplicitCastExpr 0x15c043870 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15c043800 <col:30> 'int ()' Function 0x15c043748 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x15c0438b0 <col:37> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15c043820 <col:37> 'struct sock *' lvalue ParmVar 0x15c01f848 'sk' 'struct sock *'
+    |-DeclStmt 0x15c043c88 <line:4:2, col:56>
+    | |-RecordDecl 0x15c043910 <col:8, col:15> col:15 struct inet_connection_sock
+    | `-VarDecl 0x15c043a78 <col:2, col:55> col:37 used icsk 'const struct inet_connection_sock *' cinit
+    |   `-ImplicitCastExpr 0x15c043c58 <col:44, col:55> 'const struct inet_connection_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x15c043c18 <col:44, col:55> 'int'
+    |       |-ImplicitCastExpr 0x15c043c00 <col:44> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15c043bc0 <col:44> 'int ()' Function 0x15c043b08 'inet_csk' 'int ()'
+    |       `-ImplicitCastExpr 0x15c043c40 <col:53> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15c043be0 <col:53> 'struct sock *' lvalue ParmVar 0x15c01f848 'sk' 'struct sock *'
+    |-DeclStmt 0x15c043d20 <line:5:2, col:13>
+    | `-VarDecl 0x15c043cb8 <col:2, col:6> col:6 used mss_now 'int'
+    |-IfStmt 0x15c046ac0 <line:11:2, line:16:2>
+    | |-CXXDependentScopeMemberExpr 0x15c043f98 <line:11:6, col:25> '<dependent type>' contains-errors lvalue ->net_frag_header_len
+    | | `-RecoveryExpr 0x15c043f70 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15c043f38 <col:6> 'const struct inet_connection_sock *' lvalue Var 0x15c043a78 'icsk' 'const struct inet_connection_sock *'
+    | `-CompoundStmt 0x15c046aa0 <col:46, line:16:2>
+    |   |-DeclStmt 0x15c044358 <line:12:3, col:49>
+    |   | |-RecordDecl 0x15c043fe0 <col:9, col:16> col:16 struct dst_entry
+    |   | `-VarDecl 0x15c044148 <col:3, col:48> col:27 used dst 'const struct dst_entry *' cinit
+    |   |   `-ImplicitCastExpr 0x15c044328 <col:33, col:48> 'const struct dst_entry *' <IntegralToPointer>
+    |   |     `-CallExpr 0x15c0442e8 <col:33, col:48> 'int'
+    |   |       |-ImplicitCastExpr 0x15c0442d0 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x15c044290 <col:33> 'int ()' Function 0x15c0441d8 '__sk_dst_get' 'int ()'
+    |   |       `-ImplicitCastExpr 0x15c044310 <col:46> 'struct sock *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x15c0442b0 <col:46> 'struct sock *' lvalue ParmVar 0x15c01f848 'sk' 'struct sock *'
+    |   `-IfStmt 0x15c046a80 <line:14:3, line:15:34>
+    |     |-BinaryOperator 0x15c046968 <line:14:7, col:29> 'int' '&&'
+    |     | |-ImplicitCastExpr 0x15c046950 <col:7> 'const struct dst_entry *' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x15c044370 <col:7> 'const struct dst_entry *' lvalue Var 0x15c044148 'dst' 'const struct dst_entry *'
+    |     | `-CallExpr 0x15c046910 <col:14, col:29> 'int'
+    |     |   |-ImplicitCastExpr 0x15c0468f8 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x15c0468b8 <col:14> 'int ()' Function 0x15c046800 'dst_allfrag' 'int ()'
+    |     |   `-ImplicitCastExpr 0x15c046938 <col:26> 'const struct dst_entry *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x15c0468d8 <col:26> 'const struct dst_entry *' lvalue Var 0x15c044148 'dst' 'const struct dst_entry *'
+    |     `-CompoundAssignOperator 0x15c046a50 <line:15:4, col:34> 'int' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       |-DeclRefExpr 0x15c046988 <col:4> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    |       `-CXXDependentScopeMemberExpr 0x15c046a08 <col:15, col:34> '<dependent type>' contains-errors lvalue ->net_frag_header_len
+    |         `-RecoveryExpr 0x15c0469e0 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x15c0469a8 <col:15> 'const struct inet_connection_sock *' lvalue Var 0x15c043a78 'icsk' 'const struct inet_connection_sock *'
+    |-IfStmt 0x15c046cb0 <line:19:2, line:20:24>
+    | |-BinaryOperator 0x15c046ba8 <line:19:6, col:27> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x15c046ae0 <col:6> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    | | `-CXXDependentScopeMemberExpr 0x15c046b60 <col:16, col:27> '<dependent type>' contains-errors lvalue .mss_clamp
+    | |   `-RecoveryExpr 0x15c046b38 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15c046b00 <col:16> 'const struct tcp_sock *' lvalue Var 0x15c043668 'tp' 'const struct tcp_sock *'
+    | `-BinaryOperator 0x15c046c90 <line:20:3, col:24> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x15c046bc8 <col:3> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    |   `-CXXDependentScopeMemberExpr 0x15c046c48 <col:13, col:24> '<dependent type>' contains-errors lvalue .mss_clamp
+    |     `-RecoveryExpr 0x15c046c20 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15c046be8 <col:13> 'const struct tcp_sock *' lvalue Var 0x15c043668 'tp' 'const struct tcp_sock *'
+    |-CompoundAssignOperator 0x15c046d50 <line:23:2, col:19> 'int' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x15c046cd0 <col:2> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    | `-RecoveryExpr 0x15c046d28 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15c046cf0 <col:13> 'const struct inet_connection_sock *' lvalue Var 0x15c043a78 'icsk' 'const struct inet_connection_sock *'
+    |-IfStmt 0x15c046e58 <line:26:2, line:27:13>
+    | |-BinaryOperator 0x15c046dd8 <line:26:6, col:16> 'int' '<'
+    | | |-ImplicitCastExpr 0x15c046dc0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x15c046d80 <col:6> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    | | `-IntegerLiteral 0x15c046da0 <col:16> 'int' 48
+    | `-BinaryOperator 0x15c046e38 <line:27:3, col:13> 'int' '='
+    |   |-DeclRefExpr 0x15c046df8 <col:3> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'
+    |   `-IntegerLiteral 0x15c046e18 <col:13> 'int' 48
+    `-ReturnStmt 0x15c046eb0 <line:28:2, col:9>
+      `-ImplicitCastExpr 0x15c046e98 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x15c046e78 <col:9> 'int' lvalue Var 0x15c043cb8 'mss_now' 'int'

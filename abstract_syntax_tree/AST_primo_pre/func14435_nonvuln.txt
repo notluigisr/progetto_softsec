@@ -1,0 +1,57 @@
+`-FunctionDecl 0x14f928198  line:1:12 swevent_hlist_get 'int (void)' static
+  `-CompoundStmt 0x14f942110 <line:2:1, line:23:1>
+    |-DeclStmt 0x14f928428 <line:3:2, col:26>
+    | |-VarDecl 0x14f9282a0 <col:2, col:6> col:6 used err 'int'
+    | |-VarDecl 0x14f928320 <col:2, col:11> col:11 used cpu 'int'
+    | `-VarDecl 0x14f9283a0 <col:2, col:16> col:16 used failed_cpu 'int'
+    |-CallExpr 0x14f928620 <line:5:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f928570 <col:2> 'int ()' Function 0x14f9284b8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14f928608 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f9285e8 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f9287b8 <line:6:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x14f9287a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f928728 <col:2> 'int ()' Function 0x14f928670 'for_each_possible_cpu' 'int ()'
+    | `-ImplicitCastExpr 0x14f9287e0 <col:24> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f928748 <col:24> 'int' lvalue Var 0x14f928320 'cpu' 'int'
+    |-CompoundStmt 0x14f941b10 <col:29, line:12:2>
+    | |-BinaryOperator 0x14f941998 <line:7:3, col:34> 'int' '='
+    | | |-DeclRefExpr 0x14f941800 <col:3> 'int' lvalue Var 0x14f9282a0 'err' 'int'
+    | | `-CallExpr 0x14f941958 <col:9, col:34> 'int'
+    | |   |-ImplicitCastExpr 0x14f941940 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14f941900 <col:9> 'int ()' Function 0x14f941848 'swevent_hlist_get_cpu' 'int ()'
+    | |   `-ImplicitCastExpr 0x14f941980 <col:31> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14f941920 <col:31> 'int' lvalue Var 0x14f928320 'cpu' 'int'
+    | `-IfStmt 0x14f941af0 <line:8:3, line:11:3>
+    |   |-ImplicitCastExpr 0x14f9419d8 <line:8:7> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14f9419b8 <col:7> 'int' lvalue Var 0x14f9282a0 'err' 'int'
+    |   `-CompoundStmt 0x14f941ad0 <col:12, line:11:3>
+    |     |-BinaryOperator 0x14f941a48 <line:9:4, col:17> 'int' '='
+    |     | |-DeclRefExpr 0x14f9419f0 <col:4> 'int' lvalue Var 0x14f9283a0 'failed_cpu' 'int'
+    |     | `-ImplicitCastExpr 0x14f941a30 <col:17> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x14f941a10 <col:17> 'int' lvalue Var 0x14f928320 'cpu' 'int'
+    |     `-GotoStmt 0x14f941ab8 <line:10:4, col:9> 'fail' 0x14f941a68
+    |-CallExpr 0x14f941cc0 <line:13:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f941c10 <col:2> 'int ()' Function 0x14f941b58 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14f941ca8 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f941c88 <col:16> '<dependent type>' contains-errors lvalue
+    |-ReturnStmt 0x14f941d08 <line:14:2, col:9>
+    | `-IntegerLiteral 0x14f941ce8 <col:9> 'int' 0
+    |-LabelStmt 0x14f941db0 <line:15:1, line:16:27> 'fail'
+    | `-CallExpr 0x14f941d70 <col:2, col:27> 'int'
+    |   |-ImplicitCastExpr 0x14f941d58 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14f941d18 <col:2> 'int ()' Function 0x14f928670 'for_each_possible_cpu' 'int ()'
+    |   `-ImplicitCastExpr 0x14f941d98 <col:24> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x14f941d38 <col:24> 'int' lvalue Var 0x14f928320 'cpu' 'int'
+    |-CompoundStmt 0x14f941fd8 <col:29, line:20:2>
+    | `-CallExpr 0x14f941f98 <line:19:3, col:28> 'int'
+    |   |-ImplicitCastExpr 0x14f941f80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14f941f40 <col:3> 'int ()' Function 0x14f941e88 'swevent_hlist_put_cpu' 'int ()'
+    |   `-ImplicitCastExpr 0x14f941fc0 <col:25> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x14f941f60 <col:25> 'int' lvalue Var 0x14f928320 'cpu' 'int'
+    |-CallExpr 0x14f9420a0 <line:21:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f941ff0 <col:2> 'int ()' Function 0x14f941b58 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14f942088 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f942068 <col:16> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14f942100 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x14f9420e8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14f9420c8 <col:9> 'int' lvalue Var 0x14f9282a0 'err' 'int'

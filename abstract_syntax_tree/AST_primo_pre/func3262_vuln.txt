@@ -1,0 +1,41 @@
+`-FunctionDecl 0x14700e088  line:1:1 invalid rad_get_vendor_attr 'int (__int128_t *, const void **, int *)'
+  |-ParmVarDecl 0x14700ddb8 <col:21, col:32> col:32 used vendor '__int128_t *'
+  |-ParmVarDecl 0x14700de98 <col:40, col:53> col:53 used data 'const void **'
+  |-ParmVarDecl 0x14700df48 <col:59, col:67> col:67 invalid len 'int *'
+  `-CompoundStmt 0x147026fc0 <line:2:1, line:11:1>
+    |-DeclStmt 0x14700e338 <line:3:2, col:31>
+    | |-RecordDecl 0x14700e148 <col:2, col:9> col:9 struct vendor_attribute
+    | `-VarDecl 0x14700e2b8 <col:2, col:27> col:27 used attr 'struct vendor_attribute *'
+    |-BinaryOperator 0x147026698 <line:5:2, col:37> 'struct vendor_attribute *' '='
+    | |-DeclRefExpr 0x14700e350 <col:2> 'struct vendor_attribute *' lvalue Var 0x14700e2b8 'attr' 'struct vendor_attribute *'
+    | `-CStyleCastExpr 0x147026670 <col:9, col:37> 'struct vendor_attribute *' <BitCast>
+    |   `-ImplicitCastExpr 0x147026658 <col:36, col:37> 'const void *' <LValueToRValue> part_of_explicit_cast
+    |     `-UnaryOperator 0x14700e3a8 <col:36, col:37> 'const void *' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x14700e390 <col:37> 'const void **' <LValueToRValue>
+    |         `-DeclRefExpr 0x14700e370 <col:37> 'const void **' lvalue ParmVar 0x14700de98 'data' 'const void **'
+    |-BinaryOperator 0x147026d30 <line:6:2, col:36> '__int128_t':'__int128' contains-errors '='
+    | |-UnaryOperator 0x1470266f0 <col:2, col:3> '__int128_t':'__int128' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x1470266d8 <col:3> '__int128_t *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1470266b8 <col:3> '__int128_t *' lvalue ParmVar 0x14700ddb8 'vendor' '__int128_t *'
+    | `-CallExpr 0x147026d08 <col:12, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147026860 <col:12> 'int ()' Function 0x1470267a8 'ntohl' 'int ()'
+    |   `-RecoveryExpr 0x147026ce0 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147026880 <col:18> 'struct vendor_attribute *' lvalue Var 0x14700e2b8 'attr' 'struct vendor_attribute *'
+    |-BinaryOperator 0x147026e00 <line:7:2, col:16> 'const void *' contains-errors '='
+    | |-UnaryOperator 0x147026d88 <col:2, col:3> 'const void *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x147026d70 <col:3> 'const void **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x147026d50 <col:3> 'const void **' lvalue ParmVar 0x14700de98 'data' 'const void **'
+    | `-RecoveryExpr 0x147026dd8 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x147026da0 <col:10> 'struct vendor_attribute *' lvalue Var 0x14700e2b8 'attr' 'struct vendor_attribute *'
+    |-BinaryOperator 0x147026f10 <line:8:2, col:28> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x147026e58 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x147026e40 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x147026e20 <col:3> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x147026ef0 <col:9, col:28> '<dependent type>' contains-errors '-'
+    |   |-RecoveryExpr 0x147026ea8 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x147026e70 <col:9> 'struct vendor_attribute *' lvalue Var 0x14700e2b8 'attr' 'struct vendor_attribute *'
+    |   `-IntegerLiteral 0x147026ed0 <col:28> 'int' 2
+    `-ReturnStmt 0x147026fb0 <line:10:2, col:27>
+      `-ParenExpr 0x147026f90 <col:9, col:27> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x147026f68 <col:10, col:16> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x147026f30 <col:10> 'struct vendor_attribute *' lvalue Var 0x14700e2b8 'attr' 'struct vendor_attribute *'

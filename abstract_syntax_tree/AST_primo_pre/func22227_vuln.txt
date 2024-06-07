@@ -1,0 +1,30 @@
+`-FunctionDecl 0x152027438  line:1:12 invalid can_open_delegated 'int (struct nfs_delegation *, int)' static
+  |-ParmVarDecl 0x15200e248 <col:31, col:54> col:54 used delegation 'struct nfs_delegation *'
+  |-ParmVarDecl 0x15200e2e0 <col:66, col:73> col:73 invalid open_flags 'int'
+  `-CompoundStmt 0x152027af8 <line:2:1, line:9:1>
+    |-IfStmt 0x152027620 <line:3:2, line:4:10>
+    | |-BinaryOperator 0x1520275d0 <line:3:6, col:41> 'int' contains-errors '!='
+    | | |-ParenExpr 0x152027590 <col:6, col:36> '<dependent type>' contains-errors
+    | | | `-BinaryOperator 0x152027570 <col:7, col:26> '<dependent type>' contains-errors '&'
+    | | |   |-RecoveryExpr 0x152027528 <col:7, col:19> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x1520274f0 <col:7> 'struct nfs_delegation *' lvalue ParmVar 0x15200e248 'delegation' 'struct nfs_delegation *'
+    | | |   `-RecoveryExpr 0x152027550 <col:26> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x1520275b0 <col:41> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x152027610 <line:4:3, col:10>
+    |   `-IntegerLiteral 0x1520275f0 <col:10> 'int' 0
+    |-IfStmt 0x152027900 <line:5:2, line:6:10>
+    | |-CallExpr 0x1520278a0 <line:5:6, col:62> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1520277a0 <col:6> 'int ()' Function 0x1520276e8 'test_bit' 'int ()'
+    | | |-RecoveryExpr 0x152027880 <col:15> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x152027838 <col:44, col:57> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x152027810 <col:45, col:57> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1520277d8 <col:45> 'struct nfs_delegation *' lvalue ParmVar 0x15200e248 'delegation' 'struct nfs_delegation *'
+    | `-ReturnStmt 0x1520278f0 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x1520278d0 <col:10> 'int' 0
+    |-CallExpr 0x152027a88 <line:7:2, col:43> 'int'
+    | |-ImplicitCastExpr 0x152027a70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x152027a00 <col:2> 'int ()' Function 0x152027948 'nfs_mark_delegation_referenced' 'int ()'
+    | `-ImplicitCastExpr 0x152027ab0 <col:33> 'struct nfs_delegation *' <LValueToRValue>
+    |   `-DeclRefExpr 0x152027a20 <col:33> 'struct nfs_delegation *' lvalue ParmVar 0x15200e248 'delegation' 'struct nfs_delegation *'
+    `-ReturnStmt 0x152027ae8 <line:8:2, col:9>
+      `-IntegerLiteral 0x152027ac8 <col:9> 'int' 1

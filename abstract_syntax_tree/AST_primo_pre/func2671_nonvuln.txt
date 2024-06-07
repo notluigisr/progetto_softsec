@@ -1,0 +1,91 @@
+`-FunctionDecl 0x13d128750  line:1:13 __map_bio 'void (struct dm_target_io *)' static
+  |-ParmVarDecl 0x13d128648 <col:23, col:44> col:44 used tio 'struct dm_target_io *'
+  `-CompoundStmt 0x13d143590 <line:2:1, line:40:1>
+    |-DeclStmt 0x13d140ac8 <line:3:2, col:7>
+    | `-VarDecl 0x13d140a60 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x13d140c78 <line:5:2, col:21>
+    | |-RecordDecl 0x13d140af8 <col:2, col:9> col:9 struct dm_offload
+    | `-VarDecl 0x13d140bf8 <col:2, col:20> col:20 invalid o 'struct dm_offload'
+    |-DeclStmt 0x13d140ef0 <line:6:2, col:33>
+    | |-RecordDecl 0x13d140c90 <col:2, col:9> col:9 struct bio
+    | `-VarDecl 0x13d140df8 <col:2, col:28> col:14 used clone 'struct bio *' cinit
+    |   `-UnaryOperator 0x13d140ec0 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x13d140e98 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13d140e60 <col:23> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+    |-DeclStmt 0x13d141158 <line:7:2, col:32>
+    | |-RecordDecl 0x13d140f08 <col:2, col:9> col:9 struct dm_target
+    | `-VarDecl 0x13d141078 <col:2, col:30> col:20 used ti 'struct dm_target *' cinit
+    |   `-RecoveryExpr 0x13d141118 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d1410e0 <col:25> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+    |-BinaryOperator 0x13d141228 <line:9:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13d1411a8 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13d141170 <col:2> 'struct bio *' contains-errors lvalue Var 0x13d140df8 'clone' 'struct bio *'
+    | `-RecoveryExpr 0x13d141208 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13d141440 <line:12:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d141360 <col:2> 'int ()' Function 0x13d1412a8 'atomic_inc' 'int ()'
+    | `-UnaryOperator 0x13d141428 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13d1413e0 <col:14, col:23> '<dependent type>' contains-errors lvalue ->io_count
+    |     `-RecoveryExpr 0x13d1413b8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13d141380 <col:14> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+    |-CallExpr 0x13d141648 <line:15:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d1415f0 <col:2> 'int ()' Function 0x13d141538 'dm_offload_start' 'int ()'
+    | `-UnaryOperator 0x13d141630 <col:19, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13d141610 <col:20> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13d1417a8 <line:16:2, col:29> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13d141670 <col:2> 'int' lvalue Var 0x13d140a60 'r' 'int'
+    | `-CallExpr 0x13d141778 <col:6, col:29> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x13d1416f0 <col:6, col:16> '<dependent type>' contains-errors lvalue ->map
+    |   | `-RecoveryExpr 0x13d1416c8 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13d141690 <col:6> 'struct dm_target *' contains-errors lvalue Var 0x13d141078 'ti' 'struct dm_target *'
+    |   |-DeclRefExpr 0x13d141738 <col:20> 'struct dm_target *' contains-errors lvalue Var 0x13d141078 'ti' 'struct dm_target *'
+    |   `-DeclRefExpr 0x13d141758 <col:24> 'struct bio *' contains-errors lvalue Var 0x13d140df8 'clone' 'struct bio *'
+    |-CallExpr 0x13d141900 <line:17:2, col:19> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d1418a8 <col:2> 'int ()' Function 0x13d1417f0 'dm_offload_end' 'int ()'
+    | `-UnaryOperator 0x13d1418e8 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13d1418c8 <col:18> '<dependent type>' contains-errors lvalue
+    `-SwitchStmt 0x13d141960 <line:19:2, line:39:2>
+      |-ImplicitCastExpr 0x13d141948 <line:19:10> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x13d141928 <col:10> 'int' lvalue Var 0x13d140a60 'r' 'int'
+      `-CompoundStmt 0x13d143530 <col:13, line:39:2>
+        |-BreakStmt 0x13d1419a0 <line:21:3>
+        |-CallExpr 0x13d142be8 <line:24:3, line:25:40> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13d1428b8 <line:24:3> 'int ()' Function 0x13d142800 'trace_block_bio_remap' 'int ()'
+        | |-CXXDependentScopeMemberExpr 0x13d142938 <col:25, col:41> '<dependent type>' contains-errors lvalue ->queue
+        | | `-RecoveryExpr 0x13d142910 <col:25, col:32> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x13d1428d8 <col:25> 'struct bio *' contains-errors lvalue Var 0x13d140df8 'clone' 'struct bio *'
+        | |-DeclRefExpr 0x13d142980 <col:48> 'struct bio *' contains-errors lvalue Var 0x13d140df8 'clone' 'struct bio *'
+        | |-CallExpr 0x13d142b48 <line:25:11, col:31> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x13d142a80 <col:11> 'int ()' Function 0x13d1429c8 'bio_dev' 'int ()'
+        | | `-CXXDependentScopeMemberExpr 0x13d142b00 <col:19, col:28> '<dependent type>' contains-errors lvalue ->bio
+        | |   `-RecoveryExpr 0x13d142ad8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x13d142aa0 <col:19> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+        | `-RecoveryExpr 0x13d142bc8 <col:34> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x13d142d98 <line:26:3, col:29> 'int' contains-errors
+        | |-ImplicitCastExpr 0x13d142d80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x13d142d08 <col:3> 'int ()' Function 0x13d142c50 'generic_make_request' 'int ()'
+        | `-ImplicitCastExpr 0x13d142dc0 <col:24> 'struct bio *' contains-errors <LValueToRValue>
+        |   `-DeclRefExpr 0x13d142d28 <col:24> 'struct bio *' contains-errors lvalue Var 0x13d140df8 'clone' 'struct bio *'
+        |-BreakStmt 0x13d142dd8 <line:27:3>
+        |-CallExpr 0x13d143078 <line:30:3, col:15> 'int'
+        | |-ImplicitCastExpr 0x13d143060 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x13d143020 <col:3> 'int ()' Function 0x13d142f68 'free_tio' 'int ()'
+        | `-ImplicitCastExpr 0x13d1430a0 <col:12> 'struct dm_target_io *' <LValueToRValue>
+        |   `-DeclRefExpr 0x13d143040 <col:12> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+        |-BreakStmt 0x13d1430b8 <line:31:3>
+        |-CallExpr 0x13d143198 <line:34:3, col:15> 'int'
+        | |-ImplicitCastExpr 0x13d143180 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x13d143140 <col:3> 'int ()' Function 0x13d142f68 'free_tio' 'int ()'
+        | `-ImplicitCastExpr 0x13d1431c0 <col:12> 'struct dm_target_io *' <LValueToRValue>
+        |   `-DeclRefExpr 0x13d143160 <col:12> 'struct dm_target_io *' lvalue ParmVar 0x13d128648 'tio' 'struct dm_target_io *'
+        |-BreakStmt 0x13d1431d8 <line:35:3>
+        |-DefaultStmt 0x13d1433d8 <line:36:2, line:37:18>
+        | `-CallExpr 0x13d143378 <col:3, col:18> 'int'
+        |   |-ImplicitCastExpr 0x13d143360 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x13d1432c0 <col:3> 'int ()' Function 0x13d143208 'DMWARN' 'int ()'
+        |   |-ImplicitCastExpr 0x13d1433a8 <col:10> 'char *' <ArrayToPointerDecay>
+        |   | `-StringLiteral 0x13d143320 <col:10> 'char[4]' lvalue "STR"
+        |   `-ImplicitCastExpr 0x13d1433c0 <col:17> 'int' <LValueToRValue>
+        |     `-DeclRefExpr 0x13d143340 <col:17> 'int' lvalue Var 0x13d140a60 'r' 'int'
+        `-CallExpr 0x13d143510 <line:38:3, col:7> 'int'
+          `-ImplicitCastExpr 0x13d1434f8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+            `-DeclRefExpr 0x13d1434d8 <col:3> 'int ()' Function 0x13d143420 'BUG' 'int ()'

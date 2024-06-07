@@ -1,0 +1,45 @@
+`-FunctionDecl 0x13480e350  line:1:13 flush_bg_queue 'void (struct fuse_conn *)' static
+  |-ParmVarDecl 0x13480e248 <col:28, col:46> col:46 used fc 'struct fuse_conn *'
+  `-CompoundStmt 0x134827418 <line:2:1, line:13:1>
+    `-WhileStmt 0x1348273f8 <line:3:2, line:12:2>
+      |-BinaryOperator 0x134826928 <line:3:9, line:4:34> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x134826708 <line:3:9, col:37> 'int' contains-errors '<'
+      | | |-RecoveryExpr 0x134826680 <col:9, col:13> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x134826648 <col:9> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+      | | `-RecoveryExpr 0x1348266e0 <col:33, col:37> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x1348266a8 <col:33> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+      | `-UnaryOperator 0x134826910 <line:4:9, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+      |   `-CallExpr 0x1348268e8 <col:10, col:34> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x134826850 <col:10> 'int ()' Function 0x134826798 'list_empty' 'int ()'
+      |     `-UnaryOperator 0x1348268d0 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |       `-RecoveryExpr 0x1348268a8 <col:22, col:26> '<dependent type>' contains-errors lvalue
+      |         `-DeclRefExpr 0x134826870 <col:22> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+      `-CompoundStmt 0x1348273c0 <col:37, line:12:2>
+        |-DeclStmt 0x134826b38 <line:5:3, col:23>
+        | |-RecordDecl 0x134826948 <col:3, col:10> col:10 struct fuse_req
+        | `-VarDecl 0x134826ab8 <col:3, col:20> col:20 used req 'struct fuse_req *'
+        |-CallExpr 0x134826ea8 <line:8:3, col:22> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x134826e10 <col:3> 'int ()' Function 0x134826d58 'list_del' 'int ()'
+        | `-UnaryOperator 0x134826e90 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x134826e68 <col:13, col:18> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x134826e30 <col:13> 'struct fuse_req *' lvalue Var 0x134826ab8 'req' 'struct fuse_req *'
+        |-UnaryOperator 0x134826f30 <line:9:3, col:24> '<dependent type>' contains-errors postfix '++' cannot overflow
+        | `-RecoveryExpr 0x134826f08 <col:3, col:7> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x134826ed0 <col:3> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+        |-BinaryOperator 0x1348271e8 <line:10:3, col:40> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x134826ff0 <col:3, col:13> '<dependent type>' contains-errors lvalue .unique
+        | | `-CXXDependentScopeMemberExpr 0x134826fa8 <col:3, col:11> '<dependent type>' contains-errors lvalue .h
+        | |   `-RecoveryExpr 0x134826f80 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x134826f48 <col:3> 'struct fuse_req *' lvalue Var 0x134826ab8 'req' 'struct fuse_req *'
+        | `-CallExpr 0x1348271a8 <col:22, col:40> 'int'
+        |   |-ImplicitCastExpr 0x134827190 <col:22> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x134827118 <col:22> 'int ()' Function 0x134827060 'fuse_get_unique' 'int ()'
+        |   `-ImplicitCastExpr 0x1348271d0 <col:38> 'struct fuse_conn *' <LValueToRValue>
+        |     `-DeclRefExpr 0x134827138 <col:38> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+        `-CallExpr 0x134827360 <line:11:3, col:24> 'int'
+          |-ImplicitCastExpr 0x134827348 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x1348272e8 <col:3> 'int ()' Function 0x134827230 'queue_request' 'int ()'
+          |-ImplicitCastExpr 0x134827390 <col:17> 'struct fuse_conn *' <LValueToRValue>
+          | `-DeclRefExpr 0x134827308 <col:17> 'struct fuse_conn *' lvalue ParmVar 0x13480e248 'fc' 'struct fuse_conn *'
+          `-ImplicitCastExpr 0x1348273a8 <col:21> 'struct fuse_req *' <LValueToRValue>
+            `-DeclRefExpr 0x134827328 <col:21> 'struct fuse_req *' lvalue Var 0x134826ab8 'req' 'struct fuse_req *'

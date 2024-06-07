@@ -1,0 +1,44 @@
+TEST_P(HeaderIntegrationTest, TestRouteConfigVirtualHostRouteAndClusterReplaceHeaderManipulation) {
+  initializeFilter(HeaderMode::Replace, true);
+  performRequest(
+      Http::TestRequestHeaderMapImpl{
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+      },
+      Http::TestRequestHeaderMapImpl{
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+      },
+      Http::TestResponseHeaderMapImpl{
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+      },
+      Http::TestResponseHeaderMapImpl{
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+          {"STR"},
+      });
+}

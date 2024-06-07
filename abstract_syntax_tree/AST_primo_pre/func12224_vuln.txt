@@ -1,0 +1,54 @@
+`-FunctionDecl 0x13b80e358  line:1:12 atusb_get_and_show_build 'int (struct atusb *)' static
+  |-ParmVarDecl 0x13b80e248 <col:37, col:51> col:51 used atusb 'struct atusb *'
+  `-CompoundStmt 0x13b82b6b0 <line:2:1, line:16:1>
+    |-DeclStmt 0x13b82aa98 <line:3:2, col:45>
+    | |-RecordDecl 0x13b82a850 <col:2, col:9> col:9 struct usb_device
+    | `-VarDecl 0x13b82a9b8 <col:2, col:38> col:21 used usb_dev 'struct usb_device *' cinit
+    |   `-RecoveryExpr 0x13b82aa58 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b82aa20 <col:31> 'struct atusb *' lvalue ParmVar 0x13b80e248 'atusb' 'struct atusb *'
+    |-DeclStmt 0x13b82ab98 <line:4:2, col:34>
+    | `-VarDecl 0x13b82ab30 <col:2, col:7> col:7 referenced invalid build 'char'
+    |-DeclStmt 0x13b82ac30 <line:5:2, col:9>
+    | `-VarDecl 0x13b82abc8 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x13b82b268 <line:7:2, line:9:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13b82ac48 <line:7:2> 'int' lvalue Var 0x13b82abc8 'ret' 'int'
+    | `-CallExpr 0x13b82b200 <col:8, line:9:34> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b82ad80 <line:7:8> 'int ()' Function 0x13b82acc8 'atusb_control_msg' 'int ()'
+    |   |-DeclRefExpr 0x13b82ada0 <col:26> 'struct atusb *' lvalue ParmVar 0x13b80e248 'atusb' 'struct atusb *'
+    |   |-CallExpr 0x13b82b158 <col:33, col:59> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x13b82b140 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13b82aea0 <col:33> 'int ()' Function 0x13b82ade8 'usb_rcvctrlpipe' 'int ()'
+    |   | |-ImplicitCastExpr 0x13b82b188 <col:49> 'struct usb_device *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13b82aec0 <col:49> 'struct usb_device *' contains-errors lvalue Var 0x13b82a9b8 'usb_dev' 'struct usb_device *'
+    |   | `-IntegerLiteral 0x13b82aee0 <col:58> 'int' 0
+    |   |-RecoveryExpr 0x13b82b1a0 <line:8:5> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x13b82b1c0 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x13b82afc0 <col:38> 'int' 0
+    |   |-IntegerLiteral 0x13b82afe0 <col:41> 'int' 0
+    |   |-RecoveryExpr 0x13b82b000 <line:9:5> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x13b82b1e0 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x13b82b038 <col:30> 'int' 1000
+    |-IfStmt 0x13b82b648 <line:10:2, line:13:2>
+    | |-BinaryOperator 0x13b82b2e0 <line:10:6, col:13> 'int' '>='
+    | | |-ImplicitCastExpr 0x13b82b2c8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13b82b288 <col:6> 'int' lvalue Var 0x13b82abc8 'ret' 'int'
+    | | `-IntegerLiteral 0x13b82b2a8 <col:13> 'int' 0
+    | `-CompoundStmt 0x13b82b628 <col:16, line:13:2>
+    |   |-BinaryOperator 0x13b82b3d8 <line:11:3, col:16> '<dependent type>' contains-errors '='
+    |   | |-ArraySubscriptExpr 0x13b82b398 <col:3, col:12> '<dependent type>' contains-errors lvalue
+    |   | | |-ImplicitCastExpr 0x13b82b368 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | `-RecoveryExpr 0x13b82b320 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x13b82b300 <col:3> 'char' lvalue Var 0x13b82ab30 'build' 'char'
+    |   | | `-ImplicitCastExpr 0x13b82b380 <col:9> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13b82b348 <col:9> 'int' lvalue Var 0x13b82abc8 'ret' 'int'
+    |   | `-IntegerLiteral 0x13b82b3b8 <col:16> 'int' 0
+    |   `-CallExpr 0x13b82b5f0 <line:12:3, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b82b4d8 <col:3> 'int ()' Function 0x13b82b420 'dev_info' 'int ()'
+    |     |-UnaryOperator 0x13b82b558 <col:12, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x13b82b530 <col:13, col:22> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x13b82b4f8 <col:13> 'struct usb_device *' contains-errors lvalue Var 0x13b82a9b8 'usb_dev' 'struct usb_device *'
+    |     |-StringLiteral 0x13b82b5b0 <col:27> 'char[4]' lvalue "STR"
+    |     `-RecoveryExpr 0x13b82b5d0 <col:34> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13b82b6a0 <line:15:2, col:9>
+      `-ImplicitCastExpr 0x13b82b688 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13b82b668 <col:9> 'int' lvalue Var 0x13b82abc8 'ret' 'int'

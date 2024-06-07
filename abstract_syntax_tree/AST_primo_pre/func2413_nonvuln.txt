@@ -1,0 +1,76 @@
+`-FunctionDecl 0x142026740  line:1:13 hci_keypress_notify_evt 'void (struct hci_dev *, struct sk_buff *)' static
+  |-ParmVarDecl 0x14200e248 <col:37, col:53> col:53 used hdev 'struct hci_dev *'
+  |-ParmVarDecl 0x142026628 <col:59, col:75> col:75 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x14202a398 <line:2:1, line:37:1>
+    |-DeclStmt 0x142026ae0 <line:3:2, col:56>
+    | |-RecordDecl 0x142026840 <col:2, col:9> col:9 struct hci_ev_keypress_notify
+    | `-VarDecl 0x1420269a8 <col:2, col:52> col:33 used ev 'struct hci_ev_keypress_notify *' cinit
+    |   `-ImplicitCastExpr 0x142026ab0 <col:38, col:52> 'struct hci_ev_keypress_notify *' contains-errors <BitCast>
+    |     `-CStyleCastExpr 0x142026a88 <col:38, col:52> 'void *' contains-errors <Dependent>
+    |       `-RecoveryExpr 0x142026a48 <col:47, col:52> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x142026a10 <col:47> 'struct sk_buff *' lvalue ParmVar 0x142026628 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x142026ce8 <line:4:2, col:23>
+    | |-RecordDecl 0x142026af8 <col:2, col:9> col:9 struct hci_conn
+    | `-VarDecl 0x142026c68 <col:2, col:19> col:19 used conn 'struct hci_conn *'
+    |-CallExpr 0x142026f10 <line:6:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142026e30 <col:2> 'int ()' Function 0x142026d78 'BT_DBG' 'int ()'
+    | |-StringLiteral 0x142026e90 <col:9> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x142026ee8 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x142026eb0 <col:16> 'struct hci_dev *' lvalue ParmVar 0x14200e248 'hdev' 'struct hci_dev *'
+    |-BinaryOperator 0x1420271c0 <line:8:2, col:60> 'struct hci_conn *' contains-errors '='
+    | |-DeclRefExpr 0x142026f40 <col:2> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    | `-CallExpr 0x142027188 <col:9, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x142027040 <col:9> 'int ()' Function 0x142026f88 'hci_conn_hash_lookup_ba' 'int ()'
+    |   |-DeclRefExpr 0x142027060 <col:33> 'struct hci_dev *' lvalue ParmVar 0x14200e248 'hdev' 'struct hci_dev *'
+    |   |-RecoveryExpr 0x142027168 <col:39> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x1420270f8 <col:49, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x1420270d0 <col:50, col:54> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x142027098 <col:50> 'struct hci_ev_keypress_notify *' contains-errors lvalue Var 0x1420269a8 'ev' 'struct hci_ev_keypress_notify *'
+    |-IfStmt 0x142027240 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x142027218 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x142027200 <col:7> 'struct hci_conn *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1420271e0 <col:7> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    | `-ReturnStmt 0x142027230 <line:10:3>
+    |-SwitchStmt 0x1420272d8 <line:12:2, line:31:2>
+    | |-ImplicitCastExpr 0x1420272c0 <line:12:10, col:14> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x142027298 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x142027260 <col:10> 'struct hci_ev_keypress_notify *' contains-errors lvalue Var 0x1420269a8 'ev' 'struct hci_ev_keypress_notify *'
+    | `-CompoundStmt 0x142029e00 <col:20, line:31:2>
+    |   |-BinaryOperator 0x142027398 <line:14:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x142027350 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x142027318 <col:3> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    |   | `-IntegerLiteral 0x142027378 <col:27> 'int' 0
+    |   |-ReturnStmt 0x1420273b8 <line:15:3>
+    |   |-UnaryOperator 0x142027440 <line:18:3, col:24> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | `-RecoveryExpr 0x142027418 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1420273e0 <col:3> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    |   |-BreakStmt 0x142027458 <line:19:3>
+    |   |-UnaryOperator 0x1420274d8 <line:22:3, col:24> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   | `-RecoveryExpr 0x1420274b0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x142027478 <col:3> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    |   |-BreakStmt 0x1420274f0 <line:23:3>
+    |   |-BinaryOperator 0x142027590 <line:26:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x142027548 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x142027510 <col:3> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+    |   | `-IntegerLiteral 0x142027570 <col:27> 'int' 0
+    |   |-BreakStmt 0x1420275b0 <line:27:3>
+    |   `-ReturnStmt 0x1420275d0 <line:30:3>
+    `-IfStmt 0x14202a378 <line:33:2, line:36:28>
+      |-CallExpr 0x142029fe0 <line:33:6, col:38> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x142029f38 <col:6> 'int ()' Function 0x142029e80 'hci_dev_test_flag' 'int ()'
+      | |-DeclRefExpr 0x142029f58 <col:24> 'struct hci_dev *' lvalue ParmVar 0x14200e248 'hdev' 'struct hci_dev *'
+      | `-RecoveryExpr 0x142029fc0 <col:30> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x14202a328 <line:34:3, line:36:28> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14202a0f0 <line:34:3> 'int ()' Function 0x14202a038 'mgmt_user_passkey_notify' 'int ()'
+        |-DeclRefExpr 0x14202a110 <col:28> 'struct hci_dev *' lvalue ParmVar 0x14200e248 'hdev' 'struct hci_dev *'
+        |-UnaryOperator 0x14202a190 <col:34, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x14202a168 <col:35, col:41> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x14202a130 <col:35> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+        |-RecoveryExpr 0x14202a1e0 <col:46, col:52> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x14202a1a8 <col:46> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+        |-RecoveryExpr 0x14202a240 <line:35:7, col:13> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x14202a208 <col:7> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+        |-RecoveryExpr 0x14202a2a0 <col:23, col:29> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x14202a268 <col:23> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'
+        `-RecoveryExpr 0x14202a300 <line:36:7, col:13> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14202a2c8 <col:7> 'struct hci_conn *' lvalue Var 0x142026c68 'conn' 'struct hci_conn *'

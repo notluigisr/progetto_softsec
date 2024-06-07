@@ -1,0 +1,19 @@
+`-FunctionDecl 0x15a141800  line:2:6 invalid kvm_vcpu_mark_page_dirty 'void (struct kvm_vcpu *, int)'
+  |-ParmVarDecl 0x15a128648 <col:31, col:48> col:48 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x15a1286e0 <col:54, col:60> col:60 invalid gfn 'int'
+  `-CompoundStmt 0x15a141ec8 <line:3:1, line:7:51>
+    |-DeclStmt 0x15a141aa8 <line:4:2, col:33>
+    | |-RecordDecl 0x15a1418b8 <col:2, col:9> col:9 struct kvm_memory_slot
+    | `-VarDecl 0x15a141a28 <col:2, col:26> col:26 used memslot 'struct kvm_memory_slot *'
+    |-BinaryOperator 0x15a141cd0 <line:6:2, col:45> 'struct kvm_memory_slot *' contains-errors '='
+    | |-DeclRefExpr 0x15a141ac0 <col:2> 'struct kvm_memory_slot *' lvalue Var 0x15a141a28 'memslot' 'struct kvm_memory_slot *'
+    | `-CallExpr 0x15a141ca0 <col:12, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15a141c40 <col:12> 'int ()' Function 0x15a141b88 'kvm_vcpu_gfn_to_memslot' 'int ()'
+    |   |-DeclRefExpr 0x15a141c60 <col:36> 'struct kvm_vcpu *' lvalue ParmVar 0x15a128648 'vcpu' 'struct kvm_vcpu *'
+    |   `-RecoveryExpr 0x15a141c80 <col:42> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x15a141e90 <line:7:2, col:49> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15a141dd0 <col:2> 'int ()' Function 0x15a141d18 'mark_page_dirty_in_slot' 'int ()'
+      |-RecoveryExpr 0x15a141e28 <col:26, col:32> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x15a141df0 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x15a128648 'vcpu' 'struct kvm_vcpu *'
+      |-DeclRefExpr 0x15a141e50 <col:37> 'struct kvm_memory_slot *' lvalue Var 0x15a141a28 'memslot' 'struct kvm_memory_slot *'
+      `-RecoveryExpr 0x15a141e70 <col:46> '<dependent type>' contains-errors lvalue

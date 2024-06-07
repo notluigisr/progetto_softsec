@@ -1,0 +1,53 @@
+`-FunctionDecl 0x13f808200  line:1:13 invalid cgroup_check_hierarchy_limits 'int (struct cgroup *)' static
+  |-ParmVarDecl 0x13f128668 <col:43, col:58> col:58 used parent 'struct cgroup *'
+  `-CompoundStmt 0x13f808de8 <line:2:1, line:22:1>
+    |-DeclStmt 0x13f8083a0 <line:3:2, col:23>
+    | `-VarDecl 0x13f808338 <col:2, col:17> col:17 used cgroup 'struct cgroup *'
+    |-DeclStmt 0x13f808450 <line:4:2, col:17>
+    | `-VarDecl 0x13f8083d0 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x13f808508 <line:5:2, col:15>
+    | `-VarDecl 0x13f808480 <col:2, col:14> col:6 used level 'int' cinit
+    |   `-IntegerLiteral 0x13f8084e8 <col:14> 'int' 1
+    |-CallExpr 0x13f808730 <line:7:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f808680 <col:2> 'int ()' Function 0x13f8085c8 'lockdep_assert_held' 'int ()'
+    | `-UnaryOperator 0x13f808718 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f8086f8 <col:23> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x13f808cb0 <line:9:2, line:17:2>
+    | |-BinaryOperator 0x13f8087b0 <line:9:7, col:16> 'struct cgroup *' '='
+    | | |-DeclRefExpr 0x13f808758 <col:7> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    | | `-ImplicitCastExpr 0x13f808798 <col:16> 'struct cgroup *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13f808778 <col:16> 'struct cgroup *' lvalue ParmVar 0x13f128668 'parent' 'struct cgroup *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x13f8087f0 <col:24> 'struct cgroup *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13f8087d0 <col:24> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    | |-BinaryOperator 0x13f8089f0 <col:32, col:61> 'struct cgroup *' '='
+    | | |-DeclRefExpr 0x13f808808 <col:32> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    | | `-ImplicitCastExpr 0x13f8089d8 <col:41, col:61> 'struct cgroup *' <IntegralToPointer>
+    | |   `-CallExpr 0x13f808998 <col:41, col:61> 'int'
+    | |     |-ImplicitCastExpr 0x13f808980 <col:41> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x13f808908 <col:41> 'int ()' Function 0x13f808850 'cgroup_parent' 'int ()'
+    | |     `-ImplicitCastExpr 0x13f8089c0 <col:55> 'struct cgroup *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x13f808928 <col:55> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    | `-CompoundStmt 0x13f808c88 <col:64, line:17:2>
+    |   |-IfStmt 0x13f808b58 <line:10:3, line:11:9>
+    |   | |-BinaryOperator 0x13f808ad0 <line:10:7, col:41> 'int' contains-errors '>='
+    |   | | |-RecoveryExpr 0x13f808a48 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x13f808a10 <col:7> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    |   | | `-RecoveryExpr 0x13f808aa8 <col:33, col:41> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13f808a70 <col:33> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    |   | `-GotoStmt 0x13f808b40 <line:11:4, col:9> 'fail' 0x13f808af0
+    |   |-IfStmt 0x13f808c30 <line:13:3, line:14:9>
+    |   | |-BinaryOperator 0x13f808bf8 <line:13:7, col:23> 'int' contains-errors '>'
+    |   | | |-DeclRefExpr 0x13f808b78 <col:7> 'int' lvalue Var 0x13f808480 'level' 'int'
+    |   | | `-RecoveryExpr 0x13f808bd0 <col:15, col:23> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13f808b98 <col:15> 'struct cgroup *' lvalue Var 0x13f808338 'cgroup' 'struct cgroup *'
+    |   | `-GotoStmt 0x13f808c18 <line:14:4, col:9> 'fail' 0x13f808af0
+    |   `-UnaryOperator 0x13f808c70 <line:16:3, col:8> 'int' postfix '++'
+    |     `-DeclRefExpr 0x13f808c50 <col:3> 'int' lvalue Var 0x13f808480 'level' 'int'
+    |-BinaryOperator 0x13f808d60 <line:19:2, col:8> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13f808ce8 <col:2> 'int' lvalue Var 0x13f8083d0 'ret' 'int'
+    | `-RecoveryExpr 0x13f808d40 <col:8> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x13f808dc8 <line:20:1, line:21:9> 'fail'
+      `-ReturnStmt 0x13f808db8 <col:2, col:9>
+        `-ImplicitCastExpr 0x13f808da0 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x13f808d80 <col:9> 'int' lvalue Var 0x13f8083d0 'ret' 'int'

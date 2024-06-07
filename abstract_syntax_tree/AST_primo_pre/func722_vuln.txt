@@ -1,0 +1,38 @@
+`-FunctionDecl 0x15a060948  line:1:12 invalid tiocgsid 'int (struct tty_struct *, struct tty_struct *, int)' static
+  |-ParmVarDecl 0x158830e48 <col:21, col:40> col:40 used tty 'struct tty_struct *'
+  |-ParmVarDecl 0x158830f38 <col:45, col:64> col:64 used real_tty 'struct tty_struct *'
+  |-ParmVarDecl 0x15a060800 <col:74, col:80> col:80 invalid __user 'int'
+  `-CompoundStmt 0x15a061300 <line:2:1, line:9:1>
+    |-IfStmt 0x15a060dd8 <line:4:2, line:5:11>
+    | |-BinaryOperator 0x15a060d10 <line:4:6, col:49> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x15a060c20 <col:6, col:13> 'int' '=='
+    | | | |-ImplicitCastExpr 0x15a060bf0 <col:6> 'struct tty_struct *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x15a060a08 <col:6> 'struct tty_struct *' lvalue ParmVar 0x158830e48 'tty' 'struct tty_struct *'
+    | | | `-ImplicitCastExpr 0x15a060c08 <col:13> 'struct tty_struct *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x15a060a28 <col:13> 'struct tty_struct *' lvalue ParmVar 0x158830f38 'real_tty' 'struct tty_struct *'
+    | | `-BinaryOperator 0x15a060cf0 <col:25, col:49> 'int' contains-errors '!='
+    | |   |-CXXDependentScopeMemberExpr 0x15a060ca8 <col:25, col:42> '<dependent type>' contains-errors lvalue ->tty
+    | |   | `-CXXDependentScopeMemberExpr 0x15a060c60 <col:25, col:34> '<dependent type>' contains-errors lvalue ->signal
+    | |   |   `-RecoveryExpr 0x15a060c40 <col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15a060b40 <col:49> 'struct tty_struct *' lvalue ParmVar 0x158830f38 'real_tty' 'struct tty_struct *'
+    | `-ReturnStmt 0x15a060dc8 <line:5:3, col:11>
+    |   `-UnaryOperator 0x15a060db0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15a060d98 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15a060d78 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15a060f30 <line:6:2, line:7:11>
+    | |-UnaryOperator 0x15a060e70 <line:6:6, col:17> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15a060e58 <col:7, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x15a060e30 <col:7, col:17> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15a060df8 <col:7> 'struct tty_struct *' lvalue ParmVar 0x158830f38 'real_tty' 'struct tty_struct *'
+    | `-ReturnStmt 0x15a060f20 <line:7:3, col:11>
+    |   `-UnaryOperator 0x15a060f08 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15a060ef0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15a060ed0 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15a0612f0 <line:8:2, col:47>
+      `-CallExpr 0x15a0612c0 <col:9, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15a0610b0 <col:9> 'int ()' Function 0x15a060ff8 'put_user' 'int ()'
+        |-CallExpr 0x15a061230 <col:18, col:43> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x15a0611b0 <col:18> 'int ()' Function 0x15a0610f8 'pid_vnr' 'int ()'
+        | `-RecoveryExpr 0x15a061208 <col:26, col:36> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x15a0611d0 <col:26> 'struct tty_struct *' lvalue ParmVar 0x158830f38 'real_tty' 'struct tty_struct *'
+        `-RecoveryExpr 0x15a0612a0 <col:46> '<dependent type>' contains-errors lvalue

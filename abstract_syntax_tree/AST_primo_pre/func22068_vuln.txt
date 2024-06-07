@@ -1,0 +1,51 @@
+`-FunctionDecl 0x1538266b8  line:1:30 create_mnt_ns 'struct mnt_namespace *(struct vfsmount *)' static
+  |-ParmVarDecl 0x15380e2e8 <col:44, col:61> col:61 used m 'struct vfsmount *'
+  `-CompoundStmt 0x1538275a8 <line:2:1, line:13:1>
+    |-DeclStmt 0x153826aa8 <line:3:2, col:60>
+    | `-VarDecl 0x153826838 <col:2, col:59> col:24 used new_ns 'struct mnt_namespace *' cinit
+    |   `-CallExpr 0x153826a80 <col:33, col:59> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1538269d0 <col:33> 'int ()' Function 0x153826918 'alloc_mnt_ns' 'int ()'
+    |     `-UnaryOperator 0x153826a68 <col:46, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x153826a48 <col:47> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x153827530 <line:4:2, line:11:2> has_else
+    | |-UnaryOperator 0x153826c68 <line:4:6, col:20> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x153826c28 <col:7, col:20> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x153826c10 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x153826ba0 <col:7> 'int ()' Function 0x153826ae8 'IS_ERR' 'int ()'
+    | |   `-ImplicitCastExpr 0x153826c50 <col:14> 'struct mnt_namespace *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x153826bc0 <col:14> 'struct mnt_namespace *' contains-errors lvalue Var 0x153826838 'new_ns' 'struct mnt_namespace *'
+    | |-CompoundStmt 0x153827370 <col:23, line:9:2>
+    | | |-DeclStmt 0x153826ff8 <line:5:3, col:36>
+    | | | |-RecordDecl 0x153826c80 <col:3, col:10> col:10 struct mount
+    | | | `-VarDecl 0x153826de8 <col:3, col:35> col:17 used mnt 'struct mount *' cinit
+    | | |   `-ImplicitCastExpr 0x153826fc8 <col:23, col:35> 'struct mount *' <IntegralToPointer>
+    | | |     `-CallExpr 0x153826f88 <col:23, col:35> 'int'
+    | | |       |-ImplicitCastExpr 0x153826f70 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    | | |       | `-DeclRefExpr 0x153826f30 <col:23> 'int ()' Function 0x153826e78 'real_mount' 'int ()'
+    | | |       `-ImplicitCastExpr 0x153826fb0 <col:34> 'struct vfsmount *' <LValueToRValue>
+    | | |         `-DeclRefExpr 0x153826f50 <col:34> 'struct vfsmount *' lvalue ParmVar 0x15380e2e8 'm' 'struct vfsmount *'
+    | | |-BinaryOperator 0x153827090 <line:6:3, col:17> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x153827048 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x153827010 <col:3> 'struct mount *' lvalue Var 0x153826de8 'mnt' 'struct mount *'
+    | | | `-DeclRefExpr 0x153827070 <col:17> 'struct mnt_namespace *' contains-errors lvalue Var 0x153826838 'new_ns' 'struct mnt_namespace *'
+    | | |-BinaryOperator 0x153827130 <line:7:3, col:18> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x1538270e8 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x1538270b0 <col:3> 'struct mnt_namespace *' contains-errors lvalue Var 0x153826838 'new_ns' 'struct mnt_namespace *'
+    | | | `-DeclRefExpr 0x153827110 <col:18> 'struct mount *' lvalue Var 0x153826de8 'mnt' 'struct mount *'
+    | | `-CallExpr 0x153827340 <line:8:3, col:41> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x153827230 <col:3> 'int ()' Function 0x153827178 'list_add' 'int ()'
+    | |   |-UnaryOperator 0x1538272b0 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-RecoveryExpr 0x153827288 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x153827250 <col:13> 'struct mount *' lvalue Var 0x153826de8 'mnt' 'struct mount *'
+    | |   `-UnaryOperator 0x153827328 <col:28, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x153827300 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1538272c8 <col:29> 'struct mnt_namespace *' contains-errors lvalue Var 0x153826838 'new_ns' 'struct mnt_namespace *'
+    | `-CompoundStmt 0x153827518 <line:9:9, line:11:2>
+    |   `-CallExpr 0x1538274d8 <line:10:3, col:11> 'int'
+    |     |-ImplicitCastExpr 0x1538274c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x153827480 <col:3> 'int ()' Function 0x1538273c8 'mntput' 'int ()'
+    |     `-ImplicitCastExpr 0x153827500 <col:10> 'struct vfsmount *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1538274a0 <col:10> 'struct vfsmount *' lvalue ParmVar 0x15380e2e8 'm' 'struct vfsmount *'
+    `-ReturnStmt 0x153827598 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x153827580 <col:9> 'struct mnt_namespace *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x153827560 <col:9> 'struct mnt_namespace *' contains-errors lvalue Var 0x153826838 'new_ns' 'struct mnt_namespace *'

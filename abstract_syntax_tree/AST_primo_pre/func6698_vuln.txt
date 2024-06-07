@@ -1,0 +1,63 @@
+`-FunctionDecl 0x1388088d8  line:1:16 invalid __cgroup_procs_write 'int (struct kernfs_open_file *, char *, int)' static
+  |-ParmVarDecl 0x12f070a68 <col:37, col:62> col:62 used of 'struct kernfs_open_file *'
+  |-ParmVarDecl 0x12f070ae8 <col:66, col:72> col:72 used buf 'char *'
+  |-ParmVarDecl 0x12f070b68 <line:2:9, col:14> col:14 invalid threadgroup 'int'
+  `-CompoundStmt 0x1390098e0 <line:3:1, line:37:1>
+    |-DeclStmt 0x138808c20 <line:4:2, col:36>
+    | |-RecordDecl 0x138808998 <col:2, col:9> col:9 struct cgroup
+    | |-VarDecl 0x138808b08 <col:2, col:17> col:17 used src_cgrp 'struct cgroup *'
+    | `-VarDecl 0x138808b98 <col:2, col:28> col:28 used dst_cgrp 'struct cgroup *'
+    |-DeclStmt 0x138808e28 <line:5:2, col:26>
+    | |-RecordDecl 0x138808c38 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x138808da8 <col:2, col:22> col:22 used task 'struct task_struct *'
+    |-BinaryOperator 0x1388090f8 <line:9:2, col:46> 'struct cgroup *' contains-errors '='
+    | |-DeclRefExpr 0x138808e40 <col:2> 'struct cgroup *' lvalue Var 0x138808b98 'dst_cgrp' 'struct cgroup *'
+    | `-CallExpr 0x1388090c8 <col:13, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138808fc0 <col:13> 'int ()' Function 0x138808f08 'cgroup_kn_lock_live' 'int ()'
+    |   |-RecoveryExpr 0x138809018 <col:33, col:37> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x138808fe0 <col:33> 'struct kernfs_open_file *' lvalue ParmVar 0x12f070a68 'of' 'struct kernfs_open_file *'
+    |   `-RecoveryExpr 0x1388090a8 <col:41> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x138809210 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x138809150 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x138809138 <col:7> 'struct cgroup *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x138809118 <col:7> 'struct cgroup *' lvalue Var 0x138808b98 'dst_cgrp' 'struct cgroup *'
+    | `-ReturnStmt 0x138809200 <line:11:3, col:11>
+    |   `-UnaryOperator 0x1388091e8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1388091d0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1388091b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x138809488 <line:13:2, col:59> 'struct task_struct *' contains-errors '='
+    | |-DeclRefExpr 0x138809230 <col:2> 'struct task_struct *' lvalue Var 0x138808da8 'task' 'struct task_struct *'
+    | `-CallExpr 0x138809450 <col:9, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x138809330 <col:9> 'int ()' Function 0x138809278 'cgroup_procs_write_start' 'int ()'
+    |   |-DeclRefExpr 0x138809350 <col:34> 'char *' lvalue ParmVar 0x12f070ae8 'buf' 'char *'
+    |   |-RecoveryExpr 0x138809370 <col:39> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x138809438 <col:52, col:53> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x138809418 <col:53> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1388096f8 <line:15:2, line:16:8>
+    | |-RecoveryExpr 0x138809670 <line:15:6> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x1388096e0 <line:16:3, col:8> 'out_unlock' 0x138809690
+    |-CallExpr 0x139008cb0 <line:19:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139008c00 <col:2> 'int ()' Function 0x138809740 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x139008c98 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x139008c78 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x139008f00 <line:20:2, col:55> 'struct cgroup *' contains-errors '='
+    | |-DeclRefExpr 0x139008cd8 <col:2> 'struct cgroup *' lvalue Var 0x138808b08 'src_cgrp' 'struct cgroup *'
+    | `-CallExpr 0x139008ed0 <col:13, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139008dd8 <col:13> 'int ()' Function 0x139008d20 'task_cgroup_from_root' 'int ()'
+    |   |-DeclRefExpr 0x139008df8 <col:35> 'struct task_struct *' lvalue Var 0x138808da8 'task' 'struct task_struct *'
+    |   `-UnaryOperator 0x139008eb8 <col:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x139008e98 <col:42> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1390090b0 <line:21:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139009000 <col:2> 'int ()' Function 0x139008f48 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x139009098 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x139009078 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139009438 <line:26:2, line:27:8>
+    | |-RecoveryExpr 0x1390093b0 <line:26:6> '_Bool' contains-errors
+    | `-GotoStmt 0x139009420 <line:27:3, col:8> 'out_finish' 0x1390093d0
+    |-LabelStmt 0x139009718 <line:31:1, col:11> 'out_finish'
+    | `-NullStmt 0x139009710 <col:11>
+    `-LabelStmt 0x1390098c0 <line:33:1, line:34:25> 'out_unlock'
+      `-CallExpr 0x139009898 <col:2, col:25> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x139009818 <col:2> 'int ()' Function 0x139009760 'cgroup_kn_unlock' 'int ()'
+        `-RecoveryExpr 0x139009870 <col:19, col:23> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x139009838 <col:19> 'struct kernfs_open_file *' lvalue ParmVar 0x12f070a68 'of' 'struct kernfs_open_file *'

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x13181f950  line:1:6 ring_buffer_nest_end 'void (struct trace_buffer *)'
+  |-ParmVarDecl 0x13181f848 <col:27, col:48> col:48 used buffer 'struct trace_buffer *'
+  `-CompoundStmt 0x13183aa18 <line:2:1, line:12:1>
+    |-DeclStmt 0x13183a438 <line:3:2, col:40>
+    | |-RecordDecl 0x13183a248 <col:2, col:9> col:9 struct ring_buffer_per_cpu
+    | `-VarDecl 0x13183a3b8 <col:2, col:30> col:30 used cpu_buffer 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x13183a4d0 <line:4:2, col:9>
+    | `-VarDecl 0x13183a468 <col:2, col:6> col:6 used cpu 'int'
+    |-BinaryOperator 0x13183a6b8 <line:7:2, col:29> 'int' '='
+    | |-DeclRefExpr 0x13183a4e8 <col:2> 'int' lvalue Var 0x13183a468 'cpu' 'int'
+    | `-CallExpr 0x13183a698 <col:8, col:29> 'int'
+    |   `-ImplicitCastExpr 0x13183a680 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x13183a630 <col:8> 'int ()' Function 0x13183a578 'raw_smp_processor_id' 'int ()'
+    |-BinaryOperator 0x13183a7c8 <line:8:2, col:34> 'struct ring_buffer_per_cpu *' contains-errors '='
+    | |-DeclRefExpr 0x13183a6d8 <col:2> 'struct ring_buffer_per_cpu *' lvalue Var 0x13183a3b8 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | `-ArraySubscriptExpr 0x13183a7a8 <col:15, col:34> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x13183a778 <col:15, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x13183a730 <col:15, col:23> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13183a6f8 <col:15> 'struct trace_buffer *' lvalue ParmVar 0x13181f848 'buffer' 'struct trace_buffer *'
+    |   `-ImplicitCastExpr 0x13183a790 <col:31> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13183a758 <col:31> 'int' lvalue Var 0x13183a468 'cpu' 'int'
+    |-CompoundAssignOperator 0x13183a8b0 <line:10:2, col:22> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x13183a820 <col:2, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13183a7e8 <col:2> 'struct ring_buffer_per_cpu *' lvalue Var 0x13183a3b8 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | `-RecoveryExpr 0x13183a890 <col:22> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13183a9f8 <line:11:2, col:25> 'int'
+      `-ImplicitCastExpr 0x13183a9e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x13183a9c0 <col:2> 'int ()' Function 0x13183a908 'preempt_enable_notrace' 'int ()'

@@ -1,0 +1,48 @@
+`-FunctionDecl 0x143128750  line:1:13 vapic_exit 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x143128648 <col:24, col:41> col:41 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x143141768 <line:2:1, line:13:1>
+    |-DeclStmt 0x143140ce0 <line:3:2, col:42>
+    | |-RecordDecl 0x143140a48 <col:2, col:9> col:9 struct kvm_lapic
+    | `-VarDecl 0x143140bb8 <col:2, col:38> col:20 used apic 'struct kvm_lapic *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x143140c80 <col:27, col:38> '<dependent type>' contains-errors lvalue .apic
+    |     `-RecoveryExpr 0x143140c58 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x143140c20 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x143128648 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x143140d78 <line:4:2, col:9>
+    | `-VarDecl 0x143140d10 <col:2, col:6> col:6 used idx 'int'
+    |-IfStmt 0x143140ea0 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x143140e70 <line:6:6, col:22> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x143140dc8 <col:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x143140db0 <col:7> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    | | |   `-DeclRefExpr 0x143140d90 <col:7> 'struct kvm_lapic *' contains-errors lvalue Var 0x143140bb8 'apic' 'struct kvm_lapic *'
+    | | `-UnaryOperator 0x143140e58 <col:15, col:22> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x143140e40 <col:16, col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x143140e18 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x143140de0 <col:16> 'struct kvm_lapic *' contains-errors lvalue Var 0x143140bb8 'apic' 'struct kvm_lapic *'
+    | `-ReturnStmt 0x143140e90 <line:7:3>
+    |-BinaryOperator 0x143141118 <line:9:2, col:39> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143140ec0 <col:2> 'int' lvalue Var 0x143140d10 'idx' 'int'
+    | `-CallExpr 0x1431410f0 <col:8, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143141010 <col:8> 'int ()' Function 0x143140f58 'srcu_read_lock' 'int ()'
+    |   `-UnaryOperator 0x1431410d8 <col:23, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x143141090 <col:24, col:35> '<dependent type>' contains-errors lvalue ->srcu
+    |       `-RecoveryExpr 0x143141068 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x143141030 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x143128648 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x143141298 <line:10:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x143141218 <col:2> 'int ()' Function 0x143141160 'kvm_release_page_dirty' 'int ()'
+    | `-RecoveryExpr 0x143141270 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x143141238 <col:25> 'struct kvm_lapic *' contains-errors lvalue Var 0x143140bb8 'apic' 'struct kvm_lapic *'
+    |-CallExpr 0x143141528 <line:11:2, col:59> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1431413a0 <col:2> 'int ()' Function 0x1431412e8 'mark_page_dirty' 'int ()'
+    | |-RecoveryExpr 0x1431413f8 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1431413c0 <col:18> 'struct kvm_vcpu *' lvalue ParmVar 0x143128648 'vcpu' 'struct kvm_vcpu *'
+    | `-BinaryOperator 0x143141508 <col:29, col:49> '<dependent type>' contains-errors '>>'
+    |   |-RecoveryExpr 0x143141458 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x143141420 <col:29> 'struct kvm_lapic *' contains-errors lvalue Var 0x143140bb8 'apic' 'struct kvm_lapic *'
+    |   `-RecoveryExpr 0x1431414e8 <col:49> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x143141738 <line:12:2, col:40> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x143141638 <col:2> 'int ()' Function 0x143141580 'srcu_read_unlock' 'int ()'
+      |-UnaryOperator 0x143141700 <col:19, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-CXXDependentScopeMemberExpr 0x1431416b8 <col:20, col:31> '<dependent type>' contains-errors lvalue ->srcu
+      |   `-RecoveryExpr 0x143141690 <col:20, col:26> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x143141658 <col:20> 'struct kvm_vcpu *' lvalue ParmVar 0x143128648 'vcpu' 'struct kvm_vcpu *'
+      `-DeclRefExpr 0x143141718 <col:37> 'int' lvalue Var 0x143140d10 'idx' 'int'

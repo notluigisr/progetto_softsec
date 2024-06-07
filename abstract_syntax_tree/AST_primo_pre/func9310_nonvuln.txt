@@ -1,0 +1,20 @@
+`-FunctionDecl 0x157030998  line:1:1 monotime_double 'int (void)'
+  `-CompoundStmt 0x1570541c8 <line:2:1, line:7:1>
+    |-DeclStmt 0x157053e48 <line:3:2, col:20>
+    | |-RecordDecl 0x157030a88 <col:2, col:9> col:9 struct timespec
+    | `-VarDecl 0x157030b88 <col:2, col:18> col:18 invalid ts 'struct timespec'
+    |-CallExpr 0x157053fe8 <line:5:2, col:17> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x157053f90 <col:2> 'int ()' Function 0x157053ed8 'monotime_ts' 'int ()'
+    | `-UnaryOperator 0x157053fd0 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x157053fb0 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1570541b8 <line:6:2, col:53>
+      `-BinaryOperator 0x157054198 <col:9, col:53> '<dependent type>' contains-errors '+'
+        |-CXXDependentScopeMemberExpr 0x157054030 <col:9, col:12> '<dependent type>' contains-errors lvalue .tv_sec
+        | `-RecoveryExpr 0x157054010 <col:9> '<dependent type>' contains-errors lvalue
+        `-ParenExpr 0x157054178 <col:21, col:53> 'double' contains-errors
+          `-BinaryOperator 0x157054158 <col:22, col:43> 'double' contains-errors '/'
+            |-CStyleCastExpr 0x1570540f8 <col:22, col:33> 'double' contains-errors <Dependent>
+            | `-CXXDependentScopeMemberExpr 0x157054098 <col:30, col:33> '<dependent type>' contains-errors lvalue .tv_nsec
+            |   `-RecoveryExpr 0x157054078 <col:30> '<dependent type>' contains-errors lvalue
+            `-ImplicitCastExpr 0x157054140 <col:43> 'double' <IntegralToFloating>
+              `-IntegerLiteral 0x157054120 <col:43> 'int' 1000000000

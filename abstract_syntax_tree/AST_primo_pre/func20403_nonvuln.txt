@@ -1,0 +1,67 @@
+`-FunctionDecl 0x15500dd18  line:1:1 SYSCALL_DEFINE3 'int ()'
+  `-CompoundStmt 0x15502ea70 <line:2:1, line:22:1>
+    |-DeclStmt 0x15500dff8 <line:3:2, col:20>
+    | |-RecordDecl 0x15500de08 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x15500df78 <col:2, col:16> col:16 used file 'struct file *'
+    |-DeclStmt 0x15500e140 <line:4:2, col:20>
+    | `-VarDecl 0x15500e028 <col:2, col:15> col:6 used error 'int' cinit
+    |   `-UnaryOperator 0x15500e128 <col:14, col:15> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15500e110 <col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15500e0f0 <col:15> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15500e348 <line:5:2, col:24>
+    | |-RecordDecl 0x15500e158 <col:2, col:9> col:9 struct dentry
+    | `-VarDecl 0x15500e2c8 <col:2, col:18> col:18 used dentry 'struct dentry *'
+    |-BinaryOperator 0x155027980 <line:7:2, col:16> 'struct file *' contains-errors '='
+    | |-DeclRefExpr 0x15500e360 <col:2> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    | `-CallExpr 0x155027958 <col:9, col:16> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1550278b8 <col:9> 'int ()' Function 0x155027800 'fget' 'int ()'
+    |   `-RecoveryExpr 0x155027938 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155027a58 <line:8:2, line:9:8>
+    | |-UnaryOperator 0x1550279d8 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1550279c0 <col:7> 'struct file *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1550279a0 <col:7> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    | `-GotoStmt 0x155027a40 <line:9:3, col:8> 'out' 0x1550279f0
+    |-BinaryOperator 0x155027c48 <line:11:2, col:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x155027a78 <col:2> 'int' contains-errors lvalue Var 0x15500e028 'error' 'int'
+    | `-CallExpr 0x155027c08 <col:10, col:34> 'int'
+    |   |-ImplicitCastExpr 0x155027bf0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x155027b78 <col:10> 'int ()' Function 0x155027ac0 'mnt_want_write_file' 'int ()'
+    |   `-ImplicitCastExpr 0x155027c30 <col:30> 'struct file *' <LValueToRValue>
+    |     `-DeclRefExpr 0x155027b98 <col:30> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    |-IfStmt 0x155027d08 <line:12:2, line:13:8>
+    | |-ImplicitCastExpr 0x155027c88 <line:12:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x155027c68 <col:6> 'int' contains-errors lvalue Var 0x15500e028 'error' 'int'
+    | `-GotoStmt 0x155027cf0 <line:13:3, col:8> 'out_fput' 0x155027ca0
+    |-BinaryOperator 0x155028210 <line:14:2, col:24> 'struct dentry *' contains-errors '='
+    | |-DeclRefExpr 0x155027d28 <col:2> 'struct dentry *' lvalue Var 0x15500e2c8 'dentry' 'struct dentry *'
+    | `-CXXDependentScopeMemberExpr 0x1550281c8 <col:11, col:24> '<dependent type>' contains-errors lvalue .dentry
+    |   `-RecoveryExpr 0x1550281a0 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x155027d48 <col:11> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    |-CallExpr 0x1550283b8 <line:15:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155028310 <col:2> 'int ()' Function 0x155028258 'audit_inode' 'int ()'
+    | |-RecoveryExpr 0x155028398 <col:14> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x155028348 <col:20> 'struct dentry *' lvalue Var 0x15500e2c8 'dentry' 'struct dentry *'
+    |-BinaryOperator 0x155028680 <line:16:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1550283e8 <col:2> 'int' contains-errors lvalue Var 0x15500e028 'error' 'int'
+    | `-CallExpr 0x155028648 <col:10, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1550284e8 <col:10> 'int ()' Function 0x155028430 'chown_common' 'int ()'
+    |   |-UnaryOperator 0x155028568 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x155028540 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x155028508 <col:24> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    |   |-RecoveryExpr 0x155028608 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x155028628 <col:44> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15502e848 <line:17:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155028780 <col:2> 'int ()' Function 0x1550286c8 'mnt_drop_write' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x15502e800 <col:17, col:30> '<dependent type>' contains-errors lvalue .mnt
+    |   `-RecoveryExpr 0x1550287d8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1550287a0 <col:17> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    |-LabelStmt 0x15502e9e8 <line:18:1, line:19:11> 'out_fput'
+    | `-CallExpr 0x15502e9a8 <col:2, col:11> 'int'
+    |   |-ImplicitCastExpr 0x15502e990 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15502e950 <col:2> 'int ()' Function 0x15502e898 'fput' 'int ()'
+    |   `-ImplicitCastExpr 0x15502e9d0 <col:7> 'struct file *' <LValueToRValue>
+    |     `-DeclRefExpr 0x15502e970 <col:7> 'struct file *' lvalue Var 0x15500df78 'file' 'struct file *'
+    `-LabelStmt 0x15502ea50 <line:20:1, line:21:9> 'out'
+      `-ReturnStmt 0x15502ea40 <col:2, col:9>
+        `-ImplicitCastExpr 0x15502ea28 <col:9> 'int' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x15502ea08 <col:9> 'int' contains-errors lvalue Var 0x15500e028 'error' 'int'

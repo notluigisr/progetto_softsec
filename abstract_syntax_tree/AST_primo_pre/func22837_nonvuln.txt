@@ -1,0 +1,28 @@
+`-FunctionDecl 0x12d941838  line:1:12 invalid svm_scale_tsc 'int (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x12d928668 <col:26, col:43> col:43 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x12d9286e8 <col:49, col:53> col:53 referenced invalid tsc 'int'
+  `-CompoundStmt 0x12d9420a8 <line:2:1, line:10:1>
+    |-DeclStmt 0x12d941d18 <line:3:2, col:37>
+    | |-RecordDecl 0x12d9418f0 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x12d941a58 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x12d941ce8 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x12d941ca8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x12d941c90 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12d941c20 <col:25> 'int ()' Function 0x12d941b68 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x12d941cd0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d941c40 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x12d928668 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x12d942020 <line:6:2, line:7:41>
+    | |-BinaryOperator 0x12d941de8 <line:6:6, col:24> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x12d941d68 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x12d941d30 <col:6> 'struct vcpu_svm *' lvalue Var 0x12d941a58 'svm' 'struct vcpu_svm *'
+    | | `-RecoveryExpr 0x12d941dc8 <col:24> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x12d942000 <line:7:3, col:41> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x12d941e28 <col:3> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12d941e08 <col:3> 'int' lvalue ParmVar 0x12d9286e8 'tsc' 'int'
+    |   `-CallExpr 0x12d941fd0 <col:10, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12d941f30 <col:10> 'int ()' Function 0x12d941e78 '__scale_tsc' 'int ()'
+    |     |-RecoveryExpr 0x12d941f88 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12d941f50 <col:22> 'struct vcpu_svm *' lvalue Var 0x12d941a58 'svm' 'struct vcpu_svm *'
+    |     `-RecoveryExpr 0x12d941fb0 <col:38> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12d942098 <line:9:2, col:9>
+      `-RecoveryExpr 0x12d942078 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,63 @@
+`-FunctionDecl 0x13e855c00  line:1:6 invalid kvm_vcpu_yield_to 'int (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x13e83d268 <col:24, col:41> col:41 used target 'struct kvm_vcpu *'
+  `-CompoundStmt 0x13e85b530 <line:2:1, line:23:1>
+    |-DeclStmt 0x13e855e98 <line:3:2, col:17>
+    | |-RecordDecl 0x13e855cb0 <col:2, col:9> col:9 struct pid
+    | `-VarDecl 0x13e855e18 <col:2, col:14> col:14 used pid 'struct pid *'
+    |-DeclStmt 0x13e8560d0 <line:4:2, col:33>
+    | |-RecordDecl 0x13e855eb0 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13e856018 <col:2, col:29> col:22 used task 'struct task_struct *' cinit
+    |   `-RecoveryExpr 0x13e856098 <col:29> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13e8562a8 <line:6:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x13e856290 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13e856240 <col:2> 'int ()' Function 0x13e856188 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x13e856470 <line:7:2, col:35> 'struct pid *' contains-errors '='
+    | |-DeclRefExpr 0x13e8562c8 <col:2> 'struct pid *' lvalue Var 0x13e855e18 'pid' 'struct pid *'
+    | `-CallExpr 0x13e856448 <col:8, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13e8563c8 <col:8> 'int ()' Function 0x13e856310 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x13e856420 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e8563e8 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x13e83d268 'target' 'struct kvm_vcpu *'
+    |-IfStmt 0x13e856720 <line:8:2, line:9:47>
+    | |-ImplicitCastExpr 0x13e8564b0 <line:8:6> 'struct pid *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13e856490 <col:6> 'struct pid *' lvalue Var 0x13e855e18 'pid' 'struct pid *'
+    | `-BinaryOperator 0x13e856700 <line:9:3, col:47> 'struct task_struct *' contains-errors '='
+    |   |-DeclRefExpr 0x13e8564c8 <col:3> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'
+    |   `-CallExpr 0x13e8566d0 <col:10, col:47> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13e8565c8 <col:10> 'int ()' Function 0x13e856510 'get_pid_task' 'int ()'
+    |     |-RecoveryExpr 0x13e856620 <col:23, col:31> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13e8565e8 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x13e83d268 'target' 'struct kvm_vcpu *'
+    |     `-RecoveryExpr 0x13e8566b0 <col:36> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13e856858 <line:10:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x13e856840 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13e856820 <col:2> 'int ()' Function 0x13e856768 'rcu_read_unlock' 'int ()'
+    |-IfStmt 0x13e856b60 <line:13:2, line:16:2>
+    | |-BinaryOperator 0x13e856998 <line:13:6, col:20> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x13e856918 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13e8568e0 <col:6> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'
+    | | `-RecoveryExpr 0x13e856978 <col:20> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13e856b48 <col:29, line:16:2>
+    |   `-CallExpr 0x13e856af0 <line:14:3, col:23> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x13e856ad8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13e856a98 <col:3> 'int ()' Function 0x13e8569e0 'put_task_struct' 'int ()'
+    |     `-ImplicitCastExpr 0x13e856b18 <col:19> 'struct task_struct *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x13e856ab8 <col:19> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'
+    |-IfStmt 0x13e85b478 <line:17:2, line:20:2>
+    | |-CallExpr 0x13e85b330 <line:17:6, col:22> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x13e85b318 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13e85b2b8 <col:6> 'int ()' Function 0x13e85b200 'yield_to' 'int ()'
+    | | |-ImplicitCastExpr 0x13e85b360 <col:15> 'struct task_struct *' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x13e85b2d8 <col:15> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'
+    | | `-IntegerLiteral 0x13e85b2f8 <col:21> 'int' 1
+    | `-CompoundStmt 0x13e85b458 <col:25, line:20:2>
+    |   |-CallExpr 0x13e85b3d0 <line:18:3, col:23> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x13e85b3b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13e85b378 <col:3> 'int ()' Function 0x13e8569e0 'put_task_struct' 'int ()'
+    |   | `-ImplicitCastExpr 0x13e85b3f8 <col:19> 'struct task_struct *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13e85b398 <col:19> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'
+    |   `-ReturnStmt 0x13e85b448 <line:19:3, col:10>
+    |     `-RecoveryExpr 0x13e85b428 <col:10> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13e85b4f0 <line:21:2, col:22> 'int' contains-errors
+      |-ImplicitCastExpr 0x13e85b4d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13e85b498 <col:2> 'int ()' Function 0x13e8569e0 'put_task_struct' 'int ()'
+      `-ImplicitCastExpr 0x13e85b518 <col:18> 'struct task_struct *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13e85b4b8 <col:18> 'struct task_struct *' contains-errors lvalue Var 0x13e856018 'task' 'struct task_struct *'

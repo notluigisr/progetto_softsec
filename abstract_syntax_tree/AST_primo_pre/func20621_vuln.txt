@@ -1,0 +1,29 @@
+`-FunctionDecl 0x15200dd98  line:1:14 referenced get_random_int 'unsigned int (void)'
+  `-CompoundStmt 0x1530097f0 <line:2:1, line:14:1>
+    |-DeclStmt 0x15200e078 <line:3:2, col:24>
+    | |-RecordDecl 0x15200de88 <col:2, col:9> col:9 struct keydata
+    | `-VarDecl 0x15200dff8 <col:2, col:18> col:18 used keyptr 'struct keydata *'
+    |-DeclStmt 0x15200e388 <line:5:2, col:9>
+    | `-VarDecl 0x15200e320 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x153009150 <line:7:2, col:22> 'struct keydata *' '='
+    | |-DeclRefExpr 0x15200e3a0 <col:2> 'struct keydata *' lvalue Var 0x15200dff8 'keyptr' 'struct keydata *'
+    | `-ImplicitCastExpr 0x153008d10 <col:11, col:22> 'struct keydata *' <IntegralToPointer>
+    |   `-CallExpr 0x153008cf0 <col:11, col:22> 'int'
+    |     `-ImplicitCastExpr 0x153008cd8 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x153008cb8 <col:11> 'int ()' Function 0x153008c00 'get_keyptr' 'int ()'
+    |-BinaryOperator 0x1530095b8 <line:10:2, col:47> 'int' contains-errors '='
+    | |-DeclRefExpr 0x153009380 <col:2> 'int' lvalue Var 0x15200e320 'ret' 'int'
+    | `-CallExpr 0x153009588 <col:8, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153009480 <col:8> 'int ()' Function 0x1530093c8 'half_md4_transform' 'int ()'
+    |   |-RecoveryExpr 0x153009568 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1530094f0 <col:33, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1530094b8 <col:33> 'struct keydata *' lvalue Var 0x15200dff8 'keyptr' 'struct keydata *'
+    |-CallExpr 0x153009750 <line:11:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x153009738 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1530096b8 <col:2> 'int ()' Function 0x153009600 'put_cpu_var' 'int ()'
+    | `-ImplicitCastExpr 0x153009778 <col:14> 'unsigned int (*)(void)' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x153009718 <col:14> 'unsigned int (void)' Function 0x15200dd98 'get_random_int' 'unsigned int (void)'
+    `-ReturnStmt 0x1530097e0 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x1530097c8 <col:9> 'unsigned int' <IntegralCast>
+        `-ImplicitCastExpr 0x1530097b0 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x153009790 <col:9> 'int' lvalue Var 0x15200e320 'ret' 'int'

@@ -1,0 +1,111 @@
+`-FunctionDecl 0x15c140fe8  line:1:12 invalid dgram_recvmsg 'int (struct kiocb *, struct sock *, struct msghdr *, int, int, int, int *)' static
+  |-ParmVarDecl 0x15c128648 <col:26, col:40> col:40 iocb 'struct kiocb *'
+  |-ParmVarDecl 0x15c140a28 <col:46, col:59> col:59 used sk 'struct sock *'
+  |-ParmVarDecl 0x15c140bf8 <line:2:3, col:18> col:18 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x15c140c90 <col:23, col:30> col:30 invalid len 'int'
+  |-ParmVarDecl 0x15c140d10 <col:35, col:39> col:39 used noblock 'int'
+  |-ParmVarDecl 0x15c140d90 <col:48, col:52> col:52 used flags 'int'
+  |-ParmVarDecl 0x15c140e48 <line:3:3, col:8> col:8 used addr_len 'int *'
+  `-CompoundStmt 0x14c008e70 <line:4:1, line:44:1>
+    |-RecoveryExpr 0x15c1411a8 <line:5:2, col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryExprOrTypeTraitExpr 0x15c141188 <col:2, col:9> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x15c141168 <col:9> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x15c141100 <col:18> 'int' 0
+    |-DeclStmt 0x15c1412f0 <line:6:2, col:23>
+    | `-VarDecl 0x15c1411f0 <col:2, col:13> col:6 used err 'int' cinit
+    |   `-UnaryOperator 0x15c1412d8 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15c1412c0 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15c1412a0 <col:13> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15c1414f8 <line:7:2, col:21>
+    | |-RecordDecl 0x15c141308 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x15c141478 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x15c1416f8 <line:8:2, col:35>
+    | |-RecordDecl 0x15c141510 <col:2, col:9> col:9 struct sockaddr_ieee802154
+    | `-VarDecl 0x15c141678 <col:2, col:30> col:30 used saddr 'struct sockaddr_ieee802154 *'
+    |-BinaryOperator 0x15c141840 <line:10:2, col:45> 'struct sockaddr_ieee802154 *' contains-errors '='
+    | |-DeclRefExpr 0x15c141710 <col:2> 'struct sockaddr_ieee802154 *' lvalue Var 0x15c141678 'saddr' 'struct sockaddr_ieee802154 *'
+    | `-CStyleCastExpr 0x15c141818 <col:10, col:45> 'struct sockaddr_ieee802154 *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x15c141768 <col:40, col:45> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c141730 <col:40> 'struct msghdr *' lvalue ParmVar 0x15c140bf8 'msg' 'struct msghdr *'
+    |-BinaryOperator 0x15c143988 <line:12:2, col:50> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x15c141860 <col:2> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x15c143970 <col:8, col:50> 'struct sk_buff *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x15c1438e8 <col:8, col:50> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15c1438d0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15c1419e0 <col:8> 'int ()' Function 0x15c141928 'skb_recv_datagram' 'int ()'
+    |     |-ImplicitCastExpr 0x15c143928 <col:26> 'struct sock *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x15c143800 <col:26> 'struct sock *' lvalue ParmVar 0x15c140a28 'sk' 'struct sock *'
+    |     |-ImplicitCastExpr 0x15c143940 <col:30> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x15c143820 <col:30> 'int' lvalue ParmVar 0x15c140d90 'flags' 'int'
+    |     |-ImplicitCastExpr 0x15c143958 <col:37> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x15c143840 <col:37> 'int' lvalue ParmVar 0x15c140d10 'noblock' 'int'
+    |     `-UnaryOperator 0x15c143880 <col:46, col:47> 'int *' contains-errors prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x15c143860 <col:47> 'int' contains-errors lvalue Var 0x15c1411f0 'err' 'int'
+    |-IfStmt 0x15c143a60 <line:13:2, line:14:8>
+    | |-UnaryOperator 0x15c1439e0 <line:13:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c1439c8 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c1439a8 <col:7> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x15c143a48 <line:14:3, col:8> 'out' 0x15c1439f8
+    |-IfStmt 0x15c143ca8 <line:17:2, line:20:2>
+    | |-BinaryOperator 0x15c143b58 <line:17:6, col:12> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x15c143ae0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x15c143b38 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15c143c90 <col:20, line:20:2>
+    |   `-CompoundAssignOperator 0x15c143c40 <line:18:3, col:21> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x15c143bb0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x15c143b78 <col:3> 'struct msghdr *' lvalue ParmVar 0x15c140bf8 'msg' 'struct msghdr *'
+    |     `-RecoveryExpr 0x15c143c20 <col:21> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15c143f60 <line:23:2, col:60> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c143cc8 <col:2> 'int' contains-errors lvalue Var 0x15c1411f0 'err' 'int'
+    | `-CallExpr 0x15c143f20 <col:8, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c143dc8 <col:8> 'int ()' Function 0x15c143d10 'skb_copy_datagram_iovec' 'int ()'
+    |   |-DeclRefExpr 0x15c143de8 <col:32> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    |   |-IntegerLiteral 0x15c143e08 <col:37> 'int' 0
+    |   |-RecoveryExpr 0x15c143e60 <col:40, col:45> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15c143e28 <col:40> 'struct msghdr *' lvalue ParmVar 0x15c140bf8 'msg' 'struct msghdr *'
+    |   `-RecoveryExpr 0x15c143f00 <col:54> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15c144020 <line:24:2, line:25:8>
+    | |-ImplicitCastExpr 0x15c143fa0 <line:24:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x15c143f80 <col:6> 'int' contains-errors lvalue Var 0x15c1411f0 'err' 'int'
+    | `-GotoStmt 0x15c144008 <line:25:3, col:8> 'done' 0x15c143fb8
+    |-CallExpr 0x15c1441b8 <line:27:2, col:37> 'int'
+    | |-ImplicitCastExpr 0x15c1441a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c144120 <col:2> 'int ()' Function 0x15c144068 'sock_recv_ts_and_drops' 'int ()'
+    | |-ImplicitCastExpr 0x15c1441f0 <col:25> 'struct msghdr *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c144140 <col:25> 'struct msghdr *' lvalue ParmVar 0x15c140bf8 'msg' 'struct msghdr *'
+    | |-ImplicitCastExpr 0x15c144208 <col:30> 'struct sock *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c144160 <col:30> 'struct sock *' lvalue ParmVar 0x15c140a28 'sk' 'struct sock *'
+    | `-ImplicitCastExpr 0x15c144220 <col:34> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15c144180 <col:34> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    |-IfStmt 0x15c144588 <line:29:2, line:32:2>
+    | |-ImplicitCastExpr 0x15c144258 <line:29:6> 'struct sockaddr_ieee802154 *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c144238 <col:6> 'struct sockaddr_ieee802154 *' lvalue Var 0x15c141678 'saddr' 'struct sockaddr_ieee802154 *'
+    | `-CompoundStmt 0x15c144568 <col:13, line:32:2>
+    |   |-BinaryOperator 0x15c144328 <line:30:3, col:19> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x15c1442a8 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x15c144270 <col:3> 'struct sockaddr_ieee802154 *' lvalue Var 0x15c141678 'saddr' 'struct sockaddr_ieee802154 *'
+    |   | `-RecoveryExpr 0x15c144308 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x15c144548 <line:31:3, col:30> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x15c144380 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x15c144348 <col:3> 'struct sockaddr_ieee802154 *' lvalue Var 0x15c141678 'saddr' 'struct sockaddr_ieee802154 *'
+    |     `-RecoveryExpr 0x15c144520 <col:17, col:30> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x15c1444e0 <col:17, col:27> 'int'
+    |         |-ImplicitCastExpr 0x15c1444c8 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x15c144488 <col:17> 'int ()' Function 0x15c1443d0 'mac_cb' 'int ()'
+    |         `-ImplicitCastExpr 0x15c144508 <col:24> 'struct sk_buff *' <LValueToRValue>
+    |           `-DeclRefExpr 0x15c1444a8 <col:24> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    |-LabelStmt 0x14c008d90 <line:38:1, line:39:27> 'done'
+    | `-CallExpr 0x14c008d30 <col:2, col:27> 'int'
+    |   |-ImplicitCastExpr 0x14c008d18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c008cb8 <col:2> 'int ()' Function 0x14c008c00 'skb_free_datagram' 'int ()'
+    |   |-ImplicitCastExpr 0x14c008d60 <col:20> 'struct sock *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14c008cd8 <col:20> 'struct sock *' lvalue ParmVar 0x15c140a28 'sk' 'struct sock *'
+    |   `-ImplicitCastExpr 0x14c008d78 <col:24> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c008cf8 <col:24> 'struct sk_buff *' lvalue Var 0x15c141478 'skb' 'struct sk_buff *'
+    `-LabelStmt 0x14c008e50 <line:40:1, line:42:10> 'out'
+      `-IfStmt 0x14c008e30 <line:41:2, line:42:10>
+        |-ImplicitCastExpr 0x14c008dd0 <line:41:6> 'int' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x14c008db0 <col:6> 'int' contains-errors lvalue Var 0x15c1411f0 'err' 'int'
+        `-ReturnStmt 0x14c008e20 <line:42:3, col:10>
+          `-ImplicitCastExpr 0x14c008e08 <col:10> 'int' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x14c008de8 <col:10> 'int' contains-errors lvalue Var 0x15c1411f0 'err' 'int'

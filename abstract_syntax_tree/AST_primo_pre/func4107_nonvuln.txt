@@ -1,0 +1,63 @@
+`-FunctionDecl 0x148944d48  line:1:12 ocfs2_readpage_inline 'int (struct inode *, struct page *)' static
+  |-ParmVarDecl 0x148928648 <col:34, col:48> col:48 used inode 'struct inode *'
+  |-ParmVarDecl 0x148944c28 <col:55, col:68> col:68 used page 'struct page *'
+  `-CompoundStmt 0x148946f48 <line:2:1, line:21:1>
+    |-DeclStmt 0x148944ec8 <line:3:2, col:9>
+    | `-VarDecl 0x148944e60 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x148945118 <line:4:2, col:34>
+    | |-RecordDecl 0x148944ee0 <col:2, col:9> col:9 struct buffer_head
+    | `-VarDecl 0x148945048 <col:2, col:30> col:22 used di_bh 'struct buffer_head *' cinit
+    |   `-RecoveryExpr 0x1489450e0 <col:30> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x148945438 <line:6:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x148945420 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148945240 <col:2> 'int ()' Function 0x148945188 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x148945408 <col:9, col:25> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x1489453c8 <col:10, col:25> 'int'
+    |     |-ImplicitCastExpr 0x1489453b0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x148945340 <col:10> 'int ()' Function 0x148945288 'PageLocked' 'int ()'
+    |     `-ImplicitCastExpr 0x1489453f0 <col:21> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x148945360 <col:21> 'struct page *' lvalue ParmVar 0x148944c28 'page' 'struct page *'
+    |-BinaryOperator 0x1489458e8 <line:9:2, col:44> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1489456b0 <col:2> 'int' lvalue Var 0x148944e60 'ret' 'int'
+    | `-CallExpr 0x1489458a0 <col:8, col:44> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x148945888 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1489457b0 <col:8> 'int ()' Function 0x1489456f8 'ocfs2_read_inode_block' 'int ()'
+    |   |-ImplicitCastExpr 0x1489458d0 <col:31> 'struct inode *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1489457d0 <col:31> 'struct inode *' lvalue ParmVar 0x148928648 'inode' 'struct inode *'
+    |   `-UnaryOperator 0x148945870 <col:38, col:39> 'struct buffer_head **' contains-errors prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x1489457f0 <col:39> 'struct buffer_head *' contains-errors lvalue Var 0x148945048 'di_bh' 'struct buffer_head *'
+    |-IfStmt 0x148945b40 <line:10:2, line:13:2>
+    | |-ImplicitCastExpr 0x148945928 <line:10:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x148945908 <col:6> 'int' lvalue Var 0x148944e60 'ret' 'int'
+    | `-CompoundStmt 0x148945b20 <col:11, line:13:2>
+    |   |-CallExpr 0x148945a78 <line:11:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x148945a60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x148945a20 <col:3> 'int ()' Function 0x148945968 'mlog_errno' 'int ()'
+    |   | `-ImplicitCastExpr 0x148945aa0 <col:14> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x148945a40 <col:14> 'int' lvalue Var 0x148944e60 'ret' 'int'
+    |   `-GotoStmt 0x148945b08 <line:12:3, col:8> 'out' 0x148945ab8
+    |-BinaryOperator 0x148946bd0 <line:15:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x148945b60 <col:2> 'int' lvalue Var 0x148944e60 'ret' 'int'
+    | `-CallExpr 0x148946b50 <col:8, col:49> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x148946b38 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x148946ab8 <col:8> 'int ()' Function 0x148946a00 'ocfs2_read_inline_data' 'int ()'
+    |   |-ImplicitCastExpr 0x148946b88 <col:31> 'struct inode *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x148946ad8 <col:31> 'struct inode *' lvalue ParmVar 0x148928648 'inode' 'struct inode *'
+    |   |-ImplicitCastExpr 0x148946ba0 <col:38> 'struct page *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x148946af8 <col:38> 'struct page *' lvalue ParmVar 0x148944c28 'page' 'struct page *'
+    |   `-ImplicitCastExpr 0x148946bb8 <col:44> 'struct buffer_head *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x148946b18 <col:44> 'struct buffer_head *' contains-errors lvalue Var 0x148945048 'di_bh' 'struct buffer_head *'
+    |-LabelStmt 0x148946d68 <line:16:1, line:17:18> 'out'
+    | `-CallExpr 0x148946d28 <col:2, col:18> 'int'
+    |   |-ImplicitCastExpr 0x148946d10 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x148946cd0 <col:2> 'int ()' Function 0x148946c18 'unlock_page' 'int ()'
+    |   `-ImplicitCastExpr 0x148946d50 <col:14> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x148946cf0 <col:14> 'struct page *' lvalue ParmVar 0x148944c28 'page' 'struct page *'
+    |-CallExpr 0x148946ec0 <line:19:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x148946ea8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148946e68 <col:2> 'int ()' Function 0x148946db0 'brelse' 'int ()'
+    | `-ImplicitCastExpr 0x148946ee8 <col:9> 'struct buffer_head *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x148946e88 <col:9> 'struct buffer_head *' contains-errors lvalue Var 0x148945048 'di_bh' 'struct buffer_head *'
+    `-ReturnStmt 0x148946f38 <line:20:2, col:9>
+      `-ImplicitCastExpr 0x148946f20 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x148946f00 <col:9> 'int' lvalue Var 0x148944e60 'ret' 'int'

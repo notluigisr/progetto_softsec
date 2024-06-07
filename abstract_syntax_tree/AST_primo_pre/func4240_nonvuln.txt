@@ -1,0 +1,68 @@
+`-FunctionDecl 0x12f00dda0  line:1:13 nfs4_layoutreturn_release 'void (void *)' static
+  |-ParmVarDecl 0x12f00dcd8 <col:39, col:45> col:45 used calldata 'void *'
+  `-CompoundStmt 0x12f0296f0 <line:2:1, line:15:1>
+    |-DeclStmt 0x12f00e0d8 <line:3:2, col:42>
+    | |-RecordDecl 0x12f00de98 <col:2, col:9> col:9 struct nfs4_layoutreturn
+    | `-VarDecl 0x12f00e008 <col:2, col:34> col:28 used lrp 'struct nfs4_layoutreturn *' cinit
+    |   `-ImplicitCastExpr 0x12f00e0a8 <col:34> 'struct nfs4_layoutreturn *' <BitCast>
+    |     `-ImplicitCastExpr 0x12f00e090 <col:34> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12f00e070 <col:34> 'void *' lvalue ParmVar 0x12f00dcd8 'calldata' 'void *'
+    |-DeclStmt 0x12f0271b8 <line:4:2, col:47>
+    | |-RecordDecl 0x12f00e0f0 <col:2, col:9> col:9 struct pnfs_layout_hdr
+    | `-VarDecl 0x12f00e258 <col:2, col:41> col:26 used lo 'struct pnfs_layout_hdr *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12f027158 <col:31, col:41> '<dependent type>' contains-errors lvalue .layout
+    |     `-RecoveryExpr 0x12f027130 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f00e2c0 <col:31> 'struct nfs4_layoutreturn *' lvalue Var 0x12f00e008 'lrp' 'struct nfs4_layoutreturn *'
+    |-CallExpr 0x12f027498 <line:6:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x12f027480 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f027300 <col:2> 'int ()' Function 0x12f027248 'dprintk' 'int ()'
+    | |-ImplicitCastExpr 0x12f0274c8 <col:10> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x12f027360 <col:10> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x12f0274e0 <col:17> 'const char *' <ArrayToPointerDecay>
+    |   `-PredefinedExpr 0x12f027438 <col:17> 'const char[26]' lvalue __func__
+    |     `-StringLiteral 0x12f027400 <col:17> 'const char[26]' lvalue "nfs4_layoutreturn_release"
+    |-CallExpr 0x12f0276b8 <line:7:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f0275d8 <col:2> 'int ()' Function 0x12f027520 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x12f0276a0 <col:12, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12f027658 <col:13, col:28> '<dependent type>' contains-errors lvalue ->i_lock
+    |     `-RecoveryExpr 0x12f027630 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f0275f8 <col:13> 'struct pnfs_layout_hdr *' contains-errors lvalue Var 0x12f00e258 'lo' 'struct pnfs_layout_hdr *'
+    |-IfStmt 0x12f027a10 <line:8:2, line:9:54>
+    | |-CXXDependentScopeMemberExpr 0x12f027740 <line:8:6, col:15> '<dependent type>' contains-errors lvalue .lrs_present
+    | | `-RecoveryExpr 0x12f027718 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12f0276e0 <col:6> 'struct nfs4_layoutreturn *' lvalue Var 0x12f00e008 'lrp' 'struct nfs4_layoutreturn *'
+    | `-CallExpr 0x12f0279d8 <line:9:3, col:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12f027868 <col:3> 'int ()' Function 0x12f0277b0 'pnfs_set_layout_stateid' 'int ()'
+    |   |-DeclRefExpr 0x12f027888 <col:27> 'struct pnfs_layout_hdr *' contains-errors lvalue Var 0x12f00e258 'lo' 'struct pnfs_layout_hdr *'
+    |   |-UnaryOperator 0x12f027950 <col:31, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x12f027908 <col:32, col:41> '<dependent type>' contains-errors lvalue .stateid
+    |   |   `-RecoveryExpr 0x12f0278e0 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x12f0278a8 <col:32> 'struct nfs4_layoutreturn *' lvalue Var 0x12f00e008 'lrp' 'struct nfs4_layoutreturn *'
+    |   `-RecoveryExpr 0x12f0279b8 <col:50> '<dependent type>' contains-errors lvalue
+    |-UnaryOperator 0x12f027a90 <line:10:2, col:21> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | `-RecoveryExpr 0x12f027a68 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12f027a30 <col:2> 'struct pnfs_layout_hdr *' contains-errors lvalue Var 0x12f00e258 'lo' 'struct pnfs_layout_hdr *'
+    |-CallExpr 0x12f027c68 <line:11:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f027b88 <col:2> 'int ()' Function 0x12f027ad0 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x12f027c50 <col:14, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12f027c08 <col:15, col:30> '<dependent type>' contains-errors lvalue ->i_lock
+    |     `-RecoveryExpr 0x12f027be0 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12f027ba8 <col:15> 'struct pnfs_layout_hdr *' contains-errors lvalue Var 0x12f00e258 'lo' 'struct pnfs_layout_hdr *'
+    |-CallExpr 0x12f029448 <line:12:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f027d70 <col:2> 'int ()' Function 0x12f027cb8 'pnfs_put_layout_hdr' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x12f029400 <col:22, col:32> '<dependent type>' contains-errors lvalue .layout
+    |   `-RecoveryExpr 0x12f027dc8 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f027d90 <col:22> 'struct nfs4_layoutreturn *' lvalue Var 0x12f00e008 'lrp' 'struct nfs4_layoutreturn *'
+    |-CallExpr 0x12f0295a8 <line:13:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x12f029590 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f029550 <col:2> 'int ()' Function 0x12f029498 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x12f0295d0 <col:8> 'void *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12f029570 <col:8> 'void *' lvalue ParmVar 0x12f00dcd8 'calldata' 'void *'
+    `-CallExpr 0x12f029690 <line:14:2, col:25> 'int'
+      |-ImplicitCastExpr 0x12f029678 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12f0295e8 <col:2> 'int ()' Function 0x12f027248 'dprintk' 'int ()'
+      |-ImplicitCastExpr 0x12f0296c0 <col:10> 'char *' <ArrayToPointerDecay>
+      | `-StringLiteral 0x12f029608 <col:10> 'char[4]' lvalue "STR"
+      `-ImplicitCastExpr 0x12f0296d8 <col:17> 'const char *' <ArrayToPointerDecay>
+        `-PredefinedExpr 0x12f029660 <col:17> 'const char[26]' lvalue __func__
+          `-StringLiteral 0x12f029628 <col:17> 'const char[26]' lvalue "nfs4_layoutreturn_release"

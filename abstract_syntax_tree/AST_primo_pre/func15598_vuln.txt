@@ -1,0 +1,125 @@
+`-FunctionDecl 0x147026748  line:1:1 smb_send_rqst 'int (struct TCP_Server_Info *, struct smb_rqst *)'
+  |-ParmVarDecl 0x14700e248 <col:15, col:39> col:39 used server 'struct TCP_Server_Info *'
+  |-ParmVarDecl 0x147026628 <col:47, col:64> col:64 used rqst 'struct smb_rqst *'
+  `-CompoundStmt 0x14702c608 <line:2:1, line:57:1>
+    |-DeclStmt 0x1470268c8 <line:3:2, col:8>
+    | `-VarDecl 0x147026860 <col:2, col:6> col:6 used rc 'int'
+    |-DeclStmt 0x147026b28 <line:4:2, col:33>
+    | |-RecordDecl 0x1470268e0 <col:2, col:9> col:9 struct kvec
+    | `-VarDecl 0x147026a48 <col:2, col:27> col:15 used iov 'struct kvec *' cinit
+    |   `-RecoveryExpr 0x147026ae8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147026ab0 <col:21> 'struct smb_rqst *' lvalue ParmVar 0x147026628 'rqst' 'struct smb_rqst *'
+    |-DeclStmt 0x147026c20 <line:5:2, col:27>
+    | `-VarDecl 0x147026b58 <col:2, col:20> col:6 used n_vec 'int' cinit
+    |   `-RecoveryExpr 0x147026bf8 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147026bc0 <col:14> 'struct smb_rqst *' lvalue ParmVar 0x147026628 'rqst' 'struct smb_rqst *'
+    |-DeclStmt 0x147026e58 <line:6:2, col:67>
+    | `-VarDecl 0x147026c50 <col:2, col:15> col:15 used smb_buf_length 'unsigned int'
+    |-DeclStmt 0x147026ef0 <line:7:2, col:16>
+    | `-VarDecl 0x147026e88 <col:2, col:15> col:15 used i 'unsigned int'
+    |-BinaryOperator 0x147027058 <line:8:2, col:24> '<dependent type>' contains-errors ','
+    | |-RecoveryExpr 0x147027008 <col:2, col:21> '<dependent type>' contains-errors lvalue
+    | | |-UnaryExprOrTypeTraitExpr 0x147026fe8 <col:2, col:9> 'unsigned long' contains-errors sizeof
+    | | | `-RecoveryExpr 0x147026fc8 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x147026f40 <col:21> 'int' 0
+    | `-RecoveryExpr 0x147027038 <col:24> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x1470272c8 <line:9:2, col:42>
+    | |-RecordDecl 0x147027078 <col:2, col:9> col:9 struct socket
+    | `-VarDecl 0x1470271e8 <col:2, col:35> col:17 used ssocket 'struct socket *' cinit
+    |   `-RecoveryExpr 0x147027288 <col:27, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147027250 <col:27> 'struct TCP_Server_Info *' lvalue ParmVar 0x14700e248 'server' 'struct TCP_Server_Info *'
+    |-DeclStmt 0x147027380 <line:10:2, col:13>
+    | `-VarDecl 0x1470272f8 <col:2, col:12> col:6 used val 'int' cinit
+    |   `-IntegerLiteral 0x147027360 <col:12> 'int' 1
+    |-CallExpr 0x147027588 <line:12:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x147027570 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x147027478 <col:2> 'int ()' Function 0x1470273c0 'cFYI' 'int ()'
+    | |-IntegerLiteral 0x147027498 <col:7> 'int' 1
+    | |-ImplicitCastExpr 0x1470275c0 <col:10> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x147027500 <col:10> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x1470275d8 <col:17> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x147027520 <col:17> 'unsigned int' lvalue Var 0x147026c50 'smb_buf_length' 'unsigned int'
+    |-CallExpr 0x14702a2d0 <line:16:2, line:17:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14702a090 <line:16:2> 'int ()' Function 0x147029fd8 'kernel_setsockopt' 'int ()'
+    | |-DeclRefExpr 0x14702a0b0 <col:20> 'struct socket *' contains-errors lvalue Var 0x1470271e8 'ssocket' 'struct socket *'
+    | |-RecoveryExpr 0x14702a250 <col:29> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x14702a270 <col:38> '<dependent type>' contains-errors lvalue
+    | |-CStyleCastExpr 0x14702a2a8 <line:17:5, col:14> 'char *' <BitCast>
+    | | `-UnaryOperator 0x14702a150 <col:13, col:14> 'int *' prefix '&' cannot overflow
+    | |   `-DeclRefExpr 0x14702a100 <col:14> 'int' lvalue Var 0x1470272f8 'val' 'int'
+    | `-UnaryExprOrTypeTraitExpr 0x14702a1e8 <col:19, col:29> 'unsigned long' sizeof
+    |   `-ParenExpr 0x14702a1c8 <col:25, col:29> 'int' lvalue
+    |     `-DeclRefExpr 0x14702a1a8 <col:26> 'int' lvalue Var 0x1470272f8 'val' 'int' non_odr_use_unevaluated
+    |-BinaryOperator 0x14702a5a0 <line:19:2, col:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14702a318 <col:2> 'int' lvalue Var 0x147026860 'rc' 'int'
+    | `-CallExpr 0x14702a560 <col:7, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14702a418 <col:7> 'int ()' Function 0x14702a360 'smb_send_kvec' 'int ()'
+    |   |-DeclRefExpr 0x14702a438 <col:21> 'struct TCP_Server_Info *' lvalue ParmVar 0x14700e248 'server' 'struct TCP_Server_Info *'
+    |   |-DeclRefExpr 0x14702a458 <col:29> 'struct kvec *' contains-errors lvalue Var 0x147026a48 'iov' 'struct kvec *'
+    |   |-DeclRefExpr 0x14702a478 <col:34> 'int' contains-errors lvalue Var 0x147026b58 'n_vec' 'int'
+    |   `-UnaryOperator 0x14702a548 <col:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14702a528 <col:42> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14702a6a0 <line:20:2, line:21:8>
+    | |-BinaryOperator 0x14702a618 <line:20:6, col:11> 'int' '<'
+    | | |-ImplicitCastExpr 0x14702a600 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14702a5c0 <col:6> 'int' lvalue Var 0x147026860 'rc' 'int'
+    | | `-IntegerLiteral 0x14702a5e0 <col:11> 'int' 0
+    | `-GotoStmt 0x14702a688 <line:21:3, col:8> 'uncork' 0x14702a638
+    |-ForStmt 0x14702be30 <line:26:2, line:36:2>
+    | |-BinaryOperator 0x14702a718 <line:26:7, col:11> 'unsigned int' '='
+    | | |-DeclRefExpr 0x14702a6c0 <col:7> 'unsigned int' lvalue Var 0x147026e88 'i' 'unsigned int'
+    | | `-ImplicitCastExpr 0x14702a700 <col:11> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x14702a6e0 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14702a7b8 <col:14, col:24> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x14702a738 <col:14> 'unsigned int' lvalue Var 0x147026e88 'i' 'unsigned int'
+    | | `-RecoveryExpr 0x14702a790 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14702a758 <col:18> 'struct smb_rqst *' lvalue ParmVar 0x147026628 'rqst' 'struct smb_rqst *'
+    | |-UnaryOperator 0x14702a7f8 <col:35, col:36> 'unsigned int' postfix '++'
+    | | `-DeclRefExpr 0x14702a7d8 <col:35> 'unsigned int' lvalue Var 0x147026e88 'i' 'unsigned int'
+    | `-CompoundStmt 0x14702be00 <col:40, line:36:2>
+    |   |-DeclStmt 0x14702a8c8 <line:27:3, col:20>
+    |   | `-VarDecl 0x14702a860 <col:3, col:15> col:15 invalid p_iov 'struct kvec'
+    |   |-CallExpr 0x14702aa58 <line:29:3, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14702a9c0 <col:3> 'int ()' Function 0x14702a908 'cifs_rqst_page_to_kvec' 'int ()'
+    |   | |-DeclRefExpr 0x14702a9e0 <col:26> 'struct smb_rqst *' lvalue ParmVar 0x147026628 'rqst' 'struct smb_rqst *'
+    |   | |-DeclRefExpr 0x14702aa00 <col:32> 'unsigned int' lvalue Var 0x147026e88 'i' 'unsigned int'
+    |   | `-UnaryOperator 0x14702aa40 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14702aa20 <col:36> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x14702ad18 <line:31:3, col:27> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14702ac28 <col:3> 'int ()' Function 0x14702ab70 'kunmap' 'int ()'
+    |   | `-ArraySubscriptExpr 0x14702acf8 <col:10, col:26> '<dependent type>' contains-errors lvalue
+    |   |   |-ImplicitCastExpr 0x14702acc8 <col:10, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x14702ac80 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x14702ac48 <col:10> 'struct smb_rqst *' lvalue ParmVar 0x147026628 'rqst' 'struct smb_rqst *'
+    |   |   `-ImplicitCastExpr 0x14702ace0 <col:25> 'unsigned int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14702aca8 <col:25> 'unsigned int' lvalue Var 0x147026e88 'i' 'unsigned int'
+    |   `-IfStmt 0x14702adc0 <line:32:3, line:33:4>
+    |     |-BinaryOperator 0x14702ad98 <line:32:7, col:12> 'int' '<'
+    |     | |-ImplicitCastExpr 0x14702ad80 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x14702ad40 <col:7> 'int' lvalue Var 0x147026860 'rc' 'int'
+    |     | `-IntegerLiteral 0x14702ad60 <col:12> 'int' 0
+    |     `-BreakStmt 0x14702adb8 <line:33:4>
+    |-LabelStmt 0x14702bec8 <line:38:1, line:40:8> 'uncork'
+    | `-BinaryOperator 0x14702bea8 <col:2, col:8> 'int' '='
+    |   |-DeclRefExpr 0x14702be68 <col:2> 'int' lvalue Var 0x1470272f8 'val' 'int'
+    |   `-IntegerLiteral 0x14702be88 <col:8> 'int' 0
+    |-IfStmt 0x14702c278 <line:44:2, line:49:2>
+    | |-RecoveryExpr 0x14702c0b0 <line:44:6, col:57> '_Bool' contains-errors
+    | `-CompoundStmt 0x14702c268 <col:60, line:49:2>
+    |-IfStmt 0x14702c590 <line:51:2, line:54:8> has_else
+    | |-RecoveryExpr 0x14702c330 <line:51:6, col:23> '_Bool' contains-errors
+    | |-CallExpr 0x14702c4c8 <line:52:3, col:22> 'int'
+    | | |-ImplicitCastExpr 0x14702c4b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14702c430 <col:3> 'int ()' Function 0x14702c378 'cERROR' 'int ()'
+    | | |-IntegerLiteral 0x14702c450 <col:10> 'int' 1
+    | | |-ImplicitCastExpr 0x14702c500 <col:13> 'char *' <ArrayToPointerDecay>
+    | | | `-StringLiteral 0x14702c470 <col:13> 'char[4]' lvalue "STR"
+    | | `-ImplicitCastExpr 0x14702c518 <col:20> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14702c490 <col:20> 'int' lvalue Var 0x147026860 'rc' 'int'
+    | `-BinaryOperator 0x14702c570 <line:54:3, col:8> 'int' '='
+    |   |-DeclRefExpr 0x14702c530 <col:3> 'int' lvalue Var 0x147026860 'rc' 'int'
+    |   `-IntegerLiteral 0x14702c550 <col:8> 'int' 0
+    `-ReturnStmt 0x14702c5f8 <line:56:2, col:9>
+      `-ImplicitCastExpr 0x14702c5e0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14702c5c0 <col:9> 'int' lvalue Var 0x147026860 'rc' 'int'

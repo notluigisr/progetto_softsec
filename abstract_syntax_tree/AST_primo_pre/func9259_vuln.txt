@@ -1,0 +1,73 @@
+`-FunctionDecl 0x14a941878  line:1:5 invalid ip6_find_1stfragopt 'int (struct sk_buff *, int **)'
+  |-ParmVarDecl 0x14a928648 <col:25, col:41> col:41 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14a928750 <col:46, col:51> col:51 invalid nexthdr 'int **'
+  `-CompoundStmt 0x14a9445a0 <line:2:1, line:41:1>
+    |-DeclStmt 0x14a941d88 <line:4:2, line:5:26>
+    | `-VarDecl 0x14a941948 <line:4:2, line:5:25> line:4:15 used packet_len 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x14a941d70 <col:28, line:5:25> 'unsigned int' <IntegralCast>
+    |     `-BinaryOperator 0x14a941d50 <line:4:28, line:5:25> 'int' '-'
+    |       |-CallExpr 0x14a941b98 <line:4:28, col:48> 'int'
+    |       | |-ImplicitCastExpr 0x14a941b80 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x14a941b10 <col:28> 'int ()' Function 0x14a941a58 'skb_tail_pointer' 'int ()'
+    |       | `-ImplicitCastExpr 0x14a941bc0 <col:45> 'struct sk_buff *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x14a941b30 <col:45> 'struct sk_buff *' lvalue ParmVar 0x14a928648 'skb' 'struct sk_buff *'
+    |       `-CallExpr 0x14a941d10 <line:5:3, col:25> 'int'
+    |         |-ImplicitCastExpr 0x14a941cf8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x14a941cb8 <col:3> 'int ()' Function 0x14a941c00 'skb_network_header' 'int ()'
+    |         `-ImplicitCastExpr 0x14a941d38 <col:22> 'struct sk_buff *' <LValueToRValue>
+    |           `-DeclRefExpr 0x14a941cd8 <col:22> 'struct sk_buff *' lvalue ParmVar 0x14a928648 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x14a941e40 <line:6:2, col:20>
+    | `-VarDecl 0x14a941db8 <col:2, col:19> col:6 used found_rhdr 'int' cinit
+    |   `-IntegerLiteral 0x14a941e20 <col:19> 'int' 0
+    |-BinaryOperator 0x14a942060 <line:7:2, col:29> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x14a941e90 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x14a941e78 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x14a941e58 <col:3> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x14a942048 <col:13, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14a942020 <col:14, col:29> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x14a941fe0 <col:14, col:26> 'int'
+    |       |-ImplicitCastExpr 0x14a941fc8 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14a941f88 <col:14> 'int ()' Function 0x14a941ed0 'ipv6_hdr' 'int ()'
+    |       `-ImplicitCastExpr 0x14a942008 <col:23> 'struct sk_buff *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14a941fa8 <col:23> 'struct sk_buff *' lvalue ParmVar 0x14a928648 'skb' 'struct sk_buff *'
+    `-WhileStmt 0x14a944580 <line:9:2, line:38:2>
+      |-BinaryOperator 0x14a9420f8 <line:9:9, col:19> 'int' contains-errors '<='
+      | |-RecoveryExpr 0x14a9420d8 <col:9> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x14a942098 <col:19> 'unsigned int' lvalue Var 0x14a941948 'packet_len' 'unsigned int'
+      `-CompoundStmt 0x14a944550 <col:31, line:38:2>
+        |-DeclStmt 0x14a942308 <line:10:3, col:30>
+        | |-RecordDecl 0x14a942118 <col:3, col:10> col:10 struct ipv6_opt_hdr
+        | `-VarDecl 0x14a942288 <col:3, col:24> col:24 used exthdr 'struct ipv6_opt_hdr *'
+        |-SwitchStmt 0x14a942388 <line:12:3, line:29:3>
+        | |-UnaryOperator 0x14a942370 <line:12:11, col:13> '<dependent type>' contains-errors prefix '*' cannot overflow
+        | | `-UnaryOperator 0x14a942358 <col:12, col:13> '<dependent type>' contains-errors prefix '*' cannot overflow
+        | |   `-ImplicitCastExpr 0x14a942340 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+        | |     `-RecoveryExpr 0x14a942320 <col:13> '<dependent type>' contains-errors lvalue
+        | `-CompoundStmt 0x14a942578 <col:22, line:29:3>
+        |   |-BreakStmt 0x14a9423c8 <line:15:4>
+        |   |-BinaryOperator 0x14a942428 <line:17:4, col:17> 'int' '='
+        |   | |-DeclRefExpr 0x14a9423e8 <col:4> 'int' lvalue Var 0x14a941db8 'found_rhdr' 'int'
+        |   | `-IntegerLiteral 0x14a942408 <col:17> 'int' 1
+        |   |-BreakStmt 0x14a942448 <line:18:4>
+        |   |-IfStmt 0x14a9424e8 <line:24:4, line:25:12>
+        |   | |-ImplicitCastExpr 0x14a942488 <line:24:8> 'int' <LValueToRValue>
+        |   | | `-DeclRefExpr 0x14a942468 <col:8> 'int' lvalue Var 0x14a941db8 'found_rhdr' 'int'
+        |   | `-ReturnStmt 0x14a9424d8 <line:25:5, col:12>
+        |   |   `-RecoveryExpr 0x14a9424b8 <col:12> '<dependent type>' contains-errors lvalue
+        |   |-BreakStmt 0x14a942508 <line:26:4>
+        |   `-DefaultStmt 0x14a942558 <line:27:3, line:28:11>
+        |     `-ReturnStmt 0x14a942548 <col:4, col:11>
+        |       `-RecoveryExpr 0x14a942528 <col:11> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x14a942708 <line:31:3, line:32:12>
+        | |-RecoveryExpr 0x14a942640 <line:31:7, col:46> '_Bool' contains-errors
+        | `-ReturnStmt 0x14a9426f8 <line:32:4, col:12>
+        |   `-UnaryOperator 0x14a9426e0 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x14a9426c8 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-RecoveryExpr 0x14a9426a8 <col:12> '<dependent type>' contains-errors lvalue
+        `-BinaryOperator 0x14a944530 <line:37:3, col:23> '<dependent type>' contains-errors '='
+          |-UnaryOperator 0x14a9444a0 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+          | `-ImplicitCastExpr 0x14a944488 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+          |   `-RecoveryExpr 0x14a944468 <col:4> '<dependent type>' contains-errors lvalue
+          `-UnaryOperator 0x14a944518 <col:14, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x14a9444f0 <col:15, col:23> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x14a9444b8 <col:15> 'struct ipv6_opt_hdr *' lvalue Var 0x14a942288 'exthdr' 'struct ipv6_opt_hdr *'

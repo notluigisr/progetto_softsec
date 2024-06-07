@@ -1,0 +1,18 @@
+`-FunctionDecl 0x14b810950  line:1:6 pde_users_dec 'void (struct proc_dir_entry *)'
+  |-ParmVarDecl 0x14b810848 <col:20, col:43> col:43 used pde 'struct proc_dir_entry *'
+  `-CompoundStmt 0x14b810f78 <line:2:1, line:6:1>
+    |-CallExpr 0x14b810c08 <line:3:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b810b70 <col:2> 'int ()' Function 0x14b810ab8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x14b810bf0 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b810bc8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b810b90 <col:13> 'struct proc_dir_entry *' lvalue ParmVar 0x14b810848 'pde' 'struct proc_dir_entry *'
+    |-CallExpr 0x14b810d98 <line:4:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x14b810d80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14b810d10 <col:2> 'int ()' Function 0x14b810c58 '__pde_users_dec' 'int ()'
+    | `-ImplicitCastExpr 0x14b810dc0 <col:18> 'struct proc_dir_entry *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14b810d30 <col:18> 'struct proc_dir_entry *' lvalue ParmVar 0x14b810848 'pde' 'struct proc_dir_entry *'
+    `-CallExpr 0x14b810f50 <line:5:2, col:35> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14b810eb8 <col:2> 'int ()' Function 0x14b810e00 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x14b810f38 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14b810f10 <col:15, col:20> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14b810ed8 <col:15> 'struct proc_dir_entry *' lvalue ParmVar 0x14b810848 'pde' 'struct proc_dir_entry *'

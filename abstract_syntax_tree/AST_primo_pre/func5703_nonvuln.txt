@@ -1,0 +1,42 @@
+`-FunctionDecl 0x11e141800  line:1:13 invalid inject_emulated_exception 'int (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x11e128668 <col:39, col:56> col:56 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x11e142498 <line:2:1, line:13:1>
+    |-DeclStmt 0x11e141b58 <line:3:2, col:58>
+    | |-RecordDecl 0x11e1418b0 <col:2, col:9> col:9 struct x86_emulate_ctxt
+    | `-VarDecl 0x11e141a18 <col:2, col:46> col:27 used ctxt 'struct x86_emulate_ctxt *' cinit
+    |   `-UnaryOperator 0x11e141b28 <col:34, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x11e141ae0 <col:35, col:46> '<dependent type>' contains-errors lvalue .emulate_ctxt
+    |       `-RecoveryExpr 0x11e141ab8 <col:35, col:41> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x11e141a80 <col:35> 'struct kvm_vcpu *' lvalue ParmVar 0x11e128668 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x11e141ee8 <line:4:2, line:5:52>
+    | |-BinaryOperator 0x11e141c70 <line:4:6, col:32> 'int' contains-errors '=='
+    | | |-CXXDependentScopeMemberExpr 0x11e141bd0 <col:6, col:22> '<dependent type>' contains-errors lvalue .vector
+    | | | `-RecoveryExpr 0x11e141ba8 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x11e141b70 <col:6> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'
+    | | `-RecoveryExpr 0x11e141c50 <col:32> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x11e141ed8 <line:5:3, col:52>
+    |   `-CallExpr 0x11e141ea8 <col:10, col:52> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11e141df0 <col:10> 'int ()' Function 0x11e141d38 'kvm_propagate_fault' 'int ()'
+    |     |-DeclRefExpr 0x11e141e10 <col:30> 'struct kvm_vcpu *' lvalue ParmVar 0x11e128668 'vcpu' 'struct kvm_vcpu *'
+    |     `-UnaryOperator 0x11e141e90 <col:36, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x11e141e68 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x11e141e30 <col:37> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'
+    `-IfStmt 0x11e142450 <line:7:2, line:11:51> has_else
+      |-CXXDependentScopeMemberExpr 0x11e141f68 <line:7:6, col:22> '<dependent type>' contains-errors lvalue .error_code_valid
+      | `-RecoveryExpr 0x11e141f40 <col:6, col:12> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x11e141f08 <col:6> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'
+      |-CallExpr 0x11e142220 <line:8:3, line:9:37> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x11e142090 <line:8:3> 'int ()' Function 0x11e141fd8 'kvm_queue_exception_e' 'int ()'
+      | |-DeclRefExpr 0x11e1420b0 <col:25> 'struct kvm_vcpu *' lvalue ParmVar 0x11e128668 'vcpu' 'struct kvm_vcpu *'
+      | |-CXXDependentScopeMemberExpr 0x11e142130 <col:31, col:47> '<dependent type>' contains-errors lvalue .vector
+      | | `-RecoveryExpr 0x11e142108 <col:31, col:37> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x11e1420d0 <col:31> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'
+      | `-CXXDependentScopeMemberExpr 0x11e1421d8 <line:9:11, col:27> '<dependent type>' contains-errors lvalue .error_code
+      |   `-RecoveryExpr 0x11e1421b0 <col:11, col:17> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x11e142178 <col:11> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'
+      `-CallExpr 0x11e142420 <line:11:3, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x11e142338 <col:3> 'int ()' Function 0x11e142280 'kvm_queue_exception' 'int ()'
+        |-DeclRefExpr 0x11e142358 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x11e128668 'vcpu' 'struct kvm_vcpu *'
+        `-CXXDependentScopeMemberExpr 0x11e1423d8 <col:29, col:45> '<dependent type>' contains-errors lvalue .vector
+          `-RecoveryExpr 0x11e1423b0 <col:29, col:35> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x11e142378 <col:29> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x11e141a18 'ctxt' 'struct x86_emulate_ctxt *'

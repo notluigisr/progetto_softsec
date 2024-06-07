@@ -1,0 +1,34 @@
+`-FunctionDecl 0x13c9273a8  line:1:6 invalid address_space_access_valid 'int (int *, int, int, int)'
+  |-ParmVarDecl 0x13c927128 <col:33, col:47> col:47 invalid as 'int *'
+  |-ParmVarDecl 0x13c9271a8 <col:51, col:58> col:58 referenced invalid addr 'int'
+  |-ParmVarDecl 0x13c927228 <col:64, col:68> col:68 used len 'int'
+  |-ParmVarDecl 0x13c9272a8 <col:73, col:78> col:78 invalid is_write 'int'
+  `-CompoundStmt 0x13c9410c8 <line:2:1, line:23:1>
+    |-ImplicitCastExpr 0x13c9274d0 <line:4:5> '<dependent type>' contains-errors <LValueToRValue>
+    | `-RecoveryExpr 0x13c9274a8 <col:5> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13c927488 <col:5> 'int' lvalue ParmVar 0x13c9271a8 'addr' 'int'
+    |-CallExpr 0x13c9276c8 <line:6:5, col:19> 'int'
+    | `-ImplicitCastExpr 0x13c9276b0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13c927660 <col:5> 'int ()' Function 0x13c9275a8 'rcu_read_lock' 'int ()'
+    |-WhileStmt 0x13c941050 <line:7:5, line:20:5>
+    | |-BinaryOperator 0x13c927740 <line:7:12, col:18> 'int' '>'
+    | | |-ImplicitCastExpr 0x13c927728 <col:12> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13c9276e8 <col:12> 'int' lvalue ParmVar 0x13c927228 'len' 'int'
+    | | `-IntegerLiteral 0x13c927708 <col:18> 'int' 0
+    | `-CompoundStmt 0x13c941038 <col:21, line:20:5>
+    |   `-IfStmt 0x13c940fb0 <line:10:9, line:16:9>
+    |     |-UnaryOperator 0x13c940bb0 <line:10:13, col:50> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     | `-CallExpr 0x13c940b80 <col:14, col:50> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x13c940ac0 <col:14> 'int ()' Function 0x13c940a08 'memory_access_is_direct' 'int ()'
+    |     |   |-RecoveryExpr 0x13c940b60 <col:38> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x13c940af8 <col:42> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x13c940f98 <col:53, line:16:9>
+    |       `-IfStmt 0x13c940f78 <line:12:13, line:15:13>
+    |         |-RecoveryExpr 0x13c940e08 <line:12:17, col:66> '_Bool' contains-errors
+    |         `-CompoundStmt 0x13c940f60 <col:69, line:15:13>
+    |           `-CallExpr 0x13c940f40 <line:13:17, col:33> 'int'
+    |             `-ImplicitCastExpr 0x13c940f28 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |               `-DeclRefExpr 0x13c940f08 <col:17> 'int ()' Function 0x13c940e50 'rcu_read_unlock' 'int ()'
+    `-CallExpr 0x13c9410a8 <line:21:5, col:21> 'int'
+      `-ImplicitCastExpr 0x13c941090 <col:5> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x13c941070 <col:5> 'int ()' Function 0x13c940e50 'rcu_read_unlock' 'int ()'

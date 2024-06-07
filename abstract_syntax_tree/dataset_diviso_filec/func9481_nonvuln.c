@@ -1,0 +1,1 @@
+  virtual void clear() { null_value= TRUE; value_cached= FALSE; }

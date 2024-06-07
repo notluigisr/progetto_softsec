@@ -1,0 +1,29 @@
+`-FunctionDecl 0x14d140a00  line:1:13 m_stop 'void (struct seq_file *, void *)' static
+  |-ParmVarDecl 0x14d128648 <col:20, col:37> col:37 used m 'struct seq_file *'
+  |-ParmVarDecl 0x14d1286c8 <col:40, col:46> col:46 used v 'void *'
+  `-CompoundStmt 0x14d1413f0 <line:2:1, line:9:1>
+    |-DeclStmt 0x14d140d48 <line:3:2, col:45>
+    | |-RecordDecl 0x14d140b00 <col:2, col:9> col:9 struct proc_maps_private
+    | `-VarDecl 0x14d140c68 <col:2, col:38> col:28 used priv 'struct proc_maps_private *' cinit
+    |   `-RecoveryExpr 0x14d140d08 <col:35, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14d140cd0 <col:35> 'struct seq_file *' lvalue ParmVar 0x14d128648 'm' 'struct seq_file *'
+    |-DeclStmt 0x14d140f98 <line:4:2, col:32>
+    | |-RecordDecl 0x14d140d60 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x14d140ec8 <col:2, col:31> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-ImplicitCastExpr 0x14d140f68 <col:31> 'struct vm_area_struct *' <BitCast>
+    |     `-ImplicitCastExpr 0x14d140f50 <col:31> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14d140f30 <col:31> 'void *' lvalue ParmVar 0x14d1286c8 'v' 'void *'
+    |-CallExpr 0x14d141188 <line:6:2, col:20> 'int' contains-errors
+    | |-ImplicitCastExpr 0x14d141170 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14d1410e0 <col:2> 'int ()' Function 0x14d141028 'vma_stop' 'int ()'
+    | |-ImplicitCastExpr 0x14d1411b8 <col:11> 'struct proc_maps_private *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x14d141100 <col:11> 'struct proc_maps_private *' contains-errors lvalue Var 0x14d140c68 'priv' 'struct proc_maps_private *'
+    | `-ImplicitCastExpr 0x14d1411d0 <col:17> 'struct vm_area_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14d141120 <col:17> 'struct vm_area_struct *' lvalue Var 0x14d140ec8 'vma' 'struct vm_area_struct *'
+    `-IfStmt 0x14d1413d0 <line:7:2, line:8:29>
+      |-RecoveryExpr 0x14d141220 <line:7:6, col:12> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x14d1411e8 <col:6> 'struct proc_maps_private *' contains-errors lvalue Var 0x14d140c68 'priv' 'struct proc_maps_private *'
+      `-CallExpr 0x14d1413a8 <line:8:3, col:29> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14d141328 <col:3> 'int ()' Function 0x14d141270 'put_task_struct' 'int ()'
+        `-RecoveryExpr 0x14d141380 <col:19, col:25> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14d141348 <col:19> 'struct proc_maps_private *' contains-errors lvalue Var 0x14d140c68 'priv' 'struct proc_maps_private *'

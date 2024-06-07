@@ -1,0 +1,75 @@
+`-FunctionDecl 0x137140798  line:1:12 invalid fuse_ioctl_copy_user 'int (struct page **, struct iovec *, unsigned int, int, int)' static
+  |-ParmVarDecl 0x1371280a8 <col:33, col:47> col:47 used pages 'struct page **'
+  |-ParmVarDecl 0x137140488 <col:54, col:68> col:68 used iov 'struct iovec *'
+  |-ParmVarDecl 0x137140508 <line:2:4, col:17> col:17 used nr_segs 'unsigned int'
+  |-ParmVarDecl 0x1371405a0 <col:26, col:33> col:33 invalid bytes 'int'
+  |-ParmVarDecl 0x137140620 <col:40, col:45> col:45 invalid to_user 'int'
+  `-CompoundStmt 0x140009808 <line:3:1, line:42:1>
+    |-DeclStmt 0x1371409e8 <line:4:2, col:20>
+    | |-RecordDecl 0x137140868 <col:2, col:9> col:9 struct iov_iter
+    | `-VarDecl 0x137140968 <col:2, col:18> col:18 invalid ii 'struct iov_iter'
+    |-DeclStmt 0x137140aa0 <line:5:2, col:18>
+    | `-VarDecl 0x137140a18 <col:2, col:17> col:6 used page_idx 'int' cinit
+    |   `-IntegerLiteral 0x137140a80 <col:17> 'int' 0
+    |-IfStmt 0x137140b38 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x137140af0 <line:7:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x137140ad8 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x137140ab8 <col:7> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x137140b28 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x137140b08 <col:10> 'int' 0
+    |-CallExpr 0x137140d88 <line:10:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x137140cb0 <col:2> 'int ()' Function 0x137140bf8 'iov_iter_init' 'int ()'
+    | |-UnaryOperator 0x137140cf0 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x137140cd0 <col:17> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x137140d08 <col:21> 'struct iovec *' lvalue ParmVar 0x137140488 'iov' 'struct iovec *'
+    | |-DeclRefExpr 0x137140d28 <col:26> 'unsigned int' lvalue ParmVar 0x137140508 'nr_segs' 'unsigned int'
+    | |-RecoveryExpr 0x137140d48 <col:35> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x137140d68 <col:42> 'int' 0
+    |-WhileStmt 0x1400097b8 <line:12:2, line:39:2>
+    | |-CallExpr 0x137140f08 <line:12:9, col:27> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x137140eb0 <col:9> 'int ()' Function 0x137140df8 'iov_iter_count' 'int ()'
+    | | `-UnaryOperator 0x137140ef0 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x137140ed0 <col:25> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x140009780 <col:30, line:39:2>
+    |   |-DeclStmt 0x1371410c8 <line:13:3, col:40>
+    |   | `-VarDecl 0x137140fb8 <col:3, col:39> col:16 used page 'struct page *' cinit
+    |   |   `-ImplicitCastExpr 0x1371410b0 <col:23, col:39> 'struct page *' <LValueToRValue>
+    |   |     `-ArraySubscriptExpr 0x137141090 <col:23, col:39> 'struct page *' lvalue
+    |   |       |-ImplicitCastExpr 0x137141078 <col:23> 'struct page **' <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x137141020 <col:23> 'struct page **' lvalue ParmVar 0x1371280a8 'pages' 'struct page **'
+    |   |       `-UnaryOperator 0x137141060 <col:29, col:37> 'int' postfix '++'
+    |   |         `-DeclRefExpr 0x137141040 <col:29> 'int' lvalue Var 0x137140a18 'page_idx' 'int'
+    |   |-DeclStmt 0x137141210 <line:15:3, col:20>
+    |   | |-VarDecl 0x137141110 <col:3, col:9> col:9 used kaddr 'void *'
+    |   | `-VarDecl 0x137141190 <col:3, col:17> col:17 used map 'void *'
+    |   |-BinaryOperator 0x140008c50 <line:17:3, col:26> 'void *' '='
+    |   | |-DeclRefExpr 0x137141228 <col:3> 'void *' lvalue Var 0x137141110 'kaddr' 'void *'
+    |   | `-BinaryOperator 0x140008c30 <col:11, col:26> 'void *' '='
+    |   |   |-DeclRefExpr 0x137141248 <col:11> 'void *' lvalue Var 0x137141190 'map' 'void *'
+    |   |   `-ImplicitCastExpr 0x140008c18 <col:17, col:26> 'void *' <IntegralToPointer>
+    |   |     `-CallExpr 0x1371413d8 <col:17, col:26> 'int'
+    |   |       |-ImplicitCastExpr 0x1371413c0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x137141348 <col:17> 'int ()' Function 0x137141290 'kmap' 'int ()'
+    |   |       `-ImplicitCastExpr 0x140008c00 <col:22> 'struct page *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x137141368 <col:22> 'struct page *' lvalue Var 0x137140fb8 'page' 'struct page *'
+    |   |-WhileStmt 0x1400095e8 <line:19:3, line:36:3>
+    |   | |-RecoveryExpr 0x140008c88 <line:19:10> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x1400095c8 <col:16, line:36:3>
+    |   |   |-DeclStmt 0x140008d20 <line:20:4, col:16>
+    |   |   | `-VarDecl 0x140008cb8 <col:4, col:9> col:9 __user 'char'
+    |   |   `-BinaryOperator 0x140008f08 <line:21:4, col:42> 'unsigned long' contains-errors '='
+    |   |     |-UnaryExprOrTypeTraitExpr 0x140008ee8 <col:4, col:11> 'unsigned long' contains-errors sizeof
+    |   |     | `-RecoveryExpr 0x140008ec8 <col:11> '<dependent type>' contains-errors lvalue
+    |   |     `-BinaryOperator 0x140008e88 <col:21, col:42> '<dependent type>' contains-errors '-'
+    |   |       |-CXXDependentScopeMemberExpr 0x140008dd8 <col:21, col:29> '<dependent type>' contains-errors lvalue ->iov_len
+    |   |       | `-CXXDependentScopeMemberExpr 0x140008d90 <col:21, col:24> '<dependent type>' contains-errors lvalue .iov
+    |   |       |   `-RecoveryExpr 0x140008d70 <col:21> '<dependent type>' contains-errors lvalue
+    |   |       `-CXXDependentScopeMemberExpr 0x140008e40 <col:39, col:42> '<dependent type>' contains-errors lvalue .iov_offset
+    |   |         `-RecoveryExpr 0x140008e20 <col:39> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x140009740 <line:38:3, col:13> 'int'
+    |     |-ImplicitCastExpr 0x140009728 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1400096e8 <col:3> 'int ()' Function 0x140009630 'kunmap' 'int ()'
+    |     `-ImplicitCastExpr 0x140009768 <col:10> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x140009708 <col:10> 'void *' lvalue Var 0x137141190 'map' 'void *'
+    `-ReturnStmt 0x1400097f8 <line:41:2, col:9>
+      `-IntegerLiteral 0x1400097d8 <col:9> 'int' 0

@@ -1,0 +1,31 @@
+`-FunctionDecl 0x11e124d28  line:1:23 invalid binder_alloc_new_buf 'struct binder_buffer *(struct binder_alloc *, int, int, int, int)'
+  |-ParmVarDecl 0x11e10b8e8 <col:44, col:65> col:65 used alloc 'struct binder_alloc *'
+  |-ParmVarDecl 0x11e10b980 <line:2:9, col:16> col:16 invalid data_size 'int'
+  |-ParmVarDecl 0x11e124a00 <line:3:9, col:16> col:16 invalid offsets_size 'int'
+  |-ParmVarDecl 0x11e124a80 <line:4:9, col:16> col:16 invalid extra_buffers_size 'int'
+  |-ParmVarDecl 0x11e124b00 <line:5:9, col:13> col:13 used is_async 'int'
+  `-CompoundStmt 0x11e125530 <line:6:1, line:14:1>
+    |-DeclStmt 0x11e124ef0 <line:7:2, col:30>
+    | `-VarDecl 0x11e124e88 <col:2, col:24> col:24 used buffer 'struct binder_buffer *'
+    |-CallExpr 0x11e1250f8 <line:9:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11e125060 <col:2> 'int ()' Function 0x11e124fa8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x11e1250e0 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11e1250b8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11e125080 <col:14> 'struct binder_alloc *' lvalue ParmVar 0x11e10b8e8 'alloc' 'struct binder_alloc *'
+    |-BinaryOperator 0x11e125328 <line:10:2, line:11:39> 'struct binder_buffer *' contains-errors '='
+    | |-DeclRefExpr 0x11e125120 <line:10:2> 'struct binder_buffer *' lvalue Var 0x11e124e88 'buffer' 'struct binder_buffer *'
+    | `-CallExpr 0x11e1252e0 <col:11, line:11:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e125220 <line:10:11> 'int ()' Function 0x11e125168 'binder_alloc_new_buf_locked' 'int ()'
+    |   |-DeclRefExpr 0x11e125240 <col:39> 'struct binder_alloc *' lvalue ParmVar 0x11e10b8e8 'alloc' 'struct binder_alloc *'
+    |   |-RecoveryExpr 0x11e125260 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x11e125280 <col:57> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x11e1252a0 <line:11:11> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11e1252c0 <col:31> 'int' lvalue ParmVar 0x11e124b00 'is_async' 'int'
+    |-CallExpr 0x11e1254c0 <line:12:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11e125428 <col:2> 'int ()' Function 0x11e125370 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x11e1254a8 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11e125480 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11e125448 <col:16> 'struct binder_alloc *' lvalue ParmVar 0x11e10b8e8 'alloc' 'struct binder_alloc *'
+    `-ReturnStmt 0x11e125520 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x11e125508 <col:9> 'struct binder_buffer *' <LValueToRValue>
+        `-DeclRefExpr 0x11e1254e8 <col:9> 'struct binder_buffer *' lvalue Var 0x11e124e88 'buffer' 'struct binder_buffer *'

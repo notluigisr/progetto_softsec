@@ -1,0 +1,28 @@
+`-FunctionDecl 0x14800de80  line:1:10 invalid copyBytes 'void (int *, int)'
+  |-ParmVarDecl 0x14800dd28 <col:20, col:30> col:30 referenced invalid is 'int *'
+  |-ParmVarDecl 0x14800dda8 <col:34, col:38> col:38 used length 'int'
+  `-CompoundStmt 0x148027ed0 <col:46, line:8:5>
+    `-WhileStmt 0x148027eb0 <line:2:7, line:7:7>
+      |-BinaryOperator 0x14800df90 <line:2:14, col:23> 'int' '>'
+      | |-ImplicitCastExpr 0x14800df78 <col:14> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x14800df38 <col:14> 'int' lvalue ParmVar 0x14800dda8 'length' 'int'
+      | `-IntegerLiteral 0x14800df58 <col:23> 'int' 0
+      `-CompoundStmt 0x148027e88 <col:26, line:7:7>
+        |-DeclStmt 0x14800e280 <line:3:9, col:33>
+        | `-VarDecl 0x14800dfc8 <col:9, col:32> col:13 used n 'int' cinit
+        |   `-CallExpr 0x14800e238 <col:17, col:32> 'int'
+        |     |-ImplicitCastExpr 0x14800e220 <col:17> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x14800e190 <col:17> 'int ()' Function 0x14800e0d8 'check' 'int ()'
+        |     |-IntegerLiteral 0x14800e1b0 <col:23> 'int' 1
+        |     `-ImplicitCastExpr 0x14800e268 <col:26> 'int' <LValueToRValue>
+        |       `-DeclRefExpr 0x14800e1d0 <col:26> 'int' lvalue ParmVar 0x14800dda8 'length' 'int'
+        |-CallExpr 0x14800e3b0 <line:4:9, col:29> '<dependent type>' contains-errors
+        | |-CXXDependentScopeMemberExpr 0x14800e2e0 <col:9, col:13> '<dependent type>' contains-errors lvalue ->readBytes
+        | | `-RecoveryExpr 0x14800e2b8 <col:9> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x14800e298 <col:9> 'int *' lvalue ParmVar 0x14800dd28 'is' 'int *'
+        | |-RecoveryExpr 0x14800e390 <col:23> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x14800e340 <col:28> 'int' lvalue Var 0x14800dfc8 'n' 'int'
+        `-CompoundAssignOperator 0x148027e58 <line:6:9, col:19> 'int' '-=' ComputeLHSTy='int' ComputeResultTy='int'
+          |-DeclRefExpr 0x148027e00 <col:9> 'int' lvalue ParmVar 0x14800dda8 'length' 'int'
+          `-ImplicitCastExpr 0x148027e40 <col:19> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x148027e20 <col:19> 'int' lvalue Var 0x14800dfc8 'n' 'int'

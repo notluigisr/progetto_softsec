@@ -1,0 +1,36 @@
+`-FunctionDecl 0x148140b48  line:1:12 hsr_dev_xmit 'int (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x148128648 <col:25, col:41> col:41 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x148140a28 <col:46, col:65> col:65 used dev 'struct net_device *'
+  `-CompoundStmt 0x148141758 <line:2:1, line:11:1>
+    |-DeclStmt 0x148141048 <line:3:2, col:41>
+    | |-RecordDecl 0x148140c48 <col:2, col:9> col:9 struct hsr_priv
+    | `-VarDecl 0x148140db8 <col:2, col:40> col:19 used hsr 'struct hsr_priv *' cinit
+    |   `-ImplicitCastExpr 0x148141018 <col:25, col:40> 'struct hsr_priv *' <IntegralToPointer>
+    |     `-CallExpr 0x148140fd8 <col:25, col:40> 'int'
+    |       |-ImplicitCastExpr 0x148140fc0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x148140f50 <col:25> 'int ()' Function 0x148140e98 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x148141000 <col:37> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x148140f70 <col:37> 'struct net_device *' lvalue ParmVar 0x148140a28 'dev' 'struct net_device *'
+    |-DeclStmt 0x148141248 <line:4:2, col:25>
+    | |-RecordDecl 0x148141060 <col:2, col:9> col:9 struct hsr_port
+    | `-VarDecl 0x1481411c8 <col:2, col:19> col:19 used master 'struct hsr_port *'
+    |-BinaryOperator 0x148141458 <line:6:2, col:46> 'struct hsr_port *' contains-errors '='
+    | |-DeclRefExpr 0x148141260 <col:2> 'struct hsr_port *' lvalue Var 0x1481411c8 'master' 'struct hsr_port *'
+    | `-CallExpr 0x148141428 <col:11, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148141360 <col:11> 'int ()' Function 0x1481412a8 'hsr_port_get_hsr' 'int ()'
+    |   |-DeclRefExpr 0x148141380 <col:28> 'struct hsr_priv *' lvalue Var 0x148140db8 'hsr' 'struct hsr_priv *'
+    |   `-RecoveryExpr 0x148141408 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x148141538 <line:7:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1481414b0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x148141478 <col:2> 'struct sk_buff *' lvalue ParmVar 0x148128648 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x148141510 <col:13, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1481414d8 <col:13> 'struct hsr_port *' lvalue Var 0x1481411c8 'master' 'struct hsr_port *'
+    |-CallExpr 0x1481416b0 <line:8:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x148141698 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148141638 <col:2> 'int ()' Function 0x148141580 'hsr_forward_skb' 'int ()'
+    | |-ImplicitCastExpr 0x1481416e0 <col:18> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x148141658 <col:18> 'struct sk_buff *' lvalue ParmVar 0x148128648 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x1481416f8 <col:23> 'struct hsr_port *' <LValueToRValue>
+    |   `-DeclRefExpr 0x148141678 <col:23> 'struct hsr_port *' lvalue Var 0x1481411c8 'master' 'struct hsr_port *'
+    `-ReturnStmt 0x148141748 <line:10:2, col:9>
+      `-RecoveryExpr 0x148141728 <col:9> '<dependent type>' contains-errors lvalue

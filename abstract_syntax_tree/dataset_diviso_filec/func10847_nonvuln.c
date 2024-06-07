@@ -1,0 +1,25 @@
+mapping_seek(ImagingMapperObject* mapper, PyObject* args)
+{
+    int offset;
+    int whence = 0;
+    if (!PyArg_ParseTuple(args, "STR", &offset, &whence))
+        return NULL;
+
+    switch (whence) {
+        case 0: 
+            mapper->offset = offset;
+            break;
+        case 1: 
+            mapper->offset += offset;
+            break;
+        case 2: 
+            mapper->offset = mapper->size + offset;
+            break;
+        default:
+            
+            break;
+    }
+
+    Py_INCREF(Py_None);
+    return Py_None;
+}

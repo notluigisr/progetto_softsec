@@ -1,0 +1,1 @@
+  bool canContinue() override { return true; }

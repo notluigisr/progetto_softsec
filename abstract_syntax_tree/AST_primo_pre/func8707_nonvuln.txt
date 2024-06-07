@@ -1,0 +1,20 @@
+`-FunctionDecl 0x15a128750  line:1:13 svm_clear_current_vmcb 'void (struct vmcb *)' static
+  |-ParmVarDecl 0x15a128648 <col:36, col:49> col:49 used vmcb 'struct vmcb *'
+  `-CompoundStmt 0x15a145318 <line:2:1, line:7:1>
+    |-DeclStmt 0x15a144cc8 <line:3:2, col:7>
+    | `-VarDecl 0x15a144c60 <col:2, col:6> col:6 used i 'int'
+    |-CallExpr 0x15a144e98 <line:5:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x15a144e80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a144e10 <col:2> 'int ()' Function 0x15a144d58 'for_each_online_cpu' 'int ()'
+    | `-ImplicitCastExpr 0x15a144ec0 <col:22> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x15a144e30 <col:22> 'int' lvalue Var 0x15a144c60 'i' 'int'
+    `-CallExpr 0x15a1452e0 <line:6:3, col:58> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15a144fb8 <col:3> 'int ()' Function 0x15a144f00 'cmpxchg' 'int ()'
+      |-UnaryOperator 0x15a1452a8 <col:11, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-CXXDependentScopeMemberExpr 0x15a145260 <col:12, col:34> '<dependent type>' contains-errors lvalue ->current_vmcb
+      |   `-CallExpr 0x15a145230 <col:12, col:31> '<dependent type>' contains-errors
+      |     |-DeclRefExpr 0x15a1450b8 <col:12> 'int ()' Function 0x15a145000 'per_cpu' 'int ()'
+      |     |-RecoveryExpr 0x15a145210 <col:20> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x15a1450f0 <col:30> 'int' lvalue Var 0x15a144c60 'i' 'int'
+      |-DeclRefExpr 0x15a1451a0 <col:48> 'struct vmcb *' lvalue ParmVar 0x15a128648 'vmcb' 'struct vmcb *'
+      `-RecoveryExpr 0x15a1452c0 <col:54> '<dependent type>' contains-errors lvalue

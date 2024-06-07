@@ -1,0 +1,67 @@
+`-FunctionDecl 0x13e026d28  line:1:5 sock_get_timestampns 'int (struct sock *, struct timespec)'
+  |-ParmVarDecl 0x13e00e848 <col:26, col:39> col:39 used sk 'struct sock *'
+  |-ParmVarDecl 0x13e026c00 <col:43, col:59> col:59 invalid __user 'struct timespec'
+  `-CompoundStmt 0x13e0299b8 <line:2:1, line:14:1>
+    |-DeclStmt 0x13e026ee8 <line:3:2, col:20>
+    | `-VarDecl 0x13e026e80 <col:2, col:18> col:18 referenced invalid ts 'struct timespec'
+    |-IfStmt 0x13e0272e8 <line:4:2, line:5:27>
+    | |-UnaryOperator 0x13e027120 <line:4:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13e0270f0 <col:7, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13e027030 <col:7> 'int ()' Function 0x13e026f78 'sock_flag' 'int ()'
+    | |   |-DeclRefExpr 0x13e027050 <col:17> 'struct sock *' lvalue ParmVar 0x13e00e848 'sk' 'struct sock *'
+    | |   `-RecoveryExpr 0x13e0270d0 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x13e0272a8 <line:5:3, col:27> 'int'
+    |   |-ImplicitCastExpr 0x13e027290 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13e027218 <col:3> 'int ()' Function 0x13e027160 'sock_enable_timestamp' 'int ()'
+    |   `-ImplicitCastExpr 0x13e0272d0 <col:25> 'struct sock *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13e027238 <col:25> 'struct sock *' lvalue ParmVar 0x13e00e848 'sk' 'struct sock *'
+    |-BinaryOperator 0x13e0274d8 <line:6:2, col:37> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13e027328 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13e027308 <col:2> 'struct timespec' lvalue Var 0x13e026e80 'ts' 'struct timespec'
+    | `-CallExpr 0x13e0274b0 <col:7, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13e027430 <col:7> 'int ()' Function 0x13e027378 'ktime_to_timespec' 'int ()'
+    |   `-RecoveryExpr 0x13e027488 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e027450 <col:25> 'struct sock *' lvalue ParmVar 0x13e00e848 'sk' 'struct sock *'
+    |-IfStmt 0x13e027660 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x13e027598 <line:7:6, col:20> 'int' contains-errors '=='
+    | | |-CXXDependentScopeMemberExpr 0x13e027518 <col:6, col:9> '<dependent type>' contains-errors lvalue .tv_sec
+    | | | `-RecoveryExpr 0x13e0274f8 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x13e027580 <col:19, col:20> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x13e027560 <col:20> 'int' 1
+    | `-ReturnStmt 0x13e027650 <line:8:3, col:11>
+    |   `-UnaryOperator 0x13e027638 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13e027620 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13e027600 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13e027a10 <line:9:2, line:12:2>
+    | |-BinaryOperator 0x13e027708 <line:9:6, col:19> 'int' contains-errors '=='
+    | | |-CXXDependentScopeMemberExpr 0x13e0276a0 <col:6, col:9> '<dependent type>' contains-errors lvalue .tv_sec
+    | | | `-RecoveryExpr 0x13e027680 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x13e0276e8 <col:19> 'int' 0
+    | `-CompoundStmt 0x13e0279f0 <col:22, line:12:2>
+    |   |-BinaryOperator 0x13e0278c0 <line:10:3, col:33> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13e027760 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13e027728 <col:3> 'struct sock *' lvalue ParmVar 0x13e00e848 'sk' 'struct sock *'
+    |   | `-CallExpr 0x13e0278a0 <col:18, col:33> 'int'
+    |   |   `-ImplicitCastExpr 0x13e027888 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x13e027868 <col:18> 'int ()' Function 0x13e0277b0 'ktime_get_real' 'int ()'
+    |   `-BinaryOperator 0x13e0279d0 <line:11:3, col:38> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x13e027900 <col:3> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13e0278e0 <col:3> 'struct timespec' lvalue Var 0x13e026e80 'ts' 'struct timespec'
+    |     `-CallExpr 0x13e0279a8 <col:8, col:38> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13e027928 <col:8> 'int ()' Function 0x13e027378 'ktime_to_timespec' 'int ()'
+    |       `-RecoveryExpr 0x13e027980 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13e027948 <col:26> 'struct sock *' lvalue ParmVar 0x13e00e848 'sk' 'struct sock *'
+    `-ReturnStmt 0x13e0299a8 <line:13:2, col:62>
+      `-ConditionalOperator 0x13e029978 <col:9, col:62> '<dependent type>' contains-errors
+        |-CallExpr 0x13e0298f0 <col:9, col:48> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13e027b10 <col:9> 'int ()' Function 0x13e027a58 'copy_to_user' 'int ()'
+        | |-RecoveryExpr 0x13e0298d0 <col:22> '<dependent type>' contains-errors lvalue
+        | |-UnaryOperator 0x13e027b68 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x13e027b48 <col:34> '<dependent type>' contains-errors lvalue
+        | `-UnaryExprOrTypeTraitExpr 0x13e027bc0 <col:38, col:47> 'unsigned long' contains-errors sizeof
+        |   `-ParenExpr 0x13e027ba0 <col:44, col:47> '<dependent type>' contains-errors lvalue
+        |     `-RecoveryExpr 0x13e027b80 <col:45> '<dependent type>' contains-errors lvalue
+        |-UnaryOperator 0x13e029960 <col:52, col:53> '<dependent type>' contains-errors prefix '-' cannot overflow
+        | `-ImplicitCastExpr 0x13e029948 <col:53> '<dependent type>' contains-errors <LValueToRValue>
+        |   `-RecoveryExpr 0x13e029928 <col:53> '<dependent type>' contains-errors lvalue
+        `-IntegerLiteral 0x13e029880 <col:62> 'int' 0

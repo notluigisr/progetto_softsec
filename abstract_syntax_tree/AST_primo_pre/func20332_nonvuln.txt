@@ -1,0 +1,30 @@
+`-FunctionDecl 0x13e140a80  line:1:13 cpu_load_update_nohz 'void (struct rq *, unsigned long, unsigned long)' static
+  |-ParmVarDecl 0x13e128648 <col:34, col:45> col:45 used this_rq 'struct rq *'
+  |-ParmVarDecl 0x13e1286c8 <line:2:6, col:20> col:20 used curr_jiffies 'unsigned long'
+  |-ParmVarDecl 0x13e128748 <line:3:6, col:20> col:20 used load 'unsigned long'
+  `-CompoundStmt 0x13e141088 <line:4:1, line:13:1>
+    |-DeclStmt 0x13e140c08 <line:5:2, col:31>
+    | `-VarDecl 0x13e140ba0 <col:2, col:16> col:16 used pending_updates 'unsigned long'
+    |-BinaryOperator 0x13e140ce0 <line:7:2, col:44> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x13e140c20 <col:2> 'unsigned long' lvalue Var 0x13e140ba0 'pending_updates' 'unsigned long'
+    | `-BinaryOperator 0x13e140cc0 <col:20, col:44> '<dependent type>' contains-errors '-'
+    |   |-DeclRefExpr 0x13e140c40 <col:20> 'unsigned long' lvalue ParmVar 0x13e1286c8 'curr_jiffies' 'unsigned long'
+    |   `-RecoveryExpr 0x13e140c98 <col:35, col:44> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e140c60 <col:35> 'struct rq *' lvalue ParmVar 0x13e128648 'this_rq' 'struct rq *'
+    `-IfStmt 0x13e141068 <line:8:2, line:12:2>
+      |-ImplicitCastExpr 0x13e140d20 <line:8:6> 'unsigned long' <LValueToRValue>
+      | `-DeclRefExpr 0x13e140d00 <col:6> 'unsigned long' lvalue Var 0x13e140ba0 'pending_updates' 'unsigned long'
+      `-CompoundStmt 0x13e141048 <col:23, line:12:2>
+        |-BinaryOperator 0x13e140db8 <line:9:3, col:36> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x13e140d70 <col:3, col:12> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x13e140d38 <col:3> 'struct rq *' lvalue ParmVar 0x13e128648 'this_rq' 'struct rq *'
+        | `-DeclRefExpr 0x13e140d98 <col:36> 'unsigned long' lvalue ParmVar 0x13e1286c8 'curr_jiffies' 'unsigned long'
+        `-CallExpr 0x13e140fc8 <line:11:3, col:49> 'int'
+          |-ImplicitCastExpr 0x13e140fb0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13e140f00 <col:3> 'int ()' Function 0x13e140e48 'cpu_load_update' 'int ()'
+          |-ImplicitCastExpr 0x13e141000 <col:19> 'struct rq *' <LValueToRValue>
+          | `-DeclRefExpr 0x13e140f20 <col:19> 'struct rq *' lvalue ParmVar 0x13e128648 'this_rq' 'struct rq *'
+          |-ImplicitCastExpr 0x13e141018 <col:28> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x13e140f40 <col:28> 'unsigned long' lvalue ParmVar 0x13e128748 'load' 'unsigned long'
+          `-ImplicitCastExpr 0x13e141030 <col:34> 'unsigned long' <LValueToRValue>
+            `-DeclRefExpr 0x13e140f60 <col:34> 'unsigned long' lvalue Var 0x13e140ba0 'pending_updates' 'unsigned long'

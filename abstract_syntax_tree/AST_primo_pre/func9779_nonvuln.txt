@@ -1,0 +1,27 @@
+`-FunctionDecl 0x140808f68  line:1:19 invalid op_attr_bignum_to_user 'int (void *, struct tee_ta_session *, void *, int *)' static
+  |-ParmVarDecl 0x14200dcf0 <col:42, col:48> col:48 used attr 'void *'
+  |-ParmVarDecl 0x14200e2e8 <line:2:7, col:30> col:30 used sess 'struct tee_ta_session *'
+  |-ParmVarDecl 0x14200e368 <line:3:7, col:13> col:13 used buffer 'void *'
+  |-ParmVarDecl 0x140808e18 <col:21, col:31> col:31 invalid size 'int *'
+  `-CompoundStmt 0x14080ad08 <line:4:1, line:34:1>
+    |-DeclStmt 0x1408092c8 <line:6:2, col:27>
+    | |-RecordDecl 0x140809030 <col:2, col:9> col:9 struct bignum
+    | `-VarDecl 0x1408091f8 <col:2, col:23> col:18 used bn 'struct bignum **' cinit
+    |   `-ImplicitCastExpr 0x140809298 <col:23> 'struct bignum **' <BitCast>
+    |     `-ImplicitCastExpr 0x140809280 <col:23> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x140809260 <col:23> 'void *' lvalue ParmVar 0x14200dcf0 'attr' 'void *'
+    |-IfStmt 0x1408095c0 <line:11:2, line:12:10>
+    | |-BinaryOperator 0x140809558 <line:11:6, col:13> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x140809518 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x140809538 <col:13> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1408095b0 <line:12:3, col:10>
+    |   `-RecoveryExpr 0x140809590 <col:10> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x14080aca8 <line:32:2, col:34> 'int'
+      |-ImplicitCastExpr 0x14080ac90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x14080ac00 <col:2> 'int ()' Function 0x140809d30 'crypto_bignum_bn2bin' 'int ()'
+      |-ImplicitCastExpr 0x14080acd8 <col:23, col:24> 'struct bignum *' <LValueToRValue>
+      | `-UnaryOperator 0x14080ac58 <col:23, col:24> 'struct bignum *' lvalue prefix '*' cannot overflow
+      |   `-ImplicitCastExpr 0x14080ac40 <col:24> 'struct bignum **' <LValueToRValue>
+      |     `-DeclRefExpr 0x14080ac20 <col:24> 'struct bignum **' lvalue Var 0x1408091f8 'bn' 'struct bignum **'
+      `-ImplicitCastExpr 0x14080acf0 <col:28> 'void *' <LValueToRValue>
+        `-DeclRefExpr 0x14080ac70 <col:28> 'void *' lvalue ParmVar 0x14200e368 'buffer' 'void *'

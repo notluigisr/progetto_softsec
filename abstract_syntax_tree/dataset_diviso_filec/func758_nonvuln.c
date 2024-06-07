@@ -1,0 +1,1 @@
+static inline void sctp_dbg_objcnt_init(struct net *net) { return; }

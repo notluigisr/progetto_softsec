@@ -1,0 +1,242 @@
+`-FunctionDecl 0x144941348  line:1:5 nfsd_setuser 'int (struct svc_rqst *, struct svc_export *)'
+  |-ParmVarDecl 0x144928e48 <col:18, col:35> col:35 used rqstp 'struct svc_rqst *'
+  |-ParmVarDecl 0x144941228 <col:42, col:61> col:61 used exp 'struct svc_export *'
+  `-CompoundStmt 0x14600a4e8 <line:2:1, line:73:1>
+    |-DeclStmt 0x144941638 <line:3:2, col:25>
+    | |-RecordDecl 0x144941448 <col:2, col:9> col:9 struct group_info
+    | `-VarDecl 0x1449415b8 <col:2, col:21> col:21 used rqgi 'struct group_info *'
+    |-DeclStmt 0x144941740 <line:4:2, col:23>
+    | `-VarDecl 0x1449416d8 <col:2, col:21> col:21 used gi 'struct group_info *'
+    |-DeclStmt 0x144941948 <line:5:2, col:18>
+    | |-RecordDecl 0x144941758 <col:2, col:9> col:9 struct cred
+    | `-VarDecl 0x1449418c8 <col:2, col:15> col:15 used new 'struct cred *'
+    |-DeclStmt 0x1449419e0 <line:6:2, col:7>
+    | `-VarDecl 0x144941978 <col:2, col:6> col:6 used i 'int'
+    |-DeclStmt 0x144941ca8 <line:7:2, col:38>
+    | `-VarDecl 0x144941a10 <col:2, col:37> col:6 used flags 'int' cinit
+    |   `-CallExpr 0x144941c48 <col:14, col:37> 'int'
+    |     |-ImplicitCastExpr 0x144941c30 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x144941ba0 <col:14> 'int ()' Function 0x144941ae8 'nfsexp_flags' 'int ()'
+    |     |-ImplicitCastExpr 0x144941c78 <col:27> 'struct svc_rqst *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x144941bc0 <col:27> 'struct svc_rqst *' lvalue ParmVar 0x144928e48 'rqstp' 'struct svc_rqst *'
+    |     `-ImplicitCastExpr 0x144941c90 <col:34> 'struct svc_export *' <LValueToRValue>
+    |       `-DeclRefExpr 0x144941be0 <col:34> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |-CallExpr 0x144941dd8 <line:9:2, col:25> 'int'
+    | `-ImplicitCastExpr 0x144941dc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x144941da0 <col:2> 'int ()' Function 0x144941ce8 'validate_process_creds' 'int ()'
+    |-CallExpr 0x144942188 <line:12:2, col:44> 'int'
+    | |-ImplicitCastExpr 0x144942170 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x144941ed8 <col:2> 'int ()' Function 0x144941e20 'revert_creds' 'int ()'
+    | `-CallExpr 0x144942148 <col:15, col:43> 'int'
+    |   |-ImplicitCastExpr 0x144942130 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x144941fd8 <col:15> 'int ()' Function 0x144941f20 'get_cred' 'int ()'
+    |   `-CallExpr 0x144942110 <col:24, col:42> 'int'
+    |     `-ImplicitCastExpr 0x1449420f8 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1449420d8 <col:24> 'int ()' Function 0x144942020 'current_real_cred' 'int ()'
+    |-BinaryOperator 0x144943128 <line:13:2, col:22> 'struct cred *' '='
+    | |-DeclRefExpr 0x1449421b0 <col:2> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-ImplicitCastExpr 0x144943110 <col:8, col:22> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x1449430f0 <col:8, col:22> 'int'
+    |     `-ImplicitCastExpr 0x1449430d8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1449430b8 <col:8> 'int ()' Function 0x144943000 'prepare_creds' 'int ()'
+    |-IfStmt 0x144943240 <line:14:2, line:15:11>
+    | |-UnaryOperator 0x144943180 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x144943168 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x144943148 <col:7> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-ReturnStmt 0x144943230 <line:15:3, col:11>
+    |   `-UnaryOperator 0x144943218 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x144943200 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1449431e0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x144943368 <line:17:2, col:30> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x144943298 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x144943260 <col:2> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-CXXDependentScopeMemberExpr 0x144943320 <col:15, col:30> '<dependent type>' contains-errors lvalue .cr_uid
+    |   `-RecoveryExpr 0x1449432f8 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1449432c0 <col:15> 'struct svc_rqst *' lvalue ParmVar 0x144928e48 'rqstp' 'struct svc_rqst *'
+    |-BinaryOperator 0x144943490 <line:18:2, col:30> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1449433c0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x144943388 <col:2> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-CXXDependentScopeMemberExpr 0x144943448 <col:15, col:30> '<dependent type>' contains-errors lvalue .cr_gid
+    |   `-RecoveryExpr 0x144943420 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1449433e8 <col:15> 'struct svc_rqst *' lvalue ParmVar 0x144928e48 'rqstp' 'struct svc_rqst *'
+    |-BinaryOperator 0x144943578 <line:20:2, col:24> 'struct group_info *' contains-errors '='
+    | |-DeclRefExpr 0x1449434b0 <col:2> 'struct group_info *' lvalue Var 0x1449415b8 'rqgi' 'struct group_info *'
+    | `-CXXDependentScopeMemberExpr 0x144943530 <col:9, col:24> '<dependent type>' contains-errors lvalue .cr_group_info
+    |   `-RecoveryExpr 0x144943508 <col:9, col:16> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1449434d0 <col:9> 'struct svc_rqst *' lvalue ParmVar 0x144928e48 'rqstp' 'struct svc_rqst *'
+    |-IfStmt 0x146009318 <line:22:2, line:49:2> has_else
+    | |-BinaryOperator 0x144943610 <line:22:6, col:14> '<dependent type>' contains-errors '&'
+    | | |-DeclRefExpr 0x144943598 <col:6> 'int' lvalue Var 0x144941a10 'flags' 'int'
+    | | `-RecoveryExpr 0x1449435f0 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x144943a80 <col:32, line:28:2>
+    | | |-BinaryOperator 0x1449436f0 <line:23:3, col:21> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x144943668 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x144943630 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | | | `-RecoveryExpr 0x1449436c8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x144943690 <col:16> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    | | |-BinaryOperator 0x1449437d0 <line:24:3, col:21> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x144943748 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x144943710 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | | | `-RecoveryExpr 0x1449437a8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x144943770 <col:16> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    | | |-BinaryOperator 0x144943988 <line:25:3, col:22> 'struct group_info *' '='
+    | | | |-DeclRefExpr 0x1449437f0 <col:3> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    | | | `-ImplicitCastExpr 0x144943970 <col:8, col:22> 'struct group_info *' <IntegralToPointer>
+    | | |   `-CallExpr 0x144943948 <col:8, col:22> 'int'
+    | | |     |-ImplicitCastExpr 0x144943930 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | `-DeclRefExpr 0x1449438f0 <col:8> 'int ()' Function 0x144943838 'groups_alloc' 'int ()'
+    | | |     `-IntegerLiteral 0x144943910 <col:21> 'int' 0
+    | | `-IfStmt 0x144943a60 <line:26:3, line:27:9>
+    | |   |-UnaryOperator 0x1449439e0 <line:26:7, col:8> 'int' prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x1449439c8 <col:8> 'struct group_info *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x1449439a8 <col:8> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    | |   `-GotoStmt 0x144943a48 <line:27:4, col:9> 'oom' 0x1449439f8
+    | `-IfStmt 0x1460092e8 <line:28:9, line:49:2> has_else
+    |   |-RecoveryExpr 0x144943ad0 <line:28:13, col:21> '_Bool' contains-errors
+    |   |-CompoundStmt 0x1460090c8 <col:40, line:47:2>
+    |   | |-IfStmt 0x144943d50 <line:29:3, line:30:22>
+    |   | | |-RecoveryExpr 0x144943c50 <line:29:7, col:41> '_Bool' contains-errors
+    |   | | `-BinaryOperator 0x144943d30 <line:30:4, col:22> '<dependent type>' contains-errors '='
+    |   | |   |-RecoveryExpr 0x144943ca8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   | `-DeclRefExpr 0x144943c70 <col:4> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |   | |   `-RecoveryExpr 0x144943d08 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x144943cd0 <col:17> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |   | |-IfStmt 0x144943fd0 <line:31:3, line:32:22>
+    |   | | |-RecoveryExpr 0x144943ed0 <line:31:7, col:41> '_Bool' contains-errors
+    |   | | `-BinaryOperator 0x144943fb0 <line:32:4, col:22> '<dependent type>' contains-errors '='
+    |   | |   |-RecoveryExpr 0x144943f28 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   | `-DeclRefExpr 0x144943ef0 <col:4> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |   | |   `-RecoveryExpr 0x144943f88 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x144943f50 <col:17> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |   | |-BinaryOperator 0x1460088c8 <line:34:3, col:34> 'struct group_info *' contains-errors '='
+    |   | | |-DeclRefExpr 0x146008800 <col:3> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |   | | `-CallExpr 0x1460088a0 <col:8, col:34> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x146008820 <col:8> 'int ()' Function 0x144943838 'groups_alloc' 'int ()'
+    |   | |   `-RecoveryExpr 0x146008878 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x146008840 <col:21> 'struct group_info *' lvalue Var 0x1449415b8 'rqgi' 'struct group_info *'
+    |   | |-IfStmt 0x146008950 <line:35:3, line:36:9>
+    |   | | |-UnaryOperator 0x146008920 <line:35:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | | `-ImplicitCastExpr 0x146008908 <col:8> 'struct group_info *' <LValueToRValue>
+    |   | | |   `-DeclRefExpr 0x1460088e8 <col:8> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |   | | `-GotoStmt 0x146008938 <line:36:4, col:9> 'oom' 0x1449439f8
+    |   | `-ForStmt 0x146009090 <line:38:3, line:46:3>
+    |   |   |-BinaryOperator 0x1460089b0 <line:38:8, col:12> 'int' '='
+    |   |   | |-DeclRefExpr 0x146008970 <col:8> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |   | `-IntegerLiteral 0x146008990 <col:12> 'int' 0
+    |   |   |-<<<NULL>>>
+    |   |   |-BinaryOperator 0x146008a50 <col:15, col:25> 'int' contains-errors '<'
+    |   |   | |-DeclRefExpr 0x1460089d0 <col:15> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |   | `-RecoveryExpr 0x146008a28 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x1460089f0 <col:19> 'struct group_info *' lvalue Var 0x1449415b8 'rqgi' 'struct group_info *'
+    |   |   |-UnaryOperator 0x146008a90 <col:34, col:35> 'int' postfix '++'
+    |   |   | `-DeclRefExpr 0x146008a70 <col:34> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |   `-CompoundStmt 0x146009070 <col:39, line:46:3>
+    |   |     |-IfStmt 0x146008ec8 <line:39:4, line:42:29> has_else
+    |   |     | |-RecoveryExpr 0x146008b98 <line:39:8, col:44> '_Bool' contains-errors
+    |   |     | |-BinaryOperator 0x146008ce8 <line:40:5, col:23> '<dependent type>' contains-errors '='
+    |   |     | | |-ArraySubscriptExpr 0x146008c68 <col:5, col:14> '<dependent type>' contains-errors lvalue
+    |   |     | | | |-ImplicitCastExpr 0x146008c38 <col:5, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | | | | `-RecoveryExpr 0x146008bf0 <col:5, col:9> '<dependent type>' contains-errors lvalue
+    |   |     | | | |   `-DeclRefExpr 0x146008bb8 <col:5> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |   |     | | | `-ImplicitCastExpr 0x146008c50 <col:13> 'int' <LValueToRValue>
+    |   |     | | |   `-DeclRefExpr 0x146008c18 <col:13> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |     | | `-RecoveryExpr 0x146008cc0 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |   |     | |   `-DeclRefExpr 0x146008c88 <col:18> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |   |     | `-BinaryOperator 0x146008ea8 <line:42:5, col:29> '<dependent type>' contains-errors '='
+    |   |     |   |-ArraySubscriptExpr 0x146008db8 <col:5, col:14> '<dependent type>' contains-errors lvalue
+    |   |     |   | |-ImplicitCastExpr 0x146008d88 <col:5, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     |   | | `-RecoveryExpr 0x146008d40 <col:5, col:9> '<dependent type>' contains-errors lvalue
+    |   |     |   | |   `-DeclRefExpr 0x146008d08 <col:5> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |   |     |   | `-ImplicitCastExpr 0x146008da0 <col:13> 'int' <LValueToRValue>
+    |   |     |   |   `-DeclRefExpr 0x146008d68 <col:13> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |     |   `-ArraySubscriptExpr 0x146008e88 <col:18, col:29> '<dependent type>' contains-errors lvalue
+    |   |     |     |-ImplicitCastExpr 0x146008e58 <col:18, col:24> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     |     | `-RecoveryExpr 0x146008e10 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |   |     |     |   `-DeclRefExpr 0x146008dd8 <col:18> 'struct group_info *' lvalue Var 0x1449415b8 'rqgi' 'struct group_info *'
+    |   |     |     `-ImplicitCastExpr 0x146008e70 <col:28> 'int' <LValueToRValue>
+    |   |     |       `-DeclRefExpr 0x146008e38 <col:28> 'int' lvalue Var 0x144941978 'i' 'int'
+    |   |     `-CallExpr 0x146009030 <line:45:4, col:18> 'int'
+    |   |       |-ImplicitCastExpr 0x146009018 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x146008fd8 <col:4> 'int ()' Function 0x146008f20 'groups_sort' 'int ()'
+    |   |       `-ImplicitCastExpr 0x146009058 <col:16> 'struct group_info *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x146008ff8 <col:16> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |   `-CompoundStmt 0x1460092d0 <line:47:9, line:49:2>
+    |     `-BinaryOperator 0x1460092b0 <line:48:3, col:27> 'struct group_info *' '='
+    |       |-DeclRefExpr 0x146009100 <col:3> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |       `-ImplicitCastExpr 0x146009298 <col:8, col:27> 'struct group_info *' <IntegralToPointer>
+    |         `-CallExpr 0x146009258 <col:8, col:27> 'int'
+    |           |-ImplicitCastExpr 0x146009240 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |           | `-DeclRefExpr 0x146009200 <col:8> 'int ()' Function 0x146009148 'get_group_info' 'int ()'
+    |           `-ImplicitCastExpr 0x146009280 <col:23> 'struct group_info *' <LValueToRValue>
+    |             `-DeclRefExpr 0x146009220 <col:23> 'struct group_info *' lvalue Var 0x1449415b8 'rqgi' 'struct group_info *'
+    |-IfStmt 0x1460094c8 <line:51:2, line:52:21>
+    | |-RecoveryExpr 0x1460093c8 <line:51:6, col:36> '_Bool' contains-errors
+    | `-BinaryOperator 0x1460094a8 <line:52:3, col:21> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x146009420 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1460093e8 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |   `-RecoveryExpr 0x146009480 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x146009448 <col:16> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |-IfStmt 0x146009668 <line:53:2, line:54:21>
+    | |-RecoveryExpr 0x146009568 <line:53:6, col:36> '_Bool' contains-errors
+    | `-BinaryOperator 0x146009648 <line:54:3, col:21> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x1460095c0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x146009588 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |   `-RecoveryExpr 0x146009620 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1460095e8 <col:16> 'struct svc_export *' lvalue ParmVar 0x144941228 'exp' 'struct svc_export *'
+    |-CallExpr 0x146009800 <line:56:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x1460097c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146009768 <col:2> 'int ()' Function 0x1460096b0 'set_groups' 'int ()'
+    | |-ImplicitCastExpr 0x146009830 <col:13> 'struct cred *' <LValueToRValue>
+    | | `-DeclRefExpr 0x146009788 <col:13> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-ImplicitCastExpr 0x146009848 <col:18> 'struct group_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1460097a8 <col:18> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |-CallExpr 0x146009998 <line:57:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x146009980 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146009940 <col:2> 'int ()' Function 0x146009888 'put_group_info' 'int ()'
+    | `-ImplicitCastExpr 0x1460099c0 <col:17> 'struct group_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x146009960 <col:17> 'struct group_info *' lvalue Var 0x1449416d8 'gi' 'struct group_info *'
+    |-IfStmt 0x146009ef0 <line:59:2, line:63:26> has_else
+    | |-RecoveryExpr 0x146009a58 <line:59:6, col:41> '_Bool' contains-errors
+    | |-BinaryOperator 0x146009c60 <line:60:3, col:60> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x146009ab0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x146009a78 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | | `-CallExpr 0x146009c38 <col:24, col:60> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x146009bb8 <col:24> 'int ()' Function 0x146009b00 'cap_drop_nfsd_set' 'int ()'
+    | |   `-RecoveryExpr 0x146009c10 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x146009bd8 <col:42> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    | `-BinaryOperator 0x146009ed0 <line:62:3, line:63:26> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x146009cb8 <line:62:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x146009c80 <col:3> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |   `-CallExpr 0x146009ea0 <col:24, line:63:26> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x146009dc0 <line:62:24> 'int ()' Function 0x146009d08 'cap_raise_nfsd_set' 'int ()'
+    |     |-RecoveryExpr 0x146009e18 <col:43, col:48> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x146009de0 <col:43> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |     `-RecoveryExpr 0x146009e78 <line:63:8, col:13> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x146009e40 <col:8> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |-CallExpr 0x146009f58 <line:64:2, col:25> 'int'
+    | `-ImplicitCastExpr 0x146009f40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x146009f20 <col:2> 'int ()' Function 0x144941ce8 'validate_process_creds' 'int ()'
+    |-CallExpr 0x14600a208 <line:65:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x14600a1f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14600a058 <col:2> 'int ()' Function 0x146009fa0 'put_cred' 'int ()'
+    | `-CallExpr 0x14600a1b0 <col:11, col:29> 'int'
+    |   |-ImplicitCastExpr 0x14600a198 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14600a158 <col:11> 'int ()' Function 0x14600a0a0 'override_creds' 'int ()'
+    |   `-ImplicitCastExpr 0x14600a1d8 <col:26> 'struct cred *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14600a178 <col:26> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |-CallExpr 0x14600a288 <line:66:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x14600a270 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14600a230 <col:2> 'int ()' Function 0x146009fa0 'put_cred' 'int ()'
+    | `-ImplicitCastExpr 0x14600a2b0 <col:11> 'struct cred *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14600a250 <col:11> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'
+    |-CallExpr 0x14600a300 <line:67:2, col:25> 'int'
+    | `-ImplicitCastExpr 0x14600a2e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14600a2c8 <col:2> 'int ()' Function 0x144941ce8 'validate_process_creds' 'int ()'
+    |-ReturnStmt 0x14600a340 <line:68:2, col:9>
+    | `-IntegerLiteral 0x14600a320 <col:9> 'int' 0
+    `-LabelStmt 0x14600a4c8 <line:70:1, line:71:17> 'oom'
+      `-CallExpr 0x14600a488 <col:2, col:17> 'int'
+        |-ImplicitCastExpr 0x14600a470 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14600a430 <col:2> 'int ()' Function 0x14600a378 'abort_creds' 'int ()'
+        `-ImplicitCastExpr 0x14600a4b0 <col:14> 'struct cred *' <LValueToRValue>
+          `-DeclRefExpr 0x14600a450 <col:14> 'struct cred *' lvalue Var 0x1449418c8 'new' 'struct cred *'

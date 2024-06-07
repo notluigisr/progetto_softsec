@@ -1,0 +1,27 @@
+`-FunctionDecl 0x128928750  line:1:13 io_task_refs_refill 'void (struct io_uring_task *)' static
+  |-ParmVarDecl 0x128928648 <col:33, col:55> col:55 used tctx 'struct io_uring_task *'
+  `-CompoundStmt 0x128941180 <line:2:1, line:8:1>
+    |-DeclStmt 0x128940c48 <line:3:2, col:66>
+    | `-VarDecl 0x128940a60 <col:2, col:45> col:15 used refill 'unsigned int' cinit
+    |   `-BinaryOperator 0x128940c28 <col:24, col:45> '<dependent type>' contains-errors '+'
+    |     |-UnaryOperator 0x128940bf0 <col:24, col:31> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     | `-ImplicitCastExpr 0x128940bd8 <col:25, col:31> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   `-RecoveryExpr 0x128940b00 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x128940ac8 <col:25> 'struct io_uring_task *' lvalue ParmVar 0x128928648 'tctx' 'struct io_uring_task *'
+    |     `-RecoveryExpr 0x128940c08 <col:45> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x128940e28 <line:5:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128940d70 <col:2> 'int ()' Function 0x128940cb8 'percpu_counter_add' 'int ()'
+    | |-UnaryOperator 0x128940df0 <col:21, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x128940dc8 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x128940d90 <col:22> 'struct io_uring_task *' lvalue ParmVar 0x128928648 'tctx' 'struct io_uring_task *'
+    | `-DeclRefExpr 0x128940e08 <col:38> 'unsigned int' contains-errors lvalue Var 0x128940a60 'refill' 'unsigned int'
+    |-CallExpr 0x1289410a0 <line:6:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128940f38 <col:2> 'int ()' Function 0x128940e80 'refcount_add' 'int ()'
+    | |-DeclRefExpr 0x128940f58 <col:15> 'unsigned int' contains-errors lvalue Var 0x128940a60 'refill' 'unsigned int'
+    | `-UnaryOperator 0x128941088 <col:23, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x128941040 <col:24, col:33> '<dependent type>' contains-errors lvalue ->usage
+    |     `-RecoveryExpr 0x128941020 <col:24> '<dependent type>' contains-errors lvalue
+    `-CompoundAssignOperator 0x128941150 <line:7:2, col:23> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      |-RecoveryExpr 0x128941108 <col:2, col:8> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x1289410d0 <col:2> 'struct io_uring_task *' lvalue ParmVar 0x128928648 'tctx' 'struct io_uring_task *'
+      `-DeclRefExpr 0x128941130 <col:23> 'unsigned int' contains-errors lvalue Var 0x128940a60 'refill' 'unsigned int'

@@ -1,0 +1,26 @@
+`-FunctionDecl 0x14f8ecc38  line:1:13 invalid __mark_sit_entry_dirty 'int (struct f2fs_sb_info *, unsigned int)' static
+  |-ParmVarDecl 0x14f8d3a68 <col:36, col:57> col:57 used sbi 'struct f2fs_sb_info *'
+  |-ParmVarDecl 0x14f8d3ae8 <col:62, col:75> col:75 used segno 'unsigned int'
+  `-CompoundStmt 0x14f8ed408 <line:2:1, line:11:1>
+    |-DeclStmt 0x14f8ed118 <line:3:2, col:37>
+    | |-RecordDecl 0x14f8eccf0 <col:2, col:9> col:9 struct sit_info
+    | `-VarDecl 0x14f8ece58 <col:2, col:36> col:19 used sit_i 'struct sit_info *' cinit
+    |   `-ImplicitCastExpr 0x14f8ed0e8 <col:27, col:36> 'struct sit_info *' <IntegralToPointer>
+    |     `-CallExpr 0x14f8ed0a8 <col:27, col:36> 'int'
+    |       |-ImplicitCastExpr 0x14f8ed090 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14f8ed020 <col:27> 'int ()' Function 0x14f8ecf68 'SIT_I' 'int ()'
+    |       `-ImplicitCastExpr 0x14f8ed0d0 <col:33> 'struct f2fs_sb_info *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14f8ed040 <col:33> 'struct f2fs_sb_info *' lvalue ParmVar 0x14f8d3a68 'sbi' 'struct f2fs_sb_info *'
+    |-IfStmt 0x14f8ed3a0 <line:5:2, line:8:2>
+    | |-UnaryOperator 0x14f8ed2e0 <line:5:6, col:61> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x14f8ed2b0 <col:7, col:61> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14f8ed210 <col:7> 'int ()' Function 0x14f8ed158 '__test_and_set_bit' 'int ()'
+    | |   |-DeclRefExpr 0x14f8ed230 <col:26> 'unsigned int' lvalue ParmVar 0x14f8d3ae8 'segno' 'unsigned int'
+    | |   `-RecoveryExpr 0x14f8ed288 <col:33, col:40> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14f8ed250 <col:33> 'struct sit_info *' lvalue Var 0x14f8ece58 'sit_i' 'struct sit_info *'
+    | `-CompoundStmt 0x14f8ed388 <col:64, line:8:2>
+    |   `-UnaryOperator 0x14f8ed358 <line:6:3, col:24> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |     `-RecoveryExpr 0x14f8ed330 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14f8ed2f8 <col:3> 'struct sit_info *' lvalue Var 0x14f8ece58 'sit_i' 'struct sit_info *'
+    `-ReturnStmt 0x14f8ed3f8 <line:10:2, col:9>
+      `-RecoveryExpr 0x14f8ed3d8 <col:9> '<dependent type>' contains-errors lvalue

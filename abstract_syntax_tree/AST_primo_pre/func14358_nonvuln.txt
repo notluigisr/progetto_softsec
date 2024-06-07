@@ -1,0 +1,27 @@
+`-FunctionDecl 0x15100e350  line:1:13 referenced delayed_mntput 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x15100e248 <col:28, col:48> col:48 unused 'struct work_struct *'
+  `-CompoundStmt 0x151027158 <line:2:1, line:8:1>
+    |-DeclStmt 0x151026b10 <line:3:2, col:63>
+    | |-RecordDecl 0x151026648 <col:2, col:9> col:9 struct llist_node
+    | `-VarDecl 0x1510267b8 <col:2, col:62> col:21 used node 'struct llist_node *' cinit
+    |   `-ImplicitCastExpr 0x151026ae0 <col:28, col:62> 'struct llist_node *' <IntegralToPointer>
+    |     `-CallExpr 0x151026ab8 <col:28, col:62> 'int'
+    |       |-ImplicitCastExpr 0x151026aa0 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x151026950 <col:28> 'int ()' Function 0x151026898 'llist_del_all' 'int ()'
+    |       `-UnaryOperator 0x151026a50 <col:42, col:43> 'void (*)(struct work_struct *)' prefix '&' cannot overflow
+    |         `-DeclRefExpr 0x1510269c8 <col:43> 'void (struct work_struct *)' Function 0x15100e350 'delayed_mntput' 'void (struct work_struct *)'
+    |-DeclStmt 0x151026db0 <line:4:2, col:21>
+    | |-RecordDecl 0x151026b28 <col:2, col:9> col:9 struct mount
+    | |-VarDecl 0x151026c98 <col:2, col:16> col:16 used m 'struct mount *'
+    | `-VarDecl 0x151026d28 <col:2, col:20> col:20 used t 'struct mount *'
+    |-CallExpr 0x151026fa0 <line:6:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x151026ea8 <col:2> 'int ()' Function 0x151026df0 'llist_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x151026ec8 <col:28> 'struct mount *' lvalue Var 0x151026c98 'm' 'struct mount *'
+    | |-DeclRefExpr 0x151026ee8 <col:31> 'struct mount *' lvalue Var 0x151026d28 't' 'struct mount *'
+    | |-DeclRefExpr 0x151026f08 <col:34> 'struct llist_node *' lvalue Var 0x1510267b8 'node' 'struct llist_node *'
+    | `-RecoveryExpr 0x151026f80 <col:40> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x151027118 <line:7:3, col:16> 'int'
+      |-ImplicitCastExpr 0x151027100 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x1510270c0 <col:3> 'int ()' Function 0x151027008 'cleanup_mnt' 'int ()'
+      `-ImplicitCastExpr 0x151027140 <col:15> 'struct mount *' <LValueToRValue>
+        `-DeclRefExpr 0x1510270e0 <col:15> 'struct mount *' lvalue Var 0x151026c98 'm' 'struct mount *'

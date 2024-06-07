@@ -1,0 +1,1 @@
+  const string name() override { return "STR"; }

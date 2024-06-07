@@ -1,0 +1,55 @@
+`-FunctionDecl 0x122140d18  line:1:12 check_tp_buffer_access 'int (struct bpf_verifier_env *, const struct bpf_reg_state *, int, int, int)' static
+  |-ParmVarDecl 0x122128648 <col:35, col:60> col:60 used env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x122140a28 <line:2:7, col:35> col:35 used reg 'const struct bpf_reg_state *'
+  |-ParmVarDecl 0x122140aa8 <line:3:7, col:11> col:11 used regno 'int'
+  |-ParmVarDecl 0x122140b28 <col:18, col:22> col:22 used off 'int'
+  |-ParmVarDecl 0x122140ba8 <col:27, col:31> col:31 used size 'int'
+  `-CompoundStmt 0x1221416a8 <line:4:1, line:15:1>
+    |-DeclStmt 0x122140eb0 <line:5:2, col:9>
+    | `-VarDecl 0x122140e48 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x122141258 <line:7:2, col:63> 'int' '='
+    | |-DeclRefExpr 0x122140ec8 <col:2> 'int' lvalue Var 0x122140e48 'err' 'int'
+    | `-CallExpr 0x122141178 <col:8, col:63> 'int'
+    |   |-ImplicitCastExpr 0x122141160 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x122141010 <col:8> 'int ()' Function 0x122140f58 '__check_buffer_access' 'int ()'
+    |   |-ImplicitCastExpr 0x1221411c8 <col:30> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x122141030 <col:30> 'struct bpf_verifier_env *' lvalue ParmVar 0x122128648 'env' 'struct bpf_verifier_env *'
+    |   |-ImplicitCastExpr 0x1221411e0 <col:35> 'char *' <ArrayToPointerDecay>
+    |   | `-StringLiteral 0x122141090 <col:35> 'char[4]' lvalue "STR"
+    |   |-ImplicitCastExpr 0x1221411f8 <col:42> 'const struct bpf_reg_state *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1221410b0 <col:42> 'const struct bpf_reg_state *' lvalue ParmVar 0x122140a28 'reg' 'const struct bpf_reg_state *'
+    |   |-ImplicitCastExpr 0x122141210 <col:47> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1221410d0 <col:47> 'int' lvalue ParmVar 0x122140aa8 'regno' 'int'
+    |   |-ImplicitCastExpr 0x122141228 <col:54> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1221410f0 <col:54> 'int' lvalue ParmVar 0x122140b28 'off' 'int'
+    |   `-ImplicitCastExpr 0x122141240 <col:59> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x122141110 <col:59> 'int' lvalue ParmVar 0x122140ba8 'size' 'int'
+    |-IfStmt 0x1221412f8 <line:8:2, line:9:10>
+    | |-ImplicitCastExpr 0x122141298 <line:8:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x122141278 <col:6> 'int' lvalue Var 0x122140e48 'err' 'int'
+    | `-ReturnStmt 0x1221412e8 <line:9:3, col:10>
+    |   `-ImplicitCastExpr 0x1221412d0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1221412b0 <col:10> 'int' lvalue Var 0x122140e48 'err' 'int'
+    |-IfStmt 0x122141658 <line:11:2, line:12:41>
+    | |-BinaryOperator 0x122141498 <line:11:6, col:35> 'int' contains-errors '>'
+    | | |-BinaryOperator 0x122141388 <col:6, col:12> 'int' '+'
+    | | | |-ImplicitCastExpr 0x122141358 <col:6> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x122141318 <col:6> 'int' lvalue ParmVar 0x122140b28 'off' 'int'
+    | | | `-ImplicitCastExpr 0x122141370 <col:12> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x122141338 <col:12> 'int' lvalue ParmVar 0x122140ba8 'size' 'int'
+    | | `-CXXDependentScopeMemberExpr 0x122141450 <col:19, col:35> '<dependent type>' contains-errors lvalue ->max_tp_access
+    | |   `-CXXDependentScopeMemberExpr 0x122141408 <col:19, col:30> '<dependent type>' contains-errors lvalue ->aux
+    | |     `-RecoveryExpr 0x1221413e0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1221413a8 <col:19> 'struct bpf_verifier_env *' lvalue ParmVar 0x122128648 'env' 'struct bpf_verifier_env *'
+    | `-BinaryOperator 0x122141638 <line:12:3, col:41> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x122141560 <col:3, col:19> '<dependent type>' contains-errors lvalue ->max_tp_access
+    |   | `-CXXDependentScopeMemberExpr 0x122141518 <col:3, col:14> '<dependent type>' contains-errors lvalue ->aux
+    |   |   `-RecoveryExpr 0x1221414f0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1221414b8 <col:3> 'struct bpf_verifier_env *' lvalue ParmVar 0x122128648 'env' 'struct bpf_verifier_env *'
+    |   `-BinaryOperator 0x122141618 <col:35, col:41> 'int' '+'
+    |     |-ImplicitCastExpr 0x1221415e8 <col:35> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1221415a8 <col:35> 'int' lvalue ParmVar 0x122140b28 'off' 'int'
+    |     `-ImplicitCastExpr 0x122141600 <col:41> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1221415c8 <col:41> 'int' lvalue ParmVar 0x122140ba8 'size' 'int'
+    `-ReturnStmt 0x122141698 <line:14:2, col:9>
+      `-IntegerLiteral 0x122141678 <col:9> 'int' 0

@@ -1,0 +1,43 @@
+`-FunctionDecl 0x13600de38  line:1:1 TEST_P 'int (int, int)'
+  |-ParmVarDecl 0x13600dd58 <col:8> col:8 DownstreamProtocolIntegrationTest 'int'
+  |-ParmVarDecl 0x13600dcd8 <line:2:8> col:8 OverflowDecoderBufferFromDecodeTrailersWithContinuedIteration 'int'
+  `-CompoundStmt 0x137008338 <col:71, line:37:1>
+    |-IfStmt 0x13600e1f8 <line:3:3, line:5:3>
+    | |-BinaryOperator 0x13600e1b0 <line:3:7, col:31> 'int' contains-errors '=='
+    | | |-CallExpr 0x13600e170 <col:7, col:26> 'int'
+    | | | `-ImplicitCastExpr 0x13600e158 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   `-DeclRefExpr 0x13600e060 <col:7> 'int ()' Function 0x13600dfa8 'downstreamProtocol' 'int ()'
+    | | `-RecoveryExpr 0x13600e190 <col:31> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13600e1e0 <col:55, line:5:3>
+    |   `-ReturnStmt 0x13600e1d0 <line:4:5>
+    |-DeclStmt 0x1360268f0 <line:16:3, line:20:75>
+    | `-VarDecl 0x136026810 <line:16:3, col:8> col:8 used encoder_decoder 'int' auto
+    |-DeclStmt 0x136026e10 <line:21:3, col:48>
+    | `-VarDecl 0x136026920 <col:3, col:43> col:8 used request_encoder 'int' auto cinit
+    |   `-UnaryOperator 0x136026df8 <col:26, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x136026dd0 <col:27, col:43> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x136026988 <col:27> 'int' lvalue Var 0x136026810 'encoder_decoder' 'int'
+    |-DeclStmt 0x136026ee0 <line:22:3, col:22>
+    | `-VarDecl 0x136026e40 <col:3, col:19> col:8 used response 'int' auto cinit
+    |   `-RecoveryExpr 0x136026ec0 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x136027170 <line:30:3, col:30> 'int'
+    | `-ImplicitCastExpr 0x136027158 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x136027138 <col:3> 'int ()' Function 0x136027080 'waitForNextUpstreamRequest' 'int ()'
+    |-CallExpr 0x136027310 <line:32:3, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136027270 <col:3> 'int ()' Function 0x1360271b8 'ASSERT_TRUE' 'int ()'
+    | `-CallExpr 0x1360272f0 <col:15, col:42> '<dependent type>' contains-errors
+    |   `-RecoveryExpr 0x1360272c8 <col:15, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x136027290 <col:15> 'int' contains-errors lvalue Var 0x136026e40 'response' 'int'
+    |-CallExpr 0x1360274d8 <line:35:3, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136027438 <col:3> 'int ()' Function 0x136027360 'EXPECT_TRUE' 'int ()'
+    | `-CallExpr 0x1360274b8 <col:15, col:34> '<dependent type>' contains-errors
+    |   `-RecoveryExpr 0x136027490 <col:15, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x136027458 <col:15> 'int' contains-errors lvalue Var 0x136026e40 'response' 'int'
+    `-CallExpr 0x137008308 <line:36:3, col:56> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1360275e0 <col:3> 'int ()' Function 0x136027528 'EXPECT_EQ' 'int ()'
+      |-StringLiteral 0x137008200 <col:13> 'char[4]' lvalue "STR"
+      `-CallExpr 0x1370082e8 <col:20, col:55> '<dependent type>' contains-errors
+        `-CXXDependentScopeMemberExpr 0x1370082a0 <col:20, col:40> '<dependent type>' contains-errors lvalue .getStatusValue
+          `-CallExpr 0x137008280 <col:20, col:38> '<dependent type>' contains-errors
+            `-RecoveryExpr 0x137008258 <col:20, col:30> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x137008220 <col:20> 'int' contains-errors lvalue Var 0x136026e40 'response' 'int'

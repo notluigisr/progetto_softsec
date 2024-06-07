@@ -1,0 +1,64 @@
+`-FunctionDecl 0x15780e218  line:1:14 invalid srp_create_user 'char *(char *, char **, char **, char *, char *, char *, int *, int)' static
+  |-ParmVarDecl 0x15780dcd8 <col:30, col:37> col:37 used user 'char *'
+  |-ParmVarDecl 0x15780dd88 <col:43, col:50> col:50 used srp_verifier 'char **'
+  |-ParmVarDecl 0x15780de08 <line:2:9, col:16> col:16 used srp_usersalt 'char **'
+  |-ParmVarDecl 0x15780de88 <col:29, col:35> col:35 used g 'char *'
+  |-ParmVarDecl 0x15780df08 <col:38, col:44> col:44 used N 'char *'
+  |-ParmVarDecl 0x15780df88 <line:3:9, col:15> col:15 used passout 'char *'
+  |-ParmVarDecl 0x15780e058 <col:24, col:29> col:29 invalid bio 'int *'
+  |-ParmVarDecl 0x15780e0d8 <col:34, col:38> col:38 verbose 'int'
+  `-CompoundStmt 0x157122668 <line:4:2, line:25:2>
+    |-DeclStmt 0x157827468 <line:5:3, col:22>
+    | `-VarDecl 0x157827400 <col:3, col:21> col:8 used password 'char[1024]'
+    |-DeclStmt 0x157827538 <line:7:2, col:19>
+    | `-VarDecl 0x157827498 <col:2, col:15> col:8 used gNid 'char *' cinit
+    |   `-RecoveryExpr 0x157827518 <col:15> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x157827608 <line:8:2, col:19>
+    | `-VarDecl 0x157827568 <col:2, col:15> col:8 used salt 'char *' cinit
+    |   `-RecoveryExpr 0x1578275e8 <col:15> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x157122600 <line:12:2, line:23:3>
+    | |-BinaryOperator 0x157827968 <line:12:6, col:50> 'int' contains-errors '>'
+    | | |-CallExpr 0x157827928 <col:6, col:47> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1578277c0 <col:6> 'int ()' Function 0x157827708 'password_callback' 'int ()'
+    | | | |-DeclRefExpr 0x1578277e0 <col:24> 'char[1024]' lvalue Var 0x157827400 'password' 'char[1024]'
+    | | | |-IntegerLiteral 0x157827800 <col:33> 'int' 1024
+    | | | |-IntegerLiteral 0x157827820 <col:38> 'int' 1
+    | | | `-UnaryOperator 0x157827910 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x1578278f0 <col:41> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x1578278b0 <col:50> 'int' 0
+    | `-CompoundStmt 0x1578283d0 <line:13:3, line:23:3>
+    |   `-IfStmt 0x1578283a0 <line:15:3, line:20:20> has_else
+    |     |-UnaryOperator 0x157828110 <line:15:7, col:77> 'int' contains-errors prefix '!' cannot overflow
+    |     | `-ParenExpr 0x1578280f0 <col:8, col:77> 'char *' contains-errors
+    |     |   `-BinaryOperator 0x1578280d0 <col:9, col:76> 'char *' contains-errors '='
+    |     |     |-DeclRefExpr 0x157827988 <col:9> 'char *' contains-errors lvalue Var 0x157827498 'gNid' 'char *'
+    |     |     `-ImplicitCastExpr 0x157827c90 <col:15, col:76> 'char *' contains-errors <IntegralToPointer>
+    |     |       `-CallExpr 0x157827bc8 <col:15, col:76> 'int' contains-errors
+    |     |         |-ImplicitCastExpr 0x157827bb0 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |     |         | `-DeclRefExpr 0x157827a88 <col:15> 'int ()' Function 0x1578279d0 'SRP_create_verifier' 'int ()'
+    |     |         |-ImplicitCastExpr 0x157827c18 <col:35> 'char *' <LValueToRValue>
+    |     |         | `-DeclRefExpr 0x157827aa8 <col:35> 'char *' lvalue ParmVar 0x15780dcd8 'user' 'char *'
+    |     |         |-ImplicitCastExpr 0x157827c30 <col:41> 'char *' <ArrayToPointerDecay>
+    |     |         | `-DeclRefExpr 0x157827ac8 <col:41> 'char[1024]' lvalue Var 0x157827400 'password' 'char[1024]'
+    |     |         |-UnaryOperator 0x157827b08 <col:51, col:52> 'char **' contains-errors prefix '&' cannot overflow
+    |     |         | `-DeclRefExpr 0x157827ae8 <col:52> 'char *' contains-errors lvalue Var 0x157827568 'salt' 'char *'
+    |     |         |-ImplicitCastExpr 0x157827c48 <col:58> 'char **' <LValueToRValue>
+    |     |         | `-DeclRefExpr 0x157827b20 <col:58> 'char **' lvalue ParmVar 0x15780dd88 'srp_verifier' 'char **'
+    |     |         |-ImplicitCastExpr 0x157827c60 <col:72> 'char *' <LValueToRValue>
+    |     |         | `-DeclRefExpr 0x157827b40 <col:72> 'char *' lvalue ParmVar 0x15780df08 'N' 'char *'
+    |     |         `-ImplicitCastExpr 0x157827c78 <col:75> 'char *' <LValueToRValue>
+    |     |           `-DeclRefExpr 0x157827b60 <col:75> 'char *' lvalue ParmVar 0x15780de88 'g' 'char *'
+    |     |-CompoundStmt 0x1578282e0 <line:16:4, line:18:4>
+    |     | `-CallExpr 0x1578282b0 <line:17:4, col:24> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x157828208 <col:4> 'int ()' Function 0x157828150 'BIO_printf' 'int ()'
+    |     |   |-RecoveryExpr 0x157828228 <col:15> '<dependent type>' contains-errors lvalue
+    |     |   `-StringLiteral 0x157828290 <col:19> 'char[4]' lvalue "STR"
+    |     `-BinaryOperator 0x157828380 <line:20:4, col:20> 'char *' contains-errors '='
+    |       |-UnaryOperator 0x157828330 <col:4, col:5> 'char *' lvalue prefix '*' cannot overflow
+    |       | `-ImplicitCastExpr 0x157828318 <col:5> 'char **' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x1578282f8 <col:5> 'char **' lvalue ParmVar 0x15780de08 'srp_usersalt' 'char **'
+    |       `-ImplicitCastExpr 0x157828368 <col:20> 'char *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x157828348 <col:20> 'char *' contains-errors lvalue Var 0x157827568 'salt' 'char *'
+    `-ReturnStmt 0x157122658 <line:24:2, col:9>
+      `-ImplicitCastExpr 0x157122640 <col:9> 'char *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x157122620 <col:9> 'char *' contains-errors lvalue Var 0x157827498 'gNid' 'char *'

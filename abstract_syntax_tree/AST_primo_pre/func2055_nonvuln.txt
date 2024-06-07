@@ -1,0 +1,17 @@
+`-FunctionDecl 0x130140de8  line:1:12 invalid rbd_img_fill_from_bvecs 'int (struct rbd_img_request *, struct ceph_file_extent *, int, struct bio_vec *)' static
+  |-ParmVarDecl 0x130128648 <col:36, col:60> col:60 used img_req 'struct rbd_img_request *'
+  |-ParmVarDecl 0x130140a28 <line:2:8, col:33> col:33 used img_extents 'struct ceph_file_extent *'
+  |-ParmVarDecl 0x130140ac0 <line:3:8, col:12> col:12 invalid num_img_extents 'int'
+  |-ParmVarDecl 0x130140c98 <line:4:8, col:24> col:24 used bvecs 'struct bio_vec *'
+  `-CompoundStmt 0x130141590 <line:5:1, line:14:1>
+    |-DeclStmt 0x130141390 <line:6:2, line:10:3>
+    | |-RecordDecl 0x130140eb0 <line:6:2, col:9> col:9 struct ceph_bvec_iter
+    | `-VarDecl 0x130140fa8 <col:2, col:24> col:24 invalid it 'struct ceph_bvec_iter'
+    `-ReturnStmt 0x130141580 <line:12:2, line:13:10>
+      `-CallExpr 0x130141540 <line:12:9, line:13:10> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x130141488 <line:12:9> 'int ()' Function 0x1301413d0 '__rbd_img_fill_from_bvecs' 'int ()'
+        |-DeclRefExpr 0x1301414a8 <col:35> 'struct rbd_img_request *' lvalue ParmVar 0x130128648 'img_req' 'struct rbd_img_request *'
+        |-DeclRefExpr 0x1301414c8 <col:44> 'struct ceph_file_extent *' lvalue ParmVar 0x130140a28 'img_extents' 'struct ceph_file_extent *'
+        |-RecoveryExpr 0x1301414e8 <col:57> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x130141528 <line:13:7, col:8> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x130141508 <col:8> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,85 @@
+`-FunctionDecl 0x1418274d8  line:1:1 invalid juniper_es_print 'int (int *, const struct pcap_pkthdr *, const char *)'
+  |-ParmVarDecl 0x14180dd28 <col:18, col:38> col:38 invalid ndo 'int *'
+  |-ParmVarDecl 0x14180e318 <line:2:18, col:44> col:44 used h 'const struct pcap_pkthdr *'
+  |-ParmVarDecl 0x14180e398 <col:47, col:70> col:70 used p 'const char *' register
+  `-CompoundStmt 0x14182c940 <line:3:1, line:68:1>
+    |-DeclStmt 0x141827718 <line:4:9, col:39>
+    | |-RecordDecl 0x141827598 <col:9, col:16> col:16 struct juniper_l2info_t
+    | `-VarDecl 0x141827698 <col:9, col:33> col:33 referenced invalid l2info 'struct juniper_l2info_t'
+    |-DeclStmt 0x141827c08 <line:5:9, line:12:10>
+    | `-RecordDecl 0x141827730 <line:5:9, line:12:9> line:5:16 invalid struct juniper_ipsec_header definition
+    |   |-FieldDecl 0x141827878 <line:6:13, col:31> col:21 invalid sa_index 'int[2]'
+    |   |-FieldDecl 0x1418278e0 <line:7:13, col:21> col:21 invalid ttl 'int'
+    |   |-FieldDecl 0x141827948 <line:8:13, col:21> col:21 invalid type 'int'
+    |   |-FieldDecl 0x141827a48 <line:9:13, col:26> col:21 invalid spi 'int[4]'
+    |   |-FieldDecl 0x141827b00 <line:10:13, col:29> col:21 invalid src_ip 'int[4]'
+    |   `-FieldDecl 0x141827bb8 <line:11:13, col:29> col:21 invalid dst_ip 'int[4]'
+    |-DeclStmt 0x141827d40 <line:14:9, col:46>
+    | `-VarDecl 0x141827cd8 <col:9, col:44> col:44 used ih 'const struct juniper_ipsec_header *'
+    |-BinaryOperator 0x141827e40 <line:16:9, col:26> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x141827da0 <col:9, col:16> '<dependent type>' contains-errors lvalue .pictype
+    | | `-RecoveryExpr 0x141827d78 <col:9> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x141827d58 <col:9> 'struct juniper_l2info_t' lvalue Var 0x141827698 'l2info' 'struct juniper_l2info_t'
+    | `-RecoveryExpr 0x141827e20 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x141828170 <line:17:9, line:18:27>
+    | |-BinaryOperator 0x1418280d8 <line:17:13, col:57> 'int' contains-errors '=='
+    | | |-CallExpr 0x141828078 <col:13, col:52> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x141827fc0 <col:13> 'int ()' Function 0x141827f08 'juniper_parse_header' 'int ()'
+    | | | |-RecoveryExpr 0x141827fe0 <col:34> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x141828000 <col:39> 'const char *' lvalue ParmVar 0x14180e398 'p' 'const char *'
+    | | | |-DeclRefExpr 0x141828020 <col:42> 'const struct pcap_pkthdr *' lvalue ParmVar 0x14180e318 'h' 'const struct pcap_pkthdr *'
+    | | | `-UnaryOperator 0x141828060 <col:45, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x141828040 <col:46> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x1418280b8 <col:57> 'int' 0
+    | `-ReturnStmt 0x141828160 <line:18:13, col:27>
+    |   `-CXXDependentScopeMemberExpr 0x141828118 <col:20, col:27> '<dependent type>' contains-errors lvalue .header_len
+    |     `-RecoveryExpr 0x1418280f8 <col:20> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x141828218 <line:20:9, col:19> 'const char *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x141828190 <col:9> 'const char *' lvalue ParmVar 0x14180e398 'p' 'const char *'
+    | `-CXXDependentScopeMemberExpr 0x1418281d0 <col:12, col:19> '<dependent type>' contains-errors lvalue .header_len
+    |   `-RecoveryExpr 0x1418281b0 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1418282f0 <line:21:9, col:51> 'const struct juniper_ipsec_header *' '='
+    | |-DeclRefExpr 0x141828248 <col:9> 'const struct juniper_ipsec_header *' lvalue Var 0x141827cd8 'ih' 'const struct juniper_ipsec_header *'
+    | `-CStyleCastExpr 0x1418282c8 <col:14, col:51> 'const struct juniper_ipsec_header *' <BitCast>
+    |   `-ImplicitCastExpr 0x1418282b0 <col:51> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x141828268 <col:51> 'const char *' lvalue ParmVar 0x14180e398 'p' 'const char *'
+    |-SwitchStmt 0x141828388 <line:23:9, line:40:9>
+    | |-ImplicitCastExpr 0x141828370 <line:23:17, col:21> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x141828348 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x141828310 <col:17> 'const struct juniper_ipsec_header *' lvalue Var 0x141827cd8 'ih' 'const struct juniper_ipsec_header *'
+    | `-CompoundStmt 0x14182b848 <col:27, line:40:9>
+    |   |-BreakStmt 0x14182b420 <line:28:13>
+    |   |-BreakStmt 0x14182b4b0 <line:34:13>
+    |   |-DefaultStmt 0x14182b7b0 <line:35:9, line:38:34>
+    |   | `-CallExpr 0x14182b788 <line:36:13, line:38:34> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14182b598 <line:36:13> 'int ()' Function 0x14182b4e0 'ND_PRINT' 'int ()'
+    |   |   `-ParenExpr 0x14182b768 <col:22, line:38:33> '<dependent type>' contains-errors
+    |   |     `-BinaryOperator 0x14182b748 <line:36:23, line:38:27> '<dependent type>' contains-errors ','
+    |   |       |-BinaryOperator 0x14182b6c0 <line:36:23, line:37:24> '<dependent type>' contains-errors ','
+    |   |       | |-BinaryOperator 0x14182b640 <line:36:23, col:28> 'char[4]' contains-errors ','
+    |   |       | | |-RecoveryExpr 0x14182b5b8 <col:23> '<dependent type>' contains-errors lvalue
+    |   |       | | `-StringLiteral 0x14182b620 <col:28> 'char[4]' lvalue "STR"
+    |   |       | `-RecoveryExpr 0x14182b698 <line:37:20, col:24> '<dependent type>' contains-errors lvalue
+    |   |       |   `-DeclRefExpr 0x14182b660 <col:20> 'const struct juniper_ipsec_header *' lvalue Var 0x141827cd8 'ih' 'const struct juniper_ipsec_header *'
+    |   |       `-CXXDependentScopeMemberExpr 0x14182b700 <line:38:20, col:27> '<dependent type>' contains-errors lvalue .length
+    |   |         `-RecoveryExpr 0x14182b6e0 <col:20> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x14182b838 <line:39:13, col:27>
+    |     `-CXXDependentScopeMemberExpr 0x14182b7f0 <col:20, col:27> '<dependent type>' contains-errors lvalue .header_len
+    |       `-RecoveryExpr 0x14182b7d0 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14182c6c8 <line:45:9, line:64:9>
+    | |-CXXDependentScopeMemberExpr 0x14182b948 <line:45:13, col:18> '<dependent type>' contains-errors lvalue ->ndo_eflag
+    | | `-RecoveryExpr 0x14182b928 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14182c6b0 <col:29, line:64:9>
+    |   `-IfStmt 0x14182c680 <line:46:13, line:63:13> has_else
+    |     |-RecoveryExpr 0x14182b990 <line:46:17, col:18> '_Bool' contains-errors
+    |     |-CompoundStmt 0x14182c308 <col:34, line:56:13>
+    |     `-CompoundStmt 0x14182c670 <col:20, line:63:13>
+    |-CallExpr 0x14182c890 <line:66:9, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14182c7c8 <col:9> 'int ()' Function 0x14182c710 'ip_print' 'int ()'
+    | |-RecoveryExpr 0x14182c7e8 <col:18> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x14182c808 <col:23> 'const char *' lvalue ParmVar 0x14180e398 'p' 'const char *'
+    | `-CXXDependentScopeMemberExpr 0x14182c848 <col:26, col:33> '<dependent type>' contains-errors lvalue .length
+    |   `-RecoveryExpr 0x14182c828 <col:26> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14182c930 <line:67:9, col:23>
+      `-CXXDependentScopeMemberExpr 0x14182c8e8 <col:16, col:23> '<dependent type>' contains-errors lvalue .header_len
+        `-RecoveryExpr 0x14182c8c8 <col:16> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,22 @@
+`-FunctionDecl 0x138928758  line:1:12 handle_nmi_window 'int (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x138928648 <col:30, col:47> col:47 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x138941100 <line:2:1, line:10:1>
+    |-CallExpr 0x138940c60 <line:3:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138940b80 <col:2> 'int ()' Function 0x138940ac8 'WARN_ON_ONCE' 'int ()'
+    | `-UnaryOperator 0x138940c48 <col:15, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x138940c30 <col:16> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x138940c10 <col:16> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x138940e28 <line:4:2, line:5:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138940d68 <line:4:2> 'int ()' Function 0x138940cb0 'vmcs_clear_bits' 'int ()'
+    | |-RecoveryExpr 0x138940de8 <col:18> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x138940e08 <line:5:4> '<dependent type>' contains-errors lvalue
+    |-UnaryOperator 0x138940f00 <line:6:2, col:15> '<dependent type>' contains-errors prefix '++' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x138940eb8 <col:4, col:15> '<dependent type>' contains-errors lvalue .nmi_window_exits
+    |   `-RecoveryExpr 0x138940e90 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138940e58 <col:4> 'struct kvm_vcpu *' lvalue ParmVar 0x138928648 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x1389410a0 <line:7:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138940ff8 <col:2> 'int ()' Function 0x138940f40 'kvm_make_request' 'int ()'
+    | |-RecoveryExpr 0x138941080 <col:19> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x138941030 <col:34> 'struct kvm_vcpu *' lvalue ParmVar 0x138928648 'vcpu' 'struct kvm_vcpu *'
+    `-ReturnStmt 0x1389410f0 <line:9:2, col:9>
+      `-IntegerLiteral 0x1389410d0 <col:9> 'int' 1

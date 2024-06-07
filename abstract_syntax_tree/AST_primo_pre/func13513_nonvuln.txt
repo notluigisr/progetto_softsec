@@ -1,0 +1,121 @@
+`-FunctionDecl 0x11e8087d8  line:1:5 invalid tcf_classify 'int (struct sk_buff *, const struct tcf_block *, const struct tcf_proto *, struct tcf_result *, int)'
+  |-ParmVarDecl 0x11e128648 <col:18, col:34> col:34 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x11e808228 <line:2:4, col:28> col:28 used block 'const struct tcf_block *'
+  |-ParmVarDecl 0x11e8083f8 <line:3:4, col:28> col:28 used tp 'const struct tcf_proto *'
+  |-ParmVarDecl 0x11e8085c8 <line:4:4, col:23> col:23 used res 'struct tcf_result *'
+  |-ParmVarDecl 0x11e808660 <col:28, col:33> col:33 invalid compat_mode 'int'
+  `-CompoundStmt 0x11f0089d0 <line:5:1, line:55:1>
+    |-DeclStmt 0x11e8089d8 <line:13:2, col:38>
+    | `-VarDecl 0x11e808938 <col:2, col:36> col:26 used orig_tp 'const struct tcf_proto *' cinit
+    |   `-ImplicitCastExpr 0x11e8089c0 <col:36> 'const struct tcf_proto *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11e8089a0 <col:36> 'const struct tcf_proto *' lvalue ParmVar 0x11e8083f8 'tp' 'const struct tcf_proto *'
+    |-DeclStmt 0x11e808bd8 <line:14:2, col:24>
+    | |-RecordDecl 0x11e8089f0 <col:2, col:9> col:9 struct tc_skb_ext
+    | `-VarDecl 0x11e808b58 <col:2, col:21> col:21 used ext 'struct tc_skb_ext *'
+    |-DeclStmt 0x11e808c70 <line:15:2, col:9>
+    | `-VarDecl 0x11e808c08 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x11e141100 <line:17:2, line:33:2>
+    | |-ImplicitCastExpr 0x11e808ca8 <line:17:6> 'const struct tcf_block *' <LValueToRValue>
+    | | `-DeclRefExpr 0x11e808c88 <col:6> 'const struct tcf_block *' lvalue ParmVar 0x11e808228 'block' 'const struct tcf_block *'
+    | `-CompoundStmt 0x11e1410e0 <col:13, line:33:2>
+    |   |-BinaryOperator 0x11e808f38 <line:18:3, col:37> 'struct tc_skb_ext *' contains-errors '='
+    |   | |-DeclRefExpr 0x11e808cc0 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-CallExpr 0x11e808f08 <col:9, col:37> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x11e808e40 <col:9> 'int ()' Function 0x11e808d88 'skb_ext_find' 'int ()'
+    |   |   |-DeclRefExpr 0x11e808e60 <col:22> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |   `-RecoveryExpr 0x11e808ee8 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x11e1410c0 <line:20:3, line:32:3>
+    |     |-BinaryOperator 0x11e808fd8 <line:20:7, col:19> 'int' contains-errors '&&'
+    |     | |-DeclRefExpr 0x11e808f58 <col:7> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |     | `-RecoveryExpr 0x11e808fb0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x11e808f78 <col:14> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |     `-CompoundStmt 0x11e141088 <col:26, line:32:3>
+    |       |-DeclStmt 0x11e8091e8 <line:21:4, col:28>
+    |       | |-RecordDecl 0x11e808ff8 <col:4, col:11> col:11 struct tcf_chain
+    |       | `-VarDecl 0x11e809168 <col:4, col:22> col:22 used fchain 'struct tcf_chain *'
+    |       |-BinaryOperator 0x11e140bd0 <line:23:4, col:51> 'struct tcf_chain *' contains-errors '='
+    |       | |-DeclRefExpr 0x11e140a00 <col:4> 'struct tcf_chain *' lvalue Var 0x11e809168 'fchain' 'struct tcf_chain *'
+    |       | `-CallExpr 0x11e140ba0 <col:13, col:51> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x11e140b00 <col:13> 'int ()' Function 0x11e140a48 'tcf_chain_lookup_rcu' 'int ()'
+    |       |   |-DeclRefExpr 0x11e140b20 <col:34> 'const struct tcf_block *' lvalue ParmVar 0x11e808228 'block' 'const struct tcf_block *'
+    |       |   `-RecoveryExpr 0x11e140b78 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    |       |     `-DeclRefExpr 0x11e140b40 <col:41> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |       |-IfStmt 0x11e140c88 <line:24:4, line:25:12>
+    |       | |-UnaryOperator 0x11e140c28 <line:24:8, col:9> 'int' prefix '!' cannot overflow
+    |       | | `-ImplicitCastExpr 0x11e140c10 <col:9> 'struct tcf_chain *' <LValueToRValue>
+    |       | |   `-DeclRefExpr 0x11e140bf0 <col:9> 'struct tcf_chain *' lvalue Var 0x11e809168 'fchain' 'struct tcf_chain *'
+    |       | `-ReturnStmt 0x11e140c78 <line:25:5, col:12>
+    |       |   `-RecoveryExpr 0x11e140c58 <col:12> '<dependent type>' contains-errors lvalue
+    |       |-CallExpr 0x11e140e30 <line:28:4, col:31> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x11e140d88 <col:4> 'int ()' Function 0x11e140cd0 'skb_ext_del' 'int ()'
+    |       | |-DeclRefExpr 0x11e140da8 <col:16> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |       | `-RecoveryExpr 0x11e140e10 <col:21> '<dependent type>' contains-errors lvalue
+    |       `-BinaryOperator 0x11e141008 <line:30:4, col:48> 'const struct tcf_proto *' contains-errors '='
+    |         |-DeclRefExpr 0x11e140e60 <col:4> 'const struct tcf_proto *' lvalue ParmVar 0x11e8083f8 'tp' 'const struct tcf_proto *'
+    |         `-CallExpr 0x11e140fe0 <col:9, col:48> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x11e140f60 <col:9> 'int ()' Function 0x11e140ea8 'rcu_dereference_bh' 'int ()'
+    |           `-RecoveryExpr 0x11e140fb8 <col:28, col:36> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x11e140f80 <col:28> 'struct tcf_chain *' lvalue Var 0x11e809168 'fchain' 'struct tcf_chain *'
+    |-BinaryOperator 0x11e141408 <line:35:2, line:36:29> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11e141120 <line:35:2> 'int' lvalue Var 0x11e808c08 'ret' 'int'
+    | `-CallExpr 0x11e1413b8 <col:8, line:36:29> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e141220 <line:35:8> 'int ()' Function 0x11e141168 '__tcf_classify' 'int ()'
+    |   |-DeclRefExpr 0x11e141240 <col:23> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-DeclRefExpr 0x11e141260 <col:28> 'const struct tcf_proto *' lvalue ParmVar 0x11e8083f8 'tp' 'const struct tcf_proto *'
+    |   |-DeclRefExpr 0x11e141280 <col:32> 'const struct tcf_proto *' lvalue Var 0x11e808938 'orig_tp' 'const struct tcf_proto *'
+    |   |-DeclRefExpr 0x11e1412a0 <col:41> 'struct tcf_result *' lvalue ParmVar 0x11e8085c8 'res' 'struct tcf_result *'
+    |   |-RecoveryExpr 0x11e1412c0 <col:46> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x11e1413a0 <line:36:9, col:10> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x11e141380 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11f008968 <line:39:2, line:51:2>
+    | |-BinaryOperator 0x11e141518 <line:39:6, col:30> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x11e1414d8 <col:6, col:13> 'int' contains-errors '=='
+    | | | |-DeclRefExpr 0x11e141428 <col:6> 'int' lvalue Var 0x11e808c08 'ret' 'int'
+    | | | `-RecoveryExpr 0x11e1414b8 <col:13> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x11e1414f8 <col:30> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11f008920 <col:51, line:51:2>
+    |   |-DeclStmt 0x11e1418e8 <line:40:3, col:40>
+    |   | |-RecordDecl 0x11e141538 <col:3, col:10> col:10 struct tc_skb_cb
+    |   | `-VarDecl 0x11e1416a8 <col:3, col:39> col:21 used cb 'struct tc_skb_cb *' cinit
+    |   |   `-ImplicitCastExpr 0x11e1418b8 <col:26, col:39> 'struct tc_skb_cb *' <IntegralToPointer>
+    |   |     `-CallExpr 0x11e141878 <col:26, col:39> 'int'
+    |   |       |-ImplicitCastExpr 0x11e141860 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x11e1417f0 <col:26> 'int ()' Function 0x11e141738 'tc_skb_cb' 'int ()'
+    |   |       `-ImplicitCastExpr 0x11e1418a0 <col:36> 'struct sk_buff *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x11e141810 <col:36> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-BinaryOperator 0x11f0082b0 <line:42:3, col:29> 'struct tc_skb_ext *' '='
+    |   | |-DeclRefExpr 0x11e141900 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-ImplicitCastExpr 0x11f008298 <col:9, col:29> 'struct tc_skb_ext *' <IntegralToPointer>
+    |   |   `-CallExpr 0x11f008258 <col:9, col:29> 'int'
+    |   |     |-ImplicitCastExpr 0x11f008240 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11f008200 <col:9> 'int ()' Function 0x11e141948 'tc_skb_ext_alloc' 'int ()'
+    |   |     `-ImplicitCastExpr 0x11f008280 <col:26> 'struct sk_buff *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11f008220 <col:26> 'struct sk_buff *' lvalue ParmVar 0x11e128648 'skb' 'struct sk_buff *'
+    |   |-BinaryOperator 0x11f008580 <line:46:3, col:18> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11f0084f8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11f0084c0 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-RecoveryExpr 0x11f008558 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11f008520 <col:14> 'struct tc_skb_cb *' lvalue Var 0x11e1416a8 'cb' 'struct tc_skb_cb *'
+    |   |-BinaryOperator 0x11f008660 <line:47:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11f0085d8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11f0085a0 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-RecoveryExpr 0x11f008638 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11f008600 <col:18> 'struct tc_skb_cb *' lvalue Var 0x11e1416a8 'cb' 'struct tc_skb_cb *'
+    |   |-BinaryOperator 0x11f008740 <line:48:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11f0086b8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11f008680 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-RecoveryExpr 0x11f008718 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11f0086e0 <col:23> 'struct tc_skb_cb *' lvalue Var 0x11e1416a8 'cb' 'struct tc_skb_cb *'
+    |   |-BinaryOperator 0x11f008820 <line:49:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11f008798 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11f008760 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |   | `-RecoveryExpr 0x11f0087f8 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11f0087c0 <col:23> 'struct tc_skb_cb *' lvalue Var 0x11e1416a8 'cb' 'struct tc_skb_cb *'
+    |   `-BinaryOperator 0x11f008900 <line:50:3, col:19> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x11f008878 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x11f008840 <col:3> 'struct tc_skb_ext *' lvalue Var 0x11e808b58 'ext' 'struct tc_skb_ext *'
+    |     `-RecoveryExpr 0x11f0088d8 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11f0088a0 <col:15> 'struct tc_skb_cb *' lvalue Var 0x11e1416a8 'cb' 'struct tc_skb_cb *'
+    `-ReturnStmt 0x11f0089c0 <line:53:2, col:9>
+      `-ImplicitCastExpr 0x11f0089a8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x11f008988 <col:9> 'int' lvalue Var 0x11e808c08 'ret' 'int'

@@ -1,0 +1,58 @@
+`-FunctionDecl 0x14780e358  line:1:12 bpf_prog_charge_memlock 'int (struct bpf_prog *)' static
+  |-ParmVarDecl 0x14780e248 <col:36, col:53> col:53 used prog 'struct bpf_prog *'
+  `-CompoundStmt 0x1478298b8 <line:2:1, line:16:1>
+    |-DeclStmt 0x147826a08 <line:3:2, col:47>
+    | |-RecordDecl 0x147826650 <col:2, col:9> col:9 struct user_struct
+    | `-VarDecl 0x1478267b8 <col:2, col:46> col:22 used user 'struct user_struct *' cinit
+    |   `-ImplicitCastExpr 0x1478269d8 <col:29, col:46> 'struct user_struct *' <IntegralToPointer>
+    |     `-CallExpr 0x1478269b8 <col:29, col:46> 'int'
+    |       `-ImplicitCastExpr 0x1478269a0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x147826950 <col:29> 'int ()' Function 0x147826898 'get_current_user' 'int ()'
+    |-DeclStmt 0x147826aa0 <line:4:2, col:29>
+    | `-VarDecl 0x147826a38 <col:2, col:16> col:16 used memlock_limit 'unsigned long'
+    |-BinaryOperator 0x147826cf8 <line:6:2, col:44> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x147826ab8 <col:2> 'unsigned long' lvalue Var 0x147826a38 'memlock_limit' 'unsigned long'
+    | `-BinaryOperator 0x147826cd8 <col:18, col:44> '<dependent type>' contains-errors '>>'
+    |   |-CallExpr 0x147826c90 <col:18, col:39> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x147826bb8 <col:18> 'int ()' Function 0x147826b00 'rlimit' 'int ()'
+    |   | `-RecoveryExpr 0x147826c70 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x147826cb8 <col:44> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147826ef0 <line:8:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147826df8 <col:2> 'int ()' Function 0x147826d40 'atomic_long_add' 'int ()'
+    | |-RecoveryExpr 0x147826e50 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x147826e18 <col:18> 'struct bpf_prog *' lvalue ParmVar 0x14780e248 'prog' 'struct bpf_prog *'
+    | `-UnaryOperator 0x147826ed8 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x147826eb0 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147826e78 <col:32> 'struct user_struct *' lvalue Var 0x1478267b8 'user' 'struct user_struct *'
+    |-IfStmt 0x147827550 <line:9:2, line:13:2>
+    | |-BinaryOperator 0x1478270e0 <line:9:6, col:43> 'int' contains-errors '>'
+    | | |-CallExpr 0x147827098 <col:6, col:39> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x147827000 <col:6> 'int ()' Function 0x147826f48 'atomic_long_read' 'int ()'
+    | | | `-UnaryOperator 0x147827080 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x147827058 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x147827020 <col:24> 'struct user_struct *' lvalue Var 0x1478267b8 'user' 'struct user_struct *'
+    | | `-DeclRefExpr 0x1478270c0 <col:43> 'unsigned long' lvalue Var 0x147826a38 'memlock_limit' 'unsigned long'
+    | `-CompoundStmt 0x147827528 <col:58, line:13:2>
+    |   |-CallExpr 0x1478272d8 <line:10:3, col:48> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1478271e0 <col:3> 'int ()' Function 0x147827128 'atomic_long_sub' 'int ()'
+    |   | |-RecoveryExpr 0x147827238 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x147827200 <col:19> 'struct bpf_prog *' lvalue ParmVar 0x14780e248 'prog' 'struct bpf_prog *'
+    |   | `-UnaryOperator 0x1478272c0 <col:32, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x147827298 <col:33, col:39> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x147827260 <col:33> 'struct user_struct *' lvalue Var 0x1478267b8 'user' 'struct user_struct *'
+    |   |-CallExpr 0x147827440 <line:11:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x147827428 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1478273e8 <col:3> 'int ()' Function 0x147827330 'free_uid' 'int ()'
+    |   | `-ImplicitCastExpr 0x147827468 <col:12> 'struct user_struct *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x147827408 <col:12> 'struct user_struct *' lvalue Var 0x1478267b8 'user' 'struct user_struct *'
+    |   `-ReturnStmt 0x147827518 <line:12:3, col:11>
+    |     `-UnaryOperator 0x147827500 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1478274e8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1478274c8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x147829868 <line:14:2, col:20> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x147829800 <col:2, col:13> '<dependent type>' contains-errors lvalue ->user
+    | | `-RecoveryExpr 0x1478275a8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x147827570 <col:2> 'struct bpf_prog *' lvalue ParmVar 0x14780e248 'prog' 'struct bpf_prog *'
+    | `-DeclRefExpr 0x147829848 <col:20> 'struct user_struct *' lvalue Var 0x1478267b8 'user' 'struct user_struct *'
+    `-ReturnStmt 0x1478298a8 <line:15:2, col:9>
+      `-IntegerLiteral 0x147829888 <col:9> 'int' 0

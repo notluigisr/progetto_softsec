@@ -1,0 +1,37 @@
+`-FunctionDecl 0x150026930  line:1:13 ptrace_hbptriggered 'void (struct perf_event *, struct perf_sample_data *, struct pt_regs *)' static
+  |-ParmVarDecl 0x15000e248 <col:33, col:52> col:52 used bp 'struct perf_event *'
+  |-ParmVarDecl 0x150026628 <line:2:10, col:35> col:35 data 'struct perf_sample_data *'
+  |-ParmVarDecl 0x1500267f8 <line:3:10, col:26> col:26 regs 'struct pt_regs *'
+  `-CompoundStmt 0x15002a070 <line:4:1, line:22:1>
+    |-DeclStmt 0x150026e38 <line:5:2, col:55>
+    | |-RecordDecl 0x150026a38 <col:2, col:9> col:9 struct arch_hw_breakpoint
+    | `-VarDecl 0x150026ba8 <col:2, col:54> col:29 used bkpt 'struct arch_hw_breakpoint *' cinit
+    |   `-ImplicitCastExpr 0x150026e08 <col:36, col:54> 'struct arch_hw_breakpoint *' <IntegralToPointer>
+    |     `-CallExpr 0x150026dc8 <col:36, col:54> 'int'
+    |       |-ImplicitCastExpr 0x150026db0 <col:36> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x150026d40 <col:36> 'int ()' Function 0x150026c88 'counter_arch_bp' 'int ()'
+    |       `-ImplicitCastExpr 0x150026df0 <col:52> 'struct perf_event *' <LValueToRValue>
+    |         `-DeclRefExpr 0x150026d60 <col:52> 'struct perf_event *' lvalue ParmVar 0x15000e248 'bp' 'struct perf_event *'
+    |-DeclStmt 0x150026ed0 <line:6:2, col:10>
+    | `-VarDecl 0x150026e68 <col:2, col:7> col:7 used num 'long'
+    |-DeclStmt 0x150026f68 <line:7:2, col:7>
+    | `-VarDecl 0x150026f00 <col:2, col:6> col:6 used i 'int'
+    |-ForStmt 0x150027228 <line:10:2, line:12:4>
+    | |-BinaryOperator 0x150026fc0 <line:10:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x150026f80 <col:7> 'int' lvalue Var 0x150026f00 'i' 'int'
+    | | `-IntegerLiteral 0x150026fa0 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x150027058 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x150026fe0 <col:14> 'int' lvalue Var 0x150026f00 'i' 'int'
+    | | `-RecoveryExpr 0x150027038 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x150027098 <col:37, col:39> 'int' prefix '++'
+    | | `-DeclRefExpr 0x150027078 <col:39> 'int' lvalue Var 0x150026f00 'i' 'int'
+    | `-IfStmt 0x150027208 <line:11:3, line:12:4>
+    |   |-RecoveryExpr 0x1500271e0 <line:11:7, col:39> '_Bool' contains-errors
+    |   `-BreakStmt 0x150027200 <line:12:4>
+    `-CallExpr 0x15002a038 <line:21:2, col:40> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x150029f08 <col:2> 'int ()' Function 0x150029e50 'force_sig_info' 'int ()'
+      |-RecoveryExpr 0x150029fc0 <col:17> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x15002a000 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x150029fe0 <col:27> '<dependent type>' contains-errors lvalue
+      `-RecoveryExpr 0x15002a018 <col:33> '<dependent type>' contains-errors lvalue

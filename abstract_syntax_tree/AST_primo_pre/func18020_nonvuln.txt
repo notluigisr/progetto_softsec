@@ -1,0 +1,22 @@
+`-FunctionDecl 0x15a141a18  line:1:16 invalid active_time_ms_show 'int (struct device *, struct device_attribute *, char *)' static
+  |-ParmVarDecl 0x15a128668 <col:36, col:51> col:51 used dev 'struct device *'
+  |-ParmVarDecl 0x15a141858 <line:2:8, col:33> col:33 attr 'struct device_attribute *'
+  |-ParmVarDecl 0x15a1418d8 <col:39, col:45> col:45 used buf 'char *'
+  `-CompoundStmt 0x15a1422a8 <line:3:1, line:9:1>
+    |-DeclStmt 0x15a141f08 <line:4:2, col:49>
+    | |-RecordDecl 0x15a141ad8 <col:2, col:9> col:9 struct wakeup_source
+    | `-VarDecl 0x15a141c48 <col:2, col:48> col:24 ws 'struct wakeup_source *' cinit
+    |   `-ImplicitCastExpr 0x15a141ed8 <col:29, col:48> 'struct wakeup_source *' <IntegralToPointer>
+    |     `-CallExpr 0x15a141e98 <col:29, col:48> 'int'
+    |       |-ImplicitCastExpr 0x15a141e80 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a141e10 <col:29> 'int ()' Function 0x15a141d58 'dev_get_drvdata' 'int ()'
+    |       `-ImplicitCastExpr 0x15a141ec0 <col:45> 'struct device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a141e30 <col:45> 'struct device *' lvalue ParmVar 0x15a128668 'dev' 'struct device *'
+    `-ReturnStmt 0x15a142298 <line:8:2, col:56>
+      `-CallExpr 0x15a142260 <col:9, col:56> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15a142000 <col:9> 'int ()' Function 0x15a141f48 'sysfs_emit' 'int ()'
+        |-DeclRefExpr 0x15a142020 <col:20> 'char *' lvalue ParmVar 0x15a1418d8 'buf' 'char *'
+        |-StringLiteral 0x15a142080 <col:25> 'char[4]' lvalue "STR"
+        `-CallExpr 0x15a142238 <col:32, col:55> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x15a142180 <col:32> 'int ()' Function 0x15a1420c8 'ktime_to_ms' 'int ()'
+          `-RecoveryExpr 0x15a142218 <col:44> '<dependent type>' contains-errors lvalue

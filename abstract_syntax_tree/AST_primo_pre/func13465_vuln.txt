@@ -1,0 +1,45 @@
+`-FunctionDecl 0x156921940  line:2:6 skb_complete_tx_timestamp 'void (struct sk_buff *, struct skb_shared_hwtstamps *)'
+  |-ParmVarDecl 0x156909448 <col:32, col:48> col:48 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x156921828 <line:3:11, col:40> col:40 used hwtstamps 'struct skb_shared_hwtstamps *'
+  `-CompoundStmt 0x1569227b8 <line:4:1, line:15:3>
+    |-DeclStmt 0x156921c88 <line:5:2, col:27>
+    | |-RecordDecl 0x156921a40 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x156921ba8 <col:2, col:25> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x156921c48 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156921c10 <col:20> 'struct sk_buff *' lvalue ParmVar 0x156909448 'skb' 'struct sk_buff *'
+    |-IfStmt 0x156921ee8 <line:7:2, line:8:3>
+    | |-UnaryOperator 0x156921ec0 <line:7:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x156921e90 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x156921dd0 <col:7> 'int ()' Function 0x156921d18 'skb_may_tx_timestamp' 'int ()'
+    | |   |-DeclRefExpr 0x156921df0 <col:28> 'struct sock *' contains-errors lvalue Var 0x156921ba8 'sk' 'struct sock *'
+    | |   `-RecoveryExpr 0x156921e70 <col:32> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x156921ed8 <line:8:3>
+    `-IfStmt 0x156922798 <line:11:2, line:15:2>
+      |-CallExpr 0x1569221a8 <line:11:6, col:48> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x156921fe8 <col:6> 'int ()' Function 0x156921f30 'likely' 'int ()'
+      | `-CallExpr 0x156922180 <col:13, col:47> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x1569220e8 <col:13> 'int ()' Function 0x156922030 'atomic_inc_not_zero' 'int ()'
+      |   `-UnaryOperator 0x156922168 <col:33, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x156922140 <col:34, col:38> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x156922108 <col:34> 'struct sock *' contains-errors lvalue Var 0x156921ba8 'sk' 'struct sock *'
+      `-CompoundStmt 0x156922770 <col:51, line:15:2>
+        |-BinaryOperator 0x1569223f0 <line:12:3, col:26> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x156922378 <col:3, col:21> '<dependent type>' contains-errors lvalue
+        | | `-CallExpr 0x156922338 <col:4, col:21> 'int'
+        | |   |-ImplicitCastExpr 0x156922320 <col:4> 'int (*)()' <FunctionToPointerDecay>
+        | |   | `-DeclRefExpr 0x1569222b0 <col:4> 'int ()' Function 0x1569221f8 'skb_hwtstamps' 'int ()'
+        | |   `-ImplicitCastExpr 0x156922360 <col:18> 'struct sk_buff *' <LValueToRValue>
+        | |     `-DeclRefExpr 0x1569222d0 <col:18> 'struct sk_buff *' lvalue ParmVar 0x156909448 'skb' 'struct sk_buff *'
+        | `-UnaryOperator 0x1569223d8 <col:25, col:26> 'struct skb_shared_hwtstamps' lvalue prefix '*' cannot overflow
+        |   `-ImplicitCastExpr 0x1569223c0 <col:26> 'struct skb_shared_hwtstamps *' <LValueToRValue>
+        |     `-DeclRefExpr 0x1569223a0 <col:26> 'struct skb_shared_hwtstamps *' lvalue ParmVar 0x156921828 'hwtstamps' 'struct skb_shared_hwtstamps *'
+        |-CallExpr 0x1569225c0 <line:13:3, col:54> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1569224f0 <col:3> 'int ()' Function 0x156922438 '__skb_complete_tx_timestamp' 'int ()'
+        | |-DeclRefExpr 0x156922510 <col:31> 'struct sk_buff *' lvalue ParmVar 0x156909448 'skb' 'struct sk_buff *'
+        | |-DeclRefExpr 0x156922530 <col:36> 'struct sock *' contains-errors lvalue Var 0x156921ba8 'sk' 'struct sock *'
+        | `-RecoveryExpr 0x1569225a0 <col:40> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x156922730 <line:14:3, col:14> 'int' contains-errors
+          |-ImplicitCastExpr 0x156922718 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x1569226d8 <col:3> 'int ()' Function 0x156922620 'sock_put' 'int ()'
+          `-ImplicitCastExpr 0x156922758 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x1569226f8 <col:12> 'struct sock *' contains-errors lvalue Var 0x156921ba8 'sk' 'struct sock *'

@@ -1,0 +1,43 @@
+`-FunctionDecl 0x12b8f3de8  line:1:1 invalid function_call 'int (int, int *, int)'
+  |-ParmVarDecl 0x12b8f3ad8 <col:15, col:19> col:19 used argc 'int'
+  |-ParmVarDecl 0x12b8f3c20 <col:25, col:36> col:31 invalid argv 'int *'
+  |-ParmVarDecl 0x12b8f3ca0 <col:39, col:45> col:45 invalid self 'int'
+  `-CompoundStmt 0x12c83c560 <line:2:1, line:53:1>
+    |-DeclStmt 0x12b8f3f90 <line:6:5, col:18>
+    | `-VarDecl 0x12b8f3f28 <col:5, col:12> col:12 used values 'void **'
+    |-DeclStmt 0x12b8f4028 <line:8:5, col:10>
+    | `-VarDecl 0x12b8f3fc0 <col:5, col:9> col:9 used i 'int'
+    |-IfStmt 0x12c83a570 <line:14:5, line:17:5>
+    | |-BinaryOperator 0x12c83a3e0 <line:14:8, col:35> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x12c83a218 <col:8> 'int' lvalue ParmVar 0x12b8f3ad8 'argc' 'int'
+    | | `-CallExpr 0x12c83a3b8 <col:16, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12c83a318 <col:16> 'int ()' Function 0x12c83a260 'RARRAY_LENINT' 'int ()'
+    | |   `-RecoveryExpr 0x12c83a398 <col:30> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12c83a560 <col:38, line:17:5>
+    |-ForStmt 0x12c83bd58 <line:24:5, line:39:5>
+    | |-BinaryOperator 0x12c83a830 <line:24:10, col:14> 'int' '='
+    | | |-DeclRefExpr 0x12c83a7f0 <col:10> 'int' lvalue Var 0x12b8f3fc0 'i' 'int'
+    | | `-IntegerLiteral 0x12c83a810 <col:14> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x12c83a8c0 <col:17, col:21> 'int' '<'
+    | | |-ImplicitCastExpr 0x12c83a890 <col:17> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12c83a850 <col:17> 'int' lvalue Var 0x12b8f3fc0 'i' 'int'
+    | | `-ImplicitCastExpr 0x12c83a8a8 <col:21> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c83a870 <col:21> 'int' lvalue ParmVar 0x12b8f3ad8 'argc' 'int'
+    | |-UnaryOperator 0x12c83a900 <col:27, col:28> 'int' postfix '++'
+    | | `-DeclRefExpr 0x12c83a8e0 <col:27> 'int' lvalue Var 0x12b8f3fc0 'i' 'int'
+    | `-CompoundStmt 0x12c83bd40 <col:32, line:39:5>
+    |   `-IfStmt 0x12c83bb30 <line:28:2, line:35:2>
+    |     |-RecoveryExpr 0x12c83aa18 <line:28:5, col:22> '_Bool' contains-errors
+    |     `-CompoundStmt 0x12c83bb18 <col:34, line:35:2>
+    |       `-IfStmt 0x12c83b9e8 <line:29:6, line:33:6> has_else
+    |         |-RecoveryExpr 0x12c83ab38 <line:29:9, col:18> '_Bool' contains-errors
+    |         |-CompoundStmt 0x12c83acb8 <col:21, line:31:6>
+    |         `-IfStmt 0x12c83b9c8 <col:13, line:33:6>
+    |           |-RecoveryExpr 0x12c83adc8 <line:31:16, col:40> '_Bool' contains-errors
+    |           `-CompoundStmt 0x12c83b9b8 <col:43, line:33:6>
+    `-CallExpr 0x12c83c370 <line:49:5, col:17> 'int'
+      |-ImplicitCastExpr 0x12c83c358 <col:5> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12c83c318 <col:5> 'int ()' Function 0x12c83c260 'xfree' 'int ()'
+      `-ImplicitCastExpr 0x12c83c398 <col:11> 'void **' <LValueToRValue>
+        `-DeclRefExpr 0x12c83c338 <col:11> 'void **' lvalue Var 0x12b8f3f28 'values' 'void **'

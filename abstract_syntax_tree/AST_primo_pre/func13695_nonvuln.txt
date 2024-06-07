@@ -1,0 +1,38 @@
+`-FunctionDecl 0x12c808358  line:1:12 invalid sr_read 'int (struct usbnet *, int, int, void *)' static
+  |-ParmVarDecl 0x12c128648 <col:20, col:35> col:35 used dev 'struct usbnet *'
+  |-ParmVarDecl 0x12c1286e0 <col:40, col:43> col:43 invalid reg 'int'
+  |-ParmVarDecl 0x12c128760 <col:48, col:52> col:52 invalid length 'int'
+  |-ParmVarDecl 0x12c808200 <col:60, col:66> col:66 used data 'void *'
+  `-CompoundStmt 0x12c808ae8 <line:2:1, line:10:1>
+    |-DeclStmt 0x12c8084a0 <line:3:2, col:9>
+    | `-VarDecl 0x12c808438 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x12c808830 <line:5:2, line:6:16> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12c8084b8 <line:5:2> 'int' lvalue Var 0x12c808438 'err' 'int'
+    | `-CallExpr 0x12c8087d8 <col:8, line:6:16> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c808630 <line:5:8> 'int ()' Function 0x12c808578 'usbnet_read_cmd' 'int ()'
+    |   |-DeclRefExpr 0x12c808650 <col:24> 'struct usbnet *' lvalue ParmVar 0x12c128648 'dev' 'struct usbnet *'
+    |   |-RecoveryExpr 0x12c808798 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x12c8087b8 <col:41> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x12c8086a0 <col:56> 'int' 0
+    |   |-RecoveryExpr 0x12c8086c0 <col:59> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x12c8086e0 <col:64> 'void *' lvalue ParmVar 0x12c808200 'data' 'void *'
+    |   `-RecoveryExpr 0x12c808700 <line:6:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c808a80 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x12c808968 <line:7:6, col:34> 'int' contains-errors '&&'
+    | | |-ParenExpr 0x12c8088b0 <col:6, col:20> 'int' contains-errors
+    | | | `-BinaryOperator 0x12c808890 <col:7, col:14> 'int' contains-errors '!='
+    | | |   |-DeclRefExpr 0x12c808850 <col:7> 'int' lvalue Var 0x12c808438 'err' 'int'
+    | | |   `-RecoveryExpr 0x12c808870 <col:14> '<dependent type>' contains-errors lvalue
+    | | `-ParenExpr 0x12c808948 <col:25, col:34> 'int'
+    | |   `-BinaryOperator 0x12c808928 <col:26, col:33> 'int' '>='
+    | |     |-ImplicitCastExpr 0x12c808910 <col:26> 'int' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x12c8088d0 <col:26> 'int' lvalue Var 0x12c808438 'err' 'int'
+    | |     `-IntegerLiteral 0x12c8088f0 <col:33> 'int' 0
+    | `-BinaryOperator 0x12c808a60 <line:8:3, col:10> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x12c808988 <col:3> 'int' lvalue Var 0x12c808438 'err' 'int'
+    |   `-UnaryOperator 0x12c808a48 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12c808a30 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12c808a10 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c808ad8 <line:9:2, col:9>
+      `-ImplicitCastExpr 0x12c808ac0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12c808aa0 <col:9> 'int' lvalue Var 0x12c808438 'err' 'int'

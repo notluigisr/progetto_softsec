@@ -1,0 +1,4 @@
+DeepImageStateAttribute::staticTypeName ()
+{
+    return "STR";
+}

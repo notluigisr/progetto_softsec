@@ -1,0 +1,14 @@
+`-FunctionDecl 0x14f928750  line:1:20 sem_getref_and_unlock 'void (struct sem_array *)' static inline
+  |-ParmVarDecl 0x14f928648 <col:42, col:60> col:60 used sma 'struct sem_array *'
+  `-CompoundStmt 0x14f940df8 <line:2:1, line:5:1>
+    |-CallExpr 0x14f940bf8 <line:3:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x14f940be0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f940b70 <col:2> 'int ()' Function 0x14f940ab8 'ipc_rcu_getref' 'int ()'
+    | `-ImplicitCastExpr 0x14f940c20 <col:17> 'struct sem_array *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f940b90 <col:17> 'struct sem_array *' lvalue ParmVar 0x14f928648 'sma' 'struct sem_array *'
+    `-CallExpr 0x14f940dd0 <line:4:2, col:29> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f940d18 <col:2> 'int ()' Function 0x14f940c60 'ipc_unlock' 'int ()'
+      `-UnaryOperator 0x14f940db8 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14f940d90 <col:14, col:21> '<dependent type>' contains-errors lvalue
+          `-ParenExpr 0x14f940d58 <col:14, col:18> 'struct sem_array *' lvalue
+            `-DeclRefExpr 0x14f940d38 <col:15> 'struct sem_array *' lvalue ParmVar 0x14f928648 'sma' 'struct sem_array *'

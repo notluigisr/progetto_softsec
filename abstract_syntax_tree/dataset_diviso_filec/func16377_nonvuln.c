@@ -1,0 +1,1 @@
+    const SlicePtr& operator*() { return deque_[index_]; }

@@ -1,0 +1,38 @@
+`-FunctionDecl 0x140928118  line:1:1 DEFUN 'int ()'
+  `-CompoundStmt 0x140941550 <line:7:1, line:27:1>
+    |-DeclStmt 0x140928288 <line:8:3, col:10>
+    | `-VarDecl 0x140928220 <col:3, col:7> col:7 used ret 'int'
+    |-DeclStmt 0x140928488 <line:9:3, col:18>
+    | |-RecordDecl 0x1409282a0 <col:3, col:10> col:10 struct bgp
+    | `-VarDecl 0x140928408 <col:3, col:15> col:15 used bgp 'struct bgp *'
+    |-DeclStmt 0x140940c88 <line:10:3, col:25>
+    | |-RecordDecl 0x1409284a0 <col:3, col:10> col:10 struct in_addr
+    | `-VarDecl 0x140928598 <col:3, col:18> col:18 invalid cluster 'struct in_addr'
+    |-BinaryOperator 0x140940dc0 <line:12:3, col:14> 'struct bgp *' contains-errors '='
+    | |-DeclRefExpr 0x140940ca0 <col:3> 'struct bgp *' lvalue Var 0x140928408 'bgp' 'struct bgp *'
+    | `-CXXDependentScopeMemberExpr 0x140940d78 <col:9, col:14> '<dependent type>' contains-errors lvalue ->index
+    |   `-RecoveryExpr 0x140940d58 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x140941338 <line:14:3, line:22:5>
+    | |-BinaryOperator 0x140940e58 <line:14:7, col:15> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x140940e38 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x140940df8 <col:15> 'int' 1
+    | `-CompoundStmt 0x140941320 <line:15:5, line:22:5>
+    |   `-IfStmt 0x140941300 <line:17:7, line:21:2>
+    |     |-UnaryOperator 0x140941040 <line:17:11, col:13> 'int' prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x140941028 <col:13> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x140941008 <col:13> 'int' lvalue Var 0x140928220 'ret' 'int'
+    |     `-CompoundStmt 0x1409412e0 <line:18:2, line:21:2>
+    |       |-CallExpr 0x140941260 <line:19:4, col:36> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x140941138 <col:4> 'int ()' Function 0x140941080 'vty_out' 'int ()'
+    |       | |-RecoveryExpr 0x140941220 <col:13> '<dependent type>' contains-errors lvalue
+    |       | |-StringLiteral 0x1409411b0 <col:18> 'char[4]' lvalue "STR"
+    |       | `-RecoveryExpr 0x140941240 <col:25> '<dependent type>' contains-errors lvalue
+    |       `-ReturnStmt 0x1409412d0 <line:20:4, col:11>
+    |         `-RecoveryExpr 0x1409412b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1409414c8 <line:24:3, col:28> 'int'
+    | |-ImplicitCastExpr 0x1409414b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x140941438 <col:3> 'int ()' Function 0x140941380 'bgp_cluster_id_unset' 'int ()'
+    | `-ImplicitCastExpr 0x1409414f0 <col:25> 'struct bgp *' <LValueToRValue>
+    |   `-DeclRefExpr 0x140941458 <col:25> 'struct bgp *' lvalue Var 0x140928408 'bgp' 'struct bgp *'
+    `-ReturnStmt 0x140941540 <line:26:3, col:10>
+      `-RecoveryExpr 0x140941520 <col:10> '<dependent type>' contains-errors lvalue

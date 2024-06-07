@@ -1,0 +1,46 @@
+`-FunctionDecl 0x13c140d98  line:1:12 cpu_to_allnodes_group 'int (int, const struct cpumask *, struct sched_group **, struct cpumask *)' static
+  |-ParmVarDecl 0x13c1280d8 <col:34, col:38> col:38 used cpu 'int'
+  |-ParmVarDecl 0x13c1286c8 <col:43, col:65> col:65 used cpu_map 'const struct cpumask *'
+  |-ParmVarDecl 0x13c140b28 <line:2:6, col:27> col:27 used sg 'struct sched_group **'
+  |-ParmVarDecl 0x13c140c48 <line:3:6, col:22> col:22 used nodemask 'struct cpumask *'
+  `-CompoundStmt 0x13c808800 <line:4:1, line:13:1>
+    |-DeclStmt 0x13c140f28 <line:5:2, col:11>
+    | `-VarDecl 0x13c140ec0 <col:2, col:6> col:6 used group 'int'
+    |-CallExpr 0x13c1413d0 <line:7:2, col:66> 'int'
+    | |-ImplicitCastExpr 0x13c1413b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c141070 <col:2> 'int ()' Function 0x13c140fb8 'cpumask_and' 'int ()'
+    | |-ImplicitCastExpr 0x13c141408 <col:14> 'struct cpumask *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13c141090 <col:14> 'struct cpumask *' lvalue ParmVar 0x13c140c48 'nodemask' 'struct cpumask *'
+    | |-CallExpr 0x13c141370 <col:24, col:56> 'int'
+    | | |-ImplicitCastExpr 0x13c141358 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13c141190 <col:24> 'int ()' Function 0x13c1410d8 'cpumask_of_node' 'int ()'
+    | | `-CallExpr 0x13c141318 <col:40, col:55> 'int'
+    | |   |-ImplicitCastExpr 0x13c141300 <col:40> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13c141290 <col:40> 'int ()' Function 0x13c1411d8 'cpu_to_node' 'int ()'
+    | |   `-ImplicitCastExpr 0x13c141340 <col:52> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c1412b0 <col:52> 'int' lvalue ParmVar 0x13c1280d8 'cpu' 'int'
+    | `-ImplicitCastExpr 0x13c141420 <col:59> 'const struct cpumask *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13c141398 <col:59> 'const struct cpumask *' lvalue ParmVar 0x13c1286c8 'cpu_map' 'const struct cpumask *'
+    |-BinaryOperator 0x13c1415d0 <line:8:2, col:32> 'int' '='
+    | |-DeclRefExpr 0x13c141438 <col:2> 'int' lvalue Var 0x13c140ec0 'group' 'int'
+    | `-CallExpr 0x13c141590 <col:10, col:32> 'int'
+    |   |-ImplicitCastExpr 0x13c141578 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13c141538 <col:10> 'int ()' Function 0x13c141480 'cpumask_first' 'int ()'
+    |   `-ImplicitCastExpr 0x13c1415b8 <col:24> 'struct cpumask *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13c141558 <col:24> 'struct cpumask *' lvalue ParmVar 0x13c140c48 'nodemask' 'struct cpumask *'
+    |-IfStmt 0x13c141990 <line:10:2, line:11:47>
+    | |-ImplicitCastExpr 0x13c141610 <line:10:6> 'struct sched_group **' <LValueToRValue>
+    | | `-DeclRefExpr 0x13c1415f0 <col:6> 'struct sched_group **' lvalue ParmVar 0x13c140b28 'sg' 'struct sched_group **'
+    | `-BinaryOperator 0x13c141970 <line:11:3, col:47> 'struct sched_group *' contains-errors '='
+    |   |-UnaryOperator 0x13c1418a8 <col:3, col:4> 'struct sched_group *' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x13c141890 <col:4> 'struct sched_group **' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13c141628 <col:4> 'struct sched_group **' lvalue ParmVar 0x13c140b28 'sg' 'struct sched_group **'
+    |   `-UnaryOperator 0x13c141958 <col:9, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x13c141910 <col:10, col:47> '<dependent type>' contains-errors lvalue .sg
+    |       `-CallExpr 0x13c1418e0 <col:10, col:45> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x13c141758 <col:10> 'int ()' Function 0x13c1416a0 'per_cpu' 'int ()'
+    |         |-RecoveryExpr 0x13c1418c0 <col:18> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13c141790 <col:40> 'int' lvalue Var 0x13c140ec0 'group' 'int'
+    `-ReturnStmt 0x13c1419e8 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x13c1419d0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13c1419b0 <col:9> 'int' lvalue Var 0x13c140ec0 'group' 'int'

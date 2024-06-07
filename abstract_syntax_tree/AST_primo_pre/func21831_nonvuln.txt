@@ -1,0 +1,51 @@
+`-FunctionDecl 0x133827400  line:1:6 invalid ring_buffer_empty 'int (struct ring_buffer *)'
+  |-ParmVarDecl 0x13380e268 <col:24, col:44> col:44 used buffer 'struct ring_buffer *'
+  `-CompoundStmt 0x132041ab0 <line:2:1, line:23:1>
+    |-DeclStmt 0x133827698 <line:3:2, col:40>
+    | |-RecordDecl 0x1338274b0 <col:2, col:9> col:9 struct ring_buffer_per_cpu
+    | `-VarDecl 0x133827618 <col:2, col:30> col:30 used cpu_buffer 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x133827730 <line:4:2, col:21>
+    | `-VarDecl 0x1338276c8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x1338277c8 <line:6:2, col:9>
+    | `-VarDecl 0x133827760 <col:2, col:6> col:6 used cpu 'int'
+    |-DeclStmt 0x133827860 <line:7:2, col:9>
+    | `-VarDecl 0x1338277f8 <col:2, col:6> col:6 used ret 'int'
+    |-CallExpr 0x133827a78 <line:10:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x133827a60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1338279d0 <col:2> 'int ()' Function 0x133827918 'for_each_buffer_cpu' 'int ()'
+    | |-ImplicitCastExpr 0x133827aa8 <col:22> 'struct ring_buffer *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1338279f0 <col:22> 'struct ring_buffer *' lvalue ParmVar 0x13380e268 'buffer' 'struct ring_buffer *'
+    | `-ImplicitCastExpr 0x133827ac0 <col:30> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x133827a10 <col:30> 'int' lvalue Var 0x133827760 'cpu' 'int'
+    |-CompoundStmt 0x132041a30 <col:35, line:20:2>
+    | |-BinaryOperator 0x133827bc8 <line:11:3, col:35> 'struct ring_buffer_per_cpu *' contains-errors '='
+    | | |-DeclRefExpr 0x133827ad8 <col:3> 'struct ring_buffer_per_cpu *' lvalue Var 0x133827618 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | | `-ArraySubscriptExpr 0x133827ba8 <col:16, col:35> '<dependent type>' contains-errors lvalue
+    | |   |-ImplicitCastExpr 0x133827b78 <col:16, col:24> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | `-RecoveryExpr 0x133827b30 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x133827af8 <col:16> 'struct ring_buffer *' lvalue ParmVar 0x13380e268 'buffer' 'struct ring_buffer *'
+    | |   `-ImplicitCastExpr 0x133827b90 <col:32> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x133827b58 <col:32> 'int' lvalue Var 0x133827760 'cpu' 'int'
+    | |-CallExpr 0x133827d20 <line:12:3, col:23> 'int'
+    | | |-ImplicitCastExpr 0x133827d08 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x133827cc8 <col:3> 'int ()' Function 0x133827c10 'local_irq_save' 'int ()'
+    | | `-ImplicitCastExpr 0x133827d48 <col:18> 'unsigned long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x133827ce8 <col:18> 'unsigned long' lvalue Var 0x1338276c8 'flags' 'unsigned long'
+    | |-BinaryOperator 0x133828070 <line:14:3, col:36> 'int' '='
+    | | |-DeclRefExpr 0x133827ed8 <col:3> 'int' lvalue Var 0x1338277f8 'ret' 'int'
+    | | `-CallExpr 0x133828030 <col:9, col:36> 'int'
+    | |   |-ImplicitCastExpr 0x133828018 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x133827fd8 <col:9> 'int ()' Function 0x133827f20 'rb_per_cpu_empty' 'int ()'
+    | |   `-ImplicitCastExpr 0x133828058 <col:26> 'struct ring_buffer_per_cpu *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x133827ff8 <col:26> 'struct ring_buffer_per_cpu *' lvalue Var 0x133827618 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | |-CallExpr 0x133828218 <line:15:3, col:38> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x133828170 <col:3> 'int ()' Function 0x1338280b8 'rb_reader_unlock' 'int ()'
+    | | |-DeclRefExpr 0x133828190 <col:20> 'struct ring_buffer_per_cpu *' lvalue Var 0x133827618 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | | `-RecoveryExpr 0x1338281f8 <col:32> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x133828380 <line:16:3, col:26> 'int'
+    |   |-ImplicitCastExpr 0x133828368 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x133828328 <col:3> 'int ()' Function 0x133828270 'local_irq_restore' 'int ()'
+    |   `-ImplicitCastExpr 0x1338283a8 <col:21> 'unsigned long' <LValueToRValue>
+    |     `-DeclRefExpr 0x133828348 <col:21> 'unsigned long' lvalue Var 0x1338276c8 'flags' 'unsigned long'
+    `-ReturnStmt 0x132041aa0 <line:22:2, col:9>
+      `-RecoveryExpr 0x132041a80 <col:9> '<dependent type>' contains-errors lvalue

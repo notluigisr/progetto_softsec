@@ -1,0 +1,90 @@
+`-FunctionDecl 0x12e941978  line:1:6 invalid timerqueue_add 'int (struct timerqueue_head *, struct timerqueue_node *)'
+  |-ParmVarDecl 0x12e928668 <col:21, col:45> col:45 used head 'struct timerqueue_head *'
+  |-ParmVarDecl 0x12e941858 <col:51, col:75> col:75 used node 'struct timerqueue_node *'
+  `-CompoundStmt 0x12e942f90 <line:2:1, line:26:1>
+    |-DeclStmt 0x12e941d38 <line:3:2, col:42>
+    | |-RecordDecl 0x12e941a30 <col:2, col:9> col:9 struct rb_node
+    | `-VarDecl 0x12e941bf8 <col:2, col:35> col:19 used p 'struct rb_node **' cinit
+    |   `-UnaryOperator 0x12e941d08 <col:23, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x12e941cc0 <col:24, col:35> '<dependent type>' contains-errors lvalue .rb_node
+    |       `-RecoveryExpr 0x12e941c98 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x12e941c60 <col:24> 'struct timerqueue_head *' lvalue ParmVar 0x12e928668 'head' 'struct timerqueue_head *'
+    |-DeclStmt 0x12e941e78 <line:4:2, col:31>
+    | `-VarDecl 0x12e941dd8 <col:2, col:27> col:18 used parent 'struct rb_node *' cinit
+    |   `-RecoveryExpr 0x12e941e58 <col:27> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12e941f80 <line:5:2, col:30>
+    | `-VarDecl 0x12e941f18 <col:2, col:27> col:27 used ptr 'struct timerqueue_node *'
+    |-CallExpr 0x12e9422c8 <line:8:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12e9420f0 <col:2> 'int ()' Function 0x12e942038 'WARN_ON_ONCE' 'int ()'
+    | `-UnaryOperator 0x12e9422b0 <col:15, col:41> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-CallExpr 0x12e942288 <col:16, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12e9421f0 <col:16> 'int ()' Function 0x12e942138 'RB_EMPTY_NODE' 'int ()'
+    |     `-UnaryOperator 0x12e942270 <col:30, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x12e942248 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x12e942210 <col:31> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'
+    |-WhileStmt 0x12e9428b0 <line:10:2, line:17:2>
+    | |-ImplicitCastExpr 0x12e942340 <line:10:9, col:10> 'struct rb_node *' contains-errors <LValueToRValue>
+    | | `-UnaryOperator 0x12e942328 <col:9, col:10> 'struct rb_node *' contains-errors lvalue prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x12e942310 <col:10> 'struct rb_node **' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x12e9422f0 <col:10> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    | `-CompoundStmt 0x12e942890 <col:13, line:17:2>
+    |   |-BinaryOperator 0x12e9423e0 <line:11:3, col:13> 'struct rb_node *' contains-errors '='
+    |   | |-DeclRefExpr 0x12e942358 <col:3> 'struct rb_node *' contains-errors lvalue Var 0x12e941dd8 'parent' 'struct rb_node *'
+    |   | `-ImplicitCastExpr 0x12e9423c8 <col:12, col:13> 'struct rb_node *' contains-errors <LValueToRValue>
+    |   |   `-UnaryOperator 0x12e9423b0 <col:12, col:13> 'struct rb_node *' contains-errors lvalue prefix '*' cannot overflow
+    |   |     `-ImplicitCastExpr 0x12e942398 <col:13> 'struct rb_node **' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x12e942378 <col:13> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |   `-IfStmt 0x12e942860 <line:13:3, line:16:15> has_else
+    |     |-BinaryOperator 0x12e942620 <line:13:7, col:28> 'int' contains-errors '<'
+    |     | |-RecoveryExpr 0x12e942598 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x12e942560 <col:7> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'
+    |     | `-RecoveryExpr 0x12e9425f8 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x12e9425c0 <col:23> 'struct timerqueue_node *' lvalue Var 0x12e941f18 'ptr' 'struct timerqueue_node *'
+    |     |-BinaryOperator 0x12e942728 <line:14:4, col:15> 'struct rb_node **' contains-errors '='
+    |     | |-DeclRefExpr 0x12e942640 <col:4> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |     | `-UnaryOperator 0x12e942710 <col:8, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     |   `-RecoveryExpr 0x12e9426e8 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |     |     `-ParenExpr 0x12e9426b0 <col:9, col:12> 'struct rb_node *' contains-errors lvalue
+    |     |       `-UnaryOperator 0x12e942698 <col:10, col:11> 'struct rb_node *' contains-errors lvalue prefix '*' cannot overflow
+    |     |         `-ImplicitCastExpr 0x12e942680 <col:11> 'struct rb_node **' contains-errors <LValueToRValue>
+    |     |           `-DeclRefExpr 0x12e942660 <col:11> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |     `-BinaryOperator 0x12e942840 <line:16:4, col:15> 'struct rb_node **' contains-errors '='
+    |       |-DeclRefExpr 0x12e942748 <col:4> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |       `-UnaryOperator 0x12e942828 <col:8, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x12e942800 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |           `-ParenExpr 0x12e9427b8 <col:9, col:12> 'struct rb_node *' contains-errors lvalue
+    |             `-UnaryOperator 0x12e9427a0 <col:10, col:11> 'struct rb_node *' contains-errors lvalue prefix '*' cannot overflow
+    |               `-ImplicitCastExpr 0x12e942788 <col:11> 'struct rb_node **' contains-errors <LValueToRValue>
+    |                 `-DeclRefExpr 0x12e942768 <col:11> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |-CallExpr 0x12e942a88 <line:18:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12e9429b0 <col:2> 'int ()' Function 0x12e9428f8 'rb_link_node' 'int ()'
+    | |-UnaryOperator 0x12e942a30 <col:15, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12e942a08 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12e9429d0 <col:16> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'
+    | |-DeclRefExpr 0x12e942a48 <col:28> 'struct rb_node *' contains-errors lvalue Var 0x12e941dd8 'parent' 'struct rb_node *'
+    | `-DeclRefExpr 0x12e942a68 <col:36> 'struct rb_node **' contains-errors lvalue Var 0x12e941bf8 'p' 'struct rb_node **'
+    |-CallExpr 0x12e942cb0 <line:19:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12e942ba0 <col:2> 'int ()' Function 0x12e942ae8 'rb_insert_color' 'int ()'
+    | |-UnaryOperator 0x12e942c20 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12e942bf8 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12e942bc0 <col:19> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'
+    | `-UnaryOperator 0x12e942c98 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12e942c70 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12e942c38 <col:32> 'struct timerqueue_head *' lvalue ParmVar 0x12e928668 'head' 'struct timerqueue_head *'
+    `-IfStmt 0x12e942f70 <line:21:2, line:24:2>
+      |-BinaryOperator 0x12e942e98 <line:21:6, col:49> 'int' contains-errors '||'
+      | |-UnaryOperator 0x12e942d58 <col:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | | `-ImplicitCastExpr 0x12e942d40 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+      | |   `-RecoveryExpr 0x12e942d18 <col:7, col:13> '<dependent type>' contains-errors lvalue
+      | |     `-DeclRefExpr 0x12e942ce0 <col:7> 'struct timerqueue_head *' lvalue ParmVar 0x12e928668 'head' 'struct timerqueue_head *'
+      | `-BinaryOperator 0x12e942e78 <col:21, col:49> 'int' contains-errors '<'
+      |   |-RecoveryExpr 0x12e942da8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x12e942d70 <col:21> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'
+      |   `-CXXDependentScopeMemberExpr 0x12e942e30 <col:37, col:49> '<dependent type>' contains-errors lvalue ->expires
+      |     `-RecoveryExpr 0x12e942e08 <col:37, col:43> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x12e942dd0 <col:37> 'struct timerqueue_head *' lvalue ParmVar 0x12e928668 'head' 'struct timerqueue_head *'
+      `-CompoundStmt 0x12e942f58 <col:58, line:24:2>
+        `-BinaryOperator 0x12e942f38 <line:22:3, col:16> '<dependent type>' contains-errors '='
+          |-RecoveryExpr 0x12e942ef0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x12e942eb8 <col:3> 'struct timerqueue_head *' lvalue ParmVar 0x12e928668 'head' 'struct timerqueue_head *'
+          `-DeclRefExpr 0x12e942f18 <col:16> 'struct timerqueue_node *' lvalue ParmVar 0x12e941858 'node' 'struct timerqueue_node *'

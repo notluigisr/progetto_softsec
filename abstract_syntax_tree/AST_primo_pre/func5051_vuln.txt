@@ -1,0 +1,41 @@
+`-FunctionDecl 0x11f128318  line:1:5 invalid BIO_vprintf 'int (int *, const char *, int)'
+  |-ParmVarDecl 0x11f128128 <col:17, col:22> col:22 invalid bio 'int *'
+  |-ParmVarDecl 0x11f1281a8 <col:27, col:39> col:39 used format 'const char *'
+  |-ParmVarDecl 0x11f128228 <col:47, col:55> col:55 invalid args 'int'
+  `-CompoundStmt 0x11f142248 <line:2:1, line:20:1>
+    |-DeclStmt 0x11f128458 <line:3:5, col:12>
+    | `-VarDecl 0x11f1283f0 <col:5, col:9> col:9 used ret 'int'
+    |-DeclStmt 0x11f1285d8 <line:5:5, col:27>
+    | `-VarDecl 0x11f128570 <col:5, col:26> col:10 used hugebuf 'char[2048]'
+    |-DeclStmt 0x11f1286a8 <line:6:5, col:29>
+    | `-VarDecl 0x11f128608 <col:5, col:22> col:11 used hugebufp 'char *' cinit
+    |   `-ImplicitCastExpr 0x11f128690 <col:22> 'char *' <ArrayToPointerDecay>
+    |     `-DeclRefExpr 0x11f128670 <col:22> 'char[2048]' lvalue Var 0x11f128570 'hugebuf' 'char[2048]'
+    |-RecoveryExpr 0x11f141820 <line:7:5, col:40> '<dependent type>' contains-errors lvalue
+    | |-UnaryExprOrTypeTraitExpr 0x11f141800 <col:5, col:12> 'unsigned long' contains-errors sizeof
+    | | `-RecoveryExpr 0x11f1287e0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-UnaryExprOrTypeTraitExpr 0x11f128738 <col:26, col:40> 'unsigned long' sizeof
+    |   `-ParenExpr 0x11f128718 <col:32, col:40> 'char[2048]' lvalue
+    |     `-DeclRefExpr 0x11f1286f8 <col:33> 'char[2048]' lvalue Var 0x11f128570 'hugebuf' 'char[2048]' non_odr_use_unevaluated
+    |-DeclStmt 0x11f141908 <line:8:5, col:24>
+    | `-VarDecl 0x11f141868 <col:5, col:20> col:11 used dynbuf 'char *' cinit
+    |   `-RecoveryExpr 0x11f1418e8 <col:20> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x11f1419a0 <line:9:5, col:16>
+    | `-VarDecl 0x11f141938 <col:5, col:9> col:9 used ignored 'int'
+    |-BinaryOperator 0x11f141a30 <line:11:5, col:14> 'char *' contains-errors '='
+    | |-DeclRefExpr 0x11f1419b8 <col:5> 'char *' contains-errors lvalue Var 0x11f141868 'dynbuf' 'char *'
+    | `-RecoveryExpr 0x11f141a10 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11f1421b0 <line:13:5, line:18:5> has_else
+    | |-ImplicitCastExpr 0x11f141d88 <line:13:9> 'char *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x11f141d68 <col:9> 'char *' contains-errors lvalue Var 0x11f141868 'dynbuf' 'char *'
+    | |-CompoundStmt 0x11f1420d8 <col:17, line:16:5>
+    | | `-CallExpr 0x11f142098 <line:15:9, col:28> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x11f142080 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x11f142010 <col:9> 'int ()' Function 0x11f141f58 'OPENSSL_free' 'int ()'
+    | |   `-ImplicitCastExpr 0x11f1420c0 <col:22> 'char *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x11f142030 <col:22> 'char *' contains-errors lvalue Var 0x11f141868 'dynbuf' 'char *'
+    | `-CompoundStmt 0x11f1421a0 <line:16:12, line:18:5>
+    `-ReturnStmt 0x11f142238 <line:19:5, col:16>
+      `-ImplicitCastExpr 0x11f142220 <col:12, col:16> 'int' <LValueToRValue>
+        `-ParenExpr 0x11f142200 <col:12, col:16> 'int' lvalue
+          `-DeclRefExpr 0x11f1421e0 <col:13> 'int' lvalue Var 0x11f1283f0 'ret' 'int'

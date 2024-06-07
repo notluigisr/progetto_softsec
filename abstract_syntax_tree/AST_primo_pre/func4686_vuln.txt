@@ -1,0 +1,55 @@
+`-FunctionDecl 0x11c9281a0  line:1:13 nfs4_open_confirm_release 'void (void *)' static
+  |-ParmVarDecl 0x11c9280d8 <col:39, col:45> col:45 used calldata 'void *'
+  `-CompoundStmt 0x11c941f70 <line:2:1, line:17:1>
+    |-DeclStmt 0x11c9284d8 <line:3:2, col:39>
+    | |-RecordDecl 0x11c928298 <col:2, col:9> col:9 struct nfs4_opendata
+    | `-VarDecl 0x11c928408 <col:2, col:31> col:24 used data 'struct nfs4_opendata *' cinit
+    |   `-ImplicitCastExpr 0x11c9284a8 <col:31> 'struct nfs4_opendata *' <BitCast>
+    |     `-ImplicitCastExpr 0x11c928490 <col:31> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11c928470 <col:31> 'void *' lvalue ParmVar 0x11c9280d8 'calldata' 'void *'
+    |-DeclStmt 0x11c928728 <line:4:2, col:33>
+    | |-RecordDecl 0x11c9284f0 <col:2, col:9> col:9 struct nfs4_state
+    | `-VarDecl 0x11c928658 <col:2, col:29> col:21 used state 'struct nfs4_state *' cinit
+    |   `-RecoveryExpr 0x11c9286f0 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11c941690 <line:7:2, line:8:8>
+    | |-BinaryOperator 0x11c941608 <line:7:6, col:25> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x11c9415c0 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x11c928740 <col:6> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'
+    | | `-IntegerLiteral 0x11c9415e8 <col:25> 'int' 0
+    | `-GotoStmt 0x11c941678 <line:8:3, col:8> 'out_free' 0x11c941628
+    |-IfStmt 0x11c941758 <line:10:2, line:11:8>
+    | |-UnaryOperator 0x11c941728 <line:10:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11c941710 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x11c9416e8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11c9416b0 <col:7> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'
+    | `-GotoStmt 0x11c941740 <line:11:3, col:8> 'out_free' 0x11c941628
+    |-BinaryOperator 0x11c941990 <line:12:2, col:42> 'struct nfs4_state *' contains-errors '='
+    | |-DeclRefExpr 0x11c941778 <col:2> 'struct nfs4_state *' contains-errors lvalue Var 0x11c928658 'state' 'struct nfs4_state *'
+    | `-ImplicitCastExpr 0x11c941978 <col:10, col:42> 'struct nfs4_state *' <IntegralToPointer>
+    |   `-CallExpr 0x11c941938 <col:10, col:42> 'int'
+    |     |-ImplicitCastExpr 0x11c941920 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11c9418b0 <col:10> 'int ()' Function 0x11c9417f8 'nfs4_opendata_to_nfs4_state' 'int ()'
+    |     `-ImplicitCastExpr 0x11c941960 <col:38> 'struct nfs4_opendata *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11c9418d0 <col:38> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'
+    |-IfStmt 0x11c941db8 <line:13:2, line:14:62>
+    | |-UnaryOperator 0x11c941b28 <line:13:6, col:19> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x11c941ae8 <col:7, col:19> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x11c941ad0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x11c941a90 <col:7> 'int ()' Function 0x11c9419d8 'IS_ERR' 'int ()'
+    | |   `-ImplicitCastExpr 0x11c941b10 <col:14> 'struct nfs4_state *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x11c941ab0 <col:14> 'struct nfs4_state *' contains-errors lvalue Var 0x11c928658 'state' 'struct nfs4_state *'
+    | `-CallExpr 0x11c941d80 <line:14:3, col:62> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11c941c20 <col:3> 'int ()' Function 0x11c941b68 'nfs4_close_state' 'int ()'
+    |   |-UnaryOperator 0x11c941ca0 <col:20, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x11c941c78 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11c941c40 <col:21> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'
+    |   |-DeclRefExpr 0x11c941cb8 <col:33> 'struct nfs4_state *' contains-errors lvalue Var 0x11c928658 'state' 'struct nfs4_state *'
+    |   `-CXXDependentScopeMemberExpr 0x11c941d38 <col:40, col:52> '<dependent type>' contains-errors lvalue .open_flags
+    |     `-RecoveryExpr 0x11c941d10 <col:40, col:46> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11c941cd8 <col:40> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'
+    `-LabelStmt 0x11c941f50 <line:15:1, line:16:24> 'out_free'
+      `-CallExpr 0x11c941f10 <col:2, col:24> 'int'
+        |-ImplicitCastExpr 0x11c941ef8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x11c941eb8 <col:2> 'int ()' Function 0x11c941e00 'nfs4_opendata_put' 'int ()'
+        `-ImplicitCastExpr 0x11c941f38 <col:20> 'struct nfs4_opendata *' <LValueToRValue>
+          `-DeclRefExpr 0x11c941ed8 <col:20> 'struct nfs4_opendata *' lvalue Var 0x11c928408 'data' 'struct nfs4_opendata *'

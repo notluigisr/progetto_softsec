@@ -1,0 +1,130 @@
+`-FunctionDecl 0x1551283a8  line:1:14 invalid etm_setup_aux 'void *(int, void **, int, int)' static
+  |-ParmVarDecl 0x1551280d8 <col:28, col:32> col:32 used event_cpu 'int'
+  |-ParmVarDecl 0x155128188 <col:43, col:50> col:50 used pages 'void **'
+  |-ParmVarDecl 0x155128208 <line:2:7, col:11> col:11 used nr_pages 'int'
+  |-ParmVarDecl 0x1551282a0 <col:21, col:26> col:26 invalid overwrite 'int'
+  `-CompoundStmt 0x1558098b0 <line:3:1, line:53:1>
+    |-DeclStmt 0x1551284f0 <line:4:2, col:9>
+    | `-VarDecl 0x155128488 <col:2, col:6> col:6 used cpu 'int'
+    |-DeclStmt 0x155128708 <line:6:2, col:31>
+    | |-RecordDecl 0x155128520 <col:2, col:9> col:9 struct coresight_device
+    | `-VarDecl 0x155128688 <col:2, col:27> col:27 used sink 'struct coresight_device *'
+    |-DeclStmt 0x155141940 <line:7:2, col:42>
+    | |-RecordDecl 0x155128720 <col:2, col:9> col:9 struct etm_event_data
+    | `-VarDecl 0x155141888 <col:2, col:38> col:25 used event_data 'struct etm_event_data *' cinit
+    |   `-RecoveryExpr 0x155141908 <col:38> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x155141fd0 <line:9:2, col:41> 'struct etm_event_data *' contains-errors '='
+    | |-DeclRefExpr 0x155141958 <col:2> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | `-ImplicitCastExpr 0x155141b98 <col:15, col:41> 'struct etm_event_data *' <IntegralToPointer>
+    |   `-CallExpr 0x155141b58 <col:15, col:41> 'int'
+    |     |-ImplicitCastExpr 0x155141b40 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x155141ad0 <col:15> 'int ()' Function 0x155141a18 'alloc_event_data' 'int ()'
+    |     `-ImplicitCastExpr 0x155141b80 <col:32> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x155141af0 <col:32> 'int' lvalue ParmVar 0x1551280d8 'event_cpu' 'int'
+    |-IfStmt 0x155142088 <line:10:2, line:11:10>
+    | |-UnaryOperator 0x155142028 <line:10:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x155142010 <col:7> 'struct etm_event_data *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x155141ff0 <col:7> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | `-ReturnStmt 0x155142078 <line:11:3, col:10>
+    |   `-RecoveryExpr 0x155142058 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x155142270 <line:14:2, col:40> 'struct coresight_device *' contains-errors '='
+    | |-DeclRefExpr 0x1551420a8 <col:2> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    | `-CallExpr 0x155142248 <col:9, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1551421a8 <col:9> 'int ()' Function 0x1551420f0 'coresight_get_enabled_sink' 'int ()'
+    |   `-RecoveryExpr 0x155142228 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155142348 <line:15:2, line:16:8>
+    | |-UnaryOperator 0x1551422c8 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1551422b0 <col:7> 'struct coresight_device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x155142290 <col:7> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    | `-GotoStmt 0x155142330 <line:16:3, col:8> 'err' 0x1551422e0
+    |-CallExpr 0x1551425e8 <line:18:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155142448 <col:2> 'int ()' Function 0x155142390 'INIT_WORK' 'int ()'
+    | |-UnaryOperator 0x1551424c8 <col:12, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1551424a0 <col:13, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x155142468 <col:13> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | `-RecoveryExpr 0x1551425c8 <col:31> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x155808220 <line:23:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155142770 <col:2> 'int ()' Function 0x1551426b8 'for_each_cpu' 'int ()'
+    | |-DeclRefExpr 0x155142790 <col:15> 'int' lvalue Var 0x155128488 'cpu' 'int'
+    | `-RecoveryExpr 0x155808200 <col:20> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x155808ad0 <col:26, line:34:2>
+    | |-DeclStmt 0x155808340 <line:24:3, col:33>
+    | | `-VarDecl 0x1558082d8 <col:3, col:28> col:28 used csdev 'struct coresight_device *'
+    | |-BinaryOperator 0x155808550 <line:26:3, col:33> 'struct coresight_device *' contains-errors '='
+    | | |-DeclRefExpr 0x155808358 <col:3> 'struct coresight_device *' lvalue Var 0x1558082d8 'csdev' 'struct coresight_device *'
+    | | `-CallExpr 0x155808520 <col:11, col:33> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x155808458 <col:11> 'int ()' Function 0x1558083a0 'per_cpu' 'int ()'
+    | |   |-RecoveryExpr 0x155808500 <col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x155808490 <col:30> 'int' lvalue Var 0x155128488 'cpu' 'int'
+    | |-IfStmt 0x1558085d8 <line:27:3, line:28:9>
+    | | |-UnaryOperator 0x1558085a8 <line:27:7, col:8> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x155808590 <col:8> 'struct coresight_device *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x155808570 <col:8> 'struct coresight_device *' lvalue Var 0x1558082d8 'csdev' 'struct coresight_device *'
+    | | `-GotoStmt 0x1558085c0 <line:28:4, col:9> 'err' 0x1551422e0
+    | |-BinaryOperator 0x155808880 <line:31:3, col:59> '<dependent type>' contains-errors '='
+    | | |-ArraySubscriptExpr 0x1558086a8 <col:3, col:23> '<dependent type>' contains-errors lvalue
+    | | | |-ImplicitCastExpr 0x155808678 <col:3, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | | | | `-RecoveryExpr 0x155808630 <col:3, col:15> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x1558085f8 <col:3> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | | | `-ImplicitCastExpr 0x155808690 <col:20> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x155808658 <col:20> 'int' lvalue Var 0x155128488 'cpu' 'int'
+    | | `-CallExpr 0x155808820 <col:27, col:59> 'int'
+    | |   |-ImplicitCastExpr 0x155808808 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x1558087a8 <col:27> 'int ()' Function 0x1558086f0 'coresight_build_path' 'int ()'
+    | |   |-ImplicitCastExpr 0x155808850 <col:48> 'struct coresight_device *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x1558087c8 <col:48> 'struct coresight_device *' lvalue Var 0x1558082d8 'csdev' 'struct coresight_device *'
+    | |   `-ImplicitCastExpr 0x155808868 <col:55> 'struct coresight_device *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1558087e8 <col:55> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    | `-IfStmt 0x155808ab0 <line:32:3, line:33:9>
+    |   |-CallExpr 0x155808a70 <line:32:7, col:35> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x155808980 <col:7> 'int ()' Function 0x1558088c8 'IS_ERR' 'int ()'
+    |   | `-ArraySubscriptExpr 0x155808a50 <col:14, col:34> '<dependent type>' contains-errors lvalue
+    |   |   |-ImplicitCastExpr 0x155808a20 <col:14, col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x1558089d8 <col:14, col:26> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x1558089a0 <col:14> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    |   |   `-ImplicitCastExpr 0x155808a38 <col:31> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x155808a00 <col:31> 'int' lvalue Var 0x155128488 'cpu' 'int'
+    |   `-GotoStmt 0x155808a98 <line:33:4, col:9> 'err' 0x1551422e0
+    |-IfStmt 0x155808cf0 <line:36:2, line:37:8>
+    | |-UnaryOperator 0x155808cc0 <line:36:6, col:23> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x155808ca8 <col:7, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x155808c80 <col:7, col:23> '<dependent type>' contains-errors lvalue
+    | |     `-CallExpr 0x155808c40 <col:7, col:20> 'int'
+    | |       |-ImplicitCastExpr 0x155808c28 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x155808be8 <col:7> 'int ()' Function 0x155808b30 'sink_ops' 'int ()'
+    | |       `-ImplicitCastExpr 0x155808c68 <col:16> 'struct coresight_device *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x155808c08 <col:16> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    | `-GotoStmt 0x155808cd8 <line:37:3, col:8> 'err' 0x1551422e0
+    |-BinaryOperator 0x155808f18 <line:40:2, line:42:31> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x155808d48 <line:40:2, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x155808d10 <col:2> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | `-CallExpr 0x155808ed0 <line:41:4, line:42:31> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x155808e08 <line:41:4, col:20> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x155808dc8 <col:4, col:17> 'int'
+    |   |   |-ImplicitCastExpr 0x155808db0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x155808d70 <col:4> 'int ()' Function 0x155808b30 'sink_ops' 'int ()'
+    |   |   `-ImplicitCastExpr 0x155808df0 <col:13> 'struct coresight_device *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x155808d90 <col:13> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    |   |-DeclRefExpr 0x155808e30 <col:33> 'struct coresight_device *' lvalue Var 0x155128688 'sink' 'struct coresight_device *'
+    |   |-DeclRefExpr 0x155808e50 <col:39> 'int' lvalue Var 0x155128488 'cpu' 'int'
+    |   |-DeclRefExpr 0x155808e70 <col:44> 'void **' lvalue ParmVar 0x155128188 'pages' 'void **'
+    |   |-DeclRefExpr 0x155808e90 <line:42:12> 'int' lvalue ParmVar 0x155128208 'nr_pages' 'int'
+    |   `-RecoveryExpr 0x155808eb0 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155808fe0 <line:43:2, line:44:8>
+    | |-UnaryOperator 0x155808fb0 <line:43:6, col:19> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x155808f98 <col:7, col:19> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x155808f70 <col:7, col:19> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x155808f38 <col:7> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    | `-GotoStmt 0x155808fc8 <line:44:3, col:8> 'err' 0x1551422e0
+    |-LabelStmt 0x1558090b0 <line:46:1, line:47:9> 'out'
+    | `-ReturnStmt 0x155809050 <col:2, col:9>
+    |   `-ImplicitCastExpr 0x155809038 <col:9> 'void *' contains-errors <BitCast>
+    |     `-ImplicitCastExpr 0x155809020 <col:9> 'struct etm_event_data *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x155809000 <col:9> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    |-LabelStmt 0x155809858 <line:49:1, line:50:25> 'err'
+    | `-CallExpr 0x155809818 <col:2, col:25> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x155809800 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1558091b0 <col:2> 'int ()' Function 0x1558090f8 'etm_free_aux' 'int ()'
+    |   `-ImplicitCastExpr 0x155809840 <col:15> 'struct etm_event_data *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x1558091d0 <col:15> 'struct etm_event_data *' contains-errors lvalue Var 0x155141888 'event_data' 'struct etm_event_data *'
+    `-GotoStmt 0x155809898 <line:52:2, col:7> 'out' 0x155809060

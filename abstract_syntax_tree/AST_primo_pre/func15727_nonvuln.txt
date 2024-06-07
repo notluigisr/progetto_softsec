@@ -1,0 +1,106 @@
+`-FunctionDecl 0x152808288  line:1:1 multi_reap_range 'int (const struct multi_context *, int, int)'
+  |-ParmVarDecl 0x152128a48 <col:18, col:46> col:46 used m 'const struct multi_context *'
+  |-ParmVarDecl 0x152128ac8 <line:2:18, col:22> col:22 used start_bucket 'int'
+  |-ParmVarDecl 0x152128b48 <line:3:18, col:22> col:22 used end_bucket 'int'
+  `-CompoundStmt 0x15280ea98 <line:4:1, line:31:1>
+    |-DeclStmt 0x1528086c0 <line:5:5, col:34>
+    | |-RecordDecl 0x152808390 <col:5, col:12> col:12 struct gc_arena
+    | `-VarDecl 0x152808488 <col:5, col:21> col:21 invalid gc 'struct gc_arena'
+    |-DeclStmt 0x152808858 <line:6:5, col:28>
+    | |-RecordDecl 0x1528086d8 <col:5, col:12> col:12 struct hash_iterator
+    | `-VarDecl 0x1528087d8 <col:5, col:26> col:26 invalid hi 'struct hash_iterator'
+    |-DeclStmt 0x152808a58 <line:7:5, col:28>
+    | |-RecordDecl 0x152808870 <col:5, col:12> col:12 struct hash_element
+    | `-VarDecl 0x1528089d8 <col:5, col:26> col:26 used he 'struct hash_element *'
+    |-IfStmt 0x152808d30 <line:9:5, line:13:5>
+    | |-BinaryOperator 0x152808ac8 <line:9:9, col:24> 'int' '<'
+    | | |-ImplicitCastExpr 0x152808ab0 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x152808a70 <col:9> 'int' lvalue ParmVar 0x152128ac8 'start_bucket' 'int'
+    | | `-IntegerLiteral 0x152808a90 <col:24> 'int' 0
+    | `-CompoundStmt 0x152808d10 <line:10:5, line:13:5>
+    |   |-BinaryOperator 0x152808b28 <line:11:9, col:24> 'int' '='
+    |   | |-DeclRefExpr 0x152808ae8 <col:9> 'int' lvalue ParmVar 0x152128ac8 'start_bucket' 'int'
+    |   | `-IntegerLiteral 0x152808b08 <col:24> 'int' 0
+    |   `-BinaryOperator 0x152808cf0 <line:12:9, col:45> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x152808b48 <col:9> 'int' lvalue ParmVar 0x152128b48 'end_bucket' 'int'
+    |     `-CallExpr 0x152808cc8 <col:22, col:45> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x152808c48 <col:22> 'int ()' Function 0x152808b90 'hash_n_buckets' 'int ()'
+    |       `-RecoveryExpr 0x152808ca0 <col:37, col:40> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x152808c68 <col:37> 'const struct multi_context *' lvalue ParmVar 0x152128a48 'm' 'const struct multi_context *'
+    |-CallExpr 0x152808f70 <line:15:5, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152808e30 <col:5> 'int ()' Function 0x152808d78 'dmsg' 'int ()'
+    | |-RecoveryExpr 0x152808f50 <col:10> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x152808eb0 <col:25> 'char[4]' lvalue "STR"
+    | |-DeclRefExpr 0x152808ed0 <col:32> 'int' lvalue ParmVar 0x152128ac8 'start_bucket' 'int'
+    | `-DeclRefExpr 0x152808ef0 <col:46> 'int' lvalue ParmVar 0x152128b48 'end_bucket' 'int'
+    |-CallExpr 0x152809188 <line:16:5, col:69> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152809090 <col:5> 'int ()' Function 0x152808fd8 'hash_iterator_init_range' 'int ()'
+    | |-RecoveryExpr 0x1528090e8 <col:30, col:33> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1528090b0 <col:30> 'const struct multi_context *' lvalue ParmVar 0x152128a48 'm' 'const struct multi_context *'
+    | |-UnaryOperator 0x152809130 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x152809110 <col:41> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x152809148 <col:45> 'int' lvalue ParmVar 0x152128ac8 'start_bucket' 'int'
+    | `-DeclRefExpr 0x152809168 <col:59> 'int' lvalue ParmVar 0x152128b48 'end_bucket' 'int'
+    |-WhileStmt 0x15280d180 <line:17:5, line:28:5>
+    | |-BinaryOperator 0x15280c3f8 <line:17:12, col:46> 'int' contains-errors '!='
+    | | |-ParenExpr 0x15280c380 <col:12, col:41> 'struct hash_element *' contains-errors
+    | | | `-BinaryOperator 0x15280c360 <col:13, col:40> 'struct hash_element *' contains-errors '='
+    | | |   |-DeclRefExpr 0x1528091c8 <col:13> 'struct hash_element *' lvalue Var 0x1528089d8 'he' 'struct hash_element *'
+    | | |   `-CallExpr 0x15280c338 <col:18, col:40> '<dependent type>' contains-errors
+    | | |     |-DeclRefExpr 0x15280c2e0 <col:18> 'int ()' Function 0x15280c228 'hash_iterator_next' 'int ()'
+    | | |     `-UnaryOperator 0x15280c320 <col:37, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |       `-RecoveryExpr 0x15280c300 <col:38> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x15280c3d8 <col:46> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15280d160 <line:18:5, line:28:5>
+    |   |-DeclStmt 0x15280c718 <line:19:9, col:65>
+    |   | |-RecordDecl 0x15280c418 <col:9, col:16> col:16 struct multi_route
+    |   | `-VarDecl 0x15280c588 <col:9, col:60> col:29 used r 'struct multi_route *' cinit
+    |   |   `-CStyleCastExpr 0x15280c6d8 <col:33, col:60> 'struct multi_route *' contains-errors <Dependent>
+    |   |     `-RecoveryExpr 0x15280c628 <col:56, col:60> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x15280c5f0 <col:56> 'struct hash_element *' lvalue Var 0x1528089d8 'he' 'struct hash_element *'
+    |   `-IfStmt 0x15280d140 <line:20:9, line:27:9>
+    |     |-UnaryOperator 0x15280c8e8 <line:20:13, col:38> 'int' contains-errors prefix '!' cannot overflow
+    |     | `-CallExpr 0x15280c888 <col:14, col:38> 'int' contains-errors
+    |     |   |-ImplicitCastExpr 0x15280c870 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x15280c810 <col:14> 'int ()' Function 0x15280c758 'multi_route_defined' 'int ()'
+    |     |   |-ImplicitCastExpr 0x15280c8b8 <col:34> 'const struct multi_context *' <LValueToRValue>
+    |     |   | `-DeclRefExpr 0x15280c830 <col:34> 'const struct multi_context *' lvalue ParmVar 0x152128a48 'm' 'const struct multi_context *'
+    |     |   `-ImplicitCastExpr 0x15280c8d0 <col:37> 'struct multi_route *' contains-errors <LValueToRValue>
+    |     |     `-DeclRefExpr 0x15280c850 <col:37> 'struct multi_route *' contains-errors lvalue Var 0x15280c588 'r' 'struct multi_route *'
+    |     `-CompoundStmt 0x15280d110 <line:21:9, line:27:9>
+    |       |-CallExpr 0x15280cb90 <line:22:13, line:23:50> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x15280c900 <line:22:13> 'int ()' Function 0x152808d78 'dmsg' 'int ()'
+    |       | |-RecoveryExpr 0x15280cb70 <col:18> '<dependent type>' contains-errors lvalue
+    |       | |-StringLiteral 0x15280c938 <col:33> 'char[4]' lvalue "STR"
+    |       | `-CallExpr 0x15280cb08 <line:23:18, col:49> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x15280ca38 <col:18> 'int ()' Function 0x15280c980 'mroute_addr_print' 'int ()'
+    |       |   |-UnaryOperator 0x15280cab8 <col:36, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   | `-RecoveryExpr 0x15280ca90 <col:37, col:40> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x15280ca58 <col:37> 'struct multi_route *' contains-errors lvalue Var 0x15280c588 'r' 'struct multi_route *'
+    |       |   `-UnaryOperator 0x15280caf0 <col:46, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |     `-RecoveryExpr 0x15280cad0 <col:47> '<dependent type>' contains-errors lvalue
+    |       |-CallExpr 0x15280cdf8 <line:24:13, col:58> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x15280cca8 <col:13> 'int ()' Function 0x15280cbf0 'learn_address_script' 'int ()'
+    |       | |-DeclRefExpr 0x15280ccc8 <col:34> 'const struct multi_context *' lvalue ParmVar 0x152128a48 'm' 'const struct multi_context *'
+    |       | |-RecoveryExpr 0x15280cdd8 <col:37> '<dependent type>' contains-errors lvalue
+    |       | |-StringLiteral 0x15280cd00 <col:43> 'char[4]' lvalue "STR"
+    |       | `-UnaryOperator 0x15280cd80 <col:50, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   `-RecoveryExpr 0x15280cd58 <col:51, col:54> '<dependent type>' contains-errors lvalue
+    |       |     `-DeclRefExpr 0x15280cd20 <col:51> 'struct multi_route *' contains-errors lvalue Var 0x15280c588 'r' 'struct multi_route *'
+    |       |-CallExpr 0x15280cf70 <line:25:13, col:30> 'int' contains-errors
+    |       | |-ImplicitCastExpr 0x15280cf58 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x15280cf18 <col:13> 'int ()' Function 0x15280ce60 'multi_route_del' 'int ()'
+    |       | `-ImplicitCastExpr 0x15280cf98 <col:29> 'struct multi_route *' contains-errors <LValueToRValue>
+    |       |   `-DeclRefExpr 0x15280cf38 <col:29> 'struct multi_route *' contains-errors lvalue Var 0x15280c588 'r' 'struct multi_route *'
+    |       `-CallExpr 0x15280d0e8 <line:26:13, col:45> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x15280d090 <col:13> 'int ()' Function 0x15280cfd8 'hash_iterator_delete_element' 'int ()'
+    |         `-UnaryOperator 0x15280d0d0 <col:42, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |           `-RecoveryExpr 0x15280d0b0 <col:43> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15280e910 <line:29:5, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15280e8b8 <col:5> 'int ()' Function 0x15280e800 'hash_iterator_free' 'int ()'
+    | `-UnaryOperator 0x15280e8f8 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x15280e8d8 <col:25> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x15280ea70 <line:30:5, col:16> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15280ea18 <col:5> 'int ()' Function 0x15280e960 'gc_free' 'int ()'
+      `-UnaryOperator 0x15280ea58 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x15280ea38 <col:14> '<dependent type>' contains-errors lvalue

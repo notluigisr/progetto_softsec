@@ -1,0 +1,49 @@
+`-FunctionDecl 0x15a944d48  line:1:14 shmem_follow_link 'void *(struct dentry *, struct nameidata *)' static
+  |-ParmVarDecl 0x15a928648 <col:32, col:47> col:47 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x15a944c28 <col:55, col:73> col:73 used nd 'struct nameidata *'
+  `-CompoundStmt 0x15a945bb8 <line:2:1, line:9:1>
+    |-DeclStmt 0x15a945088 <line:3:2, col:26>
+    | |-RecordDecl 0x15a944e48 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x15a944fb8 <col:2, col:22> col:15 used page 'struct page *' cinit
+    |   `-RecoveryExpr 0x15a945050 <col:22> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15a945468 <line:4:2, col:70>
+    | `-VarDecl 0x15a9450b8 <col:2, col:69> col:6 used error 'int' cinit
+    |   `-CallExpr 0x15a945420 <col:14, col:69> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x15a945230 <col:14> 'int ()' Function 0x15a945178 'shmem_getpage' 'int ()'
+    |     |-RecoveryExpr 0x15a945288 <col:28, col:36> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x15a945250 <col:28> 'struct dentry *' lvalue ParmVar 0x15a928648 'dentry' 'struct dentry *'
+    |     |-IntegerLiteral 0x15a9452b0 <col:45> 'int' 0
+    |     |-UnaryOperator 0x15a945350 <col:48, col:49> 'struct page **' contains-errors prefix '&' cannot overflow
+    |     | `-DeclRefExpr 0x15a9452d0 <col:49> 'struct page *' contains-errors lvalue Var 0x15a944fb8 'page' 'struct page *'
+    |     |-RecoveryExpr 0x15a9453e0 <col:55> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x15a945400 <col:65> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a945940 <line:5:2, col:53> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a945928 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a945560 <col:2> 'int ()' Function 0x15a9454a8 'nd_set_link' 'int ()'
+    | |-ImplicitCastExpr 0x15a945970 <col:14> 'struct nameidata *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15a945580 <col:14> 'struct nameidata *' lvalue ParmVar 0x15a944c28 'nd' 'struct nameidata *'
+    | `-ConditionalOperator 0x15a9458f8 <col:18, col:52> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15a9458e0 <col:18> 'int' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x15a9455a0 <col:18> 'int' contains-errors lvalue Var 0x15a9450b8 'error' 'int'
+    |   |-CallExpr 0x15a945728 <col:26, col:39> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x15a945710 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x15a9456a0 <col:26> 'int ()' Function 0x15a9455e8 'ERR_PTR' 'int ()'
+    |   | `-ImplicitCastExpr 0x15a945750 <col:34> 'int' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x15a9456c0 <col:34> 'int' contains-errors lvalue Var 0x15a9450b8 'error' 'int'
+    |   `-CallExpr 0x15a9458a0 <col:43, col:52> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15a945888 <col:43> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15a945848 <col:43> 'int ()' Function 0x15a945790 'kmap' 'int ()'
+    |     `-ImplicitCastExpr 0x15a9458c8 <col:48> 'struct page *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15a945868 <col:48> 'struct page *' contains-errors lvalue Var 0x15a944fb8 'page' 'struct page *'
+    |-IfStmt 0x15a945b38 <line:6:2, line:7:19>
+    | |-ImplicitCastExpr 0x15a9459a8 <line:6:6> 'struct page *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x15a945988 <col:6> 'struct page *' contains-errors lvalue Var 0x15a944fb8 'page' 'struct page *'
+    | `-CallExpr 0x15a945af8 <line:7:3, col:19> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15a945ae0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15a945aa0 <col:3> 'int ()' Function 0x15a9459e8 'unlock_page' 'int ()'
+    |   `-ImplicitCastExpr 0x15a945b20 <col:15> 'struct page *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15a945ac0 <col:15> 'struct page *' contains-errors lvalue Var 0x15a944fb8 'page' 'struct page *'
+    `-ReturnStmt 0x15a945ba8 <line:8:2, col:9>
+      `-ImplicitCastExpr 0x15a945b90 <col:9> 'void *' contains-errors <BitCast>
+        `-ImplicitCastExpr 0x15a945b78 <col:9> 'struct page *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x15a945b58 <col:9> 'struct page *' contains-errors lvalue Var 0x15a944fb8 'page' 'struct page *'

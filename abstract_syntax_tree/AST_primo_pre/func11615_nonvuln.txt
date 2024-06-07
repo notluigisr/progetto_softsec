@@ -1,0 +1,53 @@
+`-FunctionDecl 0x12780e350  line:1:6 rt_flush_dev 'void (struct net_device *)'
+  |-ParmVarDecl 0x12780e248 <col:19, col:38> col:38 used dev 'struct net_device *'
+  `-CompoundStmt 0x12782dde0 <line:2:1, line:17:1>
+    `-IfStmt 0x12782ddc0 <line:3:2, line:16:2>
+      |-UnaryOperator 0x127826860 <line:3:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x127826838 <col:7, col:35> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x127826770 <col:7> 'int ()' Function 0x1278266b8 'list_empty' 'int ()'
+      |   `-UnaryOperator 0x127826820 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x127826800 <col:19> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x12782dd80 <col:38, line:16:2>
+        |-DeclStmt 0x127826c28 <line:4:3, col:33>
+        | |-RecordDecl 0x127826878 <col:3, col:10> col:10 struct net
+        | `-VarDecl 0x1278269e8 <col:3, col:32> col:15 used net 'struct net *' cinit
+        |   `-ImplicitCastExpr 0x127826bf8 <col:21, col:32> 'struct net *' <IntegralToPointer>
+        |     `-CallExpr 0x127826bb8 <col:21, col:32> 'int'
+        |       |-ImplicitCastExpr 0x127826ba0 <col:21> 'int (*)()' <FunctionToPointerDecay>
+        |       | `-DeclRefExpr 0x127826b30 <col:21> 'int ()' Function 0x127826a78 'dev_net' 'int ()'
+        |       `-ImplicitCastExpr 0x127826be0 <col:29> 'struct net_device *' <LValueToRValue>
+        |         `-DeclRefExpr 0x127826b50 <col:29> 'struct net_device *' lvalue ParmVar 0x12780e248 'dev' 'struct net_device *'
+        |-DeclStmt 0x127826e28 <line:5:3, col:20>
+        | |-RecordDecl 0x127826c40 <col:3, col:10> col:10 struct rtable
+        | `-VarDecl 0x127826da8 <col:3, col:18> col:18 used rt 'struct rtable *'
+        |-CallExpr 0x127826fd0 <line:7:3, col:33> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x127826f20 <col:3> 'int ()' Function 0x127826e68 'spin_lock_bh' 'int ()'
+        | `-UnaryOperator 0x127826fb8 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x127826f98 <col:17> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1278271f0 <line:8:3, col:57> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1278270d8 <col:3> 'int ()' Function 0x127827020 'list_for_each_entry' 'int ()'
+        | |-DeclRefExpr 0x1278270f8 <col:23> 'struct rtable *' lvalue Var 0x127826da8 'rt' 'struct rtable *'
+        | |-UnaryOperator 0x1278271b8 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x127827198 <col:28> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x1278271d0 <col:46> '<dependent type>' contains-errors lvalue
+        |-CompoundStmt 0x12782dba0 <col:59, line:14:3>
+        | |-BinaryOperator 0x127827418 <line:11:4, col:23> '<dependent type>' contains-errors '='
+        | | |-CXXDependentScopeMemberExpr 0x127827370 <col:4, col:12> '<dependent type>' contains-errors lvalue .dev
+        | | | `-RecoveryExpr 0x127827348 <col:4, col:8> '<dependent type>' contains-errors lvalue
+        | | |   `-DeclRefExpr 0x127827310 <col:4> 'struct rtable *' lvalue Var 0x127826da8 'rt' 'struct rtable *'
+        | | `-RecoveryExpr 0x1278273f0 <col:18, col:23> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x1278273b8 <col:18> 'struct net *' lvalue Var 0x1278269e8 'net' 'struct net *'
+        | |-CallExpr 0x12782da00 <line:12:4, col:24> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x127827518 <col:4> 'int ()' Function 0x127827460 'dev_hold' 'int ()'
+        | | `-CXXDependentScopeMemberExpr 0x127827598 <col:13, col:21> '<dependent type>' contains-errors lvalue .dev
+        | |   `-RecoveryExpr 0x127827570 <col:13, col:17> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x127827538 <col:13> 'struct rtable *' lvalue Var 0x127826da8 'rt' 'struct rtable *'
+        | `-CallExpr 0x12782db60 <line:13:4, col:15> 'int'
+        |   |-ImplicitCastExpr 0x12782db48 <col:4> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x12782db08 <col:4> 'int ()' Function 0x12782da50 'dev_put' 'int ()'
+        |   `-ImplicitCastExpr 0x12782db88 <col:12> 'struct net_device *' <LValueToRValue>
+        |     `-DeclRefExpr 0x12782db28 <col:12> 'struct net_device *' lvalue ParmVar 0x12780e248 'dev' 'struct net_device *'
+        `-CallExpr 0x12782dd58 <line:15:3, col:35> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x12782dca8 <col:3> 'int ()' Function 0x12782dbf0 'spin_unlock_bh' 'int ()'
+          `-UnaryOperator 0x12782dd40 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x12782dd20 <col:19> '<dependent type>' contains-errors lvalue

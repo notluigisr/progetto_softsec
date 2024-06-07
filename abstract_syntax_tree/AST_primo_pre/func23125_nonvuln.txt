@@ -1,0 +1,38 @@
+`-FunctionDecl 0x14804c6f8  line:1:14 invalid GetQuantizedConvolutionMultipler 'int (int *, const int *, const int *, const int *, int *, double *)'
+  |-ParmVarDecl 0x14804c328 <col:47, col:62> col:62 invalid context 'int *'
+  |-ParmVarDecl 0x14804c3a8 <line:2:47, col:67> col:67 invalid input 'const int *'
+  |-ParmVarDecl 0x14804c428 <line:3:47, col:67> col:67 invalid filter 'const int *'
+  |-ParmVarDecl 0x14804c4a8 <line:4:47, col:67> col:67 invalid bias 'const int *'
+  |-ParmVarDecl 0x14804c528 <line:5:47, col:61> col:61 invalid output 'int *'
+  |-ParmVarDecl 0x14804c5d8 <line:6:47, col:55> col:55 used multiplier 'double *'
+  `-CompoundStmt 0x141808ce8 <col:67, line:37:1>
+    |-DeclStmt 0x14804c868 <line:7:3, line:8:79>
+    | `-VarDecl 0x14804c7e8 <line:7:3, col:16> col:16 input_product_scale 'const double'
+    |-IfStmt 0x141808bb0 <line:11:3, line:34:3>
+    | |-RecoveryExpr 0x14804c880 <line:11:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x141808b80 <col:13, line:34:3>
+    |   |-DeclStmt 0x14804c938 <line:12:5, col:70>
+    |   | `-VarDecl 0x14804c8b8 <col:5, col:18> col:18 bias_scale 'const double'
+    |   |-DeclStmt 0x141808820 <line:30:5, col:34>
+    |   | `-VarDecl 0x14804c968 <col:5, col:31> col:18 used scale_diff 'const double' cinit
+    |   |   `-RecoveryExpr 0x141808800 <col:31> '<dependent type>' contains-errors lvalue
+    |   |-DeclStmt 0x1418088d0 <line:31:5, col:74>
+    |   | `-VarDecl 0x141808850 <col:5, col:18> col:18 used output_scale 'const double'
+    |   `-CallExpr 0x141808b50 <line:33:5, col:62> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x141808a40 <col:5> 'int ()' Function 0x141808988 'TF_LITE_ENSURE' 'int ()'
+    |     |-RecoveryExpr 0x141808a60 <col:20> '<dependent type>' contains-errors lvalue
+    |     `-BinaryOperator 0x141808b30 <col:29, col:58> 'int' contains-errors '<='
+    |       |-BinaryOperator 0x141808af0 <col:29, col:42> 'double' contains-errors '/'
+    |       | |-ImplicitCastExpr 0x141808ac0 <col:29> 'double' contains-errors <LValueToRValue>
+    |       | | `-DeclRefExpr 0x141808a80 <col:29> 'const double' contains-errors lvalue Var 0x14804c968 'scale_diff' 'const double'
+    |       | `-ImplicitCastExpr 0x141808ad8 <col:42> 'double' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x141808aa0 <col:42> 'const double' lvalue Var 0x141808850 'output_scale' 'const double'
+    |       `-FloatingLiteral 0x141808b10 <col:58> 'double' 2.000000e-02
+    `-ReturnStmt 0x141808cd8 <line:35:3, line:36:53>
+      `-CallExpr 0x141808c90 <line:35:10, line:36:53> '<dependent type>' contains-errors
+        |-RecoveryExpr 0x141808bd0 <line:35:10> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x141808bf0 <col:43> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x141808c10 <col:52> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x141808c30 <col:59> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x141808c50 <col:67> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x141808c70 <line:36:43> 'double *' lvalue ParmVar 0x14804c5d8 'multiplier' 'double *'

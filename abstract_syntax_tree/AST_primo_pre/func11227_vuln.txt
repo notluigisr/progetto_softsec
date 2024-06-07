@@ -1,0 +1,35 @@
+`-FunctionDecl 0x147808378  line:1:17 invalid do_notify_resume 'int (struct pt_regs *, struct thread_info *)'
+  |-ParmVarDecl 0x14680e268 <col:34, col:50> col:50 used regs 'struct pt_regs *'
+  |-ParmVarDecl 0x147808258 <col:56, col:76> col:76 used ti 'struct thread_info *'
+  `-CompoundStmt 0x147808f78 <line:2:1, line:15:1>
+    |-DeclStmt 0x1478084d0 <line:3:2, col:17>
+    | `-VarDecl 0x147808448 <col:2, col:16> col:6 used syscall 'int' cinit
+    |   `-IntegerLiteral 0x1478084b0 <col:16> 'int' 0
+    |-IfStmt 0x147808770 <line:5:2, line:6:13>
+    | |-RecoveryExpr 0x1478086f0 <line:5:6, col:39> '_Bool' contains-errors
+    | `-BinaryOperator 0x147808750 <line:6:3, col:13> 'int' '='
+    |   |-DeclRefExpr 0x147808710 <col:3> 'int' lvalue Var 0x147808448 'syscall' 'int'
+    |   `-IntegerLiteral 0x147808730 <col:13> 'int' 1
+    |-IfStmt 0x147808b08 <line:8:2, line:9:45>
+    | |-RecoveryExpr 0x147808840 <line:8:6, col:57> '_Bool' contains-errors
+    | `-CallExpr 0x147808ad0 <line:9:3, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147808940 <col:3> 'int ()' Function 0x147808888 'do_signal' 'int ()'
+    |   |-DeclRefExpr 0x147808960 <col:13> 'struct pt_regs *' lvalue ParmVar 0x14680e268 'regs' 'struct pt_regs *'
+    |   |-UnaryOperator 0x147808ab8 <col:19, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x147808a70 <col:20, col:29> '<dependent type>' contains-errors lvalue ->blocked
+    |   |   `-RecoveryExpr 0x147808a50 <col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1478089f8 <col:38> 'int' lvalue Var 0x147808448 'syscall' 'int'
+    `-IfStmt 0x147808f58 <line:11:2, line:14:2>
+      |-BinaryOperator 0x147808be0 <line:11:6, col:18> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x147808b60 <col:6, col:10> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x147808b28 <col:6> 'struct thread_info *' lvalue ParmVar 0x147808258 'ti' 'struct thread_info *'
+      | `-RecoveryExpr 0x147808bc0 <col:18> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x147808f38 <col:38, line:14:2>
+        |-CallExpr 0x147808d60 <line:12:3, col:38> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x147808ce0 <col:3> 'int ()' Function 0x147808c28 'clear_thread_flag' 'int ()'
+        | `-RecoveryExpr 0x147808d40 <col:21> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x147808ef8 <line:13:3, col:31> 'int'
+          |-ImplicitCastExpr 0x147808ee0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x147808e68 <col:3> 'int ()' Function 0x147808db0 'tracehook_notify_resume' 'int ()'
+          `-ImplicitCastExpr 0x147808f20 <col:27> 'struct pt_regs *' <LValueToRValue>
+            `-DeclRefExpr 0x147808e88 <col:27> 'struct pt_regs *' lvalue ParmVar 0x14680e268 'regs' 'struct pt_regs *'

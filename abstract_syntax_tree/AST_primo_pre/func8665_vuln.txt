@@ -1,0 +1,115 @@
+`-FunctionDecl 0x139826670  line:1:28 invalid k90_backlight_get 'enum led_brightness (struct led_classdev *)' static
+  |-ParmVarDecl 0x13980e308 <col:46, col:67> col:67 used led_cdev 'struct led_classdev *'
+  `-CompoundStmt 0x139123cd8 <line:2:1, line:29:1>
+    |-DeclStmt 0x1398267e8 <line:3:2, col:9>
+    | `-VarDecl 0x139826780 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x139826b70 <line:4:2, col:68>
+    | |-RecordDecl 0x139826800 <col:2, col:9> col:9 struct k90_led
+    | `-VarDecl 0x139826968 <col:2, col:18> col:18 used led 'struct k90_led *'
+    |-DeclStmt 0x139826e68 <line:5:2, col:44>
+    | |-RecordDecl 0x139826b88 <col:2, col:9> col:9 struct device
+    | `-VarDecl 0x139826cf8 <col:2, col:38> col:17 used dev 'struct device *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x139826e08 <col:23, col:38> '<dependent type>' contains-errors lvalue ->parent
+    |     `-CXXDependentScopeMemberExpr 0x139826dc0 <col:23, col:33> '<dependent type>' contains-errors lvalue .dev
+    |       `-RecoveryExpr 0x139826d98 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x139826d60 <col:23> 'struct k90_led *' lvalue Var 0x139826968 'led' 'struct k90_led *'
+    |-DeclStmt 0x1398271f0 <line:6:2, col:61>
+    | |-RecordDecl 0x139826e80 <col:2, col:9> col:9 struct usb_interface
+    | `-VarDecl 0x139826fe8 <col:2, col:60> col:24 used usbif 'struct usb_interface *' cinit
+    |   `-CallExpr 0x1398271b0 <col:32, col:60> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x139827130 <col:32> 'int ()' Function 0x139827078 'to_usb_interface' 'int ()'
+    |     `-RecoveryExpr 0x139827188 <col:49, col:54> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x139827150 <col:49> 'struct device *' contains-errors lvalue Var 0x139826cf8 'dev' 'struct device *'
+    |-DeclStmt 0x1398275b8 <line:7:2, col:56>
+    | |-RecordDecl 0x139827208 <col:2, col:9> col:9 struct usb_device
+    | `-VarDecl 0x139827378 <col:2, col:55> col:21 used usbdev 'struct usb_device *' cinit
+    |   `-ImplicitCastExpr 0x139827588 <col:30, col:55> 'struct usb_device *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x139827548 <col:30, col:55> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x139827530 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1398274c0 <col:30> 'int ()' Function 0x139827408 'interface_to_usbdev' 'int ()'
+    |       `-ImplicitCastExpr 0x139827570 <col:50> 'struct usb_interface *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x1398274e0 <col:50> 'struct usb_interface *' contains-errors lvalue Var 0x139826fe8 'usbif' 'struct usb_interface *'
+    |-DeclStmt 0x139122668 <line:8:2, col:16>
+    | `-VarDecl 0x139122600 <col:2, col:6> col:6 used brightness 'int'
+    |-DeclStmt 0x139122788 <line:9:2, col:14>
+    | `-VarDecl 0x139122720 <col:2, col:13> col:7 used data 'char[8]'
+    |-BinaryOperator 0x139122e48 <line:11:2, line:15:30> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1391227a0 <line:11:2> 'int' lvalue Var 0x139826780 'ret' 'int'
+    | `-CallExpr 0x139122de0 <col:8, line:15:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1391228a0 <line:11:8> 'int ()' Function 0x1391227e8 'usb_control_msg' 'int ()'
+    |   |-DeclRefExpr 0x1391228c0 <col:24> 'struct usb_device *' contains-errors lvalue Var 0x139827378 'usbdev' 'struct usb_device *'
+    |   |-CallExpr 0x139122cb8 <col:32, col:57> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x139122ca0 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1391229c0 <col:32> 'int ()' Function 0x139122908 'usb_rcvctrlpipe' 'int ()'
+    |   | |-ImplicitCastExpr 0x139122ce8 <col:48> 'struct usb_device *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1391229e0 <col:48> 'struct usb_device *' contains-errors lvalue Var 0x139827378 'usbdev' 'struct usb_device *'
+    |   | `-IntegerLiteral 0x139122a00 <col:56> 'int' 0
+    |   |-RecoveryExpr 0x139122d00 <line:12:10> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x139122da0 <line:13:10, line:14:10> '<dependent type>' contains-errors '|'
+    |   | |-BinaryOperator 0x139122d60 <line:13:10, col:23> '<dependent type>' contains-errors '|'
+    |   | | |-RecoveryExpr 0x139122d20 <col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-RecoveryExpr 0x139122d40 <col:23> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x139122d80 <line:14:10> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x139122b20 <col:28> 'int' 0
+    |   |-IntegerLiteral 0x139122b40 <col:31> 'int' 0
+    |   |-DeclRefExpr 0x139122b60 <col:34> 'char[8]' lvalue Var 0x139122720 'data' 'char[8]'
+    |   |-IntegerLiteral 0x139122b80 <col:40> 'int' 8
+    |   `-RecoveryExpr 0x139122dc0 <line:15:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1391231e0 <line:16:2, line:20:2>
+    | |-BinaryOperator 0x139122ec0 <line:16:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x139122ea8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x139122e68 <col:6> 'int' lvalue Var 0x139826780 'ret' 'int'
+    | | `-IntegerLiteral 0x139122e88 <col:12> 'int' 0
+    | `-CompoundStmt 0x1391231c0 <col:15, line:20:2>
+    |   |-CallExpr 0x139123098 <line:17:3, line:18:8> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x139123080 <line:17:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x139122fc0 <col:3> 'int ()' Function 0x139122f08 'dev_warn' 'int ()'
+    |   | |-ImplicitCastExpr 0x1391230d0 <col:12> 'struct device *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x139122fe0 <col:12> 'struct device *' contains-errors lvalue Var 0x139826cf8 'dev' 'struct device *'
+    |   | |-ImplicitCastExpr 0x1391230e8 <col:17> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x139123040 <col:17> 'char[4]' lvalue "STR"
+    |   | `-ImplicitCastExpr 0x139123100 <line:18:5> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x139123060 <col:5> 'int' lvalue Var 0x139826780 'ret' 'int'
+    |   `-ReturnStmt 0x1391231b0 <line:19:3, col:11>
+    |     `-UnaryOperator 0x139123198 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x139123180 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x139123160 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1391232c8 <line:21:2, col:21> 'int' '='
+    | |-DeclRefExpr 0x139123200 <col:2> 'int' lvalue Var 0x139122600 'brightness' 'int'
+    | `-ImplicitCastExpr 0x1391232b0 <col:15, col:21> 'int' <IntegralCast>
+    |   `-ImplicitCastExpr 0x139123298 <col:15, col:21> 'char' <LValueToRValue>
+    |     `-ArraySubscriptExpr 0x139123278 <col:15, col:21> 'char' lvalue
+    |       |-ImplicitCastExpr 0x139123260 <col:15> 'char *' <ArrayToPointerDecay>
+    |       | `-DeclRefExpr 0x139123220 <col:15> 'char[8]' lvalue Var 0x139122720 'data' 'char[8]'
+    |       `-IntegerLiteral 0x139123240 <col:20> 'int' 4
+    |-IfStmt 0x139123c48 <line:22:2, line:27:2>
+    | |-BinaryOperator 0x1391233d8 <line:22:6, col:37> 'int' '||'
+    | | |-BinaryOperator 0x139123340 <col:6, col:19> 'int' '<'
+    | | | |-ImplicitCastExpr 0x139123328 <col:6> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x1391232e8 <col:6> 'int' lvalue Var 0x139122600 'brightness' 'int'
+    | | | `-IntegerLiteral 0x139123308 <col:19> 'int' 0
+    | | `-BinaryOperator 0x1391233b8 <col:24, col:37> 'int' '>'
+    | |   |-ImplicitCastExpr 0x1391233a0 <col:24> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x139123360 <col:24> 'int' lvalue Var 0x139122600 'brightness' 'int'
+    | |   `-IntegerLiteral 0x139123380 <col:37> 'int' 3
+    | `-CompoundStmt 0x139123c28 <col:40, line:27:2>
+    |   |-CallExpr 0x1391234e8 <line:23:3, line:25:12> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x1391234d0 <line:23:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1391233f8 <col:3> 'int ()' Function 0x139122f08 'dev_warn' 'int ()'
+    |   | |-ImplicitCastExpr 0x139123520 <col:12> 'struct device *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x139123418 <col:12> 'struct device *' contains-errors lvalue Var 0x139826cf8 'dev' 'struct device *'
+    |   | |-ImplicitCastExpr 0x139123538 <line:24:5> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x139123438 <col:5> 'char[4]' lvalue "STR"
+    |   | `-ImplicitCastExpr 0x139123568 <line:25:5, col:11> 'int' <IntegralCast>
+    |   |   `-ImplicitCastExpr 0x139123550 <col:5, col:11> 'char' <LValueToRValue>
+    |   |     `-ArraySubscriptExpr 0x1391234b0 <col:5, col:11> 'char' lvalue
+    |   |       |-ImplicitCastExpr 0x139123498 <col:5> 'char *' <ArrayToPointerDecay>
+    |   |       | `-DeclRefExpr 0x139123458 <col:5> 'char[8]' lvalue Var 0x139122720 'data' 'char[8]'
+    |   |       `-IntegerLiteral 0x139123478 <col:10> 'int' 4
+    |   `-ReturnStmt 0x139123c18 <line:26:3, col:11>
+    |     `-UnaryOperator 0x139123c00 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1391235e8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1391235c8 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x139123cc8 <line:28:2, col:9>
+      `-RecoveryExpr 0x139123ca0 <col:9> 'enum led_brightness' contains-errors
+        `-DeclRefExpr 0x139123c68 <col:9> 'int' lvalue Var 0x139122600 'brightness' 'int'

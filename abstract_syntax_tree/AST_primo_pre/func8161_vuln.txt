@@ -1,0 +1,58 @@
+`-FunctionDecl 0x15802ed58  line:1:6 fuse_ioctl_common 'long (struct file *, unsigned int, unsigned long, unsigned int)'
+  |-ParmVarDecl 0x158012648 <col:24, col:37> col:37 used file 'struct file *'
+  |-ParmVarDecl 0x1580126c8 <col:43, col:56> col:56 used cmd 'unsigned int'
+  |-ParmVarDecl 0x158012748 <line:2:10, col:24> col:24 used arg 'unsigned long'
+  |-ParmVarDecl 0x15802ec00 <col:29, col:42> col:42 used flags 'unsigned int'
+  `-CompoundStmt 0x15791e320 <line:3:1, line:14:1>
+    |-DeclStmt 0x15802f268 <line:4:2, col:40>
+    | |-RecordDecl 0x15802ee68 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x15802efd8 <col:2, col:39> col:16 used inode 'struct inode *' cinit
+    |   `-ImplicitCastExpr 0x15802f238 <col:24, col:39> 'struct inode *' <IntegralToPointer>
+    |     `-CallExpr 0x15802f1f8 <col:24, col:39> 'int'
+    |       |-ImplicitCastExpr 0x15802f1e0 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15802f170 <col:24> 'int ()' Function 0x15802f0b8 'file_inode' 'int ()'
+    |       `-ImplicitCastExpr 0x15802f220 <col:35> 'struct file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15802f190 <col:35> 'struct file *' lvalue ParmVar 0x158012648 'file' 'struct file *'
+    |-DeclStmt 0x15802f5f8 <line:5:2, col:45>
+    | |-RecordDecl 0x15802f280 <col:2, col:9> col:9 struct fuse_conn
+    | `-VarDecl 0x15802f3e8 <col:2, col:44> col:20 used fc 'struct fuse_conn *' cinit
+    |   `-ImplicitCastExpr 0x15802f5c8 <col:25, col:44> 'struct fuse_conn *' <IntegralToPointer>
+    |     `-CallExpr 0x15802f588 <col:25, col:44> 'int'
+    |       |-ImplicitCastExpr 0x15802f570 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15802f530 <col:25> 'int ()' Function 0x15802f478 'get_fuse_conn' 'int ()'
+    |       `-ImplicitCastExpr 0x15802f5b0 <col:39> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15802f550 <col:39> 'struct inode *' lvalue Var 0x15802efd8 'inode' 'struct inode *'
+    |-IfStmt 0x15802f848 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x15802f788 <line:7:6, col:36> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x15802f748 <col:7, col:36> 'int'
+    | |   |-ImplicitCastExpr 0x15802f730 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x15802f6f0 <col:7> 'int ()' Function 0x15802f638 'fuse_allow_current_process' 'int ()'
+    | |   `-ImplicitCastExpr 0x15802f770 <col:34> 'struct fuse_conn *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x15802f710 <col:34> 'struct fuse_conn *' lvalue Var 0x15802f3e8 'fc' 'struct fuse_conn *'
+    | `-ReturnStmt 0x15802f838 <line:8:3, col:11>
+    |   `-UnaryOperator 0x15802f820 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15802f808 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15802f7e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15802fa88 <line:10:2, line:11:11>
+    | |-CallExpr 0x15802f9a0 <line:10:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x15802f988 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x15802f948 <col:6> 'int ()' Function 0x15802f890 'is_bad_inode' 'int ()'
+    | | `-ImplicitCastExpr 0x15802f9c8 <col:19> 'struct inode *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15802f968 <col:19> 'struct inode *' lvalue Var 0x15802efd8 'inode' 'struct inode *'
+    | `-ReturnStmt 0x15802fa78 <line:11:3, col:11>
+    |   `-UnaryOperator 0x15802fa60 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15802fa48 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15802fa28 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15791e310 <line:13:2, col:44>
+      `-ImplicitCastExpr 0x15791e2f8 <col:9, col:44> 'long' <IntegralCast>
+        `-CallExpr 0x15791e258 <col:9, col:44> 'int'
+          |-ImplicitCastExpr 0x15791e240 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x15802fb88 <col:9> 'int ()' Function 0x15802fad0 'fuse_do_ioctl' 'int ()'
+          |-ImplicitCastExpr 0x15791e298 <col:23> 'struct file *' <LValueToRValue>
+          | `-DeclRefExpr 0x15802fba8 <col:23> 'struct file *' lvalue ParmVar 0x158012648 'file' 'struct file *'
+          |-ImplicitCastExpr 0x15791e2b0 <col:29> 'unsigned int' <LValueToRValue>
+          | `-DeclRefExpr 0x15802fbc8 <col:29> 'unsigned int' lvalue ParmVar 0x1580126c8 'cmd' 'unsigned int'
+          |-ImplicitCastExpr 0x15791e2c8 <col:34> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x15791e200 <col:34> 'unsigned long' lvalue ParmVar 0x158012748 'arg' 'unsigned long'
+          `-ImplicitCastExpr 0x15791e2e0 <col:39> 'unsigned int' <LValueToRValue>
+            `-DeclRefExpr 0x15791e220 <col:39> 'unsigned int' lvalue ParmVar 0x15802ec00 'flags' 'unsigned int'

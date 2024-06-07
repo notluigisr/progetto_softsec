@@ -1,0 +1,1 @@
+  bool remoteComplete() const { return state_.remote_complete_; }

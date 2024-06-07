@@ -1,0 +1,29 @@
+`-FunctionDecl 0x123008fe8  line:1:12 invalid fuse_xattr_set 'int (const struct xattr_handler *, struct dentry *, struct inode *, const char *, const void *, int, int)' static
+  |-ParmVarDecl 0x122928648 <col:27, col:55> col:55 handler 'const struct xattr_handler *'
+  |-ParmVarDecl 0x123008a28 <line:2:6, col:21> col:21 dentry 'struct dentry *'
+  |-ParmVarDecl 0x123008bf8 <col:29, col:43> col:43 used inode 'struct inode *'
+  |-ParmVarDecl 0x123008c78 <line:3:6, col:18> col:18 used name 'const char *'
+  |-ParmVarDecl 0x123008d28 <col:24, col:36> col:36 used value 'const void *'
+  |-ParmVarDecl 0x123008dc0 <col:43, col:50> col:50 invalid size 'int'
+  |-ParmVarDecl 0x123008e40 <line:4:6, col:10> col:10 used flags 'int'
+  `-CompoundStmt 0x1230095a0 <line:5:1, line:10:1>
+    |-IfStmt 0x123009388 <line:6:2, line:7:38>
+    | |-UnaryOperator 0x123009100 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1230090e8 <col:7> 'const void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1230090c8 <col:7> 'const void *' lvalue ParmVar 0x123008d28 'value' 'const void *'
+    | `-ReturnStmt 0x123009378 <line:7:3, col:38>
+    |   `-CallExpr 0x123009318 <col:10, col:38> 'int'
+    |     |-ImplicitCastExpr 0x123009300 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x123009270 <col:10> 'int ()' Function 0x1230091b8 'fuse_removexattr' 'int ()'
+    |     |-ImplicitCastExpr 0x123009348 <col:27> 'struct inode *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x123009290 <col:27> 'struct inode *' lvalue ParmVar 0x123008bf8 'inode' 'struct inode *'
+    |     `-ImplicitCastExpr 0x123009360 <col:34> 'const char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1230092b0 <col:34> 'const char *' lvalue ParmVar 0x123008c78 'name' 'const char *'
+    `-ReturnStmt 0x123009590 <line:9:2, col:54>
+      `-CallExpr 0x123009548 <col:9, col:54> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x123009488 <col:9> 'int ()' Function 0x1230093d0 'fuse_setxattr' 'int ()'
+        |-DeclRefExpr 0x1230094a8 <col:23> 'struct inode *' lvalue ParmVar 0x123008bf8 'inode' 'struct inode *'
+        |-DeclRefExpr 0x1230094c8 <col:30> 'const char *' lvalue ParmVar 0x123008c78 'name' 'const char *'
+        |-DeclRefExpr 0x1230094e8 <col:36> 'const void *' lvalue ParmVar 0x123008d28 'value' 'const void *'
+        |-RecoveryExpr 0x123009508 <col:43> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x123009528 <col:49> 'int' lvalue ParmVar 0x123008e40 'flags' 'int'

@@ -1,0 +1,29 @@
+`-FunctionDecl 0x129827400  line:1:6 invalid kvm_rdpmc 'int (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x12980e268 <col:16, col:33> col:33 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x129827c08 <line:2:1, line:13:1>
+    |-DeclStmt 0x129827530 <line:5:2, col:9>
+    | `-VarDecl 0x1298274c8 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x129827830 <line:7:2, col:41> 'int' contains-errors '='
+    | |-DeclRefExpr 0x129827548 <col:2> 'int' lvalue Var 0x1298274c8 'err' 'int'
+    | `-CallExpr 0x1298277f8 <col:8, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1298276c0 <col:8> 'int ()' Function 0x129827608 'kvm_pmu_read_pmc' 'int ()'
+    |   |-DeclRefExpr 0x1298276e0 <col:25> 'struct kvm_vcpu *' lvalue ParmVar 0x12980e268 'vcpu' 'struct kvm_vcpu *'
+    |   |-RecoveryExpr 0x1298277a0 <col:31> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x1298277e0 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x1298277c0 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1298278d0 <line:8:2, line:9:10>
+    | |-ImplicitCastExpr 0x129827870 <line:8:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x129827850 <col:6> 'int' lvalue Var 0x1298274c8 'err' 'int'
+    | `-ReturnStmt 0x1298278c0 <line:9:3, col:10>
+    |   `-ImplicitCastExpr 0x1298278a8 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x129827888 <col:10> 'int' lvalue Var 0x1298274c8 'err' 'int'
+    |-CallExpr 0x129827b88 <line:11:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129827a40 <col:2> 'int ()' Function 0x129827918 'kvm_register_write' 'int ()'
+    | |-DeclRefExpr 0x129827a60 <col:21> 'struct kvm_vcpu *' lvalue ParmVar 0x12980e268 'vcpu' 'struct kvm_vcpu *'
+    | |-RecoveryExpr 0x129827b28 <col:27> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x129827b68 <col:42, col:50> '<dependent type>' contains-errors '>>'
+    |   |-RecoveryExpr 0x129827b48 <col:42> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x129827ab0 <col:50> 'int' 32
+    `-ReturnStmt 0x129827bf8 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x129827be0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x129827bc0 <col:9> 'int' lvalue Var 0x1298274c8 'err' 'int'

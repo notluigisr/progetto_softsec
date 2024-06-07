@@ -1,0 +1,41 @@
+`-FunctionDecl 0x160808200  line:1:13 invalid io_run_task_work_head 'int (struct callback_head **)' static
+  |-ParmVarDecl 0x15780e2c8 <col:35, col:58> col:58 used work_head 'struct callback_head **'
+  `-CompoundStmt 0x160808be8 <line:2:1, line:21:1>
+    |-DeclStmt 0x160808448 <line:3:2, col:35>
+    | |-VarDecl 0x160808338 <col:2, col:24> col:24 used work 'struct callback_head *'
+    | `-VarDecl 0x1608083c8 <col:2, col:31> col:31 used next 'struct callback_head *'
+    |-DoStmt 0x160808b80 <line:6:2, line:18:12>
+    | |-CompoundStmt 0x160808b38 <line:6:5, line:18:2>
+    | | |-BinaryOperator 0x1608086d8 <line:7:3, col:30> 'struct callback_head *' contains-errors '='
+    | | | |-DeclRefExpr 0x160808460 <col:3> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | | | `-CallExpr 0x1608086a8 <col:10, col:30> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1608085e0 <col:10> 'int ()' Function 0x160808528 'xchg' 'int ()'
+    | | |   |-DeclRefExpr 0x160808600 <col:15> 'struct callback_head **' lvalue ParmVar 0x15780e2c8 'work_head' 'struct callback_head **'
+    | | |   `-RecoveryExpr 0x160808688 <col:26> '<dependent type>' contains-errors lvalue
+    | | |-IfStmt 0x160808750 <line:8:3, line:9:4>
+    | | | |-UnaryOperator 0x160808730 <line:8:7, col:8> 'int' prefix '!' cannot overflow
+    | | | | `-ImplicitCastExpr 0x160808718 <col:8> 'struct callback_head *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x1608086f8 <col:8> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | | | `-BreakStmt 0x160808748 <line:9:4>
+    | | `-DoStmt 0x160808b00 <line:11:3, line:16:16>
+    | |   |-CompoundStmt 0x160808a98 <line:11:6, line:16:3>
+    | |   | |-BinaryOperator 0x1608087f0 <line:12:4, col:17> 'struct callback_head *' contains-errors '='
+    | |   | | |-DeclRefExpr 0x160808770 <col:4> 'struct callback_head *' lvalue Var 0x1608083c8 'next' 'struct callback_head *'
+    | |   | | `-RecoveryExpr 0x1608087c8 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x160808790 <col:11> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | |   | |-CallExpr 0x160808890 <line:13:4, col:19> '<dependent type>' contains-errors
+    | |   | | |-RecoveryExpr 0x160808848 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    | |   | | | `-DeclRefExpr 0x160808810 <col:4> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | |   | | `-DeclRefExpr 0x160808870 <col:15> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | |   | |-BinaryOperator 0x160808910 <line:14:4, col:11> 'struct callback_head *' '='
+    | |   | | |-DeclRefExpr 0x1608088b8 <col:4> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | |   | | `-ImplicitCastExpr 0x1608088f8 <col:11> 'struct callback_head *' <LValueToRValue>
+    | |   | |   `-DeclRefExpr 0x1608088d8 <col:11> 'struct callback_head *' lvalue Var 0x1608083c8 'next' 'struct callback_head *'
+    | |   | `-CallExpr 0x160808a78 <line:15:4, col:17> 'int'
+    | |   |   `-ImplicitCastExpr 0x160808a60 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | |   |     `-DeclRefExpr 0x160808a10 <col:4> 'int ()' Function 0x160808958 'cond_resched' 'int ()'
+    | |   `-ImplicitCastExpr 0x160808ae8 <line:16:12> 'struct callback_head *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x160808ac8 <col:12> 'struct callback_head *' lvalue Var 0x160808338 'work' 'struct callback_head *'
+    | `-IntegerLiteral 0x160808b60 <line:18:11> 'int' 1
+    `-ReturnStmt 0x160808bd8 <line:20:2, col:9>
+      `-RecoveryExpr 0x160808bb8 <col:9> '<dependent type>' contains-errors lvalue

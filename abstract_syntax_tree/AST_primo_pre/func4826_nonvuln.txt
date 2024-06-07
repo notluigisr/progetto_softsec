@@ -1,0 +1,62 @@
+`-FunctionDecl 0x128128190  line:1:6 tracing_start 'void (void)'
+  `-CompoundStmt 0x102809000 <line:2:1, line:36:1>
+    |-DeclStmt 0x128128468 <line:3:2, col:28>
+    | |-RecordDecl 0x128128280 <col:2, col:9> col:9 struct ring_buffer
+    | `-VarDecl 0x1281283e8 <col:2, col:22> col:22 used buffer 'struct ring_buffer *'
+    |-DeclStmt 0x128128500 <line:4:2, col:21>
+    | `-VarDecl 0x128128498 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-IfStmt 0x128128578 <line:6:2, line:7:3>
+    | |-RecoveryExpr 0x128128548 <line:6:6> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x128128568 <line:7:3>
+    |-CallExpr 0x128141818 <line:9:2, col:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1281286b0 <col:2> 'int ()' Function 0x1281285f8 'raw_spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x128141800 <col:24, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x1281287b8 <col:25, col:38> '<dependent type>' contains-errors lvalue .start_lock
+    | |   `-RecoveryExpr 0x128128798 <col:25> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x128128748 <col:50> 'unsigned long' lvalue Var 0x128128498 'flags' 'unsigned long'
+    |-IfStmt 0x128141ce0 <line:10:2, line:17:2>
+    | |-UnaryOperator 0x128141928 <line:10:6, col:21> '<dependent type>' contains-errors prefix '--' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x1281418e0 <col:8, col:21> '<dependent type>' contains-errors lvalue .stop_count
+    | |   `-RecoveryExpr 0x1281418c0 <col:8> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x128141cc0 <col:33, line:17:2>
+    |   |-IfStmt 0x128141c38 <line:11:3, line:15:3>
+    |   | |-BinaryOperator 0x128141a48 <line:11:7, col:33> 'int' contains-errors '<'
+    |   | | |-CXXDependentScopeMemberExpr 0x128141a00 <col:7, col:20> '<dependent type>' contains-errors lvalue .stop_count
+    |   | | | `-RecoveryExpr 0x1281419e0 <col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-IntegerLiteral 0x1281419a0 <col:33> 'int' 0
+    |   | `-CompoundStmt 0x128141c20 <col:36, line:15:3>
+    |   |   `-CallExpr 0x128141bd8 <line:13:4, col:18> 'int'
+    |   |     |-ImplicitCastExpr 0x128141bc0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x128141b48 <col:4> 'int ()' Function 0x128141a90 'WARN_ON_ONCE' 'int ()'
+    |   |     `-IntegerLiteral 0x128141b68 <col:17> 'int' 1
+    |   `-GotoStmt 0x128141ca8 <line:16:3, col:8> 'out' 0x128141c58
+    |-CallExpr 0x128141f20 <line:20:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128141de0 <col:2> 'int ()' Function 0x128141d28 'arch_spin_lock' 'int ()'
+    | `-UnaryOperator 0x128141f08 <col:17, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x128141ec0 <col:18, col:31> '<dependent type>' contains-errors lvalue .max_lock
+    |     `-RecoveryExpr 0x128141ea0 <col:18> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1281420e0 <line:22:2, col:37> 'struct ring_buffer *' contains-errors '='
+    | |-DeclRefExpr 0x128141f48 <col:2> 'struct ring_buffer *' lvalue Var 0x1281283e8 'buffer' 'struct ring_buffer *'
+    | `-CXXDependentScopeMemberExpr 0x128142098 <col:11, col:37> '<dependent type>' contains-errors lvalue .buffer
+    |   `-CXXDependentScopeMemberExpr 0x128142050 <col:11, col:24> '<dependent type>' contains-errors lvalue .trace_buffer
+    |     `-RecoveryExpr 0x128142030 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1281422b0 <line:23:2, line:24:35>
+    | |-ImplicitCastExpr 0x128142120 <line:23:6> 'struct ring_buffer *' <LValueToRValue>
+    | | `-DeclRefExpr 0x128142100 <col:6> 'struct ring_buffer *' lvalue Var 0x1281283e8 'buffer' 'struct ring_buffer *'
+    | `-CallExpr 0x128142270 <line:24:3, col:35> 'int'
+    |   |-ImplicitCastExpr 0x128142258 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x128142218 <col:3> 'int ()' Function 0x128142160 'ring_buffer_record_enable' 'int ()'
+    |   `-ImplicitCastExpr 0x128142298 <col:29> 'struct ring_buffer *' <LValueToRValue>
+    |     `-DeclRefExpr 0x128142238 <col:29> 'struct ring_buffer *' lvalue Var 0x1281283e8 'buffer' 'struct ring_buffer *'
+    |-CallExpr 0x1281424f0 <line:32:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1281423b0 <col:2> 'int ()' Function 0x1281422f8 'arch_spin_unlock' 'int ()'
+    | `-UnaryOperator 0x1281424d8 <col:19, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x128142490 <col:20, col:33> '<dependent type>' contains-errors lvalue .max_lock
+    |     `-RecoveryExpr 0x128142470 <col:20> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x128142790 <line:34:2, line:35:60> 'out'
+      `-CallExpr 0x128142760 <col:2, col:60> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1281425f8 <col:2> 'int ()' Function 0x128142540 'raw_spin_unlock_irqrestore' 'int ()'
+        |-UnaryOperator 0x128142748 <col:29, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-CXXDependentScopeMemberExpr 0x128142700 <col:30, col:43> '<dependent type>' contains-errors lvalue .start_lock
+        |   `-RecoveryExpr 0x1281426e0 <col:30> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x128142690 <col:55> 'unsigned long' lvalue Var 0x128128498 'flags' 'unsigned long'

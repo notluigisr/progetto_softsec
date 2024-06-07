@@ -1,0 +1,48 @@
+`-FunctionDecl 0x129128288  line:1:1 invalid flatpak_run_apply_env_vars 'int (int *, int *)'
+  |-ParmVarDecl 0x129128128 <col:29, col:43> col:43 invalid bwrap 'int *'
+  |-ParmVarDecl 0x1291281a8 <col:50, col:66> col:66 invalid context 'int *'
+  `-CompoundStmt 0x129808988 <line:2:1, line:17:1>
+    |-CallExpr 0x1291285c0 <line:6:3, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1291284a0 <col:3> 'int ()' Function 0x1291283e8 'g_hash_table_iter_init' 'int ()'
+    | |-UnaryOperator 0x1291285a8 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x129128588 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CXXDependentScopeMemberExpr 0x129128510 <col:34, col:43> '<dependent type>' contains-errors lvalue ->env_vars
+    |   `-RecoveryExpr 0x1291284f0 <col:34> '<dependent type>' contains-errors lvalue
+    `-WhileStmt 0x129808968 <line:7:3, line:16:5>
+      |-CallExpr 0x129808270 <line:7:10, col:53> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1291286d0 <col:10> 'int ()' Function 0x129128618 'g_hash_table_iter_next' 'int ()'
+      | |-UnaryOperator 0x1291287d8 <col:34, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | | `-RecoveryExpr 0x1291287b8 <col:35> '<dependent type>' contains-errors lvalue
+      | |-UnaryOperator 0x129808220 <col:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | | `-RecoveryExpr 0x129808200 <col:42> '<dependent type>' contains-errors lvalue
+      | `-UnaryOperator 0x129808258 <col:47, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x129808238 <col:48> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x129808940 <line:8:5, line:16:5>
+        |-DeclStmt 0x129808360 <line:9:7, col:28>
+        | `-VarDecl 0x1298082c0 <col:7, col:25> col:19 used var 'const char *' cinit
+        |   `-RecoveryExpr 0x129808340 <col:25> '<dependent type>' contains-errors lvalue
+        |-DeclStmt 0x129808430 <line:10:7, col:30>
+        | `-VarDecl 0x129808390 <col:7, col:25> col:19 used val 'const char *' cinit
+        |   `-RecoveryExpr 0x129808410 <col:25> '<dependent type>' contains-errors lvalue
+        `-IfStmt 0x129808910 <line:12:7, line:15:44> has_else
+          |-BinaryOperator 0x129808568 <line:12:11, col:28> 'int' contains-errors '&&'
+          | |-ImplicitCastExpr 0x129808550 <col:11> 'const char *' contains-errors <LValueToRValue>
+          | | `-DeclRefExpr 0x129808448 <col:11> 'const char *' contains-errors lvalue Var 0x129808390 'val' 'const char *'
+          | `-BinaryOperator 0x129808530 <col:18, col:28> 'int' contains-errors '!='
+          |   |-ImplicitCastExpr 0x129808518 <col:18, col:23> 'int' contains-errors <IntegralCast>
+          |   | `-ImplicitCastExpr 0x129808500 <col:18, col:23> 'char' contains-errors <LValueToRValue>
+          |   |   `-ArraySubscriptExpr 0x1298084c0 <col:18, col:23> 'const char' contains-errors lvalue
+          |   |     |-ImplicitCastExpr 0x1298084a8 <col:18> 'const char *' contains-errors <LValueToRValue>
+          |   |     | `-DeclRefExpr 0x129808468 <col:18> 'const char *' contains-errors lvalue Var 0x129808390 'val' 'const char *'
+          |   |     `-IntegerLiteral 0x129808488 <col:22> 'int' 0
+          |   `-IntegerLiteral 0x1298084e0 <col:28> 'int' 0
+          |-CallExpr 0x129808760 <line:13:9, col:53> '<dependent type>' contains-errors
+          | |-DeclRefExpr 0x129808668 <col:9> 'int ()' Function 0x1298085b0 'flatpak_bwrap_set_env' 'int ()'
+          | |-RecoveryExpr 0x129808688 <col:32> '<dependent type>' contains-errors lvalue
+          | |-DeclRefExpr 0x1298086a8 <col:39> 'const char *' contains-errors lvalue Var 0x1298082c0 'var' 'const char *'
+          | |-DeclRefExpr 0x1298086c8 <col:44> 'const char *' contains-errors lvalue Var 0x129808390 'val' 'const char *'
+          | `-RecoveryExpr 0x129808740 <col:49> '<dependent type>' contains-errors lvalue
+          `-CallExpr 0x1298088e0 <line:15:9, col:44> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x129808880 <col:9> 'int ()' Function 0x1298087c8 'flatpak_bwrap_unset_env' 'int ()'
+            |-RecoveryExpr 0x1298088a0 <col:34> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x1298088c0 <col:41> 'const char *' contains-errors lvalue Var 0x1298082c0 'var' 'const char *'

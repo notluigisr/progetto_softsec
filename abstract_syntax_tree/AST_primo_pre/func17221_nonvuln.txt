@@ -1,0 +1,42 @@
+`-FunctionDecl 0x12c026a48  line:1:1 invalid xfs_attr3_leaf_read 'int (struct xfs_trans *, struct xfs_inode *, int, struct xfs_buf **)'
+  |-ParmVarDecl 0x12c00e248 <line:2:2, col:20> col:20 used tp 'struct xfs_trans *'
+  |-ParmVarDecl 0x12c026628 <line:3:2, col:20> col:20 used dp 'struct xfs_inode *'
+  |-ParmVarDecl 0x12c0266c0 <line:4:2, col:15> col:15 invalid bno 'int'
+  |-ParmVarDecl 0x12c0268f8 <line:5:2, col:20> col:20 used bpp 'struct xfs_buf **'
+  `-CompoundStmt 0x12c027380 <line:6:1, line:14:1>
+    |-DeclStmt 0x12c026b90 <line:7:2, col:11>
+    | `-VarDecl 0x12c026b28 <col:2, col:8> col:8 used err 'int'
+    |-BinaryOperator 0x12c026f50 <line:9:2, line:10:27> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12c026ba8 <line:9:2> 'int' lvalue Var 0x12c026b28 'err' 'int'
+    | `-CallExpr 0x12c026ef8 <col:8, line:10:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c026d20 <line:9:8> 'int ()' Function 0x12c026c68 'xfs_da_read_buf' 'int ()'
+    |   |-DeclRefExpr 0x12c026d40 <col:24> 'struct xfs_trans *' lvalue ParmVar 0x12c00e248 'tp' 'struct xfs_trans *'
+    |   |-DeclRefExpr 0x12c026d60 <col:28> 'struct xfs_inode *' lvalue ParmVar 0x12c026628 'dp' 'struct xfs_inode *'
+    |   |-RecoveryExpr 0x12c026d80 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x12c026da0 <col:37> 'int' 0
+    |   |-DeclRefExpr 0x12c026dc0 <col:40> 'struct xfs_buf **' lvalue ParmVar 0x12c0268f8 'bpp' 'struct xfs_buf **'
+    |   |-RecoveryExpr 0x12c026ea0 <col:45> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x12c026ee0 <line:10:4, col:5> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12c026ec0 <col:5> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c027318 <line:11:2, line:12:58>
+    | |-BinaryOperator 0x12c027080 <line:11:6, col:21> 'int' '&&'
+    | | |-BinaryOperator 0x12c026ff8 <col:6, col:14> 'int' '&&'
+    | | | |-UnaryOperator 0x12c026fa8 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | | `-ImplicitCastExpr 0x12c026f90 <col:7> 'int' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x12c026f70 <col:7> 'int' lvalue Var 0x12c026b28 'err' 'int'
+    | | | `-ImplicitCastExpr 0x12c026fe0 <col:14> 'struct xfs_trans *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12c026fc0 <col:14> 'struct xfs_trans *' lvalue ParmVar 0x12c00e248 'tp' 'struct xfs_trans *'
+    | | `-ImplicitCastExpr 0x12c027068 <col:20, col:21> 'struct xfs_buf *' <LValueToRValue>
+    | |   `-UnaryOperator 0x12c027050 <col:20, col:21> 'struct xfs_buf *' lvalue prefix '*' cannot overflow
+    | |     `-ImplicitCastExpr 0x12c027038 <col:21> 'struct xfs_buf **' <LValueToRValue>
+    | |       `-DeclRefExpr 0x12c027018 <col:21> 'struct xfs_buf **' lvalue ParmVar 0x12c0268f8 'bpp' 'struct xfs_buf **'
+    | `-CallExpr 0x12c0272e0 <line:12:3, col:58> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c027180 <col:3> 'int ()' Function 0x12c0270c8 'xfs_trans_buf_set_type' 'int ()'
+    |   |-DeclRefExpr 0x12c0271a0 <col:26> 'struct xfs_trans *' lvalue ParmVar 0x12c00e248 'tp' 'struct xfs_trans *'
+    |   |-UnaryOperator 0x12c0272a8 <col:30, col:31> 'struct xfs_buf *' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x12c027290 <col:31> 'struct xfs_buf **' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x12c0271c0 <col:31> 'struct xfs_buf **' lvalue ParmVar 0x12c0268f8 'bpp' 'struct xfs_buf **'
+    |   `-RecoveryExpr 0x12c0272c0 <col:36> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c027370 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x12c027358 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12c027338 <col:9> 'int' lvalue Var 0x12c026b28 'err' 'int'

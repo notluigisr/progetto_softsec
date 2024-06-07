@@ -1,0 +1,1 @@
+  explicit Value(double n) : type_(REAL_TYPE) { real_value_ = n; }

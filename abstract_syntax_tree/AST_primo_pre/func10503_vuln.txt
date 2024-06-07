@@ -1,0 +1,29 @@
+`-FunctionDecl 0x11d826740  line:1:20 drbg_set_testdata 'void (struct drbg_state *, struct drbg_test_data *)' static inline
+  |-ParmVarDecl 0x11d80e248 <col:38, col:57> col:57 used drbg 'struct drbg_state *'
+  |-ParmVarDecl 0x11d826628 <line:2:10, col:33> col:33 used test_data 'struct drbg_test_data *'
+  `-CompoundStmt 0x11d826da8 <line:3:1, line:9:1>
+    |-IfStmt 0x11d826950 <line:4:2, line:5:3>
+    | |-BinaryOperator 0x11d826920 <line:4:6, col:32> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x11d826878 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x11d826860 <col:7> 'struct drbg_test_data *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x11d826840 <col:7> 'struct drbg_test_data *' lvalue ParmVar 0x11d826628 'test_data' 'struct drbg_test_data *'
+    | | `-UnaryOperator 0x11d826908 <col:20, col:32> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x11d8268f0 <col:21, col:32> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x11d8268c8 <col:21, col:32> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x11d826890 <col:21> 'struct drbg_test_data *' lvalue ParmVar 0x11d826628 'test_data' 'struct drbg_test_data *'
+    | `-ReturnStmt 0x11d826940 <line:5:3>
+    |-CallExpr 0x11d826b38 <line:6:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11d826aa0 <col:2> 'int ()' Function 0x11d8269e8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x11d826b20 <col:13, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11d826af8 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11d826ac0 <col:14> 'struct drbg_state *' lvalue ParmVar 0x11d80e248 'drbg' 'struct drbg_state *'
+    |-NullStmt 0x11d826b60 <col:32>
+    |-BinaryOperator 0x11d826be8 <line:7:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11d826ba0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11d826b68 <col:2> 'struct drbg_state *' lvalue ParmVar 0x11d80e248 'drbg' 'struct drbg_state *'
+    | `-DeclRefExpr 0x11d826bc8 <col:20> 'struct drbg_test_data *' lvalue ParmVar 0x11d826628 'test_data' 'struct drbg_test_data *'
+    `-CallExpr 0x11d826d80 <line:8:2, col:32> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x11d826ce8 <col:2> 'int ()' Function 0x11d826c30 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x11d826d68 <col:15, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x11d826d40 <col:16, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x11d826d08 <col:16> 'struct drbg_state *' lvalue ParmVar 0x11d80e248 'drbg' 'struct drbg_state *'

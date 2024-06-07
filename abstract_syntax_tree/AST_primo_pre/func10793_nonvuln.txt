@@ -1,0 +1,114 @@
+`-FunctionDecl 0x13180e358  line:1:5 iscsi_eh_session_reset 'int (struct scsi_cmnd *)'
+  |-ParmVarDecl 0x13180e248 <col:28, col:46> col:46 used sc 'struct scsi_cmnd *'
+  `-CompoundStmt 0x13182a5a0 <line:2:1, line:48:1>
+    |-DeclStmt 0x131826838 <line:3:2, col:39>
+    | |-RecordDecl 0x131826650 <col:2, col:9> col:9 struct iscsi_cls_session
+    | `-VarDecl 0x1318267b8 <col:2, col:28> col:28 used cls_session 'struct iscsi_cls_session *'
+    |-DeclStmt 0x131826a38 <line:4:2, col:31>
+    | |-RecordDecl 0x131826850 <col:2, col:9> col:9 struct iscsi_session
+    | `-VarDecl 0x1318269b8 <col:2, col:24> col:24 used session 'struct iscsi_session *'
+    |-DeclStmt 0x131826c38 <line:5:2, col:25>
+    | |-RecordDecl 0x131826a50 <col:2, col:9> col:9 struct iscsi_conn
+    | `-VarDecl 0x131826bb8 <col:2, col:21> col:21 used conn 'struct iscsi_conn *'
+    |-BinaryOperator 0x131826f70 <line:7:2, col:58> 'struct iscsi_cls_session *' contains-errors '='
+    | |-DeclRefExpr 0x131826c50 <col:2> 'struct iscsi_cls_session *' lvalue Var 0x1318267b8 'cls_session' 'struct iscsi_cls_session *'
+    | `-CallExpr 0x131826f48 <col:16, col:58> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131826da0 <col:16> 'int ()' Function 0x131826ce8 'starget_to_session' 'int ()'
+    |   `-CallExpr 0x131826f20 <col:35, col:57> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x131826ea0 <col:35> 'int ()' Function 0x131826de8 'scsi_target' 'int ()'
+    |     `-RecoveryExpr 0x131826ef8 <col:47, col:51> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x131826ec0 <col:47> 'struct scsi_cmnd *' lvalue ParmVar 0x13180e248 'sc' 'struct scsi_cmnd *'
+    |-BinaryOperator 0x131827010 <line:8:2, col:25> 'struct iscsi_session *' contains-errors '='
+    | |-DeclRefExpr 0x131826f90 <col:2> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    | `-RecoveryExpr 0x131826fe8 <col:12, col:25> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x131826fb0 <col:12> 'struct iscsi_cls_session *' lvalue Var 0x1318267b8 'cls_session' 'struct iscsi_cls_session *'
+    |-BinaryOperator 0x1318270b0 <line:9:2, col:18> 'struct iscsi_conn *' contains-errors '='
+    | |-DeclRefExpr 0x131827030 <col:2> 'struct iscsi_conn *' lvalue Var 0x131826bb8 'conn' 'struct iscsi_conn *'
+    | `-RecoveryExpr 0x131827088 <col:9, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x131827050 <col:9> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-CallExpr 0x131827248 <line:11:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1318271b0 <col:2> 'int ()' Function 0x1318270f8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x131827230 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x131827208 <col:14, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1318271d0 <col:14> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-CallExpr 0x1318273e8 <line:12:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x131827350 <col:2> 'int ()' Function 0x131827298 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x1318273d0 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1318273a8 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x131827370 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-IfStmt 0x1318297b0 <line:13:2, line:22:2>
+    | |-BinaryOperator 0x1318274c8 <line:13:6, col:24> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x131827448 <col:6, col:15> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x131827410 <col:6> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    | | `-RecoveryExpr 0x1318274a8 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x131829780 <col:47, line:22:2>
+    |   |-LabelStmt 0x1318293d8 <line:14:1, line:18:21> 'failed'
+    |   | `-CallExpr 0x131829348 <line:15:3, line:18:21> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1318275c8 <line:15:3> 'int ()' Function 0x131827510 'ISCSI_DBG_EH' 'int ()'
+    |   |   |-DeclRefExpr 0x131829200 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |   |   |-StringLiteral 0x131829260 <line:16:9, line:17:9> 'char[7]' lvalue "STRSTR"
+    |   |   |-RecoveryExpr 0x1318292c0 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x131829288 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |   |   `-RecoveryExpr 0x131829320 <line:18:9, col:18> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1318292e8 <col:9> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |   |-CallExpr 0x131829570 <line:19:3, col:37> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1318294d8 <col:3> 'int ()' Function 0x131829420 'spin_unlock_bh' 'int ()'
+    |   | `-UnaryOperator 0x131829558 <col:18, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x131829530 <col:19, col:28> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1318294f8 <col:19> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |   |-CallExpr 0x131829710 <line:20:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x131829678 <col:3> 'int ()' Function 0x1318295c0 'mutex_unlock' 'int ()'
+    |   | `-UnaryOperator 0x1318296f8 <col:16, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1318296d0 <col:17, col:26> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x131829698 <col:17> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |   `-ReturnStmt 0x131829770 <line:21:3, col:10>
+    |     `-RecoveryExpr 0x131829750 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x131829868 <line:24:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1318297d0 <col:2> 'int ()' Function 0x131829420 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x131829850 <col:17, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x131829828 <col:18, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1318297f0 <col:18> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-CallExpr 0x131829928 <line:25:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x131829890 <col:2> 'int ()' Function 0x1318295c0 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x131829910 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1318298e8 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1318298b0 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-CallExpr 0x131829b58 <line:29:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x131829b40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x131829a70 <col:2> 'int ()' Function 0x131827510 'ISCSI_DBG_EH' 'int ()'
+    | |-ImplicitCastExpr 0x131829b88 <col:15> 'struct iscsi_session *' <LValueToRValue>
+    | | `-DeclRefExpr 0x131829a90 <col:15> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    | `-ImplicitCastExpr 0x131829ba0 <col:24> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x131829af0 <col:24> 'char[4]' lvalue "STR"
+    |-CallExpr 0x13182a0f0 <line:37:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13182a058 <col:2> 'int ()' Function 0x1318270f8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13182a0d8 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13182a0b0 <col:14, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13182a078 <col:14> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-CallExpr 0x13182a1b0 <line:38:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13182a118 <col:2> 'int ()' Function 0x131827298 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x13182a198 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13182a170 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13182a138 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    |-IfStmt 0x13182a3f0 <line:39:2, line:44:8> has_else
+    | |-RecoveryExpr 0x13182a240 <line:39:6, col:24> '_Bool' contains-errors
+    | |-CompoundStmt 0x13182a3c0 <col:47, line:43:2>
+    | | `-CallExpr 0x13182a380 <line:40:3, line:42:54> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13182a260 <line:40:3> 'int ()' Function 0x131827510 'ISCSI_DBG_EH' 'int ()'
+    | |   |-DeclRefExpr 0x13182a280 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    | |   |-StringLiteral 0x13182a2a0 <line:41:9> 'char[4]' lvalue "STR"
+    | |   |-RecoveryExpr 0x13182a2f8 <line:42:9, col:18> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x13182a2c0 <col:9> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    | |   `-RecoveryExpr 0x13182a358 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13182a320 <col:30> 'struct iscsi_conn *' lvalue Var 0x131826bb8 'conn' 'struct iscsi_conn *'
+    | `-GotoStmt 0x13182a3d8 <line:44:3, col:8> 'failed' 0x131829388
+    |-CallExpr 0x13182a4b8 <line:45:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13182a420 <col:2> 'int ()' Function 0x131829420 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x13182a4a0 <col:17, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13182a478 <col:18, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13182a440 <col:18> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'
+    `-CallExpr 0x13182a578 <line:46:2, col:33> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13182a4e0 <col:2> 'int ()' Function 0x1318295c0 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x13182a560 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13182a538 <col:16, col:25> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13182a500 <col:16> 'struct iscsi_session *' lvalue Var 0x1318269b8 'session' 'struct iscsi_session *'

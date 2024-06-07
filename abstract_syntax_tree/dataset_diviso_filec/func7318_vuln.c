@@ -1,0 +1,10 @@
+PHP_MINIT_FUNCTION(exif)
+{
+	REGISTER_INI_ENTRIES();
+	if (zend_hash_exists(&module_registry, "STR"))) {
+		REGISTER_LONG_CONSTANT("STR", 1, CONST_CS | CONST_PERSISTENT); 
+	} else {
+		REGISTER_LONG_CONSTANT("STR", 0, CONST_CS | CONST_PERSISTENT); 
+	}
+	return SUCCESS;
+}

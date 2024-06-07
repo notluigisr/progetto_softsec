@@ -1,0 +1,15 @@
+`-FunctionDecl 0x137140a00  line:1:13 vhost_scsi_flush_vq 'void (struct vhost_scsi *, int)' static
+  |-ParmVarDecl 0x137128648 <col:33, col:52> col:52 used vs 'struct vhost_scsi *'
+  |-ParmVarDecl 0x1371286c8 <col:56, col:60> col:60 used index 'int'
+  `-CompoundStmt 0x137140df0 <line:2:1, line:4:1>
+    `-CallExpr 0x137140dc8 <line:3:2, col:42> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x137140c30 <col:2> 'int ()' Function 0x137140b78 'vhost_poll_flush' 'int ()'
+      `-UnaryOperator 0x137140db0 <col:19, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x137140d68 <col:20, col:38> '<dependent type>' contains-errors lvalue .poll
+          `-CXXDependentScopeMemberExpr 0x137140d20 <col:20, col:35> '<dependent type>' contains-errors lvalue .vq
+            `-ArraySubscriptExpr 0x137140d00 <col:20, col:33> '<dependent type>' contains-errors lvalue
+              |-ImplicitCastExpr 0x137140cd0 <col:20, col:24> '<dependent type>' contains-errors <LValueToRValue>
+              | `-RecoveryExpr 0x137140c88 <col:20, col:24> '<dependent type>' contains-errors lvalue
+              |   `-DeclRefExpr 0x137140c50 <col:20> 'struct vhost_scsi *' lvalue ParmVar 0x137128648 'vs' 'struct vhost_scsi *'
+              `-ImplicitCastExpr 0x137140ce8 <col:28> 'int' <LValueToRValue>
+                `-DeclRefExpr 0x137140cb0 <col:28> 'int' lvalue ParmVar 0x1371286c8 'index' 'int'

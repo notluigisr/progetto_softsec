@@ -1,0 +1,1 @@
+  bool check_partition_func_processor(uchar *int_arg) { return FALSE;}

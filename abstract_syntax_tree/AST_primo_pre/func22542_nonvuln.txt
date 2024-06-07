@@ -1,0 +1,73 @@
+`-FunctionDecl 0x12810fb58  line:1:5 may_umount_tree 'int (struct vfsmount *)'
+  |-ParmVarDecl 0x12810fa48 <col:21, col:38> col:38 used m 'struct vfsmount *'
+  `-CompoundStmt 0x1281280a0 <line:2:1, line:21:1>
+    |-DeclStmt 0x128808648 <line:3:2, col:35>
+    | |-RecordDecl 0x128808250 <col:2, col:9> col:9 struct mount
+    | `-VarDecl 0x1288083b8 <col:2, col:34> col:16 used mnt 'struct mount *' cinit
+    |   `-ImplicitCastExpr 0x128808618 <col:22, col:34> 'struct mount *' <IntegralToPointer>
+    |     `-CallExpr 0x1288085d8 <col:22, col:34> 'int'
+    |       |-ImplicitCastExpr 0x1288085c0 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x128808550 <col:22> 'int ()' Function 0x128808498 'real_mount' 'int ()'
+    |       `-ImplicitCastExpr 0x128808600 <col:33> 'struct vfsmount *' <LValueToRValue>
+    |         `-DeclRefExpr 0x128808570 <col:33> 'struct vfsmount *' lvalue ParmVar 0x12810fa48 'm' 'struct vfsmount *'
+    |-DeclStmt 0x128808700 <line:4:2, col:21>
+    | `-VarDecl 0x128808678 <col:2, col:20> col:6 used actual_refs 'int' cinit
+    |   `-IntegerLiteral 0x1288086e0 <col:20> 'int' 0
+    |-DeclStmt 0x1288087b8 <line:5:2, col:22>
+    | `-VarDecl 0x128808730 <col:2, col:21> col:6 used minimum_refs 'int' cinit
+    |   `-IntegerLiteral 0x128808798 <col:21> 'int' 0
+    |-DeclStmt 0x1288088c0 <line:6:2, col:17>
+    | `-VarDecl 0x128808858 <col:2, col:16> col:16 used p 'struct mount *'
+    |-CallExpr 0x128808a40 <line:7:2, col:11> 'int'
+    | |-ImplicitCastExpr 0x128808a28 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1288089b8 <col:2> 'int ()' Function 0x128808900 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x128808a10 <col:9, col:10> 'int' prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x1288089f8 <col:10> 'struct vfsmount *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1288089d8 <col:10> 'struct vfsmount *' lvalue ParmVar 0x12810fa48 'm' 'struct vfsmount *'
+    |-CallExpr 0x128808bf8 <line:10:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128808b48 <col:2> 'int ()' Function 0x128808a90 'br_write_lock' 'int ()'
+    | `-UnaryOperator 0x128808be0 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x128808bc0 <col:17> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x128809138 <line:11:2, line:14:2>
+    | |-BinaryOperator 0x128808c78 <line:11:7, col:11> 'struct mount *' '='
+    | | |-DeclRefExpr 0x128808c20 <col:7> 'struct mount *' lvalue Var 0x128808858 'p' 'struct mount *'
+    | | `-ImplicitCastExpr 0x128808c60 <col:11> 'struct mount *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x128808c40 <col:11> 'struct mount *' lvalue Var 0x1288083b8 'mnt' 'struct mount *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x128808cb8 <col:16> 'struct mount *' <LValueToRValue>
+    | | `-DeclRefExpr 0x128808c98 <col:16> 'struct mount *' lvalue Var 0x128808858 'p' 'struct mount *'
+    | |-BinaryOperator 0x128808ec0 <col:19, col:38> 'struct mount *' '='
+    | | |-DeclRefExpr 0x128808cd0 <col:19> 'struct mount *' lvalue Var 0x128808858 'p' 'struct mount *'
+    | | `-ImplicitCastExpr 0x128808ea8 <col:23, col:38> 'struct mount *' <IntegralToPointer>
+    | |   `-CallExpr 0x128808e48 <col:23, col:38> 'int'
+    | |     |-ImplicitCastExpr 0x128808e30 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x128808dd0 <col:23> 'int ()' Function 0x128808d18 'next_mnt' 'int ()'
+    | |     |-ImplicitCastExpr 0x128808e78 <col:32> 'struct mount *' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x128808df0 <col:32> 'struct mount *' lvalue Var 0x128808858 'p' 'struct mount *'
+    | |     `-ImplicitCastExpr 0x128808e90 <col:35> 'struct mount *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x128808e10 <col:35> 'struct mount *' lvalue Var 0x1288083b8 'mnt' 'struct mount *'
+    | `-CompoundStmt 0x128809118 <col:41, line:14:2>
+    |   |-CompoundAssignOperator 0x128809078 <line:12:3, col:33> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |   | |-DeclRefExpr 0x128808ee0 <col:3> 'int' lvalue Var 0x128808678 'actual_refs' 'int'
+    |   | `-CallExpr 0x128809038 <col:18, col:33> 'int'
+    |   |   |-ImplicitCastExpr 0x128809020 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x128808fe0 <col:18> 'int ()' Function 0x128808f28 'mnt_get_count' 'int ()'
+    |   |   `-ImplicitCastExpr 0x128809060 <col:32> 'struct mount *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x128809000 <col:32> 'struct mount *' lvalue Var 0x128808858 'p' 'struct mount *'
+    |   `-CompoundAssignOperator 0x1288090e8 <line:13:3, col:19> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |     |-DeclRefExpr 0x1288090a8 <col:3> 'int' lvalue Var 0x128808730 'minimum_refs' 'int'
+    |     `-IntegerLiteral 0x1288090c8 <col:19> 'int' 2
+    |-CallExpr 0x128127f68 <line:15:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128127eb8 <col:2> 'int ()' Function 0x128127e00 'br_write_unlock' 'int ()'
+    | `-UnaryOperator 0x128127f50 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x128127f30 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x128128050 <line:17:2, line:18:10>
+    | |-BinaryOperator 0x128128000 <line:17:6, col:20> 'int' '>'
+    | | |-ImplicitCastExpr 0x128127fd0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x128127f90 <col:6> 'int' lvalue Var 0x128808678 'actual_refs' 'int'
+    | | `-ImplicitCastExpr 0x128127fe8 <col:20> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x128127fb0 <col:20> 'int' lvalue Var 0x128808730 'minimum_refs' 'int'
+    | `-ReturnStmt 0x128128040 <line:18:3, col:10>
+    |   `-IntegerLiteral 0x128128020 <col:10> 'int' 0
+    `-ReturnStmt 0x128128090 <line:20:2, col:9>
+      `-IntegerLiteral 0x128128070 <col:9> 'int' 1

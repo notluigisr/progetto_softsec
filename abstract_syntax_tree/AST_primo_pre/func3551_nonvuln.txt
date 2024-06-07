@@ -1,0 +1,40 @@
+`-FunctionDecl 0x137946788  line:1:12 invalid udp_lib_lport_inuse 'int (struct net *, int, const struct udp_hslot *, unsigned long *, struct sock *, int (*)(const struct sock *, const struct sock *, int), unsigned int)' static
+  |-ParmVarDecl 0x137928a48 <col:32, col:44> col:44 used net 'struct net *'
+  |-ParmVarDecl 0x137928ae0 <col:49, col:55> col:55 invalid num 'int'
+  |-ParmVarDecl 0x137945ec8 <line:2:11, col:35> col:35 used hslot 'const struct udp_hslot *'
+  |-ParmVarDecl 0x137945f78 <line:3:11, col:26> col:26 used bitmap 'unsigned long *'
+  |-ParmVarDecl 0x137946148 <line:4:11, col:24> col:24 used sk 'struct sock *'
+  |-ParmVarDecl 0x137946560 <line:5:11, line:7:27> line:5:17 used saddr_comp 'int (*)(const struct sock *, const struct sock *, int)'
+  |-ParmVarDecl 0x1379465e0 <line:8:11, col:24> col:24 used log 'unsigned int'
+  `-CompoundStmt 0x137947f40 <line:9:1, line:30:1>
+    |-DeclStmt 0x137946930 <line:10:2, col:18>
+    | `-VarDecl 0x1379468c8 <col:2, col:15> col:15 used sk2 'struct sock *'
+    |-CallExpr 0x137946b58 <line:13:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x137946aa0 <col:2> 'int ()' Function 0x1379469e8 'sk_for_each' 'int ()'
+    | |-DeclRefExpr 0x137946ac0 <col:14> 'struct sock *' lvalue Var 0x1379468c8 'sk2' 'struct sock *'
+    | `-UnaryOperator 0x137946b40 <col:19, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x137946b18 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x137946ae0 <col:20> 'const struct udp_hslot *' lvalue ParmVar 0x137945ec8 'hslot' 'const struct udp_hslot *'
+    |-CompoundStmt 0x137947ef8 <col:33, line:28:2>
+    | `-IfStmt 0x137947ed8 <line:14:3, line:27:3>
+    |   |-RecoveryExpr 0x137947b90 <line:14:7, line:23:31> '_Bool' contains-errors
+    |   `-CompoundStmt 0x137947eb8 <col:34, line:27:3>
+    |     |-IfStmt 0x137947c30 <line:24:4, line:25:12>
+    |     | |-UnaryOperator 0x137947be8 <line:24:8, col:9> 'int' prefix '!' cannot overflow
+    |     | | `-ImplicitCastExpr 0x137947bd0 <col:9> 'unsigned long *' <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x137947bb0 <col:9> 'unsigned long *' lvalue ParmVar 0x137945f78 'bitmap' 'unsigned long *'
+    |     | `-ReturnStmt 0x137947c20 <line:25:5, col:12>
+    |     |   `-IntegerLiteral 0x137947c00 <col:12> 'int' 1
+    |     `-CallExpr 0x137947e88 <line:26:4, col:55> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x137947d30 <col:4> 'int ()' Function 0x137947c78 '__set_bit' 'int ()'
+    |       |-BinaryOperator 0x137947e48 <col:14, col:44> '<dependent type>' contains-errors '>>'
+    |       | |-RecoveryExpr 0x137947e00 <col:14, col:27> '<dependent type>' contains-errors lvalue
+    |       | | `-CallExpr 0x137947da8 <col:14, col:24> 'int'
+    |       | |   |-ImplicitCastExpr 0x137947d90 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |       | |   | `-DeclRefExpr 0x137947d50 <col:14> 'int ()' Function 0x137946fb8 'udp_sk' 'int ()'
+    |       | |   `-ImplicitCastExpr 0x137947dd0 <col:21> 'struct sock *' <LValueToRValue>
+    |       | |     `-DeclRefExpr 0x137947d70 <col:21> 'struct sock *' lvalue Var 0x1379468c8 'sk2' 'struct sock *'
+    |       | `-DeclRefExpr 0x137947e28 <col:44> 'unsigned int' lvalue ParmVar 0x1379465e0 'log' 'unsigned int'
+    |       `-DeclRefExpr 0x137947e68 <col:49> 'unsigned long *' lvalue ParmVar 0x137945f78 'bitmap' 'unsigned long *'
+    `-ReturnStmt 0x137947f30 <line:29:2, col:9>
+      `-IntegerLiteral 0x137947f10 <col:9> 'int' 0

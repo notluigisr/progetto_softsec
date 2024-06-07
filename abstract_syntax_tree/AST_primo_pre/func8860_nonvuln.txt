@@ -1,0 +1,45 @@
+`-FunctionDecl 0x135140a70  line:1:13 sev_unlock_two_vms 'void (struct kvm *, struct kvm *)' static
+  |-ParmVarDecl 0x135128648 <col:32, col:44> col:44 used dst_kvm 'struct kvm *'
+  |-ParmVarDecl 0x135128738 <col:53, col:65> col:65 used src_kvm 'struct kvm *'
+  `-CompoundStmt 0x1351416a0 <line:2:1, line:10:1>
+    |-DeclStmt 0x135140f90 <line:3:2, col:63>
+    | |-RecordDecl 0x135140b70 <col:2, col:9> col:9 struct kvm_sev_info
+    | `-VarDecl 0x135140cd8 <col:2, col:55> col:23 used dst_sev 'struct kvm_sev_info *' cinit
+    |   `-UnaryOperator 0x135140f60 <col:33, col:55> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x135140f38 <col:34, col:55> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x135140ef8 <col:34, col:52> 'int'
+    |         |-ImplicitCastExpr 0x135140ee0 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x135140e70 <col:34> 'int ()' Function 0x135140db8 'to_kvm_svm' 'int ()'
+    |         `-ImplicitCastExpr 0x135140f20 <col:45> 'struct kvm *' <LValueToRValue>
+    |           `-DeclRefExpr 0x135140e90 <col:45> 'struct kvm *' lvalue ParmVar 0x135128648 'dst_kvm' 'struct kvm *'
+    |-DeclStmt 0x135141178 <line:4:2, col:63>
+    | `-VarDecl 0x135141038 <col:2, col:55> col:23 used src_sev 'struct kvm_sev_info *' cinit
+    |   `-UnaryOperator 0x135141160 <col:33, col:55> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x135141138 <col:34, col:55> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x1351410f8 <col:34, col:52> 'int'
+    |         |-ImplicitCastExpr 0x1351410e0 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x1351410a0 <col:34> 'int ()' Function 0x135140db8 'to_kvm_svm' 'int ()'
+    |         `-ImplicitCastExpr 0x135141120 <col:45> 'struct kvm *' <LValueToRValue>
+    |           `-DeclRefExpr 0x1351410c0 <col:45> 'struct kvm *' lvalue ParmVar 0x135128738 'src_kvm' 'struct kvm *'
+    |-CallExpr 0x135141308 <line:6:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135141270 <col:2> 'int ()' Function 0x1351411b8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x1351412f0 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1351412c8 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135141290 <col:16> 'struct kvm *' lvalue ParmVar 0x135128648 'dst_kvm' 'struct kvm *'
+    |-CallExpr 0x1351413c8 <line:7:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135141330 <col:2> 'int ()' Function 0x1351411b8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x1351413b0 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x135141388 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135141350 <col:16> 'struct kvm *' lvalue ParmVar 0x135128738 'src_kvm' 'struct kvm *'
+    |-CallExpr 0x135141588 <line:8:2, col:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1351414d0 <col:2> 'int ()' Function 0x135141418 'atomic_set_release' 'int ()'
+    | |-UnaryOperator 0x135141550 <col:21, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x135141528 <col:22, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1351414f0 <col:22> 'struct kvm_sev_info *' contains-errors lvalue Var 0x135140cd8 'dst_sev' 'struct kvm_sev_info *'
+    | `-IntegerLiteral 0x135141568 <col:54> 'int' 0
+    `-CallExpr 0x135141670 <line:9:2, col:55> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1351415b8 <col:2> 'int ()' Function 0x135141418 'atomic_set_release' 'int ()'
+      |-UnaryOperator 0x135141638 <col:21, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x135141610 <col:22, col:31> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1351415d8 <col:22> 'struct kvm_sev_info *' contains-errors lvalue Var 0x135141038 'src_sev' 'struct kvm_sev_info *'
+      `-IntegerLiteral 0x135141650 <col:54> 'int' 0

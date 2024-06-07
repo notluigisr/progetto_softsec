@@ -1,0 +1,24 @@
+`-FunctionDecl 0x14280e350  line:1:13 rekey_seq_generator 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x14280e248 <col:33, col:53> col:53 work 'struct work_struct *'
+  `-CompoundStmt 0x143008ce8 <line:2:1, line:11:1>
+    |-DeclStmt 0x1430084e0 <line:3:2, col:56>
+    | |-RecordDecl 0x143008248 <col:2, col:9> col:9 struct keydata
+    | `-VarDecl 0x1430083b8 <col:2, col:18> col:18 used keyptr 'struct keydata *'
+    |-CallExpr 0x143008730 <line:5:2, col:57> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x143008610 <col:2> 'int ()' Function 0x143008558 'get_random_bytes' 'int ()'
+    | |-RecoveryExpr 0x143008668 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x143008630 <col:19> 'struct keydata *' lvalue Var 0x1430083b8 'keyptr' 'struct keydata *'
+    | `-UnaryExprOrTypeTraitExpr 0x143008710 <col:35, col:56> 'unsigned long' contains-errors sizeof
+    |   `-ParenExpr 0x1430086f0 <col:41, col:56> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x1430086c8 <col:42, col:50> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x143008690 <col:42> 'struct keydata *' lvalue Var 0x1430083b8 'keyptr' 'struct keydata *' non_odr_use_unevaluated
+    |-CallExpr 0x143008978 <line:7:2, col:10> 'int'
+    | `-ImplicitCastExpr 0x143008960 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x143008908 <col:2> 'int ()' Function 0x143008850 'smp_wmb' 'int ()'
+    `-CallExpr 0x143008cb8 <line:9:2, line:10:48> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x143008a78 <line:9:2> 'int ()' Function 0x1430089c0 'schedule_delayed_work' 'int ()'
+      |-UnaryOperator 0x143008c58 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x143008c38 <col:25> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x143008c90 <line:10:10, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x143008ba8 <col:10> 'int ()' Function 0x143008af0 'round_jiffies_relative' 'int ()'
+        `-RecoveryExpr 0x143008c70 <col:33> '<dependent type>' contains-errors lvalue

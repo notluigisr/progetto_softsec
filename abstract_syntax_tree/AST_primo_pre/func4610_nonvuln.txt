@@ -1,0 +1,119 @@
+`-FunctionDecl 0x151859eb8  line:1:13 perf_init_event 'struct pmu *(struct perf_event *)'
+  |-ParmVarDecl 0x1518422e8 <col:29, col:48> col:48 used event 'struct perf_event *'
+  `-CompoundStmt 0x1518619c8 <line:2:1, line:44:1>
+    |-DeclStmt 0x15185a0f0 <line:3:2, col:24>
+    | `-VarDecl 0x15185a038 <col:2, col:20> col:14 used pmu 'struct pmu *' cinit
+    |   `-RecoveryExpr 0x15185a0d0 <col:20> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15185a188 <line:4:2, col:9>
+    | `-VarDecl 0x15185a120 <col:2, col:6> col:6 used idx 'int'
+    |-DeclStmt 0x15185a220 <line:5:2, col:9>
+    | `-VarDecl 0x15185a1b8 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x15185a468 <line:7:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15185a238 <col:2> 'int' lvalue Var 0x15185a120 'idx' 'int'
+    | `-CallExpr 0x15185a440 <col:8, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15185a370 <col:8> 'int ()' Function 0x15185a2b8 'srcu_read_lock' 'int ()'
+    |   `-UnaryOperator 0x15185a428 <col:23, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15185a408 <col:24> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15185a5d8 <line:9:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x15185a5c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15185a568 <col:2> 'int ()' Function 0x15185a4b0 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x15185a8a8 <line:10:2, col:43> 'struct pmu *' contains-errors '='
+    | |-DeclRefExpr 0x15185a5f8 <col:2> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | `-CallExpr 0x15185a878 <col:8, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15185a6f8 <col:8> 'int ()' Function 0x15185a640 'idr_find' 'int ()'
+    |   |-UnaryOperator 0x15185a860 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x15185a840 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-CXXDependentScopeMemberExpr 0x15185a7a8 <col:27, col:39> '<dependent type>' contains-errors lvalue .type
+    |     `-RecoveryExpr 0x15185a780 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15185a748 <col:27> 'struct perf_event *' lvalue ParmVar 0x1518422e8 'event' 'struct perf_event *'
+    |-CallExpr 0x15185a9e0 <line:11:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x15185a9c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15185a9a8 <col:2> 'int ()' Function 0x15185a8f0 'rcu_read_unlock' 'int ()'
+    |-IfStmt 0x151860fe8 <line:12:2, line:22:2>
+    | |-ImplicitCastExpr 0x15185aa20 <line:12:6> 'struct pmu *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x15185aa00 <col:6> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | `-CompoundStmt 0x151860fb0 <col:11, line:22:2>
+    |   |-IfStmt 0x151860ca8 <line:13:3, line:16:3>
+    |   | |-UnaryOperator 0x15185abc0 <line:13:7, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x15185ab98 <col:8, col:34> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x15185ab18 <col:8> 'int ()' Function 0x15185aa60 'try_module_get' 'int ()'
+    |   | |   `-RecoveryExpr 0x15185ab70 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x15185ab38 <col:23> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |   | `-CompoundStmt 0x151860c88 <col:37, line:16:3>
+    |   |   |-BinaryOperator 0x151860c00 <line:14:4, col:25> 'struct pmu *' contains-errors '='
+    |   |   | |-DeclRefExpr 0x15185abd8 <col:4> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |   |   | `-CallExpr 0x15185add8 <col:10, col:25> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x15185acd8 <col:10> 'int ()' Function 0x15185ac20 'ERR_PTR' 'int ()'
+    |   |   |   `-UnaryOperator 0x15185adc0 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |     `-ImplicitCastExpr 0x15185ada8 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |       `-RecoveryExpr 0x15185ad88 <col:19> '<dependent type>' contains-errors lvalue
+    |   |   `-GotoStmt 0x151860c70 <line:15:4, col:9> 'unlock' 0x151860c20
+    |   |-BinaryOperator 0x151860d48 <line:17:3, col:16> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x151860d00 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x151860cc8 <col:3> 'struct perf_event *' lvalue ParmVar 0x1518422e8 'event' 'struct perf_event *'
+    |   | `-DeclRefExpr 0x151860d28 <col:16> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |   |-BinaryOperator 0x151860e30 <line:18:3, col:30> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x151860d68 <col:3> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    |   | `-CallExpr 0x151860e08 <col:9, col:30> '<dependent type>' contains-errors
+    |   |   |-RecoveryExpr 0x151860dc0 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x151860d88 <col:9> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |   |   `-DeclRefExpr 0x151860de8 <col:25> 'struct perf_event *' lvalue ParmVar 0x1518422e8 'event' 'struct perf_event *'
+    |   |-IfStmt 0x151860f78 <line:19:3, line:20:21>
+    |   | |-ImplicitCastExpr 0x151860e70 <line:19:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x151860e50 <col:7> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    |   | `-BinaryOperator 0x151860f58 <line:20:4, col:21> 'struct pmu *' contains-errors '='
+    |   |   |-DeclRefExpr 0x151860e88 <col:4> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |   |   `-ImplicitCastExpr 0x151860f40 <col:10, col:21> 'struct pmu *' <IntegralToPointer>
+    |   |     `-CallExpr 0x151860f00 <col:10, col:21> 'int'
+    |   |       |-ImplicitCastExpr 0x151860ee8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x151860ea8 <col:10> 'int ()' Function 0x15185ac20 'ERR_PTR' 'int ()'
+    |   |       `-ImplicitCastExpr 0x151860f28 <col:18> 'int' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x151860ec8 <col:18> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    |   `-GotoStmt 0x151860f98 <line:21:3, col:8> 'unlock' 0x151860c20
+    |-CallExpr 0x1518612a0 <line:24:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1518610e8 <col:2> 'int ()' Function 0x151861030 'list_for_each_entry_rcu' 'int ()'
+    | |-DeclRefExpr 0x151861108 <col:26> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | |-UnaryOperator 0x151861268 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x151861248 <col:32> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x151861280 <col:38> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x1518617c0 <col:45, line:38:2>
+    | |-IfStmt 0x151861408 <line:25:3, line:28:3>
+    | | |-UnaryOperator 0x151861380 <line:25:7, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-CallExpr 0x151861358 <col:8, col:34> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1518612d8 <col:8> 'int ()' Function 0x15185aa60 'try_module_get' 'int ()'
+    | | |   `-RecoveryExpr 0x151861330 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x1518612f8 <col:23> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | | `-CompoundStmt 0x1518613f0 <col:37, line:28:3>
+    | |   `-GotoStmt 0x1518613d8 <line:27:4, col:9> 'unlock' 0x151860c20
+    | |-BinaryOperator 0x1518614a8 <line:29:3, col:16> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x151861460 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x151861428 <col:3> 'struct perf_event *' lvalue ParmVar 0x1518422e8 'event' 'struct perf_event *'
+    | | `-DeclRefExpr 0x151861488 <col:16> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | |-BinaryOperator 0x151861590 <line:30:3, col:30> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x1518614c8 <col:3> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    | | `-CallExpr 0x151861568 <col:9, col:30> '<dependent type>' contains-errors
+    | |   |-RecoveryExpr 0x151861520 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x1518614e8 <col:9> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    | |   `-DeclRefExpr 0x151861548 <col:25> 'struct perf_event *' lvalue ParmVar 0x1518422e8 'event' 'struct perf_event *'
+    | |-IfStmt 0x151861618 <line:31:3, line:32:9>
+    | | |-UnaryOperator 0x1518615e8 <line:31:7, col:8> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1518615d0 <col:8> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x1518615b0 <col:8> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    | | `-GotoStmt 0x151861600 <line:32:4, col:9> 'unlock' 0x151860c20
+    | `-IfStmt 0x1518617a0 <line:34:3, line:37:3>
+    |   |-RecoveryExpr 0x151861658 <line:34:7, col:15> '_Bool' contains-errors
+    |   `-CompoundStmt 0x151861780 <col:23, line:37:3>
+    |     |-BinaryOperator 0x151861748 <line:35:4, col:21> 'struct pmu *' contains-errors '='
+    |     | |-DeclRefExpr 0x151861678 <col:4> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'
+    |     | `-ImplicitCastExpr 0x151861730 <col:10, col:21> 'struct pmu *' <IntegralToPointer>
+    |     |   `-CallExpr 0x1518616f0 <col:10, col:21> 'int'
+    |     |     |-ImplicitCastExpr 0x1518616d8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x151861698 <col:10> 'int ()' Function 0x15185ac20 'ERR_PTR' 'int ()'
+    |     |     `-ImplicitCastExpr 0x151861718 <col:18> 'int' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x1518616b8 <col:18> 'int' lvalue Var 0x15185a1b8 'ret' 'int'
+    |     `-GotoStmt 0x151861768 <line:36:4, col:9> 'unlock' 0x151860c20
+    |-LabelStmt 0x151861960 <line:40:1, col:7> 'unlock'
+    | `-NullStmt 0x151861958 <col:7>
+    `-ReturnStmt 0x1518619b8 <line:43:2, col:9>
+      `-ImplicitCastExpr 0x1518619a0 <col:9> 'struct pmu *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x151861980 <col:9> 'struct pmu *' contains-errors lvalue Var 0x15185a038 'pmu' 'struct pmu *'

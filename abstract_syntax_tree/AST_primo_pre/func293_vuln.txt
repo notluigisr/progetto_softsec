@@ -1,0 +1,61 @@
+`-FunctionDecl 0x15b140a00  line:1:12 change_mount_flags 'int (struct vfsmount *, int)' static
+  |-ParmVarDecl 0x15b128648 <col:31, col:48> col:48 used mnt 'struct vfsmount *'
+  |-ParmVarDecl 0x15b1286c8 <col:53, col:57> col:57 used ms_flags 'int'
+  `-CompoundStmt 0x15b141740 <line:2:1, line:19:1>
+    |-DeclStmt 0x15b140ba0 <line:3:2, col:15>
+    | `-VarDecl 0x15b140b18 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x15b140b80 <col:14> 'int' 0
+    |-DeclStmt 0x15b140c58 <line:4:2, col:26>
+    | `-VarDecl 0x15b140bd0 <col:2, col:25> col:6 used readonly_request 'int' cinit
+    |   `-IntegerLiteral 0x15b140c38 <col:25> 'int' 0
+    |-IfStmt 0x15b140d80 <line:6:2, line:7:22>
+    | |-BinaryOperator 0x15b140d00 <line:6:6, col:17> '<dependent type>' contains-errors '&'
+    | | |-DeclRefExpr 0x15b140c70 <col:6> 'int' lvalue ParmVar 0x15b1286c8 'ms_flags' 'int'
+    | | `-RecoveryExpr 0x15b140ce0 <col:17> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x15b140d60 <line:7:3, col:22> 'int' '='
+    |   |-DeclRefExpr 0x15b140d20 <col:3> 'int' lvalue Var 0x15b140bd0 'readonly_request' 'int'
+    |   `-IntegerLiteral 0x15b140d40 <col:22> 'int' 1
+    |-IfStmt 0x15b141000 <line:8:2, line:9:10>
+    | |-BinaryOperator 0x15b140fb0 <line:8:6, col:47> 'int' '=='
+    | | |-ImplicitCastExpr 0x15b140f98 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x15b140da0 <col:6> 'int' lvalue Var 0x15b140bd0 'readonly_request' 'int'
+    | | `-CallExpr 0x15b140f58 <col:26, col:47> 'int'
+    | |   |-ImplicitCastExpr 0x15b140f40 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x15b140ed0 <col:26> 'int ()' Function 0x15b140e18 '__mnt_is_readonly' 'int ()'
+    | |   `-ImplicitCastExpr 0x15b140f80 <col:44> 'struct vfsmount *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x15b140ef0 <col:44> 'struct vfsmount *' lvalue ParmVar 0x15b128648 'mnt' 'struct vfsmount *'
+    | `-ReturnStmt 0x15b140ff0 <line:9:3, col:10>
+    |   `-IntegerLiteral 0x15b140fd0 <col:10> 'int' 0
+    |-IfStmt 0x15b1411a0 <line:11:2, line:12:11>
+    | |-BinaryOperator 0x15b1410d8 <line:11:6, col:23> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x15b141058 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15b141020 <col:6> 'struct vfsmount *' lvalue ParmVar 0x15b128648 'mnt' 'struct vfsmount *'
+    | | `-RecoveryExpr 0x15b1410b8 <col:23> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x15b141190 <line:12:3, col:11>
+    |   `-UnaryOperator 0x15b141178 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15b141160 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15b141140 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15b1416c8 <line:14:2, line:17:40> has_else
+    | |-ImplicitCastExpr 0x15b1411e0 <line:14:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x15b1411c0 <col:6> 'int' lvalue Var 0x15b140bd0 'readonly_request' 'int'
+    | |-BinaryOperator 0x15b1414d0 <line:15:3, col:44> 'int' '='
+    | | |-DeclRefExpr 0x15b1411f8 <col:3> 'int' lvalue Var 0x15b140b18 'error' 'int'
+    | | `-CallExpr 0x15b1414a8 <col:11, col:44> 'int'
+    | |   |-ImplicitCastExpr 0x15b141490 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x15b1412f8 <col:11> 'int ()' Function 0x15b141240 'mnt_make_readonly' 'int ()'
+    | |   `-CallExpr 0x15b141450 <col:29, col:43> 'int'
+    | |     |-ImplicitCastExpr 0x15b141438 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x15b1413f8 <col:29> 'int ()' Function 0x15b141340 'real_mount' 'int ()'
+    | |     `-ImplicitCastExpr 0x15b141478 <col:40> 'struct vfsmount *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x15b141418 <col:40> 'struct vfsmount *' lvalue ParmVar 0x15b128648 'mnt' 'struct vfsmount *'
+    | `-CallExpr 0x15b1416a0 <line:17:3, col:40> 'int'
+    |   |-ImplicitCastExpr 0x15b141688 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15b1415d0 <col:3> 'int ()' Function 0x15b141518 '__mnt_unmake_readonly' 'int ()'
+    |   `-CallExpr 0x15b141648 <col:25, col:39> 'int'
+    |     |-ImplicitCastExpr 0x15b141630 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15b1415f0 <col:25> 'int ()' Function 0x15b141340 'real_mount' 'int ()'
+    |     `-ImplicitCastExpr 0x15b141670 <col:36> 'struct vfsmount *' <LValueToRValue>
+    |       `-DeclRefExpr 0x15b141610 <col:36> 'struct vfsmount *' lvalue ParmVar 0x15b128648 'mnt' 'struct vfsmount *'
+    `-ReturnStmt 0x15b141730 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x15b141718 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x15b1416f8 <col:9> 'int' lvalue Var 0x15b140b18 'error' 'int'

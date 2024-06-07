@@ -1,0 +1,89 @@
+`-FunctionDecl 0x14d1359f8  line:1:12 invalid handle_pte_fault 'int (struct mm_struct *, struct vm_area_struct *, unsigned long, int *, int *, unsigned int)' static
+  |-ParmVarDecl 0x14d11d248 <col:29, col:47> col:47 used mm 'struct mm_struct *'
+  |-ParmVarDecl 0x14d135628 <line:2:8, col:31> col:31 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x14d1356a8 <col:36, col:50> col:50 used address 'unsigned long'
+  |-ParmVarDecl 0x14d135778 <line:3:8, col:15> col:15 referenced invalid pte 'int *'
+  |-ParmVarDecl 0x14d1357f8 <col:20, col:27> col:27 invalid pmd 'int *'
+  |-ParmVarDecl 0x14d135878 <col:32, col:45> col:45 used flags 'unsigned int'
+  `-CompoundStmt 0x14e00b7b8 <line:4:1, line:49:1>
+    |-CallExpr 0x14d135d18 <line:10:2, col:10> 'int'
+    | `-ImplicitCastExpr 0x14d135d00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14d135cb0 <col:2> 'int ()' Function 0x14d135bf8 'barrier' 'int ()'
+    |-IfStmt 0x14e00a310 <line:11:2, line:23:2>
+    | |-UnaryOperator 0x14d135ed8 <line:11:6, col:24> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x14d135eb0 <col:7, col:24> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14d135e18 <col:7> 'int ()' Function 0x14d135d60 'pte_present' 'int ()'
+    | |   `-RecoveryExpr 0x14d135e90 <col:19> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14e00a2f0 <col:27, line:23:2>
+    |   |-IfStmt 0x14e00a018 <line:12:3, line:20:3>
+    |   | |-CallExpr 0x14d136050 <line:12:7, col:21> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x14d135fd0 <col:7> 'int ()' Function 0x14d135f18 'pte_none' 'int ()'
+    |   | | `-RecoveryExpr 0x14d136030 <col:16> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x14e009ff8 <col:24, line:20:3>
+    |   |   |-IfStmt 0x14d136598 <line:13:4, line:17:4>
+    |   |   | |-RecoveryExpr 0x14d1360b0 <line:13:8, col:13> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x14d136078 <col:8> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |   |   | `-CompoundStmt 0x14d136580 <col:21, line:17:4>
+    |   |   |   `-IfStmt 0x14d136560 <line:14:5, line:16:25>
+    |   |   |     |-CallExpr 0x14d136280 <line:14:9, col:34> '<dependent type>' contains-errors
+    |   |   |     | |-DeclRefExpr 0x14d1361b8 <col:9> 'int ()' Function 0x14d136100 'likely' 'int ()'
+    |   |   |     | `-CXXDependentScopeMemberExpr 0x14d136238 <col:16, col:29> '<dependent type>' contains-errors lvalue ->fault
+    |   |   |     |   `-RecoveryExpr 0x14d136210 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   |   |     |     `-DeclRefExpr 0x14d1361d8 <col:16> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |   |   |     `-ReturnStmt 0x14d136550 <line:15:6, line:16:25>
+    |   |   |       `-CallExpr 0x14d1364f8 <line:15:13, line:16:25> '<dependent type>' contains-errors
+    |   |   |         |-DeclRefExpr 0x14d136388 <line:15:13> 'int ()' Function 0x14d1362d0 'do_fault' 'int ()'
+    |   |   |         |-DeclRefExpr 0x14d1363a8 <col:22> 'struct mm_struct *' lvalue ParmVar 0x14d11d248 'mm' 'struct mm_struct *'
+    |   |   |         |-DeclRefExpr 0x14d1363c8 <col:26> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |   |   |         |-DeclRefExpr 0x14d1363e8 <col:31> 'unsigned long' lvalue ParmVar 0x14d1356a8 'address' 'unsigned long'
+    |   |   |         |-RecoveryExpr 0x14d136408 <col:40> '<dependent type>' contains-errors lvalue
+    |   |   |         |-RecoveryExpr 0x14d136428 <line:16:8> '<dependent type>' contains-errors lvalue
+    |   |   |         |-DeclRefExpr 0x14d136448 <col:13> 'unsigned int' lvalue ParmVar 0x14d135878 'flags' 'unsigned int'
+    |   |   |         `-RecoveryExpr 0x14d1364d8 <col:20> '<dependent type>' contains-errors lvalue
+    |   |   `-ReturnStmt 0x14e009fe8 <line:18:4, line:19:23>
+    |   |     `-CallExpr 0x14e009f98 <line:18:11, line:19:23> '<dependent type>' contains-errors
+    |   |       |-DeclRefExpr 0x14e009eb8 <line:18:11> 'int ()' Function 0x14e009e00 'do_anonymous_page' 'int ()'
+    |   |       |-DeclRefExpr 0x14e009ed8 <col:29> 'struct mm_struct *' lvalue ParmVar 0x14d11d248 'mm' 'struct mm_struct *'
+    |   |       |-DeclRefExpr 0x14e009ef8 <col:33> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |   |       |-DeclRefExpr 0x14e009f18 <col:38> 'unsigned long' lvalue ParmVar 0x14d1356a8 'address' 'unsigned long'
+    |   |       |-RecoveryExpr 0x14e009f38 <line:19:8> '<dependent type>' contains-errors lvalue
+    |   |       |-RecoveryExpr 0x14e009f58 <col:13> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x14e009f78 <col:18> 'unsigned int' lvalue ParmVar 0x14d135878 'flags' 'unsigned int'
+    |   `-ReturnStmt 0x14e00a2e0 <line:21:3, line:22:28>
+    |     `-CallExpr 0x14e00a288 <line:21:10, line:22:28> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14e00a118 <line:21:10> 'int ()' Function 0x14e00a060 'do_swap_page' 'int ()'
+    |       |-DeclRefExpr 0x14e00a138 <col:23> 'struct mm_struct *' lvalue ParmVar 0x14d11d248 'mm' 'struct mm_struct *'
+    |       |-DeclRefExpr 0x14e00a158 <col:27> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |       |-DeclRefExpr 0x14e00a178 <col:32> 'unsigned long' lvalue ParmVar 0x14d1356a8 'address' 'unsigned long'
+    |       |-RecoveryExpr 0x14e00a198 <line:22:6> '<dependent type>' contains-errors lvalue
+    |       |-RecoveryExpr 0x14e00a1b8 <col:11> '<dependent type>' contains-errors lvalue
+    |       |-DeclRefExpr 0x14e00a1d8 <col:16> 'unsigned int' lvalue ParmVar 0x14d135878 'flags' 'unsigned int'
+    |       `-RecoveryExpr 0x14e00a268 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14e00ab38 <line:30:2, line:31:8>
+    | |-RecoveryExpr 0x14e00aab0 <line:30:6, col:37> '_Bool' contains-errors
+    | `-GotoStmt 0x14e00ab20 <line:31:3, col:8> 'unlock' 0x14e00aad0
+    |-IfStmt 0x14e00af70 <line:32:2, line:37:2>
+    | |-RecoveryExpr 0x14e00ab78 <line:32:6, col:14> '_Bool' contains-errors
+    | `-CompoundStmt 0x14e00af60 <col:32, line:37:2>
+    |-IfStmt 0x14e00b610 <line:39:2, line:45:2> has_else
+    | |-RecoveryExpr 0x14e00b210 <line:39:6, col:78> '_Bool' contains-errors
+    | |-CompoundStmt 0x14e00b3c8 <col:81, line:41:2>
+    | | `-CallExpr 0x14e00b390 <line:40:3, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14e00b310 <col:3> 'int ()' Function 0x14e00b258 'update_mmu_cache' 'int ()'
+    | |   |-DeclRefExpr 0x14e00b330 <col:20> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    | |   |-DeclRefExpr 0x14e00b350 <col:25> 'unsigned long' lvalue ParmVar 0x14d1356a8 'address' 'unsigned long'
+    | |   `-RecoveryExpr 0x14e00b370 <col:34> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14e00b5f8 <line:41:9, line:45:2>
+    |   `-IfStmt 0x14e00b5d8 <line:43:3, line:44:45>
+    |     |-RecoveryExpr 0x14e00b400 <line:43:7, col:15> '_Bool' contains-errors
+    |     `-CallExpr 0x14e00b578 <line:44:4, col:45> 'int'
+    |       |-ImplicitCastExpr 0x14e00b560 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14e00b500 <col:4> 'int ()' Function 0x14e00b448 'flush_tlb_fix_spurious_fault' 'int ()'
+    |       |-ImplicitCastExpr 0x14e00b5a8 <col:33> 'struct vm_area_struct *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x14e00b520 <col:33> 'struct vm_area_struct *' lvalue ParmVar 0x14d135628 'vma' 'struct vm_area_struct *'
+    |       `-ImplicitCastExpr 0x14e00b5c0 <col:38> 'unsigned long' <LValueToRValue>
+    |         `-DeclRefExpr 0x14e00b540 <col:38> 'unsigned long' lvalue ParmVar 0x14d1356a8 'address' 'unsigned long'
+    |-LabelStmt 0x14e00b768 <line:46:1, col:7> 'unlock'
+    | `-NullStmt 0x14e00b760 <col:7>
+    `-ReturnStmt 0x14e00b7a8 <line:48:2, col:9>
+      `-IntegerLiteral 0x14e00b788 <col:9> 'int' 0

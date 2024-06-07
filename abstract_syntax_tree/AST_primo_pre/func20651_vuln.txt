@@ -1,0 +1,60 @@
+`-FunctionDecl 0x140827600  line:1:13 invalid lo_release 'void (struct gendisk *, int)' static
+  |-ParmVarDecl 0x14080ec48 <col:24, col:40> col:40 used disk 'struct gendisk *'
+  |-ParmVarDecl 0x14080ece0 <col:46, col:54> col:54 invalid mode 'int'
+  `-CompoundStmt 0x140829578 <line:2:1, line:22:1>
+    |-DeclStmt 0x140827908 <line:3:2, col:45>
+    | |-RecordDecl 0x1408276b8 <col:2, col:9> col:9 struct loop_device
+    | `-VarDecl 0x140827828 <col:2, col:33> col:22 used lo 'struct loop_device *' cinit
+    |   `-RecoveryExpr 0x1408278c8 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x140827890 <col:27> 'struct gendisk *' lvalue ParmVar 0x14080ec48 'disk' 'struct gendisk *'
+    |-DeclStmt 0x1408279a0 <line:4:2, col:9>
+    | `-VarDecl 0x140827938 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x140827be0 <line:6:2, line:7:3>
+    | |-CallExpr 0x140827ba8 <line:6:6, col:38> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x140827b10 <col:6> 'int ()' Function 0x140827a58 'atomic_dec_return' 'int ()'
+    | | `-UnaryOperator 0x140827b90 <col:24, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x140827b68 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x140827b30 <col:25> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    | `-ReturnStmt 0x140827bd0 <line:7:3>
+    |-CallExpr 0x140827d78 <line:9:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x140827ce0 <col:2> 'int ()' Function 0x140827c28 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x140827d60 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x140827d38 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x140827d00 <col:14> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    |-IfStmt 0x140828530 <line:10:2, line:19:2> has_else
+    | |-BinaryOperator 0x140827e58 <line:10:6, col:21> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x140827dd8 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x140827da0 <col:6> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    | | `-RecoveryExpr 0x140827e38 <col:21> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x1408280e8 <col:41, line:15:2>
+    | | |-BinaryOperator 0x140828048 <line:12:3, col:23> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x140827e78 <col:3> 'int' lvalue Var 0x140827938 'err' 'int'
+    | | | `-CallExpr 0x140828008 <col:9, col:23> 'int' contains-errors
+    | | |   |-ImplicitCastExpr 0x140827ff0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x140827f78 <col:9> 'int ()' Function 0x140827ec0 'loop_clr_fd' 'int ()'
+    | | |   `-ImplicitCastExpr 0x140828030 <col:21> 'struct loop_device *' contains-errors <LValueToRValue>
+    | | |     `-DeclRefExpr 0x140827f98 <col:21> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    | | `-IfStmt 0x1408280c8 <line:13:3, line:14:4>
+    | |   |-UnaryOperator 0x1408280a0 <line:13:7, col:8> 'int' prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x140828088 <col:8> 'int' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x140828068 <col:8> 'int' lvalue Var 0x140827938 'err' 'int'
+    | |   `-ReturnStmt 0x1408280b8 <line:14:4>
+    | `-IfStmt 0x140828510 <line:15:9, line:19:2>
+    |   |-BinaryOperator 0x1408281c0 <line:15:13, col:29> 'int' contains-errors '=='
+    |   | |-RecoveryExpr 0x140828140 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x140828108 <col:13> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    |   | `-RecoveryExpr 0x1408281a0 <col:29> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x1408284f0 <col:39, line:19:2>
+    |     |-CallExpr 0x140828340 <line:17:3, col:35> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x1408282c0 <col:3> 'int ()' Function 0x140828208 'blk_mq_freeze_queue' 'int ()'
+    |     | `-RecoveryExpr 0x140828318 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x1408282e0 <col:23> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    |     `-CallExpr 0x1408284c8 <line:18:3, col:37> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x140828448 <col:3> 'int ()' Function 0x140828390 'blk_mq_unfreeze_queue' 'int ()'
+    |       `-RecoveryExpr 0x1408284a0 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x140828468 <col:25> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'
+    `-CallExpr 0x140829550 <line:21:2, col:32> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1408294b8 <col:2> 'int ()' Function 0x140829400 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x140829538 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x140829510 <col:16, col:20> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1408294d8 <col:16> 'struct loop_device *' contains-errors lvalue Var 0x140827828 'lo' 'struct loop_device *'

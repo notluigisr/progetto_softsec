@@ -1,0 +1,96 @@
+`-FunctionDecl 0x153808688  line:1:26 invalid tcf_chain_tp_find 'struct tcf_proto *(struct tcf_chain *, struct tcf_chain_info *, int, int, int)' static
+  |-ParmVarDecl 0x1531286e8 <col:44, col:62> col:62 used chain 'struct tcf_chain *'
+  |-ParmVarDecl 0x1538082c8 <line:2:9, col:32> col:32 used chain_info 'struct tcf_chain_info *'
+  |-ParmVarDecl 0x153808360 <line:3:9, col:13> col:13 invalid protocol 'int'
+  |-ParmVarDecl 0x1538083e0 <col:23, col:27> col:27 invalid prio 'int'
+  |-ParmVarDecl 0x153808460 <line:4:9, col:14> col:14 invalid prio_allocate 'int'
+  `-CompoundStmt 0x1531410d0 <line:5:1, line:32:1>
+    |-DeclStmt 0x1538088b0 <line:6:2, col:26>
+    | `-VarDecl 0x153808848 <col:2, col:21> col:21 used pprev 'struct tcf_proto **'
+    |-DeclStmt 0x153808958 <line:7:2, col:22>
+    | `-VarDecl 0x1538088f0 <col:2, col:20> col:20 used tp 'struct tcf_proto *'
+    |-ForStmt 0x153140be0 <line:10:2, line:23:2>
+    | |-BinaryOperator 0x153808a08 <line:10:7, col:23> 'struct tcf_proto **' contains-errors '='
+    | | |-DeclRefExpr 0x153808970 <col:7> 'struct tcf_proto **' lvalue Var 0x153808848 'pprev' 'struct tcf_proto **'
+    | | `-UnaryOperator 0x1538089f0 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1538089c8 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x153808990 <col:16> 'struct tcf_chain *' lvalue ParmVar 0x1531286e8 'chain' 'struct tcf_chain *'
+    | |-<<<NULL>>>
+    | |-ParenExpr 0x153808d10 <line:11:7, col:49> 'struct tcf_proto *'
+    | | `-BinaryOperator 0x153808cf0 <col:8, col:48> 'struct tcf_proto *' '='
+    | |   |-DeclRefExpr 0x153808a28 <col:8> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    | |   `-ImplicitCastExpr 0x153808cd8 <col:13, col:48> 'struct tcf_proto *' <IntegralToPointer>
+    | |     `-CallExpr 0x153808c78 <col:13, col:48> 'int'
+    | |       |-ImplicitCastExpr 0x153808c60 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x153808ba0 <col:13> 'int ()' Function 0x153808ae8 'tcf_chain_dereference' 'int ()'
+    | |       |-ImplicitCastExpr 0x153808ca8 <col:35, col:36> 'struct tcf_proto *' <LValueToRValue>
+    | |       | `-UnaryOperator 0x153808bf8 <col:35, col:36> 'struct tcf_proto *' lvalue prefix '*' cannot overflow
+    | |       |   `-ImplicitCastExpr 0x153808be0 <col:36> 'struct tcf_proto **' <LValueToRValue>
+    | |       |     `-DeclRefExpr 0x153808bc0 <col:36> 'struct tcf_proto **' lvalue Var 0x153808848 'pprev' 'struct tcf_proto **'
+    | |       `-ImplicitCastExpr 0x153808cc0 <col:43> 'struct tcf_chain *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x153808c10 <col:43> 'struct tcf_chain *' lvalue ParmVar 0x1531286e8 'chain' 'struct tcf_chain *'
+    | |-BinaryOperator 0x153808dc8 <line:12:7, col:20> 'struct tcf_proto **' contains-errors '='
+    | | |-DeclRefExpr 0x153808d30 <col:7> 'struct tcf_proto **' lvalue Var 0x153808848 'pprev' 'struct tcf_proto **'
+    | | `-UnaryOperator 0x153808db0 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x153808d88 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x153808d50 <col:16> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    | `-CompoundStmt 0x153140bc8 <col:26, line:23:2>
+    |   `-IfStmt 0x153140ba8 <line:13:3, line:22:3>
+    |     |-BinaryOperator 0x153808e68 <line:13:7, col:19> 'int' contains-errors '>='
+    |     | |-RecoveryExpr 0x153808e20 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x153808de8 <col:7> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    |     | `-RecoveryExpr 0x153808e48 <col:19> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x153140b88 <col:25, line:22:3>
+    |       |-IfStmt 0x153140b50 <line:14:4, line:20:4> has_else
+    |       | |-BinaryOperator 0x153808f08 <line:14:8, col:20> 'int' contains-errors '=='
+    |       | | |-RecoveryExpr 0x153808ec0 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |       | | | `-DeclRefExpr 0x153808e88 <col:8> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    |       | | `-RecoveryExpr 0x153808ee8 <col:20> '<dependent type>' contains-errors lvalue
+    |       | |-CompoundStmt 0x153140a88 <col:26, line:18:4>
+    |       | | `-IfStmt 0x153140a68 <line:15:5, line:17:28>
+    |       | |   |-BinaryOperator 0x153809048 <line:15:9, line:16:46> 'int' contains-errors '||'
+    |       | |   | |-RecoveryExpr 0x153808f28 <line:15:9> '<dependent type>' contains-errors lvalue
+    |       | |   | `-ParenExpr 0x153809028 <line:16:9, col:46> 'int' contains-errors
+    |       | |   |   `-BinaryOperator 0x153809008 <col:10, col:38> 'int' contains-errors '&&'
+    |       | |   |     |-BinaryOperator 0x153808fc8 <col:10, col:26> 'int' contains-errors '!='
+    |       | |   |     | |-RecoveryExpr 0x153808f80 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    |       | |   |     | | `-DeclRefExpr 0x153808f48 <col:10> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    |       | |   |     | `-RecoveryExpr 0x153808fa8 <col:26> '<dependent type>' contains-errors lvalue
+    |       | |   |     `-RecoveryExpr 0x153808fe8 <col:38> '<dependent type>' contains-errors lvalue
+    |       | |   `-ReturnStmt 0x153140a58 <line:17:6, col:28>
+    |       | |     `-CallExpr 0x153140a30 <col:13, col:28> '<dependent type>' contains-errors
+    |       | |       |-DeclRefExpr 0x153809148 <col:13> 'int ()' Function 0x153809090 'ERR_PTR' 'int ()'
+    |       | |       `-UnaryOperator 0x153140a18 <col:21, col:22> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       | |         `-ImplicitCastExpr 0x153140a00 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    |       | |           `-RecoveryExpr 0x1538091d8 <col:22> '<dependent type>' contains-errors lvalue
+    |       | `-CompoundStmt 0x153140b38 <line:18:11, line:20:4>
+    |       |   `-BinaryOperator 0x153140b18 <line:19:5, col:10> 'struct tcf_proto *' contains-errors '='
+    |       |     |-DeclRefExpr 0x153140aa0 <col:5> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    |       |     `-RecoveryExpr 0x153140af8 <col:10> '<dependent type>' contains-errors lvalue
+    |       `-BreakStmt 0x153140b80 <line:21:4>
+    |-BinaryOperator 0x153140c98 <line:24:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x153140c50 <col:2, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x153140c18 <col:2> 'struct tcf_chain_info *' lvalue ParmVar 0x1538082c8 'chain_info' 'struct tcf_chain_info *'
+    | `-DeclRefExpr 0x153140c78 <col:22> 'struct tcf_proto **' lvalue Var 0x153808848 'pprev' 'struct tcf_proto **'
+    |-IfStmt 0x153141058 <line:25:2, line:30:2> has_else
+    | |-ImplicitCastExpr 0x153140cd8 <line:25:6> 'struct tcf_proto *' <LValueToRValue>
+    | | `-DeclRefExpr 0x153140cb8 <col:6> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    | |-CompoundStmt 0x153140f48 <col:10, line:28:2>
+    | | |-BinaryOperator 0x153140db0 <line:26:3, col:26> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x153140d28 <col:3, col:15> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x153140cf0 <col:3> 'struct tcf_chain_info *' lvalue ParmVar 0x1538082c8 'chain_info' 'struct tcf_chain_info *'
+    | | | `-RecoveryExpr 0x153140d88 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x153140d50 <col:22> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    | | `-CallExpr 0x153140f08 <line:27:3, col:19> 'int'
+    | |   |-ImplicitCastExpr 0x153140ef0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x153140eb0 <col:3> 'int ()' Function 0x153140df8 'tcf_proto_get' 'int ()'
+    | |   `-ImplicitCastExpr 0x153140f30 <col:17> 'struct tcf_proto *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x153140ed0 <col:17> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'
+    | `-CompoundStmt 0x153141040 <line:28:9, line:30:2>
+    |   `-BinaryOperator 0x153141020 <line:29:3, col:22> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x153140fa0 <col:3, col:15> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x153140f68 <col:3> 'struct tcf_chain_info *' lvalue ParmVar 0x1538082c8 'chain_info' 'struct tcf_chain_info *'
+    |     `-RecoveryExpr 0x153141000 <col:22> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1531410c0 <line:31:2, col:9>
+      `-ImplicitCastExpr 0x1531410a8 <col:9> 'struct tcf_proto *' <LValueToRValue>
+        `-DeclRefExpr 0x153141088 <col:9> 'struct tcf_proto *' lvalue Var 0x1538088f0 'tp' 'struct tcf_proto *'

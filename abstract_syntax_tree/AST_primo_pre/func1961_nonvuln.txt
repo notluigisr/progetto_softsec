@@ -1,0 +1,77 @@
+`-FunctionDecl 0x13f923838  line:1:1 invalid relpTcpWaitWriteable 'int (int *const, struct timespec *const)'
+  |-ParmVarDecl 0x13f90a128 <col:22, col:39> col:39 referenced invalid pThis 'int *const'
+  |-ParmVarDecl 0x13f90a718 <col:46, col:69> col:69 used tTimeout 'struct timespec *const'
+  `-CompoundStmt 0x12e809010 <line:2:1, line:21:1>
+    |-DeclStmt 0x13f923970 <line:3:2, col:7>
+    | `-VarDecl 0x13f923908 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x13f923a48 <line:4:2, col:23>
+    | `-VarDecl 0x13f9239e0 <col:2, col:18> col:18 invalid tCurr 'struct timespec'
+    |-DeclStmt 0x13f923bd8 <line:5:2, col:19>
+    | |-RecordDecl 0x13f923a60 <col:2, col:9> col:9 struct pollfd
+    | `-VarDecl 0x13f923b58 <col:2, col:16> col:16 referenced invalid pfd 'struct pollfd'
+    |-CallExpr 0x13f923e10 <line:7:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f923d50 <col:2> 'int ()' Function 0x13f923c98 'clock_gettime' 'int ()'
+    | |-RecoveryExpr 0x13f923df0 <col:16> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x13f923da8 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f923d88 <col:33> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13f924170 <line:8:2, line:9:58>
+    | `-VarDecl 0x13f923e58 <line:8:2, line:9:48> line:8:12 used timeout 'const int' cinit
+    |   `-BinaryOperator 0x13f924150 <col:24, line:9:48> '<dependent type>' contains-errors '+'
+    |     |-BinaryOperator 0x13f923fe8 <line:8:24, col:60> '<dependent type>' contains-errors '*'
+    |     | |-ParenExpr 0x13f923fa8 <col:24, col:56> '<dependent type>' contains-errors
+    |     | | `-BinaryOperator 0x13f923f88 <col:25, col:50> '<dependent type>' contains-errors '-'
+    |     | |   |-RecoveryExpr 0x13f923ef8 <col:25, col:35> '<dependent type>' contains-errors lvalue
+    |     | |   | `-DeclRefExpr 0x13f923ec0 <col:25> 'struct timespec *const' lvalue ParmVar 0x13f90a718 'tTimeout' 'struct timespec *const'
+    |     | |   `-CXXDependentScopeMemberExpr 0x13f923f40 <col:44, col:50> '<dependent type>' contains-errors lvalue .tv_sec
+    |     | |     `-RecoveryExpr 0x13f923f20 <col:44> '<dependent type>' contains-errors lvalue
+    |     | `-IntegerLiteral 0x13f923fc8 <col:60> 'int' 1000
+    |     `-BinaryOperator 0x13f924130 <line:9:10, col:48> '<dependent type>' contains-errors '/'
+    |       |-ParenExpr 0x13f9240f0 <col:10, col:44> '<dependent type>' contains-errors
+    |       | `-BinaryOperator 0x13f9240d0 <col:11, col:37> '<dependent type>' contains-errors '-'
+    |       |   |-RecoveryExpr 0x13f924040 <col:11, col:21> '<dependent type>' contains-errors lvalue
+    |       |   | `-DeclRefExpr 0x13f924008 <col:11> 'struct timespec *const' lvalue ParmVar 0x13f90a718 'tTimeout' 'struct timespec *const'
+    |       |   `-CXXDependentScopeMemberExpr 0x13f924088 <col:31, col:37> '<dependent type>' contains-errors lvalue .tv_nsec
+    |       |     `-RecoveryExpr 0x13f924068 <col:31> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x13f924110 <col:48> 'int' 1000000000
+    |-IfStmt 0x13f9242e8 <line:10:2, line:12:2>
+    | |-BinaryOperator 0x13f9241e0 <line:10:5, col:15> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x13f9241c8 <col:5> 'int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x13f924188 <col:5> 'const int' contains-errors lvalue Var 0x13f923e58 'timeout' 'const int'
+    | | `-IntegerLiteral 0x13f9241a8 <col:15> 'int' 0
+    | `-CompoundStmt 0x13f9242c8 <col:18, line:12:2>
+    |   |-BinaryOperator 0x13f924240 <line:11:3, col:7> 'int' '='
+    |   | |-DeclRefExpr 0x13f924200 <col:3> 'int' lvalue Var 0x13f923908 'r' 'int'
+    |   | `-IntegerLiteral 0x13f924220 <col:7> 'int' 0
+    |   `-GotoStmt 0x13f9242b0 <col:10, col:15> 'done' 0x13f924260
+    |-CallExpr 0x13f9244d0 <line:14:2, line:15:30> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x13f924398 <line:14:2, col:18> '<dependent type>' contains-errors lvalue ->dbgprint
+    | | `-CXXDependentScopeMemberExpr 0x13f924350 <col:2, col:9> '<dependent type>' contains-errors lvalue ->pEngine
+    | |   `-RecoveryExpr 0x13f924328 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13f924308 <col:2> 'int *const' lvalue ParmVar 0x13f90a128 'pThis' 'int *const'
+    | |-StringLiteral 0x13f924420 <col:27, line:15:3> 'char[7]' lvalue "STRSTR"
+    | |-CXXDependentScopeMemberExpr 0x13f924468 <col:10, col:17> '<dependent type>' contains-errors lvalue ->sock
+    | | `-RecoveryExpr 0x13f924448 <col:10> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x13f9244b0 <col:23> 'const int' contains-errors lvalue Var 0x13f923e58 'timeout' 'const int'
+    |-BinaryOperator 0x13f924600 <line:17:2, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x13f924550 <col:2, col:6> '<dependent type>' contains-errors lvalue .fd
+    | | `-RecoveryExpr 0x13f924528 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13f924508 <col:2> 'struct pollfd' lvalue Var 0x13f923b58 'pfd' 'struct pollfd'
+    | `-CXXDependentScopeMemberExpr 0x13f9245b8 <col:11, col:18> '<dependent type>' contains-errors lvalue ->sock
+    |   `-RecoveryExpr 0x13f924598 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13f924708 <line:18:2, col:15> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x13f924668 <col:2, col:6> '<dependent type>' contains-errors lvalue .events
+    | | `-RecoveryExpr 0x13f924640 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13f924620 <col:2> 'struct pollfd' lvalue Var 0x13f923b58 'pfd' 'struct pollfd'
+    | `-RecoveryExpr 0x13f9246e8 <col:15> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12e808f88 <line:19:2, col:27> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13f924728 <col:2> 'int' lvalue Var 0x13f923908 'r' 'int'
+    | `-CallExpr 0x12e808f50 <col:6, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e808eb8 <col:6> 'int ()' Function 0x12e808e00 'poll' 'int ()'
+    |   |-UnaryOperator 0x12e808ef8 <col:11, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x12e808ed8 <col:12> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x12e808f10 <col:17> 'int' 1
+    |   `-DeclRefExpr 0x12e808f30 <col:20> 'const int' contains-errors lvalue Var 0x13f923e58 'timeout' 'const int'
+    `-LabelStmt 0x12e808ff0 <line:20:1, col:14> 'done'
+      `-ReturnStmt 0x12e808fe0 <col:7, col:14>
+        `-ImplicitCastExpr 0x12e808fc8 <col:14> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x12e808fa8 <col:14> 'int' lvalue Var 0x13f923908 'r' 'int'

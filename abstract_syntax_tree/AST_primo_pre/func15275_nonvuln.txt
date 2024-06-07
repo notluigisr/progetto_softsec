@@ -1,0 +1,36 @@
+`-FunctionDecl 0x138928758  line:1:12 oz_hcd_bus_resume 'int (struct usb_hcd *)' static
+  |-ParmVarDecl 0x138928648 <col:30, col:46> col:46 used hcd 'struct usb_hcd *'
+  `-CompoundStmt 0x138941440 <line:2:1, line:11:1>
+    |-DeclStmt 0x138940c38 <line:3:2, col:22>
+    | |-RecordDecl 0x138940a50 <col:2, col:9> col:9 struct oz_hcd
+    | `-VarDecl 0x138940bb8 <col:2, col:17> col:17 used ozhcd 'struct oz_hcd *'
+    |-BinaryOperator 0x138940e80 <line:5:2, col:28> 'struct oz_hcd *' '='
+    | |-DeclRefExpr 0x138940c50 <col:2> 'struct oz_hcd *' lvalue Var 0x138940bb8 'ozhcd' 'struct oz_hcd *'
+    | `-ImplicitCastExpr 0x138940e68 <col:10, col:28> 'struct oz_hcd *' <IntegralToPointer>
+    |   `-CallExpr 0x138940e28 <col:10, col:28> 'int'
+    |     |-ImplicitCastExpr 0x138940e10 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x138940da0 <col:10> 'int ()' Function 0x138940ce8 'oz_hcd_private' 'int ()'
+    |     `-ImplicitCastExpr 0x138940e50 <col:25> 'struct usb_hcd *' <LValueToRValue>
+    |       `-DeclRefExpr 0x138940dc0 <col:25> 'struct usb_hcd *' lvalue ParmVar 0x138928648 'hcd' 'struct usb_hcd *'
+    |-CallExpr 0x138941018 <line:6:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138940f80 <col:2> 'int ()' Function 0x138940ec8 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x138941000 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x138940fd8 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138940fa0 <col:16> 'struct oz_hcd *' lvalue Var 0x138940bb8 'ozhcd' 'struct oz_hcd *'
+    |-CompoundAssignOperator 0x138941168 <line:7:2, col:19> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x138941078 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138941040 <col:2> 'struct oz_hcd *' lvalue Var 0x138940bb8 'ozhcd' 'struct oz_hcd *'
+    | `-UnaryOperator 0x138941150 <col:18, col:19> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   `-ImplicitCastExpr 0x138941138 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x138941118 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x138941250 <line:8:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1389411d0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x138941198 <col:2> 'struct usb_hcd *' lvalue ParmVar 0x138928648 'hcd' 'struct usb_hcd *'
+    | `-RecoveryExpr 0x138941230 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1389413e8 <line:9:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138941350 <col:2> 'int ()' Function 0x138941298 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x1389413d0 <col:17, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1389413a8 <col:18, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138941370 <col:18> 'struct oz_hcd *' lvalue Var 0x138940bb8 'ozhcd' 'struct oz_hcd *'
+    `-ReturnStmt 0x138941430 <line:10:2, col:9>
+      `-IntegerLiteral 0x138941410 <col:9> 'int' 0

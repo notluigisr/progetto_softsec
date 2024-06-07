@@ -1,0 +1,70 @@
+`-FunctionDecl 0x13991b740  line:1:13 xen_netbk_fill_frags 'void (struct xen_netbk *, struct sk_buff *)' static
+  |-ParmVarDecl 0x139903248 <col:34, col:52> col:52 used netbk 'struct xen_netbk *'
+  |-ParmVarDecl 0x13991b628 <col:59, col:75> col:75 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x13991df58 <line:2:1, line:26:1>
+    |-DeclStmt 0x13991bc38 <line:3:2, col:50>
+    | |-RecordDecl 0x13991b840 <col:2, col:9> col:9 struct skb_shared_info
+    | `-VarDecl 0x13991b9a8 <col:2, col:49> col:26 used shinfo 'struct skb_shared_info *' cinit
+    |   `-ImplicitCastExpr 0x13991bc08 <col:35, col:49> 'struct skb_shared_info *' <IntegralToPointer>
+    |     `-CallExpr 0x13991bbc8 <col:35, col:49> 'int'
+    |       |-ImplicitCastExpr 0x13991bbb0 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13991bb40 <col:35> 'int ()' Function 0x13991ba88 'skb_shinfo' 'int ()'
+    |       `-ImplicitCastExpr 0x13991bbf0 <col:46> 'struct sk_buff *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13991bb60 <col:46> 'struct sk_buff *' lvalue ParmVar 0x13991b628 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x13991bd30 <line:4:2, col:33>
+    | `-VarDecl 0x13991bc68 <col:2, col:25> col:6 used nr_frags 'int' cinit
+    |   `-RecoveryExpr 0x13991bd08 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13991bcd0 <col:17> 'struct skb_shared_info *' lvalue Var 0x13991b9a8 'shinfo' 'struct skb_shared_info *'
+    |-DeclStmt 0x13991bdc8 <line:5:2, col:7>
+    | `-VarDecl 0x13991bd60 <col:2, col:6> col:6 used i 'int'
+    `-ForStmt 0x13991df20 <line:7:2, line:25:2>
+      |-BinaryOperator 0x13991be20 <line:7:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x13991bde0 <col:7> 'int' lvalue Var 0x13991bd60 'i' 'int'
+      | `-IntegerLiteral 0x13991be00 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x13991beb0 <col:14, col:18> 'int' contains-errors '<'
+      | |-ImplicitCastExpr 0x13991be80 <col:14> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x13991be40 <col:14> 'int' lvalue Var 0x13991bd60 'i' 'int'
+      | `-ImplicitCastExpr 0x13991be98 <col:18> 'int' contains-errors <LValueToRValue>
+      |   `-DeclRefExpr 0x13991be60 <col:18> 'int' contains-errors lvalue Var 0x13991bc68 'nr_frags' 'int'
+      |-UnaryOperator 0x13991bef0 <col:28, col:29> 'int' postfix '++'
+      | `-DeclRefExpr 0x13991bed0 <col:28> 'int' lvalue Var 0x13991bd60 'i' 'int'
+      `-CompoundStmt 0x13991ded8 <col:33, line:25:2>
+        |-DeclStmt 0x13991c1a8 <line:9:3, col:35>
+        | |-RecordDecl 0x13991bfc0 <col:3, col:10> col:10 struct xen_netif_tx_request
+        | `-VarDecl 0x13991c128 <col:3, col:32> col:32 used txp 'struct xen_netif_tx_request *'
+        |-DeclStmt 0x13991c3a8 <line:10:3, col:20>
+        | |-RecordDecl 0x13991c1c0 <col:3, col:10> col:10 struct page
+        | `-VarDecl 0x13991c328 <col:3, col:16> col:16 used page 'struct page *'
+        |-BinaryOperator 0x13991d700 <line:16:3, col:55> 'struct page *' contains-errors '='
+        | |-DeclRefExpr 0x13991c598 <col:3> 'struct page *' lvalue Var 0x13991c328 'page' 'struct page *'
+        | `-CallExpr 0x13991d6d8 <col:10, col:55> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x13991d4b8 <col:10> 'int ()' Function 0x13991d400 'virt_to_page' 'int ()'
+        |   `-CallExpr 0x13991d6a8 <col:23, col:54> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x13991d5b8 <col:23> 'int ()' Function 0x13991d500 'idx_to_kaddr' 'int ()'
+        |     |-DeclRefExpr 0x13991d5d8 <col:36> 'struct xen_netbk *' lvalue ParmVar 0x139903248 'netbk' 'struct xen_netbk *'
+        |     `-RecoveryExpr 0x13991d688 <col:43> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x13991d940 <line:17:3, col:60> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13991d800 <col:3> 'int ()' Function 0x13991d748 '__skb_fill_page_desc' 'int ()'
+        | |-DeclRefExpr 0x13991d820 <col:24> 'struct sk_buff *' lvalue ParmVar 0x13991b628 'skb' 'struct sk_buff *'
+        | |-DeclRefExpr 0x13991d840 <col:29> 'int' lvalue Var 0x13991bd60 'i' 'int'
+        | |-DeclRefExpr 0x13991d860 <col:32> 'struct page *' lvalue Var 0x13991c328 'page' 'struct page *'
+        | |-RecoveryExpr 0x13991d8b8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x13991d880 <col:38> 'struct xen_netif_tx_request *' lvalue Var 0x13991c128 'txp' 'struct xen_netif_tx_request *'
+        | `-RecoveryExpr 0x13991d918 <col:51, col:56> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13991d8e0 <col:51> 'struct xen_netif_tx_request *' lvalue Var 0x13991c128 'txp' 'struct xen_netif_tx_request *'
+        |-CompoundAssignOperator 0x13991da48 <line:18:3, col:20> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        | |-RecoveryExpr 0x13991d9c0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x13991d988 <col:3> 'struct sk_buff *' lvalue ParmVar 0x13991b628 'skb' 'struct sk_buff *'
+        | `-RecoveryExpr 0x13991da20 <col:15, col:20> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13991d9e8 <col:15> 'struct xen_netif_tx_request *' lvalue Var 0x13991c128 'txp' 'struct xen_netif_tx_request *'
+        |-CompoundAssignOperator 0x13991db38 <line:19:3, col:25> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        | |-RecoveryExpr 0x13991dab0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x13991da78 <col:3> 'struct sk_buff *' lvalue ParmVar 0x13991b628 'skb' 'struct sk_buff *'
+        | `-RecoveryExpr 0x13991db10 <col:20, col:25> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13991dad8 <col:20> 'struct xen_netif_tx_request *' lvalue Var 0x13991c128 'txp' 'struct xen_netif_tx_request *'
+        `-CompoundAssignOperator 0x13991dc28 <line:20:3, col:25> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          |-RecoveryExpr 0x13991dba0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x13991db68 <col:3> 'struct sk_buff *' lvalue ParmVar 0x13991b628 'skb' 'struct sk_buff *'
+          `-RecoveryExpr 0x13991dc00 <col:20, col:25> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x13991dbc8 <col:20> 'struct xen_netif_tx_request *' lvalue Var 0x13991c128 'txp' 'struct xen_netif_tx_request *'

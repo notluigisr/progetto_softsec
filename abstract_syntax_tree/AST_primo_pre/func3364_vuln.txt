@@ -1,0 +1,68 @@
+`-FunctionDecl 0x129145a38  line:1:21 invalid tun_chr_poll 'unsigned int (struct file *, int *)' static
+  |-ParmVarDecl 0x129128648 <col:34, col:47> col:47 used file 'struct file *'
+  |-ParmVarDecl 0x129128718 <col:53, col:66> col:66 invalid wait 'int *'
+  `-CompoundStmt 0x129147a38 <line:2:1, line:28:1>
+    |-DeclStmt 0x129145d38 <line:3:2, col:45>
+    | |-RecordDecl 0x129145af0 <col:2, col:9> col:9 struct tun_file
+    | `-VarDecl 0x129145c58 <col:2, col:33> col:19 used tfile 'struct tun_file *' cinit
+    |   `-RecoveryExpr 0x129145cf8 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129145cc0 <col:27> 'struct file *' lvalue ParmVar 0x129128648 'file' 'struct file *'
+    |-DeclStmt 0x129146178 <line:4:2, col:43>
+    | |-RecordDecl 0x129145d50 <col:2, col:9> col:9 struct tun_struct
+    | `-VarDecl 0x129145eb8 <col:2, col:42> col:21 used tun 'struct tun_struct *' cinit
+    |   `-ImplicitCastExpr 0x129146148 <col:27, col:42> 'struct tun_struct *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x129146108 <col:27, col:42> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x1291460f0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x129146080 <col:27> 'int ()' Function 0x129145fc8 '__tun_get' 'int ()'
+    |       `-ImplicitCastExpr 0x129146130 <col:37> 'struct tun_file *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x1291460a0 <col:37> 'struct tun_file *' contains-errors lvalue Var 0x129145c58 'tfile' 'struct tun_file *'
+    |-DeclStmt 0x1291463d8 <line:5:2, col:27>
+    | |-RecordDecl 0x129146190 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1291462f8 <col:2, col:25> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x129146398 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129146360 <col:20> 'struct tun_struct *' contains-errors lvalue Var 0x129145eb8 'tun' 'struct tun_struct *'
+    |-DeclStmt 0x1291464a8 <line:6:2, col:23>
+    | `-VarDecl 0x129146408 <col:2, col:22> col:15 used mask 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x129146490 <col:22> 'unsigned int' <IntegralCast>
+    |     `-IntegerLiteral 0x129146470 <col:22> 'int' 0
+    |-IfStmt 0x129146558 <line:8:2, line:9:10>
+    | |-UnaryOperator 0x1291464f8 <line:8:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1291464e0 <col:7> 'struct tun_struct *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1291464c0 <col:7> 'struct tun_struct *' contains-errors lvalue Var 0x129145eb8 'tun' 'struct tun_struct *'
+    | `-ReturnStmt 0x129146548 <line:9:3, col:10>
+    |   `-RecoveryExpr 0x129146528 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x129146890 <line:13:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129146770 <col:2> 'int ()' Function 0x1291466b8 'poll_wait' 'int ()'
+    | |-DeclRefExpr 0x129146790 <col:12> 'struct file *' lvalue ParmVar 0x129128648 'file' 'struct file *'
+    | |-UnaryOperator 0x129146858 <col:18, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x129146810 <col:19, col:31> '<dependent type>' contains-errors lvalue .wait
+    | |   `-RecoveryExpr 0x1291467e8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1291467b0 <col:19> 'struct tun_struct *' contains-errors lvalue Var 0x129145eb8 'tun' 'struct tun_struct *'
+    | `-RecoveryExpr 0x129146870 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1291471b0 <line:15:2, line:16:20>
+    | |-UnaryOperator 0x129147068 <line:15:6, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x129147040 <col:7, col:34> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1291469a8 <col:7> 'int ()' Function 0x1291468f0 'skb_queue_empty' 'int ()'
+    | |   `-UnaryOperator 0x129147028 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x129147000 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1291469c8 <col:24> 'struct tun_struct *' contains-errors lvalue Var 0x129145eb8 'tun' 'struct tun_struct *'
+    | `-CompoundAssignOperator 0x129147180 <line:16:3, col:20> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x129147080 <col:3> 'unsigned int' lvalue Var 0x129146408 'mask' 'unsigned int'
+    |   `-BinaryOperator 0x129147160 <col:11, col:20> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x129147120 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x129147140 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x129147770 <line:18:2, line:21:21>
+    | |-RecoveryExpr 0x129147620 <line:18:6, line:20:25> '_Bool' contains-errors
+    | `-CompoundAssignOperator 0x129147740 <line:21:3, col:21> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x129147640 <col:3> 'unsigned int' lvalue Var 0x129146408 'mask' 'unsigned int'
+    |   `-BinaryOperator 0x129147720 <col:11, col:21> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x1291476e0 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x129147700 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1291479b0 <line:26:2, col:13> 'int' contains-errors
+    | |-ImplicitCastExpr 0x129147998 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129147958 <col:2> 'int ()' Function 0x1291478a0 'tun_put' 'int ()'
+    | `-ImplicitCastExpr 0x1291479d8 <col:10> 'struct tun_struct *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x129147978 <col:10> 'struct tun_struct *' contains-errors lvalue Var 0x129145eb8 'tun' 'struct tun_struct *'
+    `-ReturnStmt 0x129147a28 <line:27:2, col:9>
+      `-ImplicitCastExpr 0x129147a10 <col:9> 'unsigned int' <LValueToRValue>
+        `-DeclRefExpr 0x1291479f0 <col:9> 'unsigned int' lvalue Var 0x129146408 'mask' 'unsigned int'

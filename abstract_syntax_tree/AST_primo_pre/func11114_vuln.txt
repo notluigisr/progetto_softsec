@@ -1,0 +1,100 @@
+`-FunctionDecl 0x12c932478  line:1:14 invalid dma_memcpy_pg_to_iovec 'int (struct dma_chan *, struct iovec *, struct dma_pinned_list *, struct page *, unsigned int, int)'
+  |-ParmVarDecl 0x12c918c68 <col:37, col:54> col:54 used chan 'struct dma_chan *'
+  |-ParmVarDecl 0x12c931e58 <col:60, col:74> col:74 used iov 'struct iovec *'
+  |-ParmVarDecl 0x12c932028 <line:2:2, col:26> col:26 used pinned_list 'struct dma_pinned_list *'
+  |-ParmVarDecl 0x12c9321f8 <col:39, col:52> col:52 used page 'struct page *'
+  |-ParmVarDecl 0x12c932278 <line:3:2, col:15> col:15 used offset 'unsigned int'
+  |-ParmVarDecl 0x12c9322f8 <col:23, col:30> col:30 referenced invalid len 'int'
+  `-CompoundStmt 0x12c00b638 <line:4:1, line:69:1>
+    |-DeclStmt 0x12c9325d0 <line:5:2, col:21>
+    | `-VarDecl 0x12c932568 <col:2, col:6> col:6 used iov_byte_offset 'int'
+    |-DeclStmt 0x12c932668 <line:6:2, col:10>
+    | `-VarDecl 0x12c932600 <col:2, col:6> col:6 used copy 'int'
+    |-DeclStmt 0x12c932700 <line:8:2, col:15>
+    | `-VarDecl 0x12c932698 <col:2, col:6> col:6 used iovec_idx 'int'
+    |-DeclStmt 0x12c932798 <line:9:2, col:14>
+    | `-VarDecl 0x12c932730 <col:2, col:6> col:6 used page_idx 'int'
+    |-DeclStmt 0x12c932830 <line:10:2, col:9>
+    | `-VarDecl 0x12c9327c8 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x12c009be8 <line:14:2, line:19:2>
+    | |-BinaryOperator 0x12c9328e8 <line:14:6, col:16> 'int' '||'
+    | | |-UnaryOperator 0x12c932880 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x12c932868 <col:7> 'struct dma_chan *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12c932848 <col:7> 'struct dma_chan *' lvalue ParmVar 0x12c918c68 'chan' 'struct dma_chan *'
+    | | `-UnaryOperator 0x12c9328d0 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x12c9328b8 <col:16> 'struct dma_pinned_list *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12c932898 <col:16> 'struct dma_pinned_list *' lvalue ParmVar 0x12c932028 'pinned_list' 'struct dma_pinned_list *'
+    | `-CompoundStmt 0x12c009bc0 <col:29, line:19:2>
+    |   |-BinaryOperator 0x12c932dd0 <line:16:3, col:48> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12c932b48 <col:3> 'int' lvalue Var 0x12c9327c8 'err' 'int'
+    |   | `-CallExpr 0x12c932d98 <col:9, col:48> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x12c932c48 <col:9> 'int ()' Function 0x12c932b90 'memcpy_toiovec' 'int ()'
+    |   |   |-DeclRefExpr 0x12c932c68 <col:24> 'struct iovec *' lvalue ParmVar 0x12c931e58 'iov' 'struct iovec *'
+    |   |   |-BinaryOperator 0x12c932d78 <col:29, col:37> '<dependent type>' contains-errors '+'
+    |   |   | |-RecoveryExpr 0x12c932d58 <col:29> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x12c932ca0 <col:37> 'unsigned int' lvalue ParmVar 0x12c932278 'offset' 'unsigned int'
+    |   |   `-RecoveryExpr 0x12c932ce0 <col:45> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x12c009b38 <line:17:3, col:14> 'int'
+    |   | |-ImplicitCastExpr 0x12c009b20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12c009ae0 <col:3> 'int ()' Function 0x12c009a28 'kunmap' 'int ()'
+    |   | `-ImplicitCastExpr 0x12c009b60 <col:10> 'struct page *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x12c009b00 <col:10> 'struct page *' lvalue ParmVar 0x12c9321f8 'page' 'struct page *'
+    |   `-ReturnStmt 0x12c009bb0 <line:18:3, col:10>
+    |     `-ImplicitCastExpr 0x12c009b98 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x12c009b78 <col:10> 'int' lvalue Var 0x12c9327c8 'err' 'int'
+    |-BinaryOperator 0x12c009c48 <line:21:2, col:14> 'int' '='
+    | |-DeclRefExpr 0x12c009c08 <col:2> 'int' lvalue Var 0x12c932698 'iovec_idx' 'int'
+    | `-IntegerLiteral 0x12c009c28 <col:14> 'int' 0
+    |-WhileStmt 0x12c00b4e0 <line:22:2, line:64:2>
+    | |-BinaryOperator 0x12c009ce8 <line:22:9, col:34> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x12c009c68 <col:9> 'int' lvalue Var 0x12c932698 'iovec_idx' 'int'
+    | | `-RecoveryExpr 0x12c009cc0 <col:21, col:34> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12c009c88 <col:21> 'struct dma_pinned_list *' lvalue ParmVar 0x12c932028 'pinned_list' 'struct dma_pinned_list *'
+    | `-CompoundStmt 0x12c00b4a8 <col:45, line:64:2>
+    |   |-DeclStmt 0x12c009ef8 <line:23:3, col:34>
+    |   | |-RecordDecl 0x12c009d08 <col:3, col:10> col:10 struct dma_page_list
+    |   | `-VarDecl 0x12c009e78 <col:3, col:25> col:25 used page_list 'struct dma_page_list *'
+    |   |-WhileStmt 0x12c009fd8 <line:26:3, line:27:13>
+    |   | |-RecoveryExpr 0x12c009f80 <line:26:10, col:26> '_Bool' contains-errors
+    |   | `-UnaryOperator 0x12c009fc0 <line:27:4, col:13> 'int' postfix '++'
+    |   |   `-DeclRefExpr 0x12c009fa0 <col:4> 'int' lvalue Var 0x12c932698 'iovec_idx' 'int'
+    |   |-BinaryOperator 0x12c00a100 <line:29:3, col:48> 'struct dma_page_list *' contains-errors '='
+    |   | |-DeclRefExpr 0x12c009ff8 <col:3> 'struct dma_page_list *' lvalue Var 0x12c009e78 'page_list' 'struct dma_page_list *'
+    |   | `-UnaryOperator 0x12c00a0e8 <col:15, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-ArraySubscriptExpr 0x12c00a0c8 <col:16, col:48> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x12c00a098 <col:16, col:29> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-RecoveryExpr 0x12c00a050 <col:16, col:29> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x12c00a018 <col:16> 'struct dma_pinned_list *' lvalue ParmVar 0x12c932028 'pinned_list' 'struct dma_pinned_list *'
+    |   |     `-ImplicitCastExpr 0x12c00a0b0 <col:39> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x12c00a078 <col:39> 'int' lvalue Var 0x12c932698 'iovec_idx' 'int'
+    |   |-WhileStmt 0x12c00b450 <line:36:3, line:62:3>
+    |   | |-RecoveryExpr 0x12c00a440 <line:36:10, col:25> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x12c00b418 <col:34, line:62:3>
+    |   |   |-IfStmt 0x12c00b0b8 <line:47:4, line:50:4>
+    |   |   | |-RecoveryExpr 0x12c00aef8 <line:47:8, col:31> '_Bool' contains-errors
+    |   |   | `-CompoundStmt 0x12c00b098 <col:34, line:50:4>
+    |   |   |   |-CallExpr 0x12c00b050 <line:48:5, col:33> 'int'
+    |   |   |   | |-ImplicitCastExpr 0x12c00b038 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   | | `-DeclRefExpr 0x12c00aff8 <col:5> 'int ()' Function 0x12c00af40 'dma_async_issue_pending' 'int ()'
+    |   |   |   | `-ImplicitCastExpr 0x12c00b078 <col:29> 'struct dma_chan *' <LValueToRValue>
+    |   |   |   |   `-DeclRefExpr 0x12c00b018 <col:29> 'struct dma_chan *' lvalue ParmVar 0x12c918c68 'chan' 'struct dma_chan *'
+    |   |   |   `-ContinueStmt 0x12c00b090 <line:49:5>
+    |   |   |-CompoundAssignOperator 0x12c00b140 <line:52:4, col:11> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |   | |-RecoveryExpr 0x12c00b0f8 <col:4> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x12c00b0d8 <col:4> 'int' lvalue ParmVar 0x12c9322f8 'len' 'int'
+    |   |   | `-DeclRefExpr 0x12c00b120 <col:11> 'int' lvalue Var 0x12c932600 'copy' 'int'
+    |   |   |-CompoundAssignOperator 0x12c00b350 <line:59:4, col:14> 'unsigned int' '+=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+    |   |   | |-DeclRefExpr 0x12c00b2e0 <col:4> 'unsigned int' lvalue ParmVar 0x12c932278 'offset' 'unsigned int'
+    |   |   | `-ImplicitCastExpr 0x12c00b338 <col:14> 'unsigned int' <IntegralCast>
+    |   |   |   `-ImplicitCastExpr 0x12c00b320 <col:14> 'int' <LValueToRValue>
+    |   |   |     `-DeclRefExpr 0x12c00b300 <col:14> 'int' lvalue Var 0x12c932600 'copy' 'int'
+    |   |   |-BinaryOperator 0x12c00b3c0 <line:60:4, col:22> 'int' '='
+    |   |   | |-DeclRefExpr 0x12c00b380 <col:4> 'int' lvalue Var 0x12c932568 'iov_byte_offset' 'int'
+    |   |   | `-IntegerLiteral 0x12c00b3a0 <col:22> 'int' 0
+    |   |   `-UnaryOperator 0x12c00b400 <line:61:4, col:12> 'int' postfix '++'
+    |   |     `-DeclRefExpr 0x12c00b3e0 <col:4> 'int' lvalue Var 0x12c932730 'page_idx' 'int'
+    |   `-UnaryOperator 0x12c00b490 <line:63:3, col:12> 'int' postfix '++'
+    |     `-DeclRefExpr 0x12c00b470 <col:3> 'int' lvalue Var 0x12c932698 'iovec_idx' 'int'
+    `-CallExpr 0x12c00b618 <line:67:2, col:6> 'int'
+      `-ImplicitCastExpr 0x12c00b600 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x12c00b5e0 <col:2> 'int ()' Function 0x12c00b528 'BUG' 'int ()'

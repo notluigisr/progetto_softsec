@@ -1,0 +1,72 @@
+`-FunctionDecl 0x147140c00  line:1:6 invalid brcmf_rx_frame 'void (struct device *, struct sk_buff *, int)'
+  |-ParmVarDecl 0x147128648 <col:21, col:36> col:36 used dev 'struct device *'
+  |-ParmVarDecl 0x147140a28 <col:41, col:57> col:57 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x147140ac0 <col:62, col:67> col:67 invalid handle_event 'int'
+  `-CompoundStmt 0x1471431a8 <line:2:1, line:21:1>
+    |-DeclStmt 0x147140ea8 <line:3:2, col:22>
+    | |-RecordDecl 0x147140cc0 <col:2, col:9> col:9 struct brcmf_if
+    | `-VarDecl 0x147140e28 <col:2, col:19> col:19 used ifp 'struct brcmf_if *'
+    |-DeclStmt 0x1471412e8 <line:4:2, col:49>
+    | |-RecordDecl 0x147140ec0 <col:2, col:9> col:9 struct brcmf_bus
+    | `-VarDecl 0x147141028 <col:2, col:48> col:20 used bus_if 'struct brcmf_bus *' cinit
+    |   `-ImplicitCastExpr 0x1471412b8 <col:29, col:48> 'struct brcmf_bus *' <IntegralToPointer>
+    |     `-CallExpr 0x147141278 <col:29, col:48> 'int'
+    |       |-ImplicitCastExpr 0x147141260 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1471411f0 <col:29> 'int ()' Function 0x147141138 'dev_get_drvdata' 'int ()'
+    |       `-ImplicitCastExpr 0x1471412a0 <col:45> 'struct device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x147141210 <col:45> 'struct device *' lvalue ParmVar 0x147128648 'dev' 'struct device *'
+    |-DeclStmt 0x147141548 <line:5:2, col:39>
+    | |-RecordDecl 0x147141300 <col:2, col:9> col:9 struct brcmf_pub
+    | `-VarDecl 0x147141468 <col:2, col:35> col:20 used drvr 'struct brcmf_pub *' cinit
+    |   `-RecoveryExpr 0x147141508 <col:27, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1471414d0 <col:27> 'struct brcmf_bus *' lvalue Var 0x147141028 'bus_if' 'struct brcmf_bus *'
+    |-CallExpr 0x147141930 <line:7:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147141640 <col:2> 'int ()' Function 0x147141588 'brcmf_dbg' 'int ()'
+    | |-RecoveryExpr 0x1471418b8 <col:12> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x1471416c0 <col:18> 'char[4]' lvalue "STR"
+    | |-CallExpr 0x1471418f0 <col:25, col:37> 'int'
+    | | |-ImplicitCastExpr 0x1471418d8 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1471417c0 <col:25> 'int ()' Function 0x147141708 'dev_name' 'int ()'
+    | | `-ImplicitCastExpr 0x147141918 <col:34> 'struct device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1471417e0 <col:34> 'struct device *' lvalue ParmVar 0x147128648 'dev' 'struct device *'
+    | `-DeclRefExpr 0x147141858 <col:40> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'
+    |-IfStmt 0x147142a48 <line:9:2, line:10:3>
+    | |-CallExpr 0x1471429d0 <line:9:6, col:38> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x1471429b8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1471428b8 <col:6> 'int ()' Function 0x147142800 'brcmf_rx_hdrpull' 'int ()'
+    | | |-ImplicitCastExpr 0x147142a08 <col:23> 'struct brcmf_pub *' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x1471428d8 <col:23> 'struct brcmf_pub *' contains-errors lvalue Var 0x147141468 'drvr' 'struct brcmf_pub *'
+    | | |-ImplicitCastExpr 0x147142a20 <col:29> 'struct sk_buff *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1471428f8 <col:29> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'
+    | | `-UnaryOperator 0x1471429a0 <col:34, col:35> 'struct brcmf_if **' prefix '&' cannot overflow
+    | |   `-DeclRefExpr 0x147142918 <col:35> 'struct brcmf_if *' lvalue Var 0x147140e28 'ifp' 'struct brcmf_if *'
+    | `-ReturnStmt 0x147142a38 <line:10:3>
+    `-IfStmt 0x147143178 <line:12:2, line:20:2> has_else
+      |-CallExpr 0x147142ba0 <line:12:6, col:36> 'int'
+      | |-ImplicitCastExpr 0x147142b88 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x147142b48 <col:6> 'int ()' Function 0x147142a90 'brcmf_proto_is_reorder_skb' 'int ()'
+      | `-ImplicitCastExpr 0x147142bc8 <col:33> 'struct sk_buff *' <LValueToRValue>
+      |   `-DeclRefExpr 0x147142b68 <col:33> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'
+      |-CompoundStmt 0x147142d98 <col:39, line:14:2>
+      | `-CallExpr 0x147142d38 <line:13:3, col:33> 'int'
+      |   |-ImplicitCastExpr 0x147142d20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x147142cc0 <col:3> 'int ()' Function 0x147142c08 'brcmf_proto_rxreorder' 'int ()'
+      |   |-ImplicitCastExpr 0x147142d68 <col:25> 'struct brcmf_if *' <LValueToRValue>
+      |   | `-DeclRefExpr 0x147142ce0 <col:25> 'struct brcmf_if *' lvalue Var 0x147140e28 'ifp' 'struct brcmf_if *'
+      |   `-ImplicitCastExpr 0x147142d80 <col:30> 'struct sk_buff *' <LValueToRValue>
+      |     `-DeclRefExpr 0x147142d00 <col:30> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'
+      `-CompoundStmt 0x147143158 <line:14:9, line:20:2>
+        |-IfStmt 0x147142f80 <line:16:3, line:17:41>
+        | |-RecoveryExpr 0x147142db0 <line:16:7> '<dependent type>' contains-errors lvalue
+        | `-CallExpr 0x147142f50 <line:17:4, col:41> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x147142eb0 <col:4> 'int ()' Function 0x147142df8 'brcmf_fweh_process_skb' 'int ()'
+        |   |-RecoveryExpr 0x147142f08 <col:27, col:32> '<dependent type>' contains-errors lvalue
+        |   | `-DeclRefExpr 0x147142ed0 <col:27> 'struct brcmf_if *' lvalue Var 0x147140e28 'ifp' 'struct brcmf_if *'
+        |   `-DeclRefExpr 0x147142f30 <col:38> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'
+        `-CallExpr 0x1471430f8 <line:19:3, col:26> 'int'
+          |-ImplicitCastExpr 0x1471430e0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x147143080 <col:3> 'int ()' Function 0x147142fc8 'brcmf_netif_rx' 'int ()'
+          |-ImplicitCastExpr 0x147143128 <col:18> 'struct brcmf_if *' <LValueToRValue>
+          | `-DeclRefExpr 0x1471430a0 <col:18> 'struct brcmf_if *' lvalue Var 0x147140e28 'ifp' 'struct brcmf_if *'
+          `-ImplicitCastExpr 0x147143140 <col:23> 'struct sk_buff *' <LValueToRValue>
+            `-DeclRefExpr 0x1471430c0 <col:23> 'struct sk_buff *' lvalue ParmVar 0x147140a28 'skb' 'struct sk_buff *'

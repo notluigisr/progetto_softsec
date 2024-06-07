@@ -1,0 +1,53 @@
+`-FunctionDecl 0x1539229f8  line:2:12 invalid __kvm_write_guest_page 'int (struct kvm *, struct kvm_memory_slot *, int, const void *, int, int)' static
+  |-ParmVarDecl 0x15400e248 <col:35, col:47> col:47 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x153922628 <line:3:7, col:31> col:31 used memslot 'struct kvm_memory_slot *'
+  |-ParmVarDecl 0x1539226c0 <col:40, col:46> col:46 invalid gfn 'int'
+  |-ParmVarDecl 0x153922778 <line:4:14, col:26> col:26 used data 'const void *'
+  |-ParmVarDecl 0x1539227f8 <col:32, col:36> col:36 used offset 'int'
+  |-ParmVarDecl 0x153922878 <col:44, col:48> col:48 used len 'int'
+  `-CompoundStmt 0x153924e00 <line:5:1, line:16:11>
+    |-DeclStmt 0x153922b50 <line:6:2, col:7>
+    | `-VarDecl 0x153922ae8 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x153922be8 <line:7:2, col:20>
+    | `-VarDecl 0x153922b80 <col:2, col:16> col:16 used addr 'unsigned long'
+    |-BinaryOperator 0x153922e10 <line:9:2, col:40> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x153922c00 <col:2> 'unsigned long' lvalue Var 0x153922b80 'addr' 'unsigned long'
+    | `-CallExpr 0x153922de0 <col:9, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153922d80 <col:9> 'int ()' Function 0x153922cc8 'gfn_to_hva_memslot' 'int ()'
+    |   |-DeclRefExpr 0x153922da0 <col:28> 'struct kvm_memory_slot *' lvalue ParmVar 0x153922628 'memslot' 'struct kvm_memory_slot *'
+    |   `-RecoveryExpr 0x153922dc0 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x153923080 <line:10:2, line:11:11>
+    | |-CallExpr 0x153922f98 <line:10:6, col:27> 'int'
+    | | |-ImplicitCastExpr 0x153922f80 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x153922f10 <col:6> 'int ()' Function 0x153922e58 'kvm_is_error_hva' 'int ()'
+    | | `-ImplicitCastExpr 0x153922fc0 <col:23> 'unsigned long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x153922f30 <col:23> 'unsigned long' lvalue Var 0x153922b80 'addr' 'unsigned long'
+    | `-ReturnStmt 0x153923070 <line:11:3, col:11>
+    |   `-UnaryOperator 0x153923058 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x153923040 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x153923020 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x153923310 <line:12:2, col:60> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1539230a0 <col:2> 'int' lvalue Var 0x153922ae8 'r' 'int'
+    | `-CallExpr 0x1539232d8 <col:6, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1539231a0 <col:6> 'int ()' Function 0x1539230e8 '__copy_to_user' 'int ()'
+    |   |-RecoveryExpr 0x153923268 <col:21, col:43> '<dependent type>' contains-errors lvalue
+    |   | |-CStyleCastExpr 0x153923208 <col:21, col:36> 'void' <ToVoid>
+    |   | | `-ImplicitCastExpr 0x1539231f0 <col:36> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    |   | |   `-DeclRefExpr 0x1539231c0 <col:36> 'unsigned long' lvalue Var 0x153922b80 'addr' 'unsigned long'
+    |   | `-DeclRefExpr 0x153923230 <col:43> 'int' lvalue ParmVar 0x1539227f8 'offset' 'int'
+    |   |-DeclRefExpr 0x153923298 <col:51> 'const void *' lvalue ParmVar 0x153922778 'data' 'const void *'
+    |   `-DeclRefExpr 0x1539232b8 <col:57> 'int' lvalue ParmVar 0x153922878 'len' 'int'
+    |-IfStmt 0x153923410 <line:13:2, line:14:11>
+    | |-ImplicitCastExpr 0x153923350 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x153923330 <col:6> 'int' lvalue Var 0x153922ae8 'r' 'int'
+    | `-ReturnStmt 0x153923400 <line:14:3, col:11>
+    |   `-UnaryOperator 0x1539233e8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1539233d0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1539233b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x153923590 <line:15:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153923510 <col:2> 'int ()' Function 0x153923458 'mark_page_dirty_in_slot' 'int ()'
+    | |-DeclRefExpr 0x153923530 <col:26> 'struct kvm *' lvalue ParmVar 0x15400e248 'kvm' 'struct kvm *'
+    | |-DeclRefExpr 0x153923550 <col:31> 'struct kvm_memory_slot *' lvalue ParmVar 0x153922628 'memslot' 'struct kvm_memory_slot *'
+    | `-RecoveryExpr 0x153923570 <col:40> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1539235e8 <line:16:2, col:9>
+      `-IntegerLiteral 0x1539235c8 <col:9> 'int' 0

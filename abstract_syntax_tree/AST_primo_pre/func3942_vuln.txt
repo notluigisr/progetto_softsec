@@ -1,0 +1,50 @@
+`-FunctionDecl 0x14680ddc8  line:1:1 invalid state_separate_contexts 'int (const int *)'
+  |-ParmVarDecl 0x14680dcf0 <col:26, col:46> col:46 invalid s 'const int *'
+  `-CompoundStmt 0x146827898 <line:2:1, line:15:1>
+    |-DeclStmt 0x14680df18 <line:3:3, col:28>
+    | `-VarDecl 0x14680de90 <col:3, col:27> col:7 used separate_contexts 'int' cinit
+    |   `-IntegerLiteral 0x14680def8 <col:27> 'int' 0
+    |-DeclStmt 0x14680dfb0 <line:4:3, col:17>
+    | `-VarDecl 0x14680df48 <col:3, col:16> col:16 used j 'unsigned int'
+    |-ForStmt 0x146827818 <line:6:3, line:12:5>
+    | |-BinaryOperator 0x14680e020 <line:6:8, col:12> 'unsigned int' '='
+    | | |-DeclRefExpr 0x14680dfc8 <col:8> 'unsigned int' lvalue Var 0x14680df48 'j' 'unsigned int'
+    | | `-ImplicitCastExpr 0x14680e008 <col:12> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x14680dfe8 <col:12> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14680e0c8 <col:15, col:22> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x14680e040 <col:15> 'unsigned int' lvalue Var 0x14680df48 'j' 'unsigned int'
+    | | `-CXXDependentScopeMemberExpr 0x14680e080 <col:19, col:22> '<dependent type>' contains-errors lvalue ->nelem
+    | |   `-RecoveryExpr 0x14680e060 <col:19> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x14680e108 <col:29, col:31> 'unsigned int' prefix '++'
+    | | `-DeclRefExpr 0x14680e0e8 <col:31> 'unsigned int' lvalue Var 0x14680df48 'j' 'unsigned int'
+    | `-CompoundStmt 0x1468277f8 <line:7:5, line:12:5>
+    |   |-IfStmt 0x1468274b8 <line:8:7, line:9:30>
+    |   | |-CallExpr 0x14680e3c0 <line:8:11, col:57> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x14680e280 <col:11> 'int ()' Function 0x14680e1c8 'PREV_NEWLINE_DEPENDENT' 'int ()'
+    |   | | `-CXXDependentScopeMemberExpr 0x14680e378 <col:35, col:47> '<dependent type>' contains-errors lvalue .constraint
+    |   | |   `-ArraySubscriptExpr 0x14680e358 <col:35, col:45> '<dependent type>' contains-errors lvalue
+    |   | |     |-ImplicitCastExpr 0x14680e328 <col:35, col:38> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |     | `-CXXDependentScopeMemberExpr 0x14680e2c0 <col:35, col:38> '<dependent type>' contains-errors lvalue ->elems
+    |   | |     |   `-RecoveryExpr 0x14680e2a0 <col:35> '<dependent type>' contains-errors lvalue
+    |   | |     `-ImplicitCastExpr 0x14680e340 <col:44> 'unsigned int' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x14680e308 <col:44> 'unsigned int' lvalue Var 0x14680df48 'j' 'unsigned int'
+    |   | `-CompoundAssignOperator 0x146827488 <line:9:9, col:30> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |   |-DeclRefExpr 0x146827400 <col:9> 'int' lvalue Var 0x14680de90 'separate_contexts' 'int'
+    |   |   `-RecoveryExpr 0x146827468 <col:30> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x1468277d8 <line:10:7, line:11:30>
+    |     |-CallExpr 0x1468276f8 <line:10:11, col:56> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x1468275b8 <col:11> 'int ()' Function 0x146827500 'PREV_LETTER_DEPENDENT' 'int ()'
+    |     | `-CXXDependentScopeMemberExpr 0x1468276b0 <col:34, col:46> '<dependent type>' contains-errors lvalue .constraint
+    |     |   `-ArraySubscriptExpr 0x146827690 <col:34, col:44> '<dependent type>' contains-errors lvalue
+    |     |     |-ImplicitCastExpr 0x146827660 <col:34, col:37> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     | `-CXXDependentScopeMemberExpr 0x1468275f8 <col:34, col:37> '<dependent type>' contains-errors lvalue ->elems
+    |     |     |   `-RecoveryExpr 0x1468275d8 <col:34> '<dependent type>' contains-errors lvalue
+    |     |     `-ImplicitCastExpr 0x146827678 <col:43> 'unsigned int' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x146827640 <col:43> 'unsigned int' lvalue Var 0x14680df48 'j' 'unsigned int'
+    |     `-CompoundAssignOperator 0x1468277a8 <line:11:9, col:30> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       |-DeclRefExpr 0x146827720 <col:9> 'int' lvalue Var 0x14680de90 'separate_contexts' 'int'
+    |       `-RecoveryExpr 0x146827788 <col:30> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x146827888 <line:14:3, col:10>
+      `-ImplicitCastExpr 0x146827870 <col:10> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x146827850 <col:10> 'int' lvalue Var 0x14680de90 'separate_contexts' 'int'

@@ -1,0 +1,37 @@
+`-FunctionDecl 0x136808238  line:1:12 invalid nested_vmx_get_vmptr 'int (struct kvm_vcpu *, int *)' static
+  |-ParmVarDecl 0x13580e248 <col:33, col:50> col:50 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x13580e318 <col:56, col:63> col:63 invalid vmpointer 'int *'
+  `-CompoundStmt 0x136808f60 <line:2:1, line:17:1>
+    |-DeclStmt 0x136808468 <line:4:2, col:24>
+    | |-RecordDecl 0x1368082f0 <col:2, col:9> col:9 struct x86_exception
+    | `-VarDecl 0x1368083e8 <col:2, col:23> col:23 invalid e 'struct x86_exception'
+    |-IfStmt 0x136808938 <line:6:2, line:8:10>
+    | |-RecoveryExpr 0x1368088e8 <line:6:6, line:7:50> '_Bool' contains-errors
+    | `-ReturnStmt 0x136808928 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x136808908 <col:10> 'int' 1
+    |-IfStmt 0x136808f10 <line:10:2, line:14:2>
+    | |-CallExpr 0x136808cf0 <line:10:6, line:11:27> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x136808a38 <line:10:6> 'int ()' Function 0x136808980 'kvm_read_guest_virt' 'int ()'
+    | | |-UnaryOperator 0x136808b00 <col:26, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-CXXDependentScopeMemberExpr 0x136808ab8 <col:27, col:38> '<dependent type>' contains-errors lvalue .emulate_ctxt
+    | | |   `-RecoveryExpr 0x136808a90 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x136808a58 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x13580e248 'vcpu' 'struct kvm_vcpu *'
+    | | |-RecoveryExpr 0x136808c60 <col:52> '<dependent type>' contains-errors lvalue
+    | | |-RecoveryExpr 0x136808b30 <col:57> '<dependent type>' contains-errors lvalue
+    | | |-UnaryExprOrTypeTraitExpr 0x136808cd0 <line:11:5, col:22> 'unsigned long' contains-errors sizeof
+    | | | `-ParenExpr 0x136808cb0 <col:11, col:22> '<dependent type>' contains-errors
+    | | |   `-UnaryOperator 0x136808c98 <col:12, col:13> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | |     `-ImplicitCastExpr 0x136808c80 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | | |       `-RecoveryExpr 0x136808b50 <col:13> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x136808c00 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x136808be0 <col:26> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x136808ef0 <col:30, line:14:2>
+    |   |-CallExpr 0x136808e90 <line:12:3, col:33> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x136808e18 <col:3> 'int ()' Function 0x136808d60 'kvm_inject_page_fault' 'int ()'
+    |   | |-DeclRefExpr 0x136808e38 <col:25> 'struct kvm_vcpu *' lvalue ParmVar 0x13580e248 'vcpu' 'struct kvm_vcpu *'
+    |   | `-UnaryOperator 0x136808e78 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x136808e58 <col:32> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x136808ee0 <line:13:3, col:10>
+    |     `-IntegerLiteral 0x136808ec0 <col:10> 'int' 1
+    `-ReturnStmt 0x136808f50 <line:16:2, col:9>
+      `-IntegerLiteral 0x136808f30 <col:9> 'int' 0

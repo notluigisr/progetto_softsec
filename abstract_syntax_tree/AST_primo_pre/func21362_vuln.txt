@@ -1,0 +1,87 @@
+`-FunctionDecl 0x134869f18  line:1:1 invalid memxor 'int (void *, const void *, int)'
+  |-ParmVarDecl 0x134869cd8 <col:8, col:14> col:14 used dst_in 'void *'
+  |-ParmVarDecl 0x134869d88 <col:22, col:34> col:34 used src_in 'const void *'
+  |-ParmVarDecl 0x134869e20 <col:42, col:49> col:49 referenced invalid n 'int'
+  `-CompoundStmt 0x1340a2fb0 <line:2:1, line:34:1>
+    |-DeclStmt 0x13486a0a8 <line:3:3, col:21>
+    | `-VarDecl 0x134869ff0 <col:3, col:15> col:9 used dst 'char *' cinit
+    |   `-ImplicitCastExpr 0x13486a090 <col:15> 'char *' <BitCast>
+    |     `-ImplicitCastExpr 0x13486a078 <col:15> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13486a058 <col:15> 'void *' lvalue ParmVar 0x134869cd8 'dst_in' 'void *'
+    |-DeclStmt 0x13486a190 <line:4:3, col:27>
+    | `-VarDecl 0x13486a0d8 <col:3, col:21> col:15 used src 'const char *' cinit
+    |   `-ImplicitCastExpr 0x13486a178 <col:21> 'const char *' <BitCast>
+    |     `-ImplicitCastExpr 0x13486a160 <col:21> 'const void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13486a140 <col:21> 'const void *' lvalue ParmVar 0x134869d88 'src_in' 'const void *'
+    |-IfStmt 0x134883ea8 <line:6:3, line:26:5>
+    | |-BinaryOperator 0x13486a220 <line:6:7, col:12> 'int' contains-errors '>='
+    | | |-RecoveryExpr 0x13486a1a8 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x13486a200 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x134883e70 <line:7:5, line:26:5>
+    |   |-DeclStmt 0x13486a2c0 <line:8:7, col:17>
+    |   | `-VarDecl 0x13486a258 <col:7, col:16> col:16 used i 'unsigned int'
+    |   |-DeclStmt 0x13486a358 <line:9:7, col:22>
+    |   | `-VarDecl 0x13486a2f0 <col:7, col:16> col:16 used offset 'unsigned int'
+    |   |-UnaryExprOrTypeTraitExpr 0x13486a3c8 <line:10:7, col:14> 'unsigned long' contains-errors sizeof
+    |   | `-RecoveryExpr 0x13486a3a8 <col:14> '<dependent type>' contains-errors lvalue
+    |   |-ForStmt 0x1348838e0 <line:12:7, line:16:2>
+    |   | |-BinaryOperator 0x134883628 <line:12:12, col:36> 'unsigned int' contains-errors '='
+    |   | | |-DeclRefExpr 0x134883400 <col:12> 'unsigned int' lvalue Var 0x13486a258 'i' 'unsigned int'
+    |   | | `-CallExpr 0x134883600 <col:16, col:36> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x134883580 <col:16> 'int ()' Function 0x1348834c8 'ALIGN_OFFSET' 'int ()'
+    |   | |   `-BinaryOperator 0x1348835e0 <col:29, col:35> '<dependent type>' contains-errors '+'
+    |   | |     |-DeclRefExpr 0x1348835a0 <col:29> 'char *' lvalue Var 0x134869ff0 'dst' 'char *'
+    |   | |     `-RecoveryExpr 0x1348835c0 <col:35> '<dependent type>' contains-errors lvalue
+    |   | |-<<<NULL>>>
+    |   | |-BinaryOperator 0x1348836b8 <col:39, col:43> 'int' '>'
+    |   | | |-ImplicitCastExpr 0x134883688 <col:39> 'unsigned int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x134883648 <col:39> 'unsigned int' lvalue Var 0x13486a258 'i' 'unsigned int'
+    |   | | `-ImplicitCastExpr 0x1348836a0 <col:43> 'unsigned int' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x134883668 <col:43> 'int' 0
+    |   | |-UnaryOperator 0x1348836f8 <col:46, col:47> 'unsigned int' postfix '--'
+    |   | | `-DeclRefExpr 0x1348836d8 <col:46> 'unsigned int' lvalue Var 0x13486a258 'i' 'unsigned int'
+    |   | `-CompoundStmt 0x1348838c0 <line:13:2, line:16:2>
+    |   |   |-UnaryOperator 0x134883758 <line:14:4, col:5> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   |   | `-RecoveryExpr 0x134883730 <col:4> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x134883710 <col:4> 'int' lvalue ParmVar 0x134869e20 'n' 'int'
+    |   |   `-CompoundAssignOperator 0x134883890 <line:15:4, col:19> '<dependent type>' contains-errors '^=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |     |-ArraySubscriptExpr 0x1348837e0 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   |     | |-ImplicitCastExpr 0x1348837b0 <col:4> 'char *' <LValueToRValue>
+    |   |     | | `-DeclRefExpr 0x134883770 <col:4> 'char *' lvalue Var 0x134869ff0 'dst' 'char *'
+    |   |     | `-ImplicitCastExpr 0x1348837c8 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     |   `-RecoveryExpr 0x134883790 <col:8> '<dependent type>' contains-errors lvalue
+    |   |     `-ArraySubscriptExpr 0x134883870 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |   |       |-ImplicitCastExpr 0x134883840 <col:14> 'const char *' <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x134883800 <col:14> 'const char *' lvalue Var 0x13486a0d8 'src' 'const char *'
+    |   |       `-ImplicitCastExpr 0x134883858 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |   |         `-RecoveryExpr 0x134883820 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x1348839e0 <line:17:7, col:36> 'unsigned int' contains-errors '='
+    |     |-DeclRefExpr 0x134883918 <col:7> 'unsigned int' lvalue Var 0x13486a2f0 'offset' 'unsigned int'
+    |     `-CallExpr 0x1348839b8 <col:16, col:36> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x134883938 <col:16> 'int ()' Function 0x1348834c8 'ALIGN_OFFSET' 'int ()'
+    |       `-BinaryOperator 0x134883998 <col:29, col:35> '<dependent type>' contains-errors '+'
+    |         |-DeclRefExpr 0x134883958 <col:29> 'const char *' lvalue Var 0x13486a0d8 'src' 'const char *'
+    |         `-RecoveryExpr 0x134883978 <col:35> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x1348840f8 <line:27:3, line:31:5>
+    | |-BinaryOperator 0x134883f08 <line:27:10, col:14> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x134883ec8 <col:10> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x134883ee8 <col:14> 'int' 0
+    | `-CompoundStmt 0x1348840d8 <line:28:5, line:31:5>
+    |   |-UnaryOperator 0x134883f70 <line:29:7, col:8> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   | `-RecoveryExpr 0x134883f48 <col:7> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x134883f28 <col:7> 'int' lvalue ParmVar 0x134869e20 'n' 'int'
+    |   `-CompoundAssignOperator 0x1348840a8 <line:30:7, col:22> '<dependent type>' contains-errors '^=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-ArraySubscriptExpr 0x134883ff8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     | |-ImplicitCastExpr 0x134883fc8 <col:7> 'char *' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x134883f88 <col:7> 'char *' lvalue Var 0x134869ff0 'dst' 'char *'
+    |     | `-ImplicitCastExpr 0x134883fe0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   `-RecoveryExpr 0x134883fa8 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-ArraySubscriptExpr 0x134884088 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x134884058 <col:17> 'const char *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x134884018 <col:17> 'const char *' lvalue Var 0x13486a0d8 'src' 'const char *'
+    |       `-ImplicitCastExpr 0x134884070 <col:21> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x134884038 <col:21> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1340a2fa0 <line:33:3, col:10>
+      `-ImplicitCastExpr 0x134884150 <col:10> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x134884138 <col:10> 'char *' <LValueToRValue>
+          `-DeclRefExpr 0x134884118 <col:10> 'char *' lvalue Var 0x134869ff0 'dst' 'char *'

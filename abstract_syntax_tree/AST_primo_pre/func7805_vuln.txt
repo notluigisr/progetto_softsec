@@ -1,0 +1,205 @@
+`-FunctionDecl 0x11d80dda8  line:1:6 join_session_keyring 'long (const char *)'
+  |-ParmVarDecl 0x11d80dcd8 <col:27, col:39> col:39 used name 'const char *'
+  `-CompoundStmt 0x11f009f08 <line:2:1, line:67:1>
+    |-DeclStmt 0x11d80e088 <line:3:2, col:24>
+    | |-RecordDecl 0x11d80dea0 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x11d80e008 <col:2, col:21> col:21 used old 'const struct cred *'
+    |-DeclStmt 0x11d80e1c0 <line:4:2, col:18>
+    | `-VarDecl 0x11d80e158 <col:2, col:15> col:15 used new 'struct cred *'
+    |-DeclStmt 0x11d80e3c8 <line:5:2, col:21>
+    | |-RecordDecl 0x11d80e1d8 <col:2, col:9> col:9 struct key
+    | `-VarDecl 0x11d80e348 <col:2, col:14> col:14 used keyring 'struct key *'
+    |-DeclStmt 0x11d826700 <line:6:2, col:18>
+    | |-VarDecl 0x11d826600 <col:2, col:7> col:7 used ret 'long'
+    | `-VarDecl 0x11d826680 <col:2, col:12> col:12 used serial 'long'
+    |-BinaryOperator 0x11d826d20 <line:8:2, col:22> 'struct cred *' '='
+    | |-DeclRefExpr 0x11d826718 <col:2> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    | `-ImplicitCastExpr 0x11d8268e8 <col:8, col:22> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x11d8268c8 <col:8, col:22> 'int'
+    |     `-ImplicitCastExpr 0x11d8268b0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x11d826860 <col:8> 'int ()' Function 0x11d8267a8 'prepare_creds' 'int ()'
+    |-IfStmt 0x11d826e38 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x11d826d78 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11d826d60 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11d826d40 <col:7> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    | `-ReturnStmt 0x11d826e28 <line:10:3, col:11>
+    |   `-UnaryOperator 0x11d826e10 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11d826df8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11d826dd8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11d826fc8 <line:11:2, col:21> 'const struct cred *' '='
+    | |-DeclRefExpr 0x11d826e58 <col:2> 'const struct cred *' lvalue Var 0x11d80e008 'old' 'const struct cred *'
+    | `-ImplicitCastExpr 0x11d826fb0 <col:8, col:21> 'const struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x11d826f90 <col:8, col:21> 'int'
+    |     `-ImplicitCastExpr 0x11d826f78 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x11d826f58 <col:8> 'int ()' Function 0x11d826ea0 'current_cred' 'int ()'
+    |-IfStmt 0x11f0083f0 <line:14:2, line:24:2>
+    | |-UnaryOperator 0x11d827020 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11d827008 <col:7> 'const char *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11d826fe8 <col:7> 'const char *' lvalue ParmVar 0x11d80dcd8 'name' 'const char *'
+    | `-CompoundStmt 0x11f0083b0 <col:13, line:24:2>
+    |   |-BinaryOperator 0x11d827230 <line:15:3, col:50> 'long' contains-errors '='
+    |   | |-DeclRefExpr 0x11d827038 <col:3> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   | `-CallExpr 0x11d827200 <col:9, col:50> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x11d827138 <col:9> 'int ()' Function 0x11d827080 'install_session_keyring_to_cred' 'int ()'
+    |   |   |-DeclRefExpr 0x11d827158 <col:41> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |   |   `-RecoveryExpr 0x11d8271e0 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x11d827348 <line:16:3, line:17:9>
+    |   | |-BinaryOperator 0x11d8272c0 <line:16:7, col:13> 'int' '<'
+    |   | | |-ImplicitCastExpr 0x11d827290 <col:7> 'long' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x11d827250 <col:7> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   | | `-ImplicitCastExpr 0x11d8272a8 <col:13> 'long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x11d827270 <col:13> 'int' 0
+    |   | `-GotoStmt 0x11d827330 <line:17:4, col:9> 'error' 0x11d8272e0
+    |   |-BinaryOperator 0x11d827430 <line:19:3, col:34> 'long' contains-errors '='
+    |   | |-DeclRefExpr 0x11d827368 <col:3> 'long' lvalue Var 0x11d826680 'serial' 'long'
+    |   | `-CXXDependentScopeMemberExpr 0x11d8273e8 <col:12, col:34> '<dependent type>' contains-errors lvalue ->serial
+    |   |   `-RecoveryExpr 0x11d8273c0 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11d827388 <col:12> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |   |-BinaryOperator 0x11f008200 <line:20:3, col:25> 'long' '='
+    |   | |-DeclRefExpr 0x11d827450 <col:3> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   | `-ImplicitCastExpr 0x11d8275e8 <col:9, col:25> 'long' <IntegralCast>
+    |   |   `-CallExpr 0x11d8275a8 <col:9, col:25> 'int'
+    |   |     |-ImplicitCastExpr 0x11d827590 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d827550 <col:9> 'int ()' Function 0x11d827498 'commit_creds' 'int ()'
+    |   |     `-ImplicitCastExpr 0x11d8275d0 <col:22> 'struct cred *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d827570 <col:22> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |   |-IfStmt 0x11f008328 <line:21:3, line:22:10>
+    |   | |-BinaryOperator 0x11f008290 <line:21:7, col:14> 'int' '=='
+    |   | | |-ImplicitCastExpr 0x11f008260 <col:7> 'long' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x11f008220 <col:7> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   | | `-ImplicitCastExpr 0x11f008278 <col:14> 'long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x11f008240 <col:14> 'int' 0
+    |   | `-BinaryOperator 0x11f008308 <line:22:4, col:10> 'long' '='
+    |   |   |-DeclRefExpr 0x11f0082b0 <col:4> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   |   `-ImplicitCastExpr 0x11f0082f0 <col:10> 'long' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x11f0082d0 <col:10> 'long' lvalue Var 0x11d826680 'serial' 'long'
+    |   `-GotoStmt 0x11f008398 <line:23:3, col:8> 'okay' 0x11f008348
+    |-CallExpr 0x11f0085a0 <line:27:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f0084f0 <col:2> 'int ()' Function 0x11f008438 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x11f008588 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f008568 <col:14> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11f0087c0 <line:30:2, col:44> 'struct key *' contains-errors '='
+    | |-DeclRefExpr 0x11f0085c8 <col:2> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    | `-CallExpr 0x11f008790 <col:12, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11f0086c8 <col:12> 'int ()' Function 0x11f008610 'find_keyring_by_name' 'int ()'
+    |   |-DeclRefExpr 0x11f0086e8 <col:33> 'const char *' lvalue ParmVar 0x11d80dcd8 'name' 'const char *'
+    |   `-RecoveryExpr 0x11f008770 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11f0096a0 <line:31:2, line:47:2> has_else
+    | |-BinaryOperator 0x11f008ac0 <line:31:6, col:27> 'int' contains-errors '=='
+    | | |-CallExpr 0x11f008a30 <col:6, col:21> 'int'
+    | | | |-ImplicitCastExpr 0x11f008a18 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x11f0088c0 <col:6> 'int ()' Function 0x11f008808 'PTR_ERR' 'int ()'
+    | | | `-ImplicitCastExpr 0x11f008a58 <col:14> 'struct key *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x11f0088e0 <col:14> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    | | `-UnaryOperator 0x11f008aa8 <col:26, col:27> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x11f008a90 <col:27> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x11f008a70 <col:27> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x11f009320 <col:35, line:41:2>
+    | | |-BinaryOperator 0x11f008fe0 <line:33:3, line:36:28> 'struct key *' contains-errors '='
+    | | | |-DeclRefExpr 0x11f008ae0 <line:33:3> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    | | | `-CallExpr 0x11f008f88 <col:13, line:36:28> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x11f008be0 <line:33:13> 'int ()' Function 0x11f008b28 'keyring_alloc' 'int ()'
+    | | |   |-DeclRefExpr 0x11f008c00 <line:34:4> 'const char *' lvalue ParmVar 0x11d80dcd8 'name' 'const char *'
+    | | |   |-RecoveryExpr 0x11f008c58 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x11f008c20 <col:10> 'const struct cred *' lvalue Var 0x11d80e008 'old' 'const struct cred *'
+    | | |   |-RecoveryExpr 0x11f008cb8 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x11f008c80 <col:20> 'const struct cred *' lvalue Var 0x11d80e008 'old' 'const struct cred *'
+    | | |   |-DeclRefExpr 0x11f008ce0 <col:30> 'const struct cred *' lvalue Var 0x11d80e008 'old' 'const struct cred *'
+    | | |   |-BinaryOperator 0x11f008f28 <line:35:4, col:48> '<dependent type>' contains-errors '|'
+    | | |   | |-BinaryOperator 0x11f008ee8 <col:4, col:33> '<dependent type>' contains-errors '|'
+    | | |   | | |-BinaryOperator 0x11f008ea8 <col:4, col:18> '<dependent type>' contains-errors '|'
+    | | |   | | | |-RecoveryExpr 0x11f008e68 <col:4> '<dependent type>' contains-errors lvalue
+    | | |   | | | `-RecoveryExpr 0x11f008e88 <col:18> '<dependent type>' contains-errors lvalue
+    | | |   | | `-RecoveryExpr 0x11f008ec8 <col:33> '<dependent type>' contains-errors lvalue
+    | | |   | `-RecoveryExpr 0x11f008f08 <col:48> '<dependent type>' contains-errors lvalue
+    | | |   |-RecoveryExpr 0x11f008f48 <line:36:4> '<dependent type>' contains-errors lvalue
+    | | |   `-RecoveryExpr 0x11f008f68 <col:24> '<dependent type>' contains-errors lvalue
+    | | `-IfStmt 0x11f009300 <line:37:3, line:40:3>
+    | |   |-CallExpr 0x11f009138 <line:37:7, col:21> 'int'
+    | |   | |-ImplicitCastExpr 0x11f009120 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x11f0090e0 <col:7> 'int ()' Function 0x11f009028 'IS_ERR' 'int ()'
+    | |   | `-ImplicitCastExpr 0x11f009160 <col:14> 'struct key *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x11f009100 <col:14> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    | |   `-CompoundStmt 0x11f0092e0 <col:24, line:40:3>
+    | |     |-BinaryOperator 0x11f009258 <line:38:4, col:25> 'long' '='
+    | |     | |-DeclRefExpr 0x11f009178 <col:4> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    | |     | `-ImplicitCastExpr 0x11f009240 <col:10, col:25> 'long' <IntegralCast>
+    | |     |   `-CallExpr 0x11f009200 <col:10, col:25> 'int'
+    | |     |     |-ImplicitCastExpr 0x11f0091d8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | |     |     | `-DeclRefExpr 0x11f009198 <col:10> 'int ()' Function 0x11f008808 'PTR_ERR' 'int ()'
+    | |     |     `-ImplicitCastExpr 0x11f009228 <col:18> 'struct key *' <LValueToRValue>
+    | |     |       `-DeclRefExpr 0x11f0091b8 <col:18> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    | |     `-GotoStmt 0x11f0092c8 <line:39:4, col:9> 'error2' 0x11f009278
+    | `-IfStmt 0x11f009670 <line:41:9, line:47:2> has_else
+    |   |-CallExpr 0x11f009398 <line:41:13, col:27> 'int'
+    |   | |-ImplicitCastExpr 0x11f009380 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x11f009340 <col:13> 'int ()' Function 0x11f009028 'IS_ERR' 'int ()'
+    |   | `-ImplicitCastExpr 0x11f0093c0 <col:20> 'struct key *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x11f009360 <col:20> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |   |-CompoundStmt 0x11f0094e0 <col:30, line:44:2>
+    |   | |-BinaryOperator 0x11f0094a8 <line:42:3, col:24> 'long' '='
+    |   | | |-DeclRefExpr 0x11f0093d8 <col:3> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |   | | `-ImplicitCastExpr 0x11f009490 <col:9, col:24> 'long' <IntegralCast>
+    |   | |   `-CallExpr 0x11f009450 <col:9, col:24> 'int'
+    |   | |     |-ImplicitCastExpr 0x11f009438 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | |     | `-DeclRefExpr 0x11f0093f8 <col:9> 'int ()' Function 0x11f008808 'PTR_ERR' 'int ()'
+    |   | |     `-ImplicitCastExpr 0x11f009478 <col:17> 'struct key *' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x11f009418 <col:17> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |   | `-GotoStmt 0x11f0094c8 <line:43:3, col:8> 'error2' 0x11f009278
+    |   `-IfStmt 0x11f009650 <line:44:9, line:47:2>
+    |     |-BinaryOperator 0x11f009580 <line:44:13, col:29> 'int' contains-errors '=='
+    |     | |-DeclRefExpr 0x11f009500 <col:13> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |     | `-RecoveryExpr 0x11f009558 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x11f009520 <col:24> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |     `-CompoundStmt 0x11f009630 <col:46, line:47:2>
+    |       |-BinaryOperator 0x11f0095f8 <line:45:3, col:9> 'long' '='
+    |       | |-DeclRefExpr 0x11f0095a0 <col:3> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |       | `-ImplicitCastExpr 0x11f0095e0 <col:9> 'long' <IntegralCast>
+    |       |   `-IntegerLiteral 0x11f0095c0 <col:9> 'int' 0
+    |       `-GotoStmt 0x11f009618 <line:46:3, col:8> 'error2' 0x11f009278
+    |-BinaryOperator 0x11f0097e0 <line:50:2, col:52> 'long' '='
+    | |-DeclRefExpr 0x11f0096d0 <col:2> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    | `-ImplicitCastExpr 0x11f0097c8 <col:8, col:52> 'long' <IntegralCast>
+    |   `-CallExpr 0x11f009768 <col:8, col:52> 'int'
+    |     |-ImplicitCastExpr 0x11f009750 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11f0096f0 <col:8> 'int ()' Function 0x11d827080 'install_session_keyring_to_cred' 'int ()'
+    |     |-ImplicitCastExpr 0x11f009798 <col:40> 'struct cred *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x11f009710 <col:40> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |     `-ImplicitCastExpr 0x11f0097b0 <col:45> 'struct key *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11f009730 <col:45> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |-IfStmt 0x11f0098a8 <line:51:2, line:52:8>
+    | |-BinaryOperator 0x11f009870 <line:51:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x11f009840 <col:6> 'long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x11f009800 <col:6> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    | | `-ImplicitCastExpr 0x11f009858 <col:12> 'long' <IntegralCast>
+    | |   `-IntegerLiteral 0x11f009820 <col:12> 'int' 0
+    | `-GotoStmt 0x11f009890 <line:52:3, col:8> 'error2' 0x11f009278
+    |-CallExpr 0x11f009920 <line:54:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x11f009908 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11f0098c8 <col:2> 'int ()' Function 0x11d827498 'commit_creds' 'int ()'
+    | `-ImplicitCastExpr 0x11f009948 <col:15> 'struct cred *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11f0098e8 <col:15> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    |-BinaryOperator 0x11f009ae0 <line:57:2, col:17> 'long' contains-errors '='
+    | |-DeclRefExpr 0x11f009a60 <col:2> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    | `-RecoveryExpr 0x11f009ab8 <col:8, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11f009a80 <col:8> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |-CallExpr 0x11f009c38 <line:58:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x11f009c20 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11f009be0 <col:2> 'int ()' Function 0x11f009b28 'key_put' 'int ()'
+    | `-ImplicitCastExpr 0x11f009c60 <col:10> 'struct key *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11f009c00 <col:10> 'struct key *' lvalue Var 0x11d80e348 'keyring' 'struct key *'
+    |-LabelStmt 0x11f009cc0 <line:59:1, line:60:9> 'okay'
+    | `-ReturnStmt 0x11f009cb0 <col:2, col:9>
+    |   `-ImplicitCastExpr 0x11f009c98 <col:9> 'long' <LValueToRValue>
+    |     `-DeclRefExpr 0x11f009c78 <col:9> 'long' lvalue Var 0x11d826600 'ret' 'long'
+    |-LabelStmt 0x11f009d08 <line:62:1, col:7> 'error2'
+    | `-NullStmt 0x11f009d00 <col:7>
+    |-LabelStmt 0x11f009ea0 <line:64:1, line:65:17> 'error'
+    | `-CallExpr 0x11f009e60 <col:2, col:17> 'int'
+    |   |-ImplicitCastExpr 0x11f009e48 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11f009e08 <col:2> 'int ()' Function 0x11f009d50 'abort_creds' 'int ()'
+    |   `-ImplicitCastExpr 0x11f009e88 <col:14> 'struct cred *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11f009e28 <col:14> 'struct cred *' lvalue Var 0x11d80e158 'new' 'struct cred *'
+    `-ReturnStmt 0x11f009ef8 <line:66:2, col:9>
+      `-ImplicitCastExpr 0x11f009ee0 <col:9> 'long' <LValueToRValue>
+        `-DeclRefExpr 0x11f009ec0 <col:9> 'long' lvalue Var 0x11d826600 'ret' 'long'

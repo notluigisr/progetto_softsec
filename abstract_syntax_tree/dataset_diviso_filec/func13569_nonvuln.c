@@ -1,0 +1,1 @@
+  const nghttp2_session_callbacks *get_callbacks() const { return callbacks_; }

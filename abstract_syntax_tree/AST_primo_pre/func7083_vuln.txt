@@ -1,0 +1,50 @@
+`-FunctionDecl 0x12a940b48  line:1:1 validate_event 'int (struct pmu_hw_events *, struct perf_event *)'
+  |-ParmVarDecl 0x12a928648 <col:16, col:38> col:38 used hw_events 'struct pmu_hw_events *'
+  |-ParmVarDecl 0x12a940a28 <line:2:9, col:28> col:28 used event 'struct perf_event *'
+  `-CompoundStmt 0x12a941870 <line:3:1, line:14:1>
+    |-DeclStmt 0x12a941010 <line:4:2, col:49>
+    | |-RecordDecl 0x12a940c48 <col:2, col:9> col:9 struct arm_pmu
+    | `-VarDecl 0x12a940db8 <col:2, col:48> col:18 used armpmu 'struct arm_pmu *' cinit
+    |   `-CallExpr 0x12a940fd0 <col:27, col:48> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12a940f50 <col:27> 'int ()' Function 0x12a940e98 'to_arm_pmu' 'int ()'
+    |     `-RecoveryExpr 0x12a940fa8 <col:38, col:45> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a940f70 <col:38> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    |-DeclStmt 0x12a9412c0 <line:5:2, col:51>
+    | |-RecordDecl 0x12a941028 <col:2, col:9> col:9 struct pmu
+    | `-VarDecl 0x12a941198 <col:2, col:48> col:14 used leader_pmu 'struct pmu *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12a941260 <col:27, col:48> '<dependent type>' contains-errors lvalue ->pmu
+    |     `-RecoveryExpr 0x12a941238 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a941200 <col:27> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    |-IfStmt 0x12a9414c0 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x12a941470 <line:7:6, col:49> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x12a941358 <col:6, col:20> 'int' contains-errors '!='
+    | | | |-RecoveryExpr 0x12a941310 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x12a9412d8 <col:6> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    | | | `-DeclRefExpr 0x12a941338 <col:20> 'struct pmu *' contains-errors lvalue Var 0x12a941198 'leader_pmu' 'struct pmu *'
+    | | `-BinaryOperator 0x12a941450 <col:34, col:49> 'int' contains-errors '<'
+    | |   |-RecoveryExpr 0x12a9413b0 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x12a941378 <col:34> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    | |   `-RecoveryExpr 0x12a941430 <col:49> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a9414b0 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x12a941490 <col:10> 'int' 1
+    |-IfStmt 0x12a941730 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x12a9416e0 <line:10:6, col:59> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x12a941690 <col:6, col:22> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x12a941518 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x12a9414e0 <col:6> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    | | | `-RecoveryExpr 0x12a941670 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x12a9416c8 <col:46, col:59> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x12a9416b0 <col:47, col:59> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-CXXDependentScopeMemberExpr 0x12a9415d8 <col:47, col:59> '<dependent type>' contains-errors lvalue .enable_on_exec
+    | |       `-RecoveryExpr 0x12a9415b0 <col:47, col:54> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x12a941578 <col:47> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+    | `-ReturnStmt 0x12a941720 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x12a941700 <col:10> 'int' 1
+    `-ReturnStmt 0x12a941860 <line:13:2, col:52>
+      `-BinaryOperator 0x12a941840 <col:9, col:52> 'int' contains-errors '>='
+        |-CallExpr 0x12a9417f0 <col:9, col:47> '<dependent type>' contains-errors
+        | |-RecoveryExpr 0x12a941788 <col:9, col:17> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x12a941750 <col:9> 'struct arm_pmu *' contains-errors lvalue Var 0x12a940db8 'armpmu' 'struct arm_pmu *'
+        | |-DeclRefExpr 0x12a9417b0 <col:31> 'struct pmu_hw_events *' lvalue ParmVar 0x12a928648 'hw_events' 'struct pmu_hw_events *'
+        | `-DeclRefExpr 0x12a9417d0 <col:42> 'struct perf_event *' lvalue ParmVar 0x12a940a28 'event' 'struct perf_event *'
+        `-IntegerLiteral 0x12a941820 <col:52> 'int' 0

@@ -1,0 +1,124 @@
+`-FunctionDecl 0x11f140a88  line:1:1 down_write_failed 'int (struct ld_semaphore *, long, long)'
+  |-ParmVarDecl 0x11f128648 <col:19, col:40> col:40 used sem 'struct ld_semaphore *'
+  |-ParmVarDecl 0x11f1286c8 <col:45, col:50> col:50 used count 'long'
+  |-ParmVarDecl 0x11f128748 <col:57, col:62> col:62 used timeout 'long'
+  `-CompoundStmt 0x11f144ab0 <line:2:1, line:48:1>
+    |-DeclStmt 0x11f140d08 <line:3:2, col:28>
+    | |-RecordDecl 0x11f140b90 <col:2, col:9> col:9 struct ldsem_waiter
+    | `-VarDecl 0x11f140c88 <col:2, col:22> col:22 referenced invalid waiter 'struct ldsem_waiter'
+    |-DeclStmt 0x11f140f58 <line:4:2, col:35>
+    | |-RecordDecl 0x11f140d20 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x11f140e88 <col:2, col:28> col:22 used tsk 'struct task_struct *' cinit
+    |   `-RecoveryExpr 0x11f140f20 <col:28> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x11f141088 <line:5:2, col:34>
+    | `-VarDecl 0x11f140f88 <col:2, col:17> col:7 used adjust 'long' cinit
+    |   `-UnaryOperator 0x11f141070 <col:16, col:17> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11f141058 <col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11f141038 <col:17> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x11f141140 <line:6:2, col:16>
+    | `-VarDecl 0x11f1410b8 <col:2, col:15> col:6 used locked 'int' cinit
+    |   `-IntegerLiteral 0x11f141120 <col:15> 'int' 0
+    |-CallExpr 0x11f141308 <line:9:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f141270 <col:2> 'int ()' Function 0x11f1411b8 'raw_spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x11f1412f0 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f1412c8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f141290 <col:21> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    |-DoStmt 0x11f141920 <line:12:2, line:19:12>
+    | |-CompoundStmt 0x11f1418e0 <line:12:5, line:19:2>
+    | | |-IfStmt 0x11f1415f0 <line:13:3, line:14:4>
+    | | | |-CallExpr 0x11f141598 <line:13:7, col:48> 'int' contains-errors
+    | | | | |-ImplicitCastExpr 0x11f141580 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | `-DeclRefExpr 0x11f141410 <col:7> 'int ()' Function 0x11f141358 'ldsem_cmpxchg' 'int ()'
+    | | | | |-UnaryOperator 0x11f141480 <col:21, col:22> 'long *' prefix '&' cannot overflow
+    | | | | | `-DeclRefExpr 0x11f141430 <col:22> 'long' lvalue ParmVar 0x11f1286c8 'count' 'long'
+    | | | | |-BinaryOperator 0x11f141508 <col:29, col:37> 'long' contains-errors '+'
+    | | | | | |-ImplicitCastExpr 0x11f1414d8 <col:29> 'long' <LValueToRValue>
+    | | | | | | `-DeclRefExpr 0x11f141498 <col:29> 'long' lvalue ParmVar 0x11f1286c8 'count' 'long'
+    | | | | | `-ImplicitCastExpr 0x11f1414f0 <col:37> 'long' contains-errors <LValueToRValue>
+    | | | | |   `-DeclRefExpr 0x11f1414b8 <col:37> 'long' contains-errors lvalue Var 0x11f140f88 'adjust' 'long'
+    | | | | `-ImplicitCastExpr 0x11f1415d0 <col:45> 'struct ld_semaphore *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x11f141528 <col:45> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    | | | `-BreakStmt 0x11f1415e8 <line:14:4>
+    | | `-IfStmt 0x11f1418c0 <line:15:3, line:18:3>
+    | |   |-RecoveryExpr 0x11f141680 <line:15:7, col:38> '_Bool' contains-errors
+    | |   `-CompoundStmt 0x11f1418a0 <col:57, line:18:3>
+    | |     |-CallExpr 0x11f141818 <line:16:4, col:39> '<dependent type>' contains-errors
+    | |     | |-DeclRefExpr 0x11f141780 <col:4> 'int ()' Function 0x11f1416c8 'raw_spin_unlock_irq' 'int ()'
+    | |     | `-UnaryOperator 0x11f141800 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     |   `-RecoveryExpr 0x11f1417d8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    | |     |     `-DeclRefExpr 0x11f1417a0 <col:25> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    | |     `-ReturnStmt 0x11f141890 <line:17:4, col:11>
+    | |       `-ImplicitCastExpr 0x11f141878 <col:11> 'int' <PointerToIntegral>
+    | |         `-ImplicitCastExpr 0x11f141860 <col:11> 'struct ld_semaphore *' <LValueToRValue>
+    | |           `-DeclRefExpr 0x11f141840 <col:11> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    | `-IntegerLiteral 0x11f141900 <line:19:11> 'int' 1
+    |-CallExpr 0x11f1435d0 <line:21:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f1434b8 <col:2> 'int ()' Function 0x11f143400 'list_add_tail' 'int ()'
+    | |-UnaryOperator 0x11f143540 <col:16, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x11f1434f8 <col:17, col:24> '<dependent type>' contains-errors lvalue .list
+    | |   `-RecoveryExpr 0x11f1434d8 <col:17> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x11f1435b8 <col:30, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f143590 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f143558 <col:31> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    |-BinaryOperator 0x11f1436b0 <line:23:2, col:16> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x11f143648 <col:2, col:9> '<dependent type>' contains-errors lvalue .task
+    | | `-RecoveryExpr 0x11f143620 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f143600 <col:2> 'struct ldsem_waiter' lvalue Var 0x11f140c88 'waiter' 'struct ldsem_waiter'
+    | `-DeclRefExpr 0x11f143690 <col:16> 'struct task_struct *' contains-errors lvalue Var 0x11f140e88 'tsk' 'struct task_struct *'
+    |-CallExpr 0x11f143858 <line:25:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f1437b0 <col:2> 'int ()' Function 0x11f1436f8 'set_task_state' 'int ()'
+    | |-DeclRefExpr 0x11f1437d0 <col:17> 'struct task_struct *' contains-errors lvalue Var 0x11f140e88 'tsk' 'struct task_struct *'
+    | `-RecoveryExpr 0x11f143838 <col:22> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x11f143ec8 <line:26:2, line:35:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | `-CompoundStmt 0x11f143e90 <line:26:11, line:35:2>
+    |   |-IfStmt 0x11f1438e0 <line:27:3, line:28:4>
+    |   | |-UnaryOperator 0x11f1438c0 <line:27:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x11f1438a8 <col:8> 'long' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x11f143888 <col:8> 'long' lvalue ParmVar 0x11f128748 'timeout' 'long'
+    |   | `-BreakStmt 0x11f1438d8 <line:28:4>
+    |   |-CallExpr 0x11f143998 <line:29:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11f143900 <col:3> 'int ()' Function 0x11f1416c8 'raw_spin_unlock_irq' 'int ()'
+    |   | `-UnaryOperator 0x11f143980 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x11f143958 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11f143920 <col:24> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    |   |-BinaryOperator 0x11f143b70 <line:30:3, col:37> 'long' '='
+    |   | |-DeclRefExpr 0x11f1439c0 <col:3> 'long' lvalue ParmVar 0x11f128748 'timeout' 'long'
+    |   | `-ImplicitCastExpr 0x11f143b58 <col:13, col:37> 'long' <IntegralCast>
+    |   |   `-CallExpr 0x11f143b18 <col:13, col:37> 'int'
+    |   |     |-ImplicitCastExpr 0x11f143b00 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11f143ac0 <col:13> 'int ()' Function 0x11f143a08 'schedule_timeout' 'int ()'
+    |   |     `-ImplicitCastExpr 0x11f143b40 <col:30> 'long' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11f143ae0 <col:30> 'long' lvalue ParmVar 0x11f128748 'timeout' 'long'
+    |   |-CallExpr 0x11f143c28 <line:31:3, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11f143b90 <col:3> 'int ()' Function 0x11f1411b8 'raw_spin_lock_irq' 'int ()'
+    |   | `-UnaryOperator 0x11f143c10 <col:21, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x11f143be8 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11f143bb0 <col:22> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    |   `-IfStmt 0x11f143e70 <line:33:3, line:34:4>
+    |     |-ParenExpr 0x11f143e48 <line:33:7, col:36> 'int'
+    |     | `-BinaryOperator 0x11f143e28 <col:8, col:35> 'int' '='
+    |     |   |-DeclRefExpr 0x11f143c90 <col:8> 'int' lvalue Var 0x11f1410b8 'locked' 'int'
+    |     |   `-CallExpr 0x11f143de8 <col:17, col:35> 'int'
+    |     |     |-ImplicitCastExpr 0x11f143dd0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x11f143d90 <col:17> 'int ()' Function 0x11f143cd8 'writer_trylock' 'int ()'
+    |     |     `-ImplicitCastExpr 0x11f143e10 <col:32> 'struct ld_semaphore *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x11f143db0 <col:32> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    |     `-BreakStmt 0x11f143e68 <line:34:4>
+    |-CallExpr 0x11f1441f0 <line:39:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f144150 <col:2> 'int ()' Function 0x11f144098 'list_del' 'int ()'
+    | `-UnaryOperator 0x11f1441d8 <col:11, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x11f144190 <col:12, col:19> '<dependent type>' contains-errors lvalue .list
+    |     `-RecoveryExpr 0x11f144170 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11f1442b0 <line:40:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f144218 <col:2> 'int ()' Function 0x11f1416c8 'raw_spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x11f144298 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f144270 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f144238 <col:23> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'
+    `-ReturnStmt 0x11f144aa0 <line:47:2, col:9>
+      `-ImplicitCastExpr 0x11f144a88 <col:9> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x11f144a70 <col:9> 'struct ld_semaphore *' <LValueToRValue>
+          `-DeclRefExpr 0x11f144a50 <col:9> 'struct ld_semaphore *' lvalue ParmVar 0x11f128648 'sem' 'struct ld_semaphore *'

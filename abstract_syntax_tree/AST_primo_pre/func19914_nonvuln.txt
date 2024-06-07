@@ -1,0 +1,21 @@
+`-FunctionDecl 0x13a00ddc8  line:1:1 invalid dir_check 'int (int)'
+  |-ParmVarDecl 0x13a00dcf0 <col:11, col:17> col:17 invalid dir 'int'
+  `-CompoundStmt 0x13b0092e8 <line:2:1, line:6:1>
+    |-DeclStmt 0x13a00e230 <line:3:5, col:41>
+    | |-RecordDecl 0x13a00de78 <col:5, col:12> col:12 struct dir_data
+    | `-VarDecl 0x13a00dfe8 <col:5, col:40> col:22 used dirp 'struct dir_data *' cinit
+    |   `-CallExpr 0x13a00e1f0 <col:29, col:40> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13a00e1b0 <col:29> 'int ()' Function 0x13a00e0f8 'dir_get' 'int ()'
+    |     `-RecoveryExpr 0x13a00e1d0 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13b009268 <line:4:5, col:32>
+    | |-UnaryOperator 0x13b0090e0 <col:9, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13b0090c8 <col:10, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x13b0090a0 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13a00e248 <col:10> 'struct dir_data *' contains-errors lvalue Var 0x13a00dfe8 'dirp' 'struct dir_data *'
+    | `-CallExpr 0x13b009248 <col:21, col:32> 'int'
+    |   `-ImplicitCastExpr 0x13b009230 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x13b0091d8 <col:21> 'int ()' Function 0x13b009120 'dir_closed' 'int ()'
+    `-ReturnStmt 0x13b0092d8 <line:5:5, col:12>
+      `-ImplicitCastExpr 0x13b0092c0 <col:12> 'int' contains-errors <PointerToIntegral>
+        `-ImplicitCastExpr 0x13b0092a8 <col:12> 'struct dir_data *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x13b009288 <col:12> 'struct dir_data *' contains-errors lvalue Var 0x13a00dfe8 'dirp' 'struct dir_data *'

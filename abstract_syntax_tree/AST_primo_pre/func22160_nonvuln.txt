@@ -1,0 +1,36 @@
+`-FunctionDecl 0x15a027278  line:1:12 skcipher_crypt_blkcipher 'int (struct skcipher_request *, int (*)(struct blkcipher_desc *, struct scatterlist *, struct scatterlist *, unsigned int))' static
+  |-ParmVarDecl 0x15a00e848 <col:37, col:62> col:62 used req 'struct skcipher_request *'
+  |-ParmVarDecl 0x15a027158 <line:2:9, line:5:20> line:2:15 used crypt 'int (*)(struct blkcipher_desc *, struct scatterlist *, struct scatterlist *, unsigned int)'
+  `-CompoundStmt 0x15a029548 <line:6:1, line:17:1>
+    |-DeclStmt 0x15a027778 <line:7:2, col:59>
+    | |-RecordDecl 0x15a027378 <col:2, col:9> col:9 struct crypto_skcipher
+    | `-VarDecl 0x15a0274e8 <col:2, col:58> col:26 used tfm 'struct crypto_skcipher *' cinit
+    |   `-ImplicitCastExpr 0x15a027748 <col:32, col:58> 'struct crypto_skcipher *' <IntegralToPointer>
+    |     `-CallExpr 0x15a027708 <col:32, col:58> 'int'
+    |       |-ImplicitCastExpr 0x15a0276f0 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a027680 <col:32> 'int ()' Function 0x15a0275c8 'crypto_skcipher_reqtfm' 'int ()'
+    |       `-ImplicitCastExpr 0x15a027730 <col:55> 'struct skcipher_request *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a0276a0 <col:55> 'struct skcipher_request *' lvalue ParmVar 0x15a00e848 'req' 'struct skcipher_request *'
+    |-DeclStmt 0x15a027b68 <line:8:2, col:58>
+    | |-RecordDecl 0x15a027790 <col:2, col:9> col:9 struct crypto_blkcipher
+    | `-VarDecl 0x15a027958 <col:2, col:57> col:28 used ctx 'struct crypto_blkcipher **' cinit
+    |   `-ImplicitCastExpr 0x15a027b38 <col:34, col:57> 'struct crypto_blkcipher **' <IntegralToPointer>
+    |     `-CallExpr 0x15a027af8 <col:34, col:57> 'int'
+    |       |-ImplicitCastExpr 0x15a027ae0 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a027aa0 <col:34> 'int ()' Function 0x15a0279e8 'crypto_skcipher_ctx' 'int ()'
+    |       `-ImplicitCastExpr 0x15a027b20 <col:54> 'struct crypto_skcipher *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a027ac0 <col:54> 'struct crypto_skcipher *' lvalue Var 0x15a0274e8 'tfm' 'struct crypto_skcipher *'
+    |-DeclStmt 0x15a029368 <line:9:2, line:13:3>
+    | |-RecordDecl 0x15a027b80 <line:9:2, col:9> col:9 struct blkcipher_desc
+    | `-VarDecl 0x15a029078 <col:2, col:24> col:24 invalid desc 'struct blkcipher_desc'
+    `-ReturnStmt 0x15a029538 <line:16:2, col:55>
+      `-CallExpr 0x15a0294f8 <col:9, col:55> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15a029380 <col:9> 'int (*)(struct blkcipher_desc *, struct scatterlist *, struct scatterlist *, unsigned int)' lvalue ParmVar 0x15a027158 'crypt' 'int (*)(struct blkcipher_desc *, struct scatterlist *, struct scatterlist *, unsigned int)'
+        |-UnaryOperator 0x15a0293c0 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x15a0293a0 <col:16> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x15a029410 <col:22, col:27> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x15a0293d8 <col:22> 'struct skcipher_request *' lvalue ParmVar 0x15a00e848 'req' 'struct skcipher_request *'
+        |-RecoveryExpr 0x15a029470 <col:32, col:37> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x15a029438 <col:32> 'struct skcipher_request *' lvalue ParmVar 0x15a00e848 'req' 'struct skcipher_request *'
+        `-RecoveryExpr 0x15a0294d0 <col:42, col:47> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x15a029498 <col:42> 'struct skcipher_request *' lvalue ParmVar 0x15a00e848 'req' 'struct skcipher_request *'

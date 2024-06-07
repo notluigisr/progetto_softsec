@@ -1,0 +1,134 @@
+`-FunctionDecl 0x150941108  line:1:22 referenced v9fs_qid_iget_dotl 'struct inode *(struct super_block *, struct p9_qid *, struct p9_fid *, struct p9_stat_dotl *, int)' static
+  |-ParmVarDecl 0x1509286e8 <col:41, col:61> col:61 used sb 'struct super_block *'
+  |-ParmVarDecl 0x150940ac8 <line:2:6, col:21> col:21 used qid 'struct p9_qid *'
+  |-ParmVarDecl 0x150940c98 <line:3:6, col:21> col:21 used fid 'struct p9_fid *'
+  |-ParmVarDecl 0x150940e68 <line:4:6, col:27> col:27 used st 'struct p9_stat_dotl *'
+  |-ParmVarDecl 0x150940ee8 <line:5:6, col:10> col:10 used new 'int'
+  `-CompoundStmt 0x150948f88 <line:6:1, line:43:1>
+    |-DeclStmt 0x1509412a0 <line:7:2, col:12>
+    | `-VarDecl 0x150941238 <col:2, col:6> col:6 used retval 'int'
+    |-DeclStmt 0x150941338 <line:8:2, col:21>
+    | `-VarDecl 0x1509412d0 <col:2, col:16> col:16 used i_ino 'unsigned long'
+    |-DeclStmt 0x150941440 <line:9:2, col:21>
+    | `-VarDecl 0x1509413d8 <col:2, col:16> col:16 used inode 'struct inode *'
+    |-DeclStmt 0x1509416a8 <line:10:2, col:49>
+    | |-RecordDecl 0x150941458 <col:2, col:9> col:9 struct v9fs_session_info
+    | `-VarDecl 0x1509415c8 <col:2, col:40> col:28 used v9ses 'struct v9fs_session_info *' cinit
+    |   `-RecoveryExpr 0x150941668 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x150941630 <col:36> 'struct super_block *' lvalue ParmVar 0x1509286e8 'sb' 'struct super_block *'
+    |-DeclStmt 0x150941990 <line:11:2, col:37>
+    | `-VarDecl 0x150941928 <col:2, col:36> col:8 used test 'int (*)(struct inode *, void *)'
+    |-IfStmt 0x150946328 <line:13:2, line:16:10> has_else
+    | |-ImplicitCastExpr 0x1509419c8 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x1509419a8 <col:6> 'int' lvalue ParmVar 0x150940ee8 'new' 'int'
+    | |-BinaryOperator 0x150946270 <line:14:3, col:10> 'int (*)(struct inode *, void *)' contains-errors '='
+    | | |-DeclRefExpr 0x1509419e0 <col:3> 'int (*)(struct inode *, void *)' lvalue Var 0x150941928 'test' 'int (*)(struct inode *, void *)'
+    | | `-RecoveryExpr 0x150946250 <col:10> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x150946308 <line:16:3, col:10> 'int (*)(struct inode *, void *)' contains-errors '='
+    |   |-DeclRefExpr 0x150946290 <col:3> 'int (*)(struct inode *, void *)' lvalue Var 0x150941928 'test' 'int (*)(struct inode *, void *)'
+    |   `-RecoveryExpr 0x1509462e8 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150946570 <line:18:2, col:26> 'unsigned long' '='
+    | |-DeclRefExpr 0x150946358 <col:2> 'unsigned long' lvalue Var 0x1509412d0 'i_ino' 'unsigned long'
+    | `-ImplicitCastExpr 0x150946558 <col:10, col:26> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x150946518 <col:10, col:26> 'int'
+    |     |-ImplicitCastExpr 0x150946500 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x150946490 <col:10> 'int ()' Function 0x1509463d8 'v9fs_qid2ino' 'int ()'
+    |     `-ImplicitCastExpr 0x150946540 <col:23> 'struct p9_qid *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1509464b0 <col:23> 'struct p9_qid *' lvalue ParmVar 0x150940ac8 'qid' 'struct p9_qid *'
+    |-BinaryOperator 0x150946928 <line:19:2, col:63> 'struct inode *' '='
+    | |-DeclRefExpr 0x150946590 <col:2> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    | `-ImplicitCastExpr 0x150946910 <col:10, col:63> 'struct inode *' <IntegralToPointer>
+    |   `-CallExpr 0x1509467e8 <col:10, col:63> 'int'
+    |     |-ImplicitCastExpr 0x1509467d0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x150946690 <col:10> 'int ()' Function 0x1509465d8 'iget5_locked' 'int ()'
+    |     |-ImplicitCastExpr 0x150946830 <col:23> 'struct super_block *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1509466b0 <col:23> 'struct super_block *' lvalue ParmVar 0x1509286e8 'sb' 'struct super_block *'
+    |     |-ImplicitCastExpr 0x150946848 <col:27> 'unsigned long' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1509466d0 <col:27> 'unsigned long' lvalue Var 0x1509412d0 'i_ino' 'unsigned long'
+    |     |-ImplicitCastExpr 0x150946860 <col:34> 'int (*)(struct inode *, void *)' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1509466f0 <col:34> 'int (*)(struct inode *, void *)' lvalue Var 0x150941928 'test' 'int (*)(struct inode *, void *)'
+    |     |-ImplicitCastExpr 0x1509468e0 <col:40> 'struct inode *(*)(struct super_block *, struct p9_qid *, struct p9_fid *, struct p9_stat_dotl *, int)' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1509467b0 <col:40> 'struct inode *(struct super_block *, struct p9_qid *, struct p9_fid *, struct p9_stat_dotl *, int)' Function 0x150941108 'v9fs_qid_iget_dotl' 'struct inode *(struct super_block *, struct p9_qid *, struct p9_fid *, struct p9_stat_dotl *, int)'
+    |     `-ImplicitCastExpr 0x1509468f8 <col:61> 'struct p9_stat_dotl *' <LValueToRValue>
+    |       `-DeclRefExpr 0x150946728 <col:61> 'struct p9_stat_dotl *' lvalue ParmVar 0x150940e68 'st' 'struct p9_stat_dotl *'
+    |-IfStmt 0x150946b90 <line:20:2, line:21:25>
+    | |-UnaryOperator 0x150946980 <line:20:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x150946968 <col:7> 'struct inode *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150946948 <col:7> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    | `-ReturnStmt 0x150946b80 <line:21:3, col:25>
+    |   `-CallExpr 0x150946b58 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x150946a78 <col:10> 'int ()' Function 0x1509469c0 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x150946b40 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x150946b28 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x150946b08 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x150946cb0 <line:22:2, line:23:10>
+    | |-RecoveryExpr 0x150946c48 <line:22:6, col:30> '_Bool' contains-errors
+    | `-ReturnStmt 0x150946ca0 <line:23:3, col:10>
+    |   `-ImplicitCastExpr 0x150946c88 <col:10> 'struct inode *' <LValueToRValue>
+    |     `-DeclRefExpr 0x150946c68 <col:10> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |-BinaryOperator 0x150946d50 <line:25:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x150946d08 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x150946cd0 <col:2> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    | `-DeclRefExpr 0x150946d30 <col:17> 'unsigned long' lvalue Var 0x1509412d0 'i_ino' 'unsigned long'
+    |-BinaryOperator 0x1509470f8 <line:26:2, line:27:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x150946d70 <line:26:2> 'int' lvalue Var 0x150941238 'retval' 'int'
+    | `-CallExpr 0x1509470b8 <col:11, line:27:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150946e70 <line:26:11> 'int ()' Function 0x150946db8 'v9fs_init_inode' 'int ()'
+    |   |-DeclRefExpr 0x150946e90 <col:27> 'struct v9fs_session_info *' contains-errors lvalue Var 0x1509415c8 'v9ses' 'struct v9fs_session_info *'
+    |   |-DeclRefExpr 0x150946eb0 <col:34> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |   |-RecoveryExpr 0x150946f08 <line:27:6, col:10> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x150946ed0 <col:6> 'struct p9_stat_dotl *' lvalue ParmVar 0x150940e68 'st' 'struct p9_stat_dotl *'
+    |   `-CallExpr 0x150947090 <col:19, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x150947010 <col:19> 'int ()' Function 0x150946f58 'new_decode_dev' 'int ()'
+    |     `-RecoveryExpr 0x150947068 <col:34, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x150947030 <col:34> 'struct p9_stat_dotl *' lvalue ParmVar 0x150940e68 'st' 'struct p9_stat_dotl *'
+    |-IfStmt 0x1509471b8 <line:28:2, line:29:8>
+    | |-ImplicitCastExpr 0x150947138 <line:28:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x150947118 <col:6> 'int' lvalue Var 0x150941238 'retval' 'int'
+    | `-GotoStmt 0x1509471a0 <line:29:3, col:8> 'error' 0x150947150
+    |-CallExpr 0x150948730 <line:31:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x150948718 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1509486b8 <col:2> 'int ()' Function 0x150948600 'v9fs_stat2inode_dotl' 'int ()'
+    | |-ImplicitCastExpr 0x150948760 <col:23> 'struct p9_stat_dotl *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1509486d8 <col:23> 'struct p9_stat_dotl *' lvalue ParmVar 0x150940e68 'st' 'struct p9_stat_dotl *'
+    | `-ImplicitCastExpr 0x150948778 <col:27> 'struct inode *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1509486f8 <col:27> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |-CallExpr 0x1509488c8 <line:32:2, col:35> 'int'
+    | |-ImplicitCastExpr 0x1509488b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x150948870 <col:2> 'int ()' Function 0x1509487b8 'v9fs_cache_inode_get_cookie' 'int ()'
+    | `-ImplicitCastExpr 0x1509488f0 <col:30> 'struct inode *' <LValueToRValue>
+    |   `-DeclRefExpr 0x150948890 <col:30> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |-BinaryOperator 0x150948ae0 <line:33:2, col:34> 'int' '='
+    | |-DeclRefExpr 0x150948908 <col:2> 'int' lvalue Var 0x150941238 'retval' 'int'
+    | `-CallExpr 0x150948a80 <col:11, col:34> 'int'
+    |   |-ImplicitCastExpr 0x150948a68 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x150948a08 <col:11> 'int ()' Function 0x150948950 'v9fs_get_acl' 'int ()'
+    |   |-ImplicitCastExpr 0x150948ab0 <col:24> 'struct inode *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x150948a28 <col:24> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |   `-ImplicitCastExpr 0x150948ac8 <col:31> 'struct p9_fid *' <LValueToRValue>
+    |     `-DeclRefExpr 0x150948a48 <col:31> 'struct p9_fid *' lvalue ParmVar 0x150940c98 'fid' 'struct p9_fid *'
+    |-IfStmt 0x150948b50 <line:34:2, line:35:8>
+    | |-ImplicitCastExpr 0x150948b20 <line:34:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x150948b00 <col:6> 'int' lvalue Var 0x150941238 'retval' 'int'
+    | `-GotoStmt 0x150948b38 <line:35:3, col:8> 'error' 0x150947150
+    |-CallExpr 0x150948ca8 <line:37:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x150948c90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x150948c50 <col:2> 'int ()' Function 0x150948b98 'unlock_new_inode' 'int ()'
+    | `-ImplicitCastExpr 0x150948cd0 <col:19> 'struct inode *' <LValueToRValue>
+    |   `-DeclRefExpr 0x150948c70 <col:19> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |-ReturnStmt 0x150948d20 <line:38:2, col:9>
+    | `-ImplicitCastExpr 0x150948d08 <col:9> 'struct inode *' <LValueToRValue>
+    |   `-DeclRefExpr 0x150948ce8 <col:9> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    |-LabelStmt 0x150948ea8 <line:39:1, line:40:19> 'error'
+    | `-CallExpr 0x150948e68 <col:2, col:19> 'int'
+    |   |-ImplicitCastExpr 0x150948e50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x150948e10 <col:2> 'int ()' Function 0x150948d58 'iget_failed' 'int ()'
+    |   `-ImplicitCastExpr 0x150948e90 <col:14> 'struct inode *' <LValueToRValue>
+    |     `-DeclRefExpr 0x150948e30 <col:14> 'struct inode *' lvalue Var 0x1509413d8 'inode' 'struct inode *'
+    `-ReturnStmt 0x150948f78 <line:41:2, col:23>
+      `-ImplicitCastExpr 0x150948f60 <col:9, col:23> 'struct inode *' <IntegralToPointer>
+        `-CallExpr 0x150948f20 <col:9, col:23> 'int'
+          |-ImplicitCastExpr 0x150948f08 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x150948ec8 <col:9> 'int ()' Function 0x1509469c0 'ERR_PTR' 'int ()'
+          `-ImplicitCastExpr 0x150948f48 <col:17> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x150948ee8 <col:17> 'int' lvalue Var 0x150941238 'retval' 'int'

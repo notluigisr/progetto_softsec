@@ -1,0 +1,56 @@
+`-FunctionDecl 0x11c940d28  line:1:12 drbg_kcapi_hash 'int (struct drbg_state *, const unsigned char *, unsigned char *, const struct list_head *)' static
+  |-ParmVarDecl 0x11c928648 <col:28, col:47> col:47 used drbg 'struct drbg_state *'
+  |-ParmVarDecl 0x11c9286f8 <col:53, col:74> col:74 used key 'const unsigned char *'
+  |-ParmVarDecl 0x11c940a00 <line:2:7, col:22> col:22 used outval 'unsigned char *'
+  |-ParmVarDecl 0x11c940bd8 <col:30, col:54> col:54 used in 'const struct list_head *'
+  `-CompoundStmt 0x11c948008 <line:3:1, line:13:1>
+    |-DeclStmt 0x11c941138 <line:4:2, col:55>
+    | |-RecordDecl 0x11c940e38 <col:2, col:9> col:9 struct sdesc
+    | `-VarDecl 0x11c940fa8 <col:2, col:46> col:16 used sdesc 'struct sdesc *' cinit
+    |   `-CStyleCastExpr 0x11c9410f8 <col:24, col:46> 'struct sdesc *' contains-errors <Dependent>
+    |     `-RecoveryExpr 0x11c941048 <col:40, col:46> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11c941010 <col:40> 'struct drbg_state *' lvalue ParmVar 0x11c928648 'drbg' 'struct drbg_state *'
+    |-DeclStmt 0x11c941388 <line:5:2, col:34>
+    | |-RecordDecl 0x11c941150 <col:2, col:9> col:9 struct drbg_string
+    | `-VarDecl 0x11c9412b8 <col:2, col:30> col:22 used input 'struct drbg_string *' cinit
+    |   `-RecoveryExpr 0x11c941350 <col:30> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11c9417c0 <line:7:2, line:8:65>
+    | |-ImplicitCastExpr 0x11c9413c0 <line:7:6> 'const unsigned char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x11c9413a0 <col:6> 'const unsigned char *' lvalue ParmVar 0x11c9286f8 'key' 'const unsigned char *'
+    | `-CallExpr 0x11c941788 <line:8:3, col:65> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11c9414f0 <col:3> 'int ()' Function 0x11c941438 'crypto_shash_setkey' 'int ()'
+    |   |-CXXDependentScopeMemberExpr 0x11c941570 <col:23, col:36> '<dependent type>' contains-errors lvalue .tfm
+    |   | `-RecoveryExpr 0x11c941548 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11c941510 <col:23> 'struct sdesc *' contains-errors lvalue Var 0x11c940fa8 'sdesc' 'struct sdesc *'
+    |   |-DeclRefExpr 0x11c9415b8 <col:41> 'const unsigned char *' lvalue ParmVar 0x11c9286f8 'key' 'const unsigned char *'
+    |   `-CallExpr 0x11c941748 <col:46, col:64> 'int'
+    |     |-ImplicitCastExpr 0x11c941730 <col:46> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11c9416b8 <col:46> 'int ()' Function 0x11c941600 'drbg_statelen' 'int ()'
+    |     `-ImplicitCastExpr 0x11c941770 <col:60> 'struct drbg_state *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11c9416d8 <col:60> 'struct drbg_state *' lvalue ParmVar 0x11c928648 'drbg' 'struct drbg_state *'
+    |-CallExpr 0x11c941958 <line:9:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11c9418c0 <col:2> 'int ()' Function 0x11c941808 'crypto_shash_init' 'int ()'
+    | `-UnaryOperator 0x11c941940 <col:20, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11c941918 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11c9418e0 <col:21> 'struct sdesc *' contains-errors lvalue Var 0x11c940fa8 'sdesc' 'struct sdesc *'
+    |-CallExpr 0x11c947b88 <line:10:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11c947ab8 <col:2> 'int ()' Function 0x11c947a00 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x11c947ad8 <col:22> 'struct drbg_string *' contains-errors lvalue Var 0x11c9412b8 'input' 'struct drbg_string *'
+    | |-DeclRefExpr 0x11c947af8 <col:29> 'const struct list_head *' lvalue ParmVar 0x11c940bd8 'in' 'const struct list_head *'
+    | `-RecoveryExpr 0x11c947b68 <col:33> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11c947df8 <line:11:3, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11c947ca0 <col:3> 'int ()' Function 0x11c947be8 'crypto_shash_update' 'int ()'
+    | |-UnaryOperator 0x11c947d20 <col:23, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x11c947cf8 <col:24, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11c947cc0 <col:24> 'struct sdesc *' contains-errors lvalue Var 0x11c940fa8 'sdesc' 'struct sdesc *'
+    | |-RecoveryExpr 0x11c947d70 <col:38, col:45> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11c947d38 <col:38> 'struct drbg_string *' contains-errors lvalue Var 0x11c9412b8 'input' 'struct drbg_string *'
+    | `-RecoveryExpr 0x11c947dd0 <col:50, col:57> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11c947d98 <col:50> 'struct drbg_string *' contains-errors lvalue Var 0x11c9412b8 'input' 'struct drbg_string *'
+    `-ReturnStmt 0x11c947ff8 <line:12:2, col:49>
+      `-CallExpr 0x11c947fc8 <col:9, col:49> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x11c947f10 <col:9> 'int ()' Function 0x11c947e58 'crypto_shash_final' 'int ()'
+        |-UnaryOperator 0x11c947f90 <col:28, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x11c947f68 <col:29, col:36> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x11c947f30 <col:29> 'struct sdesc *' contains-errors lvalue Var 0x11c940fa8 'sdesc' 'struct sdesc *'
+        `-DeclRefExpr 0x11c947fa8 <col:43> 'unsigned char *' lvalue ParmVar 0x11c940a00 'outval' 'unsigned char *'

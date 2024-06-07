@@ -1,0 +1,69 @@
+`-FunctionDecl 0x157026e00  line:1:6 copy_huge_page_from_user 'long (struct page *, int)'
+  |-ParmVarDecl 0x15700ea48 <col:31, col:44> col:44 used dst_page 'struct page *'
+  |-ParmVarDecl 0x15700eac0 <line:2:5, col:16> col:16 __user 'int'
+  `-CompoundStmt 0x15702a690 <line:5:1, line:31:1>
+    |-DeclStmt 0x157026fc8 <line:6:2, col:29>
+    | `-VarDecl 0x157026f18 <col:2, col:8> col:8 used src 'void *'
+    |-DeclStmt 0x157027060 <line:7:2, col:18>
+    | `-VarDecl 0x157026ff8 <col:2, col:8> col:8 used page_kaddr 'void *'
+    |-DeclStmt 0x1570271c8 <line:8:2, col:25>
+    | |-VarDecl 0x157027090 <col:2, col:16> col:16 used i 'unsigned long'
+    | `-VarDecl 0x157027110 <col:2, col:24> col:19 used rc 'unsigned long' cinit
+    |   `-ImplicitCastExpr 0x157027198 <col:24> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x157027178 <col:24> 'int' 0
+    |-DeclStmt 0x157027310 <line:9:2, col:57>
+    | `-VarDecl 0x1570271f8 <col:2, col:48> col:16 used ret_val 'unsigned long' cinit
+    |   `-BinaryOperator 0x1570272f0 <col:26, col:48> '<dependent type>' contains-errors '*'
+    |     |-RecoveryExpr 0x1570272b0 <col:26> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x1570272d0 <col:48> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x15702a5f8 <line:11:2, line:29:2>
+    | |-BinaryOperator 0x157027380 <line:11:7, col:11> 'unsigned long' '='
+    | | |-DeclRefExpr 0x157027328 <col:7> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    | | `-ImplicitCastExpr 0x157027368 <col:11> 'unsigned long' <IntegralCast>
+    | |   `-IntegerLiteral 0x157027348 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x157027418 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x1570273a0 <col:14> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    | | `-RecoveryExpr 0x1570273f8 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x157027458 <col:39, col:40> 'unsigned long' postfix '++'
+    | | `-DeclRefExpr 0x157027438 <col:39> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    | `-CompoundStmt 0x15702a5c8 <col:44, line:29:2>
+    |   |-IfStmt 0x1570278f0 <line:12:3, line:15:41> has_else
+    |   | |-RecoveryExpr 0x157027488 <line:12:7> '<dependent type>' contains-errors lvalue
+    |   | |-BinaryOperator 0x1570276c8 <line:13:4, col:34> 'void *' contains-errors '='
+    |   | | |-DeclRefExpr 0x1570274a8 <col:4> 'void *' lvalue Var 0x157026ff8 'page_kaddr' 'void *'
+    |   | | `-CallExpr 0x1570276a0 <col:17, col:34> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x1570275e0 <col:17> 'int ()' Function 0x157027528 'kmap' 'int ()'
+    |   | |   `-RecoveryExpr 0x157027670 <col:22, col:33> '<dependent type>' contains-errors lvalue
+    |   | |     |-DeclRefExpr 0x157027600 <col:22> 'struct page *' lvalue ParmVar 0x15700ea48 'dst_page' 'struct page *'
+    |   | |     `-DeclRefExpr 0x157027620 <col:33> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    |   | `-BinaryOperator 0x1570278d0 <line:15:4, col:41> 'void *' contains-errors '='
+    |   |   |-DeclRefExpr 0x1570276e8 <col:4> 'void *' lvalue Var 0x157026ff8 'page_kaddr' 'void *'
+    |   |   `-CallExpr 0x1570278a8 <col:17, col:41> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x1570277e8 <col:17> 'int ()' Function 0x157027730 'kmap_atomic' 'int ()'
+    |   |     `-RecoveryExpr 0x157027878 <col:29, col:40> '<dependent type>' contains-errors lvalue
+    |   |       |-DeclRefExpr 0x157027808 <col:29> 'struct page *' lvalue ParmVar 0x15700ea48 'dst_page' 'struct page *'
+    |   |       `-DeclRefExpr 0x157027828 <col:40> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    |   |-IfStmt 0x15702a388 <line:19:3, line:22:28> has_else
+    |   | |-RecoveryExpr 0x157027b58 <line:19:7> '<dependent type>' contains-errors lvalue
+    |   | |-CallExpr 0x157027d18 <line:20:4, col:23> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x157027c58 <col:4> 'int ()' Function 0x157027ba0 'kunmap' 'int ()'
+    |   | | `-RecoveryExpr 0x157027ce8 <col:11, col:22> '<dependent type>' contains-errors lvalue
+    |   | |   |-DeclRefExpr 0x157027c78 <col:11> 'struct page *' lvalue ParmVar 0x15700ea48 'dst_page' 'struct page *'
+    |   | |   `-DeclRefExpr 0x157027c98 <col:22> 'unsigned long' lvalue Var 0x157027090 'i' 'unsigned long'
+    |   | `-CallExpr 0x15702a348 <line:22:4, col:28> 'int'
+    |   |   |-ImplicitCastExpr 0x15702a330 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x15702a2b8 <col:4> 'int ()' Function 0x15702a200 'kunmap_atomic' 'int ()'
+    |   |   `-ImplicitCastExpr 0x15702a370 <col:18> 'void *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x15702a2d8 <col:18> 'void *' lvalue Var 0x157026ff8 'page_kaddr' 'void *'
+    |   |-IfStmt 0x15702a470 <line:25:3, line:26:4>
+    |   | |-ImplicitCastExpr 0x15702a450 <line:25:7> 'unsigned long' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x15702a430 <col:7> 'unsigned long' lvalue Var 0x157027110 'rc' 'unsigned long'
+    |   | `-BreakStmt 0x15702a468 <line:26:4>
+    |   `-CallExpr 0x15702a5a8 <line:28:3, col:16> 'int'
+    |     `-ImplicitCastExpr 0x15702a590 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x15702a570 <col:3> 'int ()' Function 0x15702a4b8 'cond_resched' 'int ()'
+    `-ReturnStmt 0x15702a680 <line:30:2, col:9>
+      `-ImplicitCastExpr 0x15702a668 <col:9> 'long' contains-errors <IntegralCast>
+        `-ImplicitCastExpr 0x15702a650 <col:9> 'unsigned long' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x15702a630 <col:9> 'unsigned long' contains-errors lvalue Var 0x1570271f8 'ret_val' 'unsigned long'

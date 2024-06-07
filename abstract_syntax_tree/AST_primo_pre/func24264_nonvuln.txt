@@ -1,0 +1,88 @@
+`-FunctionDecl 0x152826b48  line:1:15 btrfs_iget 'struct inode *(struct super_block *, struct btrfs_key *, struct btrfs_root *, int *)'
+  |-ParmVarDecl 0x15280e2e8 <col:26, col:46> col:46 used s 'struct super_block *'
+  |-ParmVarDecl 0x1528266c8 <col:49, col:67> col:67 used location 'struct btrfs_key *'
+  |-ParmVarDecl 0x152826898 <line:2:5, col:24> col:24 used root 'struct btrfs_root *'
+  |-ParmVarDecl 0x152826948 <col:30, col:35> col:35 used new 'int *'
+  `-CompoundStmt 0x15282dce8 <line:3:1, line:25:1>
+    |-DeclStmt 0x152826d50 <line:4:2, col:21>
+    | `-VarDecl 0x152826ce8 <col:2, col:16> col:16 used inode 'struct inode *'
+    |-BinaryOperator 0x152827010 <line:6:2, col:45> 'struct inode *' '='
+    | |-DeclRefExpr 0x152826d68 <col:2> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    | `-ImplicitCastExpr 0x152826ff8 <col:10, col:45> 'struct inode *' <IntegralToPointer>
+    |   `-CallExpr 0x152826f78 <col:10, col:45> 'int'
+    |     |-ImplicitCastExpr 0x152826f60 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x152826eb0 <col:10> 'int ()' Function 0x152826df8 'btrfs_iget_locked' 'int ()'
+    |     |-ImplicitCastExpr 0x152826fb0 <col:28> 'struct super_block *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x152826ed0 <col:28> 'struct super_block *' lvalue ParmVar 0x15280e2e8 's' 'struct super_block *'
+    |     |-ImplicitCastExpr 0x152826fc8 <col:31> 'struct btrfs_key *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x152826ef0 <col:31> 'struct btrfs_key *' lvalue ParmVar 0x1528266c8 'location' 'struct btrfs_key *'
+    |     `-ImplicitCastExpr 0x152826fe0 <col:41> 'struct btrfs_root *' <LValueToRValue>
+    |       `-DeclRefExpr 0x152826f10 <col:41> 'struct btrfs_root *' lvalue ParmVar 0x152826898 'root' 'struct btrfs_root *'
+    |-IfStmt 0x152827278 <line:7:2, line:8:25>
+    | |-UnaryOperator 0x152827068 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x152827050 <col:7> 'struct inode *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152827030 <col:7> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    | `-ReturnStmt 0x152827268 <line:8:3, col:25>
+    |   `-CallExpr 0x152827240 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x152827160 <col:10> 'int ()' Function 0x1528270a8 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x152827228 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x152827210 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1528271f0 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15282dc80 <line:10:2, line:22:2>
+    | |-BinaryOperator 0x152827350 <line:10:6, col:23> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x1528272d0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x152827298 <col:6> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    | | `-RecoveryExpr 0x152827330 <col:23> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15282dc60 <col:30, line:22:2>
+    |   |-CallExpr 0x1528274a8 <line:11:3, col:32> 'int'
+    |   | |-ImplicitCastExpr 0x152827490 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x152827450 <col:3> 'int ()' Function 0x152827398 'btrfs_read_locked_inode' 'int ()'
+    |   | `-ImplicitCastExpr 0x1528274d0 <col:27> 'struct inode *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x152827470 <col:27> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |   `-IfStmt 0x15282dc30 <line:12:3, line:21:3> has_else
+    |     |-UnaryOperator 0x15282d478 <line:12:7, col:26> 'int' prefix '!' cannot overflow
+    |     | `-CallExpr 0x15282d438 <col:8, col:26> 'int'
+    |     |   |-ImplicitCastExpr 0x15282d420 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x1528275c8 <col:8> 'int ()' Function 0x152827510 'is_bad_inode' 'int ()'
+    |     |   `-ImplicitCastExpr 0x15282d460 <col:21> 'struct inode *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x15282d400 <col:21> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |     |-CompoundStmt 0x15282d868 <col:29, line:17:3>
+    |     | |-CallExpr 0x15282d5c8 <line:13:4, col:24> 'int'
+    |     | | |-ImplicitCastExpr 0x15282d5b0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x15282d570 <col:4> 'int ()' Function 0x15282d4b8 'inode_tree_add' 'int ()'
+    |     | | `-ImplicitCastExpr 0x15282d5f0 <col:19> 'struct inode *' <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x15282d590 <col:19> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |     | |-CallExpr 0x15282d740 <line:14:4, col:26> 'int'
+    |     | | |-ImplicitCastExpr 0x15282d728 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x15282d6e8 <col:4> 'int ()' Function 0x15282d630 'unlock_new_inode' 'int ()'
+    |     | | `-ImplicitCastExpr 0x15282d768 <col:21> 'struct inode *' <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x15282d708 <col:21> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |     | `-IfStmt 0x15282d848 <line:15:4, line:16:12>
+    |     |   |-ImplicitCastExpr 0x15282d7a0 <line:15:8> 'int *' <LValueToRValue>
+    |     |   | `-DeclRefExpr 0x15282d780 <col:8> 'int *' lvalue ParmVar 0x152826948 'new' 'int *'
+    |     |   `-BinaryOperator 0x15282d828 <line:16:5, col:12> 'int' '='
+    |     |     |-UnaryOperator 0x15282d7f0 <col:5, col:6> 'int' lvalue prefix '*' cannot overflow
+    |     |     | `-ImplicitCastExpr 0x15282d7d8 <col:6> 'int *' <LValueToRValue>
+    |     |     |   `-DeclRefExpr 0x15282d7b8 <col:6> 'int *' lvalue ParmVar 0x152826948 'new' 'int *'
+    |     |     `-IntegerLiteral 0x15282d808 <col:12> 'int' 1
+    |     `-CompoundStmt 0x15282dc08 <line:17:10, line:21:3>
+    |       |-CallExpr 0x15282d8e8 <line:18:4, col:26> 'int'
+    |       | |-ImplicitCastExpr 0x15282d8d0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x15282d890 <col:4> 'int ()' Function 0x15282d630 'unlock_new_inode' 'int ()'
+    |       | `-ImplicitCastExpr 0x15282d910 <col:21> 'struct inode *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x15282d8b0 <col:21> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |       |-CallExpr 0x15282da60 <line:19:4, col:14> 'int'
+    |       | |-ImplicitCastExpr 0x15282da48 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x15282da08 <col:4> 'int ()' Function 0x15282d950 'iput' 'int ()'
+    |       | `-ImplicitCastExpr 0x15282da88 <col:9> 'struct inode *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x15282da28 <col:9> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |       `-BinaryOperator 0x15282dbe8 <line:20:4, col:27> 'struct inode *' contains-errors '='
+    |         |-DeclRefExpr 0x15282daa0 <col:4> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'
+    |         `-CallExpr 0x15282dbc0 <col:12, col:27> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x15282dac0 <col:12> 'int ()' Function 0x1528270a8 'ERR_PTR' 'int ()'
+    |           `-UnaryOperator 0x15282dba8 <col:20, col:21> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |             `-ImplicitCastExpr 0x15282db90 <col:21> '<dependent type>' contains-errors <LValueToRValue>
+    |               `-RecoveryExpr 0x15282db70 <col:21> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15282dcd8 <line:24:2, col:9>
+      `-ImplicitCastExpr 0x15282dcc0 <col:9> 'struct inode *' <LValueToRValue>
+        `-DeclRefExpr 0x15282dca0 <col:9> 'struct inode *' lvalue Var 0x152826ce8 'inode' 'struct inode *'

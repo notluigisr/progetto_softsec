@@ -1,0 +1,44 @@
+`-FunctionDecl 0x14f813238  line:1:9 invalid tpm_write 'int (struct file *, const char)'
+  |-ParmVarDecl 0x14e076268 <col:19, col:32> col:32 used file 'struct file *'
+  |-ParmVarDecl 0x14e0762e0 <col:38, col:49> col:49 __user 'const char'
+  `-CompoundStmt 0x1588b57d0 <line:3:1, line:32:1>
+    |-DeclStmt 0x14f813538 <line:4:2, col:44>
+    | |-RecordDecl 0x14f8132f0 <col:2, col:9> col:9 struct tpm_chip
+    | `-VarDecl 0x14f813458 <col:2, col:32> col:19 used chip 'struct tpm_chip *' cinit
+    |   `-RecoveryExpr 0x14f8134f8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f8134c0 <col:26> 'struct file *' lvalue ParmVar 0x14e076268 'file' 'struct file *'
+    |-BinaryOperator 0x14f813698 <line:5:2, col:25> '<dependent type>' contains-errors ','
+    | |-BinaryOperator 0x14f813658 <col:2, col:19> 'unsigned long' contains-errors '='
+    | | |-UnaryExprOrTypeTraitExpr 0x14f813618 <col:2, col:9> 'unsigned long' contains-errors sizeof
+    | | | `-RecoveryExpr 0x14f8135f8 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14f813638 <col:19> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x14f813678 <col:25> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x14f813a98 <line:8:2, line:9:21>
+    | |-BinaryOperator 0x14f8138f0 <line:8:9, col:45> 'int' contains-errors '!='
+    | | |-CallExpr 0x14f8138a8 <col:9, col:40> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x14f813810 <col:9> 'int ()' Function 0x14f813758 'atomic_read' 'int ()'
+    | | | `-UnaryOperator 0x14f813890 <col:21, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x14f813868 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14f813830 <col:22> 'struct tpm_chip *' contains-errors lvalue Var 0x14f813458 'chip' 'struct tpm_chip *'
+    | | `-IntegerLiteral 0x14f8138d0 <col:45> 'int' 0
+    | `-CallExpr 0x14f813a70 <line:9:3, col:21> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f8139f0 <col:3> 'int ()' Function 0x14f813938 'msleep' 'int ()'
+    |   `-RecoveryExpr 0x14f813a50 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f813c30 <line:11:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f813b98 <col:2> 'int ()' Function 0x14f813ae0 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14f813c18 <col:13, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f813bf0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f813bb8 <col:14> 'struct tpm_chip *' contains-errors lvalue Var 0x14f813458 'chip' 'struct tpm_chip *'
+    |-IfStmt 0x14f814058 <line:16:2, line:20:2>
+    | |-RecoveryExpr 0x14f813e80 <line:16:6, line:17:54> '_Bool' contains-errors
+    | `-CompoundStmt 0x14f814040 <col:57, line:20:2>
+    |   `-CallExpr 0x14f814018 <line:18:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14f813f80 <col:3> 'int ()' Function 0x14f813ec8 'mutex_unlock' 'int ()'
+    |     `-UnaryOperator 0x14f814000 <col:16, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14f813fd8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f813fa0 <col:17> 'struct tpm_chip *' contains-errors lvalue Var 0x14f813458 'chip' 'struct tpm_chip *'
+    `-CallExpr 0x1588b5610 <line:26:2, col:34> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1588b5578 <col:2> 'int ()' Function 0x14f813ec8 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x1588b55f8 <col:15, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x1588b55d0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1588b5598 <col:16> 'struct tpm_chip *' contains-errors lvalue Var 0x14f813458 'chip' 'struct tpm_chip *'

@@ -1,0 +1,45 @@
+`-FunctionDecl 0x11f026a80  line:1:13 schedule_defer_open 'void (struct share_mode_lock *, struct file_id, struct timeval, struct smb_request *)' static
+  |-ParmVarDecl 0x11f00e248 <col:33, col:57> col:57 used lck 'struct share_mode_lock *'
+  |-ParmVarDecl 0x11f026600 <line:2:5, col:20> col:20 invalid id 'struct file_id'
+  |-ParmVarDecl 0x11f026768 <line:3:5, col:20> col:20 invalid request_time 'struct timeval'
+  |-ParmVarDecl 0x11f026938 <line:4:5, col:25> col:25 used req 'struct smb_request *'
+  `-CompoundStmt 0x11f029318 <line:5:1, line:25:1>
+    |-DeclStmt 0x11f026d08 <line:6:2, col:35>
+    | |-RecordDecl 0x11f026b90 <col:2, col:9> col:9 struct deferred_open_record
+    | `-VarDecl 0x11f026c88 <col:2, col:30> col:30 referenced invalid state 'struct deferred_open_record'
+    |-DeclStmt 0x11f026dd8 <line:10:2, col:24>
+    | `-VarDecl 0x11f026d70 <col:2, col:17> col:17 referenced invalid timeout 'struct timeval'
+    |-BinaryOperator 0x11f0270b8 <line:14:2, col:49> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f026e10 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f026df0 <col:2> 'struct timeval' lvalue Var 0x11f026d70 'timeout' 'struct timeval'
+    | `-CallExpr 0x11f027088 <col:12, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11f026f60 <col:12> 'int ()' Function 0x11f026ea8 'timeval_set' 'int ()'
+    |   |-BinaryOperator 0x11f027068 <col:24, col:45> '<dependent type>' contains-errors '*'
+    |   | |-RecoveryExpr 0x11f027048 <col:24> '<dependent type>' contains-errors lvalue
+    |   | `-IntegerLiteral 0x11f026f98 <col:45> 'int' 2
+    |   `-IntegerLiteral 0x11f026fd8 <col:48> 'int' 0
+    |-BinaryOperator 0x11f0271c0 <line:18:2, col:30> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x11f027120 <col:2, col:8> '<dependent type>' contains-errors lvalue .delayed_for_oplocks
+    | | `-RecoveryExpr 0x11f0270f8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f0270d8 <col:2> 'struct deferred_open_record' lvalue Var 0x11f026c88 'state' 'struct deferred_open_record'
+    | `-RecoveryExpr 0x11f0271a0 <col:30> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11f027338 <line:20:2, col:13> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x11f0272d0 <col:2, col:8> '<dependent type>' contains-errors lvalue .id
+    | | `-RecoveryExpr 0x11f0272a8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f027288 <col:2> 'struct deferred_open_record' lvalue Var 0x11f026c88 'state' 'struct deferred_open_record'
+    | `-RecoveryExpr 0x11f027318 <col:13> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x11f0292f8 <line:22:2, line:24:2>
+      |-UnaryOperator 0x11f0274c8 <line:22:6, col:46> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x11f027498 <col:7, col:46> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x11f027438 <col:7> 'int ()' Function 0x11f027380 'request_timed_out' 'int ()'
+      |   |-RecoveryExpr 0x11f027458 <col:25> '<dependent type>' contains-errors lvalue
+      |   `-RecoveryExpr 0x11f027478 <col:39> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x11f0292e0 <col:49, line:24:2>
+        `-CallExpr 0x11f029298 <line:23:3, col:53> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x11f0275c0 <col:3> 'int ()' Function 0x11f027508 'defer_open' 'int ()'
+          |-DeclRefExpr 0x11f0275e0 <col:14> 'struct share_mode_lock *' lvalue ParmVar 0x11f00e248 'lck' 'struct share_mode_lock *'
+          |-RecoveryExpr 0x11f029200 <col:19> '<dependent type>' contains-errors lvalue
+          |-RecoveryExpr 0x11f029220 <col:33> '<dependent type>' contains-errors lvalue
+          |-DeclRefExpr 0x11f029240 <col:42> 'struct smb_request *' lvalue ParmVar 0x11f026938 'req' 'struct smb_request *'
+          `-UnaryOperator 0x11f029280 <col:47, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x11f029260 <col:48> '<dependent type>' contains-errors lvalue

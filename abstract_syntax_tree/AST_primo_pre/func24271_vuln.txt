@@ -1,0 +1,121 @@
+`-FunctionDecl 0x14a886928  line:1:1 smbhash 'int (unsigned char *, const unsigned char *, unsigned char *)'
+  |-ParmVarDecl 0x14a886708 <col:9, col:24> col:24 used out 'unsigned char *'
+  |-ParmVarDecl 0x14a8867b8 <col:29, col:50> col:50 used in 'const unsigned char *'
+  |-ParmVarDecl 0x14a886838 <col:54, col:69> col:69 used key 'unsigned char *'
+  `-CompoundStmt 0x14a0ad5a8 <line:2:1, line:43:1>
+    |-DeclStmt 0x14a886ab0 <line:3:2, col:8>
+    | `-VarDecl 0x14a886a48 <col:2, col:6> col:6 used rc 'int'
+    |-DeclStmt 0x14a886be0 <line:4:2, col:23>
+    | `-VarDecl 0x14a886b78 <col:2, col:22> col:16 used key2 'unsigned char[8]'
+    |-DeclStmt 0x14a886de8 <line:5:2, col:33>
+    | |-RecordDecl 0x14a886bf8 <col:2, col:9> col:9 struct crypto_skcipher
+    | `-VarDecl 0x14a886d68 <col:2, col:26> col:26 used tfm_des 'struct crypto_skcipher *'
+    |-DeclStmt 0x14b01e828 <line:6:2, col:32>
+    | |-RecordDecl 0x14b01e200 <col:2, col:9> col:9 struct scatterlist
+    | |-VarDecl 0x14b01e2f8 <col:2, col:21> col:21 invalid sgin 'struct scatterlist'
+    | `-VarDecl 0x14b01e7a0 <col:2, col:27> col:27 invalid sgout 'struct scatterlist'
+    |-DeclStmt 0x14b01ea28 <line:7:2, col:30>
+    | |-RecordDecl 0x14b01e840 <col:2, col:9> col:9 struct skcipher_request
+    | `-VarDecl 0x14b01e9a8 <col:2, col:27> col:27 used req 'struct skcipher_request *'
+    |-CallExpr 0x14b01ec18 <line:9:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x14b01ec00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14b01eb70 <col:2> 'int ()' Function 0x14b01eab8 'str_to_key' 'int ()'
+    | |-ImplicitCastExpr 0x14b01ec48 <col:13> 'unsigned char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14b01eb90 <col:13> 'unsigned char *' lvalue ParmVar 0x14a886838 'key' 'unsigned char *'
+    | `-ImplicitCastExpr 0x14b01ec60 <col:18> 'unsigned char *' <ArrayToPointerDecay>
+    |   `-DeclRefExpr 0x14b01ebb0 <col:18> 'unsigned char[8]' lvalue Var 0x14a886b78 'key2' 'unsigned char[8]'
+    |-BinaryOperator 0x14b01eee8 <line:11:2, col:60> 'struct crypto_skcipher *' contains-errors '='
+    | |-DeclRefExpr 0x14b01ec78 <col:2> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    | `-CallExpr 0x14b01eeb0 <col:12, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b01ed78 <col:12> 'int ()' Function 0x14b01ecc0 'crypto_alloc_skcipher' 'int ()'
+    |   |-StringLiteral 0x14b01ede0 <col:34> 'char[4]' lvalue "STR"
+    |   |-IntegerLiteral 0x14b01ee00 <col:41> 'int' 0
+    |   `-RecoveryExpr 0x14b01ee90 <col:44> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a0ac280 <line:12:2, line:16:2>
+    | |-CallExpr 0x14b01f040 <line:12:6, col:20> 'int'
+    | | |-ImplicitCastExpr 0x14b01f028 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14b01efe8 <col:6> 'int ()' Function 0x14b01ef30 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14b01f068 <col:13> 'struct crypto_skcipher *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b01f008 <col:13> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    | `-CompoundStmt 0x14a0ac258 <col:23, line:16:2>
+    |   |-BinaryOperator 0x14a0ac018 <line:13:3, col:23> 'int' '='
+    |   | |-DeclRefExpr 0x14b01f080 <col:3> 'int' lvalue Var 0x14a886a48 'rc' 'int'
+    |   | `-CallExpr 0x14b01f1d8 <col:8, col:23> 'int'
+    |   |   |-ImplicitCastExpr 0x14b01f1c0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x14b01f180 <col:8> 'int ()' Function 0x14b01f0c8 'PTR_ERR' 'int ()'
+    |   |   `-ImplicitCastExpr 0x14a0ac000 <col:16> 'struct crypto_skcipher *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14b01f1a0 <col:16> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    |   |-CallExpr 0x14a0ac1c0 <line:14:3, col:22> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14a0ac118 <col:3> 'int ()' Function 0x14a0ac060 'cifs_dbg' 'int ()'
+    |   | |-RecoveryExpr 0x14a0ac1a0 <col:12> '<dependent type>' contains-errors lvalue
+    |   | `-StringLiteral 0x14a0ac150 <col:17> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x14a0ac240 <line:15:3, col:8> 'smbhash_err' 0x14a0ac1f0
+    |-BinaryOperator 0x14a0ac498 <line:18:2, col:50> 'struct skcipher_request *' contains-errors '='
+    | |-DeclRefExpr 0x14a0ac2a0 <col:2> 'struct skcipher_request *' lvalue Var 0x14b01e9a8 'req' 'struct skcipher_request *'
+    | `-CallExpr 0x14a0ac468 <col:8, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a0ac3a0 <col:8> 'int ()' Function 0x14a0ac2e8 'skcipher_request_alloc' 'int ()'
+    |   |-DeclRefExpr 0x14a0ac3c0 <col:31> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    |   `-RecoveryExpr 0x14a0ac448 <col:40> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a0ac768 <line:19:2, line:23:2>
+    | |-UnaryOperator 0x14a0ac4f0 <line:19:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a0ac4d8 <col:7> 'struct skcipher_request *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a0ac4b8 <col:7> 'struct skcipher_request *' lvalue Var 0x14b01e9a8 'req' 'struct skcipher_request *'
+    | `-CompoundStmt 0x14a0ac740 <col:12, line:23:2>
+    |   |-BinaryOperator 0x14a0ac5e0 <line:20:3, col:9> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14a0ac508 <col:3> 'int' lvalue Var 0x14a886a48 'rc' 'int'
+    |   | `-UnaryOperator 0x14a0ac5c8 <col:8, col:9> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14a0ac5b0 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14a0ac590 <col:9> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x14a0ac6a8 <line:21:3, col:22> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14a0ac600 <col:3> 'int ()' Function 0x14a0ac060 'cifs_dbg' 'int ()'
+    |   | |-RecoveryExpr 0x14a0ac688 <col:12> '<dependent type>' contains-errors lvalue
+    |   | `-StringLiteral 0x14a0ac638 <col:17> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x14a0ac728 <line:22:3, col:8> 'smbhash_free_skcipher' 0x14a0ac6d8
+    |-CallExpr 0x14a0ac900 <line:25:2, col:41> 'int'
+    | |-ImplicitCastExpr 0x14a0ac8e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a0ac868 <col:2> 'int ()' Function 0x14a0ac7b0 'crypto_skcipher_setkey' 'int ()'
+    | |-ImplicitCastExpr 0x14a0ac938 <col:25> 'struct crypto_skcipher *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14a0ac888 <col:25> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    | |-ImplicitCastExpr 0x14a0ac950 <col:34> 'unsigned char *' <ArrayToPointerDecay>
+    | | `-DeclRefExpr 0x14a0ac8a8 <col:34> 'unsigned char[8]' lvalue Var 0x14a886b78 'key2' 'unsigned char[8]'
+    | `-IntegerLiteral 0x14a0ac8c8 <col:40> 'int' 8
+    |-CallExpr 0x14a0acae0 <line:27:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a0aca48 <col:2> 'int ()' Function 0x14a0ac990 'sg_init_one' 'int ()'
+    | |-UnaryOperator 0x14a0aca88 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14a0aca68 <col:15> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x14a0acaa0 <col:21> 'const unsigned char *' lvalue ParmVar 0x14a8867b8 'in' 'const unsigned char *'
+    | `-IntegerLiteral 0x14a0acac0 <col:25> 'int' 8
+    |-CallExpr 0x14a0acbb0 <line:28:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a0acb18 <col:2> 'int ()' Function 0x14a0ac990 'sg_init_one' 'int ()'
+    | |-UnaryOperator 0x14a0acb58 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14a0acb38 <col:15> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x14a0acb70 <col:22> 'unsigned char *' lvalue ParmVar 0x14a886708 'out' 'unsigned char *'
+    | `-IntegerLiteral 0x14a0acb90 <col:27> 'int' 8
+    |-CallExpr 0x14a0acdd8 <line:30:2, col:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a0accc8 <col:2> 'int ()' Function 0x14a0acc10 'skcipher_request_set_callback' 'int ()'
+    | |-DeclRefExpr 0x14a0acce8 <col:32> 'struct skcipher_request *' lvalue Var 0x14b01e9a8 'req' 'struct skcipher_request *'
+    | |-IntegerLiteral 0x14a0acd08 <col:37> 'int' 0
+    | |-RecoveryExpr 0x14a0acd98 <col:40> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x14a0acdb8 <col:46> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14a0ad178 <line:33:2, col:34> 'int' '='
+    | |-DeclRefExpr 0x14a0acfc8 <col:2> 'int' lvalue Var 0x14a886a48 'rc' 'int'
+    | `-CallExpr 0x14a0ad138 <col:7, col:34> 'int'
+    |   |-ImplicitCastExpr 0x14a0ad120 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14a0ad0e0 <col:7> 'int ()' Function 0x14a0ad028 'crypto_skcipher_encrypt' 'int ()'
+    |   `-ImplicitCastExpr 0x14a0ad160 <col:31> 'struct skcipher_request *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14a0ad100 <col:31> 'struct skcipher_request *' lvalue Var 0x14b01e9a8 'req' 'struct skcipher_request *'
+    |-CallExpr 0x14a0ad368 <line:37:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x14a0ad350 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a0ad310 <col:2> 'int ()' Function 0x14a0ad258 'skcipher_request_free' 'int ()'
+    | `-ImplicitCastExpr 0x14a0ad390 <col:24> 'struct skcipher_request *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a0ad330 <col:24> 'struct skcipher_request *' lvalue Var 0x14b01e9a8 'req' 'struct skcipher_request *'
+    |-LabelStmt 0x14a0ad520 <line:39:1, line:40:30> 'smbhash_free_skcipher'
+    | `-CallExpr 0x14a0ad4e0 <col:2, col:30> 'int'
+    |   |-ImplicitCastExpr 0x14a0ad4c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14a0ad488 <col:2> 'int ()' Function 0x14a0ad3d0 'crypto_free_skcipher' 'int ()'
+    |   `-ImplicitCastExpr 0x14a0ad508 <col:23> 'struct crypto_skcipher *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14a0ad4a8 <col:23> 'struct crypto_skcipher *' lvalue Var 0x14a886d68 'tfm_des' 'struct crypto_skcipher *'
+    `-LabelStmt 0x14a0ad588 <line:41:1, line:42:9> 'smbhash_err'
+      `-ReturnStmt 0x14a0ad578 <col:2, col:9>
+        `-ImplicitCastExpr 0x14a0ad560 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x14a0ad540 <col:9> 'int' lvalue Var 0x14a886a48 'rc' 'int'

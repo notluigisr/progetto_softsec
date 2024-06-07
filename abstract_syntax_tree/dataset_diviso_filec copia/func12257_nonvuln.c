@@ -1,0 +1,1 @@
+  uint get_srid() { return srid; }

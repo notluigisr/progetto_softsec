@@ -1,0 +1,26 @@
+`-FunctionDecl 0x120128318  line:1:1 invalid VerifyIpChecksum 'int (int *, int, int)'
+  |-ParmVarDecl 0x120128128 <line:2:5, col:17> col:17 referenced invalid pIpHeader 'int *'
+  |-ParmVarDecl 0x1201281a8 <line:3:5, col:31> col:31 invalid known 'int'
+  |-ParmVarDecl 0x120128228 <line:4:5, col:13> col:13 invalid bFix 'int'
+  `-CompoundStmt 0x120141ba0 <line:5:1, line:18:1>
+    |-IfStmt 0x120141b38 <line:7:5, line:16:5>
+    | |-BinaryOperator 0x1201284f8 <line:7:9, col:27> 'int' contains-errors '!='
+    | | |-CXXDependentScopeMemberExpr 0x120128490 <col:9, col:13> '<dependent type>' contains-errors lvalue .ipCheckSum
+    | | | `-RecoveryExpr 0x120128470 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x1201284d8 <col:27> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x120141b18 <line:8:5, line:16:5>
+    |   |-CallExpr 0x1201286b0 <line:10:9, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x120128670 <col:9> 'int ()' Function 0x1201285b8 'CalculateIpChecksum' 'int ()'
+    |   | `-RecoveryExpr 0x120128690 <col:29> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x120141ae8 <line:12:9, line:15:13> has_else
+    |     |-UnaryOperator 0x120141928 <line:12:13, col:14> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x120141910 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   `-RecoveryExpr 0x1201418f0 <col:14> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x120141a28 <line:13:13, col:34> '<dependent type>' contains-errors '='
+    |     | |-CXXDependentScopeMemberExpr 0x120141988 <col:13, col:24> '<dependent type>' contains-errors lvalue ->ip_xsum
+    |     | | `-RecoveryExpr 0x120141960 <col:13> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x120141940 <col:13> 'int *' lvalue ParmVar 0x120128128 'pIpHeader' 'int *'
+    |     | `-RecoveryExpr 0x120141a08 <col:34> '<dependent type>' contains-errors lvalue
+    |     `-NullStmt 0x120141ae0 <line:15:13>
+    `-ReturnStmt 0x120141b90 <line:17:5, col:12>
+      `-RecoveryExpr 0x120141b70 <col:12> '<dependent type>' contains-errors lvalue

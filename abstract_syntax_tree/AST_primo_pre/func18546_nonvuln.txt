@@ -1,0 +1,44 @@
+`-FunctionDecl 0x123027438  line:1:13 invalid io_work_cancel 'int (struct io_worker *, void *)' static
+  |-ParmVarDecl 0x12300e268 <col:28, col:46> col:46 used worker 'struct io_worker *'
+  |-ParmVarDecl 0x12300e2e8 <col:54, col:60> col:60 used cancel_data 'void *'
+  `-CompoundStmt 0x123028070 <line:2:1, line:17:1>
+    |-DeclStmt 0x123027728 <line:3:2, col:46>
+    | |-RecordDecl 0x1230274f0 <col:2, col:9> col:9 struct io_cb_cancel_data
+    | `-VarDecl 0x123027658 <col:2, col:35> col:28 used data 'struct io_cb_cancel_data *' cinit
+    |   `-ImplicitCastExpr 0x1230276f8 <col:35> 'struct io_cb_cancel_data *' <BitCast>
+    |     `-ImplicitCastExpr 0x1230276e0 <col:35> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1230276c0 <col:35> 'void *' lvalue ParmVar 0x12300e2e8 'cancel_data' 'void *'
+    |-DeclStmt 0x1230277c0 <line:4:2, col:21>
+    | `-VarDecl 0x123027758 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x1230279e8 <line:8:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123027930 <col:2> 'int ()' Function 0x123027878 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x1230279b0 <col:20, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x123027988 <col:21, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123027950 <col:21> 'struct io_worker *' lvalue ParmVar 0x12300e268 'worker' 'struct io_worker *'
+    | `-DeclRefExpr 0x1230279c8 <col:35> 'unsigned long' lvalue Var 0x123027758 'flags' 'unsigned long'
+    |-IfStmt 0x123027e40 <line:9:2, line:13:2>
+    | |-BinaryOperator 0x123027bc8 <line:9:6, line:10:54> 'int' contains-errors '&&'
+    | | |-RecoveryExpr 0x123027a50 <line:9:6, col:14> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x123027a18 <col:6> 'struct io_worker *' lvalue ParmVar 0x12300e268 'worker' 'struct io_worker *'
+    | | `-CallExpr 0x123027b98 <line:10:6, col:54> '<dependent type>' contains-errors
+    | |   |-RecoveryExpr 0x123027ab0 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x123027a78 <col:6> 'struct io_cb_cancel_data *' lvalue Var 0x123027658 'data' 'struct io_cb_cancel_data *'
+    | |   |-RecoveryExpr 0x123027b10 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x123027ad8 <col:19> 'struct io_worker *' lvalue ParmVar 0x12300e268 'worker' 'struct io_worker *'
+    | |   `-RecoveryExpr 0x123027b70 <col:37, col:43> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x123027b38 <col:37> 'struct io_cb_cancel_data *' lvalue Var 0x123027658 'data' 'struct io_cb_cancel_data *'
+    | `-CompoundStmt 0x123027e28 <col:57, line:13:2>
+    |   `-CallExpr 0x123027dd8 <line:11:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x123027cc8 <col:3> 'int ()' Function 0x123027c10 'send_sig' 'int ()'
+    |     |-RecoveryExpr 0x123027db8 <col:12> '<dependent type>' contains-errors lvalue
+    |     |-RecoveryExpr 0x123027d38 <col:20, col:28> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x123027d00 <col:20> 'struct io_worker *' lvalue ParmVar 0x12300e268 'worker' 'struct io_worker *'
+    |     `-IntegerLiteral 0x123027d60 <col:34> 'int' 1
+    |-CallExpr 0x123027ff8 <line:14:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123027f40 <col:2> 'int ()' Function 0x123027e88 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x123027fc0 <col:25, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x123027f98 <col:26, col:34> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123027f60 <col:26> 'struct io_worker *' lvalue ParmVar 0x12300e268 'worker' 'struct io_worker *'
+    | `-DeclRefExpr 0x123027fd8 <col:40> 'unsigned long' lvalue Var 0x123027758 'flags' 'unsigned long'
+    `-ReturnStmt 0x123028060 <line:16:2, col:9>
+      `-RecoveryExpr 0x123028040 <col:9> '<dependent type>' contains-errors lvalue

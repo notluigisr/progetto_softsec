@@ -1,0 +1,44 @@
+`-FunctionDecl 0x137928758  line:1:12 shash_async_digest 'int (struct ahash_request *)' static
+  |-ParmVarDecl 0x137928648 <col:31, col:53> col:53 used req 'struct ahash_request *'
+  `-CompoundStmt 0x137941750 <line:2:1, line:10:1>
+    |-DeclStmt 0x137940fe8 <line:3:2, col:72>
+    | |-RecordDecl 0x137940a50 <col:2, col:9> col:9 struct crypto_shash
+    | `-VarDecl 0x137940c18 <col:2, col:71> col:24 used ctx 'struct crypto_shash **' cinit
+    |   `-ImplicitCastExpr 0x137940fb8 <col:30, col:71> 'struct crypto_shash **' <IntegralToPointer>
+    |     `-CallExpr 0x137940f90 <col:30, col:71> 'int'
+    |       |-ImplicitCastExpr 0x137940f78 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x137940db0 <col:30> 'int ()' Function 0x137940cf8 'crypto_ahash_ctx' 'int ()'
+    |       `-CallExpr 0x137940f38 <col:47, col:70> 'int'
+    |         |-ImplicitCastExpr 0x137940f20 <col:47> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x137940eb0 <col:47> 'int ()' Function 0x137940df8 'crypto_ahash_reqtfm' 'int ()'
+    |         `-ImplicitCastExpr 0x137940f60 <col:67> 'struct ahash_request *' <LValueToRValue>
+    |           `-DeclRefExpr 0x137940ed0 <col:67> 'struct ahash_request *' lvalue ParmVar 0x137928648 'req' 'struct ahash_request *'
+    |-DeclStmt 0x137941378 <line:4:2, col:50>
+    | |-RecordDecl 0x137941000 <col:2, col:9> col:9 struct shash_desc
+    | `-VarDecl 0x137941168 <col:2, col:49> col:21 used desc 'struct shash_desc *' cinit
+    |   `-ImplicitCastExpr 0x137941348 <col:28, col:49> 'struct shash_desc *' <IntegralToPointer>
+    |     `-CallExpr 0x137941308 <col:28, col:49> 'int'
+    |       |-ImplicitCastExpr 0x1379412f0 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1379412b0 <col:28> 'int ()' Function 0x1379411f8 'ahash_request_ctx' 'int ()'
+    |       `-ImplicitCastExpr 0x137941330 <col:46> 'struct ahash_request *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1379412d0 <col:46> 'struct ahash_request *' lvalue ParmVar 0x137928648 'req' 'struct ahash_request *'
+    |-BinaryOperator 0x137941440 <line:6:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1379413c8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x137941390 <col:2> 'struct shash_desc *' lvalue Var 0x137941168 'desc' 'struct shash_desc *'
+    | `-UnaryOperator 0x137941428 <col:14, col:15> 'struct crypto_shash *' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x137941410 <col:15> 'struct crypto_shash **' <LValueToRValue>
+    |     `-DeclRefExpr 0x1379413f0 <col:15> 'struct crypto_shash **' lvalue Var 0x137940c18 'ctx' 'struct crypto_shash **'
+    |-BinaryOperator 0x137941568 <line:7:2, col:26> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x137941498 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x137941460 <col:2> 'struct shash_desc *' lvalue Var 0x137941168 'desc' 'struct shash_desc *'
+    | `-CXXDependentScopeMemberExpr 0x137941520 <col:16, col:26> '<dependent type>' contains-errors lvalue .flags
+    |   `-RecoveryExpr 0x1379414f8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1379414c0 <col:16> 'struct ahash_request *' lvalue ParmVar 0x137928648 'req' 'struct ahash_request *'
+    `-ReturnStmt 0x137941740 <line:9:2, col:37>
+      `-CallExpr 0x1379416e0 <col:9, col:37> 'int'
+        |-ImplicitCastExpr 0x1379416c8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x137941668 <col:9> 'int ()' Function 0x1379415b0 'shash_ahash_digest' 'int ()'
+        |-ImplicitCastExpr 0x137941710 <col:28> 'struct ahash_request *' <LValueToRValue>
+        | `-DeclRefExpr 0x137941688 <col:28> 'struct ahash_request *' lvalue ParmVar 0x137928648 'req' 'struct ahash_request *'
+        `-ImplicitCastExpr 0x137941728 <col:33> 'struct shash_desc *' <LValueToRValue>
+          `-DeclRefExpr 0x1379416a8 <col:33> 'struct shash_desc *' lvalue Var 0x137941168 'desc' 'struct shash_desc *'

@@ -1,0 +1,99 @@
+`-FunctionDecl 0x14e827438  line:1:5 invalid inotify_rm_wd 'int (struct inotify_handle *, int)'
+  |-ParmVarDecl 0x14e80e248 <col:19, col:42> col:42 used ih 'struct inotify_handle *'
+  |-ParmVarDecl 0x14e80e2e0 <col:46, col:50> col:50 invalid wd 'int'
+  `-CompoundStmt 0x14e82dd10 <line:2:1, line:28:1>
+    |-DeclStmt 0x14e8276d8 <line:3:2, col:29>
+    | |-RecordDecl 0x14e8274f0 <col:2, col:9> col:9 struct inotify_watch
+    | `-VarDecl 0x14e827658 <col:2, col:24> col:24 used watch 'struct inotify_watch *'
+    |-DeclStmt 0x14e8278d8 <line:4:2, col:21>
+    | |-RecordDecl 0x14e8276f0 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x14e827858 <col:2, col:16> col:16 used inode 'struct inode *'
+    |-CallExpr 0x14e827ae8 <line:6:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e827a50 <col:2> 'int ()' Function 0x14e827998 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14e827ad0 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e827aa8 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e827a70 <col:14> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |-BinaryOperator 0x14e827cf8 <line:7:2, col:31> 'struct inotify_watch *' contains-errors '='
+    | |-DeclRefExpr 0x14e827b10 <col:2> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    | `-CallExpr 0x14e827cc8 <col:10, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e827c10 <col:10> 'int ()' Function 0x14e827b58 'idr_find' 'int ()'
+    |   |-UnaryOperator 0x14e827c90 <col:19, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14e827c68 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14e827c30 <col:20> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |   `-RecoveryExpr 0x14e827ca8 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14e828148 <line:8:2, line:11:2>
+    | |-CallExpr 0x14e827eb8 <line:8:6, col:21> 'int'
+    | | |-ImplicitCastExpr 0x14e827ea0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14e827df8 <col:6> 'int ()' Function 0x14e827d40 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x14e827e50 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x14e827e38 <col:16> 'struct inotify_watch *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14e827e18 <col:16> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    | `-CompoundStmt 0x14e828128 <col:24, line:11:2>
+    |   |-CallExpr 0x14e828058 <line:9:3, col:26> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14e827fc0 <col:3> 'int ()' Function 0x14e827f08 'mutex_unlock' 'int ()'
+    |   | `-UnaryOperator 0x14e828040 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14e828018 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14e827fe0 <col:17> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |   `-ReturnStmt 0x14e828118 <line:10:3, col:11>
+    |     `-UnaryOperator 0x14e828100 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x14e8280e8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x14e8280c8 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14e8282a0 <line:12:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x14e828288 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e828248 <col:2> 'int ()' Function 0x14e828190 'get_inotify_watch' 'int ()'
+    | `-ImplicitCastExpr 0x14e8282c8 <col:20> 'struct inotify_watch *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14e828268 <col:20> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    |-BinaryOperator 0x14e828360 <line:13:2, col:17> 'struct inode *' contains-errors '='
+    | |-DeclRefExpr 0x14e8282e0 <col:2> 'struct inode *' lvalue Var 0x14e827858 'inode' 'struct inode *'
+    | `-RecoveryExpr 0x14e828338 <col:10, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14e828300 <col:10> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    |-CallExpr 0x14e82d418 <line:14:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e828380 <col:2> 'int ()' Function 0x14e827f08 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14e82d400 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e8283d8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e8283a0 <col:16> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |-CallExpr 0x14e82d4d8 <line:16:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e82d440 <col:2> 'int ()' Function 0x14e827998 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14e82d4c0 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e82d498 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e82d460 <col:14> 'struct inode *' lvalue Var 0x14e827858 'inode' 'struct inode *'
+    |-CallExpr 0x14e82d598 <line:17:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e82d500 <col:2> 'int ()' Function 0x14e827998 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14e82d580 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e82d558 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e82d520 <col:14> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |-IfStmt 0x14e82d9c8 <line:20:2, line:21:40>
+    | |-CallExpr 0x14e82d7e8 <line:20:6, col:44> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14e82d6a0 <col:6> 'int ()' Function 0x14e82d5e8 'likely' 'int ()'
+    | | `-BinaryOperator 0x14e82d7c8 <col:13, col:39> 'int' contains-errors '=='
+    | |   |-CallExpr 0x14e82d778 <col:13, col:34> '<dependent type>' contains-errors
+    | |   | |-DeclRefExpr 0x14e82d6c0 <col:13> 'int ()' Function 0x14e827b58 'idr_find' 'int ()'
+    | |   | |-UnaryOperator 0x14e82d740 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | | `-RecoveryExpr 0x14e82d718 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x14e82d6e0 <col:23> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    | |   | `-RecoveryExpr 0x14e82d758 <col:32> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14e82d7a8 <col:39> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    | `-CallExpr 0x14e82d968 <line:21:3, col:40> 'int'
+    |   |-ImplicitCastExpr 0x14e82d950 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14e82d8f0 <col:3> 'int ()' Function 0x14e82d838 'inotify_remove_watch_locked' 'int ()'
+    |   |-ImplicitCastExpr 0x14e82d998 <col:31> 'struct inotify_handle *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14e82d910 <col:31> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |   `-ImplicitCastExpr 0x14e82d9b0 <col:35> 'struct inotify_watch *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14e82d930 <col:35> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    |-CallExpr 0x14e82da80 <line:23:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e82d9e8 <col:2> 'int ()' Function 0x14e827f08 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14e82da68 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e82da40 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e82da08 <col:16> 'struct inotify_handle *' lvalue ParmVar 0x14e80e248 'ih' 'struct inotify_handle *'
+    |-CallExpr 0x14e82db40 <line:24:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e82daa8 <col:2> 'int ()' Function 0x14e827f08 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14e82db28 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e82db00 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e82dac8 <col:16> 'struct inode *' lvalue Var 0x14e827858 'inode' 'struct inode *'
+    |-CallExpr 0x14e82dca0 <line:25:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x14e82dc88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e82dc48 <col:2> 'int ()' Function 0x14e82db90 'put_inotify_watch' 'int ()'
+    | `-ImplicitCastExpr 0x14e82dcc8 <col:20> 'struct inotify_watch *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14e82dc68 <col:20> 'struct inotify_watch *' lvalue Var 0x14e827658 'watch' 'struct inotify_watch *'
+    `-ReturnStmt 0x14e82dd00 <line:27:2, col:9>
+      `-IntegerLiteral 0x14e82dce0 <col:9> 'int' 0

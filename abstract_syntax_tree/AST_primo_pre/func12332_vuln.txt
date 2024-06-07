@@ -1,0 +1,94 @@
+`-FunctionDecl 0x13a008538  line:1:5 inet6_csk_xmit 'int (struct sock *, struct sk_buff *, struct flowi *)'
+  |-ParmVarDecl 0x13980e248 <col:20, col:33> col:33 used sk 'struct sock *'
+  |-ParmVarDecl 0x13a008228 <col:37, col:53> col:53 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13a0083f8 <col:58, col:72> col:72 fl_unused 'struct flowi *'
+  `-CompoundStmt 0x139827728 <line:2:1, line:25:1>
+    |-DeclStmt 0x13a008a38 <line:3:2, col:38>
+    | |-RecordDecl 0x13a008640 <col:2, col:9> col:9 struct ipv6_pinfo
+    | `-VarDecl 0x13a0087a8 <col:2, col:37> col:21 used np 'struct ipv6_pinfo *' cinit
+    |   `-ImplicitCastExpr 0x13a008a08 <col:26, col:37> 'struct ipv6_pinfo *' <IntegralToPointer>
+    |     `-CallExpr 0x13a0089c8 <col:26, col:37> 'int'
+    |       |-ImplicitCastExpr 0x13a0089b0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13a008940 <col:26> 'int ()' Function 0x13a008888 'inet6_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x13a0089f0 <col:35> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13a008960 <col:35> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |-DeclStmt 0x13a008bc8 <line:4:2, col:19>
+    | |-RecordDecl 0x13a008a50 <col:2, col:9> col:9 struct flowi6
+    | `-VarDecl 0x13a008b48 <col:2, col:16> col:16 referenced invalid fl6 'struct flowi6'
+    |-DeclStmt 0x13a008dc8 <line:5:2, col:23>
+    | |-RecordDecl 0x13a008be0 <col:2, col:9> col:9 struct dst_entry
+    | `-VarDecl 0x13a008d48 <col:2, col:20> col:20 used dst 'struct dst_entry *'
+    |-DeclStmt 0x13a008e60 <line:6:2, col:9>
+    | `-VarDecl 0x13a008df8 <col:2, col:6> col:6 used res 'int'
+    |-BinaryOperator 0x13a009020 <line:8:2, col:39> 'struct dst_entry *' contains-errors '='
+    | |-DeclRefExpr 0x13a008e78 <col:2> 'struct dst_entry *' lvalue Var 0x13a008d48 'dst' 'struct dst_entry *'
+    | `-CallExpr 0x13a008ff0 <col:8, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13a008f78 <col:8> 'int ()' Function 0x13a008ec0 'inet6_csk_route_socket' 'int ()'
+    |   |-DeclRefExpr 0x13a008f98 <col:31> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |   `-UnaryOperator 0x13a008fd8 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x13a008fb8 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139826ec8 <line:9:2, line:14:2>
+    | |-CallExpr 0x13a009178 <line:9:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x13a009160 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13a009120 <col:6> 'int ()' Function 0x13a009068 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x13a0091a0 <col:13> 'struct dst_entry *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13a009140 <col:13> 'struct dst_entry *' lvalue Var 0x13a008d48 'dst' 'struct dst_entry *'
+    | `-CompoundStmt 0x139826e98 <col:19, line:14:2>
+    |   |-BinaryOperator 0x139826bb8 <line:10:3, col:33> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x139826a00 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13a0091b8 <col:3> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |   | `-UnaryOperator 0x139826ba0 <col:21, col:33> 'int' prefix '-'
+    |   |   `-CallExpr 0x139826b60 <col:22, col:33> 'int'
+    |   |     |-ImplicitCastExpr 0x139826b48 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x139826b08 <col:22> 'int ()' Function 0x139826a50 'PTR_ERR' 'int ()'
+    |   |     `-ImplicitCastExpr 0x139826b88 <col:30> 'struct dst_entry *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x139826b28 <col:30> 'struct dst_entry *' lvalue Var 0x13a008d48 'dst' 'struct dst_entry *'
+    |   |-BinaryOperator 0x139826c58 <line:11:3, col:23> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x139826c10 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x139826bd8 <col:3> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |   | `-IntegerLiteral 0x139826c38 <col:23> 'int' 0
+    |   |-CallExpr 0x139826db0 <line:12:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x139826d98 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x139826d58 <col:3> 'int ()' Function 0x139826ca0 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x139826dd8 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x139826d78 <col:13> 'struct sk_buff *' lvalue ParmVar 0x13a008228 'skb' 'struct sk_buff *'
+    |   `-ReturnStmt 0x139826e88 <line:13:3, col:21>
+    |     `-CallExpr 0x139826e48 <col:10, col:21> 'int'
+    |       |-ImplicitCastExpr 0x139826e30 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x139826df0 <col:10> 'int ()' Function 0x139826a50 'PTR_ERR' 'int ()'
+    |       `-ImplicitCastExpr 0x139826e70 <col:18> 'struct dst_entry *' <LValueToRValue>
+    |         `-DeclRefExpr 0x139826e10 <col:18> 'struct dst_entry *' lvalue Var 0x13a008d48 'dst' 'struct dst_entry *'
+    |-CallExpr 0x139827000 <line:16:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x139826fe8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x139826fc8 <col:2> 'int ()' Function 0x139826f10 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x139827178 <line:17:2, col:28> 'int'
+    | |-ImplicitCastExpr 0x139827160 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x139827100 <col:2> 'int ()' Function 0x139827048 'skb_dst_set_noref' 'int ()'
+    | |-ImplicitCastExpr 0x1398271a8 <col:20> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x139827120 <col:20> 'struct sk_buff *' lvalue ParmVar 0x13a008228 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x1398271c0 <col:25> 'struct dst_entry *' <LValueToRValue>
+    |   `-DeclRefExpr 0x139827140 <col:25> 'struct dst_entry *' lvalue Var 0x13a008d48 'dst' 'struct dst_entry *'
+    |-BinaryOperator 0x1398272c8 <line:20:2, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x139827220 <col:2, col:6> '<dependent type>' contains-errors lvalue .daddr
+    | | `-RecoveryExpr 0x1398271f8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1398271d8 <col:2> 'struct flowi6' lvalue Var 0x13a008b48 'fl6' 'struct flowi6'
+    | `-RecoveryExpr 0x1398272a0 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x139827268 <col:14> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |-BinaryOperator 0x139827588 <line:22:2, col:51> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1398272e8 <col:2> 'int' lvalue Var 0x13a008df8 'res' 'int'
+    | `-CallExpr 0x139827540 <col:8, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1398273e8 <col:8> 'int ()' Function 0x139827330 'ip6_xmit' 'int ()'
+    |   |-DeclRefExpr 0x139827408 <col:17> 'struct sock *' lvalue ParmVar 0x13980e248 'sk' 'struct sock *'
+    |   |-DeclRefExpr 0x139827428 <col:21> 'struct sk_buff *' lvalue ParmVar 0x13a008228 'skb' 'struct sk_buff *'
+    |   |-UnaryOperator 0x139827468 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x139827448 <col:27> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x1398274b8 <col:32, col:36> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x139827480 <col:32> 'struct ipv6_pinfo *' lvalue Var 0x13a0087a8 'np' 'struct ipv6_pinfo *'
+    |   `-RecoveryExpr 0x139827518 <col:41, col:45> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1398274e0 <col:41> 'struct ipv6_pinfo *' lvalue Var 0x13a0087a8 'np' 'struct ipv6_pinfo *'
+    |-CallExpr 0x1398276c0 <line:23:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1398276a8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x139827688 <col:2> 'int ()' Function 0x1398275d0 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x139827718 <line:24:2, col:9>
+      `-ImplicitCastExpr 0x139827700 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1398276e0 <col:9> 'int' lvalue Var 0x13a008df8 'res' 'int'

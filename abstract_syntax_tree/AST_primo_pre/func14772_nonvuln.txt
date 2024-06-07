@@ -1,0 +1,48 @@
+`-FunctionDecl 0x120140e10  line:1:13 invalid ip6_append_data_mtu 'void (unsigned int *, int *, unsigned int, struct sk_buff *, struct rt6_info *, int)' static
+  |-ParmVarDecl 0x120128108 <col:33, col:47> col:47 used mtu 'unsigned int *'
+  |-ParmVarDecl 0x1201281b8 <line:2:5, col:10> col:10 used maxfraglen 'int *'
+  |-ParmVarDecl 0x120128238 <line:3:5, col:18> col:18 used fragheaderlen 'unsigned int'
+  |-ParmVarDecl 0x120140a28 <line:4:5, col:21> col:21 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x120140bf8 <line:5:5, col:22> col:22 used rt 'struct rt6_info *'
+  |-ParmVarDecl 0x120140c90 <line:6:5, col:10> col:10 invalid pmtuprobe 'int'
+  `-CompoundStmt 0x105808d30 <line:7:1, line:22:1>
+    `-IfStmt 0x105808d10 <line:8:2, line:21:2>
+      |-RecoveryExpr 0x120140fc8 <line:8:6, col:39> '_Bool' contains-errors
+      `-CompoundStmt 0x105808cf8 <col:42, line:21:2>
+        `-IfStmt 0x1201417b8 <line:9:3, line:18:3> has_else
+          |-BinaryOperator 0x120141060 <line:9:7, col:14> 'int' contains-errors '=='
+          | |-DeclRefExpr 0x120140fe8 <col:7> 'struct sk_buff *' lvalue ParmVar 0x120140a28 'skb' 'struct sk_buff *'
+          | `-RecoveryExpr 0x120141040 <col:14> '<dependent type>' contains-errors lvalue
+          |-CompoundStmt 0x120141208 <col:20, line:13:3>
+          | `-BinaryOperator 0x1201411e8 <line:11:4, col:26> 'unsigned int' contains-errors '='
+          |   |-UnaryOperator 0x1201410b8 <col:4, col:5> 'unsigned int' lvalue prefix '*' cannot overflow
+          |   | `-ImplicitCastExpr 0x1201410a0 <col:5> 'unsigned int *' <LValueToRValue>
+          |   |   `-DeclRefExpr 0x120141080 <col:5> 'unsigned int *' lvalue ParmVar 0x120128108 'mtu' 'unsigned int *'
+          |   `-BinaryOperator 0x1201411c8 <col:11, col:26> '<dependent type>' contains-errors '-'
+          |     |-UnaryOperator 0x120141108 <col:11, col:12> 'unsigned int' lvalue prefix '*' cannot overflow
+          |     | `-ImplicitCastExpr 0x1201410f0 <col:12> 'unsigned int *' <LValueToRValue>
+          |     |   `-DeclRefExpr 0x1201410d0 <col:12> 'unsigned int *' lvalue ParmVar 0x120128108 'mtu' 'unsigned int *'
+          |     `-CXXDependentScopeMemberExpr 0x120141180 <col:18, col:26> '<dependent type>' contains-errors lvalue .header_len
+          |       `-RecoveryExpr 0x120141158 <col:18, col:22> '<dependent type>' contains-errors lvalue
+          |         `-DeclRefExpr 0x120141120 <col:18> 'struct rt6_info *' lvalue ParmVar 0x120140bf8 'rt' 'struct rt6_info *'
+          `-CompoundStmt 0x1201417a0 <line:13:10, line:18:3>
+            `-BinaryOperator 0x120141780 <line:15:4, line:17:29> 'unsigned int' contains-errors '='
+              |-UnaryOperator 0x120141258 <line:15:4, col:5> 'unsigned int' lvalue prefix '*' cannot overflow
+              | `-ImplicitCastExpr 0x120141240 <col:5> 'unsigned int *' <LValueToRValue>
+              |   `-DeclRefExpr 0x120141220 <col:5> 'unsigned int *' lvalue ParmVar 0x120128108 'mtu' 'unsigned int *'
+              `-CallExpr 0x120141750 <col:11, line:17:29> '<dependent type>' contains-errors
+                |-DeclRefExpr 0x1201413d0 <line:15:11> 'int ()' Function 0x120141318 'min' 'int ()'
+                |-UnaryOperator 0x120141428 <col:15, col:16> 'unsigned int' lvalue prefix '*' cannot overflow
+                | `-ImplicitCastExpr 0x120141410 <col:16> 'unsigned int *' <LValueToRValue>
+                |   `-DeclRefExpr 0x1201413f0 <col:16> 'unsigned int *' lvalue ParmVar 0x120128108 'mtu' 'unsigned int *'
+                `-ConditionalOperator 0x120141720 <col:21, line:17:28> '<dependent type>' contains-errors
+                  |-RecoveryExpr 0x120141440 <line:15:21> '<dependent type>' contains-errors lvalue
+                  |-CXXDependentScopeMemberExpr 0x120141508 <line:16:8, col:21> '<dependent type>' contains-errors lvalue ->mtu
+                  | `-CXXDependentScopeMemberExpr 0x1201414c0 <col:8, col:16> '<dependent type>' contains-errors lvalue .dev
+                  |   `-RecoveryExpr 0x120141498 <col:8, col:12> '<dependent type>' contains-errors lvalue
+                  |     `-DeclRefExpr 0x120141460 <col:8> 'struct rt6_info *' lvalue ParmVar 0x120140bf8 'rt' 'struct rt6_info *'
+                  `-CallExpr 0x1201416f8 <line:17:8, col:28> '<dependent type>' contains-errors
+                    |-DeclRefExpr 0x120141630 <col:8> 'int ()' Function 0x120141578 'dst_mtu' 'int ()'
+                    `-CXXDependentScopeMemberExpr 0x1201416b0 <col:16, col:24> '<dependent type>' contains-errors lvalue .path
+                      `-RecoveryExpr 0x120141688 <col:16, col:20> '<dependent type>' contains-errors lvalue
+                        `-DeclRefExpr 0x120141650 <col:16> 'struct rt6_info *' lvalue ParmVar 0x120140bf8 'rt' 'struct rt6_info *'

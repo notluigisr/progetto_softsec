@@ -1,0 +1,84 @@
+`-FunctionDecl 0x14b027400  line:1:6 invalid iov_iter_advance 'void (struct iov_iter *, int)'
+  |-ParmVarDecl 0x14b00e248 <col:23, col:40> col:40 used i 'struct iov_iter *'
+  |-ParmVarDecl 0x14b00e2e0 <col:43, col:50> col:50 referenced invalid bytes 'int'
+  `-CompoundStmt 0x149870b80 <line:2:1, line:29:1>
+    |-CallExpr 0x14b0276d0 <line:3:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b027610 <col:2> 'int ()' Function 0x14b027558 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x14b0276b0 <col:9, col:20> 'int' contains-errors '<'
+    |   |-RecoveryExpr 0x14b027668 <col:9, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14b027630 <col:9> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+    |   `-RecoveryExpr 0x14b027690 <col:20> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x149870b50 <line:5:2, line:28:2> has_else
+      |-CallExpr 0x14b027898 <line:5:6, col:28> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x14b0277d8 <col:6> 'int ()' Function 0x14b027720 'likely' 'int ()'
+      | `-BinaryOperator 0x14b027878 <col:13, col:27> 'int' contains-errors '=='
+      |   |-RecoveryExpr 0x14b027830 <col:13, col:16> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x14b0277f8 <col:13> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+      |   `-IntegerLiteral 0x14b027858 <col:27> 'int' 1
+      |-CompoundStmt 0x14b027a20 <col:31, line:8:2>
+      | |-CompoundAssignOperator 0x14b027940 <line:6:3, col:20> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      | | |-RecoveryExpr 0x14b0278f8 <col:3, col:6> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x14b0278c0 <col:3> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+      | | `-RecoveryExpr 0x14b027920 <col:20> '<dependent type>' contains-errors lvalue
+      | `-CompoundAssignOperator 0x14b0279f0 <line:7:3, col:15> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+      |   |-RecoveryExpr 0x14b0279a8 <col:3, col:6> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x14b027970 <col:3> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+      |   `-RecoveryExpr 0x14b0279d0 <col:15> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x149870b28 <line:8:9, line:28:2>
+        |-DeclStmt 0x14b027c88 <line:9:3, col:35>
+        | |-RecordDecl 0x14b027a40 <col:9, col:16> col:16 struct iovec
+        | `-VarDecl 0x14b027ba8 <col:3, col:32> col:23 used iov 'const struct iovec *' cinit
+        |   `-RecoveryExpr 0x14b027c48 <col:29, col:32> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x14b027c10 <col:29> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+        |-WhileStmt 0x149870a08 <line:13:3, line:25:3>
+        | |-BinaryOperator 0x14b027fa8 <line:13:10, col:53> 'int' contains-errors '||'
+        | | |-RecoveryExpr 0x14b027cb8 <col:10> '<dependent type>' contains-errors lvalue
+        | | `-CallExpr 0x14b027f80 <col:19, col:53> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x14b027db8 <col:19> 'int ()' Function 0x14b027d00 'unlikely' 'int ()'
+        | |   `-BinaryOperator 0x14b027f60 <col:28, col:46> 'int' contains-errors '&&'
+        | |     |-RecoveryExpr 0x14b027e10 <col:28, col:31> '<dependent type>' contains-errors lvalue
+        | |     | `-DeclRefExpr 0x14b027dd8 <col:28> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+        | |     `-UnaryOperator 0x14b027f48 <col:40, col:46> '<dependent type>' contains-errors prefix '!' cannot overflow
+        | |       `-ImplicitCastExpr 0x14b027f30 <col:41, col:46> '<dependent type>' contains-errors <LValueToRValue>
+        | |         `-RecoveryExpr 0x14b027e70 <col:41, col:46> '<dependent type>' contains-errors lvalue
+        | |           `-DeclRefExpr 0x14b027e38 <col:41> 'const struct iovec *' contains-errors lvalue Var 0x14b027ba8 'iov' 'const struct iovec *'
+        | `-CompoundStmt 0x1498709c8 <col:56, line:25:3>
+        |   |-DeclStmt 0x14b028048 <line:14:4, col:12>
+        |   | `-VarDecl 0x14b027fe0 <col:4, col:8> col:8 used copy 'int'
+        |   |-BinaryOperator 0x14b0282f8 <line:16:4, col:41> 'int' contains-errors '='
+        |   | |-DeclRefExpr 0x14b028060 <col:4> 'int' lvalue Var 0x14b027fe0 'copy' 'int'
+        |   | `-CallExpr 0x14b0282c8 <col:11, col:41> '<dependent type>' contains-errors
+        |   |   |-DeclRefExpr 0x14b028160 <col:11> 'int ()' Function 0x14b0280a8 'min' 'int ()'
+        |   |   |-RecoveryExpr 0x14b028180 <col:15> '<dependent type>' contains-errors lvalue
+        |   |   `-BinaryOperator 0x14b0282a8 <col:22, col:37> '<dependent type>' contains-errors '-'
+        |   |     |-RecoveryExpr 0x14b0281d8 <col:22, col:27> '<dependent type>' contains-errors lvalue
+        |   |     | `-DeclRefExpr 0x14b0281a0 <col:22> 'const struct iovec *' contains-errors lvalue Var 0x14b027ba8 'iov' 'const struct iovec *'
+        |   |     `-RecoveryExpr 0x14b028288 <col:37> '<dependent type>' contains-errors lvalue
+        |   |-CallExpr 0x149870700 <line:17:4, col:39> '<dependent type>' contains-errors
+        |   | |-DeclRefExpr 0x14b028318 <col:4> 'int ()' Function 0x14b027558 'BUG_ON' 'int ()'
+        |   | `-BinaryOperator 0x1498706e0 <col:11, col:35> 'int' contains-errors '||'
+        |   |   |-UnaryOperator 0x1498706c8 <col:11, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+        |   |   | `-ImplicitCastExpr 0x1498706b0 <col:12, col:15> '<dependent type>' contains-errors <LValueToRValue>
+        |   |   |   `-RecoveryExpr 0x14b028370 <col:12, col:15> '<dependent type>' contains-errors lvalue
+        |   |   |     `-DeclRefExpr 0x14b028338 <col:12> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+        |   |   `-BinaryOperator 0x149870648 <col:24, col:35> 'int' contains-errors '<'
+        |   |     |-RecoveryExpr 0x149870600 <col:24, col:27> '<dependent type>' contains-errors lvalue
+        |   |     | `-DeclRefExpr 0x14b0283c8 <col:24> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+        |   |     `-DeclRefExpr 0x149870628 <col:35> 'int' lvalue Var 0x14b027fe0 'copy' 'int'
+        |   |-CompoundAssignOperator 0x1498707a8 <line:18:4, col:16> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        |   | |-RecoveryExpr 0x149870760 <col:4, col:7> '<dependent type>' contains-errors lvalue
+        |   | | `-DeclRefExpr 0x149870728 <col:4> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+        |   | `-DeclRefExpr 0x149870788 <col:16> 'int' lvalue Var 0x14b027fe0 'copy' 'int'
+        |   |-CompoundAssignOperator 0x149870840 <line:19:4, col:13> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        |   | |-RecoveryExpr 0x1498707f8 <col:4> '<dependent type>' contains-errors lvalue
+        |   | | `-DeclRefExpr 0x1498707d8 <col:4> 'int' lvalue ParmVar 0x14b00e2e0 'bytes' 'int'
+        |   | `-DeclRefExpr 0x149870820 <col:13> 'int' lvalue Var 0x14b027fe0 'copy' 'int'
+        |   `-IfStmt 0x1498709a8 <line:21:4, line:24:4>
+        |     |-RecoveryExpr 0x1498708f0 <line:21:8, col:24> '_Bool' contains-errors
+        |     `-CompoundStmt 0x149870990 <col:30, line:24:4>
+        |       `-RecoveryExpr 0x149870930 <line:22:5, col:8> '<dependent type>' contains-errors lvalue
+        |         `-DeclRefExpr 0x149870910 <col:5> 'const struct iovec *' contains-errors lvalue Var 0x14b027ba8 'iov' 'const struct iovec *'
+        `-BinaryOperator 0x149870aa8 <line:26:3, col:12> '<dependent type>' contains-errors '='
+          |-RecoveryExpr 0x149870a60 <col:3, col:6> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x149870a28 <col:3> 'struct iov_iter *' lvalue ParmVar 0x14b00e248 'i' 'struct iov_iter *'
+          `-DeclRefExpr 0x149870a88 <col:12> 'const struct iovec *' contains-errors lvalue Var 0x14b027ba8 'iov' 'const struct iovec *'

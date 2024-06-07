@@ -1,0 +1,56 @@
+`-FunctionDecl 0x145027430  line:2:13 invalid io_req_task_link_timeout 'void (struct io_kiocb *, int *)' static
+  |-ParmVarDecl 0x14500e248 <col:38, col:55> col:55 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x14500e318 <col:60, col:66> col:66 invalid locked 'int *'
+  `-CompoundStmt 0x145028260 <line:3:1, line:14:3>
+    |-DeclStmt 0x145027688 <line:4:2, col:43>
+    | `-VarDecl 0x145027578 <col:2, col:39> col:19 used prev 'struct io_kiocb *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x145027640 <col:26, col:39> '<dependent type>' contains-errors lvalue .prev
+    |     `-RecoveryExpr 0x145027618 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1450275e0 <col:26> 'struct io_kiocb *' lvalue ParmVar 0x14500e248 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x1450277b8 <line:5:2, col:19>
+    | `-VarDecl 0x1450276b8 <col:2, col:13> col:6 used ret 'int' cinit
+    |   `-UnaryOperator 0x1450277a0 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x145027788 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x145027768 <col:13> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x145028230 <line:7:2, line:14:2> has_else
+      |-ImplicitCastExpr 0x1450277f0 <line:7:6> 'struct io_kiocb *' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x1450277d0 <col:6> 'struct io_kiocb *' contains-errors lvalue Var 0x145027578 'prev' 'struct io_kiocb *'
+      |-CompoundStmt 0x145028088 <col:12, line:12:2>
+      | |-IfStmt 0x145027b70 <line:8:3, line:9:53>
+      | | |-RecoveryExpr 0x1450278e8 <line:8:7, col:38> '_Bool' contains-errors
+      | | `-BinaryOperator 0x145027b50 <line:9:4, col:53> 'int' contains-errors '='
+      | |   |-DeclRefExpr 0x145027908 <col:4> 'int' contains-errors lvalue Var 0x1450276b8 'ret' 'int'
+      | |   `-CallExpr 0x145027b20 <col:10, col:53> '<dependent type>' contains-errors
+      | |     |-DeclRefExpr 0x145027a80 <col:10> 'int ()' Function 0x1450279c8 'io_try_cancel_userdata' 'int ()'
+      | |     |-DeclRefExpr 0x145027aa0 <col:33> 'struct io_kiocb *' lvalue ParmVar 0x14500e248 'req' 'struct io_kiocb *'
+      | |     `-RecoveryExpr 0x145027af8 <col:38, col:44> '<dependent type>' contains-errors lvalue
+      | |       `-DeclRefExpr 0x145027ac0 <col:38> 'struct io_kiocb *' contains-errors lvalue Var 0x145027578 'prev' 'struct io_kiocb *'
+      | |-CallExpr 0x145027ea0 <line:10:3, col:45> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x145027c70 <col:3> 'int ()' Function 0x145027bb8 'io_req_complete_post' 'int ()'
+      | | |-DeclRefExpr 0x145027c90 <col:24> 'struct io_kiocb *' lvalue ParmVar 0x14500e248 'req' 'struct io_kiocb *'
+      | | |-BinaryConditionalOperator 0x145027e60 <col:29, col:37> '<dependent type>' contains-errors
+      | | | |-ImplicitCastExpr 0x145027e30 <col:29> 'int' contains-errors <LValueToRValue>
+      | | | | `-DeclRefExpr 0x145027cb0 <col:29> 'int' contains-errors lvalue Var 0x1450276b8 'ret' 'int'
+      | | | |-OpaqueValueExpr 0x145027e48 <col:29> 'int' contains-errors
+      | | | | `-ImplicitCastExpr 0x145027e30 <col:29> 'int' contains-errors <LValueToRValue>
+      | | | |   `-DeclRefExpr 0x145027cb0 <col:29> 'int' contains-errors lvalue Var 0x1450276b8 'ret' 'int'
+      | | | |-OpaqueValueExpr 0x145027e48 <col:29> 'int' contains-errors
+      | | | | `-ImplicitCastExpr 0x145027e30 <col:29> 'int' contains-errors <LValueToRValue>
+      | | | |   `-DeclRefExpr 0x145027cb0 <col:29> 'int' contains-errors lvalue Var 0x1450276b8 'ret' 'int'
+      | | | `-UnaryOperator 0x145027e18 <col:36, col:37> '<dependent type>' contains-errors prefix '-' cannot overflow
+      | | |   `-ImplicitCastExpr 0x145027e00 <col:37> '<dependent type>' contains-errors <LValueToRValue>
+      | | |     `-RecoveryExpr 0x145027de0 <col:37> '<dependent type>' contains-errors lvalue
+      | | `-IntegerLiteral 0x145027d88 <col:44> 'int' 0
+      | `-CallExpr 0x145028048 <line:11:3, col:18> 'int' contains-errors
+      |   |-ImplicitCastExpr 0x145028030 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x145027fb8 <col:3> 'int ()' Function 0x145027f00 'io_put_req' 'int ()'
+      |   `-ImplicitCastExpr 0x145028070 <col:14> 'struct io_kiocb *' contains-errors <LValueToRValue>
+      |     `-DeclRefExpr 0x145027fd8 <col:14> 'struct io_kiocb *' contains-errors lvalue Var 0x145027578 'prev' 'struct io_kiocb *'
+      `-CompoundStmt 0x145028218 <line:12:9, line:14:2>
+        `-CallExpr 0x1450281e0 <line:13:3, col:38> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1450280b0 <col:3> 'int ()' Function 0x145027bb8 'io_req_complete_post' 'int ()'
+          |-DeclRefExpr 0x1450280d0 <col:24> 'struct io_kiocb *' lvalue ParmVar 0x14500e248 'req' 'struct io_kiocb *'
+          |-UnaryOperator 0x1450281c8 <col:29, col:30> '<dependent type>' contains-errors prefix '-' cannot overflow
+          | `-ImplicitCastExpr 0x1450281b0 <col:30> '<dependent type>' contains-errors <LValueToRValue>
+          |   `-RecoveryExpr 0x145028190 <col:30> '<dependent type>' contains-errors lvalue
+          `-IntegerLiteral 0x145028138 <col:37> 'int' 0

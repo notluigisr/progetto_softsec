@@ -1,0 +1,50 @@
+`-FunctionDecl 0x12b826740  line:1:6 sas_device_set_phy 'void (struct domain_device *, struct sas_port *)'
+  |-ParmVarDecl 0x12b80e248 <col:25, col:47> col:47 used dev 'struct domain_device *'
+  |-ParmVarDecl 0x12b826628 <col:52, col:69> col:69 used port 'struct sas_port *'
+  `-CompoundStmt 0x12b828e00 <line:2:1, line:19:1>
+    |-DeclStmt 0x12b826a28 <line:3:2, col:26>
+    | |-RecordDecl 0x12b826840 <col:2, col:9> col:9 struct sas_ha_struct
+    | `-VarDecl 0x12b8269a8 <col:2, col:24> col:24 used ha 'struct sas_ha_struct *'
+    |-DeclStmt 0x12b826c28 <line:4:2, col:25>
+    | |-RecordDecl 0x12b826a40 <col:2, col:9> col:9 struct sas_phy
+    | `-VarDecl 0x12b826ba8 <col:2, col:18> col:18 used new_phy 'struct sas_phy *'
+    |-IfStmt 0x12b826ca0 <line:6:2, line:7:3>
+    | |-UnaryOperator 0x12b826c78 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12b826c60 <col:7> 'struct domain_device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12b826c40 <col:7> 'struct domain_device *' lvalue ParmVar 0x12b80e248 'dev' 'struct domain_device *'
+    | `-ReturnStmt 0x12b826c90 <line:7:3>
+    |-BinaryOperator 0x12b826d88 <line:9:2, col:18> 'struct sas_ha_struct *' contains-errors '='
+    | |-DeclRefExpr 0x12b826cc0 <col:2> 'struct sas_ha_struct *' lvalue Var 0x12b8269a8 'ha' 'struct sas_ha_struct *'
+    | `-CXXDependentScopeMemberExpr 0x12b826d40 <col:7, col:18> '<dependent type>' contains-errors lvalue ->ha
+    |   `-RecoveryExpr 0x12b826d18 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12b826ce0 <col:7> 'struct domain_device *' lvalue ParmVar 0x12b80e248 'dev' 'struct domain_device *'
+    |-BinaryOperator 0x12b826fd0 <line:10:2, col:33> 'struct sas_phy *' '='
+    | |-DeclRefExpr 0x12b826da8 <col:2> 'struct sas_phy *' lvalue Var 0x12b826ba8 'new_phy' 'struct sas_phy *'
+    | `-ImplicitCastExpr 0x12b826fb8 <col:12, col:33> 'struct sas_phy *' <IntegralToPointer>
+    |   `-CallExpr 0x12b826f78 <col:12, col:33> 'int'
+    |     |-ImplicitCastExpr 0x12b826f60 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12b826ef0 <col:12> 'int ()' Function 0x12b826e38 'sas_port_get_phy' 'int ()'
+    |     `-ImplicitCastExpr 0x12b826fa0 <col:29> 'struct sas_port *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12b826f10 <col:29> 'struct sas_port *' lvalue ParmVar 0x12b826628 'port' 'struct sas_port *'
+    |-CallExpr 0x12b827168 <line:13:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b8270d0 <col:2> 'int ()' Function 0x12b827018 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x12b827150 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12b827128 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12b8270f0 <col:17> 'struct sas_ha_struct *' lvalue Var 0x12b8269a8 'ha' 'struct sas_ha_struct *'
+    |-IfStmt 0x12b827410 <line:14:2, line:17:2>
+    | |-ImplicitCastExpr 0x12b8271b0 <line:14:6> 'struct sas_phy *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12b827190 <col:6> 'struct sas_phy *' lvalue Var 0x12b826ba8 'new_phy' 'struct sas_phy *'
+    | `-CompoundStmt 0x12b8273f0 <col:15, line:17:2>
+    |   |-CallExpr 0x12b827328 <line:15:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12b8272a8 <col:3> 'int ()' Function 0x12b8271f0 'sas_port_put_phy' 'int ()'
+    |   | `-RecoveryExpr 0x12b827300 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12b8272c8 <col:20> 'struct domain_device *' lvalue ParmVar 0x12b80e248 'dev' 'struct domain_device *'
+    |   `-BinaryOperator 0x12b8273d0 <line:16:3, col:14> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x12b827388 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12b827350 <col:3> 'struct domain_device *' lvalue ParmVar 0x12b80e248 'dev' 'struct domain_device *'
+    |     `-DeclRefExpr 0x12b8273b0 <col:14> 'struct sas_phy *' lvalue Var 0x12b826ba8 'new_phy' 'struct sas_phy *'
+    `-CallExpr 0x12b8275a8 <line:18:2, col:36> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12b827510 <col:2> 'int ()' Function 0x12b827458 'spin_unlock_irq' 'int ()'
+      `-UnaryOperator 0x12b827590 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12b827568 <col:19, col:23> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12b827530 <col:19> 'struct sas_ha_struct *' lvalue Var 0x12b8269a8 'ha' 'struct sas_ha_struct *'

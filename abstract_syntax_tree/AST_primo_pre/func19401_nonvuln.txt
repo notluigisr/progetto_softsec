@@ -1,0 +1,83 @@
+`-FunctionDecl 0x142827540  line:1:6 invalid psi_task_switch 'void (struct task_struct *, struct task_struct *, int)'
+  |-ParmVarDecl 0x14280e248 <col:22, col:42> col:42 used prev 'struct task_struct *'
+  |-ParmVarDecl 0x14280e338 <col:48, col:68> col:68 used next 'struct task_struct *'
+  |-ParmVarDecl 0x142827400 <line:2:8, col:13> col:13 invalid sleep 'int'
+  `-CompoundStmt 0x14282a660 <line:3:1, line:52:1>
+    |-DeclStmt 0x1428278b8 <line:4:2, col:41>
+    | |-RecordDecl 0x142827600 <col:2, col:9> col:9 struct psi_group
+    | |-VarDecl 0x142827768 <col:2, col:20> col:20 used group 'struct psi_group *'
+    | `-VarDecl 0x1428277f8 <col:2, col:37> col:28 used common 'struct psi_group *' cinit
+    |   `-RecoveryExpr 0x142827878 <col:37> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x142827b78 <line:5:2, col:26>
+    | `-VarDecl 0x1428278e8 <col:2, col:25> col:6 used cpu 'int' cinit
+    |   `-CallExpr 0x142827b38 <col:12, col:25> 'int'
+    |     |-ImplicitCastExpr 0x142827b20 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142827ab0 <col:12> 'int ()' Function 0x1428279f8 'task_cpu' 'int ()'
+    |     `-ImplicitCastExpr 0x142827b60 <col:21> 'struct task_struct *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142827ad0 <col:21> 'struct task_struct *' lvalue ParmVar 0x14280e248 'prev' 'struct task_struct *'
+    |-DeclStmt 0x142827c10 <line:6:2, col:12>
+    | `-VarDecl 0x142827ba8 <col:2, col:8> col:8 used iter 'void *'
+    |-IfStmt 0x142829c80 <line:9:2, line:25:2>
+    | |-RecoveryExpr 0x142827c60 <line:9:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x142827c28 <col:6> 'struct task_struct *' lvalue ParmVar 0x14280e338 'next' 'struct task_struct *'
+    | `-CompoundStmt 0x142829c58 <col:17, line:25:2>
+    |   |-CallExpr 0x142827e38 <line:12:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x142827d68 <col:3> 'int ()' Function 0x142827cb0 'psi_flags_change' 'int ()'
+    |   | |-DeclRefExpr 0x142827d88 <col:20> 'struct task_struct *' lvalue ParmVar 0x14280e338 'next' 'struct task_struct *'
+    |   | |-IntegerLiteral 0x142827da8 <col:26> 'int' 0
+    |   | `-RecoveryExpr 0x142827e18 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x142827fc8 <line:15:3, col:10> 'void *' contains-errors '='
+    |   | |-DeclRefExpr 0x142827f50 <col:3> 'void *' lvalue Var 0x142827ba8 'iter' 'void *'
+    |   | `-RecoveryExpr 0x142827fa8 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-WhileStmt 0x142829c38 <line:16:3, line:24:3>
+    |     |-ParenExpr 0x142828230 <line:16:10, col:46> 'struct psi_group *'
+    |     | `-BinaryOperator 0x142828210 <col:11, col:45> 'struct psi_group *' '='
+    |     |   |-DeclRefExpr 0x142827fe8 <col:11> 'struct psi_group *' lvalue Var 0x142827768 'group' 'struct psi_group *'
+    |     |   `-ImplicitCastExpr 0x1428281f8 <col:19, col:45> 'struct psi_group *' <IntegralToPointer>
+    |     |     `-CallExpr 0x1428281b0 <col:19, col:45> 'int'
+    |     |       |-ImplicitCastExpr 0x142828198 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |     |       | `-DeclRefExpr 0x1428280e8 <col:19> 'int ()' Function 0x142828030 'iterate_groups' 'int ()'
+    |     |       |-ImplicitCastExpr 0x1428281e0 <col:34> 'struct task_struct *' <LValueToRValue>
+    |     |       | `-DeclRefExpr 0x142828108 <col:34> 'struct task_struct *' lvalue ParmVar 0x14280e338 'next' 'struct task_struct *'
+    |     |       `-UnaryOperator 0x142828180 <col:40, col:41> 'void **' prefix '&' cannot overflow
+    |     |         `-DeclRefExpr 0x142828128 <col:41> 'void *' lvalue Var 0x142827ba8 'iter' 'void *'
+    |     `-CompoundStmt 0x142829c18 <col:49, line:24:3>
+    |       |-IfStmt 0x142829950 <line:17:4, line:21:4>
+    |       | |-RecoveryExpr 0x142829890 <line:17:8, line:18:53> '_Bool' contains-errors
+    |       | `-CompoundStmt 0x142829930 <col:56, line:21:4>
+    |       |   |-BinaryOperator 0x142829908 <line:19:5, col:14> 'struct psi_group *' contains-errors '='
+    |       |   | |-DeclRefExpr 0x1428298b0 <col:5> 'struct psi_group *' contains-errors lvalue Var 0x1428277f8 'common' 'struct psi_group *'
+    |       |   | `-ImplicitCastExpr 0x1428298f0 <col:14> 'struct psi_group *' <LValueToRValue>
+    |       |   |   `-DeclRefExpr 0x1428298d0 <col:14> 'struct psi_group *' lvalue Var 0x142827768 'group' 'struct psi_group *'
+    |       |   `-BreakStmt 0x142829928 <line:20:5>
+    |       `-CallExpr 0x142829bc8 <line:23:4, col:56> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x142829a50 <col:4> 'int ()' Function 0x142829998 'psi_group_change' 'int ()'
+    |         |-DeclRefExpr 0x142829a70 <col:21> 'struct psi_group *' lvalue Var 0x142827768 'group' 'struct psi_group *'
+    |         |-DeclRefExpr 0x142829a90 <col:28> 'int' lvalue Var 0x1428278e8 'cpu' 'int'
+    |         |-IntegerLiteral 0x142829ab0 <col:33> 'int' 0
+    |         |-RecoveryExpr 0x142829b68 <col:36> '<dependent type>' contains-errors lvalue
+    |         |-RecoveryExpr 0x142829b88 <col:47> '<dependent type>' contains-errors lvalue
+    |         `-RecoveryExpr 0x142829ba8 <col:52> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x14282a640 <line:27:2, line:51:2>
+      |-RecoveryExpr 0x142829cd8 <line:27:6, col:12> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x142829ca0 <col:6> 'struct task_struct *' lvalue ParmVar 0x14280e248 'prev' 'struct task_struct *'
+      `-CompoundStmt 0x14282a610 <col:17, line:51:2>
+        |-DeclStmt 0x142829e38 <line:28:3, col:33>
+        | |-VarDecl 0x142829d18 <col:3, col:7> col:7 used clear 'int'
+        | `-VarDecl 0x142829d98 <col:3, col:32> col:26 used set 'int' cinit
+        |   `-IntegerLiteral 0x142829e00 <col:32> 'int' 0
+        |-IfStmt 0x142829fa0 <line:31:3, line:37:3>
+        | |-RecoveryExpr 0x142829e50 <line:31:7> '<dependent type>' contains-errors lvalue
+        | `-CompoundStmt 0x142829f90 <col:14, line:37:3>
+        |-CallExpr 0x14282a058 <line:39:3, col:36> 'int'
+        | |-ImplicitCastExpr 0x14282a040 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x142829fc0 <col:3> 'int ()' Function 0x142827cb0 'psi_flags_change' 'int ()'
+        | |-ImplicitCastExpr 0x14282a090 <col:20> 'struct task_struct *' <LValueToRValue>
+        | | `-DeclRefExpr 0x142829fe0 <col:20> 'struct task_struct *' lvalue ParmVar 0x14280e248 'prev' 'struct task_struct *'
+        | |-ImplicitCastExpr 0x14282a0a8 <col:26> 'int' <LValueToRValue>
+        | | `-DeclRefExpr 0x14282a000 <col:26> 'int' lvalue Var 0x142829d18 'clear' 'int'
+        | `-ImplicitCastExpr 0x14282a0c0 <col:33> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x14282a020 <col:33> 'int' lvalue Var 0x142829d98 'set' 'int'
+        `-IfStmt 0x14282a5f0 <line:46:3, line:50:3>
+          |-RecoveryExpr 0x14282a398 <line:46:7> '<dependent type>' contains-errors lvalue
+          `-CompoundStmt 0x14282a5e0 <col:14, line:50:3>

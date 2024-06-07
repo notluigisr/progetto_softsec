@@ -1,0 +1,120 @@
+`-FunctionDecl 0x12a82a948  line:1:12 uio_open 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x12a80e248 <col:21, col:35> col:35 used inode 'struct inode *'
+  |-ParmVarDecl 0x12a82a828 <col:42, col:55> col:55 used filep 'struct file *'
+  `-CompoundStmt 0x12a82ec30 <line:2:1, line:45:1>
+    |-DeclStmt 0x12a82ac38 <line:3:2, col:25>
+    | |-RecordDecl 0x12a82aa48 <col:2, col:9> col:9 struct uio_device
+    | `-VarDecl 0x12a82abb8 <col:2, col:21> col:21 used idev 'struct uio_device *'
+    |-DeclStmt 0x12a82ae38 <line:4:2, col:31>
+    | |-RecordDecl 0x12a82ac50 <col:2, col:9> col:9 struct uio_listener
+    | `-VarDecl 0x12a82adb8 <col:2, col:23> col:23 used listener 'struct uio_listener *'
+    |-DeclStmt 0x12a82aef0 <line:5:2, col:13>
+    | `-VarDecl 0x12a82ae68 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x12a82aed0 <col:12> 'int' 0
+    |-CallExpr 0x12a82b130 <line:7:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x12a82b118 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a82b030 <col:2> 'int ()' Function 0x12a82af78 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12a82b100 <col:13, col:14> 'int (*)()' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x12a82b0a8 <col:14> 'int ()' Function 0x12a82af78 'mutex_lock' 'int ()'
+    |-BinaryOperator 0x12a82b530 <line:8:2, col:41> 'struct uio_device *' contains-errors '='
+    | |-DeclRefExpr 0x12a82b158 <col:2> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    | `-CallExpr 0x12a82b500 <col:9, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a82b258 <col:9> 'int ()' Function 0x12a82b1a0 'idr_find' 'int ()'
+    |   |-UnaryOperator 0x12a82b490 <col:18, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x12a82b470 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x12a82b4c0 <col:28, col:40> 'int'
+    |     |-ImplicitCastExpr 0x12a82b4a8 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a82b388 <col:28> 'int ()' Function 0x12a82b2d0 'iminor' 'int ()'
+    |     `-ImplicitCastExpr 0x12a82b4e8 <col:35> 'struct inode *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a82b3a8 <col:35> 'struct inode *' lvalue ParmVar 0x12a80e248 'inode' 'struct inode *'
+    |-CallExpr 0x12a82b6f8 <line:9:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x12a82b6e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a82b630 <col:2> 'int ()' Function 0x12a82b578 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x12a82b6c8 <col:15, col:16> 'int (*)()' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x12a82b6a8 <col:16> 'int ()' Function 0x12a82af78 'mutex_lock' 'int ()'
+    |-IfStmt 0x12a82daf8 <line:10:2, line:13:2>
+    | |-UnaryOperator 0x12a82b758 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a82b740 <col:7> 'struct uio_device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a82b720 <col:7> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    | `-CompoundStmt 0x12a82dad8 <col:13, line:13:2>
+    |   |-BinaryOperator 0x12a82da50 <line:11:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12a82b770 <col:3> 'int' lvalue Var 0x12a82ae68 'ret' 'int'
+    |   | `-UnaryOperator 0x12a82da38 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x12a82da20 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x12a82da00 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x12a82dac0 <line:12:3, col:8> 'out' 0x12a82da70
+    |-IfStmt 0x12a82dde8 <line:15:2, line:18:2>
+    | |-UnaryOperator 0x12a82dca0 <line:15:6, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12a82dc78 <col:7, col:33> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12a82dbf8 <col:7> 'int ()' Function 0x12a82db40 'try_module_get' 'int ()'
+    | |   `-RecoveryExpr 0x12a82dc50 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12a82dc18 <col:22> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    | `-CompoundStmt 0x12a82ddc8 <col:36, line:18:2>
+    |   |-BinaryOperator 0x12a82dd90 <line:16:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12a82dcb8 <col:3> 'int' lvalue Var 0x12a82ae68 'ret' 'int'
+    |   | `-UnaryOperator 0x12a82dd78 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x12a82dd60 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x12a82dd40 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x12a82ddb0 <line:17:3, col:8> 'out' 0x12a82da70
+    |-IfStmt 0x12a82e180 <line:21:2, line:24:2>
+    | |-UnaryOperator 0x12a82dfe8 <line:21:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a82dfd0 <col:7> 'struct uio_listener *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a82dfb0 <col:7> 'struct uio_listener *' lvalue Var 0x12a82adb8 'listener' 'struct uio_listener *'
+    | `-CompoundStmt 0x12a82e160 <col:17, line:24:2>
+    |   |-BinaryOperator 0x12a82e0d8 <line:22:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12a82e000 <col:3> 'int' lvalue Var 0x12a82ae68 'ret' 'int'
+    |   | `-UnaryOperator 0x12a82e0c0 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x12a82e0a8 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x12a82e088 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x12a82e148 <line:23:3, col:8> 'err_alloc_listener' 0x12a82e0f8
+    |-BinaryOperator 0x12a82e220 <line:26:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12a82e1d8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a82e1a0 <col:2> 'struct uio_listener *' lvalue Var 0x12a82adb8 'listener' 'struct uio_listener *'
+    | `-DeclRefExpr 0x12a82e200 <col:18> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    |-BinaryOperator 0x12a82e440 <line:27:2, col:50> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12a82e278 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a82e240 <col:2> 'struct uio_listener *' lvalue Var 0x12a82adb8 'listener' 'struct uio_listener *'
+    | `-CallExpr 0x12a82e418 <col:26, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a82e380 <col:26> 'int ()' Function 0x12a82e2c8 'atomic_read' 'int ()'
+    |   `-UnaryOperator 0x12a82e400 <col:38, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12a82e3d8 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a82e3a0 <col:39> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    |-BinaryOperator 0x12a82e4e0 <line:28:2, col:24> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12a82e498 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a82e460 <col:2> 'struct file *' lvalue ParmVar 0x12a82a828 'filep' 'struct file *'
+    | `-DeclRefExpr 0x12a82e4c0 <col:24> 'struct uio_listener *' lvalue Var 0x12a82adb8 'listener' 'struct uio_listener *'
+    |-IfStmt 0x12a82e820 <line:30:2, line:34:2>
+    | |-CXXDependentScopeMemberExpr 0x12a82e560 <line:30:6, col:18> '<dependent type>' contains-errors lvalue ->open
+    | | `-RecoveryExpr 0x12a82e538 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12a82e500 <col:6> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    | `-CompoundStmt 0x12a82e800 <col:24, line:34:2>
+    |   |-BinaryOperator 0x12a82e720 <line:31:3, col:43> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12a82e5a8 <col:3> 'int' lvalue Var 0x12a82ae68 'ret' 'int'
+    |   | `-CallExpr 0x12a82e6f0 <col:9, col:43> '<dependent type>' contains-errors
+    |   |   |-CXXDependentScopeMemberExpr 0x12a82e628 <col:9, col:21> '<dependent type>' contains-errors lvalue ->open
+    |   |   | `-RecoveryExpr 0x12a82e600 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x12a82e5c8 <col:9> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    |   |   |-RecoveryExpr 0x12a82e6a8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x12a82e670 <col:26> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    |   |   `-DeclRefExpr 0x12a82e6d0 <col:38> 'struct inode *' lvalue ParmVar 0x12a80e248 'inode' 'struct inode *'
+    |   `-IfStmt 0x12a82e7e0 <line:32:3, line:33:9>
+    |     |-ImplicitCastExpr 0x12a82e760 <line:32:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a82e740 <col:7> 'int' lvalue Var 0x12a82ae68 'ret' 'int'
+    |     `-GotoStmt 0x12a82e7c8 <line:33:4, col:9> 'err_infoopen' 0x12a82e778
+    |-ReturnStmt 0x12a82e860 <line:35:2, col:9>
+    | `-IntegerLiteral 0x12a82e840 <col:9> 'int' 0
+    |-LabelStmt 0x12a82ea00 <line:37:1, line:38:16> 'err_infoopen'
+    | `-CallExpr 0x12a82e9a8 <col:2, col:16> 'int'
+    |   |-ImplicitCastExpr 0x12a82e990 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a82e950 <col:2> 'int ()' Function 0x12a82e898 'kfree' 'int ()'
+    |   `-ImplicitCastExpr 0x12a82e9d0 <col:8> 'struct uio_listener *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a82e970 <col:8> 'struct uio_listener *' lvalue Var 0x12a82adb8 'listener' 'struct uio_listener *'
+    |-LabelStmt 0x12a82eba8 <line:40:1, line:41:24> 'err_alloc_listener'
+    | `-CallExpr 0x12a82eb80 <col:2, col:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a82eb00 <col:2> 'int ()' Function 0x12a82ea48 'module_put' 'int ()'
+    |   `-RecoveryExpr 0x12a82eb58 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a82eb20 <col:13> 'struct uio_device *' lvalue Var 0x12a82abb8 'idev' 'struct uio_device *'
+    `-LabelStmt 0x12a82ec10 <line:43:1, line:44:9> 'out'
+      `-ReturnStmt 0x12a82ec00 <col:2, col:9>
+        `-ImplicitCastExpr 0x12a82ebe8 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x12a82ebc8 <col:9> 'int' lvalue Var 0x12a82ae68 'ret' 'int'

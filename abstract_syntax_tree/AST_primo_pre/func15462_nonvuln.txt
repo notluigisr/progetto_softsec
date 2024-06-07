@@ -1,0 +1,110 @@
+`-FunctionDecl 0x120141968  line:1:29 invalid create_rx_sc 'struct macsec_rx_sc *(struct net_device *, int)' static
+  |-ParmVarDecl 0x1201286e8 <col:42, col:61> col:61 used dev 'struct net_device *'
+  |-ParmVarDecl 0x120128780 <col:66, col:72> col:72 invalid sci 'int'
+  `-CompoundStmt 0x107008bd8 <line:2:1, line:36:1>
+    |-DeclStmt 0x120141b10 <line:3:2, col:28>
+    | `-VarDecl 0x120141aa8 <col:2, col:23> col:23 used rx_sc 'struct macsec_rx_sc *'
+    |-DeclStmt 0x120141d18 <line:4:2, col:27>
+    | |-RecordDecl 0x120141b28 <col:2, col:9> col:9 struct macsec_dev
+    | `-VarDecl 0x120141c98 <col:2, col:21> col:21 used macsec 'struct macsec_dev *'
+    |-DeclStmt 0x120142070 <line:5:2, col:58>
+    | `-VarDecl 0x120141db8 <col:2, col:50> col:21 used real_dev 'struct net_device *' cinit
+    |   `-RecoveryExpr 0x120142048 <col:32, col:50> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x120142008 <col:32, col:47> 'int'
+    |       |-ImplicitCastExpr 0x120141ff0 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x120141f80 <col:32> 'int ()' Function 0x120141ec8 'macsec_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x120142030 <col:44> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x120141fa0 <col:44> 'struct net_device *' lvalue ParmVar 0x1201286e8 'dev' 'struct net_device *'
+    |-DeclStmt 0x120142408 <line:6:2, col:58>
+    | |-RecordDecl 0x120142088 <col:2, col:9> col:9 struct macsec_rxh_data
+    | `-VarDecl 0x1201421f8 <col:2, col:57> col:26 used rxd 'struct macsec_rxh_data *' cinit
+    |   `-ImplicitCastExpr 0x1201423d8 <col:32, col:57> 'struct macsec_rxh_data *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x120142398 <col:32, col:57> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x120142380 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x120142340 <col:32> 'int ()' Function 0x120142288 'macsec_data_rtnl' 'int ()'
+    |       `-ImplicitCastExpr 0x1201423c0 <col:49> 'struct net_device *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x120142360 <col:49> 'struct net_device *' contains-errors lvalue Var 0x120141db8 'real_dev' 'struct net_device *'
+    |-DeclStmt 0x120142608 <line:7:2, col:26>
+    | |-RecordDecl 0x120142420 <col:2, col:9> col:9 struct macsec_secy
+    | `-VarDecl 0x120142588 <col:2, col:22> col:22 used secy 'struct macsec_secy *'
+    |-CallExpr 0x120142858 <line:9:2, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x120142700 <col:2> 'int ()' Function 0x120142648 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x120142720 <col:22> 'struct macsec_dev *' lvalue Var 0x120141c98 'macsec' 'struct macsec_dev *'
+    | |-UnaryOperator 0x1201427a0 <col:30, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x120142778 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x120142740 <col:31> 'struct macsec_rxh_data *' contains-errors lvalue Var 0x1201421f8 'rxd' 'struct macsec_rxh_data *'
+    | `-DeclRefExpr 0x120142838 <col:43> 'struct macsec_secy *' lvalue Var 0x120142588 'secy' 'struct macsec_secy *'
+    |-CompoundStmt 0x120142c70 <col:50, line:12:2>
+    | `-IfStmt 0x120142c50 <line:10:3, line:11:26>
+    |   |-CallExpr 0x120142a28 <line:10:7, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x120142970 <col:7> 'int ()' Function 0x1201428b8 'find_rx_sc_rtnl' 'int ()'
+    |   | |-UnaryOperator 0x1201429f0 <col:23, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x1201429c8 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x120142990 <col:24> 'struct macsec_dev *' lvalue Var 0x120141c98 'macsec' 'struct macsec_dev *'
+    |   | `-RecoveryExpr 0x120142a08 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x120142c40 <line:11:4, col:26>
+    |     `-CallExpr 0x120142c18 <col:11, col:26> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x120142b38 <col:11> 'int ()' Function 0x120142a80 'ERR_PTR' 'int ()'
+    |       `-UnaryOperator 0x120142c00 <col:19, col:20> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x120142be8 <col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x120142bc8 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x120142f98 <line:15:2, line:16:25>
+    | |-UnaryOperator 0x120142e68 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x120142e50 <col:7> 'struct macsec_rx_sc *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x120142e30 <col:7> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-ReturnStmt 0x120142f88 <line:16:3, col:25>
+    |   `-CallExpr 0x120142f60 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x120142e80 <col:10> 'int ()' Function 0x120142a80 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x120142f48 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x120142f30 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x120142f10 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x120143358 <line:19:2, line:22:2>
+    | |-UnaryOperator 0x120143190 <line:19:6, col:14> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x120143178 <col:7, col:14> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x120143150 <col:7, col:14> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x120143118 <col:7> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-CompoundStmt 0x120143340 <col:21, line:22:2>
+    |   `-CallExpr 0x1201432e0 <line:20:3, col:14> 'int'
+    |     |-ImplicitCastExpr 0x1201432c8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x120143288 <col:3> 'int ()' Function 0x1201431d0 'kfree' 'int ()'
+    |     `-ImplicitCastExpr 0x120143308 <col:9> 'struct macsec_rx_sc *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1201432a8 <col:9> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    |-BinaryOperator 0x1201433f8 <line:24:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1201433b0 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x120143378 <col:2> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-RecoveryExpr 0x1201433d8 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x120143610 <line:26:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x120143558 <col:2> 'int ()' Function 0x1201434a0 'atomic_set' 'int ()'
+    | |-UnaryOperator 0x1201435d8 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1201435b0 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x120143578 <col:14> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-IntegerLiteral 0x1201435f0 <col:29> 'int' 1
+    |-BinaryOperator 0x120143738 <line:28:2, col:28> 'struct macsec_secy *' contains-errors '='
+    | |-DeclRefExpr 0x120143640 <col:2> 'struct macsec_secy *' lvalue Var 0x120142588 'secy' 'struct macsec_secy *'
+    | `-UnaryOperator 0x120143720 <col:9, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1201436f8 <col:10, col:28> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x1201436b8 <col:10, col:25> 'int'
+    |       |-ImplicitCastExpr 0x1201436a0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x120143660 <col:10> 'int ()' Function 0x120141ec8 'macsec_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x1201436e0 <col:22> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x120143680 <col:22> 'struct net_device *' lvalue ParmVar 0x1201286e8 'dev' 'struct net_device *'
+    |-CallExpr 0x107008998 <line:29:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1070088b8 <col:2> 'int ()' Function 0x107008800 'rcu_assign_pointer' 'int ()'
+    | |-RecoveryExpr 0x107008910 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1070088d8 <col:21> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-RecoveryExpr 0x107008970 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x107008938 <col:34> 'struct macsec_secy *' lvalue Var 0x120142588 'secy' 'struct macsec_secy *'
+    |-CallExpr 0x107008a68 <line:30:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1070089c8 <col:2> 'int ()' Function 0x107008800 'rcu_assign_pointer' 'int ()'
+    | |-RecoveryExpr 0x107008a20 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1070089e8 <col:21> 'struct macsec_secy *' lvalue Var 0x120142588 'secy' 'struct macsec_secy *'
+    | `-DeclRefExpr 0x107008a48 <col:34> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    |-IfStmt 0x107008b70 <line:32:2, line:33:16>
+    | |-RecoveryExpr 0x107008ad0 <line:32:6, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x107008a98 <col:6> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'
+    | `-UnaryOperator 0x107008b58 <line:33:3, col:16> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   `-RecoveryExpr 0x107008b30 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x107008af8 <col:3> 'struct macsec_secy *' lvalue Var 0x120142588 'secy' 'struct macsec_secy *'
+    `-ReturnStmt 0x107008bc8 <line:35:2, col:9>
+      `-ImplicitCastExpr 0x107008bb0 <col:9> 'struct macsec_rx_sc *' <LValueToRValue>
+        `-DeclRefExpr 0x107008b90 <col:9> 'struct macsec_rx_sc *' lvalue Var 0x120141aa8 'rx_sc' 'struct macsec_rx_sc *'

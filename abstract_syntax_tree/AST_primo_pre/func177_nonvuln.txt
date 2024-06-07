@@ -1,0 +1,50 @@
+`-FunctionDecl 0x130941838  line:1:12 invalid btrfs_check_raid_min_devices 'int (struct btrfs_fs_info *, int)' static
+  |-ParmVarDecl 0x130928648 <col:41, col:63> col:63 used fs_info 'struct btrfs_fs_info *'
+  |-ParmVarDecl 0x1309286e0 <line:2:3, col:7> col:7 invalid num_devices 'int'
+  `-CompoundStmt 0x130942458 <line:3:1, line:29:1>
+    |-DeclStmt 0x130941970 <line:5:2, col:14>
+    | `-VarDecl 0x130941908 <col:2, col:11> col:11 used seq 'unsigned int'
+    |-DeclStmt 0x130941a08 <line:6:2, col:7>
+    | `-VarDecl 0x1309419a0 <col:2, col:6> col:6 used i 'int'
+    |-DoStmt 0x130941fc0 <line:8:2, line:14:54>
+    | |-CompoundStmt 0x130941de0 <line:8:5, line:14:2>
+    | | `-BinaryOperator 0x130941c60 <line:9:3, col:46> 'unsigned int' contains-errors '='
+    | |   |-DeclRefExpr 0x130941a20 <col:3> 'unsigned int' lvalue Var 0x130941908 'seq' 'unsigned int'
+    | |   `-CallExpr 0x130941c38 <col:9, col:46> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x130941ba0 <col:9> 'int ()' Function 0x130941ae8 'read_seqbegin' 'int ()'
+    | |     `-UnaryOperator 0x130941c20 <col:23, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |       `-RecoveryExpr 0x130941bf8 <col:24, col:33> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x130941bc0 <col:24> 'struct btrfs_fs_info *' lvalue ParmVar 0x130928648 'fs_info' 'struct btrfs_fs_info *'
+    | `-CallExpr 0x130941f90 <line:14:11, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x130941ed8 <col:11> 'int ()' Function 0x130941e20 'read_seqretry' 'int ()'
+    |   |-UnaryOperator 0x130941f58 <col:25, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x130941f30 <col:26, col:35> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x130941ef8 <col:26> 'struct btrfs_fs_info *' lvalue ParmVar 0x130928648 'fs_info' 'struct btrfs_fs_info *'
+    |   `-DeclRefExpr 0x130941f70 <col:50> 'unsigned int' lvalue Var 0x130941908 'seq' 'unsigned int'
+    |-ForStmt 0x1309423f0 <line:16:2, line:26:2>
+    | |-BinaryOperator 0x130942020 <line:16:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x130941fe0 <col:7> 'int' lvalue Var 0x1309419a0 'i' 'int'
+    | | `-IntegerLiteral 0x130942000 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x1309420b8 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x130942040 <col:14> 'int' lvalue Var 0x1309419a0 'i' 'int'
+    | | `-RecoveryExpr 0x130942098 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x1309420f8 <col:39, col:40> 'int' postfix '++'
+    | | `-DeclRefExpr 0x1309420d8 <col:39> 'int' lvalue Var 0x1309419a0 'i' 'int'
+    | `-CompoundStmt 0x1309423d0 <col:44, line:26:2>
+    |   |-IfStmt 0x130942188 <line:17:3, line:18:4>
+    |   | |-RecoveryExpr 0x130942160 <line:17:7, col:48> '_Bool' contains-errors
+    |   | `-ContinueStmt 0x130942180 <line:18:4>
+    |   `-IfStmt 0x1309423b0 <line:20:3, line:25:3>
+    |     |-RecoveryExpr 0x130942200 <line:20:7, col:41> '_Bool' contains-errors
+    |     `-CompoundStmt 0x130942390 <col:51, line:25:3>
+    |       |-DeclStmt 0x1309422d8 <line:21:4, col:46>
+    |       | `-VarDecl 0x130942238 <col:4, col:8> col:8 used ret 'int'
+    |       `-IfStmt 0x130942370 <line:23:4, line:24:12>
+    |         |-ImplicitCastExpr 0x130942310 <line:23:8> 'int' <LValueToRValue>
+    |         | `-DeclRefExpr 0x1309422f0 <col:8> 'int' lvalue Var 0x130942238 'ret' 'int'
+    |         `-ReturnStmt 0x130942360 <line:24:5, col:12>
+    |           `-ImplicitCastExpr 0x130942348 <col:12> 'int' <LValueToRValue>
+    |             `-DeclRefExpr 0x130942328 <col:12> 'int' lvalue Var 0x130942238 'ret' 'int'
+    `-ReturnStmt 0x130942448 <line:28:2, col:9>
+      `-IntegerLiteral 0x130942428 <col:9> 'int' 0

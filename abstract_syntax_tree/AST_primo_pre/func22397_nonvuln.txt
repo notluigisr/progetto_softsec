@@ -1,0 +1,29 @@
+`-FunctionDecl 0x135128750  line:1:6 __ieee80211_check_fast_rx_iface 'void (struct ieee80211_sub_if_data *)'
+  |-ParmVarDecl 0x135128648 <col:38, col:68> col:68 used sdata 'struct ieee80211_sub_if_data *'
+  `-CompoundStmt 0x1351417a0 <line:2:1, line:14:1>
+    |-DeclStmt 0x135140c98 <line:3:2, col:46>
+    | |-RecordDecl 0x135140a48 <col:2, col:9> col:9 struct ieee80211_local
+    | `-VarDecl 0x135140bb8 <col:2, col:41> col:26 used local 'struct ieee80211_local *' cinit
+    |   `-RecoveryExpr 0x135140c58 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135140c20 <col:34> 'struct ieee80211_sub_if_data *' lvalue ParmVar 0x135128648 'sdata' 'struct ieee80211_sub_if_data *'
+    |-DeclStmt 0x135140e98 <line:4:2, col:22>
+    | |-RecordDecl 0x135140cb0 <col:2, col:9> col:9 struct sta_info
+    | `-VarDecl 0x135140e18 <col:2, col:19> col:19 used sta 'struct sta_info *'
+    |-CallExpr 0x135141078 <line:6:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135140fe0 <col:2> 'int ()' Function 0x135140f28 'lockdep_assert_held' 'int ()'
+    | `-UnaryOperator 0x135141060 <col:22, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x135141038 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135141000 <col:23> 'struct ieee80211_local *' contains-errors lvalue Var 0x135140bb8 'local' 'struct ieee80211_local *'
+    |-CallExpr 0x1351412a8 <line:8:2, col:53> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135141180 <col:2> 'int ()' Function 0x1351410c8 'list_for_each_entry_rcu' 'int ()'
+    | |-DeclRefExpr 0x1351411a0 <col:26> 'struct sta_info *' lvalue Var 0x135140e18 'sta' 'struct sta_info *'
+    | |-UnaryOperator 0x135141220 <col:31, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1351411f8 <col:32, col:39> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1351411c0 <col:32> 'struct ieee80211_local *' contains-errors lvalue Var 0x135140bb8 'local' 'struct ieee80211_local *'
+    | `-RecoveryExpr 0x135141288 <col:49> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x135141788 <col:55, line:13:2>
+      `-CallExpr 0x135141748 <line:12:3, col:30> 'int'
+        |-ImplicitCastExpr 0x135141730 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1351416c0 <col:3> 'int ()' Function 0x135141608 'ieee80211_check_fast_rx' 'int ()'
+        `-ImplicitCastExpr 0x135141770 <col:27> 'struct sta_info *' <LValueToRValue>
+          `-DeclRefExpr 0x1351416e0 <col:27> 'struct sta_info *' lvalue Var 0x135140e18 'sta' 'struct sta_info *'

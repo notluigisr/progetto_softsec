@@ -1,0 +1,42 @@
+`-FunctionDecl 0x14e80de88  line:1:5 invalid SafeMulDims 'int (const int *, int *)'
+  |-ParmVarDecl 0x14e80dcf0 <col:17, col:33> col:33 invalid matvar 'const int *'
+  |-ParmVarDecl 0x14e80dda8 <col:41, col:49> col:49 invalid nelems 'int *'
+  `-CompoundStmt 0x14e8275d0 <line:2:1, line:13:1>
+    |-DeclStmt 0x14e80dfc0 <line:3:5, col:10>
+    | `-VarDecl 0x14e80df58 <col:5, col:9> col:9 used i 'int'
+    |-ForStmt 0x14e827568 <line:5:5, line:10:5>
+    | |-BinaryOperator 0x14e80e018 <line:5:11, col:15> 'int' '='
+    | | |-DeclRefExpr 0x14e80dfd8 <col:11> 'int' lvalue Var 0x14e80df58 'i' 'int'
+    | | `-IntegerLiteral 0x14e80dff8 <col:15> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14e80e0c0 <col:18, col:30> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x14e80e038 <col:18> 'int' lvalue Var 0x14e80df58 'i' 'int'
+    | | `-CXXDependentScopeMemberExpr 0x14e80e078 <col:22, col:30> '<dependent type>' contains-errors lvalue ->rank
+    | |   `-RecoveryExpr 0x14e80e058 <col:22> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x14e80e100 <col:36, col:37> 'int' postfix '++'
+    | | `-DeclRefExpr 0x14e80e0e0 <col:36> 'int' lvalue Var 0x14e80df58 'i' 'int'
+    | `-CompoundStmt 0x14e827550 <col:42, line:10:5>
+    |   `-IfStmt 0x14e827530 <line:6:9, line:9:9>
+    |     |-UnaryOperator 0x14e827438 <line:6:14, col:67> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     | `-CallExpr 0x14e827400 <col:15, col:67> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x14e80e270 <col:15> 'int ()' Function 0x14e80e1b8 'psnip_safe_size_mul' 'int ()'
+    |     |   |-RecoveryExpr 0x14e80e290 <col:35> '<dependent type>' contains-errors lvalue
+    |     |   |-UnaryOperator 0x14e80e2e8 <col:43, col:44> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     |   | `-ImplicitCastExpr 0x14e80e2d0 <col:44> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   |   `-RecoveryExpr 0x14e80e2b0 <col:44> '<dependent type>' contains-errors lvalue
+    |     |   `-ArraySubscriptExpr 0x14e80e3b8 <col:52, col:66> '<dependent type>' contains-errors lvalue
+    |     |     |-ImplicitCastExpr 0x14e80e388 <col:52, col:60> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     | `-CXXDependentScopeMemberExpr 0x14e80e320 <col:52, col:60> '<dependent type>' contains-errors lvalue ->dims
+    |     |     |   `-RecoveryExpr 0x14e80e300 <col:52> '<dependent type>' contains-errors lvalue
+    |     |     `-ImplicitCastExpr 0x14e80e3a0 <col:65> 'int' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x14e80e368 <col:65> 'int' lvalue Var 0x14e80df58 'i' 'int'
+    |     `-CompoundStmt 0x14e827510 <col:71, line:9:9>
+    |       |-BinaryOperator 0x14e8274c0 <line:7:13, col:23> '<dependent type>' contains-errors '='
+    |       | |-UnaryOperator 0x14e827488 <col:13, col:14> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       | | `-ImplicitCastExpr 0x14e827470 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |       | |   `-RecoveryExpr 0x14e827450 <col:14> '<dependent type>' contains-errors lvalue
+    |       | `-IntegerLiteral 0x14e8274a0 <col:23> 'int' 0
+    |       `-ReturnStmt 0x14e827500 <line:8:13, col:20>
+    |         `-IntegerLiteral 0x14e8274e0 <col:20> 'int' 1
+    `-ReturnStmt 0x14e8275c0 <line:12:5, col:12>
+      `-IntegerLiteral 0x14e8275a0 <col:12> 'int' 0

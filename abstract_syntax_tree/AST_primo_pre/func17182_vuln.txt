@@ -1,0 +1,35 @@
+`-FunctionDecl 0x150122740  line:1:13 sas_scsi_clear_queue_lu 'void (struct list_head *, struct scsi_cmnd *)' static
+  |-ParmVarDecl 0x14800e248 <col:37, col:55> col:55 used error_q 'struct list_head *'
+  |-ParmVarDecl 0x150122628 <col:64, col:82> col:82 used my_cmd 'struct scsi_cmnd *'
+  `-CompoundStmt 0x150123140 <line:2:1, line:10:1>
+    |-DeclStmt 0x1501229d8 <line:3:2, col:27>
+    | |-VarDecl 0x1501228c8 <col:2, col:20> col:20 used cmd 'struct scsi_cmnd *'
+    | `-VarDecl 0x150122958 <col:2, col:26> col:26 used n 'struct scsi_cmnd *'
+    |-CallExpr 0x150122c18 <line:5:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150122b20 <col:2> 'int ()' Function 0x150122a68 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x150122b40 <col:27> 'struct scsi_cmnd *' lvalue Var 0x1501228c8 'cmd' 'struct scsi_cmnd *'
+    | |-DeclRefExpr 0x150122b60 <col:32> 'struct scsi_cmnd *' lvalue Var 0x150122958 'n' 'struct scsi_cmnd *'
+    | |-DeclRefExpr 0x150122b80 <col:35> 'struct list_head *' lvalue ParmVar 0x14800e248 'error_q' 'struct list_head *'
+    | `-RecoveryExpr 0x150122bf8 <col:44> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x150123128 <col:54, line:9:2>
+      `-IfStmt 0x150123108 <line:6:3, line:8:24>
+        |-BinaryOperator 0x150122f38 <line:6:7, line:7:43> 'int' contains-errors '&&'
+        | |-BinaryOperator 0x150122da8 <line:6:7, col:51> 'int' contains-errors '=='
+        | | |-CXXDependentScopeMemberExpr 0x150122cb8 <col:7, col:20> '<dependent type>' contains-errors lvalue ->sdev_target
+        | | | `-RecoveryExpr 0x150122c90 <col:7, col:12> '<dependent type>' contains-errors lvalue
+        | | |   `-DeclRefExpr 0x150122c58 <col:7> 'struct scsi_cmnd *' lvalue Var 0x1501228c8 'cmd' 'struct scsi_cmnd *'
+        | | `-CXXDependentScopeMemberExpr 0x150122d60 <col:35, col:51> '<dependent type>' contains-errors lvalue ->sdev_target
+        | |   `-RecoveryExpr 0x150122d38 <col:35, col:43> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x150122d00 <col:35> 'struct scsi_cmnd *' lvalue ParmVar 0x150122628 'my_cmd' 'struct scsi_cmnd *'
+        | `-BinaryOperator 0x150122f18 <line:7:7, col:43> 'int' contains-errors '=='
+        |   |-CXXDependentScopeMemberExpr 0x150122e28 <col:7, col:20> '<dependent type>' contains-errors lvalue ->lun
+        |   | `-RecoveryExpr 0x150122e00 <col:7, col:12> '<dependent type>' contains-errors lvalue
+        |   |   `-DeclRefExpr 0x150122dc8 <col:7> 'struct scsi_cmnd *' lvalue Var 0x1501228c8 'cmd' 'struct scsi_cmnd *'
+        |   `-CXXDependentScopeMemberExpr 0x150122ed0 <col:27, col:43> '<dependent type>' contains-errors lvalue ->lun
+        |     `-RecoveryExpr 0x150122ea8 <col:27, col:35> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x150122e70 <col:27> 'struct scsi_cmnd *' lvalue ParmVar 0x150122628 'my_cmd' 'struct scsi_cmnd *'
+        `-CallExpr 0x1501230c8 <line:8:4, col:24> 'int'
+          |-ImplicitCastExpr 0x1501230b0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x150123038 <col:4> 'int ()' Function 0x150122f80 'sas_eh_defer_cmd' 'int ()'
+          `-ImplicitCastExpr 0x1501230f0 <col:21> 'struct scsi_cmnd *' <LValueToRValue>
+            `-DeclRefExpr 0x150123058 <col:21> 'struct scsi_cmnd *' lvalue Var 0x1501228c8 'cmd' 'struct scsi_cmnd *'

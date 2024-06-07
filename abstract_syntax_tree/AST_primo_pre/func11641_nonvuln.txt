@@ -1,0 +1,46 @@
+`-FunctionDecl 0x11e128750  line:1:6 iscsi_requeue_task 'void (struct iscsi_task *)'
+  |-ParmVarDecl 0x11e128648 <col:25, col:44> col:44 used task 'struct iscsi_task *'
+  `-CompoundStmt 0x11e141810 <line:2:1, line:15:1>
+    |-DeclStmt 0x11e140c98 <line:3:2, col:38>
+    | |-RecordDecl 0x11e140a48 <col:2, col:9> col:9 struct iscsi_conn
+    | `-VarDecl 0x11e140bb8 <col:2, col:34> col:21 used conn 'struct iscsi_conn *' cinit
+    |   `-RecoveryExpr 0x11e140c58 <col:28, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11e140c20 <col:28> 'struct iscsi_task *' lvalue ParmVar 0x11e128648 'task' 'struct iscsi_task *'
+    |-CallExpr 0x11e140ec0 <line:6:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11e140de0 <col:2> 'int ()' Function 0x11e140d28 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x11e140ea8 <col:15, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x11e140e60 <col:16, col:31> '<dependent type>' contains-errors lvalue ->frwd_lock
+    |     `-RecoveryExpr 0x11e140e38 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11e140e00 <col:16> 'struct iscsi_conn *' contains-errors lvalue Var 0x11e140bb8 'conn' 'struct iscsi_conn *'
+    |-IfStmt 0x11e141480 <line:7:2, line:12:2> has_else
+    | |-CallExpr 0x11e141060 <line:7:6, col:31> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11e140fc8 <col:6> 'int ()' Function 0x11e140f10 'list_empty' 'int ()'
+    | | `-UnaryOperator 0x11e141048 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x11e141020 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11e140fe8 <col:18> 'struct iscsi_task *' lvalue ParmVar 0x11e128648 'task' 'struct iscsi_task *'
+    | |-CompoundStmt 0x11e1412a8 <col:34, line:9:2>
+    | | `-CallExpr 0x11e141278 <line:8:3, col:47> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x11e141168 <col:3> 'int ()' Function 0x11e1410b0 'list_add_tail' 'int ()'
+    | |   |-UnaryOperator 0x11e1411e8 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-RecoveryExpr 0x11e1411c0 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x11e141188 <col:18> 'struct iscsi_task *' lvalue ParmVar 0x11e128648 'task' 'struct iscsi_task *'
+    | |   `-UnaryOperator 0x11e141260 <col:33, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x11e141238 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x11e141200 <col:34> 'struct iscsi_conn *' contains-errors lvalue Var 0x11e140bb8 'conn' 'struct iscsi_conn *'
+    | `-CompoundStmt 0x11e141468 <line:9:9, line:12:2>
+    |   `-CallExpr 0x11e141428 <line:11:3, col:22> 'int'
+    |     |-ImplicitCastExpr 0x11e141410 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11e1413a0 <col:3> 'int ()' Function 0x11e1412e8 'iscsi_put_task' 'int ()'
+    |     `-ImplicitCastExpr 0x11e141450 <col:18> 'struct iscsi_task *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11e1413c0 <col:18> 'struct iscsi_task *' lvalue ParmVar 0x11e128648 'task' 'struct iscsi_task *'
+    |-CallExpr 0x11e1415e8 <line:13:2, col:28> 'int' contains-errors
+    | |-ImplicitCastExpr 0x11e1415d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e141590 <col:2> 'int ()' Function 0x11e1414d8 'iscsi_conn_queue_work' 'int ()'
+    | `-ImplicitCastExpr 0x11e141610 <col:24> 'struct iscsi_conn *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x11e1415b0 <col:24> 'struct iscsi_conn *' contains-errors lvalue Var 0x11e140bb8 'conn' 'struct iscsi_conn *'
+    `-CallExpr 0x11e1417e8 <line:14:2, col:42> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x11e141708 <col:2> 'int ()' Function 0x11e141650 'spin_unlock_bh' 'int ()'
+      `-UnaryOperator 0x11e1417d0 <col:17, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x11e141788 <col:18, col:33> '<dependent type>' contains-errors lvalue ->frwd_lock
+          `-RecoveryExpr 0x11e141760 <col:18, col:24> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x11e141728 <col:18> 'struct iscsi_conn *' contains-errors lvalue Var 0x11e140bb8 'conn' 'struct iscsi_conn *'

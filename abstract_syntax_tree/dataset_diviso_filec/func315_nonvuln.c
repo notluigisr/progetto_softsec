@@ -1,0 +1,1 @@
+  uint64_t block_number() const { return block_number_; }

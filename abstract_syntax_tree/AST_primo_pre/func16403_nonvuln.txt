@@ -1,0 +1,37 @@
+`-FunctionDecl 0x14000ddf8  line:1:11 invalid EC_GROUP_dup 'int *(const int *)'
+  |-ParmVarDecl 0x14000dcf0 <col:24, col:40> col:40 invalid a 'const int *'
+  `-CompoundStmt 0x141008d20 <line:2:1, line:23:1>
+    |-DeclStmt 0x14000df78 <line:4:5, col:15>
+    | `-VarDecl 0x14000def0 <col:5, col:14> col:9 used ok 'int' cinit
+    |   `-IntegerLiteral 0x14000df58 <col:14> 'int' 0
+    |-IfStmt 0x14000e070 <line:6:5, line:7:16>
+    | |-BinaryOperator 0x14000e008 <line:6:9, col:14> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x14000df90 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14000dfe8 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14000e060 <line:7:9, col:16>
+    |   `-RecoveryExpr 0x14000e040 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x141008970 <line:11:5, line:12:14>
+    | |-UnaryOperator 0x1410088f0 <line:11:9, col:28> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x1410088c0 <col:10, col:28> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x141008800 <col:10> 'int ()' Function 0x14000e348 'EC_GROUP_copy' 'int ()'
+    | |   |-RecoveryExpr 0x1410088a0 <col:24> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x141008838 <col:27> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x141008958 <line:12:9, col:14> 'err' 0x141008908
+    |-BinaryOperator 0x1410089d0 <line:14:5, col:10> 'int' '='
+    | |-DeclRefExpr 0x141008990 <col:5> 'int' lvalue Var 0x14000def0 'ok' 'int'
+    | `-IntegerLiteral 0x1410089b0 <col:10> 'int' 1
+    `-LabelStmt 0x141008d00 <line:16:2, line:22:16> 'err'
+      `-IfStmt 0x141008cd0 <line:17:5, line:22:16> has_else
+        |-UnaryOperator 0x141008a28 <line:17:9, col:10> 'int' prefix '!' cannot overflow
+        | `-ImplicitCastExpr 0x141008a10 <col:10> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x1410089f0 <col:10> 'int' lvalue Var 0x14000def0 'ok' 'int'
+        |-CompoundStmt 0x141008c68 <col:14, line:21:5>
+        | |-IfStmt 0x141008c00 <line:18:9, line:19:28>
+        | | |-RecoveryExpr 0x141008a58 <line:18:13> '<dependent type>' contains-errors lvalue
+        | | `-CallExpr 0x141008bd8 <line:19:13, col:28> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x141008b58 <col:13> 'int ()' Function 0x141008aa0 'EC_GROUP_free' 'int ()'
+        | |   `-RecoveryExpr 0x141008bb8 <col:27> '<dependent type>' contains-errors lvalue
+        | `-ReturnStmt 0x141008c58 <line:20:9, col:16>
+        |   `-RecoveryExpr 0x141008c38 <col:16> '<dependent type>' contains-errors lvalue
+        `-ReturnStmt 0x141008cc0 <line:22:9, col:16>
+          `-RecoveryExpr 0x141008ca0 <col:16> '<dependent type>' contains-errors lvalue

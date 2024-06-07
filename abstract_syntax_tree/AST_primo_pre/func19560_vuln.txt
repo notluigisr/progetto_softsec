@@ -1,0 +1,21 @@
+`-FunctionDecl 0x147026688  line:1:12 flakey_ioctl 'int (struct dm_target *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x14700e248 <col:25, col:43> col:43 used ti 'struct dm_target *'
+  |-ParmVarDecl 0x14700e2c8 <col:47, col:60> col:60 used cmd 'unsigned int'
+  |-ParmVarDecl 0x14700e348 <col:65, col:79> col:79 used arg 'unsigned long'
+  `-CompoundStmt 0x147026d20 <line:2:1, line:6:1>
+    |-DeclStmt 0x1470269d8 <line:3:2, col:35>
+    | |-RecordDecl 0x147026790 <col:2, col:9> col:9 struct flakey_c
+    | `-VarDecl 0x1470268f8 <col:2, col:28> col:19 used fc 'struct flakey_c *' cinit
+    |   `-RecoveryExpr 0x147026998 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147026960 <col:24> 'struct dm_target *' lvalue ParmVar 0x14700e248 'ti' 'struct dm_target *'
+    `-ReturnStmt 0x147026d10 <line:5:2, col:69>
+      `-CallExpr 0x147026cd0 <col:9, col:69> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x147026b20 <col:9> 'int ()' Function 0x147026a68 '__blkdev_driver_ioctl' 'int ()'
+        |-CXXDependentScopeMemberExpr 0x147026ba0 <col:31, col:40> '<dependent type>' contains-errors lvalue ->bdev
+        | `-RecoveryExpr 0x147026b78 <col:31, col:35> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x147026b40 <col:31> 'struct flakey_c *' contains-errors lvalue Var 0x1470268f8 'fc' 'struct flakey_c *'
+        |-CXXDependentScopeMemberExpr 0x147026c48 <col:46, col:55> '<dependent type>' contains-errors lvalue ->mode
+        | `-RecoveryExpr 0x147026c20 <col:46, col:50> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x147026be8 <col:46> 'struct flakey_c *' contains-errors lvalue Var 0x1470268f8 'fc' 'struct flakey_c *'
+        |-DeclRefExpr 0x147026c90 <col:61> 'unsigned int' lvalue ParmVar 0x14700e2c8 'cmd' 'unsigned int'
+        `-DeclRefExpr 0x147026cb0 <col:66> 'unsigned long' lvalue ParmVar 0x14700e348 'arg' 'unsigned long'

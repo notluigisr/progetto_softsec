@@ -1,0 +1,70 @@
+`-FunctionDecl 0x14b00dfa8  line:1:1 invalid on_unregister_handler 'int (int *, int *, char *, int)'
+  |-ParmVarDecl 0x14b00dd28 <col:23, col:52> col:52 invalid interface 'int *'
+  |-ParmVarDecl 0x14b00dda8 <line:2:9, col:32> col:32 invalid invocation 'int *'
+  |-ParmVarDecl 0x14b00de28 <line:3:9, col:16> col:16 used subtype 'char *'
+  |-ParmVarDecl 0x14b00dea8 <line:4:9, col:18> col:18 invalid user_data 'int'
+  `-CompoundStmt 0x149014c78 <line:5:1, line:23:1>
+    |-DeclStmt 0x14a80a8d8 <line:6:2, col:66>
+    | |-RecordDecl 0x14b00e070 <col:2, col:9> col:9 struct tcmur_handler
+    | `-VarDecl 0x14b00e1d8 <col:2, col:65> col:24 used handler 'struct tcmur_handler *' cinit
+    |   `-ImplicitCastExpr 0x14a80a488 <col:34, col:65> 'struct tcmur_handler *' <IntegralToPointer>
+    |     `-CallExpr 0x14a80a448 <col:34, col:65> 'int'
+    |       |-ImplicitCastExpr 0x14a80a430 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14b00e3a0 <col:34> 'int ()' Function 0x14b00e2e8 'find_handler_by_subtype' 'int ()'
+    |       `-ImplicitCastExpr 0x14a80a470 <col:58> 'char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14b00e3c0 <col:58> 'char *' lvalue ParmVar 0x14b00de28 'subtype' 'char *'
+    |-DeclStmt 0x14a80abf0 <line:7:2, col:59>
+    | |-RecordDecl 0x14a80a8f0 <col:2, col:9> col:9 struct dbus_info
+    | `-VarDecl 0x14a80aa58 <col:2, col:55> col:20 used info 'struct dbus_info *' cinit
+    |   `-ConditionalOperator 0x14a80aba8 <col:27, col:55> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14a80aac0 <col:27> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    |     |-RecoveryExpr 0x14a80ab18 <col:37, col:46> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x14a80aae0 <col:37> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    |     `-RecoveryExpr 0x14a80ab88 <col:55> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a80b070 <line:9:2, line:14:2>
+    | |-UnaryOperator 0x14a80ac40 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a80ac28 <col:7> 'struct tcmur_handler *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a80ac08 <col:7> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    | `-CompoundStmt 0x14a80b050 <col:16, line:14:2>
+    |   |-CallExpr 0x14a80afd8 <line:10:3, line:12:17> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14a80ad38 <line:10:3> 'int ()' Function 0x14a80ac80 'g_dbus_method_invocation_return_value' 'int ()'
+    |   | |-RecoveryExpr 0x14a80ad58 <col:41> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x14a80afa0 <line:11:4, line:12:16> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14a80ae58 <line:11:4> 'int ()' Function 0x14a80ada0 'g_variant_new' 'int ()'
+    |   |   |-StringLiteral 0x14a80aec0 <col:18> 'char[4]' lvalue "STR"
+    |   |   |-RecoveryExpr 0x14a80af80 <col:25> '<dependent type>' contains-errors lvalue
+    |   |   `-StringLiteral 0x14a80aef8 <line:12:11> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x14a80b040 <line:13:3, col:10>
+    |     `-RecoveryExpr 0x14a80b020 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14a80b1c8 <line:15:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x14a80b1b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a80b170 <col:2> 'int ()' Function 0x14a80b0b8 'dbus_unexport_handler' 'int ()'
+    | `-ImplicitCastExpr 0x14a80b1f0 <col:24> 'struct tcmur_handler *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a80b190 <col:24> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    |-CallExpr 0x14a80b340 <line:16:2, col:34> 'int'
+    | |-ImplicitCastExpr 0x14a80b328 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a80b2e8 <col:2> 'int ()' Function 0x14a80b230 'tcmur_unregister_handler' 'int ()'
+    | `-ImplicitCastExpr 0x14a80b368 <col:27> 'struct tcmur_handler *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a80b308 <col:27> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    |-CallExpr 0x149014938 <line:17:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1490148b8 <col:2> 'int ()' Function 0x149014800 'g_bus_unwatch_name' 'int ()'
+    | `-RecoveryExpr 0x149014910 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1490148d8 <col:21> 'struct dbus_info *' contains-errors lvalue Var 0x14a80aa58 'info' 'struct dbus_info *'
+    |-CallExpr 0x149014a98 <line:18:2, col:13> 'int' contains-errors
+    | |-ImplicitCastExpr 0x149014a80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x149014a40 <col:2> 'int ()' Function 0x149014988 'g_free' 'int ()'
+    | `-ImplicitCastExpr 0x149014ac0 <col:9> 'struct dbus_info *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x149014a60 <col:9> 'struct dbus_info *' contains-errors lvalue Var 0x14a80aa58 'info' 'struct dbus_info *'
+    |-CallExpr 0x149014b30 <line:19:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x149014b18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x149014ad8 <col:2> 'int ()' Function 0x149014988 'g_free' 'int ()'
+    | `-ImplicitCastExpr 0x149014b58 <col:9> 'struct tcmur_handler *' <LValueToRValue>
+    |   `-DeclRefExpr 0x149014af8 <col:9> 'struct tcmur_handler *' lvalue Var 0x14b00e1d8 'handler' 'struct tcmur_handler *'
+    `-CallExpr 0x149014c48 <line:20:2, line:21:23> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x149014b70 <line:20:2> 'int ()' Function 0x14a80ac80 'g_dbus_method_invocation_return_value' 'int ()'
+      |-RecoveryExpr 0x149014b90 <col:40> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x149014c08 <line:21:3, col:22> 'int'
+        |-ImplicitCastExpr 0x149014bf0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x149014bb0 <col:3> 'int ()' Function 0x14a80ada0 'g_variant_new' 'int ()'
+        `-ImplicitCastExpr 0x149014c30 <col:17> 'char *' <ArrayToPointerDecay>
+          `-StringLiteral 0x149014bd0 <col:17> 'char[4]' lvalue "STR"

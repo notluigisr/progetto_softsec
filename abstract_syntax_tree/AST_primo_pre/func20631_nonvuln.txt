@@ -1,0 +1,91 @@
+`-FunctionDecl 0x124928758  line:1:1 cifs_prune_tlinks 'int (struct work_struct *)'
+  |-ParmVarDecl 0x124928648 <col:19, col:39> col:39 used work 'struct work_struct *'
+  `-CompoundStmt 0x124941ee0 <line:2:1, line:35:1>
+    |-DeclStmt 0x125008608 <line:3:2, line:4:29>
+    | |-RecordDecl 0x125008250 <line:3:2, col:9> col:9 struct cifs_sb_info
+    | `-VarDecl 0x1250083b8 <col:2, col:23> col:23 used cifs_sb 'struct cifs_sb_info *'
+    |-DeclStmt 0x125008880 <line:5:2, col:45>
+    | |-RecordDecl 0x125008620 <col:2, col:9> col:9 struct rb_root
+    | `-VarDecl 0x125008788 <col:2, col:35> col:18 used root 'struct rb_root *' cinit
+    |   `-UnaryOperator 0x125008850 <col:25, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x125008828 <col:26, col:35> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1250087f0 <col:26> 'struct cifs_sb_info *' lvalue Var 0x1250083b8 'cifs_sb' 'struct cifs_sb_info *'
+    |-DeclStmt 0x125008c48 <line:6:2, col:39>
+    | |-RecordDecl 0x125008898 <col:2, col:9> col:9 struct rb_node
+    | `-VarDecl 0x125008a08 <col:2, col:38> col:18 used node 'struct rb_node *' cinit
+    |   `-ImplicitCastExpr 0x125008c18 <col:25, col:38> 'struct rb_node *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x125008bd8 <col:25, col:38> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x125008bc0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x125008b50 <col:25> 'int ()' Function 0x125008a98 'rb_first' 'int ()'
+    |       `-ImplicitCastExpr 0x125008c00 <col:34> 'struct rb_root *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x125008b70 <col:34> 'struct rb_root *' contains-errors lvalue Var 0x125008788 'root' 'struct rb_root *'
+    |-DeclStmt 0x125008d50 <line:7:2, col:21>
+    | `-VarDecl 0x125008ce8 <col:2, col:18> col:18 used tmp 'struct rb_node *'
+    |-DeclStmt 0x125008f58 <line:8:2, col:25>
+    | |-RecordDecl 0x125008d68 <col:2, col:9> col:9 struct tcon_link
+    | `-VarDecl 0x125008ed8 <col:2, col:20> col:20 used tlink 'struct tcon_link *'
+    |-CallExpr 0x1250090e8 <line:11:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x125009050 <col:2> 'int ()' Function 0x125008f98 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x1250090d0 <col:12, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1250090a8 <col:13, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x125009070 <col:13> 'struct cifs_sb_info *' lvalue Var 0x1250083b8 'cifs_sb' 'struct cifs_sb_info *'
+    |-BinaryOperator 0x1250091e0 <line:12:2, col:22> 'struct rb_node *' contains-errors '='
+    | |-DeclRefExpr 0x125009110 <col:2> 'struct rb_node *' contains-errors lvalue Var 0x125008a08 'node' 'struct rb_node *'
+    | `-ImplicitCastExpr 0x1250091c8 <col:9, col:22> 'struct rb_node *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x125009188 <col:9, col:22> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x125009170 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x125009130 <col:9> 'int ()' Function 0x125008a98 'rb_first' 'int ()'
+    |     `-ImplicitCastExpr 0x1250091b0 <col:18> 'struct rb_root *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x125009150 <col:18> 'struct rb_root *' contains-errors lvalue Var 0x125008788 'root' 'struct rb_root *'
+    |-WhileStmt 0x124941c88 <line:13:2, line:30:2>
+    | |-BinaryOperator 0x124940a78 <line:13:9, col:17> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x124940a00 <col:9> 'struct rb_node *' contains-errors lvalue Var 0x125008a08 'node' 'struct rb_node *'
+    | | `-RecoveryExpr 0x124940a58 <col:17> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x124941c38 <col:23, line:30:2>
+    |   |-BinaryOperator 0x124940af0 <line:14:3, col:9> 'struct rb_node *' contains-errors '='
+    |   | |-DeclRefExpr 0x124940a98 <col:3> 'struct rb_node *' lvalue Var 0x125008ce8 'tmp' 'struct rb_node *'
+    |   | `-ImplicitCastExpr 0x124940ad8 <col:9> 'struct rb_node *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x124940ab8 <col:9> 'struct rb_node *' contains-errors lvalue Var 0x125008a08 'node' 'struct rb_node *'
+    |   |-BinaryOperator 0x124940cc0 <line:15:3, col:21> 'struct rb_node *' contains-errors '='
+    |   | |-DeclRefExpr 0x124940b10 <col:3> 'struct rb_node *' contains-errors lvalue Var 0x125008a08 'node' 'struct rb_node *'
+    |   | `-ImplicitCastExpr 0x124940ca8 <col:10, col:21> 'struct rb_node *' <IntegralToPointer>
+    |   |   `-CallExpr 0x124940c68 <col:10, col:21> 'int'
+    |   |     |-ImplicitCastExpr 0x124940c50 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x124940c10 <col:10> 'int ()' Function 0x124940b58 'rb_next' 'int ()'
+    |   |     `-ImplicitCastExpr 0x124940c90 <col:18> 'struct rb_node *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x124940c30 <col:18> 'struct rb_node *' lvalue Var 0x125008ce8 'tmp' 'struct rb_node *'
+    |   |-IfStmt 0x124941380 <line:18:3, line:21:4>
+    |   | |-RecoveryExpr 0x124941358 <line:18:7, line:20:61> '_Bool' contains-errors
+    |   | `-ContinueStmt 0x124941378 <line:21:4>
+    |   |-CallExpr 0x1249414d8 <line:23:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x1249414c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x124941480 <col:3> 'int ()' Function 0x1249413c8 'cifs_get_tlink' 'int ()'
+    |   | `-ImplicitCastExpr 0x124941500 <col:18> 'struct tcon_link *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1249414a0 <col:18> 'struct tcon_link *' lvalue Var 0x125008ed8 'tlink' 'struct tcon_link *'
+    |   |-CallExpr 0x1249417e8 <line:25:3, col:21> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x1249417d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x124941770 <col:3> 'int ()' Function 0x1249416b8 'rb_erase' 'int ()'
+    |   | |-ImplicitCastExpr 0x124941818 <col:12> 'struct rb_node *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x124941790 <col:12> 'struct rb_node *' lvalue Var 0x125008ce8 'tmp' 'struct rb_node *'
+    |   | `-ImplicitCastExpr 0x124941830 <col:17> 'struct rb_root *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1249417b0 <col:17> 'struct rb_root *' contains-errors lvalue Var 0x125008788 'root' 'struct rb_root *'
+    |   |-CallExpr 0x1249419c0 <line:27:3, col:40> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x124941928 <col:3> 'int ()' Function 0x124941870 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x1249419a8 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x124941980 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x124941948 <col:16> 'struct cifs_sb_info *' lvalue Var 0x1250083b8 'cifs_sb' 'struct cifs_sb_info *'
+    |   |-CallExpr 0x124941b38 <line:28:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x124941b20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x124941ae0 <col:3> 'int ()' Function 0x124941a28 'cifs_put_tlink' 'int ()'
+    |   | `-ImplicitCastExpr 0x124941b60 <col:18> 'struct tcon_link *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x124941b00 <col:18> 'struct tcon_link *' lvalue Var 0x125008ed8 'tlink' 'struct tcon_link *'
+    |   `-CallExpr 0x124941c10 <line:29:3, col:38> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x124941b78 <col:3> 'int ()' Function 0x125008f98 'spin_lock' 'int ()'
+    |     `-UnaryOperator 0x124941bf8 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x124941bd0 <col:14, col:23> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x124941b98 <col:14> 'struct cifs_sb_info *' lvalue Var 0x1250083b8 'cifs_sb' 'struct cifs_sb_info *'
+    `-CallExpr 0x124941d40 <line:31:2, col:39> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x124941ca8 <col:2> 'int ()' Function 0x124941870 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x124941d28 <col:14, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x124941d00 <col:15, col:24> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x124941cc8 <col:15> 'struct cifs_sb_info *' lvalue Var 0x1250083b8 'cifs_sb' 'struct cifs_sb_info *'

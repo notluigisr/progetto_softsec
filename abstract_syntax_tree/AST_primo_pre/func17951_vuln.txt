@@ -1,0 +1,75 @@
+`-FunctionDecl 0x146140b48  line:1:12 dispatch_discard_io 'int (struct xen_blkif *, struct blkif_request *)' static
+  |-ParmVarDecl 0x146128648 <col:32, col:50> col:50 used blkif 'struct xen_blkif *'
+  |-ParmVarDecl 0x146140a28 <line:2:5, col:27> col:27 used req 'struct blkif_request *'
+  `-CompoundStmt 0x146143070 <line:3:1, line:29:1>
+    |-DeclStmt 0x146140ce8 <line:4:2, col:13>
+    | `-VarDecl 0x146140c60 <col:2, col:12> col:6 used err 'int' cinit
+    |   `-IntegerLiteral 0x146140cc8 <col:12> 'int' 0
+    |-DeclStmt 0x146140dd0 <line:5:2, col:29>
+    | `-VarDecl 0x146140d18 <col:2, col:15> col:6 used status 'int' cinit
+    |   `-RecoveryExpr 0x146140db0 <col:15> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x146141080 <line:6:2, col:45>
+    | |-RecordDecl 0x146140de8 <col:2, col:9> col:9 struct block_device
+    | `-VarDecl 0x146140f58 <col:2, col:41> col:23 used bdev 'struct block_device *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x146141020 <col:30, col:41> '<dependent type>' contains-errors lvalue .bdev
+    |     `-RecoveryExpr 0x146140ff8 <col:30, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x146140fc0 <col:30> 'struct xen_blkif *' lvalue ParmVar 0x146128648 'blkif' 'struct xen_blkif *'
+    |-DeclStmt 0x146141118 <line:7:2, col:22>
+    | `-VarDecl 0x1461410b0 <col:2, col:16> col:16 used secure 'unsigned long'
+    |-UnaryOperator 0x146141190 <line:9:2, col:18> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | `-RecoveryExpr 0x146141168 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x146141130 <col:2> 'struct xen_blkif *' lvalue ParmVar 0x146128648 'blkif' 'struct xen_blkif *'
+    |-CallExpr 0x146141348 <line:11:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x146141330 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1461412c0 <col:2> 'int ()' Function 0x146141208 'xen_blkif_get' 'int ()'
+    | `-ImplicitCastExpr 0x146141370 <col:16> 'struct xen_blkif *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1461412e0 <col:16> 'struct xen_blkif *' lvalue ParmVar 0x146128648 'blkif' 'struct xen_blkif *'
+    |-BinaryOperator 0x1461419d8 <line:16:2, line:18:26> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1461415b0 <line:16:2> 'int' lvalue Var 0x146140c60 'err' 'int'
+    | `-CallExpr 0x146141990 <col:8, line:18:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1461416b0 <line:16:8> 'int ()' Function 0x1461415f8 'blkdev_issue_discard' 'int ()'
+    |   |-DeclRefExpr 0x1461416d0 <col:29> 'struct block_device *' contains-errors lvalue Var 0x146140f58 'bdev' 'struct block_device *'
+    |   |-CXXDependentScopeMemberExpr 0x146141798 <col:35, col:50> '<dependent type>' contains-errors lvalue .sector_number
+    |   | `-CXXDependentScopeMemberExpr 0x146141750 <col:35, col:42> '<dependent type>' contains-errors lvalue .discard
+    |   |   `-RecoveryExpr 0x146141728 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1461416f0 <col:35> 'struct blkif_request *' lvalue ParmVar 0x146140a28 'req' 'struct blkif_request *'
+    |   |-CXXDependentScopeMemberExpr 0x146141888 <line:17:8, col:23> '<dependent type>' contains-errors lvalue .nr_sectors
+    |   | `-CXXDependentScopeMemberExpr 0x146141840 <col:8, col:15> '<dependent type>' contains-errors lvalue .discard
+    |   |   `-RecoveryExpr 0x146141818 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1461417e0 <col:8> 'struct blkif_request *' lvalue ParmVar 0x146140a28 'req' 'struct blkif_request *'
+    |   |-RecoveryExpr 0x146141970 <line:18:8> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1461418e8 <col:20> 'unsigned long' lvalue Var 0x1461410b0 'secure' 'unsigned long'
+    |-IfStmt 0x146142bb0 <line:20:2, line:24:12> has_else
+    | |-BinaryOperator 0x1461428d8 <line:20:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x146142800 <col:6> 'int' lvalue Var 0x146140c60 'err' 'int'
+    | | `-UnaryOperator 0x1461428c0 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x1461428a8 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x146142888 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x146142aa8 <col:26, line:23:2>
+    | | `-BinaryOperator 0x146142a88 <line:22:3, col:12> 'int' contains-errors '='
+    | |   |-DeclRefExpr 0x146142a10 <col:3> 'int' contains-errors lvalue Var 0x146140d18 'status' 'int'
+    | |   `-RecoveryExpr 0x146142a68 <col:12> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x146142b90 <line:23:9, line:24:12>
+    |   |-ImplicitCastExpr 0x146142ae0 <line:23:13> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x146142ac0 <col:13> 'int' lvalue Var 0x146140c60 'err' 'int'
+    |   `-BinaryOperator 0x146142b70 <line:24:3, col:12> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x146142af8 <col:3> 'int' contains-errors lvalue Var 0x146140d18 'status' 'int'
+    |     `-RecoveryExpr 0x146142b50 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x146142e70 <line:26:2, col:64> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x146142cc0 <col:2> 'int ()' Function 0x146142c08 'make_response' 'int ()'
+    | |-DeclRefExpr 0x146142ce0 <col:16> 'struct xen_blkif *' lvalue ParmVar 0x146128648 'blkif' 'struct xen_blkif *'
+    | |-CXXDependentScopeMemberExpr 0x146142da8 <col:23, col:38> '<dependent type>' contains-errors lvalue .id
+    | | `-CXXDependentScopeMemberExpr 0x146142d60 <col:23, col:30> '<dependent type>' contains-errors lvalue .discard
+    | |   `-RecoveryExpr 0x146142d38 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x146142d00 <col:23> 'struct blkif_request *' lvalue ParmVar 0x146140a28 'req' 'struct blkif_request *'
+    | |-RecoveryExpr 0x146142e28 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x146142df0 <col:42> 'struct blkif_request *' lvalue ParmVar 0x146140a28 'req' 'struct blkif_request *'
+    | `-DeclRefExpr 0x146142e50 <col:58> 'int' contains-errors lvalue Var 0x146140d18 'status' 'int'
+    |-CallExpr 0x146142fe8 <line:27:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x146142fd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146142f90 <col:2> 'int ()' Function 0x146142ed8 'xen_blkif_put' 'int ()'
+    | `-ImplicitCastExpr 0x146143010 <col:16> 'struct xen_blkif *' <LValueToRValue>
+    |   `-DeclRefExpr 0x146142fb0 <col:16> 'struct xen_blkif *' lvalue ParmVar 0x146128648 'blkif' 'struct xen_blkif *'
+    `-ReturnStmt 0x146143060 <line:28:2, col:9>
+      `-ImplicitCastExpr 0x146143048 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x146143028 <col:9> 'int' lvalue Var 0x146140c60 'err' 'int'

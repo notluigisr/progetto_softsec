@@ -1,0 +1,61 @@
+`-FunctionDecl 0x14e141978  line:1:20 invalid hns_nic_net_xmit 'int (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x14e128668 <col:37, col:53> col:53 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14e141858 <line:2:9, col:28> col:28 used ndev 'struct net_device *'
+  `-CompoundStmt 0x14e1429d8 <line:3:1, line:16:1>
+    |-DeclStmt 0x14e141e58 <line:4:2, col:47>
+    | |-RecordDecl 0x14e141a30 <col:2, col:9> col:9 struct hns_nic_priv
+    | `-VarDecl 0x14e141b98 <col:2, col:46> col:23 used priv 'struct hns_nic_priv *' cinit
+    |   `-ImplicitCastExpr 0x14e141e28 <col:30, col:46> 'struct hns_nic_priv *' <IntegralToPointer>
+    |     `-CallExpr 0x14e141de8 <col:30, col:46> 'int'
+    |       |-ImplicitCastExpr 0x14e141dd0 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14e141d60 <col:30> 'int ()' Function 0x14e141ca8 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x14e141e10 <col:42> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14e141d80 <col:42> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |-DeclStmt 0x14e141ef0 <line:5:2, col:9>
+    | `-VarDecl 0x14e141e88 <col:2, col:6> col:6 used ret 'int'
+    |-CallExpr 0x14e142130 <line:7:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e141fe8 <col:2> 'int ()' Function 0x14e141f30 'assert' 'int ()'
+    | `-BinaryOperator 0x14e142110 <col:9, col:47> 'int' contains-errors '<'
+    |   |-RecoveryExpr 0x14e142040 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14e142008 <col:9> 'struct sk_buff *' lvalue ParmVar 0x14e128668 'skb' 'struct sk_buff *'
+    |   `-CXXDependentScopeMemberExpr 0x14e1420c8 <col:30, col:47> '<dependent type>' contains-errors lvalue ->q_num
+    |     `-RecoveryExpr 0x14e1420a0 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14e142068 <col:30> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |-BinaryOperator 0x14e1424b8 <line:8:2, line:9:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14e142158 <line:8:2> 'int' lvalue Var 0x14e141e88 'ret' 'int'
+    | `-CallExpr 0x14e142480 <col:8, line:9:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e142258 <line:8:8> 'int ()' Function 0x14e1421a0 'hns_nic_net_xmit_hw' 'int ()'
+    |   |-DeclRefExpr 0x14e142278 <col:28> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |   |-DeclRefExpr 0x14e142298 <col:34> 'struct sk_buff *' lvalue ParmVar 0x14e128668 'skb' 'struct sk_buff *'
+    |   `-UnaryOperator 0x14e142468 <line:9:7, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CallExpr 0x14e142438 <col:8, col:45> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14e142398 <col:8> 'int ()' Function 0x14e1422e0 'tx_ring_data' 'int ()'
+    |       |-DeclRefExpr 0x14e1423b8 <col:21> 'struct hns_nic_priv *' lvalue Var 0x14e141b98 'priv' 'struct hns_nic_priv *'
+    |       `-RecoveryExpr 0x14e142410 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14e1423d8 <col:27> 'struct sk_buff *' lvalue ParmVar 0x14e128668 'skb' 'struct sk_buff *'
+    |-IfStmt 0x14e142918 <line:10:2, line:14:2>
+    | |-BinaryOperator 0x14e142550 <line:10:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14e1424d8 <col:6> 'int' lvalue Var 0x14e141e88 'ret' 'int'
+    | | `-RecoveryExpr 0x14e142530 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14e1428f0 <col:27, line:14:2>
+    |   |-CallExpr 0x14e1426a8 <line:11:3, col:26> 'int'
+    |   | |-ImplicitCastExpr 0x14e142690 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14e142650 <col:3> 'int ()' Function 0x14e142598 'netif_trans_update' 'int ()'
+    |   | `-ImplicitCastExpr 0x14e1426d0 <col:22> 'struct net_device *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14e142670 <col:22> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |   |-CompoundAssignOperator 0x14e142800 <line:12:3, col:32> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-CXXDependentScopeMemberExpr 0x14e142748 <col:3, col:15> '<dependent type>' contains-errors lvalue .tx_bytes
+    |   | | `-RecoveryExpr 0x14e142720 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14e1426e8 <col:3> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |   | `-RecoveryExpr 0x14e1427c8 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14e142790 <col:27> 'struct sk_buff *' lvalue ParmVar 0x14e128668 'skb' 'struct sk_buff *'
+    |   `-UnaryOperator 0x14e1428d8 <line:13:3, col:25> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x14e142890 <col:3, col:15> '<dependent type>' contains-errors lvalue .tx_packets
+    |       `-RecoveryExpr 0x14e142868 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14e142830 <col:3> 'struct net_device *' lvalue ParmVar 0x14e141858 'ndev' 'struct net_device *'
+    |-ReturnStmt 0x14e1429c0 <line:15:2, col:21>
+    | `-ImplicitCastExpr 0x14e1429a8 <col:9, col:21> 'int' <PointerToIntegral>
+    |   `-ImplicitCastExpr 0x14e142990 <col:9, col:21> 'int (*)()' <FunctionToPointerDecay>
+    |     `-ParenExpr 0x14e142970 <col:9, col:21> 'int ()'
+    |       `-DeclRefExpr 0x14e142950 <col:10> 'int ()' Function 0x14e141ca8 'netdev_priv' 'int ()'
+    `-NullStmt 0x14e1429d0 <col:25>

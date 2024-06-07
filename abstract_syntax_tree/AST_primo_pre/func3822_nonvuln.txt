@@ -1,0 +1,24 @@
+`-FunctionDecl 0x12200de88  line:1:1 invalid gs_window_set_status_message 'int (int *, const char *)'
+  |-ParmVarDecl 0x12200dd28 <col:31, col:43> col:43 referenced invalid window 'int *'
+  |-ParmVarDecl 0x12200dda8 <line:2:29, col:41> col:41 used status_message 'const char *'
+  `-CompoundStmt 0x1220276c8 <line:3:1, line:8:1>
+    |-CallExpr 0x12200e208 <line:4:9, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200e0a0 <col:9> 'int ()' Function 0x12200dfe8 'g_return_if_fail' 'int ()'
+    | `-CallExpr 0x12200e1e0 <col:27, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12200e1a0 <col:27> 'int ()' Function 0x12200e0e8 'GS_IS_WINDOW' 'int ()'
+    |   `-RecoveryExpr 0x12200e1c0 <col:41> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x122027400 <line:6:9, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200e310 <col:9> 'int ()' Function 0x12200e258 'g_free' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x12200e398 <col:17, col:31> '<dependent type>' contains-errors lvalue ->status_message
+    |   `-CXXDependentScopeMemberExpr 0x12200e350 <col:17, col:25> '<dependent type>' contains-errors lvalue ->priv
+    |     `-RecoveryExpr 0x12200e330 <col:17> '<dependent type>' contains-errors lvalue
+    `-BinaryOperator 0x1220276a8 <line:7:9, col:64> '<dependent type>' contains-errors '='
+      |-CXXDependentScopeMemberExpr 0x1220274b8 <col:9, col:23> '<dependent type>' contains-errors lvalue ->status_message
+      | `-CXXDependentScopeMemberExpr 0x122027470 <col:9, col:17> '<dependent type>' contains-errors lvalue ->priv
+      |   `-RecoveryExpr 0x122027448 <col:9> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x122027428 <col:9> 'int *' lvalue ParmVar 0x12200dd28 'window' 'int *'
+      `-CallExpr 0x122027668 <col:40, col:64> 'int'
+        |-ImplicitCastExpr 0x122027650 <col:40> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1220275e0 <col:40> 'int ()' Function 0x122027528 'g_strdup' 'int ()'
+        `-ImplicitCastExpr 0x122027690 <col:50> 'const char *' <LValueToRValue>
+          `-DeclRefExpr 0x122027600 <col:50> 'const char *' lvalue ParmVar 0x12200dda8 'status_message' 'const char *'

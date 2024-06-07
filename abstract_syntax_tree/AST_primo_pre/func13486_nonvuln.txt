@@ -1,0 +1,33 @@
+`-FunctionDecl 0x148928750  line:1:6 sdma_wait 'void (struct hfi1_devdata *)'
+  |-ParmVarDecl 0x148928648 <col:16, col:37> col:37 used dd 'struct hfi1_devdata *'
+  `-CompoundStmt 0x148941178 <line:2:1, line:10:1>
+    |-DeclStmt 0x148940ac8 <line:3:2, col:7>
+    | `-VarDecl 0x148940a60 <col:2, col:6> col:6 used i 'int'
+    `-ForStmt 0x148941140 <line:5:2, line:9:2>
+      |-BinaryOperator 0x148940b20 <line:5:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x148940ae0 <col:7> 'int' lvalue Var 0x148940a60 'i' 'int'
+      | `-IntegerLiteral 0x148940b00 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x148940bc0 <col:14, col:22> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x148940b40 <col:14> 'int' lvalue Var 0x148940a60 'i' 'int'
+      | `-RecoveryExpr 0x148940b98 <col:18, col:22> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x148940b60 <col:18> 'struct hfi1_devdata *' lvalue ParmVar 0x148928648 'dd' 'struct hfi1_devdata *'
+      |-UnaryOperator 0x148940c00 <col:32, col:33> 'int' postfix '++'
+      | `-DeclRefExpr 0x148940be0 <col:32> 'int' lvalue Var 0x148940a60 'i' 'int'
+      `-CompoundStmt 0x148941120 <col:37, line:9:2>
+        |-DeclStmt 0x148940ef0 <line:6:3, col:45>
+        | |-RecordDecl 0x148940c18 <col:3, col:10> col:10 struct sdma_engine
+        | `-VarDecl 0x148940d88 <col:3, col:44> col:23 used sde 'struct sdma_engine *' cinit
+        |   `-UnaryOperator 0x148940ec0 <col:29, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-ArraySubscriptExpr 0x148940ea0 <col:30, col:44> '<dependent type>' contains-errors lvalue
+        |       |-ImplicitCastExpr 0x148940e70 <col:30, col:34> '<dependent type>' contains-errors <LValueToRValue>
+        |       | `-RecoveryExpr 0x148940e28 <col:30, col:34> '<dependent type>' contains-errors lvalue
+        |       |   `-DeclRefExpr 0x148940df0 <col:30> 'struct hfi1_devdata *' lvalue ParmVar 0x148928648 'dd' 'struct hfi1_devdata *'
+        |       `-ImplicitCastExpr 0x148940e88 <col:43> 'int' <LValueToRValue>
+        |         `-DeclRefExpr 0x148940e50 <col:43> 'int' lvalue Var 0x148940a60 'i' 'int'
+        `-CallExpr 0x1489410d8 <line:8:3, col:37> 'int' contains-errors
+          |-ImplicitCastExpr 0x1489410c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x148941030 <col:3> 'int ()' Function 0x148940f78 'sdma_wait_for_packet_egress' 'int ()'
+          |-ImplicitCastExpr 0x148941108 <col:31> 'struct sdma_engine *' contains-errors <LValueToRValue>
+          | `-DeclRefExpr 0x148941050 <col:31> 'struct sdma_engine *' contains-errors lvalue Var 0x148940d88 'sde' 'struct sdma_engine *'
+          `-IntegerLiteral 0x148941070 <col:36> 'int' 0

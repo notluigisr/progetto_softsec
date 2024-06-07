@@ -1,0 +1,34 @@
+`-FunctionDecl 0x13c128750  line:1:13 wake_futex 'void (struct futex_q *)' static
+  |-ParmVarDecl 0x13c128648 <col:24, col:40> col:40 used q 'struct futex_q *'
+  `-CompoundStmt 0x13c141560 <line:2:1, line:15:1>
+    |-DeclStmt 0x13c140c98 <line:3:2, col:33>
+    | |-RecordDecl 0x13c140a48 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13c140bb8 <col:2, col:29> col:22 used p 'struct task_struct *' cinit
+    |   `-RecoveryExpr 0x13c140c58 <col:26, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c140c20 <col:26> 'struct futex_q *' lvalue ParmVar 0x13c128648 'q' 'struct futex_q *'
+    |-CallExpr 0x13c140e68 <line:6:2, col:19> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13c140e50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c140de0 <col:2> 'int ()' Function 0x13c140d28 'get_task_struct' 'int ()'
+    | `-ImplicitCastExpr 0x13c140e90 <col:18> 'struct task_struct *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13c140e00 <col:18> 'struct task_struct *' contains-errors lvalue Var 0x13c140bb8 'p' 'struct task_struct *'
+    |-CallExpr 0x13c140fe0 <line:8:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x13c140fc8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c140f88 <col:2> 'int ()' Function 0x13c140ed0 '__unqueue_futex' 'int ()'
+    | `-ImplicitCastExpr 0x13c141008 <col:18> 'struct futex_q *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13c140fa8 <col:18> 'struct futex_q *' lvalue ParmVar 0x13c128648 'q' 'struct futex_q *'
+    |-CallExpr 0x13c141138 <line:10:2, col:10> 'int'
+    | `-ImplicitCastExpr 0x13c141120 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13c141100 <col:2> 'int ()' Function 0x13c141048 'smp_wmb' 'int ()'
+    |-BinaryOperator 0x13c141210 <line:11:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13c141190 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13c141158 <col:2> 'struct futex_q *' lvalue ParmVar 0x13c128648 'q' 'struct futex_q *'
+    | `-RecoveryExpr 0x13c1411f0 <col:16> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13c1413b8 <line:13:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c141310 <col:2> 'int ()' Function 0x13c141258 'wake_up_state' 'int ()'
+    | |-DeclRefExpr 0x13c141330 <col:16> 'struct task_struct *' contains-errors lvalue Var 0x13c140bb8 'p' 'struct task_struct *'
+    | `-RecoveryExpr 0x13c141398 <col:19> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13c141520 <line:14:2, col:19> 'int' contains-errors
+      |-ImplicitCastExpr 0x13c141508 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13c1414c8 <col:2> 'int ()' Function 0x13c141410 'put_task_struct' 'int ()'
+      `-ImplicitCastExpr 0x13c141548 <col:18> 'struct task_struct *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13c1414e8 <col:18> 'struct task_struct *' contains-errors lvalue Var 0x13c140bb8 'p' 'struct task_struct *'

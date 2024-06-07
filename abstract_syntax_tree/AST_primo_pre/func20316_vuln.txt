@@ -1,0 +1,122 @@
+`-FunctionDecl 0x13c944d48  line:1:12 userfaultfd_release 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x13c928648 <col:32, col:46> col:46 inode 'struct inode *'
+  |-ParmVarDecl 0x13c944c28 <col:53, col:66> col:66 used file 'struct file *'
+  `-CompoundStmt 0x13c949be8 <line:2:1, line:54:1>
+    |-DeclStmt 0x13c945098 <line:3:2, col:50>
+    | |-RecordDecl 0x13c944e48 <col:2, col:9> col:9 struct userfaultfd_ctx
+    | `-VarDecl 0x13c944fb8 <col:2, col:38> col:26 used ctx 'struct userfaultfd_ctx *' cinit
+    |   `-RecoveryExpr 0x13c945058 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c945020 <col:32> 'struct file *' lvalue ParmVar 0x13c944c28 'file' 'struct file *'
+    |-DeclStmt 0x13c9452f8 <line:4:2, col:32>
+    | |-RecordDecl 0x13c9450b0 <col:2, col:9> col:9 struct mm_struct
+    | `-VarDecl 0x13c945218 <col:2, col:30> col:20 used mm 'struct mm_struct *' cinit
+    |   `-RecoveryExpr 0x13c9452b8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c945280 <col:25> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    |-DeclStmt 0x13c945590 <line:5:2, col:35>
+    | |-RecordDecl 0x13c945310 <col:2, col:9> col:9 struct vm_area_struct
+    | |-VarDecl 0x13c945478 <col:2, col:25> col:25 used vma 'struct vm_area_struct *'
+    | `-VarDecl 0x13c945508 <col:2, col:31> col:31 used prev 'struct vm_area_struct *'
+    |-DeclStmt 0x13c9457d0 <line:7:2, col:53>
+    | |-RecordDecl 0x13c9455a8 <col:2, col:9> col:9 struct userfaultfd_wake_range
+    | `-VarDecl 0x13c9456a8 <col:2, col:32> col:32 invalid range 'struct userfaultfd_wake_range'
+    |-DeclStmt 0x13c945868 <line:8:2, col:25>
+    | `-VarDecl 0x13c945800 <col:2, col:16> col:16 used new_flags 'unsigned long'
+    |-CallExpr 0x13c945a98 <line:10:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c9459b0 <col:2> 'int ()' Function 0x13c9458f8 'WRITE_ONCE' 'int ()'
+    | |-RecoveryExpr 0x13c945a08 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13c9459d0 <col:13> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    | `-RecoveryExpr 0x13c945a78 <col:28> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13c947108 <line:12:2, line:13:8>
+    | |-UnaryOperator 0x13c947088 <line:12:6, col:24> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13c947048 <col:7, col:24> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x13c947030 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13c945ba8 <col:7> 'int ()' Function 0x13c945af0 'mmget_not_zero' 'int ()'
+    | |   `-ImplicitCastExpr 0x13c947070 <col:22> 'struct mm_struct *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c945bc8 <col:22> 'struct mm_struct *' contains-errors lvalue Var 0x13c945218 'mm' 'struct mm_struct *'
+    | `-GotoStmt 0x13c9470f0 <line:13:3, col:8> 'wakeup' 0x13c9470a0
+    |-CallExpr 0x13c9472a0 <line:16:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c947208 <col:2> 'int ()' Function 0x13c947150 'down_write' 'int ()'
+    | `-UnaryOperator 0x13c947288 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13c947260 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c947228 <col:14> 'struct mm_struct *' contains-errors lvalue Var 0x13c945218 'mm' 'struct mm_struct *'
+    |-BinaryOperator 0x13c947340 <line:17:2, col:9> 'struct vm_area_struct *' contains-errors '='
+    | |-DeclRefExpr 0x13c9472c8 <col:2> 'struct vm_area_struct *' lvalue Var 0x13c945508 'prev' 'struct vm_area_struct *'
+    | `-RecoveryExpr 0x13c947320 <col:9> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x13c948c50 <line:18:2, line:38:2>
+    | |-BinaryOperator 0x13c9473e0 <line:18:7, col:17> 'struct vm_area_struct *' contains-errors '='
+    | | |-DeclRefExpr 0x13c947360 <col:7> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    | | `-RecoveryExpr 0x13c9473b8 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13c947380 <col:13> 'struct mm_struct *' contains-errors lvalue Var 0x13c945218 'mm' 'struct mm_struct *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x13c947420 <col:23> 'struct vm_area_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13c947400 <col:23> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    | |-BinaryOperator 0x13c9474b8 <col:28, col:39> 'struct vm_area_struct *' contains-errors '='
+    | | |-DeclRefExpr 0x13c947438 <col:28> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    | | `-RecoveryExpr 0x13c947490 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13c947458 <col:34> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    | `-CompoundStmt 0x13c948c20 <col:48, line:38:2>
+    |   |-CallExpr 0x13c9475f0 <line:19:3, col:16> 'int'
+    |   | `-ImplicitCastExpr 0x13c9475d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x13c9475b8 <col:3> 'int ()' Function 0x13c947500 'cond_resched' 'int ()'
+    |   |-IfStmt 0x13c947a38 <line:22:3, line:25:3>
+    |   | |-BinaryOperator 0x13c947978 <line:22:7, col:38> 'int' contains-errors '!='
+    |   | | |-CXXDependentScopeMemberExpr 0x13c947910 <col:7, col:31> '<dependent type>' contains-errors lvalue .ctx
+    |   | | | `-RecoveryExpr 0x13c9478e8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x13c9478b0 <col:7> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    |   | | `-DeclRefExpr 0x13c947958 <col:38> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    |   | `-CompoundStmt 0x13c947a18 <col:43, line:25:3>
+    |   |   |-BinaryOperator 0x13c9479f0 <line:23:4, col:11> 'struct vm_area_struct *' '='
+    |   |   | |-DeclRefExpr 0x13c947998 <col:4> 'struct vm_area_struct *' lvalue Var 0x13c945508 'prev' 'struct vm_area_struct *'
+    |   |   | `-ImplicitCastExpr 0x13c9479d8 <col:11> 'struct vm_area_struct *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x13c9479b8 <col:11> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    |   |   `-ContinueStmt 0x13c947a10 <line:24:4>
+    |   |-IfStmt 0x13c948af0 <line:32:3, line:35:11> has_else
+    |   | |-ImplicitCastExpr 0x13c947fd0 <line:32:7> 'struct vm_area_struct *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13c947fb0 <col:7> 'struct vm_area_struct *' lvalue Var 0x13c945508 'prev' 'struct vm_area_struct *'
+    |   | |-BinaryOperator 0x13c948a58 <line:33:4, col:10> 'struct vm_area_struct *' '='
+    |   | | |-DeclRefExpr 0x13c948a00 <col:4> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    |   | | `-ImplicitCastExpr 0x13c948a40 <col:10> 'struct vm_area_struct *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13c948a20 <col:10> 'struct vm_area_struct *' lvalue Var 0x13c945508 'prev' 'struct vm_area_struct *'
+    |   | `-BinaryOperator 0x13c948ad0 <line:35:4, col:11> 'struct vm_area_struct *' '='
+    |   |   |-DeclRefExpr 0x13c948a78 <col:4> 'struct vm_area_struct *' lvalue Var 0x13c945508 'prev' 'struct vm_area_struct *'
+    |   |   `-ImplicitCastExpr 0x13c948ab8 <col:11> 'struct vm_area_struct *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13c948a98 <col:11> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    |   `-BinaryOperator 0x13c948ba0 <line:36:3, col:19> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x13c948b58 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13c948b20 <col:3> 'struct vm_area_struct *' lvalue Var 0x13c945478 'vma' 'struct vm_area_struct *'
+    |     `-DeclRefExpr 0x13c948b80 <col:19> 'unsigned long' lvalue Var 0x13c945800 'new_flags' 'unsigned long'
+    |-CallExpr 0x13c948e00 <line:39:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c948d68 <col:2> 'int ()' Function 0x13c948cb0 'up_write' 'int ()'
+    | `-UnaryOperator 0x13c948de8 <col:11, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13c948dc0 <col:12, col:16> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c948d88 <col:12> 'struct mm_struct *' contains-errors lvalue Var 0x13c945218 'mm' 'struct mm_struct *'
+    |-CallExpr 0x13c948f60 <line:40:2, col:10> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13c948f48 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c948f08 <col:2> 'int ()' Function 0x13c948e50 'mmput' 'int ()'
+    | `-ImplicitCastExpr 0x13c948f88 <col:8> 'struct mm_struct *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13c948f28 <col:8> 'struct mm_struct *' contains-errors lvalue Var 0x13c945218 'mm' 'struct mm_struct *'
+    |-LabelStmt 0x13c949188 <line:41:1, line:43:40> 'wakeup'
+    | `-CallExpr 0x13c949160 <col:2, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13c949080 <col:2> 'int ()' Function 0x13c948fc8 'spin_lock' 'int ()'
+    |   `-UnaryOperator 0x13c949148 <col:12, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x13c949100 <col:13, col:36> '<dependent type>' contains-errors lvalue .lock
+    |       `-RecoveryExpr 0x13c9490d8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13c9490a0 <col:13> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    |-CallExpr 0x13c9496e8 <line:46:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c949608 <col:2> 'int ()' Function 0x13c949550 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x13c9496d0 <col:14, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13c949688 <col:15, col:38> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x13c949660 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13c949628 <col:15> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    |-CallExpr 0x13c949888 <line:49:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c9497f0 <col:2> 'int ()' Function 0x13c949738 'wake_up_all' 'int ()'
+    | `-UnaryOperator 0x13c949870 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13c949848 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c949810 <col:15> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    |-CallExpr 0x13c949b78 <line:52:2, col:25> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13c949b60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c949b20 <col:2> 'int ()' Function 0x13c949a68 'userfaultfd_ctx_put' 'int ()'
+    | `-ImplicitCastExpr 0x13c949ba0 <col:22> 'struct userfaultfd_ctx *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13c949b40 <col:22> 'struct userfaultfd_ctx *' contains-errors lvalue Var 0x13c944fb8 'ctx' 'struct userfaultfd_ctx *'
+    `-ReturnStmt 0x13c949bd8 <line:53:2, col:9>
+      `-IntegerLiteral 0x13c949bb8 <col:9> 'int' 0

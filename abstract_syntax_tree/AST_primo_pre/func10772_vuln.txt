@@ -1,0 +1,40 @@
+`-FunctionDecl 0x13c80de88  line:1:21 invalid InitTemporaryTensors 'int (int *, int *)' static
+  |-ParmVarDecl 0x13c80dd28 <col:42, col:57> col:57 invalid context 'int *'
+  |-ParmVarDecl 0x13c80dda8 <line:2:42, col:54> col:54 referenced invalid node 'int *'
+  `-CompoundStmt 0x13d809338 <col:60, line:45:1>
+    |-IfStmt 0x13c80e330 <line:6:3, line:9:3>
+    | |-BinaryOperator 0x13c80e2b0 <line:6:7, line:7:43> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x13c80e1e8 <line:6:7, col:44> 'int' contains-errors '!='
+    | | | |-CXXDependentScopeMemberExpr 0x13c80e180 <col:7, col:13> '<dependent type>' contains-errors lvalue ->fft_integer_working_area_id
+    | | | | `-RecoveryExpr 0x13c80e160 <col:7> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x13c80e1c8 <col:44> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x13c80e290 <line:7:7, col:43> 'int' contains-errors '!='
+    | |   |-CXXDependentScopeMemberExpr 0x13c80e228 <col:7, col:13> '<dependent type>' contains-errors lvalue ->fft_double_working_area_id
+    | |   | `-RecoveryExpr 0x13c80e208 <col:7> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x13c80e270 <col:43> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13c80e318 <col:64, line:9:3>
+    |   `-ReturnStmt 0x13c80e308 <line:8:5, col:12>
+    |     `-RecoveryExpr 0x13c80e2e8 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13d808940 <line:11:3, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d8088b8 <col:3> 'int ()' Function 0x13d808800 'TfLiteIntArrayFree' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x13d8088f8 <col:22, col:28> '<dependent type>' contains-errors lvalue ->temporaries
+    |   `-RecoveryExpr 0x13d8088d8 <col:22> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13d808b90 <line:13:3, col:45> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x13d8089b0 <col:3, col:9> '<dependent type>' contains-errors lvalue ->temporaries
+    | | `-RecoveryExpr 0x13d808988 <col:3> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13d808968 <col:3> 'int *' lvalue ParmVar 0x13c80dda8 'node' 'int *'
+    | `-CallExpr 0x13d808b68 <col:23, col:45> 'int'
+    |   |-ImplicitCastExpr 0x13d808b50 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13d808ad8 <col:23> 'int ()' Function 0x13d808a20 'TfLiteIntArrayCreate' 'int ()'
+    |   `-IntegerLiteral 0x13d808af8 <col:44> 'int' 2
+    |-DeclStmt 0x13d808c30 <line:14:3, col:22>
+    | `-VarDecl 0x13d808bc8 <col:3, col:7> col:7 used first_new_index 'int'
+    `-CallExpr 0x13d808e60 <line:15:3, col:74> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13d808d28 <col:3> 'int ()' Function 0x13d808c70 'TF_LITE_ENSURE_STATUS' 'int ()'
+      `-CallExpr 0x13d808e28 <col:25, col:73> '<dependent type>' contains-errors
+        |-CXXDependentScopeMemberExpr 0x13d808d68 <col:25, col:34> '<dependent type>' contains-errors lvalue ->AddTensors
+        | `-RecoveryExpr 0x13d808d48 <col:25> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x13d808db0 <col:45> '<dependent type>' contains-errors lvalue
+        |-IntegerLiteral 0x13d808dd0 <col:54> 'int' 2
+        `-UnaryOperator 0x13d808e10 <col:57, col:58> 'int *' prefix '&' cannot overflow
+          `-DeclRefExpr 0x13d808df0 <col:58> 'int' lvalue Var 0x13d808bc8 'first_new_index' 'int'

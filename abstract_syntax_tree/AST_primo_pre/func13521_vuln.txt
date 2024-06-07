@@ -1,0 +1,55 @@
+`-FunctionDecl 0x14f00df18  line:1:5 invalid mongo_env_read_socket 'int (int *, void *, int)'
+  |-ParmVarDecl 0x14f00dd28 <col:28, col:35> col:35 invalid conn 'int *'
+  |-ParmVarDecl 0x14f00dda8 <col:41, col:47> col:47 used buf 'void *'
+  |-ParmVarDecl 0x14f00de28 <col:52, col:56> col:56 used len 'int'
+  `-CompoundStmt 0x14f027b20 <col:62, line:15:1>
+    |-DeclStmt 0x14f00e0a8 <line:2:5, col:21>
+    | `-VarDecl 0x14f00dff0 <col:5, col:18> col:11 used cbuf 'char *' cinit
+    |   `-ImplicitCastExpr 0x14f00e090 <col:18> 'char *' <BitCast>
+    |     `-ImplicitCastExpr 0x14f00e078 <col:18> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14f00e058 <col:18> 'void *' lvalue ParmVar 0x14f00dda8 'buf' 'void *'
+    |-WhileStmt 0x14f027ab8 <line:4:5, line:12:5>
+    | |-ImplicitCastExpr 0x14f00e0e0 <line:4:13> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f00e0c0 <col:13> 'int' lvalue ParmVar 0x14f00de28 'len' 'int'
+    | `-CompoundStmt 0x14f027a88 <col:19, line:12:5>
+    |   |-DeclStmt 0x14f027400 <line:5:9, col:52>
+    |   | `-VarDecl 0x14f00e110 <col:9, col:51> col:13 used sent 'int' cinit
+    |   |   `-CallExpr 0x14f00e3b8 <col:20, col:51> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x14f00e2d0 <col:20> 'int ()' Function 0x14f00e218 'recv' 'int ()'
+    |   |     |-CXXDependentScopeMemberExpr 0x14f00e310 <col:26, col:32> '<dependent type>' contains-errors lvalue ->sock
+    |   |     | `-RecoveryExpr 0x14f00e2f0 <col:26> '<dependent type>' contains-errors lvalue
+    |   |     |-DeclRefExpr 0x14f00e358 <col:38> 'char *' lvalue Var 0x14f00dff0 'cbuf' 'char *'
+    |   |     |-DeclRefExpr 0x14f00e378 <col:44> 'int' lvalue ParmVar 0x14f00de28 'len' 'int'
+    |   |     `-IntegerLiteral 0x14f00e398 <col:49> 'int' 0
+    |   |-IfStmt 0x14f027958 <line:6:9, line:9:9>
+    |   | |-BinaryOperator 0x14f027520 <line:6:14, col:36> 'int' contains-errors '||'
+    |   | | |-BinaryOperator 0x14f027470 <col:14, col:22> 'int' contains-errors '=='
+    |   | | | |-ImplicitCastExpr 0x14f027458 <col:14> 'int' contains-errors <LValueToRValue>
+    |   | | | | `-DeclRefExpr 0x14f027418 <col:14> 'int' contains-errors lvalue Var 0x14f00e110 'sent' 'int'
+    |   | | | `-IntegerLiteral 0x14f027438 <col:22> 'int' 0
+    |   | | `-BinaryOperator 0x14f027500 <col:27, col:36> 'int' contains-errors '=='
+    |   | |   |-ImplicitCastExpr 0x14f0274e8 <col:27> 'int' contains-errors <LValueToRValue>
+    |   | |   | `-DeclRefExpr 0x14f027490 <col:27> 'int' contains-errors lvalue Var 0x14f00e110 'sent' 'int'
+    |   | |   `-UnaryOperator 0x14f0274d0 <col:35, col:36> 'int' prefix '-'
+    |   | |     `-IntegerLiteral 0x14f0274b0 <col:36> 'int' 1
+    |   | `-CompoundStmt 0x14f027938 <col:40, line:9:9>
+    |   |   |-CallExpr 0x14f0278b0 <line:7:13, col:78> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x14f027620 <col:13> 'int ()' Function 0x14f027568 '__mongo_set_error' 'int ()'
+    |   |   | |-RecoveryExpr 0x14f027640 <col:32> '<dependent type>' contains-errors lvalue
+    |   |   | |-RecoveryExpr 0x14f027838 <col:38> '<dependent type>' contains-errors lvalue
+    |   |   | |-RecoveryExpr 0x14f027858 <col:54> '<dependent type>' contains-errors lvalue
+    |   |   | `-CallExpr 0x14f027890 <col:60, col:76> 'int'
+    |   |   |   `-ImplicitCastExpr 0x14f027878 <col:60> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |     `-DeclRefExpr 0x14f027770 <col:60> 'int ()' Function 0x14f0276b8 'WSAGetLastError' 'int ()'
+    |   |   `-ReturnStmt 0x14f027928 <line:8:13, col:20>
+    |   |     `-RecoveryExpr 0x14f027908 <col:20> '<dependent type>' contains-errors lvalue
+    |   |-CompoundAssignOperator 0x14f0279d0 <line:10:9, col:17> 'char *' contains-errors '+=' ComputeLHSTy='char *' ComputeResultTy='char *'
+    |   | |-DeclRefExpr 0x14f027978 <col:9> 'char *' lvalue Var 0x14f00dff0 'cbuf' 'char *'
+    |   | `-ImplicitCastExpr 0x14f0279b8 <col:17> 'int' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14f027998 <col:17> 'int' contains-errors lvalue Var 0x14f00e110 'sent' 'int'
+    |   `-CompoundAssignOperator 0x14f027a58 <line:11:9, col:16> 'int' contains-errors '-=' ComputeLHSTy='int' ComputeResultTy='int'
+    |     |-DeclRefExpr 0x14f027a00 <col:9> 'int' lvalue ParmVar 0x14f00de28 'len' 'int'
+    |     `-ImplicitCastExpr 0x14f027a40 <col:16> 'int' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x14f027a20 <col:16> 'int' contains-errors lvalue Var 0x14f00e110 'sent' 'int'
+    `-ReturnStmt 0x14f027b10 <line:14:5, col:12>
+      `-RecoveryExpr 0x14f027af0 <col:12> '<dependent type>' contains-errors lvalue

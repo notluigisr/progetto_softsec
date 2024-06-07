@@ -1,0 +1,38 @@
+`-FunctionDecl 0x12b826a48  line:1:5 input_handler_for_each_handle 'int (struct input_handler *, void *, int (*)(struct input_handle *, void *))'
+  |-ParmVarDecl 0x12b80e248 <col:35, col:57> col:57 used handler 'struct input_handler *'
+  |-ParmVarDecl 0x12b80e2c8 <col:66, col:72> col:72 used data 'void *'
+  |-ParmVarDecl 0x12b826908 <line:2:7, col:46> col:13 used fn 'int (*)(struct input_handle *, void *)'
+  `-CompoundStmt 0x12b827528 <line:3:1, line:18:1>
+    |-DeclStmt 0x12b826d38 <line:4:2, col:29>
+    | |-RecordDecl 0x12b826b50 <col:2, col:9> col:9 struct input_handle
+    | `-VarDecl 0x12b826cb8 <col:2, col:23> col:23 used handle 'struct input_handle *'
+    |-DeclStmt 0x12b826df0 <line:5:2, col:16>
+    | `-VarDecl 0x12b826d68 <col:2, col:15> col:6 used retval 'int' cinit
+    |   `-IntegerLiteral 0x12b826dd0 <col:15> 'int' 0
+    |-CallExpr 0x12b826f98 <line:7:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x12b826f80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12b826f30 <col:2> 'int ()' Function 0x12b826e78 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x12b8271c0 <line:9:2, col:58> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b827098 <col:2> 'int ()' Function 0x12b826fe0 'list_for_each_entry_rcu' 'int ()'
+    | |-DeclRefExpr 0x12b8270b8 <col:26> 'struct input_handle *' lvalue Var 0x12b826cb8 'handle' 'struct input_handle *'
+    | |-UnaryOperator 0x12b827138 <col:34, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12b827110 <col:35, col:44> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12b8270d8 <col:35> 'struct input_handler *' lvalue ParmVar 0x12b80e248 'handler' 'struct input_handler *'
+    | `-RecoveryExpr 0x12b8271a0 <col:52> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x12b827390 <col:60, line:13:2>
+    | `-BinaryOperator 0x12b827338 <line:10:3, col:27> 'int' '='
+    |   |-DeclRefExpr 0x12b8271f8 <col:3> 'int' lvalue Var 0x12b826d68 'retval' 'int'
+    |   `-CallExpr 0x12b827290 <col:12, col:27> 'int'
+    |     |-ImplicitCastExpr 0x12b827278 <col:12> 'int (*)(struct input_handle *, void *)' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12b827218 <col:12> 'int (*)(struct input_handle *, void *)' lvalue ParmVar 0x12b826908 'fn' 'int (*)(struct input_handle *, void *)'
+    |     |-ImplicitCastExpr 0x12b8272d8 <col:15> 'struct input_handle *' <BitCast>
+    |     | `-ImplicitCastExpr 0x12b8272c0 <col:15> 'struct input_handle *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x12b827238 <col:15> 'struct input_handle *' lvalue Var 0x12b826cb8 'handle' 'struct input_handle *'
+    |     `-ImplicitCastExpr 0x12b827320 <col:23> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12b827258 <col:23> 'void *' lvalue ParmVar 0x12b80e2c8 'data' 'void *'
+    |-CallExpr 0x12b8274c0 <line:15:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x12b8274a8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12b827488 <col:2> 'int ()' Function 0x12b8273d0 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x12b827518 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x12b827500 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12b8274e0 <col:9> 'int' lvalue Var 0x12b826d68 'retval' 'int'

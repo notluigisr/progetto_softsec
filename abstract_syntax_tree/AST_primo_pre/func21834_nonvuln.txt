@@ -1,0 +1,30 @@
+`-FunctionDecl 0x124026740  line:1:13 kick_siblings 'void (struct i915_request *, struct intel_context *)' static
+  |-ParmVarDecl 0x12400e248 <col:27, col:48> col:48 used rq 'struct i915_request *'
+  |-ParmVarDecl 0x124026628 <col:52, col:74> col:74 used ce 'struct intel_context *'
+  `-CompoundStmt 0x124027200 <line:2:1, line:8:1>
+    |-DeclStmt 0x124026bb0 <line:3:2, col:68>
+    | |-RecordDecl 0x124026840 <col:2, col:9> col:9 struct virtual_engine
+    | `-VarDecl 0x1240269a8 <col:2, col:25> col:25 used ve 'struct virtual_engine *'
+    |-DeclStmt 0x124026e48 <line:4:2, col:52>
+    | `-VarDecl 0x124026c58 <col:2, col:51> col:23 used next 'struct i915_request *' cinit
+    |   `-CallExpr 0x124026e20 <col:30, col:51> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x124026da0 <col:30> 'int ()' Function 0x124026ce8 'READ_ONCE' 'int ()'
+    |     `-RecoveryExpr 0x124026df8 <col:40, col:44> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x124026dc0 <col:40> 'struct virtual_engine *' lvalue Var 0x1240269a8 've' 'struct virtual_engine *'
+    `-IfStmt 0x1240271e0 <line:6:2, line:7:47>
+      |-BinaryOperator 0x124026f90 <line:6:6, col:42> 'int' contains-errors '&&'
+      | |-DeclRefExpr 0x124026e60 <col:6> 'struct i915_request *' contains-errors lvalue Var 0x124026c58 'next' 'struct i915_request *'
+      | `-BinaryOperator 0x124026f70 <col:14, col:42> '<dependent type>' contains-errors '&'
+      |   |-RecoveryExpr 0x124026eb8 <col:14, col:20> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x124026e80 <col:14> 'struct i915_request *' contains-errors lvalue Var 0x124026c58 'next' 'struct i915_request *'
+      |   `-UnaryOperator 0x124026f58 <col:37, col:42> '<dependent type>' contains-errors prefix '~' cannot overflow
+      |     `-ImplicitCastExpr 0x124026f40 <col:38, col:42> '<dependent type>' contains-errors <LValueToRValue>
+      |       `-RecoveryExpr 0x124026f18 <col:38, col:42> '<dependent type>' contains-errors lvalue
+      |         `-DeclRefExpr 0x124026ee0 <col:38> 'struct i915_request *' lvalue ParmVar 0x12400e248 'rq' 'struct i915_request *'
+      `-CallExpr 0x1240271b8 <line:7:3, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x124027090 <col:3> 'int ()' Function 0x124026fd8 'tasklet_schedule' 'int ()'
+        `-UnaryOperator 0x1240271a0 <col:20, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x124027158 <col:21, col:40> '<dependent type>' contains-errors lvalue .tasklet
+            `-CXXDependentScopeMemberExpr 0x124027110 <col:21, col:30> '<dependent type>' contains-errors lvalue .execlists
+              `-RecoveryExpr 0x1240270e8 <col:21, col:25> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x1240270b0 <col:21> 'struct virtual_engine *' lvalue Var 0x1240269a8 've' 'struct virtual_engine *'

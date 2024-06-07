@@ -1,0 +1,62 @@
+`-FunctionDecl 0x12d141978  line:1:12 invalid clear_refs_pte_range 'int (int *, unsigned long, unsigned long, struct mm_walk *)' static
+  |-ParmVarDecl 0x12d128128 <col:33, col:40> col:40 invalid pmd 'int *'
+  |-ParmVarDecl 0x12d1281a8 <col:45, col:59> col:59 used addr 'unsigned long'
+  |-ParmVarDecl 0x12d128228 <line:2:5, col:19> col:19 used end 'unsigned long'
+  |-ParmVarDecl 0x12d141828 <col:24, col:40> col:40 used walk 'struct mm_walk *'
+  `-CompoundStmt 0x12d147908 <line:3:1, line:31:1>
+    |-DeclStmt 0x12d141c88 <line:4:2, col:44>
+    | |-RecordDecl 0x12d141a40 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x12d141ba8 <col:2, col:37> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-RecoveryExpr 0x12d141c48 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d141c10 <col:31> 'struct mm_walk *' lvalue ParmVar 0x12d141828 'walk' 'struct mm_walk *'
+    |-DeclStmt 0x12d141ed8 <line:7:2, col:19>
+    | |-RecordDecl 0x12d141ce8 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x12d141e58 <col:2, col:15> col:15 used page 'struct page *'
+    |-CallExpr 0x12d1420f0 <line:9:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d142050 <col:2> 'int ()' Function 0x12d141f98 'split_huge_page_pmd' 'int ()'
+    | |-RecoveryExpr 0x12d1420a8 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12d142070 <col:22> 'struct mm_walk *' lvalue ParmVar 0x12d141828 'walk' 'struct mm_walk *'
+    | `-RecoveryExpr 0x12d1420d0 <col:32> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x12d147648 <line:12:2, line:27:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x12d1423a0 <line:12:9, col:17> 'int' '!='
+    | | |-ImplicitCastExpr 0x12d142370 <col:9> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12d142330 <col:9> 'unsigned long' lvalue ParmVar 0x12d1281a8 'addr' 'unsigned long'
+    | | `-ImplicitCastExpr 0x12d142388 <col:17> 'unsigned long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d142350 <col:17> 'unsigned long' lvalue ParmVar 0x12d128228 'end' 'unsigned long'
+    | |-BinaryOperator 0x12d142500 <col:22, col:37> 'unsigned long' contains-errors ','
+    | | |-UnaryOperator 0x12d142498 <col:22, col:25> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | | | `-RecoveryExpr 0x12d142478 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-CompoundAssignOperator 0x12d1424d0 <col:29, col:37> 'unsigned long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |   |-DeclRefExpr 0x12d1423f0 <col:29> 'unsigned long' lvalue ParmVar 0x12d1281a8 'addr' 'unsigned long'
+    | |   `-RecoveryExpr 0x12d1424b0 <col:37> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12d147618 <col:48, line:27:2>
+    |   |-IfStmt 0x12d142728 <line:14:3, line:15:4>
+    |   | |-UnaryOperator 0x12d142708 <line:14:7, col:25> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x12d1426e0 <col:8, col:25> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x12d142648 <col:8> 'int ()' Function 0x12d142590 'pte_present' 'int ()'
+    |   | |   `-RecoveryExpr 0x12d1426c0 <col:20> '<dependent type>' contains-errors lvalue
+    |   | `-ContinueStmt 0x12d142720 <line:15:4>
+    |   |-IfStmt 0x12d147170 <line:18:3, line:19:4>
+    |   | |-UnaryOperator 0x12d147150 <line:18:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x12d147138 <col:8> 'struct page *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x12d147118 <col:8> 'struct page *' lvalue Var 0x12d141e58 'page' 'struct page *'
+    |   | `-ContinueStmt 0x12d147168 <line:19:4>
+    |   |-IfStmt 0x12d147340 <line:21:3, line:22:4>
+    |   | |-CallExpr 0x12d1472f8 <line:21:7, col:24> 'int'
+    |   | | |-ImplicitCastExpr 0x12d1472e0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x12d147270 <col:7> 'int ()' Function 0x12d1471b8 'PageReserved' 'int ()'
+    |   | | `-ImplicitCastExpr 0x12d147320 <col:20> 'struct page *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x12d147290 <col:20> 'struct page *' lvalue Var 0x12d141e58 'page' 'struct page *'
+    |   | `-ContinueStmt 0x12d147338 <line:22:4>
+    |   `-CallExpr 0x12d1475d8 <line:26:3, col:27> 'int'
+    |     |-ImplicitCastExpr 0x12d1475c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12d147580 <col:3> 'int ()' Function 0x12d1474c8 'ClearPageReferenced' 'int ()'
+    |     `-ImplicitCastExpr 0x12d147600 <col:23> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12d1475a0 <col:23> 'struct page *' lvalue Var 0x12d141e58 'page' 'struct page *'
+    |-CallExpr 0x12d1478b8 <line:29:2, col:15> 'int'
+    | `-ImplicitCastExpr 0x12d1478a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12d147880 <col:2> 'int ()' Function 0x12d1477c8 'cond_resched' 'int ()'
+    `-ReturnStmt 0x12d1478f8 <line:30:2, col:9>
+      `-IntegerLiteral 0x12d1478d8 <col:9> 'int' 0

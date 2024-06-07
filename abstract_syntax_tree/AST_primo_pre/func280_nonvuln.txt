@@ -1,0 +1,50 @@
+`-FunctionDecl 0x146928750  line:1:13 reset_csb_pointers 'void (struct intel_engine_cs *)' static
+  |-ParmVarDecl 0x146928648 <col:32, col:56> col:56 used engine 'struct intel_engine_cs *'
+  `-CompoundStmt 0x1469416c0 <line:2:1, line:15:1>
+    |-DeclStmt 0x146940cb0 <line:3:2, col:70>
+    | |-RecordDecl 0x146940a48 <col:2, col:9> col:9 struct intel_engine_execlists
+    | `-VarDecl 0x146940bb8 <col:2, col:61> col:40 used execlists 'struct intel_engine_execlists *const' cinit
+    |   `-UnaryOperator 0x146940c80 <col:52, col:61> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x146940c58 <col:53, col:61> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x146940c20 <col:53> 'struct intel_engine_cs *' lvalue ParmVar 0x146928648 'engine' 'struct intel_engine_cs *'
+    |-DeclStmt 0x146940de8 <line:4:2, col:58>
+    | `-VarDecl 0x146940ce0 <col:2, col:57> col:21 used reset_value 'const unsigned int' cinit
+    |   `-BinaryOperator 0x146940dc8 <col:35, col:57> '<dependent type>' contains-errors '-'
+    |     |-RecoveryExpr 0x146940d80 <col:35, col:46> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x146940d48 <col:35> 'struct intel_engine_execlists *const' contains-errors lvalue Var 0x146940bb8 'execlists' 'struct intel_engine_execlists *const'
+    |     `-IntegerLiteral 0x146940da8 <col:57> 'int' 1
+    |-CallExpr 0x146940fd8 <line:6:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x146940fc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146940f30 <col:2> 'int ()' Function 0x146940e78 'ring_set_paused' 'int ()'
+    | |-ImplicitCastExpr 0x146941008 <col:18> 'struct intel_engine_cs *' <LValueToRValue>
+    | | `-DeclRefExpr 0x146940f50 <col:18> 'struct intel_engine_cs *' lvalue ParmVar 0x146928648 'engine' 'struct intel_engine_cs *'
+    | `-IntegerLiteral 0x146940f70 <col:26> 'int' 0
+    |-BinaryOperator 0x1469410a0 <line:9:2, col:24> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x146941058 <col:2, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x146941020 <col:2> 'struct intel_engine_execlists *const' contains-errors lvalue Var 0x146940bb8 'execlists' 'struct intel_engine_execlists *const'
+    | `-DeclRefExpr 0x146941080 <col:24> 'const unsigned int' contains-errors lvalue Var 0x146940ce0 'reset_value' 'const unsigned int'
+    |-CallExpr 0x146941270 <line:10:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1469411a0 <col:2> 'int ()' Function 0x1469410e8 'WRITE_ONCE' 'int ()'
+    | |-UnaryOperator 0x146941238 <col:13, col:25> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x146941220 <col:14, col:25> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1469411f8 <col:14, col:25> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1469411c0 <col:14> 'struct intel_engine_execlists *const' contains-errors lvalue Var 0x146940bb8 'execlists' 'struct intel_engine_execlists *const'
+    | `-DeclRefExpr 0x146941250 <col:36> 'const unsigned int' contains-errors lvalue Var 0x146940ce0 'reset_value' 'const unsigned int'
+    |-CallExpr 0x1469413b8 <line:11:2, col:6> 'int'
+    | `-ImplicitCastExpr 0x1469413a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x146941380 <col:2> 'int ()' Function 0x1469412c8 'wmb' 'int ()'
+    `-CallExpr 0x146941690 <line:13:2, line:14:46> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1469414b8 <line:13:2> 'int ()' Function 0x146941400 'invalidate_csb_entries' 'int ()'
+      |-UnaryOperator 0x146941590 <col:25, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-ArraySubscriptExpr 0x146941570 <col:26, col:49> '<dependent type>' contains-errors lvalue
+      |   |-ImplicitCastExpr 0x146941558 <col:26, col:37> '<dependent type>' contains-errors <LValueToRValue>
+      |   | `-RecoveryExpr 0x146941510 <col:26, col:37> '<dependent type>' contains-errors lvalue
+      |   |   `-DeclRefExpr 0x1469414d8 <col:26> 'struct intel_engine_execlists *const' contains-errors lvalue Var 0x146940bb8 'execlists' 'struct intel_engine_execlists *const'
+      |   `-IntegerLiteral 0x146941538 <col:48> 'int' 0
+      `-UnaryOperator 0x146941678 <line:14:11, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-ArraySubscriptExpr 0x146941658 <col:12, col:45> '<dependent type>' contains-errors lvalue
+          |-ImplicitCastExpr 0x146941628 <col:12, col:23> '<dependent type>' contains-errors <LValueToRValue>
+          | `-RecoveryExpr 0x1469415e0 <col:12, col:23> '<dependent type>' contains-errors lvalue
+          |   `-DeclRefExpr 0x1469415a8 <col:12> 'struct intel_engine_execlists *const' contains-errors lvalue Var 0x146940bb8 'execlists' 'struct intel_engine_execlists *const'
+          `-ImplicitCastExpr 0x146941640 <col:34> 'unsigned int' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x146941608 <col:34> 'const unsigned int' contains-errors lvalue Var 0x146940ce0 'reset_value' 'const unsigned int'

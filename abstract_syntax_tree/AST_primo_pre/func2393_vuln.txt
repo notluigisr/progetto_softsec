@@ -1,0 +1,66 @@
+`-FunctionDecl 0x153928a88  line:1:14 referenced invalid HardSwishPrepare 'int (int *, int *)'
+  |-ParmVarDecl 0x153928928 <col:31, col:46> col:46 invalid context 'int *'
+  |-ParmVarDecl 0x1539289a8 <col:55, col:67> col:67 invalid node 'int *'
+  `-CompoundStmt 0x153943868 <col:73, line:35:1>
+    |-CallExpr 0x153928e30 <line:2:3, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153928ca0 <col:3> 'int ()' Function 0x153928be8 'TF_LITE_ENSURE_STATUS' 'int ()'
+    | `-CallExpr 0x153928e00 <col:25, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153928da0 <col:25> 'int ()' Function 0x153928ce8 'GenericPrepare' 'int ()'
+    |   |-RecoveryExpr 0x153928dc0 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x153928de0 <col:49> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x153943848 <line:5:3, line:33:3>
+      |-BinaryOperator 0x1539422d8 <line:5:7, col:55> 'int' contains-errors '||'
+      | |-BinaryOperator 0x153942210 <col:7, col:23> 'int' contains-errors '=='
+      | | |-CXXDependentScopeMemberExpr 0x1539421a8 <col:7, col:15> '<dependent type>' contains-errors lvalue ->type
+      | | | `-RecoveryExpr 0x153942188 <col:7> '<dependent type>' contains-errors lvalue
+      | | `-RecoveryExpr 0x1539421f0 <col:23> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x1539422b8 <col:39, col:55> 'int' contains-errors '=='
+      |   |-CXXDependentScopeMemberExpr 0x153942250 <col:39, col:47> '<dependent type>' contains-errors lvalue ->type
+      |   | `-RecoveryExpr 0x153942230 <col:39> '<dependent type>' contains-errors lvalue
+      |   `-RecoveryExpr 0x153942298 <col:55> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x1539437f8 <col:68, line:33:3>
+        |-BinaryOperator 0x1539425a0 <line:7:5, col:38> '<dependent type>' contains-errors '='
+        | |-BinaryOperator 0x153942500 <col:5, col:22> '<dependent type>' contains-errors '*'
+        | | |-RecoveryExpr 0x1539423e8 <col:5> '<dependent type>' contains-errors lvalue
+        | | | `-DeclRefExpr 0x1539423c8 <col:5> 'int (int *, int *)' Function 0x153928a88 'HardSwishPrepare' 'int (int *, int *)'
+        | | `-RecoveryExpr 0x1539424e0 <col:22> '<dependent type>' contains-errors lvalue
+        | `-UnaryOperator 0x153942588 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-CXXDependentScopeMemberExpr 0x153942540 <col:32, col:38> '<dependent type>' contains-errors lvalue ->params
+        |     `-RecoveryExpr 0x153942520 <col:32> '<dependent type>' contains-errors lvalue
+        |-DeclStmt 0x1539427d8 <line:8:5, col:59>
+        | `-VarDecl 0x1539425d8 <col:5, col:25> col:25 invalid input 'const int *'
+        |-DeclStmt 0x1539429d0 <line:11:5, col:50>
+        | `-VarDecl 0x1539428b8 <col:5, col:45> col:17 used input_scale 'const float' cinit
+        |   `-CXXDependentScopeMemberExpr 0x153942988 <col:31, col:45> '<dependent type>' contains-errors lvalue .scale
+        |     `-CXXDependentScopeMemberExpr 0x153942940 <col:31, col:38> '<dependent type>' contains-errors lvalue ->params
+        |       `-RecoveryExpr 0x153942920 <col:31> '<dependent type>' contains-errors lvalue
+        |-DeclStmt 0x153942b40 <line:12:5, col:66>
+        | `-VarDecl 0x153942a00 <col:5, col:55> col:17 used hires_input_scale 'const float' cinit
+        |   `-BinaryOperator 0x153942b20 <col:37, col:55> 'float' contains-errors '*'
+        |     |-ParenExpr 0x153942ac8 <col:37, col:51> 'float'
+        |     | `-BinaryOperator 0x153942aa8 <col:38, col:45> 'float' '/'
+        |     |   |-FloatingLiteral 0x153942a68 <col:38> 'float' 1.000000e+00
+        |     |   `-FloatingLiteral 0x153942a88 <col:45> 'float' 1.280000e+02
+        |     `-ImplicitCastExpr 0x153942b08 <col:55> 'float' contains-errors <LValueToRValue>
+        |       `-DeclRefExpr 0x153942ae8 <col:55> 'const float' contains-errors lvalue Var 0x1539428b8 'input_scale' 'const float'
+        |-DeclStmt 0x153942c38 <line:13:5, col:48>
+        | `-VarDecl 0x153942b70 <col:5, col:40> col:17 used reluish_scale 'const float' cinit
+        |   `-BinaryOperator 0x153942c18 <col:33, col:40> 'float' '/'
+        |     |-FloatingLiteral 0x153942bd8 <col:33> 'float' 3.000000e+00
+        |     `-FloatingLiteral 0x153942bf8 <col:40> 'float' 3.276800e+04
+        |-DeclStmt 0x153942cd0 <line:14:5, col:52>
+        | `-VarDecl 0x153942c68 <col:5, col:17> col:17 used output_scale 'const float'
+        |-DeclStmt 0x153942e50 <line:16:5, col:69>
+        | `-VarDecl 0x153942d00 <col:5, col:57> col:17 used output_multiplier 'const float' cinit
+        |   `-BinaryOperator 0x153942dd8 <col:37, col:57> 'float' contains-errors '/'
+        |     |-ImplicitCastExpr 0x153942da8 <col:37> 'float' contains-errors <LValueToRValue>
+        |     | `-DeclRefExpr 0x153942d68 <col:37> 'const float' contains-errors lvalue Var 0x153942a00 'hires_input_scale' 'const float'
+        |     `-ImplicitCastExpr 0x153942dc0 <col:57> 'float' <LValueToRValue>
+        |       `-DeclRefExpr 0x153942d88 <col:57> 'const float' lvalue Var 0x153942c68 'output_scale' 'const float'
+        `-DeclStmt 0x153943780 <line:26:5, col:71>
+          `-VarDecl 0x153943630 <col:5, col:58> col:17 used reluish_multiplier 'const float' cinit
+            `-BinaryOperator 0x153943708 <col:38, col:58> 'float' contains-errors '/'
+              |-ImplicitCastExpr 0x1539436d8 <col:38> 'float' contains-errors <LValueToRValue>
+              | `-DeclRefExpr 0x153943698 <col:38> 'const float' contains-errors lvalue Var 0x153942a00 'hires_input_scale' 'const float'
+              `-ImplicitCastExpr 0x1539436f0 <col:58> 'float' <LValueToRValue>
+                `-DeclRefExpr 0x1539436b8 <col:58> 'const float' lvalue Var 0x153942b70 'reluish_scale' 'const float'

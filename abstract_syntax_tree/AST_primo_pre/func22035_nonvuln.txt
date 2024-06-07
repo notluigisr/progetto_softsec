@@ -1,0 +1,73 @@
+`-FunctionDecl 0x1540269c8  line:1:12 __check_buffer_access 'int (struct bpf_verifier_env *, const char *, const struct bpf_reg_state *, int, int, int)' static
+  |-ParmVarDecl 0x15400e248 <col:34, col:59> col:59 used env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x15400e2c8 <line:2:6, col:18> col:18 used buf_info 'const char *'
+  |-ParmVarDecl 0x1540266c8 <line:3:6, col:34> col:34 used reg 'const struct bpf_reg_state *'
+  |-ParmVarDecl 0x154026748 <line:4:6, col:10> col:10 used regno 'int'
+  |-ParmVarDecl 0x1540267c8 <col:17, col:21> col:21 used off 'int'
+  |-ParmVarDecl 0x154026848 <col:26, col:30> col:30 used size 'int'
+  `-CompoundStmt 0x154029640 <line:5:1, line:23:1>
+    |-IfStmt 0x154026fa0 <line:6:2, line:11:2>
+    | |-BinaryOperator 0x154026b40 <line:6:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x154026b28 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x154026ae8 <col:6> 'int' lvalue ParmVar 0x1540267c8 'off' 'int'
+    | | `-IntegerLiteral 0x154026b08 <col:12> 'int' 0
+    | `-CompoundStmt 0x154026f80 <col:15, line:11:2>
+    |   |-CallExpr 0x154026df8 <line:7:3, line:9:30> 'int'
+    |   | |-ImplicitCastExpr 0x154026de0 <line:7:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x154026c90 <col:3> 'int ()' Function 0x154026bd8 'verbose' 'int ()'
+    |   | |-ImplicitCastExpr 0x154026e48 <col:11> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154026cb0 <col:11> 'struct bpf_verifier_env *' lvalue ParmVar 0x15400e248 'env' 'struct bpf_verifier_env *'
+    |   | |-ImplicitCastExpr 0x154026e60 <line:8:4> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x154026d10 <col:4> 'char[4]' lvalue "STR"
+    |   | |-ImplicitCastExpr 0x154026e78 <line:9:4> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154026d30 <col:4> 'int' lvalue ParmVar 0x154026748 'regno' 'int'
+    |   | |-ImplicitCastExpr 0x154026e90 <col:11> 'const char *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154026d50 <col:11> 'const char *' lvalue ParmVar 0x15400e2c8 'buf_info' 'const char *'
+    |   | |-ImplicitCastExpr 0x154026ea8 <col:21> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154026d70 <col:21> 'int' lvalue ParmVar 0x1540267c8 'off' 'int'
+    |   | `-ImplicitCastExpr 0x154026ec0 <col:26> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x154026d90 <col:26> 'int' lvalue ParmVar 0x154026848 'size' 'int'
+    |   `-ReturnStmt 0x154026f70 <line:10:3, col:11>
+    |     `-UnaryOperator 0x154026f58 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x154026f40 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x154026f20 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1540295f0 <line:12:2, line:20:2>
+    | |-BinaryOperator 0x154027208 <line:12:6, col:51> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x154027148 <col:6, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-CallExpr 0x154027120 <col:7, col:33> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1540270a0 <col:7> 'int ()' Function 0x154026fe8 'tnum_is_const' 'int ()'
+    | | |   `-RecoveryExpr 0x1540270f8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x1540270c0 <col:21> 'const struct bpf_reg_state *' lvalue ParmVar 0x1540266c8 'reg' 'const struct bpf_reg_state *'
+    | | `-CXXDependentScopeMemberExpr 0x1540271c0 <col:38, col:51> '<dependent type>' contains-errors lvalue .value
+    | |   `-RecoveryExpr 0x154027198 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x154027160 <col:38> 'const struct bpf_reg_state *' lvalue ParmVar 0x1540266c8 'reg' 'const struct bpf_reg_state *'
+    | `-CompoundStmt 0x1540295c0 <col:58, line:20:2>
+    |   |-DeclStmt 0x154027338 <line:13:3, col:18>
+    |   | `-VarDecl 0x1540272d0 <col:3, col:17> col:8 used tn_buf 'char[48]'
+    |   |-CallExpr 0x154027530 <line:15:3, col:49> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x154027430 <col:3> 'int ()' Function 0x154027378 'tnum_strn' 'int ()'
+    |   | |-DeclRefExpr 0x154027450 <col:13> 'char[48]' lvalue Var 0x1540272d0 'tn_buf' 'char[48]'
+    |   | |-UnaryExprOrTypeTraitExpr 0x1540274b0 <col:21, col:34> 'unsigned long' sizeof
+    |   | | `-ParenExpr 0x154027490 <col:27, col:34> 'char[48]' lvalue
+    |   | |   `-DeclRefExpr 0x154027470 <col:28> 'char[48]' lvalue Var 0x1540272d0 'tn_buf' 'char[48]' non_odr_use_unevaluated
+    |   | `-RecoveryExpr 0x154027508 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1540274d0 <col:37> 'const struct bpf_reg_state *' lvalue ParmVar 0x1540266c8 'reg' 'const struct bpf_reg_state *'
+    |   |-CallExpr 0x154029458 <line:16:3, line:18:22> 'int'
+    |   | |-ImplicitCastExpr 0x154029440 <line:16:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x154027568 <col:3> 'int ()' Function 0x154026bd8 'verbose' 'int ()'
+    |   | |-ImplicitCastExpr 0x1540294a0 <col:11> 'struct bpf_verifier_env *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154027588 <col:11> 'struct bpf_verifier_env *' lvalue ParmVar 0x15400e248 'env' 'struct bpf_verifier_env *'
+    |   | |-ImplicitCastExpr 0x1540294b8 <line:17:4> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x1540275a8 <col:4> 'char[4]' lvalue "STR"
+    |   | |-ImplicitCastExpr 0x1540294d0 <line:18:4> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1540275c8 <col:4> 'int' lvalue ParmVar 0x154026748 'regno' 'int'
+    |   | |-ImplicitCastExpr 0x1540294e8 <col:11> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x154029400 <col:11> 'int' lvalue ParmVar 0x1540267c8 'off' 'int'
+    |   | `-ImplicitCastExpr 0x154029500 <col:16> 'char *' <ArrayToPointerDecay>
+    |   |   `-DeclRefExpr 0x154029420 <col:16> 'char[48]' lvalue Var 0x1540272d0 'tn_buf' 'char[48]'
+    |   `-ReturnStmt 0x1540295b0 <line:19:3, col:11>
+    |     `-UnaryOperator 0x154029598 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x154029580 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x154029560 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x154029630 <line:22:2, col:9>
+      `-IntegerLiteral 0x154029610 <col:9> 'int' 0

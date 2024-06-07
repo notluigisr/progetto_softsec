@@ -1,0 +1,34 @@
+`-FunctionDecl 0x13f80dd98  line:1:12 finish 'int (void)' static
+  `-CompoundStmt 0x13f828390 <line:2:1, line:17:1>
+    |-DeclStmt 0x13f80df58 <line:3:2, col:29>
+    | `-VarDecl 0x13f80dea0 <col:2, col:14> col:6 used magic 'int' cinit
+    |   `-RecoveryExpr 0x13f80df38 <col:14> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13f80e158 <line:4:2, col:18>
+    | |-RecordDecl 0x13f80df70 <col:2, col:9> col:9 struct pid
+    | `-VarDecl 0x13f80e0d8 <col:2, col:14> col:14 used tgid 'struct pid *'
+    |-IfStmt 0x13f827a10 <line:11:2, line:12:11>
+    | |-BinaryOperator 0x13f827948 <line:11:6, col:23> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x13f827928 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryExprOrTypeTraitExpr 0x13f8278e8 <col:11, col:23> 'unsigned long' contains-errors sizeof
+    | |   `-ParenExpr 0x13f8278c8 <col:17, col:23> 'int' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13f8278a8 <col:18> 'int' contains-errors lvalue Var 0x13f80dea0 'magic' 'int' non_odr_use_unevaluated
+    | `-ReturnStmt 0x13f827a00 <line:12:3, col:11>
+    |   `-UnaryOperator 0x13f8279e8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13f8279d0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13f8279b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13f827bc8 <line:13:2, col:22> 'struct pid *' contains-errors '='
+    | |-DeclRefExpr 0x13f827a30 <col:2> 'struct pid *' lvalue Var 0x13f80e0d8 'tgid' 'struct pid *'
+    | `-CXXDependentScopeMemberExpr 0x13f827b80 <col:9, col:22> '<dependent type>' contains-errors lvalue .tgid
+    |   `-CXXDependentScopeMemberExpr 0x13f827b38 <col:9, col:17> '<dependent type>' contains-errors lvalue .info
+    |     `-RecoveryExpr 0x13f827b18 <col:9> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13f828318 <line:14:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f827cc8 <col:2> 'int ()' Function 0x13f827c10 'wait_event' 'int ()'
+    | |-RecoveryExpr 0x13f828140 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13f827ce8 <col:13> 'struct pid *' lvalue Var 0x13f80e0d8 'tgid' 'struct pid *'
+    | `-CallExpr 0x13f8282d8 <col:31, col:55> 'int'
+    |   |-ImplicitCastExpr 0x13f8282c0 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13f828248 <col:31> 'int ()' Function 0x13f828190 'thread_group_exited' 'int ()'
+    |   `-ImplicitCastExpr 0x13f828300 <col:51> 'struct pid *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13f828268 <col:51> 'struct pid *' lvalue Var 0x13f80e0d8 'tgid' 'struct pid *'
+    `-ReturnStmt 0x13f828380 <line:16:2, col:9>
+      `-IntegerLiteral 0x13f828360 <col:9> 'int' 0

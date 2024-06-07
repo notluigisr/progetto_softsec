@@ -1,0 +1,44 @@
+`-FunctionDecl 0x152026938  line:1:22 find_inode_fast 'struct inode *(struct super_block *, struct hlist_head *, unsigned long)' static
+  |-ParmVarDecl 0x15200e2e8 <col:38, col:58> col:58 used sb 'struct super_block *'
+  |-ParmVarDecl 0x1520266c8 <line:2:5, col:24> col:24 used head 'struct hlist_head *'
+  |-ParmVarDecl 0x152026748 <col:30, col:44> col:44 used ino 'unsigned long'
+  `-CompoundStmt 0x15202d840 <line:3:1, line:22:1>
+    |-DeclStmt 0x152026b80 <line:4:2, col:28>
+    | `-VarDecl 0x152026ac8 <col:2, col:24> col:16 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x152026b60 <col:24> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x152026e08 <line:6:1, line:7:42> 'repeat'
+    | `-CallExpr 0x152026d80 <col:2, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152026cb0 <col:2> 'int ()' Function 0x152026bf8 'hlist_for_each_entry' 'int ()'
+    |   |-DeclRefExpr 0x152026cd0 <col:23> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    |   |-DeclRefExpr 0x152026cf0 <col:30> 'struct hlist_head *' lvalue ParmVar 0x1520266c8 'head' 'struct hlist_head *'
+    |   `-RecoveryExpr 0x152026d60 <col:36> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x15202d7c0 <col:44, line:20:2>
+    | |-CallExpr 0x1520270e0 <line:12:3, col:27> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x152027048 <col:3> 'int ()' Function 0x152026f90 'spin_lock' 'int ()'
+    | | `-UnaryOperator 0x1520270c8 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1520270a0 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x152027068 <col:14> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    | |-IfStmt 0x1520273c0 <line:13:3, line:16:3>
+    | | |-RecoveryExpr 0x1520271b8 <line:13:7, col:46> '_Bool' contains-errors
+    | | `-CompoundStmt 0x1520273a0 <col:49, line:16:3>
+    | |   |-CallExpr 0x152027348 <line:14:4, col:33> 'int' contains-errors
+    | |   | |-ImplicitCastExpr 0x152027330 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x1520272b8 <col:4> 'int ()' Function 0x152027200 '__wait_on_freeing_inode' 'int ()'
+    | |   | `-ImplicitCastExpr 0x152027370 <col:28> 'struct inode *' contains-errors <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x1520272d8 <col:28> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    | |   `-GotoStmt 0x152027388 <line:15:4, col:9> 'repeat' 0x152026db8
+    | |-CallExpr 0x152027518 <line:17:3, col:15> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x152027500 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1520274c0 <col:3> 'int ()' Function 0x152027408 '__iget' 'int ()'
+    | | `-ImplicitCastExpr 0x152027540 <col:10> 'struct inode *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1520274e0 <col:10> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    | |-CallExpr 0x15202d750 <line:18:3, col:29> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x15202d6b8 <col:3> 'int ()' Function 0x15202d600 'spin_unlock' 'int ()'
+    | | `-UnaryOperator 0x15202d738 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x15202d710 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15202d6d8 <col:16> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    | `-ReturnStmt 0x15202d7b0 <line:19:3, col:10>
+    |   `-ImplicitCastExpr 0x15202d798 <col:10> 'struct inode *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15202d778 <col:10> 'struct inode *' contains-errors lvalue Var 0x152026ac8 'inode' 'struct inode *'
+    `-ReturnStmt 0x15202d830 <line:21:2, col:9>
+      `-RecoveryExpr 0x15202d810 <col:9> '<dependent type>' contains-errors lvalue

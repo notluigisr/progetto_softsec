@@ -1,0 +1,37 @@
+`-FunctionDecl 0x1391283a8  line:1:1 invalid oerr_cert 'int (int, int, int *, const char *)'
+  |-ParmVarDecl 0x1391280f0 <col:11, col:24> col:24 invalid context 'int'
+  |-ParmVarDecl 0x139128170 <col:33, col:49> col:49 invalid code 'int'
+  |-ParmVarDecl 0x139128228 <col:55, col:71> col:71 invalid certctx 'int *'
+  |-ParmVarDecl 0x1391282a8 <line:2:11, col:23> col:23 used msg 'const char *'
+  `-CompoundStmt 0x139142378 <line:3:1, line:9:1>
+    |-DeclStmt 0x1391286b8 <line:4:5, col:56>
+    | `-VarDecl 0x139128488 <col:5, col:55> col:9 used depth 'int' cinit
+    |   `-CallExpr 0x139128690 <col:17, col:55> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x139128650 <col:17> 'int ()' Function 0x139128598 'X509_STORE_CTX_get_error_depth' 'int ()'
+    |     `-RecoveryExpr 0x139128670 <col:48> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x139141920 <line:5:5, col:48>
+    | `-VarDecl 0x1391286e8 <col:5, col:47> col:9 used err 'int' cinit
+    |   `-CallExpr 0x1391418f8 <col:15, col:47> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1391418b8 <col:15> 'int ()' Function 0x139141800 'X509_STORE_CTX_get_error' 'int ()'
+    |     `-RecoveryExpr 0x1391418d8 <col:40> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x139141fa0 <line:6:5, col:60>
+    | `-VarDecl 0x139141950 <col:5, col:59> col:17 used errstr 'const char *' cinit
+    |   `-ImplicitCastExpr 0x139141b68 <col:26, col:59> 'const char *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x139141b28 <col:26, col:59> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x139141b10 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x139141a98 <col:26> 'int ()' Function 0x1391419e0 'X509_verify_cert_error_string' 'int ()'
+    |       `-ImplicitCastExpr 0x139141b50 <col:56> 'int' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x139141ab8 <col:56> 'int' contains-errors lvalue Var 0x1391286e8 'err' 'int'
+    `-ReturnStmt 0x139142368 <line:8:5, col:60>
+      `-CallExpr 0x139142318 <col:12, col:60> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x139142098 <col:12> 'int ()' Function 0x139141fe0 'oerr' 'int ()'
+        |-RecoveryExpr 0x1391420b8 <col:17> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x1391420d8 <col:26> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x139142278 <col:32, col:39> 'int'
+        | |-ImplicitCastExpr 0x139142260 <col:32> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x1391421d8 <col:32> 'int ()' Function 0x139142120 '_' 'int ()'
+        | `-ImplicitCastExpr 0x1391422a0 <col:34> 'char *' <ArrayToPointerDecay>
+        |   `-StringLiteral 0x139142240 <col:34> 'char[4]' lvalue "STR"
+        |-DeclRefExpr 0x1391422b8 <col:42> 'const char *' lvalue ParmVar 0x1391282a8 'msg' 'const char *'
+        |-DeclRefExpr 0x1391422d8 <col:47> 'int' contains-errors lvalue Var 0x139128488 'depth' 'int'
+        `-DeclRefExpr 0x1391422f8 <col:54> 'const char *' contains-errors lvalue Var 0x139141950 'errstr' 'const char *'

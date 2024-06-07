@@ -1,0 +1,1 @@
+    inline virtual void initDbSession(QSqlDatabase & ) {}

@@ -1,0 +1,34 @@
+`-FunctionDecl 0x14f80e350  line:1:6 referenced rt_add_uncached_list 'void (struct rtable *)'
+  |-ParmVarDecl 0x14f80e248 <col:27, col:42> col:42 used rt 'struct rtable *'
+  `-CompoundStmt 0x14f827128 <line:2:1, line:10:1>
+    |-DeclStmt 0x14f826b10 <line:3:2, col:59>
+    | |-RecordDecl 0x14f826648 <col:2, col:9> col:9 struct uncached_list
+    | `-VarDecl 0x14f8267b8 <col:2, col:58> col:24 used ul 'struct uncached_list *' cinit
+    |   `-ImplicitCastExpr 0x14f826ae0 <col:29, col:58> 'struct uncached_list *' <IntegralToPointer>
+    |     `-CallExpr 0x14f826ab8 <col:29, col:58> 'int'
+    |       |-ImplicitCastExpr 0x14f826aa0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14f826950 <col:29> 'int ()' Function 0x14f826898 'raw_cpu_ptr' 'int ()'
+    |       `-UnaryOperator 0x14f826a50 <col:41, col:42> 'void (*)(struct rtable *)' prefix '&' cannot overflow
+    |         `-DeclRefExpr 0x14f8269c8 <col:42> 'void (struct rtable *)' Function 0x14f80e350 'rt_add_uncached_list' 'void (struct rtable *)'
+    |-BinaryOperator 0x14f826ba8 <line:5:2, col:25> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14f826b60 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14f826b28 <col:2> 'struct rtable *' lvalue ParmVar 0x14f80e248 'rt' 'struct rtable *'
+    | `-DeclRefExpr 0x14f826b88 <col:25> 'struct uncached_list *' lvalue Var 0x14f8267b8 'ul' 'struct uncached_list *'
+    |-CallExpr 0x14f826d40 <line:7:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f826ca8 <col:2> 'int ()' Function 0x14f826bf0 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x14f826d28 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f826d00 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f826cc8 <col:16> 'struct uncached_list *' lvalue Var 0x14f8267b8 'ul' 'struct uncached_list *'
+    |-CallExpr 0x14f826f58 <line:8:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f826e48 <col:2> 'int ()' Function 0x14f826d90 'list_add_tail' 'int ()'
+    | |-UnaryOperator 0x14f826ec8 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14f826ea0 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14f826e68 <col:17> 'struct rtable *' lvalue ParmVar 0x14f80e248 'rt' 'struct rtable *'
+    | `-UnaryOperator 0x14f826f40 <col:34, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f826f18 <col:35, col:39> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f826ee0 <col:35> 'struct uncached_list *' lvalue Var 0x14f8267b8 'ul' 'struct uncached_list *'
+    `-CallExpr 0x14f827100 <line:9:2, col:26> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f827068 <col:2> 'int ()' Function 0x14f826fb0 'spin_unlock_bh' 'int ()'
+      `-UnaryOperator 0x14f8270e8 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14f8270c0 <col:18, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14f827088 <col:18> 'struct uncached_list *' lvalue Var 0x14f8267b8 'ul' 'struct uncached_list *'

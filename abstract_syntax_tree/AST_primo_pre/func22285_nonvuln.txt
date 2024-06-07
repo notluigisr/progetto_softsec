@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12f808328  line:1:12 bio_copy_from_iter 'int (struct bio *, struct iov_iter)' static
+  |-ParmVarDecl 0x12f00e248 <col:31, col:43> col:43 used bio 'struct bio *'
+  |-ParmVarDecl 0x12f808200 <col:48, col:64> col:64 invalid iter 'struct iov_iter'
+  `-CompoundStmt 0x12f808f30 <line:2:1, line:22:1>
+    |-DeclStmt 0x12f8084a8 <line:3:2, col:7>
+    | `-VarDecl 0x12f808440 <col:2, col:6> col:6 used i 'int'
+    |-DeclStmt 0x12f8086a8 <line:4:2, col:22>
+    | |-RecordDecl 0x12f8084c0 <col:2, col:9> col:9 struct bio_vec
+    | `-VarDecl 0x12f808628 <col:2, col:18> col:18 used bvec 'struct bio_vec *'
+    |-CallExpr 0x12f8088b8 <line:6:2, col:39> 'int'
+    | |-ImplicitCastExpr 0x12f8088a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f8087f0 <col:2> 'int ()' Function 0x12f808738 'bio_for_each_segment_all' 'int ()'
+    | |-ImplicitCastExpr 0x12f8088f0 <col:27> 'struct bio_vec *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12f808810 <col:27> 'struct bio_vec *' lvalue Var 0x12f808628 'bvec' 'struct bio_vec *'
+    | |-ImplicitCastExpr 0x12f808908 <col:33> 'struct bio *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12f808830 <col:33> 'struct bio *' lvalue ParmVar 0x12f00e248 'bio' 'struct bio *'
+    | `-ImplicitCastExpr 0x12f808920 <col:38> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x12f808850 <col:38> 'int' lvalue Var 0x12f808440 'i' 'int'
+    |-CompoundStmt 0x12f808ee8 <col:41, line:19:2>
+    | `-IfStmt 0x12f808ec8 <line:17:3, line:18:12>
+    |   |-BinaryOperator 0x12f808e00 <line:17:7, col:19> 'int' contains-errors '<'
+    |   | |-RecoveryExpr 0x12f808de0 <col:7> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x12f808d98 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12f808d60 <col:13> 'struct bio_vec *' lvalue Var 0x12f808628 'bvec' 'struct bio_vec *'
+    |   `-ReturnStmt 0x12f808eb8 <line:18:4, col:12>
+    |     `-UnaryOperator 0x12f808ea0 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x12f808e88 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x12f808e68 <col:12> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12f808f20 <line:21:2, col:9>
+      `-IntegerLiteral 0x12f808f00 <col:9> 'int' 0

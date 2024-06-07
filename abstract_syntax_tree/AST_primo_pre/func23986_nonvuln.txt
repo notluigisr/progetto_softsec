@@ -1,0 +1,41 @@
+`-FunctionDecl 0x12d1282e8  line:1:1 invalid uint64_to_str_back_len 'int (char *, int, int)'
+  |-ParmVarDecl 0x12d1280d8 <col:24, col:30> col:30 used ptr 'char *'
+  |-ParmVarDecl 0x12d128170 <col:35, col:43> col:43 invalid value 'int'
+  |-ParmVarDecl 0x12d1281f0 <col:50, col:54> col:54 used len 'int'
+  `-CompoundStmt 0x12d809e10 <line:2:1, line:18:1>
+    |-DeclStmt 0x12d128428 <line:3:2, col:15>
+    | `-VarDecl 0x12d1283c0 <col:2, col:8> col:8 used new_ptr 'char *'
+    |-BinaryOperator 0x12d128650 <line:5:2, col:41> 'char *' contains-errors '='
+    | |-DeclRefExpr 0x12d128440 <col:2> 'char *' lvalue Var 0x12d1283c0 'new_ptr' 'char *'
+    | `-CallExpr 0x12d128620 <col:12, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d1285c0 <col:12> 'int ()' Function 0x12d128508 'uint64_to_str_back' 'int ()'
+    |   |-DeclRefExpr 0x12d1285e0 <col:31> 'char *' lvalue ParmVar 0x12d1280d8 'ptr' 'char *'
+    |   `-RecoveryExpr 0x12d128600 <col:36> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x12d1287a0 <line:8:2, col:28> 'int' '-=' ComputeLHSTy='int' ComputeResultTy='int'
+    | |-DeclRefExpr 0x12d128670 <col:2> 'int' lvalue ParmVar 0x12d1281f0 'len' 'int'
+    | `-CStyleCastExpr 0x12d128778 <col:9, col:28> 'int' <IntegralCast>
+    |   `-ParenExpr 0x12d128758 <col:14, col:28> 'long'
+    |     `-BinaryOperator 0x12d128700 <col:15, col:21> 'long' '-'
+    |       |-ImplicitCastExpr 0x12d1286d0 <col:15> 'char *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x12d128690 <col:15> 'char *' lvalue ParmVar 0x12d1280d8 'ptr' 'char *'
+    |       `-ImplicitCastExpr 0x12d1286e8 <col:21> 'char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d1286b0 <col:21> 'char *' lvalue Var 0x12d1283c0 'new_ptr' 'char *'
+    |-WhileStmt 0x12d809970 <line:11:2, line:15:2>
+    | |-BinaryOperator 0x12d809838 <line:11:9, col:15> 'int' '>'
+    | | |-ImplicitCastExpr 0x12d809820 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12d1287d0 <col:9> 'int' lvalue ParmVar 0x12d1281f0 'len' 'int'
+    | | `-IntegerLiteral 0x12d809800 <col:15> 'int' 0
+    | `-CompoundStmt 0x12d809950 <line:12:2, line:15:2>
+    |   |-BinaryOperator 0x12d8098f8 <line:13:3, col:18> 'char' '='
+    |   | |-UnaryOperator 0x12d8098b0 <col:3, col:14> 'char' lvalue prefix '*' cannot overflow
+    |   | | `-ParenExpr 0x12d809890 <col:4, col:14> 'char *'
+    |   | |   `-UnaryOperator 0x12d809878 <col:5, col:7> 'char *' prefix '--'
+    |   | |     `-DeclRefExpr 0x12d809858 <col:7> 'char *' lvalue Var 0x12d1283c0 'new_ptr' 'char *'
+    |   | `-ImplicitCastExpr 0x12d8098e0 <col:18> 'char' <IntegralCast>
+    |   |   `-CharacterLiteral 0x12d8098c8 <col:18> 'int' 48
+    |   `-UnaryOperator 0x12d809938 <line:14:3, col:6> 'int' postfix '--'
+    |     `-DeclRefExpr 0x12d809918 <col:3> 'int' lvalue ParmVar 0x12d1281f0 'len' 'int'
+    `-ReturnStmt 0x12d809e00 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x12d8099c8 <col:9> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x12d8099b0 <col:9> 'char *' <LValueToRValue>
+          `-DeclRefExpr 0x12d809990 <col:9> 'char *' lvalue Var 0x12d1283c0 'new_ptr' 'char *'

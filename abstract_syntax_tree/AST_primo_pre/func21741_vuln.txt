@@ -1,0 +1,136 @@
+`-FunctionDecl 0x14e940ce8  line:1:12 encrypt 'int (struct blkcipher_desc *, struct scatterlist *, struct scatterlist *, unsigned int)' static
+  |-ParmVarDecl 0x14e928648 <col:20, col:43> col:43 used desc 'struct blkcipher_desc *'
+  |-ParmVarDecl 0x14e940a28 <line:2:6, col:26> col:26 used dst 'struct scatterlist *'
+  |-ParmVarDecl 0x14e940b18 <col:31, col:51> col:51 used src 'struct scatterlist *'
+  |-ParmVarDecl 0x14e940b98 <line:3:6, col:19> col:19 used nbytes 'unsigned int'
+  `-CompoundStmt 0x14e9442b8 <line:4:1, line:36:1>
+    |-DeclStmt 0x14e940f78 <line:5:2, col:28>
+    | |-RecordDecl 0x14e940df8 <col:2, col:9> col:9 struct blkcipher_walk
+    | `-VarDecl 0x14e940ef8 <col:2, col:24> col:24 invalid walk 'struct blkcipher_walk'
+    |-DeclStmt 0x14e9411d8 <line:6:2, col:42>
+    | |-RecordDecl 0x14e940f90 <col:2, col:9> col:9 struct crypto_blkcipher
+    | `-VarDecl 0x14e9410f8 <col:2, col:39> col:27 used tfm 'struct crypto_blkcipher *' cinit
+    |   `-RecoveryExpr 0x14e941198 <col:33, col:39> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e941160 <col:33> 'struct blkcipher_desc *' lvalue ParmVar 0x14e928648 'desc' 'struct blkcipher_desc *'
+    |-DeclStmt 0x14e9415e8 <line:7:2, col:53>
+    | |-RecordDecl 0x14e9411f0 <col:2, col:9> col:9 struct salsa20_ctx
+    | `-VarDecl 0x14e941358 <col:2, col:52> col:22 used ctx 'struct salsa20_ctx *' cinit
+    |   `-ImplicitCastExpr 0x14e9415b8 <col:28, col:52> 'struct salsa20_ctx *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x14e941578 <col:28, col:52> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x14e941560 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14e9414f0 <col:28> 'int ()' Function 0x14e941438 'crypto_blkcipher_ctx' 'int ()'
+    |       `-ImplicitCastExpr 0x14e9415a0 <col:49> 'struct crypto_blkcipher *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x14e941510 <col:49> 'struct crypto_blkcipher *' contains-errors lvalue Var 0x14e9410f8 'tfm' 'struct crypto_blkcipher *'
+    |-DeclStmt 0x14e941680 <line:8:2, col:9>
+    | `-VarDecl 0x14e941618 <col:2, col:6> col:6 used err 'int'
+    |-CallExpr 0x14e941830 <line:10:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e941778 <col:2> 'int ()' Function 0x14e9416c0 'blkcipher_walk_init' 'int ()'
+    | |-UnaryOperator 0x14e9417b8 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14e941798 <col:23> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x14e9417d0 <col:29> 'struct scatterlist *' lvalue ParmVar 0x14e940a28 'dst' 'struct scatterlist *'
+    | |-DeclRefExpr 0x14e9417f0 <col:34> 'struct scatterlist *' lvalue ParmVar 0x14e940b18 'src' 'struct scatterlist *'
+    | `-DeclRefExpr 0x14e941810 <col:39> 'unsigned int' lvalue ParmVar 0x14e940b98 'nbytes' 'unsigned int'
+    |-BinaryOperator 0x14e942e58 <line:11:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14e941870 <col:2> 'int' lvalue Var 0x14e941618 'err' 'int'
+    | `-CallExpr 0x14e942e20 <col:8, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e941970 <col:8> 'int ()' Function 0x14e9418b8 'blkcipher_walk_virt_block' 'int ()'
+    |   |-DeclRefExpr 0x14e941990 <col:34> 'struct blkcipher_desc *' lvalue ParmVar 0x14e928648 'desc' 'struct blkcipher_desc *'
+    |   |-UnaryOperator 0x14e9419d0 <col:40, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14e9419b0 <col:41> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x14e942e00 <col:47> 'int' 64
+    |-CallExpr 0x14e943000 <line:13:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e942f58 <col:2> 'int ()' Function 0x14e942ea0 'salsa20_ivsetup' 'int ()'
+    | |-DeclRefExpr 0x14e942f78 <col:18> 'struct salsa20_ctx *' contains-errors lvalue Var 0x14e941358 'ctx' 'struct salsa20_ctx *'
+    | `-CXXDependentScopeMemberExpr 0x14e942fb8 <col:23, col:28> '<dependent type>' contains-errors lvalue .iv
+    |   `-RecoveryExpr 0x14e942f98 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14e943750 <line:15:2, line:20:2>
+    | |-CallExpr 0x14e9431d8 <line:15:6, col:34> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14e943110 <col:6> 'int ()' Function 0x14e943058 'likely' 'int ()'
+    | | `-BinaryOperator 0x14e9431b8 <col:13, col:28> 'int' contains-errors '=='
+    | |   |-CXXDependentScopeMemberExpr 0x14e943150 <col:13, col:18> '<dependent type>' contains-errors lvalue .nbytes
+    | |   | `-RecoveryExpr 0x14e943130 <col:13> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14e943198 <col:28> 'unsigned int' lvalue ParmVar 0x14e940b98 'nbytes' 'unsigned int'
+    | `-CompoundStmt 0x14e943730 <line:16:2, line:20:2>
+    |   |-CallExpr 0x14e943530 <line:17:3, line:18:37> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14e9432e0 <line:17:3> 'int ()' Function 0x14e943228 'salsa20_encrypt_bytes' 'int ()'
+    |   | |-DeclRefExpr 0x14e943300 <col:25> 'struct salsa20_ctx *' contains-errors lvalue Var 0x14e941358 'ctx' 'struct salsa20_ctx *'
+    |   | |-CXXDependentScopeMemberExpr 0x14e9433d0 <col:30, col:44> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e943388 <col:30, col:39> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943340 <col:30, col:35> '<dependent type>' contains-errors lvalue .src
+    |   | |     `-RecoveryExpr 0x14e943320 <col:30> '<dependent type>' contains-errors lvalue
+    |   | |-CXXDependentScopeMemberExpr 0x14e9434c8 <line:18:11, col:25> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e943480 <col:11, col:20> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943438 <col:11, col:16> '<dependent type>' contains-errors lvalue .dst
+    |   | |     `-RecoveryExpr 0x14e943418 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14e943510 <col:31> 'unsigned int' lvalue ParmVar 0x14e940b98 'nbytes' 'unsigned int'
+    |   `-ReturnStmt 0x14e943720 <line:19:3, col:44>
+    |     `-CallExpr 0x14e9436e8 <col:10, col:44> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14e943650 <col:10> 'int ()' Function 0x14e943598 'blkcipher_walk_done' 'int ()'
+    |       |-DeclRefExpr 0x14e943670 <col:30> 'struct blkcipher_desc *' lvalue ParmVar 0x14e928648 'desc' 'struct blkcipher_desc *'
+    |       |-UnaryOperator 0x14e9436b0 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       | `-RecoveryExpr 0x14e943690 <col:37> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x14e9436c8 <col:43> 'int' 0
+    |-WhileStmt 0x14e943d90 <line:22:2, line:27:2>
+    | |-BinaryOperator 0x14e9437f8 <line:22:9, col:24> 'int' contains-errors '>='
+    | | |-CXXDependentScopeMemberExpr 0x14e943790 <col:9, col:14> '<dependent type>' contains-errors lvalue .nbytes
+    | | | `-RecoveryExpr 0x14e943770 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x14e9437d8 <col:24> 'int' 64
+    | `-CompoundStmt 0x14e943d70 <col:28, line:27:2>
+    |   |-CallExpr 0x14e943b98 <line:23:3, line:25:43> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14e943818 <line:23:3> 'int ()' Function 0x14e943228 'salsa20_encrypt_bytes' 'int ()'
+    |   | |-DeclRefExpr 0x14e943838 <col:25> 'struct salsa20_ctx *' contains-errors lvalue Var 0x14e941358 'ctx' 'struct salsa20_ctx *'
+    |   | |-CXXDependentScopeMemberExpr 0x14e943908 <col:30, col:44> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e9438c0 <col:30, col:39> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943878 <col:30, col:35> '<dependent type>' contains-errors lvalue .src
+    |   | |     `-RecoveryExpr 0x14e943858 <col:30> '<dependent type>' contains-errors lvalue
+    |   | |-CXXDependentScopeMemberExpr 0x14e943a00 <line:24:11, col:25> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e9439b8 <col:11, col:20> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943970 <col:11, col:16> '<dependent type>' contains-errors lvalue .dst
+    |   | |     `-RecoveryExpr 0x14e943950 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-BinaryOperator 0x14e943b78 <line:25:11, col:42> '<dependent type>' contains-errors '-'
+    |   |   |-CXXDependentScopeMemberExpr 0x14e943a68 <col:11, col:16> '<dependent type>' contains-errors lvalue .nbytes
+    |   |   | `-RecoveryExpr 0x14e943a48 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-ParenExpr 0x14e943b58 <col:25, col:42> '<dependent type>' contains-errors
+    |   |     `-BinaryOperator 0x14e943b38 <col:26, col:40> '<dependent type>' contains-errors '%'
+    |   |       |-CXXDependentScopeMemberExpr 0x14e943ad0 <col:26, col:31> '<dependent type>' contains-errors lvalue .nbytes
+    |   |       | `-RecoveryExpr 0x14e943ab0 <col:26> '<dependent type>' contains-errors lvalue
+    |   |       `-IntegerLiteral 0x14e943b18 <col:40> 'int' 64
+    |   `-BinaryOperator 0x14e943d50 <line:26:3, col:58> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x14e943bd8 <col:3> 'int' lvalue Var 0x14e941618 'err' 'int'
+    |     `-CallExpr 0x14e943d18 <col:9, col:58> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14e943bf8 <col:9> 'int ()' Function 0x14e943598 'blkcipher_walk_done' 'int ()'
+    |       |-DeclRefExpr 0x14e943c18 <col:29> 'struct blkcipher_desc *' lvalue ParmVar 0x14e928648 'desc' 'struct blkcipher_desc *'
+    |       |-UnaryOperator 0x14e943c58 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       | `-RecoveryExpr 0x14e943c38 <col:36> '<dependent type>' contains-errors lvalue
+    |       `-BinaryOperator 0x14e943cf8 <col:42, col:56> '<dependent type>' contains-errors '%'
+    |         |-CXXDependentScopeMemberExpr 0x14e943c90 <col:42, col:47> '<dependent type>' contains-errors lvalue .nbytes
+    |         | `-RecoveryExpr 0x14e943c70 <col:42> '<dependent type>' contains-errors lvalue
+    |         `-IntegerLiteral 0x14e943cd8 <col:56> 'int' 64
+    |-IfStmt 0x14e944250 <line:29:2, line:33:2>
+    | |-CXXDependentScopeMemberExpr 0x14e943e00 <line:29:6, col:11> '<dependent type>' contains-errors lvalue .nbytes
+    | | `-RecoveryExpr 0x14e943db0 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14e944230 <col:19, line:33:2>
+    |   |-CallExpr 0x14e9440e0 <line:30:3, line:31:42> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14e943e48 <line:30:3> 'int ()' Function 0x14e943228 'salsa20_encrypt_bytes' 'int ()'
+    |   | |-DeclRefExpr 0x14e943e68 <col:25> 'struct salsa20_ctx *' contains-errors lvalue Var 0x14e941358 'ctx' 'struct salsa20_ctx *'
+    |   | |-CXXDependentScopeMemberExpr 0x14e943f38 <col:30, col:44> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e943ef0 <col:30, col:39> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943ea8 <col:30, col:35> '<dependent type>' contains-errors lvalue .src
+    |   | |     `-RecoveryExpr 0x14e943e88 <col:30> '<dependent type>' contains-errors lvalue
+    |   | |-CXXDependentScopeMemberExpr 0x14e944030 <line:31:11, col:25> '<dependent type>' contains-errors lvalue .addr
+    |   | | `-CXXDependentScopeMemberExpr 0x14e943fe8 <col:11, col:20> '<dependent type>' contains-errors lvalue .virt
+    |   | |   `-CXXDependentScopeMemberExpr 0x14e943fa0 <col:11, col:16> '<dependent type>' contains-errors lvalue .dst
+    |   | |     `-RecoveryExpr 0x14e943f80 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-CXXDependentScopeMemberExpr 0x14e944098 <col:31, col:36> '<dependent type>' contains-errors lvalue .nbytes
+    |   |   `-RecoveryExpr 0x14e944078 <col:31> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x14e944210 <line:32:3, col:43> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x14e944120 <col:3> 'int' lvalue Var 0x14e941618 'err' 'int'
+    |     `-CallExpr 0x14e9441d8 <col:9, col:43> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14e944140 <col:9> 'int ()' Function 0x14e943598 'blkcipher_walk_done' 'int ()'
+    |       |-DeclRefExpr 0x14e944160 <col:29> 'struct blkcipher_desc *' lvalue ParmVar 0x14e928648 'desc' 'struct blkcipher_desc *'
+    |       |-UnaryOperator 0x14e9441a0 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       | `-RecoveryExpr 0x14e944180 <col:36> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x14e9441b8 <col:42> 'int' 0
+    `-ReturnStmt 0x14e9442a8 <line:35:2, col:9>
+      `-ImplicitCastExpr 0x14e944290 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14e944270 <col:9> 'int' lvalue Var 0x14e941618 'err' 'int'

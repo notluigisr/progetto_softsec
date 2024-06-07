@@ -1,0 +1,74 @@
+`-FunctionDecl 0x13180deb8  line:1:1 invalid compile_get_env 'int (char **, int *)'
+  |-ParmVarDecl 0x13180dd28 <col:17, col:26> col:26 used arg 'char **'
+  |-ParmVarDecl 0x13180ddd8 <col:31, col:39> col:39 invalid cctx 'int *'
+  `-CompoundStmt 0x13182a198 <line:2:1, line:21:1>
+    |-DeclStmt 0x13180e058 <line:3:5, col:25>
+    | `-VarDecl 0x13180df88 <col:5, col:22> col:13 used start 'char *' cinit
+    |   `-ImplicitCastExpr 0x13180e040 <col:21, col:22> 'char *' <LValueToRValue>
+    |     `-UnaryOperator 0x13180e028 <col:21, col:22> 'char *' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x13180e010 <col:22> 'char **' <LValueToRValue>
+    |         `-DeclRefExpr 0x13180dff0 <col:22> 'char **' lvalue ParmVar 0x13180dd28 'arg' 'char **'
+    |-DeclStmt 0x13180e0f0 <line:4:5, col:13>
+    | `-VarDecl 0x13180e088 <col:5, col:10> col:10 used len 'int'
+    |-DeclStmt 0x13180e188 <line:5:5, col:13>
+    | `-VarDecl 0x13180e120 <col:5, col:10> col:10 used ret 'int'
+    |-DeclStmt 0x13180e220 <line:6:5, col:17>
+    | `-VarDecl 0x13180e1b8 <col:5, col:13> col:13 used name 'char *'
+    |-UnaryOperator 0x13180e288 <line:8:5, col:8> 'char *' prefix '++'
+    | `-UnaryOperator 0x13180e270 <col:7, col:8> 'char *' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x13180e258 <col:8> 'char **' <LValueToRValue>
+    |     `-DeclRefExpr 0x13180e238 <col:8> 'char **' lvalue ParmVar 0x13180dd28 'arg' 'char **'
+    |-BinaryOperator 0x131826788 <line:9:5, col:26> 'int' '='
+    | |-DeclRefExpr 0x13180e2a0 <col:5> 'int' lvalue Var 0x13180e088 'len' 'int'
+    | `-CallExpr 0x131826748 <col:11, col:26> 'int'
+    |   |-ImplicitCastExpr 0x131826730 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1318266b8 <col:11> 'int ()' Function 0x131826600 'get_env_len' 'int ()'
+    |   `-ImplicitCastExpr 0x131826770 <col:23> 'char **' <LValueToRValue>
+    |     `-DeclRefExpr 0x1318266d8 <col:23> 'char **' lvalue ParmVar 0x13180dd28 'arg' 'char **'
+    |-IfStmt 0x131826c20 <line:10:5, line:14:5>
+    | |-BinaryOperator 0x131826800 <line:10:9, col:16> 'int' '=='
+    | | |-ImplicitCastExpr 0x1318267e8 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1318267a8 <col:9> 'int' lvalue Var 0x13180e088 'len' 'int'
+    | | `-IntegerLiteral 0x1318267c8 <col:16> 'int' 0
+    | `-CompoundStmt 0x131826c00 <line:11:5, line:14:5>
+    |   |-CallExpr 0x131826b88 <line:12:2, col:43> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x131826900 <col:2> 'int ()' Function 0x131826848 'semsg' 'int ()'
+    |   | |-CallExpr 0x131826b28 <col:8, col:31> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x131826a00 <col:8> 'int ()' Function 0x131826948 '_' 'int ()'
+    |   | | `-RecoveryExpr 0x131826b08 <col:10> '<dependent type>' contains-errors lvalue
+    |   | `-BinaryOperator 0x131826b68 <col:34, col:42> 'char *' '-'
+    |   |   |-ImplicitCastExpr 0x131826b50 <col:34> 'char *' <LValueToRValue>
+    |   |   | `-DeclRefExpr 0x131826a60 <col:34> 'char *' lvalue Var 0x13180df88 'start' 'char *'
+    |   |   `-IntegerLiteral 0x131826a80 <col:42> 'int' 1
+    |   `-ReturnStmt 0x131826bf0 <line:13:2, col:9>
+    |     `-RecoveryExpr 0x131826bd0 <col:9> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x131827290 <line:17:5, col:39> 'char *' '='
+    | |-DeclRefExpr 0x131826c40 <col:5> 'char *' lvalue Var 0x13180e1b8 'name' 'char *'
+    | `-ImplicitCastExpr 0x131826e58 <col:12, col:39> 'char *' <IntegralToPointer>
+    |   `-CallExpr 0x131826e10 <col:12, col:39> 'int'
+    |     |-ImplicitCastExpr 0x131826df8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x131826d40 <col:12> 'int ()' Function 0x131826c88 'vim_strnsave' 'int ()'
+    |     |-ImplicitCastExpr 0x131826e40 <col:25> 'char *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x131826d60 <col:25> 'char *' lvalue Var 0x13180df88 'start' 'char *'
+    |     `-BinaryOperator 0x131826dd8 <col:32, col:38> 'int' '+'
+    |       |-ImplicitCastExpr 0x131826dc0 <col:32> 'int' <LValueToRValue>
+    |       | `-DeclRefExpr 0x131826d80 <col:32> 'int' lvalue Var 0x13180e088 'len' 'int'
+    |       `-IntegerLiteral 0x131826da0 <col:38> 'int' 1
+    |-BinaryOperator 0x131827580 <line:18:5, col:62> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1318272b0 <col:5> 'int' lvalue Var 0x13180e120 'ret' 'int'
+    | `-CallExpr 0x131827538 <col:11, col:62> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1318273b0 <col:11> 'int ()' Function 0x1318272f8 'generate_LOAD' 'int ()'
+    |   |-RecoveryExpr 0x1318273d0 <col:25> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x1318274e0 <col:31> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x131827408 <col:44> 'int' 0
+    |   |-DeclRefExpr 0x131827428 <col:47> 'char *' lvalue Var 0x13180e1b8 'name' 'char *'
+    |   `-UnaryOperator 0x131827520 <col:53, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x131827500 <col:54> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13182a110 <line:19:5, col:18> 'int'
+    | |-ImplicitCastExpr 0x13182a0f8 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13182a0b8 <col:5> 'int ()' Function 0x13182a000 'vim_free' 'int ()'
+    | `-ImplicitCastExpr 0x13182a138 <col:14> 'char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13182a0d8 <col:14> 'char *' lvalue Var 0x13180e1b8 'name' 'char *'
+    `-ReturnStmt 0x13182a188 <line:20:5, col:12>
+      `-ImplicitCastExpr 0x13182a170 <col:12> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13182a150 <col:12> 'int' lvalue Var 0x13180e120 'ret' 'int'

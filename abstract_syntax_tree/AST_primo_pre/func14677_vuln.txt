@@ -1,0 +1,56 @@
+`-FunctionDecl 0x13b827438  line:1:1 invalid vg_resource_destroy 'int (int *, struct virtio_gpu_simple_resource *)'
+  |-ParmVarDecl 0x13b80dd28 <col:21, col:28> col:28 invalid g 'int *'
+  |-ParmVarDecl 0x13b80e318 <line:2:21, col:56> col:56 used res 'struct virtio_gpu_simple_resource *'
+  `-CompoundStmt 0x13b8281f8 <line:3:1, line:18:1>
+    |-DeclStmt 0x13b827570 <line:4:5, col:10>
+    | `-VarDecl 0x13b827508 <col:5, col:9> col:9 used i 'int'
+    |-IfStmt 0x13b827ac0 <line:6:5, line:12:5>
+    | |-RecoveryExpr 0x13b8275c0 <line:6:9, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b827588 <col:9> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'
+    | `-CompoundStmt 0x13b827aa8 <col:31, line:12:5>
+    |   `-ForStmt 0x13b827a70 <line:7:9, line:11:9>
+    |     |-BinaryOperator 0x13b827628 <line:7:14, col:18> 'int' '='
+    |     | |-DeclRefExpr 0x13b8275e8 <col:14> 'int' lvalue Var 0x13b827508 'i' 'int'
+    |     | `-IntegerLiteral 0x13b827608 <col:18> 'int' 0
+    |     |-<<<NULL>>>
+    |     |-BinaryOperator 0x13b8276c0 <col:21, col:25> 'int' contains-errors '<'
+    |     | |-DeclRefExpr 0x13b827648 <col:21> 'int' lvalue Var 0x13b827508 'i' 'int'
+    |     | `-RecoveryExpr 0x13b8276a0 <col:25> '<dependent type>' contains-errors lvalue
+    |     |-UnaryOperator 0x13b827700 <col:50, col:51> 'int' postfix '++'
+    |     | `-DeclRefExpr 0x13b8276e0 <col:50> 'int' lvalue Var 0x13b827508 'i' 'int'
+    |     `-CompoundStmt 0x13b827a58 <col:55, line:11:9>
+    |       `-IfStmt 0x13b827a38 <line:8:13, line:10:13>
+    |         |-BinaryOperator 0x13b827810 <line:8:17, col:47> '<dependent type>' contains-errors '&'
+    |         | |-RecoveryExpr 0x13b827750 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |         | | `-DeclRefExpr 0x13b827718 <col:17> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'
+    |         | `-ParenExpr 0x13b8277f0 <col:40, col:47> 'int'
+    |         |   `-BinaryOperator 0x13b8277d0 <col:41, col:46> 'int' '<<'
+    |         |     |-IntegerLiteral 0x13b827778 <col:41> 'int' 1
+    |         |     `-ImplicitCastExpr 0x13b8277b8 <col:46> 'int' <LValueToRValue>
+    |         |       `-DeclRefExpr 0x13b827798 <col:46> 'int' lvalue Var 0x13b827508 'i' 'int'
+    |         `-CompoundStmt 0x13b827a20 <col:50, line:10:13>
+    |           `-CallExpr 0x13b8279f0 <line:9:17, col:40> '<dependent type>' contains-errors
+    |             |-DeclRefExpr 0x13b827990 <col:17> 'int ()' Function 0x13b8278d8 'vg_disable_scanout' 'int ()'
+    |             |-RecoveryExpr 0x13b8279b0 <col:36> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x13b8279d0 <col:39> 'int' lvalue Var 0x13b827508 'i' 'int'
+    |-CallExpr 0x13b827c58 <line:14:5, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b827bc0 <col:5> 'int ()' Function 0x13b827b08 'vugbm_buffer_destroy' 'int ()'
+    | `-UnaryOperator 0x13b827c40 <col:26, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13b827c18 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b827be0 <col:27> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'
+    |-CallExpr 0x13b827de0 <line:15:5, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b827d60 <col:5> 'int ()' Function 0x13b827ca8 'pixman_image_unref' 'int ()'
+    | `-RecoveryExpr 0x13b827db8 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13b827d80 <col:24> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'
+    |-CallExpr 0x13b828018 <line:16:5, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b827ee8 <col:5> 'int ()' Function 0x13b827e30 'QTAILQ_REMOVE' 'int ()'
+    | |-UnaryOperator 0x13b827f70 <col:19, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x13b827f28 <col:20, col:23> '<dependent type>' contains-errors lvalue ->reslist
+    | |   `-RecoveryExpr 0x13b827f08 <col:20> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x13b827f88 <col:32> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'
+    | `-RecoveryExpr 0x13b827ff8 <col:37> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x13b8281b8 <line:17:5, col:15> 'int'
+      |-ImplicitCastExpr 0x13b8281a0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13b828130 <col:5> 'int ()' Function 0x13b828078 'g_free' 'int ()'
+      `-ImplicitCastExpr 0x13b8281e0 <col:12> 'struct virtio_gpu_simple_resource *' <LValueToRValue>
+        `-DeclRefExpr 0x13b828150 <col:12> 'struct virtio_gpu_simple_resource *' lvalue ParmVar 0x13b80e318 'res' 'struct virtio_gpu_simple_resource *'

@@ -1,0 +1,33 @@
+`-FunctionDecl 0x121141ca8  line:1:5 invalid samdb_msg_add_dom_sid 'int (struct ldb_context *, int *, struct ldb_message *, const char *, const struct dom_sid *)'
+  |-ParmVarDecl 0x121128648 <col:27, col:47> col:47 used sam_ldb 'struct ldb_context *'
+  |-ParmVarDecl 0x121128718 <col:56, col:68> col:68 invalid mem_ctx 'int *'
+  |-ParmVarDecl 0x1211418e8 <col:77, col:97> col:97 used msg 'struct ldb_message *'
+  |-ParmVarDecl 0x121141968 <line:2:6, col:18> col:18 used attr_name 'const char *'
+  |-ParmVarDecl 0x121141b38 <col:29, col:51> col:51 used sid 'const struct dom_sid *'
+  `-CompoundStmt 0x1211428b0 <line:3:1, line:14:1>
+    |-DeclStmt 0x121141ef8 <line:4:2, col:18>
+    | |-RecordDecl 0x121141d78 <col:2, col:9> col:9 struct ldb_val
+    | `-VarDecl 0x121141e78 <col:2, col:17> col:17 invalid v 'struct ldb_val'
+    |-DeclStmt 0x1211420a8 <line:5:2, col:27>
+    | |-EnumDecl 0x121141f10 <col:2, col:7> col:7 ndr_err_code
+    | `-VarDecl 0x121142028 <col:2, col:20> col:20 referenced invalid ndr_err 'enum ndr_err_code'
+    |-IfStmt 0x121142640 <line:10:2, line:12:2>
+    | |-UnaryOperator 0x121142458 <line:10:6, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x121142430 <col:7, col:38> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1211423f0 <col:7> 'int ()' Function 0x121142338 'NDR_ERR_CODE_IS_SUCCESS' 'int ()'
+    | |   `-RecoveryExpr 0x121142410 <col:31> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x121142628 <col:41, line:12:2>
+    |   `-ReturnStmt 0x121142618 <line:11:3, col:27>
+    |     `-CallExpr 0x1211425d8 <col:10, col:27> 'int'
+    |       |-ImplicitCastExpr 0x1211425c0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x121142550 <col:10> 'int ()' Function 0x121142498 'ldb_operr' 'int ()'
+    |       `-ImplicitCastExpr 0x121142600 <col:20> 'struct ldb_context *' <LValueToRValue>
+    |         `-DeclRefExpr 0x121142570 <col:20> 'struct ldb_context *' lvalue ParmVar 0x121128648 'sam_ldb' 'struct ldb_context *'
+    `-ReturnStmt 0x1211428a0 <line:13:2, col:51>
+      `-CallExpr 0x121142860 <col:9, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x121142740 <col:9> 'int ()' Function 0x121142688 'ldb_msg_add_value' 'int ()'
+        |-DeclRefExpr 0x121142760 <col:27> 'struct ldb_message *' lvalue ParmVar 0x1211418e8 'msg' 'struct ldb_message *'
+        |-DeclRefExpr 0x121142780 <col:32> 'const char *' lvalue ParmVar 0x121141968 'attr_name' 'const char *'
+        |-UnaryOperator 0x1211427c0 <col:43, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x1211427a0 <col:44> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x121142840 <col:47> '<dependent type>' contains-errors lvalue

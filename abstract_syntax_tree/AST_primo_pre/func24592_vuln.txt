@@ -1,0 +1,48 @@
+`-FunctionDecl 0x150026740  line:1:6 mm_release 'void (struct task_struct *, struct mm_struct *)'
+  |-ParmVarDecl 0x15000e248 <col:17, col:37> col:37 used tsk 'struct task_struct *'
+  |-ParmVarDecl 0x150026628 <col:42, col:60> col:60 used mm 'struct mm_struct *'
+  `-CompoundStmt 0x150029438 <line:2:1, line:25:1>
+    |-DeclStmt 0x150026a88 <line:3:2, col:49>
+    | |-RecordDecl 0x150026840 <col:2, col:9> col:9 struct completion
+    | `-VarDecl 0x1500269a8 <col:2, col:39> col:21 used vfork_done 'struct completion *' cinit
+    |   `-RecoveryExpr 0x150026a48 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x150026a10 <col:34> 'struct task_struct *' lvalue ParmVar 0x15000e248 'tsk' 'struct task_struct *'
+    |-CallExpr 0x150026c78 <line:6:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x150026c60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x150026bd0 <col:2> 'int ()' Function 0x150026b18 'deactivate_mm' 'int ()'
+    | |-ImplicitCastExpr 0x150026ca8 <col:16> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x150026bf0 <col:16> 'struct task_struct *' lvalue ParmVar 0x15000e248 'tsk' 'struct task_struct *'
+    | `-ImplicitCastExpr 0x150026cc0 <col:21> 'struct mm_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x150026c10 <col:21> 'struct mm_struct *' lvalue ParmVar 0x150026628 'mm' 'struct mm_struct *'
+    |-IfStmt 0x150026f80 <line:9:2, line:12:2>
+    | |-ImplicitCastExpr 0x150026cf8 <line:9:6> 'struct completion *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x150026cd8 <col:6> 'struct completion *' contains-errors lvalue Var 0x1500269a8 'vfork_done' 'struct completion *'
+    | `-CompoundStmt 0x150026f60 <col:18, line:12:2>
+    |   |-BinaryOperator 0x150026dc8 <line:10:3, col:21> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x150026d48 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x150026d10 <col:3> 'struct task_struct *' lvalue ParmVar 0x15000e248 'tsk' 'struct task_struct *'
+    |   | `-RecoveryExpr 0x150026da8 <col:21> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x150026f20 <line:11:3, col:22> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x150026f08 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x150026ec8 <col:3> 'int ()' Function 0x150026e10 'complete' 'int ()'
+    |     `-ImplicitCastExpr 0x150026f48 <col:12> 'struct completion *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x150026ee8 <col:12> 'struct completion *' contains-errors lvalue Var 0x1500269a8 'vfork_done' 'struct completion *'
+    `-IfStmt 0x150029418 <line:15:2, line:24:2>
+      |-RecoveryExpr 0x150027278 <line:15:6, line:17:38> '_Bool' contains-errors
+      `-CompoundStmt 0x1500293f0 <col:41, line:24:2>
+        |-BinaryOperator 0x150027350 <line:19:3, col:26> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x1500272d0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x150027298 <col:3> 'struct task_struct *' lvalue ParmVar 0x15000e248 'tsk' 'struct task_struct *'
+        | `-RecoveryExpr 0x150027330 <col:26> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1500274f8 <line:22:3, col:21> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x150027450 <col:3> 'int ()' Function 0x150027398 'put_user' 'int ()'
+        | |-IntegerLiteral 0x150027470 <col:12> 'int' 0
+        | `-RecoveryExpr 0x1500274d8 <col:15> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x1500293a0 <line:23:3, col:49> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x150029210 <col:3> 'int ()' Function 0x150027550 'sys_futex' 'int ()'
+          |-RecoveryExpr 0x150029320 <col:13> '<dependent type>' contains-errors lvalue
+          |-RecoveryExpr 0x150029340 <col:21> '<dependent type>' contains-errors lvalue
+          |-IntegerLiteral 0x150029260 <col:33> 'int' 1
+          |-RecoveryExpr 0x150029360 <col:36> '<dependent type>' contains-errors lvalue
+          |-RecoveryExpr 0x150029380 <col:42> '<dependent type>' contains-errors lvalue
+          `-IntegerLiteral 0x1500292b0 <col:48> 'int' 0

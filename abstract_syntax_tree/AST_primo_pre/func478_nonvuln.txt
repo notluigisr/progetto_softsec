@@ -1,0 +1,23 @@
+`-FunctionDecl 0x158928758  line:1:12 block_device_ejected 'int (struct super_block *)' static
+  |-ParmVarDecl 0x158928648 <col:33, col:53> col:53 used sb 'struct super_block *'
+  `-CompoundStmt 0x1589411f8 <line:2:1, line:7:1>
+    |-DeclStmt 0x158940ce0 <line:3:2, col:47>
+    | |-RecordDecl 0x158940a50 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x158940bb8 <col:2, col:39> col:16 used bd_inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x158940c80 <col:27, col:39> '<dependent type>' contains-errors lvalue ->bd_inode
+    |     `-RecoveryExpr 0x158940c58 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x158940c20 <col:27> 'struct super_block *' lvalue ParmVar 0x158928648 'sb' 'struct super_block *'
+    |-DeclStmt 0x1589410f8 <line:4:2, col:55>
+    | |-RecordDecl 0x158940cf8 <col:2, col:9> col:9 struct backing_dev_info
+    | `-VarDecl 0x158940e68 <col:2, col:54> col:27 used bdi 'struct backing_dev_info *' cinit
+    |   `-ImplicitCastExpr 0x1589410c8 <col:33, col:54> 'struct backing_dev_info *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x158941088 <col:33, col:54> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x158941070 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x158941000 <col:33> 'int ()' Function 0x158940f48 'inode_to_bdi' 'int ()'
+    |       `-ImplicitCastExpr 0x1589410b0 <col:46> 'struct inode *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x158941020 <col:46> 'struct inode *' contains-errors lvalue Var 0x158940bb8 'bd_inode' 'struct inode *'
+    `-ReturnStmt 0x1589411e8 <line:6:2, col:21>
+      `-BinaryOperator 0x1589411c8 <col:9, col:21> 'int' contains-errors '=='
+        |-RecoveryExpr 0x158941148 <col:9, col:14> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x158941110 <col:9> 'struct backing_dev_info *' contains-errors lvalue Var 0x158940e68 'bdi' 'struct backing_dev_info *'
+        `-RecoveryExpr 0x1589411a8 <col:21> '<dependent type>' contains-errors lvalue

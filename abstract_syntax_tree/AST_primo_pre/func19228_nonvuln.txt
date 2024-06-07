@@ -1,0 +1,14 @@
+`-FunctionDecl 0x12f0e8f50  line:1:6 md_super_wait 'void (struct mddev *)'
+  |-ParmVarDecl 0x12f0e8e48 <col:20, col:34> col:34 used mddev 'struct mddev *'
+  `-CompoundStmt 0x12f105800 <line:2:1, line:5:1>
+    `-CallExpr 0x12f1057d0 <line:4:2, col:67> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12f105570 <col:2> 'int ()' Function 0x12f1054b8 'wait_event' 'int ()'
+      |-RecoveryExpr 0x12f1055c8 <col:13, col:20> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x12f105590 <col:13> 'struct mddev *' lvalue ParmVar 0x12f0e8e48 'mddev' 'struct mddev *'
+      `-BinaryOperator 0x12f1057b0 <col:29, col:66> 'int' contains-errors '=='
+        |-CallExpr 0x12f105768 <col:29, col:63> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12f1056d0 <col:29> 'int ()' Function 0x12f105618 'atomic_read' 'int ()'
+        | `-UnaryOperator 0x12f105750 <col:41, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x12f105728 <col:42, col:49> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x12f1056f0 <col:42> 'struct mddev *' lvalue ParmVar 0x12f0e8e48 'mddev' 'struct mddev *'
+        `-IntegerLiteral 0x12f105790 <col:66> 'int' 0

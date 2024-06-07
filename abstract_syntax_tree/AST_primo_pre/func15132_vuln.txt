@@ -1,0 +1,59 @@
+`-FunctionDecl 0x12100ddf8  line:1:1 invalid smtp_log_to_file 'int (int *)'
+  |-ParmVarDecl 0x12100dd28 <col:18, col:26> col:26 invalid smtp 'int *'
+  `-CompoundStmt 0x12200fe00 <line:2:1, line:23:1>
+    |-DeclStmt 0x12200d4e8 <line:5:2, col:14>
+    | |-RecordDecl 0x12100e128 <col:2, col:9> col:9 struct tm
+    | `-VarDecl 0x12100e228 <col:2, col:12> col:12 invalid tm 'struct tm'
+    |-DeclStmt 0x12200d608 <line:6:2, col:19>
+    | `-VarDecl 0x12200d5a0 <col:2, col:18> col:7 used time_buf 'char[25]'
+    |-DeclStmt 0x12200d6a0 <line:7:2, col:18>
+    | `-VarDecl 0x12200d638 <col:2, col:6> col:6 used time_buf_len 'int'
+    |-CallExpr 0x12200d848 <line:9:2, col:11> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200d798 <col:2> 'int ()' Function 0x12200d6e0 'time' 'int ()'
+    | `-UnaryOperator 0x12200d830 <col:7, col:8> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12200d810 <col:8> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12200da40 <line:10:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200d950 <col:2> 'int ()' Function 0x12200d898 'localtime_r' 'int ()'
+    | |-UnaryOperator 0x12200da28 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12200da08 <col:15> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x12200d9c0 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12200d9a0 <col:21> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12200dc88 <line:11:2, col:63> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12200da70 <col:2> 'int' lvalue Var 0x12200d638 'time_buf_len' 'int'
+    | `-CallExpr 0x12200dc48 <col:17, col:63> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12200db70 <col:17> 'int ()' Function 0x12200dab8 'strftime' 'int ()'
+    |   |-DeclRefExpr 0x12200db90 <col:26> 'char[25]' lvalue Var 0x12200d5a0 'time_buf' 'char[25]'
+    |   |-UnaryExprOrTypeTraitExpr 0x12200dbd0 <col:36, col:43> 'unsigned long' sizeof
+    |   | `-DeclRefExpr 0x12200dbb0 <col:43> 'char[25]' lvalue Var 0x12200d5a0 'time_buf' 'char[25]' non_odr_use_unevaluated
+    |   |-StringLiteral 0x12200dbf0 <col:53> 'char[4]' lvalue "STR"
+    |   `-UnaryOperator 0x12200dc30 <col:60, col:61> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12200dc10 <col:61> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12200fab8 <line:13:2, line:18:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200dd88 <line:13:2> 'int ()' Function 0x12200dcd0 'fprintf' 'int ()'
+    | |-RecoveryExpr 0x12200e1c0 <col:10> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x12200de00 <col:14, line:15:7> 'char[10]' lvalue "STRSTRSTR"
+    | |-DeclRefExpr 0x12200de30 <line:16:7> 'char[25]' lvalue Var 0x12200d5a0 'time_buf' 'char[25]'
+    | |-CXXDependentScopeMemberExpr 0x12200fa00 <col:17, col:30> '<dependent type>' contains-errors lvalue ->email_from
+    | | `-RecoveryExpr 0x12200e1e0 <col:17> '<dependent type>' contains-errors lvalue
+    | |-CXXDependentScopeMemberExpr 0x12200ded0 <col:42, col:48> '<dependent type>' contains-errors lvalue ->email_to
+    | | `-RecoveryExpr 0x12200deb0 <col:42> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x12200fa60 <line:17:7, col:22> 'int' '-'
+    | | |-ImplicitCastExpr 0x12200fa48 <col:7> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12200df18 <col:7> 'int' lvalue Var 0x12200d638 'time_buf_len' 'int'
+    | | `-IntegerLiteral 0x12200df38 <col:22> 'int' 7
+    | |-StringLiteral 0x12200dfd0 <col:25> 'char[1]' lvalue ""
+    | |-CXXDependentScopeMemberExpr 0x12200e008 <col:29, col:35> '<dependent type>' contains-errors lvalue ->subject
+    | | `-RecoveryExpr 0x12200dfe8 <col:29> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x12200fa98 <line:18:7, col:22> 'int' '-'
+    | | |-ImplicitCastExpr 0x12200fa80 <col:7> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12200e050 <col:7> 'int' lvalue Var 0x12200d638 'time_buf_len' 'int'
+    | | `-IntegerLiteral 0x12200e070 <col:22> 'int' 7
+    | |-StringLiteral 0x12200e0c8 <col:25> 'char[1]' lvalue ""
+    | `-CXXDependentScopeMemberExpr 0x12200e100 <col:29, col:35> '<dependent type>' contains-errors lvalue ->body
+    |   `-RecoveryExpr 0x12200e0e0 <col:29> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12200fc90 <line:20:2, col:11> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200fc10 <col:2> 'int ()' Function 0x12200fb58 'fclose' 'int ()'
+    | `-RecoveryExpr 0x12200fc70 <col:9> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x12200fdd8 <line:22:2, col:20> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12200fd98 <col:2> 'int ()' Function 0x12200fce0 'free_smtp_all' 'int ()'
+      `-RecoveryExpr 0x12200fdb8 <col:16> '<dependent type>' contains-errors lvalue

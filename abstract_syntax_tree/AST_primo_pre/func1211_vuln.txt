@@ -1,0 +1,55 @@
+`-FunctionDecl 0x124944f38  line:1:5 vfs_open 'int (const struct path *, struct file *, const struct cred *)'
+  |-ParmVarDecl 0x124928648 <col:14, col:33> col:33 used path 'const struct path *'
+  |-ParmVarDecl 0x124944c28 <col:39, col:52> col:52 used file 'struct file *'
+  |-ParmVarDecl 0x124944df8 <line:2:7, col:26> col:26 used cred 'const struct cred *'
+  `-CompoundStmt 0x125009c48 <line:3:1, line:15:1>
+    |-DeclStmt 0x124945288 <line:4:2, col:38>
+    | |-RecordDecl 0x124945040 <col:2, col:9> col:9 struct dentry
+    | `-VarDecl 0x1249451a8 <col:2, col:32> col:17 used dentry 'struct dentry *' cinit
+    |   `-RecoveryExpr 0x124945248 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x124945210 <col:26> 'const struct path *' lvalue ParmVar 0x124928648 'path' 'const struct path *'
+    |-DeclStmt 0x1249454e8 <line:5:2, col:39>
+    | |-RecordDecl 0x1249452a0 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x124945408 <col:2, col:32> col:16 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x1249454a8 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x124945470 <col:24> 'struct dentry *' contains-errors lvalue Var 0x1249451a8 'dentry' 'struct dentry *'
+    |-BinaryOperator 0x1249455b0 <line:7:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x124945538 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x124945500 <col:2> 'struct file *' lvalue ParmVar 0x124944c28 'file' 'struct file *'
+    | `-UnaryOperator 0x124945598 <col:17, col:18> 'const struct path' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x124945580 <col:18> 'const struct path *' <LValueToRValue>
+    |     `-DeclRefExpr 0x124945560 <col:18> 'const struct path *' lvalue ParmVar 0x124928648 'path' 'const struct path *'
+    |-IfStmt 0x125009a00 <line:8:2, line:12:2>
+    | |-BinaryOperator 0x1249456a0 <line:8:6, col:24> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x124945608 <col:6, col:14> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x1249455d0 <col:6> 'struct dentry *' contains-errors lvalue Var 0x1249451a8 'dentry' 'struct dentry *'
+    | | `-RecoveryExpr 0x124945680 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x124945be0 <col:48, line:12:2>
+    |   |-BinaryOperator 0x124945838 <line:9:3, col:61> 'struct inode *' contains-errors '='
+    |   | |-DeclRefExpr 0x1249456c0 <col:3> 'struct inode *' contains-errors lvalue Var 0x124945408 'inode' 'struct inode *'
+    |   | `-CallExpr 0x124945808 <col:11, col:61> '<dependent type>' contains-errors
+    |   |   |-CXXDependentScopeMemberExpr 0x124945740 <col:11, col:25> '<dependent type>' contains-errors lvalue ->d_select_inode
+    |   |   | `-RecoveryExpr 0x124945718 <col:11, col:19> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x1249456e0 <col:11> 'struct dentry *' contains-errors lvalue Var 0x1249451a8 'dentry' 'struct dentry *'
+    |   |   |-DeclRefExpr 0x124945788 <col:40> 'struct dentry *' contains-errors lvalue Var 0x1249451a8 'dentry' 'struct dentry *'
+    |   |   `-RecoveryExpr 0x1249457e0 <col:48, col:54> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1249457a8 <col:48> 'struct file *' lvalue ParmVar 0x124944c28 'file' 'struct file *'
+    |   `-IfStmt 0x124945bc0 <line:10:3, line:11:24>
+    |     |-CallExpr 0x1249459f8 <line:10:7, col:19> 'int' contains-errors
+    |     | |-ImplicitCastExpr 0x1249459e0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x124945970 <col:7> 'int ()' Function 0x1249458b8 'IS_ERR' 'int ()'
+    |     | `-ImplicitCastExpr 0x124945a20 <col:14> 'struct inode *' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x124945990 <col:14> 'struct inode *' contains-errors lvalue Var 0x124945408 'inode' 'struct inode *'
+    |     `-ReturnStmt 0x124945bb0 <line:11:4, col:24>
+    |       `-CallExpr 0x124945b70 <col:11, col:24> 'int' contains-errors
+    |         |-ImplicitCastExpr 0x124945b58 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x124945b18 <col:11> 'int ()' Function 0x124945a60 'PTR_ERR' 'int ()'
+    |         `-ImplicitCastExpr 0x124945b98 <col:19> 'struct inode *' contains-errors <LValueToRValue>
+    |           `-DeclRefExpr 0x124945b38 <col:19> 'struct inode *' contains-errors lvalue Var 0x124945408 'inode' 'struct inode *'
+    `-ReturnStmt 0x125009c38 <line:14:2, col:47>
+      `-CallExpr 0x125009bf8 <col:9, col:47> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x125009b00 <col:9> 'int ()' Function 0x125009a48 'do_dentry_open' 'int ()'
+        |-DeclRefExpr 0x125009b20 <col:24> 'struct file *' lvalue ParmVar 0x124944c28 'file' 'struct file *'
+        |-DeclRefExpr 0x125009b40 <col:30> 'struct inode *' contains-errors lvalue Var 0x124945408 'inode' 'struct inode *'
+        |-RecoveryExpr 0x125009bd8 <col:37> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x125009b78 <col:43> 'const struct cred *' lvalue ParmVar 0x124944df8 'cred' 'const struct cred *'

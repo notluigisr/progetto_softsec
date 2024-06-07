@@ -1,0 +1,21 @@
+`-FunctionDecl 0x149808238  line:1:1 invalid tracing_buffers_poll 'int (struct file *, int *)'
+  |-ParmVarDecl 0x149128648 <col:22, col:35> col:35 used filp 'struct file *'
+  |-ParmVarDecl 0x149128718 <col:41, col:53> col:53 invalid poll_table 'int *'
+  `-CompoundStmt 0x1498089e8 <line:2:1, line:7:1>
+    |-DeclStmt 0x149808538 <line:3:2, col:54>
+    | |-RecordDecl 0x1498082f0 <col:2, col:9> col:9 struct ftrace_buffer_info
+    | `-VarDecl 0x149808458 <col:2, col:42> col:29 used info 'struct ftrace_buffer_info *' cinit
+    |   `-RecoveryExpr 0x1498084f8 <col:36, col:42> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1498084c0 <col:36> 'struct file *' lvalue ParmVar 0x149128648 'filp' 'struct file *'
+    |-DeclStmt 0x1498087b0 <line:4:2, col:43>
+    | |-RecordDecl 0x149808550 <col:2, col:9> col:9 struct trace_iterator
+    | `-VarDecl 0x1498086b8 <col:2, col:39> col:25 used iter 'struct trace_iterator *' cinit
+    |   `-UnaryOperator 0x149808780 <col:32, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x149808758 <col:33, col:39> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x149808720 <col:33> 'struct ftrace_buffer_info *' contains-errors lvalue Var 0x149808458 'info' 'struct ftrace_buffer_info *'
+    `-ReturnStmt 0x1498089d8 <line:6:2, col:42>
+      `-CallExpr 0x1498089a0 <col:9, col:42> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x149808920 <col:9> 'int ()' Function 0x149808868 'trace_poll' 'int ()'
+        |-DeclRefExpr 0x149808940 <col:20> 'struct trace_iterator *' contains-errors lvalue Var 0x1498086b8 'iter' 'struct trace_iterator *'
+        |-DeclRefExpr 0x149808960 <col:26> 'struct file *' lvalue ParmVar 0x149128648 'filp' 'struct file *'
+        `-RecoveryExpr 0x149808980 <col:32> '<dependent type>' contains-errors lvalue

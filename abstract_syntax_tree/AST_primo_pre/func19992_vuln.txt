@@ -1,0 +1,92 @@
+`-FunctionDecl 0x12a076a38  line:1:12 invalid io_rw_init_file 'int (struct io_kiocb *, int)' static
+  |-ParmVarDecl 0x12a05e048 <col:28, col:45> col:45 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x12a05e0e0 <col:50, col:58> col:58 invalid mode 'int'
+  `-CompoundStmt 0x12a07d910 <line:2:1, line:38:1>
+    |-DeclStmt 0x12a076d98 <line:3:2, col:38>
+    | |-RecordDecl 0x12a076af0 <col:2, col:9> col:9 struct kiocb
+    | `-VarDecl 0x12a076c58 <col:2, col:33> col:16 used kiocb 'struct kiocb *' cinit
+    |   `-UnaryOperator 0x12a076d68 <col:24, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x12a076d20 <col:25, col:33> '<dependent type>' contains-errors lvalue .kiocb
+    |       `-RecoveryExpr 0x12a076cf8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x12a076cc0 <col:25> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x12a076ff8 <line:4:2, col:36>
+    | |-RecordDecl 0x12a076db0 <col:2, col:9> col:9 struct io_ring_ctx
+    | `-VarDecl 0x12a076f18 <col:2, col:33> col:22 used ctx 'struct io_ring_ctx *' cinit
+    |   `-RecoveryExpr 0x12a076fb8 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a076f80 <col:28> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x12a077258 <line:5:2, col:31>
+    | |-RecordDecl 0x12a077010 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x12a077178 <col:2, col:27> col:15 used file 'struct file *' cinit
+    |   `-RecoveryExpr 0x12a077218 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a0771e0 <col:22> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x12a0772f0 <line:6:2, col:9>
+    | `-VarDecl 0x12a077288 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x12a077698 <line:8:2, line:9:11>
+    | |-CallExpr 0x12a0775c8 <line:8:6, col:46> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12a077460 <col:6> 'int ()' Function 0x12a0773a8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x12a0775a8 <col:15, col:45> 'int' contains-errors '||'
+    | |   |-UnaryOperator 0x12a0774b8 <col:15, col:16> 'int' contains-errors prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x12a0774a0 <col:16> 'struct file *' contains-errors <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x12a077480 <col:16> 'struct file *' contains-errors lvalue Var 0x12a077178 'file' 'struct file *'
+    | |   `-UnaryOperator 0x12a077590 <col:24, col:45> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |     `-ParenExpr 0x12a077570 <col:25, col:45> '<dependent type>' contains-errors
+    | |       `-BinaryOperator 0x12a077550 <col:26, col:41> '<dependent type>' contains-errors '&'
+    | |         |-RecoveryExpr 0x12a077508 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |         | `-DeclRefExpr 0x12a0774d0 <col:26> 'struct file *' contains-errors lvalue Var 0x12a077178 'file' 'struct file *'
+    | |         `-RecoveryExpr 0x12a077530 <col:41> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a077688 <line:9:3, col:11>
+    |   `-UnaryOperator 0x12a077670 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12a077658 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12a077638 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a07cbe0 <line:11:2, line:12:44>
+    | |-UnaryOperator 0x12a077868 <line:11:6, col:25> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x12a077828 <col:7, col:25> 'int'
+    | |   |-ImplicitCastExpr 0x12a077810 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x12a077798 <col:7> 'int ()' Function 0x12a0776e0 'io_req_ffs_set' 'int ()'
+    | |   `-ImplicitCastExpr 0x12a077850 <col:22> 'struct io_kiocb *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12a0777b8 <col:22> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    | `-CompoundAssignOperator 0x12a07cbb0 <line:12:3, col:44> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-RecoveryExpr 0x12a0778b8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12a077880 <col:3> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    |   `-BinaryOperator 0x12a07cb90 <col:17, col:44> '<dependent type>' contains-errors '<<'
+    |     |-CallExpr 0x12a07cb30 <col:17, col:39> 'int' contains-errors
+    |     | |-ImplicitCastExpr 0x12a07cb18 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x12a0779c0 <col:17> 'int ()' Function 0x12a077908 'io_file_get_flags' 'int ()'
+    |     | `-ImplicitCastExpr 0x12a07cb58 <col:35> 'struct file *' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x12a0779e0 <col:35> 'struct file *' contains-errors lvalue Var 0x12a077178 'file' 'struct file *'
+    |     `-RecoveryExpr 0x12a07cb70 <col:44> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a07cdd8 <line:14:2, col:35> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12a07cc38 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a07cc00 <col:2> 'struct kiocb *' contains-errors lvalue Var 0x12a076c58 'kiocb' 'struct kiocb *'
+    | `-CallExpr 0x12a07cd98 <col:20, col:35> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x12a07cd80 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a07cd40 <col:20> 'int ()' Function 0x12a07cc88 'iocb_flags' 'int ()'
+    |   `-ImplicitCastExpr 0x12a07cdc0 <col:31> 'struct file *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12a07cd60 <col:31> 'struct file *' contains-errors lvalue Var 0x12a077178 'file' 'struct file *'
+    |-BinaryOperator 0x12a07d010 <line:15:2, col:47> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12a07cdf8 <col:2> 'int' lvalue Var 0x12a077288 'ret' 'int'
+    | `-CallExpr 0x12a07cfe0 <col:8, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a07cef8 <col:8> 'int ()' Function 0x12a07ce40 'kiocb_set_rw_flags' 'int ()'
+    |   |-DeclRefExpr 0x12a07cf18 <col:27> 'struct kiocb *' contains-errors lvalue Var 0x12a076c58 'kiocb' 'struct kiocb *'
+    |   `-CXXDependentScopeMemberExpr 0x12a07cf98 <col:34, col:42> '<dependent type>' contains-errors lvalue .flags
+    |     `-RecoveryExpr 0x12a07cf70 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a07cf38 <col:34> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    |-IfStmt 0x12a07d110 <line:16:2, line:17:10>
+    | |-CallExpr 0x12a07d088 <line:16:6, col:18> 'int'
+    | | |-ImplicitCastExpr 0x12a07d070 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12a07d030 <col:6> 'int ()' Function 0x12a0773a8 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x12a07d0b0 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a07d050 <col:15> 'int' lvalue Var 0x12a077288 'ret' 'int'
+    | `-ReturnStmt 0x12a07d100 <line:17:3, col:10>
+    |   `-ImplicitCastExpr 0x12a07d0e8 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a07d0c8 <col:10> 'int' lvalue Var 0x12a077288 'ret' 'int'
+    |-IfStmt 0x12a07d8b0 <line:24:2, line:35:2> has_else
+    | |-RecoveryExpr 0x12a07d4d0 <line:24:6, col:19> '_Bool' contains-errors
+    | |-CompoundStmt 0x12a07d7a8 <col:40, line:31:2>
+    | | `-BinaryOperator 0x12a07d788 <line:30:3, col:27> '<dependent type>' contains-errors '='
+    | |   |-RecoveryExpr 0x12a07d740 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x12a07d708 <col:3> 'struct io_kiocb *' lvalue ParmVar 0x12a05e048 'req' 'struct io_kiocb *'
+    | |   `-IntegerLiteral 0x12a07d768 <col:27> 'int' 0
+    | `-CompoundStmt 0x12a07d8a0 <line:31:9, line:35:2>
+    `-ReturnStmt 0x12a07d900 <line:37:2, col:9>
+      `-IntegerLiteral 0x12a07d8e0 <col:9> 'int' 0

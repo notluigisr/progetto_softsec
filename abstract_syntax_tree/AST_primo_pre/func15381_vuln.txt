@@ -1,0 +1,25 @@
+`-FunctionDecl 0x13e80dd98  line:1:14 getusername 'char *(void)' static
+  `-CompoundStmt 0x13e8279d0 <line:2:1, line:9:1>
+    |-DeclStmt 0x13e80df58 <line:3:2, col:23>
+    | `-VarDecl 0x13e80dea0 <col:2, col:19> col:8 used username 'char *' cinit
+    |   `-RecoveryExpr 0x13e80df38 <col:19> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13e827878 <line:4:2, col:46>
+    | |-RecordDecl 0x13e80df70 <col:2, col:9> col:9 struct passwd
+    | `-VarDecl 0x13e80e0d8 <col:2, col:45> col:17 used password 'struct passwd *' cinit
+    |   `-ImplicitCastExpr 0x13e827428 <col:28, col:45> 'struct passwd *' <IntegralToPointer>
+    |     `-CallExpr 0x13e827400 <col:28, col:45> 'int'
+    |       |-ImplicitCastExpr 0x13e80e3d8 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13e80e250 <col:28> 'int ()' Function 0x13e80e198 'getpwuid' 'int ()'
+    |       `-CallExpr 0x13e80e3b8 <col:37, col:44> 'int'
+    |         `-ImplicitCastExpr 0x13e80e3a0 <col:37> 'int (*)()' <FunctionToPointerDecay>
+    |           `-DeclRefExpr 0x13e80e350 <col:37> 'int ()' Function 0x13e80e298 'getuid' 'int ()'
+    |-IfStmt 0x13e827968 <line:6:2, line:7:24>
+    | |-ImplicitCastExpr 0x13e8278b0 <line:6:6> 'struct passwd *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13e827890 <col:6> 'struct passwd *' lvalue Var 0x13e80e0d8 'password' 'struct passwd *'
+    | `-BinaryOperator 0x13e827948 <line:7:3, col:24> 'char *' contains-errors '='
+    |   |-DeclRefExpr 0x13e8278c8 <col:3> 'char *' contains-errors lvalue Var 0x13e80dea0 'username' 'char *'
+    |   `-RecoveryExpr 0x13e827920 <col:14, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e8278e8 <col:14> 'struct passwd *' lvalue Var 0x13e80e0d8 'password' 'struct passwd *'
+    `-ReturnStmt 0x13e8279c0 <line:8:2, col:9>
+      `-ImplicitCastExpr 0x13e8279a8 <col:9> 'char *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13e827988 <col:9> 'char *' contains-errors lvalue Var 0x13e80dea0 'username' 'char *'

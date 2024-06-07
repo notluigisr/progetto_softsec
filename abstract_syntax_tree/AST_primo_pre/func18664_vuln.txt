@@ -1,0 +1,52 @@
+`-FunctionDecl 0x152928f08  line:1:1 spectre_v2_user_select_mitigation 'int (enum spectre_v2_mitigation_cmd)'
+  |-ParmVarDecl 0x152928df8 <col:35, col:66> col:66 invalid v2_cmd 'enum spectre_v2_mitigation_cmd'
+  `-CompoundStmt 0x154009858 <line:2:1, line:76:1>
+    |-DeclStmt 0x1529413c8 <line:3:2, col:61>
+    | |-EnumDecl 0x152941200 <col:2, col:7> col:7 spectre_v2_user_mitigation
+    | `-VarDecl 0x152941318 <col:2, col:34> col:34 referenced invalid mode 'enum spectre_v2_user_mitigation'
+    |-DeclStmt 0x152941578 <line:5:2, col:30>
+    | |-EnumDecl 0x1529413e0 <col:2, col:7> col:7 spectre_v2_user_cmd
+    | `-VarDecl 0x1529414f8 <col:2, col:27> col:27 referenced invalid cmd 'enum spectre_v2_user_cmd'
+    |-IfStmt 0x1529418a0 <line:7:2, line:8:3>
+    | |-BinaryOperator 0x152941870 <line:7:6, col:72> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x1529417f8 <col:6, col:36> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-CallExpr 0x1529417d0 <col:7, col:36> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1529416a0 <col:7> 'int ()' Function 0x1529415e8 'boot_cpu_has' 'int ()'
+    | | |   `-RecoveryExpr 0x1529417b0 <col:20> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x152941858 <col:41, col:72> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x152941830 <col:42, col:72> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x152941718 <col:42> 'int ()' Function 0x1529415e8 'boot_cpu_has' 'int ()'
+    | |     `-RecoveryExpr 0x152941810 <col:55> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x152941890 <line:8:3>
+    |-BinaryOperator 0x152941c08 <line:14:2, col:44> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x152941a98 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152941a78 <col:2> 'enum spectre_v2_user_cmd' lvalue Var 0x1529414f8 'cmd' 'enum spectre_v2_user_cmd'
+    | `-CallExpr 0x152941be0 <col:8, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152941ba0 <col:8> 'int ()' Function 0x152941ae8 'spectre_v2_parse_user_cmdline' 'int ()'
+    |   `-RecoveryExpr 0x152941bc0 <col:38> '<dependent type>' contains-errors lvalue
+    |-SwitchStmt 0x152941c60 <line:15:2, line:33:2>
+    | |-RecoveryExpr 0x152941c28 <line:15:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x152941ff0 <col:15, line:33:2>
+    |   |-GotoStmt 0x152941cf0 <line:17:3, col:8> 'set_mode' 0x152941ca0
+    |   |-BinaryOperator 0x152941dc0 <line:19:3, col:10> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x152941d40 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x152941d20 <col:3> 'enum spectre_v2_user_mitigation' lvalue Var 0x152941318 'mode' 'enum spectre_v2_user_mitigation'
+    |   | `-RecoveryExpr 0x152941da0 <col:10> '<dependent type>' contains-errors lvalue
+    |   |-BreakStmt 0x152941de0 <line:20:3>
+    |   |-BreakStmt 0x152941e30 <line:24:3>
+    |   `-BreakStmt 0x152941fe8 <line:32:3>
+    |-IfStmt 0x154009698 <line:41:2, line:62:2>
+    | |-RecoveryExpr 0x1529420f0 <line:41:6, col:35> '_Bool' contains-errors
+    | `-CompoundStmt 0x154009680 <col:38, line:62:2>
+    |   `-SwitchStmt 0x154009258 <line:44:3, line:57:3>
+    |     |-RecoveryExpr 0x154009220 <line:44:11> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x1540093d8 <col:16, line:57:3>
+    |       |-BreakStmt 0x154009380 <line:49:4>
+    |       |-BreakStmt 0x1540093a8 <line:54:4>
+    |       `-DefaultStmt 0x1540093b8 <line:55:3, line:56:4>
+    |         `-BreakStmt 0x1540093b0 <col:4>
+    |-IfStmt 0x1540096e8 <line:65:2, line:66:3>
+    | |-RecoveryExpr 0x1540096b8 <line:65:6, col:28> '_Bool' contains-errors
+    | `-ReturnStmt 0x1540096d8 <line:66:3>
+    `-LabelStmt 0x1540097b8 <line:71:1, col:9> 'set_mode'
+      `-NullStmt 0x1540097b0 <col:9>

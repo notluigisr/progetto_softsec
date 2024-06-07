@@ -1,0 +1,28 @@
+void arch_pick_mmap_layout(struct mm_struct *mm)
+{
+	unsigned long random_factor = mmap_rnd();
+	unsigned long gap;
+
+	
+	gap = rlimit(RLIMIT_STACK);
+	if (!test_thread_flag(TIF_32BIT) ||
+	    (current->personality & ADDR_COMPAT_LAYOUT) ||
+	    gap == RLIM_INFINITY ||
+	    sysctl_legacy_va_layout) {
+		mm->mmap_base = TASK_UNMAPPED_BASE + random_factor;
+		mm->get_unmapped_area = arch_get_unmapped_area;
+		mm->unmap_area = arch_unmap_area;
+	} else {
+		
+		unsigned long task_size = STACK_TOP32;
+
+		if (gap < 128 * 1024 * 1024)
+			gap = 128 * 1024 * 1024;
+		if (gap > (task_size / 6 * 5))
+			gap = (task_size / 6 * 5);
+
+		mm->mmap_base = PAGE_ALIGN(task_size - gap - random_factor);
+		mm->get_unmapped_area = arch_get_unmapped_area_topdown;
+		mm->unmap_area = arch_unmap_area_topdown;
+	}
+}

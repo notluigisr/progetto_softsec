@@ -1,0 +1,58 @@
+`-FunctionDecl 0x14f80e350  line:1:6 eventpoll_release_file 'void (struct file *)'
+  |-ParmVarDecl 0x14f80e248 <col:29, col:42> col:42 used file 'struct file *'
+  `-CompoundStmt 0x14f82d888 <line:2:1, line:21:1>
+    |-DeclStmt 0x14f82aab0 <line:3:2, col:47>
+    | |-RecordDecl 0x14f82a848 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x14f82a9b8 <col:2, col:37> col:20 used lsthead 'struct list_head *' cinit
+    |   `-UnaryOperator 0x14f82aa80 <col:30, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14f82aa58 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14f82aa20 <col:31> 'struct file *' lvalue ParmVar 0x14f80e248 'file' 'struct file *'
+    |-DeclStmt 0x14f82acb8 <line:4:2, col:22>
+    | |-RecordDecl 0x14f82aac8 <col:2, col:9> col:9 struct eventpoll
+    | `-VarDecl 0x14f82ac38 <col:2, col:20> col:20 used ep 'struct eventpoll *'
+    |-DeclStmt 0x14f82aeb8 <line:5:2, col:20>
+    | |-RecordDecl 0x14f82acd0 <col:2, col:9> col:9 struct epitem
+    | `-VarDecl 0x14f82ae38 <col:2, col:17> col:17 used epi 'struct epitem *'
+    |-CallExpr 0x14f82b0b0 <line:8:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f82b000 <col:2> 'int ()' Function 0x14f82af48 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14f82b098 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f82b078 <col:14> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x14f82d790 <line:10:2, line:18:2>
+    | |-UnaryOperator 0x14f82b288 <line:10:9, col:28> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x14f82b248 <col:10, col:28> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x14f82b230 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14f82b1b8 <col:10> 'int ()' Function 0x14f82b100 'list_empty' 'int ()'
+    | |   `-ImplicitCastExpr 0x14f82b270 <col:21> 'struct list_head *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x14f82b1d8 <col:21> 'struct list_head *' contains-errors lvalue Var 0x14f82a9b8 'lsthead' 'struct list_head *'
+    | `-CompoundStmt 0x14f82d758 <col:31, line:18:2>
+    |   |-BinaryOperator 0x14f82b478 <line:13:3, col:13> 'struct eventpoll *' contains-errors '='
+    |   | |-DeclRefExpr 0x14f82b3f8 <col:3> 'struct eventpoll *' lvalue Var 0x14f82ac38 'ep' 'struct eventpoll *'
+    |   | `-RecoveryExpr 0x14f82b450 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14f82b418 <col:8> 'struct epitem *' lvalue Var 0x14f82ae38 'epi' 'struct epitem *'
+    |   |-CallExpr 0x14f82b610 <line:14:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14f82b578 <col:3> 'int ()' Function 0x14f82b4c0 'list_del_init' 'int ()'
+    |   | `-UnaryOperator 0x14f82b5f8 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14f82b5d0 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14f82b598 <col:18> 'struct epitem *' lvalue Var 0x14f82ae38 'epi' 'struct epitem *'
+    |   |-CallExpr 0x14f82b7d0 <line:15:3, col:32> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14f82b718 <col:3> 'int ()' Function 0x14f82b660 'mutex_lock_nested' 'int ()'
+    |   | |-UnaryOperator 0x14f82b798 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x14f82b770 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14f82b738 <col:22> 'struct eventpoll *' lvalue Var 0x14f82ac38 'ep' 'struct eventpoll *'
+    |   | `-IntegerLiteral 0x14f82b7b0 <col:31> 'int' 0
+    |   |-CallExpr 0x14f82d558 <line:16:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x14f82d540 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14f82d4e0 <col:3> 'int ()' Function 0x14f82d428 'ep_remove' 'int ()'
+    |   | |-ImplicitCastExpr 0x14f82d588 <col:13> 'struct eventpoll *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x14f82d500 <col:13> 'struct eventpoll *' lvalue Var 0x14f82ac38 'ep' 'struct eventpoll *'
+    |   | `-ImplicitCastExpr 0x14f82d5a0 <col:17> 'struct epitem *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14f82d520 <col:17> 'struct epitem *' lvalue Var 0x14f82ae38 'epi' 'struct epitem *'
+    |   `-CallExpr 0x14f82d730 <line:17:3, col:24> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14f82d698 <col:3> 'int ()' Function 0x14f82d5e0 'mutex_unlock' 'int ()'
+    |     `-UnaryOperator 0x14f82d718 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14f82d6f0 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f82d6b8 <col:17> 'struct eventpoll *' lvalue Var 0x14f82ac38 'ep' 'struct eventpoll *'
+    `-CallExpr 0x14f82d860 <line:20:2, col:23> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f82d7b0 <col:2> 'int ()' Function 0x14f82d5e0 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x14f82d848 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14f82d828 <col:16> '<dependent type>' contains-errors lvalue

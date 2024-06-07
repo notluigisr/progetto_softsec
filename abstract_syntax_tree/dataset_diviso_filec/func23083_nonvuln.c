@@ -1,0 +1,5 @@
+		CWebServer::~CWebServer(void)
+		{
+			
+			StopServer();
+		}

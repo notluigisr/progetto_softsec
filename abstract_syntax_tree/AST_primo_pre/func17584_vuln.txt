@@ -1,0 +1,16 @@
+`-FunctionDecl 0x13e82f600  line:1:20 invalid sk_eat_skb 'void (struct sock *, struct sk_buff *, int)' static inline
+  |-ParmVarDecl 0x13e81c848 <col:31, col:44> col:44 used sk 'struct sock *'
+  |-ParmVarDecl 0x13e82f428 <col:48, col:64> col:64 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13e82f4c0 <col:69, col:74> col:74 invalid copied_early 'int'
+  `-CompoundStmt 0x13e82fab8 <line:2:1, line:5:1>
+    |-CallExpr 0x13e82f8d8 <line:3:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13e82f820 <col:2> 'int ()' Function 0x13e82f768 '__skb_unlink' 'int ()'
+    | |-DeclRefExpr 0x13e82f840 <col:15> 'struct sk_buff *' lvalue ParmVar 0x13e82f428 'skb' 'struct sk_buff *'
+    | `-UnaryOperator 0x13e82f8c0 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13e82f898 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13e82f860 <col:21> 'struct sock *' lvalue ParmVar 0x13e81c848 'sk' 'struct sock *'
+    `-CallExpr 0x13e82fa78 <line:4:2, col:17> 'int'
+      |-ImplicitCastExpr 0x13e82fa60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13e82f9e8 <col:2> 'int ()' Function 0x13e82f930 '__kfree_skb' 'int ()'
+      `-ImplicitCastExpr 0x13e82faa0 <col:14> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x13e82fa08 <col:14> 'struct sk_buff *' lvalue ParmVar 0x13e82f428 'skb' 'struct sk_buff *'

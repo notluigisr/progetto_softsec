@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12600dda8  line:1:12 ensure_valid_ownership 'int (const char *)' static
+  |-ParmVarDecl 0x12600dcd8 <col:35, col:47> col:47 used path 'const char *'
+  `-CompoundStmt 0x1260275e8 <line:2:1, line:12:1>
+    |-DeclStmt 0x126026f28 <line:3:2, col:52>
+    | |-RecordDecl 0x12600dea0 <col:2, col:9> col:9 struct safe_directory_data
+    | `-VarDecl 0x12600df98 <col:2, col:29> col:29 invalid data 'struct safe_directory_data'
+    |-IfStmt 0x126027380 <line:5:2, line:7:10>
+    | |-BinaryOperator 0x126027330 <line:5:6, line:6:40> 'int' '&&'
+    | | |-UnaryOperator 0x1260271a0 <line:5:6, col:28> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x126027158 <col:7, col:28> 'int'
+    | | |   |-ImplicitCastExpr 0x126027140 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x126027070 <col:7> 'int ()' Function 0x126026fb8 'git_env_bool' 'int ()'
+    | | |   |-ImplicitCastExpr 0x126027188 <col:20> 'char *' <ArrayToPointerDecay>
+    | | |   | `-StringLiteral 0x1260270d0 <col:20> 'char[4]' lvalue "STR"
+    | | |   `-IntegerLiteral 0x1260270f0 <col:27> 'int' 0
+    | | `-CallExpr 0x1260272f0 <line:6:6, col:40> 'int'
+    | |   |-ImplicitCastExpr 0x1260272d8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x126027298 <col:6> 'int ()' Function 0x1260271e0 'is_path_owned_by_current_user' 'int ()'
+    | |   `-ImplicitCastExpr 0x126027318 <col:36> 'const char *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1260272b8 <col:36> 'const char *' lvalue ParmVar 0x12600dcd8 'path' 'const char *'
+    | `-ReturnStmt 0x126027370 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x126027350 <col:10> 'int' 1
+    |-CallExpr 0x126027540 <line:9:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x126027480 <col:2> 'int ()' Function 0x1260273c8 'read_very_early_config' 'int ()'
+    | |-RecoveryExpr 0x126027520 <col:25> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x1260274d8 <col:44, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1260274b8 <col:45> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1260275d8 <line:11:2, col:14>
+      `-CXXDependentScopeMemberExpr 0x126027590 <col:9, col:14> '<dependent type>' contains-errors lvalue .is_safe
+        `-RecoveryExpr 0x126027570 <col:9> '<dependent type>' contains-errors lvalue

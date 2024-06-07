@@ -1,0 +1,50 @@
+`-FunctionDecl 0x145940b40  line:1:6 common_timer_get 'void (struct k_itimer *, struct itimerspec64 *)'
+  |-ParmVarDecl 0x145928648 <col:23, col:40> col:40 used timr 'struct k_itimer *'
+  |-ParmVarDecl 0x145940a28 <col:46, col:67> col:67 used cur_setting 'struct itimerspec64 *'
+  `-CompoundStmt 0x145942aa0 <line:2:1, line:37:1>
+    |-DeclStmt 0x145940e88 <line:3:2, col:41>
+    | |-RecordDecl 0x145940c40 <col:8, col:15> col:15 struct k_clock
+    | `-VarDecl 0x145940da8 <col:2, col:35> col:24 used kc 'const struct k_clock *' cinit
+    |   `-RecoveryExpr 0x145940e48 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145940e10 <col:29> 'struct k_itimer *' lvalue ParmVar 0x145928648 'timr' 'struct k_itimer *'
+    |-DeclStmt 0x145941038 <line:5:2, col:24>
+    | |-RecordDecl 0x145940eb8 <col:2, col:9> col:9 struct timespec64
+    | `-VarDecl 0x145940fb8 <col:2, col:20> col:20 invalid ts64 'struct timespec64'
+    |-IfStmt 0x1459415d0 <line:12:2, line:18:2> has_else
+    | |-RecoveryExpr 0x1459411a8 <line:12:6> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x145941428 <col:10, line:14:2>
+    | | `-BinaryOperator 0x145941408 <line:13:3, col:52> '<dependent type>' contains-errors '='
+    | |   |-RecoveryExpr 0x145941200 <col:3, col:16> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x1459411c8 <col:3> 'struct itimerspec64 *' lvalue ParmVar 0x145940a28 'cur_setting' 'struct itimerspec64 *'
+    | |   `-CallExpr 0x1459413e0 <col:30, col:52> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x145941340 <col:30> 'int ()' Function 0x145941288 'ktime_to_timespec64' 'int ()'
+    | |     `-RecoveryExpr 0x1459413c0 <col:50> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x1459415b0 <line:14:9, line:18:2>
+    |   |-UnaryOperator 0x1459414b8 <line:14:13, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | `-ImplicitCastExpr 0x1459414a0 <col:14, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   `-RecoveryExpr 0x145941478 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x145941440 <col:14> 'struct k_itimer *' lvalue ParmVar 0x145928648 'timr' 'struct k_itimer *'
+    |   `-CompoundStmt 0x145941598 <col:31, line:18:2>
+    |     `-IfStmt 0x145941578 <line:16:3, line:17:4>
+    |       |-UnaryOperator 0x145941550 <line:16:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |       | `-ImplicitCastExpr 0x145941538 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |       |   `-RecoveryExpr 0x145941518 <col:8> '<dependent type>' contains-errors lvalue
+    |       `-ReturnStmt 0x145941568 <line:17:4>
+    |-CallExpr 0x1459416f8 <line:21:2, col:37> '<dependent type>' contains-errors
+    | |-RecoveryExpr 0x145941638 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x145941600 <col:2> 'const struct k_clock *' contains-errors lvalue Var 0x145940da8 'kc' 'const struct k_clock *'
+    | |-RecoveryExpr 0x145941698 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x145941660 <col:16> 'struct k_itimer *' lvalue ParmVar 0x145928648 'timr' 'struct k_itimer *'
+    | `-UnaryOperator 0x1459416e0 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1459416c0 <col:33> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x145942a70 <line:30:2, line:36:2> has_else
+      |-RecoveryExpr 0x145942880 <line:30:6, col:19> '_Bool' contains-errors
+      |-CompoundStmt 0x1459429c8 <col:22, line:34:2>
+      | `-IfStmt 0x1459429a8 <line:32:3, line:33:36>
+      |   |-RecoveryExpr 0x1459428a0 <line:32:7, col:8> '_Bool' contains-errors
+      |   `-BinaryOperator 0x145942988 <line:33:4, col:36> '<dependent type>' contains-errors '='
+      |     |-CXXDependentScopeMemberExpr 0x145942920 <col:4, col:26> '<dependent type>' contains-errors lvalue .tv_nsec
+      |     | `-RecoveryExpr 0x1459428f8 <col:4, col:17> '<dependent type>' contains-errors lvalue
+      |     |   `-DeclRefExpr 0x1459428c0 <col:4> 'struct itimerspec64 *' lvalue ParmVar 0x145940a28 'cur_setting' 'struct itimerspec64 *'
+      |     `-IntegerLiteral 0x145942968 <col:36> 'int' 1
+      `-CompoundStmt 0x145942a60 <line:34:9, line:36:2>

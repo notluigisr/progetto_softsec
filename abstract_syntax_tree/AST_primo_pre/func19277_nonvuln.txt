@@ -1,0 +1,95 @@
+`-FunctionDecl 0x152128488  line:1:20 invalid crypto_alloc_base 'struct crypto_tfm *(const char *, int, int)'
+  |-ParmVarDecl 0x152128178 <col:38, col:50> col:50 used alg_name 'const char *'
+  |-ParmVarDecl 0x152128210 <col:60, col:64> col:64 invalid type 'int'
+  |-ParmVarDecl 0x152128290 <col:70, col:74> col:74 invalid mask 'int'
+  `-CompoundStmt 0x152147110 <line:2:1, line:32:1>
+    |-DeclStmt 0x152128640 <line:3:2, col:24>
+    | `-VarDecl 0x1521285d8 <col:2, col:21> col:21 used tfm 'struct crypto_tfm *'
+    |-DeclStmt 0x1521286d8 <line:4:2, col:9>
+    | `-VarDecl 0x152128670 <col:2, col:6> col:6 used err 'int'
+    |-ForStmt 0x152146b10 <line:6:2, line:29:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | `-CompoundStmt 0x152146ab8 <line:6:11, line:29:2>
+    |   |-DeclStmt 0x1521418d8 <line:7:3, col:25>
+    |   | |-RecordDecl 0x1521286f0 <col:3, col:10> col:10 struct crypto_alg
+    |   | `-VarDecl 0x152141858 <col:3, col:22> col:22 used alg 'struct crypto_alg *'
+    |   |-BinaryOperator 0x152141b28 <line:9:3, col:51> 'struct crypto_alg *' contains-errors '='
+    |   | |-DeclRefExpr 0x1521418f0 <col:3> 'struct crypto_alg *' lvalue Var 0x152141858 'alg' 'struct crypto_alg *'
+    |   | `-CallExpr 0x152141af0 <col:9, col:51> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x152141a70 <col:9> 'int ()' Function 0x1521419b8 'crypto_alg_mod_lookup' 'int ()'
+    |   |   |-DeclRefExpr 0x152141a90 <col:31> 'const char *' lvalue ParmVar 0x152128178 'alg_name' 'const char *'
+    |   |   |-RecoveryExpr 0x152141ab0 <col:41> '<dependent type>' contains-errors lvalue
+    |   |   `-RecoveryExpr 0x152141ad0 <col:47> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x152141f38 <line:10:3, line:13:3>
+    |   | |-CallExpr 0x152141cb8 <line:10:7, col:17> 'int'
+    |   | | |-ImplicitCastExpr 0x152141ca0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x152141c28 <col:7> 'int ()' Function 0x152141b70 'IS_ERR' 'int ()'
+    |   | | `-ImplicitCastExpr 0x152141ce0 <col:14> 'struct crypto_alg *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x152141c48 <col:14> 'struct crypto_alg *' lvalue Var 0x152141858 'alg' 'struct crypto_alg *'
+    |   | `-CompoundStmt 0x152141f18 <col:20, line:13:3>
+    |   |   |-BinaryOperator 0x152141e90 <line:11:4, col:21> 'int' '='
+    |   |   | |-DeclRefExpr 0x152141cf8 <col:4> 'int' lvalue Var 0x152128670 'err' 'int'
+    |   |   | `-CallExpr 0x152141e50 <col:10, col:21> 'int'
+    |   |   |   |-ImplicitCastExpr 0x152141e38 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   | `-DeclRefExpr 0x152141df8 <col:10> 'int ()' Function 0x152141d40 'PTR_ERR' 'int ()'
+    |   |   |   `-ImplicitCastExpr 0x152141e78 <col:18> 'struct crypto_alg *' <LValueToRValue>
+    |   |   |     `-DeclRefExpr 0x152141e18 <col:18> 'struct crypto_alg *' lvalue Var 0x152141858 'alg' 'struct crypto_alg *'
+    |   |   `-GotoStmt 0x152141f00 <line:12:4, col:9> 'err' 0x152141eb0
+    |   |-BinaryOperator 0x152142110 <line:15:3, col:43> 'struct crypto_tfm *' contains-errors '='
+    |   | |-DeclRefExpr 0x152141f58 <col:3> 'struct crypto_tfm *' lvalue Var 0x1521285d8 'tfm' 'struct crypto_tfm *'
+    |   | `-CallExpr 0x1521420d8 <col:9, col:43> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x152142058 <col:9> 'int ()' Function 0x152141fa0 '__crypto_alloc_tfm' 'int ()'
+    |   |   |-DeclRefExpr 0x152142078 <col:28> 'struct crypto_alg *' lvalue Var 0x152141858 'alg' 'struct crypto_alg *'
+    |   |   |-RecoveryExpr 0x152142098 <col:33> '<dependent type>' contains-errors lvalue
+    |   |   `-RecoveryExpr 0x1521420b8 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x152142228 <line:16:3, line:17:11>
+    |   | |-UnaryOperator 0x1521421c8 <line:16:7, col:18> 'int' prefix '!' cannot overflow
+    |   | | `-CallExpr 0x152142188 <col:8, col:18> 'int'
+    |   | |   |-ImplicitCastExpr 0x152142170 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x152142130 <col:8> 'int ()' Function 0x152141b70 'IS_ERR' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x1521421b0 <col:15> 'struct crypto_tfm *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x152142150 <col:15> 'struct crypto_tfm *' lvalue Var 0x1521285d8 'tfm' 'struct crypto_tfm *'
+    |   | `-ReturnStmt 0x152142218 <line:17:4, col:11>
+    |   |   `-ImplicitCastExpr 0x152142200 <col:11> 'struct crypto_tfm *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x1521421e0 <col:11> 'struct crypto_tfm *' lvalue Var 0x1521285d8 'tfm' 'struct crypto_tfm *'
+    |   |-CallExpr 0x152142380 <line:19:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x152142368 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x152142328 <col:3> 'int ()' Function 0x152142270 'crypto_mod_put' 'int ()'
+    |   | `-ImplicitCastExpr 0x1521423a8 <col:18> 'struct crypto_alg *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x152142348 <col:18> 'struct crypto_alg *' lvalue Var 0x152141858 'alg' 'struct crypto_alg *'
+    |   |-BinaryOperator 0x152142478 <line:20:3, col:20> 'int' '='
+    |   | |-DeclRefExpr 0x1521423c0 <col:3> 'int' lvalue Var 0x152128670 'err' 'int'
+    |   | `-CallExpr 0x152142438 <col:9, col:20> 'int'
+    |   |   |-ImplicitCastExpr 0x152142420 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1521423e0 <col:9> 'int ()' Function 0x152141d40 'PTR_ERR' 'int ()'
+    |   |   `-ImplicitCastExpr 0x152142460 <col:17> 'struct crypto_tfm *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x152142400 <col:17> 'struct crypto_tfm *' lvalue Var 0x1521285d8 'tfm' 'struct crypto_tfm *'
+    |   |-LabelStmt 0x1521425b8 <line:22:1, line:24:4> 'err'
+    |   | `-IfStmt 0x152142598 <line:23:3, line:24:4>
+    |   |   |-BinaryOperator 0x152142570 <line:23:7, col:15> 'int' contains-errors '!='
+    |   |   | |-DeclRefExpr 0x152142498 <col:7> 'int' lvalue Var 0x152128670 'err' 'int'
+    |   |   | `-UnaryOperator 0x152142558 <col:14, col:15> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |   `-ImplicitCastExpr 0x152142540 <col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |     `-RecoveryExpr 0x152142520 <col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-BreakStmt 0x152142590 <line:24:4>
+    |   `-IfStmt 0x152146a98 <line:25:3, line:28:3>
+    |     |-CallExpr 0x152142738 <line:25:7, col:29> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x1521426b8 <col:7> 'int ()' Function 0x152142600 'signal_pending' 'int ()'
+    |     | `-RecoveryExpr 0x152142718 <col:22> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x152146a78 <col:32, line:28:3>
+    |       |-BinaryOperator 0x152146a50 <line:26:4, col:11> 'int' contains-errors '='
+    |       | |-DeclRefExpr 0x152142760 <col:4> 'int' lvalue Var 0x152128670 'err' 'int'
+    |       | `-UnaryOperator 0x152146a38 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       |   `-ImplicitCastExpr 0x152146a20 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       |     `-RecoveryExpr 0x152146a00 <col:11> '<dependent type>' contains-errors lvalue
+    |       `-BreakStmt 0x152146a70 <line:27:4>
+    `-ReturnStmt 0x152147100 <line:31:2, col:20>
+      `-ImplicitCastExpr 0x152146cc0 <col:9, col:20> 'struct crypto_tfm *' <IntegralToPointer>
+        `-CallExpr 0x152146c80 <col:9, col:20> 'int'
+          |-ImplicitCastExpr 0x152146c68 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x152146c28 <col:9> 'int ()' Function 0x152146b70 'ERR_PTR' 'int ()'
+          `-ImplicitCastExpr 0x152146ca8 <col:17> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x152146c48 <col:17> 'int' lvalue Var 0x152128670 'err' 'int'

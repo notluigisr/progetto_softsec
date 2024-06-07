@@ -1,0 +1,37 @@
+`-FunctionDecl 0x122940a88  line:1:19 throttled_lb_pair 'int (struct task_group *, int, int)' static inline
+  |-ParmVarDecl 0x122928648 <col:37, col:56> col:56 used tg 'struct task_group *'
+  |-ParmVarDecl 0x1229286c8 <line:2:9, col:13> col:13 used src_cpu 'int'
+  |-ParmVarDecl 0x122928748 <col:22, col:26> col:26 used dest_cpu 'int'
+  `-CompoundStmt 0x122941300 <line:3:1, line:11:1>
+    |-DeclStmt 0x122940e10 <line:4:2, col:41>
+    | |-RecordDecl 0x122940b90 <col:2, col:9> col:9 struct cfs_rq
+    | |-VarDecl 0x122940cf8 <col:2, col:17> col:17 used src_cfs_rq 'struct cfs_rq *'
+    | `-VarDecl 0x122940d88 <col:2, col:30> col:30 used dest_cfs_rq 'struct cfs_rq *'
+    |-BinaryOperator 0x122940f18 <line:6:2, col:33> 'struct cfs_rq *' contains-errors '='
+    | |-DeclRefExpr 0x122940e28 <col:2> 'struct cfs_rq *' lvalue Var 0x122940cf8 'src_cfs_rq' 'struct cfs_rq *'
+    | `-ArraySubscriptExpr 0x122940ef8 <col:15, col:33> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x122940ec8 <col:15, col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x122940e80 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x122940e48 <col:15> 'struct task_group *' lvalue ParmVar 0x122928648 'tg' 'struct task_group *'
+    |   `-ImplicitCastExpr 0x122940ee0 <col:26> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x122940ea8 <col:26> 'int' lvalue ParmVar 0x1229286c8 'src_cpu' 'int'
+    |-BinaryOperator 0x122941028 <line:7:2, col:35> 'struct cfs_rq *' contains-errors '='
+    | |-DeclRefExpr 0x122940f38 <col:2> 'struct cfs_rq *' lvalue Var 0x122940d88 'dest_cfs_rq' 'struct cfs_rq *'
+    | `-ArraySubscriptExpr 0x122941008 <col:16, col:35> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x122940fd8 <col:16, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x122940f90 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x122940f58 <col:16> 'struct task_group *' lvalue ParmVar 0x122928648 'tg' 'struct task_group *'
+    |   `-ImplicitCastExpr 0x122940ff0 <col:27> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x122940fb8 <col:27> 'int' lvalue ParmVar 0x122928748 'dest_cpu' 'int'
+    `-ReturnStmt 0x1229412f0 <line:9:2, line:10:40>
+      `-BinaryOperator 0x1229412d0 <line:9:9, line:10:40> 'int' '||'
+        |-CallExpr 0x1229411f8 <line:9:9, col:39> 'int'
+        | |-ImplicitCastExpr 0x1229411e0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x122941170 <col:9> 'int ()' Function 0x1229410b8 'throttled_hierarchy' 'int ()'
+        | `-ImplicitCastExpr 0x122941220 <col:29> 'struct cfs_rq *' <LValueToRValue>
+        |   `-DeclRefExpr 0x122941190 <col:29> 'struct cfs_rq *' lvalue Var 0x122940cf8 'src_cfs_rq' 'struct cfs_rq *'
+        `-CallExpr 0x122941290 <line:10:9, col:40> 'int'
+          |-ImplicitCastExpr 0x122941278 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x122941238 <col:9> 'int ()' Function 0x1229410b8 'throttled_hierarchy' 'int ()'
+          `-ImplicitCastExpr 0x1229412b8 <col:29> 'struct cfs_rq *' <LValueToRValue>
+            `-DeclRefExpr 0x122941258 <col:29> 'struct cfs_rq *' lvalue Var 0x122940d88 'dest_cfs_rq' 'struct cfs_rq *'

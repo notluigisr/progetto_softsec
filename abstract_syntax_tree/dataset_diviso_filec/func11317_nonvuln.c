@@ -1,0 +1,1 @@
+  unsigned long long encoding_scope() const { return encoding_scope_; }

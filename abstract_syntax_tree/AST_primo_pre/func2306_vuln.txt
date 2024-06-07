@@ -1,0 +1,31 @@
+`-FunctionDecl 0x152808340  line:1:6 elevator_exit 'void (struct request_queue *, struct elevator_queue *)'
+  |-ParmVarDecl 0x152128648 <col:20, col:42> col:42 used q 'struct request_queue *'
+  |-ParmVarDecl 0x152808228 <col:45, col:68> col:68 used e 'struct elevator_queue *'
+  `-CompoundStmt 0x152808c68 <line:2:1, line:9:1>
+    |-CallExpr 0x152808608 <line:3:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152808570 <col:2> 'int ()' Function 0x1528084b8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1528085f0 <col:13, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1528085c8 <col:14, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152808590 <col:14> 'struct elevator_queue *' lvalue ParmVar 0x152808228 'e' 'struct elevator_queue *'
+    |-IfStmt 0x152808908 <line:4:2, line:5:25>
+    | |-CXXDependentScopeMemberExpr 0x1528086d8 <line:4:6, col:19> '<dependent type>' contains-errors lvalue .exit_sched
+    | | `-CXXDependentScopeMemberExpr 0x152808690 <col:6, col:15> '<dependent type>' contains-errors lvalue ->ops
+    | |   `-RecoveryExpr 0x152808668 <col:6, col:9> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x152808630 <col:6> 'struct elevator_queue *' lvalue ParmVar 0x152808228 'e' 'struct elevator_queue *'
+    | `-CallExpr 0x1528088a8 <line:5:3, col:25> 'int'
+    |   |-ImplicitCastExpr 0x152808890 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x152808800 <col:3> 'int ()' Function 0x152808748 'blk_mq_exit_sched' 'int ()'
+    |   |-ImplicitCastExpr 0x1528088d8 <col:21> 'struct request_queue *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x152808820 <col:21> 'struct request_queue *' lvalue ParmVar 0x152128648 'q' 'struct request_queue *'
+    |   `-ImplicitCastExpr 0x1528088f0 <col:24> 'struct elevator_queue *' <LValueToRValue>
+    |     `-DeclRefExpr 0x152808840 <col:24> 'struct elevator_queue *' lvalue ParmVar 0x152808228 'e' 'struct elevator_queue *'
+    |-CallExpr 0x152808aa0 <line:6:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152808a08 <col:2> 'int ()' Function 0x152808950 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x152808a88 <col:15, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x152808a60 <col:16, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152808a28 <col:16> 'struct elevator_queue *' lvalue ParmVar 0x152808228 'e' 'struct elevator_queue *'
+    `-CallExpr 0x152808c40 <line:8:2, col:22> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x152808ba8 <col:2> 'int ()' Function 0x152808af0 'kobject_put' 'int ()'
+      `-UnaryOperator 0x152808c28 <col:14, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x152808c00 <col:15, col:18> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x152808bc8 <col:15> 'struct elevator_queue *' lvalue ParmVar 0x152808228 'e' 'struct elevator_queue *'

@@ -1,0 +1,66 @@
+`-FunctionDecl 0x12c826808  line:1:12 invalid lo_read_simple 'int (struct loop_device *, struct request *, int)' static
+  |-ParmVarDecl 0x12c80e248 <col:27, col:47> col:47 used lo 'struct loop_device *'
+  |-ParmVarDecl 0x12c826628 <col:51, col:67> col:67 used rq 'struct request *'
+  |-ParmVarDecl 0x12c8266c0 <line:2:3, col:10> col:10 invalid pos 'int'
+  `-CompoundStmt 0x12c829b98 <line:3:1, line:28:1>
+    |-DeclStmt 0x12c826a48 <line:4:2, col:21>
+    | |-RecordDecl 0x12c8268c8 <col:2, col:9> col:9 struct bio_vec
+    | `-VarDecl 0x12c8269c8 <col:2, col:17> col:17 invalid bvec 'struct bio_vec'
+    |-DeclStmt 0x12c826bd8 <line:5:2, col:26>
+    | |-RecordDecl 0x12c826a60 <col:2, col:9> col:9 struct req_iterator
+    | `-VarDecl 0x12c826b58 <col:2, col:22> col:22 invalid iter 'struct req_iterator'
+    |-DeclStmt 0x12c826d68 <line:6:2, col:19>
+    | |-RecordDecl 0x12c826bf0 <col:2, col:9> col:9 struct iov_iter
+    | `-VarDecl 0x12c826ce8 <col:2, col:18> col:18 invalid i 'struct iov_iter'
+    |-CallExpr 0x12c826f60 <line:9:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c826ee0 <col:2> 'int ()' Function 0x12c826e28 'rq_for_each_segment' 'int ()'
+    | |-RecoveryExpr 0x12c826f00 <col:22> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x12c826f20 <col:28> 'struct request *' lvalue ParmVar 0x12c826628 'rq' 'struct request *'
+    | `-RecoveryExpr 0x12c826f40 <col:32> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x12c829b30 <col:38, line:25:2>
+    | |-CallExpr 0x12c827210 <line:10:3, col:53> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12c827078 <col:3> 'int ()' Function 0x12c826fc0 'iov_iter_bvec' 'int ()'
+    | | |-UnaryOperator 0x12c8270b8 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-RecoveryExpr 0x12c827098 <col:18> '<dependent type>' contains-errors lvalue
+    | | |-RecoveryExpr 0x12c8271f0 <col:21> '<dependent type>' contains-errors lvalue
+    | | |-UnaryOperator 0x12c827108 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-RecoveryExpr 0x12c8270e8 <col:33> '<dependent type>' contains-errors lvalue
+    | | |-IntegerLiteral 0x12c827120 <col:39> 'int' 1
+    | | `-CXXDependentScopeMemberExpr 0x12c827160 <col:42, col:47> '<dependent type>' contains-errors lvalue .bv_len
+    | |   `-RecoveryExpr 0x12c827140 <col:42> '<dependent type>' contains-errors lvalue
+    | |-IfStmt 0x12c827568 <line:12:3, line:13:11>
+    | | |-BinaryOperator 0x12c827500 <line:12:7, col:13> 'int' contains-errors '<'
+    | | | |-RecoveryExpr 0x12c8274e0 <col:7> '<dependent type>' contains-errors lvalue
+    | | | `-IntegerLiteral 0x12c8274a0 <col:13> 'int' 0
+    | | `-ReturnStmt 0x12c827558 <line:13:4, col:11>
+    | |   `-RecoveryExpr 0x12c827538 <col:11> '<dependent type>' contains-errors lvalue
+    | |-CallExpr 0x12c829340 <line:15:3, col:33> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12c8292b8 <col:3> 'int ()' Function 0x12c829200 'flush_dcache_page' 'int ()'
+    | | `-CXXDependentScopeMemberExpr 0x12c8292f8 <col:21, col:26> '<dependent type>' contains-errors lvalue .bv_page
+    | |   `-RecoveryExpr 0x12c8292d8 <col:21> '<dependent type>' contains-errors lvalue
+    | |-IfStmt 0x12c8299d8 <line:17:3, line:23:3>
+    | | |-BinaryOperator 0x12c829428 <line:17:7, col:19> 'int' contains-errors '!='
+    | | | |-RecoveryExpr 0x12c829408 <col:7> '<dependent type>' contains-errors lvalue
+    | | | `-CXXDependentScopeMemberExpr 0x12c8293a0 <col:14, col:19> '<dependent type>' contains-errors lvalue .bv_len
+    | | |   `-RecoveryExpr 0x12c829380 <col:14> '<dependent type>' contains-errors lvalue
+    | | `-CompoundStmt 0x12c8299b0 <col:27, line:23:3>
+    | |   |-DeclStmt 0x12c829638 <line:18:4, col:19>
+    | |   | |-RecordDecl 0x12c829448 <col:4, col:11> col:11 struct bio
+    | |   | `-VarDecl 0x12c8295b8 <col:4, col:16> col:16 used bio 'struct bio *'
+    | |   |-CallExpr 0x12c8297d8 <line:20:4, col:29> 'int'
+    | |   | |-ImplicitCastExpr 0x12c8297c0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x12c829730 <col:4> 'int ()' Function 0x12c829678 '__rq_for_each_bio' 'int ()'
+    | |   | |-ImplicitCastExpr 0x12c829808 <col:22> 'struct bio *' <LValueToRValue>
+    | |   | | `-DeclRefExpr 0x12c829750 <col:22> 'struct bio *' lvalue Var 0x12c8295b8 'bio' 'struct bio *'
+    | |   | `-ImplicitCastExpr 0x12c829820 <col:27> 'struct request *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x12c829770 <col:27> 'struct request *' lvalue ParmVar 0x12c826628 'rq' 'struct request *'
+    | |   `-CallExpr 0x12c829970 <line:21:5, col:22> 'int'
+    | |     |-ImplicitCastExpr 0x12c829958 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x12c829918 <col:5> 'int ()' Function 0x12c829860 'zero_fill_bio' 'int ()'
+    | |     `-ImplicitCastExpr 0x12c829998 <col:19> 'struct bio *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x12c829938 <col:19> 'struct bio *' lvalue Var 0x12c8295b8 'bio' 'struct bio *'
+    | `-CallExpr 0x12c829b10 <line:24:3, col:16> 'int'
+    |   `-ImplicitCastExpr 0x12c829af8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x12c829ad8 <col:3> 'int ()' Function 0x12c829a20 'cond_resched' 'int ()'
+    `-ReturnStmt 0x12c829b88 <line:27:2, col:9>
+      `-IntegerLiteral 0x12c829b68 <col:9> 'int' 0

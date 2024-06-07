@@ -1,0 +1,21 @@
+`-FunctionDecl 0x13210e518  line:1:6 invalid constructor 'int (int *, unsigned int, int *)'
+  |-ParmVarDecl 0x13210e328 <col:18, col:29> col:29 invalid cx 'int *'
+  |-ParmVarDecl 0x13210e3a8 <col:33, col:42> col:42 used argc 'unsigned int'
+  |-ParmVarDecl 0x13210e428 <col:48, col:55> col:55 invalid vp 'int *'
+  `-CompoundStmt 0x132127f50 <col:59, line:10:1>
+    |-CallExpr 0x13210e818 <line:2:3, col:23> 'int'
+    | |-ImplicitCastExpr 0x13210e800 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13210e730 <col:3> 'int ()' Function 0x13210e678 'CTOR_HEADER' 'int ()'
+    | |-ImplicitCastExpr 0x13210e848 <col:15> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x13210e790 <col:15> 'char[4]' lvalue "STR"
+    | `-IntegerLiteral 0x13210e7b0 <col:22> 'int' 0
+    |-CallExpr 0x132127ee0 <line:8:3, col:30> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x132127dd8 <col:3, col:15> '<dependent type>' contains-errors lvalue .setObject
+    | | `-CallExpr 0x132127db8 <col:3, col:13> '<dependent type>' contains-errors
+    | |   `-RecoveryExpr 0x132127d90 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13210e910 <col:3> 'unsigned int' lvalue ParmVar 0x13210e3a8 'argc' 'unsigned int'
+    | `-UnaryOperator 0x132127ec8 <col:25, col:26> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x132127eb0 <col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x132127e90 <col:26> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x132127f40 <line:9:3, col:10>
+      `-RecoveryExpr 0x132127f20 <col:10> '<dependent type>' contains-errors lvalue

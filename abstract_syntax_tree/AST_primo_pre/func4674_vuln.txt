@@ -1,0 +1,64 @@
+`-FunctionDecl 0x143928758  line:1:5 sas_smp_get_phy_events 'int (struct sas_phy *)'
+  |-ParmVarDecl 0x143928648 <col:28, col:44> col:44 used phy 'struct sas_phy *'
+  `-CompoundStmt 0x144009048 <line:2:1, line:37:1>
+    |-DeclStmt 0x143940ad0 <line:3:2, col:9>
+    | `-VarDecl 0x143940a68 <col:2, col:6> col:6 used res 'int'
+    |-DeclStmt 0x143940f58 <line:6:2, col:54>
+    | |-RecordDecl 0x143940b70 <col:2, col:9> col:9 struct sas_rphy
+    | `-VarDecl 0x143940cd8 <col:2, col:53> col:19 used rphy 'struct sas_rphy *' cinit
+    |   `-CallExpr 0x143940f18 <col:26, col:53> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x143940e50 <col:26> 'int ()' Function 0x143940d98 'dev_to_rphy' 'int ()'
+    |     `-CXXDependentScopeMemberExpr 0x143940ed0 <col:38, col:47> '<dependent type>' contains-errors lvalue .parent
+    |       `-RecoveryExpr 0x143940ea8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x143940e70 <col:38> 'struct sas_phy *' lvalue ParmVar 0x143928648 'phy' 'struct sas_phy *'
+    |-DeclStmt 0x143941318 <line:7:2, col:56>
+    | |-RecordDecl 0x143940f70 <col:2, col:9> col:9 struct domain_device
+    | `-VarDecl 0x1439410d8 <col:2, col:55> col:24 used dev 'struct domain_device *' cinit
+    |   `-ImplicitCastExpr 0x1439412e8 <col:30, col:55> 'struct domain_device *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x1439412a8 <col:30, col:55> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x143941290 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x143941220 <col:30> 'int ()' Function 0x143941168 'sas_find_dev_by_rphy' 'int ()'
+    |       `-ImplicitCastExpr 0x1439412d0 <col:51> 'struct sas_rphy *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x143941240 <col:51> 'struct sas_rphy *' contains-errors lvalue Var 0x143940cd8 'rphy' 'struct sas_rphy *'
+    |-BinaryOperator 0x1439414f8 <line:9:2, col:35> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143941330 <col:2> 'int' lvalue Var 0x143940a68 'res' 'int'
+    | `-CallExpr 0x1439414d0 <col:8, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143941430 <col:8> 'int ()' Function 0x143941378 'alloc_smp_req' 'int ()'
+    |   `-RecoveryExpr 0x1439414b0 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x143941658 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x143941598 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x143941580 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x143941560 <col:7> 'int' lvalue Var 0x143940a68 'res' 'int'
+    | `-ReturnStmt 0x143941648 <line:11:3, col:11>
+    |   `-UnaryOperator 0x143941630 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x143941618 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1439415f8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x143941840 <line:13:2, col:38> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143941678 <col:2> 'int' lvalue Var 0x143940a68 'res' 'int'
+    | `-CallExpr 0x143941818 <col:9, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143941778 <col:9> 'int ()' Function 0x1439416c0 'alloc_smp_resp' 'int ()'
+    |   `-RecoveryExpr 0x1439417f8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x144008980 <line:14:2, line:17:2>
+    | |-UnaryOperator 0x1439418e0 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1439418c8 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1439418a8 <col:7> 'int' lvalue Var 0x143940a68 'res' 'int'
+    | `-CompoundStmt 0x144008960 <col:13, line:17:2>
+    |   |-CallExpr 0x144008878 <line:15:3, col:12> 'int'
+    |   | |-ImplicitCastExpr 0x144008860 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1439419d8 <col:3> 'int ()' Function 0x143941920 'kfree' 'int ()'
+    |   | `-ImplicitCastExpr 0x1440088a0 <col:9> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x144008840 <col:9> 'int' lvalue Var 0x143940a68 'res' 'int'
+    |   `-ReturnStmt 0x144008950 <line:16:3, col:11>
+    |     `-UnaryOperator 0x144008938 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x144008920 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x144008900 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x144008c38 <line:25:2, line:26:8>
+    | |-UnaryOperator 0x144008bb8 <line:25:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x144008ba0 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x144008b80 <col:7> 'int' lvalue Var 0x143940a68 'res' 'int'
+    | `-GotoStmt 0x144008c20 <line:26:3, col:8> 'out' 0x144008bd0
+    |-LabelStmt 0x144008fe0 <line:33:2, col:5> 'out'
+    | `-NullStmt 0x144008fd8 <col:5>
+    `-ReturnStmt 0x144009038 <line:35:2, col:9>
+      `-ImplicitCastExpr 0x144009020 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x144009000 <col:9> 'int' lvalue Var 0x143940a68 'res' 'int'

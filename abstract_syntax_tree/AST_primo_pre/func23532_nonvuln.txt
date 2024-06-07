@@ -1,0 +1,26 @@
+`-FunctionDecl 0x120830178  line:1:6 invalid vhost_vq_avail_empty 'int (struct vhost_dev *, struct vhost_virtqueue *)'
+  |-ParmVarDecl 0x1058ed468 <col:27, col:45> col:45 dev 'struct vhost_dev *'
+  |-ParmVarDecl 0x120830058 <col:50, col:74> col:74 used vq 'struct vhost_virtqueue *'
+  `-CompoundStmt 0x120830b98 <line:2:1, line:15:1>
+    |-DeclStmt 0x1208302b0 <line:4:2, col:7>
+    | `-VarDecl 0x120830248 <col:2, col:6> col:6 used r 'int'
+    |-BinaryOperator 0x120830668 <line:9:2, col:40> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1208303c0 <col:2> 'int' lvalue Var 0x120830248 'r' 'int'
+    | `-CallExpr 0x120830638 <col:6, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x120830540 <col:6> 'int ()' Function 0x120830488 'vhost_get_avail_idx' 'int ()'
+    |   |-DeclRefExpr 0x120830560 <col:26> 'struct vhost_virtqueue *' lvalue ParmVar 0x120830058 'vq' 'struct vhost_virtqueue *'
+    |   `-UnaryOperator 0x120830620 <col:30, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x120830600 <col:31> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x120830a88 <line:12:2, col:46> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x120830888 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x120830850 <col:2> 'struct vhost_virtqueue *' lvalue ParmVar 0x120830058 'vq' 'struct vhost_virtqueue *'
+    | `-CallExpr 0x120830a58 <col:18, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x120830990 <col:18> 'int ()' Function 0x1208308d8 'vhost16_to_cpu' 'int ()'
+    |   |-DeclRefExpr 0x1208309b0 <col:33> 'struct vhost_virtqueue *' lvalue ParmVar 0x120830058 'vq' 'struct vhost_virtqueue *'
+    |   `-RecoveryExpr 0x120830a38 <col:37> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x120830b88 <line:14:2, col:30>
+      `-BinaryOperator 0x120830b68 <col:9, col:30> 'int' contains-errors '=='
+        |-RecoveryExpr 0x120830ae0 <col:9, col:13> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x120830aa8 <col:9> 'struct vhost_virtqueue *' lvalue ParmVar 0x120830058 'vq' 'struct vhost_virtqueue *'
+        `-RecoveryExpr 0x120830b40 <col:26, col:30> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x120830b08 <col:26> 'struct vhost_virtqueue *' lvalue ParmVar 0x120830058 'vq' 'struct vhost_virtqueue *'

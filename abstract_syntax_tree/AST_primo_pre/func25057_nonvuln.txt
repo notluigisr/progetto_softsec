@@ -1,0 +1,50 @@
+`-FunctionDecl 0x143827608  line:1:12 invalid may_context_mount_sb_relabel 'int (int, struct superblock_security_struct *, const struct cred *)' static
+  |-ParmVarDecl 0x14380dcf0 <col:41, col:45> col:45 invalid sid 'int'
+  |-ParmVarDecl 0x14380e2e8 <line:2:4, col:39> col:39 used sbsec 'struct superblock_security_struct *'
+  |-ParmVarDecl 0x1438274c8 <line:3:4, col:23> col:23 used cred 'const struct cred *'
+  `-CompoundStmt 0x143828380 <line:4:1, line:18:1>
+    |-DeclStmt 0x143827af8 <line:5:2, col:62>
+    | |-RecordDecl 0x1438276c8 <col:8, col:15> col:15 struct task_security_struct
+    | `-VarDecl 0x143827838 <col:2, col:61> col:37 used tsec 'const struct task_security_struct *' cinit
+    |   `-ImplicitCastExpr 0x143827ac8 <col:44, col:61> 'const struct task_security_struct *' <IntegralToPointer>
+    |     `-CallExpr 0x143827a88 <col:44, col:61> 'int'
+    |       |-ImplicitCastExpr 0x143827a70 <col:44> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x143827a00 <col:44> 'int ()' Function 0x143827948 'selinux_cred' 'int ()'
+    |       `-ImplicitCastExpr 0x143827ab0 <col:57> 'const struct cred *' <LValueToRValue>
+    |         `-DeclRefExpr 0x143827a20 <col:57> 'const struct cred *' lvalue ParmVar 0x1438274c8 'cred' 'const struct cred *'
+    |-DeclStmt 0x143827b90 <line:6:2, col:8>
+    | `-VarDecl 0x143827b28 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x143827f90 <line:8:2, line:10:35> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143827ba8 <line:8:2> 'int' lvalue Var 0x143827b28 'rc' 'int'
+    | `-CallExpr 0x143827f40 <col:7, line:10:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143827ca8 <line:8:7> 'int ()' Function 0x143827bf0 'avc_has_perm' 'int ()'
+    |   |-UnaryOperator 0x143827ec8 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x143827ea8 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x143827d30 <line:9:6, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x143827cf8 <col:6> 'const struct task_security_struct *' lvalue Var 0x143827838 'tsec' 'const struct task_security_struct *'
+    |   |-RecoveryExpr 0x143827d90 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x143827d58 <col:17> 'struct superblock_security_struct *' lvalue ParmVar 0x14380e2e8 'sbsec' 'struct superblock_security_struct *'
+    |   |-RecoveryExpr 0x143827ee0 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x143827f00 <line:10:6> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x143827f20 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x143828030 <line:11:2, line:12:10>
+    | |-ImplicitCastExpr 0x143827fd0 <line:11:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x143827fb0 <col:6> 'int' lvalue Var 0x143827b28 'rc' 'int'
+    | `-ReturnStmt 0x143828020 <line:12:3, col:10>
+    |   `-ImplicitCastExpr 0x143828008 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x143827fe8 <col:10> 'int' lvalue Var 0x143827b28 'rc' 'int'
+    |-BinaryOperator 0x143828318 <line:14:2, line:16:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143828050 <line:14:2> 'int' lvalue Var 0x143827b28 'rc' 'int'
+    | `-CallExpr 0x1438282c8 <col:7, line:16:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x143828070 <line:14:7> 'int ()' Function 0x143827bf0 'avc_has_perm' 'int ()'
+    |   |-UnaryOperator 0x143828250 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x143828230 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x1438280f8 <line:15:6, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1438280c0 <col:6> 'const struct task_security_struct *' lvalue Var 0x143827838 'tsec' 'const struct task_security_struct *'
+    |   |-RecoveryExpr 0x143828120 <col:17> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x143828268 <col:22> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x143828288 <line:16:6> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1438282a8 <col:29> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x143828370 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x143828358 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x143828338 <col:9> 'int' lvalue Var 0x143827b28 'rc' 'int'

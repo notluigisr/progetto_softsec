@@ -1,0 +1,53 @@
+`-FunctionDecl 0x13780c9d8  line:1:19 invalid fib6_rule_lookup 'struct dst_entry *(struct net *, struct flowi6 *, const struct sk_buff *, int, int)'
+  |-ParmVarDecl 0x1371286e8 <col:36, col:48> col:48 used net 'struct net *'
+  |-ParmVarDecl 0x13780c4c8 <col:53, col:68> col:68 used fl6 'struct flowi6 *'
+  |-ParmVarDecl 0x13780c698 <line:2:8, col:30> col:30 used skb 'const struct sk_buff *'
+  |-ParmVarDecl 0x13780c718 <line:3:8, col:12> col:12 used flags 'int'
+  |-ParmVarDecl 0x13780c7b0 <col:19, col:32> col:32 invalid lookup 'int'
+  `-CompoundStmt 0x13780dc68 <line:4:1, line:16:1>
+    |-DeclStmt 0x13780cc98 <line:5:2, col:21>
+    | |-RecordDecl 0x13780caa8 <col:2, col:9> col:9 struct rt6_info
+    | `-VarDecl 0x13780cc18 <col:2, col:19> col:19 used rt 'struct rt6_info *'
+    |-BinaryOperator 0x13780ce60 <line:7:2, col:59> 'struct rt6_info *' contains-errors '='
+    | |-DeclRefExpr 0x13780ccb0 <col:2> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'
+    | `-CallExpr 0x13780ce18 <col:7, col:59> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x13780ccd0 <col:7> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x13780ccf0 <col:14> 'struct net *' lvalue ParmVar 0x1371286e8 'net' 'struct net *'
+    |   |-CXXDependentScopeMemberExpr 0x13780cd70 <col:19, col:29> '<dependent type>' contains-errors lvalue .fib6_main_tbl
+    |   | `-RecoveryExpr 0x13780cd48 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13780cd10 <col:19> 'struct net *' lvalue ParmVar 0x1371286e8 'net' 'struct net *'
+    |   |-DeclRefExpr 0x13780cdb8 <col:44> 'struct flowi6 *' lvalue ParmVar 0x13780c4c8 'fl6' 'struct flowi6 *'
+    |   |-DeclRefExpr 0x13780cdd8 <col:49> 'const struct sk_buff *' lvalue ParmVar 0x13780c698 'skb' 'const struct sk_buff *'
+    |   `-DeclRefExpr 0x13780cdf8 <col:54> 'int' lvalue ParmVar 0x13780c718 'flags' 'int'
+    |-IfStmt 0x13780dbc0 <line:8:2, line:13:2>
+    | |-BinaryOperator 0x13780cfe0 <line:8:6, col:24> 'int' contains-errors '=='
+    | | |-CXXDependentScopeMemberExpr 0x13780cee0 <col:6, col:14> '<dependent type>' contains-errors lvalue .error
+    | | | `-RecoveryExpr 0x13780ceb8 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x13780ce80 <col:6> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'
+    | | `-UnaryOperator 0x13780cfc8 <col:23, col:24> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x13780cfb0 <col:24> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x13780cf90 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13780db98 <col:32, line:13:2>
+    |   |-CallExpr 0x13780d208 <line:9:3, col:29> 'int'
+    |   | |-ImplicitCastExpr 0x13780d1f0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13780d160 <col:3> 'int ()' Function 0x13780d0a8 'ip6_rt_put_flags' 'int ()'
+    |   | |-ImplicitCastExpr 0x13780d238 <col:20> 'struct rt6_info *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13780d180 <col:20> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'
+    |   | `-ImplicitCastExpr 0x13780d250 <col:24> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13780d1a0 <col:24> 'int' lvalue ParmVar 0x13780c718 'flags' 'int'
+    |   |-BinaryOperator 0x13780d330 <line:10:3, col:18> 'struct rt6_info *' contains-errors '='
+    |   | |-DeclRefExpr 0x13780d268 <col:3> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'
+    |   | `-CXXDependentScopeMemberExpr 0x13780d2e8 <col:8, col:18> '<dependent type>' contains-errors lvalue .ip6_null_entry
+    |   |   `-RecoveryExpr 0x13780d2c0 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13780d288 <col:8> 'struct net *' lvalue ParmVar 0x1371286e8 'net' 'struct net *'
+    |   `-IfStmt 0x13780db78 <line:11:3, line:12:21>
+    |     |-RecoveryExpr 0x13780d3a8 <line:11:7, col:39> '_Bool' contains-errors
+    |     `-CallExpr 0x13780db50 <line:12:4, col:21> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13780dab8 <col:4> 'int ()' Function 0x13780da00 'dst_hold' 'int ()'
+    |       `-UnaryOperator 0x13780db38 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x13780db10 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13780dad8 <col:14> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'
+    `-ReturnStmt 0x13780dc58 <line:15:2, col:14>
+      `-UnaryOperator 0x13780dc40 <col:9, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13780dc18 <col:10, col:14> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13780dbe0 <col:10> 'struct rt6_info *' lvalue Var 0x13780cc18 'rt' 'struct rt6_info *'

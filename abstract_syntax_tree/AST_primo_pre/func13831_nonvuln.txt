@@ -1,0 +1,95 @@
+`-FunctionDecl 0x13e027948  line:1:18 invalid huge_zonelist 'struct zonelist *(struct vm_area_struct *, unsigned long, int, struct mempolicy **, int **)'
+  |-ParmVarDecl 0x13e00e2e8 <col:32, col:55> col:55 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x13e00e368 <col:60, col:74> col:74 used addr 'unsigned long'
+  |-ParmVarDecl 0x13e027400 <line:2:5, col:11> col:11 invalid gfp_flags 'int'
+  |-ParmVarDecl 0x13e027638 <col:22, col:41> col:41 used mpol 'struct mempolicy **'
+  |-ParmVarDecl 0x13e027720 <line:3:5, col:18> col:18 invalid nodemask 'int **'
+  `-CompoundStmt 0x13d923690 <line:4:1, line:19:1>
+    |-DeclStmt 0x13e027b10 <line:5:2, col:21>
+    | `-VarDecl 0x13e027aa8 <col:2, col:19> col:19 used zl 'struct zonelist *'
+    |-BinaryOperator 0x13e027df0 <line:7:2, col:34> 'struct mempolicy *' '='
+    | |-UnaryOperator 0x13e027b60 <col:2, col:3> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x13e027b48 <col:3> 'struct mempolicy **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13e027b28 <col:3> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    | `-ImplicitCastExpr 0x13e027dd8 <col:10, col:34> 'struct mempolicy *' <IntegralToPointer>
+    |   `-CallExpr 0x13e027d78 <col:10, col:34> 'int'
+    |     |-ImplicitCastExpr 0x13e027d60 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13e027cd0 <col:10> 'int ()' Function 0x13e027c18 'get_vma_policy' 'int ()'
+    |     |-ImplicitCastExpr 0x13e027da8 <col:25> 'struct vm_area_struct *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13e027cf0 <col:25> 'struct vm_area_struct *' lvalue ParmVar 0x13e00e2e8 'vma' 'struct vm_area_struct *'
+    |     `-ImplicitCastExpr 0x13e027dc0 <col:30> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x13e027d10 <col:30> 'unsigned long' lvalue ParmVar 0x13e00e368 'addr' 'unsigned long'
+    |-BinaryOperator 0x13e027f18 <line:8:2, col:14> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x13e027ee0 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x13e027ec8 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x13e027e10 <col:3> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x13e027ef8 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13d923618 <line:10:2, line:17:2> has_else
+    | |-CallExpr 0x13e028250 <line:10:6, col:47> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x13e028018 <col:6> 'int ()' Function 0x13e027f60 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x13e028230 <col:15, col:32> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x13e0281e8 <col:15, col:24> '<dependent type>' contains-errors lvalue
+    | |   | `-ParenExpr 0x13e0281c8 <col:15, col:21> 'struct mempolicy *' lvalue
+    | |   |   `-UnaryOperator 0x13e0281b0 <col:16, col:17> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    | |   |     `-ImplicitCastExpr 0x13e028198 <col:17> 'struct mempolicy **' <LValueToRValue>
+    | |   |       `-DeclRefExpr 0x13e028038 <col:17> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    | |   `-RecoveryExpr 0x13e028210 <col:32> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x13d922f30 <col:50, line:13:2>
+    | | `-BinaryOperator 0x13d922f10 <line:11:3, line:12:49> 'struct zonelist *' contains-errors '='
+    | |   |-DeclRefExpr 0x13e028278 <line:11:3> 'struct zonelist *' lvalue Var 0x13e027aa8 'zl' 'struct zonelist *'
+    | |   `-CallExpr 0x13d922ee0 <col:8, line:12:49> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x13e028378 <line:11:8> 'int ()' Function 0x13e0282c0 'node_zonelist' 'int ()'
+    | |     |-CallExpr 0x13d922e38 <col:22, line:12:37> 'int'
+    | |     | |-ImplicitCastExpr 0x13d922e20 <line:11:22> 'int (*)()' <FunctionToPointerDecay>
+    | |     | | `-DeclRefExpr 0x13d922ab8 <col:22> 'int ()' Function 0x13d922a00 'interleave_nid' 'int ()'
+    | |     | |-ImplicitCastExpr 0x13d922e78 <col:37, col:38> 'struct mempolicy *' <LValueToRValue>
+    | |     | | `-UnaryOperator 0x13d922b10 <col:37, col:38> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    | |     | |   `-ImplicitCastExpr 0x13d922af8 <col:38> 'struct mempolicy **' <LValueToRValue>
+    | |     | |     `-DeclRefExpr 0x13d922ad8 <col:38> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    | |     | |-ImplicitCastExpr 0x13d922e90 <col:44> 'struct vm_area_struct *' <LValueToRValue>
+    | |     | | `-DeclRefExpr 0x13d922b28 <col:44> 'struct vm_area_struct *' lvalue ParmVar 0x13e00e2e8 'vma' 'struct vm_area_struct *'
+    | |     | |-ImplicitCastExpr 0x13d922ea8 <col:49> 'unsigned long' <LValueToRValue>
+    | |     | | `-DeclRefExpr 0x13d922b48 <col:49> 'unsigned long' lvalue ParmVar 0x13e00e368 'addr' 'unsigned long'
+    | |     | `-CallExpr 0x13d922df8 <line:12:5, col:36> 'int'
+    | |     |   |-ImplicitCastExpr 0x13d922de0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | |     |   | `-DeclRefExpr 0x13d922c48 <col:5> 'int ()' Function 0x13d922b90 'huge_page_shift' 'int ()'
+    | |     |   `-CallExpr 0x13d922da0 <col:21, col:35> 'int'
+    | |     |     |-ImplicitCastExpr 0x13d922d88 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    | |     |     | `-DeclRefExpr 0x13d922d48 <col:21> 'int ()' Function 0x13d922c90 'hstate_vma' 'int ()'
+    | |     |     `-ImplicitCastExpr 0x13d922dc8 <col:32> 'struct vm_area_struct *' <LValueToRValue>
+    | |     |       `-DeclRefExpr 0x13d922d68 <col:32> 'struct vm_area_struct *' lvalue ParmVar 0x13e00e2e8 'vma' 'struct vm_area_struct *'
+    | |     `-RecoveryExpr 0x13d922ec0 <col:40> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13d9235f8 <line:13:9, line:17:2>
+    |   |-BinaryOperator 0x13d923248 <line:14:3, col:56> 'struct zonelist *' contains-errors '='
+    |   | |-DeclRefExpr 0x13d922f48 <col:3> 'struct zonelist *' lvalue Var 0x13e027aa8 'zl' 'struct zonelist *'
+    |   | `-CallExpr 0x13d923210 <col:8, col:56> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13d923048 <col:8> 'int ()' Function 0x13d922f90 'policy_zonelist' 'int ()'
+    |   |   |-RecoveryExpr 0x13d923068 <col:24> '<dependent type>' contains-errors lvalue
+    |   |   |-UnaryOperator 0x13d9230c0 <col:35, col:36> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    |   |   | `-ImplicitCastExpr 0x13d9230a8 <col:36> 'struct mempolicy **' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x13d923088 <col:36> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    |   |   `-CallExpr 0x13d9231f0 <col:42, col:55> 'int'
+    |   |     `-ImplicitCastExpr 0x13d9231d8 <col:42> 'int (*)()' <FunctionToPointerDecay>
+    |   |       `-DeclRefExpr 0x13d9231b8 <col:42> 'int ()' Function 0x13d923100 'numa_node_id' 'int ()'
+    |   `-IfStmt 0x13d9235d8 <line:15:3, line:16:28>
+    |     |-BinaryOperator 0x13d923438 <line:15:7, col:24> 'int' contains-errors '=='
+    |     | |-RecoveryExpr 0x13d9233f0 <col:7, col:16> '<dependent type>' contains-errors lvalue
+    |     | | `-ParenExpr 0x13d9233d0 <col:7, col:13> 'struct mempolicy *' lvalue
+    |     | |   `-UnaryOperator 0x13d9233b8 <col:8, col:9> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    |     | |     `-ImplicitCastExpr 0x13d9233a0 <col:9> 'struct mempolicy **' <LValueToRValue>
+    |     | |       `-DeclRefExpr 0x13d923268 <col:9> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    |     | `-RecoveryExpr 0x13d923418 <col:24> '<dependent type>' contains-errors lvalue
+    |     `-BinaryOperator 0x13d9235b8 <line:16:4, col:28> '<dependent type>' contains-errors '='
+    |       |-UnaryOperator 0x13d923490 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       | `-ImplicitCastExpr 0x13d923478 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+    |       |   `-RecoveryExpr 0x13d923458 <col:5> '<dependent type>' contains-errors lvalue
+    |       `-UnaryOperator 0x13d9235a0 <col:16, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-CXXDependentScopeMemberExpr 0x13d923558 <col:17, col:28> '<dependent type>' contains-errors lvalue .nodes
+    |           `-RecoveryExpr 0x13d923530 <col:17, col:26> '<dependent type>' contains-errors lvalue
+    |             `-ParenExpr 0x13d9234f8 <col:17, col:23> 'struct mempolicy *' lvalue
+    |               `-UnaryOperator 0x13d9234e0 <col:18, col:19> 'struct mempolicy *' lvalue prefix '*' cannot overflow
+    |                 `-ImplicitCastExpr 0x13d9234c8 <col:19> 'struct mempolicy **' <LValueToRValue>
+    |                   `-DeclRefExpr 0x13d9234a8 <col:19> 'struct mempolicy **' lvalue ParmVar 0x13e027638 'mpol' 'struct mempolicy **'
+    `-ReturnStmt 0x13d923680 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x13d923668 <col:9> 'struct zonelist *' <LValueToRValue>
+        `-DeclRefExpr 0x13d923648 <col:9> 'struct zonelist *' lvalue Var 0x13e027aa8 'zl' 'struct zonelist *'

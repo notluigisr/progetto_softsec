@@ -1,0 +1,83 @@
+`-FunctionDecl 0x11f1418d0  line:1:6 invalid kvm_mmu_invpcid_gva 'void (struct kvm_vcpu *, int, unsigned long)'
+  |-ParmVarDecl 0x11f128648 <col:26, col:43> col:43 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x11f1286e0 <col:49, col:55> col:55 invalid gva 'int'
+  |-ParmVarDecl 0x11f128760 <col:60, col:74> col:74 used pcid 'unsigned long'
+  `-CompoundStmt 0x11f143248 <line:2:1, line:26:1>
+    |-DeclStmt 0x11f141c20 <line:3:2, col:38>
+    | |-RecordDecl 0x11f141990 <col:2, col:9> col:9 struct kvm_mmu
+    | `-VarDecl 0x11f141af8 <col:2, col:35> col:18 used mmu 'struct kvm_mmu *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x11f141bc0 <col:24, col:35> '<dependent type>' contains-errors lvalue .mmu
+    |     `-RecoveryExpr 0x11f141b98 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11f141b60 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x11f141cb8 <line:5:2, col:8>
+    | `-VarDecl 0x11f141c50 <col:2, col:7> col:7 used i 'int'
+    |-IfStmt 0x11f142118 <line:7:2, line:10:2>
+    | |-BinaryOperator 0x11f141f48 <line:7:6, col:38> 'int' '=='
+    | | |-ImplicitCastExpr 0x11f141f18 <col:6> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x11f141cd0 <col:6> 'unsigned long' lvalue ParmVar 0x11f128760 'pcid' 'unsigned long'
+    | | `-ImplicitCastExpr 0x11f141f30 <col:14, col:38> 'unsigned long' <IntegralCast>
+    | |   `-CallExpr 0x11f141ed8 <col:14, col:38> 'int'
+    | |     |-ImplicitCastExpr 0x11f141ec0 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x11f141e50 <col:14> 'int ()' Function 0x11f141d98 'kvm_get_active_pcid' 'int ()'
+    | |     `-ImplicitCastExpr 0x11f141f00 <col:34> 'struct kvm_vcpu *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x11f141e70 <col:34> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'
+    | `-CompoundStmt 0x11f142100 <col:41, line:10:2>
+    |   `-CallExpr 0x11f1420b0 <line:8:3, col:39> '<dependent type>' contains-errors
+    |     |-RecoveryExpr 0x11f141fa0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x11f141f68 <col:3> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |     |-DeclRefExpr 0x11f141fc8 <col:15> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'
+    |     |-RecoveryExpr 0x11f141fe8 <col:21> '<dependent type>' contains-errors lvalue
+    |     `-CXXDependentScopeMemberExpr 0x11f142068 <col:26, col:36> '<dependent type>' contains-errors lvalue .hpa
+    |       `-RecoveryExpr 0x11f142040 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x11f142008 <col:26> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |-ForStmt 0x11f142fd8 <line:12:2, line:18:2>
+    | |-BinaryOperator 0x11f142178 <line:12:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x11f142138 <col:7> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    | | `-IntegerLiteral 0x11f142158 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x11f142210 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x11f142198 <col:14> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    | | `-RecoveryExpr 0x11f1421f0 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x11f142250 <col:42, col:43> 'int' postfix '++'
+    | | `-DeclRefExpr 0x11f142230 <col:42> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    | `-CompoundStmt 0x11f142fc0 <col:47, line:18:2>
+    |   `-IfStmt 0x11f142fa0 <line:13:3, line:17:3>
+    |     |-BinaryOperator 0x11f142750 <line:13:7, line:14:56> 'int' contains-errors '&&'
+    |     | |-CallExpr 0x11f142480 <line:13:7, col:40> '<dependent type>' contains-errors
+    |     | | |-DeclRefExpr 0x11f142348 <col:7> 'int ()' Function 0x11f142290 'VALID_PAGE' 'int ()'
+    |     | | `-CXXDependentScopeMemberExpr 0x11f142438 <col:18, col:37> '<dependent type>' contains-errors lvalue .hpa
+    |     | |   `-ArraySubscriptExpr 0x11f142418 <col:18, col:35> '<dependent type>' contains-errors lvalue
+    |     | |     |-ImplicitCastExpr 0x11f1423e8 <col:18, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |     | |     | `-RecoveryExpr 0x11f1423a0 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |     | |     |   `-DeclRefExpr 0x11f142368 <col:18> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |     | |     `-ImplicitCastExpr 0x11f142400 <col:34> 'int' <LValueToRValue>
+    |     | |       `-DeclRefExpr 0x11f1423c8 <col:34> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    |     | `-BinaryOperator 0x11f142730 <line:14:7, col:56> 'int' contains-errors '=='
+    |     |   |-DeclRefExpr 0x11f1424a8 <col:7> 'unsigned long' lvalue ParmVar 0x11f128760 'pcid' 'unsigned long'
+    |     |   `-CallExpr 0x11f142700 <col:15, col:56> '<dependent type>' contains-errors
+    |     |     |-DeclRefExpr 0x11f1425a8 <col:15> 'int ()' Function 0x11f1424f0 'kvm_get_pcid' 'int ()'
+    |     |     |-DeclRefExpr 0x11f1425c8 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'
+    |     |     `-CXXDependentScopeMemberExpr 0x11f1426b8 <col:34, col:53> '<dependent type>' contains-errors lvalue .pgd
+    |     |       `-ArraySubscriptExpr 0x11f142698 <col:34, col:51> '<dependent type>' contains-errors lvalue
+    |     |         |-ImplicitCastExpr 0x11f142668 <col:34, col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |     |         | `-RecoveryExpr 0x11f142620 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     |         |   `-DeclRefExpr 0x11f1425e8 <col:34> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |     |         `-ImplicitCastExpr 0x11f142680 <col:50> 'int' <LValueToRValue>
+    |     |           `-DeclRefExpr 0x11f142648 <col:50> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    |     `-CompoundStmt 0x11f142f88 <col:59, line:17:3>
+    |       `-CallExpr 0x11f142f38 <line:15:4, col:49> '<dependent type>' contains-errors
+    |         |-RecoveryExpr 0x11f1427a8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x11f142770 <col:4> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |         |-DeclRefExpr 0x11f1427d0 <col:16> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'
+    |         |-RecoveryExpr 0x11f142e00 <col:22> '<dependent type>' contains-errors lvalue
+    |         `-CXXDependentScopeMemberExpr 0x11f142ef0 <col:27, col:46> '<dependent type>' contains-errors lvalue .hpa
+    |           `-ArraySubscriptExpr 0x11f142ed0 <col:27, col:44> '<dependent type>' contains-errors lvalue
+    |             |-ImplicitCastExpr 0x11f142ea0 <col:27, col:32> '<dependent type>' contains-errors <LValueToRValue>
+    |             | `-RecoveryExpr 0x11f142e58 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |             |   `-DeclRefExpr 0x11f142e20 <col:27> 'struct kvm_mmu *' contains-errors lvalue Var 0x11f141af8 'mmu' 'struct kvm_mmu *'
+    |             `-ImplicitCastExpr 0x11f142eb8 <col:43> 'int' <LValueToRValue>
+    |               `-DeclRefExpr 0x11f142e80 <col:43> 'int' lvalue Var 0x11f141c50 'i' 'int'
+    `-UnaryOperator 0x11f143230 <line:23:2, col:15> '<dependent type>' contains-errors prefix '++' cannot overflow
+      `-CXXDependentScopeMemberExpr 0x11f1431e8 <col:4, col:15> '<dependent type>' contains-errors lvalue .invlpg
+        `-RecoveryExpr 0x11f1431c0 <col:4, col:10> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x11f143188 <col:4> 'struct kvm_vcpu *' lvalue ParmVar 0x11f128648 'vcpu' 'struct kvm_vcpu *'

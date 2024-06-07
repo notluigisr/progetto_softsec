@@ -1,0 +1,1 @@
+  absl::string_view vm_id() const { return vm_id_; }

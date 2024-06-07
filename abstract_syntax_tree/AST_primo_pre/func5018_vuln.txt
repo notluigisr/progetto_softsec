@@ -1,0 +1,26 @@
+`-FunctionDecl 0x13f922800  line:1:20 invalid sk_eat_skb 'void (struct sock *, struct sk_buff *, int)' static inline
+  |-ParmVarDecl 0x14800e248 <col:31, col:44> col:44 used sk 'struct sock *'
+  |-ParmVarDecl 0x13f922628 <col:48, col:64> col:64 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13f9226c0 <col:69, col:74> col:74 invalid copied_early 'int'
+  `-CompoundStmt 0x13f922f00 <line:2:1, line:8:1>
+    |-CallExpr 0x13f922ad8 <line:3:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f922a20 <col:2> 'int ()' Function 0x13f922968 '__skb_unlink' 'int ()'
+    | |-DeclRefExpr 0x13f922a40 <col:15> 'struct sk_buff *' lvalue ParmVar 0x13f922628 'skb' 'struct sk_buff *'
+    | `-UnaryOperator 0x13f922ac0 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f922a98 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f922a60 <col:21> 'struct sock *' lvalue ParmVar 0x14800e248 'sk' 'struct sock *'
+    `-IfStmt 0x13f922ed0 <line:4:2, line:7:49> has_else
+      |-UnaryOperator 0x13f922b40 <line:4:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-ImplicitCastExpr 0x13f922b28 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x13f922b08 <col:7> '<dependent type>' contains-errors lvalue
+      |-CallExpr 0x13f922cc8 <line:5:3, col:18> 'int'
+      | |-ImplicitCastExpr 0x13f922cb0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x13f922c38 <col:3> 'int ()' Function 0x13f922b80 '__kfree_skb' 'int ()'
+      | `-ImplicitCastExpr 0x13f922cf0 <col:15> 'struct sk_buff *' <LValueToRValue>
+      |   `-DeclRefExpr 0x13f922c58 <col:15> 'struct sk_buff *' lvalue ParmVar 0x13f922628 'skb' 'struct sk_buff *'
+      `-CallExpr 0x13f922ea0 <line:7:3, col:49> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13f922de8 <col:3> 'int ()' Function 0x13f922d30 '__skb_queue_tail' 'int ()'
+        |-UnaryOperator 0x13f922e68 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x13f922e40 <col:21, col:25> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13f922e08 <col:21> 'struct sock *' lvalue ParmVar 0x14800e248 'sk' 'struct sock *'
+        `-DeclRefExpr 0x13f922e80 <col:46> 'struct sk_buff *' lvalue ParmVar 0x13f922628 'skb' 'struct sk_buff *'

@@ -1,0 +1,36 @@
+`-FunctionDecl 0x1551282e8  line:1:12 invalid date_to_ISO8601 'int (int, char *, int)' static
+  |-ParmVarDecl 0x1551280f0 <col:29, col:36> col:36 invalid value 'int'
+  |-ParmVarDecl 0x155128170 <col:43, col:49> col:49 used buf 'char *'
+  |-ParmVarDecl 0x1551281f0 <col:54, col:58> col:58 used length 'int'
+  `-CompoundStmt 0x155146278 <col:66, line:12:1>
+    |-DeclStmt 0x155145c90 <line:2:4, col:24>
+    | |-RecordDecl 0x1551283a8 <col:4, col:11> col:11 struct tm
+    | |-VarDecl 0x155128518 <col:4, col:15> col:15 used tm 'struct tm *'
+    | `-VarDecl 0x1551285a0 <col:4, col:19> col:19 invalid tmbuf 'struct tm'
+    |-BinaryOperator 0x155145ee0 <line:3:4, col:39> 'struct tm *' contains-errors '='
+    | |-DeclRefExpr 0x155145ca8 <col:4> 'struct tm *' lvalue Var 0x155128518 'tm' 'struct tm *'
+    | `-CallExpr 0x155145eb0 <col:9, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x155145e20 <col:9> 'int ()' Function 0x155145d68 'php_localtime_r' 'int ()'
+    |   |-UnaryOperator 0x155145e60 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x155145e40 <col:26> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x155145e98 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x155145e78 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x155145f98 <line:4:4, line:6:4>
+    | |-UnaryOperator 0x155145f38 <line:4:8, col:9> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x155145f20 <col:9> 'struct tm *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x155145f00 <col:9> 'struct tm *' lvalue Var 0x155128518 'tm' 'struct tm *'
+    | `-CompoundStmt 0x155145f80 <col:13, line:6:4>
+    |   `-ReturnStmt 0x155145f70 <line:5:5, col:12>
+    |     `-IntegerLiteral 0x155145f50 <col:12> 'int' 0
+    `-ReturnStmt 0x155146268 <line:10:4, col:42>
+      `-CallExpr 0x1551461c8 <col:11, col:42> 'int'
+        |-ImplicitCastExpr 0x1551461b0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x155146098 <col:11> 'int ()' Function 0x155145fe0 'strftime' 'int ()'
+        |-ImplicitCastExpr 0x155146208 <col:20> 'char *' <LValueToRValue>
+        | `-DeclRefExpr 0x1551460b8 <col:20> 'char *' lvalue ParmVar 0x155128170 'buf' 'char *'
+        |-ImplicitCastExpr 0x155146220 <col:25> 'int' <LValueToRValue>
+        | `-DeclRefExpr 0x1551460d8 <col:25> 'int' lvalue ParmVar 0x1551281f0 'length' 'int'
+        |-ImplicitCastExpr 0x155146238 <col:33> 'char *' <ArrayToPointerDecay>
+        | `-StringLiteral 0x155146140 <col:33> 'char[4]' lvalue "STR"
+        `-ImplicitCastExpr 0x155146250 <col:40> 'struct tm *' <LValueToRValue>
+          `-DeclRefExpr 0x155146160 <col:40> 'struct tm *' lvalue Var 0x155128518 'tm' 'struct tm *'

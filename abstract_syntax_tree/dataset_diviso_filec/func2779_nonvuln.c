@@ -1,0 +1,1 @@
+  const SlicePtr& operator[](size_t i) const { return ring_[internalIndex(i)]; }

@@ -1,0 +1,1 @@
+  void set_is_key(bool key) { is_key_ = key; }

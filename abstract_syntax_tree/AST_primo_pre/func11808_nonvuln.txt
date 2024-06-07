@@ -1,0 +1,39 @@
+`-FunctionDecl 0x151940d30  line:1:13 vxlan_vs_add_dev 'void (struct vxlan_sock *, struct vxlan_dev *, struct vxlan_dev_node *)' static
+  |-ParmVarDecl 0x151928648 <col:30, col:49> col:49 used vs 'struct vxlan_sock *'
+  |-ParmVarDecl 0x151940a28 <col:53, col:71> col:71 used vxlan 'struct vxlan_dev *'
+  |-ParmVarDecl 0x151940bf8 <line:2:9, col:32> col:32 used node 'struct vxlan_dev_node *'
+  `-CompoundStmt 0x151942880 <line:3:1, line:11:1>
+    |-DeclStmt 0x151941270 <line:4:2, col:62>
+    | |-RecordDecl 0x151940e38 <col:2, col:9> col:9 struct vxlan_net
+    | `-VarDecl 0x151940fa8 <col:2, col:61> col:20 used vn 'struct vxlan_net *' cinit
+    |   `-CallExpr 0x151941228 <col:25, col:61> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x151941140 <col:25> 'int ()' Function 0x151941088 'net_generic' 'int ()'
+    |     |-RecoveryExpr 0x151941198 <col:37, col:44> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x151941160 <col:37> 'struct vxlan_dev *' lvalue ParmVar 0x151940a28 'vxlan' 'struct vxlan_dev *'
+    |     `-RecoveryExpr 0x151941208 <col:49> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x151941308 <line:7:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1519412c0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x151941288 <col:2> 'struct vxlan_dev_node *' lvalue ParmVar 0x151940bf8 'node' 'struct vxlan_dev_node *'
+    | `-DeclRefExpr 0x1519412e8 <col:16> 'struct vxlan_dev *' lvalue ParmVar 0x151940a28 'vxlan' 'struct vxlan_dev *'
+    |-CallExpr 0x1519414a0 <line:8:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x151941408 <col:2> 'int ()' Function 0x151941350 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x151941488 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x151941460 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x151941428 <col:13> 'struct vxlan_net *' contains-errors lvalue Var 0x151940fa8 'vn' 'struct vxlan_net *'
+    |-CallExpr 0x1519418a8 <line:9:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1519415a8 <col:2> 'int ()' Function 0x1519414f0 'hlist_add_head_rcu' 'int ()'
+    | |-UnaryOperator 0x151941628 <col:21, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x151941600 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1519415c8 <col:22> 'struct vxlan_dev_node *' lvalue ParmVar 0x151940bf8 'node' 'struct vxlan_dev_node *'
+    | `-CallExpr 0x151941848 <col:35, col:51> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x151941830 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x151941720 <col:35> 'int ()' Function 0x151941668 'vni_head' 'int ()'
+    |   |-ImplicitCastExpr 0x151941878 <col:44> 'struct vxlan_sock *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x151941740 <col:44> 'struct vxlan_sock *' lvalue ParmVar 0x151928648 'vs' 'struct vxlan_sock *'
+    |   `-ImplicitCastExpr 0x151941890 <col:48> 'struct vxlan_net *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x1519417d8 <col:48> 'struct vxlan_net *' contains-errors lvalue Var 0x151940fa8 'vn' 'struct vxlan_net *'
+    `-CallExpr 0x151942858 <line:10:2, col:28> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1519419b8 <col:2> 'int ()' Function 0x151941900 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x151942840 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x151942818 <col:15, col:19> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1519419d8 <col:15> 'struct vxlan_net *' contains-errors lvalue Var 0x151940fa8 'vn' 'struct vxlan_net *'

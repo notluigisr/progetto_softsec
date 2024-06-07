@@ -1,0 +1,198 @@
+`-FunctionDecl 0x152142378  line:1:16 invalid fuse_dev_splice_write 'int (struct pipe_inode_info *, struct file *, int *, int, unsigned int)' static
+  |-ParmVarDecl 0x152128e68 <col:38, col:62> col:62 used pipe 'struct pipe_inode_info *'
+  |-ParmVarDecl 0x152142058 <line:2:10, col:23> col:23 used out 'struct file *'
+  |-ParmVarDecl 0x152142108 <col:28, col:36> col:36 invalid ppos 'int *'
+  |-ParmVarDecl 0x152142188 <line:3:10, col:17> col:17 invalid len 'int'
+  |-ParmVarDecl 0x152142208 <col:22, col:35> col:35 used flags 'unsigned int'
+  `-CompoundStmt 0x15214bca0 <line:4:1, line:83:1>
+    |-DeclStmt 0x1521424c8 <line:5:2, col:15>
+    | `-VarDecl 0x152142460 <col:2, col:11> col:11 used nbuf 'unsigned int'
+    |-DeclStmt 0x152142560 <line:6:2, col:14>
+    | `-VarDecl 0x1521424f8 <col:2, col:11> col:11 used idx 'unsigned int'
+    |-DeclStmt 0x152142768 <line:7:2, col:26>
+    | |-RecordDecl 0x152142578 <col:2, col:9> col:9 struct pipe_buffer
+    | `-VarDecl 0x1521426e8 <col:2, col:22> col:22 used bufs 'struct pipe_buffer *'
+    |-DeclStmt 0x1521428f8 <line:8:2, col:27>
+    | |-RecordDecl 0x152142780 <col:2, col:9> col:9 struct fuse_copy_state
+    | `-VarDecl 0x152142878 <col:2, col:25> col:25 referenced invalid cs 'struct fuse_copy_state'
+    |-DeclStmt 0x152142af8 <line:9:2, col:22>
+    | |-RecordDecl 0x152142910 <col:2, col:9> col:9 struct fuse_dev
+    | `-VarDecl 0x152142a78 <col:2, col:19> col:19 used fud 'struct fuse_dev *'
+    |-UnaryExprOrTypeTraitExpr 0x152142b68 <line:10:2, col:9> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x152142b48 <col:9> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x152142de0 <line:13:2, col:24> 'struct fuse_dev *' '='
+    | |-DeclRefExpr 0x152142b88 <col:2> 'struct fuse_dev *' lvalue Var 0x152142a78 'fud' 'struct fuse_dev *'
+    | `-ImplicitCastExpr 0x152142dc8 <col:8, col:24> 'struct fuse_dev *' <IntegralToPointer>
+    |   `-CallExpr 0x152142d88 <col:8, col:24> 'int'
+    |     |-ImplicitCastExpr 0x152142d70 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x152142d00 <col:8> 'int ()' Function 0x152142c48 'fuse_get_dev' 'int ()'
+    |     `-ImplicitCastExpr 0x152142db0 <col:21> 'struct file *' <LValueToRValue>
+    |       `-DeclRefExpr 0x152142d20 <col:21> 'struct file *' lvalue ParmVar 0x152142058 'out' 'struct file *'
+    |-IfStmt 0x152142ef8 <line:14:2, line:15:11>
+    | |-UnaryOperator 0x152142e38 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x152142e20 <col:7> 'struct fuse_dev *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152142e00 <col:7> 'struct fuse_dev *' lvalue Var 0x152142a78 'fud' 'struct fuse_dev *'
+    | `-ReturnStmt 0x152142ee8 <line:15:3, col:11>
+    |   `-UnaryOperator 0x152142ed0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x152142eb8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x152142e98 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x152143058 <line:17:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x152143040 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x152143000 <col:2> 'int ()' Function 0x152142f40 'pipe_lock' 'int ()'
+    | `-ImplicitCastExpr 0x152143080 <col:12> 'struct pipe_inode_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x152143020 <col:12> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |-IfStmt 0x152143518 <line:21:2, line:24:2>
+    | |-UnaryOperator 0x1521432c0 <line:21:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1521432a8 <col:7> 'struct pipe_buffer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152143288 <col:7> 'struct pipe_buffer *' lvalue Var 0x1521426e8 'bufs' 'struct pipe_buffer *'
+    | `-CompoundStmt 0x1521434f8 <col:13, line:24:2>
+    |   |-CallExpr 0x152143410 <line:22:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x1521433f8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1521433b8 <col:3> 'int ()' Function 0x152143300 'pipe_unlock' 'int ()'
+    |   | `-ImplicitCastExpr 0x152143438 <col:15> 'struct pipe_inode_info *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1521433d8 <col:15> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   `-ReturnStmt 0x1521434e8 <line:23:3, col:11>
+    |     `-UnaryOperator 0x1521434d0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1521434b8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x152143498 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x152143590 <line:26:2, col:9> 'unsigned int' '='
+    | |-DeclRefExpr 0x152143538 <col:2> 'unsigned int' lvalue Var 0x152142460 'nbuf' 'unsigned int'
+    | `-ImplicitCastExpr 0x152143578 <col:9> 'unsigned int' <IntegralCast>
+    |   `-IntegerLiteral 0x152143558 <col:9> 'int' 0
+    |-IfStmt 0x152143bd8 <line:32:2, line:35:2>
+    | |-RecoveryExpr 0x152143a98 <line:32:6, col:12> '_Bool' contains-errors
+    | `-CompoundStmt 0x152143bb8 <col:17, line:35:2>
+    |   |-CallExpr 0x152143b10 <line:33:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x152143af8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x152143ab8 <col:3> 'int ()' Function 0x152143300 'pipe_unlock' 'int ()'
+    |   | `-ImplicitCastExpr 0x152143b38 <col:15> 'struct pipe_inode_info *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x152143ad8 <col:15> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   `-GotoStmt 0x152143ba0 <line:34:3, col:8> 'out' 0x152143b50
+    |-WhileStmt 0x152146380 <line:38:2, line:62:2>
+    | |-RecoveryExpr 0x152143c18 <line:38:9> '_Bool' contains-errors
+    | `-CompoundStmt 0x152146338 <col:14, line:62:2>
+    |   |-DeclStmt 0x152143d00 <line:39:3, col:27>
+    |   | `-VarDecl 0x152143c98 <col:3, col:23> col:23 used ibuf 'struct pipe_buffer *'
+    |   |-DeclStmt 0x152143da8 <line:40:3, col:27>
+    |   | `-VarDecl 0x152143d40 <col:3, col:23> col:23 used obuf 'struct pipe_buffer *'
+    |   |-CallExpr 0x152143f60 <line:42:3, col:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x152143ea0 <col:3> 'int ()' Function 0x152143de8 'BUG_ON' 'int ()'
+    |   | `-BinaryOperator 0x152143f40 <col:10, col:24> 'int' contains-errors '>='
+    |   |   |-DeclRefExpr 0x152143ec0 <col:10> 'unsigned int' lvalue Var 0x152142460 'nbuf' 'unsigned int'
+    |   |   `-RecoveryExpr 0x152143f18 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x152143ee0 <col:18> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   |-CallExpr 0x152145658 <line:43:3, col:23> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x152143f88 <col:3> 'int ()' Function 0x152143de8 'BUG_ON' 'int ()'
+    |   | `-UnaryOperator 0x152145640 <col:10, col:17> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |   `-ImplicitCastExpr 0x152145628 <col:11, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x152145600 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x152143fa8 <col:11> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   |-BinaryOperator 0x1521457c8 <line:44:3, col:34> 'struct pipe_buffer *' contains-errors '='
+    |   | |-DeclRefExpr 0x152145680 <col:3> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   | `-UnaryOperator 0x1521457b0 <col:10, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-ArraySubscriptExpr 0x152145790 <col:11, col:34> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x152145760 <col:11, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-RecoveryExpr 0x1521456d8 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x1521456a0 <col:11> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   |     `-ImplicitCastExpr 0x152145778 <col:22, col:28> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x152145738 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x152145700 <col:22> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   |-IfStmt 0x152146270 <line:47:3, line:59:3> has_else
+    |   | |-RecoveryExpr 0x1521458d8 <line:47:7, col:20> '_Bool' contains-errors
+    |   | |-CompoundStmt 0x152145cd8 <col:25, line:52:3>
+    |   | | |-ImplicitCastExpr 0x1521459c8 <line:48:4, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | `-RecoveryExpr 0x152145998 <col:4, col:13> '<dependent type>' contains-errors lvalue
+    |   | | |   |-UnaryOperator 0x152145930 <col:4, col:5> 'struct pipe_buffer' lvalue prefix '*' cannot overflow
+    |   | | |   | `-ImplicitCastExpr 0x152145918 <col:5> 'struct pipe_buffer *' <LValueToRValue>
+    |   | | |   |   `-DeclRefExpr 0x1521458f8 <col:5> 'struct pipe_buffer *' lvalue Var 0x152143d40 'obuf' 'struct pipe_buffer *'
+    |   | | |   `-UnaryOperator 0x152145980 <col:12, col:13> 'struct pipe_buffer' lvalue prefix '*' cannot overflow
+    |   | | |     `-ImplicitCastExpr 0x152145968 <col:13> 'struct pipe_buffer *' <LValueToRValue>
+    |   | | |       `-DeclRefExpr 0x152145948 <col:13> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   | | |-BinaryOperator 0x152145c40 <line:50:4, col:58> '<dependent type>' contains-errors '='
+    |   | | | |-RecoveryExpr 0x152145a78 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   | | | | `-DeclRefExpr 0x152145a40 <col:4> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   | | | `-BinaryOperator 0x152145c20 <col:19, col:58> '<dependent type>' contains-errors '&'
+    |   | | |   |-ParenExpr 0x152145b40 <col:19, col:36> '<dependent type>' contains-errors
+    |   | | |   | `-BinaryOperator 0x152145b20 <col:20, col:35> '<dependent type>' contains-errors '+'
+    |   | | |   |   |-RecoveryExpr 0x152145ad8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   | | |   |   | `-DeclRefExpr 0x152145aa0 <col:20> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   | | |   |   `-IntegerLiteral 0x152145b00 <col:35> 'int' 1
+    |   | | |   `-ParenExpr 0x152145c00 <col:40, col:58> '<dependent type>' contains-errors
+    |   | | |     `-BinaryOperator 0x152145be0 <col:41, col:57> '<dependent type>' contains-errors '-'
+    |   | | |       |-RecoveryExpr 0x152145b98 <col:41, col:47> '<dependent type>' contains-errors lvalue
+    |   | | |       | `-DeclRefExpr 0x152145b60 <col:41> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   | | |       `-IntegerLiteral 0x152145bc0 <col:57> 'int' 1
+    |   | | `-UnaryOperator 0x152145cc0 <line:51:4, col:16> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   | |   `-RecoveryExpr 0x152145c98 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x152145c60 <col:4> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   | `-CompoundStmt 0x152146240 <line:52:10, line:59:3>
+    |   |   |-CallExpr 0x152145e58 <line:53:4, col:27> 'int'
+    |   |   | |-ImplicitCastExpr 0x152145e40 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x152145de0 <col:4> 'int ()' Function 0x152145d28 'pipe_buf_get' 'int ()'
+    |   |   | |-ImplicitCastExpr 0x152145e88 <col:17> 'struct pipe_inode_info *' <LValueToRValue>
+    |   |   | | `-DeclRefExpr 0x152145e00 <col:17> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |   |   | `-ImplicitCastExpr 0x152145ea0 <col:23> 'struct pipe_buffer *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x152145e20 <col:23> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   |   |-ImplicitCastExpr 0x152145f88 <line:54:4, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x152145f58 <col:4, col:13> '<dependent type>' contains-errors lvalue
+    |   |   |   |-UnaryOperator 0x152145ef0 <col:4, col:5> 'struct pipe_buffer' lvalue prefix '*' cannot overflow
+    |   |   |   | `-ImplicitCastExpr 0x152145ed8 <col:5> 'struct pipe_buffer *' <LValueToRValue>
+    |   |   |   |   `-DeclRefExpr 0x152145eb8 <col:5> 'struct pipe_buffer *' lvalue Var 0x152143d40 'obuf' 'struct pipe_buffer *'
+    |   |   |   `-UnaryOperator 0x152145f40 <col:12, col:13> 'struct pipe_buffer' lvalue prefix '*' cannot overflow
+    |   |   |     `-ImplicitCastExpr 0x152145f28 <col:13> 'struct pipe_buffer *' <LValueToRValue>
+    |   |   |       `-DeclRefExpr 0x152145f08 <col:13> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   |   |-CompoundAssignOperator 0x152146120 <line:57:4, col:26> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |   | |-RecoveryExpr 0x152146098 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x152146060 <col:4> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   |   | `-RecoveryExpr 0x1521460f8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x1521460c0 <col:20> 'struct pipe_buffer *' lvalue Var 0x152143d40 'obuf' 'struct pipe_buffer *'
+    |   |   `-CompoundAssignOperator 0x152146210 <line:58:4, col:23> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |     |-RecoveryExpr 0x152146188 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   |     | `-DeclRefExpr 0x152146150 <col:4> 'struct pipe_buffer *' lvalue Var 0x152143c98 'ibuf' 'struct pipe_buffer *'
+    |   |     `-RecoveryExpr 0x1521461e8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x1521461b0 <col:17> 'struct pipe_buffer *' lvalue Var 0x152143d40 'obuf' 'struct pipe_buffer *'
+    |   `-UnaryOperator 0x1521462c0 <line:60:3, col:7> 'unsigned int' postfix '++'
+    |     `-DeclRefExpr 0x1521462a0 <col:3> 'unsigned int' lvalue Var 0x152142460 'nbuf' 'unsigned int'
+    |-CallExpr 0x1521463f8 <line:63:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x1521463e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1521463a0 <col:2> 'int ()' Function 0x152143300 'pipe_unlock' 'int ()'
+    | `-ImplicitCastExpr 0x152146420 <col:14> 'struct pipe_inode_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1521463c0 <col:14> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |-BinaryOperator 0x15214b268 <line:66:2, col:16> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15214b200 <col:2, col:5> '<dependent type>' contains-errors lvalue .pipebufs
+    | | `-RecoveryExpr 0x1521465b0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x152146590 <col:2> 'struct fuse_copy_state' lvalue Var 0x152142878 'cs' 'struct fuse_copy_state'
+    | `-DeclRefExpr 0x15214b248 <col:16> 'struct pipe_buffer *' lvalue Var 0x1521426e8 'bufs' 'struct pipe_buffer *'
+    |-BinaryOperator 0x15214b338 <line:67:2, col:15> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15214b2d0 <col:2, col:5> '<dependent type>' contains-errors lvalue .nr_segs
+    | | `-RecoveryExpr 0x15214b2a8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15214b288 <col:2> 'struct fuse_copy_state' lvalue Var 0x152142878 'cs' 'struct fuse_copy_state'
+    | `-DeclRefExpr 0x15214b318 <col:15> 'unsigned int' lvalue Var 0x152142460 'nbuf' 'unsigned int'
+    |-BinaryOperator 0x15214b408 <line:68:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15214b3a0 <col:2, col:5> '<dependent type>' contains-errors lvalue .pipe
+    | | `-RecoveryExpr 0x15214b378 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15214b358 <col:2> 'struct fuse_copy_state' lvalue Var 0x152142878 'cs' 'struct fuse_copy_state'
+    | `-DeclRefExpr 0x15214b3e8 <col:12> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |-IfStmt 0x15214b538 <line:70:2, line:71:19>
+    | |-RecoveryExpr 0x15214b448 <line:70:6, col:14> '_Bool' contains-errors
+    | `-BinaryOperator 0x15214b518 <line:71:3, col:19> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x15214b4b0 <col:3, col:6> '<dependent type>' contains-errors lvalue .move_pages
+    |   | `-RecoveryExpr 0x15214b488 <col:3> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x15214b468 <col:3> 'struct fuse_copy_state' lvalue Var 0x152142878 'cs' 'struct fuse_copy_state'
+    |   `-IntegerLiteral 0x15214b4f8 <col:19> 'int' 1
+    |-CallExpr 0x15214b760 <line:75:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x15214b748 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15214b708 <col:2> 'int ()' Function 0x152142f40 'pipe_lock' 'int ()'
+    | `-ImplicitCastExpr 0x15214b788 <col:12> 'struct pipe_inode_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15214b728 <col:12> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    |-CallExpr 0x15214bac8 <line:78:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x15214bab0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15214ba70 <col:2> 'int ()' Function 0x152143300 'pipe_unlock' 'int ()'
+    | `-ImplicitCastExpr 0x15214baf0 <col:14> 'struct pipe_inode_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15214ba90 <col:14> 'struct pipe_inode_info *' lvalue ParmVar 0x152128e68 'pipe' 'struct pipe_inode_info *'
+    `-LabelStmt 0x15214bc80 <line:80:1, line:81:13> 'out'
+      `-CallExpr 0x15214bc40 <col:2, col:13> 'int'
+        |-ImplicitCastExpr 0x15214bc28 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x15214bbe8 <col:2> 'int ()' Function 0x15214bb30 'kvfree' 'int ()'
+        `-ImplicitCastExpr 0x15214bc68 <col:9> 'struct pipe_buffer *' <LValueToRValue>
+          `-DeclRefExpr 0x15214bc08 <col:9> 'struct pipe_buffer *' lvalue Var 0x1521426e8 'bufs' 'struct pipe_buffer *'

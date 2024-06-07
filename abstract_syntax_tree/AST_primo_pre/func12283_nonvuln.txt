@@ -1,0 +1,58 @@
+`-FunctionDecl 0x156141aa8  line:1:9 invalid device_store_int 'int (struct device *, struct device_attribute *, const char *, int)'
+  |-ParmVarDecl 0x156128668 <col:26, col:41> col:41 dev 'struct device *'
+  |-ParmVarDecl 0x156141858 <line:2:5, col:30> col:30 used attr 'struct device_attribute *'
+  |-ParmVarDecl 0x1561418d8 <line:3:5, col:17> col:17 used buf 'const char *'
+  |-ParmVarDecl 0x156141958 <col:22, col:29> col:29 invalid size 'int'
+  `-CompoundStmt 0x156809200 <line:4:1, line:18:1>
+    |-DeclStmt 0x156141f98 <line:5:2, col:50>
+    | |-RecordDecl 0x156141b70 <col:2, col:9> col:9 struct dev_ext_attribute
+    | `-VarDecl 0x156141cd8 <col:2, col:49> col:28 used ea 'struct dev_ext_attribute *' cinit
+    |   `-ImplicitCastExpr 0x156141f68 <col:33, col:49> 'struct dev_ext_attribute *' <IntegralToPointer>
+    |     `-CallExpr 0x156141f28 <col:33, col:49> 'int'
+    |       |-ImplicitCastExpr 0x156141f10 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x156141ea0 <col:33> 'int ()' Function 0x156141de8 'to_ext_attr' 'int ()'
+    |       `-ImplicitCastExpr 0x156141f50 <col:45> 'struct device_attribute *' <LValueToRValue>
+    |         `-DeclRefExpr 0x156141ec0 <col:45> 'struct device_attribute *' lvalue ParmVar 0x156141858 'attr' 'struct device_attribute *'
+    |-DeclStmt 0x156142030 <line:6:2, col:9>
+    | `-VarDecl 0x156141fc8 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x1561420c8 <line:7:2, col:10>
+    | `-VarDecl 0x156142060 <col:2, col:7> col:7 used new 'long'
+    |-BinaryOperator 0x156142310 <line:9:2, col:28> 'int' '='
+    | |-DeclRefExpr 0x1561420e0 <col:2> 'int' lvalue Var 0x156141fc8 'ret' 'int'
+    | `-CallExpr 0x1561422c0 <col:8, col:28> 'int'
+    |   |-ImplicitCastExpr 0x1561422a8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1561421e0 <col:8> 'int ()' Function 0x156142128 'kstrtol' 'int ()'
+    |   |-ImplicitCastExpr 0x1561422f8 <col:16> 'const char *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x156142200 <col:16> 'const char *' lvalue ParmVar 0x1561418d8 'buf' 'const char *'
+    |   |-IntegerLiteral 0x156142220 <col:21> 'int' 0
+    |   `-UnaryOperator 0x156142290 <col:24, col:25> 'long *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x156142240 <col:25> 'long' lvalue Var 0x156142060 'new' 'long'
+    |-IfStmt 0x1561423b0 <line:10:2, line:11:10>
+    | |-ImplicitCastExpr 0x156142350 <line:10:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x156142330 <col:6> 'int' lvalue Var 0x156141fc8 'ret' 'int'
+    | `-ReturnStmt 0x1561423a0 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x156142388 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x156142368 <col:10> 'int' lvalue Var 0x156141fc8 'ret' 'int'
+    |-IfStmt 0x1561425e8 <line:13:2, line:14:11>
+    | |-BinaryOperator 0x156142520 <line:13:6, col:29> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x1561424c0 <col:6, col:12> 'int' contains-errors '>'
+    | | | |-DeclRefExpr 0x1561423d0 <col:6> 'long' lvalue Var 0x156142060 'new' 'long'
+    | | | `-RecoveryExpr 0x1561424a0 <col:12> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x156142500 <col:23, col:29> 'int' contains-errors '<'
+    | |   |-DeclRefExpr 0x156142428 <col:23> 'long' lvalue Var 0x156142060 'new' 'long'
+    | |   `-RecoveryExpr 0x1561424e0 <col:29> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1561425d8 <line:14:3, col:11>
+    |   `-UnaryOperator 0x1561425c0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1561425a8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x156142588 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x156142788 <line:15:2, col:22> 'int' contains-errors '='
+    | |-UnaryOperator 0x156142720 <col:2, col:18> 'int' contains-errors lvalue prefix '*' cannot overflow
+    | | `-CStyleCastExpr 0x1561426f8 <col:3, col:18> 'int *' contains-errors <Dependent>
+    | |   `-ParenExpr 0x1561426d8 <col:10, col:18> '<dependent type>' contains-errors lvalue
+    | |     `-RecoveryExpr 0x156142640 <col:11, col:15> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x156142608 <col:11> 'struct dev_ext_attribute *' lvalue Var 0x156141cd8 'ea' 'struct dev_ext_attribute *'
+    | `-ImplicitCastExpr 0x156142770 <col:22> 'int' <IntegralCast>
+    |   `-ImplicitCastExpr 0x156142758 <col:22> 'long' <LValueToRValue>
+    |     `-DeclRefExpr 0x156142738 <col:22> 'long' lvalue Var 0x156142060 'new' 'long'
+    `-ReturnStmt 0x1561427c8 <line:17:2, col:9>
+      `-RecoveryExpr 0x1561427a8 <col:9> '<dependent type>' contains-errors lvalue

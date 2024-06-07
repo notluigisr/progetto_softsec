@@ -1,0 +1,103 @@
+`-FunctionDecl 0x139026af0  line:2:6 invalid nl80211_send_roamed 'void (struct cfg80211_registered_device *, struct net_device *, const int *, const int *, int, const int *, int, int)'
+  |-ParmVarDecl 0x13900e248 <col:26, col:61> col:61 used rdev 'struct cfg80211_registered_device *'
+  |-ParmVarDecl 0x139026628 <line:3:5, col:24> col:24 used netdev 'struct net_device *'
+  |-ParmVarDecl 0x1390266c0 <col:32, col:42> col:42 invalid bssid 'const int *'
+  |-ParmVarDecl 0x139026740 <line:4:5, col:15> col:15 invalid req_ie 'const int *'
+  |-ParmVarDecl 0x1390267c0 <col:23, col:30> col:30 invalid req_ie_len 'int'
+  |-ParmVarDecl 0x139026840 <line:5:5, col:15> col:15 invalid resp_ie 'const int *'
+  |-ParmVarDecl 0x1390268c0 <col:24, col:31> col:31 invalid resp_ie_len 'int'
+  |-ParmVarDecl 0x139026940 <col:44, col:50> col:50 invalid gfp 'int'
+  `-CompoundStmt 0x13902ad08 <line:6:1, line:39:18>
+    |-DeclStmt 0x139026dc8 <line:7:2, col:21>
+    | |-RecordDecl 0x139026bd8 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x139026d48 <col:2, col:18> col:18 used msg 'struct sk_buff *'
+    |-DeclStmt 0x139026e60 <line:8:2, col:11>
+    | `-VarDecl 0x139026df8 <col:2, col:8> col:8 used hdr 'void *'
+    |-BinaryOperator 0x1390270e8 <line:10:2, col:37> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x139026e78 <col:2> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | `-CallExpr 0x1390270b8 <col:8, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139026ff0 <col:8> 'int ()' Function 0x139026f38 'nlmsg_new' 'int ()'
+    |   |-RecoveryExpr 0x139027098 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x139027028 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139027168 <line:11:2, line:12:3>
+    | |-UnaryOperator 0x139027140 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139027128 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139027108 <col:7> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | `-ReturnStmt 0x139027158 <line:12:3>
+    |-BinaryOperator 0x139027410 <line:14:2, col:53> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x139027188 <col:2> 'void *' lvalue Var 0x139026df8 'hdr' 'void *'
+    | `-CallExpr 0x1390273c8 <col:8, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139027288 <col:8> 'int ()' Function 0x1390271d0 'nl80211hdr_put' 'int ()'
+    |   |-DeclRefExpr 0x1390272a8 <col:23> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    |   |-IntegerLiteral 0x1390272c8 <col:28> 'int' 0
+    |   |-IntegerLiteral 0x1390272e8 <col:31> 'int' 0
+    |   |-IntegerLiteral 0x139027308 <col:34> 'int' 0
+    |   `-RecoveryExpr 0x1390273a8 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139029270 <line:15:2, line:18:2>
+    | |-UnaryOperator 0x139027468 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139027450 <col:7> 'void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139027430 <col:7> 'void *' lvalue Var 0x139026df8 'hdr' 'void *'
+    | `-CompoundStmt 0x139029250 <col:12, line:18:2>
+    |   |-CallExpr 0x139029200 <line:16:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x1390275d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x139027560 <col:3> 'int ()' Function 0x1390274a8 'nlmsg_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x139029228 <col:14> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x139027580 <col:14> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    |   `-ReturnStmt 0x139029240 <line:17:3>
+    |-CallExpr 0x139029480 <line:20:2, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139029370 <col:2> 'int ()' Function 0x1390292b8 'NLA_PUT_U32' 'int ()'
+    | |-DeclRefExpr 0x139029390 <col:14> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | |-RecoveryExpr 0x139029460 <col:19> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x139029400 <col:39, col:45> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1390293c8 <col:39> 'struct cfg80211_registered_device *' lvalue ParmVar 0x13900e248 'rdev' 'struct cfg80211_registered_device *'
+    |-CallExpr 0x1390295c8 <line:21:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1390294b8 <col:2> 'int ()' Function 0x1390292b8 'NLA_PUT_U32' 'int ()'
+    | |-DeclRefExpr 0x1390294d8 <col:14> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | |-RecoveryExpr 0x1390295a8 <col:19> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x139029548 <col:41, col:49> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x139029510 <col:41> 'struct net_device *' lvalue ParmVar 0x139026628 'netdev' 'struct net_device *'
+    |-CallExpr 0x1390297f0 <line:22:2, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1390296e0 <col:2> 'int ()' Function 0x139029628 'NLA_PUT' 'int ()'
+    | |-DeclRefExpr 0x139029700 <col:10> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | |-RecoveryExpr 0x1390297b0 <col:15> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x1390297d0 <col:33> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x139029750 <col:43> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139029988 <line:23:2, line:24:55>
+    | |-RecoveryExpr 0x139029830 <line:23:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x139029948 <line:24:3, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139029850 <col:3> 'int ()' Function 0x139029628 'NLA_PUT' 'int ()'
+    |   |-DeclRefExpr 0x139029870 <col:11> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    |   |-RecoveryExpr 0x139029928 <col:16> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x1390298a8 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1390298c8 <col:49> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139029d08 <line:28:2, line:31:2>
+    | |-BinaryOperator 0x139029c20 <line:28:6, col:30> 'int' '<'
+    | | |-CallExpr 0x139029ba0 <col:6, col:26> 'int'
+    | | | |-ImplicitCastExpr 0x139029b88 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x139029b28 <col:6> 'int ()' Function 0x139029a70 'genlmsg_end' 'int ()'
+    | | | |-ImplicitCastExpr 0x139029bd0 <col:18> 'struct sk_buff *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x139029b48 <col:18> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    | | | `-ImplicitCastExpr 0x139029be8 <col:23> 'void *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x139029b68 <col:23> 'void *' lvalue Var 0x139026df8 'hdr' 'void *'
+    | | `-IntegerLiteral 0x139029c00 <col:30> 'int' 0
+    | `-CompoundStmt 0x139029ce8 <col:33, line:31:2>
+    |   |-CallExpr 0x139029c98 <line:29:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x139029c80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x139029c40 <col:3> 'int ()' Function 0x1390274a8 'nlmsg_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x139029cc0 <col:14> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x139029c60 <col:14> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    |   `-ReturnStmt 0x139029cd8 <line:30:3>
+    |-ReturnStmt 0x13902a028 <line:35:2>
+    |-LabelStmt 0x13902ac50 <line:37:2, line:38:25> 'nla_put_failure'
+    | `-CallExpr 0x13902a190 <col:2, col:25> 'int'
+    |   |-ImplicitCastExpr 0x13902a178 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13902a118 <col:2> 'int ()' Function 0x13902a060 'genlmsg_cancel' 'int ()'
+    |   |-ImplicitCastExpr 0x13902a1c0 <col:17> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x13902a138 <col:17> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x13902a1d8 <col:22> 'void *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13902a158 <col:22> 'void *' lvalue Var 0x139026df8 'hdr' 'void *'
+    `-CallExpr 0x13902acc8 <line:39:2, col:16> 'int'
+      |-ImplicitCastExpr 0x13902acb0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13902ac70 <col:2> 'int ()' Function 0x1390274a8 'nlmsg_free' 'int ()'
+      `-ImplicitCastExpr 0x13902acf0 <col:13> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x13902ac90 <col:13> 'struct sk_buff *' lvalue Var 0x139026d48 'msg' 'struct sk_buff *'

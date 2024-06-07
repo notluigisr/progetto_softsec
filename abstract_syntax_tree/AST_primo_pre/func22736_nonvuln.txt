@@ -1,0 +1,21 @@
+`-FunctionDecl 0x156022d48  line:1:5 __ipv6_dev_mc_dec 'int (struct inet6_dev *, const struct in6_addr *)'
+  |-ParmVarDecl 0x15600a848 <col:23, col:41> col:41 used idev 'struct inet6_dev *'
+  |-ParmVarDecl 0x156022c28 <col:47, col:70> col:70 used addr 'const struct in6_addr *'
+  `-CompoundStmt 0x155926918 <line:2:1, line:29:1>
+    |-DeclStmt 0x1560230c8 <line:3:2, col:30>
+    | |-RecordDecl 0x156022e48 <col:2, col:9> col:9 struct ifmcaddr6
+    | |-VarDecl 0x156022fb8 <col:2, col:20> col:20 used ma 'struct ifmcaddr6 *'
+    | `-VarDecl 0x156023040 <col:2, col:24> col:24 invalid __rcu 'struct ifmcaddr6'
+    |-CallExpr 0x156023278 <line:5:2, col:14> 'int'
+    | `-ImplicitCastExpr 0x156023260 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x156023210 <col:2> 'int ()' Function 0x156023158 'ASSERT_RTNL' 'int ()'
+    |-CallExpr 0x156023410 <line:7:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x156023378 <col:2> 'int ()' Function 0x1560232c0 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1560233f8 <col:13, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1560233d0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156023398 <col:14> 'struct inet6_dev *' lvalue ParmVar 0x15600a848 'idev' 'struct inet6_dev *'
+    `-CallExpr 0x1559268f0 <line:27:2, col:29> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x155926858 <col:2> 'int ()' Function 0x155926388 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x1559268d8 <col:15, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x1559268b0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x155926878 <col:16> 'struct inet6_dev *' lvalue ParmVar 0x15600a848 'idev' 'struct inet6_dev *'

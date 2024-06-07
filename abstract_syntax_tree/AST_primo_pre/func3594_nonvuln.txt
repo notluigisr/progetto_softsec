@@ -1,0 +1,66 @@
+`-FunctionDecl 0x1380269e8  line:1:1 smb2_queryfs 'int (const unsigned int, struct cifs_tcon *, struct cifs_sb_info *, struct kstatfs *)'
+  |-ParmVarDecl 0x13800dcd8 <col:14, col:33> col:33 used xid 'const unsigned int'
+  |-ParmVarDecl 0x13800e2c8 <col:38, col:56> col:56 used tcon 'struct cifs_tcon *'
+  |-ParmVarDecl 0x1380266c8 <line:2:7, col:28> col:28 used cifs_sb 'struct cifs_sb_info *'
+  |-ParmVarDecl 0x138026898 <col:37, col:53> col:53 used buf 'struct kstatfs *'
+  `-CompoundStmt 0x139809008 <line:3:1, line:34:1>
+    |-DeclStmt 0x138026ce8 <line:4:2, col:33>
+    | |-RecordDecl 0x138026af8 <col:2, col:9> col:9 struct smb2_query_info_rsp
+    | `-VarDecl 0x138026c68 <col:2, col:30> col:30 used rsp 'struct smb2_query_info_rsp *'
+    |-DeclStmt 0x138026f38 <line:5:2, col:44>
+    | |-RecordDecl 0x138026d00 <col:2, col:9> col:9 struct smb2_fs_full_size_info
+    | `-VarDecl 0x138026e68 <col:2, col:40> col:33 used info 'struct smb2_fs_full_size_info *' cinit
+    |   `-RecoveryExpr 0x138026f00 <col:40> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x138027100 <line:6:2, col:33>
+    | |-RecordDecl 0x138026f50 <col:2, col:9> col:9 struct kvec
+    | `-VarDecl 0x138027048 <col:2, col:14> col:14 invalid rsp_iov 'struct kvec'
+    |-DeclStmt 0x1380271d0 <line:7:2, col:30>
+    | `-VarDecl 0x138027130 <col:2, col:16> col:6 used buftype 'int' cinit
+    |   `-RecoveryExpr 0x1380271b0 <col:16> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x138027268 <line:8:2, col:8>
+    | `-VarDecl 0x138027200 <col:2, col:6> col:6 used rc 'int'
+    |-IfStmt 0x139808268 <line:17:2, line:18:8>
+    | |-ImplicitCastExpr 0x1380275e8 <line:17:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x1380275c8 <col:6> 'int' lvalue Var 0x138027200 'rc' 'int'
+    | `-GotoStmt 0x139808250 <line:18:3, col:8> 'qfs_exit' 0x139808200
+    |-BinaryOperator 0x1398083c0 <line:20:2, col:46> 'struct smb2_query_info_rsp *' contains-errors '='
+    | |-DeclRefExpr 0x139808288 <col:2> 'struct smb2_query_info_rsp *' lvalue Var 0x138026c68 'rsp' 'struct smb2_query_info_rsp *'
+    | `-CStyleCastExpr 0x139808398 <col:8, col:46> 'struct smb2_query_info_rsp *' contains-errors <Dependent>
+    |   `-CXXDependentScopeMemberExpr 0x1398082c8 <col:38, col:46> '<dependent type>' contains-errors lvalue .iov_base
+    |     `-RecoveryExpr 0x1398082a8 <col:38> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x139808498 <line:21:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x139808418 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1398083e0 <col:2> 'struct kstatfs *' lvalue ParmVar 0x138026898 'buf' 'struct kstatfs *'
+    | `-RecoveryExpr 0x139808478 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1398087c0 <line:22:2, line:23:53> 'struct smb2_fs_full_size_info *' contains-errors '='
+    | |-DeclRefExpr 0x1398084b8 <line:22:2> 'struct smb2_fs_full_size_info *' contains-errors lvalue Var 0x138026e68 'info' 'struct smb2_fs_full_size_info *'
+    | `-CStyleCastExpr 0x139808798 <col:9, line:23:53> 'struct smb2_fs_full_size_info *' contains-errors <Dependent>
+    |   `-ParenExpr 0x139808778 <line:22:42, line:23:53> '<dependent type>' contains-errors
+    |     `-BinaryOperator 0x1398086d8 <col:3, col:50> '<dependent type>' contains-errors '+'
+    |       |-CallExpr 0x139808638 <col:3, col:38> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x1398085b8 <col:3> 'int ()' Function 0x139808500 'le16_to_cpu' 'int ()'
+    |       | `-RecoveryExpr 0x139808610 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x1398085d8 <col:15> 'struct smb2_query_info_rsp *' lvalue Var 0x138026c68 'rsp' 'struct smb2_query_info_rsp *'
+    |       `-CStyleCastExpr 0x1398086b0 <col:42, col:50> 'char *' <BitCast>
+    |         `-ImplicitCastExpr 0x139808698 <col:50> 'struct smb2_query_info_rsp *' <LValueToRValue> part_of_explicit_cast
+    |           `-DeclRefExpr 0x139808660 <col:50> 'struct smb2_query_info_rsp *' lvalue Var 0x138026c68 'rsp' 'struct smb2_query_info_rsp *'
+    |-IfStmt 0x139808dc8 <line:28:2, line:29:41>
+    | |-UnaryOperator 0x139808bc0 <line:28:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139808ba8 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139808b88 <col:7> 'int' lvalue Var 0x138027200 'rc' 'int'
+    | `-CallExpr 0x139808d68 <line:29:3, col:41> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x139808d50 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x139808cb8 <col:3> 'int ()' Function 0x139808c00 'smb2_copy_fs_info_to_kstatfs' 'int ()'
+    |   |-ImplicitCastExpr 0x139808d98 <col:32> 'struct smb2_fs_full_size_info *' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x139808cd8 <col:32> 'struct smb2_fs_full_size_info *' contains-errors lvalue Var 0x138026e68 'info' 'struct smb2_fs_full_size_info *'
+    |   `-ImplicitCastExpr 0x139808db0 <col:38> 'struct kstatfs *' <LValueToRValue>
+    |     `-DeclRefExpr 0x139808cf8 <col:38> 'struct kstatfs *' lvalue ParmVar 0x138026898 'buf' 'struct kstatfs *'
+    |-LabelStmt 0x139808fa0 <line:31:1, line:32:40> 'qfs_exit'
+    | `-CallExpr 0x139808f70 <col:2, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139808ec8 <col:2> 'int ()' Function 0x139808e10 'free_rsp_buf' 'int ()'
+    |   |-DeclRefExpr 0x139808ee8 <col:15> 'int' contains-errors lvalue Var 0x138027130 'buftype' 'int'
+    |   `-CXXDependentScopeMemberExpr 0x139808f28 <col:24, col:32> '<dependent type>' contains-errors lvalue .iov_base
+    |     `-RecoveryExpr 0x139808f08 <col:24> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x139808ff8 <line:33:2, col:9>
+      `-ImplicitCastExpr 0x139808fe0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x139808fc0 <col:9> 'int' lvalue Var 0x138027200 'rc' 'int'

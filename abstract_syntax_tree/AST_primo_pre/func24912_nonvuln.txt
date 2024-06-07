@@ -1,0 +1,25 @@
+`-FunctionDecl 0x12c144c00  line:1:12 i8042_aux_write 'int (struct serio *, unsigned char)' static
+  |-ParmVarDecl 0x12c128648 <col:28, col:42> col:42 used serio 'struct serio *'
+  |-ParmVarDecl 0x12c1286c8 <col:49, col:63> col:63 used c 'unsigned char'
+  `-CompoundStmt 0x12c1453b0 <line:2:1, line:8:1>
+    |-DeclStmt 0x12c144f48 <line:3:2, col:44>
+    | |-RecordDecl 0x12c144d00 <col:2, col:9> col:9 struct i8042_port
+    | `-VarDecl 0x12c144e68 <col:2, col:35> col:21 used port 'struct i8042_port *' cinit
+    |   `-RecoveryExpr 0x12c144f08 <col:28, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c144ed0 <col:28> 'struct serio *' lvalue ParmVar 0x12c128648 'serio' 'struct serio *'
+    `-ReturnStmt 0x12c1453a0 <line:5:2, line:7:36>
+      `-CallExpr 0x12c145370 <line:5:9, line:7:36> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12c145090 <line:5:9> 'int ()' Function 0x12c144fd8 'i8042_command' 'int ()'
+        |-UnaryOperator 0x12c145100 <col:23, col:24> 'unsigned char *' prefix '&' cannot overflow
+        | `-DeclRefExpr 0x12c1450b0 <col:24> 'unsigned char' lvalue ParmVar 0x12c1286c8 'c' 'unsigned char'
+        `-ConditionalOperator 0x12c145340 <col:27, line:7:33> '<dependent type>' contains-errors
+          |-BinaryOperator 0x12c1451b0 <line:5:27, col:41> 'int' contains-errors '=='
+          | |-RecoveryExpr 0x12c145150 <col:27, col:33> '<dependent type>' contains-errors lvalue
+          | | `-DeclRefExpr 0x12c145118 <col:27> 'struct i8042_port *' contains-errors lvalue Var 0x12c144e68 'port' 'struct i8042_port *'
+          | `-UnaryOperator 0x12c145198 <col:40, col:41> 'int' prefix '-'
+          |   `-IntegerLiteral 0x12c145178 <col:41> 'int' 1
+          |-RecoveryExpr 0x12c1452e0 <line:6:6> '<dependent type>' contains-errors lvalue
+          `-BinaryOperator 0x12c145320 <line:7:6, col:33> '<dependent type>' contains-errors '+'
+            |-RecoveryExpr 0x12c145300 <col:6> '<dependent type>' contains-errors lvalue
+            `-RecoveryExpr 0x12c145238 <col:27, col:33> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x12c145200 <col:27> 'struct i8042_port *' contains-errors lvalue Var 0x12c144e68 'port' 'struct i8042_port *'

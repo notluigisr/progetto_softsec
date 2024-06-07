@@ -1,0 +1,114 @@
+`-FunctionDecl 0x12d140c08  line:1:12 invalid may_delete 'int (struct inode *, struct dentry *, int)' static
+  |-ParmVarDecl 0x12d128648 <col:23, col:37> col:37 used dir 'struct inode *'
+  |-ParmVarDecl 0x12d140a28 <col:42, col:57> col:57 used victim 'struct dentry *'
+  |-ParmVarDecl 0x12d140ac0 <col:65, col:70> col:70 invalid isdir 'int'
+  `-CompoundStmt 0x12d1484b0 <line:2:1, line:34:1>
+    |-DeclStmt 0x12d141000 <line:3:2, col:47>
+    | `-VarDecl 0x12d140d58 <col:2, col:46> col:16 used inode 'struct inode *' cinit
+    |   `-ImplicitCastExpr 0x12d140fe8 <col:24, col:46> 'struct inode *' <IntegralToPointer>
+    |     `-CallExpr 0x12d140fa8 <col:24, col:46> 'int'
+    |       |-ImplicitCastExpr 0x12d140f90 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12d140f20 <col:24> 'int ()' Function 0x12d140e68 'd_backing_inode' 'int ()'
+    |       `-ImplicitCastExpr 0x12d140fd0 <col:40> 'struct dentry *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d140f40 <col:40> 'struct dentry *' lvalue ParmVar 0x12d140a28 'victim' 'struct dentry *'
+    |-DeclStmt 0x12d141098 <line:4:2, col:11>
+    | `-VarDecl 0x12d141030 <col:2, col:6> col:6 used error 'int'
+    |-IfStmt 0x12d1412d0 <line:6:2, line:7:11>
+    | |-CallExpr 0x12d1411e8 <line:6:6, col:26> 'int'
+    | | |-ImplicitCastExpr 0x12d1411d0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12d141190 <col:6> 'int ()' Function 0x12d1410d8 'd_is_negative' 'int ()'
+    | | `-ImplicitCastExpr 0x12d141210 <col:20> 'struct dentry *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d1411b0 <col:20> 'struct dentry *' lvalue ParmVar 0x12d140a28 'victim' 'struct dentry *'
+    | `-ReturnStmt 0x12d1412c0 <line:7:3, col:11>
+    |   `-UnaryOperator 0x12d1412a8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12d141290 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12d141270 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12d141458 <line:8:2, col:15> 'int'
+    | |-ImplicitCastExpr 0x12d141440 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12d1413d0 <col:2> 'int ()' Function 0x12d141318 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x12d141428 <col:9, col:10> 'int' prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x12d141410 <col:10> 'struct inode *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12d1413f0 <col:10> 'struct inode *' lvalue Var 0x12d140d58 'inode' 'struct inode *'
+    |-CallExpr 0x12d141588 <line:10:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d141480 <col:2> 'int ()' Function 0x12d141318 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x12d141568 <col:9, col:38> 'int' contains-errors '!='
+    |   |-CXXDependentScopeMemberExpr 0x12d141500 <col:9, col:27> '<dependent type>' contains-errors lvalue ->d_inode
+    |   | `-RecoveryExpr 0x12d1414d8 <col:9, col:17> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12d1414a0 <col:9> 'struct dentry *' lvalue ParmVar 0x12d140a28 'victim' 'struct dentry *'
+    |   `-DeclRefExpr 0x12d141548 <col:38> 'struct inode *' lvalue ParmVar 0x12d128648 'dir' 'struct inode *'
+    |-CallExpr 0x12d141760 <line:11:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d141690 <col:2> 'int ()' Function 0x12d1415d8 'audit_inode_child' 'int ()'
+    | |-DeclRefExpr 0x12d1416b0 <col:20> 'struct inode *' lvalue ParmVar 0x12d128648 'dir' 'struct inode *'
+    | |-DeclRefExpr 0x12d1416d0 <col:25> 'struct dentry *' lvalue ParmVar 0x12d140a28 'victim' 'struct dentry *'
+    | `-RecoveryExpr 0x12d141740 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12d147430 <line:13:2, col:52> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12d141798 <col:2> 'int' lvalue Var 0x12d141030 'error' 'int'
+    | `-CallExpr 0x12d147400 <col:10, col:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d141898 <col:10> 'int ()' Function 0x12d1417e0 'inode_permission' 'int ()'
+    |   |-DeclRefExpr 0x12d1418b8 <col:27> 'struct inode *' lvalue ParmVar 0x12d128648 'dir' 'struct inode *'
+    |   `-BinaryOperator 0x12d1419b8 <col:32, col:44> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x12d141978 <col:32> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x12d141998 <col:44> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12d1474d0 <line:14:2, line:15:10>
+    | |-ImplicitCastExpr 0x12d147470 <line:14:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12d147450 <col:6> 'int' lvalue Var 0x12d141030 'error' 'int'
+    | `-ReturnStmt 0x12d1474c0 <line:15:3, col:10>
+    |   `-ImplicitCastExpr 0x12d1474a8 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12d147488 <col:10> 'int' lvalue Var 0x12d141030 'error' 'int'
+    |-IfStmt 0x12d147710 <line:16:2, line:17:11>
+    | |-CallExpr 0x12d147628 <line:16:6, col:19> 'int'
+    | | |-ImplicitCastExpr 0x12d147610 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12d1475d0 <col:6> 'int ()' Function 0x12d147518 'IS_APPEND' 'int ()'
+    | | `-ImplicitCastExpr 0x12d147650 <col:16> 'struct inode *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d1475f0 <col:16> 'struct inode *' lvalue ParmVar 0x12d128648 'dir' 'struct inode *'
+    | `-ReturnStmt 0x12d147700 <line:17:3, col:11>
+    |   `-UnaryOperator 0x12d1476e8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12d1476d0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12d1476b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12d147d78 <line:19:2, line:21:11>
+    | |-BinaryOperator 0x12d147cb0 <line:19:6, line:20:46> 'int' '||'
+    | | |-BinaryOperator 0x12d147b18 <line:19:6, line:20:24> 'int' '||'
+    | | | |-BinaryOperator 0x12d147980 <line:19:6, col:49> 'int' '||'
+    | | | | |-CallExpr 0x12d147888 <col:6, col:29> 'int'
+    | | | | | |-ImplicitCastExpr 0x12d147870 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | | `-DeclRefExpr 0x12d147810 <col:6> 'int ()' Function 0x12d147758 'check_sticky' 'int ()'
+    | | | | | |-ImplicitCastExpr 0x12d1478b8 <col:19> 'struct inode *' <LValueToRValue>
+    | | | | | | `-DeclRefExpr 0x12d147830 <col:19> 'struct inode *' lvalue ParmVar 0x12d128648 'dir' 'struct inode *'
+    | | | | | `-ImplicitCastExpr 0x12d1478d0 <col:24> 'struct inode *' <LValueToRValue>
+    | | | | |   `-DeclRefExpr 0x12d147850 <col:24> 'struct inode *' lvalue Var 0x12d140d58 'inode' 'struct inode *'
+    | | | | `-CallExpr 0x12d147940 <col:34, col:49> 'int'
+    | | | |   |-ImplicitCastExpr 0x12d147928 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    | | | |   | `-DeclRefExpr 0x12d1478e8 <col:34> 'int ()' Function 0x12d147518 'IS_APPEND' 'int ()'
+    | | | |   `-ImplicitCastExpr 0x12d147968 <col:44> 'struct inode *' <LValueToRValue>
+    | | | |     `-DeclRefExpr 0x12d147908 <col:44> 'struct inode *' lvalue Var 0x12d140d58 'inode' 'struct inode *'
+    | | | `-CallExpr 0x12d147ad8 <line:20:6, col:24> 'int'
+    | | |   |-ImplicitCastExpr 0x12d147ac0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x12d147a80 <col:6> 'int ()' Function 0x12d1479c8 'IS_IMMUTABLE' 'int ()'
+    | | |   `-ImplicitCastExpr 0x12d147b00 <col:19> 'struct inode *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x12d147aa0 <col:19> 'struct inode *' lvalue Var 0x12d140d58 'inode' 'struct inode *'
+    | | `-CallExpr 0x12d147c70 <col:29, col:46> 'int'
+    | |   |-ImplicitCastExpr 0x12d147c58 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x12d147c18 <col:29> 'int ()' Function 0x12d147b60 'IS_SWAPFILE' 'int ()'
+    | |   `-ImplicitCastExpr 0x12d147c98 <col:41> 'struct inode *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x12d147c38 <col:41> 'struct inode *' lvalue Var 0x12d140d58 'inode' 'struct inode *'
+    | `-ReturnStmt 0x12d147d68 <line:21:3, col:11>
+    |   `-UnaryOperator 0x12d147d50 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12d147d38 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12d147d18 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12d148240 <line:22:2, line:27:9> has_else
+    | |-RecoveryExpr 0x12d147d98 <line:22:6> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x12d148188 <col:13, line:27:2>
+    | | `-IfStmt 0x12d147ff0 <line:23:3, line:24:12>
+    | |   |-UnaryOperator 0x12d147f30 <line:23:7, col:23> 'int' prefix '!' cannot overflow
+    | |   | `-CallExpr 0x12d147ef0 <col:8, col:23> 'int'
+    | |   |   |-ImplicitCastExpr 0x12d147ed8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | |   |   | `-DeclRefExpr 0x12d147e98 <col:8> 'int ()' Function 0x12d147de0 'd_is_dir' 'int ()'
+    | |   |   `-ImplicitCastExpr 0x12d147f18 <col:17> 'struct dentry *' <LValueToRValue>
+    | |   |     `-DeclRefExpr 0x12d147eb8 <col:17> 'struct dentry *' lvalue ParmVar 0x12d140a28 'victim' 'struct dentry *'
+    | |   `-ReturnStmt 0x12d147fe0 <line:24:4, col:12>
+    | |     `-UnaryOperator 0x12d147fc8 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |       `-ImplicitCastExpr 0x12d147fb0 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | |         `-RecoveryExpr 0x12d147f90 <col:12> '<dependent type>' contains-errors lvalue
+    | `-NullStmt 0x12d148238 <line:27:9>
+    `-ReturnStmt 0x12d1484a0 <line:33:2, col:9>
+      `-IntegerLiteral 0x12d148480 <col:9> 'int' 0

@@ -1,0 +1,48 @@
+`-FunctionDecl 0x146027438  line:1:12 invalid ptrace_check_attach 'int (struct task_struct *, int)' static
+  |-ParmVarDecl 0x14600e248 <col:32, col:52> col:52 used child 'struct task_struct *'
+  |-ParmVarDecl 0x14600e2e0 <col:59, col:64> col:64 invalid ignore_state 'int'
+  `-CompoundStmt 0x147808bf8 <line:2:1, line:23:1>
+    |-DeclStmt 0x146027608 <line:3:2, col:18>
+    | `-VarDecl 0x146027508 <col:2, col:13> col:6 used ret 'int' cinit
+    |   `-UnaryOperator 0x1460275f0 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1460275d8 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1460275b8 <col:13> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x146027830 <line:6:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x146027780 <col:2> 'int ()' Function 0x1460276c8 'read_lock' 'int ()'
+    | `-UnaryOperator 0x146027818 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1460277f8 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x146028360 <line:7:2, line:15:2>
+    | |-RecoveryExpr 0x146027988 <line:7:6, col:55> '_Bool' contains-errors
+    | `-CompoundStmt 0x146028330 <col:64, line:15:2>
+    |   |-CallExpr 0x146027b68 <line:9:3, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x146027a88 <col:3> 'int ()' Function 0x1460279d0 'spin_lock_irq' 'int ()'
+    |   | `-UnaryOperator 0x146027b50 <col:17, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x146027b08 <col:18, col:34> '<dependent type>' contains-errors lvalue ->siglock
+    |   |     `-RecoveryExpr 0x146027ae0 <col:18, col:25> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x146027aa8 <col:18> 'struct task_struct *' lvalue ParmVar 0x14600e248 'child' 'struct task_struct *'
+    |   |-CallExpr 0x146027e50 <line:10:3, col:38> 'int'
+    |   | |-ImplicitCastExpr 0x146027e38 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x146027c70 <col:3> 'int ()' Function 0x146027bb8 'WARN_ON_ONCE' 'int ()'
+    |   | `-CallExpr 0x146027df8 <col:16, col:37> 'int'
+    |   |   |-ImplicitCastExpr 0x146027de0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x146027d70 <col:16> 'int ()' Function 0x146027cb8 'task_is_stopped' 'int ()'
+    |   |   `-ImplicitCastExpr 0x146027e20 <col:32> 'struct task_struct *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x146027d90 <col:32> 'struct task_struct *' lvalue ParmVar 0x14600e248 'child' 'struct task_struct *'
+    |   |-IfStmt 0x146028128 <line:11:3, line:13:10>
+    |   | |-RecoveryExpr 0x1460280a8 <line:11:7, line:12:45> '_Bool' contains-errors
+    |   | `-BinaryOperator 0x146028108 <line:13:4, col:10> 'int' contains-errors '='
+    |   |   |-DeclRefExpr 0x1460280c8 <col:4> 'int' contains-errors lvalue Var 0x146027508 'ret' 'int'
+    |   |   `-IntegerLiteral 0x1460280e8 <col:10> 'int' 0
+    |   `-CallExpr 0x146028308 <line:14:3, col:43> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x146028228 <col:3> 'int ()' Function 0x146028170 'spin_unlock_irq' 'int ()'
+    |     `-UnaryOperator 0x1460282f0 <col:19, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x1460282a8 <col:20, col:36> '<dependent type>' contains-errors lvalue ->siglock
+    |         `-RecoveryExpr 0x146028280 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x146028248 <col:20> 'struct task_struct *' lvalue ParmVar 0x14600e248 'child' 'struct task_struct *'
+    |-CallExpr 0x147808968 <line:16:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1478088b8 <col:2> 'int ()' Function 0x147808800 'read_unlock' 'int ()'
+    | `-UnaryOperator 0x147808950 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x147808930 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x147808be8 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x147808bd0 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x147808bb0 <col:9> 'int' contains-errors lvalue Var 0x146027508 'ret' 'int'

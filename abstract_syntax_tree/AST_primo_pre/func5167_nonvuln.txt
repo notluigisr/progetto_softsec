@@ -1,0 +1,53 @@
+`-FunctionDecl 0x13d940b40  line:2:6 skb_complete_tx_timestamp 'void (struct sk_buff *, struct skb_shared_hwtstamps *)'
+  |-ParmVarDecl 0x13d928648 <col:32, col:48> col:48 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13d940a28 <line:3:11, col:40> col:40 used hwtstamps 'struct skb_shared_hwtstamps *'
+  `-CompoundStmt 0x13e008a10 <line:4:1, line:19:17>
+    |-DeclStmt 0x13d940e88 <line:5:2, col:27>
+    | |-RecordDecl 0x13d940c40 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x13d940da8 <col:2, col:25> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x13d940e48 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d940e10 <col:20> 'struct sk_buff *' lvalue ParmVar 0x13d928648 'skb' 'struct sk_buff *'
+    |-IfStmt 0x13d941140 <line:7:2, line:8:8>
+    | |-UnaryOperator 0x13d9410c0 <line:7:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13d941090 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13d940fd0 <col:7> 'int ()' Function 0x13d940f18 'skb_may_tx_timestamp' 'int ()'
+    | |   |-DeclRefExpr 0x13d940ff0 <col:28> 'struct sock *' contains-errors lvalue Var 0x13d940da8 'sk' 'struct sock *'
+    | |   `-RecoveryExpr 0x13d941070 <col:32> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x13d941128 <line:8:3, col:8> 'err' 0x13d9410d8
+    |-IfStmt 0x13e008858 <line:11:2, line:16:2>
+    | |-CallExpr 0x13d941400 <line:11:6, col:50> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x13d941240 <col:6> 'int ()' Function 0x13d941188 'likely' 'int ()'
+    | | `-CallExpr 0x13d9413d8 <col:13, col:49> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13d941340 <col:13> 'int ()' Function 0x13d941288 'refcount_inc_not_zero' 'int ()'
+    | |   `-UnaryOperator 0x13d9413c0 <col:35, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x13d941398 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13d941360 <col:36> 'struct sock *' contains-errors lvalue Var 0x13d940da8 'sk' 'struct sock *'
+    | `-CompoundStmt 0x13e008828 <col:53, line:16:2>
+    |   |-BinaryOperator 0x13d941650 <line:12:3, col:26> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13d9415d8 <col:3, col:21> '<dependent type>' contains-errors lvalue
+    |   | | `-CallExpr 0x13d941598 <col:4, col:21> 'int'
+    |   | |   |-ImplicitCastExpr 0x13d941580 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x13d941508 <col:4> 'int ()' Function 0x13d941450 'skb_hwtstamps' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x13d9415c0 <col:18> 'struct sk_buff *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x13d941528 <col:18> 'struct sk_buff *' lvalue ParmVar 0x13d928648 'skb' 'struct sk_buff *'
+    |   | `-UnaryOperator 0x13d941638 <col:25, col:26> 'struct skb_shared_hwtstamps' lvalue prefix '*' cannot overflow
+    |   |   `-ImplicitCastExpr 0x13d941620 <col:26> 'struct skb_shared_hwtstamps *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13d941600 <col:26> 'struct skb_shared_hwtstamps *' lvalue ParmVar 0x13d940a28 'hwtstamps' 'struct skb_shared_hwtstamps *'
+    |   |-CallExpr 0x13d941860 <line:13:3, col:61> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13d941750 <col:3> 'int ()' Function 0x13d941698 '__skb_complete_tx_timestamp' 'int ()'
+    |   | |-DeclRefExpr 0x13d941770 <col:31> 'struct sk_buff *' lvalue ParmVar 0x13d928648 'skb' 'struct sk_buff *'
+    |   | |-DeclRefExpr 0x13d941790 <col:36> 'struct sock *' contains-errors lvalue Var 0x13d940da8 'sk' 'struct sock *'
+    |   | |-RecoveryExpr 0x13d941820 <col:40> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x13d941840 <col:56> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x13d9419d8 <line:14:3, col:14> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x13d9419c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13d941980 <col:3> 'int ()' Function 0x13d9418c8 'sock_put' 'int ()'
+    |   | `-ImplicitCastExpr 0x13e008800 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13d9419a0 <col:12> 'struct sock *' contains-errors lvalue Var 0x13d940da8 'sk' 'struct sock *'
+    |   `-ReturnStmt 0x13e008818 <line:15:3>
+    `-LabelStmt 0x13e0089f0 <line:18:1, line:19:15> 'err'
+      `-CallExpr 0x13e0089b0 <col:2, col:15> 'int'
+        |-ImplicitCastExpr 0x13e008998 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x13e008958 <col:2> 'int ()' Function 0x13e0088a0 'kfree_skb' 'int ()'
+        `-ImplicitCastExpr 0x13e0089d8 <col:12> 'struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x13e008978 <col:12> 'struct sk_buff *' lvalue ParmVar 0x13d928648 'skb' 'struct sk_buff *'

@@ -1,0 +1,39 @@
+`-FunctionDecl 0x13a140ab8  line:1:19 get_task_mm 'struct mm_struct *(struct task_struct *)'
+  |-ParmVarDecl 0x13a1286e8 <col:31, col:51> col:51 used task 'struct task_struct *'
+  `-CompoundStmt 0x13a1414b8 <line:2:1, line:15:1>
+    |-DeclStmt 0x13a140ca0 <line:3:2, col:22>
+    | `-VarDecl 0x13a140c38 <col:2, col:20> col:20 used mm 'struct mm_struct *'
+    |-CallExpr 0x13a140e68 <line:5:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x13a140e50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a140de0 <col:2> 'int ()' Function 0x13a140d28 'task_lock' 'int ()'
+    | `-ImplicitCastExpr 0x13a140e90 <col:12> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13a140e00 <col:12> 'struct task_struct *' lvalue ParmVar 0x13a1286e8 'task' 'struct task_struct *'
+    |-BinaryOperator 0x13a140f28 <line:6:2, col:13> 'struct mm_struct *' contains-errors '='
+    | |-DeclRefExpr 0x13a140ea8 <col:2> 'struct mm_struct *' lvalue Var 0x13a140c38 'mm' 'struct mm_struct *'
+    | `-RecoveryExpr 0x13a140f00 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13a140ec8 <col:7> 'struct task_struct *' lvalue ParmVar 0x13a1286e8 'task' 'struct task_struct *'
+    |-IfStmt 0x13a1412d8 <line:7:2, line:12:2>
+    | |-ImplicitCastExpr 0x13a140f68 <line:7:6> 'struct mm_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13a140f48 <col:6> 'struct mm_struct *' lvalue Var 0x13a140c38 'mm' 'struct mm_struct *'
+    | `-CompoundStmt 0x13a1412c0 <col:10, line:12:2>
+    |   `-IfStmt 0x13a141290 <line:8:3, line:11:28> has_else
+    |     |-BinaryOperator 0x13a141038 <line:8:7, col:21> '<dependent type>' contains-errors '&'
+    |     | |-RecoveryExpr 0x13a140fb8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x13a140f80 <col:7> 'struct task_struct *' lvalue ParmVar 0x13a1286e8 'task' 'struct task_struct *'
+    |     | `-RecoveryExpr 0x13a141018 <col:21> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x13a1410d0 <line:9:4, col:9> 'struct mm_struct *' contains-errors '='
+    |     | |-DeclRefExpr 0x13a141058 <col:4> 'struct mm_struct *' lvalue Var 0x13a140c38 'mm' 'struct mm_struct *'
+    |     | `-RecoveryExpr 0x13a1410b0 <col:9> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x13a141268 <line:11:4, col:28> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13a1411d0 <col:4> 'int ()' Function 0x13a141118 'atomic_inc' 'int ()'
+    |       `-UnaryOperator 0x13a141250 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x13a141228 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13a1411f0 <col:16> 'struct mm_struct *' lvalue Var 0x13a140c38 'mm' 'struct mm_struct *'
+    |-CallExpr 0x13a141430 <line:13:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x13a141418 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a1413d8 <col:2> 'int ()' Function 0x13a141320 'task_unlock' 'int ()'
+    | `-ImplicitCastExpr 0x13a141458 <col:14> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13a1413f8 <col:14> 'struct task_struct *' lvalue ParmVar 0x13a1286e8 'task' 'struct task_struct *'
+    `-ReturnStmt 0x13a1414a8 <line:14:2, col:9>
+      `-ImplicitCastExpr 0x13a141490 <col:9> 'struct mm_struct *' <LValueToRValue>
+        `-DeclRefExpr 0x13a141470 <col:9> 'struct mm_struct *' lvalue Var 0x13a140c38 'mm' 'struct mm_struct *'

@@ -1,0 +1,243 @@
+`-FunctionDecl 0x14780e058  line:1:17 invalid nf_ct_frag6_gather 'struct sk_buff *(struct sk_buff *, int)'
+  |-ParmVarDecl 0x14780de18 <col:36, col:52> col:52 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14780deb0 <col:57, col:61> col:61 invalid user 'int'
+  `-CompoundStmt 0x147831c48 <line:2:1, line:76:1>
+    |-DeclStmt 0x14780e1a0 <line:3:2, col:23>
+    | `-VarDecl 0x14780e138 <col:2, col:18> col:18 used clone 'struct sk_buff *'
+    |-DeclStmt 0x147827c30 <line:4:2, col:35>
+    | |-RecordDecl 0x14780e1b8 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x14780e328 <col:2, col:32> col:21 used dev 'struct net_device *' cinit
+    |   `-RecoveryExpr 0x147827bf0 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14780e390 <col:27> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x147827e38 <line:5:2, col:23>
+    | |-RecordDecl 0x147827c48 <col:2, col:9> col:9 struct frag_hdr
+    | `-VarDecl 0x147827db8 <col:2, col:19> col:19 used fhdr 'struct frag_hdr *'
+    |-DeclStmt 0x147828038 <line:6:2, col:30>
+    | |-RecordDecl 0x147827e50 <col:2, col:9> col:9 struct nf_ct_frag6_queue
+    | `-VarDecl 0x147827fb8 <col:2, col:28> col:28 used fq 'struct nf_ct_frag6_queue *'
+    |-DeclStmt 0x147828238 <line:7:2, col:21>
+    | |-RecordDecl 0x147828050 <col:2, col:9> col:9 struct ipv6hdr
+    | `-VarDecl 0x1478281b8 <col:2, col:18> col:18 used hdr 'struct ipv6hdr *'
+    |-DeclStmt 0x147828368 <line:8:2, col:18>
+    | |-VarDecl 0x147828268 <col:2, col:6> col:6 used fhoff 'int'
+    | `-VarDecl 0x1478282e8 <col:2, col:13> col:13 used nhoff 'int'
+    |-DeclStmt 0x147828448 <line:10:2, col:32>
+    | `-VarDecl 0x1478283a8 <col:2, col:28> col:18 used ret_skb 'struct sk_buff *' cinit
+    |   `-RecoveryExpr 0x147828428 <col:28> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147829320 <line:13:2, line:16:2>
+    | |-BinaryOperator 0x1478286d0 <line:13:6, col:36> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x147828688 <col:6, col:21> '<dependent type>' contains-errors lvalue
+    | | | `-CallExpr 0x147828648 <col:6, col:18> 'int'
+    | | |   |-ImplicitCastExpr 0x147828630 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x1478285c0 <col:6> 'int ()' Function 0x147828508 'ipv6_hdr' 'int ()'
+    | | |   `-ImplicitCastExpr 0x147828670 <col:15> 'struct sk_buff *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x1478285e0 <col:15> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    | | `-IntegerLiteral 0x1478286b0 <col:36> 'int' 0
+    | `-CompoundStmt 0x147829300 <col:39, line:16:2>
+    |   |-CallExpr 0x147829278 <line:14:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x147829260 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1478287d0 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x1478292a0 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x147829240 <col:12> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x1478292f0 <line:15:3, col:10>
+    |     `-ImplicitCastExpr 0x1478292d8 <col:10> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1478292b8 <col:10> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |-IfStmt 0x147829690 <line:18:2, line:19:10>
+    | |-BinaryOperator 0x147829628 <line:18:6, col:54> 'int' contains-errors '<'
+    | | |-CallExpr 0x1478295e8 <col:6, col:50> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x147829420 <col:6> 'int ()' Function 0x147829368 'find_prev_fhdr' 'int ()'
+    | | | |-DeclRefExpr 0x147829440 <col:21> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    | | | |-UnaryOperator 0x1478295d0 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x1478295b0 <col:27> '<dependent type>' contains-errors lvalue
+    | | | |-UnaryOperator 0x1478294e0 <col:36, col:37> 'int *' prefix '&' cannot overflow
+    | | | | `-DeclRefExpr 0x147829490 <col:37> 'int' lvalue Var 0x1478282e8 'nhoff' 'int'
+    | | | `-UnaryOperator 0x147829518 <col:44, col:45> 'int *' prefix '&' cannot overflow
+    | | |   `-DeclRefExpr 0x1478294f8 <col:45> 'int' lvalue Var 0x147828268 'fhoff' 'int'
+    | | `-IntegerLiteral 0x147829570 <col:54> 'int' 0
+    | `-ReturnStmt 0x147829680 <line:19:3, col:10>
+    |   `-ImplicitCastExpr 0x147829668 <col:10> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x147829648 <col:10> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x1478298a8 <line:21:2, col:35> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x1478296b0 <col:2> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    | `-CallExpr 0x147829878 <col:10, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1478297b0 <col:10> 'int ()' Function 0x1478296f8 'skb_clone' 'int ()'
+    |   |-DeclRefExpr 0x1478297d0 <col:20> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x147829858 <col:25> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147829a60 <line:22:2, line:25:2>
+    | |-BinaryOperator 0x147829940 <line:22:6, col:15> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1478298c8 <col:6> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    | | `-RecoveryExpr 0x147829920 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x147829a40 <col:21, line:25:2>
+    |   |-CallExpr 0x1478299b8 <line:23:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x1478299a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x147829960 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x1478299e0 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x147829980 <col:12> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x147829a30 <line:24:3, col:10>
+    |     `-ImplicitCastExpr 0x147829a18 <col:10> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1478299f8 <col:10> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x147829c40 <line:27:2, col:31> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x147829bf8 <col:2, col:24> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x147829bb8 <col:2, col:21> 'int'
+    | |   |-ImplicitCastExpr 0x147829ba0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x147829b60 <col:2> 'int ()' Function 0x147829aa8 'NFCT_FRAG6_CB' 'int ()'
+    | |   `-ImplicitCastExpr 0x147829be0 <col:16> 'struct sk_buff *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x147829b80 <col:16> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    | `-DeclRefExpr 0x147829c20 <col:31> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'
+    |-IfStmt 0x147829f50 <line:29:2, line:32:2>
+    | |-RecoveryExpr 0x147829e10 <line:29:6, col:49> '_Bool' contains-errors
+    | `-CompoundStmt 0x147829f30 <col:52, line:32:2>
+    |   |-CallExpr 0x147829e88 <line:30:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x147829e70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x147829e30 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x147829eb0 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x147829e50 <col:12> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x147829f18 <line:31:3, col:8> 'ret_orig' 0x147829ec8
+    |-CallExpr 0x14782a0c8 <line:34:2, col:39> 'int'
+    | |-ImplicitCastExpr 0x14782a0b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14782a050 <col:2> 'int ()' Function 0x147829f98 'skb_set_transport_header' 'int ()'
+    | |-ImplicitCastExpr 0x14782a0f8 <col:27> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14782a070 <col:27> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x14782a110 <col:34> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x14782a090 <col:34> 'int' lvalue Var 0x147828268 'fhoff' 'int'
+    |-BinaryOperator 0x14782ac00 <line:35:2, col:22> 'struct ipv6hdr *' '='
+    | |-DeclRefExpr 0x14782a128 <col:2> 'struct ipv6hdr *' lvalue Var 0x1478281b8 'hdr' 'struct ipv6hdr *'
+    | `-ImplicitCastExpr 0x14782a1e0 <col:8, col:22> 'struct ipv6hdr *' <IntegralToPointer>
+    |   `-CallExpr 0x14782a1a0 <col:8, col:22> 'int'
+    |     |-ImplicitCastExpr 0x14782a188 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14782a148 <col:8> 'int ()' Function 0x147828508 'ipv6_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x14782a1c8 <col:17> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14782a168 <col:17> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    |-BinaryOperator 0x14782ae70 <line:36:2, col:54> 'struct frag_hdr *' '='
+    | |-DeclRefExpr 0x14782ac20 <col:2> 'struct frag_hdr *' lvalue Var 0x147827db8 'fhdr' 'struct frag_hdr *'
+    | `-CStyleCastExpr 0x14782ae48 <col:9, col:54> 'struct frag_hdr *' <IntegralToPointer>
+    |   `-CallExpr 0x14782ad78 <col:28, col:54> 'int'
+    |     |-ImplicitCastExpr 0x14782ad60 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14782ad20 <col:28> 'int ()' Function 0x14782ac68 'skb_transport_header' 'int ()'
+    |     `-ImplicitCastExpr 0x14782ada0 <col:49> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14782ad40 <col:49> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    |-IfStmt 0x14782b178 <line:38:2, line:42:2>
+    | |-UnaryOperator 0x14782b090 <line:38:6, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ParenExpr 0x14782b070 <col:7, col:38> '<dependent type>' contains-errors
+    | |   `-BinaryOperator 0x14782b050 <col:8, col:37> '<dependent type>' contains-errors '&'
+    | |     |-RecoveryExpr 0x14782aec8 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x14782ae90 <col:8> 'struct frag_hdr *' lvalue Var 0x147827db8 'fhdr' 'struct frag_hdr *'
+    | |     `-CallExpr 0x14782b028 <col:25, col:37> 'int'
+    | |       |-ImplicitCastExpr 0x14782b010 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x14782afd0 <col:25> 'int ()' Function 0x14782af18 'htons' 'int ()'
+    | |       `-IntegerLiteral 0x14782aff0 <col:31> 'int' 65529
+    | `-CompoundStmt 0x14782b158 <col:41, line:42:2>
+    |   |-CallExpr 0x14782b100 <line:39:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x14782b0e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14782b0a8 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x14782b128 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x14782b0c8 <col:12> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x14782b140 <line:41:3, col:8> 'ret_orig' 0x147829ec8
+    |-IfStmt 0x14782b3f0 <line:44:2, line:45:23>
+    | |-RecoveryExpr 0x14782b298 <line:44:6, col:54> '_Bool' contains-errors
+    | `-CallExpr 0x14782b3d0 <line:45:3, col:23> 'int'
+    |   `-ImplicitCastExpr 0x14782b3b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x14782b398 <col:3> 'int ()' Function 0x14782b2e0 'nf_ct_frag6_evictor' 'int ()'
+    |-BinaryOperator 0x14782b6e0 <line:47:2, col:67> 'struct nf_ct_frag6_queue *' contains-errors '='
+    | |-DeclRefExpr 0x14782b410 <col:2> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    | `-CallExpr 0x14782b6a0 <col:7, col:67> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14782b510 <col:7> 'int ()' Function 0x14782b458 'fq_find' 'int ()'
+    |   |-RecoveryExpr 0x14782b568 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14782b530 <col:15> 'struct frag_hdr *' lvalue Var 0x147827db8 'fhdr' 'struct frag_hdr *'
+    |   |-RecoveryExpr 0x14782b590 <col:37> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x14782b610 <col:43, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14782b5e8 <col:44, col:49> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14782b5b0 <col:44> 'struct ipv6hdr *' lvalue Var 0x1478281b8 'hdr' 'struct ipv6hdr *'
+    |   `-UnaryOperator 0x14782b688 <col:56, col:62> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14782b660 <col:57, col:62> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14782b628 <col:57> 'struct ipv6hdr *' lvalue Var 0x1478281b8 'hdr' 'struct ipv6hdr *'
+    |-IfStmt 0x14782b810 <line:48:2, line:51:2>
+    | |-RecoveryExpr 0x14782b720 <line:48:6, col:12> '_Bool' contains-errors
+    | `-CompoundStmt 0x14782b7f0 <col:18, line:51:2>
+    |   |-CallExpr 0x14782b798 <line:49:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x14782b780 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14782b740 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x14782b7c0 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x14782b760 <col:12> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x14782b7d8 <line:50:3, col:8> 'ret_orig' 0x147829ec8
+    |-CallExpr 0x14782b9f0 <line:53:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14782b910 <col:2> 'int ()' Function 0x14782b858 'spin_lock_bh' 'int ()'
+    | `-UnaryOperator 0x14782b9d8 <col:15, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14782b990 <col:16, col:22> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x14782b968 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14782b930 <col:16> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |-IfStmt 0x1478312e0 <line:55:2, line:60:2>
+    | |-BinaryOperator 0x147830e80 <line:55:6, col:50> 'int' '<'
+    | | |-CallExpr 0x14782bbb0 <col:6, col:46> 'int'
+    | | | |-ImplicitCastExpr 0x14782bb98 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x14782baf8 <col:6> 'int ()' Function 0x14782ba40 'nf_ct_frag6_queue' 'int ()'
+    | | | |-ImplicitCastExpr 0x147830e00 <col:24> 'struct nf_ct_frag6_queue *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14782bb18 <col:24> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    | | | |-ImplicitCastExpr 0x147830e18 <col:28> 'struct sk_buff *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14782bb38 <col:28> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    | | | |-ImplicitCastExpr 0x147830e30 <col:35> 'struct frag_hdr *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x14782bb58 <col:35> 'struct frag_hdr *' lvalue Var 0x147827db8 'fhdr' 'struct frag_hdr *'
+    | | | `-ImplicitCastExpr 0x147830e48 <col:41> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x14782bb78 <col:41> 'int' lvalue Var 0x1478282e8 'nhoff' 'int'
+    | | `-IntegerLiteral 0x147830e60 <col:50> 'int' 0
+    | `-CompoundStmt 0x1478312b0 <col:53, line:60:2>
+    |   |-CallExpr 0x147831060 <line:56:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x147830f80 <col:3> 'int ()' Function 0x147830ec8 'spin_unlock_bh' 'int ()'
+    |   | `-UnaryOperator 0x147831048 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x147831000 <col:19, col:25> '<dependent type>' contains-errors lvalue .lock
+    |   |     `-RecoveryExpr 0x147830fd8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x147830fa0 <col:19> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |   |-CallExpr 0x1478310e0 <line:57:3, col:17> 'int'
+    |   | |-ImplicitCastExpr 0x1478310c8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x147831088 <col:3> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x147831108 <col:12> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x1478310a8 <col:12> 'char[4]' lvalue "STR"
+    |   |-CallExpr 0x147831258 <line:58:3, col:12> 'int'
+    |   | |-ImplicitCastExpr 0x147831240 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x147831200 <col:3> 'int ()' Function 0x147831148 'fq_put' 'int ()'
+    |   | `-ImplicitCastExpr 0x147831280 <col:10> 'struct nf_ct_frag6_queue *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x147831220 <col:10> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |   `-GotoStmt 0x147831298 <line:59:3, col:8> 'ret_orig' 0x147829ec8
+    |-IfStmt 0x147831860 <line:62:2, line:67:2>
+    | |-RecoveryExpr 0x147831518 <line:62:6, line:63:26> '_Bool' contains-errors
+    | `-CompoundStmt 0x147831840 <col:31, line:67:2>
+    |   |-BinaryOperator 0x147831728 <line:64:3, col:38> 'struct sk_buff *' contains-errors '='
+    |   | |-DeclRefExpr 0x147831538 <col:3> 'struct sk_buff *' contains-errors lvalue Var 0x1478283a8 'ret_skb' 'struct sk_buff *'
+    |   | `-ImplicitCastExpr 0x147831710 <col:13, col:38> 'struct sk_buff *' contains-errors <IntegralToPointer>
+    |   |   `-CallExpr 0x1478316b0 <col:13, col:38> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x147831698 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x147831638 <col:13> 'int ()' Function 0x147831580 'nf_ct_frag6_reasm' 'int ()'
+    |   |     |-ImplicitCastExpr 0x1478316e0 <col:31> 'struct nf_ct_frag6_queue *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x147831658 <col:31> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |   |     `-ImplicitCastExpr 0x1478316f8 <col:35> 'struct net_device *' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x147831678 <col:35> 'struct net_device *' contains-errors lvalue Var 0x14780e328 'dev' 'struct net_device *'
+    |   `-IfStmt 0x147831820 <line:65:3, line:66:18>
+    |     |-RecoveryExpr 0x147831768 <line:65:7, col:18> '_Bool' contains-errors
+    |     `-CallExpr 0x1478317e0 <line:66:4, col:18> 'int'
+    |       |-ImplicitCastExpr 0x1478317c8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x147831788 <col:4> 'int ()' Function 0x147828718 'pr_debug' 'int ()'
+    |       `-ImplicitCastExpr 0x147831808 <col:13> 'char *' <ArrayToPointerDecay>
+    |         `-StringLiteral 0x1478317a8 <col:13> 'char[4]' lvalue "STR"
+    |-CallExpr 0x147831960 <line:68:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147831880 <col:2> 'int ()' Function 0x147830ec8 'spin_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x147831948 <col:17, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x147831900 <col:18, col:24> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x1478318d8 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1478318a0 <col:18> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |-CallExpr 0x1478319e0 <line:70:2, col:11> 'int'
+    | |-ImplicitCastExpr 0x1478319c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x147831988 <col:2> 'int ()' Function 0x147831148 'fq_put' 'int ()'
+    | `-ImplicitCastExpr 0x147831a08 <col:9> 'struct nf_ct_frag6_queue *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1478319a8 <col:9> 'struct nf_ct_frag6_queue *' lvalue Var 0x147827fb8 'fq' 'struct nf_ct_frag6_queue *'
+    |-ReturnStmt 0x147831a58 <line:71:2, col:9>
+    | `-ImplicitCastExpr 0x147831a40 <col:9> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x147831a20 <col:9> 'struct sk_buff *' contains-errors lvalue Var 0x1478283a8 'ret_skb' 'struct sk_buff *'
+    |-LabelStmt 0x147831be0 <line:73:1, line:74:17> 'ret_orig'
+    | `-CallExpr 0x147831ba0 <col:2, col:17> 'int'
+    |   |-ImplicitCastExpr 0x147831b88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x147831b48 <col:2> 'int ()' Function 0x147831a90 'kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x147831bc8 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x147831b68 <col:12> 'struct sk_buff *' lvalue Var 0x14780e138 'clone' 'struct sk_buff *'
+    `-ReturnStmt 0x147831c38 <line:75:2, col:9>
+      `-ImplicitCastExpr 0x147831c20 <col:9> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x147831c00 <col:9> 'struct sk_buff *' lvalue ParmVar 0x14780de18 'skb' 'struct sk_buff *'

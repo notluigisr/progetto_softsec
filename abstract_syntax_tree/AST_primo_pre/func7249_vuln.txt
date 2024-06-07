@@ -1,0 +1,35 @@
+`-FunctionDecl 0x144027558  line:1:1 invalid dma_async_memcpy_buf_to_buf 'int (struct dma_chan *, void *, void *, int)'
+  |-ParmVarDecl 0x14400e248 <col:29, col:46> col:46 used chan 'struct dma_chan *'
+  |-ParmVarDecl 0x14400e2c8 <col:52, col:58> col:58 used dest 'void *'
+  |-ParmVarDecl 0x14400e348 <line:2:8, col:14> col:14 used src 'void *'
+  |-ParmVarDecl 0x144027400 <col:19, col:26> col:26 invalid len 'int'
+  `-CompoundStmt 0x144027f80 <line:3:1, line:8:1>
+    `-ReturnStmt 0x144027f70 <line:4:2, line:7:44>
+      `-CallExpr 0x144027f20 <line:4:9, line:7:44> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x144027780 <line:4:9> 'int ()' Function 0x1440276c8 'dma_async_memcpy_pg_to_pg' 'int ()'
+        |-DeclRefExpr 0x1440277a0 <col:35> 'struct dma_chan *' lvalue ParmVar 0x14400e248 'chan' 'struct dma_chan *'
+        |-CallExpr 0x144027cf8 <col:41, col:58> 'int'
+        | |-ImplicitCastExpr 0x144027ce0 <col:41> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x1440278a0 <col:41> 'int ()' Function 0x1440277e8 'virt_to_page' 'int ()'
+        | `-ImplicitCastExpr 0x144027d20 <col:54> 'void *' <LValueToRValue>
+        |   `-DeclRefExpr 0x1440278c0 <col:54> 'void *' lvalue ParmVar 0x14400e2c8 'dest' 'void *'
+        |-BinaryOperator 0x144027de0 <line:5:7, col:31> '<dependent type>' contains-errors '&'
+        | |-CStyleCastExpr 0x144027d68 <col:7, col:23> 'unsigned long' <PointerToIntegral>
+        | | `-ImplicitCastExpr 0x144027d50 <col:23> 'void *' <LValueToRValue> part_of_explicit_cast
+        | |   `-DeclRefExpr 0x144027968 <col:23> 'void *' lvalue ParmVar 0x14400e2c8 'dest' 'void *'
+        | `-UnaryOperator 0x144027dc8 <col:30, col:31> '<dependent type>' contains-errors prefix '~' cannot overflow
+        |   `-ImplicitCastExpr 0x144027db0 <col:31> '<dependent type>' contains-errors <LValueToRValue>
+        |     `-RecoveryExpr 0x144027d90 <col:31> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x144027e18 <line:6:7, col:23> 'int'
+        | |-ImplicitCastExpr 0x144027e00 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x144027a48 <col:7> 'int ()' Function 0x1440277e8 'virt_to_page' 'int ()'
+        | `-ImplicitCastExpr 0x144027e40 <col:20> 'void *' <LValueToRValue>
+        |   `-DeclRefExpr 0x144027a68 <col:20> 'void *' lvalue ParmVar 0x14400e348 'src' 'void *'
+        |-BinaryOperator 0x144027f00 <line:7:7, col:30> '<dependent type>' contains-errors '&'
+        | |-CStyleCastExpr 0x144027e88 <col:7, col:23> 'unsigned long' <PointerToIntegral>
+        | | `-ImplicitCastExpr 0x144027e70 <col:23> 'void *' <LValueToRValue> part_of_explicit_cast
+        | |   `-DeclRefExpr 0x144027ae0 <col:23> 'void *' lvalue ParmVar 0x14400e348 'src' 'void *'
+        | `-UnaryOperator 0x144027ee8 <col:29, col:30> '<dependent type>' contains-errors prefix '~' cannot overflow
+        |   `-ImplicitCastExpr 0x144027ed0 <col:30> '<dependent type>' contains-errors <LValueToRValue>
+        |     `-RecoveryExpr 0x144027eb0 <col:30> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x144027bc0 <col:41> '<dependent type>' contains-errors lvalue

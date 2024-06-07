@@ -1,0 +1,37 @@
+`-FunctionDecl 0x1341418d8  line:1:1 invalid vhost_user_iotlb_miss 'int (struct virtio_net *, int, int)'
+  |-ParmVarDecl 0x134128648 <col:23, col:42> col:42 used dev 'struct virtio_net *'
+  |-ParmVarDecl 0x1341286e0 <col:47, col:56> col:56 invalid iova 'int'
+  |-ParmVarDecl 0x134128760 <col:62, col:70> col:70 invalid perm 'int'
+  `-CompoundStmt 0x134142568 <line:2:1, line:25:1>
+    |-DeclStmt 0x134141a18 <line:3:2, col:9>
+    | `-VarDecl 0x1341419b0 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x134141ee0 <line:4:2, line:15:3>
+    | |-RecordDecl 0x134141a30 <line:4:2, col:9> col:9 struct vhu_msg_context
+    | `-VarDecl 0x134141b28 <col:2, col:25> col:25 referenced invalid ctx 'struct vhu_msg_context'
+    |-BinaryOperator 0x134142180 <line:17:2, col:55> 'int' contains-errors '='
+    | |-DeclRefExpr 0x134141ef8 <col:2> 'int' lvalue Var 0x1341419b0 'ret' 'int'
+    | `-CallExpr 0x134142148 <col:8, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x134142070 <col:8> 'int ()' Function 0x134141fb8 'send_vhost_message' 'int ()'
+    |   |-DeclRefExpr 0x134142090 <col:27> 'struct virtio_net *' lvalue ParmVar 0x134128648 'dev' 'struct virtio_net *'
+    |   |-RecoveryExpr 0x1341420e8 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1341420b0 <col:32> 'struct virtio_net *' lvalue ParmVar 0x134128648 'dev' 'struct virtio_net *'
+    |   `-UnaryOperator 0x134142130 <col:51, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x134142110 <col:52> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x134142518 <line:18:2, line:22:2>
+    | |-BinaryOperator 0x1341421f8 <line:18:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x1341421e0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1341421a0 <col:6> 'int' lvalue Var 0x1341419b0 'ret' 'int'
+    | | `-IntegerLiteral 0x1341421c0 <col:12> 'int' 0
+    | `-CompoundStmt 0x1341424f8 <col:15, line:22:2>
+    |   |-CallExpr 0x134142470 <line:19:3, line:20:21> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1341422f8 <line:19:3> 'int ()' Function 0x134142240 'VHOST_LOG_CONFIG' 'int ()'
+    |   | |-RecoveryExpr 0x134142450 <col:20> '<dependent type>' contains-errors lvalue
+    |   | |-StringLiteral 0x134142370 <col:25> 'char[4]' lvalue "STR"
+    |   | |-RecoveryExpr 0x1341423c8 <line:20:5, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x134142390 <col:5> 'struct virtio_net *' lvalue ParmVar 0x134128648 'dev' 'struct virtio_net *'
+    |   | `-DeclRefExpr 0x1341423f0 <col:18> 'int' lvalue Var 0x1341419b0 'ret' 'int'
+    |   `-ReturnStmt 0x1341424e8 <line:21:3, col:10>
+    |     `-ImplicitCastExpr 0x1341424d0 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1341424b0 <col:10> 'int' lvalue Var 0x1341419b0 'ret' 'int'
+    `-ReturnStmt 0x134142558 <line:24:2, col:9>
+      `-IntegerLiteral 0x134142538 <col:9> 'int' 0

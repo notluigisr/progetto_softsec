@@ -1,0 +1,22 @@
+`-FunctionDecl 0x12f00e350  line:1:6 ist_begin_non_atomic 'void (struct pt_regs *)'
+  |-ParmVarDecl 0x12f00e248 <col:27, col:43> col:43 used regs 'struct pt_regs *'
+  `-CompoundStmt 0x12f026c78 <line:2:1, line:9:1>
+    |-CallExpr 0x12f026968 <line:3:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x12f026950 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f026770 <col:2> 'int ()' Function 0x12f0266b8 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x12f026938 <col:9, col:24> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x12f0268f8 <col:10, col:24> 'int'
+    |     |-ImplicitCastExpr 0x12f0268e0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12f026870 <col:10> 'int ()' Function 0x12f0267b8 'user_mode' 'int ()'
+    |     `-ImplicitCastExpr 0x12f026920 <col:20> 'struct pt_regs *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12f026890 <col:20> 'struct pt_regs *' lvalue ParmVar 0x12f00e248 'regs' 'struct pt_regs *'
+    |-CallExpr 0x12f026b18 <line:6:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x12f026b00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f026990 <col:2> 'int ()' Function 0x12f0266b8 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x12f026ae8 <col:9, col:26> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x12f026ac8 <col:10, col:26> 'int'
+    |     `-ImplicitCastExpr 0x12f026ab0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x12f026a90 <col:10> 'int ()' Function 0x12f0269d8 'on_thread_stack' 'int ()'
+    `-CallExpr 0x12f026c58 <line:8:2, col:28> 'int'
+      `-ImplicitCastExpr 0x12f026c40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x12f026c20 <col:2> 'int ()' Function 0x12f026b68 'preempt_enable_no_resched' 'int ()'

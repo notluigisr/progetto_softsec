@@ -1,0 +1,38 @@
+`-FunctionDecl 0x14c1283a8  line:1:1 invalid check_dn_exists 'int (int, int *, const char *, int)'
+  |-ParmVarDecl 0x14c1280f0 <col:17, col:30> col:30 invalid context 'int'
+  |-ParmVarDecl 0x14c1281a8 <line:2:17, col:42> col:42 invalid ldap_server_handle 'int *'
+  |-ParmVarDecl 0x14c128228 <line:3:17, col:29> col:29 used dn 'const char *'
+  |-ParmVarDecl 0x14c1282a8 <col:33, col:46> col:46 invalid nonkrb_only 'int'
+  `-CompoundStmt 0x14d80a300 <line:4:1, line:36:1>
+    |-DeclStmt 0x14c128768 <line:9:5, col:36>
+    | `-VarDecl 0x14c128688 <col:5, col:17> col:11 used attrs 'char *[]'
+    |-DeclStmt 0x14d808868 <line:10:5, col:18>
+    | `-VarDecl 0x14d808800 <col:5, col:12> col:12 used values 'char **'
+    |-CallExpr 0x14d808b18 <line:12:5, col:63> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d8089e0 <col:5> 'int ()' Function 0x14d808928 'LDAP_SEARCH_1' 'int ()'
+    | |-DeclRefExpr 0x14d808a00 <col:19> 'const char *' lvalue ParmVar 0x14c128228 'dn' 'const char *'
+    | |-RecoveryExpr 0x14d808ad8 <col:23> '<dependent type>' contains-errors lvalue
+    | |-IntegerLiteral 0x14d808a38 <col:40> 'int' 0
+    | |-DeclRefExpr 0x14d808a58 <col:43> 'char *[]' lvalue Var 0x14c128688 'attrs' 'char *[]'
+    | `-RecoveryExpr 0x14d808af8 <col:50> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d809258 <line:20:5, line:21:31>
+    | |-RecoveryExpr 0x14d809090 <line:20:9, col:19> '_Bool' contains-errors
+    | `-CallExpr 0x14d809218 <line:21:9, col:31> 'int'
+    |   |-ImplicitCastExpr 0x14d809200 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14d809190 <col:9> 'int ()' Function 0x14d8090d8 'ldap_value_free' 'int ()'
+    |   `-ImplicitCastExpr 0x14d809240 <col:25> 'char **' <LValueToRValue>
+    |     `-DeclRefExpr 0x14d8091b0 <col:25> 'char **' lvalue Var 0x14d808800 'values' 'char **'
+    |-IfStmt 0x14d809728 <line:24:5, line:31:5>
+    | |-RecoveryExpr 0x14d8092f8 <line:24:9, col:19> '_Bool' contains-errors
+    | `-CompoundStmt 0x14d809708 <col:25, line:31:5>
+    |   |-CallExpr 0x14d809370 <line:25:9, col:31> 'int'
+    |   | |-ImplicitCastExpr 0x14d809358 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14d809318 <col:9> 'int ()' Function 0x14d8090d8 'ldap_value_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x14d809398 <col:25> 'char **' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14d809338 <col:25> 'char **' lvalue Var 0x14d808800 'values' 'char **'
+    |   `-IfStmt 0x14d8096e8 <line:26:9, line:30:9>
+    |     |-RecoveryExpr 0x14d8093b0 <line:26:13> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x14d8096d0 <col:26, line:30:9>
+    |       `-GotoStmt 0x14d8096b8 <line:29:13, col:18> 'cleanup' 0x14d809668
+    `-LabelStmt 0x14d80a2e0 <line:33:1, col:8> 'cleanup'
+      `-NullStmt 0x14d80a2d8 <col:8>

@@ -1,0 +1,71 @@
+`-FunctionDecl 0x13b928758  line:1:5 btrfs_run_dev_stats 'int (struct btrfs_trans_handle *)'
+  |-ParmVarDecl 0x13b928648 <col:25, col:52> col:52 used trans 'struct btrfs_trans_handle *'
+  `-CompoundStmt 0x13b942f90 <line:2:1, line:26:1>
+    |-DeclStmt 0x13b940c98 <line:3:2, col:48>
+    | |-RecordDecl 0x13b940a50 <col:2, col:9> col:9 struct btrfs_fs_info
+    | `-VarDecl 0x13b940bb8 <col:2, col:41> col:24 used fs_info 'struct btrfs_fs_info *' cinit
+    |   `-RecoveryExpr 0x13b940c58 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b940c20 <col:34> 'struct btrfs_trans_handle *' lvalue ParmVar 0x13b928648 'trans' 'struct btrfs_trans_handle *'
+    |-DeclStmt 0x13b940ef8 <line:4:2, col:59>
+    | |-RecordDecl 0x13b940cb0 <col:2, col:9> col:9 struct btrfs_fs_devices
+    | `-VarDecl 0x13b940e18 <col:2, col:49> col:27 used fs_devices 'struct btrfs_fs_devices *' cinit
+    |   `-RecoveryExpr 0x13b940eb8 <col:40, col:49> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b940e80 <col:40> 'struct btrfs_fs_info *' contains-errors lvalue Var 0x13b940bb8 'fs_info' 'struct btrfs_fs_info *'
+    |-DeclStmt 0x13b9410f8 <line:5:2, col:29>
+    | |-RecordDecl 0x13b940f10 <col:2, col:9> col:9 struct btrfs_device
+    | `-VarDecl 0x13b941078 <col:2, col:23> col:23 used device 'struct btrfs_device *'
+    |-DeclStmt 0x13b941190 <line:6:2, col:15>
+    | `-VarDecl 0x13b941128 <col:2, col:6> col:6 used stats_cnt 'int'
+    |-DeclStmt 0x13b941248 <line:7:2, col:13>
+    | `-VarDecl 0x13b9411c0 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x13b941228 <col:12> 'int' 0
+    |-CallExpr 0x13b941428 <line:9:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b941390 <col:2> 'int ()' Function 0x13b9412d8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13b941410 <col:13, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13b9413e8 <col:14, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b9413b0 <col:14> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x13b940e18 'fs_devices' 'struct btrfs_fs_devices *'
+    |-CallExpr 0x13b941658 <line:10:2, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b941530 <col:2> 'int ()' Function 0x13b941478 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x13b941550 <col:22> 'struct btrfs_device *' lvalue Var 0x13b941078 'device' 'struct btrfs_device *'
+    | |-UnaryOperator 0x13b9415d0 <col:30, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13b9415a8 <col:31, col:43> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13b941570 <col:31> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x13b940e18 'fs_devices' 'struct btrfs_fs_devices *'
+    | `-RecoveryExpr 0x13b941638 <col:52> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x13b942d78 <col:62, line:22:2>
+    | |-BinaryOperator 0x13b941850 <line:11:3, col:50> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x13b941690 <col:3> 'int' lvalue Var 0x13b941128 'stats_cnt' 'int'
+    | | `-CallExpr 0x13b941828 <col:15, col:50> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13b941790 <col:15> 'int ()' Function 0x13b9416d8 'atomic_read' 'int ()'
+    | |   `-UnaryOperator 0x13b941810 <col:27, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x13b9417e8 <col:28, col:36> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13b9417b0 <col:28> 'struct btrfs_device *' lvalue Var 0x13b941078 'device' 'struct btrfs_device *'
+    | |-CallExpr 0x13b942928 <line:17:3, col:11> 'int'
+    | | `-ImplicitCastExpr 0x13b942910 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   `-DeclRefExpr 0x13b9428b8 <col:3> 'int ()' Function 0x13b942800 'smp_rmb' 'int ()'
+    | |-BinaryOperator 0x13b942b20 <line:19:3, col:43> 'int' '='
+    | | |-DeclRefExpr 0x13b942948 <col:3> 'int' lvalue Var 0x13b9411c0 'ret' 'int'
+    | | `-CallExpr 0x13b942ac0 <col:9, col:43> 'int'
+    | |   |-ImplicitCastExpr 0x13b942aa8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13b942a48 <col:9> 'int ()' Function 0x13b942990 'update_dev_stat_item' 'int ()'
+    | |   |-ImplicitCastExpr 0x13b942af0 <col:30> 'struct btrfs_trans_handle *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x13b942a68 <col:30> 'struct btrfs_trans_handle *' lvalue ParmVar 0x13b928648 'trans' 'struct btrfs_trans_handle *'
+    | |   `-ImplicitCastExpr 0x13b942b08 <col:37> 'struct btrfs_device *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13b942a88 <col:37> 'struct btrfs_device *' lvalue Var 0x13b941078 'device' 'struct btrfs_device *'
+    | `-IfStmt 0x13b942d58 <line:20:3, line:21:49>
+    |   |-UnaryOperator 0x13b942b78 <line:20:7, col:8> 'int' prefix '!' cannot overflow
+    |   | `-ImplicitCastExpr 0x13b942b60 <col:8> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13b942b40 <col:8> 'int' lvalue Var 0x13b9411c0 'ret' 'int'
+    |   `-CallExpr 0x13b942d28 <line:21:4, col:49> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b942c70 <col:4> 'int ()' Function 0x13b942bb8 'atomic_sub' 'int ()'
+    |     |-DeclRefExpr 0x13b942c90 <col:15> 'int' lvalue Var 0x13b941128 'stats_cnt' 'int'
+    |     `-UnaryOperator 0x13b942d10 <col:26, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x13b942ce8 <col:27, col:35> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13b942cb0 <col:27> 'struct btrfs_device *' lvalue Var 0x13b941078 'device' 'struct btrfs_device *'
+    |-CallExpr 0x13b942f20 <line:23:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b942e88 <col:2> 'int ()' Function 0x13b942dd0 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x13b942f08 <col:15, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13b942ee0 <col:16, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b942ea8 <col:16> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x13b940e18 'fs_devices' 'struct btrfs_fs_devices *'
+    `-ReturnStmt 0x13b942f80 <line:25:2, col:9>
+      `-ImplicitCastExpr 0x13b942f68 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13b942f48 <col:9> 'int' lvalue Var 0x13b9411c0 'ret' 'int'

@@ -1,0 +1,85 @@
+`-FunctionDecl 0x107808498  line:1:12 invalid ext4_get_block_write 'int (struct inode *, int, struct buffer_head *, int)' static
+  |-ParmVarDecl 0x10700e248 <col:33, col:47> col:47 used inode 'struct inode *'
+  |-ParmVarDecl 0x10700e2e0 <col:54, col:63> col:63 invalid iblock 'int'
+  |-ParmVarDecl 0x1078082c8 <line:2:6, col:26> col:26 used bh_result 'struct buffer_head *'
+  |-ParmVarDecl 0x107808348 <col:37, col:41> col:41 used create 'int'
+  `-CompoundStmt 0x120122f70 <line:3:1, line:31:1>
+    |-DeclStmt 0x107808630 <line:5:2, col:13>
+    | `-VarDecl 0x1078085a8 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x107808610 <col:12> 'int' 0
+    |-DeclStmt 0x1078087a8 <line:6:2, col:61>
+    | `-VarDecl 0x107808660 <col:2, col:52> col:11 used max_blocks 'unsigned int' cinit
+    |   `-BinaryOperator 0x107808788 <col:24, col:52> '<dependent type>' contains-errors '>>'
+    |     |-RecoveryExpr 0x107808700 <col:24, col:35> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x1078086c8 <col:24> 'struct buffer_head *' lvalue ParmVar 0x1078082c8 'bh_result' 'struct buffer_head *'
+    |     `-RecoveryExpr 0x107808760 <col:45, col:52> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x107808728 <col:45> 'struct inode *' lvalue ParmVar 0x10700e248 'inode' 'struct inode *'
+    |-DeclStmt 0x107808840 <line:7:2, col:17>
+    | `-VarDecl 0x1078087d8 <col:2, col:6> col:6 used dio_credits 'int'
+    |-CallExpr 0x107808ab0 <line:9:2, line:10:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1078089b0 <line:9:2> 'int ()' Function 0x1078088f8 'ext4_debug' 'int ()'
+    | |-StringLiteral 0x107808a10 <col:13> 'char[4]' lvalue "STR"
+    | |-RecoveryExpr 0x107808a68 <line:10:6, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x107808a30 <col:6> 'struct inode *' lvalue ParmVar 0x10700e248 'inode' 'struct inode *'
+    | `-DeclRefExpr 0x107808a90 <col:20> 'int' lvalue ParmVar 0x107808348 'create' 'int'
+    |-BinaryOperator 0x107808b60 <line:12:2, col:11> 'int' contains-errors '='
+    | |-DeclRefExpr 0x107808ae8 <col:2> 'int' lvalue ParmVar 0x107808348 'create' 'int'
+    | `-RecoveryExpr 0x107808b40 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x107808cb0 <line:14:2, line:15:16>
+    | |-BinaryOperator 0x107808bf8 <line:14:6, col:19> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x107808b80 <col:6> 'unsigned int' contains-errors lvalue Var 0x107808660 'max_blocks' 'unsigned int'
+    | | `-RecoveryExpr 0x107808bd8 <col:19> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x107808c90 <line:15:3, col:16> 'unsigned int' contains-errors '='
+    |   |-DeclRefExpr 0x107808c18 <col:3> 'unsigned int' contains-errors lvalue Var 0x107808660 'max_blocks' 'unsigned int'
+    |   `-RecoveryExpr 0x107808c70 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x107808ed8 <line:16:2, col:57> 'int' contains-errors '='
+    | |-DeclRefExpr 0x107808cd0 <col:2> 'int' lvalue Var 0x1078087d8 'dio_credits' 'int'
+    | `-CallExpr 0x107808e78 <col:16, col:57> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x107808e60 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x107808dd0 <col:16> 'int ()' Function 0x107808d18 'ext4_chunk_trans_blocks' 'int ()'
+    |   |-ImplicitCastExpr 0x107808ea8 <col:40> 'struct inode *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x107808df0 <col:40> 'struct inode *' lvalue ParmVar 0x10700e248 'inode' 'struct inode *'
+    |   `-ImplicitCastExpr 0x107808ec0 <col:47> 'unsigned int' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x107808e10 <col:47> 'unsigned int' contains-errors lvalue Var 0x107808660 'max_blocks' 'unsigned int'
+    |-IfStmt 0x1201228b8 <line:18:2, line:21:2>
+    | |-CallExpr 0x120122620 <line:18:6, col:19> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x107809190 <col:6> 'int ()' Function 0x1078090d8 'IS_ERR' 'int ()'
+    | | `-RecoveryExpr 0x120122600 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x120122898 <col:22, line:21:2>
+    |   |-BinaryOperator 0x120122810 <line:19:3, col:23> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x120122648 <col:3> 'int' lvalue Var 0x1078085a8 'ret' 'int'
+    |   | `-CallExpr 0x1201227e8 <col:9, col:23> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x120122748 <col:9> 'int ()' Function 0x120122690 'PTR_ERR' 'int ()'
+    |   |   `-RecoveryExpr 0x1201227c8 <col:17> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x120122880 <line:20:3, col:8> 'out' 0x120122830
+    |-BinaryOperator 0x120122b90 <line:22:2, line:23:16> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1201228d8 <line:22:2> 'int' lvalue Var 0x1078085a8 'ret' 'int'
+    | `-CallExpr 0x120122b40 <col:8, line:23:16> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1201229d8 <line:22:8> 'int ()' Function 0x120122920 'ext4_get_blocks' 'int ()'
+    |   |-RecoveryExpr 0x120122b20 <col:24> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x120122a10 <col:32> 'struct inode *' lvalue ParmVar 0x10700e248 'inode' 'struct inode *'
+    |   |-RecoveryExpr 0x120122a30 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x120122a50 <col:47> 'unsigned int' contains-errors lvalue Var 0x107808660 'max_blocks' 'unsigned int'
+    |   |-DeclRefExpr 0x120122a70 <col:59> 'struct buffer_head *' lvalue ParmVar 0x1078082c8 'bh_result' 'struct buffer_head *'
+    |   `-DeclRefExpr 0x120122a90 <line:23:10> 'int' lvalue ParmVar 0x107808348 'create' 'int'
+    |-IfStmt 0x120122de8 <line:24:2, line:27:2>
+    | |-BinaryOperator 0x120122c08 <line:24:6, col:12> 'int' '>'
+    | | |-ImplicitCastExpr 0x120122bf0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x120122bb0 <col:6> 'int' lvalue Var 0x1078085a8 'ret' 'int'
+    | | `-IntegerLiteral 0x120122bd0 <col:12> 'int' 0
+    | `-CompoundStmt 0x120122dc8 <col:15, line:27:2>
+    |   |-BinaryOperator 0x120122d48 <line:25:3, col:47> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x120122c60 <col:3, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x120122c28 <col:3> 'struct buffer_head *' lvalue ParmVar 0x1078082c8 'bh_result' 'struct buffer_head *'
+    |   | `-ParenExpr 0x120122d28 <col:23, col:47> '<dependent type>' contains-errors
+    |   |   `-BinaryOperator 0x120122d08 <col:24, col:38> '<dependent type>' contains-errors '<<'
+    |   |     |-DeclRefExpr 0x120122c88 <col:24> 'int' lvalue Var 0x1078085a8 'ret' 'int'
+    |   |     `-RecoveryExpr 0x120122ce0 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x120122ca8 <col:31> 'struct inode *' lvalue ParmVar 0x10700e248 'inode' 'struct inode *'
+    |   `-BinaryOperator 0x120122da8 <line:26:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x120122d68 <col:3> 'int' lvalue Var 0x1078085a8 'ret' 'int'
+    |     `-IntegerLiteral 0x120122d88 <col:9> 'int' 0
+    `-LabelStmt 0x120122f50 <line:29:1, line:30:9> 'out'
+      `-ReturnStmt 0x120122f40 <col:2, col:9>
+        `-ImplicitCastExpr 0x120122f28 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x120122f08 <col:9> 'int' lvalue Var 0x1078085a8 'ret' 'int'

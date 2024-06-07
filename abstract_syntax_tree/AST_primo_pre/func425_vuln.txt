@@ -1,0 +1,51 @@
+`-FunctionDecl 0x154128318  line:1:1 invalid mrb_realloc 'int (int *, void *, int)'
+  |-ParmVarDecl 0x154128128 <col:13, col:24> col:24 referenced invalid mrb 'int *'
+  |-ParmVarDecl 0x1541281a8 <col:29, col:35> col:35 used p 'void *'
+  |-ParmVarDecl 0x154128228 <col:38, col:45> col:45 invalid len 'int'
+  `-CompoundStmt 0x1541422b0 <line:2:1, line:17:1>
+    |-DeclStmt 0x154128458 <line:3:3, col:11>
+    | `-VarDecl 0x1541283f0 <col:3, col:9> col:9 used p2 'void *'
+    |-BinaryOperator 0x1541286a8 <line:5:3, col:38> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x154128470 <col:3> 'void *' lvalue Var 0x1541283f0 'p2' 'void *'
+    | `-CallExpr 0x154128670 <col:8, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1541285f0 <col:8> 'int ()' Function 0x154128538 'mrb_realloc_simple' 'int ()'
+    |   |-RecoveryExpr 0x154128610 <col:27> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x154128630 <col:32> 'void *' lvalue ParmVar 0x1541281a8 'p' 'void *'
+    |   `-RecoveryExpr 0x154128650 <col:35> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x154141bd0 <line:6:3, col:24>
+    | |-BinaryOperator 0x154128708 <col:7, col:14> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x1541286c8 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x1541286e8 <col:14> 'int' 0
+    | `-ReturnStmt 0x154141bc0 <col:17, col:24>
+    |   `-ImplicitCastExpr 0x154128760 <col:24> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x154128748 <col:24> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x154128728 <col:24> 'void *' lvalue Var 0x1541283f0 'p2' 'void *'
+    |-IfStmt 0x154142220 <line:7:3, line:14:3> has_else
+    | |-BinaryOperator 0x154141c68 <line:7:7, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x154141bf0 <col:7> 'void *' lvalue Var 0x1541283f0 'p2' 'void *'
+    | | `-RecoveryExpr 0x154141c48 <col:13> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x154142090 <col:19, line:11:3>
+    | | |-CallExpr 0x154141dc8 <line:8:5, col:20> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x154141d68 <col:5> 'int ()' Function 0x154141cb0 'mrb_free' 'int ()'
+    | | | |-RecoveryExpr 0x154141d88 <col:14> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x154141da8 <col:19> 'void *' lvalue ParmVar 0x1541281a8 'p' 'void *'
+    | | |-BinaryOperator 0x154141f28 <line:9:5, col:29> '<dependent type>' contains-errors '='
+    | | | |-CXXDependentScopeMemberExpr 0x154141e88 <col:5, col:13> '<dependent type>' contains-errors lvalue .out_of_memory
+    | | | | `-CXXDependentScopeMemberExpr 0x154141e40 <col:5, col:10> '<dependent type>' contains-errors lvalue ->gc
+    | | | |   `-RecoveryExpr 0x154141e18 <col:5> '<dependent type>' contains-errors lvalue
+    | | | |     `-DeclRefExpr 0x154141df8 <col:5> 'int *' lvalue ParmVar 0x154128128 'mrb' 'int *'
+    | | | `-RecoveryExpr 0x154141f08 <col:29> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x154142068 <line:10:5, col:27> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x154142028 <col:5> 'int ()' Function 0x154141f70 'mrb_raise_nomemory' 'int ()'
+    | |   `-RecoveryExpr 0x154142048 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x154142208 <line:12:8, line:14:3>
+    |   `-BinaryOperator 0x1541421e8 <line:13:5, col:29> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x154142148 <col:5, col:13> '<dependent type>' contains-errors lvalue .out_of_memory
+    |     | `-CXXDependentScopeMemberExpr 0x154142100 <col:5, col:10> '<dependent type>' contains-errors lvalue ->gc
+    |     |   `-RecoveryExpr 0x1541420d8 <col:5> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x1541420b8 <col:5> 'int *' lvalue ParmVar 0x154128128 'mrb' 'int *'
+    |     `-RecoveryExpr 0x1541421c8 <col:29> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1541422a0 <line:16:3, col:10>
+      `-ImplicitCastExpr 0x154142288 <col:10> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x154142270 <col:10> 'void *' <LValueToRValue>
+          `-DeclRefExpr 0x154142250 <col:10> 'void *' lvalue Var 0x1541283f0 'p2' 'void *'

@@ -1,0 +1,36 @@
+`-FunctionDecl 0x14d941be8  line:1:25 invalid bpf_patch_insn_data 'struct bpf_prog *(struct bpf_verifier_env *, int, const struct bpf_insn *, int)' static
+  |-ParmVarDecl 0x14d9286e8 <col:45, col:70> col:70 used env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x14d928780 <col:75, col:79> col:79 invalid off 'int'
+  |-ParmVarDecl 0x14d941968 <line:2:10, col:33> col:33 used patch 'const struct bpf_insn *'
+  |-ParmVarDecl 0x14d9419e8 <col:40, col:44> col:44 invalid len 'int'
+  `-CompoundStmt 0x14d9423d8 <line:3:1, line:12:1>
+    |-DeclStmt 0x14d941da0 <line:4:2, col:27>
+    | `-VarDecl 0x14d941d38 <col:2, col:19> col:19 used new_prog 'struct bpf_prog *'
+    |-BinaryOperator 0x14d942050 <line:6:2, col:61> 'struct bpf_prog *' contains-errors '='
+    | |-DeclRefExpr 0x14d941db8 <col:2> 'struct bpf_prog *' lvalue Var 0x14d941d38 'new_prog' 'struct bpf_prog *'
+    | `-CallExpr 0x14d942010 <col:13, col:61> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14d941f30 <col:13> 'int ()' Function 0x14d941e78 'bpf_patch_insn_single' 'int ()'
+    |   |-RecoveryExpr 0x14d941f88 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14d941f50 <col:35> 'struct bpf_verifier_env *' lvalue ParmVar 0x14d9286e8 'env' 'struct bpf_verifier_env *'
+    |   |-RecoveryExpr 0x14d941fb0 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x14d941fd0 <col:51> 'const struct bpf_insn *' lvalue ParmVar 0x14d941968 'patch' 'const struct bpf_insn *'
+    |   `-RecoveryExpr 0x14d941ff0 <col:58> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d942108 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x14d9420a8 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14d942090 <col:7> 'struct bpf_prog *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14d942070 <col:7> 'struct bpf_prog *' lvalue Var 0x14d941d38 'new_prog' 'struct bpf_prog *'
+    | `-ReturnStmt 0x14d9420f8 <line:8:3, col:10>
+    |   `-RecoveryExpr 0x14d9420d8 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d942370 <line:9:2, line:10:10>
+    | |-CallExpr 0x14d9422e8 <line:9:6, col:55> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14d942208 <col:6> 'int ()' Function 0x14d942150 'adjust_insn_aux_data' 'int ()'
+    | | |-DeclRefExpr 0x14d942228 <col:27> 'struct bpf_verifier_env *' lvalue ParmVar 0x14d9286e8 'env' 'struct bpf_verifier_env *'
+    | | |-RecoveryExpr 0x14d942280 <col:32, col:42> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14d942248 <col:32> 'struct bpf_prog *' lvalue Var 0x14d941d38 'new_prog' 'struct bpf_prog *'
+    | | |-RecoveryExpr 0x14d9422a8 <col:47> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14d9422c8 <col:52> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14d942360 <line:10:3, col:10>
+    |   `-RecoveryExpr 0x14d942340 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14d9423c8 <line:11:2, col:9>
+      `-ImplicitCastExpr 0x14d9423b0 <col:9> 'struct bpf_prog *' <LValueToRValue>
+        `-DeclRefExpr 0x14d942390 <col:9> 'struct bpf_prog *' lvalue Var 0x14d941d38 'new_prog' 'struct bpf_prog *'

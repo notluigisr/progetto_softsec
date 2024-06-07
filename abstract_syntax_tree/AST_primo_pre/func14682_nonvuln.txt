@@ -1,0 +1,27 @@
+`-FunctionDecl 0x121128758  line:1:5 may_umount 'int (struct vfsmount *)'
+  |-ParmVarDecl 0x121128648 <col:16, col:33> col:33 used mnt 'struct vfsmount *'
+  `-CompoundStmt 0x121141160 <line:2:1, line:9:1>
+    |-DeclStmt 0x121140af0 <line:3:2, col:13>
+    | `-VarDecl 0x121140a68 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x121140ad0 <col:12> 'int' 1
+    |-CallExpr 0x121140ce0 <line:4:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121140c30 <col:2> 'int ()' Function 0x121140b78 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x121140cc8 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x121140ca8 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x121140f40 <line:5:2, line:6:9>
+    | |-CallExpr 0x121140e98 <line:5:6, col:33> 'int'
+    | | |-ImplicitCastExpr 0x121140e80 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x121140de8 <col:6> 'int ()' Function 0x121140d30 'propagate_mount_busy' 'int ()'
+    | | |-ImplicitCastExpr 0x121140ec8 <col:27> 'struct vfsmount *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x121140e08 <col:27> 'struct vfsmount *' lvalue ParmVar 0x121128648 'mnt' 'struct vfsmount *'
+    | | `-IntegerLiteral 0x121140e28 <col:32> 'int' 2
+    | `-BinaryOperator 0x121140f20 <line:6:3, col:9> 'int' '='
+    |   |-DeclRefExpr 0x121140ee0 <col:3> 'int' lvalue Var 0x121140a68 'ret' 'int'
+    |   `-IntegerLiteral 0x121140f00 <col:9> 'int' 0
+    |-CallExpr 0x1211410f0 <line:7:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121141040 <col:2> 'int ()' Function 0x121140f88 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x1211410d8 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1211410b8 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x121141150 <line:8:2, col:9>
+      `-ImplicitCastExpr 0x121141138 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x121141118 <col:9> 'int' lvalue Var 0x121140a68 'ret' 'int'

@@ -1,0 +1,69 @@
+`-FunctionDecl 0x130941b18  line:1:6 invalid hfi1_mmu_rb_remove_unless_exact 'int (struct mmu_rb_handler *, unsigned long, unsigned long, struct mmu_rb_node **)'
+  |-ParmVarDecl 0x130928668 <col:38, col:61> col:61 used handler 'struct mmu_rb_handler *'
+  |-ParmVarDecl 0x1309286e8 <line:2:10, col:24> col:24 used addr 'unsigned long'
+  |-ParmVarDecl 0x130928768 <col:30, col:44> col:44 used len 'unsigned long'
+  |-ParmVarDecl 0x1309419c8 <line:3:10, col:31> col:31 used rb_node 'struct mmu_rb_node **'
+  `-CompoundStmt 0x131009320 <line:4:1, line:22:1>
+    |-DeclStmt 0x130941cd0 <line:5:2, col:26>
+    | `-VarDecl 0x130941c68 <col:2, col:22> col:22 used node 'struct mmu_rb_node *'
+    |-DeclStmt 0x130941d68 <line:6:2, col:21>
+    | `-VarDecl 0x130941d00 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x130941f98 <line:9:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130941ee0 <col:2> 'int ()' Function 0x130941e28 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x130941f60 <col:20, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x130941f38 <col:21, col:30> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x130941f00 <col:21> 'struct mmu_rb_handler *' lvalue ParmVar 0x130928668 'handler' 'struct mmu_rb_handler *'
+    | `-DeclRefExpr 0x130941f78 <col:36> 'unsigned long' lvalue Var 0x130941d00 'flags' 'unsigned long'
+    |-BinaryOperator 0x130942230 <line:10:2, col:43> 'struct mmu_rb_node *' '='
+    | |-DeclRefExpr 0x130941fc8 <col:2> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    | `-ImplicitCastExpr 0x130942218 <col:9, col:43> 'struct mmu_rb_node *' <IntegralToPointer>
+    |   `-CallExpr 0x130942198 <col:9, col:43> 'int'
+    |     |-ImplicitCastExpr 0x130942180 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1309420c8 <col:9> 'int ()' Function 0x130942010 '__mmu_rb_search' 'int ()'
+    |     |-ImplicitCastExpr 0x1309421d0 <col:25> 'struct mmu_rb_handler *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1309420e8 <col:25> 'struct mmu_rb_handler *' lvalue ParmVar 0x130928668 'handler' 'struct mmu_rb_handler *'
+    |     |-ImplicitCastExpr 0x1309421e8 <col:34> 'unsigned long' <LValueToRValue>
+    |     | `-DeclRefExpr 0x130942108 <col:34> 'unsigned long' lvalue ParmVar 0x1309286e8 'addr' 'unsigned long'
+    |     `-ImplicitCastExpr 0x130942200 <col:40> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x130942128 <col:40> 'unsigned long' lvalue ParmVar 0x130928768 'len' 'unsigned long'
+    |-IfStmt 0x131009028 <line:11:2, line:17:2>
+    | |-ImplicitCastExpr 0x130942270 <line:11:6> 'struct mmu_rb_node *' <LValueToRValue>
+    | | `-DeclRefExpr 0x130942250 <col:6> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    | `-CompoundStmt 0x131009000 <col:12, line:17:2>
+    |   |-IfStmt 0x130942450 <line:12:3, line:13:9>
+    |   | |-BinaryOperator 0x1309423c8 <line:12:7, col:42> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x130942308 <col:7, col:21> 'int' contains-errors '=='
+    |   | | | |-RecoveryExpr 0x1309422c0 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   | | | | `-DeclRefExpr 0x130942288 <col:7> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    |   | | | `-DeclRefExpr 0x1309422e8 <col:21> 'unsigned long' lvalue ParmVar 0x1309286e8 'addr' 'unsigned long'
+    |   | | `-BinaryOperator 0x1309423a8 <col:29, col:42> 'int' contains-errors '=='
+    |   | |   |-RecoveryExpr 0x130942360 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |   | |   | `-DeclRefExpr 0x130942328 <col:29> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    |   | |   `-DeclRefExpr 0x130942388 <col:42> 'unsigned long' lvalue ParmVar 0x130928768 'len' 'unsigned long'
+    |   | `-GotoStmt 0x130942438 <line:13:4, col:9> 'unlock' 0x1309423e8
+    |   |-CallExpr 0x130942608 <line:14:3, col:43> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x130942550 <col:3> 'int ()' Function 0x130942498 '__mmu_int_rb_remove' 'int ()'
+    |   | |-DeclRefExpr 0x130942570 <col:23> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    |   | `-UnaryOperator 0x1309425f0 <col:29, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1309425c8 <col:30, col:39> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x130942590 <col:30> 'struct mmu_rb_handler *' lvalue ParmVar 0x130928668 'handler' 'struct mmu_rb_handler *'
+    |   `-CallExpr 0x1309427b0 <line:15:3, col:23> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x130942718 <col:3> 'int ()' Function 0x130942660 'list_del' 'int ()'
+    |     `-UnaryOperator 0x130942798 <col:12, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x130942770 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x130942738 <col:13> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    |-LabelStmt 0x131009210 <line:18:1, line:19:46> 'unlock'
+    | `-CallExpr 0x1310091e0 <col:2, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131009128 <col:2> 'int ()' Function 0x131009070 'spin_unlock_irqrestore' 'int ()'
+    |   |-UnaryOperator 0x1310091a8 <col:25, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x131009180 <col:26, col:35> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x131009148 <col:26> 'struct mmu_rb_handler *' lvalue ParmVar 0x130928668 'handler' 'struct mmu_rb_handler *'
+    |   `-DeclRefExpr 0x1310091c0 <col:41> 'unsigned long' lvalue Var 0x130941d00 'flags' 'unsigned long'
+    |-BinaryOperator 0x1310092b8 <line:20:2, col:13> 'struct mmu_rb_node *' '='
+    | |-UnaryOperator 0x131009268 <col:2, col:3> 'struct mmu_rb_node *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x131009250 <col:3> 'struct mmu_rb_node **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x131009230 <col:3> 'struct mmu_rb_node **' lvalue ParmVar 0x1309419c8 'rb_node' 'struct mmu_rb_node **'
+    | `-ImplicitCastExpr 0x1310092a0 <col:13> 'struct mmu_rb_node *' <LValueToRValue>
+    |   `-DeclRefExpr 0x131009280 <col:13> 'struct mmu_rb_node *' lvalue Var 0x130941c68 'node' 'struct mmu_rb_node *'
+    `-ReturnStmt 0x131009310 <line:21:2, col:9>
+      `-RecoveryExpr 0x1310092f0 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,67 @@
+`-FunctionDecl 0x15800e350  line:1:13 referenced cli_start_connection_connected 'void (struct tevent_req *)' static
+  |-ParmVarDecl 0x15800e248 <col:44, col:63> col:63 used subreq 'struct tevent_req *'
+  `-CompoundStmt 0x1598090d0 <line:2:1, line:23:1>
+    |-DeclStmt 0x1590084b0 <line:3:2, line:4:29>
+    | `-VarDecl 0x1590082d8 <line:3:2, col:21> col:21 used req 'struct tevent_req *'
+    |-DeclStmt 0x1590087d8 <line:5:2, line:6:42>
+    | |-RecordDecl 0x1590084c8 <line:5:2, col:9> col:9 struct cli_start_connection_state
+    | `-VarDecl 0x159008638 <col:2, col:37> col:37 used state 'struct cli_start_connection_state *'
+    |-BinaryOperator 0x1590089d8 <line:9:2, col:50> 'struct cli_start_connection_state *' contains-errors '='
+    | |-DeclRefExpr 0x1590087f0 <col:2> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    | `-CallExpr 0x1590089a8 <col:11, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1590088f0 <col:11> 'int ()' Function 0x159008838 'cli_connect_nb_recv' 'int ()'
+    |   |-DeclRefExpr 0x159008910 <col:31> 'struct tevent_req *' lvalue ParmVar 0x15800e248 'subreq' 'struct tevent_req *'
+    |   `-UnaryOperator 0x159008990 <col:39, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x159008968 <col:40, col:47> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x159008930 <col:40> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |-CallExpr 0x159008b68 <line:10:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x159008b50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x159008ad8 <col:2> 'int ()' Function 0x159008a20 'TALLOC_FREE' 'int ()'
+    | `-ImplicitCastExpr 0x159008b90 <col:14> 'struct tevent_req *' <LValueToRValue>
+    |   `-DeclRefExpr 0x159008af8 <col:14> 'struct tevent_req *' lvalue ParmVar 0x15800e248 'subreq' 'struct tevent_req *'
+    |-IfStmt 0x159008dd0 <line:11:2, line:13:2>
+    | |-CallExpr 0x159008d48 <line:11:6, col:36> 'int'
+    | | |-ImplicitCastExpr 0x159008d30 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x159008c88 <col:6> 'int ()' Function 0x159008bd0 'tevent_req_nterror' 'int ()'
+    | | |-ImplicitCastExpr 0x159008d78 <col:25> 'struct tevent_req *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x159008ca8 <col:25> 'struct tevent_req *' lvalue Var 0x1590082d8 'req' 'struct tevent_req *'
+    | | `-ImplicitCastExpr 0x159008d90 <col:30> 'struct cli_start_connection_state *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x159008d10 <col:30> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    | `-CompoundStmt 0x159008db8 <col:39, line:13:2>
+    |   `-ReturnStmt 0x159008da8 <line:12:3>
+    |-BinaryOperator 0x159808c00 <line:15:2, line:18:30> 'struct tevent_req *' contains-errors '='
+    | |-DeclRefExpr 0x159008df0 <line:15:2> 'struct tevent_req *' lvalue ParmVar 0x15800e248 'subreq' 'struct tevent_req *'
+    | `-CallExpr 0x1590091a0 <col:11, line:18:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x159008ef0 <line:15:11> 'int ()' Function 0x159008e38 'smbXcli_negprot_send' 'int ()'
+    |   |-DeclRefExpr 0x159008f10 <col:32> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |   |-RecoveryExpr 0x159008f68 <col:39, col:46> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x159008f30 <col:39> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |   |-CXXDependentScopeMemberExpr 0x159008ff0 <col:50, col:62> '<dependent type>' contains-errors lvalue ->conn
+    |   | `-RecoveryExpr 0x159008fc8 <col:50, col:57> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x159008f90 <col:50> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |   |-CXXDependentScopeMemberExpr 0x159009098 <line:16:11, col:23> '<dependent type>' contains-errors lvalue ->timeout
+    |   | `-RecoveryExpr 0x159009070 <col:11, col:18> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x159009038 <col:11> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |   |-RecoveryExpr 0x159009118 <line:17:11, col:18> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1590090e0 <col:11> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |   `-RecoveryExpr 0x159009178 <line:18:11, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159009140 <col:11> 'struct cli_start_connection_state *' lvalue Var 0x159008638 'state' 'struct cli_start_connection_state *'
+    |-IfStmt 0x159808e00 <line:19:2, line:21:2>
+    | |-CallExpr 0x159808d78 <line:19:6, col:34> 'int'
+    | | |-ImplicitCastExpr 0x159808d60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x159808d00 <col:6> 'int ()' Function 0x159808c48 'tevent_req_nomem' 'int ()'
+    | | |-ImplicitCastExpr 0x159808da8 <col:23> 'struct tevent_req *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x159808d20 <col:23> 'struct tevent_req *' lvalue ParmVar 0x15800e248 'subreq' 'struct tevent_req *'
+    | | `-ImplicitCastExpr 0x159808dc0 <col:31> 'struct tevent_req *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x159808d40 <col:31> 'struct tevent_req *' lvalue Var 0x1590082d8 'req' 'struct tevent_req *'
+    | `-CompoundStmt 0x159808de8 <col:37, line:21:2>
+    |   `-ReturnStmt 0x159808dd8 <line:20:3>
+    `-CallExpr 0x159808fe8 <line:22:2, col:64> 'int'
+      |-ImplicitCastExpr 0x159808fd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x159808f00 <col:2> 'int ()' Function 0x159808e48 'tevent_req_set_callback' 'int ()'
+      |-ImplicitCastExpr 0x159809020 <col:26> 'struct tevent_req *' <LValueToRValue>
+      | `-DeclRefExpr 0x159808f20 <col:26> 'struct tevent_req *' lvalue ParmVar 0x15800e248 'subreq' 'struct tevent_req *'
+      |-ImplicitCastExpr 0x1598090a0 <col:34> 'void (*)(struct tevent_req *)' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x159808fb0 <col:34> 'void (struct tevent_req *)' Function 0x15800e350 'cli_start_connection_connected' 'void (struct tevent_req *)'
+      `-ImplicitCastExpr 0x1598090b8 <col:61> 'struct tevent_req *' <LValueToRValue>
+        `-DeclRefExpr 0x159808f58 <col:61> 'struct tevent_req *' lvalue Var 0x1590082d8 'req' 'struct tevent_req *'

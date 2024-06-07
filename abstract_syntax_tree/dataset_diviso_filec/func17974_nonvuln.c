@@ -1,0 +1,1 @@
+  RGWOpType get_type() override { return RGW_OP_GET_BUCKET_LOCATION; }

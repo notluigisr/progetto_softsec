@@ -1,0 +1,53 @@
+`-FunctionDecl 0x13e928190  line:1:13 check_stack_usage 'void (void)' static
+  `-CompoundStmt 0x13f00a270 <line:2:1, line:23:1>
+    |-DeclStmt 0x13e928390 <line:3:2, col:40>
+    | `-FunctionDecl 0x13e9282d8 parent 0x13e855608 <col:2, col:39> col:9 invalid DEFINE_SPINLOCK 'int ()'
+    |-DeclStmt 0x13e928478 <line:4:2, col:41>
+    | `-VarDecl 0x13e9283c0 <col:2, col:30> col:13 used lowest_to_date 'int' static cinit
+    |   `-RecoveryExpr 0x13e928458 <col:30> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13e9286c8 <line:5:2, col:42>
+    | `-VarDecl 0x13e9284d8 <col:2, col:41> col:17 used n 'unsigned long *' cinit
+    |   `-CallExpr 0x13e9286a0 <col:21, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13e928620 <col:21> 'int ()' Function 0x13e928568 'end_of_stack' 'int ()'
+    |     `-RecoveryExpr 0x13e928680 <col:34> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13e928760 <line:6:2, col:20>
+    | `-VarDecl 0x13e9286f8 <col:2, col:16> col:16 used free 'unsigned long'
+    |-WhileStmt 0x13f009a70 <line:8:2, line:9:4>
+    | |-BinaryOperator 0x13f009a18 <line:8:9, col:15> 'int' contains-errors '=='
+    | | |-ImplicitCastExpr 0x13e9287e8 <col:9, col:10> 'unsigned long' contains-errors <LValueToRValue>
+    | | | `-UnaryOperator 0x13e9287b0 <col:9, col:10> 'unsigned long' contains-errors lvalue prefix '*' cannot overflow
+    | | |   `-ImplicitCastExpr 0x13e928798 <col:10> 'unsigned long *' contains-errors <LValueToRValue>
+    | | |     `-DeclRefExpr 0x13e928778 <col:10> 'unsigned long *' contains-errors lvalue Var 0x13e9284d8 'n' 'unsigned long *'
+    | | `-ImplicitCastExpr 0x13f009a00 <col:15> 'unsigned long' <IntegralCast>
+    | |   `-IntegerLiteral 0x13e9287c8 <col:15> 'int' 0
+    | `-UnaryOperator 0x13f009a58 <line:9:3, col:4> 'unsigned long *' contains-errors postfix '++'
+    |   `-DeclRefExpr 0x13f009a38 <col:3> 'unsigned long *' contains-errors lvalue Var 0x13e9284d8 'n' 'unsigned long *'
+    |-IfStmt 0x13f009c58 <line:12:2, line:13:3>
+    | |-BinaryOperator 0x13f009c28 <line:12:6, col:14> 'int' contains-errors '>='
+    | | |-ImplicitCastExpr 0x13f009be0 <col:6> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13f009ba0 <col:6> 'unsigned long' lvalue Var 0x13e9286f8 'free' 'unsigned long'
+    | | `-ImplicitCastExpr 0x13f009c10 <col:14> 'unsigned long' contains-errors <IntegralCast>
+    | |   `-ImplicitCastExpr 0x13f009bf8 <col:14> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x13f009bc0 <col:14> 'int' contains-errors lvalue Var 0x13e9283c0 'lowest_to_date' 'int'
+    | `-ReturnStmt 0x13f009c48 <line:13:3>
+    |-CallExpr 0x13f009e08 <line:15:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f009d58 <col:2> 'int ()' Function 0x13f009ca0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x13f009df0 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f009dd0 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13f00a098 <line:16:2, line:21:2>
+    | |-BinaryOperator 0x13f009eb8 <line:16:6, col:13> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x13f009e70 <col:6> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13f009e30 <col:6> 'unsigned long' lvalue Var 0x13e9286f8 'free' 'unsigned long'
+    | | `-ImplicitCastExpr 0x13f009ea0 <col:13> 'unsigned long' contains-errors <IntegralCast>
+    | |   `-ImplicitCastExpr 0x13f009e88 <col:13> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x13f009e50 <col:13> 'int' contains-errors lvalue Var 0x13e9283c0 'lowest_to_date' 'int'
+    | `-CompoundStmt 0x13f00a080 <col:29, line:21:2>
+    |   `-BinaryOperator 0x13f00a060 <line:20:3, col:20> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x13f009ff0 <col:3> 'int' contains-errors lvalue Var 0x13e9283c0 'lowest_to_date' 'int'
+    |     `-ImplicitCastExpr 0x13f00a048 <col:20> 'int' <IntegralCast>
+    |       `-ImplicitCastExpr 0x13f00a030 <col:20> 'unsigned long' <LValueToRValue>
+    |         `-DeclRefExpr 0x13f00a010 <col:20> 'unsigned long' lvalue Var 0x13e9286f8 'free' 'unsigned long'
+    `-CallExpr 0x13f00a248 <line:22:2, col:29> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13f00a198 <col:2> 'int ()' Function 0x13f00a0e0 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x13f00a230 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13f00a210 <col:15> '<dependent type>' contains-errors lvalue

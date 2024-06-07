@@ -1,0 +1,52 @@
+`-FunctionDecl 0x11e82b778  line:1:12 invalid sched_vslice_add 'int (struct cfs_rq *, struct sched_entity *)' static
+  |-ParmVarDecl 0x11e80e268 <col:29, col:44> col:44 used cfs_rq 'struct cfs_rq *'
+  |-ParmVarDecl 0x11e82b658 <col:52, col:73> col:73 used se 'struct sched_entity *'
+  `-CompoundStmt 0x11e82c4e8 <line:2:1, line:24:1>
+    |-DeclStmt 0x11e82b910 <line:3:2, col:47>
+    | `-VarDecl 0x11e82b848 <col:2, col:37> col:16 used nr_running 'unsigned long' cinit
+    |   `-RecoveryExpr 0x11e82b8e8 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11e82b8b0 <col:29> 'struct cfs_rq *' lvalue ParmVar 0x11e80e268 'cfs_rq' 'struct cfs_rq *'
+    |-DeclStmt 0x11e82b9a8 <line:4:2, col:22>
+    | `-VarDecl 0x11e82b940 <col:2, col:16> col:16 used weight 'unsigned long'
+    |-IfStmt 0x11e82ba88 <line:7:2, line:8:13>
+    | |-UnaryOperator 0x11e82ba38 <line:7:6, col:11> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11e82ba20 <col:7, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x11e82b9f8 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11e82b9c0 <col:7> 'struct sched_entity *' lvalue ParmVar 0x11e82b658 'se' 'struct sched_entity *'
+    | `-UnaryOperator 0x11e82ba70 <line:8:3, col:13> 'unsigned long' contains-errors postfix '++'
+    |   `-DeclRefExpr 0x11e82ba50 <col:3> 'unsigned long' contains-errors lvalue Var 0x11e82b848 'nr_running' 'unsigned long'
+    |-CallExpr 0x11e82be00 <line:12:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x11e82bde8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11e82bda8 <col:2> 'int ()' Function 0x11e82bcf0 'for_each_sched_entity' 'int ()'
+    | `-ImplicitCastExpr 0x11e82be28 <col:24> 'struct sched_entity *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11e82bdc8 <col:24> 'struct sched_entity *' lvalue ParmVar 0x11e82b658 'se' 'struct sched_entity *'
+    |-CompoundStmt 0x11e82c470 <col:28, line:21:2>
+    | |-BinaryOperator 0x11e82bff0 <line:13:3, col:24> 'struct cfs_rq *' '='
+    | | |-DeclRefExpr 0x11e82be40 <col:3> 'struct cfs_rq *' lvalue ParmVar 0x11e80e268 'cfs_rq' 'struct cfs_rq *'
+    | | `-ImplicitCastExpr 0x11e82bfd8 <col:12, col:24> 'struct cfs_rq *' <IntegralToPointer>
+    | |   `-CallExpr 0x11e82bf98 <col:12, col:24> 'int'
+    | |     |-ImplicitCastExpr 0x11e82bf80 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x11e82bf40 <col:12> 'int ()' Function 0x11e82be88 'cfs_rq_of' 'int ()'
+    | |     `-ImplicitCastExpr 0x11e82bfc0 <col:22> 'struct sched_entity *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x11e82bf60 <col:22> 'struct sched_entity *' lvalue ParmVar 0x11e82b658 'se' 'struct sched_entity *'
+    | |-BinaryOperator 0x11e82c0d8 <line:15:3, col:25> 'unsigned long' contains-errors '='
+    | | |-DeclRefExpr 0x11e82c010 <col:3> 'unsigned long' lvalue Var 0x11e82b940 'weight' 'unsigned long'
+    | | `-CXXDependentScopeMemberExpr 0x11e82c090 <col:12, col:25> '<dependent type>' contains-errors lvalue .weight
+    | |   `-RecoveryExpr 0x11e82c068 <col:12, col:20> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11e82c030 <col:12> 'struct cfs_rq *' lvalue ParmVar 0x11e80e268 'cfs_rq' 'struct cfs_rq *'
+    | |-IfStmt 0x11e82c280 <line:16:3, line:17:23>
+    | | |-UnaryOperator 0x11e82c170 <line:16:7, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x11e82c158 <col:8, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x11e82c130 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x11e82c0f8 <col:8> 'struct sched_entity *' lvalue ParmVar 0x11e82b658 'se' 'struct sched_entity *'
+    | | `-CompoundAssignOperator 0x11e82c250 <line:17:4, col:23> 'unsigned long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |   |-DeclRefExpr 0x11e82c188 <col:4> 'unsigned long' lvalue Var 0x11e82b940 'weight' 'unsigned long'
+    | |   `-CXXDependentScopeMemberExpr 0x11e82c208 <col:14, col:23> '<dependent type>' contains-errors lvalue .weight
+    | |     `-RecoveryExpr 0x11e82c1e0 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x11e82c1a8 <col:14> 'struct sched_entity *' lvalue ParmVar 0x11e82b658 'se' 'struct sched_entity *'
+    | `-CallExpr 0x11e82c440 <line:20:3, col:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e82c398 <col:3> 'int ()' Function 0x11e82c2e0 'do_div' 'int ()'
+    |   |-RecoveryExpr 0x11e82c420 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11e82c3d0 <col:18> 'unsigned long' lvalue Var 0x11e82b940 'weight' 'unsigned long'
+    `-ReturnStmt 0x11e82c4d8 <line:23:2, col:9>
+      `-RecoveryExpr 0x11e82c4b8 <col:9> '<dependent type>' contains-errors lvalue

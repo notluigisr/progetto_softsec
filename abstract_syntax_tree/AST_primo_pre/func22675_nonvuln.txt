@@ -1,0 +1,46 @@
+`-FunctionDecl 0x11d941838  line:1:12 invalid svm_smi_allowed 'int (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x11d928648 <col:28, col:45> col:45 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x11d9286e0 <col:51, col:56> col:56 invalid for_injection 'int'
+  `-CompoundStmt 0x11d942458 <line:2:1, line:12:1>
+    |-DeclStmt 0x11d941d18 <line:3:2, col:37>
+    | |-RecordDecl 0x11d9418f0 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x11d941a58 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x11d941ce8 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x11d941ca8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x11d941c90 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x11d941c20 <col:25> 'int ()' Function 0x11d941b68 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x11d941cd0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x11d941c40 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x11d928648 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x11d941e80 <line:4:2, line:5:11>
+    | |-CXXDependentScopeMemberExpr 0x11d941d90 <line:4:6, col:18> '<dependent type>' contains-errors lvalue .nested_run_pending
+    | | `-RecoveryExpr 0x11d941d68 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d941d30 <col:6> 'struct vcpu_svm *' lvalue Var 0x11d941a58 'svm' 'struct vcpu_svm *'
+    | `-ReturnStmt 0x11d941e70 <line:5:3, col:11>
+    |   `-UnaryOperator 0x11d941e58 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11d941e40 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11d941e20 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11d942298 <line:8:2, line:9:11>
+    | |-BinaryOperator 0x11d9421d0 <line:8:6, col:68> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x11d942038 <col:6, col:41> 'int' contains-errors '&&'
+    | | | |-RecoveryExpr 0x11d941ea0 <col:6> '<dependent type>' contains-errors lvalue
+    | | | `-CallExpr 0x11d941ff8 <col:23, col:41> 'int'
+    | | |   |-ImplicitCastExpr 0x11d941fe0 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x11d941fa0 <col:23> 'int ()' Function 0x11d941ee8 'is_guest_mode' 'int ()'
+    | | |   `-ImplicitCastExpr 0x11d942020 <col:37> 'struct kvm_vcpu *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x11d941fc0 <col:37> 'struct kvm_vcpu *' lvalue ParmVar 0x11d928648 'vcpu' 'struct kvm_vcpu *'
+    | | `-CallExpr 0x11d942190 <col:46, col:68> 'int'
+    | |   |-ImplicitCastExpr 0x11d942178 <col:46> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x11d942138 <col:46> 'int ()' Function 0x11d942080 'nested_exit_on_smi' 'int ()'
+    | |   `-ImplicitCastExpr 0x11d9421b8 <col:65> 'struct vcpu_svm *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x11d942158 <col:65> 'struct vcpu_svm *' lvalue Var 0x11d941a58 'svm' 'struct vcpu_svm *'
+    | `-ReturnStmt 0x11d942288 <line:9:3, col:11>
+    |   `-UnaryOperator 0x11d942270 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11d942258 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11d942238 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x11d942448 <line:11:2, col:30>
+      `-UnaryOperator 0x11d942430 <col:9, col:30> 'int' prefix '!' cannot overflow
+        `-CallExpr 0x11d9423f0 <col:10, col:30> 'int'
+          |-ImplicitCastExpr 0x11d9423d8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x11d942398 <col:10> 'int ()' Function 0x11d9422e0 'svm_smi_blocked' 'int ()'
+          `-ImplicitCastExpr 0x11d942418 <col:26> 'struct kvm_vcpu *' <LValueToRValue>
+            `-DeclRefExpr 0x11d9423b8 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x11d928648 'vcpu' 'struct kvm_vcpu *'

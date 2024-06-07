@@ -1,0 +1,25 @@
+`-FunctionDecl 0x14c0423f8  line:2:28 invalid kvm_handle_hva_range 'int (struct mmu_notifier *, unsigned long, unsigned long, int, int)' static
+  |-ParmVarDecl 0x14c879868 <col:49, col:70> col:70 used mn 'struct mmu_notifier *'
+  |-ParmVarDecl 0x14c8798e8 <line:3:7, col:21> col:21 used start 'unsigned long'
+  |-ParmVarDecl 0x14c879968 <line:4:7, col:21> col:21 used end 'unsigned long'
+  |-ParmVarDecl 0x14c042200 <line:5:7, col:13> col:13 invalid pte 'int'
+  |-ParmVarDecl 0x14c042280 <line:6:7, col:21> col:21 invalid handler 'int'
+  `-CompoundStmt 0x14c042e88 <line:7:1, line:20:45>
+    |-DeclStmt 0x14c0428f8 <line:8:2, col:43>
+    | |-RecordDecl 0x14c0424c8 <col:2, col:9> col:9 struct kvm
+    | `-VarDecl 0x14c042638 <col:2, col:42> col:14 used kvm 'struct kvm *' cinit
+    |   `-ImplicitCastExpr 0x14c0428c8 <col:20, col:42> 'struct kvm *' <IntegralToPointer>
+    |     `-CallExpr 0x14c042888 <col:20, col:42> 'int'
+    |       |-ImplicitCastExpr 0x14c042870 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14c042800 <col:20> 'int ()' Function 0x14c042748 'mmu_notifier_to_kvm' 'int ()'
+    |       `-ImplicitCastExpr 0x14c0428b0 <col:40> 'struct mmu_notifier *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14c042820 <col:40> 'struct mmu_notifier *' lvalue ParmVar 0x14c879868 'mn' 'struct mmu_notifier *'
+    |-DeclStmt 0x14c042cd8 <line:9:2, line:18:3>
+    | |-RecordDecl 0x14c042910 <line:9:8, col:15> col:15 struct kvm_hva_range
+    | `-VarDecl 0x14c042a08 <col:2, col:29> col:29 invalid range 'const struct kvm_hva_range'
+    `-ReturnStmt 0x14c042e78 <line:20:2, col:43>
+      `-CallExpr 0x14c042e48 <col:9, col:43> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14c042dd0 <col:9> 'int ()' Function 0x14c042d18 '__kvm_handle_hva_range' 'int ()'
+        |-DeclRefExpr 0x14c042df0 <col:32> 'struct kvm *' lvalue Var 0x14c042638 'kvm' 'struct kvm *'
+        `-UnaryOperator 0x14c042e30 <col:37, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x14c042e10 <col:38> '<dependent type>' contains-errors lvalue

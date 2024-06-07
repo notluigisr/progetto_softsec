@@ -1,0 +1,61 @@
+`-FunctionDecl 0x15a145a38  line:1:12 invalid hugetlb_vmtruncate 'int (struct inode *, int)' static
+  |-ParmVarDecl 0x15a128648 <col:31, col:45> col:45 used inode 'struct inode *'
+  |-ParmVarDecl 0x15a1286e0 <col:52, col:59> col:59 invalid offset 'int'
+  `-CompoundStmt 0x15a146f20 <line:2:1, line:17:1>
+    |-DeclStmt 0x15a145d38 <line:4:2, col:50>
+    | |-RecordDecl 0x15a145af0 <col:2, col:9> col:9 struct address_space
+    | `-VarDecl 0x15a145c58 <col:2, col:41> col:24 used mapping 'struct address_space *' cinit
+    |   `-RecoveryExpr 0x15a145cf8 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15a145cc0 <col:34> 'struct inode *' lvalue ParmVar 0x15a128648 'inode' 'struct inode *'
+    |-DeclStmt 0x15a146178 <line:5:2, col:40>
+    | |-RecordDecl 0x15a145d50 <col:2, col:9> col:9 struct hstate
+    | `-VarDecl 0x15a145eb8 <col:2, col:39> col:17 used h 'struct hstate *' cinit
+    |   `-ImplicitCastExpr 0x15a146148 <col:21, col:39> 'struct hstate *' <IntegralToPointer>
+    |     `-CallExpr 0x15a146108 <col:21, col:39> 'int'
+    |       |-ImplicitCastExpr 0x15a1460f0 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a146080 <col:21> 'int ()' Function 0x15a145fc8 'hstate_inode' 'int ()'
+    |       `-ImplicitCastExpr 0x15a146130 <col:34> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a1460a0 <col:34> 'struct inode *' lvalue ParmVar 0x15a128648 'inode' 'struct inode *'
+    |-CallExpr 0x15a146460 <line:7:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a146270 <col:2> 'int ()' Function 0x15a1461b8 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x15a146440 <col:9, col:35> '<dependent type>' contains-errors '&'
+    |   |-RecoveryExpr 0x15a146290 <col:9> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x15a146428 <col:18, col:35> 'int' prefix '~' cannot overflow
+    |     `-CallExpr 0x15a1463e8 <col:19, col:35> 'int'
+    |       |-ImplicitCastExpr 0x15a1463d0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a146390 <col:19> 'int ()' Function 0x15a1462d8 'huge_page_mask' 'int ()'
+    |       `-ImplicitCastExpr 0x15a146410 <col:34> 'struct hstate *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a1463b0 <col:34> 'struct hstate *' lvalue Var 0x15a145eb8 'h' 'struct hstate *'
+    |-CallExpr 0x15a146620 <line:10:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a1465c0 <col:2> 'int ()' Function 0x15a146508 'i_size_write' 'int ()'
+    | |-DeclRefExpr 0x15a1465e0 <col:15> 'struct inode *' lvalue ParmVar 0x15a128648 'inode' 'struct inode *'
+    | `-RecoveryExpr 0x15a146600 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a146788 <line:11:2, col:27> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a146770 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a146730 <col:2> 'int ()' Function 0x15a146678 'i_mmap_lock_write' 'int ()'
+    | `-ImplicitCastExpr 0x15a1467b0 <col:20> 'struct address_space *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a146750 <col:20> 'struct address_space *' contains-errors lvalue Var 0x15a145c58 'mapping' 'struct address_space *'
+    |-IfStmt 0x15a146be8 <line:12:2, line:13:50>
+    | |-UnaryOperator 0x15a146968 <line:12:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x15a146940 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x15a1468a8 <col:7> 'int ()' Function 0x15a1467f0 'RB_EMPTY_ROOT' 'int ()'
+    | |   `-UnaryOperator 0x15a146928 <col:21, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x15a146900 <col:22, col:31> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x15a1468c8 <col:22> 'struct address_space *' contains-errors lvalue Var 0x15a145c58 'mapping' 'struct address_space *'
+    | `-CallExpr 0x15a146bb8 <line:13:3, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15a146ab8 <col:3> 'int ()' Function 0x15a146a00 'hugetlb_vmtruncate_list' 'int ()'
+    |   |-UnaryOperator 0x15a146b38 <col:27, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x15a146b10 <col:28, col:37> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x15a146ad8 <col:28> 'struct address_space *' contains-errors lvalue Var 0x15a145c58 'mapping' 'struct address_space *'
+    |   `-RecoveryExpr 0x15a146b98 <col:45> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a146d40 <line:14:2, col:29> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a146d28 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a146ce8 <col:2> 'int ()' Function 0x15a146c30 'i_mmap_unlock_write' 'int ()'
+    | `-ImplicitCastExpr 0x15a146d68 <col:22> 'struct address_space *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a146d08 <col:22> 'struct address_space *' contains-errors lvalue Var 0x15a145c58 'mapping' 'struct address_space *'
+    |-CallExpr 0x15a146ec0 <line:15:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a146e60 <col:2> 'int ()' Function 0x15a146da8 'truncate_hugepages' 'int ()'
+    | |-DeclRefExpr 0x15a146e80 <col:21> 'struct inode *' lvalue ParmVar 0x15a128648 'inode' 'struct inode *'
+    | `-RecoveryExpr 0x15a146ea0 <col:28> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15a146f10 <line:16:2, col:9>
+      `-IntegerLiteral 0x15a146ef0 <col:9> 'int' 0

@@ -1,0 +1,53 @@
+`-FunctionDecl 0x14e0276c8  line:1:16 invalid _hostsock_sendto 'int (int *, const void *, int, int, const struct oe_sockaddr *, int)' static
+  |-ParmVarDecl 0x14e00dd28 <line:2:5, col:14> col:14 referenced invalid sock_ 'int *'
+  |-ParmVarDecl 0x14e00ddd8 <line:3:5, col:17> col:17 used buf 'const void *'
+  |-ParmVarDecl 0x14e00de58 <line:4:5, col:12> col:12 invalid count 'int'
+  |-ParmVarDecl 0x14e00ded8 <line:5:5, col:9> col:9 used flags 'int'
+  |-ParmVarDecl 0x14e0274c8 <line:6:5, col:31> col:31 used dest_addr 'const struct oe_sockaddr *'
+  |-ParmVarDecl 0x14e027548 <line:7:5, col:18> col:18 invalid addrlen 'int'
+  `-CompoundStmt 0x14e02b9b8 <line:8:1, line:31:1>
+    |-BinaryOperator 0x14e027a68 <line:10:5, col:36> '<dependent type>' contains-errors '='
+    | |-BinaryOperator 0x14e027a48 <col:5, col:13> '<dependent type>' contains-errors '*'
+    | | |-RecoveryExpr 0x14e0277c0 <col:5> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14e0277a0 <col:5> 'int *' lvalue ParmVar 0x14e00dd28 'sock_' 'int *'
+    | | `-RecoveryExpr 0x14e027a28 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14e0279c0 <col:20, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e027980 <col:20> 'int ()' Function 0x14e0278c8 '_cast_sock' 'int ()'
+    |   `-RecoveryExpr 0x14e0279a0 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14e027e98 <line:14:5, line:15:33>
+    | |-BinaryOperator 0x14e027cf0 <line:14:9, col:32> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x14e027c68 <col:9, col:10> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x14e027c50 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x14e027c30 <col:10> '<dependent type>' contains-errors lvalue
+    | | `-ParenExpr 0x14e027cd0 <col:18, col:32> 'int' contains-errors
+    | |   `-BinaryOperator 0x14e027cb0 <col:19, col:29> 'int' contains-errors '&&'
+    | |     |-RecoveryExpr 0x14e027af0 <col:19> '<dependent type>' contains-errors lvalue
+    | |     `-UnaryOperator 0x14e027c98 <col:28, col:29> 'int' prefix '!' cannot overflow
+    | |       `-ImplicitCastExpr 0x14e027c80 <col:29> 'const void *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x14e027b10 <col:29> 'const void *' lvalue ParmVar 0x14e00ddd8 'buf' 'const void *'
+    | `-CallExpr 0x14e027e70 <line:15:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e027df0 <col:9> 'int ()' Function 0x14e027d38 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x14e027e50 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14e02b8e0 <line:17:5, line:27:5>
+    | |-BinaryOperator 0x14e02b800 <line:17:9, line:24:25> 'int' contains-errors '!='
+    | | |-CallExpr 0x14e028380 <line:17:9, line:24:20> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x14e027f98 <line:17:9> 'int ()' Function 0x14e027ee0 'oe_syscall_sendto_ocall' 'int ()'
+    | | | |-UnaryOperator 0x14e028298 <line:18:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x14e028278 <col:14> '<dependent type>' contains-errors lvalue
+    | | | |-CXXDependentScopeMemberExpr 0x14e0282d0 <line:19:13, col:19> '<dependent type>' contains-errors lvalue ->host_fd
+    | | | | `-RecoveryExpr 0x14e0282b0 <col:13> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x14e028048 <line:20:13> 'const void *' lvalue ParmVar 0x14e00ddd8 'buf' 'const void *'
+    | | | |-RecoveryExpr 0x14e028068 <line:21:13> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x14e028088 <line:22:13> 'int' lvalue ParmVar 0x14e00ded8 'flags' 'int'
+    | | | |-CStyleCastExpr 0x14e028358 <line:23:13, col:34> 'struct oe_sockaddr *' <NoOp>
+    | | | | `-ImplicitCastExpr 0x14e028340 <col:34> 'const struct oe_sockaddr *' <LValueToRValue> part_of_explicit_cast
+    | | | |   `-DeclRefExpr 0x14e0280a8 <col:34> 'const struct oe_sockaddr *' lvalue ParmVar 0x14e0274c8 'dest_addr' 'const struct oe_sockaddr *'
+    | | | `-RecoveryExpr 0x14e0281c8 <line:24:13> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14e0283d8 <col:25> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14e02b8c8 <line:25:5, line:27:5>
+    |   `-CallExpr 0x14e02b8a0 <line:26:9, col:33> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14e02b820 <col:9> 'int ()' Function 0x14e027d38 'OE_RAISE_ERRNO' 'int ()'
+    |     `-RecoveryExpr 0x14e02b880 <col:24> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x14e02b998 <line:29:1, line:30:12> 'done'
+      `-ReturnStmt 0x14e02b938 <col:5, col:12>
+        `-RecoveryExpr 0x14e02b918 <col:12> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,97 @@
+`-FunctionDecl 0x13f128750  line:1:13 uas_do_work 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x13f128648 <col:25, col:45> col:45 used work 'struct work_struct *'
+  `-CompoundStmt 0x13f1431e0 <line:2:1, line:33:1>
+    |-DeclStmt 0x13f140dc8 <line:3:2, line:4:48>
+    | |-RecordDecl 0x13f140a48 <line:3:2, col:9> col:9 struct uas_dev_info
+    | `-VarDecl 0x13f140bb8 <col:2, col:23> col:23 used devinfo 'struct uas_dev_info *'
+    |-DeclStmt 0x13f140fc8 <line:5:2, col:30>
+    | |-RecordDecl 0x13f140de0 <col:2, col:9> col:9 struct uas_cmd_info
+    | `-VarDecl 0x13f140f48 <col:2, col:23> col:23 used cmdinfo 'struct uas_cmd_info *'
+    |-DeclStmt 0x13f1411c8 <line:6:2, col:24>
+    | |-RecordDecl 0x13f140fe0 <col:2, col:9> col:9 struct scsi_cmnd
+    | `-VarDecl 0x13f141148 <col:2, col:20> col:20 used cmnd 'struct scsi_cmnd *'
+    |-DeclStmt 0x13f141260 <line:7:2, col:21>
+    | `-VarDecl 0x13f1411f8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x13f141390 <line:8:2, col:12>
+    | |-VarDecl 0x13f141290 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x13f141310 <col:2, col:9> col:9 used err 'int'
+    |-CallExpr 0x13f141540 <line:10:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f141488 <col:2> 'int ()' Function 0x13f1413d0 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x13f141508 <col:20, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13f1414e0 <col:21, col:30> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13f1414a8 <col:21> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    | `-DeclRefExpr 0x13f141520 <col:36> 'unsigned long' lvalue Var 0x13f1411f8 'flags' 'unsigned long'
+    |-IfStmt 0x13f141638 <line:12:2, line:13:8>
+    | |-RecoveryExpr 0x13f1415a8 <line:12:6, col:15> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13f141570 <col:6> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    | `-GotoStmt 0x13f141620 <line:13:3, col:8> 'out' 0x13f1415d0
+    |-ForStmt 0x13f142fc0 <line:15:2, line:30:2>
+    | |-BinaryOperator 0x13f141698 <line:15:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x13f141658 <col:7> 'int' lvalue Var 0x13f141290 'i' 'int'
+    | | `-IntegerLiteral 0x13f141678 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x13f141738 <col:14, col:27> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x13f1416b8 <col:14> 'int' lvalue Var 0x13f141290 'i' 'int'
+    | | `-RecoveryExpr 0x13f141710 <col:18, col:27> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13f1416d8 <col:18> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    | |-UnaryOperator 0x13f141778 <col:35, col:36> 'int' postfix '++'
+    | | `-DeclRefExpr 0x13f141758 <col:35> 'int' lvalue Var 0x13f141290 'i' 'int'
+    | `-CompoundStmt 0x13f142f80 <col:40, line:30:2>
+    |   |-IfStmt 0x13f141898 <line:16:3, line:17:4>
+    |   | |-UnaryOperator 0x13f141878 <line:16:7, col:23> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x13f141860 <col:8, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |   `-ArraySubscriptExpr 0x13f141840 <col:8, col:23> '<dependent type>' contains-errors lvalue
+    |   | |     |-ImplicitCastExpr 0x13f141810 <col:8, col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |     | `-RecoveryExpr 0x13f1417c8 <col:8, col:17> '<dependent type>' contains-errors lvalue
+    |   | |     |   `-DeclRefExpr 0x13f141790 <col:8> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    |   | |     `-ImplicitCastExpr 0x13f141828 <col:22> 'int' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x13f1417f0 <col:22> 'int' lvalue Var 0x13f141290 'i' 'int'
+    |   | `-ContinueStmt 0x13f141890 <line:17:4>
+    |   |-BinaryOperator 0x13f1419a8 <line:19:3, col:25> 'struct scsi_cmnd *' contains-errors '='
+    |   | |-DeclRefExpr 0x13f1418b8 <col:3> 'struct scsi_cmnd *' lvalue Var 0x13f141148 'cmnd' 'struct scsi_cmnd *'
+    |   | `-ArraySubscriptExpr 0x13f141988 <col:10, col:25> '<dependent type>' contains-errors lvalue
+    |   |   |-ImplicitCastExpr 0x13f141958 <col:10, col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x13f141910 <col:10, col:19> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x13f1418d8 <col:10> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    |   |   `-ImplicitCastExpr 0x13f141970 <col:24> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13f141938 <col:24> 'int' lvalue Var 0x13f141290 'i' 'int'
+    |   |-BinaryOperator 0x13f1428d0 <line:20:3, col:28> 'struct uas_cmd_info *' contains-errors '='
+    |   | |-DeclRefExpr 0x13f1419c8 <col:3> 'struct uas_cmd_info *' lvalue Var 0x13f140f48 'cmdinfo' 'struct uas_cmd_info *'
+    |   | `-ImplicitCastExpr 0x13f1428b8 <col:13, col:28> 'struct uas_cmd_info *' contains-errors <BitCast>
+    |   |   `-CStyleCastExpr 0x13f142890 <col:13, col:28> 'void *' contains-errors <Dependent>
+    |   |     `-UnaryOperator 0x13f142860 <col:21, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |       `-RecoveryExpr 0x13f142838 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x13f142800 <col:22> 'struct scsi_cmnd *' lvalue Var 0x13f141148 'cmnd' 'struct scsi_cmnd *'
+    |   |-IfStmt 0x13f1429b0 <line:22:3, line:23:4>
+    |   | |-RecoveryExpr 0x13f142988 <line:22:7, col:41> '_Bool' contains-errors
+    |   | `-ContinueStmt 0x13f1429a8 <line:23:4>
+    |   |-BinaryOperator 0x13f142be8 <line:25:3, col:53> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13f1429d0 <col:3> 'int' lvalue Var 0x13f141310 'err' 'int'
+    |   | `-CallExpr 0x13f142bb8 <col:9, col:53> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13f142ad0 <col:9> 'int ()' Function 0x13f142a18 'uas_submit_urbs' 'int ()'
+    |   |   |-DeclRefExpr 0x13f142af0 <col:25> 'struct scsi_cmnd *' lvalue Var 0x13f141148 'cmnd' 'struct scsi_cmnd *'
+    |   |   `-CXXDependentScopeMemberExpr 0x13f142b70 <col:31, col:45> '<dependent type>' contains-errors lvalue ->hostdata
+    |   |     `-RecoveryExpr 0x13f142b48 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x13f142b10 <col:31> 'struct scsi_cmnd *' lvalue Var 0x13f141148 'cmnd' 'struct scsi_cmnd *'
+    |   `-IfStmt 0x13f142f50 <line:26:3, line:29:32> has_else
+    |     |-UnaryOperator 0x13f142c40 <line:26:7, col:8> 'int' prefix '!' cannot overflow
+    |     | `-ImplicitCastExpr 0x13f142c28 <col:8> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x13f142c08 <col:8> 'int' lvalue Var 0x13f141310 'err' 'int'
+    |     |-CompoundAssignOperator 0x13f142d80 <line:27:4, col:23> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-RecoveryExpr 0x13f142c90 <col:4, col:13> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x13f142c58 <col:4> 'struct uas_cmd_info *' lvalue Var 0x13f140f48 'cmdinfo' 'struct uas_cmd_info *'
+    |     | `-UnaryOperator 0x13f142d68 <col:22, col:23> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |     |   `-ImplicitCastExpr 0x13f142d50 <col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     `-RecoveryExpr 0x13f142d30 <col:23> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x13f142f28 <line:29:4, col:32> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13f142e90 <col:4> 'int ()' Function 0x13f142dd8 'schedule_work' 'int ()'
+    |       `-UnaryOperator 0x13f142f10 <col:18, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x13f142ee8 <col:19, col:28> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13f142eb0 <col:19> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+    `-LabelStmt 0x13f1431c0 <line:31:1, line:32:46> 'out'
+      `-CallExpr 0x13f143190 <col:2, col:46> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13f1430d8 <col:2> 'int ()' Function 0x13f143020 'spin_unlock_irqrestore' 'int ()'
+        |-UnaryOperator 0x13f143158 <col:25, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x13f143130 <col:26, col:35> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13f1430f8 <col:26> 'struct uas_dev_info *' lvalue Var 0x13f140bb8 'devinfo' 'struct uas_dev_info *'
+        `-DeclRefExpr 0x13f143170 <col:41> 'unsigned long' lvalue Var 0x13f1411f8 'flags' 'unsigned long'

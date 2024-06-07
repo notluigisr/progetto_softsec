@@ -1,0 +1,36 @@
+`-FunctionDecl 0x145826748  line:1:5 __sk_backlog_rcv 'int (struct sock *, struct sk_buff *)'
+  |-ParmVarDecl 0x14580e248 <col:22, col:35> col:35 used sk 'struct sock *'
+  |-ParmVarDecl 0x145826628 <col:39, col:55> col:55 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x145827190 <line:2:1, line:14:1>
+    |-DeclStmt 0x1458268c8 <line:3:2, col:9>
+    | `-VarDecl 0x145826860 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x145826960 <line:4:2, col:29>
+    | `-VarDecl 0x1458268f8 <col:2, col:15> col:15 used noreclaim_flag 'unsigned int'
+    |-CallExpr 0x145826cd0 <line:7:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x145826aa0 <col:2> 'int ()' Function 0x1458269e8 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x145826cb8 <col:9, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-CallExpr 0x145826c88 <col:10, col:37> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x145826ba0 <col:10> 'int ()' Function 0x145826ae8 'sock_flag' 'int ()'
+    |     |-DeclRefExpr 0x145826bc0 <col:20> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |     `-RecoveryExpr 0x145826c68 <col:24> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x145826ea0 <line:9:2, col:43> 'unsigned int' '='
+    | |-DeclRefExpr 0x145826cf8 <col:2> 'unsigned int' lvalue Var 0x1458268f8 'noreclaim_flag' 'unsigned int'
+    | `-ImplicitCastExpr 0x145826e88 <col:19, col:43> 'unsigned int' <IntegralCast>
+    |   `-CallExpr 0x145826e68 <col:19, col:43> 'int'
+    |     `-ImplicitCastExpr 0x145826e50 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x145826df8 <col:19> 'int ()' Function 0x145826d40 'memalloc_noreclaim_save' 'int ()'
+    |-BinaryOperator 0x145826fb0 <line:10:2, col:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x145826ec0 <col:2> 'int' lvalue Var 0x145826860 'ret' 'int'
+    | `-CallExpr 0x145826f80 <col:8, col:34> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x145826f18 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x145826ee0 <col:8> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |   |-DeclRefExpr 0x145826f40 <col:27> 'struct sock *' lvalue ParmVar 0x14580e248 'sk' 'struct sock *'
+    |   `-DeclRefExpr 0x145826f60 <col:31> 'struct sk_buff *' lvalue ParmVar 0x145826628 'skb' 'struct sk_buff *'
+    |-CallExpr 0x145827108 <line:11:2, col:43> 'int'
+    | |-ImplicitCastExpr 0x1458270f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1458270b0 <col:2> 'int ()' Function 0x145826ff8 'memalloc_noreclaim_restore' 'int ()'
+    | `-ImplicitCastExpr 0x145827130 <col:29> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x1458270d0 <col:29> 'unsigned int' lvalue Var 0x1458268f8 'noreclaim_flag' 'unsigned int'
+    `-ReturnStmt 0x145827180 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x145827168 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x145827148 <col:9> 'int' lvalue Var 0x145826860 'ret' 'int'

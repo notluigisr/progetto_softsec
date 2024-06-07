@@ -1,0 +1,98 @@
+`-FunctionDecl 0x13382aa08  line:1:5 invalid __fsnotify_parent 'int (const struct path *, struct dentry *, int)'
+  |-ParmVarDecl 0x13380e248 <col:23, col:42> col:42 used path 'const struct path *'
+  |-ParmVarDecl 0x13382a828 <col:48, col:63> col:63 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x13382a8c0 <col:71, col:77> col:77 referenced invalid mask 'int'
+  `-CompoundStmt 0x134809650 <line:2:1, line:33:1>
+    |-DeclStmt 0x13382abc0 <line:3:2, col:23>
+    | `-VarDecl 0x13382ab58 <col:2, col:17> col:17 used parent 'struct dentry *'
+    |-DeclStmt 0x13382adc8 <line:4:2, col:23>
+    | |-RecordDecl 0x13382abd8 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x13382ad48 <col:2, col:16> col:16 used p_inode 'struct inode *'
+    |-DeclStmt 0x13382ae80 <line:5:2, col:13>
+    | `-VarDecl 0x13382adf8 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x13382ae60 <col:12> 'int' 0
+    |-IfStmt 0x13382af88 <line:7:2, line:8:18>
+    | |-UnaryOperator 0x13382aed0 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13382aeb8 <col:7> 'struct dentry *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13382ae98 <col:7> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    | `-BinaryOperator 0x13382af68 <line:8:3, col:18> 'struct dentry *' contains-errors '='
+    |   |-DeclRefExpr 0x13382aee8 <col:3> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    |   `-RecoveryExpr 0x13382af40 <col:12, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13382af08 <col:12> 'const struct path *' lvalue ParmVar 0x13380e248 'path' 'const struct path *'
+    |-IfStmt 0x13382b090 <line:10:2, line:11:10>
+    | |-RecoveryExpr 0x13382b040 <line:10:6, col:56> '_Bool' contains-errors
+    | `-ReturnStmt 0x13382b080 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x13382b060 <col:10> 'int' 0
+    |-BinaryOperator 0x13382b310 <line:13:2, col:29> 'struct dentry *' '='
+    | |-DeclRefExpr 0x13382b0b0 <col:2> 'struct dentry *' lvalue Var 0x13382ab58 'parent' 'struct dentry *'
+    | `-ImplicitCastExpr 0x13382b2f8 <col:11, col:29> 'struct dentry *' <IntegralToPointer>
+    |   `-CallExpr 0x13382b2b8 <col:11, col:29> 'int'
+    |     |-ImplicitCastExpr 0x13382b2a0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13382b230 <col:11> 'int ()' Function 0x13382b178 'dget_parent' 'int ()'
+    |     `-ImplicitCastExpr 0x13382b2e0 <col:23> 'struct dentry *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13382b250 <col:23> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    |-BinaryOperator 0x13382b3b0 <line:14:2, col:20> 'struct inode *' contains-errors '='
+    | |-DeclRefExpr 0x13382b330 <col:2> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    | `-RecoveryExpr 0x13382b388 <col:12, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13382b350 <col:12> 'struct dentry *' lvalue Var 0x13382ab58 'parent' 'struct dentry *'
+    |-IfStmt 0x134809460 <line:16:2, line:28:2> has_else
+    | |-CallExpr 0x13382b678 <line:16:6, col:56> 'int'
+    | | |-ImplicitCastExpr 0x13382b660 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13382b4b0 <col:6> 'int ()' Function 0x13382b3f8 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x13382b648 <col:15, col:55> 'int' prefix '!' cannot overflow
+    | |   `-CallExpr 0x13382b608 <col:16, col:55> 'int'
+    | |     |-ImplicitCastExpr 0x13382b5f0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x13382b5b0 <col:16> 'int ()' Function 0x13382b4f8 'fsnotify_inode_watches_children' 'int ()'
+    | |     `-ImplicitCastExpr 0x13382b630 <col:48> 'struct inode *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x13382b5d0 <col:48> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    | |-CallExpr 0x13382b7d8 <line:17:3, col:47> 'int'
+    | | |-ImplicitCastExpr 0x13382b7c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13382b780 <col:3> 'int ()' Function 0x13382b6c8 '__fsnotify_update_child_dentry_flags' 'int ()'
+    | | `-ImplicitCastExpr 0x134808c00 <col:40> 'struct inode *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13382b7a0 <col:40> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    | `-IfStmt 0x134809440 <line:18:7, line:28:2>
+    |   |-BinaryOperator 0x134808c98 <line:18:11, col:38> '<dependent type>' contains-errors '&'
+    |   | |-RecoveryExpr 0x134808c50 <col:11, col:20> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x134808c18 <col:11> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    |   | `-RecoveryExpr 0x134808c78 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x134809420 <col:44, line:28:2>
+    |     |-CompoundAssignOperator 0x134808d68 <line:20:3, col:11> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-RecoveryExpr 0x134808cd8 <col:3> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x134808cb8 <col:3> 'int' lvalue ParmVar 0x13382a8c0 'mask' 'int'
+    |     | `-RecoveryExpr 0x134808d48 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-IfStmt 0x1348093f0 <line:22:3, line:27:34> has_else
+    |       |-ImplicitCastExpr 0x134808db8 <line:22:7> 'const struct path *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x134808d98 <col:7> 'const struct path *' lvalue ParmVar 0x13380e248 'path' 'const struct path *'
+    |       |-BinaryOperator 0x134809110 <line:23:4, line:24:34> 'int' contains-errors '='
+    |       | |-DeclRefExpr 0x134808dd0 <line:23:4> 'int' lvalue Var 0x13382adf8 'ret' 'int'
+    |       | `-CallExpr 0x1348090c0 <col:10, line:24:34> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x134808ed0 <line:23:10> 'int ()' Function 0x134808e18 'fsnotify' 'int ()'
+    |       |   |-DeclRefExpr 0x134808ef0 <col:19> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    |       |   |-RecoveryExpr 0x134808f10 <col:28> '<dependent type>' contains-errors lvalue
+    |       |   |-DeclRefExpr 0x134808f30 <col:34> 'const struct path *' lvalue ParmVar 0x13380e248 'path' 'const struct path *'
+    |       |   |-RecoveryExpr 0x1348090a0 <col:40> '<dependent type>' contains-errors lvalue
+    |       |   |-CXXDependentScopeMemberExpr 0x134808fc8 <line:24:12, col:27> '<dependent type>' contains-errors lvalue .name
+    |       |   | `-RecoveryExpr 0x134808fa0 <col:12, col:20> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x134808f68 <col:12> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    |       |   `-IntegerLiteral 0x134809010 <col:33> 'int' 0
+    |       `-BinaryOperator 0x1348093d0 <line:26:4, line:27:34> 'int' contains-errors '='
+    |         |-DeclRefExpr 0x134809130 <line:26:4> 'int' lvalue Var 0x13382adf8 'ret' 'int'
+    |         `-CallExpr 0x134809380 <col:10, line:27:34> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x134809150 <line:26:10> 'int ()' Function 0x134808e18 'fsnotify' 'int ()'
+    |           |-DeclRefExpr 0x134809170 <col:19> 'struct inode *' lvalue Var 0x13382ad48 'p_inode' 'struct inode *'
+    |           |-RecoveryExpr 0x134809190 <col:28> '<dependent type>' contains-errors lvalue
+    |           |-RecoveryExpr 0x1348091e8 <col:34, col:42> '<dependent type>' contains-errors lvalue
+    |           | `-DeclRefExpr 0x1348091b0 <col:34> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    |           |-RecoveryExpr 0x134809360 <col:51> '<dependent type>' contains-errors lvalue
+    |           |-CXXDependentScopeMemberExpr 0x134809288 <line:27:12, col:27> '<dependent type>' contains-errors lvalue .name
+    |           | `-RecoveryExpr 0x134809260 <col:12, col:20> '<dependent type>' contains-errors lvalue
+    |           |   `-DeclRefExpr 0x134809228 <col:12> 'struct dentry *' lvalue ParmVar 0x13382a828 'dentry' 'struct dentry *'
+    |           `-IntegerLiteral 0x1348092d0 <col:33> 'int' 0
+    |-CallExpr 0x1348095c8 <line:30:2, col:13> 'int'
+    | |-ImplicitCastExpr 0x1348095b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x134809570 <col:2> 'int ()' Function 0x1348094b8 'dput' 'int ()'
+    | `-ImplicitCastExpr 0x1348095f0 <col:7> 'struct dentry *' <LValueToRValue>
+    |   `-DeclRefExpr 0x134809590 <col:7> 'struct dentry *' lvalue Var 0x13382ab58 'parent' 'struct dentry *'
+    `-ReturnStmt 0x134809640 <line:32:2, col:9>
+      `-ImplicitCastExpr 0x134809628 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x134809608 <col:9> 'int' lvalue Var 0x13382adf8 'ret' 'int'

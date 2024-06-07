@@ -1,0 +1,29 @@
+`-FunctionDecl 0x12b80ddc8  line:1:7 invalid zmalloc_no_tcache 'void *(int)'
+  |-ParmVarDecl 0x12b80dcf0 <col:25, col:32> col:32 invalid size 'int'
+  `-CompoundStmt 0x12b828110 <col:38, line:6:1>
+    |-DeclStmt 0x12b80e1a0 <line:2:5, col:63>
+    | `-VarDecl 0x12b80de90 <col:5, col:62> col:11 used ptr 'void *' cinit
+    |   `-CallExpr 0x12b80e170 <col:17, col:62> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12b80e050 <col:17> 'int ()' Function 0x12b80df98 'mallocx' 'int ()'
+    |     |-BinaryOperator 0x12b80e130 <col:25, col:30> '<dependent type>' contains-errors '+'
+    |     | |-RecoveryExpr 0x12b80e070 <col:25> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x12b80e110 <col:30> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x12b80e150 <col:43> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12b80e350 <line:3:5, col:39>
+    | |-UnaryOperator 0x12b80e1f0 <col:9, col:10> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12b80e1d8 <col:10> 'void *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x12b80e1b8 <col:10> 'void *' contains-errors lvalue Var 0x12b80de90 'ptr' 'void *'
+    | `-CallExpr 0x12b80e328 <col:15, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b80e2e8 <col:15> 'int ()' Function 0x12b80e230 'zmalloc_oom_handler' 'int ()'
+    |   `-RecoveryExpr 0x12b80e308 <col:35> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12b8280a0 <line:4:5, col:48> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12b828088 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12b827eb8 <col:5> 'int ()' Function 0x12b827e00 'update_zmalloc_stat_alloc' 'int ()'
+    | `-CallExpr 0x12b828048 <col:31, col:47> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x12b828030 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12b827fb8 <col:31> 'int ()' Function 0x12b827f00 'zmalloc_size' 'int ()'
+    |   `-ImplicitCastExpr 0x12b828070 <col:44> 'void *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x12b827fd8 <col:44> 'void *' contains-errors lvalue Var 0x12b80de90 'ptr' 'void *'
+    `-ReturnStmt 0x12b828100 <line:5:5, col:12>
+      `-ImplicitCastExpr 0x12b8280e8 <col:12> 'void *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x12b8280c8 <col:12> 'void *' contains-errors lvalue Var 0x12b80de90 'ptr' 'void *'

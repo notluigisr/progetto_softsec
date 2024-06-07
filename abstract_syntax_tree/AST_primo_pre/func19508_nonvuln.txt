@@ -1,0 +1,29 @@
+`-FunctionDecl 0x14f922758  line:1:5 invalid wmi_send 'int (struct wil6210_priv *, int, void *, int)'
+  |-ParmVarDecl 0x15800e248 <col:14, col:35> col:35 used wil 'struct wil6210_priv *'
+  |-ParmVarDecl 0x15800e2e0 <col:40, col:44> col:44 invalid cmdid 'int'
+  |-ParmVarDecl 0x15800e360 <col:51, col:57> col:57 used buf 'void *'
+  |-ParmVarDecl 0x14f922600 <col:62, col:66> col:66 invalid len 'int'
+  `-CompoundStmt 0x14f922eb8 <line:2:1, line:10:1>
+    |-DeclStmt 0x14f9228a0 <line:3:2, col:8>
+    | `-VarDecl 0x14f922838 <col:2, col:6> col:6 used rc 'int'
+    |-CallExpr 0x14f922aa8 <line:5:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f922a10 <col:2> 'int ()' Function 0x14f922958 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14f922a90 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f922a68 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f922a30 <col:14> 'struct wil6210_priv *' lvalue ParmVar 0x15800e248 'wil' 'struct wil6210_priv *'
+    |-BinaryOperator 0x14f922cb0 <line:6:2, col:38> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14f922ad0 <col:2> 'int' lvalue Var 0x14f922838 'rc' 'int'
+    | `-CallExpr 0x14f922c70 <col:7, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f922bd0 <col:7> 'int ()' Function 0x14f922b18 '__wmi_send' 'int ()'
+    |   |-DeclRefExpr 0x14f922bf0 <col:18> 'struct wil6210_priv *' lvalue ParmVar 0x15800e248 'wil' 'struct wil6210_priv *'
+    |   |-RecoveryExpr 0x14f922c10 <col:23> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x14f922c30 <col:30> 'void *' lvalue ParmVar 0x15800e360 'buf' 'void *'
+    |   `-RecoveryExpr 0x14f922c50 <col:35> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14f922e48 <line:7:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f922db0 <col:2> 'int ()' Function 0x14f922cf8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14f922e30 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f922e08 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f922dd0 <col:16> 'struct wil6210_priv *' lvalue ParmVar 0x15800e248 'wil' 'struct wil6210_priv *'
+    `-ReturnStmt 0x14f922ea8 <line:9:2, col:9>
+      `-ImplicitCastExpr 0x14f922e90 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14f922e70 <col:9> 'int' lvalue Var 0x14f922838 'rc' 'int'

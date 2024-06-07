@@ -1,0 +1,23 @@
+`-FunctionDecl 0x14f0ee350  line:1:13 stack_map_free 'void (struct bpf_map *)' static
+  |-ParmVarDecl 0x14f0ee248 <col:28, col:44> col:44 used map 'struct bpf_map *'
+  `-CompoundStmt 0x14f83f310 <line:2:1, line:9:1>
+    |-DeclStmt 0x14f83edc8 <line:3:2, col:75>
+    | |-RecordDecl 0x14f83ea48 <col:2, col:9> col:9 struct bpf_stack_map
+    | `-VarDecl 0x14f83ebb8 <col:2, col:24> col:24 used smap 'struct bpf_stack_map *'
+    |-CallExpr 0x14f83ef40 <line:5:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f83eec0 <col:2> 'int ()' Function 0x14f83ee08 'bpf_map_area_free' 'int ()'
+    | `-RecoveryExpr 0x14f83ef18 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14f83eee0 <col:20> 'struct bpf_stack_map *' lvalue Var 0x14f83ebb8 'smap' 'struct bpf_stack_map *'
+    |-CallExpr 0x14f83f0e0 <line:6:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f83f048 <col:2> 'int ()' Function 0x14f83ef90 'pcpu_freelist_destroy' 'int ()'
+    | `-UnaryOperator 0x14f83f0c8 <col:24, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14f83f0a0 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f83f068 <col:25> 'struct bpf_stack_map *' lvalue Var 0x14f83ebb8 'smap' 'struct bpf_stack_map *'
+    |-CallExpr 0x14f83f198 <line:7:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x14f83f180 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f83f108 <col:2> 'int ()' Function 0x14f83ee08 'bpf_map_area_free' 'int ()'
+    | `-ImplicitCastExpr 0x14f83f1c0 <col:20> 'struct bpf_stack_map *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f83f128 <col:20> 'struct bpf_stack_map *' lvalue Var 0x14f83ebb8 'smap' 'struct bpf_stack_map *'
+    `-CallExpr 0x14f83f2f0 <line:8:2, col:24> 'int'
+      `-ImplicitCastExpr 0x14f83f2d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x14f83f2b8 <col:2> 'int ()' Function 0x14f83f200 'put_callchain_buffers' 'int ()'

@@ -1,0 +1,1 @@
+  inline bool vio_ok() const { return net.vio != 0; }

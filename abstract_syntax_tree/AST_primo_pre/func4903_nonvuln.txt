@@ -1,0 +1,47 @@
+`-FunctionDecl 0x13d00ddc8  line:1:14 invalid http_date 'char *(int)' static
+  |-ParmVarDecl 0x13d00dcf0 <col:24, col:31> col:31 invalid t 'int'
+  `-CompoundStmt 0x13d0280b0 <line:2:1, line:12:1>
+    |-DeclStmt 0x13d00e0c0 <line:3:2, line:4:10>
+    | `-VarDecl 0x13d00df60 <line:3:2, line:4:9> line:3:14 used day 'char[1][4]' static cinit
+    |   `-InitListExpr 0x13d00e030 <line:4:3, col:9> 'char[1][4]'
+    |     `-StringLiteral 0x13d00dfc8 <col:4> 'char[4]' "STR"
+    |-DeclStmt 0x13d00e2e0 <line:5:2, line:7:10>
+    | `-VarDecl 0x13d00e148 <line:5:2, line:7:9> line:5:14 used month 'char[2][4]' static cinit
+    |   `-InitListExpr 0x13d00e240 <line:6:3, line:7:9> 'char[2][4]'
+    |     |-StringLiteral 0x13d00e1b0 <line:6:4> 'char[4]' "STR"
+    |     `-StringLiteral 0x13d00e1d0 <line:7:4> 'char[4]' "STR"
+    |-DeclStmt 0x13d0276e8 <line:8:2, col:28>
+    | |-RecordDecl 0x13d00e2f8 <col:2, col:9> col:9 struct tm
+    | `-VarDecl 0x13d027488 <col:2, col:27> col:13 used tm 'struct tm *' cinit
+    |   `-CallExpr 0x13d0276a8 <col:18, col:27> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13d027650 <col:18> 'int ()' Function 0x13d027598 'gmtime' 'int ()'
+    |     `-UnaryOperator 0x13d027690 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x13d027670 <col:26> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13d0280a0 <line:9:2, line:11:41>
+      `-CallExpr 0x13d028040 <line:9:9, line:11:41> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13d0277e0 <line:9:9> 'int ()' Function 0x13d027728 'fmt' 'int ()'
+        |-StringLiteral 0x13d027800 <col:13> 'char[4]' lvalue "STR"
+        |-ArraySubscriptExpr 0x13d027d30 <col:20, col:35> '<dependent type>' contains-errors lvalue
+        | |-ImplicitCastExpr 0x13d027d00 <col:20> 'char (*)[4]' <ArrayToPointerDecay>
+        | | `-DeclRefExpr 0x13d027820 <col:20> 'char[1][4]' lvalue Var 0x13d00df60 'day' 'char[1][4]'
+        | `-ImplicitCastExpr 0x13d027d18 <col:24, col:28> '<dependent type>' contains-errors <LValueToRValue>
+        |   `-RecoveryExpr 0x13d027ca0 <col:24, col:28> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13d027840 <col:24> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        |-RecoveryExpr 0x13d027d88 <line:10:6, col:10> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x13d027d50 <col:6> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        |-ArraySubscriptExpr 0x13d027e60 <col:19, col:35> '<dependent type>' contains-errors lvalue
+        | |-ImplicitCastExpr 0x13d027e30 <col:19> 'char (*)[4]' <ArrayToPointerDecay>
+        | | `-DeclRefExpr 0x13d027db0 <col:19> 'char[2][4]' lvalue Var 0x13d00e148 'month' 'char[2][4]'
+        | `-ImplicitCastExpr 0x13d027e48 <col:25, col:29> '<dependent type>' contains-errors <LValueToRValue>
+        |   `-RecoveryExpr 0x13d027e08 <col:25, col:29> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13d027dd0 <col:25> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        |-BinaryOperator 0x13d027f00 <col:38, col:49> '<dependent type>' contains-errors '+'
+        | |-IntegerLiteral 0x13d027e80 <col:38> 'int' 1900
+        | `-RecoveryExpr 0x13d027ed8 <col:45, col:49> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x13d027ea0 <col:45> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        |-RecoveryExpr 0x13d027f58 <line:11:6, col:10> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x13d027f20 <col:6> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        |-RecoveryExpr 0x13d027fb8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x13d027f80 <col:19> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'
+        `-RecoveryExpr 0x13d028018 <col:31, col:35> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13d027fe0 <col:31> 'struct tm *' contains-errors lvalue Var 0x13d027488 'tm' 'struct tm *'

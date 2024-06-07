@@ -1,0 +1,20 @@
+`-FunctionDecl 0x146122748  line:1:12 ax88179_set_link_ksettings 'int (struct net_device *, const struct ethtool_link_ksettings *)' static
+  |-ParmVarDecl 0x14680e248 <col:39, col:58> col:58 used net 'struct net_device *'
+  |-ParmVarDecl 0x146122628 <line:2:11, col:48> col:48 used cmd 'const struct ethtool_link_ksettings *'
+  `-CompoundStmt 0x146122e38 <line:3:1, line:6:1>
+    |-DeclStmt 0x146122c48 <line:4:2, col:39>
+    | |-RecordDecl 0x146122848 <col:2, col:9> col:9 struct usbnet
+    | `-VarDecl 0x1461229b8 <col:2, col:38> col:17 used dev 'struct usbnet *' cinit
+    |   `-ImplicitCastExpr 0x146122c18 <col:23, col:38> 'struct usbnet *' <IntegralToPointer>
+    |     `-CallExpr 0x146122bd8 <col:23, col:38> 'int'
+    |       |-ImplicitCastExpr 0x146122bc0 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x146122b50 <col:23> 'int ()' Function 0x146122a98 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x146122c00 <col:35> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x146122b70 <col:35> 'struct net_device *' lvalue ParmVar 0x14680e248 'net' 'struct net_device *'
+    `-ReturnStmt 0x146122e28 <line:5:2, col:54>
+      `-CallExpr 0x146122df8 <col:9, col:54> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x146122d40 <col:9> 'int ()' Function 0x146122c88 'mii_ethtool_set_link_ksettings' 'int ()'
+        |-UnaryOperator 0x146122dc0 <col:40, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x146122d98 <col:41, col:46> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x146122d60 <col:41> 'struct usbnet *' lvalue Var 0x1461229b8 'dev' 'struct usbnet *'
+        `-DeclRefExpr 0x146122dd8 <col:51> 'const struct ethtool_link_ksettings *' lvalue ParmVar 0x146122628 'cmd' 'const struct ethtool_link_ksettings *'

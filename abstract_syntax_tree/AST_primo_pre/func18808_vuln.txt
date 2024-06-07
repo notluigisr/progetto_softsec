@@ -1,0 +1,25 @@
+`-FunctionDecl 0x142128758  line:1:12 amd_gpio_remove 'int (struct platform_device *)' static
+  |-ParmVarDecl 0x142128648 <col:28, col:52> col:52 used pdev 'struct platform_device *'
+  `-CompoundStmt 0x1421411f8 <line:2:1, line:11:1>
+    |-DeclStmt 0x142140c38 <line:3:2, col:27>
+    | |-RecordDecl 0x142140a50 <col:2, col:9> col:9 struct amd_gpio
+    | `-VarDecl 0x142140bb8 <col:2, col:19> col:19 used gpio_dev 'struct amd_gpio *'
+    |-BinaryOperator 0x142140e80 <line:5:2, col:38> 'struct amd_gpio *' '='
+    | |-DeclRefExpr 0x142140c50 <col:2> 'struct amd_gpio *' lvalue Var 0x142140bb8 'gpio_dev' 'struct amd_gpio *'
+    | `-ImplicitCastExpr 0x142140e68 <col:13, col:38> 'struct amd_gpio *' <IntegralToPointer>
+    |   `-CallExpr 0x142140e28 <col:13, col:38> 'int'
+    |     |-ImplicitCastExpr 0x142140e10 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142140da0 <col:13> 'int ()' Function 0x142140ce8 'platform_get_drvdata' 'int ()'
+    |     `-ImplicitCastExpr 0x142140e50 <col:34> 'struct platform_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142140dc0 <col:34> 'struct platform_device *' lvalue ParmVar 0x142128648 'pdev' 'struct platform_device *'
+    |-CallExpr 0x142141018 <line:7:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142140f80 <col:2> 'int ()' Function 0x142140ec8 'gpiochip_remove' 'int ()'
+    | `-UnaryOperator 0x142141000 <col:18, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x142140fd8 <col:19, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x142140fa0 <col:19> 'struct amd_gpio *' lvalue Var 0x142140bb8 'gpio_dev' 'struct amd_gpio *'
+    |-CallExpr 0x1421411a0 <line:8:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142141120 <col:2> 'int ()' Function 0x142141068 'pinctrl_unregister' 'int ()'
+    | `-RecoveryExpr 0x142141178 <col:21, col:31> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x142141140 <col:21> 'struct amd_gpio *' lvalue Var 0x142140bb8 'gpio_dev' 'struct amd_gpio *'
+    `-ReturnStmt 0x1421411e8 <line:10:2, col:9>
+      `-IntegerLiteral 0x1421411c8 <col:9> 'int' 0

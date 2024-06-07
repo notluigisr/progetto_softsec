@@ -1,0 +1,24 @@
+`-FunctionDecl 0x134026740  line:1:13 drm_mode_object_put 'void (struct drm_device *, struct drm_mode_object *)' static
+  |-ParmVarDecl 0x13400e248 <col:33, col:52> col:52 used dev 'struct drm_device *'
+  |-ParmVarDecl 0x134026628 <line:2:5, col:29> col:29 used object 'struct drm_mode_object *'
+  `-CompoundStmt 0x134026eb0 <line:3:1, line:7:1>
+    |-CallExpr 0x134026a50 <line:4:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x134026970 <col:2> 'int ()' Function 0x1340268b8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x134026a38 <col:13, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x1340269f0 <col:14, col:31> '<dependent type>' contains-errors lvalue .idr_mutex
+    |     `-RecoveryExpr 0x1340269c8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x134026990 <col:14> 'struct drm_device *' lvalue ParmVar 0x13400e248 'dev' 'struct drm_device *'
+    |-CallExpr 0x134026c98 <line:5:2, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x134026b58 <col:2> 'int ()' Function 0x134026aa0 'idr_remove' 'int ()'
+    | |-UnaryOperator 0x134026c20 <col:13, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x134026bd8 <col:14, col:31> '<dependent type>' contains-errors lvalue .crtc_idr
+    | |   `-RecoveryExpr 0x134026bb0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x134026b78 <col:14> 'struct drm_device *' lvalue ParmVar 0x13400e248 'dev' 'struct drm_device *'
+    | `-RecoveryExpr 0x134026c70 <col:41, col:49> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x134026c38 <col:41> 'struct drm_mode_object *' lvalue ParmVar 0x134026628 'object' 'struct drm_mode_object *'
+    `-CallExpr 0x134026e88 <line:6:2, col:42> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x134026da8 <col:2> 'int ()' Function 0x134026cf0 'mutex_unlock' 'int ()'
+      `-UnaryOperator 0x134026e70 <col:15, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x134026e28 <col:16, col:33> '<dependent type>' contains-errors lvalue .idr_mutex
+          `-RecoveryExpr 0x134026e00 <col:16, col:21> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x134026dc8 <col:16> 'struct drm_device *' lvalue ParmVar 0x13400e248 'dev' 'struct drm_device *'

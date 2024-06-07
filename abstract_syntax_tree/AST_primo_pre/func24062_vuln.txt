@@ -1,0 +1,120 @@
+`-FunctionDecl 0x1500274d8  line:1:12 invalid kill_something_info 'int (int, struct siginfo *, int)' static
+  |-ParmVarDecl 0x15000dcd8 <col:32, col:36> col:36 used sig 'int'
+  |-ParmVarDecl 0x15000e2c8 <col:41, col:57> col:57 used info 'struct siginfo *'
+  |-ParmVarDecl 0x15000e360 <col:63, col:69> col:69 invalid pid 'int'
+  `-CompoundStmt 0x15002aad0 <line:2:1, line:34:1>
+    |-DeclStmt 0x150027618 <line:3:2, col:9>
+    | `-VarDecl 0x1500275b0 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x150027d28 <line:5:2, line:10:2>
+    | |-BinaryOperator 0x150027670 <line:5:6, col:12> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x150027630 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x150027650 <col:12> 'int' 0
+    | `-CompoundStmt 0x150027cf8 <col:15, line:10:2>
+    |   |-CallExpr 0x150027858 <line:6:3, col:17> 'int'
+    |   | `-ImplicitCastExpr 0x150027840 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x1500277f0 <col:3> 'int ()' Function 0x150027738 'rcu_read_lock' 'int ()'
+    |   |-BinaryOperator 0x150027b58 <line:7:3, col:48> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x150027878 <col:3> 'int' lvalue Var 0x1500275b0 'ret' 'int'
+    |   | `-CallExpr 0x150027b20 <col:9, col:48> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x150027978 <col:9> 'int ()' Function 0x1500278c0 'kill_pid_info' 'int ()'
+    |   |   |-DeclRefExpr 0x150027998 <col:23> 'int' lvalue ParmVar 0x15000dcd8 'sig' 'int'
+    |   |   |-DeclRefExpr 0x1500279b8 <col:28> 'struct siginfo *' lvalue ParmVar 0x15000e2c8 'info' 'struct siginfo *'
+    |   |   `-CallExpr 0x150027af8 <col:34, col:47> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x150027ab8 <col:34> 'int ()' Function 0x150027a00 'find_vpid' 'int ()'
+    |   |     `-RecoveryExpr 0x150027ad8 <col:44> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x150027c90 <line:8:3, col:19> 'int'
+    |   | `-ImplicitCastExpr 0x150027c78 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x150027c58 <col:3> 'int ()' Function 0x150027ba0 'rcu_read_unlock' 'int ()'
+    |   `-ReturnStmt 0x150027ce8 <line:9:3, col:10>
+    |     `-ImplicitCastExpr 0x150027cd0 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x150027cb0 <col:10> 'int' lvalue Var 0x1500275b0 'ret' 'int'
+    |-CallExpr 0x150027ed8 <line:12:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150027e28 <col:2> 'int ()' Function 0x150027d70 'read_lock' 'int ()'
+    | `-UnaryOperator 0x150027ec0 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150027ea0 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15002a958 <line:13:2, line:30:2> has_else
+    | |-BinaryOperator 0x150027f58 <line:13:6, col:14> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x150027f00 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x150027f40 <col:13, col:14> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x150027f20 <col:14> 'int' 1
+    | |-CompoundStmt 0x1500298f8 <col:17, line:16:2>
+    | | `-BinaryOperator 0x1500298d8 <line:14:3, line:15:47> 'int' contains-errors '='
+    | |   |-DeclRefExpr 0x150027f78 <line:14:3> 'int' lvalue Var 0x1500275b0 'ret' 'int'
+    | |   `-CallExpr 0x1500298a0 <col:9, line:15:47> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x150028078 <line:14:9> 'int ()' Function 0x150027fc0 '__kill_pgrp_info' 'int ()'
+    | |     |-DeclRefExpr 0x150028098 <col:26> 'int' lvalue ParmVar 0x15000dcd8 'sig' 'int'
+    | |     |-DeclRefExpr 0x1500280b8 <col:31> 'struct siginfo *' lvalue ParmVar 0x15000e2c8 'info' 'struct siginfo *'
+    | |     `-ConditionalOperator 0x150029870 <line:15:5, col:46> '<dependent type>' contains-errors
+    | |       |-RecoveryExpr 0x1500280d8 <col:5> '<dependent type>' contains-errors lvalue
+    | |       |-CallExpr 0x150029800 <col:11, col:25> '<dependent type>' contains-errors
+    | |       | |-DeclRefExpr 0x1500280f8 <col:11> 'int ()' Function 0x150027a00 'find_vpid' 'int ()'
+    | |       | `-UnaryOperator 0x1500283c8 <col:21, col:22> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |       |   `-ImplicitCastExpr 0x1500283b0 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |       |     `-RecoveryExpr 0x150028118 <col:22> '<dependent type>' contains-errors lvalue
+    | |       `-CallExpr 0x150029848 <col:29, col:46> '<dependent type>' contains-errors
+    | |         |-DeclRefExpr 0x150028270 <col:29> 'int ()' Function 0x1500281b8 'task_pgrp' 'int ()'
+    | |         `-RecoveryExpr 0x150029828 <col:39> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15002a920 <line:16:9, line:30:2>
+    |   |-DeclStmt 0x150029a68 <line:17:3, col:28>
+    |   | |-VarDecl 0x150029928 <col:3, col:16> col:7 used retval 'int' cinit
+    |   | | `-IntegerLiteral 0x150029990 <col:16> 'int' 0
+    |   | `-VarDecl 0x1500299c8 <col:3, col:27> col:19 used count 'int' cinit
+    |   |   `-IntegerLiteral 0x150029a30 <col:27> 'int' 0
+    |   |-DeclStmt 0x150029c68 <line:18:3, col:25>
+    |   | |-RecordDecl 0x150029a80 <col:3, col:10> col:10 struct task_struct
+    |   | `-VarDecl 0x150029be8 <col:3, col:24> col:24 used p 'struct task_struct *'
+    |   |-CallExpr 0x150029db8 <line:20:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x150029da0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x150029d60 <col:3> 'int ()' Function 0x150029ca8 'for_each_process' 'int ()'
+    |   | `-ImplicitCastExpr 0x150029de0 <col:20> 'struct task_struct *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x150029d80 <col:20> 'struct task_struct *' lvalue Var 0x150029be8 'p' 'struct task_struct *'
+    |   |-CompoundStmt 0x15002a768 <col:23, line:28:3>
+    |   | `-IfStmt 0x15002a748 <line:21:4, line:27:4>
+    |   |   |-BinaryOperator 0x15002a2a8 <line:21:8, line:22:35> 'int' contains-errors '&&'
+    |   |   | |-BinaryOperator 0x15002a220 <line:21:8, col:26> 'int' '>'
+    |   |   | | |-CallExpr 0x15002a1e0 <col:8, col:22> 'int'
+    |   |   | | | |-ImplicitCastExpr 0x15002a1c8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | | | `-DeclRefExpr 0x150029ed8 <col:8> 'int ()' Function 0x150029e20 'task_pid_vnr' 'int ()'
+    |   |   | | | `-ImplicitCastExpr 0x15002a208 <col:21> 'struct task_struct *' <LValueToRValue>
+    |   |   | | |   `-DeclRefExpr 0x150029ef8 <col:21> 'struct task_struct *' lvalue Var 0x150029be8 'p' 'struct task_struct *'
+    |   |   | | `-IntegerLiteral 0x150029f70 <col:26> 'int' 1
+    |   |   | `-UnaryOperator 0x15002a290 <line:22:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |   |   `-CallExpr 0x15002a260 <col:7, col:35> '<dependent type>' contains-errors
+    |   |   |     |-DeclRefExpr 0x15002a090 <col:7> 'int ()' Function 0x150029fd8 'same_thread_group' 'int ()'
+    |   |   |     |-DeclRefExpr 0x15002a0b0 <col:25> 'struct task_struct *' lvalue Var 0x150029be8 'p' 'struct task_struct *'
+    |   |   |     `-RecoveryExpr 0x15002a240 <col:28> '<dependent type>' contains-errors lvalue
+    |   |   `-CompoundStmt 0x15002a720 <col:38, line:27:4>
+    |   |     |-DeclStmt 0x15002a540 <line:23:5, col:48>
+    |   |     | `-VarDecl 0x15002a2e0 <col:5, col:47> col:9 used err 'int' cinit
+    |   |     |   `-CallExpr 0x15002a4c0 <col:15, col:47> 'int'
+    |   |     |     |-ImplicitCastExpr 0x15002a4a8 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |   |     |     | `-DeclRefExpr 0x15002a428 <col:15> 'int ()' Function 0x15002a370 'group_send_sig_info' 'int ()'
+    |   |     |     |-ImplicitCastExpr 0x15002a4f8 <col:35> 'int' <LValueToRValue>
+    |   |     |     | `-DeclRefExpr 0x15002a448 <col:35> 'int' lvalue ParmVar 0x15000dcd8 'sig' 'int'
+    |   |     |     |-ImplicitCastExpr 0x15002a510 <col:40> 'struct siginfo *' <LValueToRValue>
+    |   |     |     | `-DeclRefExpr 0x15002a468 <col:40> 'struct siginfo *' lvalue ParmVar 0x15000e2c8 'info' 'struct siginfo *'
+    |   |     |     `-ImplicitCastExpr 0x15002a528 <col:46> 'struct task_struct *' <LValueToRValue>
+    |   |     |       `-DeclRefExpr 0x15002a488 <col:46> 'struct task_struct *' lvalue Var 0x150029be8 'p' 'struct task_struct *'
+    |   |     |-UnaryOperator 0x15002a578 <line:24:5, col:7> 'int' prefix '++'
+    |   |     | `-DeclRefExpr 0x15002a558 <col:7> 'int' lvalue Var 0x1500299c8 'count' 'int'
+    |   |     `-IfStmt 0x15002a700 <line:25:5, line:26:15>
+    |   |       |-BinaryOperator 0x15002a668 <line:25:9, col:17> 'int' contains-errors '!='
+    |   |       | |-DeclRefExpr 0x15002a590 <col:9> 'int' lvalue Var 0x15002a2e0 'err' 'int'
+    |   |       | `-UnaryOperator 0x15002a650 <col:16, col:17> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |       |   `-ImplicitCastExpr 0x15002a638 <col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       |     `-RecoveryExpr 0x15002a618 <col:17> '<dependent type>' contains-errors lvalue
+    |   |       `-BinaryOperator 0x15002a6e0 <line:26:6, col:15> 'int' '='
+    |   |         |-DeclRefExpr 0x15002a688 <col:6> 'int' lvalue Var 0x150029928 'retval' 'int'
+    |   |         `-ImplicitCastExpr 0x15002a6c8 <col:15> 'int' <LValueToRValue>
+    |   |           `-DeclRefExpr 0x15002a6a8 <col:15> 'int' lvalue Var 0x15002a2e0 'err' 'int'
+    |   `-BinaryOperator 0x15002a900 <line:29:3, col:27> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x15002a780 <col:3> 'int' lvalue Var 0x1500275b0 'ret' 'int'
+    |     `-ConditionalOperator 0x15002a8d0 <col:9, col:27> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x15002a7a0 <col:9> 'int' lvalue Var 0x1500299c8 'count' 'int'
+    |       |-DeclRefExpr 0x15002a7c0 <col:17> 'int' lvalue Var 0x150029928 'retval' 'int'
+    |       `-UnaryOperator 0x15002a8b8 <col:26, col:27> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x15002a8a0 <col:27> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x15002a880 <col:27> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15002aac0 <line:33:2, col:9>
+      `-ImplicitCastExpr 0x15002aaa8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x15002aa88 <col:9> 'int' lvalue Var 0x1500275b0 'ret' 'int'

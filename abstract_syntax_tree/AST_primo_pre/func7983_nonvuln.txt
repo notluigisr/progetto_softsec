@@ -1,0 +1,40 @@
+`-FunctionDecl 0x15500dee8  line:1:9 invalid load_image_size 'int (const char *, void *, int)'
+  |-ParmVarDecl 0x15500dcf0 <col:25, col:37> col:37 used filename 'const char *'
+  |-ParmVarDecl 0x15500dd70 <col:47, col:53> col:53 used addr 'void *'
+  |-ParmVarDecl 0x15500ddf0 <col:59, col:66> col:66 invalid size 'int'
+  `-CompoundStmt 0x153813a30 <line:2:1, line:18:1>
+    |-DeclStmt 0x15500e028 <line:3:5, col:11>
+    | `-VarDecl 0x15500dfc0 <col:5, col:9> col:9 used fd 'int'
+    |-BinaryOperator 0x15500e330 <line:6:5, col:44> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15500e040 <col:5> 'int' lvalue Var 0x15500dfc0 'fd' 'int'
+    | `-CallExpr 0x15500e300 <col:10, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15500e1c0 <col:10> 'int ()' Function 0x15500e108 'open' 'int ()'
+    |   |-DeclRefExpr 0x15500e1e0 <col:15> 'const char *' lvalue ParmVar 0x15500dcf0 'filename' 'const char *'
+    |   `-BinaryOperator 0x15500e2e0 <col:25, col:36> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x15500e2a0 <col:25> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x15500e2c0 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x153813428 <line:7:5, line:9:5>
+    | |-BinaryOperator 0x15500e3a8 <line:7:9, col:14> 'int' '<'
+    | | |-ImplicitCastExpr 0x15500e390 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x15500e350 <col:9> 'int' lvalue Var 0x15500dfc0 'fd' 'int'
+    | | `-IntegerLiteral 0x15500e370 <col:14> 'int' 0
+    | `-CompoundStmt 0x153813410 <col:17, line:9:5>
+    |   `-ReturnStmt 0x153813400 <line:8:9, col:17>
+    |     `-UnaryOperator 0x15500e3e8 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x15500e3c8 <col:17> 'int' 1
+    |-WhileStmt 0x1538136f0 <line:11:5, line:13:5>
+    | |-RecoveryExpr 0x1538136a8 <line:11:12, col:55> '_Bool' contains-errors
+    | `-CompoundStmt 0x1538136e0 <col:58, line:13:5>
+    |-CallExpr 0x153813878 <line:15:5, col:13> 'int'
+    | |-ImplicitCastExpr 0x153813860 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1538137f0 <col:5> 'int ()' Function 0x153813738 'close' 'int ()'
+    | `-ImplicitCastExpr 0x1538138a0 <col:11> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x153813810 <col:11> 'int' lvalue Var 0x15500dfc0 'fd' 'int'
+    `-ReturnStmt 0x153813a20 <line:17:5, col:31>
+      `-ConditionalOperator 0x1538139f0 <col:12, col:31> '<dependent type>' contains-errors
+        |-BinaryOperator 0x1538139b0 <col:12, col:22> 'int' contains-errors '<'
+        | |-RecoveryExpr 0x153813990 <col:12> '<dependent type>' contains-errors lvalue
+        | `-IntegerLiteral 0x1538138d0 <col:22> 'int' 0
+        |-UnaryOperator 0x153813930 <col:26, col:27> 'int' prefix '-'
+        | `-IntegerLiteral 0x153813910 <col:27> 'int' 1
+        `-RecoveryExpr 0x1538139d0 <col:31> '<dependent type>' contains-errors lvalue

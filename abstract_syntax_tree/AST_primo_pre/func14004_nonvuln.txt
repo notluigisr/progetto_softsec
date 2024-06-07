@@ -1,0 +1,113 @@
+`-FunctionDecl 0x1229419f8  line:1:24 invalid cfg80211_prepare_cqm 'struct sk_buff *(struct net_device *, const char *, int)' static
+  |-ParmVarDecl 0x1229286e8 <col:45, col:64> col:64 used dev 'struct net_device *'
+  |-ParmVarDecl 0x122928768 <line:2:10, col:22> col:22 used mac 'const char *'
+  |-ParmVarDecl 0x122941800 <col:27, col:33> col:33 invalid gfp 'int'
+  `-CompoundStmt 0x122945820 <line:3:1, line:37:1>
+    |-DeclStmt 0x122941d08 <line:4:2, col:48>
+    | |-RecordDecl 0x122941ab8 <col:2, col:9> col:9 struct wireless_dev
+    | `-VarDecl 0x122941c28 <col:2, col:35> col:23 used wdev 'struct wireless_dev *' cinit
+    |   `-RecoveryExpr 0x122941cc8 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122941c90 <col:30> 'struct net_device *' lvalue ParmVar 0x1229286e8 'dev' 'struct net_device *'
+    |-DeclStmt 0x122942110 <line:5:2, col:70>
+    | |-RecordDecl 0x122941d20 <col:2, col:9> col:9 struct cfg80211_registered_device
+    | `-VarDecl 0x122941e88 <col:2, col:69> col:37 used rdev 'struct cfg80211_registered_device *' cinit
+    |   `-CallExpr 0x1229420d0 <col:44, col:69> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122942050 <col:44> 'int ()' Function 0x122941f98 'wiphy_to_rdev' 'int ()'
+    |     `-RecoveryExpr 0x1229420a8 <col:58, col:64> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x122942070 <col:58> 'struct wireless_dev *' contains-errors lvalue Var 0x122941c28 'wdev' 'struct wireless_dev *'
+    |-DeclStmt 0x1229423d8 <line:6:2, col:58>
+    | `-VarDecl 0x1229421b8 <col:2, col:57> col:18 used msg 'struct sk_buff *' cinit
+    |   `-CallExpr 0x1229423a8 <col:24, col:57> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122942300 <col:24> 'int ()' Function 0x122942248 'nlmsg_new' 'int ()'
+    |     |-RecoveryExpr 0x122942388 <col:34> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x122942338 <col:54> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x1229424a0 <line:7:2, col:11>
+    | `-VarDecl 0x122942438 <col:2, col:9> col:9 used cb 'void **'
+    |-IfStmt 0x122942550 <line:9:2, line:10:10>
+    | |-UnaryOperator 0x1229424f0 <line:9:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1229424d8 <col:7> 'struct sk_buff *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1229424b8 <col:7> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    | `-ReturnStmt 0x122942540 <line:10:3, col:10>
+    |   `-RecoveryExpr 0x122942520 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122942630 <line:12:2, col:21> 'void **' contains-errors '='
+    | |-DeclRefExpr 0x122942570 <col:2> 'void **' lvalue Var 0x122942438 'cb' 'void **'
+    | `-CStyleCastExpr 0x122942608 <col:7, col:21> 'void **' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x1229425c8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122942590 <col:16> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    |-BinaryOperator 0x1229439b8 <line:14:2, col:61> 'void *' contains-errors '='
+    | |-ArraySubscriptExpr 0x122943930 <col:2, col:6> 'void *' lvalue
+    | | |-ImplicitCastExpr 0x122943918 <col:2> 'void **' <LValueToRValue>
+    | | | `-DeclRefExpr 0x122942650 <col:2> 'void **' lvalue Var 0x122942438 'cb' 'void **'
+    | | `-IntegerLiteral 0x122942670 <col:5> 'int' 0
+    | `-CallExpr 0x122943970 <col:10, col:61> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1229427a8 <col:10> 'int ()' Function 0x1229426f0 'nl80211hdr_put' 'int ()'
+    |   |-DeclRefExpr 0x1229427c8 <col:25> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    |   |-IntegerLiteral 0x122943800 <col:30> 'int' 0
+    |   |-IntegerLiteral 0x122943820 <col:33> 'int' 0
+    |   |-IntegerLiteral 0x122943840 <col:36> 'int' 0
+    |   `-RecoveryExpr 0x122943950 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122943c90 <line:15:2, line:18:2>
+    | |-UnaryOperator 0x122943a68 <line:15:6, col:11> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x122943a50 <col:7, col:11> 'void *' <LValueToRValue>
+    | |   `-ArraySubscriptExpr 0x122943a30 <col:7, col:11> 'void *' lvalue
+    | |     |-ImplicitCastExpr 0x122943a18 <col:7> 'void **' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x1229439d8 <col:7> 'void **' lvalue Var 0x122942438 'cb' 'void **'
+    | |     `-IntegerLiteral 0x1229439f8 <col:10> 'int' 0
+    | `-CompoundStmt 0x122943c70 <col:14, line:18:2>
+    |   |-CallExpr 0x122943be8 <line:16:3, col:17> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x122943bd0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x122943b60 <col:3> 'int ()' Function 0x122943aa8 'nlmsg_free' 'int ()'
+    |   | `-ImplicitCastExpr 0x122943c10 <col:14> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x122943b80 <col:14> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    |   `-ReturnStmt 0x122943c60 <line:17:3, col:10>
+    |     `-RecoveryExpr 0x122943c40 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1229440c8 <line:20:2, line:22:8>
+    | |-BinaryOperator 0x122944040 <line:20:6, line:21:57> 'int' contains-errors '||'
+    | | |-CallExpr 0x122943fb0 <line:20:6, col:58> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x122943d90 <col:6> 'int ()' Function 0x122943cd8 'nla_put_u32' 'int ()'
+    | | | |-DeclRefExpr 0x122943db0 <col:18> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    | | | |-RecoveryExpr 0x122943f90 <col:23> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x122943e20 <col:43, col:49> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x122943de8 <col:43> 'struct cfg80211_registered_device *' contains-errors lvalue Var 0x122941e88 'rdev' 'struct cfg80211_registered_device *'
+    | | `-CallExpr 0x122944008 <line:21:6, col:57> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x122943e80 <col:6> 'int ()' Function 0x122943cd8 'nla_put_u32' 'int ()'
+    | |   |-DeclRefExpr 0x122943ea0 <col:18> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    | |   |-RecoveryExpr 0x122943fe8 <col:23> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x122943f10 <col:45, col:50> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x122943ed8 <col:45> 'struct net_device *' lvalue ParmVar 0x1229286e8 'dev' 'struct net_device *'
+    | `-GotoStmt 0x1229440b0 <line:22:3, col:8> 'nla_put_failure' 0x122944060
+    |-IfStmt 0x122944390 <line:24:2, line:25:8>
+    | |-BinaryOperator 0x122944358 <line:24:6, col:57> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x1229440e8 <col:6> 'const char *' lvalue ParmVar 0x122928768 'mac' 'const char *'
+    | | `-CallExpr 0x122944318 <col:13, col:57> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1229441e8 <col:13> 'int ()' Function 0x122944130 'nla_put' 'int ()'
+    | |   |-DeclRefExpr 0x122944208 <col:21> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    | |   |-RecoveryExpr 0x1229442d8 <col:26> '<dependent type>' contains-errors lvalue
+    | |   |-RecoveryExpr 0x1229442f8 <col:44> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x122944258 <col:54> 'const char *' lvalue ParmVar 0x122928768 'mac' 'const char *'
+    | `-GotoStmt 0x122944378 <line:25:3, col:8> 'nla_put_failure' 0x122944060
+    |-IfStmt 0x122944608 <line:28:2, line:29:8>
+    | |-UnaryOperator 0x1229445d8 <line:28:6, col:11> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1229445c0 <col:7, col:11> 'void *' <LValueToRValue>
+    | |   `-ArraySubscriptExpr 0x1229445a0 <col:7, col:11> 'void *' lvalue
+    | |     |-ImplicitCastExpr 0x122944588 <col:7> 'void **' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x122944548 <col:7> 'void **' lvalue Var 0x122942438 'cb' 'void **'
+    | |     `-IntegerLiteral 0x122944568 <col:10> 'int' 1
+    | `-GotoStmt 0x1229445f0 <line:29:3, col:8> 'nla_put_failure' 0x122944060
+    |-BinaryOperator 0x1229446f0 <line:31:2, col:10> 'void *' contains-errors '='
+    | |-ArraySubscriptExpr 0x122944680 <col:2, col:6> 'void *' lvalue
+    | | |-ImplicitCastExpr 0x122944668 <col:2> 'void **' <LValueToRValue>
+    | | | `-DeclRefExpr 0x122944628 <col:2> 'void **' lvalue Var 0x122942438 'cb' 'void **'
+    | | `-IntegerLiteral 0x122944648 <col:5> 'int' 2
+    | `-ImplicitCastExpr 0x1229446d8 <col:10> 'void *' contains-errors <BitCast>
+    |   `-ImplicitCastExpr 0x1229446c0 <col:10> 'struct cfg80211_registered_device *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x1229446a0 <col:10> 'struct cfg80211_registered_device *' contains-errors lvalue Var 0x122941e88 'rdev' 'struct cfg80211_registered_device *'
+    |-ReturnStmt 0x122944748 <line:33:2, col:9>
+    | `-ImplicitCastExpr 0x122944730 <col:9> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x122944710 <col:9> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'
+    `-LabelStmt 0x122945800 <line:34:2, line:35:16> 'nla_put_failure'
+      `-CallExpr 0x1229447b0 <col:2, col:16> 'int' contains-errors
+        |-ImplicitCastExpr 0x122944798 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x122944758 <col:2> 'int ()' Function 0x122943aa8 'nlmsg_free' 'int ()'
+        `-ImplicitCastExpr 0x1229447d8 <col:13> 'struct sk_buff *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x122944778 <col:13> 'struct sk_buff *' contains-errors lvalue Var 0x1229421b8 'msg' 'struct sk_buff *'

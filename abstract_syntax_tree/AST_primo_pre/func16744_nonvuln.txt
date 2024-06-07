@@ -1,0 +1,32 @@
+`-FunctionDecl 0x14d046438  line:1:13 invalid xennet_handle_tx 'int (struct netfront_queue *, unsigned int *)' static
+  |-ParmVarDecl 0x14d02d268 <col:30, col:53> col:53 used queue 'struct netfront_queue *'
+  |-ParmVarDecl 0x14d02d318 <col:60, col:74> col:74 used eoi 'unsigned int *'
+  `-CompoundStmt 0x14d046e30 <line:2:1, line:14:1>
+    |-DeclStmt 0x14d046570 <line:3:2, col:21>
+    | `-VarDecl 0x14d046508 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x14d046980 <line:8:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d0468c8 <col:2> 'int ()' Function 0x14d046810 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x14d046948 <col:20, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14d046920 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14d0468e8 <col:21> 'struct netfront_queue *' lvalue ParmVar 0x14d02d268 'queue' 'struct netfront_queue *'
+    | `-DeclRefExpr 0x14d046960 <col:37> 'unsigned long' lvalue Var 0x14d046508 'flags' 'unsigned long'
+    |-IfStmt 0x14d046c00 <line:9:2, line:10:10>
+    | |-CallExpr 0x14d046b18 <line:9:6, col:28> 'int'
+    | | |-ImplicitCastExpr 0x14d046b00 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14d046a90 <col:6> 'int ()' Function 0x14d0469d8 'xennet_tx_buf_gc' 'int ()'
+    | | `-ImplicitCastExpr 0x14d046b40 <col:23> 'struct netfront_queue *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14d046ab0 <col:23> 'struct netfront_queue *' lvalue ParmVar 0x14d02d268 'queue' 'struct netfront_queue *'
+    | `-BinaryOperator 0x14d046be0 <line:10:3, col:10> 'unsigned int' '='
+    |   |-UnaryOperator 0x14d046b90 <col:3, col:4> 'unsigned int' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x14d046b78 <col:4> 'unsigned int *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14d046b58 <col:4> 'unsigned int *' lvalue ParmVar 0x14d02d318 'eoi' 'unsigned int *'
+    |   `-ImplicitCastExpr 0x14d046bc8 <col:10> 'unsigned int' <IntegralCast>
+    |     `-IntegerLiteral 0x14d046ba8 <col:10> 'int' 0
+    |-CallExpr 0x14d046db8 <line:11:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d046d00 <col:2> 'int ()' Function 0x14d046c48 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x14d046d80 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14d046d58 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14d046d20 <col:26> 'struct netfront_queue *' lvalue ParmVar 0x14d02d268 'queue' 'struct netfront_queue *'
+    | `-DeclRefExpr 0x14d046d98 <col:42> 'unsigned long' lvalue Var 0x14d046508 'flags' 'unsigned long'
+    `-ReturnStmt 0x14d046e20 <line:13:2, col:9>
+      `-RecoveryExpr 0x14d046e00 <col:9> '<dependent type>' contains-errors lvalue

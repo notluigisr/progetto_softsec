@@ -1,0 +1,3 @@
+void rfbDoNothingWithClient(rfbClientPtr cl)
+{
+}

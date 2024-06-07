@@ -1,0 +1,75 @@
+`-FunctionDecl 0x150940a00  line:2:12 rx_queue_add_kobject 'int (struct net_device *, int)' static
+  |-ParmVarDecl 0x150928648 <col:33, col:52> col:52 used dev 'struct net_device *'
+  |-ParmVarDecl 0x1509286c8 <col:57, col:61> col:61 used index 'int'
+  `-CompoundStmt 0x150943268 <line:3:1, line:25:15>
+    |-DeclStmt 0x150940d88 <line:4:2, col:50>
+    | |-RecordDecl 0x150940b00 <col:2, col:9> col:9 struct netdev_rx_queue
+    | `-VarDecl 0x150940c68 <col:2, col:45> col:26 used queue 'struct netdev_rx_queue *' cinit
+    |   `-BinaryOperator 0x150940d50 <col:34, col:45> '<dependent type>' contains-errors '+'
+    |     |-RecoveryExpr 0x150940d08 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x150940cd0 <col:34> 'struct net_device *' lvalue ParmVar 0x150928648 'dev' 'struct net_device *'
+    |     `-DeclRefExpr 0x150940d30 <col:45> 'int' lvalue ParmVar 0x1509286c8 'index' 'int'
+    |-DeclStmt 0x150941000 <line:5:2, col:37>
+    | |-RecordDecl 0x150940da0 <col:2, col:9> col:9 struct kobject
+    | `-VarDecl 0x150940f08 <col:2, col:33> col:18 used kobj 'struct kobject *' cinit
+    |   `-UnaryOperator 0x150940fd0 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x150940fa8 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x150940f70 <col:26> 'struct netdev_rx_queue *' contains-errors lvalue Var 0x150940c68 'queue' 'struct netdev_rx_queue *'
+    |-DeclStmt 0x1509410b8 <line:6:2, col:15>
+    | `-VarDecl 0x150941030 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x150941098 <col:14> 'int' 0
+    |-BinaryOperator 0x150941190 <line:8:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x150941108 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1509410d0 <col:2> 'struct kobject *' contains-errors lvalue Var 0x150940f08 'kobj' 'struct kobject *'
+    | `-RecoveryExpr 0x150941168 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150941130 <col:15> 'struct net_device *' lvalue ParmVar 0x150928648 'dev' 'struct net_device *'
+    |-BinaryOperator 0x150941518 <line:9:2, line:10:22> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1509411b0 <line:9:2> 'int' lvalue Var 0x150941030 'error' 'int'
+    | `-CallExpr 0x1509414d0 <col:10, line:10:22> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150941300 <line:9:10> 'int ()' Function 0x150941248 'kobject_init_and_add' 'int ()'
+    |   |-DeclRefExpr 0x150941320 <col:31> 'struct kobject *' contains-errors lvalue Var 0x150940f08 'kobj' 'struct kobject *'
+    |   |-UnaryOperator 0x150941498 <col:37, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x150941478 <col:38> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x1509414b0 <col:54> '<dependent type>' contains-errors lvalue
+    |   |-StringLiteral 0x1509413d0 <line:10:10> 'char[4]' lvalue "STR"
+    |   `-DeclRefExpr 0x1509413f0 <col:17> 'int' lvalue ParmVar 0x1509286c8 'index' 'int'
+    |-IfStmt 0x1509415b8 <line:11:2, line:12:10>
+    | |-ImplicitCastExpr 0x150941558 <line:11:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x150941538 <col:6> 'int' lvalue Var 0x150941030 'error' 'int'
+    | `-ReturnStmt 0x1509415a8 <line:12:3, col:10>
+    |   `-ImplicitCastExpr 0x150941590 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x150941570 <col:10> 'int' lvalue Var 0x150941030 'error' 'int'
+    |-IfStmt 0x150942ec0 <line:14:2, line:20:2>
+    | |-RecoveryExpr 0x150941610 <line:14:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1509415d8 <col:6> 'struct net_device *' lvalue ParmVar 0x150928648 'dev' 'struct net_device *'
+    | `-CompoundStmt 0x150942ea0 <col:33, line:20:2>
+    |   |-BinaryOperator 0x150941808 <line:15:3, col:61> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x150941638 <col:3> 'int' lvalue Var 0x150941030 'error' 'int'
+    |   | `-CallExpr 0x1509417d8 <col:11, col:61> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x150941738 <col:11> 'int ()' Function 0x150941680 'sysfs_create_group' 'int ()'
+    |   |   |-DeclRefExpr 0x150941758 <col:30> 'struct kobject *' contains-errors lvalue Var 0x150940f08 'kobj' 'struct kobject *'
+    |   |   `-RecoveryExpr 0x1509417b0 <col:36, col:41> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x150941778 <col:36> 'struct net_device *' lvalue ParmVar 0x150928648 'dev' 'struct net_device *'
+    |   `-IfStmt 0x150942e80 <line:16:3, line:19:3>
+    |     |-ImplicitCastExpr 0x150941848 <line:16:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x150941828 <col:7> 'int' lvalue Var 0x150941030 'error' 'int'
+    |     `-CompoundStmt 0x150942e60 <col:14, line:19:3>
+    |       |-CallExpr 0x1509419c8 <line:17:4, col:20> 'int' contains-errors
+    |       | |-ImplicitCastExpr 0x1509419b0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x150941940 <col:4> 'int ()' Function 0x150941888 'kobject_put' 'int ()'
+    |       | `-ImplicitCastExpr 0x150942e00 <col:16> 'struct kobject *' contains-errors <LValueToRValue>
+    |       |   `-DeclRefExpr 0x150941960 <col:16> 'struct kobject *' contains-errors lvalue Var 0x150940f08 'kobj' 'struct kobject *'
+    |       `-ReturnStmt 0x150942e50 <line:18:4, col:11>
+    |         `-ImplicitCastExpr 0x150942e38 <col:11> 'int' <LValueToRValue>
+    |           `-DeclRefExpr 0x150942e18 <col:11> 'int' lvalue Var 0x150941030 'error' 'int'
+    |-CallExpr 0x150943068 <line:22:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150942fc0 <col:2> 'int ()' Function 0x150942f08 'kobject_uevent' 'int ()'
+    | |-DeclRefExpr 0x150942fe0 <col:17> 'struct kobject *' contains-errors lvalue Var 0x150940f08 'kobj' 'struct kobject *'
+    | `-RecoveryExpr 0x150943048 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1509431f8 <line:23:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150943178 <col:2> 'int ()' Function 0x1509430c0 'dev_hold' 'int ()'
+    | `-RecoveryExpr 0x1509431d0 <col:11, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150943198 <col:11> 'struct netdev_rx_queue *' contains-errors lvalue Var 0x150940c68 'queue' 'struct netdev_rx_queue *'
+    `-ReturnStmt 0x150943258 <line:25:2, col:9>
+      `-ImplicitCastExpr 0x150943240 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x150943220 <col:9> 'int' lvalue Var 0x150941030 'error' 'int'

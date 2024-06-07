@@ -1,0 +1,1 @@
+  int  store_field(Field *from) { return from->save_in_field(this); }

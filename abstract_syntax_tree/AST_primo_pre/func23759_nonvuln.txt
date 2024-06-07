@@ -1,0 +1,21 @@
+`-FunctionDecl 0x12d128288  line:1:16 invalid find_thread_callback 'int (int *, int *)' static
+  |-ParmVarDecl 0x12d128128 <col:37, col:42> col:42 invalid thd 'int *'
+  |-ParmVarDecl 0x12d1281a8 <col:47, col:73> col:73 referenced invalid arg 'int *'
+  `-CompoundStmt 0x12d808850 <line:2:1, line:10:1>
+    |-IfStmt 0x12d808800 <line:3:3, line:8:3>
+    | |-RecoveryExpr 0x12d128490 <line:3:7, col:76> '_Bool' contains-errors
+    | `-CompoundStmt 0x12d1287d8 <line:4:3, line:8:3>
+    |   |-CallExpr 0x12d1286b0 <line:5:5, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12d128610 <col:5> 'int ()' Function 0x12d128558 'mysql_mutex_lock' 'int ()'
+    |   | `-UnaryOperator 0x12d128698 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x12d128650 <col:23, col:28> '<dependent type>' contains-errors lvalue ->LOCK_thd_kill
+    |   |     `-RecoveryExpr 0x12d128630 <col:23> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x12d128788 <line:6:5, col:15> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x12d128720 <col:5, col:10> '<dependent type>' contains-errors lvalue ->thd
+    |   | | `-RecoveryExpr 0x12d1286f8 <col:5> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x12d1286d8 <col:5> 'int *' lvalue ParmVar 0x12d1281a8 'arg' 'int *'
+    |   | `-RecoveryExpr 0x12d128768 <col:15> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x12d1287c8 <line:7:5, col:12>
+    |     `-IntegerLiteral 0x12d1287a8 <col:12> 'int' 1
+    `-ReturnStmt 0x12d808840 <line:9:3, col:10>
+      `-IntegerLiteral 0x12d808820 <col:10> 'int' 0

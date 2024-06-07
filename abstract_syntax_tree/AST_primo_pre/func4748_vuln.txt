@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12b026740  line:1:13 ucma_move_events 'void (struct ucma_context *, struct ucma_file *)' static
+  |-ParmVarDecl 0x12b00e248 <col:30, col:51> col:51 used ctx 'struct ucma_context *'
+  |-ParmVarDecl 0x12b026628 <col:56, col:74> col:74 used file 'struct ucma_file *'
+  `-CompoundStmt 0x12b0270b8 <line:2:1, line:8:1>
+    |-DeclStmt 0x12b026ac0 <line:3:2, col:33>
+    | |-RecordDecl 0x12b026840 <col:2, col:9> col:9 struct ucma_event
+    | |-VarDecl 0x12b0269a8 <col:2, col:21> col:21 used uevent 'struct ucma_event *'
+    | `-VarDecl 0x12b026a38 <col:2, col:30> col:30 used tmp 'struct ucma_event *'
+    |-CallExpr 0x12b026d98 <line:5:2, col:68> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b026c00 <col:2> 'int ()' Function 0x12b026b48 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x12b026c20 <col:27> 'struct ucma_event *' lvalue Var 0x12b0269a8 'uevent' 'struct ucma_event *'
+    | |-DeclRefExpr 0x12b026c40 <col:35> 'struct ucma_event *' lvalue Var 0x12b026a38 'tmp' 'struct ucma_event *'
+    | |-UnaryOperator 0x12b026d08 <col:40, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x12b026cc0 <col:41, col:52> '<dependent type>' contains-errors lvalue ->event_list
+    | |   `-RecoveryExpr 0x12b026c98 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12b026c60 <col:41> 'struct ucma_context *' lvalue ParmVar 0x12b00e248 'ctx' 'struct ucma_context *'
+    | `-RecoveryExpr 0x12b026d78 <col:64> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x12b027098 <line:6:3, line:7:51>
+      |-BinaryOperator 0x12b026e58 <line:6:7, col:22> 'int' contains-errors '=='
+      | |-RecoveryExpr 0x12b026e10 <col:7, col:15> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x12b026dd8 <col:7> 'struct ucma_event *' lvalue Var 0x12b0269a8 'uevent' 'struct ucma_event *'
+      | `-DeclRefExpr 0x12b026e38 <col:22> 'struct ucma_context *' lvalue ParmVar 0x12b00e248 'ctx' 'struct ucma_context *'
+      `-CallExpr 0x12b027068 <line:7:4, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12b026f58 <col:4> 'int ()' Function 0x12b026ea0 'list_move_tail' 'int ()'
+        |-UnaryOperator 0x12b026fd8 <col:19, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x12b026fb0 <col:20, col:28> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x12b026f78 <col:20> 'struct ucma_event *' lvalue Var 0x12b0269a8 'uevent' 'struct ucma_event *'
+        `-UnaryOperator 0x12b027050 <col:34, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x12b027028 <col:35, col:41> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x12b026ff0 <col:35> 'struct ucma_file *' lvalue ParmVar 0x12b026628 'file' 'struct ucma_file *'

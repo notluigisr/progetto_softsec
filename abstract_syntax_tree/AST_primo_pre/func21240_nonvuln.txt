@@ -1,0 +1,34 @@
+`-FunctionDecl 0x11e9281c8  line:1:5 invalid node_random 'int (const int *)'
+  |-ParmVarDecl 0x11e9280f0 <col:17, col:35> col:35 invalid maskp 'const int *'
+  `-CompoundStmt 0x11e941bd0 <line:2:1, line:10:1>
+    |-DeclStmt 0x11e9283c8 <line:3:2, col:17>
+    | |-VarDecl 0x11e928290 <col:2, col:6> col:6 used w 'int'
+    | `-VarDecl 0x11e928310 <col:2, col:16> col:9 used bit 'int' cinit
+    |   `-UnaryOperator 0x11e928398 <col:15, col:16> 'int' prefix '-'
+    |     `-IntegerLiteral 0x11e928378 <col:16> 'int' 1
+    |-BinaryOperator 0x11e9285f8 <line:5:2, col:25> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11e9283e0 <col:2> 'int' lvalue Var 0x11e928290 'w' 'int'
+    | `-CallExpr 0x11e9285d0 <col:6, col:25> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e928560 <col:6> 'int ()' Function 0x11e9284a8 'nodes_weight' 'int ()'
+    |   `-UnaryOperator 0x11e9285b8 <col:19, col:20> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     `-ImplicitCastExpr 0x11e9285a0 <col:20> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11e928580 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11e941b68 <line:6:2, line:8:38>
+    | |-ImplicitCastExpr 0x11e928638 <line:6:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x11e928618 <col:6> 'int' lvalue Var 0x11e928290 'w' 'int'
+    | `-BinaryOperator 0x11e941b48 <line:7:3, line:8:38> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x11e928650 <line:7:3> 'int' lvalue Var 0x11e928310 'bit' 'int'
+    |   `-CallExpr 0x11e941b10 <col:9, line:8:38> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11e928750 <line:7:9> 'int ()' Function 0x11e928698 'bitmap_ord_to_pos' 'int ()'
+    |     |-CXXDependentScopeMemberExpr 0x11e928790 <col:27, col:34> '<dependent type>' contains-errors lvalue ->bits
+    |     | `-RecoveryExpr 0x11e928770 <col:27> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x11e941ad0 <line:8:4, col:23> 'int' '%'
+    |     | |-CallExpr 0x11e941a98 <col:4, col:19> 'int'
+    |     | | `-ImplicitCastExpr 0x11e941a80 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | |   `-DeclRefExpr 0x11e9418b8 <col:4> 'int ()' Function 0x11e941800 'get_random_int' 'int ()'
+    |     | `-ImplicitCastExpr 0x11e941ab8 <col:23> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x11e941948 <col:23> 'int' lvalue Var 0x11e928290 'w' 'int'
+    |     `-RecoveryExpr 0x11e941af0 <col:26> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x11e941bc0 <line:9:2, col:9>
+      `-ImplicitCastExpr 0x11e941ba8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x11e941b88 <col:9> 'int' lvalue Var 0x11e928310 'bit' 'int'

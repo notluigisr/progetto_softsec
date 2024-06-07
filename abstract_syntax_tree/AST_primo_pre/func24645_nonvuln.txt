@@ -1,0 +1,27 @@
+`-FunctionDecl 0x15d92a0d8  line:1:5 invalid netdev_rx_handler_register 'int (struct net_device *, int *, void *)'
+  |-ParmVarDecl 0x15d910e48 <col:32, col:51> col:51 used dev 'struct net_device *'
+  |-ParmVarDecl 0x15d910f18 <line:2:11, col:30> col:30 invalid rx_handler 'int *'
+  |-ParmVarDecl 0x15d910f98 <line:3:11, col:17> col:17 used rx_handler_data 'void *'
+  `-CompoundStmt 0x15d92a750 <line:4:1, line:14:1>
+    |-CallExpr 0x15d92a358 <line:5:2, col:14> 'int'
+    | `-ImplicitCastExpr 0x15d92a340 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x15d92a2f0 <col:2> 'int ()' Function 0x15d92a238 'ASSERT_RTNL' 'int ()'
+    |-IfStmt 0x15d92a480 <line:7:2, line:8:11>
+    | |-RecoveryExpr 0x15d92a3b0 <line:7:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15d92a378 <col:6> 'struct net_device *' lvalue ParmVar 0x15d910e48 'dev' 'struct net_device *'
+    | `-ReturnStmt 0x15d92a470 <line:8:3, col:11>
+    |   `-UnaryOperator 0x15d92a458 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15d92a440 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15d92a420 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15d92a620 <line:10:2, col:58> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15d92a580 <col:2> 'int ()' Function 0x15d92a4c8 'rcu_assign_pointer' 'int ()'
+    | |-RecoveryExpr 0x15d92a5d8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15d92a5a0 <col:21> 'struct net_device *' lvalue ParmVar 0x15d910e48 'dev' 'struct net_device *'
+    | `-DeclRefExpr 0x15d92a600 <col:43> 'void *' lvalue ParmVar 0x15d910f98 'rx_handler_data' 'void *'
+    |-CallExpr 0x15d92a6f0 <line:11:2, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15d92a650 <col:2> 'int ()' Function 0x15d92a4c8 'rcu_assign_pointer' 'int ()'
+    | |-RecoveryExpr 0x15d92a6a8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15d92a670 <col:21> 'struct net_device *' lvalue ParmVar 0x15d910e48 'dev' 'struct net_device *'
+    | `-RecoveryExpr 0x15d92a6d0 <col:38> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15d92a740 <line:13:2, col:9>
+      `-IntegerLiteral 0x15d92a720 <col:9> 'int' 0

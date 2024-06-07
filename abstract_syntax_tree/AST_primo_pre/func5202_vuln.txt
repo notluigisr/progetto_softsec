@@ -1,0 +1,65 @@
+`-FunctionDecl 0x13580de58  line:1:12 referenced invalid set_evtchn_to_irq 'int (int, unsigned int)' static
+  |-ParmVarDecl 0x13580dcf0 <col:30, col:44> col:44 invalid evtchn 'int'
+  |-ParmVarDecl 0x13580dd70 <col:52, col:65> col:65 used irq 'unsigned int'
+  `-CompoundStmt 0x136009b48 <line:2:1, line:26:1>
+    |-DeclStmt 0x13580df90 <line:3:2, col:14>
+    | `-VarDecl 0x13580df28 <col:2, col:11> col:11 used row 'unsigned int'
+    |-DeclStmt 0x13580e028 <line:4:2, col:14>
+    | `-VarDecl 0x13580dfc0 <col:2, col:11> col:11 used col 'unsigned int'
+    |-IfStmt 0x13580e310 <line:6:2, line:7:11>
+    | |-BinaryOperator 0x13580e248 <line:6:6, col:40> 'int' contains-errors '>='
+    | | |-RecoveryExpr 0x13580e040 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x13580e228 <col:16, col:40> 'int'
+    | |   `-ImplicitCastExpr 0x13580e210 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x13580e1c0 <col:16> 'int ()' Function 0x13580e108 'xen_evtchn_max_channels' 'int ()'
+    | `-ReturnStmt 0x13580e300 <line:7:3, col:11>
+    |   `-UnaryOperator 0x13580e2e8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13580e2d0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13580e2b0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x136009120 <line:9:2, col:25> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x13580e330 <col:2> 'unsigned int' lvalue Var 0x13580df28 'row' 'unsigned int'
+    | `-CallExpr 0x1360090f8 <col:8, col:25> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1360090b8 <col:8> 'int ()' Function 0x136009000 'EVTCHN_ROW' 'int ()'
+    |   `-RecoveryExpr 0x1360090d8 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1360092a8 <line:10:2, col:25> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x136009140 <col:2> 'unsigned int' lvalue Var 0x13580dfc0 'col' 'unsigned int'
+    | `-CallExpr 0x136009280 <col:8, col:25> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x136009240 <col:8> 'int ()' Function 0x136009188 'EVTCHN_COL' 'int ()'
+    |   `-RecoveryExpr 0x136009260 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x136009990 <line:12:2, line:22:2>
+    | |-RecoveryExpr 0x136009338 <line:12:6, col:28> '_Bool' contains-errors
+    | `-CompoundStmt 0x136009968 <col:34, line:22:2>
+    |   |-IfStmt 0x136009430 <line:14:3, line:15:11>
+    |   | |-BinaryOperator 0x1360093e0 <line:14:7, col:15> 'int' '=='
+    |   | | |-ImplicitCastExpr 0x1360093b0 <col:7> 'unsigned int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x136009358 <col:7> 'unsigned int' lvalue ParmVar 0x13580dd70 'irq' 'unsigned int'
+    |   | | `-ImplicitCastExpr 0x1360093c8 <col:14, col:15> 'unsigned int' <IntegralCast>
+    |   | |   `-UnaryOperator 0x136009398 <col:14, col:15> 'int' prefix '-'
+    |   | |     `-IntegerLiteral 0x136009378 <col:15> 'int' 1
+    |   | `-ReturnStmt 0x136009420 <line:15:4, col:11>
+    |   |   `-IntegerLiteral 0x136009400 <col:11> 'int' 0
+    |   |-IfStmt 0x1360097d0 <line:18:3, line:19:12>
+    |   | |-RecoveryExpr 0x136009708 <line:18:7, col:29> '_Bool' contains-errors
+    |   | `-ReturnStmt 0x1360097c0 <line:19:4, col:12>
+    |   |   `-UnaryOperator 0x1360097a8 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |     `-ImplicitCastExpr 0x136009790 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x136009770 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x136009928 <line:21:3, col:30> 'int'
+    |     |-ImplicitCastExpr 0x136009910 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1360098d0 <col:3> 'int ()' Function 0x136009818 'clear_evtchn_to_irq_row' 'int ()'
+    |     `-ImplicitCastExpr 0x136009950 <col:27> 'unsigned int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1360098f0 <col:27> 'unsigned int' lvalue Var 0x13580df28 'row' 'unsigned int'
+    |-BinaryOperator 0x136009af8 <line:24:2, col:28> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x136009ab8 <col:2, col:24> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x136009a88 <col:2, col:19> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-ArraySubscriptExpr 0x136009a48 <col:2, col:19> '<dependent type>' contains-errors lvalue
+    | | |   |-ImplicitCastExpr 0x136009a18 <col:2> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   | `-RecoveryExpr 0x1360099d0 <col:2> '<dependent type>' contains-errors lvalue
+    | | |   |   `-DeclRefExpr 0x1360099b0 <col:2> 'int (int, unsigned int)' Function 0x13580de58 'set_evtchn_to_irq' 'int (int, unsigned int)'
+    | | |   `-ImplicitCastExpr 0x136009a30 <col:16> 'unsigned int' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x1360099f8 <col:16> 'unsigned int' lvalue Var 0x13580df28 'row' 'unsigned int'
+    | | `-ImplicitCastExpr 0x136009aa0 <col:21> 'unsigned int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x136009a68 <col:21> 'unsigned int' lvalue Var 0x13580dfc0 'col' 'unsigned int'
+    | `-DeclRefExpr 0x136009ad8 <col:28> 'unsigned int' lvalue ParmVar 0x13580dd70 'irq' 'unsigned int'
+    `-ReturnStmt 0x136009b38 <line:25:2, col:9>
+      `-IntegerLiteral 0x136009b18 <col:9> 'int' 0

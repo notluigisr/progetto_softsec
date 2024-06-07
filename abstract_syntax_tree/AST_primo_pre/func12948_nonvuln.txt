@@ -1,0 +1,33 @@
+`-FunctionDecl 0x142113738  line:1:27 find_attach 'struct aa_profile *(struct aa_namespace *, struct list_head *, const char *)' static
+  |-ParmVarDecl 0x1420fb0e8 <col:39, col:60> col:60 used ns 'struct aa_namespace *'
+  |-ParmVarDecl 0x1421134c8 <line:2:11, col:29> col:29 used list 'struct list_head *'
+  |-ParmVarDecl 0x142113548 <col:35, col:47> col:47 used name 'const char *'
+  `-CompoundStmt 0x142114098 <line:3:1, line:11:1>
+    |-DeclStmt 0x142113930 <line:4:2, col:28>
+    | `-VarDecl 0x1421138c8 <col:2, col:21> col:21 used profile 'struct aa_profile *'
+    |-CallExpr 0x142113b08 <line:6:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142113a70 <col:2> 'int ()' Function 0x1421139b8 'read_lock' 'int ()'
+    | `-UnaryOperator 0x142113af0 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x142113ac8 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x142113a90 <col:13> 'struct aa_namespace *' lvalue ParmVar 0x1420fb0e8 'ns' 'struct aa_namespace *'
+    |-BinaryOperator 0x142113e90 <line:7:2, col:53> 'struct aa_profile *' '='
+    | |-DeclRefExpr 0x142113b30 <col:2> 'struct aa_profile *' lvalue Var 0x1421138c8 'profile' 'struct aa_profile *'
+    | `-ImplicitCastExpr 0x142113e78 <col:12, col:53> 'struct aa_profile *' <IntegralToPointer>
+    |   `-CallExpr 0x142113e50 <col:12, col:53> 'int'
+    |     |-ImplicitCastExpr 0x142113e38 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142113c30 <col:12> 'int ()' Function 0x142113b78 'aa_get_profile' 'int ()'
+    |     `-CallExpr 0x142113dd8 <col:27, col:52> 'int'
+    |       |-ImplicitCastExpr 0x142113dc0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x142113d30 <col:27> 'int ()' Function 0x142113c78 '__attach_match' 'int ()'
+    |       |-ImplicitCastExpr 0x142113e08 <col:42> 'const char *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x142113d50 <col:42> 'const char *' lvalue ParmVar 0x142113548 'name' 'const char *'
+    |       `-ImplicitCastExpr 0x142113e20 <col:48> 'struct list_head *' <LValueToRValue>
+    |         `-DeclRefExpr 0x142113d70 <col:48> 'struct list_head *' lvalue ParmVar 0x1421134c8 'list' 'struct list_head *'
+    |-CallExpr 0x142114028 <line:8:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142113f90 <col:2> 'int ()' Function 0x142113ed8 'read_unlock' 'int ()'
+    | `-UnaryOperator 0x142114010 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x142113fe8 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x142113fb0 <col:15> 'struct aa_namespace *' lvalue ParmVar 0x1420fb0e8 'ns' 'struct aa_namespace *'
+    `-ReturnStmt 0x142114088 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x142114070 <col:9> 'struct aa_profile *' <LValueToRValue>
+        `-DeclRefExpr 0x142114050 <col:9> 'struct aa_profile *' lvalue Var 0x1421138c8 'profile' 'struct aa_profile *'

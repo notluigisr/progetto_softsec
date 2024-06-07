@@ -1,0 +1,32 @@
+`-FunctionDecl 0x14b940ad8  line:1:19 ldsem_cmpxchg 'int (long *, long, struct ld_semaphore *)' static inline
+  |-ParmVarDecl 0x14b928108 <col:33, col:39> col:39 used old 'long *'
+  |-ParmVarDecl 0x14b928188 <col:44, col:49> col:49 used new 'long'
+  |-ParmVarDecl 0x14b928778 <col:54, col:75> col:75 used sem 'struct ld_semaphore *'
+  `-CompoundStmt 0x14b941090 <line:2:1, line:6:1>
+    |-DeclStmt 0x14b940cc8 <line:3:2, col:17>
+    | `-VarDecl 0x14b940bf8 <col:2, col:14> col:7 used tmp 'long' cinit
+    |   `-ImplicitCastExpr 0x14b940cb0 <col:13, col:14> 'long' <LValueToRValue>
+    |     `-UnaryOperator 0x14b940c98 <col:13, col:14> 'long' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x14b940c80 <col:14> 'long *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14b940c60 <col:14> 'long *' lvalue ParmVar 0x14b928108 'old' 'long *'
+    |-BinaryOperator 0x14b940fa0 <line:4:2, col:51> 'long' contains-errors '='
+    | |-UnaryOperator 0x14b940d18 <col:2, col:3> 'long' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x14b940d00 <col:3> 'long *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b940ce0 <col:3> 'long *' lvalue ParmVar 0x14b928108 'old' 'long *'
+    | `-CallExpr 0x14b940f68 <col:9, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b940e60 <col:9> 'int ()' Function 0x14b940da8 'atomic_long_cmpxchg' 'int ()'
+    |   |-UnaryOperator 0x14b940ee0 <col:29, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14b940eb8 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14b940e80 <col:30> 'struct ld_semaphore *' lvalue ParmVar 0x14b928778 'sem' 'struct ld_semaphore *'
+    |   |-UnaryOperator 0x14b940f30 <col:42, col:43> 'long' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x14b940f18 <col:43> 'long *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14b940ef8 <col:43> 'long *' lvalue ParmVar 0x14b928108 'old' 'long *'
+    |   `-DeclRefExpr 0x14b940f48 <col:48> 'long' lvalue ParmVar 0x14b928188 'new' 'long'
+    `-ReturnStmt 0x14b941080 <line:5:2, col:17>
+      `-BinaryOperator 0x14b941060 <col:9, col:17> 'int' '=='
+        |-ImplicitCastExpr 0x14b941030 <col:9, col:10> 'long' <LValueToRValue>
+        | `-UnaryOperator 0x14b940ff8 <col:9, col:10> 'long' lvalue prefix '*' cannot overflow
+        |   `-ImplicitCastExpr 0x14b940fe0 <col:10> 'long *' <LValueToRValue>
+        |     `-DeclRefExpr 0x14b940fc0 <col:10> 'long *' lvalue ParmVar 0x14b928108 'old' 'long *'
+        `-ImplicitCastExpr 0x14b941048 <col:17> 'long' <LValueToRValue>
+          `-DeclRefExpr 0x14b941010 <col:17> 'long' lvalue Var 0x14b940bf8 'tmp' 'long'

@@ -1,0 +1,29 @@
+`-FunctionDecl 0x145128750  line:1:13 enter_pmode 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x145128648 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x1451439c0 <line:2:1, line:36:1>
+    |-DeclStmt 0x145140ac8 <line:3:2, col:21>
+    | `-VarDecl 0x145140a60 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x145140ed8 <line:4:2, col:37>
+    | |-RecordDecl 0x145140ae0 <col:2, col:9> col:9 struct vcpu_vmx
+    | `-VarDecl 0x145140c48 <col:2, col:36> col:19 used vmx 'struct vcpu_vmx *' cinit
+    |   `-ImplicitCastExpr 0x145140ea8 <col:25, col:36> 'struct vcpu_vmx *' <IntegralToPointer>
+    |     `-CallExpr 0x145140e68 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x145140e50 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x145140de0 <col:25> 'int ()' Function 0x145140d28 'to_vmx' 'int ()'
+    |       `-ImplicitCastExpr 0x145140e90 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x145140e00 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x145128648 'vcpu' 'struct kvm_vcpu *'
+    |-BinaryOperator 0x145141710 <line:14:2, col:27> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1451416a8 <col:2, col:13> '<dependent type>' contains-errors lvalue .vm86_active
+    | | `-RecoveryExpr 0x145141680 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x145141648 <col:2> 'struct vcpu_vmx *' lvalue Var 0x145140c48 'vmx' 'struct vcpu_vmx *'
+    | `-IntegerLiteral 0x1451416f0 <col:27> 'int' 0
+    |-CallExpr 0x145141868 <line:16:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x145141850 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x145141810 <col:2> 'int ()' Function 0x145141758 'vmx_segment_cache_clear' 'int ()'
+    | `-ImplicitCastExpr 0x145141890 <col:26> 'struct vcpu_vmx *' <LValueToRValue>
+    |   `-DeclRefExpr 0x145141830 <col:26> 'struct vcpu_vmx *' lvalue Var 0x145140c48 'vmx' 'struct vcpu_vmx *'
+    `-CallExpr 0x145143330 <line:28:2, col:30> 'int'
+      |-ImplicitCastExpr 0x145143318 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x1451432d8 <col:2> 'int ()' Function 0x145143220 'update_exception_bitmap' 'int ()'
+      `-ImplicitCastExpr 0x145143358 <col:26> 'struct kvm_vcpu *' <LValueToRValue>
+        `-DeclRefExpr 0x1451432f8 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x145128648 'vcpu' 'struct kvm_vcpu *'

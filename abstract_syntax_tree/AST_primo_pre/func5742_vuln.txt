@@ -1,0 +1,41 @@
+`-FunctionDecl 0x13882ce38  line:1:12 invalid needs_empty_write 'int (int, struct inode *)' static
+  |-ParmVarDecl 0x13880f4f0 <col:30, col:39> col:39 invalid block 'int'
+  |-ParmVarDecl 0x13880fae8 <col:46, col:60> col:60 used inode 'struct inode *'
+  `-CompoundStmt 0x13882d9b8 <line:2:1, line:11:1>
+    |-DeclStmt 0x13882cf70 <line:3:2, col:11>
+    | `-VarDecl 0x13882cf08 <col:2, col:6> col:6 used error 'int'
+    |-DeclStmt 0x13882d218 <line:4:2, col:62>
+    | |-RecordDecl 0x13882cf88 <col:2, col:9> col:9 struct buffer_head
+    | `-VarDecl 0x13882d088 <col:2, col:21> col:21 referenced invalid bh_map 'struct buffer_head'
+    |-BinaryOperator 0x13882d360 <line:6:2, col:30> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x13882d278 <col:2, col:9> '<dependent type>' contains-errors lvalue .b_size
+    | | `-RecoveryExpr 0x13882d250 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13882d230 <col:2> 'struct buffer_head' lvalue Var 0x13882d088 'bh_map' 'struct buffer_head'
+    | `-BinaryOperator 0x13882d340 <col:18, col:30> '<dependent type>' contains-errors '<<'
+    |   |-IntegerLiteral 0x13882d2c0 <col:18> 'int' 1
+    |   `-RecoveryExpr 0x13882d318 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13882d2e0 <col:23> 'struct inode *' lvalue ParmVar 0x13880fae8 'inode' 'struct inode *'
+    |-BinaryOperator 0x13882d5f8 <line:7:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13882d380 <col:2> 'int' lvalue Var 0x13882cf08 'error' 'int'
+    | `-CallExpr 0x13882d5b8 <col:10, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13882d500 <col:10> 'int ()' Function 0x13882d448 'gfs2_block_map' 'int ()'
+    |   |-DeclRefExpr 0x13882d520 <col:25> 'struct inode *' lvalue ParmVar 0x13880fae8 'inode' 'struct inode *'
+    |   |-RecoveryExpr 0x13882d540 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x13882d580 <col:39, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x13882d560 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x13882d598 <col:48> 'int' 0
+    |-IfStmt 0x13882d810 <line:8:2, line:9:10>
+    | |-CallExpr 0x13882d788 <line:8:6, col:20> 'int'
+    | | |-ImplicitCastExpr 0x13882d770 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13882d6f8 <col:6> 'int ()' Function 0x13882d640 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x13882d7b0 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13882d718 <col:15> 'int' lvalue Var 0x13882cf08 'error' 'int'
+    | `-ReturnStmt 0x13882d800 <line:9:3, col:10>
+    |   `-ImplicitCastExpr 0x13882d7e8 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13882d7c8 <col:10> 'int' lvalue Var 0x13882cf08 'error' 'int'
+    `-ReturnStmt 0x13882d9a8 <line:10:2, col:31>
+      `-UnaryOperator 0x13882d990 <col:9, col:31> '<dependent type>' contains-errors prefix '!' cannot overflow
+        `-CallExpr 0x13882d968 <col:10, col:31> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x13882d910 <col:10> 'int ()' Function 0x13882d858 'buffer_mapped' 'int ()'
+          `-UnaryOperator 0x13882d950 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x13882d930 <col:25> '<dependent type>' contains-errors lvalue

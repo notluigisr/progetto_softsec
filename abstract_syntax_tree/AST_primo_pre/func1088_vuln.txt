@@ -1,0 +1,74 @@
+`-FunctionDecl 0x14d82b758  line:1:12 invalid fuse_dir_fsync 'int (struct file *, int, int, int)' static
+  |-ParmVarDecl 0x14d80e248 <col:27, col:40> col:40 used file 'struct file *'
+  |-ParmVarDecl 0x14d80e2e0 <col:46, col:53> col:53 invalid start 'int'
+  |-ParmVarDecl 0x14d80e360 <col:60, col:67> col:67 invalid end 'int'
+  |-ParmVarDecl 0x14d82b600 <line:2:6, col:10> col:10 used datasync 'int'
+  `-CompoundStmt 0x14d82d8e8 <line:3:1, line:23:1>
+    |-DeclStmt 0x14d82bab0 <line:4:2, col:45>
+    | |-RecordDecl 0x14d82b820 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x14d82b988 <col:2, col:41> col:16 used inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14d82ba50 <col:24, col:41> '<dependent type>' contains-errors lvalue ->host
+    |     `-RecoveryExpr 0x14d82ba28 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14d82b9f0 <col:24> 'struct file *' lvalue ParmVar 0x14d80e248 'file' 'struct file *'
+    |-DeclStmt 0x14d82bef8 <line:5:2, col:45>
+    | |-RecordDecl 0x14d82bac8 <col:2, col:9> col:9 struct fuse_conn
+    | `-VarDecl 0x14d82bc38 <col:2, col:44> col:20 used fc 'struct fuse_conn *' cinit
+    |   `-ImplicitCastExpr 0x14d82bec8 <col:25, col:44> 'struct fuse_conn *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x14d82be88 <col:25, col:44> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x14d82be70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14d82be00 <col:25> 'int ()' Function 0x14d82bd48 'get_fuse_conn' 'int ()'
+    |       `-ImplicitCastExpr 0x14d82beb0 <col:39> 'struct inode *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x14d82be20 <col:39> 'struct inode *' contains-errors lvalue Var 0x14d82b988 'inode' 'struct inode *'
+    |-DeclStmt 0x14d82bf90 <line:6:2, col:9>
+    | `-VarDecl 0x14d82bf28 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x14d82c1c8 <line:8:2, line:9:11>
+    | |-CallExpr 0x14d82c0e0 <line:8:6, col:24> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x14d82c0c8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14d82c088 <col:6> 'int ()' Function 0x14d82bfd0 'is_bad_inode' 'int ()'
+    | | `-ImplicitCastExpr 0x14d82c108 <col:19> 'struct inode *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x14d82c0a8 <col:19> 'struct inode *' contains-errors lvalue Var 0x14d82b988 'inode' 'struct inode *'
+    | `-ReturnStmt 0x14d82c1b8 <line:9:3, col:11>
+    |   `-UnaryOperator 0x14d82c1a0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14d82c188 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14d82c168 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d82c278 <line:11:2, line:12:10>
+    | |-RecoveryExpr 0x14d82c220 <line:11:6, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14d82c1e8 <col:6> 'struct fuse_conn *' contains-errors lvalue Var 0x14d82bc38 'fc' 'struct fuse_conn *'
+    | `-ReturnStmt 0x14d82c268 <line:12:3, col:10>
+    |   `-IntegerLiteral 0x14d82c248 <col:10> 'int' 0
+    |-CallExpr 0x14d82c3d0 <line:14:2, col:18> 'int' contains-errors
+    | |-ImplicitCastExpr 0x14d82c3b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14d82c378 <col:2> 'int ()' Function 0x14d82c2c0 'inode_lock' 'int ()'
+    | `-ImplicitCastExpr 0x14d82c3f8 <col:13> 'struct inode *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x14d82c398 <col:13> 'struct inode *' contains-errors lvalue Var 0x14d82b988 'inode' 'struct inode *'
+    |-BinaryOperator 0x14d82d4d0 <line:15:2, col:67> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14d82c410 <col:2> 'int' lvalue Var 0x14d82bf28 'err' 'int'
+    | `-CallExpr 0x14d82d488 <col:8, col:67> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14d82c510 <col:8> 'int ()' Function 0x14d82c458 'fuse_fsync_common' 'int ()'
+    |   |-DeclRefExpr 0x14d82c530 <col:26> 'struct file *' lvalue ParmVar 0x14d80e248 'file' 'struct file *'
+    |   |-RecoveryExpr 0x14d82c550 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x14d82c570 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x14d82c590 <col:44> 'int' lvalue ParmVar 0x14d82b600 'datasync' 'int'
+    |   `-RecoveryExpr 0x14d82d468 <col:54> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14d82d708 <line:16:2, line:19:2>
+    | |-BinaryOperator 0x14d82d5c8 <line:16:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14d82d4f0 <col:6> 'int' lvalue Var 0x14d82bf28 'err' 'int'
+    | | `-UnaryOperator 0x14d82d5b0 <col:13, col:14> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |   `-ImplicitCastExpr 0x14d82d598 <col:14> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x14d82d578 <col:14> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14d82d6e8 <col:22, line:19:2>
+    |   |-BinaryOperator 0x14d82d668 <line:17:3, col:21> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14d82d620 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14d82d5e8 <col:3> 'struct fuse_conn *' contains-errors lvalue Var 0x14d82bc38 'fc' 'struct fuse_conn *'
+    |   | `-IntegerLiteral 0x14d82d648 <col:21> 'int' 1
+    |   `-BinaryOperator 0x14d82d6c8 <line:18:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x14d82d688 <col:3> 'int' lvalue Var 0x14d82bf28 'err' 'int'
+    |     `-IntegerLiteral 0x14d82d6a8 <col:9> 'int' 0
+    |-CallExpr 0x14d82d860 <line:20:2, col:20> 'int' contains-errors
+    | |-ImplicitCastExpr 0x14d82d848 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14d82d808 <col:2> 'int ()' Function 0x14d82d750 'inode_unlock' 'int ()'
+    | `-ImplicitCastExpr 0x14d82d888 <col:15> 'struct inode *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x14d82d828 <col:15> 'struct inode *' contains-errors lvalue Var 0x14d82b988 'inode' 'struct inode *'
+    `-ReturnStmt 0x14d82d8d8 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x14d82d8c0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14d82d8a0 <col:9> 'int' lvalue Var 0x14d82bf28 'err' 'int'

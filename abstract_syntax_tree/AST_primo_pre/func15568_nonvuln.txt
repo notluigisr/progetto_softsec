@@ -1,0 +1,61 @@
+`-FunctionDecl 0x159941838  line:1:1 invalid virgl_cmd_resource_flush 'int (int *, struct virtio_gpu_ctrl_command *)'
+  |-ParmVarDecl 0x159928128 <col:26, col:33> col:33 invalid g 'int *'
+  |-ParmVarDecl 0x159928718 <line:2:26, col:58> col:58 cmd 'struct virtio_gpu_ctrl_command *'
+  `-CompoundStmt 0x159942800 <line:3:1, line:30:1>
+    |-DeclStmt 0x159941a68 <line:4:5, col:40>
+    | |-RecordDecl 0x1599418f0 <col:5, col:12> col:12 struct virtio_gpu_resource_flush
+    | `-VarDecl 0x1599419e8 <col:5, col:38> col:38 invalid rf 'struct virtio_gpu_resource_flush'
+    |-DeclStmt 0x159941b00 <line:5:5, col:10>
+    | `-VarDecl 0x159941a98 <col:5, col:9> col:9 used i 'int'
+    |-CallExpr 0x159941cb0 <line:7:5, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x159941c70 <col:5> 'int ()' Function 0x159941bb8 'VUGPU_FILL_CMD' 'int ()'
+    | `-RecoveryExpr 0x159941c90 <col:20> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x159941e28 <line:9:5, col:13> 'int'
+    | `-ImplicitCastExpr 0x159941e10 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x159941db8 <col:5> 'int ()' Function 0x159941d00 'glFlush' 'int ()'
+    |-IfStmt 0x1599420c8 <line:10:5, line:13:5>
+    | |-UnaryOperator 0x159941ec8 <line:10:9, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x159941eb0 <col:10, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x159941e68 <col:10, col:13> '<dependent type>' contains-errors lvalue .resource_id
+    | |     `-RecoveryExpr 0x159941e48 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1599420a8 <col:26, line:13:5>
+    |   |-CallExpr 0x159942058 <line:11:9, col:22> 'int'
+    |   | |-ImplicitCastExpr 0x159942040 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x159941fc0 <col:9> 'int ()' Function 0x159941f08 'g_debug' 'int ()'
+    |   | `-ImplicitCastExpr 0x159942080 <col:17> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x159942020 <col:17> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x159942098 <line:12:9>
+    `-ForStmt 0x1599427a0 <line:14:5, line:29:5>
+      |-BinaryOperator 0x159942128 <line:14:10, col:14> 'int' '='
+      | |-DeclRefExpr 0x1599420e8 <col:10> 'int' lvalue Var 0x159941a98 'i' 'int'
+      | `-IntegerLiteral 0x159942108 <col:14> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x1599421c0 <col:17, col:21> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x159942148 <col:17> 'int' lvalue Var 0x159941a98 'i' 'int'
+      | `-RecoveryExpr 0x1599421a0 <col:21> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x159942200 <col:46, col:47> 'int' postfix '++'
+      | `-DeclRefExpr 0x1599421e0 <col:46> 'int' lvalue Var 0x159941a98 'i' 'int'
+      `-CompoundStmt 0x159942778 <col:51, line:29:5>
+        |-IfStmt 0x1599423e0 <line:15:9, line:17:9>
+        | |-BinaryOperator 0x1599423a0 <line:15:13, col:45> 'int' contains-errors '!='
+        | | |-CXXDependentScopeMemberExpr 0x1599422f0 <col:13, col:27> '<dependent type>' contains-errors lvalue .resource_id
+        | | | `-ArraySubscriptExpr 0x1599422d0 <col:13, col:25> '<dependent type>' contains-errors lvalue
+        | | |   |-ImplicitCastExpr 0x1599422a0 <col:13, col:16> '<dependent type>' contains-errors <LValueToRValue>
+        | | |   | `-CXXDependentScopeMemberExpr 0x159942238 <col:13, col:16> '<dependent type>' contains-errors lvalue ->scanout
+        | | |   |   `-RecoveryExpr 0x159942218 <col:13> '<dependent type>' contains-errors lvalue
+        | | |   `-ImplicitCastExpr 0x1599422b8 <col:24> 'int' <LValueToRValue>
+        | | |     `-DeclRefExpr 0x159942280 <col:24> 'int' lvalue Var 0x159941a98 'i' 'int'
+        | | `-CXXDependentScopeMemberExpr 0x159942358 <col:42, col:45> '<dependent type>' contains-errors lvalue .resource_id
+        | |   `-RecoveryExpr 0x159942338 <col:42> '<dependent type>' contains-errors lvalue
+        | `-CompoundStmt 0x1599423c8 <col:58, line:17:9>
+        |   `-ContinueStmt 0x1599423c0 <line:16:13>
+        |-CallExpr 0x1599425f8 <line:27:9, col:32> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1599424e0 <col:9> 'int ()' Function 0x159942428 'vg_send_msg' 'int ()'
+        | |-RecoveryExpr 0x159942500 <col:21> '<dependent type>' contains-errors lvalue
+        | |-UnaryOperator 0x1599425e0 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x1599425c0 <col:25> '<dependent type>' contains-errors lvalue
+        | `-UnaryOperator 0x159942570 <col:30, col:31> 'int' prefix '-'
+        |   `-IntegerLiteral 0x159942550 <col:31> 'int' 1
+        `-CallExpr 0x159942750 <line:28:9, col:21> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x159942710 <col:9> 'int ()' Function 0x159942658 'vg_wait_ok' 'int ()'
+          `-RecoveryExpr 0x159942730 <col:20> '<dependent type>' contains-errors lvalue

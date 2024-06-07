@@ -1,0 +1,38 @@
+`-FunctionDecl 0x145128758  line:1:12 keyctl_change_reqkey_auth 'int (struct key *)' static
+  |-ParmVarDecl 0x145128648 <col:38, col:50> col:50 used key 'struct key *'
+  `-CompoundStmt 0x145145680 <line:2:1, line:13:1>
+    |-DeclStmt 0x145144e38 <line:3:2, col:18>
+    | |-RecordDecl 0x145144c50 <col:2, col:9> col:9 struct cred
+    | `-VarDecl 0x145144db8 <col:2, col:15> col:15 used new 'struct cred *'
+    |-BinaryOperator 0x145145040 <line:5:2, col:22> 'struct cred *' '='
+    | |-DeclRefExpr 0x145144e50 <col:2> 'struct cred *' lvalue Var 0x145144db8 'new' 'struct cred *'
+    | `-ImplicitCastExpr 0x145145028 <col:8, col:22> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x145145008 <col:8, col:22> 'int'
+    |     `-ImplicitCastExpr 0x145144ff0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x145144fa0 <col:8> 'int ()' Function 0x145144ee8 'prepare_creds' 'int ()'
+    |-IfStmt 0x145145158 <line:6:2, line:7:11>
+    | |-UnaryOperator 0x145145098 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x145145080 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x145145060 <col:7> 'struct cred *' lvalue Var 0x145144db8 'new' 'struct cred *'
+    | `-ReturnStmt 0x145145148 <line:7:3, col:11>
+    |   `-UnaryOperator 0x145145130 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x145145118 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1451450f8 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1451452d8 <line:9:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x145145258 <col:2> 'int ()' Function 0x1451451a0 'key_put' 'int ()'
+    | `-RecoveryExpr 0x1451452b0 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x145145278 <col:10> 'struct cred *' lvalue Var 0x145144db8 'new' 'struct cred *'
+    |-BinaryOperator 0x1451454d8 <line:10:2, col:37> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x145145338 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x145145300 <col:2> 'struct cred *' lvalue Var 0x145144db8 'new' 'struct cred *'
+    | `-CallExpr 0x145145498 <col:26, col:37> 'int'
+    |   |-ImplicitCastExpr 0x145145480 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x145145440 <col:26> 'int ()' Function 0x145145388 'key_get' 'int ()'
+    |   `-ImplicitCastExpr 0x1451454c0 <col:34> 'struct key *' <LValueToRValue>
+    |     `-DeclRefExpr 0x145145460 <col:34> 'struct key *' lvalue ParmVar 0x145128648 'key' 'struct key *'
+    `-ReturnStmt 0x145145670 <line:12:2, col:25>
+      `-CallExpr 0x145145630 <col:9, col:25> 'int'
+        |-ImplicitCastExpr 0x145145618 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1451455d8 <col:9> 'int ()' Function 0x145145520 'commit_creds' 'int ()'
+        `-ImplicitCastExpr 0x145145658 <col:22> 'struct cred *' <LValueToRValue>
+          `-DeclRefExpr 0x1451455f8 <col:22> 'struct cred *' lvalue Var 0x145144db8 'new' 'struct cred *'

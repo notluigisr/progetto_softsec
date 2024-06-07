@@ -1,0 +1,24 @@
+`-FunctionDecl 0x10500ddc8  line:1:2 invalid __releases 'int (int)'
+  |-ParmVarDecl 0x10500dcf0 <col:13, <invalid sloc>> col:15 invalid 'int'
+  `-CompoundStmt 0x1050284f0 <line:2:1, line:12:1>
+    |-DeclStmt 0x105027e88 <line:3:2, col:27>
+    | |-RecordDecl 0x10500de78 <col:2, col:9> col:9 struct rq
+    | `-VarDecl 0x10500dfe8 <col:2, col:26> col:13 used rq 'struct rq *' cinit
+    |   `-ImplicitCastExpr 0x10500e238 <col:18, col:26> 'struct rq *' <IntegralToPointer>
+    |     `-CallExpr 0x10500e218 <col:18, col:26> 'int'
+    |       `-ImplicitCastExpr 0x10500e200 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x10500e1b0 <col:18> 'int ()' Function 0x10500e0f8 'this_rq' 'int ()'
+    |-CallExpr 0x105028028 <line:5:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x105027f80 <col:2> 'int ()' Function 0x105027ec8 'finish_task_switch' 'int ()'
+    | |-DeclRefExpr 0x105027fa0 <col:21> 'struct rq *' lvalue Var 0x10500dfe8 'rq' 'struct rq *'
+    | `-RecoveryExpr 0x105028008 <col:25> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x1050284d0 <line:10:2, line:11:57>
+      |-CXXDependentScopeMemberExpr 0x1050280d8 <line:10:6, col:15> '<dependent type>' contains-errors lvalue ->set_child_tid
+      | `-RecoveryExpr 0x1050280b8 <col:6> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x1050284a0 <line:11:3, col:57> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x105028200 <col:3> 'int ()' Function 0x105028148 'put_user' 'int ()'
+        |-CallExpr 0x105028410 <col:12, col:32> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x105028300 <col:12> 'int ()' Function 0x105028248 'task_pid_vnr' 'int ()'
+        | `-RecoveryExpr 0x1050283f0 <col:25> '<dependent type>' contains-errors lvalue
+        `-CXXDependentScopeMemberExpr 0x105028458 <col:35, col:44> '<dependent type>' contains-errors lvalue ->set_child_tid
+          `-RecoveryExpr 0x105028438 <col:35> '<dependent type>' contains-errors lvalue

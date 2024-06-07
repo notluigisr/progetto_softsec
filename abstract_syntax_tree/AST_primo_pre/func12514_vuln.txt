@@ -1,0 +1,33 @@
+`-FunctionDecl 0x15c140b40  line:2:13 kvm_mmu_notifier_release 'void (struct mmu_notifier *, struct mm_struct *)' static
+  |-ParmVarDecl 0x15c128648 <col:38, col:59> col:59 used mn 'struct mmu_notifier *'
+  |-ParmVarDecl 0x15c140a28 <line:3:10, col:28> col:28 mm 'struct mm_struct *'
+  `-CompoundStmt 0x15c141608 <line:4:1, line:10:36>
+    |-DeclStmt 0x15c141038 <line:5:2, col:43>
+    | |-RecordDecl 0x15c140c40 <col:2, col:9> col:9 struct kvm
+    | `-VarDecl 0x15c140da8 <col:2, col:42> col:14 used kvm 'struct kvm *' cinit
+    |   `-ImplicitCastExpr 0x15c141008 <col:20, col:42> 'struct kvm *' <IntegralToPointer>
+    |     `-CallExpr 0x15c140fc8 <col:20, col:42> 'int'
+    |       |-ImplicitCastExpr 0x15c140fb0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15c140f40 <col:20> 'int ()' Function 0x15c140e88 'mmu_notifier_to_kvm' 'int ()'
+    |       `-ImplicitCastExpr 0x15c140ff0 <col:40> 'struct mmu_notifier *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15c140f60 <col:40> 'struct mmu_notifier *' lvalue ParmVar 0x15c128648 'mn' 'struct mmu_notifier *'
+    |-DeclStmt 0x15c1410d0 <line:6:2, col:9>
+    | `-VarDecl 0x15c141068 <col:2, col:6> col:6 used idx 'int'
+    |-BinaryOperator 0x15c1412a8 <line:8:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c1410e8 <col:2> 'int' lvalue Var 0x15c141068 'idx' 'int'
+    | `-CallExpr 0x15c141280 <col:8, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c1411e8 <col:8> 'int ()' Function 0x15c141130 'srcu_read_lock' 'int ()'
+    |   `-UnaryOperator 0x15c141268 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15c141240 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15c141208 <col:24> 'struct kvm *' lvalue Var 0x15c140da8 'kvm' 'struct kvm *'
+    |-CallExpr 0x15c141400 <line:9:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x15c1413e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c1413a8 <col:2> 'int ()' Function 0x15c1412f0 'kvm_arch_flush_shadow_all' 'int ()'
+    | `-ImplicitCastExpr 0x15c141428 <col:28> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15c1413c8 <col:28> 'struct kvm *' lvalue Var 0x15c140da8 'kvm' 'struct kvm *'
+    `-CallExpr 0x15c1415d8 <line:10:2, col:34> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15c141520 <col:2> 'int ()' Function 0x15c141468 'srcu_read_unlock' 'int ()'
+      |-UnaryOperator 0x15c1415a0 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x15c141578 <col:20, col:25> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x15c141540 <col:20> 'struct kvm *' lvalue Var 0x15c140da8 'kvm' 'struct kvm *'
+      `-DeclRefExpr 0x15c1415b8 <col:31> 'int' lvalue Var 0x15c141068 'idx' 'int'

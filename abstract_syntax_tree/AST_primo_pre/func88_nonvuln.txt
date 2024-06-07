@@ -1,0 +1,120 @@
+`-FunctionDecl 0x15d010a00  line:1:12 __bsg_write 'int (struct bsg_device *, const char)' static
+  |-ParmVarDecl 0x15c837e48 <col:24, col:43> col:43 used bd 'struct bsg_device *'
+  |-ParmVarDecl 0x15c837ec0 <col:47, col:58> col:58 __user 'const char'
+  `-CompoundStmt 0x15c84dbb8 <line:4:1, line:51:1>
+    |-DeclStmt 0x15d010ce8 <line:5:2, col:24>
+    | |-RecordDecl 0x15d010b00 <col:2, col:9> col:9 struct bsg_command
+    | `-VarDecl 0x15d010c68 <col:2, col:22> col:22 used bc 'struct bsg_command *'
+    |-DeclStmt 0x15d010ee8 <line:6:2, col:20>
+    | |-RecordDecl 0x15d010d00 <col:2, col:9> col:9 struct request
+    | `-VarDecl 0x15d010e68 <col:2, col:18> col:18 used rq 'struct request *'
+    |-DeclStmt 0x15d011018 <line:7:2, col:22>
+    | |-VarDecl 0x15d010f18 <col:2, col:6> col:6 used ret 'int'
+    | `-VarDecl 0x15d010f98 <col:2, col:11> col:11 used nr_commands 'int'
+    |-IfStmt 0x15d011220 <line:9:2, line:10:11>
+    | |-RecoveryExpr 0x15d011158 <line:9:6, col:36> '_Bool' contains-errors
+    | `-ReturnStmt 0x15d011210 <line:10:3, col:11>
+    |   `-UnaryOperator 0x15d0111f8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x15d0111e0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x15d0111c0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15d0113f0 <line:13:2, col:7> 'struct request *' contains-errors '='
+    | |-DeclRefExpr 0x15d011378 <col:2> 'struct request *' lvalue Var 0x15d010e68 'rq' 'struct request *'
+    | `-RecoveryExpr 0x15d0113d0 <col:7> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15d011488 <line:14:2, col:7> 'struct bsg_command *' contains-errors '='
+    | |-DeclRefExpr 0x15d011410 <col:2> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    | `-RecoveryExpr 0x15d011468 <col:7> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15d0114e8 <line:15:2, col:8> 'int' '='
+    | |-DeclRefExpr 0x15d0114a8 <col:2> 'int' lvalue Var 0x15d010f18 'ret' 'int'
+    | `-IntegerLiteral 0x15d0114c8 <col:8> 'int' 0
+    |-WhileStmt 0x15c0e9d48 <line:16:2, line:45:2>
+    | |-ImplicitCastExpr 0x15d011528 <line:16:9> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x15d011508 <col:9> 'int' lvalue Var 0x15d010f98 'nr_commands' 'int'
+    | `-CompoundStmt 0x15c0e9d00 <col:22, line:45:2>
+    |   |-DeclStmt 0x15d011788 <line:17:3, col:38>
+    |   | |-RecordDecl 0x15d011540 <col:3, col:10> col:10 struct request_queue
+    |   | `-VarDecl 0x15d0116a8 <col:3, col:33> col:25 used q 'struct request_queue *' cinit
+    |   |   `-RecoveryExpr 0x15d011748 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x15d011710 <col:29> 'struct bsg_device *' lvalue ParmVar 0x15c837e48 'bd' 'struct bsg_device *'
+    |   |-BinaryOperator 0x15d0119b0 <line:19:3, col:28> 'struct bsg_command *' '='
+    |   | |-DeclRefExpr 0x15d0117a0 <col:3> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   | `-ImplicitCastExpr 0x15d011998 <col:8, col:28> 'struct bsg_command *' <IntegralToPointer>
+    |   |   `-CallExpr 0x15d011958 <col:8, col:28> 'int'
+    |   |     |-ImplicitCastExpr 0x15d011940 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x15d0118d0 <col:8> 'int ()' Function 0x15d011818 'bsg_alloc_command' 'int ()'
+    |   |     `-ImplicitCastExpr 0x15d011980 <col:26> 'struct bsg_device *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x15d0118f0 <col:26> 'struct bsg_device *' lvalue ParmVar 0x15c837e48 'bd' 'struct bsg_device *'
+    |   |-IfStmt 0x15c0e91d0 <line:20:3, line:24:3>
+    |   | |-CallExpr 0x15c0e8f10 <line:20:7, col:16> 'int'
+    |   | | |-ImplicitCastExpr 0x15c0e8ef8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x15c0e8eb8 <col:7> 'int ()' Function 0x15c0e8e00 'IS_ERR' 'int ()'
+    |   | | `-ImplicitCastExpr 0x15c0e8f38 <col:14> 'struct bsg_command *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x15c0e8ed8 <col:14> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   | `-CompoundStmt 0x15c0e91a8 <col:19, line:24:3>
+    |   |   |-BinaryOperator 0x15c0e90e8 <line:21:4, col:20> 'int' '='
+    |   |   | |-DeclRefExpr 0x15c0e8f50 <col:4> 'int' lvalue Var 0x15d010f18 'ret' 'int'
+    |   |   | `-CallExpr 0x15c0e90a8 <col:10, col:20> 'int'
+    |   |   |   |-ImplicitCastExpr 0x15c0e9090 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   | `-DeclRefExpr 0x15c0e9050 <col:10> 'int ()' Function 0x15c0e8f98 'PTR_ERR' 'int ()'
+    |   |   |   `-ImplicitCastExpr 0x15c0e90d0 <col:18> 'struct bsg_command *' <LValueToRValue>
+    |   |   |     `-DeclRefExpr 0x15c0e9070 <col:18> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   |   |-BinaryOperator 0x15c0e9180 <line:22:4, col:9> 'struct bsg_command *' contains-errors '='
+    |   |   | |-DeclRefExpr 0x15c0e9108 <col:4> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   |   | `-RecoveryExpr 0x15c0e9160 <col:9> '<dependent type>' contains-errors lvalue
+    |   |   `-BreakStmt 0x15c0e91a0 <line:23:4>
+    |   |-IfStmt 0x15c0e95d0 <line:26:3, line:29:3>
+    |   | |-CallExpr 0x15c0e9478 <line:26:7, col:52> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x15c0e92d0 <col:7> 'int ()' Function 0x15c0e9218 'copy_from_user' 'int ()'
+    |   | | |-UnaryOperator 0x15c0e9350 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | | `-RecoveryExpr 0x15c0e9328 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x15c0e92f0 <col:23> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   | | |-RecoveryExpr 0x15c0e9458 <col:32> '<dependent type>' contains-errors lvalue
+    |   | | `-UnaryExprOrTypeTraitExpr 0x15c0e9400 <col:37, col:51> 'unsigned long' contains-errors sizeof
+    |   | |   `-ParenExpr 0x15c0e93e0 <col:43, col:51> '<dependent type>' contains-errors lvalue
+    |   | |     `-RecoveryExpr 0x15c0e93b8 <col:44, col:48> '<dependent type>' contains-errors lvalue
+    |   | |       `-DeclRefExpr 0x15c0e9380 <col:44> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *' non_odr_use_unevaluated
+    |   | `-CompoundStmt 0x15c0e95b0 <col:55, line:29:3>
+    |   |   |-BinaryOperator 0x15c0e9588 <line:27:4, col:11> 'int' contains-errors '='
+    |   |   | |-DeclRefExpr 0x15c0e94b0 <col:4> 'int' lvalue Var 0x15d010f18 'ret' 'int'
+    |   |   | `-UnaryOperator 0x15c0e9570 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |   `-ImplicitCastExpr 0x15c0e9558 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |     `-RecoveryExpr 0x15c0e9538 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-BreakStmt 0x15c0e95a8 <line:28:4>
+    |   |-IfStmt 0x15c0e99c0 <line:33:3, line:37:3>
+    |   | |-CallExpr 0x15c0e9860 <line:33:7, col:16> 'int'
+    |   | | |-ImplicitCastExpr 0x15c0e9848 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x15c0e9808 <col:7> 'int ()' Function 0x15c0e8e00 'IS_ERR' 'int ()'
+    |   | | `-ImplicitCastExpr 0x15c0e9888 <col:14> 'struct request *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x15c0e9828 <col:14> 'struct request *' lvalue Var 0x15d010e68 'rq' 'struct request *'
+    |   | `-CompoundStmt 0x15c0e99a0 <col:19, line:37:3>
+    |   |   |-BinaryOperator 0x15c0e9958 <line:34:4, col:20> 'int' '='
+    |   |   | |-DeclRefExpr 0x15c0e98a0 <col:4> 'int' lvalue Var 0x15d010f18 'ret' 'int'
+    |   |   | `-CallExpr 0x15c0e9918 <col:10, col:20> 'int'
+    |   |   |   |-ImplicitCastExpr 0x15c0e9900 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   | `-DeclRefExpr 0x15c0e98c0 <col:10> 'int ()' Function 0x15c0e8f98 'PTR_ERR' 'int ()'
+    |   |   |   `-ImplicitCastExpr 0x15c0e9940 <col:18> 'struct request *' <LValueToRValue>
+    |   |   |     `-DeclRefExpr 0x15c0e98e0 <col:18> 'struct request *' lvalue Var 0x15d010e68 'rq' 'struct request *'
+    |   |   `-BreakStmt 0x15c0e9998 <line:36:4>
+    |   |-CallExpr 0x15c0e9b78 <line:39:3, col:32> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x15c0e9b60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x15c0e9ac0 <col:3> 'int ()' Function 0x15c0e9a08 'bsg_add_command' 'int ()'
+    |   | |-ImplicitCastExpr 0x15c0e9bb8 <col:19> 'struct bsg_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x15c0e9ae0 <col:19> 'struct bsg_device *' lvalue ParmVar 0x15c837e48 'bd' 'struct bsg_device *'
+    |   | |-ImplicitCastExpr 0x15c0e9bd0 <col:23> 'struct request_queue *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x15c0e9b00 <col:23> 'struct request_queue *' contains-errors lvalue Var 0x15d0116a8 'q' 'struct request_queue *'
+    |   | |-ImplicitCastExpr 0x15c0e9be8 <col:26> 'struct bsg_command *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x15c0e9b20 <col:26> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    |   | `-ImplicitCastExpr 0x15c0e9c00 <col:30> 'struct request *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x15c0e9b40 <col:30> 'struct request *' lvalue Var 0x15d010e68 'rq' 'struct request *'
+    |   `-UnaryOperator 0x15c0e9c78 <line:42:3, col:14> 'int' postfix '--'
+    |     `-DeclRefExpr 0x15c0e9c58 <col:3> 'int' lvalue Var 0x15d010f98 'nr_commands' 'int'
+    |-IfStmt 0x15c84db50 <line:47:2, line:48:22>
+    | |-ImplicitCastExpr 0x15c0e9d88 <line:47:6> 'struct bsg_command *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c0e9d68 <col:6> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    | `-CallExpr 0x15c84db10 <line:48:3, col:22> 'int'
+    |   |-ImplicitCastExpr 0x15c84daf8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c84dab8 <col:3> 'int ()' Function 0x15c84da00 'bsg_free_command' 'int ()'
+    |   `-ImplicitCastExpr 0x15c84db38 <col:20> 'struct bsg_command *' <LValueToRValue>
+    |     `-DeclRefExpr 0x15c84dad8 <col:20> 'struct bsg_command *' lvalue Var 0x15d010c68 'bc' 'struct bsg_command *'
+    `-ReturnStmt 0x15c84dba8 <line:50:2, col:9>
+      `-ImplicitCastExpr 0x15c84db90 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x15c84db70 <col:9> 'int' lvalue Var 0x15d010f18 'ret' 'int'

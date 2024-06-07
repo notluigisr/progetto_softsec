@@ -1,0 +1,22 @@
+`-FunctionDecl 0x149027400  line:1:20 invalid aio_poll_complete 'void (struct aio_kiocb *, int)' static inline
+  |-ParmVarDecl 0x14900e248 <col:38, col:56> col:56 used iocb 'struct aio_kiocb *'
+  |-ParmVarDecl 0x14900e2e0 <col:62, col:71> col:71 invalid mask 'int'
+  `-CompoundStmt 0x149027c48 <line:2:1, line:7:1>
+    |-DeclStmt 0x149027750 <line:3:2, col:37>
+    | |-RecordDecl 0x1490274b8 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x149027628 <col:2, col:33> col:15 used file 'struct file *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x1490276f0 <col:22, col:33> '<dependent type>' contains-errors lvalue .file
+    |     `-RecoveryExpr 0x1490276c8 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x149027690 <col:22> 'struct aio_kiocb *' lvalue ParmVar 0x14900e248 'iocb' 'struct aio_kiocb *'
+    |-CallExpr 0x149027a68 <line:5:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1490278c0 <col:2> 'int ()' Function 0x149027808 'aio_complete' 'int ()'
+    | |-DeclRefExpr 0x1490278e0 <col:15> 'struct aio_kiocb *' lvalue ParmVar 0x14900e248 'iocb' 'struct aio_kiocb *'
+    | |-CallExpr 0x149027a20 <col:21, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1490279e0 <col:21> 'int ()' Function 0x149027928 'mangle_poll' 'int ()'
+    | | `-RecoveryExpr 0x149027a00 <col:33> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x149027a48 <col:40> 'int' 0
+    `-CallExpr 0x149027c08 <line:6:2, col:11> 'int' contains-errors
+      |-ImplicitCastExpr 0x149027bf0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x149027b80 <col:2> 'int ()' Function 0x149027ac8 'fput' 'int ()'
+      `-ImplicitCastExpr 0x149027c30 <col:7> 'struct file *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x149027ba0 <col:7> 'struct file *' contains-errors lvalue Var 0x149027628 'file' 'struct file *'

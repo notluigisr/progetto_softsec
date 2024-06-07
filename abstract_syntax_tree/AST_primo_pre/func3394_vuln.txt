@@ -1,0 +1,36 @@
+`-FunctionDecl 0x146119438  line:1:12 invalid efi_capsule_flush 'int (struct file *, int)' static
+  |-ParmVarDecl 0x1460fc048 <col:30, col:43> col:43 used file 'struct file *'
+  |-ParmVarDecl 0x1460fc0e0 <col:49, col:60> col:60 invalid id 'int'
+  `-CompoundStmt 0x146119e18 <line:2:1, line:13:1>
+    |-DeclStmt 0x146119590 <line:3:2, col:13>
+    | `-VarDecl 0x146119508 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x146119570 <col:12> 'int' 0
+    |-DeclStmt 0x1461197f8 <line:4:2, col:52>
+    | |-RecordDecl 0x1461195a8 <col:2, col:9> col:9 struct capsule_info
+    | `-VarDecl 0x146119718 <col:2, col:40> col:23 used cap_info 'struct capsule_info *' cinit
+    |   `-RecoveryExpr 0x1461197b8 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x146119780 <col:34> 'struct file *' lvalue ParmVar 0x1460fc048 'file' 'struct file *'
+    |-IfStmt 0x146119db0 <line:6:2, line:10:2>
+    | |-BinaryOperator 0x146119890 <line:6:6, col:24> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x146119848 <col:6, col:16> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x146119810 <col:6> 'struct capsule_info *' contains-errors lvalue Var 0x146119718 'cap_info' 'struct capsule_info *'
+    | | `-IntegerLiteral 0x146119870 <col:24> 'int' 0
+    | `-CompoundStmt 0x146119d88 <col:27, line:10:2>
+    |   |-CallExpr 0x146119ad8 <line:7:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x146119ac0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x146119a10 <col:3> 'int ()' Function 0x146119958 'pr_err' 'int ()'
+    |   | `-ImplicitCastExpr 0x146119b00 <col:10> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x146119a70 <col:10> 'char[4]' lvalue "STR"
+    |   |-CallExpr 0x146119c50 <line:8:3, col:35> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x146119c38 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x146119bf8 <col:3> 'int ()' Function 0x146119b40 'efi_free_all_buff_pages' 'int ()'
+    |   | `-ImplicitCastExpr 0x146119c78 <col:27> 'struct capsule_info *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x146119c18 <col:27> 'struct capsule_info *' contains-errors lvalue Var 0x146119718 'cap_info' 'struct capsule_info *'
+    |   `-BinaryOperator 0x146119d68 <line:9:3, col:10> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x146119c90 <col:3> 'int' lvalue Var 0x146119508 'ret' 'int'
+    |     `-UnaryOperator 0x146119d50 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x146119d38 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x146119d18 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x146119e08 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x146119df0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x146119dd0 <col:9> 'int' lvalue Var 0x146119508 'ret' 'int'

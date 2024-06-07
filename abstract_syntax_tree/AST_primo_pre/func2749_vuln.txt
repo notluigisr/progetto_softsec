@@ -1,0 +1,45 @@
+`-FunctionDecl 0x142808368  line:1:29 invalid ext3_blkdev_get 'struct block_device *(int, struct super_block *)' static
+  |-ParmVarDecl 0x142128190 <col:45, col:51> col:51 invalid dev 'int'
+  |-ParmVarDecl 0x142128788 <col:56, col:76> col:76 used sb 'struct super_block *'
+  `-CompoundStmt 0x142809120 <line:2:1, line:16:1>
+    |-DeclStmt 0x142808510 <line:3:2, col:27>
+    | `-VarDecl 0x1428084a8 <col:2, col:23> col:23 used bdev 'struct block_device *'
+    |-DeclStmt 0x1428085b8 <line:4:2, col:23>
+    | `-VarDecl 0x142808550 <col:2, col:7> col:7 invalid b 'char'
+    |-BinaryOperator 0x142808968 <line:6:2, col:69> 'struct block_device *' contains-errors '='
+    | |-DeclRefExpr 0x1428085d0 <col:2> 'struct block_device *' lvalue Var 0x1428084a8 'bdev' 'struct block_device *'
+    | `-CallExpr 0x142808930 <col:9, col:69> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x142808750 <col:9> 'int ()' Function 0x142808698 'blkdev_get_by_dev' 'int ()'
+    |   |-RecoveryExpr 0x142808770 <col:27> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x142808910 <col:32, col:55> '<dependent type>' contains-errors '|'
+    |   | |-BinaryOperator 0x1428088d0 <col:32, col:43> '<dependent type>' contains-errors '|'
+    |   | | |-RecoveryExpr 0x142808890 <col:32> '<dependent type>' contains-errors lvalue
+    |   | | `-RecoveryExpr 0x1428088b0 <col:43> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x1428088f0 <col:55> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x142808818 <col:67> 'struct super_block *' lvalue ParmVar 0x142128788 'sb' 'struct super_block *'
+    |-IfStmt 0x142808ba0 <line:7:2, line:8:8>
+    | |-CallExpr 0x142808af8 <line:7:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x142808ae0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x142808a68 <col:6> 'int ()' Function 0x1428089b0 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x142808b20 <col:13> 'struct block_device *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x142808a88 <col:13> 'struct block_device *' lvalue Var 0x1428084a8 'bdev' 'struct block_device *'
+    | `-GotoStmt 0x142808b88 <line:8:3, col:8> 'fail' 0x142808b38
+    |-ReturnStmt 0x142808bf8 <line:9:2, col:9>
+    | `-ImplicitCastExpr 0x142808be0 <col:9> 'struct block_device *' <LValueToRValue>
+    |   `-DeclRefExpr 0x142808bc0 <col:9> 'struct block_device *' lvalue Var 0x1428084a8 'bdev' 'struct block_device *'
+    |-LabelStmt 0x1428090b8 <line:11:1, line:13:36> 'fail'
+    | `-CallExpr 0x142809078 <line:12:2, line:13:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x142808ce8 <line:12:2> 'int ()' Function 0x142808c30 'ext3_msg' 'int ()'
+    |   |-DeclRefExpr 0x142808d08 <col:11> 'struct super_block *' lvalue ParmVar 0x142128788 'sb' 'struct super_block *'
+    |   |-StringLiteral 0x142808d70 <col:15> 'char[4]' lvalue "STR"
+    |   |-CallExpr 0x142808ed0 <line:13:3, col:20> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x142808e70 <col:3> 'int ()' Function 0x142808db8 '__bdevname' 'int ()'
+    |   | |-RecoveryExpr 0x142808e90 <col:14> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x142808eb0 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x142809038 <col:23, col:35> 'int'
+    |     |-ImplicitCastExpr 0x142809020 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142808fe0 <col:23> 'int ()' Function 0x142808f28 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x142809060 <col:31> 'struct block_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142809000 <col:31> 'struct block_device *' lvalue Var 0x1428084a8 'bdev' 'struct block_device *'
+    `-ReturnStmt 0x142809110 <line:15:2, col:9>
+      `-RecoveryExpr 0x1428090f0 <col:9> '<dependent type>' contains-errors lvalue

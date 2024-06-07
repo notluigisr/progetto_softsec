@@ -1,0 +1,24 @@
+`-FunctionDecl 0x120830f50  line:1:6 __fput_sync 'void (struct file *)'
+  |-ParmVarDecl 0x120830e48 <col:18, col:31> col:31 used file 'struct file *'
+  `-CompoundStmt 0x120858970 <line:2:1, line:9:1>
+    `-IfStmt 0x120858950 <line:3:2, line:8:2>
+      |-CallExpr 0x120858208 <line:3:6, col:45> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x120858170 <col:6> 'int ()' Function 0x1208580b8 'atomic_long_dec_and_test' 'int ()'
+      | `-UnaryOperator 0x1208581f0 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x1208581c8 <col:32, col:38> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x120858190 <col:32> 'struct file *' lvalue ParmVar 0x120830e48 'file' 'struct file *'
+      `-CompoundStmt 0x120858928 <col:48, line:8:2>
+        |-DeclStmt 0x120858450 <line:4:3, col:37>
+        | |-RecordDecl 0x120858230 <col:3, col:10> col:10 struct task_struct
+        | `-VarDecl 0x120858398 <col:3, col:30> col:23 used task 'struct task_struct *' cinit
+        |   `-RecoveryExpr 0x120858418 <col:30> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1208585d8 <line:5:3, col:24> 'int'
+        | |-ImplicitCastExpr 0x1208585c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x120858548 <col:3> 'int ()' Function 0x120858490 'file_sb_list_del' 'int ()'
+        | `-ImplicitCastExpr 0x120858600 <col:20> 'struct file *' <LValueToRValue>
+        |   `-DeclRefExpr 0x120858568 <col:20> 'struct file *' lvalue ParmVar 0x120830e48 'file' 'struct file *'
+        `-CallExpr 0x1208588e8 <line:7:3, col:14> 'int'
+          |-ImplicitCastExpr 0x1208588d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x120858890 <col:3> 'int ()' Function 0x1208587d8 '__fput' 'int ()'
+          `-ImplicitCastExpr 0x120858910 <col:10> 'struct file *' <LValueToRValue>
+            `-DeclRefExpr 0x1208588b0 <col:10> 'struct file *' lvalue ParmVar 0x120830e48 'file' 'struct file *'

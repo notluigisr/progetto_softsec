@@ -1,0 +1,1 @@
+  void setRefused(bool refused) { refused_ = refused; }

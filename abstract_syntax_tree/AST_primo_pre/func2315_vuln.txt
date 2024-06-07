@@ -1,0 +1,65 @@
+`-FunctionDecl 0x13c9284b8  line:1:21 invalid ldb_msg_copy_shallow 'struct ldb_message *(int *, const struct ldb_message *)'
+  |-ParmVarDecl 0x13c9281c8 <col:42, col:54> col:54 invalid mem_ctx 'int *'
+  |-ParmVarDecl 0x13c9282e8 <line:2:7, col:33> col:33 used msg 'const struct ldb_message *'
+  `-CompoundStmt 0x13c942e00 <line:3:1, line:25:1>
+    |-DeclStmt 0x13c928630 <line:4:2, col:26>
+    | `-VarDecl 0x13c9285c8 <col:2, col:22> col:22 used msg2 'struct ldb_message *'
+    |-DeclStmt 0x13c9286c8 <line:5:2, col:16>
+    | `-VarDecl 0x13c928660 <col:2, col:15> col:15 used i 'unsigned int'
+    |-IfStmt 0x13c9419d8 <line:8:2, col:27>
+    | |-BinaryOperator 0x13c941970 <col:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x13c9418f8 <col:6> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    | | `-RecoveryExpr 0x13c941950 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x13c9419c8 <col:20, col:27>
+    |   `-RecoveryExpr 0x13c9419a8 <col:27> '<dependent type>' contains-errors lvalue
+    |-ImplicitCastExpr 0x13c941ef0 <line:10:2, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | `-RecoveryExpr 0x13c941ec0 <col:2, col:11> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x13c941a30 <col:2, col:3> 'struct ldb_message' lvalue prefix '*' cannot overflow
+    |   | `-ImplicitCastExpr 0x13c941a18 <col:3> 'struct ldb_message *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13c9419f8 <col:3> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    |   `-UnaryOperator 0x13c941a80 <col:10, col:11> 'const struct ldb_message' lvalue prefix '*' cannot overflow
+    |     `-ImplicitCastExpr 0x13c941a68 <col:11> 'const struct ldb_message *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13c941a48 <col:11> 'const struct ldb_message *' lvalue ParmVar 0x13c9282e8 'msg' 'const struct ldb_message *'
+    |-IfStmt 0x13c942228 <line:14:2, col:35>
+    | |-BinaryOperator 0x13c9421a0 <col:6, col:24> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x13c942120 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13c9420e8 <col:6> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    | | `-RecoveryExpr 0x13c942180 <col:24> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x13c942210 <col:30, col:35> 'failed' 0x13c9421c0
+    |-ForStmt 0x13c942570 <line:16:2, line:18:2>
+    | |-BinaryOperator 0x13c9422a0 <line:16:7, col:9> 'unsigned int' '='
+    | | |-DeclRefExpr 0x13c942248 <col:7> 'unsigned int' lvalue Var 0x13c928660 'i' 'unsigned int'
+    | | `-ImplicitCastExpr 0x13c942288 <col:9> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x13c942268 <col:9> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x13c942340 <col:11, col:19> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x13c9422c0 <col:11> 'unsigned int' lvalue Var 0x13c928660 'i' 'unsigned int'
+    | | `-RecoveryExpr 0x13c942318 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13c9422e0 <col:13> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    | |-UnaryOperator 0x13c942380 <col:32, col:33> 'unsigned int' postfix '++'
+    | | `-DeclRefExpr 0x13c942360 <col:32> 'unsigned int' lvalue Var 0x13c928660 'i' 'unsigned int'
+    | `-CompoundStmt 0x13c942558 <col:37, line:18:2>
+    |   `-BinaryOperator 0x13c942538 <line:17:3, col:38> '<dependent type>' contains-errors '='
+    |     |-ArraySubscriptExpr 0x13c942448 <col:3, col:19> '<dependent type>' contains-errors lvalue
+    |     | |-ImplicitCastExpr 0x13c942418 <col:3, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |     | | `-RecoveryExpr 0x13c9423d0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x13c942398 <col:3> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    |     | `-ImplicitCastExpr 0x13c942430 <col:18> 'unsigned int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x13c9423f8 <col:18> 'unsigned int' lvalue Var 0x13c928660 'i' 'unsigned int'
+    |     `-ArraySubscriptExpr 0x13c942518 <col:23, col:38> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x13c9424e8 <col:23, col:28> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x13c9424a0 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x13c942468 <col:23> 'const struct ldb_message *' lvalue ParmVar 0x13c9282e8 'msg' 'const struct ldb_message *'
+    |       `-ImplicitCastExpr 0x13c942500 <col:37> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x13c9424c8 <col:37> 'unsigned int' lvalue Var 0x13c928660 'i' 'unsigned int'
+    |-ReturnStmt 0x13c9425e0 <line:20:2, col:9>
+    | `-ImplicitCastExpr 0x13c9425c8 <col:9> 'struct ldb_message *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13c9425a8 <col:9> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    |-LabelStmt 0x13c942798 <line:22:1, line:23:18> 'failed'
+    | `-CallExpr 0x13c942758 <col:2, col:18> 'int'
+    |   |-ImplicitCastExpr 0x13c942740 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13c9426d0 <col:2> 'int ()' Function 0x13c942618 'talloc_free' 'int ()'
+    |   `-ImplicitCastExpr 0x13c942780 <col:14> 'struct ldb_message *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13c9426f0 <col:14> 'struct ldb_message *' lvalue Var 0x13c9285c8 'msg2' 'struct ldb_message *'
+    `-ReturnStmt 0x13c9427f0 <line:24:2, col:9>
+      `-RecoveryExpr 0x13c9427d0 <col:9> '<dependent type>' contains-errors lvalue

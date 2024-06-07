@@ -1,0 +1,224 @@
+`-FunctionDecl 0x141061ac8  line:1:12 invalid kvm_s390_get_cmma 'int (struct kvm *, struct kvm_s390_cmma_log *, int *, unsigned long)' static
+  |-ParmVarDecl 0x141045a48 <col:30, col:42> col:42 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x141061828 <col:47, col:73> col:73 used args 'struct kvm_s390_cmma_log *'
+  |-ParmVarDecl 0x1410618f8 <line:2:9, col:13> col:13 referenced invalid res 'int *'
+  |-ParmVarDecl 0x141061978 <col:18, col:32> col:32 used bufsize 'unsigned long'
+  `-CompoundStmt 0x141066070 <line:3:1, line:47:1>
+    |-DeclStmt 0x141061e40 <line:4:2, col:55>
+    | |-VarDecl 0x141061ba8 <col:2, col:16> col:16 used mem_end 'unsigned long'
+    | |-VarDecl 0x141061c28 <col:2, col:25> col:25 used cur_gfn 'unsigned long'
+    | |-VarDecl 0x141061ca8 <col:2, col:34> col:34 used next_gfn 'unsigned long'
+    | |-VarDecl 0x141061d28 <col:2, col:44> col:44 used hva 'unsigned long'
+    | `-VarDecl 0x141061da8 <col:2, col:49> col:49 used pgstev 'unsigned long'
+    |-DeclStmt 0x141062288 <line:5:2, col:48>
+    | |-RecordDecl 0x141061e58 <col:2, col:9> col:9 struct kvm_memslots
+    | `-VarDecl 0x141061fc8 <col:2, col:47> col:23 used slots 'struct kvm_memslots *' cinit
+    |   `-ImplicitCastExpr 0x141062258 <col:31, col:47> 'struct kvm_memslots *' <IntegralToPointer>
+    |     `-CallExpr 0x141062218 <col:31, col:47> 'int'
+    |       |-ImplicitCastExpr 0x141062200 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x141062190 <col:31> 'int ()' Function 0x1410620d8 'kvm_memslots' 'int ()'
+    |       `-ImplicitCastExpr 0x141062240 <col:44> 'struct kvm *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1410621b0 <col:44> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |-DeclStmt 0x141062488 <line:6:2, col:28>
+    | |-RecordDecl 0x1410622a0 <col:2, col:9> col:9 struct kvm_memory_slot
+    | `-VarDecl 0x141062408 <col:2, col:26> col:26 used ms 'struct kvm_memory_slot *'
+    |-BinaryOperator 0x141062670 <line:8:2, col:59> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x1410624a0 <col:2> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    | `-CallExpr 0x141062640 <col:12, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1410625a0 <col:12> 'int ()' Function 0x1410624e8 'kvm_s390_next_dirty_cmma' 'int ()'
+    |   |-DeclRefExpr 0x1410625c0 <col:37> 'struct kvm_memslots *' lvalue Var 0x141061fc8 'slots' 'struct kvm_memslots *'
+    |   `-RecoveryExpr 0x141062618 <col:44, col:50> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1410625e0 <col:44> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    |-BinaryOperator 0x141063c90 <line:9:2, col:34> 'struct kvm_memory_slot *' '='
+    | |-DeclRefExpr 0x141062690 <col:2> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    | `-ImplicitCastExpr 0x141063c78 <col:7, col:34> 'struct kvm_memory_slot *' <IntegralToPointer>
+    |   `-CallExpr 0x141063c18 <col:7, col:34> 'int'
+    |     |-ImplicitCastExpr 0x141063c00 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x141062790 <col:7> 'int ()' Function 0x1410626d8 'gfn_to_memslot' 'int ()'
+    |     |-ImplicitCastExpr 0x141063c48 <col:22> 'struct kvm *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1410627b0 <col:22> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |     `-ImplicitCastExpr 0x141063c60 <col:27> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x1410627d0 <col:27> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |-BinaryOperator 0x141063d30 <line:10:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x141063ce8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x141063cb0 <col:2> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    | `-IntegerLiteral 0x141063d10 <col:16> 'int' 0
+    |-BinaryOperator 0x141063dd0 <line:11:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x141063d88 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x141063d50 <col:2> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    | `-DeclRefExpr 0x141063db0 <col:20> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |-IfStmt 0x141063e70 <line:12:2, line:13:10>
+    | |-UnaryOperator 0x141063e28 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x141063e10 <col:7> 'struct kvm_memory_slot *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x141063df0 <col:7> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    | `-ReturnStmt 0x141063e60 <line:13:3, col:10>
+    |   `-IntegerLiteral 0x141063e40 <col:10> 'int' 0
+    |-BinaryOperator 0x141063ff8 <line:14:2, col:56> 'unsigned long' '='
+    | |-DeclRefExpr 0x141063e90 <col:2> 'unsigned long' lvalue Var 0x141061ca8 'next_gfn' 'unsigned long'
+    | `-ImplicitCastExpr 0x141063fe0 <col:13, col:56> 'unsigned long' <IntegralCast>
+    |   `-CallExpr 0x141063f98 <col:13, col:56> 'int'
+    |     |-ImplicitCastExpr 0x141063f80 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x141063eb0 <col:13> 'int ()' Function 0x1410624e8 'kvm_s390_next_dirty_cmma' 'int ()'
+    |     |-ImplicitCastExpr 0x141063fc8 <col:38> 'struct kvm_memslots *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x141063ed0 <col:38> 'struct kvm_memslots *' lvalue Var 0x141061fc8 'slots' 'struct kvm_memslots *'
+    |     `-BinaryOperator 0x141063f60 <col:45, col:55> 'unsigned long' '+'
+    |       |-ImplicitCastExpr 0x141063f30 <col:45> 'unsigned long' <LValueToRValue>
+    |       | `-DeclRefExpr 0x141063ef0 <col:45> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |       `-ImplicitCastExpr 0x141063f48 <col:55> 'unsigned long' <IntegralCast>
+    |         `-IntegerLiteral 0x141063f10 <col:55> 'int' 1
+    |-BinaryOperator 0x141064258 <line:15:2, col:61> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x141064018 <col:2> 'unsigned long' lvalue Var 0x141061ba8 'mem_end' 'unsigned long'
+    | `-BinaryOperator 0x141064238 <col:12, col:61> '<dependent type>' contains-errors '+'
+    |   |-CXXDependentScopeMemberExpr 0x1410640f0 <col:12, col:31> '<dependent type>' contains-errors lvalue .base_gfn
+    |   | `-ArraySubscriptExpr 0x1410640d0 <col:12, col:29> '<dependent type>' contains-errors lvalue
+    |   |   |-ImplicitCastExpr 0x1410640b8 <col:12, col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x141064070 <col:12, col:19> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x141064038 <col:12> 'struct kvm_memslots *' lvalue Var 0x141061fc8 'slots' 'struct kvm_memslots *'
+    |   |   `-IntegerLiteral 0x141064098 <col:28> 'int' 0
+    |   `-CXXDependentScopeMemberExpr 0x1410641f0 <col:42, col:61> '<dependent type>' contains-errors lvalue .npages
+    |     `-ArraySubscriptExpr 0x1410641d0 <col:42, col:59> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x1410641b8 <col:42, col:49> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x141064170 <col:42, col:49> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x141064138 <col:42> 'struct kvm_memslots *' lvalue Var 0x141061fc8 'slots' 'struct kvm_memslots *'
+    |       `-IntegerLiteral 0x141064198 <col:58> 'int' 0
+    |-WhileStmt 0x141066020 <line:17:2, line:45:2>
+    | |-BinaryOperator 0x1410642f8 <line:17:9, col:23> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x1410642b0 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x141064278 <col:9> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    | | `-DeclRefExpr 0x1410642d8 <col:23> 'unsigned long' lvalue ParmVar 0x141061978 'bufsize' 'unsigned long'
+    | `-CompoundStmt 0x141065fc0 <col:32, line:45:2>
+    |   |-BinaryOperator 0x141064508 <line:18:3, col:32> 'unsigned long' '='
+    |   | |-DeclRefExpr 0x141064318 <col:3> 'unsigned long' lvalue Var 0x141061d28 'hva' 'unsigned long'
+    |   | `-ImplicitCastExpr 0x1410644f0 <col:9, col:32> 'unsigned long' <IntegralCast>
+    |   |   `-CallExpr 0x141064490 <col:9, col:32> 'int'
+    |   |     |-ImplicitCastExpr 0x141064478 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x141064418 <col:9> 'int ()' Function 0x141064360 'gfn_to_hva' 'int ()'
+    |   |     |-ImplicitCastExpr 0x1410644c0 <col:20> 'struct kvm *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x141064438 <col:20> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |   |     `-ImplicitCastExpr 0x1410644d8 <col:25> 'unsigned long' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x141064458 <col:25> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |   |-IfStmt 0x1410646d0 <line:19:3, line:20:11>
+    |   | |-CallExpr 0x141064660 <line:19:7, col:27> 'int'
+    |   | | |-ImplicitCastExpr 0x141064648 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x141064608 <col:7> 'int ()' Function 0x141064550 'kvm_is_error_hva' 'int ()'
+    |   | | `-ImplicitCastExpr 0x141064688 <col:24> 'unsigned long' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x141064628 <col:24> 'unsigned long' lvalue Var 0x141061d28 'hva' 'unsigned long'
+    |   | `-ReturnStmt 0x1410646c0 <line:20:4, col:11>
+    |   |   `-IntegerLiteral 0x1410646a0 <col:11> 'int' 0
+    |   |-IfStmt 0x141065228 <line:22:3, line:23:44>
+    |   | |-CallExpr 0x141064a08 <line:22:7, col:77> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x1410647d0 <col:7> 'int ()' Function 0x141064718 'test_and_clear_bit' 'int ()'
+    |   | | |-BinaryOperator 0x141064870 <col:26, col:40> '<dependent type>' contains-errors '-'
+    |   | | | |-DeclRefExpr 0x1410647f0 <col:26> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |   | | | `-RecoveryExpr 0x141064848 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x141064810 <col:36> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |   | | `-CallExpr 0x1410649c8 <col:50, col:76> 'int'
+    |   | |   |-ImplicitCastExpr 0x1410649b0 <col:50> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x141064970 <col:50> 'int ()' Function 0x1410648b8 'kvm_second_dirty_bitmap' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x1410649f0 <col:74> 'struct kvm_memory_slot *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x141064990 <col:74> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |   | `-CallExpr 0x141065200 <line:23:4, col:44> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x141064b18 <col:4> 'int ()' Function 0x141064a60 'atomic64_dec' 'int ()'
+    |   |   `-UnaryOperator 0x141064be0 <col:17, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-CXXDependentScopeMemberExpr 0x141064b98 <col:18, col:28> '<dependent type>' contains-errors lvalue .cmma_dirty_pages
+    |   |       `-RecoveryExpr 0x141064b70 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x141064b38 <col:18> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |   |-IfStmt 0x141065528 <line:24:3, line:25:13>
+    |   | |-BinaryOperator 0x141065490 <line:24:7, col:42> 'int' contains-errors '<'
+    |   | | |-CallExpr 0x141065438 <col:7, col:38> '<dependent type>' contains-errors
+    |   | | | |-DeclRefExpr 0x141065328 <col:7> 'int ()' Function 0x141065270 'get_pgste' 'int ()'
+    |   | | | |-RecoveryExpr 0x141065380 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |   | | | | `-DeclRefExpr 0x141065348 <col:17> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |   | | | |-DeclRefExpr 0x1410653a8 <col:26> 'unsigned long' lvalue Var 0x141061d28 'hva' 'unsigned long'
+    |   | | | `-UnaryOperator 0x141065420 <col:31, col:32> 'unsigned long *' prefix '&' cannot overflow
+    |   | | |   `-DeclRefExpr 0x1410653c8 <col:32> 'unsigned long' lvalue Var 0x141061da8 'pgstev' 'unsigned long'
+    |   | | `-IntegerLiteral 0x141065470 <col:42> 'int' 0
+    |   | `-BinaryOperator 0x141065508 <line:25:4, col:13> 'unsigned long' '='
+    |   |   |-DeclRefExpr 0x1410654b0 <col:4> 'unsigned long' lvalue Var 0x141061da8 'pgstev' 'unsigned long'
+    |   |   `-ImplicitCastExpr 0x1410654f0 <col:13> 'unsigned long' <IntegralCast>
+    |   |     `-IntegerLiteral 0x1410654d0 <col:13> 'int' 0
+    |   |-BinaryOperator 0x141065730 <line:27:3, col:41> '<dependent type>' contains-errors '='
+    |   | |-ArraySubscriptExpr 0x141065620 <col:3, col:20> '<dependent type>' contains-errors lvalue
+    |   | | |-ImplicitCastExpr 0x141065608 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | | `-RecoveryExpr 0x141065568 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x141065548 <col:3> 'int *' lvalue ParmVar 0x1410618f8 'res' 'int *'
+    |   | | `-UnaryOperator 0x1410655f0 <col:7, col:18> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | |   `-RecoveryExpr 0x1410655c8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x141065590 <col:7> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    |   | `-BinaryOperator 0x141065710 <col:24, col:41> 'unsigned long' '&'
+    |   |   |-ParenExpr 0x1410656b8 <col:24, col:37> 'unsigned long'
+    |   |   | `-BinaryOperator 0x141065698 <col:25, col:35> 'unsigned long' '>>'
+    |   |   |   |-ImplicitCastExpr 0x141065680 <col:25> 'unsigned long' <LValueToRValue>
+    |   |   |   | `-DeclRefExpr 0x141065640 <col:25> 'unsigned long' lvalue Var 0x141061da8 'pgstev' 'unsigned long'
+    |   |   |   `-IntegerLiteral 0x141065660 <col:35> 'int' 24
+    |   |   `-ImplicitCastExpr 0x1410656f8 <col:41> 'unsigned long' <IntegralCast>
+    |   |     `-IntegerLiteral 0x1410656d8 <col:41> 'int' 67
+    |   |-IfStmt 0x1410657e0 <line:29:3, line:30:11>
+    |   | |-RecoveryExpr 0x141065790 <line:29:7, col:28> '_Bool' contains-errors
+    |   | `-ReturnStmt 0x1410657d0 <line:30:4, col:11>
+    |   |   `-IntegerLiteral 0x1410657b0 <col:11> 'int' 0
+    |   |-IfStmt 0x141065a18 <line:32:3, line:33:58>
+    |   | |-BinaryOperator 0x141065870 <line:32:7, col:18> 'int' '=='
+    |   | | |-ImplicitCastExpr 0x141065840 <col:7> 'unsigned long' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x141065800 <col:7> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |   | | `-ImplicitCastExpr 0x141065858 <col:18> 'unsigned long' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x141065820 <col:18> 'unsigned long' lvalue Var 0x141061ca8 'next_gfn' 'unsigned long'
+    |   | `-BinaryOperator 0x1410659f8 <line:33:4, col:58> 'unsigned long' '='
+    |   |   |-DeclRefExpr 0x141065890 <col:4> 'unsigned long' lvalue Var 0x141061ca8 'next_gfn' 'unsigned long'
+    |   |   `-ImplicitCastExpr 0x1410659e0 <col:15, col:58> 'unsigned long' <IntegralCast>
+    |   |     `-CallExpr 0x141065998 <col:15, col:58> 'int'
+    |   |       |-ImplicitCastExpr 0x141065980 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x1410658b0 <col:15> 'int ()' Function 0x1410624e8 'kvm_s390_next_dirty_cmma' 'int ()'
+    |   |       |-ImplicitCastExpr 0x1410659c8 <col:40> 'struct kvm_memslots *' <LValueToRValue>
+    |   |       | `-DeclRefExpr 0x1410658d0 <col:40> 'struct kvm_memslots *' lvalue Var 0x141061fc8 'slots' 'struct kvm_memslots *'
+    |   |       `-BinaryOperator 0x141065960 <col:47, col:57> 'unsigned long' '+'
+    |   |         |-ImplicitCastExpr 0x141065930 <col:47> 'unsigned long' <LValueToRValue>
+    |   |         | `-DeclRefExpr 0x1410658f0 <col:47> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |   |         `-ImplicitCastExpr 0x141065948 <col:57> 'unsigned long' <IntegralCast>
+    |   |           `-IntegerLiteral 0x141065910 <col:57> 'int' 1
+    |   |-IfStmt 0x141065c38 <line:35:3, line:37:11>
+    |   | |-BinaryOperator 0x141065be8 <line:35:7, line:36:45> 'int' contains-errors '||'
+    |   | | |-ParenExpr 0x141065ac8 <line:35:7, col:27> 'int'
+    |   | | | `-BinaryOperator 0x141065aa8 <col:8, col:20> 'int' '>='
+    |   | | |   |-ImplicitCastExpr 0x141065a78 <col:8> 'unsigned long' <LValueToRValue>
+    |   | | |   | `-DeclRefExpr 0x141065a38 <col:8> 'unsigned long' lvalue Var 0x141061ca8 'next_gfn' 'unsigned long'
+    |   | | |   `-ImplicitCastExpr 0x141065a90 <col:20> 'unsigned long' <LValueToRValue>
+    |   | | |     `-DeclRefExpr 0x141065a58 <col:20> 'unsigned long' lvalue Var 0x141061ba8 'mem_end' 'unsigned long'
+    |   | | `-ParenExpr 0x141065bc8 <line:36:7, col:45> 'int' contains-errors
+    |   | |   `-BinaryOperator 0x141065ba8 <col:8, col:38> 'int' contains-errors '>='
+    |   | |     |-BinaryOperator 0x141065b68 <col:8, col:25> '<dependent type>' contains-errors '-'
+    |   | |     | |-DeclRefExpr 0x141065ae8 <col:8> 'unsigned long' lvalue Var 0x141061ca8 'next_gfn' 'unsigned long'
+    |   | |     | `-RecoveryExpr 0x141065b40 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |   | |     |   `-DeclRefExpr 0x141065b08 <col:19> 'struct kvm_s390_cmma_log *' lvalue ParmVar 0x141061828 'args' 'struct kvm_s390_cmma_log *'
+    |   | |     `-DeclRefExpr 0x141065b88 <col:38> 'unsigned long' lvalue ParmVar 0x141061978 'bufsize' 'unsigned long'
+    |   | `-ReturnStmt 0x141065c28 <line:37:4, col:11>
+    |   |   `-IntegerLiteral 0x141065c08 <col:11> 'int' 0
+    |   |-UnaryOperator 0x141065c78 <line:38:3, col:10> 'unsigned long' postfix '++'
+    |   | `-DeclRefExpr 0x141065c58 <col:3> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |   `-IfStmt 0x141065fa0 <line:40:3, line:44:3>
+    |     |-BinaryOperator 0x141065d90 <line:40:7, col:37> 'int' contains-errors '>='
+    |     | |-BinaryOperator 0x141065d10 <col:7, col:21> '<dependent type>' contains-errors '-'
+    |     | | |-DeclRefExpr 0x141065c90 <col:7> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |     | | `-RecoveryExpr 0x141065ce8 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x141065cb0 <col:17> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |     | `-RecoveryExpr 0x141065d68 <col:33, col:37> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x141065d30 <col:33> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |     `-CompoundStmt 0x141065f80 <col:45, line:44:3>
+    |       |-BinaryOperator 0x141065ec0 <line:41:4, col:36> 'struct kvm_memory_slot *' '='
+    |       | |-DeclRefExpr 0x141065db0 <col:4> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |       | `-ImplicitCastExpr 0x141065ea8 <col:9, col:36> 'struct kvm_memory_slot *' <IntegralToPointer>
+    |       |   `-CallExpr 0x141065e48 <col:9, col:36> 'int'
+    |       |     |-ImplicitCastExpr 0x141065e30 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       |     | `-DeclRefExpr 0x141065dd0 <col:9> 'int ()' Function 0x1410626d8 'gfn_to_memslot' 'int ()'
+    |       |     |-ImplicitCastExpr 0x141065e78 <col:24> 'struct kvm *' <LValueToRValue>
+    |       |     | `-DeclRefExpr 0x141065df0 <col:24> 'struct kvm *' lvalue ParmVar 0x141045a48 'kvm' 'struct kvm *'
+    |       |     `-ImplicitCastExpr 0x141065e90 <col:29> 'unsigned long' <LValueToRValue>
+    |       |       `-DeclRefExpr 0x141065e10 <col:29> 'unsigned long' lvalue Var 0x141061c28 'cur_gfn' 'unsigned long'
+    |       `-IfStmt 0x141065f60 <line:42:4, line:43:12>
+    |         |-UnaryOperator 0x141065f18 <line:42:8, col:9> 'int' prefix '!' cannot overflow
+    |         | `-ImplicitCastExpr 0x141065f00 <col:9> 'struct kvm_memory_slot *' <LValueToRValue>
+    |         |   `-DeclRefExpr 0x141065ee0 <col:9> 'struct kvm_memory_slot *' lvalue Var 0x141062408 'ms' 'struct kvm_memory_slot *'
+    |         `-ReturnStmt 0x141065f50 <line:43:5, col:12>
+    |           `-IntegerLiteral 0x141065f30 <col:12> 'int' 0
+    `-ReturnStmt 0x141066060 <line:46:2, col:9>
+      `-IntegerLiteral 0x141066040 <col:9> 'int' 0

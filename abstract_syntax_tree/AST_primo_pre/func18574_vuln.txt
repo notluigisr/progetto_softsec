@@ -1,0 +1,87 @@
+`-FunctionDecl 0x135128500  line:1:20 ModulateHCLp 'void (const double, const double, const double, double *, double *, double *)' static inline
+  |-ParmVarDecl 0x1351280d8 <col:33, col:46> col:46 used percent_hue 'const double'
+  |-ParmVarDecl 0x135128158 <line:2:3, col:16> col:16 used percent_chroma 'const double'
+  |-ParmVarDecl 0x1351281d8 <col:31, col:44> col:44 used percent_luma 'const double'
+  |-ParmVarDecl 0x135128288 <col:57, col:65> col:65 used red 'double *'
+  |-ParmVarDecl 0x135128308 <line:3:3, col:11> col:11 used green 'double *'
+  |-ParmVarDecl 0x135128388 <col:17, col:25> col:25 used blue 'double *'
+  `-CompoundStmt 0x135142370 <line:4:1, line:20:1>
+    |-DeclStmt 0x1351287c0 <line:5:3, line:8:11>
+    | |-VarDecl 0x135128638 <line:5:3, line:6:5> col:5 used hue 'double'
+    | |-VarDecl 0x1351286b8 <line:5:3, line:7:5> col:5 used luma 'double'
+    | `-VarDecl 0x135128738 <line:5:3, line:8:5> col:5 used chroma 'double'
+    |-CallExpr 0x135141b18 <line:11:3, col:56> 'int'
+    | |-ImplicitCastExpr 0x135141b00 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x135141910 <col:3> 'int ()' Function 0x135141858 'ConvertRGBToHCLp' 'int ()'
+    | |-ImplicitCastExpr 0x135141b68 <col:20, col:21> 'double' <LValueToRValue>
+    | | `-UnaryOperator 0x135141968 <col:20, col:21> 'double' lvalue prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x135141950 <col:21> 'double *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x135141930 <col:21> 'double *' lvalue ParmVar 0x135128288 'red' 'double *'
+    | |-ImplicitCastExpr 0x135141b80 <col:25, col:26> 'double' <LValueToRValue>
+    | | `-UnaryOperator 0x1351419b8 <col:25, col:26> 'double' lvalue prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x1351419a0 <col:26> 'double *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x135141980 <col:26> 'double *' lvalue ParmVar 0x135128308 'green' 'double *'
+    | |-ImplicitCastExpr 0x135141b98 <col:32, col:33> 'double' <LValueToRValue>
+    | | `-UnaryOperator 0x135141a08 <col:32, col:33> 'double' lvalue prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x1351419f0 <col:33> 'double *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1351419d0 <col:33> 'double *' lvalue ParmVar 0x135128388 'blue' 'double *'
+    | |-UnaryOperator 0x135141a40 <col:38, col:39> 'double *' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x135141a20 <col:39> 'double' lvalue Var 0x135128638 'hue' 'double'
+    | |-UnaryOperator 0x135141a78 <col:43, col:44> 'double *' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x135141a58 <col:44> 'double' lvalue Var 0x135128738 'chroma' 'double'
+    | `-UnaryOperator 0x135141ab0 <col:51, col:52> 'double *' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x135141a90 <col:52> 'double' lvalue Var 0x1351286b8 'luma' 'double'
+    |-CompoundAssignOperator 0x135141ce8 <line:12:3, col:33> 'double' '+=' ComputeLHSTy='double' ComputeResultTy='double'
+    | |-DeclRefExpr 0x135141bb0 <col:3> 'double' lvalue Var 0x135128638 'hue' 'double'
+    | `-BinaryOperator 0x135141cc8 <col:8, col:33> 'double' '*'
+    |   |-FloatingLiteral 0x135141bd0 <col:8> 'double' 5.000000e-01
+    |   `-ParenExpr 0x135141ca8 <col:12, col:33> 'double'
+    |     `-BinaryOperator 0x135141c88 <col:13, col:30> 'double' '-'
+    |       |-BinaryOperator 0x135141c48 <col:13, col:18> 'double' '*'
+    |       | |-FloatingLiteral 0x135141bf0 <col:13> 'double' 1.000000e-02
+    |       | `-ImplicitCastExpr 0x135141c30 <col:18> 'double' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x135141c10 <col:18> 'const double' lvalue ParmVar 0x1351280d8 'percent_hue' 'const double'
+    |       `-FloatingLiteral 0x135141c68 <col:30> 'double' 1.000000e+00
+    |-WhileStmt 0x135141e00 <line:13:3, line:14:10>
+    | |-BinaryOperator 0x135141d70 <line:13:10, col:16> 'int' '<'
+    | | |-ImplicitCastExpr 0x135141d58 <col:10> 'double' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135141d18 <col:10> 'double' lvalue Var 0x135128638 'hue' 'double'
+    | | `-FloatingLiteral 0x135141d38 <col:16> 'double' 0.000000e+00
+    | `-CompoundAssignOperator 0x135141dd0 <line:14:5, col:10> 'double' '+=' ComputeLHSTy='double' ComputeResultTy='double'
+    |   |-DeclRefExpr 0x135141d90 <col:5> 'double' lvalue Var 0x135128638 'hue' 'double'
+    |   `-FloatingLiteral 0x135141db0 <col:10> 'double' 1.000000e+00
+    |-WhileStmt 0x135141f08 <line:15:3, line:16:10>
+    | |-BinaryOperator 0x135141e78 <line:15:10, col:16> 'int' '>'
+    | | |-ImplicitCastExpr 0x135141e60 <col:10> 'double' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135141e20 <col:10> 'double' lvalue Var 0x135128638 'hue' 'double'
+    | | `-FloatingLiteral 0x135141e40 <col:16> 'double' 1.000000e+00
+    | `-CompoundAssignOperator 0x135141ed8 <line:16:5, col:10> 'double' '-=' ComputeLHSTy='double' ComputeResultTy='double'
+    |   |-DeclRefExpr 0x135141e98 <col:5> 'double' lvalue Var 0x135128638 'hue' 'double'
+    |   `-FloatingLiteral 0x135141eb8 <col:10> 'double' 1.000000e+00
+    |-CompoundAssignOperator 0x135141fc0 <line:17:3, col:16> 'double' '*=' ComputeLHSTy='double' ComputeResultTy='double'
+    | |-DeclRefExpr 0x135141f28 <col:3> 'double' lvalue Var 0x135128738 'chroma' 'double'
+    | `-BinaryOperator 0x135141fa0 <col:11, col:16> 'double' '*'
+    |   |-FloatingLiteral 0x135141f48 <col:11> 'double' 1.000000e-02
+    |   `-ImplicitCastExpr 0x135141f88 <col:16> 'double' <LValueToRValue>
+    |     `-DeclRefExpr 0x135141f68 <col:16> 'const double' lvalue ParmVar 0x135128158 'percent_chroma' 'const double'
+    |-CompoundAssignOperator 0x135142088 <line:18:3, col:14> 'double' '*=' ComputeLHSTy='double' ComputeResultTy='double'
+    | |-DeclRefExpr 0x135141ff0 <col:3> 'double' lvalue Var 0x1351286b8 'luma' 'double'
+    | `-BinaryOperator 0x135142068 <col:9, col:14> 'double' '*'
+    |   |-FloatingLiteral 0x135142010 <col:9> 'double' 1.000000e-02
+    |   `-ImplicitCastExpr 0x135142050 <col:14> 'double' <LValueToRValue>
+    |     `-DeclRefExpr 0x135142030 <col:14> 'const double' lvalue ParmVar 0x1351281d8 'percent_luma' 'const double'
+    `-CallExpr 0x135142290 <line:19:3, col:50> 'int'
+      |-ImplicitCastExpr 0x135142278 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x135142198 <col:3> 'int ()' Function 0x1351420e0 'ConvertHCLpToRGB' 'int ()'
+      |-ImplicitCastExpr 0x1351422e0 <col:20> 'double' <LValueToRValue>
+      | `-DeclRefExpr 0x1351421b8 <col:20> 'double' lvalue Var 0x135128638 'hue' 'double'
+      |-ImplicitCastExpr 0x1351422f8 <col:24> 'double' <LValueToRValue>
+      | `-DeclRefExpr 0x1351421d8 <col:24> 'double' lvalue Var 0x135128738 'chroma' 'double'
+      |-ImplicitCastExpr 0x135142310 <col:31> 'double' <LValueToRValue>
+      | `-DeclRefExpr 0x1351421f8 <col:31> 'double' lvalue Var 0x1351286b8 'luma' 'double'
+      |-ImplicitCastExpr 0x135142328 <col:36> 'double *' <LValueToRValue>
+      | `-DeclRefExpr 0x135142218 <col:36> 'double *' lvalue ParmVar 0x135128288 'red' 'double *'
+      |-ImplicitCastExpr 0x135142340 <col:40> 'double *' <LValueToRValue>
+      | `-DeclRefExpr 0x135142238 <col:40> 'double *' lvalue ParmVar 0x135128308 'green' 'double *'
+      `-ImplicitCastExpr 0x135142358 <col:46> 'double *' <LValueToRValue>
+        `-DeclRefExpr 0x135142258 <col:46> 'double *' lvalue ParmVar 0x135128388 'blue' 'double *'

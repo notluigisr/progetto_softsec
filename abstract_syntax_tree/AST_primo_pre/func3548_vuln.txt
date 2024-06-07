@@ -1,0 +1,45 @@
+`-FunctionDecl 0x15380dd90  line:1:6 exit_io_context 'void (void)'
+  `-CompoundStmt 0x153828500 <line:2:1, line:17:1>
+    |-DeclStmt 0x15380e068 <line:3:2, col:24>
+    | |-RecordDecl 0x15380de80 <col:2, col:9> col:9 struct io_context
+    | `-VarDecl 0x15380dfe8 <col:2, col:21> col:21 used ioc 'struct io_context *'
+    |-CallExpr 0x15380e230 <line:5:2, col:19> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15380e1b0 <col:2> 'int ()' Function 0x15380e0f8 'task_lock' 'int ()'
+    | `-RecoveryExpr 0x15380e210 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15380e360 <line:6:2, col:17> 'struct io_context *' contains-errors '='
+    | |-DeclRefExpr 0x15380e258 <col:2> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    | `-CXXDependentScopeMemberExpr 0x15380e318 <col:8, col:17> '<dependent type>' contains-errors lvalue ->io_context
+    |   `-RecoveryExpr 0x15380e2f8 <col:8> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x153827938 <line:8:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1538278b8 <col:2> 'int ()' Function 0x153827800 'task_unlock' 'int ()'
+    | `-RecoveryExpr 0x153827918 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x153828368 <line:10:2, line:15:2>
+    | |-CallExpr 0x153827f00 <line:10:6, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x153827a40 <col:6> 'int ()' Function 0x153827988 'atomic_dec_and_test' 'int ()'
+    | | `-UnaryOperator 0x153827ee8 <col:26, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x153827ec0 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x153827a60 <col:27> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    | `-CompoundStmt 0x153828348 <col:43, line:15:2>
+    |   |-IfStmt 0x153828180 <line:11:3, line:12:27>
+    |   | |-BinaryOperator 0x153828030 <line:11:7, col:29> 'int' contains-errors '&&'
+    |   | | |-RecoveryExpr 0x153827f60 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x153827f28 <col:7> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    |   | | `-CXXDependentScopeMemberExpr 0x153827fe8 <col:19, col:29> '<dependent type>' contains-errors lvalue ->exit
+    |   | |   `-RecoveryExpr 0x153827fc0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x153827f88 <col:19> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    |   | `-CallExpr 0x153828158 <line:12:4, col:27> '<dependent type>' contains-errors
+    |   |   |-CXXDependentScopeMemberExpr 0x1538280b0 <col:4, col:14> '<dependent type>' contains-errors lvalue ->exit
+    |   |   | `-RecoveryExpr 0x153828088 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x153828050 <col:4> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    |   |   `-RecoveryExpr 0x153828130 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1538280f8 <col:19> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    |   `-CallExpr 0x153828308 <line:13:3, col:15> 'int'
+    |     |-ImplicitCastExpr 0x1538282f0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x153828280 <col:3> 'int ()' Function 0x1538281c8 'cfq_exit' 'int ()'
+    |     `-ImplicitCastExpr 0x153828330 <col:12> 'struct io_context *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1538282a0 <col:12> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'
+    `-CallExpr 0x1538284c0 <line:16:2, col:20> 'int'
+      |-ImplicitCastExpr 0x1538284a8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x153828468 <col:2> 'int ()' Function 0x1538283b0 'put_io_context' 'int ()'
+      `-ImplicitCastExpr 0x1538284e8 <col:17> 'struct io_context *' <LValueToRValue>
+        `-DeclRefExpr 0x153828488 <col:17> 'struct io_context *' lvalue Var 0x15380dfe8 'ioc' 'struct io_context *'

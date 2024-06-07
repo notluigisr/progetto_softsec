@@ -1,0 +1,27 @@
+`-FunctionDecl 0x15400de88  line:1:12 invalid setup_raw_socket 'int (int *, const char *)' static
+  |-ParmVarDecl 0x15400dd28 <col:29, col:43> col:43 invalid s 'int *'
+  |-ParmVarDecl 0x15400dda8 <col:46, col:58> col:58 used address 'const char *'
+  `-CompoundStmt 0x154028958 <col:67, line:9:1>
+    |-DeclStmt 0x15400dfc0 <line:2:9, col:15>
+    | `-VarDecl 0x15400df58 <col:9, col:13> col:13 used fd 'int'
+    |-BinaryOperator 0x15400e2d8 <line:4:9, col:73> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15400dfd8 <col:9> 'int' lvalue Var 0x15400df58 'fd' 'int'
+    | `-CallExpr 0x15400e298 <col:14, col:73> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15400e150 <col:14> 'int ()' Function 0x15400e098 'make_socket_fd' 'int ()'
+    |   |-RecoveryExpr 0x15400e238 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x15400e188 <col:39> 'const char *' lvalue ParmVar 0x15400dda8 'address' 'const char *'
+    |   |-RecoveryExpr 0x15400e258 <col:48> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x15400e278 <col:61> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15400e3b8 <line:5:9, line:6:24>
+    | |-BinaryOperator 0x15400e350 <line:5:13, col:18> 'int' '<'
+    | | |-ImplicitCastExpr 0x15400e338 <col:13> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x15400e2f8 <col:13> 'int' lvalue Var 0x15400df58 'fd' 'int'
+    | | `-IntegerLiteral 0x15400e318 <col:18> 'int' 0
+    | `-ReturnStmt 0x15400e3a8 <line:6:17, col:24>
+    |   `-ImplicitCastExpr 0x15400e390 <col:24> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x15400e370 <col:24> 'int' lvalue Var 0x15400df58 'fd' 'int'
+    `-ReturnStmt 0x154028948 <line:8:9, col:51>
+      `-CallExpr 0x154028918 <col:16, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1540288b8 <col:16> 'int ()' Function 0x154028800 'journal_remote_add_raw_socket' 'int ()'
+        |-RecoveryExpr 0x1540288d8 <col:46> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x1540288f8 <col:49> 'int' lvalue Var 0x15400df58 'fd' 'int'

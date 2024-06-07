@@ -1,0 +1,23 @@
+`-FunctionDecl 0x133144d48  line:1:12 psi_fop_release 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x133128648 <col:28, col:42> col:42 used inode 'struct inode *'
+  |-ParmVarDecl 0x133144c28 <col:49, col:62> col:62 used file 'struct file *'
+  `-CompoundStmt 0x133145508 <line:2:1, line:7:1>
+    |-DeclStmt 0x133145098 <line:3:2, col:43>
+    | |-RecordDecl 0x133144e48 <col:2, col:9> col:9 struct seq_file
+    | `-VarDecl 0x133144fb8 <col:2, col:31> col:19 used seq 'struct seq_file *' cinit
+    |   `-RecoveryExpr 0x133145058 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x133145020 <col:25> 'struct file *' lvalue ParmVar 0x133144c28 'file' 'struct file *'
+    |-CallExpr 0x1331452e0 <line:5:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1331451e0 <col:2> 'int ()' Function 0x133145128 'psi_trigger_replace' 'int ()'
+    | |-UnaryOperator 0x133145260 <col:22, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x133145238 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x133145200 <col:23> 'struct seq_file *' contains-errors lvalue Var 0x133144fb8 'seq' 'struct seq_file *'
+    | `-RecoveryExpr 0x1331452c0 <col:37> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1331454f8 <line:6:2, col:35>
+      `-CallExpr 0x133145498 <col:9, col:35> 'int'
+        |-ImplicitCastExpr 0x133145480 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1331453f0 <col:9> 'int ()' Function 0x133145338 'single_release' 'int ()'
+        |-ImplicitCastExpr 0x1331454c8 <col:24> 'struct inode *' <LValueToRValue>
+        | `-DeclRefExpr 0x133145410 <col:24> 'struct inode *' lvalue ParmVar 0x133128648 'inode' 'struct inode *'
+        `-ImplicitCastExpr 0x1331454e0 <col:31> 'struct file *' <LValueToRValue>
+          `-DeclRefExpr 0x133145430 <col:31> 'struct file *' lvalue ParmVar 0x133144c28 'file' 'struct file *'

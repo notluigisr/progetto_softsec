@@ -1,0 +1,32 @@
+`-FunctionDecl 0x13e027600  line:1:13 invalid read_cb 'void (struct bt_att_chan *, int, const void *, int, void *)' static
+  |-ParmVarDecl 0x13e00e248 <col:21, col:41> col:41 used chan 'struct bt_att_chan *'
+  |-ParmVarDecl 0x13e00e2e0 <col:47, col:55> col:55 invalid opcode 'int'
+  |-ParmVarDecl 0x13e00e398 <col:63, col:75> col:75 used pdu 'const void *'
+  |-ParmVarDecl 0x13e027418 <line:2:6, col:15> col:15 invalid length 'int'
+  |-ParmVarDecl 0x13e027498 <col:23, col:29> col:29 used user_data 'void *'
+  `-CompoundStmt 0x13e028060 <line:3:1, line:16:1>
+    |-DeclStmt 0x13e027908 <line:4:2, col:43>
+    | |-RecordDecl 0x13e0276d0 <col:2, col:9> col:9 struct bt_gatt_server
+    | `-VarDecl 0x13e027838 <col:2, col:34> col:25 used server 'struct bt_gatt_server *' cinit
+    |   `-ImplicitCastExpr 0x13e0278d8 <col:34> 'struct bt_gatt_server *' <BitCast>
+    |     `-ImplicitCastExpr 0x13e0278c0 <col:34> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13e0278a0 <col:34> 'void *' lvalue ParmVar 0x13e027498 'user_data' 'void *'
+    |-IfStmt 0x13e027c48 <line:7:2, line:11:2>
+    | |-BinaryOperator 0x13e027960 <line:7:6, col:16> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x13e027920 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x13e027940 <col:16> 'int' 2
+    | `-CompoundStmt 0x13e027c28 <col:19, line:11:2>
+    |   |-CallExpr 0x13e027bd8 <line:8:3, line:9:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13e027ae0 <line:8:3> 'int ()' Function 0x13e027a28 'bt_att_chan_send_error_rsp' 'int ()'
+    |   | |-DeclRefExpr 0x13e027b00 <col:30> 'struct bt_att_chan *' lvalue ParmVar 0x13e00e248 'chan' 'struct bt_att_chan *'
+    |   | |-RecoveryExpr 0x13e027b20 <col:36> '<dependent type>' contains-errors lvalue
+    |   | |-IntegerLiteral 0x13e027b40 <col:44> 'int' 0
+    |   | `-RecoveryExpr 0x13e027bb8 <line:9:7> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x13e027c18 <line:10:3>
+    `-CallExpr 0x13e028018 <line:15:2, col:49> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13e027ef8 <col:2> 'int ()' Function 0x13e027e40 'handle_read_req' 'int ()'
+      |-DeclRefExpr 0x13e027f18 <col:18> 'struct bt_att_chan *' lvalue ParmVar 0x13e00e248 'chan' 'struct bt_att_chan *'
+      |-DeclRefExpr 0x13e027f38 <col:24> 'struct bt_gatt_server *' lvalue Var 0x13e027838 'server' 'struct bt_gatt_server *'
+      |-RecoveryExpr 0x13e027f58 <col:32> '<dependent type>' contains-errors lvalue
+      |-RecoveryExpr 0x13e027ff8 <col:40> '<dependent type>' contains-errors lvalue
+      `-IntegerLiteral 0x13e027f90 <col:48> 'int' 0

@@ -1,0 +1,33 @@
+`-FunctionDecl 0x155128750  line:1:6 kgdb_unregister_io_module 'void (struct kgdb_io *)'
+  |-ParmVarDecl 0x155128648 <col:32, col:48> col:48 used old_dbg_io_ops 'struct kgdb_io *'
+  `-CompoundStmt 0x1551415f0 <line:2:1, line:20:1>
+    |-CallExpr 0x155140bf0 <line:3:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155140b70 <col:2> 'int ()' Function 0x155140ab8 'BUG_ON' 'int ()'
+    | `-RecoveryExpr 0x155140bd0 <col:9> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x155140d68 <line:6:2, col:28> 'int'
+    | `-ImplicitCastExpr 0x155140d50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x155140cf8 <col:2> 'int ()' Function 0x155140c40 'kgdb_unregister_callbacks' 'int ()'
+    |-CallExpr 0x155140f18 <line:8:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155140e68 <col:2> 'int ()' Function 0x155140db0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x155140f00 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x155140ee0 <col:13> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x155141100 <line:10:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155141020 <col:2> 'int ()' Function 0x155140f68 'WARN_ON_ONCE' 'int ()'
+    | `-BinaryOperator 0x1551410e0 <col:15, col:29> 'int' contains-errors '!='
+    |   |-RecoveryExpr 0x1551410c0 <col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x155141058 <col:29> 'struct kgdb_io *' lvalue ParmVar 0x155128648 'old_dbg_io_ops' 'struct kgdb_io *'
+    |-CallExpr 0x1551412d0 <line:13:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155141220 <col:2> 'int ()' Function 0x155141168 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x1551412b8 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x155141298 <col:15> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1551413d8 <line:15:2, line:16:26>
+    | |-RecoveryExpr 0x155141330 <line:15:6, col:22> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1551412f8 <col:6> 'struct kgdb_io *' lvalue ParmVar 0x155128648 'old_dbg_io_ops' 'struct kgdb_io *'
+    | `-CallExpr 0x1551413b8 <line:16:3, col:26> '<dependent type>' contains-errors
+    |   `-RecoveryExpr 0x155141390 <col:3, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x155141358 <col:3> 'struct kgdb_io *' lvalue ParmVar 0x155128648 'old_dbg_io_ops' 'struct kgdb_io *'
+    `-CallExpr 0x1551415c0 <line:18:2, line:19:23> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1551414d8 <line:18:2> 'int ()' Function 0x155141420 'pr_info' 'int ()'
+      |-StringLiteral 0x155141540 <col:10> 'char[4]' lvalue "STR"
+      `-RecoveryExpr 0x155141598 <line:19:3, col:19> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x155141560 <col:3> 'struct kgdb_io *' lvalue ParmVar 0x155128648 'old_dbg_io_ops' 'struct kgdb_io *'

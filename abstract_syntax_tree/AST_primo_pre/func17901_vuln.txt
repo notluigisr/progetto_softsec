@@ -1,0 +1,35 @@
+`-FunctionDecl 0x14980e350  line:1:13 common_hrtimer_rearm 'void (struct k_itimer *)' static
+  |-ParmVarDecl 0x14980e248 <col:34, col:51> col:51 used timr 'struct k_itimer *'
+  `-CompoundStmt 0x149826f58 <line:2:1, line:12:1>
+    |-DeclStmt 0x149826940 <line:3:2, col:46>
+    | |-RecordDecl 0x149826648 <col:2, col:9> col:9 struct hrtimer
+    | `-VarDecl 0x1498267b8 <col:2, col:41> col:18 used timer 'struct hrtimer *' cinit
+    |   `-UnaryOperator 0x149826910 <col:26, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x1498268c8 <col:27, col:41> '<dependent type>' contains-errors lvalue .timer
+    |       `-CXXDependentScopeMemberExpr 0x149826880 <col:27, col:36> '<dependent type>' contains-errors lvalue .real
+    |         `-RecoveryExpr 0x149826858 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x149826820 <col:27> 'struct k_itimer *' lvalue ParmVar 0x14980e248 'timr' 'struct k_itimer *'
+    |-IfStmt 0x1498269f8 <line:5:2, line:6:3>
+    | |-UnaryOperator 0x1498269d0 <line:5:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1498269b8 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x149826990 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x149826958 <col:7> 'struct k_itimer *' lvalue ParmVar 0x14980e248 'timr' 'struct k_itimer *'
+    | `-ReturnStmt 0x1498269e8 <line:6:3>
+    |-CompoundAssignOperator 0x149826d80 <line:8:2, line:10:24> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x149826a50 <line:8:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x149826a18 <col:2> 'struct k_itimer *' lvalue ParmVar 0x14980e248 'timr' 'struct k_itimer *'
+    | `-CStyleCastExpr 0x149826d58 <col:22, line:10:24> 'unsigned int' contains-errors <Dependent>
+    |   `-CallExpr 0x149826d08 <line:8:37, line:10:24> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x149826ba0 <line:8:37> 'int ()' Function 0x149826ae8 'hrtimer_forward' 'int ()'
+    |     |-DeclRefExpr 0x149826bc0 <col:53> 'struct hrtimer *' contains-errors lvalue Var 0x1498267b8 'timer' 'struct hrtimer *'
+    |     |-CallExpr 0x149826c88 <line:9:7, col:29> '<dependent type>' contains-errors
+    |     | `-CXXDependentScopeMemberExpr 0x149826c40 <col:7, col:20> '<dependent type>' contains-errors lvalue ->get_time
+    |     |   `-RecoveryExpr 0x149826c18 <col:7, col:14> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x149826be0 <col:7> 'struct hrtimer *' contains-errors lvalue Var 0x1498267b8 'timer' 'struct hrtimer *'
+    |     `-RecoveryExpr 0x149826ce0 <line:10:7, col:13> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x149826ca8 <col:7> 'struct k_itimer *' lvalue ParmVar 0x14980e248 'timr' 'struct k_itimer *'
+    `-CallExpr 0x149826f18 <line:11:2, col:23> 'int' contains-errors
+      |-ImplicitCastExpr 0x149826f00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x149826e90 <col:2> 'int ()' Function 0x149826dd8 'hrtimer_restart' 'int ()'
+      `-ImplicitCastExpr 0x149826f40 <col:18> 'struct hrtimer *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x149826eb0 <col:18> 'struct hrtimer *' contains-errors lvalue Var 0x1498267b8 'timer' 'struct hrtimer *'

@@ -1,0 +1,88 @@
+`-FunctionDecl 0x12f141800  line:1:6 invalid dmar_free_irte 'void (const struct intr_source *, int)'
+  |-ParmVarDecl 0x12f128648 <col:21, col:47> col:47 used intr_src 'const struct intr_source *'
+  |-ParmVarDecl 0x12f1286e0 <col:57, col:66> col:66 invalid index 'int'
+  `-CompoundStmt 0x12f143600 <line:2:1, line:28:1>
+    |-DeclStmt 0x12f141aa8 <line:3:2, col:32>
+    | |-RecordDecl 0x12f1418b8 <col:2, col:9> col:9 struct dmar_drhd_rt
+    | `-VarDecl 0x12f141a28 <col:2, col:23> col:23 used dmar_unit 'struct dmar_drhd_rt *'
+    |-DeclStmt 0x12f141d40 <line:4:2, col:42>
+    | |-RecordDecl 0x12f141ac0 <col:2, col:8> col:8 union dmar_ir_entry
+    | |-VarDecl 0x12f141c28 <col:2, col:23> col:23 used ir_table 'union dmar_ir_entry *'
+    | `-VarDecl 0x12f141cb8 <col:2, col:34> col:34 used ir_entry 'union dmar_ir_entry *'
+    |-DeclStmt 0x12f141ed8 <line:5:2, col:19>
+    | |-RecordDecl 0x12f141d58 <col:2, col:8> col:8 union pci_bdf
+    | `-VarDecl 0x12f141e58 <col:2, col:16> col:16 invalid sid 'union pci_bdf'
+    |-IfStmt 0x12f1424b8 <line:7:2, line:11:2> has_else
+    | |-RecoveryExpr 0x12f141f28 <line:7:6, col:16> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12f141ef0 <col:6> 'const struct intr_source *' lvalue ParmVar 0x12f128648 'intr_src' 'const struct intr_source *'
+    | |-CompoundStmt 0x12f142240 <col:24, line:9:2>
+    | `-CompoundStmt 0x12f1424a0 <col:9, line:11:2>
+    |   `-BinaryOperator 0x12f142480 <line:10:3, col:60> 'struct dmar_drhd_rt *' contains-errors '='
+    |     |-DeclRefExpr 0x12f142250 <col:3> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+    |     `-CallExpr 0x12f142450 <col:15, col:60> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x12f142350 <col:15> 'int ()' Function 0x12f142298 'ioapic_to_dmaru' 'int ()'
+    |       |-CXXDependentScopeMemberExpr 0x12f1423d0 <col:31, col:45> '<dependent type>' contains-errors lvalue .ioapic_id
+    |       | `-RecoveryExpr 0x12f1423a8 <col:31, col:41> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x12f142370 <col:31> 'const struct intr_source *' lvalue ParmVar 0x12f128648 'intr_src' 'const struct intr_source *'
+    |       `-UnaryOperator 0x12f142438 <col:56, col:57> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x12f142418 <col:57> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x12f1435e0 <line:13:2, line:26:2>
+      |-CallExpr 0x12f142628 <line:13:6, col:39> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x12f1425c8 <col:6> 'int ()' Function 0x12f142510 'is_dmar_unit_valid' 'int ()'
+      | |-DeclRefExpr 0x12f1425e8 <col:25> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+      | `-RecoveryExpr 0x12f142608 <col:36> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x12f1435a8 <col:42, line:26:2>
+        |-BinaryOperator 0x12f1428b0 <line:14:3, col:69> 'union dmar_ir_entry *' contains-errors '='
+        | |-DeclRefExpr 0x12f142658 <col:3> 'union dmar_ir_entry *' lvalue Var 0x12f141c28 'ir_table' 'union dmar_ir_entry *'
+        | `-CStyleCastExpr 0x12f142888 <col:14, col:69> 'union dmar_ir_entry *' contains-errors <Dependent>
+        |   `-CallExpr 0x12f1427d8 <col:37, col:69> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x12f142758 <col:37> 'int ()' Function 0x12f1426a0 'hpa2hva' 'int ()'
+        |     `-RecoveryExpr 0x12f1427b0 <col:45, col:56> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x12f142778 <col:45> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+        |-BinaryOperator 0x12f142950 <line:15:3, col:25> 'union dmar_ir_entry *' contains-errors '='
+        | |-DeclRefExpr 0x12f1428d0 <col:3> 'union dmar_ir_entry *' lvalue Var 0x12f141cb8 'ir_entry' 'union dmar_ir_entry *'
+        | `-BinaryOperator 0x12f142930 <col:14, col:25> '<dependent type>' contains-errors '+'
+        |   |-DeclRefExpr 0x12f1428f0 <col:14> 'union dmar_ir_entry *' lvalue Var 0x12f141c28 'ir_table' 'union dmar_ir_entry *'
+        |   `-RecoveryExpr 0x12f142910 <col:25> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x12f142a80 <line:16:3, col:34> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x12f142a18 <col:3, col:24> '<dependent type>' contains-errors lvalue .present
+        | | `-CXXDependentScopeMemberExpr 0x12f1429d0 <col:3, col:18> '<dependent type>' contains-errors lvalue .remap
+        | |   `-RecoveryExpr 0x12f1429a8 <col:3, col:13> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x12f142970 <col:3> 'union dmar_ir_entry *' lvalue Var 0x12f141cb8 'ir_entry' 'union dmar_ir_entry *'
+        | `-IntegerLiteral 0x12f142a60 <col:34> 'unsigned long' 0
+        |-CallExpr 0x12f142db8 <line:19:3, col:47> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12f142cc0 <col:3> 'int ()' Function 0x12f142c08 'dmar_invalid_iec' 'int ()'
+        | |-DeclRefExpr 0x12f142ce0 <col:20> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+        | |-RecoveryExpr 0x12f142d00 <col:31> '<dependent type>' contains-errors lvalue
+        | |-IntegerLiteral 0x12f142d20 <col:38> 'unsigned int' 0
+        | `-RecoveryExpr 0x12f142d98 <col:42> '<dependent type>' contains-errors lvalue
+        `-IfStmt 0x12f143588 <line:21:3, line:25:3>
+          |-UnaryOperator 0x12f142f68 <line:21:7, col:41> '<dependent type>' contains-errors prefix '!' cannot overflow
+          | `-CallExpr 0x12f142f38 <col:8, col:41> '<dependent type>' contains-errors
+          |   |-DeclRefExpr 0x12f142ed8 <col:8> 'int ()' Function 0x12f142e20 'is_irte_reserved' 'int ()'
+          |   |-DeclRefExpr 0x12f142ef8 <col:25> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+          |   `-RecoveryExpr 0x12f142f18 <col:36> '<dependent type>' contains-errors lvalue
+          `-CompoundStmt 0x12f143560 <col:44, line:25:3>
+            |-CallExpr 0x12f1430f8 <line:22:4, col:36> '<dependent type>' contains-errors
+            | |-DeclRefExpr 0x12f143060 <col:4> 'int ()' Function 0x12f142fa8 'spinlock_obtain' 'int ()'
+            | `-UnaryOperator 0x12f1430e0 <col:20, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+            |   `-RecoveryExpr 0x12f1430b8 <col:21, col:32> '<dependent type>' contains-errors lvalue
+            |     `-DeclRefExpr 0x12f143080 <col:21> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+            |-CallExpr 0x12f143390 <line:23:4, col:81> '<dependent type>' contains-errors
+            | |-DeclRefExpr 0x12f143200 <col:4> 'int ()' Function 0x12f143148 'bitmap_clear_nolock' 'int ()'
+            | |-BinaryOperator 0x12f143260 <col:24, col:32> '<dependent type>' contains-errors '&'
+            | | |-RecoveryExpr 0x12f143220 <col:24> '<dependent type>' contains-errors lvalue
+            | | `-IntegerLiteral 0x12f143240 <col:32> 'unsigned int' 63
+            | `-UnaryOperator 0x12f143378 <col:39, col:80> '<dependent type>' contains-errors prefix '&' cannot overflow
+            |   `-ArraySubscriptExpr 0x12f143358 <col:40, col:80> '<dependent type>' contains-errors lvalue
+            |     |-ImplicitCastExpr 0x12f143340 <col:40, col:51> '<dependent type>' contains-errors <LValueToRValue>
+            |     | `-RecoveryExpr 0x12f1432b8 <col:40, col:51> '<dependent type>' contains-errors lvalue
+            |     |   `-DeclRefExpr 0x12f143280 <col:40> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'
+            |     `-BinaryOperator 0x12f143320 <col:69, col:78> '<dependent type>' contains-errors '>>'
+            |       |-RecoveryExpr 0x12f1432e0 <col:69> '<dependent type>' contains-errors lvalue
+            |       `-IntegerLiteral 0x12f143300 <col:78> 'unsigned int' 6
+            `-CallExpr 0x12f143538 <line:24:4, col:37> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x12f1434a0 <col:4> 'int ()' Function 0x12f1433e8 'spinlock_release' 'int ()'
+              `-UnaryOperator 0x12f143520 <col:21, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+                `-RecoveryExpr 0x12f1434f8 <col:22, col:33> '<dependent type>' contains-errors lvalue
+                  `-DeclRefExpr 0x12f1434c0 <col:22> 'struct dmar_drhd_rt *' lvalue Var 0x12f141a28 'dmar_unit' 'struct dmar_drhd_rt *'

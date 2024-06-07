@@ -1,0 +1,76 @@
+`-FunctionDecl 0x140053e00  line:1:5 kvm_set_cr0 'int (struct kvm_vcpu *, unsigned long)'
+  |-ParmVarDecl 0x140030e48 <col:17, col:34> col:34 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x140030ec8 <col:40, col:54> col:54 used cr0 'unsigned long'
+  `-CompoundStmt 0x140056608 <line:2:1, line:44:1>
+    |-DeclStmt 0x140054190 <line:3:2, col:44>
+    | `-VarDecl 0x140053f18 <col:2, col:43> col:16 used old_cr0 'unsigned long' cinit
+    |   `-ImplicitCastExpr 0x140054178 <col:26, col:43> 'unsigned long' <IntegralCast>
+    |     `-CallExpr 0x140054138 <col:26, col:43> 'int'
+    |       |-ImplicitCastExpr 0x140054120 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1400540b0 <col:26> 'int ()' Function 0x140053ff8 'kvm_read_cr0' 'int ()'
+    |       `-ImplicitCastExpr 0x140054160 <col:39> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1400540d0 <col:39> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x1400543c8 <line:4:2, line:5:32>
+    | `-VarDecl 0x1400541c0 <line:4:2, line:5:22> line:4:16 used update_bits 'unsigned long' cinit
+    |   `-BinaryOperator 0x1400543a8 <col:30, line:5:22> '<dependent type>' contains-errors '|'
+    |     |-BinaryOperator 0x140054368 <line:4:30, line:5:9> '<dependent type>' contains-errors '|'
+    |     | |-BinaryOperator 0x140054328 <line:4:30, col:43> '<dependent type>' contains-errors '|'
+    |     | | |-RecoveryExpr 0x1400542e8 <col:30> '<dependent type>' contains-errors lvalue
+    |     | | `-RecoveryExpr 0x140054308 <col:43> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x140054348 <line:5:9> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x140054388 <col:22> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x140054468 <line:7:2, col:9> 'unsigned long' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x1400543e0 <col:2> 'unsigned long' lvalue ParmVar 0x140030ec8 'cr0' 'unsigned long'
+    | `-RecoveryExpr 0x140054448 <col:9> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x140054580 <line:14:2, col:10> 'unsigned long' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x140054498 <col:2> 'unsigned long' lvalue ParmVar 0x140030ec8 'cr0' 'unsigned long'
+    | `-UnaryOperator 0x140054568 <col:9, col:10> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   `-ImplicitCastExpr 0x140054550 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x140054530 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1400546b0 <line:16:2, line:17:10>
+    | |-RecoveryExpr 0x140054660 <line:16:6, col:46> '_Bool' contains-errors
+    | `-ReturnStmt 0x1400546a0 <line:17:3, col:10>
+    |   `-IntegerLiteral 0x140054680 <col:10> 'int' 1
+    |-IfStmt 0x1400547d0 <line:19:2, line:20:10>
+    | |-RecoveryExpr 0x140054780 <line:19:6, col:46> '_Bool' contains-errors
+    | `-ReturnStmt 0x1400547c0 <line:20:3, col:10>
+    |   `-IntegerLiteral 0x1400547a0 <col:10> 'int' 1
+    |-IfStmt 0x1400562d8 <line:22:2, line:37:2>
+    | |-RecoveryExpr 0x1400549d8 <line:22:6, col:43> '_Bool' contains-errors
+    | `-CompoundStmt 0x1400562c0 <col:46, line:37:2>
+    |   `-IfStmt 0x1400562a0 <line:34:3, line:36:11>
+    |     |-BinaryOperator 0x140056250 <line:34:7, line:35:22> 'int' contains-errors '&&'
+    |     | |-CallExpr 0x140054b30 <line:34:7, col:18> 'int'
+    |     | | |-ImplicitCastExpr 0x140054b18 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x140054ad8 <col:7> 'int ()' Function 0x140054a20 'is_pae' 'int ()'
+    |     | | `-ImplicitCastExpr 0x140054b58 <col:14> 'struct kvm_vcpu *' <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x140054af8 <col:14> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    |     | `-UnaryOperator 0x140056238 <col:23, line:35:22> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     |   `-CallExpr 0x140056200 <line:34:24, line:35:22> '<dependent type>' contains-errors
+    |     |     |-DeclRefExpr 0x140054c50 <line:34:24> 'int ()' Function 0x140054b98 'load_pdptrs' 'int ()'
+    |     |     |-DeclRefExpr 0x140054c70 <col:36> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    |     |     |-CXXDependentScopeMemberExpr 0x140054cf0 <col:42, col:53> '<dependent type>' contains-errors lvalue .walk_mmu
+    |     |     | `-RecoveryExpr 0x140054cc8 <col:42, col:48> '<dependent type>' contains-errors lvalue
+    |     |     |   `-DeclRefExpr 0x140054c90 <col:42> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    |     |     `-CXXDependentScopeMemberExpr 0x140054d98 <line:35:8, col:19> '<dependent type>' contains-errors lvalue .cr3
+    |     |       `-RecoveryExpr 0x140054d70 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |     |         `-DeclRefExpr 0x140054d38 <col:8> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    |     `-ReturnStmt 0x140056290 <line:36:4, col:11>
+    |       `-IntegerLiteral 0x140056270 <col:11> 'int' 1
+    |-IfStmt 0x1400565b8 <line:41:2, line:42:29>
+    | |-BinaryOperator 0x140056420 <line:41:6, col:24> 'unsigned long' contains-errors '&'
+    | | |-ParenExpr 0x1400563c8 <col:6, col:20> 'unsigned long'
+    | | | `-BinaryOperator 0x1400563a8 <col:7, col:13> 'unsigned long' '^'
+    | | |   |-ImplicitCastExpr 0x140056378 <col:7> 'unsigned long' <LValueToRValue>
+    | | |   | `-DeclRefExpr 0x140056338 <col:7> 'unsigned long' lvalue ParmVar 0x140030ec8 'cr0' 'unsigned long'
+    | | |   `-ImplicitCastExpr 0x140056390 <col:13> 'unsigned long' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x140056358 <col:13> 'unsigned long' lvalue Var 0x140053f18 'old_cr0' 'unsigned long'
+    | | `-ImplicitCastExpr 0x140056408 <col:24> 'unsigned long' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1400563e8 <col:24> 'unsigned long' contains-errors lvalue Var 0x1400541c0 'update_bits' 'unsigned long'
+    | `-CallExpr 0x140056578 <line:42:3, col:29> 'int'
+    |   |-ImplicitCastExpr 0x140056560 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x140056520 <col:3> 'int ()' Function 0x140056468 'kvm_mmu_reset_context' 'int ()'
+    |   `-ImplicitCastExpr 0x1400565a0 <col:25> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x140056540 <col:25> 'struct kvm_vcpu *' lvalue ParmVar 0x140030e48 'vcpu' 'struct kvm_vcpu *'
+    `-ReturnStmt 0x1400565f8 <line:43:2, col:9>
+      `-IntegerLiteral 0x1400565d8 <col:9> 'int' 0

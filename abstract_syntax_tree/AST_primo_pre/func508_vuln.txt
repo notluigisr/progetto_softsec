@@ -1,0 +1,37 @@
+`-FunctionDecl 0x126140a00  line:1:5 expand_stack 'int (struct vm_area_struct *, unsigned long)'
+  |-ParmVarDecl 0x126128648 <col:18, col:41> col:41 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x1261286c8 <col:46, col:60> col:60 used address 'unsigned long'
+  `-CompoundStmt 0x1261412f8 <line:2:1, line:12:1>
+    |-DeclStmt 0x126140bf0 <line:3:2, col:29>
+    | `-VarDecl 0x126140b88 <col:2, col:25> col:25 used next 'struct vm_area_struct *'
+    |-CompoundAssignOperator 0x126140ca8 <line:5:2, col:13> 'unsigned long' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x126140c08 <col:2> 'unsigned long' lvalue ParmVar 0x1261286c8 'address' 'unsigned long'
+    | `-RecoveryExpr 0x126140c88 <col:13> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x126140d58 <line:6:2, col:14> 'struct vm_area_struct *' contains-errors '='
+    | |-DeclRefExpr 0x126140cd8 <col:2> 'struct vm_area_struct *' lvalue Var 0x126140b88 'next' 'struct vm_area_struct *'
+    | `-RecoveryExpr 0x126140d30 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x126140cf8 <col:9> 'struct vm_area_struct *' lvalue ParmVar 0x126128648 'vma' 'struct vm_area_struct *'
+    |-IfStmt 0x1261410a8 <line:7:2, line:10:2>
+    | |-BinaryOperator 0x126140ef0 <line:7:6, col:42> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x126140d78 <col:6> 'struct vm_area_struct *' lvalue Var 0x126140b88 'next' 'struct vm_area_struct *'
+    | | `-BinaryOperator 0x126140ed0 <col:14, col:42> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x126140dd0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x126140d98 <col:14> 'struct vm_area_struct *' lvalue Var 0x126140b88 'next' 'struct vm_area_struct *'
+    | |   `-BinaryOperator 0x126140eb0 <col:32, col:42> '<dependent type>' contains-errors '+'
+    | |     |-DeclRefExpr 0x126140df8 <col:32> 'unsigned long' lvalue ParmVar 0x1261286c8 'address' 'unsigned long'
+    | |     `-RecoveryExpr 0x126140e90 <col:42> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x126141090 <col:53, line:10:2>
+    |   `-IfStmt 0x126141070 <line:8:3, line:9:12>
+    |     |-RecoveryExpr 0x126140fa8 <line:8:7, col:36> '_Bool' contains-errors
+    |     `-ReturnStmt 0x126141060 <line:9:4, col:12>
+    |       `-UnaryOperator 0x126141048 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x126141030 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x126141010 <col:12> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1261412e8 <line:11:2, col:36>
+      `-CallExpr 0x126141288 <col:9, col:36> 'int'
+        |-ImplicitCastExpr 0x126141270 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x1261411e0 <col:9> 'int ()' Function 0x126141128 'expand_upwards' 'int ()'
+        |-ImplicitCastExpr 0x1261412b8 <col:24> 'struct vm_area_struct *' <LValueToRValue>
+        | `-DeclRefExpr 0x126141200 <col:24> 'struct vm_area_struct *' lvalue ParmVar 0x126128648 'vma' 'struct vm_area_struct *'
+        `-ImplicitCastExpr 0x1261412d0 <col:29> 'unsigned long' <LValueToRValue>
+          `-DeclRefExpr 0x126141220 <col:29> 'unsigned long' lvalue ParmVar 0x1261286c8 'address' 'unsigned long'

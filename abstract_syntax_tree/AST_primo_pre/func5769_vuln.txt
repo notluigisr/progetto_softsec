@@ -1,0 +1,88 @@
+`-FunctionDecl 0x14b141968  line:1:24 invalid get_ucounts 'struct ucounts *(struct user_namespace *, int)' static
+  |-ParmVarDecl 0x14b1286e8 <col:36, col:59> col:59 used ns 'struct user_namespace *'
+  |-ParmVarDecl 0x14b128780 <col:63, col:70> col:70 invalid uid 'int'
+  `-CompoundStmt 0x14b1475e0 <line:2:1, line:32:1>
+    |-DeclStmt 0x14b141df8 <line:3:2, col:57>
+    | |-RecordDecl 0x14b141a20 <col:2, col:9> col:9 struct hlist_head
+    | `-VarDecl 0x14b141b88 <col:2, col:56> col:21 used hashent 'struct hlist_head *' cinit
+    |   `-CallExpr 0x14b141db0 <col:31, col:56> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b141d50 <col:31> 'int ()' Function 0x14b141c98 'ucounts_hashentry' 'int ()'
+    |     |-DeclRefExpr 0x14b141d70 <col:49> 'struct user_namespace *' lvalue ParmVar 0x14b1286e8 'ns' 'struct user_namespace *'
+    |     `-RecoveryExpr 0x14b141d90 <col:53> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14b141fa8 <line:4:2, col:31>
+    | |-VarDecl 0x14b141e98 <col:2, col:18> col:18 used ucounts 'struct ucounts *'
+    | `-VarDecl 0x14b141f28 <col:2, col:28> col:28 used new 'struct ucounts *'
+    |-CallExpr 0x14b142150 <line:6:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b1420a0 <col:2> 'int ()' Function 0x14b141fe8 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x14b142138 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b142118 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14b142330 <line:7:2, col:41> 'struct ucounts *' contains-errors '='
+    | |-DeclRefExpr 0x14b142178 <col:2> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'
+    | `-CallExpr 0x14b1422f8 <col:12, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b142278 <col:12> 'int ()' Function 0x14b1421c0 'find_ucounts' 'int ()'
+    |   |-DeclRefExpr 0x14b142298 <col:25> 'struct user_namespace *' lvalue ParmVar 0x14b1286e8 'ns' 'struct user_namespace *'
+    |   |-RecoveryExpr 0x14b1422b8 <col:29> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14b1422d8 <col:34> 'struct hlist_head *' contains-errors lvalue Var 0x14b141b88 'hashent' 'struct hlist_head *'
+    |-IfStmt 0x14b147380 <line:8:2, line:27:2>
+    | |-UnaryOperator 0x14b142388 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b142370 <col:7> 'struct ucounts *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b142350 <col:7> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'
+    | `-CompoundStmt 0x14b147330 <col:16, line:27:2>
+    |   |-CallExpr 0x14b142530 <line:9:3, col:32> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b142480 <col:3> 'int ()' Function 0x14b1423c8 'spin_unlock_irq' 'int ()'
+    |   | `-UnaryOperator 0x14b142518 <col:19, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14b1424f8 <col:20> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x14b142798 <line:12:3, line:13:11>
+    |   | |-UnaryOperator 0x14b142738 <line:12:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x14b142720 <col:8> 'struct ucounts *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14b142700 <col:8> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |   | `-ReturnStmt 0x14b142788 <line:13:4, col:11>
+    |   |   `-RecoveryExpr 0x14b142768 <col:11> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14b146a48 <line:15:3, col:13> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14b146a00 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14b1427b8 <col:3> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |   | `-DeclRefExpr 0x14b146a28 <col:13> 'struct user_namespace *' lvalue ParmVar 0x14b1286e8 'ns' 'struct user_namespace *'
+    |   |-BinaryOperator 0x14b146ae8 <line:16:3, col:14> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14b146aa0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14b146a68 <col:3> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |   | `-RecoveryExpr 0x14b146ac8 <col:14> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x14b146ca0 <line:17:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b146be8 <col:3> 'int ()' Function 0x14b146b30 'atomic_set' 'int ()'
+    |   | |-UnaryOperator 0x14b146c68 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x14b146c40 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14b146c08 <col:15> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |   | `-IntegerLiteral 0x14b146c80 <col:27> 'int' 0
+    |   |-CallExpr 0x14b146d80 <line:19:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b146cd0 <col:3> 'int ()' Function 0x14b141fe8 'spin_lock_irq' 'int ()'
+    |   | `-UnaryOperator 0x14b146d68 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14b146d48 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14b146e80 <line:20:3, col:42> 'struct ucounts *' contains-errors '='
+    |   | |-DeclRefExpr 0x14b146da8 <col:3> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'
+    |   | `-CallExpr 0x14b146e48 <col:13, col:42> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14b146dc8 <col:13> 'int ()' Function 0x14b1421c0 'find_ucounts' 'int ()'
+    |   |   |-DeclRefExpr 0x14b146de8 <col:26> 'struct user_namespace *' lvalue ParmVar 0x14b1286e8 'ns' 'struct user_namespace *'
+    |   |   |-RecoveryExpr 0x14b146e08 <col:30> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14b146e28 <col:35> 'struct hlist_head *' contains-errors lvalue Var 0x14b141b88 'hashent' 'struct hlist_head *'
+    |   `-IfStmt 0x14b147300 <line:21:3, line:26:3> has_else
+    |     |-ImplicitCastExpr 0x14b146ec0 <line:21:7> 'struct ucounts *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14b146ea0 <col:7> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'
+    |     |-CompoundStmt 0x14b147088 <col:16, line:23:3>
+    |     | `-CallExpr 0x14b147048 <line:22:4, col:13> 'int'
+    |     |   |-ImplicitCastExpr 0x14b147030 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x14b146fb8 <col:4> 'int ()' Function 0x14b146f00 'kfree' 'int ()'
+    |     |   `-ImplicitCastExpr 0x14b147070 <col:10> 'struct ucounts *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x14b146fd8 <col:10> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |     `-CompoundStmt 0x14b1472e0 <line:23:10, line:26:3>
+    |       |-CallExpr 0x14b147238 <line:24:4, col:38> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x14b147180 <col:4> 'int ()' Function 0x14b1470c8 'hlist_add_head' 'int ()'
+    |       | |-UnaryOperator 0x14b147200 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       | | `-RecoveryExpr 0x14b1471d8 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |       | |   `-DeclRefExpr 0x14b1471a0 <col:20> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    |       | `-DeclRefExpr 0x14b147218 <col:31> 'struct hlist_head *' contains-errors lvalue Var 0x14b141b88 'hashent' 'struct hlist_head *'
+    |       `-BinaryOperator 0x14b1472c0 <line:25:4, col:14> 'struct ucounts *' '='
+    |         |-DeclRefExpr 0x14b147268 <col:4> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'
+    |         `-ImplicitCastExpr 0x14b1472a8 <col:14> 'struct ucounts *' <LValueToRValue>
+    |           `-DeclRefExpr 0x14b147288 <col:14> 'struct ucounts *' lvalue Var 0x14b141f28 'new' 'struct ucounts *'
+    `-ReturnStmt 0x14b1475d0 <line:31:2, col:9>
+      `-ImplicitCastExpr 0x14b1475b8 <col:9> 'struct ucounts *' <LValueToRValue>
+        `-DeclRefExpr 0x14b147598 <col:9> 'struct ucounts *' lvalue Var 0x14b141e98 'ucounts' 'struct ucounts *'

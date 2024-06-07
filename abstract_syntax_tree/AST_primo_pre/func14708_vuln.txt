@@ -1,0 +1,31 @@
+`-FunctionDecl 0x12200dd98  line:1:5 referenced perf_event_task_disable 'int (void)'
+  `-CompoundStmt 0x121922cd0 <line:2:1, line:11:1>
+    |-DeclStmt 0x12200e078 <line:3:2, col:26>
+    | |-RecordDecl 0x12200de88 <col:2, col:9> col:9 struct perf_event
+    | `-VarDecl 0x12200dff8 <col:2, col:21> col:21 used event 'struct perf_event *'
+    |-CallExpr 0x12200e300 <line:5:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12200e1c0 <col:2> 'int ()' Function 0x12200e108 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12200e2e8 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12200e2a0 <col:14, col:23> '<dependent type>' contains-errors lvalue ->perf_event_mutex
+    |     `-RecoveryExpr 0x12200e280 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1219227b8 <line:6:2, col:67> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121922610 <col:2> 'int ()' Function 0x12200e350 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x121922630 <col:22> 'struct perf_event *' lvalue Var 0x12200dff8 'event' 'struct perf_event *'
+    | |-UnaryOperator 0x121922780 <col:29, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x121922738 <col:30, col:39> '<dependent type>' contains-errors lvalue ->perf_event_list
+    | |   `-RecoveryExpr 0x121922718 <col:30> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x121922798 <col:56> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1219229c8 <line:7:3, col:54> 'int'
+    | |-ImplicitCastExpr 0x1219229b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1219228d0 <col:3> 'int ()' Function 0x121922818 'perf_event_for_each_child' 'int ()'
+    | |-ImplicitCastExpr 0x1219229f8 <col:29> 'struct perf_event *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1219228f0 <col:29> 'struct perf_event *' lvalue Var 0x12200dff8 'event' 'struct perf_event *'
+    | `-ImplicitCastExpr 0x121922a40 <col:36> 'int (*)(void)' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x121922958 <col:36> 'int (void)' Function 0x12200dd98 'perf_event_task_disable' 'int (void)'
+    |-CallExpr 0x121922c78 <line:8:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121922b38 <col:2> 'int ()' Function 0x121922a80 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x121922c60 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x121922c18 <col:16, col:25> '<dependent type>' contains-errors lvalue ->perf_event_mutex
+    |     `-RecoveryExpr 0x121922bf8 <col:16> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x121922cc0 <line:10:2, col:9>
+      `-IntegerLiteral 0x121922ca0 <col:9> 'int' 0

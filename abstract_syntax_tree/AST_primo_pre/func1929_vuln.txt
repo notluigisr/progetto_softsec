@@ -1,0 +1,52 @@
+`-FunctionDecl 0x13580dd98  line:1:12 install_thread_keyring 'int (void)' static
+  `-CompoundStmt 0x135827fa8 <line:2:1, line:19:1>
+    |-DeclStmt 0x13580e078 <line:3:2, col:18>
+    | |-RecordDecl 0x13580de88 <col:2, col:9> col:9 struct cred
+    | `-VarDecl 0x13580dff8 <col:2, col:15> col:15 used new 'struct cred *'
+    |-DeclStmt 0x13580e110 <line:4:2, col:9>
+    | `-VarDecl 0x13580e0a8 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x135827730 <line:6:2, col:22> 'struct cred *' '='
+    | |-DeclRefExpr 0x13580e128 <col:2> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'
+    | `-ImplicitCastExpr 0x13580e2f8 <col:8, col:22> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x13580e2d8 <col:8, col:22> 'int'
+    |     `-ImplicitCastExpr 0x13580e2c0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x13580e270 <col:8> 'int ()' Function 0x13580e1b8 'prepare_creds' 'int ()'
+    |-IfStmt 0x135827848 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x135827788 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x135827770 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x135827750 <col:7> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'
+    | `-ReturnStmt 0x135827838 <line:8:3, col:11>
+    |   `-UnaryOperator 0x135827820 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x135827808 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1358277e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1358279c8 <line:10:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135827948 <col:2> 'int ()' Function 0x135827890 'BUG_ON' 'int ()'
+    | `-RecoveryExpr 0x1358279a0 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x135827968 <col:9> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'
+    |-BinaryOperator 0x135827b88 <line:12:2, col:42> 'int' '='
+    | |-DeclRefExpr 0x1358279f0 <col:2> 'int' lvalue Var 0x13580e0a8 'ret' 'int'
+    | `-CallExpr 0x135827b48 <col:8, col:42> 'int'
+    |   |-ImplicitCastExpr 0x135827b30 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x135827af0 <col:8> 'int ()' Function 0x135827a38 'install_thread_keyring_to_cred' 'int ()'
+    |   `-ImplicitCastExpr 0x135827b70 <col:39> 'struct cred *' <LValueToRValue>
+    |     `-DeclRefExpr 0x135827b10 <col:39> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'
+    |-IfStmt 0x135827e00 <line:13:2, line:16:2>
+    | |-BinaryOperator 0x135827c00 <line:13:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x135827be8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135827ba8 <col:6> 'int' lvalue Var 0x13580e0a8 'ret' 'int'
+    | | `-IntegerLiteral 0x135827bc8 <col:12> 'int' 0
+    | `-CompoundStmt 0x135827de0 <col:15, line:16:2>
+    |   |-CallExpr 0x135827d58 <line:14:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x135827d40 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x135827d00 <col:3> 'int ()' Function 0x135827c48 'abort_creds' 'int ()'
+    |   | `-ImplicitCastExpr 0x135827d80 <col:15> 'struct cred *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x135827d20 <col:15> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'
+    |   `-ReturnStmt 0x135827dd0 <line:15:3, col:10>
+    |     `-ImplicitCastExpr 0x135827db8 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x135827d98 <col:10> 'int' lvalue Var 0x13580e0a8 'ret' 'int'
+    `-ReturnStmt 0x135827f98 <line:18:2, col:25>
+      `-CallExpr 0x135827f58 <col:9, col:25> 'int'
+        |-ImplicitCastExpr 0x135827f40 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x135827f00 <col:9> 'int ()' Function 0x135827e48 'commit_creds' 'int ()'
+        `-ImplicitCastExpr 0x135827f80 <col:22> 'struct cred *' <LValueToRValue>
+          `-DeclRefExpr 0x135827f20 <col:22> 'struct cred *' lvalue Var 0x13580dff8 'new' 'struct cred *'

@@ -1,0 +1,50 @@
+`-FunctionDecl 0x13184d958  line:1:5 x86_decode_emulated_instruction 'int (struct kvm_vcpu *, int, void *, int)'
+  |-ParmVarDecl 0x131835c48 <col:37, col:54> col:54 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x131835cc8 <col:60, col:64> col:64 used emulation_type 'int'
+  |-ParmVarDecl 0x131835d48 <line:2:9, col:15> col:15 used insn 'void *'
+  |-ParmVarDecl 0x13184d800 <col:21, col:25> col:25 used insn_len 'int'
+  `-CompoundStmt 0x13184e798 <line:3:1, line:20:1>
+    |-DeclStmt 0x13184db38 <line:4:2, col:22>
+    | `-VarDecl 0x13184da80 <col:2, col:10> col:6 used r 'int' cinit
+    |   `-RecoveryExpr 0x13184db18 <col:10> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13184dde0 <line:5:2, col:57>
+    | |-RecordDecl 0x13184db50 <col:2, col:9> col:9 struct x86_emulate_ctxt
+    | `-VarDecl 0x13184dcb8 <col:2, col:45> col:27 used ctxt 'struct x86_emulate_ctxt *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13184dd80 <col:34, col:45> '<dependent type>' contains-errors lvalue .emulate_ctxt
+    |     `-RecoveryExpr 0x13184dd58 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13184dd20 <col:34> 'struct kvm_vcpu *' lvalue ParmVar 0x131835c48 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x13184df98 <line:7:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x13184df80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13184df10 <col:2> 'int ()' Function 0x13184de58 'init_emulate_ctxt' 'int ()'
+    | `-ImplicitCastExpr 0x13184dfc0 <col:20> 'struct kvm_vcpu *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13184df30 <col:20> 'struct kvm_vcpu *' lvalue ParmVar 0x131835c48 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x13184e280 <line:10:2, line:12:10>
+    | |-RecoveryExpr 0x13184e218 <line:10:6, line:11:40> '_Bool' contains-errors
+    | `-ReturnStmt 0x13184e270 <line:12:3, col:10>
+    |   `-ImplicitCastExpr 0x13184e258 <col:10> 'int' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x13184e238 <col:10> 'int' contains-errors lvalue Var 0x13184da80 'r' 'int'
+    |-BinaryOperator 0x13184e4f8 <line:14:2, col:58> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13184e2a0 <col:2> 'int' contains-errors lvalue Var 0x13184da80 'r' 'int'
+    | `-CallExpr 0x13184e458 <col:6, col:58> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x13184e440 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13184e3a0 <col:6> 'int ()' Function 0x13184e2e8 'x86_decode_insn' 'int ()'
+    |   |-ImplicitCastExpr 0x13184e498 <col:22> 'struct x86_emulate_ctxt *' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x13184e3c0 <col:22> 'struct x86_emulate_ctxt *' contains-errors lvalue Var 0x13184dcb8 'ctxt' 'struct x86_emulate_ctxt *'
+    |   |-ImplicitCastExpr 0x13184e4b0 <col:28> 'void *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x13184e3e0 <col:28> 'void *' lvalue ParmVar 0x131835d48 'insn' 'void *'
+    |   |-ImplicitCastExpr 0x13184e4c8 <col:34> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x13184e400 <col:34> 'int' lvalue ParmVar 0x13184d800 'insn_len' 'int'
+    |   `-ImplicitCastExpr 0x13184e4e0 <col:44> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13184e420 <col:44> 'int' lvalue ParmVar 0x131835cc8 'emulation_type' 'int'
+    |-CallExpr 0x13184e650 <line:16:2, col:35> 'int'
+    | |-ImplicitCastExpr 0x13184e638 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13184e5f8 <col:2> 'int ()' Function 0x13184e540 'trace_kvm_emulate_insn_start' 'int ()'
+    | `-ImplicitCastExpr 0x13184e678 <col:31> 'struct kvm_vcpu *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13184e618 <col:31> 'struct kvm_vcpu *' lvalue ParmVar 0x131835c48 'vcpu' 'struct kvm_vcpu *'
+    |-UnaryOperator 0x13184e738 <line:17:2, col:15> '<dependent type>' contains-errors prefix '++' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x13184e6f0 <col:4, col:15> '<dependent type>' contains-errors lvalue .insn_emulation
+    |   `-RecoveryExpr 0x13184e6c8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13184e690 <col:4> 'struct kvm_vcpu *' lvalue ParmVar 0x131835c48 'vcpu' 'struct kvm_vcpu *'
+    `-ReturnStmt 0x13184e788 <line:19:2, col:9>
+      `-ImplicitCastExpr 0x13184e770 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13184e750 <col:9> 'int' contains-errors lvalue Var 0x13184da80 'r' 'int'

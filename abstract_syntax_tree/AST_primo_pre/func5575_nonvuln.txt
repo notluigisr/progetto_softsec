@@ -1,0 +1,62 @@
+`-FunctionDecl 0x124140a00  line:1:12 vmx_deliver_posted_interrupt 'int (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x124128648 <col:41, col:58> col:58 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x1241286c8 <col:64, col:68> col:68 used vector 'int'
+  `-CompoundStmt 0x124141970 <line:2:1, line:23:1>
+    |-DeclStmt 0x124140ef8 <line:3:2, col:37>
+    | |-RecordDecl 0x124140b00 <col:2, col:9> col:9 struct vcpu_vmx
+    | `-VarDecl 0x124140c68 <col:2, col:36> col:19 used vmx 'struct vcpu_vmx *' cinit
+    |   `-ImplicitCastExpr 0x124140ec8 <col:25, col:36> 'struct vcpu_vmx *' <IntegralToPointer>
+    |     `-CallExpr 0x124140e88 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x124140e70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x124140e00 <col:25> 'int ()' Function 0x124140d48 'to_vmx' 'int ()'
+    |       `-ImplicitCastExpr 0x124140eb0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x124140e20 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x124128648 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x124140f90 <line:4:2, col:7>
+    | `-VarDecl 0x124140f28 <col:2, col:6> col:6 used r 'int'
+    |-BinaryOperator 0x124141180 <line:6:2, col:54> 'int' '='
+    | |-DeclRefExpr 0x124140fa8 <col:2> 'int' lvalue Var 0x124140f28 'r' 'int'
+    | `-CallExpr 0x124141120 <col:6, col:54> 'int'
+    |   |-ImplicitCastExpr 0x124141108 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1241410a8 <col:6> 'int ()' Function 0x124140ff0 'vmx_deliver_nested_posted_interrupt' 'int ()'
+    |   |-ImplicitCastExpr 0x124141150 <col:42> 'struct kvm_vcpu *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1241410c8 <col:42> 'struct kvm_vcpu *' lvalue ParmVar 0x124128648 'vcpu' 'struct kvm_vcpu *'
+    |   `-ImplicitCastExpr 0x124141168 <col:48> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1241410e8 <col:48> 'int' lvalue ParmVar 0x1241286c8 'vector' 'int'
+    |-IfStmt 0x124141220 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x1241411d8 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1241411c0 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1241411a0 <col:7> 'int' lvalue Var 0x124140f28 'r' 'int'
+    | `-ReturnStmt 0x124141210 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x1241411f0 <col:10> 'int' 0
+    |-IfStmt 0x124141360 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x124141300 <line:10:6, col:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1241412e8 <col:7, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x1241412a0 <col:7, col:18> '<dependent type>' contains-errors lvalue .apicv_active
+    | |     `-RecoveryExpr 0x124141278 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x124141240 <col:7> 'struct kvm_vcpu *' lvalue ParmVar 0x124128648 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x124141350 <line:11:3, col:11>
+    |   `-UnaryOperator 0x124141338 <col:10, col:11> 'int' prefix '-'
+    |     `-IntegerLiteral 0x124141318 <col:11> 'int' 1
+    |-IfStmt 0x124141578 <line:13:2, line:14:10>
+    | |-CallExpr 0x124141518 <line:13:6, col:47> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x124141460 <col:6> 'int ()' Function 0x1241413a8 'pi_test_and_set_pir' 'int ()'
+    | | |-DeclRefExpr 0x124141480 <col:26> 'int' lvalue ParmVar 0x1241286c8 'vector' 'int'
+    | | `-UnaryOperator 0x124141500 <col:34, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1241414d8 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1241414a0 <col:35> 'struct vcpu_vmx *' lvalue Var 0x124140c68 'vmx' 'struct vcpu_vmx *'
+    | `-ReturnStmt 0x124141568 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x124141548 <col:10> 'int' 0
+    |-IfStmt 0x124141768 <line:17:2, line:18:10>
+    | |-CallExpr 0x124141710 <line:17:6, col:38> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x124141678 <col:6> 'int ()' Function 0x1241415c0 'pi_test_and_set_on' 'int ()'
+    | | `-UnaryOperator 0x1241416f8 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1241416d0 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x124141698 <col:26> 'struct vcpu_vmx *' lvalue Var 0x124140c68 'vmx' 'struct vcpu_vmx *'
+    | `-ReturnStmt 0x124141758 <line:18:3, col:10>
+    |   `-IntegerLiteral 0x124141738 <col:10> 'int' 0
+    |-CallExpr 0x124141910 <line:21:2, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124141868 <col:2> 'int ()' Function 0x1241417b0 'kvm_vcpu_trigger_posted_interrupt' 'int ()'
+    | |-DeclRefExpr 0x124141888 <col:36> 'struct kvm_vcpu *' lvalue ParmVar 0x124128648 'vcpu' 'struct kvm_vcpu *'
+    | `-RecoveryExpr 0x1241418f0 <col:42> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x124141960 <line:22:2, col:9>
+      `-IntegerLiteral 0x124141940 <col:9> 'int' 0

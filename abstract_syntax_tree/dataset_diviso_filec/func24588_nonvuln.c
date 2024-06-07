@@ -1,0 +1,1 @@
+    ResourceLimit& openConnections() override { return connection_resource_; }

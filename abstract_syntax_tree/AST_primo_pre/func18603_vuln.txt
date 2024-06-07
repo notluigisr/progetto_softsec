@@ -1,0 +1,65 @@
+`-FunctionDecl 0x1220084a8  line:1:12 pvc_getname 'int (struct socket *, struct sockaddr *, int *, int)' static
+  |-ParmVarDecl 0x121928648 <col:24, col:39> col:39 used sock 'struct socket *'
+  |-ParmVarDecl 0x122008228 <col:45, col:62> col:62 used sockaddr 'struct sockaddr *'
+  |-ParmVarDecl 0x1220082d8 <line:2:10, col:15> col:15 used sockaddr_len 'int *'
+  |-ParmVarDecl 0x122008358 <col:29, col:33> col:33 peer 'int'
+  `-CompoundStmt 0x12300a090 <line:3:1, line:16:1>
+    |-DeclStmt 0x1220087a8 <line:4:2, col:30>
+    | |-RecordDecl 0x1220085b8 <col:2, col:9> col:9 struct sockaddr_atmpvc
+    | `-VarDecl 0x122008728 <col:2, col:26> col:26 used addr 'struct sockaddr_atmpvc *'
+    |-DeclStmt 0x122008bb8 <line:5:2, col:36>
+    | |-RecordDecl 0x1220087c0 <col:2, col:9> col:9 struct atm_vcc
+    | `-VarDecl 0x122008928 <col:2, col:35> col:18 used vcc 'struct atm_vcc *' cinit
+    |   `-ImplicitCastExpr 0x122008b88 <col:24, col:35> 'struct atm_vcc *' <IntegralToPointer>
+    |     `-CallExpr 0x122008b48 <col:24, col:35> 'int'
+    |       |-ImplicitCastExpr 0x122008b30 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x122008ac0 <col:24> 'int ()' Function 0x122008a08 'ATM_SD' 'int ()'
+    |       `-ImplicitCastExpr 0x122008b70 <col:31> 'struct socket *' <LValueToRValue>
+    |         `-DeclRefExpr 0x122008ae0 <col:31> 'struct socket *' lvalue ParmVar 0x121928648 'sock' 'struct socket *'
+    |-IfStmt 0x122008fe8 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x122008f20 <line:7:6, col:53> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x122008ea0 <col:6, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x122008e88 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x122008c08 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x122008bd0 <col:7> 'struct atm_vcc *' lvalue Var 0x122008928 'vcc' 'struct atm_vcc *'
+    | | `-UnaryOperator 0x122008f08 <col:19, col:53> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x122008ed8 <col:20, col:53> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x122008d40 <col:20> 'int ()' Function 0x122008c88 'test_bit' 'int ()'
+    | |     |-RecoveryExpr 0x122008eb8 <col:29> '<dependent type>' contains-errors lvalue
+    | |     `-UnaryOperator 0x122008dd8 <col:42, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |       `-RecoveryExpr 0x122008db0 <col:43, col:48> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x122008d78 <col:43> 'struct atm_vcc *' lvalue Var 0x122008928 'vcc' 'struct atm_vcc *'
+    | `-ReturnStmt 0x122008fd8 <line:8:3, col:11>
+    |   `-UnaryOperator 0x122008fc0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x122008fa8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x122008f88 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122009188 <line:10:2, col:35> 'struct sockaddr_atmpvc *' '='
+    | |-DeclRefExpr 0x1220090b0 <col:2> 'struct sockaddr_atmpvc *' lvalue Var 0x122008728 'addr' 'struct sockaddr_atmpvc *'
+    | `-CStyleCastExpr 0x122009160 <col:9, col:35> 'struct sockaddr_atmpvc *' <BitCast>
+    |   `-ImplicitCastExpr 0x122009148 <col:35> 'struct sockaddr *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x1220090d0 <col:35> 'struct sockaddr *' lvalue ParmVar 0x122008228 'sockaddr' 'struct sockaddr *'
+    |-BinaryOperator 0x123009c80 <line:11:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x123009c00 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1220091a8 <col:2> 'struct sockaddr_atmpvc *' lvalue Var 0x122008728 'addr' 'struct sockaddr_atmpvc *'
+    | `-RecoveryExpr 0x123009c60 <col:21> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x123009df0 <line:12:2, col:33> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123009d00 <col:2, col:17> '<dependent type>' contains-errors lvalue .itf
+    | | `-RecoveryExpr 0x123009cd8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123009ca0 <col:2> 'struct sockaddr_atmpvc *' lvalue Var 0x122008728 'addr' 'struct sockaddr_atmpvc *'
+    | `-CXXDependentScopeMemberExpr 0x123009da8 <col:23, col:33> '<dependent type>' contains-errors lvalue ->number
+    |   `-RecoveryExpr 0x123009d80 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x123009d48 <col:23> 'struct atm_vcc *' lvalue Var 0x122008928 'vcc' 'struct atm_vcc *'
+    |-BinaryOperator 0x123009f18 <line:13:2, col:28> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123009e70 <col:2, col:17> '<dependent type>' contains-errors lvalue .vpi
+    | | `-RecoveryExpr 0x123009e48 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123009e10 <col:2> 'struct sockaddr_atmpvc *' lvalue Var 0x122008728 'addr' 'struct sockaddr_atmpvc *'
+    | `-RecoveryExpr 0x123009ef0 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x123009eb8 <col:23> 'struct atm_vcc *' lvalue Var 0x122008928 'vcc' 'struct atm_vcc *'
+    |-BinaryOperator 0x12300a040 <line:14:2, col:28> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x123009f98 <col:2, col:17> '<dependent type>' contains-errors lvalue .vci
+    | | `-RecoveryExpr 0x123009f70 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x123009f38 <col:2> 'struct sockaddr_atmpvc *' lvalue Var 0x122008728 'addr' 'struct sockaddr_atmpvc *'
+    | `-RecoveryExpr 0x12300a018 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x123009fe0 <col:23> 'struct atm_vcc *' lvalue Var 0x122008928 'vcc' 'struct atm_vcc *'
+    `-ReturnStmt 0x12300a080 <line:15:2, col:9>
+      `-IntegerLiteral 0x12300a060 <col:9> 'int' 0

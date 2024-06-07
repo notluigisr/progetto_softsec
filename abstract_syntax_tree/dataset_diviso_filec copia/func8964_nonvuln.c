@@ -1,0 +1,1 @@
+  virtual void updateLineWidth(GfxState *state) { }

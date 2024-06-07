@@ -1,0 +1,67 @@
+`-FunctionDecl 0x14a008378  line:1:20 invalid bnep_net_xmit 'int (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x149928668 <col:34, col:50> col:50 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14a008258 <line:2:6, col:25> col:25 used dev 'struct net_device *'
+  `-CompoundStmt 0x149941d68 <line:3:1, line:36:1>
+    |-DeclStmt 0x14a008858 <line:4:2, col:43>
+    | |-RecordDecl 0x14a008430 <col:2, col:9> col:9 struct bnep_session
+    | `-VarDecl 0x14a008598 <col:2, col:42> col:23 used s 'struct bnep_session *' cinit
+    |   `-ImplicitCastExpr 0x14a008828 <col:27, col:42> 'struct bnep_session *' <IntegralToPointer>
+    |     `-CallExpr 0x14a0087e8 <col:27, col:42> 'int'
+    |       |-ImplicitCastExpr 0x14a0087d0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14a008760 <col:27> 'int ()' Function 0x14a0086a8 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x14a008810 <col:39> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14a008780 <col:39> 'struct net_device *' lvalue ParmVar 0x14a008258 'dev' 'struct net_device *'
+    |-DeclStmt 0x14a008b00 <line:5:2, col:31>
+    | |-RecordDecl 0x14a008870 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x14a0089d8 <col:2, col:29> col:15 used sk 'struct sock *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14a008aa0 <col:20, col:29> '<dependent type>' contains-errors lvalue ->sk
+    |     `-RecoveryExpr 0x14a008a78 <col:20, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14a008a40 <col:20> 'struct bnep_session *' lvalue Var 0x14a008598 's' 'struct bnep_session *'
+    |-CallExpr 0x14a008cd8 <line:7:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x14a008cc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a008bf8 <col:2> 'int ()' Function 0x14a008b40 'BT_DBG' 'int ()'
+    | |-ImplicitCastExpr 0x14a008d10 <col:9> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x14a008c60 <col:9> 'char[4]' lvalue "STR"
+    | |-ImplicitCastExpr 0x14a008d28 <col:16> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14a008c80 <col:16> 'struct sk_buff *' lvalue ParmVar 0x149928668 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x14a008d40 <col:21> 'struct net_device *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a008ca0 <col:21> 'struct net_device *' lvalue ParmVar 0x14a008258 'dev' 'struct net_device *'
+    |-BinaryOperator 0x14a008e10 <line:24:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14a008d90 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14a008d58 <col:2> 'struct net_device *' lvalue ParmVar 0x14a008258 'dev' 'struct net_device *'
+    | `-RecoveryExpr 0x14a008df0 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14a008fc8 <line:25:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a008f10 <col:2> 'int ()' Function 0x14a008e58 'skb_queue_tail' 'int ()'
+    | |-UnaryOperator 0x14a008f90 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14a008f68 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14a008f30 <col:18> 'struct sock *' contains-errors lvalue Var 0x14a0089d8 'sk' 'struct sock *'
+    | `-DeclRefExpr 0x14a008fa8 <col:38> 'struct sk_buff *' lvalue ParmVar 0x149928668 'skb' 'struct sk_buff *'
+    |-CallExpr 0x149941890 <line:26:2, col:36> 'int' contains-errors
+    | |-ImplicitCastExpr 0x149941878 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a0090d8 <col:2> 'int ()' Function 0x14a009020 'wake_up_interruptible' 'int ()'
+    | `-CallExpr 0x149941838 <col:24, col:35> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x149941820 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14a0091d8 <col:24> 'int ()' Function 0x14a009120 'sk_sleep' 'int ()'
+    |   `-ImplicitCastExpr 0x149941860 <col:33> 'struct sock *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x149941800 <col:33> 'struct sock *' contains-errors lvalue Var 0x14a0089d8 'sk' 'struct sock *'
+    |-IfStmt 0x149941d00 <line:28:2, line:33:2>
+    | |-BinaryOperator 0x149941ab0 <line:28:6, col:44> 'int' contains-errors '>='
+    | | |-CallExpr 0x149941a30 <col:6, col:39> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x149941998 <col:6> 'int ()' Function 0x1499418e0 'skb_queue_len' 'int ()'
+    | | | `-UnaryOperator 0x149941a18 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x1499419f0 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x1499419b8 <col:21> 'struct sock *' contains-errors lvalue Var 0x14a0089d8 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x149941a90 <col:44> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x149941ce0 <col:63, line:33:2>
+    |   |-CallExpr 0x149941b28 <line:29:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x149941b10 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x149941ad0 <col:3> 'int ()' Function 0x14a008b40 'BT_DBG' 'int ()'
+    |   | `-ImplicitCastExpr 0x149941b50 <col:10> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x149941af0 <col:10> 'char[4]' lvalue "STR"
+    |   `-CallExpr 0x149941ca0 <line:32:3, col:23> 'int'
+    |     |-ImplicitCastExpr 0x149941c88 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x149941c48 <col:3> 'int ()' Function 0x149941b90 'netif_stop_queue' 'int ()'
+    |     `-ImplicitCastExpr 0x149941cc8 <col:20> 'struct net_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x149941c68 <col:20> 'struct net_device *' lvalue ParmVar 0x14a008258 'dev' 'struct net_device *'
+    `-ReturnStmt 0x149941d58 <line:35:2, col:9>
+      `-RecoveryExpr 0x149941d38 <col:9> '<dependent type>' contains-errors lvalue

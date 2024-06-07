@@ -1,0 +1,22 @@
+`-FunctionDecl 0x129027568  line:1:24 invalid _hsh_find 'struct bpf_blk *(const struct bpf_state *, int)' static
+  |-ParmVarDecl 0x12900e2e8 <col:34, col:58> col:58 used state 'const struct bpf_state *'
+  |-ParmVarDecl 0x12900e380 <col:65, col:74> col:74 invalid h_val 'int'
+  `-CompoundStmt 0x129027bc0 <line:2:1, line:9:1>
+    |-DeclStmt 0x129027808 <line:3:2, col:29>
+    | |-RecordDecl 0x129027620 <col:2, col:9> col:9 struct bpf_hash_bkt
+    | `-VarDecl 0x129027788 <col:2, col:23> col:23 used h_iter 'struct bpf_hash_bkt *'
+    |-BinaryOperator 0x129027a30 <line:5:2, col:37> 'struct bpf_hash_bkt *' contains-errors '='
+    | |-DeclRefExpr 0x129027820 <col:2> 'struct bpf_hash_bkt *' lvalue Var 0x129027788 'h_iter' 'struct bpf_hash_bkt *'
+    | `-CallExpr 0x129027a00 <col:11, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1290279a0 <col:11> 'int ()' Function 0x1290278e8 '_hsh_find_bkt' 'int ()'
+    |   |-DeclRefExpr 0x1290279c0 <col:25> 'const struct bpf_state *' lvalue ParmVar 0x12900e2e8 'state' 'const struct bpf_state *'
+    |   `-RecoveryExpr 0x1290279e0 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x129027b30 <line:6:2, line:7:10>
+    | |-BinaryOperator 0x129027ac8 <line:6:6, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x129027a50 <col:6> 'struct bpf_hash_bkt *' lvalue Var 0x129027788 'h_iter' 'struct bpf_hash_bkt *'
+    | | `-RecoveryExpr 0x129027aa8 <col:16> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x129027b20 <line:7:3, col:10>
+    |   `-RecoveryExpr 0x129027b00 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x129027bb0 <line:8:2, col:17>
+      `-RecoveryExpr 0x129027b88 <col:9, col:17> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x129027b50 <col:9> 'struct bpf_hash_bkt *' lvalue Var 0x129027788 'h_iter' 'struct bpf_hash_bkt *'

@@ -1,0 +1,220 @@
+`-FunctionDecl 0x1550ac558  line:1:12 invalid packet_do_bind 'int (struct sock *, const char *, int, int)' static
+  |-ParmVarDecl 0x1550a3a48 <col:27, col:40> col:40 used sk 'struct sock *'
+  |-ParmVarDecl 0x1550a3ac8 <col:44, col:56> col:56 used name 'const char *'
+  |-ParmVarDecl 0x1550a3b48 <col:62, col:66> col:66 used ifindex 'int'
+  |-ParmVarDecl 0x1550ac400 <line:2:6, col:13> col:13 invalid proto 'int'
+  `-CompoundStmt 0x156877070 <line:3:1, line:87:1>
+    |-DeclStmt 0x1550aca48 <line:4:2, col:37>
+    | |-RecordDecl 0x1550ac620 <col:2, col:9> col:9 struct packet_sock
+    | `-VarDecl 0x1550ac788 <col:2, col:36> col:22 used po 'struct packet_sock *' cinit
+    |   `-ImplicitCastExpr 0x1550aca18 <col:27, col:36> 'struct packet_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x1550ac9d8 <col:27, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1550ac9c0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1550ac950 <col:27> 'int ()' Function 0x1550ac898 'pkt_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x1550aca00 <col:34> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1550ac970 <col:34> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    |-DeclStmt 0x1550acc48 <line:5:2, col:29>
+    | |-RecordDecl 0x1550aca60 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x1550acbc8 <col:2, col:21> col:21 used dev_curr 'struct net_device *'
+    |-DeclStmt 0x1550acd88 <line:8:2, col:31>
+    | `-VarDecl 0x1550acce8 <col:2, col:27> col:21 used dev 'struct net_device *' cinit
+    |   `-RecoveryExpr 0x1550acd68 <col:27> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x1550ace40 <line:9:2, col:13>
+    | `-VarDecl 0x1550acdb8 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x1550ace20 <col:12> 'int' 0
+    |-CallExpr 0x1550acf90 <line:12:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x1550acf78 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1550acf38 <col:2> 'int ()' Function 0x1550ace80 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x1550acfb8 <col:12> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1550acf58 <col:12> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    |-CallExpr 0x1550ad148 <line:13:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1550ad0b0 <col:2> 'int ()' Function 0x1550acff8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x1550ad130 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1550ad108 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1550ad0d0 <col:13> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |-CallExpr 0x1550ad288 <line:14:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1550ad270 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1550ad250 <col:2> 'int ()' Function 0x1550ad198 'rcu_read_lock' 'int ()'
+    |-IfStmt 0x156015088 <line:16:2, line:19:2>
+    | |-RecoveryExpr 0x1550ad2e0 <line:16:6, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1550ad2a8 <col:6> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    | `-CompoundStmt 0x156015068 <col:18, line:19:2>
+    |   |-BinaryOperator 0x1550ad3e0 <line:17:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1550ad308 <col:3> 'int' lvalue Var 0x1550acdb8 'ret' 'int'
+    |   | `-UnaryOperator 0x1550ad3c8 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x1550ad3b0 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x1550ad390 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x156015050 <line:18:3, col:8> 'out_unlock' 0x156015000
+    |-IfStmt 0x156015998 <line:21:2, line:33:2> has_else
+    | |-ImplicitCastExpr 0x1560150c8 <line:21:6> 'const char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1560150a8 <col:6> 'const char *' lvalue ParmVar 0x1550a3ac8 'name' 'const char *'
+    | |-CompoundStmt 0x1560155d0 <col:12, line:27:2>
+    | | |-BinaryOperator 0x156015410 <line:22:3, col:47> 'struct net_device *' contains-errors '='
+    | | | |-DeclRefExpr 0x1560150e0 <col:3> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    | | | `-ImplicitCastExpr 0x1560153f8 <col:9, col:47> 'struct net_device *' <IntegralToPointer>
+    | | |   `-CallExpr 0x1560153b0 <col:9, col:47> 'int'
+    | | |     |-ImplicitCastExpr 0x156015398 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | `-DeclRefExpr 0x1560151e0 <col:9> 'int ()' Function 0x156015128 'dev_get_by_name_rcu' 'int ()'
+    | | |     |-CallExpr 0x156015338 <col:29, col:40> 'int'
+    | | |     | |-ImplicitCastExpr 0x156015320 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | | `-DeclRefExpr 0x1560152e0 <col:29> 'int ()' Function 0x156015228 'sock_net' 'int ()'
+    | | |     | `-ImplicitCastExpr 0x156015360 <col:38> 'struct sock *' <LValueToRValue>
+    | | |     |   `-DeclRefExpr 0x156015300 <col:38> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    | | |     `-ImplicitCastExpr 0x1560153e0 <col:43> 'const char *' <LValueToRValue>
+    | | |       `-DeclRefExpr 0x156015378 <col:43> 'const char *' lvalue ParmVar 0x1550a3ac8 'name' 'const char *'
+    | | `-IfStmt 0x1560155b0 <line:23:3, line:26:3>
+    | |   |-UnaryOperator 0x156015468 <line:23:7, col:8> 'int' contains-errors prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x156015450 <col:8> 'struct net_device *' contains-errors <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x156015430 <col:8> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    | |   `-CompoundStmt 0x156015590 <col:13, line:26:3>
+    | |     |-BinaryOperator 0x156015558 <line:24:4, col:11> 'int' contains-errors '='
+    | |     | |-DeclRefExpr 0x156015480 <col:4> 'int' lvalue Var 0x1550acdb8 'ret' 'int'
+    | |     | `-UnaryOperator 0x156015540 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |     |   `-ImplicitCastExpr 0x156015528 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |     |     `-RecoveryExpr 0x156015508 <col:11> '<dependent type>' contains-errors lvalue
+    | |     `-GotoStmt 0x156015578 <line:25:4, col:9> 'out_unlock' 0x156015000
+    | `-IfStmt 0x156015978 <line:27:9, line:33:2>
+    |   |-ImplicitCastExpr 0x156015610 <line:27:13> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x1560155f0 <col:13> 'int' lvalue ParmVar 0x1550a3b48 'ifindex' 'int'
+    |   `-CompoundStmt 0x156015958 <col:22, line:33:2>
+    |     |-BinaryOperator 0x156015878 <line:28:3, col:51> 'struct net_device *' contains-errors '='
+    |     | |-DeclRefExpr 0x156015628 <col:3> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |     | `-ImplicitCastExpr 0x156015860 <col:9, col:51> 'struct net_device *' <IntegralToPointer>
+    |     |   `-CallExpr 0x156015818 <col:9, col:51> 'int'
+    |     |     |-ImplicitCastExpr 0x156015800 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x156015728 <col:9> 'int ()' Function 0x156015670 'dev_get_by_index_rcu' 'int ()'
+    |     |     |-CallExpr 0x1560157a0 <col:30, col:41> 'int'
+    |     |     | |-ImplicitCastExpr 0x156015788 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | | `-DeclRefExpr 0x156015748 <col:30> 'int ()' Function 0x156015228 'sock_net' 'int ()'
+    |     |     | `-ImplicitCastExpr 0x1560157c8 <col:39> 'struct sock *' <LValueToRValue>
+    |     |     |   `-DeclRefExpr 0x156015768 <col:39> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    |     |     `-ImplicitCastExpr 0x156015848 <col:44> 'int' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x1560157e0 <col:44> 'int' lvalue ParmVar 0x1550a3b48 'ifindex' 'int'
+    |     `-IfStmt 0x156015938 <line:29:3, line:32:3>
+    |       |-UnaryOperator 0x1560158d0 <line:29:7, col:8> 'int' contains-errors prefix '!' cannot overflow
+    |       | `-ImplicitCastExpr 0x1560158b8 <col:8> 'struct net_device *' contains-errors <LValueToRValue>
+    |       |   `-DeclRefExpr 0x156015898 <col:8> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |       `-CompoundStmt 0x156015920 <col:13, line:32:3>
+    |         `-GotoStmt 0x156015908 <line:31:4, col:9> 'out_unlock' 0x156015000
+    |-IfStmt 0x156015b78 <line:35:2, line:36:15>
+    | |-ImplicitCastExpr 0x1560159e8 <line:35:6> 'struct net_device *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x1560159c8 <col:6> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    | `-CallExpr 0x156015b38 <line:36:3, col:15> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x156015b20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x156015ae0 <col:3> 'int ()' Function 0x156015a28 'dev_hold' 'int ()'
+    |   `-ImplicitCastExpr 0x156015b60 <col:12> 'struct net_device *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x156015b00 <col:12> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |-BinaryOperator 0x156015d08 <line:39:2, col:27> 'struct net_device *' contains-errors '='
+    | |-DeclRefExpr 0x156015c40 <col:2> 'struct net_device *' lvalue Var 0x1550acbc8 'dev_curr' 'struct net_device *'
+    | `-CXXDependentScopeMemberExpr 0x156015cc0 <col:13, col:27> '<dependent type>' contains-errors lvalue .dev
+    |   `-RecoveryExpr 0x156015c98 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156015c60 <col:13> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |-IfStmt 0x1568765b0 <line:43:2, line:67:2>
+    | |-RecoveryExpr 0x156015dd8 <line:43:6> '_Bool' contains-errors
+    | `-CompoundStmt 0x156876580 <col:19, line:67:2>
+    |   |-IfStmt 0x1568759f8 <line:44:3, line:52:3>
+    |   | |-RecoveryExpr 0x156015e30 <line:44:7, col:11> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x156015df8 <col:7> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |   | `-CompoundStmt 0x1568759d0 <col:20, line:52:3>
+    |   |   |-CallExpr 0x156015f70 <line:45:4, col:20> 'int'
+    |   |   | `-ImplicitCastExpr 0x156015f58 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   `-DeclRefExpr 0x156015f38 <col:4> 'int ()' Function 0x156015e80 'rcu_read_unlock' 'int ()'
+    |   |   |-CallExpr 0x156875730 <line:47:4, col:18> 'int'
+    |   |   | `-ImplicitCastExpr 0x156875718 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   `-DeclRefExpr 0x1568756f8 <col:4> 'int ()' Function 0x1550ad198 'rcu_read_lock' 'int ()'
+    |   |   `-BinaryOperator 0x156875818 <line:48:4, col:29> 'struct net_device *' contains-errors '='
+    |   |     |-DeclRefExpr 0x156875750 <col:4> 'struct net_device *' lvalue Var 0x1550acbc8 'dev_curr' 'struct net_device *'
+    |   |     `-CXXDependentScopeMemberExpr 0x1568757d0 <col:15, col:29> '<dependent type>' contains-errors lvalue .dev
+    |   |       `-RecoveryExpr 0x1568757a8 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x156875770 <col:15> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |   |-BinaryOperator 0x156875a98 <line:54:3, col:13> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x156875a50 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x156875a18 <col:3> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |   | `-RecoveryExpr 0x156875a78 <col:13> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x156875b80 <line:55:3, col:24> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x156875b18 <col:3, col:17> '<dependent type>' contains-errors lvalue .type
+    |   | | `-RecoveryExpr 0x156875af0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x156875ab8 <col:3> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |   | `-RecoveryExpr 0x156875b60 <col:24> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x156876550 <line:57:3, line:66:3> has_else
+    |     |-RecoveryExpr 0x156875ca0 <line:57:7, col:24> '_Bool' contains-errors
+    |     |-CompoundStmt 0x156876110 <col:27, line:62:3>
+    |     | |-CallExpr 0x156875df8 <line:58:4, col:15> 'int' contains-errors
+    |     | | |-ImplicitCastExpr 0x156875de0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x156875da0 <col:4> 'int ()' Function 0x156875ce8 'dev_put' 'int ()'
+    |     | | `-ImplicitCastExpr 0x156875e20 <col:12> 'struct net_device *' contains-errors <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x156875dc0 <col:12> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |     | |-BinaryOperator 0x156875f78 <line:60:4, col:19> '<dependent type>' contains-errors '='
+    |     | | |-RecoveryExpr 0x156875f18 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |     | | | `-DeclRefExpr 0x156875ee0 <col:4> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |     | | `-UnaryOperator 0x156875f60 <col:18, col:19> 'int' prefix '-'
+    |     | |   `-IntegerLiteral 0x156875f40 <col:19> 'int' 1
+    |     | `-CallExpr 0x1568760d0 <line:61:4, col:30> 'int'
+    |     |   |-ImplicitCastExpr 0x1568760b8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x156876078 <col:4> 'int ()' Function 0x156875fc0 'packet_cached_dev_reset' 'int ()'
+    |     |   `-ImplicitCastExpr 0x1568760f8 <col:28> 'struct packet_sock *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x156876098 <col:28> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |     `-CompoundStmt 0x156876528 <line:62:10, line:66:3>
+    |       |-BinaryOperator 0x156876200 <line:63:4, col:24> '<dependent type>' contains-errors '='
+    |       | |-CXXDependentScopeMemberExpr 0x156876198 <col:4, col:18> '<dependent type>' contains-errors lvalue .dev
+    |       | | `-RecoveryExpr 0x156876170 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |       | |   `-DeclRefExpr 0x156876138 <col:4> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |       | `-DeclRefExpr 0x1568761e0 <col:24> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |       |-BinaryOperator 0x156876350 <line:64:4, col:39> '<dependent type>' contains-errors '='
+    |       | |-RecoveryExpr 0x156876258 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x156876220 <col:4> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |       | `-ConditionalOperator 0x156876320 <col:18, col:39> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x156876280 <col:18> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |       |   |-RecoveryExpr 0x1568762d8 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |       |   | `-DeclRefExpr 0x1568762a0 <col:24> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |       |   `-IntegerLiteral 0x156876300 <col:39> 'int' 0
+    |       `-CallExpr 0x1568764c8 <line:65:4, col:36> 'int' contains-errors
+    |         |-ImplicitCastExpr 0x1568764b0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x156876450 <col:4> 'int ()' Function 0x156876398 'packet_cached_dev_assign' 'int ()'
+    |         |-ImplicitCastExpr 0x1568764f8 <col:29> 'struct packet_sock *' <LValueToRValue>
+    |         | `-DeclRefExpr 0x156876470 <col:29> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |         `-ImplicitCastExpr 0x156876510 <col:33> 'struct net_device *' contains-errors <LValueToRValue>
+    |           `-DeclRefExpr 0x156876490 <col:33> 'struct net_device *' contains-errors lvalue Var 0x1550acce8 'dev' 'struct net_device *'
+    |-IfStmt 0x1568766b0 <line:68:2, line:69:19>
+    | |-ImplicitCastExpr 0x156876600 <line:68:6> 'struct net_device *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1568765d0 <col:6> 'struct net_device *' lvalue Var 0x1550acbc8 'dev_curr' 'struct net_device *'
+    | `-CallExpr 0x156876670 <line:69:3, col:19> 'int'
+    |   |-ImplicitCastExpr 0x156876658 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x156876618 <col:3> 'int ()' Function 0x156875ce8 'dev_put' 'int ()'
+    |   `-ImplicitCastExpr 0x156876698 <col:11> 'struct net_device *' <LValueToRValue>
+    |     `-DeclRefExpr 0x156876638 <col:11> 'struct net_device *' lvalue Var 0x1550acbc8 'dev_curr' 'struct net_device *'
+    |-IfStmt 0x156876768 <line:71:2, line:72:8>
+    | |-RecoveryExpr 0x156876730 <line:71:6, col:21> '_Bool' contains-errors
+    | `-GotoStmt 0x156876750 <line:72:3, col:8> 'out_unlock' 0x156015000
+    |-IfStmt 0x156876c68 <line:74:2, line:80:2> has_else
+    | |-RecoveryExpr 0x156876838 <line:74:6, col:49> '_Bool' contains-errors
+    | |-CompoundStmt 0x1568769d0 <col:52, line:76:2>
+    | | `-CallExpr 0x156876990 <line:75:3, col:24> 'int'
+    | |   |-ImplicitCastExpr 0x156876978 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x156876938 <col:3> 'int ()' Function 0x156876880 'register_prot_hook' 'int ()'
+    | |   `-ImplicitCastExpr 0x1568769b8 <col:22> 'struct sock *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x156876958 <col:22> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    | `-CompoundStmt 0x156876c50 <line:76:9, line:80:2>
+    |   `-IfStmt 0x156876c30 <line:78:3, line:79:26>
+    |     |-RecoveryExpr 0x156876b68 <line:78:7, col:31> '_Bool' contains-errors
+    |     `-CallExpr 0x156876c08 <line:79:4, col:26> '<dependent type>' contains-errors
+    |       |-RecoveryExpr 0x156876bc0 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x156876b88 <col:4> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    |       `-DeclRefExpr 0x156876be8 <col:24> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    |-LabelStmt 0x156876cf0 <line:82:1, line:83:18> 'out_unlock'
+    | `-CallExpr 0x156876cd0 <col:2, col:18> 'int'
+    |   `-ImplicitCastExpr 0x156876cb8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x156876c98 <col:2> 'int ()' Function 0x156015e80 'rcu_read_unlock' 'int ()'
+    |-CallExpr 0x156876e88 <line:84:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x156876df0 <col:2> 'int ()' Function 0x156876d38 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x156876e70 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x156876e48 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156876e10 <col:15> 'struct packet_sock *' lvalue Var 0x1550ac788 'po' 'struct packet_sock *'
+    |-CallExpr 0x156876fe8 <line:85:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x156876fd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x156876f90 <col:2> 'int ()' Function 0x156876ed8 'release_sock' 'int ()'
+    | `-ImplicitCastExpr 0x156877010 <col:15> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x156876fb0 <col:15> 'struct sock *' lvalue ParmVar 0x1550a3a48 'sk' 'struct sock *'
+    `-ReturnStmt 0x156877060 <line:86:2, col:9>
+      `-ImplicitCastExpr 0x156877048 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x156877028 <col:9> 'int' lvalue Var 0x1550acdb8 'ret' 'int'

@@ -1,0 +1,115 @@
+`-FunctionDecl 0x12a928750  line:1:6 sched_move_task 'void (struct task_struct *)'
+  |-ParmVarDecl 0x12a928648 <col:22, col:42> col:42 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x12a948080 <line:2:1, line:37:1>
+    |-DeclStmt 0x12a940c38 <line:3:2, col:23>
+    | |-RecordDecl 0x12a940a48 <col:2, col:9> col:9 struct task_group
+    | `-VarDecl 0x12a940bb8 <col:2, col:21> col:21 used tg 'struct task_group *'
+    |-DeclStmt 0x12a940d68 <line:4:2, col:20>
+    | |-VarDecl 0x12a940c68 <col:2, col:6> col:6 used on_rq 'int'
+    | `-VarDecl 0x12a940ce8 <col:2, col:13> col:13 used running 'int'
+    |-DeclStmt 0x12a940e00 <line:5:2, col:21>
+    | `-VarDecl 0x12a940d98 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x12a941008 <line:6:2, col:15>
+    | |-RecordDecl 0x12a940e18 <col:2, col:9> col:9 struct rq
+    | `-VarDecl 0x12a940f88 <col:2, col:13> col:13 used rq 'struct rq *'
+    |-BinaryOperator 0x12a9412c8 <line:8:2, col:31> 'struct rq *' '='
+    | |-DeclRefExpr 0x12a941020 <col:2> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    | `-ImplicitCastExpr 0x12a9412b0 <col:7, col:31> 'struct rq *' <IntegralToPointer>
+    |   `-CallExpr 0x12a941268 <col:7, col:31> 'int'
+    |     |-ImplicitCastExpr 0x12a941250 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a941170 <col:7> 'int ()' Function 0x12a9410b8 'task_rq_lock' 'int ()'
+    |     |-ImplicitCastExpr 0x12a941298 <col:20> 'struct task_struct *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a941190 <col:20> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |     `-UnaryOperator 0x12a941200 <col:25, col:26> 'unsigned long *' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x12a9411b0 <col:26> 'unsigned long' lvalue Var 0x12a940d98 'flags' 'unsigned long'
+    |-BinaryOperator 0x12a9414c0 <line:10:2, col:32> 'int' '='
+    | |-DeclRefExpr 0x12a9412e8 <col:2> 'int' lvalue Var 0x12a940ce8 'running' 'int'
+    | `-CallExpr 0x12a941460 <col:12, col:32> 'int'
+    |   |-ImplicitCastExpr 0x12a941448 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a9413e8 <col:12> 'int ()' Function 0x12a941330 'task_current' 'int ()'
+    |   |-ImplicitCastExpr 0x12a941490 <col:25> 'struct rq *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a941408 <col:25> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    |   `-ImplicitCastExpr 0x12a9414a8 <col:29> 'struct task_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a941428 <col:29> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |-BinaryOperator 0x12a941560 <line:11:2, col:15> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12a9414e0 <col:2> 'int' lvalue Var 0x12a940c68 'on_rq' 'int'
+    | `-RecoveryExpr 0x12a941538 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12a941500 <col:10> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |-IfStmt 0x12a941798 <line:13:2, line:14:26>
+    | |-ImplicitCastExpr 0x12a9415a0 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a941580 <col:6> 'int' lvalue Var 0x12a940c68 'on_rq' 'int'
+    | `-CallExpr 0x12a941730 <line:14:3, col:26> 'int'
+    |   |-ImplicitCastExpr 0x12a941718 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a941698 <col:3> 'int ()' Function 0x12a9415e0 'dequeue_task' 'int ()'
+    |   |-ImplicitCastExpr 0x12a941768 <col:16> 'struct rq *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a9416b8 <col:16> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    |   |-ImplicitCastExpr 0x12a941780 <col:20> 'struct task_struct *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a9416d8 <col:20> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |   `-IntegerLiteral 0x12a9416f8 <col:25> 'int' 0
+    |-IfStmt 0x12a946a50 <line:15:2, line:16:42>
+    | |-CallExpr 0x12a9418f0 <line:15:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x12a9418d8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12a941898 <col:6> 'int ()' Function 0x12a9417e0 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x12a941918 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a9418b8 <col:15> 'int' lvalue Var 0x12a940ce8 'running' 'int'
+    | `-CallExpr 0x12a946a20 <line:16:3, col:42> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x12a941990 <col:3, col:21> '<dependent type>' contains-errors lvalue ->put_prev_task
+    |   | `-RecoveryExpr 0x12a941968 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12a941930 <col:3> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |   |-DeclRefExpr 0x12a9419d8 <col:35> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    |   `-DeclRefExpr 0x12a946a00 <col:39> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |-BinaryOperator 0x12a9470f0 <line:21:2, col:35> 'struct task_group *' '='
+    | |-DeclRefExpr 0x12a946f00 <col:2> 'struct task_group *' lvalue Var 0x12a940bb8 'tg' 'struct task_group *'
+    | `-ImplicitCastExpr 0x12a9470d8 <col:7, col:35> 'struct task_group *' <IntegralToPointer>
+    |   `-CallExpr 0x12a947078 <col:7, col:35> 'int'
+    |     |-ImplicitCastExpr 0x12a947060 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a947000 <col:7> 'int ()' Function 0x12a946f48 'autogroup_task_group' 'int ()'
+    |     |-ImplicitCastExpr 0x12a9470a8 <col:28> 'struct task_struct *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a947020 <col:28> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |     `-ImplicitCastExpr 0x12a9470c0 <col:33> 'struct task_group *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a947040 <col:33> 'struct task_group *' lvalue Var 0x12a940bb8 'tg' 'struct task_group *'
+    |-BinaryOperator 0x12a947190 <line:22:2, col:26> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12a947148 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a947110 <col:2> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    | `-DeclRefExpr 0x12a947170 <col:26> 'struct task_group *' lvalue Var 0x12a940bb8 'tg' 'struct task_group *'
+    |-CallExpr 0x12a947460 <line:29:3, col:33> 'int'
+    | |-ImplicitCastExpr 0x12a947448 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a947290 <col:3> 'int ()' Function 0x12a9471d8 'set_task_rq' 'int ()'
+    | |-ImplicitCastExpr 0x12a947490 <col:15> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a9472b0 <col:15> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    | `-CallExpr 0x12a947408 <col:20, col:32> 'int'
+    |   |-ImplicitCastExpr 0x12a9473f0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a9473b0 <col:20> 'int ()' Function 0x12a9472f8 'task_cpu' 'int ()'
+    |   `-ImplicitCastExpr 0x12a947430 <col:29> 'struct task_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a9473d0 <col:29> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |-IfStmt 0x12a947630 <line:31:2, line:32:37>
+    | |-CallExpr 0x12a947500 <line:31:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x12a9474e8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12a9474a8 <col:6> 'int ()' Function 0x12a9417e0 'unlikely' 'int ()'
+    | | `-ImplicitCastExpr 0x12a947528 <col:15> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a9474c8 <col:15> 'int' lvalue Var 0x12a940ce8 'running' 'int'
+    | `-CallExpr 0x12a947608 <line:32:3, col:37> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x12a9475a0 <col:3, col:21> '<dependent type>' contains-errors lvalue ->set_curr_task
+    |   | `-RecoveryExpr 0x12a947578 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12a947540 <col:3> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |   `-DeclRefExpr 0x12a9475e8 <col:35> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    |-IfStmt 0x12a947868 <line:33:2, line:34:26>
+    | |-ImplicitCastExpr 0x12a947670 <line:33:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a947650 <col:6> 'int' lvalue Var 0x12a940c68 'on_rq' 'int'
+    | `-CallExpr 0x12a947800 <line:34:3, col:26> 'int'
+    |   |-ImplicitCastExpr 0x12a9477e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a947768 <col:3> 'int ()' Function 0x12a9476b0 'enqueue_task' 'int ()'
+    |   |-ImplicitCastExpr 0x12a947838 <col:16> 'struct rq *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a947788 <col:16> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+    |   |-ImplicitCastExpr 0x12a947850 <col:20> 'struct task_struct *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a9477a8 <col:20> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+    |   `-IntegerLiteral 0x12a9477c8 <col:25> 'int' 0
+    `-CallExpr 0x12a948018 <line:36:2, col:32> 'int'
+      |-ImplicitCastExpr 0x12a948000 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12a947968 <col:2> 'int ()' Function 0x12a9478b0 'task_rq_unlock' 'int ()'
+      |-ImplicitCastExpr 0x12a948050 <col:17> 'struct rq *' <LValueToRValue>
+      | `-DeclRefExpr 0x12a947988 <col:17> 'struct rq *' lvalue Var 0x12a940f88 'rq' 'struct rq *'
+      |-ImplicitCastExpr 0x12a948068 <col:21> 'struct task_struct *' <LValueToRValue>
+      | `-DeclRefExpr 0x12a9479a8 <col:21> 'struct task_struct *' lvalue ParmVar 0x12a928648 'tsk' 'struct task_struct *'
+      `-UnaryOperator 0x12a9479e8 <col:26, col:27> 'unsigned long *' prefix '&' cannot overflow
+        `-DeclRefExpr 0x12a9479c8 <col:27> 'unsigned long' lvalue Var 0x12a940d98 'flags' 'unsigned long'

@@ -1,0 +1,64 @@
+`-FunctionDecl 0x15780dee0  line:1:6 invalid kvm_set_shared_msr 'void (unsigned int, int, int)'
+  |-ParmVarDecl 0x15780dcd8 <col:25, col:34> col:34 used slot 'unsigned int'
+  |-ParmVarDecl 0x15780dd70 <col:40, col:44> col:44 invalid value 'int'
+  |-ParmVarDecl 0x15780ddf0 <col:51, col:55> col:55 invalid mask 'int'
+  `-CompoundStmt 0x157829a48 <line:2:1, line:15:1>
+    |-DeclStmt 0x15780e220 <line:3:2, col:39>
+    | `-VarDecl 0x15780dfb8 <col:2, col:38> col:15 used cpu 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x15780e208 <col:21, col:38> 'unsigned int' <IntegralCast>
+    |     `-CallExpr 0x15780e1e8 <col:21, col:38> 'int'
+    |       `-ImplicitCastExpr 0x15780e1d0 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x15780e180 <col:21> 'int ()' Function 0x15780e0c8 'smp_processor_id' 'int ()'
+    |-DeclStmt 0x157827638 <line:4:2, col:62>
+    | |-RecordDecl 0x15780e238 <col:2, col:9> col:9 struct kvm_shared_msrs
+    | `-VarDecl 0x157827400 <col:2, col:61> col:26 used smsr 'struct kvm_shared_msrs *' cinit
+    |   `-CallExpr 0x1578275f0 <col:33, col:61> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x157827548 <col:33> 'int ()' Function 0x157827490 'per_cpu_ptr' 'int ()'
+    |     |-RecoveryExpr 0x1578275d0 <col:45> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157827580 <col:58> 'unsigned int' lvalue Var 0x15780dfb8 'cpu' 'unsigned int'
+    |-IfStmt 0x157827ca0 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x157827c70 <line:6:6, col:52> 'int' contains-errors '=='
+    | | |-ParenExpr 0x157827c30 <col:6, col:47> '<dependent type>' contains-errors
+    | | | `-BinaryOperator 0x157827c10 <col:7, col:43> '<dependent type>' contains-errors '&'
+    | | |   |-ParenExpr 0x157827bd0 <col:7, col:39> '<dependent type>' contains-errors
+    | | |   | `-BinaryOperator 0x157827bb0 <col:8, col:35> '<dependent type>' contains-errors '^'
+    | | |   |   |-RecoveryExpr 0x157827650 <col:8> '<dependent type>' contains-errors lvalue
+    | | |   |   `-CXXDependentScopeMemberExpr 0x157827b68 <col:16, col:35> '<dependent type>' contains-errors lvalue .curr
+    | | |   |     `-ArraySubscriptExpr 0x157827b48 <col:16, col:33> '<dependent type>' contains-errors lvalue
+    | | |   |       |-ImplicitCastExpr 0x157827b18 <col:16, col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   |       | `-RecoveryExpr 0x157827ad0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    | | |   |       |   `-DeclRefExpr 0x157827670 <col:16> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+    | | |   |       `-ImplicitCastExpr 0x157827b30 <col:29> 'unsigned int' <LValueToRValue>
+    | | |   |         `-DeclRefExpr 0x157827af8 <col:29> 'unsigned int' lvalue ParmVar 0x15780dcd8 'slot' 'unsigned int'
+    | | |   `-RecoveryExpr 0x157827bf0 <col:43> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x157827c50 <col:52> 'int' 0
+    | `-ReturnStmt 0x157827c90 <line:7:3>
+    |-BinaryOperator 0x157827df8 <line:8:2, col:28> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x157827d90 <col:2, col:21> '<dependent type>' contains-errors lvalue .curr
+    | | `-ArraySubscriptExpr 0x157827d70 <col:2, col:19> '<dependent type>' contains-errors lvalue
+    | |   |-ImplicitCastExpr 0x157827d40 <col:2, col:8> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | `-RecoveryExpr 0x157827cf8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x157827cc0 <col:2> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+    | |   `-ImplicitCastExpr 0x157827d58 <col:15> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x157827d20 <col:15> 'unsigned int' lvalue ParmVar 0x15780dcd8 'slot' 'unsigned int'
+    | `-RecoveryExpr 0x157827dd8 <col:28> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x157829a28 <line:10:2, line:14:2>
+      |-UnaryOperator 0x157828030 <line:10:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-ImplicitCastExpr 0x157828018 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x157827ff0 <col:7, col:13> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x157827fb8 <col:7> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+      `-CompoundStmt 0x157829a00 <col:25, line:14:2>
+        |-BinaryOperator 0x157828148 <line:11:3, col:30> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x1578280a8 <col:3, col:13> '<dependent type>' contains-errors lvalue .on_user_return
+        | | `-RecoveryExpr 0x157828080 <col:3, col:9> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x157828048 <col:3> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+        | `-RecoveryExpr 0x157828128 <col:30> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x1578282e0 <line:12:3, col:43> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x157828248 <col:3> 'int ()' Function 0x157828190 'user_return_notifier_register' 'int ()'
+        | `-UnaryOperator 0x1578282c8 <col:33, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x1578282a0 <col:34, col:40> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x157828268 <col:34> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+        `-BinaryOperator 0x1578283c0 <line:13:3, col:22> '<dependent type>' contains-errors '='
+          |-RecoveryExpr 0x157828340 <col:3, col:9> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x157828308 <col:3> 'struct kvm_shared_msrs *' contains-errors lvalue Var 0x157827400 'smsr' 'struct kvm_shared_msrs *'
+          `-RecoveryExpr 0x1578283a0 <col:22> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,55 @@
+`-FunctionDecl 0x13c128758  line:1:5 fixup_exception 'int (struct pt_regs *)'
+  |-ParmVarDecl 0x13c128648 <col:21, col:37> col:37 used regs 'struct pt_regs *'
+  `-CompoundStmt 0x13c141648 <line:2:1, line:34:1>
+    |-DeclStmt 0x13c140c38 <line:3:2, col:43>
+    | |-RecordDecl 0x13c140a50 <col:8, col:15> col:15 struct exception_table_entry
+    | `-VarDecl 0x13c140bb8 <col:2, col:38> col:38 used fixup 'const struct exception_table_entry *'
+    |-DeclStmt 0x13c140cd0 <line:4:2, col:22>
+    | `-VarDecl 0x13c140c68 <col:2, col:16> col:16 used new_ip 'unsigned long'
+    |-BinaryOperator 0x13c140ed8 <line:20:2, col:42> 'const struct exception_table_entry *' contains-errors '='
+    | |-DeclRefExpr 0x13c140ce8 <col:2> 'const struct exception_table_entry *' lvalue Var 0x13c140bb8 'fixup' 'const struct exception_table_entry *'
+    | `-CallExpr 0x13c140eb0 <col:10, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13c140e30 <col:10> 'int ()' Function 0x13c140d78 'search_exception_tables' 'int ()'
+    |   `-RecoveryExpr 0x13c140e88 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c140e50 <col:34> 'struct pt_regs *' lvalue ParmVar 0x13c128648 'regs' 'struct pt_regs *'
+    |-IfStmt 0x13c1415f8 <line:21:2, line:31:2>
+    | |-ImplicitCastExpr 0x13c140f18 <line:21:6> 'const struct exception_table_entry *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13c140ef8 <col:6> 'const struct exception_table_entry *' lvalue Var 0x13c140bb8 'fixup' 'const struct exception_table_entry *'
+    | `-CompoundStmt 0x13c1415c8 <col:13, line:31:2>
+    |   |-BinaryOperator 0x13c141110 <line:22:3, col:31> 'unsigned long' '='
+    |   | |-DeclRefExpr 0x13c140f30 <col:3> 'unsigned long' lvalue Var 0x13c140c68 'new_ip' 'unsigned long'
+    |   | `-ImplicitCastExpr 0x13c1410f8 <col:12, col:31> 'unsigned long' <IntegralCast>
+    |   |   `-CallExpr 0x13c1410b8 <col:12, col:31> 'int'
+    |   |     |-ImplicitCastExpr 0x13c1410a0 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x13c141030 <col:12> 'int ()' Function 0x13c140f78 'ex_fixup_addr' 'int ()'
+    |   |     `-ImplicitCastExpr 0x13c1410e0 <col:26> 'const struct exception_table_entry *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x13c141050 <col:26> 'const struct exception_table_entry *' lvalue Var 0x13c140bb8 'fixup' 'const struct exception_table_entry *'
+    |   |-IfStmt 0x13c1414d8 <line:24:3, line:28:3>
+    |   | |-BinaryOperator 0x13c141270 <line:24:7, col:50> 'int' contains-errors '>='
+    |   | | |-BinaryOperator 0x13c1411f0 <col:7, col:29> '<dependent type>' contains-errors '-'
+    |   | | | |-RecoveryExpr 0x13c141168 <col:7, col:14> '<dependent type>' contains-errors lvalue
+    |   | | | | `-DeclRefExpr 0x13c141130 <col:7> 'const struct exception_table_entry *' lvalue Var 0x13c140bb8 'fixup' 'const struct exception_table_entry *'
+    |   | | | `-RecoveryExpr 0x13c1411c8 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x13c141190 <col:22> 'const struct exception_table_entry *' lvalue Var 0x13c140bb8 'fixup' 'const struct exception_table_entry *'
+    |   | | `-BinaryOperator 0x13c141250 <col:37, col:50> 'int' '-'
+    |   | |   |-IntegerLiteral 0x13c141210 <col:37> 'int' 2147483632
+    |   | |   `-IntegerLiteral 0x13c141230 <col:50> 'int' 4
+    |   | `-CompoundStmt 0x13c1414b8 <col:53, line:28:3>
+    |   |   |-BinaryOperator 0x13c141410 <line:26:4, col:41> '<dependent type>' contains-errors '='
+    |   |   | |-RecoveryExpr 0x13c1413c8 <col:4, col:27> '<dependent type>' contains-errors lvalue
+    |   |   | | `-CallExpr 0x13c1413a8 <col:4, col:24> 'int'
+    |   |   | |   `-ImplicitCastExpr 0x13c141390 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | |     `-DeclRefExpr 0x13c141370 <col:4> 'int ()' Function 0x13c1412b8 'current_thread_info' 'int ()'
+    |   |   | `-IntegerLiteral 0x13c1413f0 <col:41> 'int' 1
+    |   |   `-CompoundAssignOperator 0x13c141488 <line:27:4, col:14> 'unsigned long' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   |     |-DeclRefExpr 0x13c141430 <col:4> 'unsigned long' lvalue Var 0x13c140c68 'new_ip' 'unsigned long'
+    |   |     `-ImplicitCastExpr 0x13c141470 <col:14> 'unsigned long' <IntegralCast>
+    |   |       `-IntegerLiteral 0x13c141450 <col:14> 'int' 2147483632
+    |   |-BinaryOperator 0x13c141578 <line:29:3, col:14> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13c141530 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13c1414f8 <col:3> 'struct pt_regs *' lvalue ParmVar 0x13c128648 'regs' 'struct pt_regs *'
+    |   | `-DeclRefExpr 0x13c141558 <col:14> 'unsigned long' lvalue Var 0x13c140c68 'new_ip' 'unsigned long'
+    |   `-ReturnStmt 0x13c1415b8 <line:30:3, col:10>
+    |     `-IntegerLiteral 0x13c141598 <col:10> 'int' 1
+    `-ReturnStmt 0x13c141638 <line:33:2, col:9>
+      `-IntegerLiteral 0x13c141618 <col:9> 'int' 0

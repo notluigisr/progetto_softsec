@@ -1,0 +1,28 @@
+`-FunctionDecl 0x154027438  line:1:17 invalid port_fops_poll 'int (struct file *, int *)' static
+  |-ParmVarDecl 0x15400e268 <col:32, col:45> col:45 used filp 'struct file *'
+  |-ParmVarDecl 0x15400e318 <col:51, col:63> col:63 invalid wait 'int *'
+  `-CompoundStmt 0x154027fd8 <line:2:1, line:22:1>
+    |-DeclStmt 0x1540276d8 <line:3:2, col:19>
+    | |-RecordDecl 0x1540274f0 <col:2, col:9> col:9 struct port
+    | `-VarDecl 0x154027658 <col:2, col:15> col:15 used port 'struct port *'
+    |-BinaryOperator 0x154027770 <line:6:2, col:15> 'struct port *' contains-errors '='
+    | |-DeclRefExpr 0x1540276f0 <col:2> 'struct port *' lvalue Var 0x154027658 'port' 'struct port *'
+    | `-RecoveryExpr 0x154027748 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x154027710 <col:9> 'struct file *' lvalue ParmVar 0x15400e268 'filp' 'struct file *'
+    |-CallExpr 0x1540279c8 <line:7:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1540278f0 <col:2> 'int ()' Function 0x154027838 'poll_wait' 'int ()'
+    | |-DeclRefExpr 0x154027910 <col:12> 'struct file *' lvalue ParmVar 0x15400e268 'filp' 'struct file *'
+    | |-UnaryOperator 0x154027990 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x154027968 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x154027930 <col:19> 'struct port *' lvalue Var 0x154027658 'port' 'struct port *'
+    | `-RecoveryExpr 0x1540279a8 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x154027af0 <line:9:2, line:12:2>
+    | |-UnaryOperator 0x154027a78 <line:9:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x154027a60 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x154027a38 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x154027a00 <col:7> 'struct port *' lvalue Var 0x154027658 'port' 'struct port *'
+    | `-CompoundStmt 0x154027ad8 <col:30, line:12:2>
+    |   `-ReturnStmt 0x154027ac8 <line:11:3, col:10>
+    |     `-RecoveryExpr 0x154027aa8 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x154027fc8 <line:21:2, col:9>
+      `-RecoveryExpr 0x154027fa8 <col:9> '<dependent type>' contains-errors lvalue

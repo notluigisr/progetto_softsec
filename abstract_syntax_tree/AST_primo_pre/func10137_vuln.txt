@@ -1,0 +1,92 @@
+`-FunctionDecl 0x14e026600  line:1:12 svc_listen 'int (struct socket *, int)' static
+  |-ParmVarDecl 0x14e00e248 <col:23, col:38> col:38 used sock 'struct socket *'
+  |-ParmVarDecl 0x14e00e2c8 <col:43, col:47> col:47 used backlog 'int'
+  `-CompoundStmt 0x14e02efb8 <line:2:1, line:34:1>
+    |-CallExpr 0x14e0268b0 <line:3:2, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e026830 <col:2> 'int ()' Function 0x14e026778 'DEFINE_WAIT' 'int ()'
+    | `-RecoveryExpr 0x14e026890 <col:14> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14e026b28 <line:4:2, col:28>
+    | |-RecordDecl 0x14e0268d8 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x14e026a48 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x14e026ae8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e026ab0 <col:20> 'struct socket *' lvalue ParmVar 0x14e00e248 'sock' 'struct socket *'
+    |-DeclStmt 0x14e026ee8 <line:5:2, col:36>
+    | |-RecordDecl 0x14e026b40 <col:2, col:9> col:9 struct atm_vcc
+    | `-VarDecl 0x14e026ca8 <col:2, col:35> col:18 used vcc 'struct atm_vcc *' cinit
+    |   `-ImplicitCastExpr 0x14e026eb8 <col:24, col:35> 'struct atm_vcc *' <IntegralToPointer>
+    |     `-CallExpr 0x14e026e78 <col:24, col:35> 'int'
+    |       |-ImplicitCastExpr 0x14e026e60 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14e026df0 <col:24> 'int ()' Function 0x14e026d38 'ATM_SD' 'int ()'
+    |       `-ImplicitCastExpr 0x14e026ea0 <col:31> 'struct socket *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14e026e10 <col:31> 'struct socket *' lvalue ParmVar 0x14e00e248 'sock' 'struct socket *'
+    |-DeclStmt 0x14e026f80 <line:6:2, col:11>
+    | `-VarDecl 0x14e026f18 <col:2, col:6> col:6 used error 'int'
+    |-CallExpr 0x14e027138 <line:8:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x14e027120 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e027078 <col:2> 'int ()' Function 0x14e026fc0 'pr_debug' 'int ()'
+    | |-ImplicitCastExpr 0x14e027168 <col:11> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x14e0270e0 <col:11> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x14e027180 <col:17> 'struct atm_vcc *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14e027100 <col:17> 'struct atm_vcc *' lvalue Var 0x14e026ca8 'vcc' 'struct atm_vcc *'
+    |-CallExpr 0x14e0272d0 <line:9:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x14e0272b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e027278 <col:2> 'int ()' Function 0x14e0271c0 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x14e0272f8 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x14e027298 <col:12> 'struct sock *' contains-errors lvalue Var 0x14e026a48 'sk' 'struct sock *'
+    |-IfStmt 0x14e02d4a8 <line:11:2, line:14:2>
+    | |-CallExpr 0x14e0274f0 <line:11:6, col:41> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14e0273f0 <col:6> 'int ()' Function 0x14e027338 'test_bit' 'int ()'
+    | | |-RecoveryExpr 0x14e0274d0 <col:15> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x14e027488 <col:30, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x14e027460 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14e027428 <col:31> 'struct atm_vcc *' lvalue Var 0x14e026ca8 'vcc' 'struct atm_vcc *'
+    | `-CompoundStmt 0x14e02d488 <col:44, line:14:2>
+    |   |-BinaryOperator 0x14e02d400 <line:12:3, col:12> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14e027520 <col:3> 'int' lvalue Var 0x14e026f18 'error' 'int'
+    |   | `-UnaryOperator 0x14e0275e0 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14e0275c8 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14e0275a8 <col:12> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14e02d470 <line:13:3, col:8> 'out' 0x14e02d420
+    |-CallExpr 0x14e02d600 <line:15:2, col:22> 'int' contains-errors
+    | |-ImplicitCastExpr 0x14e02d5e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e02d5a8 <col:2> 'int ()' Function 0x14e02d4f0 'vcc_insert_socket' 'int ()'
+    | `-ImplicitCastExpr 0x14e02d628 <col:20> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x14e02d5c8 <col:20> 'struct sock *' contains-errors lvalue Var 0x14e026a48 'sk' 'struct sock *'
+    |-CallExpr 0x14e02d820 <line:16:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e02d720 <col:2> 'int ()' Function 0x14e02d668 'set_bit' 'int ()'
+    | |-RecoveryExpr 0x14e02d800 <col:10> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x14e02d7b8 <col:26, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14e02d790 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14e02d758 <col:27> 'struct atm_vcc *' lvalue Var 0x14e026ca8 'vcc' 'struct atm_vcc *'
+    |-CallExpr 0x14e02da88 <line:17:2, col:59> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14e02d930 <col:2> 'int ()' Function 0x14e02d878 'prepare_to_wait' 'int ()'
+    | |-RecoveryExpr 0x14e02d988 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e02d950 <col:18> 'struct sock *' contains-errors lvalue Var 0x14e026a48 'sk' 'struct sock *'
+    | |-UnaryOperator 0x14e02da50 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14e02da30 <col:33> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x14e02da68 <col:39> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x14e02dee0 <line:19:2, line:22:2>
+    | |-RecoveryExpr 0x14e02dcf0 <line:19:9, col:50> '_Bool' contains-errors
+    | `-CompoundStmt 0x14e02dec8 <col:56, line:22:2>
+    |   `-CallExpr 0x14e02de28 <line:20:3, col:12> 'int'
+    |     `-ImplicitCastExpr 0x14e02de10 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x14e02ddf0 <col:3> 'int ()' Function 0x14e02dd38 'schedule' 'int ()'
+    |-IfStmt 0x14e02e0d0 <line:24:2, line:27:2>
+    | |-RecoveryExpr 0x14e02e060 <line:24:6, col:7> '_Bool' contains-errors
+    | `-CompoundStmt 0x14e02e0b8 <col:13, line:27:2>
+    |   `-GotoStmt 0x14e02e0a0 <line:26:3, col:8> 'out' 0x14e02d420
+    |-BinaryOperator 0x14e02e330 <line:30:2, col:15> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14e02e280 <col:2> 'int' lvalue Var 0x14e026f18 'error' 'int'
+    | `-UnaryOperator 0x14e02e318 <col:10, col:15> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x14e02e300 <col:11, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x14e02e2d8 <col:11, col:15> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14e02e2a0 <col:11> 'struct sock *' contains-errors lvalue Var 0x14e026a48 'sk' 'struct sock *'
+    |-LabelStmt 0x14e02ef50 <line:31:1, line:32:17> 'out'
+    | `-CallExpr 0x14e02ef10 <col:2, col:17> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x14e02eef8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14e02eeb8 <col:2> 'int ()' Function 0x14e02ee00 'release_sock' 'int ()'
+    |   `-ImplicitCastExpr 0x14e02ef38 <col:15> 'struct sock *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x14e02eed8 <col:15> 'struct sock *' contains-errors lvalue Var 0x14e026a48 'sk' 'struct sock *'
+    `-ReturnStmt 0x14e02efa8 <line:33:2, col:9>
+      `-ImplicitCastExpr 0x14e02ef90 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14e02ef70 <col:9> 'int' lvalue Var 0x14e026f18 'error' 'int'

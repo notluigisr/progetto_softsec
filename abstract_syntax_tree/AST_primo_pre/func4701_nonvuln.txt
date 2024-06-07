@@ -1,0 +1,41 @@
+`-FunctionDecl 0x1489281a8  line:1:12 lookup_node 'int (unsigned long)' static
+  |-ParmVarDecl 0x1489280d8 <col:24, col:38> col:38 used addr 'unsigned long'
+  `-CompoundStmt 0x148941d98 <line:2:1, line:12:1>
+    |-DeclStmt 0x148928488 <line:3:2, col:16>
+    | |-RecordDecl 0x1489282a0 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x148928408 <col:2, col:15> col:15 used p 'struct page *'
+    |-DeclStmt 0x148928520 <line:4:2, col:9>
+    | `-VarDecl 0x1489284b8 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x148941910 <line:6:2, col:55> 'int' contains-errors '='
+    | |-DeclRefExpr 0x148928538 <col:2> 'int' lvalue Var 0x1489284b8 'err' 'int'
+    | `-CallExpr 0x1489418c8 <col:8, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148928680 <col:8> 'int ()' Function 0x1489285c8 'get_user_pages' 'int ()'
+    |   |-BinaryOperator 0x148941888 <col:23, col:30> '<dependent type>' contains-errors '&'
+    |   | |-DeclRefExpr 0x1489286a0 <col:23> 'unsigned long' lvalue ParmVar 0x1489280d8 'addr' 'unsigned long'
+    |   | `-RecoveryExpr 0x148941868 <col:30> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x1489286f8 <col:41> 'int' 1
+    |   |-IntegerLiteral 0x148928718 <col:44> 'int' 0
+    |   |-UnaryOperator 0x1489287c0 <col:47, col:48> 'struct page **' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x148928738 <col:48> 'struct page *' lvalue Var 0x148928408 'p' 'struct page *'
+    |   `-RecoveryExpr 0x1489418a8 <col:51> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x148941d30 <line:7:2, line:10:2>
+    | |-BinaryOperator 0x148941988 <line:7:6, col:13> 'int' '>='
+    | | |-ImplicitCastExpr 0x148941970 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x148941930 <col:6> 'int' lvalue Var 0x1489284b8 'err' 'int'
+    | | `-IntegerLiteral 0x148941950 <col:13> 'int' 0
+    | `-CompoundStmt 0x148941d10 <col:16, line:10:2>
+    |   |-BinaryOperator 0x148941b78 <line:8:3, col:22> 'int' '='
+    |   | |-DeclRefExpr 0x1489419a8 <col:3> 'int' lvalue Var 0x1489284b8 'err' 'int'
+    |   | `-CallExpr 0x148941b38 <col:9, col:22> 'int'
+    |   |   |-ImplicitCastExpr 0x148941b20 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x148941aa8 <col:9> 'int ()' Function 0x1489419f0 'page_to_nid' 'int ()'
+    |   |   `-ImplicitCastExpr 0x148941b60 <col:21> 'struct page *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x148941ac8 <col:21> 'struct page *' lvalue Var 0x148928408 'p' 'struct page *'
+    |   `-CallExpr 0x148941cd0 <line:9:3, col:13> 'int'
+    |     |-ImplicitCastExpr 0x148941cb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x148941c78 <col:3> 'int ()' Function 0x148941bc0 'put_page' 'int ()'
+    |     `-ImplicitCastExpr 0x148941cf8 <col:12> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x148941c98 <col:12> 'struct page *' lvalue Var 0x148928408 'p' 'struct page *'
+    `-ReturnStmt 0x148941d88 <line:11:2, col:9>
+      `-ImplicitCastExpr 0x148941d70 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x148941d50 <col:9> 'int' lvalue Var 0x1489284b8 'err' 'int'

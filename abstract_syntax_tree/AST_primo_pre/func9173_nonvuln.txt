@@ -1,0 +1,82 @@
+`-FunctionDecl 0x147140a00  line:1:13 nf_tables_table_notify 'void (const struct nft_ctx *, int)' static
+  |-ParmVarDecl 0x147128648 <col:36, col:58> col:58 used ctx 'const struct nft_ctx *'
+  |-ParmVarDecl 0x1471286c8 <col:63, col:67> col:67 used event 'int'
+  `-CompoundStmt 0x147146510 <line:2:1, line:27:1>
+    |-DeclStmt 0x147140ce8 <line:3:2, col:33>
+    | |-RecordDecl 0x147140b00 <col:2, col:9> col:9 struct nftables_pernet
+    | `-VarDecl 0x147140c68 <col:2, col:26> col:26 used nft_net 'struct nftables_pernet *'
+    |-DeclStmt 0x147140ee8 <line:4:2, col:21>
+    | |-RecordDecl 0x147140d00 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x147140e68 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x147140f80 <line:5:2, col:9>
+    | `-VarDecl 0x147140f18 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x147141348 <line:7:2, line:9:3>
+    | |-BinaryOperator 0x147141318 <line:7:6, line:8:57> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x147141298 <line:7:6, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x147141280 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x147140fd0 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x147140f98 <col:7> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    | | `-UnaryOperator 0x147141300 <line:8:6, col:57> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x1471412d0 <col:7, col:57> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x147141150 <col:7> 'int ()' Function 0x147141098 'nfnetlink_has_listeners' 'int ()'
+    | |     |-RecoveryExpr 0x1471411a8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x147141170 <col:31> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    | |     `-RecoveryExpr 0x1471412b0 <col:41> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x147141338 <line:9:3>
+    |-BinaryOperator 0x147141578 <line:11:2, col:44> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x147141368 <col:2> 'struct sk_buff *' lvalue Var 0x147140e68 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x147141548 <col:8, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147141468 <col:8> 'int ()' Function 0x1471413b0 'nlmsg_new' 'int ()'
+    |   |-RecoveryExpr 0x147141508 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x147141528 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147141698 <line:12:2, line:13:8>
+    | |-BinaryOperator 0x147141610 <line:12:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x147141598 <col:6> 'struct sk_buff *' lvalue Var 0x147140e68 'skb' 'struct sk_buff *'
+    | | `-RecoveryExpr 0x1471415f0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x147141680 <line:13:3, col:8> 'err' 0x147141630
+    |-BinaryOperator 0x147145c88 <line:15:2, line:16:39> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1471416b8 <line:15:2> 'int' lvalue Var 0x147140f18 'err' 'int'
+    | `-CallExpr 0x147145c28 <col:8, line:16:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1471417b8 <line:15:8> 'int ()' Function 0x147141700 'nf_tables_fill_table_info' 'int ()'
+    |   |-DeclRefExpr 0x1471417d8 <col:34> 'struct sk_buff *' lvalue Var 0x147140e68 'skb' 'struct sk_buff *'
+    |   |-RecoveryExpr 0x147141830 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1471417f8 <col:39> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |   |-RecoveryExpr 0x147141890 <col:49, col:54> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x147141858 <col:49> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |   |-RecoveryExpr 0x1471418f0 <col:62, col:67> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1471418b8 <col:62> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |   |-DeclRefExpr 0x147141918 <line:16:6> 'int' lvalue ParmVar 0x1471286c8 'event' 'int'
+    |   |-IntegerLiteral 0x147141938 <col:13> 'int' 0
+    |   |-RecoveryExpr 0x147141990 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x147141958 <col:16> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |   `-RecoveryExpr 0x147145c00 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1471419b8 <col:29> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |-IfStmt 0x147145f00 <line:17:2, line:20:2>
+    | |-BinaryOperator 0x147145d00 <line:17:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x147145ce8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x147145ca8 <col:6> 'int' lvalue Var 0x147140f18 'err' 'int'
+    | | `-IntegerLiteral 0x147145cc8 <col:12> 'int' 0
+    | `-CompoundStmt 0x147145ee0 <col:15, line:20:2>
+    |   |-CallExpr 0x147145e88 <line:18:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x147145e70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x147145e00 <col:3> 'int ()' Function 0x147145d48 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x147145eb0 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x147145e20 <col:13> 'struct sk_buff *' lvalue Var 0x147140e68 'skb' 'struct sk_buff *'
+    |   `-GotoStmt 0x147145ec8 <line:19:3, col:8> 'err' 0x147141630
+    |-BinaryOperator 0x1471460c8 <line:22:2, col:31> 'struct nftables_pernet *' contains-errors '='
+    | |-DeclRefExpr 0x147145f20 <col:2> 'struct nftables_pernet *' lvalue Var 0x147140c68 'nft_net' 'struct nftables_pernet *'
+    | `-CallExpr 0x1471460a0 <col:12, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147146020 <col:12> 'int ()' Function 0x147145f68 'nft_pernet' 'int ()'
+    |   `-RecoveryExpr 0x147146078 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147146040 <col:23> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    |-CallExpr 0x1471462e0 <line:23:2, col:60> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1471461c8 <col:2> 'int ()' Function 0x147146110 'nft_notify_enqueue' 'int ()'
+    | |-DeclRefExpr 0x1471461e8 <col:21> 'struct sk_buff *' lvalue Var 0x147140e68 'skb' 'struct sk_buff *'
+    | |-RecoveryExpr 0x147146240 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x147146208 <col:26> 'const struct nft_ctx *' lvalue ParmVar 0x147128648 'ctx' 'const struct nft_ctx *'
+    | `-UnaryOperator 0x1471462c8 <col:39, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1471462a0 <col:40, col:49> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147146268 <col:40> 'struct nftables_pernet *' lvalue Var 0x147140c68 'nft_net' 'struct nftables_pernet *'
+    |-ReturnStmt 0x147146318 <line:24:2>
+    `-LabelStmt 0x1471464f0 <line:25:1, col:4> 'err'
+      `-NullStmt 0x1471464e8 <col:4>

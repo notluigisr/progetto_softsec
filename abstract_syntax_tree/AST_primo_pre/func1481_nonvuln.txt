@@ -1,0 +1,35 @@
+`-FunctionDecl 0x14700dd98  line:1:1 cleanup_module 'int (void)'
+  `-CompoundStmt 0x1470282e8 <line:2:1, line:12:1>
+    |-DeclStmt 0x14700e078 <line:3:2, col:25>
+    | |-RecordDecl 0x14700de88 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x14700dff8 <col:2, col:22> col:22 used dev 'struct net_device *'
+    |-DeclStmt 0x14700e110 <line:4:2, col:10>
+    | `-VarDecl 0x14700e0a8 <col:2, col:7> col:7 used num 'int'
+    `-ForStmt 0x1470282b0 <line:6:2, line:11:3>
+      |-BinaryOperator 0x14700e168 <line:6:7, col:13> 'int' '='
+      | |-DeclRefExpr 0x14700e128 <col:7> 'int' lvalue Var 0x14700e0a8 'num' 'int'
+      | `-IntegerLiteral 0x14700e148 <col:13> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x14700e218 <col:17, col:23> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x14700e188 <col:17> 'int' lvalue Var 0x14700e0a8 'num' 'int'
+      | `-RecoveryExpr 0x14700e1f8 <col:23> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x14700e258 <col:44, col:46> 'int' prefix '++'
+      | `-DeclRefExpr 0x14700e238 <col:46> 'int' lvalue Var 0x14700e0a8 'num' 'int'
+      `-IfStmt 0x147028290 <line:7:3, line:11:3>
+        |-RecoveryExpr 0x14700e2e0 <line:7:7, col:36> '_Bool' contains-errors
+        `-CompoundStmt 0x147028268 <col:43, line:11:3>
+          |-CallExpr 0x147027a98 <line:8:4, col:27> 'int'
+          | |-ImplicitCastExpr 0x147027a80 <col:4> 'int (*)()' <FunctionToPointerDecay>
+          | | `-DeclRefExpr 0x147027a10 <col:4> 'int ()' Function 0x14700e358 'unregister_netdev' 'int ()'
+          | `-ImplicitCastExpr 0x147027ac0 <col:23> 'struct net_device *' <LValueToRValue>
+          |   `-DeclRefExpr 0x147027a30 <col:23> 'struct net_device *' lvalue Var 0x14700dff8 'dev' 'struct net_device *'
+          |-CallExpr 0x1470280c0 <line:9:4, col:51> '<dependent type>' contains-errors
+          | |-DeclRefExpr 0x147027bb8 <col:4> 'int ()' Function 0x147027b00 'release_region' 'int ()'
+          | |-RecoveryExpr 0x147028030 <col:20, col:25> '<dependent type>' contains-errors lvalue
+          | | `-DeclRefExpr 0x147027bd8 <col:20> 'struct net_device *' lvalue Var 0x14700dff8 'dev' 'struct net_device *'
+          | `-RecoveryExpr 0x1470280a0 <col:36> '<dependent type>' contains-errors lvalue
+          `-CallExpr 0x147028228 <line:10:4, col:21> 'int'
+            |-ImplicitCastExpr 0x147028210 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x1470281d0 <col:4> 'int ()' Function 0x147028118 'free_netdev' 'int ()'
+            `-ImplicitCastExpr 0x147028250 <col:17> 'struct net_device *' <LValueToRValue>
+              `-DeclRefExpr 0x1470281f0 <col:17> 'struct net_device *' lvalue Var 0x14700dff8 'dev' 'struct net_device *'

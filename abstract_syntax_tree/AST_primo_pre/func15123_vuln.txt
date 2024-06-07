@@ -1,0 +1,21 @@
+`-FunctionDecl 0x15980e350  line:1:13 __net_random_once_deferred 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x15980e248 <col:40, col:60> col:60 used w 'struct work_struct *'
+  `-CompoundStmt 0x159826ed8 <line:2:1, line:8:1>
+    |-DeclStmt 0x1598269c8 <line:3:2, line:4:55>
+    | |-RecordDecl 0x159826648 <line:3:2, col:9> col:9 struct __net_random_once_work
+    | `-VarDecl 0x1598267b8 <col:2, col:33> col:33 used work 'struct __net_random_once_work *'
+    |-IfStmt 0x159826d08 <line:5:2, line:6:32>
+    | |-UnaryOperator 0x159826b68 <line:5:6, col:35> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x159826b40 <col:7, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x159826ac0 <col:7> 'int ()' Function 0x159826a08 'static_key_enabled' 'int ()'
+    | |   `-RecoveryExpr 0x159826b18 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x159826ae0 <col:26> 'struct __net_random_once_work *' lvalue Var 0x1598267b8 'work' 'struct __net_random_once_work *'
+    | `-CallExpr 0x159826ce0 <line:6:3, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x159826c60 <col:3> 'int ()' Function 0x159826ba8 'static_key_slow_inc' 'int ()'
+    |   `-RecoveryExpr 0x159826cb8 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159826c80 <col:23> 'struct __net_random_once_work *' lvalue Var 0x1598267b8 'work' 'struct __net_random_once_work *'
+    `-CallExpr 0x159826e98 <line:7:2, col:12> 'int'
+      |-ImplicitCastExpr 0x159826e80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x159826e08 <col:2> 'int ()' Function 0x159826d50 'kfree' 'int ()'
+      `-ImplicitCastExpr 0x159826ec0 <col:8> 'struct __net_random_once_work *' <LValueToRValue>
+        `-DeclRefExpr 0x159826e28 <col:8> 'struct __net_random_once_work *' lvalue Var 0x1598267b8 'work' 'struct __net_random_once_work *'

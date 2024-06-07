@@ -1,0 +1,23 @@
+`-FunctionDecl 0x12e940c08  line:1:21 referenced syscall_nopage 'struct page *(struct vm_area_struct *, unsigned long, int *)' static
+  |-ParmVarDecl 0x12e9286e8 <col:36, col:59> col:59 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x12e928768 <line:2:5, col:19> col:19 used adr 'unsigned long'
+  |-ParmVarDecl 0x12e940a18 <col:24, col:29> col:29 type 'int *'
+  `-CompoundStmt 0x12e9412c0 <line:3:1, line:7:1>
+    |-DeclStmt 0x12e9410b8 <line:4:2, col:67>
+    | `-VarDecl 0x12e940d98 <col:2, col:66> col:15 used p 'struct page *' cinit
+    |   `-CallExpr 0x12e941090 <col:19, col:66> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12e940f30 <col:19> 'int ()' Function 0x12e940e78 'virt_to_page' 'int ()'
+    |     `-BinaryOperator 0x12e941070 <col:32, col:54> '<dependent type>' contains-errors '+'
+    |       |-BinaryOperator 0x12e940fd0 <col:32, col:43> '<dependent type>' contains-errors '-'
+    |       | |-DeclRefExpr 0x12e940f50 <col:32> 'unsigned long' lvalue ParmVar 0x12e928768 'adr' 'unsigned long'
+    |       | `-RecoveryExpr 0x12e940fa8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x12e940f70 <col:38> 'struct vm_area_struct *' lvalue ParmVar 0x12e9286e8 'vma' 'struct vm_area_struct *'
+    |       `-DeclRefExpr 0x12e941050 <col:54> 'struct page *(struct vm_area_struct *, unsigned long, int *)' Function 0x12e940c08 'syscall_nopage' 'struct page *(struct vm_area_struct *, unsigned long, int *)'
+    |-CallExpr 0x12e941238 <line:5:2, col:12> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12e941220 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12e9411b0 <col:2> 'int ()' Function 0x12e9410f8 'get_page' 'int ()'
+    | `-ImplicitCastExpr 0x12e941260 <col:11> 'struct page *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12e9411d0 <col:11> 'struct page *' contains-errors lvalue Var 0x12e940d98 'p' 'struct page *'
+    `-ReturnStmt 0x12e9412b0 <line:6:2, col:9>
+      `-ImplicitCastExpr 0x12e941298 <col:9> 'struct page *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x12e941278 <col:9> 'struct page *' contains-errors lvalue Var 0x12e940d98 'p' 'struct page *'

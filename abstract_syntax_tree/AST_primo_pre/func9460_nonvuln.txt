@@ -1,0 +1,178 @@
+`-FunctionDecl 0x13b940a00  line:1:12 io_recvmsg 'int (struct io_kiocb *, unsigned int)' static
+  |-ParmVarDecl 0x13b928648 <col:23, col:40> col:40 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x13b9286c8 <col:45, col:58> col:58 used issue_flags 'unsigned int'
+  `-CompoundStmt 0x13b943f28 <line:2:1, line:55:1>
+    |-DeclStmt 0x13b940d70 <line:3:2, col:37>
+    | |-RecordDecl 0x13b940b00 <col:2, col:9> col:9 struct io_async_msghdr
+    | |-VarDecl 0x13b940bf8 <col:2, col:25> col:25 invalid iomsg 'struct io_async_msghdr'
+    | `-VarDecl 0x13b940ce8 <col:2, col:33> col:33 used kmsg 'struct io_async_msghdr *'
+    |-DeclStmt 0x13b940f78 <line:4:2, col:21>
+    | |-RecordDecl 0x13b940d88 <col:2, col:9> col:9 struct socket
+    | `-VarDecl 0x13b940ef8 <col:2, col:17> col:17 used sock 'struct socket *'
+    |-DeclStmt 0x13b941178 <line:5:2, col:24>
+    | |-RecordDecl 0x13b940f90 <col:2, col:9> col:9 struct io_buffer
+    | `-VarDecl 0x13b9410f8 <col:2, col:20> col:20 used kbuf 'struct io_buffer *'
+    |-DeclStmt 0x13b941210 <line:6:2, col:16>
+    | `-VarDecl 0x13b9411a8 <col:2, col:11> col:11 used flags 'unsigned int'
+    |-DeclStmt 0x13b941360 <line:7:2, col:21>
+    | |-VarDecl 0x13b941240 <col:2, col:6> col:6 used ret 'int'
+    | `-VarDecl 0x13b9412c0 <col:2, col:20> col:11 used cflags 'int' cinit
+    |   `-IntegerLiteral 0x13b941328 <col:20> 'int' 0
+    |-BinaryOperator 0x13b941568 <line:10:2, col:33> 'struct socket *' contains-errors '='
+    | |-DeclRefExpr 0x13b941390 <col:2> 'struct socket *' lvalue Var 0x13b940ef8 'sock' 'struct socket *'
+    | `-CallExpr 0x13b941540 <col:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b9414c0 <col:9> 'int ()' Function 0x13b941408 'sock_from_file' 'int ()'
+    |   `-RecoveryExpr 0x13b941518 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b9414e0 <col:24> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-IfStmt 0x13b9417f8 <line:11:2, line:12:11>
+    | |-CallExpr 0x13b941728 <line:11:6, col:20> 'int'
+    | | |-ImplicitCastExpr 0x13b941710 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13b941668 <col:6> 'int ()' Function 0x13b9415b0 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x13b9416c0 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x13b9416a8 <col:16> 'struct socket *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13b941688 <col:16> 'struct socket *' lvalue Var 0x13b940ef8 'sock' 'struct socket *'
+    | `-ReturnStmt 0x13b9417e8 <line:12:3, col:11>
+    |   `-UnaryOperator 0x13b9417d0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13b9417b8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13b941798 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13b941898 <line:14:2, col:14> 'struct io_async_msghdr *' contains-errors '='
+    | |-DeclRefExpr 0x13b941818 <col:2> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    | `-RecoveryExpr 0x13b941870 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13b941838 <col:9> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-IfStmt 0x13c808a18 <line:15:2, line:20:2>
+    | |-UnaryOperator 0x13b9418f0 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13b9418d8 <col:7> 'struct io_async_msghdr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b9418b8 <col:7> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    | `-CompoundStmt 0x13c8089f0 <col:13, line:20:2>
+    |   |-BinaryOperator 0x13c8088b8 <line:16:3, col:40> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13b941908 <col:3> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    |   | `-CallExpr 0x13c808888 <col:9, col:40> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13c808810 <col:9> 'int ()' Function 0x13b941950 'io_recvmsg_copy_hdr' 'int ()'
+    |   |   |-DeclRefExpr 0x13c808830 <col:29> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |   |   `-UnaryOperator 0x13c808870 <col:34, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x13c808850 <col:35> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x13c808958 <line:17:3, line:18:11>
+    |   | |-ImplicitCastExpr 0x13c8088f8 <line:17:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x13c8088d8 <col:7> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    |   | `-ReturnStmt 0x13c808948 <line:18:4, col:11>
+    |   |   `-ImplicitCastExpr 0x13c808930 <col:11> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13c808910 <col:11> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    |   `-BinaryOperator 0x13c8089d0 <line:19:3, col:11> 'struct io_async_msghdr *' contains-errors '='
+    |     |-DeclRefExpr 0x13c808978 <col:3> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |     `-UnaryOperator 0x13c8089b8 <col:10, col:11> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x13c808998 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13b942e30 <line:22:2, line:30:2>
+    | |-BinaryOperator 0x13c808af0 <line:22:6, col:19> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x13c808a70 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13c808a38 <col:6> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    | | `-RecoveryExpr 0x13c808ad0 <col:19> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13b942e00 <col:40, line:30:2>
+    |   |-BinaryOperator 0x13c808d68 <line:23:3, col:52> 'struct io_buffer *' contains-errors '='
+    |   | |-DeclRefExpr 0x13c808b10 <col:3> 'struct io_buffer *' lvalue Var 0x13b9410f8 'kbuf' 'struct io_buffer *'
+    |   | `-CallExpr 0x13c808d38 <col:10, col:52> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13c808c10 <col:10> 'int ()' Function 0x13c808b58 'io_recv_buffer_select' 'int ()'
+    |   |   |-DeclRefExpr 0x13c808c30 <col:32> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |   |   `-UnaryOperator 0x13c808d20 <col:37, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |     `-ImplicitCastExpr 0x13c808d08 <col:38> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x13c808ce8 <col:38> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x13c809088 <line:24:3, line:25:23>
+    |   | |-CallExpr 0x13c808ec0 <line:24:7, col:18> 'int'
+    |   | | |-ImplicitCastExpr 0x13c808ea8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x13c808e68 <col:7> 'int ()' Function 0x13c808db0 'IS_ERR' 'int ()'
+    |   | | `-ImplicitCastExpr 0x13c808ee8 <col:14> 'struct io_buffer *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13c808e88 <col:14> 'struct io_buffer *' lvalue Var 0x13b9410f8 'kbuf' 'struct io_buffer *'
+    |   | `-ReturnStmt 0x13c809078 <line:25:4, col:23>
+    |   |   `-CallExpr 0x13c809038 <col:11, col:23> 'int'
+    |   |     |-ImplicitCastExpr 0x13c809020 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x13c808fe0 <col:11> 'int ()' Function 0x13c808f28 'PTR_ERR' 'int ()'
+    |   |     `-ImplicitCastExpr 0x13c809060 <col:19> 'struct io_buffer *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x13c809000 <col:19> 'struct io_buffer *' lvalue Var 0x13b9410f8 'kbuf' 'struct io_buffer *'
+    |   |-BinaryOperator 0x13c809330 <line:26:3, col:58> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x13c809160 <col:3, col:21> '<dependent type>' contains-errors lvalue .iov_base
+    |   | | `-ArraySubscriptExpr 0x13c809140 <col:3, col:19> '<dependent type>' contains-errors lvalue
+    |   | |   |-ImplicitCastExpr 0x13c809128 <col:3, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |   | `-RecoveryExpr 0x13c8090e0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   |   `-DeclRefExpr 0x13c8090a8 <col:3> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |   | |   `-IntegerLiteral 0x13c809108 <col:18> 'int' 0
+    |   | `-CallExpr 0x13c809308 <col:32, col:58> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13c809288 <col:32> 'int ()' Function 0x13c8091d0 'u64_to_user_ptr' 'int ()'
+    |   |   `-RecoveryExpr 0x13c8092e0 <col:48, col:54> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13c8092a8 <col:48> 'struct io_buffer *' lvalue Var 0x13b9410f8 'kbuf' 'struct io_buffer *'
+    |   `-BinaryOperator 0x13c8094f8 <line:27:3, col:43> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x13c809408 <col:3, col:21> '<dependent type>' contains-errors lvalue .iov_len
+    |     | `-ArraySubscriptExpr 0x13c8093e8 <col:3, col:19> '<dependent type>' contains-errors lvalue
+    |     |   |-ImplicitCastExpr 0x13c8093d0 <col:3, col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   | `-RecoveryExpr 0x13c809388 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |     |   |   `-DeclRefExpr 0x13c809350 <col:3> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |     |   `-IntegerLiteral 0x13c8093b0 <col:18> 'int' 0
+    |     `-CXXDependentScopeMemberExpr 0x13c8094b0 <col:31, col:43> '<dependent type>' contains-errors lvalue .len
+    |       `-RecoveryExpr 0x13c809488 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13c809450 <col:31> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-BinaryOperator 0x13b942f18 <line:32:2, col:22> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x13b942e50 <col:2> 'unsigned int' lvalue Var 0x13b9411a8 'flags' 'unsigned int'
+    | `-CXXDependentScopeMemberExpr 0x13b942ed0 <col:10, col:22> '<dependent type>' contains-errors lvalue .msg_flags
+    |   `-RecoveryExpr 0x13b942ea8 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b942e70 <col:10> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-BinaryOperator 0x13b943340 <line:38:2, line:39:24> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13b943018 <line:38:2> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    | `-CallExpr 0x13b9432f8 <col:8, line:39:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b943118 <line:38:8> 'int ()' Function 0x13b943060 '__sys_recvmsg_sock' 'int ()'
+    |   |-DeclRefExpr 0x13b943138 <col:27> 'struct socket *' lvalue Var 0x13b940ef8 'sock' 'struct socket *'
+    |   |-UnaryOperator 0x13b9431b8 <col:33, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x13b943190 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13b943158 <col:34> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |   |-CXXDependentScopeMemberExpr 0x13b943230 <col:45, col:57> '<dependent type>' contains-errors lvalue .umsg
+    |   | `-RecoveryExpr 0x13b943208 <col:45, col:50> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13b9431d0 <col:45> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |   |-RecoveryExpr 0x13b9432b0 <line:39:6, col:12> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x13b943278 <col:6> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |   `-DeclRefExpr 0x13b9432d8 <col:19> 'unsigned int' lvalue Var 0x13b9411a8 'flags' 'unsigned int'
+    |-IfStmt 0x13b943568 <line:40:2, line:41:38>
+    | |-RecoveryExpr 0x13b943380 <line:40:6, col:32> '_Bool' contains-errors
+    | `-ReturnStmt 0x13b943558 <line:41:3, col:38>
+    |   `-CallExpr 0x13b9434f8 <col:10, col:38> 'int'
+    |     |-ImplicitCastExpr 0x13b9434e0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13b943480 <col:10> 'int ()' Function 0x13b9433c8 'io_setup_async_msg' 'int ()'
+    |     |-ImplicitCastExpr 0x13b943528 <col:29> 'struct io_kiocb *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13b9434a0 <col:29> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |     `-ImplicitCastExpr 0x13b943540 <col:34> 'struct io_async_msghdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13b9434c0 <col:34> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |-IfStmt 0x13b943820 <line:45:2, line:46:32>
+    | |-RecoveryExpr 0x13b943648 <line:45:6, col:19> '_Bool' contains-errors
+    | `-BinaryOperator 0x13b943800 <line:46:3, col:32> 'int' '='
+    |   |-DeclRefExpr 0x13b943668 <col:3> 'int' lvalue Var 0x13b9412c0 'cflags' 'int'
+    |   `-CallExpr 0x13b9437c0 <col:12, col:32> 'int'
+    |     |-ImplicitCastExpr 0x13b9437a8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13b943768 <col:12> 'int ()' Function 0x13b9436b0 'io_put_recv_kbuf' 'int ()'
+    |     `-ImplicitCastExpr 0x13b9437e8 <col:29> 'struct io_kiocb *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13b943788 <col:29> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-IfStmt 0x13b943a28 <line:48:2, line:49:23>
+    | |-RecoveryExpr 0x13b943878 <line:48:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b943840 <col:6> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    | `-CallExpr 0x13b943a00 <line:49:3, col:23> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b943980 <col:3> 'int ()' Function 0x13b9438c8 'kfree' 'int ()'
+    |   `-RecoveryExpr 0x13b9439d8 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b9439a0 <col:9> 'struct io_async_msghdr *' lvalue Var 0x13b940ce8 'kmsg' 'struct io_async_msghdr *'
+    |-IfStmt 0x13b943c98 <line:51:2, line:52:25>
+    | |-BinaryOperator 0x13b943b00 <line:51:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x13b943ae8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13b943aa8 <col:6> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    | | `-IntegerLiteral 0x13b943ac8 <col:12> 'int' 0
+    | `-CallExpr 0x13b943c58 <line:52:3, col:25> 'int'
+    |   |-ImplicitCastExpr 0x13b943c40 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13b943c00 <col:3> 'int ()' Function 0x13b943b48 'req_set_fail_links' 'int ()'
+    |   `-ImplicitCastExpr 0x13b943c80 <col:22> 'struct io_kiocb *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13b943c20 <col:22> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    |-CallExpr 0x13b943e58 <line:53:2, col:49> 'int'
+    | |-ImplicitCastExpr 0x13b943e40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13b943d98 <col:2> 'int ()' Function 0x13b943ce0 '__io_req_complete' 'int ()'
+    | |-ImplicitCastExpr 0x13b943e98 <col:20> 'struct io_kiocb *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13b943db8 <col:20> 'struct io_kiocb *' lvalue ParmVar 0x13b928648 'req' 'struct io_kiocb *'
+    | |-ImplicitCastExpr 0x13b943eb0 <col:25> 'unsigned int' <LValueToRValue>
+    | | `-DeclRefExpr 0x13b943dd8 <col:25> 'unsigned int' lvalue ParmVar 0x13b9286c8 'issue_flags' 'unsigned int'
+    | |-ImplicitCastExpr 0x13b943ec8 <col:38> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x13b943e00 <col:38> 'int' lvalue Var 0x13b941240 'ret' 'int'
+    | `-ImplicitCastExpr 0x13b943ee0 <col:43> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x13b943e20 <col:43> 'int' lvalue Var 0x13b9412c0 'cflags' 'int'
+    `-ReturnStmt 0x13b943f18 <line:54:2, col:9>
+      `-IntegerLiteral 0x13b943ef8 <col:9> 'int' 0

@@ -1,0 +1,64 @@
+`-FunctionDecl 0x15c140c00  line:1:13 invalid ieee80211_rx_mgmt_deauth 'void (struct ieee80211_sub_if_data *, struct ieee80211_mgmt *, int)' static
+  |-ParmVarDecl 0x15c128648 <col:38, col:68> col:68 used sdata 'struct ieee80211_sub_if_data *'
+  |-ParmVarDecl 0x15c140a28 <line:2:10, col:33> col:33 used mgmt 'struct ieee80211_mgmt *'
+  |-ParmVarDecl 0x15c140ac0 <col:39, col:46> col:46 invalid len 'int'
+  `-CompoundStmt 0x15c80a4e8 <line:3:1, line:41:1>
+    |-DeclStmt 0x15c140f68 <line:4:2, col:52>
+    | |-RecordDecl 0x15c140cc0 <col:2, col:9> col:9 struct ieee80211_if_managed
+    | `-VarDecl 0x15c140e28 <col:2, col:49> col:31 used ifmgd 'struct ieee80211_if_managed *' cinit
+    |   `-UnaryOperator 0x15c140f38 <col:39, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x15c140ef0 <col:40, col:49> '<dependent type>' contains-errors lvalue .mgd
+    |       `-RecoveryExpr 0x15c140ec8 <col:40, col:47> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x15c140e90 <col:40> 'struct ieee80211_sub_if_data *' lvalue ParmVar 0x15c128648 'sdata' 'struct ieee80211_sub_if_data *'
+    |-CallExpr 0x15c141168 <line:7:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x15c141150 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c1410e0 <col:2> 'int ()' Function 0x15c141028 'sdata_assert_lock' 'int ()'
+    | `-ImplicitCastExpr 0x15c141190 <col:20> 'struct ieee80211_sub_if_data *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15c141100 <col:20> 'struct ieee80211_sub_if_data *' lvalue ParmVar 0x15c128648 'sdata' 'struct ieee80211_sub_if_data *'
+    |-IfStmt 0x15c141258 <line:9:2, line:10:3>
+    | |-BinaryOperator 0x15c141228 <line:9:6, col:17> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x15c1411a8 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x15c141208 <col:12, col:17> 'int' '+'
+    | |   |-IntegerLiteral 0x15c1411c8 <col:12> 'int' 24
+    | |   `-IntegerLiteral 0x15c1411e8 <col:17> 'int' 2
+    | `-ReturnStmt 0x15c141248 <line:10:3>
+    |-IfStmt 0x15c809d90 <line:12:2, line:25:2>
+    | |-BinaryOperator 0x15c141510 <line:12:6, line:13:60> 'int' contains-errors '&&'
+    | | |-RecoveryExpr 0x15c1412b0 <line:12:6, col:13> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15c141278 <col:6> 'struct ieee80211_if_managed *' contains-errors lvalue Var 0x15c140e28 'ifmgd' 'struct ieee80211_if_managed *'
+    | | `-CallExpr 0x15c1414e0 <line:13:6, col:60> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x15c1413b8 <col:6> 'int ()' Function 0x15c141300 'ether_addr_equal' 'int ()'
+    | |   |-RecoveryExpr 0x15c141410 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x15c1413d8 <col:23> 'struct ieee80211_mgmt *' lvalue ParmVar 0x15c140a28 'mgmt' 'struct ieee80211_mgmt *'
+    | |   `-CXXDependentScopeMemberExpr 0x15c141498 <col:36, col:55> '<dependent type>' contains-errors lvalue ->bssid
+    | |     `-RecoveryExpr 0x15c141470 <col:36, col:43> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x15c141438 <col:36> 'struct ieee80211_if_managed *' contains-errors lvalue Var 0x15c140e28 'ifmgd' 'struct ieee80211_if_managed *'
+    | `-CompoundStmt 0x15c809d68 <col:63, line:25:2>
+    |   |-DeclStmt 0x15c141658 <line:14:3, col:45>
+    |   | `-VarDecl 0x15c141548 <col:3, col:13> col:13 invalid bssid 'const int *'
+    |   |-CallExpr 0x15c809a28 <line:16:3, line:18:52> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15c141750 <line:16:3> 'int ()' Function 0x15c141698 'sdata_info' 'int ()'
+    |   | |-DeclRefExpr 0x15c141770 <col:14> 'struct ieee80211_sub_if_data *' lvalue ParmVar 0x15c128648 'sdata' 'struct ieee80211_sub_if_data *'
+    |   | |-StringLiteral 0x15c1417d0 <col:21> 'char[4]' lvalue "STR"
+    |   | |-RecoveryExpr 0x15c1417f0 <line:17:7> '<dependent type>' contains-errors lvalue
+    |   | |-RecoveryExpr 0x15c1419b0 <col:14> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x15c809a00 <line:18:7, col:51> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x15c141908 <col:7> 'int ()' Function 0x15c141850 'ieee80211_get_reason_code_string' 'int ()'
+    |   |   `-RecoveryExpr 0x15c1419d0 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x15c809d58 <line:24:3>
+    `-IfStmt 0x15c80a4c8 <line:27:2, line:40:2>
+      |-BinaryOperator 0x15c809fb0 <line:27:6, line:28:65> 'int' contains-errors '&&'
+      | |-RecoveryExpr 0x15c809de8 <line:27:6, col:13> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x15c809db0 <col:6> 'struct ieee80211_if_managed *' contains-errors lvalue Var 0x15c140e28 'ifmgd' 'struct ieee80211_if_managed *'
+      | `-CallExpr 0x15c809f80 <line:28:6, col:65> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x15c809e10 <col:6> 'int ()' Function 0x15c141300 'ether_addr_equal' 'int ()'
+      |   |-RecoveryExpr 0x15c809e68 <col:23, col:29> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x15c809e30 <col:23> 'struct ieee80211_mgmt *' lvalue ParmVar 0x15c140a28 'mgmt' 'struct ieee80211_mgmt *'
+      |   `-CXXDependentScopeMemberExpr 0x15c809f38 <col:36, col:60> '<dependent type>' contains-errors lvalue ->bssid
+      |     `-CXXDependentScopeMemberExpr 0x15c809ef0 <col:36, col:55> '<dependent type>' contains-errors lvalue ->bss
+      |       `-RecoveryExpr 0x15c809ec8 <col:36, col:43> '<dependent type>' contains-errors lvalue
+      |         `-DeclRefExpr 0x15c809e90 <col:36> 'struct ieee80211_if_managed *' contains-errors lvalue Var 0x15c140e28 'ifmgd' 'struct ieee80211_if_managed *'
+      `-CompoundStmt 0x15c80a4a8 <col:68, line:40:2>
+        |-DeclStmt 0x15c80a140 <line:29:3, col:50>
+        | `-VarDecl 0x15c809fe8 <col:3, col:13> col:13 invalid bssid 'const int *'
+        `-ReturnStmt 0x15c80a498 <line:39:3>

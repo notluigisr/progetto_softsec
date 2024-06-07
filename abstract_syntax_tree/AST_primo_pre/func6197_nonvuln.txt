@@ -1,0 +1,19 @@
+`-FunctionDecl 0x138026748  line:1:12 check_filter 'int (struct tap_filter *, const struct sk_buff *)' static
+  |-ParmVarDecl 0x13800e248 <col:25, col:44> col:44 used filter 'struct tap_filter *'
+  |-ParmVarDecl 0x138026628 <col:52, col:74> col:74 used skb 'const struct sk_buff *'
+  `-CompoundStmt 0x138026b68 <line:2:1, line:7:1>
+    |-IfStmt 0x138026908 <line:3:2, line:4:10>
+    | |-UnaryOperator 0x1380268c0 <line:3:6, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1380268a8 <col:7, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x138026880 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x138026848 <col:7> 'struct tap_filter *' lvalue ParmVar 0x13800e248 'filter' 'struct tap_filter *'
+    | `-ReturnStmt 0x1380268f8 <line:4:3, col:10>
+    |   `-IntegerLiteral 0x1380268d8 <col:10> 'int' 1
+    `-ReturnStmt 0x138026b58 <line:6:2, col:31>
+      `-CallExpr 0x138026af8 <col:9, col:31> 'int'
+        |-ImplicitCastExpr 0x138026ae0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x138026a50 <col:9> 'int ()' Function 0x138026998 'run_filter' 'int ()'
+        |-ImplicitCastExpr 0x138026b28 <col:20> 'struct tap_filter *' <LValueToRValue>
+        | `-DeclRefExpr 0x138026a70 <col:20> 'struct tap_filter *' lvalue ParmVar 0x13800e248 'filter' 'struct tap_filter *'
+        `-ImplicitCastExpr 0x138026b40 <col:28> 'const struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x138026a90 <col:28> 'const struct sk_buff *' lvalue ParmVar 0x138026628 'skb' 'const struct sk_buff *'

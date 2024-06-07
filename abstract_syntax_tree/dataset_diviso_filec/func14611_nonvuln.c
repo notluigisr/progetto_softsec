@@ -1,0 +1,1 @@
+  virtual uint decimals() const { return 0; }

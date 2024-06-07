@@ -1,0 +1,44 @@
+`-FunctionDecl 0x13400df48  line:1:5 invalid jas_stream_write 'int (int *, const void *, int)'
+  |-ParmVarDecl 0x13400dd28 <col:22, col:36> col:36 invalid stream 'int *'
+  |-ParmVarDecl 0x13400ddd8 <col:44, col:56> col:56 used buf 'const void *'
+  |-ParmVarDecl 0x13400de58 <col:61, col:65> col:65 used cnt 'int'
+  `-CompoundStmt 0x134027788 <line:2:1, line:18:1>
+    |-DeclStmt 0x13400e088 <line:3:2, col:7>
+    | `-VarDecl 0x13400e020 <col:2, col:6> col:6 used n 'int'
+    |-DeclStmt 0x13400e120 <line:4:2, col:20>
+    | `-VarDecl 0x13400e0b8 <col:2, col:14> col:14 used bufptr 'const char *'
+    |-BinaryOperator 0x13400e1a8 <line:6:2, col:11> 'const char *' '='
+    | |-DeclRefExpr 0x13400e138 <col:2> 'const char *' lvalue Var 0x13400e0b8 'bufptr' 'const char *'
+    | `-ImplicitCastExpr 0x13400e190 <col:11> 'const char *' <BitCast>
+    |   `-ImplicitCastExpr 0x13400e178 <col:11> 'const void *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13400e158 <col:11> 'const void *' lvalue ParmVar 0x13400ddd8 'buf' 'const void *'
+    |-BinaryOperator 0x13400e208 <line:8:2, col:6> 'int' '='
+    | |-DeclRefExpr 0x13400e1c8 <col:2> 'int' lvalue Var 0x13400e020 'n' 'int'
+    | `-IntegerLiteral 0x13400e1e8 <col:6> 'int' 0
+    |-WhileStmt 0x134027720 <line:9:2, line:15:2>
+    | |-BinaryOperator 0x13400e298 <line:9:9, col:13> 'int' '<'
+    | | |-ImplicitCastExpr 0x13400e268 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13400e228 <col:9> 'int' lvalue Var 0x13400e020 'n' 'int'
+    | | `-ImplicitCastExpr 0x13400e280 <col:13> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13400e248 <col:13> 'int' lvalue ParmVar 0x13400de58 'cnt' 'int'
+    | `-CompoundStmt 0x1340276f8 <col:18, line:15:2>
+    |   |-IfStmt 0x134027668 <line:10:3, line:12:3>
+    |   | |-BinaryOperator 0x1340275e8 <line:10:7, col:43> 'int' contains-errors '=='
+    |   | | |-CallExpr 0x134027598 <col:7, col:38> '<dependent type>' contains-errors
+    |   | | | |-DeclRefExpr 0x134027410 <col:7> 'int ()' Function 0x13400e358 'jas_stream_putc' 'int ()'
+    |   | | | |-RecoveryExpr 0x134027430 <col:23> '<dependent type>' contains-errors lvalue
+    |   | | | `-UnaryOperator 0x134027580 <col:31, col:32> 'const char' lvalue prefix '*' cannot overflow
+    |   | | |   `-ImplicitCastExpr 0x134027568 <col:32> 'const char *' <LValueToRValue>
+    |   | | |     `-DeclRefExpr 0x134027450 <col:32> 'const char *' lvalue Var 0x13400e0b8 'bufptr' 'const char *'
+    |   | | `-RecoveryExpr 0x1340275c8 <col:43> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x134027650 <col:48, line:12:3>
+    |   |   `-ReturnStmt 0x134027640 <line:11:4, col:11>
+    |   |     `-ImplicitCastExpr 0x134027628 <col:11> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x134027608 <col:11> 'int' lvalue Var 0x13400e020 'n' 'int'
+    |   |-UnaryOperator 0x1340276a8 <line:13:3, col:5> 'const char *' prefix '++'
+    |   | `-DeclRefExpr 0x134027688 <col:5> 'const char *' lvalue Var 0x13400e0b8 'bufptr' 'const char *'
+    |   `-UnaryOperator 0x1340276e0 <line:14:3, col:5> 'int' prefix '++'
+    |     `-DeclRefExpr 0x1340276c0 <col:5> 'int' lvalue Var 0x13400e020 'n' 'int'
+    `-ReturnStmt 0x134027778 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x134027760 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x134027740 <col:9> 'int' lvalue Var 0x13400e020 'n' 'int'

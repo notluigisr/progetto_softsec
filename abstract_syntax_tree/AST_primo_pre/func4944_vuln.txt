@@ -1,0 +1,49 @@
+`-FunctionDecl 0x15b027578  line:1:6 invalid __net_get_random_once 'int (void *, int, int *, struct static_key *)'
+  |-ParmVarDecl 0x15b00dcf0 <col:28, col:34> col:34 used buf 'void *'
+  |-ParmVarDecl 0x15b00dd70 <col:39, col:43> col:43 used nbytes 'int'
+  |-ParmVarDecl 0x15b00de28 <col:51, col:57> col:57 invalid done 'int *'
+  |-ParmVarDecl 0x15b027428 <line:2:7, col:26> col:26 used done_key 'struct static_key *'
+  `-CompoundStmt 0x15b028298 <line:3:1, line:20:1>
+    |-DeclStmt 0x15b027750 <line:4:2, col:30>
+    | `-FunctionDecl 0x15b027698 parent 0x15a855608 <col:2, col:29> col:9 invalid DEFINE_SPINLOCK 'int ()'
+    |-DeclStmt 0x15b0277e8 <line:5:2, col:21>
+    | `-VarDecl 0x15b027780 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x15b027a00 <line:7:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15b027928 <col:2> 'int ()' Function 0x15b027870 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x15b0279e8 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15b0279c8 <col:21> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x15b027978 <col:27> 'unsigned long' lvalue Var 0x15b027780 'flags' 'unsigned long'
+    |-IfStmt 0x15b027c98 <line:8:2, line:11:2>
+    | |-UnaryOperator 0x15b027a68 <line:8:6, col:7> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x15b027a50 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x15b027a30 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15b027c80 <col:13, line:11:2>
+    |   `-CallExpr 0x15b027c38 <line:9:3, col:38> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x15b027b60 <col:3> 'int ()' Function 0x15b027aa8 'spin_unlock_irqrestore' 'int ()'
+    |     |-UnaryOperator 0x15b027c20 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x15b027c00 <col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15b027bb0 <col:33> 'unsigned long' lvalue Var 0x15b027780 'flags' 'unsigned long'
+    |-CallExpr 0x15b027e48 <line:13:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x15b027e30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15b027d98 <col:2> 'int ()' Function 0x15b027ce0 'get_random_bytes' 'int ()'
+    | |-ImplicitCastExpr 0x15b027e78 <col:19> 'void *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15b027db8 <col:19> 'void *' lvalue ParmVar 0x15b00dcf0 'buf' 'void *'
+    | `-ImplicitCastExpr 0x15b027e90 <col:24> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x15b027dd8 <col:24> 'int' lvalue ParmVar 0x15b00dd70 'nbytes' 'int'
+    |-BinaryOperator 0x15b027fb0 <line:14:2, col:10> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x15b027f78 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x15b027f60 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x15b027ea8 <col:3> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x15b027f90 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15b0280a8 <line:15:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15b027fd0 <col:2> 'int ()' Function 0x15b027aa8 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x15b028090 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15b028070 <col:26> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x15b028020 <col:32> 'unsigned long' lvalue Var 0x15b027780 'flags' 'unsigned long'
+    |-CallExpr 0x15b028210 <line:17:2, col:41> 'int'
+    | |-ImplicitCastExpr 0x15b0281f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15b0281b8 <col:2> 'int ()' Function 0x15b028100 '__net_random_once_disable_jump' 'int ()'
+    | `-ImplicitCastExpr 0x15b028238 <col:33> 'struct static_key *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15b0281d8 <col:33> 'struct static_key *' lvalue ParmVar 0x15b027428 'done_key' 'struct static_key *'
+    `-ReturnStmt 0x15b028288 <line:19:2, col:9>
+      `-RecoveryExpr 0x15b028268 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x12c1281c8  line:1:13 invalid exist_file_dir 'int (const char *)' static
+  |-ParmVarDecl 0x12c1280f0 <col:28, col:40> col:40 used path 'const char *'
+  `-CompoundStmt 0x12c141e88 <line:2:1, line:12:1>
+    |-DeclStmt 0x12c141818 <line:3:5, col:20>
+    | |-RecordDecl 0x12c128278 <col:5, col:12> col:12 struct stat
+    | `-VarDecl 0x12c128378 <col:5, col:17> col:17 invalid buf 'struct stat'
+    `-IfStmt 0x12c141e50 <line:4:5, line:10:5>
+      |-BinaryOperator 0x12c141a58 <line:4:9, col:29> 'int' contains-errors '=='
+      | |-CallExpr 0x12c141a08 <col:9, col:24> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x12c141990 <col:9> 'int ()' Function 0x12c1418d8 'stat' 'int ()'
+      | | |-DeclRefExpr 0x12c1419b0 <col:14> 'const char *' lvalue ParmVar 0x12c1280f0 'path' 'const char *'
+      | | `-UnaryOperator 0x12c1419f0 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | |   `-RecoveryExpr 0x12c1419d0 <col:21> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x12c141a38 <col:29> 'int' 0
+      `-CompoundStmt 0x12c141e38 <line:5:5, line:10:5>
+        `-IfStmt 0x12c141e18 <line:6:9, line:9:9>
+          |-BinaryOperator 0x12c141d98 <line:6:13, col:56> 'int' contains-errors '||'
+          | |-CallExpr 0x12c141be0 <col:13, col:32> '<dependent type>' contains-errors
+          | | |-DeclRefExpr 0x12c141b58 <col:13> 'int ()' Function 0x12c141aa0 'S_ISDIR' 'int ()'
+          | | `-CXXDependentScopeMemberExpr 0x12c141b98 <col:21, col:25> '<dependent type>' contains-errors lvalue .st_mode
+          | |   `-RecoveryExpr 0x12c141b78 <col:21> '<dependent type>' contains-errors lvalue
+          | `-CallExpr 0x12c141d70 <col:37, col:56> '<dependent type>' contains-errors
+          |   |-DeclRefExpr 0x12c141ce8 <col:37> 'int ()' Function 0x12c141c30 'S_ISREG' 'int ()'
+          |   `-CXXDependentScopeMemberExpr 0x12c141d28 <col:45, col:49> '<dependent type>' contains-errors lvalue .st_mode
+          |     `-RecoveryExpr 0x12c141d08 <col:45> '<dependent type>' contains-errors lvalue
+          `-CompoundStmt 0x12c141e00 <line:7:9, line:9:9>
+            `-ReturnStmt 0x12c141df0 <line:8:13, col:20>
+              `-RecoveryExpr 0x12c141dd0 <col:20> '<dependent type>' contains-errors lvalue

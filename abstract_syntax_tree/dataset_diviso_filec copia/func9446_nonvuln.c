@@ -1,0 +1,1 @@
+  static Point_3 convert(const CGAL::Point_3<R>& p){return Converter()(p);}

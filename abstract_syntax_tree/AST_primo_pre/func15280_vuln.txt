@@ -1,0 +1,37 @@
+`-FunctionDecl 0x14000de58  line:1:5 invalid FuzzerTestOneInput 'int (const int *, int)'
+  |-ParmVarDecl 0x14000dcf0 <col:24, col:39> col:39 invalid buf 'const int *'
+  |-ParmVarDecl 0x14000dd70 <col:44, col:51> col:51 invalid len 'int'
+  `-CompoundStmt 0x140028678 <line:2:1, line:20:1>
+    |-DeclStmt 0x14000dfe0 <line:3:5, col:33>
+    | `-VarDecl 0x14000df58 <col:5, col:30> col:26 used p 'const unsigned char *' cinit
+    |   `-RecoveryExpr 0x14000dfc0 <col:30> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14000e0e8 <line:4:5, col:30>
+    | `-VarDecl 0x14000e048 <col:5, col:26> col:20 used der 'unsigned char *' cinit
+    |   `-RecoveryExpr 0x14000e0c8 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1400284f0 <line:7:5, line:17:5>
+    | |-BinaryOperator 0x140027a00 <line:7:9, col:17> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x14000e3c0 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14000e3e0 <col:17> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1400284c0 <col:23, line:17:5>
+    |   |-CallExpr 0x140027e88 <line:10:9, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x140027dc8 <col:9> 'int ()' Function 0x140027d10 'X509_print' 'int ()'
+    |   | |-RecoveryExpr 0x140027e48 <col:20> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x140027e68 <col:25> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x140028018 <line:11:9, col:21> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x140027f98 <col:9> 'int ()' Function 0x140027ee0 'BIO_free' 'int ()'
+    |   | `-RecoveryExpr 0x140027ff8 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x140028218 <line:13:9, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x140028120 <col:9> 'int ()' Function 0x140028068 'i2d_X509' 'int ()'
+    |   | |-RecoveryExpr 0x1400281f8 <col:18> '<dependent type>' contains-errors lvalue
+    |   | `-UnaryOperator 0x1400281b0 <col:24, col:25> 'unsigned char **' contains-errors prefix '&' cannot overflow
+    |   |   `-DeclRefExpr 0x140028158 <col:25> 'unsigned char *' contains-errors lvalue Var 0x14000e048 'der' 'unsigned char *'
+    |   `-CallExpr 0x140028380 <line:14:9, col:25> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x140028368 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x140028328 <col:9> 'int ()' Function 0x140028270 'OPENSSL_free' 'int ()'
+    |     `-ImplicitCastExpr 0x1400283a8 <col:22> 'unsigned char *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x140028348 <col:22> 'unsigned char *' contains-errors lvalue Var 0x14000e048 'der' 'unsigned char *'
+    |-CallExpr 0x140028628 <line:18:5, col:21> 'int'
+    | `-ImplicitCastExpr 0x140028610 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1400285f0 <col:5> 'int ()' Function 0x140028538 'ERR_clear_error' 'int ()'
+    `-ReturnStmt 0x140028668 <line:19:5, col:12>
+      `-IntegerLiteral 0x140028648 <col:12> 'int' 0

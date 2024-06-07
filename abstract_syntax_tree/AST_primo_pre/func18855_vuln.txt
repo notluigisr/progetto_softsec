@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12b020c28  line:1:29 macsec_alloc_req 'struct aead_request *(struct crypto_aead *, unsigned char **, struct scatterlist **)' static
+  |-ParmVarDecl 0x12a0b58e8 <col:46, col:66> col:66 used tfm 'struct crypto_aead *'
+  |-ParmVarDecl 0x12b020800 <line:2:11, col:27> col:27 used iv 'unsigned char **'
+  |-ParmVarDecl 0x12b020a38 <line:3:11, col:32> col:32 used sg 'struct scatterlist **'
+  `-CompoundStmt 0x12a843dd8 <line:4:1, line:28:1>
+    |-BinaryOperator 0x12b020e90 <line:5:2, col:26> '<dependent type>' contains-errors ','
+    | |-BinaryOperator 0x12b020e50 <col:2, col:15> '<dependent type>' contains-errors ','
+    | | |-UnaryExprOrTypeTraitExpr 0x12b020e10 <col:2, col:9> 'unsigned long' contains-errors sizeof
+    | | | `-RecoveryExpr 0x12b020df0 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x12b020e30 <col:15> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x12b020e70 <col:26> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12b020fa0 <line:6:2, col:26>
+    | `-VarDecl 0x12b020f38 <col:2, col:23> col:23 used req 'struct aead_request *'
+    |-DeclStmt 0x12b021038 <line:7:2, col:11>
+    | `-VarDecl 0x12b020fd0 <col:2, col:8> col:8 used tmp 'void *'
+    |-BinaryOperator 0x12b021730 <line:23:2, col:8> 'struct aead_request *' '='
+    | |-DeclRefExpr 0x12b0216c0 <col:2> 'struct aead_request *' lvalue Var 0x12b020f38 'req' 'struct aead_request *'
+    | `-ImplicitCastExpr 0x12b021718 <col:8> 'struct aead_request *' <BitCast>
+    |   `-ImplicitCastExpr 0x12b021700 <col:8> 'void *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12b0216e0 <col:8> 'void *' lvalue Var 0x12b020fd0 'tmp' 'void *'
+    |-CallExpr 0x12a843d30 <line:25:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x12a843d18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a843cb8 <col:2> 'int ()' Function 0x12a843c00 'aead_request_set_tfm' 'int ()'
+    | |-ImplicitCastExpr 0x12a843d60 <col:23> 'struct aead_request *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a843cd8 <col:23> 'struct aead_request *' lvalue Var 0x12b020f38 'req' 'struct aead_request *'
+    | `-ImplicitCastExpr 0x12a843d78 <col:28> 'struct crypto_aead *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12a843cf8 <col:28> 'struct crypto_aead *' lvalue ParmVar 0x12a0b58e8 'tfm' 'struct crypto_aead *'
+    `-ReturnStmt 0x12a843dc8 <line:27:2, col:9>
+      `-ImplicitCastExpr 0x12a843db0 <col:9> 'struct aead_request *' <LValueToRValue>
+        `-DeclRefExpr 0x12a843d90 <col:9> 'struct aead_request *' lvalue Var 0x12b020f38 'req' 'struct aead_request *'

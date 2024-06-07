@@ -1,0 +1,39 @@
+`-FunctionDecl 0x135145ad8  line:1:12 invalid selinux_key_permission 'int (int, const struct cred *, unsigned int)' static
+  |-ParmVarDecl 0x1351280f0 <col:35, col:45> col:45 invalid key_ref 'int'
+  |-ParmVarDecl 0x1351286e8 <line:2:7, col:26> col:26 used cred 'const struct cred *'
+  |-ParmVarDecl 0x135128768 <line:3:7, col:16> col:16 used perm 'unsigned int'
+  `-CompoundStmt 0x135146810 <line:4:1, line:20:1>
+    |-DeclStmt 0x135145d88 <line:5:2, col:17>
+    | |-RecordDecl 0x135145b98 <col:2, col:9> col:9 struct key
+    | `-VarDecl 0x135145d08 <col:2, col:14> col:14 used key 'struct key *'
+    |-DeclStmt 0x135145f88 <line:6:2, col:34>
+    | |-RecordDecl 0x135145da0 <col:2, col:9> col:9 struct key_security_struct
+    | `-VarDecl 0x135145f08 <col:2, col:30> col:30 used ksec 'struct key_security_struct *'
+    |-IfStmt 0x135146060 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x135146010 <line:10:6, col:14> 'int' '=='
+    | | |-ImplicitCastExpr 0x135145fe0 <col:6> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135145fa0 <col:6> 'unsigned int' lvalue ParmVar 0x135128768 'perm' 'unsigned int'
+    | | `-ImplicitCastExpr 0x135145ff8 <col:14> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x135145fc0 <col:14> 'int' 0
+    | `-ReturnStmt 0x135146050 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x135146030 <col:10> 'int' 0
+    |-BinaryOperator 0x135146410 <line:15:2, col:30> 'struct key *' contains-errors '='
+    | |-DeclRefExpr 0x1351462a8 <col:2> 'struct key *' lvalue Var 0x135145d08 'key' 'struct key *'
+    | `-CallExpr 0x1351463e8 <col:8, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1351463a8 <col:8> 'int ()' Function 0x1351462f0 'key_ref_to_ptr' 'int ()'
+    |   `-RecoveryExpr 0x1351463c8 <col:23> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1351464b0 <line:16:2, col:14> 'struct key_security_struct *' contains-errors '='
+    | |-DeclRefExpr 0x135146430 <col:2> 'struct key_security_struct *' lvalue Var 0x135145f08 'ksec' 'struct key_security_struct *'
+    | `-RecoveryExpr 0x135146488 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x135146450 <col:9> 'struct key *' lvalue Var 0x135145d08 'key' 'struct key *'
+    `-ReturnStmt 0x135146800 <line:18:2, line:19:48>
+      `-CallExpr 0x1351467b0 <line:18:9, line:19:48> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1351465b0 <line:18:9> 'int ()' Function 0x1351464f8 'avc_has_perm' 'int ()'
+        |-UnaryOperator 0x135146738 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x135146718 <col:23> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x135146750 <line:19:8> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x135146650 <col:13, col:19> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x135146618 <col:13> 'struct key_security_struct *' lvalue Var 0x135145f08 'ksec' 'struct key_security_struct *'
+        |-RecoveryExpr 0x135146770 <col:24> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x135146690 <col:38> 'unsigned int' lvalue ParmVar 0x135128768 'perm' 'unsigned int'
+        `-RecoveryExpr 0x135146790 <col:44> '<dependent type>' contains-errors lvalue

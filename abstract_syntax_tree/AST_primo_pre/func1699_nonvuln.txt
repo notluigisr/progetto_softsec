@@ -1,0 +1,53 @@
+`-FunctionDecl 0x12c81a000  line:1:12 llc_ui_wait_for_conn 'int (struct sock *, long)' static
+  |-ParmVarDecl 0x12c80d848 <col:33, col:46> col:46 used sk 'struct sock *'
+  |-ParmVarDecl 0x12c80d8c8 <col:50, col:55> col:55 used timeout 'long'
+  `-CompoundStmt 0x12d010890 <line:2:1, line:14:1>
+    |-CallExpr 0x12c81a2b0 <line:3:2, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c81a230 <col:2> 'int ()' Function 0x12c81a178 'DEFINE_WAIT' 'int ()'
+    | `-RecoveryExpr 0x12c81a290 <col:14> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x12c81ad00 <line:5:2, line:11:2>
+    | |-IntegerLiteral 0x12c81a2d8 <line:5:9> 'int' 1
+    | `-CompoundStmt 0x12c81acd8 <col:12, line:11:2>
+    |   |-CallExpr 0x12c81a730 <line:6:3, col:58> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12c81a3d8 <col:3> 'int ()' Function 0x12c81a320 'prepare_to_wait' 'int ()'
+    |   | |-CallExpr 0x12c81a698 <col:19, col:30> 'int'
+    |   | | |-ImplicitCastExpr 0x12c81a680 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x12c81a4d8 <col:19> 'int ()' Function 0x12c81a420 'sk_sleep' 'int ()'
+    |   | | `-ImplicitCastExpr 0x12c81a6c0 <col:28> 'struct sock *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x12c81a4f8 <col:28> 'struct sock *' lvalue ParmVar 0x12c80d848 'sk' 'struct sock *'
+    |   | |-UnaryOperator 0x12c81a6f8 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x12c81a6d8 <col:34> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x12c81a710 <col:40> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x12c81aa48 <line:7:3, line:8:4>
+    |   | |-CallExpr 0x12c81aa08 <line:7:7, col:63> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x12c81a848 <col:7> 'int ()' Function 0x12c81a790 'sk_wait_event' 'int ()'
+    |   | | |-DeclRefExpr 0x12c81a868 <col:21> 'struct sock *' lvalue ParmVar 0x12c80d848 'sk' 'struct sock *'
+    |   | | |-UnaryOperator 0x12c81a8e0 <col:25, col:26> 'long *' prefix '&' cannot overflow
+    |   | | | `-DeclRefExpr 0x12c81a888 <col:26> 'long' lvalue ParmVar 0x12c80d8c8 'timeout' 'long'
+    |   | | `-BinaryOperator 0x12c81a9e8 <col:35, col:51> 'int' contains-errors '!='
+    |   | |   |-RecoveryExpr 0x12c81a930 <col:35, col:39> '<dependent type>' contains-errors lvalue
+    |   | |   | `-DeclRefExpr 0x12c81a8f8 <col:35> 'struct sock *' lvalue ParmVar 0x12c80d848 'sk' 'struct sock *'
+    |   | |   `-RecoveryExpr 0x12c81a9c8 <col:51> '<dependent type>' contains-errors lvalue
+    |   | `-BreakStmt 0x12c81aa40 <line:8:4>
+    |   `-IfStmt 0x12c81acb8 <line:9:3, line:10:4>
+    |     |-BinaryOperator 0x12c81ac90 <line:9:7, col:35> 'int' contains-errors '||'
+    |     | |-CallExpr 0x12c81ac38 <col:7, col:29> '<dependent type>' contains-errors
+    |     | | |-DeclRefExpr 0x12c81ab48 <col:7> 'int ()' Function 0x12c81aa90 'signal_pending' 'int ()'
+    |     | | `-RecoveryExpr 0x12c81ac18 <col:22> '<dependent type>' contains-errors lvalue
+    |     | `-UnaryOperator 0x12c81ac78 <col:34, col:35> 'int' prefix '!' cannot overflow
+    |     |   `-ImplicitCastExpr 0x12c81ac60 <col:35> 'long' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x12c81aba8 <col:35> 'long' lvalue ParmVar 0x12c80d8c8 'timeout' 'long'
+    |     `-BreakStmt 0x12c81acb0 <line:10:4>
+    |-CallExpr 0x12d010800 <line:12:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c81ae00 <col:2> 'int ()' Function 0x12c81ad48 'finish_wait' 'int ()'
+    | |-CallExpr 0x12c81af88 <col:14, col:25> 'int'
+    | | |-ImplicitCastExpr 0x12c81af70 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12c81ae20 <col:14> 'int ()' Function 0x12c81a420 'sk_sleep' 'int ()'
+    | | `-ImplicitCastExpr 0x12c81afb0 <col:23> 'struct sock *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c81ae40 <col:23> 'struct sock *' lvalue ParmVar 0x12c80d848 'sk' 'struct sock *'
+    | `-UnaryOperator 0x12c81afe8 <col:28, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c81afc8 <col:29> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12d010880 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x12d010868 <col:9> 'int' <IntegralCast>
+        `-ImplicitCastExpr 0x12d010850 <col:9> 'long' <LValueToRValue>
+          `-DeclRefExpr 0x12d010830 <col:9> 'long' lvalue ParmVar 0x12c80d8c8 'timeout' 'long'

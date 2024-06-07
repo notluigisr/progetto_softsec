@@ -1,0 +1,38 @@
+`-FunctionDecl 0x143144c00  line:1:6 dev_load 'void (struct net *, const char *)'
+  |-ParmVarDecl 0x143128648 <col:15, col:27> col:27 used net 'struct net *'
+  |-ParmVarDecl 0x1431286c8 <col:32, col:44> col:44 used name 'const char *'
+  `-CompoundStmt 0x143145898 <line:2:1, line:11:1>
+    |-DeclStmt 0x143144ee8 <line:3:2, col:24>
+    | |-RecordDecl 0x143144d00 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x143144e68 <col:2, col:21> col:21 used dev 'struct net_device *'
+    |-CallExpr 0x143145098 <line:5:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x143145080 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x143145030 <col:2> 'int ()' Function 0x143144f78 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x1431452a8 <line:6:2, col:37> 'struct net_device *' '='
+    | |-DeclRefExpr 0x1431450b8 <col:2> 'struct net_device *' lvalue Var 0x143144e68 'dev' 'struct net_device *'
+    | `-ImplicitCastExpr 0x143145290 <col:8, col:37> 'struct net_device *' <IntegralToPointer>
+    |   `-CallExpr 0x143145230 <col:8, col:37> 'int'
+    |     |-ImplicitCastExpr 0x143145218 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1431451b8 <col:8> 'int ()' Function 0x143145100 'dev_get_by_name_rcu' 'int ()'
+    |     |-ImplicitCastExpr 0x143145260 <col:28> 'struct net *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1431451d8 <col:28> 'struct net *' lvalue ParmVar 0x143128648 'net' 'struct net *'
+    |     `-ImplicitCastExpr 0x143145278 <col:33> 'const char *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1431451f8 <col:33> 'const char *' lvalue ParmVar 0x1431286c8 'name' 'const char *'
+    |-CallExpr 0x1431453e0 <line:7:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1431453c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1431453a8 <col:2> 'int ()' Function 0x1431452f0 'rcu_read_unlock' 'int ()'
+    `-IfStmt 0x143145878 <line:9:2, line:10:29>
+      |-BinaryOperator 0x143145658 <line:9:6, col:35> 'int' contains-errors '&&'
+      | |-UnaryOperator 0x1431455f8 <col:6, col:7> 'int' prefix '!' cannot overflow
+      | | `-ImplicitCastExpr 0x1431455e0 <col:7> 'struct net_device *' <LValueToRValue>
+      | |   `-DeclRefExpr 0x143145400 <col:7> 'struct net_device *' lvalue Var 0x143144e68 'dev' 'struct net_device *'
+      | `-CallExpr 0x143145630 <col:14, col:35> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x143145530 <col:14> 'int ()' Function 0x143145478 'capable' 'int ()'
+      |   `-RecoveryExpr 0x143145610 <col:22> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x143145818 <line:10:3, col:29> 'int'
+        |-ImplicitCastExpr 0x143145800 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x143145758 <col:3> 'int ()' Function 0x1431456a0 'request_module' 'int ()'
+        |-ImplicitCastExpr 0x143145848 <col:18> 'char *' <ArrayToPointerDecay>
+        | `-StringLiteral 0x1431457c0 <col:18> 'char[4]' lvalue "STR"
+        `-ImplicitCastExpr 0x143145860 <col:25> 'const char *' <LValueToRValue>
+          `-DeclRefExpr 0x1431457e0 <col:25> 'const char *' lvalue ParmVar 0x1431286c8 'name' 'const char *'

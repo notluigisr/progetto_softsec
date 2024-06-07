@@ -1,0 +1,3 @@
+TEST_P(Http2IntegrationTest, RouterDownstreamDisconnectBeforeResponseComplete) {
+  testRouterDownstreamDisconnectBeforeResponseComplete();
+}

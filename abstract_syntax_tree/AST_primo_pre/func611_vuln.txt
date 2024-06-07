@@ -1,0 +1,125 @@
+`-FunctionDecl 0x127826888  line:1:23 proc_mount 'struct dentry *(struct file_system_type *, int, const char *, void *)' static
+  |-ParmVarDecl 0x12780e2e8 <col:34, col:59> col:59 used fs_type 'struct file_system_type *'
+  |-ParmVarDecl 0x12780e368 <line:2:2, col:6> col:6 used flags 'int'
+  |-ParmVarDecl 0x127826600 <col:13, col:25> col:25 dev_name 'const char *'
+  |-ParmVarDecl 0x127826680 <col:35, col:41> col:41 used data 'void *'
+  `-CompoundStmt 0x12782be40 <line:3:1, line:37:1>
+    |-DeclStmt 0x127826a18 <line:4:2, col:9>
+    | `-VarDecl 0x1278269b0 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x127826c18 <line:5:2, col:24>
+    | |-RecordDecl 0x127826a30 <col:2, col:9> col:9 struct super_block
+    | `-VarDecl 0x127826b98 <col:2, col:22> col:22 used sb 'struct super_block *'
+    |-DeclStmt 0x127826e18 <line:6:2, col:26>
+    | |-RecordDecl 0x127826c30 <col:2, col:9> col:9 struct pid_namespace
+    | `-VarDecl 0x127826d98 <col:2, col:24> col:24 used ns 'struct pid_namespace *'
+    |-DeclStmt 0x127827018 <line:7:2, col:23>
+    | |-RecordDecl 0x127826e30 <col:2, col:9> col:9 struct proc_inode
+    | `-VarDecl 0x127826f98 <col:2, col:21> col:21 used ei 'struct proc_inode *'
+    |-IfStmt 0x1278273c0 <line:9:2, line:12:26> has_else
+    | |-BinaryOperator 0x1278270c0 <line:9:6, col:14> '<dependent type>' contains-errors '&'
+    | | |-DeclRefExpr 0x127827030 <col:6> 'int' lvalue ParmVar 0x12780e368 'flags' 'int'
+    | | `-RecoveryExpr 0x1278270a0 <col:14> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x1278271e8 <line:10:3, col:32> 'struct pid_namespace *' '='
+    | | |-DeclRefExpr 0x1278270e0 <col:3> 'struct pid_namespace *' lvalue Var 0x127826d98 'ns' 'struct pid_namespace *'
+    | | `-CStyleCastExpr 0x1278271c0 <col:8, col:32> 'struct pid_namespace *' <BitCast>
+    | |   `-ImplicitCastExpr 0x1278271a8 <col:32> 'void *' <LValueToRValue> part_of_explicit_cast
+    | |     `-DeclRefExpr 0x127827100 <col:32> 'void *' lvalue ParmVar 0x127826680 'data' 'void *'
+    | `-BinaryOperator 0x1278273a0 <line:12:3, col:26> 'struct pid_namespace *' contains-errors '='
+    |   |-DeclRefExpr 0x127827208 <col:3> 'struct pid_namespace *' lvalue Var 0x127826d98 'ns' 'struct pid_namespace *'
+    |   `-CXXDependentScopeMemberExpr 0x127827358 <col:8, col:26> '<dependent type>' contains-errors lvalue ->pid_ns
+    |     `-CXXDependentScopeMemberExpr 0x127827310 <col:8, col:17> '<dependent type>' contains-errors lvalue ->nsproxy
+    |       `-RecoveryExpr 0x1278272f0 <col:8> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12782a4a0 <line:14:2, col:56> 'struct super_block *' contains-errors '='
+    | |-DeclRefExpr 0x1278273f0 <col:2> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    | `-CallExpr 0x12782a460 <col:7, col:56> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127827520 <col:7> 'int ()' Function 0x127827468 'sget' 'int ()'
+    |   |-DeclRefExpr 0x127827540 <col:12> 'struct file_system_type *' lvalue ParmVar 0x12780e2e8 'fs_type' 'struct file_system_type *'
+    |   |-RecoveryExpr 0x12782a420 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x12782a440 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x127827590 <col:54> 'struct pid_namespace *' lvalue Var 0x127826d98 'ns' 'struct pid_namespace *'
+    |-IfStmt 0x12782a808 <line:15:2, line:16:21>
+    | |-CallExpr 0x12782a628 <line:15:6, col:15> 'int'
+    | | |-ImplicitCastExpr 0x12782a610 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12782a5a0 <col:6> 'int ()' Function 0x12782a4e8 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x12782a650 <col:13> 'struct super_block *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12782a5c0 <col:13> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    | `-ReturnStmt 0x12782a7f8 <line:16:3, col:21>
+    |   `-ImplicitCastExpr 0x12782a7e0 <col:10, col:21> 'struct dentry *' <IntegralToPointer>
+    |     `-CallExpr 0x12782a7a0 <col:10, col:21> 'int'
+    |       |-ImplicitCastExpr 0x12782a788 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12782a748 <col:10> 'int ()' Function 0x12782a690 'ERR_CAST' 'int ()'
+    |       `-ImplicitCastExpr 0x12782a7c8 <col:19> 'struct super_block *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12782a768 <col:19> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |-IfStmt 0x12782afc8 <line:18:2, line:27:2>
+    | |-UnaryOperator 0x12782a8a0 <line:18:6, col:11> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12782a888 <col:7, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x12782a860 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12782a828 <col:7> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    | `-CompoundStmt 0x12782af98 <col:19, line:27:2>
+    |   |-BinaryOperator 0x12782a938 <line:19:3, col:17> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x12782a8f0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x12782a8b8 <col:3> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |   | `-DeclRefExpr 0x12782a918 <col:17> 'int' lvalue ParmVar 0x12780e368 'flags' 'int'
+    |   |-BinaryOperator 0x12782aaf0 <line:20:3, col:27> 'int' '='
+    |   | |-DeclRefExpr 0x12782a958 <col:3> 'int' lvalue Var 0x1278269b0 'err' 'int'
+    |   | `-CallExpr 0x12782aab0 <col:9, col:27> 'int'
+    |   |   |-ImplicitCastExpr 0x12782aa98 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x12782aa58 <col:9> 'int ()' Function 0x12782a9a0 'proc_fill_super' 'int ()'
+    |   |   `-ImplicitCastExpr 0x12782aad8 <col:25> 'struct super_block *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x12782aa78 <col:25> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |   |-IfStmt 0x12782ae80 <line:21:3, line:24:3>
+    |   | |-ImplicitCastExpr 0x12782ab30 <line:21:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x12782ab10 <col:7> 'int' lvalue Var 0x1278269b0 'err' 'int'
+    |   | `-CompoundStmt 0x12782ae60 <col:12, line:24:3>
+    |   |   |-CallExpr 0x12782ac80 <line:22:4, col:30> 'int'
+    |   |   | |-ImplicitCastExpr 0x12782ac68 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x12782ac28 <col:4> 'int ()' Function 0x12782ab70 'deactivate_locked_super' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x12782aca8 <col:28> 'struct super_block *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x12782ac48 <col:28> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |   |   `-ReturnStmt 0x12782ae50 <line:23:4, col:22>
+    |   |     `-ImplicitCastExpr 0x12782ae38 <col:11, col:22> 'struct dentry *' <IntegralToPointer>
+    |   |       `-CallExpr 0x12782adf8 <col:11, col:22> 'int'
+    |   |         |-ImplicitCastExpr 0x12782ade0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |         | `-DeclRefExpr 0x12782ada0 <col:11> 'int ()' Function 0x12782ace8 'ERR_PTR' 'int ()'
+    |   |         `-ImplicitCastExpr 0x12782ae20 <col:19> 'int' <LValueToRValue>
+    |   |           `-DeclRefExpr 0x12782adc0 <col:19> 'int' lvalue Var 0x1278269b0 'err' 'int'
+    |   `-CompoundAssignOperator 0x12782af68 <line:26:3, col:18> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x12782aed8 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12782aea0 <col:3> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |     `-RecoveryExpr 0x12782af48 <col:18> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12782b1d8 <line:29:2, col:33> 'struct proc_inode *' contains-errors '='
+    | |-DeclRefExpr 0x12782afe8 <col:2> 'struct proc_inode *' lvalue Var 0x127826f98 'ei' 'struct proc_inode *'
+    | `-CallExpr 0x12782b1b0 <col:7, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12782b0e8 <col:7> 'int ()' Function 0x12782b030 'PROC_I' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x12782b168 <col:14, col:26> '<dependent type>' contains-errors lvalue ->d_inode
+    |     `-RecoveryExpr 0x12782b140 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12782b108 <col:14> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'
+    |-IfStmt 0x12782bc88 <line:30:2, line:34:2>
+    | |-UnaryOperator 0x12782b270 <line:30:6, col:11> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12782b258 <col:7, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x12782b230 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12782b1f8 <col:7> 'struct proc_inode *' lvalue Var 0x127826f98 'ei' 'struct proc_inode *'
+    | `-CompoundStmt 0x12782bc60 <col:16, line:34:2>
+    |   |-CallExpr 0x12782b3a0 <line:31:3, col:17> 'int'
+    |   | `-ImplicitCastExpr 0x12782b388 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x12782b368 <col:3> 'int ()' Function 0x12782b2b0 'rcu_read_lock' 'int ()'
+    |   |-BinaryOperator 0x12782bb08 <line:32:3, col:39> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x12782b800 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x12782b3c0 <col:3> 'struct proc_inode *' lvalue Var 0x127826f98 'ei' 'struct proc_inode *'
+    |   | `-CallExpr 0x12782bae0 <col:13, col:39> 'int'
+    |   |   |-ImplicitCastExpr 0x12782bac8 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x12782b908 <col:13> 'int ()' Function 0x12782b850 'get_pid' 'int ()'
+    |   |   `-CallExpr 0x12782ba80 <col:21, col:38> 'int'
+    |   |     |-ImplicitCastExpr 0x12782ba68 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x12782ba08 <col:21> 'int ()' Function 0x12782b950 'find_pid_ns' 'int ()'
+    |   |     |-IntegerLiteral 0x12782ba28 <col:33> 'int' 1
+    |   |     `-ImplicitCastExpr 0x12782bab0 <col:36> 'struct pid_namespace *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x12782ba48 <col:36> 'struct pid_namespace *' lvalue Var 0x127826d98 'ns' 'struct pid_namespace *'
+    |   `-CallExpr 0x12782bc40 <line:33:3, col:19> 'int'
+    |     `-ImplicitCastExpr 0x12782bc28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x12782bc08 <col:3> 'int ()' Function 0x12782bb50 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x12782be30 <line:36:2, col:24>
+      `-CallExpr 0x12782be08 <col:9, col:24> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12782bd88 <col:9> 'int ()' Function 0x12782bcd0 'dget' 'int ()'
+        `-RecoveryExpr 0x12782bde0 <col:14, col:18> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12782bda8 <col:14> 'struct super_block *' lvalue Var 0x127826b98 'sb' 'struct super_block *'

@@ -1,0 +1,1 @@
+  bool connectRequest() const { return connect_request_; }

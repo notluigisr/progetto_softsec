@@ -1,0 +1,54 @@
+`-FunctionDecl 0x14680e358  line:1:5 del_timer 'int (struct timer_list *)'
+  |-ParmVarDecl 0x14680e248 <col:15, col:34> col:34 used timer 'struct timer_list *'
+  `-CompoundStmt 0x146827570 <line:2:1, line:17:1>
+    |-DeclStmt 0x146826838 <line:3:2, col:25>
+    | |-RecordDecl 0x146826650 <col:2, col:9> col:9 struct timer_base
+    | `-VarDecl 0x1468267b8 <col:2, col:21> col:21 used base 'struct timer_base *'
+    |-DeclStmt 0x1468268d0 <line:4:2, col:21>
+    | `-VarDecl 0x146826868 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x146826988 <line:5:2, col:13>
+    | `-VarDecl 0x146826900 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x146826968 <col:12> 'int' 0
+    |-CallExpr 0x146826b58 <line:7:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x146826b40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146826ad0 <col:2> 'int ()' Function 0x146826a18 'debug_assert_init' 'int ()'
+    | `-ImplicitCastExpr 0x146826b80 <col:20> 'struct timer_list *' <LValueToRValue>
+    |   `-DeclRefExpr 0x146826af0 <col:20> 'struct timer_list *' lvalue ParmVar 0x14680e248 'timer' 'struct timer_list *'
+    |-CallExpr 0x146826cd0 <line:9:2, col:42> 'int'
+    | |-ImplicitCastExpr 0x146826cb8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146826c78 <col:2> 'int ()' Function 0x146826bc0 'timer_stats_timer_clear_start_info' 'int ()'
+    | `-ImplicitCastExpr 0x146826cf8 <col:37> 'struct timer_list *' <LValueToRValue>
+    |   `-DeclRefExpr 0x146826c98 <col:37> 'struct timer_list *' lvalue ParmVar 0x14680e248 'timer' 'struct timer_list *'
+    |-IfStmt 0x146827508 <line:10:2, line:14:2>
+    | |-CallExpr 0x146826e48 <line:10:6, col:25> 'int'
+    | | |-ImplicitCastExpr 0x146826e30 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x146826df0 <col:6> 'int ()' Function 0x146826d38 'timer_pending' 'int ()'
+    | | `-ImplicitCastExpr 0x146826e70 <col:20> 'struct timer_list *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x146826e10 <col:20> 'struct timer_list *' lvalue ParmVar 0x14680e248 'timer' 'struct timer_list *'
+    | `-CompoundStmt 0x1468274e0 <col:28, line:14:2>
+    |   |-BinaryOperator 0x1468270b0 <line:11:3, col:39> 'struct timer_base *' '='
+    |   | |-DeclRefExpr 0x146826e88 <col:3> 'struct timer_base *' lvalue Var 0x1468267b8 'base' 'struct timer_base *'
+    |   | `-ImplicitCastExpr 0x146827098 <col:10, col:39> 'struct timer_base *' <IntegralToPointer>
+    |   |   `-CallExpr 0x146827050 <col:10, col:39> 'int'
+    |   |     |-ImplicitCastExpr 0x146827038 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x146826f88 <col:10> 'int ()' Function 0x146826ed0 'lock_timer_base' 'int ()'
+    |   |     |-ImplicitCastExpr 0x146827080 <col:26> 'struct timer_list *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x146826fa8 <col:26> 'struct timer_list *' lvalue ParmVar 0x14680e248 'timer' 'struct timer_list *'
+    |   |     `-UnaryOperator 0x146827020 <col:33, col:34> 'unsigned long *' prefix '&' cannot overflow
+    |   |       `-DeclRefExpr 0x146826fc8 <col:34> 'unsigned long' lvalue Var 0x146826868 'flags' 'unsigned long'
+    |   |-BinaryOperator 0x1468272f8 <line:12:3, col:44> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1468270d0 <col:3> 'int' lvalue Var 0x146826900 'ret' 'int'
+    |   | `-CallExpr 0x1468272c0 <col:9, col:44> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x1468271d0 <col:9> 'int ()' Function 0x146827118 'detach_if_pending' 'int ()'
+    |   |   |-DeclRefExpr 0x1468271f0 <col:27> 'struct timer_list *' lvalue ParmVar 0x14680e248 'timer' 'struct timer_list *'
+    |   |   |-DeclRefExpr 0x146827210 <col:34> 'struct timer_base *' lvalue Var 0x1468267b8 'base' 'struct timer_base *'
+    |   |   `-RecoveryExpr 0x1468272a0 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x1468274b0 <line:13:3, col:44> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1468273f8 <col:3> 'int ()' Function 0x146827340 'spin_unlock_irqrestore' 'int ()'
+    |     |-UnaryOperator 0x146827478 <col:26, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x146827450 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x146827418 <col:27> 'struct timer_base *' lvalue Var 0x1468267b8 'base' 'struct timer_base *'
+    |     `-DeclRefExpr 0x146827490 <col:39> 'unsigned long' lvalue Var 0x146826868 'flags' 'unsigned long'
+    `-ReturnStmt 0x146827560 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x146827548 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x146827528 <col:9> 'int' lvalue Var 0x146826900 'ret' 'int'

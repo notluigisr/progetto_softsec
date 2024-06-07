@@ -1,0 +1,1 @@
+  HSideEffectMap* dominators() { return &dominators_; }

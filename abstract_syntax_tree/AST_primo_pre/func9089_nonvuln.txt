@@ -1,0 +1,25 @@
+`-FunctionDecl 0x155128750  line:1:13 do_notify_pidfd 'void (struct task_struct *)' static
+  |-ParmVarDecl 0x155128648 <col:29, col:49> col:49 used task 'struct task_struct *'
+  `-CompoundStmt 0x155141210 <line:2:1, line:8:1>
+    |-DeclStmt 0x155140c38 <line:3:2, col:17>
+    | |-RecordDecl 0x155140a48 <col:2, col:9> col:9 struct pid
+    | `-VarDecl 0x155140bb8 <col:2, col:14> col:14 used pid 'struct pid *'
+    |-CallExpr 0x155140e40 <line:5:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155140d80 <col:2> 'int ()' Function 0x155140cc8 'WARN_ON' 'int ()'
+    | `-BinaryOperator 0x155140e20 <col:10, col:30> 'int' contains-errors '=='
+    |   |-RecoveryExpr 0x155140dd8 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x155140da0 <col:10> 'struct task_struct *' lvalue ParmVar 0x155128648 'task' 'struct task_struct *'
+    |   `-IntegerLiteral 0x155140e00 <col:30> 'int' 0
+    |-BinaryOperator 0x155141050 <line:6:2, col:21> 'struct pid *' '='
+    | |-DeclRefExpr 0x155140e68 <col:2> 'struct pid *' lvalue Var 0x155140bb8 'pid' 'struct pid *'
+    | `-ImplicitCastExpr 0x155141038 <col:8, col:21> 'struct pid *' <IntegralToPointer>
+    |   `-CallExpr 0x155140ff8 <col:8, col:21> 'int'
+    |     |-ImplicitCastExpr 0x155140fe0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x155140f68 <col:8> 'int ()' Function 0x155140eb0 'task_pid' 'int ()'
+    |     `-ImplicitCastExpr 0x155141020 <col:17> 'struct task_struct *' <LValueToRValue>
+    |       `-DeclRefExpr 0x155140f88 <col:17> 'struct task_struct *' lvalue ParmVar 0x155128648 'task' 'struct task_struct *'
+    `-CallExpr 0x1551411e8 <line:7:2, col:30> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x155141150 <col:2> 'int ()' Function 0x155141098 'wake_up_all' 'int ()'
+      `-UnaryOperator 0x1551411d0 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x1551411a8 <col:15, col:20> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x155141170 <col:15> 'struct pid *' lvalue Var 0x155140bb8 'pid' 'struct pid *'

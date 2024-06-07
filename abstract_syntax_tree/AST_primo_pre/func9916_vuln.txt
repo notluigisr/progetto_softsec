@@ -1,0 +1,53 @@
+`-FunctionDecl 0x1571282e8  line:1:1 invalid com_charset 'int (int *, char *)'
+  |-ParmVarDecl 0x157128128 <col:13, col:21> col:21 invalid buffer 'int *'
+  | `-UnusedAttr 0x157128190 <col:43> unused
+  |-ParmVarDecl 0x157128200 <col:53, col:59> col:59 used line 'char *'
+  `-CompoundStmt 0x157144a00 <line:2:1, line:22:1>
+    |-DeclStmt 0x157128540 <line:3:3, col:25>
+    | |-VarDecl 0x157128440 <col:3, col:16> col:8 used buff 'char[256]'
+    | `-VarDecl 0x1571284c0 <col:3, col:20> col:20 used param 'char *'
+    |-CallExpr 0x157128778 <line:5:3, col:25> 'int'
+    | |-ImplicitCastExpr 0x157128760 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1571286d0 <col:3> 'int ()' Function 0x157128618 'strmake_buf' 'int ()'
+    | |-ImplicitCastExpr 0x1571287a8 <col:15> 'char *' <ArrayToPointerDecay>
+    | | `-DeclRefExpr 0x1571286f0 <col:15> 'char[256]' lvalue Var 0x157128440 'buff' 'char[256]'
+    | `-ImplicitCastExpr 0x1571287c0 <col:21> 'char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x157128710 <col:21> 'char *' lvalue ParmVar 0x157128200 'line' 'char *'
+    |-BinaryOperator 0x157142de0 <line:6:3, col:25> 'char *' '='
+    | |-DeclRefExpr 0x1571287d8 <col:3> 'char *' lvalue Var 0x1571284c0 'param' 'char *'
+    | `-ImplicitCastExpr 0x1571429a0 <col:10, col:25> 'char *' <IntegralToPointer>
+    |   `-CallExpr 0x157142958 <col:10, col:25> 'int'
+    |     |-ImplicitCastExpr 0x157142940 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1571428e0 <col:10> 'int ()' Function 0x157142828 'get_arg' 'int ()'
+    |     |-ImplicitCastExpr 0x157142988 <col:18> 'char *' <ArrayToPointerDecay>
+    |     | `-DeclRefExpr 0x157142900 <col:18> 'char[256]' lvalue Var 0x157128440 'buff' 'char[256]'
+    |     `-IntegerLiteral 0x157142920 <col:24> 'int' 0
+    |-IfStmt 0x157143140 <line:7:3, line:11:3>
+    | |-BinaryOperator 0x157142ed0 <line:7:7, col:19> 'int' '||'
+    | | |-UnaryOperator 0x157142e38 <col:7, col:8> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x157142e20 <col:8> 'char *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x157142e00 <col:8> 'char *' lvalue Var 0x1571284c0 'param' 'char *'
+    | | `-UnaryOperator 0x157142eb8 <col:17, col:19> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x157142ea0 <col:18, col:19> 'char' <LValueToRValue>
+    | |     `-UnaryOperator 0x157142e88 <col:18, col:19> 'char' lvalue prefix '*' cannot overflow
+    | |       `-ImplicitCastExpr 0x157142e70 <col:19> 'char *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x157142e50 <col:19> 'char *' lvalue Var 0x1571284c0 'param' 'char *'
+    | `-CompoundStmt 0x157143128 <line:8:3, line:11:3>
+    |   `-ReturnStmt 0x157143118 <line:9:5, line:10:20>
+    |     `-CallExpr 0x1571430e0 <line:9:12, line:10:20> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x157142fd0 <line:9:12> 'int ()' Function 0x157142f18 'put_info' 'int ()'
+    |       |-StringLiteral 0x157143030 <col:21> 'char[4]' lvalue "STR"
+    |       |-RecoveryExpr 0x1571430c0 <line:10:7> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x157143068 <col:19> 'int' 0
+    |-IfStmt 0x157143790 <line:13:3, line:20:8> has_else
+    | |-RecoveryExpr 0x157143428 <line:13:7> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x157143730 <line:14:3, line:19:3>
+    | | `-CallExpr 0x1571436c0 <line:16:5, col:57> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x157143540 <col:5> 'int ()' Function 0x157143488 'mysql_set_character_set' 'int ()'
+    | |   |-UnaryOperator 0x157143640 <col:29, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-RecoveryExpr 0x157143620 <col:30> '<dependent type>' contains-errors lvalue
+    | |   `-CXXDependentScopeMemberExpr 0x157143678 <col:37, col:51> '<dependent type>' contains-errors lvalue ->csname
+    | |     `-RecoveryExpr 0x157143658 <col:37> '<dependent type>' contains-errors lvalue
+    | `-NullStmt 0x157143788 <line:20:8>
+    `-ReturnStmt 0x1571437e0 <line:21:3, col:10>
+      `-IntegerLiteral 0x1571437c0 <col:10> 'int' 0

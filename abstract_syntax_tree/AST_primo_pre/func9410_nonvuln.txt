@@ -1,0 +1,54 @@
+`-FunctionDecl 0x128027400  line:2:13 invalid io_arm_poll_handler 'int (struct io_kiocb *)' static
+  |-ParmVarDecl 0x12800e268 <col:33, col:50> col:50 used req 'struct io_kiocb *'
+  `-CompoundStmt 0x12802a860 <line:3:1, line:58:14>
+    |-DeclStmt 0x128027710 <line:4:2, col:56>
+    | |-RecordDecl 0x1280274b0 <col:8, col:15> col:15 struct io_op_def
+    | `-VarDecl 0x128027618 <col:2, col:26> col:26 used def 'const struct io_op_def *'
+    |-DeclStmt 0x128027978 <line:5:2, col:36>
+    | |-RecordDecl 0x128027728 <col:2, col:9> col:9 struct io_ring_ctx
+    | `-VarDecl 0x128027898 <col:2, col:33> col:22 used ctx 'struct io_ring_ctx *' cinit
+    |   `-RecoveryExpr 0x128027938 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x128027900 <col:28> 'struct io_kiocb *' lvalue ParmVar 0x12800e268 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x128027b78 <line:6:2, col:26>
+    | |-RecordDecl 0x128027990 <col:2, col:9> col:9 struct async_poll
+    | `-VarDecl 0x128027af8 <col:2, col:21> col:21 used apoll 'struct async_poll *'
+    |-DeclStmt 0x128027d08 <line:7:2, col:26>
+    | |-RecordDecl 0x128027b90 <col:2, col:9> col:9 struct io_poll_table
+    | `-VarDecl 0x128027c88 <col:2, col:23> col:23 referenced invalid ipt 'struct io_poll_table'
+    |-DeclStmt 0x128027da0 <line:9:2, col:8>
+    | `-VarDecl 0x128027d38 <col:2, col:6> col:6 used rw 'int'
+    |-IfStmt 0x1280283c8 <line:15:2, line:20:3> has_else
+    | |-RecoveryExpr 0x1280281c0 <line:15:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x128028188 <col:6> 'const struct io_op_def *' lvalue Var 0x128027618 'def' 'const struct io_op_def *'
+    | |-BinaryOperator 0x128028260 <line:16:3, col:8> 'int' contains-errors '='
+    | | |-DeclRefExpr 0x1280281e8 <col:3> 'int' lvalue Var 0x128027d38 'rw' 'int'
+    | | `-RecoveryExpr 0x128028240 <col:8> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x128028398 <line:17:7, line:20:3> has_else
+    |   |-RecoveryExpr 0x1280282b8 <line:17:11, col:16> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x128028280 <col:11> 'const struct io_op_def *' lvalue Var 0x128027618 'def' 'const struct io_op_def *'
+    |   |-BinaryOperator 0x128028358 <line:18:3, col:8> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1280282e0 <col:3> 'int' lvalue Var 0x128027d38 'rw' 'int'
+    |   | `-RecoveryExpr 0x128028338 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-NullStmt 0x128028390 <line:20:3>
+    |-BinaryOperator 0x128029860 <line:31:2, col:15> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x128029818 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1280297e0 <col:2> 'struct io_kiocb *' lvalue ParmVar 0x12800e268 'req' 'struct io_kiocb *'
+    | `-DeclRefExpr 0x128029840 <col:15> 'struct async_poll *' lvalue Var 0x128027af8 'apoll' 'struct async_poll *'
+    |-IfStmt 0x12802a0d0 <line:50:2, line:54:2>
+    | |-RecoveryExpr 0x128029d78 <line:50:6, col:17> '_Bool' contains-errors
+    | `-CompoundStmt 0x12802a0b0 <col:24, line:54:2>
+    |   |-CallExpr 0x128029ed0 <line:51:3, col:28> 'int'
+    |   | |-ImplicitCastExpr 0x128029eb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x128029e78 <col:3> 'int ()' Function 0x128029dc0 'io_poll_remove_double' 'int ()'
+    |   | `-ImplicitCastExpr 0x128029ef8 <col:25> 'struct io_kiocb *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x128029e98 <col:25> 'struct io_kiocb *' lvalue ParmVar 0x12800e268 'req' 'struct io_kiocb *'
+    |   `-CallExpr 0x12802a088 <line:52:3, col:40> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x128029ff0 <col:3> 'int ()' Function 0x128029f38 'spin_unlock_irq' 'int ()'
+    |     `-UnaryOperator 0x12802a070 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x12802a048 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x12802a010 <col:20> 'struct io_ring_ctx *' contains-errors lvalue Var 0x128027898 'ctx' 'struct io_ring_ctx *'
+    `-CallExpr 0x12802a188 <line:55:2, col:39> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12802a0f0 <col:2> 'int ()' Function 0x128029f38 'spin_unlock_irq' 'int ()'
+      `-UnaryOperator 0x12802a170 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12802a148 <col:19, col:24> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12802a110 <col:19> 'struct io_ring_ctx *' contains-errors lvalue Var 0x128027898 'ctx' 'struct io_ring_ctx *'

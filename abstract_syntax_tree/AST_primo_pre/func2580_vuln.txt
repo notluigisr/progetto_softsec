@@ -1,0 +1,70 @@
+`-FunctionDecl 0x1559281f8  line:1:5 invalid hllSparseToDense 'int (int *)'
+  |-ParmVarDecl 0x155928128 <col:22, col:28> col:28 referenced invalid o 'int *'
+  `-CompoundStmt 0x155943ff0 <col:31, line:53:1>
+    |-DeclStmt 0x1559285d8 <line:3:5, col:57>
+    | |-RecordDecl 0x1559282a8 <col:5, col:12> col:12 struct hllhdr
+    | |-VarDecl 0x155928418 <col:5, col:20> col:20 used hdr 'struct hllhdr *'
+    | `-VarDecl 0x1559284a8 <col:5, col:26> col:26 used oldhdr 'struct hllhdr *'
+    |-DeclStmt 0x1559287b0 <line:4:5, col:32>
+    | |-VarDecl 0x155928608 <col:5, col:15> col:9 used idx 'int' cinit
+    | | `-IntegerLiteral 0x155928670 <col:15> 'int' 0
+    | |-VarDecl 0x1559286a8 <col:5, col:18> col:18 used runlen 'int'
+    | `-VarDecl 0x155928728 <col:5, col:26> col:26 used regval 'int'
+    |-IfStmt 0x155941da8 <line:9:5, col:44>
+    | |-BinaryOperator 0x155941d40 <col:9, col:26> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x155941cc0 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x155941860 <col:9> 'struct hllhdr *' lvalue Var 0x155928418 'hdr' 'struct hllhdr *'
+    | | `-RecoveryExpr 0x155941d20 <col:26> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x155941d98 <col:37, col:44>
+    |   `-RecoveryExpr 0x155941d78 <col:44> '<dependent type>' contains-errors lvalue
+    |-RecoveryExpr 0x155942180 <line:14:5, col:13> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x155942138 <col:5, col:6> 'struct hllhdr' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x155942120 <col:6> 'struct hllhdr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x155941fd8 <col:6> 'struct hllhdr *' lvalue Var 0x155928418 'hdr' 'struct hllhdr *'
+    | `-UnaryOperator 0x155942168 <col:12, col:13> 'struct hllhdr' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x155942150 <col:13> 'struct hllhdr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x155942028 <col:13> 'struct hllhdr *' lvalue Var 0x1559284a8 'oldhdr' 'struct hllhdr *'
+    |-BinaryOperator 0x155942268 <line:15:5, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1559421e8 <col:5, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1559421b0 <col:5> 'struct hllhdr *' lvalue Var 0x155928418 'hdr' 'struct hllhdr *'
+    | `-RecoveryExpr 0x155942248 <col:21> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x155943e00 <line:19:5, line:41:5>
+    | |-RecoveryExpr 0x155942288 <line:19:11, col:15> '_Bool' contains-errors
+    | `-CompoundStmt 0x155943de8 <col:20, line:41:5>
+    |   `-IfStmt 0x155943db8 <line:20:9, line:40:9> has_else
+    |     |-RecoveryExpr 0x1559423a8 <line:20:13, col:33> '_Bool' contains-errors
+    |     |-CompoundStmt 0x155942570 <col:36, line:24:9>
+    |     | `-CompoundAssignOperator 0x155942540 <line:22:13, col:20> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |     |   |-DeclRefExpr 0x1559424e8 <col:13> 'int' lvalue Var 0x155928608 'idx' 'int'
+    |     |   `-ImplicitCastExpr 0x155942528 <col:20> 'int' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x155942508 <col:20> 'int' lvalue Var 0x1559286a8 'runlen' 'int'
+    |     `-IfStmt 0x155943d88 <line:24:16, line:40:9> has_else
+    |       |-RecoveryExpr 0x155942688 <line:24:20, col:41> '_Bool' contains-errors
+    |       |-CompoundStmt 0x155943688 <col:44, line:28:9>
+    |       | `-CompoundAssignOperator 0x155943638 <line:26:13, col:20> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |       |   |-DeclRefExpr 0x1559427c8 <col:13> 'int' lvalue Var 0x155928608 'idx' 'int'
+    |       |   `-ImplicitCastExpr 0x155943620 <col:20> 'int' <LValueToRValue>
+    |       |     `-DeclRefExpr 0x155943600 <col:20> 'int' lvalue Var 0x1559286a8 'runlen' 'int'
+    |       `-CompoundStmt 0x155943d68 <line:28:16, line:40:9>
+    |         |-IfStmt 0x155943ac0 <line:31:13, line:34:13>
+    |         | |-RecoveryExpr 0x155943990 <line:31:17, col:34> '_Bool' contains-errors
+    |         | `-CompoundStmt 0x155943ab0 <col:49, line:34:13>
+    |         `-WhileStmt 0x155943d48 <line:35:13, line:38:13>
+    |           |-UnaryOperator 0x155943b00 <line:35:19, col:25> 'int' postfix '--'
+    |           | `-DeclRefExpr 0x155943ae0 <col:19> 'int' lvalue Var 0x1559286a8 'runlen' 'int'
+    |           `-CompoundStmt 0x155943d28 <col:29, line:38:13>
+    |             |-CallExpr 0x155943cb8 <line:36:17, col:65> '<dependent type>' contains-errors
+    |             | |-DeclRefExpr 0x155943bf8 <col:17> 'int ()' Function 0x155943b40 'HLL_DENSE_SET_REGISTER' 'int ()'
+    |             | |-RecoveryExpr 0x155943c50 <col:40, col:45> '<dependent type>' contains-errors lvalue
+    |             | | `-DeclRefExpr 0x155943c18 <col:40> 'struct hllhdr *' lvalue Var 0x155928418 'hdr' 'struct hllhdr *'
+    |             | |-DeclRefExpr 0x155943c78 <col:55> 'int' lvalue Var 0x155928608 'idx' 'int'
+    |             | `-DeclRefExpr 0x155943c98 <col:59> 'int' lvalue Var 0x155928728 'regval' 'int'
+    |             `-UnaryOperator 0x155943d10 <line:37:17, col:20> 'int' postfix '++'
+    |               `-DeclRefExpr 0x155943cf0 <col:17> 'int' lvalue Var 0x155928608 'idx' 'int'
+    |-IfStmt 0x155943e90 <line:44:5, line:47:5>
+    | |-RecoveryExpr 0x155943e40 <line:44:9, col:16> '_Bool' contains-errors
+    | `-CompoundStmt 0x155943e80 <col:31, line:47:5>
+    `-CallExpr 0x155943f38 <line:50:5, col:19> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x155943eb0 <col:5> 'int ()' Function 0x1559439d8 'sdsfree' 'int ()'
+      `-CXXDependentScopeMemberExpr 0x155943ef0 <col:13, col:16> '<dependent type>' contains-errors lvalue ->ptr
+        `-RecoveryExpr 0x155943ed0 <col:13> '<dependent type>' contains-errors lvalue

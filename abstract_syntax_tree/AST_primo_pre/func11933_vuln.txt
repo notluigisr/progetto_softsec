@@ -1,0 +1,112 @@
+`-FunctionDecl 0x14f82a928  line:1:13 vmsplice_to_user 'long (struct file *, const struct iovec)' static
+  |-ParmVarDecl 0x14f80e248 <col:30, col:43> col:43 used file 'struct file *'
+  |-ParmVarDecl 0x14f82a800 <col:49, col:68> col:68 invalid __user 'const struct iovec'
+  `-CompoundStmt 0x14f124800 <line:3:1, line:68:1>
+    |-DeclStmt 0x14f82ac18 <line:4:2, col:30>
+    | |-RecordDecl 0x14f82aa28 <col:2, col:9> col:9 struct pipe_inode_info
+    | `-VarDecl 0x14f82ab98 <col:2, col:26> col:26 used pipe 'struct pipe_inode_info *'
+    |-DeclStmt 0x14f82ada8 <line:5:2, col:23>
+    | |-RecordDecl 0x14f82ac30 <col:2, col:9> col:9 struct splice_desc
+    | `-VarDecl 0x14f82ad28 <col:2, col:21> col:21 referenced invalid sd 'struct splice_desc'
+    |-DeclStmt 0x14f82ae58 <line:7:2, col:11>
+    | `-VarDecl 0x14f82adf0 <col:2, col:6> col:6 used error 'int'
+    |-DeclStmt 0x14f82aef0 <line:8:2, col:10>
+    | `-VarDecl 0x14f82ae88 <col:2, col:7> col:7 used ret 'long'
+    |-BinaryOperator 0x14f82b178 <line:10:2, col:47> 'struct pipe_inode_info *' contains-errors '='
+    | |-DeclRefExpr 0x14f82af08 <col:2> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    | `-CallExpr 0x14f82b150 <col:9, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f82b040 <col:9> 'int ()' Function 0x14f82af88 'pipe_info' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x14f82b108 <col:19, col:40> '<dependent type>' contains-errors lvalue ->d_inode
+    |     `-CXXDependentScopeMemberExpr 0x14f82b0c0 <col:19, col:32> '<dependent type>' contains-errors lvalue .dentry
+    |       `-RecoveryExpr 0x14f82b098 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f82b060 <col:19> 'struct file *' lvalue ParmVar 0x14f80e248 'file' 'struct file *'
+    |-IfStmt 0x14f82b290 <line:11:2, line:12:11>
+    | |-UnaryOperator 0x14f82b1d0 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14f82b1b8 <col:7> 'struct pipe_inode_info *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14f82b198 <col:7> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    | `-ReturnStmt 0x14f82b280 <line:12:3, col:11>
+    |   `-UnaryOperator 0x14f82b268 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14f82b250 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14f82b230 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14f82b4f8 <line:14:2, line:15:35>
+    | |-RecoveryExpr 0x14f82b2e8 <line:14:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14f82b2b0 <col:6> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    | `-CallExpr 0x14f82b4d0 <line:15:3, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f82b3f0 <col:3> 'int ()' Function 0x14f82b338 'mutex_lock' 'int ()'
+    |   `-UnaryOperator 0x14f82b4b8 <col:14, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x14f82b470 <col:15, col:28> '<dependent type>' contains-errors lvalue ->i_mutex
+    |       `-RecoveryExpr 0x14f82b448 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f82b410 <col:15> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    |-BinaryOperator 0x14f82b5c8 <line:17:2, col:16> 'int' '='
+    | |-DeclRefExpr 0x14f82b518 <col:2> 'int' lvalue Var 0x14f82adf0 'error' 'int'
+    | `-ImplicitCastExpr 0x14f82b5b0 <col:10, col:16> 'int' <IntegralCast>
+    |   `-BinaryOperator 0x14f82b590 <col:10, col:16> 'long' '='
+    |     |-DeclRefExpr 0x14f82b538 <col:10> 'long' lvalue Var 0x14f82ae88 'ret' 'long'
+    |     `-ImplicitCastExpr 0x14f82b578 <col:16> 'long' <IntegralCast>
+    |       `-IntegerLiteral 0x14f82b558 <col:16> 'int' 0
+    |-WhileStmt 0x14f1243f0 <line:18:2, line:59:2>
+    | |-RecoveryExpr 0x14f82b600 <line:18:9> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14f124390 <col:18, line:59:2>
+    |   |-DeclStmt 0x14f82b698 <line:19:3, col:15>
+    |   | `-VarDecl 0x14f82b630 <col:3, col:8> col:8 invalid __user 'void'
+    |   |-UnaryExprOrTypeTraitExpr 0x14f82b708 <line:20:3, col:10> 'unsigned long' contains-errors sizeof
+    |   | `-RecoveryExpr 0x14f82b6e8 <col:10> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x14f123b20 <line:24:3, line:25:4>
+    |   | |-CallExpr 0x14f123ad8 <line:24:7, col:21> 'int'
+    |   | | |-ImplicitCastExpr 0x14f123ac0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x14f123a48 <col:7> 'int ()' Function 0x14f123990 'unlikely' 'int ()'
+    |   | | `-ImplicitCastExpr 0x14f123b00 <col:16> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14f123a68 <col:16> 'int' lvalue Var 0x14f82adf0 'error' 'int'
+    |   | `-BreakStmt 0x14f123b18 <line:25:4>
+    |   |-IfStmt 0x14f123c20 <line:27:3, line:28:4>
+    |   | |-CallExpr 0x14f123bd8 <line:27:7, col:21> 'int'
+    |   | | |-ImplicitCastExpr 0x14f123bc0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x14f123b80 <col:7> 'int ()' Function 0x14f123990 'unlikely' 'int ()'
+    |   | | `-ImplicitCastExpr 0x14f123c00 <col:16> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14f123ba0 <col:16> 'int' lvalue Var 0x14f82adf0 'error' 'int'
+    |   | `-BreakStmt 0x14f123c18 <line:28:4>
+    |   |-IfStmt 0x14f123c88 <line:31:3, line:32:4>
+    |   | |-RecoveryExpr 0x14f123c60 <line:31:7, col:20> '_Bool' contains-errors
+    |   | `-BreakStmt 0x14f123c80 <line:32:4>
+    |   |-IfStmt 0x14f123d28 <line:33:3, line:36:3>
+    |   | |-RecoveryExpr 0x14f123cc8 <line:33:7, col:21> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x14f123d10 <col:24, line:36:3>
+    |   |   `-BreakStmt 0x14f123d08 <line:35:4>
+    |   |-BinaryOperator 0x14f123df8 <line:38:3, col:12> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x14f123d90 <col:3, col:6> '<dependent type>' contains-errors lvalue .len
+    |   | | `-RecoveryExpr 0x14f123d68 <col:3> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14f123d48 <col:3> 'struct splice_desc' lvalue Var 0x14f82ad28 'sd' 'struct splice_desc'
+    |   | `-IntegerLiteral 0x14f123dd8 <col:12> 'int' 0
+    |   |-BinaryOperator 0x14f1240c0 <line:42:3, col:12> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x14f124058 <col:3, col:6> '<dependent type>' contains-errors lvalue .pos
+    |   | | `-RecoveryExpr 0x14f124030 <col:3> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14f124010 <col:3> 'struct splice_desc' lvalue Var 0x14f82ad28 'sd' 'struct splice_desc'
+    |   | `-IntegerLiteral 0x14f1240a0 <col:12> 'int' 0
+    |   |-IfStmt 0x14f124308 <line:45:3, line:50:3>
+    |   | |-RecoveryExpr 0x14f124258 <line:45:7, col:14> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x14f1242f0 <col:17, line:50:3>
+    |   |   `-BreakStmt 0x14f1242e8 <line:49:4>
+    |   `-IfStmt 0x14f124370 <line:54:3, line:55:4>
+    |     |-RecoveryExpr 0x14f124348 <line:54:7, col:14> '_Bool' contains-errors
+    |     `-BreakStmt 0x14f124368 <line:55:4>
+    |-IfStmt 0x14f124658 <line:61:2, line:62:37>
+    | |-RecoveryExpr 0x14f124448 <line:61:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14f124410 <col:6> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    | `-CallExpr 0x14f124630 <line:62:3, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f124550 <col:3> 'int ()' Function 0x14f124498 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x14f124618 <col:16, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x14f1245d0 <col:17, col:30> '<dependent type>' contains-errors lvalue ->i_mutex
+    |       `-RecoveryExpr 0x14f1245a8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f124570 <col:17> 'struct pipe_inode_info *' lvalue Var 0x14f82ab98 'pipe' 'struct pipe_inode_info *'
+    |-IfStmt 0x14f124758 <line:64:2, line:65:9>
+    | |-UnaryOperator 0x14f1246b0 <line:64:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14f124698 <col:7> 'long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14f124678 <col:7> 'long' lvalue Var 0x14f82ae88 'ret' 'long'
+    | `-BinaryOperator 0x14f124738 <line:65:3, col:9> 'long' '='
+    |   |-DeclRefExpr 0x14f1246c8 <col:3> 'long' lvalue Var 0x14f82ae88 'ret' 'long'
+    |   `-ImplicitCastExpr 0x14f124720 <col:9> 'long' <IntegralCast>
+    |     `-ImplicitCastExpr 0x14f124708 <col:9> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x14f1246e8 <col:9> 'int' lvalue Var 0x14f82adf0 'error' 'int'
+    `-ReturnStmt 0x14f1247b0 <line:67:2, col:9>
+      `-ImplicitCastExpr 0x14f124798 <col:9> 'long' <LValueToRValue>
+        `-DeclRefExpr 0x14f124778 <col:9> 'long' lvalue Var 0x14f82ae88 'ret' 'long'

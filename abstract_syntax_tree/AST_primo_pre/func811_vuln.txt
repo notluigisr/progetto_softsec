@@ -1,0 +1,38 @@
+`-FunctionDecl 0x1398274d0  line:1:6 invalid fpm_scoreboard_child_use 'void (struct fpm_scoreboard_s *, int, int)'
+  |-ParmVarDecl 0x13980e248 <col:31, col:56> col:56 used scoreboard 'struct fpm_scoreboard_s *'
+  |-ParmVarDecl 0x13980e2c8 <col:68, col:72> col:72 used child_index 'int'
+  |-ParmVarDecl 0x13980e360 <col:85, col:91> col:91 invalid pid 'int'
+  `-CompoundStmt 0x139827e40 <line:2:1, line:12:1>
+    |-DeclStmt 0x139827778 <line:3:2, col:36>
+    | |-RecordDecl 0x139827590 <col:2, col:9> col:9 struct fpm_scoreboard_proc_s
+    | `-VarDecl 0x1398276f8 <col:2, col:32> col:32 used proc 'struct fpm_scoreboard_proc_s *'
+    |-BinaryOperator 0x1398277e8 <line:4:2, col:19> 'struct fpm_scoreboard_s *' '='
+    | |-DeclRefExpr 0x139827790 <col:2> 'struct fpm_scoreboard_s *' lvalue ParmVar 0x13980e248 'scoreboard' 'struct fpm_scoreboard_s *'
+    | `-ImplicitCastExpr 0x1398277d0 <col:19> 'struct fpm_scoreboard_s *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1398277b0 <col:19> 'struct fpm_scoreboard_s *' lvalue ParmVar 0x13980e248 'scoreboard' 'struct fpm_scoreboard_s *'
+    |-BinaryOperator 0x139827ac0 <line:6:2, col:56> 'struct fpm_scoreboard_proc_s *' '='
+    | |-DeclRefExpr 0x139827828 <col:2> 'struct fpm_scoreboard_proc_s *' lvalue Var 0x1398276f8 'proc' 'struct fpm_scoreboard_proc_s *'
+    | `-ImplicitCastExpr 0x139827aa8 <col:9, col:56> 'struct fpm_scoreboard_proc_s *' <IntegralToPointer>
+    |   `-CallExpr 0x139827a48 <col:9, col:56> 'int'
+    |     |-ImplicitCastExpr 0x139827a30 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1398279a0 <col:9> 'int ()' Function 0x1398278e8 'fpm_scoreboard_proc_get' 'int ()'
+    |     |-ImplicitCastExpr 0x139827a78 <col:33> 'struct fpm_scoreboard_s *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1398279c0 <col:33> 'struct fpm_scoreboard_s *' lvalue ParmVar 0x13980e248 'scoreboard' 'struct fpm_scoreboard_s *'
+    |     `-ImplicitCastExpr 0x139827a90 <col:45> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1398279e0 <col:45> 'int' lvalue ParmVar 0x13980e2c8 'child_index' 'int'
+    |-IfStmt 0x139827b58 <line:7:2, line:9:2>
+    | |-UnaryOperator 0x139827b18 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139827b00 <col:7> 'struct fpm_scoreboard_proc_s *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139827ae0 <col:7> 'struct fpm_scoreboard_proc_s *' lvalue Var 0x1398276f8 'proc' 'struct fpm_scoreboard_proc_s *'
+    | `-CompoundStmt 0x139827b40 <col:13, line:9:2>
+    |   `-ReturnStmt 0x139827b30 <line:8:3>
+    |-BinaryOperator 0x139827bf8 <line:10:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x139827bb0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x139827b78 <col:2> 'struct fpm_scoreboard_proc_s *' lvalue Var 0x1398276f8 'proc' 'struct fpm_scoreboard_proc_s *'
+    | `-RecoveryExpr 0x139827bd8 <col:14> '<dependent type>' contains-errors lvalue
+    `-BinaryOperator 0x139827e20 <line:11:2, col:31> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x139827c50 <col:2, col:8> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x139827c18 <col:2> 'struct fpm_scoreboard_proc_s *' lvalue Var 0x1398276f8 'proc' 'struct fpm_scoreboard_proc_s *'
+      `-CallExpr 0x139827df8 <col:22, col:31> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x139827d58 <col:22> 'int ()' Function 0x139827ca0 'time' 'int ()'
+        `-RecoveryExpr 0x139827dd8 <col:27> '<dependent type>' contains-errors lvalue

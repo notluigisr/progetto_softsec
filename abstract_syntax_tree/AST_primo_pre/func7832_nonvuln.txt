@@ -1,0 +1,25 @@
+`-FunctionDecl 0x14803fb78  line:1:20 invalid yam_send_packet 'int (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x148026868 <col:36, col:52> col:52 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14803fa58 <line:2:7, col:26> col:26 used dev 'struct net_device *'
+  `-CompoundStmt 0x148040358 <line:3:1, line:9:1>
+    |-DeclStmt 0x148040058 <line:4:2, col:40>
+    | |-RecordDecl 0x14803fc30 <col:2, col:9> col:9 struct yam_port
+    | `-VarDecl 0x14803fd98 <col:2, col:39> col:19 used yp 'struct yam_port *' cinit
+    |   `-ImplicitCastExpr 0x148040028 <col:24, col:39> 'struct yam_port *' <IntegralToPointer>
+    |     `-CallExpr 0x14803ffe8 <col:24, col:39> 'int'
+    |       |-ImplicitCastExpr 0x14803ffd0 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14803ff60 <col:24> 'int ()' Function 0x14803fea8 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x148040010 <col:36> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14803ff80 <col:36> 'struct net_device *' lvalue ParmVar 0x14803fa58 'dev' 'struct net_device *'
+    |-CallExpr 0x148040208 <line:6:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x148040150 <col:2> 'int ()' Function 0x148040098 'skb_queue_tail' 'int ()'
+    | |-UnaryOperator 0x1480401d0 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1480401a8 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x148040170 <col:18> 'struct yam_port *' lvalue Var 0x14803fd98 'yp' 'struct yam_port *'
+    | `-DeclRefExpr 0x1480401e8 <col:34> 'struct sk_buff *' lvalue ParmVar 0x148026868 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x1480402f0 <line:7:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x148040270 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x148040238 <col:2> 'struct net_device *' lvalue ParmVar 0x14803fa58 'dev' 'struct net_device *'
+    | `-RecoveryExpr 0x1480402d0 <col:21> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x148040348 <line:8:2, col:9>
+      `-RecoveryExpr 0x148040328 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,61 @@
+`-FunctionDecl 0x121118638  line:1:21 invalid bsg_poll 'unsigned int (struct file *, int *)' static
+  |-ParmVarDecl 0x1210fb248 <col:30, col:43> col:43 used file 'struct file *'
+  |-ParmVarDecl 0x1210fb318 <col:49, col:61> col:61 invalid wait 'int *'
+  `-CompoundStmt 0x122008c00 <line:2:1, line:17:1>
+    |-DeclStmt 0x121118938 <line:3:2, col:44>
+    | |-RecordDecl 0x1211186f0 <col:2, col:9> col:9 struct bsg_device
+    | `-VarDecl 0x121118858 <col:2, col:32> col:21 used bd 'struct bsg_device *' cinit
+    |   `-RecoveryExpr 0x1211188f8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1211188c0 <col:26> 'struct file *' lvalue ParmVar 0x1210fb248 'file' 'struct file *'
+    |-DeclStmt 0x121118a08 <line:4:2, col:23>
+    | `-VarDecl 0x121118968 <col:2, col:22> col:15 used mask 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x1211189f0 <col:22> 'unsigned int' <IntegralCast>
+    |     `-IntegerLiteral 0x1211189d0 <col:22> 'int' 0
+    |-CallExpr 0x121118c58 <line:6:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121118b80 <col:2> 'int ()' Function 0x121118ac8 'poll_wait' 'int ()'
+    | |-DeclRefExpr 0x121118ba0 <col:12> 'struct file *' lvalue ParmVar 0x1210fb248 'file' 'struct file *'
+    | |-UnaryOperator 0x121118c20 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x121118bf8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x121118bc0 <col:19> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    | `-RecoveryExpr 0x121118c38 <col:32> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x121118d68 <line:7:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121118c90 <col:2> 'int ()' Function 0x121118ac8 'poll_wait' 'int ()'
+    | |-DeclRefExpr 0x121118cb0 <col:12> 'struct file *' lvalue ParmVar 0x1210fb248 'file' 'struct file *'
+    | |-UnaryOperator 0x121118d30 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x121118d08 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x121118cd0 <col:19> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    | `-RecoveryExpr 0x121118d48 <col:32> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x121118f18 <line:9:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121118e80 <col:2> 'int ()' Function 0x121118dc8 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x121118f00 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x121118ed8 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x121118ea0 <col:17> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    |-IfStmt 0x121119228 <line:10:2, line:11:20>
+    | |-UnaryOperator 0x1211190e0 <line:10:6, col:32> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x1211190b8 <col:7, col:32> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x121119020 <col:7> 'int ()' Function 0x121118f68 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x1211190a0 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x121119078 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x121119040 <col:19> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    | `-CompoundAssignOperator 0x1211191f8 <line:11:3, col:20> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x1211190f8 <col:3> 'unsigned int' lvalue Var 0x121118968 'mask' 'unsigned int'
+    |   `-BinaryOperator 0x1211191d8 <col:11, col:20> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x121119198 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x1211191b8 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1211193e0 <line:12:2, line:13:11>
+    | |-BinaryOperator 0x121119308 <line:12:6, col:29> 'int' contains-errors '>='
+    | | |-RecoveryExpr 0x121119280 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x121119248 <col:6> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    | | `-RecoveryExpr 0x1211192e0 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1211192a8 <col:25> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    | `-CompoundAssignOperator 0x1211193b0 <line:13:3, col:11> 'unsigned int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x121119328 <col:3> 'unsigned int' lvalue Var 0x121118968 'mask' 'unsigned int'
+    |   `-RecoveryExpr 0x121119390 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x121119578 <line:14:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1211194e0 <col:2> 'int ()' Function 0x121119428 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x121119560 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x121119538 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x121119500 <col:19> 'struct bsg_device *' contains-errors lvalue Var 0x121118858 'bd' 'struct bsg_device *'
+    `-ReturnStmt 0x1211195d8 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x1211195c0 <col:9> 'unsigned int' <LValueToRValue>
+        `-DeclRefExpr 0x1211195a0 <col:9> 'unsigned int' lvalue Var 0x121118968 'mask' 'unsigned int'

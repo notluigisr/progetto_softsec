@@ -1,0 +1,61 @@
+`-FunctionDecl 0x126826600  line:1:16 atalk_checksum 'unsigned short (struct ddpehdr *, int)'
+  |-ParmVarDecl 0x12680e248 <col:31, col:47> col:47 used ddp 'struct ddpehdr *'
+  |-ParmVarDecl 0x12680e2c8 <col:52, col:56> col:56 used len 'int'
+  `-CompoundStmt 0x126827098 <line:2:1, line:21:1>
+    |-DeclStmt 0x1268267b8 <line:3:2, col:23>
+    | `-VarDecl 0x126826718 <col:2, col:22> col:16 used sum 'unsigned long' cinit
+    |   `-ImplicitCastExpr 0x1268267a0 <col:22> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x126826780 <col:22> 'int' 0
+    |-DeclStmt 0x1268268f8 <line:4:2, col:44>
+    | `-VarDecl 0x126826818 <col:2, col:41> col:17 used data 'unsigned char *' cinit
+    |   `-CStyleCastExpr 0x1268268d0 <col:24, col:41> 'unsigned char *' <BitCast>
+    |     `-ImplicitCastExpr 0x1268268b8 <col:41> 'struct ddpehdr *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x126826880 <col:41> 'struct ddpehdr *' lvalue ParmVar 0x12680e248 'ddp' 'struct ddpehdr *'
+    |-CompoundAssignOperator 0x126826950 <line:6:2, col:10> 'int' '-=' ComputeLHSTy='int' ComputeResultTy='int'
+    | |-DeclRefExpr 0x126826910 <col:2> 'int' lvalue ParmVar 0x12680e2c8 'len' 'int'
+    | `-IntegerLiteral 0x126826930 <col:10> 'int' 4
+    |-CompoundAssignOperator 0x1268269c0 <line:7:2, col:10> 'unsigned char *' '+=' ComputeLHSTy='unsigned char *' ComputeResultTy='unsigned char *'
+    | |-DeclRefExpr 0x126826980 <col:2> 'unsigned char *' lvalue Var 0x126826818 'data' 'unsigned char *'
+    | `-IntegerLiteral 0x1268269a0 <col:10> 'int' 4
+    |-WhileStmt 0x126826d78 <line:10:2, line:18:2>
+    | |-UnaryOperator 0x126826a10 <line:10:9, col:12> 'int' postfix '--'
+    | | `-DeclRefExpr 0x1268269f0 <col:9> 'int' lvalue ParmVar 0x12680e2c8 'len' 'int'
+    | `-CompoundStmt 0x126826d48 <col:16, line:18:2>
+    |   |-CompoundAssignOperator 0x126826ac8 <line:11:3, col:11> 'unsigned long' '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   | |-DeclRefExpr 0x126826a28 <col:3> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+    |   | `-ImplicitCastExpr 0x126826ab0 <col:10, col:11> 'unsigned long' <IntegralCast>
+    |   |   `-ImplicitCastExpr 0x126826a98 <col:10, col:11> 'unsigned char' <LValueToRValue>
+    |   |     `-UnaryOperator 0x126826a80 <col:10, col:11> 'unsigned char' lvalue prefix '*' cannot overflow
+    |   |       `-ImplicitCastExpr 0x126826a68 <col:11> 'unsigned char *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x126826a48 <col:11> 'unsigned char *' lvalue Var 0x126826818 'data' 'unsigned char *'
+    |   |-CompoundAssignOperator 0x126826b50 <line:12:3, col:11> 'unsigned long' '<<=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   | |-DeclRefExpr 0x126826af8 <col:3> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+    |   | `-IntegerLiteral 0x126826b18 <col:11> 'int' 1
+    |   |-IfStmt 0x126826cf0 <line:13:3, line:16:3>
+    |   | |-BinaryOperator 0x126826bf0 <line:13:7, col:13> 'unsigned long' '&'
+    |   | | |-ImplicitCastExpr 0x126826bc0 <col:7> 'unsigned long' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x126826b80 <col:7> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+    |   | | `-ImplicitCastExpr 0x126826bd8 <col:13> 'unsigned long' <IntegralCast>
+    |   | |   `-IntegerLiteral 0x126826ba0 <col:13> 'int' 65536
+    |   | `-CompoundStmt 0x126826cd0 <col:22, line:16:3>
+    |   |   |-UnaryOperator 0x126826c30 <line:14:4, col:7> 'unsigned long' postfix '++'
+    |   |   | `-DeclRefExpr 0x126826c10 <col:4> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+    |   |   `-CompoundAssignOperator 0x126826ca0 <line:15:4, col:11> 'unsigned long' '&=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |   |     |-DeclRefExpr 0x126826c48 <col:4> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+    |   |     `-ImplicitCastExpr 0x126826c88 <col:11> 'unsigned long' <IntegralCast>
+    |   |       `-IntegerLiteral 0x126826c68 <col:11> 'int' 65535
+    |   `-UnaryOperator 0x126826d30 <line:17:3, col:7> 'unsigned char *' postfix '++'
+    |     `-DeclRefExpr 0x126826d10 <col:3> 'unsigned char *' lvalue Var 0x126826818 'data' 'unsigned char *'
+    `-ReturnStmt 0x126827088 <line:20:2, col:44>
+      `-ImplicitCastExpr 0x126827070 <col:9, col:44> 'unsigned short' <IntegralCast>
+        `-ConditionalOperator 0x126827040 <col:9, col:44> 'int'
+          |-ImplicitCastExpr 0x126827028 <col:9> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x126826d98 <col:9> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+          |-CallExpr 0x126826fc8 <col:15, col:40> 'int'
+          | |-ImplicitCastExpr 0x126826fb0 <col:15> 'int (*)()' <FunctionToPointerDecay>
+          | | `-DeclRefExpr 0x126826ee0 <col:15> 'int ()' Function 0x126826e28 'htons' 'int ()'
+          | `-ImplicitCastExpr 0x126826ff0 <col:21, col:37> 'int' <IntegralCast>
+          |   `-CStyleCastExpr 0x126826f50 <col:21, col:37> 'unsigned short' <IntegralCast>
+          |     `-ImplicitCastExpr 0x126826f38 <col:37> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+          |       `-DeclRefExpr 0x126826f00 <col:37> 'unsigned long' lvalue Var 0x126826718 'sum' 'unsigned long'
+          `-IntegerLiteral 0x126827008 <col:44> 'int' 65535

@@ -1,0 +1,28 @@
+`-FunctionDecl 0x1379281f8  line:1:1 invalid get_outside_region 'int (int *)'
+  |-ParmVarDecl 0x137928128 <col:21, col:31> col:31 invalid window 'int *'
+  `-CompoundStmt 0x140008e10 <line:2:1, line:21:1>
+    |-DeclStmt 0x137928328 <line:3:9, col:26>
+    | `-VarDecl 0x1379282c0 <col:9, col:25> col:25 used i 'int'
+    `-ForStmt 0x140008dd8 <line:7:9, line:18:9>
+      |-BinaryOperator 0x137928578 <line:7:14, col:18> 'int' '='
+      | |-DeclRefExpr 0x137928538 <col:14> 'int' lvalue Var 0x1379282c0 'i' 'int'
+      | `-IntegerLiteral 0x137928558 <col:18> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x137928668 <col:21, col:39> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x137928598 <col:21> 'int' lvalue Var 0x1379282c0 'i' 'int'
+      | `-CXXDependentScopeMemberExpr 0x137928620 <col:25, col:39> '<dependent type>' contains-errors lvalue ->monitor
+      |   `-CXXDependentScopeMemberExpr 0x1379285d8 <col:25, col:33> '<dependent type>' contains-errors lvalue ->priv
+      |     `-RecoveryExpr 0x1379285b8 <col:25> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x1379286a8 <col:48, col:49> 'int' postfix '++'
+      | `-DeclRefExpr 0x137928688 <col:48> 'int' lvalue Var 0x1379282c0 'i' 'int'
+      `-CompoundStmt 0x140008dc0 <col:53, line:18:9>
+        `-CallExpr 0x140008b08 <line:11:17, line:12:64> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1379287a0 <line:11:17> 'int ()' Function 0x1379286e8 'gdk_screen_get_monitor_geometry' 'int ()'
+          |-CallExpr 0x140008a20 <col:50, col:92> '<dependent type>' contains-errors
+          | |-DeclRefExpr 0x1400088b8 <col:50> 'int ()' Function 0x140008800 'gtk_window_get_screen' 'int ()'
+          | `-CallExpr 0x1400089f8 <col:73, col:91> '<dependent type>' contains-errors
+          |   |-DeclRefExpr 0x1400089b8 <col:73> 'int ()' Function 0x140008900 'GTK_WINDOW' 'int ()'
+          |   `-RecoveryExpr 0x1400089d8 <col:85> '<dependent type>' contains-errors lvalue
+          |-DeclRefExpr 0x140008a48 <line:12:52> 'int' lvalue Var 0x1379282c0 'i' 'int'
+          `-UnaryOperator 0x140008af0 <col:55, col:56> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x140008ad0 <col:56> '<dependent type>' contains-errors lvalue

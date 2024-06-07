@@ -1,0 +1,73 @@
+`-FunctionDecl 0x1349419f8  line:1:5 invalid apply_to_page_range 'int (struct mm_struct *, unsigned long, unsigned long, int, void *)'
+  |-ParmVarDecl 0x134928648 <col:25, col:43> col:43 used mm 'struct mm_struct *'
+  |-ParmVarDecl 0x1349286c8 <col:47, col:61> col:61 used addr 'unsigned long'
+  |-ParmVarDecl 0x134928748 <line:2:4, col:18> col:18 used size 'unsigned long'
+  |-ParmVarDecl 0x134941800 <col:24, col:33> col:33 invalid fn 'int'
+  |-ParmVarDecl 0x134941880 <col:37, col:43> col:43 used data 'void *'
+  `-CompoundStmt 0x134943090 <line:3:1, line:21:1>
+    |-DeclStmt 0x134941b60 <line:5:2, col:20>
+    | `-VarDecl 0x134941af8 <col:2, col:16> col:16 used next 'unsigned long'
+    |-DeclStmt 0x134941c88 <line:6:2, col:33>
+    | `-VarDecl 0x134941b90 <col:2, col:29> col:16 used end 'unsigned long' cinit
+    |   `-BinaryOperator 0x134941c68 <col:22, col:29> 'unsigned long' '+'
+    |     |-ImplicitCastExpr 0x134941c38 <col:22> 'unsigned long' <LValueToRValue>
+    |     | `-DeclRefExpr 0x134941bf8 <col:22> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    |     `-ImplicitCastExpr 0x134941c50 <col:29> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x134941c18 <col:29> 'unsigned long' lvalue ParmVar 0x134928748 'size' 'unsigned long'
+    |-DeclStmt 0x134941d20 <line:7:2, col:9>
+    | `-VarDecl 0x134941cb8 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x134942058 <line:9:2, line:10:11>
+    | |-CallExpr 0x134941f88 <line:9:6, col:25> 'int'
+    | | |-ImplicitCastExpr 0x134941f70 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x134941e90 <col:6> 'int ()' Function 0x134941dd8 'WARN_ON' 'int ()'
+    | | `-BinaryOperator 0x134941f20 <col:14, col:22> 'int' '>='
+    | |   |-ImplicitCastExpr 0x134941ef0 <col:14> 'unsigned long' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x134941eb0 <col:14> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    | |   `-ImplicitCastExpr 0x134941f08 <col:22> 'unsigned long' <LValueToRValue>
+    | |     `-DeclRefExpr 0x134941ed0 <col:22> 'unsigned long' lvalue Var 0x134941b90 'end' 'unsigned long'
+    | `-ReturnStmt 0x134942048 <line:10:3, col:11>
+    |   `-UnaryOperator 0x134942030 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x134942018 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x134941ff8 <col:11> '<dependent type>' contains-errors lvalue
+    |-DoStmt 0x134943028 <line:13:2, line:18:42>
+    | |-CompoundStmt 0x134942778 <line:13:5, line:18:2>
+    | | |-BinaryOperator 0x134942420 <line:14:3, col:32> 'unsigned long' '='
+    | | | |-DeclRefExpr 0x134942230 <col:3> 'unsigned long' lvalue Var 0x134941af8 'next' 'unsigned long'
+    | | | `-ImplicitCastExpr 0x134942408 <col:10, col:32> 'unsigned long' <IntegralCast>
+    | | |   `-CallExpr 0x1349423a8 <col:10, col:32> 'int'
+    | | |     |-ImplicitCastExpr 0x134942390 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | `-DeclRefExpr 0x134942330 <col:10> 'int ()' Function 0x134942278 'pgd_addr_end' 'int ()'
+    | | |     |-ImplicitCastExpr 0x1349423d8 <col:23> 'unsigned long' <LValueToRValue>
+    | | |     | `-DeclRefExpr 0x134942350 <col:23> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    | | |     `-ImplicitCastExpr 0x1349423f0 <col:29> 'unsigned long' <LValueToRValue>
+    | | |       `-DeclRefExpr 0x134942370 <col:29> 'unsigned long' lvalue Var 0x134941b90 'end' 'unsigned long'
+    | | |-BinaryOperator 0x1349426f8 <line:15:3, col:57> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x134942440 <col:3> 'int' lvalue Var 0x134941cb8 'err' 'int'
+    | | | `-CallExpr 0x1349426a8 <col:9, col:57> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x134942540 <col:9> 'int ()' Function 0x134942488 'apply_to_p4d_range' 'int ()'
+    | | |   |-DeclRefExpr 0x134942560 <col:28> 'struct mm_struct *' lvalue ParmVar 0x134928648 'mm' 'struct mm_struct *'
+    | | |   |-RecoveryExpr 0x134942688 <col:32> '<dependent type>' contains-errors lvalue
+    | | |   |-DeclRefExpr 0x134942598 <col:37> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    | | |   |-DeclRefExpr 0x1349425b8 <col:43> 'unsigned long' lvalue Var 0x134941af8 'next' 'unsigned long'
+    | | |   |-RecoveryExpr 0x1349425d8 <col:49> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x1349425f8 <col:53> 'void *' lvalue ParmVar 0x134941880 'data' 'void *'
+    | | `-IfStmt 0x134942758 <line:16:3, line:17:4>
+    | |   |-ImplicitCastExpr 0x134942738 <line:16:7> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x134942718 <col:7> 'int' lvalue Var 0x134941cb8 'err' 'int'
+    | |   `-BreakStmt 0x134942750 <line:17:4>
+    | `-BinaryOperator 0x134943008 <line:18:11, col:39> 'int' contains-errors ','
+    |   |-BinaryOperator 0x134942f98 <col:11, col:25> 'unsigned long' contains-errors ','
+    |   | |-UnaryOperator 0x134942f48 <col:11, col:14> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | | `-RecoveryExpr 0x134942f28 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-BinaryOperator 0x134942f78 <col:18, col:25> 'unsigned long' '='
+    |   |   |-DeclRefExpr 0x1349427d0 <col:18> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    |   |   `-ImplicitCastExpr 0x134942f60 <col:25> 'unsigned long' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x134942e00 <col:25> 'unsigned long' lvalue Var 0x134941af8 'next' 'unsigned long'
+    |   `-BinaryOperator 0x134942fe8 <col:31, col:39> 'int' '!='
+    |     |-ImplicitCastExpr 0x134942fb8 <col:31> 'unsigned long' <LValueToRValue>
+    |     | `-DeclRefExpr 0x134942e78 <col:31> 'unsigned long' lvalue ParmVar 0x1349286c8 'addr' 'unsigned long'
+    |     `-ImplicitCastExpr 0x134942fd0 <col:39> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x134942e98 <col:39> 'unsigned long' lvalue Var 0x134941b90 'end' 'unsigned long'
+    `-ReturnStmt 0x134943080 <line:20:2, col:9>
+      `-ImplicitCastExpr 0x134943068 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x134943048 <col:9> 'int' lvalue Var 0x134941cb8 'err' 'int'

@@ -1,0 +1,69 @@
+`-FunctionDecl 0x127928750  line:1:13 rd_release_device_space 'void (struct rd_dev *)' static
+  |-ParmVarDecl 0x127928648 <col:37, col:52> col:52 used rd_dev 'struct rd_dev *'
+  `-CompoundStmt 0x130008e78 <line:2:1, line:36:1>
+    |-DeclStmt 0x127944e48 <line:4:2, col:34>
+    | |-RecordDecl 0x127944c60 <col:2, col:9> col:9 struct rd_dev_sg_table
+    | `-VarDecl 0x127944dc8 <col:2, col:26> col:26 used sg_table 'struct rd_dev_sg_table *'
+    |-DeclStmt 0x127945048 <line:5:2, col:17>
+    | |-RecordDecl 0x127944e60 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x127944fc8 <col:2, col:15> col:15 used pg 'struct page *'
+    |-DeclStmt 0x127945248 <line:6:2, col:24>
+    | |-RecordDecl 0x127945060 <col:2, col:9> col:9 struct scatterlist
+    | `-VarDecl 0x1279451c8 <col:2, col:22> col:22 used sg 'struct scatterlist *'
+    |-IfStmt 0x1279453b0 <line:8:2, line:9:3>
+    | |-BinaryOperator 0x127945380 <line:8:6, col:42> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x1279452d8 <col:6, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1279452c0 <col:7, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x127945298 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x127945260 <col:7> 'struct rd_dev *' lvalue ParmVar 0x127928648 'rd_dev' 'struct rd_dev *'
+    | | `-UnaryOperator 0x127945368 <col:33, col:42> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x127945350 <col:34, col:42> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x127945328 <col:34, col:42> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1279452f0 <col:34> 'struct rd_dev *' lvalue ParmVar 0x127928648 'rd_dev' 'struct rd_dev *'
+    | `-ReturnStmt 0x1279453a0 <line:9:3>
+    |-BinaryOperator 0x127945450 <line:11:2, col:21> 'struct rd_dev_sg_table *' contains-errors '='
+    | |-DeclRefExpr 0x1279453d0 <col:2> 'struct rd_dev_sg_table *' lvalue Var 0x127944dc8 'sg_table' 'struct rd_dev_sg_table *'
+    | `-RecoveryExpr 0x127945428 <col:13, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1279453f0 <col:13> 'struct rd_dev *' lvalue ParmVar 0x127928648 'rd_dev' 'struct rd_dev *'
+    |-ForStmt 0x1300089d0 <line:13:2, line:26:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x127945580 <line:13:14, col:26> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x127945560 <col:14> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x127945518 <col:18, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1279454e0 <col:18> 'struct rd_dev *' lvalue ParmVar 0x127928648 'rd_dev' 'struct rd_dev *'
+    | |-UnaryOperator 0x1279455f0 <col:42, col:43> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | | `-RecoveryExpr 0x1279455d0 <col:42> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1300089b0 <col:47, line:26:2>
+    |   |-ForStmt 0x130008800 <line:17:3, line:23:3>
+    |   | |-<<<NULL>>>
+    |   | |-<<<NULL>>>
+    |   | |-BinaryOperator 0x1279457a0 <line:17:15, col:19> 'int' contains-errors '<'
+    |   | | |-RecoveryExpr 0x127945760 <col:15> '<dependent type>' contains-errors lvalue
+    |   | | `-RecoveryExpr 0x127945780 <col:19> '<dependent type>' contains-errors lvalue
+    |   | |-UnaryOperator 0x127945810 <col:33, col:34> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | | `-RecoveryExpr 0x1279457f0 <col:33> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x127945bd0 <col:38, line:23:3>
+    |   |   `-IfStmt 0x127945bb0 <line:19:4, line:22:4>
+    |   |     |-ImplicitCastExpr 0x1279459d8 <line:19:8> 'struct page *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x1279459b8 <col:8> 'struct page *' lvalue Var 0x127944fc8 'pg' 'struct page *'
+    |   |     `-CompoundStmt 0x127945b98 <col:12, line:22:4>
+    |   |       `-CallExpr 0x127945b58 <line:20:5, col:19> 'int'
+    |   |         |-ImplicitCastExpr 0x127945b40 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   |         | `-DeclRefExpr 0x127945ad0 <col:5> 'int ()' Function 0x127945a18 '__free_page' 'int ()'
+    |   |         `-ImplicitCastExpr 0x127945b80 <col:17> 'struct page *' <LValueToRValue>
+    |   |           `-DeclRefExpr 0x127945af0 <col:17> 'struct page *' lvalue Var 0x127944fc8 'pg' 'struct page *'
+    |   `-CallExpr 0x130008970 <line:25:3, col:11> 'int'
+    |     |-ImplicitCastExpr 0x130008958 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x130008918 <col:3> 'int ()' Function 0x130008860 'kfree' 'int ()'
+    |     `-ImplicitCastExpr 0x130008998 <col:9> 'struct scatterlist *' <LValueToRValue>
+    |       `-DeclRefExpr 0x130008938 <col:9> 'struct scatterlist *' lvalue Var 0x1279451c8 'sg' 'struct scatterlist *'
+    |-CallExpr 0x130008d38 <line:33:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x130008d20 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x130008ce0 <col:2> 'int ()' Function 0x130008860 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x130008d60 <col:8> 'struct rd_dev_sg_table *' <LValueToRValue>
+    |   `-DeclRefExpr 0x130008d00 <col:8> 'struct rd_dev_sg_table *' lvalue Var 0x127944dc8 'sg_table' 'struct rd_dev_sg_table *'
+    `-BinaryOperator 0x130008e58 <line:35:2, col:27> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x130008e10 <col:2, col:10> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x130008dd8 <col:2> 'struct rd_dev *' lvalue ParmVar 0x127928648 'rd_dev' 'struct rd_dev *'
+      `-IntegerLiteral 0x130008e38 <col:27> 'int' 0

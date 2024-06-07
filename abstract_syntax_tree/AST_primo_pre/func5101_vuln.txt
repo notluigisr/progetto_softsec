@@ -1,0 +1,115 @@
+`-FunctionDecl 0x141141048  line:1:1 acl_fetch_proto_http 'int (struct proxy *, struct session *, void *, int, struct acl_expr *, struct acl_test *)'
+  |-ParmVarDecl 0x141128648 <col:22, col:36> col:36 px 'struct proxy *'
+  |-ParmVarDecl 0x141140a28 <col:40, col:56> col:56 used s 'struct session *'
+  |-ParmVarDecl 0x141140aa8 <col:59, col:65> col:65 l7 'void *'
+  |-ParmVarDecl 0x141140b28 <col:69, col:73> col:73 dir 'int'
+  |-ParmVarDecl 0x141140cf8 <line:2:8, col:25> col:25 expr 'struct acl_expr *'
+  |-ParmVarDecl 0x141140ec8 <col:31, col:48> col:48 used test 'struct acl_test *'
+  `-CompoundStmt 0x14180c798 <line:3:1, line:45:1>
+    |-DeclStmt 0x1411413b8 <line:4:2, col:29>
+    | |-RecordDecl 0x141141168 <col:2, col:9> col:9 struct buffer
+    | `-VarDecl 0x1411412d8 <col:2, col:26> col:17 used req 'struct buffer *' cinit
+    |   `-RecoveryExpr 0x141141378 <col:23, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x141141340 <col:23> 'struct session *' lvalue ParmVar 0x141140a28 's' 'struct session *'
+    |-DeclStmt 0x141141630 <line:5:2, col:32>
+    | |-RecordDecl 0x1411413d0 <col:2, col:9> col:9 struct http_txn
+    | `-VarDecl 0x141141538 <col:2, col:29> col:19 used txn 'struct http_txn *' cinit
+    |   `-UnaryOperator 0x141141600 <col:25, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x1411415d8 <col:26, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1411415a0 <col:26> 'struct session *' lvalue ParmVar 0x141140a28 's' 'struct session *'
+    |-DeclStmt 0x1411418b0 <line:6:2, col:34>
+    | |-RecordDecl 0x141141648 <col:2, col:9> col:9 struct http_msg
+    | `-VarDecl 0x1411417b8 <col:2, col:31> col:19 used msg 'struct http_msg *' cinit
+    |   `-UnaryOperator 0x141141880 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x141141858 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x141141820 <col:26> 'struct http_txn *' contains-errors lvalue Var 0x141141538 'txn' 'struct http_txn *'
+    |-IfStmt 0x1411419b8 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x141141968 <line:10:6, col:13> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x141141900 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1411418e8 <col:7> 'struct session *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x1411418c8 <col:7> 'struct session *' lvalue ParmVar 0x141140a28 's' 'struct session *'
+    | | `-UnaryOperator 0x141141950 <col:12, col:13> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x141141938 <col:13> 'struct buffer *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x141141918 <col:13> 'struct buffer *' contains-errors lvalue Var 0x1411412d8 'req' 'struct buffer *'
+    | `-ReturnStmt 0x1411419a8 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x141141988 <col:10> 'int' 0
+    |-IfStmt 0x1418085a0 <line:13:2, line:17:2>
+    | |-CallExpr 0x141808430 <line:13:6, col:46> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x141808310 <col:6> 'int ()' Function 0x141808258 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x141808410 <col:15, col:33> 'int' contains-errors '>='
+    | |   |-RecoveryExpr 0x141808368 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x141808330 <col:15> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    | |   `-RecoveryExpr 0x1418083f0 <col:33> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x141808580 <col:49, line:17:2>
+    |   |-CompoundAssignOperator 0x141808520 <line:15:3, col:18> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x141808490 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x141808458 <col:3> 'struct acl_test *' lvalue ParmVar 0x141140ec8 'test' 'struct acl_test *'
+    |   | `-RecoveryExpr 0x141808500 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x141808570 <line:16:3, col:10>
+    |     `-IntegerLiteral 0x141808550 <col:10> 'int' 1
+    |-IfStmt 0x1418089b8 <line:20:2, line:21:44>
+    | |-CallExpr 0x1418087a0 <line:20:6, col:29> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1418086a0 <col:6> 'int ()' Function 0x1418085e8 'likely' 'int ()'
+    | | `-BinaryOperator 0x141808780 <col:13, col:28> 'int' contains-errors '<'
+    | |   |-RecoveryExpr 0x1418086f8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x1418086c0 <col:13> 'struct buffer *' contains-errors lvalue Var 0x1411412d8 'req' 'struct buffer *'
+    | |   `-RecoveryExpr 0x141808758 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x141808720 <col:23> 'struct buffer *' contains-errors lvalue Var 0x1411412d8 'req' 'struct buffer *'
+    | `-CallExpr 0x141808980 <line:21:3, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1418088a8 <col:3> 'int ()' Function 0x1418087f0 'http_msg_analyzer' 'int ()'
+    |   |-DeclRefExpr 0x1418088c8 <col:21> 'struct buffer *' contains-errors lvalue Var 0x1411412d8 'req' 'struct buffer *'
+    |   |-DeclRefExpr 0x1418088e8 <col:26> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    |   `-UnaryOperator 0x141808968 <col:31, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x141808940 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x141808908 <col:32> 'struct http_txn *' contains-errors lvalue Var 0x141141538 'txn' 'struct http_txn *'
+    |-IfStmt 0x141808de8 <line:23:2, line:31:2>
+    | |-CallExpr 0x141808af8 <line:23:6, col:45> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1418089d8 <col:6> 'int ()' Function 0x141808258 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x141808ad8 <col:15, col:32> 'int' contains-errors '<'
+    | |   |-RecoveryExpr 0x141808a30 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x1418089f8 <col:15> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    | |   `-RecoveryExpr 0x141808ab8 <col:32> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x141808dc8 <col:48, line:31:2>
+    |   |-IfStmt 0x141808d18 <line:24:3, line:27:3>
+    |   | |-RecoveryExpr 0x141808c50 <line:24:7, col:66> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x141808d00 <col:69, line:27:3>
+    |   |   `-ReturnStmt 0x141808cf0 <line:26:4, col:11>
+    |   |     `-IntegerLiteral 0x141808cd0 <col:11> 'int' 1
+    |   `-ReturnStmt 0x141808db8 <line:30:3, col:10>
+    |     `-IntegerLiteral 0x141808d98 <col:10> 'int' 0
+    |-BinaryOperator 0x1418090e8 <line:34:2, col:53> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x141808e40 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x141808e08 <col:2> 'struct http_txn *' contains-errors lvalue Var 0x141141538 'txn' 'struct http_txn *'
+    | `-CallExpr 0x1418090b8 <col:14, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x141808f48 <col:14> 'int ()' Function 0x141808e90 'find_http_meth' 'int ()'
+    |   |-RecoveryExpr 0x141808fa0 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x141808f68 <col:29> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    |   `-CXXDependentScopeMemberExpr 0x141809070 <col:39, col:50> '<dependent type>' contains-errors lvalue .m_l
+    |     `-CXXDependentScopeMemberExpr 0x141809028 <col:39, col:47> '<dependent type>' contains-errors lvalue .rq
+    |       `-RecoveryExpr 0x141809000 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x141808fc8 <col:39> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    |-IfStmt 0x14180c6e8 <line:38:2, line:41:2>
+    | |-BinaryOperator 0x14180c620 <line:38:6, col:77> 'int' contains-errors '&&'
+    | | |-CallExpr 0x14180c3b0 <col:6, col:34> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x14180c260 <col:6> 'int ()' Function 0x141808258 'unlikely' 'int ()'
+    | | | `-BinaryOperator 0x14180c390 <col:15, col:33> 'int' contains-errors '=='
+    | | |   |-CXXDependentScopeMemberExpr 0x14180c328 <col:15, col:26> '<dependent type>' contains-errors lvalue .v_l
+    | | |   | `-CXXDependentScopeMemberExpr 0x14180c2e0 <col:15, col:23> '<dependent type>' contains-errors lvalue .rq
+    | | |   |   `-RecoveryExpr 0x14180c2b8 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    | | |   |     `-DeclRefExpr 0x14180c280 <col:15> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    | | |   `-IntegerLiteral 0x14180c370 <col:33> 'int' 0
+    | | `-UnaryOperator 0x14180c608 <col:39, col:77> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x14180c588 <col:40, col:77> 'int' contains-errors
+    | |     |-ImplicitCastExpr 0x14180c570 <col:40> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x14180c4b8 <col:40> 'int ()' Function 0x14180c400 'http_upgrade_v09_to_v10' 'int ()'
+    | |     |-ImplicitCastExpr 0x14180c5c0 <col:64> 'struct buffer *' contains-errors <LValueToRValue>
+    | |     | `-DeclRefExpr 0x14180c4d8 <col:64> 'struct buffer *' contains-errors lvalue Var 0x1411412d8 'req' 'struct buffer *'
+    | |     |-ImplicitCastExpr 0x14180c5d8 <col:69> 'struct http_msg *' contains-errors <LValueToRValue>
+    | |     | `-DeclRefExpr 0x14180c4f8 <col:69> 'struct http_msg *' contains-errors lvalue Var 0x1411417b8 'msg' 'struct http_msg *'
+    | |     `-ImplicitCastExpr 0x14180c5f0 <col:74> 'struct http_txn *' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x14180c518 <col:74> 'struct http_txn *' contains-errors lvalue Var 0x141141538 'txn' 'struct http_txn *'
+    | `-CompoundStmt 0x14180c6d0 <col:80, line:41:2>
+    |   `-ReturnStmt 0x14180c6c0 <line:40:3, col:10>
+    |     `-IntegerLiteral 0x14180c6a0 <col:10> 'int' 1
+    `-ReturnStmt 0x14180c788 <line:44:2, col:9>
+      `-IntegerLiteral 0x14180c768 <col:9> 'int' 1

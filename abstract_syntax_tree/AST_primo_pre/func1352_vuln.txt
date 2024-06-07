@@ -1,0 +1,42 @@
+`-FunctionDecl 0x12180e350  line:1:13 smp_task_timedout 'void (struct timer_list *)' static
+  |-ParmVarDecl 0x12180e248 <col:31, col:50> col:50 used t 'struct timer_list *'
+  `-CompoundStmt 0x1218274d0 <line:2:1, line:13:1>
+    |-DeclStmt 0x121826a70 <line:3:2, col:57>
+    | |-RecordDecl 0x121826648 <col:2, col:9> col:9 struct sas_task_slow
+    | `-VarDecl 0x1218267b8 <col:2, col:56> col:24 used slow 'struct sas_task_slow *' cinit
+    |   `-CallExpr 0x121826a20 <col:31, col:56> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x121826950 <col:31> 'int ()' Function 0x121826898 'from_timer' 'int ()'
+    |     |-DeclRefExpr 0x121826970 <col:42> 'struct sas_task_slow *' lvalue Var 0x1218267b8 'slow' 'struct sas_task_slow *'
+    |     |-DeclRefExpr 0x121826990 <col:48> 'struct timer_list *' lvalue ParmVar 0x12180e248 't' 'struct timer_list *'
+    |     `-RecoveryExpr 0x121826a00 <col:51> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x121826cd8 <line:4:2, col:36>
+    | |-RecordDecl 0x121826a88 <col:2, col:9> col:9 struct sas_task
+    | `-VarDecl 0x121826bf8 <col:2, col:32> col:19 used task 'struct sas_task *' cinit
+    |   `-RecoveryExpr 0x121826c98 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x121826c60 <col:26> 'struct sas_task_slow *' contains-errors lvalue Var 0x1218267b8 'slow' 'struct sas_task_slow *'
+    |-DeclStmt 0x121826d70 <line:5:2, col:21>
+    | `-VarDecl 0x121826d08 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-CallExpr 0x121826f20 <line:7:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121826e68 <col:2> 'int ()' Function 0x121826db0 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x121826ee8 <col:20, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x121826ec0 <col:21, col:27> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x121826e88 <col:21> 'struct sas_task *' contains-errors lvalue Var 0x121826bf8 'task' 'struct sas_task *'
+    | `-DeclRefExpr 0x121826f00 <col:44> 'unsigned long' lvalue Var 0x121826d08 'flags' 'unsigned long'
+    |-IfStmt 0x121827100 <line:8:2, line:9:29>
+    | |-RecoveryExpr 0x121826fe8 <line:8:6, col:52> '_Bool' contains-errors
+    | `-CompoundAssignOperator 0x1218270d0 <line:9:3, col:29> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-RecoveryExpr 0x121827040 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x121827008 <col:3> 'struct sas_task *' contains-errors lvalue Var 0x121826bf8 'task' 'struct sas_task *'
+    |   `-RecoveryExpr 0x1218270b0 <col:29> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1218272b8 <line:10:2, col:54> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121827200 <col:2> 'int ()' Function 0x121827148 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x121827280 <col:25, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x121827258 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x121827220 <col:26> 'struct sas_task *' contains-errors lvalue Var 0x121826bf8 'task' 'struct sas_task *'
+    | `-DeclRefExpr 0x121827298 <col:49> 'unsigned long' lvalue Var 0x121826d08 'flags' 'unsigned long'
+    `-CallExpr 0x1218274a8 <line:12:2, col:39> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1218273c8 <col:2> 'int ()' Function 0x121827310 'complete' 'int ()'
+      `-UnaryOperator 0x121827490 <col:11, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x121827448 <col:12, col:29> '<dependent type>' contains-errors lvalue ->completion
+          `-RecoveryExpr 0x121827420 <col:12, col:18> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x1218273e8 <col:12> 'struct sas_task *' contains-errors lvalue Var 0x121826bf8 'task' 'struct sas_task *'

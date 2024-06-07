@@ -1,0 +1,44 @@
+`-FunctionDecl 0x121827548  line:1:14 invalid mr_report_fixup 'int *(struct hid_device *, int *, unsigned int *)' static
+  |-ParmVarDecl 0x12180e268 <col:30, col:49> col:49 used hdev 'struct hid_device *'
+  |-ParmVarDecl 0x12180e318 <col:55, col:61> col:61 referenced invalid rdesc 'int *'
+  |-ParmVarDecl 0x121827400 <line:2:3, col:17> col:17 used rsize 'unsigned int *'
+  `-CompoundStmt 0x121827c68 <line:3:1, line:9:1>
+    |-IfStmt 0x121827c18 <line:4:2, line:7:2>
+    | |-BinaryOperator 0x121827858 <line:4:6, col:56> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x121827780 <col:6, col:35> 'int' contains-errors '&&'
+    | | | |-BinaryOperator 0x1218276a8 <col:6, col:16> 'int' '>='
+    | | | | |-ImplicitCastExpr 0x121827678 <col:6, col:7> 'unsigned int' <LValueToRValue>
+    | | | | | `-UnaryOperator 0x121827640 <col:6, col:7> 'unsigned int' lvalue prefix '*' cannot overflow
+    | | | | |   `-ImplicitCastExpr 0x121827628 <col:7> 'unsigned int *' <LValueToRValue>
+    | | | | |     `-DeclRefExpr 0x121827608 <col:7> 'unsigned int *' lvalue ParmVar 0x121827400 'rsize' 'unsigned int *'
+    | | | | `-ImplicitCastExpr 0x121827690 <col:16> 'unsigned int' <IntegralCast>
+    | | | |   `-IntegerLiteral 0x121827658 <col:16> 'int' 30
+    | | | `-BinaryOperator 0x121827760 <col:22, col:35> 'int' contains-errors '=='
+    | | |   |-ArraySubscriptExpr 0x121827720 <col:22, col:30> '<dependent type>' contains-errors lvalue
+    | | |   | |-ImplicitCastExpr 0x121827708 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   | | `-RecoveryExpr 0x1218276c8 <col:22> '<dependent type>' contains-errors lvalue
+    | | |   | `-IntegerLiteral 0x1218276e8 <col:28> 'int' 29
+    | | |   `-IntegerLiteral 0x121827740 <col:35> 'int' 5
+    | | `-BinaryOperator 0x121827838 <col:43, col:56> 'int' contains-errors '=='
+    | |   |-ArraySubscriptExpr 0x1218277f8 <col:43, col:51> '<dependent type>' contains-errors lvalue
+    | |   | |-ImplicitCastExpr 0x1218277e0 <col:43> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | | `-RecoveryExpr 0x1218277a0 <col:43> '<dependent type>' contains-errors lvalue
+    | |   | `-IntegerLiteral 0x1218277c0 <col:49> 'int' 30
+    | |   `-IntegerLiteral 0x121827818 <col:56> 'int' 9
+    | `-CompoundStmt 0x121827bf8 <col:62, line:7:2>
+    |   |-CallExpr 0x121827ab8 <line:5:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x121827aa0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1218279d0 <col:3> 'int ()' Function 0x121827918 'hid_info' 'int ()'
+    |   | |-ImplicitCastExpr 0x121827ae8 <col:12> 'struct hid_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1218279f0 <col:12> 'struct hid_device *' lvalue ParmVar 0x12180e268 'hdev' 'struct hid_device *'
+    |   | `-ImplicitCastExpr 0x121827b00 <col:18> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x121827a50 <col:18> 'char[4]' lvalue "STR"
+    |   `-BinaryOperator 0x121827bd8 <line:6:3, col:15> '<dependent type>' contains-errors '='
+    |     |-ArraySubscriptExpr 0x121827b98 <col:3, col:11> '<dependent type>' contains-errors lvalue
+    |     | |-ImplicitCastExpr 0x121827b80 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    |     | | `-RecoveryExpr 0x121827b38 <col:3> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x121827b18 <col:3> 'int *' lvalue ParmVar 0x12180e318 'rdesc' 'int *'
+    |     | `-IntegerLiteral 0x121827b60 <col:9> 'int' 30
+    |     `-IntegerLiteral 0x121827bb8 <col:15> 'int' 12
+    `-ReturnStmt 0x121827c58 <line:8:2, col:9>
+      `-RecoveryExpr 0x121827c38 <col:9> '<dependent type>' contains-errors lvalue

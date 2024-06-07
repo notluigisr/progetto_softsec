@@ -1,0 +1,25 @@
+`-FunctionDecl 0x12900a368  line:1:23 invalid binder_alloc_prepare_to_free 'struct binder_buffer *(struct binder_alloc *, int)'
+  |-ParmVarDecl 0x11f91c4e8 <col:52, col:73> col:73 used alloc 'struct binder_alloc *'
+  |-ParmVarDecl 0x11f91c580 <line:2:10, col:20> col:20 invalid user_ptr 'int'
+  `-CompoundStmt 0x12900aad8 <line:3:1, line:10:1>
+    |-DeclStmt 0x12900a510 <line:4:2, col:30>
+    | `-VarDecl 0x12900a4a8 <col:2, col:24> col:24 used buffer 'struct binder_buffer *'
+    |-CallExpr 0x12900a718 <line:6:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12900a680 <col:2> 'int ()' Function 0x12900a5c8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12900a700 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12900a6d8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12900a6a0 <col:14> 'struct binder_alloc *' lvalue ParmVar 0x11f91c4e8 'alloc' 'struct binder_alloc *'
+    |-BinaryOperator 0x12900a8d0 <line:7:2, col:62> 'struct binder_buffer *' contains-errors '='
+    | |-DeclRefExpr 0x12900a740 <col:2> 'struct binder_buffer *' lvalue Var 0x12900a4a8 'buffer' 'struct binder_buffer *'
+    | `-CallExpr 0x12900a8a0 <col:11, col:62> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12900a840 <col:11> 'int ()' Function 0x12900a788 'binder_alloc_prepare_to_free_locked' 'int ()'
+    |   |-DeclRefExpr 0x12900a860 <col:47> 'struct binder_alloc *' lvalue ParmVar 0x11f91c4e8 'alloc' 'struct binder_alloc *'
+    |   `-RecoveryExpr 0x12900a880 <col:54> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12900aa68 <line:8:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12900a9d0 <col:2> 'int ()' Function 0x12900a918 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x12900aa50 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12900aa28 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12900a9f0 <col:16> 'struct binder_alloc *' lvalue ParmVar 0x11f91c4e8 'alloc' 'struct binder_alloc *'
+    `-ReturnStmt 0x12900aac8 <line:9:2, col:9>
+      `-ImplicitCastExpr 0x12900aab0 <col:9> 'struct binder_buffer *' <LValueToRValue>
+        `-DeclRefExpr 0x12900aa90 <col:9> 'struct binder_buffer *' lvalue Var 0x12900a4a8 'buffer' 'struct binder_buffer *'

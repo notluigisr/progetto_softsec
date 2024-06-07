@@ -1,0 +1,15 @@
+`-FunctionDecl 0x124027438  line:1:13 invalid io_wq_files_match 'int (struct io_wq_work *, void *)' static
+  |-ParmVarDecl 0x12400e268 <col:31, col:50> col:50 used work 'struct io_wq_work *'
+  |-ParmVarDecl 0x12400e2e8 <col:56, col:62> col:62 used data 'void *'
+  `-CompoundStmt 0x1240277f0 <line:2:1, line:6:1>
+    |-DeclStmt 0x124027728 <line:3:2, col:35>
+    | |-RecordDecl 0x1240274f0 <col:2, col:9> col:9 struct files_struct
+    | `-VarDecl 0x124027658 <col:2, col:31> col:23 used files 'struct files_struct *' cinit
+    |   `-ImplicitCastExpr 0x1240276f8 <col:31> 'struct files_struct *' <BitCast>
+    |     `-ImplicitCastExpr 0x1240276e0 <col:31> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1240276c0 <col:31> 'void *' lvalue ParmVar 0x12400e2e8 'data' 'void *'
+    `-ReturnStmt 0x1240277e0 <line:5:2, col:24>
+      `-BinaryOperator 0x1240277c0 <col:9, col:24> 'int' contains-errors '=='
+        |-RecoveryExpr 0x124027778 <col:9, col:15> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x124027740 <col:9> 'struct io_wq_work *' lvalue ParmVar 0x12400e268 'work' 'struct io_wq_work *'
+        `-DeclRefExpr 0x1240277a0 <col:24> 'struct files_struct *' lvalue Var 0x124027658 'files' 'struct files_struct *'

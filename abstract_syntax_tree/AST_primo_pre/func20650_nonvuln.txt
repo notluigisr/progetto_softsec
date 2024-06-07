@@ -1,0 +1,22 @@
+`-FunctionDecl 0x143026600  line:1:7 fixup_red_left 'void *(struct kmem_cache *, void *)'
+  |-ParmVarDecl 0x14300e248 <col:22, col:41> col:41 used s 'struct kmem_cache *'
+  |-ParmVarDecl 0x14300e2c8 <col:44, col:50> col:50 used p 'void *'
+  `-CompoundStmt 0x143026bd8 <line:2:1, line:7:1>
+    |-IfStmt 0x143026b70 <line:3:2, line:4:11>
+    | |-BinaryOperator 0x143026aa0 <line:3:6, col:40> 'int' contains-errors '&&'
+    | | |-CallExpr 0x143026a20 <col:6, col:24> 'int'
+    | | | |-ImplicitCastExpr 0x143026a08 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x143026830 <col:6> 'int ()' Function 0x143026778 'kmem_cache_debug' 'int ()'
+    | | | `-ImplicitCastExpr 0x143026a48 <col:23> 'struct kmem_cache *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x143026850 <col:23> 'struct kmem_cache *' lvalue ParmVar 0x14300e248 's' 'struct kmem_cache *'
+    | | `-BinaryOperator 0x143026a80 <col:29, col:40> '<dependent type>' contains-errors '&'
+    | |   |-RecoveryExpr 0x143026930 <col:29, col:32> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x1430268f8 <col:29> 'struct kmem_cache *' lvalue ParmVar 0x14300e248 's' 'struct kmem_cache *'
+    | |   `-RecoveryExpr 0x143026a60 <col:40> '<dependent type>' contains-errors lvalue
+    | `-CompoundAssignOperator 0x143026b40 <line:4:3, col:11> 'void *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x143026ac0 <col:3> 'void *' lvalue ParmVar 0x14300e2c8 'p' 'void *'
+    |   `-RecoveryExpr 0x143026b18 <col:8, col:11> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x143026ae0 <col:8> 'struct kmem_cache *' lvalue ParmVar 0x14300e248 's' 'struct kmem_cache *'
+    `-ReturnStmt 0x143026bc8 <line:6:2, col:9>
+      `-ImplicitCastExpr 0x143026bb0 <col:9> 'void *' <LValueToRValue>
+        `-DeclRefExpr 0x143026b90 <col:9> 'void *' lvalue ParmVar 0x14300e2c8 'p' 'void *'

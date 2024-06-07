@@ -1,0 +1,30 @@
+`-FunctionDecl 0x1441281a8  line:1:1 fmgr_c_validator 'int (int)'
+  |-ParmVarDecl 0x1441280d8 <col:18> col:18 PG_FUNCTION_ARGS 'int'
+  `-CompoundStmt 0x1441417f8 <line:2:1, line:33:1>
+    |-DeclStmt 0x144128338 <line:4:2, col:24>
+    | `-VarDecl 0x1441282d0 <col:2, col:11> col:11 used libraryhandle 'void *'
+    |-DeclStmt 0x1441283d0 <line:8:2, col:17>
+    | `-VarDecl 0x144128368 <col:2, col:11> col:11 used prosrc 'char *'
+    |-DeclStmt 0x144128468 <line:9:2, col:17>
+    | `-VarDecl 0x144128400 <col:2, col:11> col:11 used probin 'char *'
+    |-IfStmt 0x144140dd8 <line:14:2, line:15:29>
+    | |-UnaryOperator 0x144140b78 <line:14:6, col:29> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x144140b50 <col:7, col:29> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x144140ab8 <col:7> 'int ()' Function 0x144140a00 'HeapTupleIsValid' 'int ()'
+    | |   `-RecoveryExpr 0x144140b30 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x144140da0 <line:15:3, col:29> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144140c70 <col:3> 'int ()' Function 0x144140bb8 'elog' 'int ()'
+    |   |-RecoveryExpr 0x144140d60 <col:8> '<dependent type>' contains-errors lvalue
+    |   |-StringLiteral 0x144140cf0 <col:15> 'char[4]' lvalue "STR"
+    |   `-RecoveryExpr 0x144140d80 <col:22> '<dependent type>' contains-errors lvalue
+    |-CStyleCastExpr 0x144141598 <line:28:2, col:49> 'void' <ToVoid>
+    | `-CallExpr 0x144141528 <col:9, col:49> 'int'
+    |   |-ImplicitCastExpr 0x144141510 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x144141478 <col:9> 'int ()' Function 0x1441413c0 'fetch_finfo_record' 'int ()'
+    |   |-ImplicitCastExpr 0x144141558 <col:28> 'void *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x144141498 <col:28> 'void *' lvalue Var 0x1441282d0 'libraryhandle' 'void *'
+    |   `-ImplicitCastExpr 0x144141570 <col:43> 'char *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1441414b8 <col:43> 'char *' lvalue Var 0x144128368 'prosrc' 'char *'
+    `-CallExpr 0x1441417d8 <line:32:2, col:17> 'int'
+      `-ImplicitCastExpr 0x1441417c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x1441417a0 <col:2> 'int ()' Function 0x1441416e8 'PG_RETURN_VOID' 'int ()'

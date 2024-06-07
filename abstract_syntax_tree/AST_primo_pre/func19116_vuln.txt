@@ -1,0 +1,92 @@
+`-FunctionDecl 0x13002b008  line:1:12 tipc_udp_xmit 'int (struct net *, struct sk_buff *, struct udp_bearer *, struct udp_media_addr *, struct udp_media_addr *, struct dst_cache *)' static
+  |-ParmVarDecl 0x13000e248 <col:26, col:38> col:38 used net 'struct net *'
+  |-ParmVarDecl 0x13002a828 <col:43, col:59> col:59 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13002a9f8 <line:2:5, col:24> col:24 used ub 'struct udp_bearer *'
+  |-ParmVarDecl 0x13002abc8 <col:28, col:51> col:51 used src 'struct udp_media_addr *'
+  |-ParmVarDecl 0x13002acb8 <line:3:5, col:28> col:28 used dst 'struct udp_media_addr *'
+  |-ParmVarDecl 0x13002ae88 <col:33, col:51> col:51 used cache 'struct dst_cache *'
+  `-CompoundStmt 0x13002fd78 <line:4:1, line:56:1>
+    |-DeclStmt 0x13002b528 <line:5:2, col:47>
+    | |-RecordDecl 0x13002b128 <col:2, col:9> col:9 struct dst_entry
+    | `-VarDecl 0x13002b298 <col:2, col:46> col:20 used ndst 'struct dst_entry *' cinit
+    |   `-ImplicitCastExpr 0x13002b4f8 <col:27, col:46> 'struct dst_entry *' <IntegralToPointer>
+    |     `-CallExpr 0x13002b4b8 <col:27, col:46> 'int'
+    |       |-ImplicitCastExpr 0x13002b4a0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13002b430 <col:27> 'int ()' Function 0x13002b378 'dst_cache_get' 'int ()'
+    |       `-ImplicitCastExpr 0x13002b4e0 <col:41> 'struct dst_cache *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13002b450 <col:41> 'struct dst_cache *' lvalue ParmVar 0x13002ae88 'cache' 'struct dst_cache *'
+    |-DeclStmt 0x13002b678 <line:6:2, col:18>
+    | |-VarDecl 0x13002b558 <col:2, col:6> col:6 used ttl 'int'
+    | `-VarDecl 0x13002b5d8 <col:2, col:17> col:11 used err 'int' cinit
+    |   `-IntegerLiteral 0x13002b640 <col:17> 'int' 0
+    |-IfStmt 0x13002fb30 <line:8:2, line:50:2>
+    | |-BinaryOperator 0x13002cca8 <line:8:6, col:34> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x13002b6c8 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13002b690 <col:6> 'struct udp_media_addr *' lvalue ParmVar 0x13002acb8 'dst' 'struct udp_media_addr *'
+    | | `-CallExpr 0x13002cc80 <col:20, col:34> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13002b7d0 <col:20> 'int ()' Function 0x13002b718 'htons' 'int ()'
+    | |   `-RecoveryExpr 0x13002cc60 <col:26> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13002fb08 <col:37, line:50:2>
+    |   |-DeclStmt 0x13002cfa0 <line:9:3, col:44>
+    |   | |-RecordDecl 0x13002ccc8 <col:3, col:10> col:10 struct rtable
+    |   | `-VarDecl 0x13002ce38 <col:3, col:40> col:18 used rt 'struct rtable *' cinit
+    |   |   `-CStyleCastExpr 0x13002cf60 <col:23, col:40> 'struct rtable *' <BitCast>
+    |   |     `-ImplicitCastExpr 0x13002cf48 <col:40> 'struct dst_entry *' <LValueToRValue> part_of_explicit_cast
+    |   |       `-DeclRefExpr 0x13002cea0 <col:40> 'struct dst_entry *' lvalue Var 0x13002b298 'ndst' 'struct dst_entry *'
+    |   |-IfStmt 0x13002f4b0 <line:11:3, line:24:3>
+    |   | |-UnaryOperator 0x13002cff0 <line:11:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x13002cfd8 <col:8> 'struct rtable *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13002cfb8 <col:8> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |   | `-CompoundStmt 0x13002f480 <col:12, line:24:3>
+    |   |   |-DeclStmt 0x13002d450 <line:12:4, line:17:5>
+    |   |   | |-RecordDecl 0x13002d008 <line:12:4, col:11> col:11 struct flowi4
+    |   |   | `-VarDecl 0x13002d108 <col:4, col:18> col:18 invalid fl 'struct flowi4'
+    |   |   |-BinaryOperator 0x13002d610 <line:18:4, col:37> 'struct rtable *' contains-errors '='
+    |   |   | |-DeclRefExpr 0x13002d468 <col:4> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |   |   | `-CallExpr 0x13002d5e0 <col:9, col:37> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x13002d568 <col:9> 'int ()' Function 0x13002d4b0 'ip_route_output_key' 'int ()'
+    |   |   |   |-DeclRefExpr 0x13002d588 <col:29> 'struct net *' lvalue ParmVar 0x13000e248 'net' 'struct net *'
+    |   |   |   `-UnaryOperator 0x13002d5c8 <col:34, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |     `-RecoveryExpr 0x13002d5a8 <col:35> '<dependent type>' contains-errors lvalue
+    |   |   |-IfStmt 0x13002d9e8 <line:19:4, line:22:4>
+    |   |   | |-CallExpr 0x13002d768 <line:19:8, col:17> 'int'
+    |   |   | | |-ImplicitCastExpr 0x13002d750 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | | `-DeclRefExpr 0x13002d710 <col:8> 'int ()' Function 0x13002d658 'IS_ERR' 'int ()'
+    |   |   | | `-ImplicitCastExpr 0x13002d790 <col:15> 'struct rtable *' <LValueToRValue>
+    |   |   | |   `-DeclRefExpr 0x13002d730 <col:15> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |   |   | `-CompoundStmt 0x13002d9c8 <col:20, line:22:4>
+    |   |   |   |-BinaryOperator 0x13002d940 <line:20:5, col:21> 'int' '='
+    |   |   |   | |-DeclRefExpr 0x13002d7a8 <col:5> 'int' lvalue Var 0x13002b5d8 'err' 'int'
+    |   |   |   | `-CallExpr 0x13002d900 <col:11, col:21> 'int'
+    |   |   |   |   |-ImplicitCastExpr 0x13002d8e8 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   |   | `-DeclRefExpr 0x13002d8a8 <col:11> 'int ()' Function 0x13002d7f0 'PTR_ERR' 'int ()'
+    |   |   |   |   `-ImplicitCastExpr 0x13002d928 <col:19> 'struct rtable *' <LValueToRValue>
+    |   |   |   |     `-DeclRefExpr 0x13002d8c8 <col:19> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |   |   |   `-GotoStmt 0x13002d9b0 <line:21:5, col:10> 'tx_error' 0x13002d960
+    |   |   `-CallExpr 0x13002f448 <line:23:4, col:47> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x13002dae8 <col:4> 'int ()' Function 0x13002da30 'dst_cache_set_ip4' 'int ()'
+    |   |     |-DeclRefExpr 0x13002db08 <col:22> 'struct dst_cache *' lvalue ParmVar 0x13002ae88 'cache' 'struct dst_cache *'
+    |   |     |-UnaryOperator 0x13002db88 <col:29, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     | `-RecoveryExpr 0x13002db60 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x13002db28 <col:30> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |   |     `-CXXDependentScopeMemberExpr 0x13002f400 <col:39, col:42> '<dependent type>' contains-errors lvalue .saddr
+    |   |       `-RecoveryExpr 0x13002dba0 <col:39> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x13002f690 <line:26:3, col:34> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x13002f4d0 <col:3> 'int' lvalue Var 0x13002b558 'ttl' 'int'
+    |     `-CallExpr 0x13002f668 <col:9, col:34> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13002f5d0 <col:9> 'int ()' Function 0x13002f518 'ip4_dst_hoplimit' 'int ()'
+    |       `-UnaryOperator 0x13002f650 <col:26, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x13002f628 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13002f5f0 <col:27> 'struct rtable *' lvalue Var 0x13002ce38 'rt' 'struct rtable *'
+    |-ReturnStmt 0x13002fb88 <line:51:2, col:9>
+    | `-ImplicitCastExpr 0x13002fb70 <col:9> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x13002fb50 <col:9> 'int' lvalue Var 0x13002b5d8 'err' 'int'
+    |-LabelStmt 0x13002fd10 <line:53:1, line:54:15> 'tx_error'
+    | `-CallExpr 0x13002fcd0 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x13002fcb8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13002fc78 <col:2> 'int ()' Function 0x13002fbc0 'kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x13002fcf8 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13002fc98 <col:12> 'struct sk_buff *' lvalue ParmVar 0x13002a828 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x13002fd68 <line:55:2, col:9>
+      `-ImplicitCastExpr 0x13002fd50 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13002fd30 <col:9> 'int' lvalue Var 0x13002b5d8 'err' 'int'

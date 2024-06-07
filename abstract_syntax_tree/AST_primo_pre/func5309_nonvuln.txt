@@ -1,0 +1,60 @@
+`-FunctionDecl 0x13f1283a8  line:1:12 invalid session_update_recv_stream_window_size 'int (int *, int *, int, int)' static
+  |-ParmVarDecl 0x13f128128 <col:51, col:68> col:68 invalid session 'int *'
+  |-ParmVarDecl 0x13f1281a8 <line:2:51, col:67> col:67 referenced invalid stream 'int *'
+  |-ParmVarDecl 0x13f128228 <line:3:51, col:58> col:58 invalid delta_size 'int'
+  |-ParmVarDecl 0x13f1282a8 <line:4:51, col:55> col:55 used send_window_update 'int'
+  `-CompoundStmt 0x13f1423c0 <col:75, line:29:1>
+    |-DeclStmt 0x13f1284f0 <line:5:3, col:9>
+    | `-VarDecl 0x13f128488 <col:3, col:7> col:7 used rv 'int'
+    |-BinaryOperator 0x13f1287e0 <line:6:3, line:7:57> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13f128508 <line:6:3> 'int' lvalue Var 0x13f128488 'rv' 'int'
+    | `-CallExpr 0x13f1287a8 <col:8, line:7:57> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13f128680 <line:6:8> 'int ()' Function 0x13f1285c8 'adjust_recv_window_size' 'int ()'
+    |   |-UnaryOperator 0x13f128708 <col:32, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x13f1286c0 <col:33, col:41> '<dependent type>' contains-errors lvalue ->recv_window_size
+    |   |   `-RecoveryExpr 0x13f1286a0 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x13f128720 <col:59> '<dependent type>' contains-errors lvalue
+    |   `-CXXDependentScopeMemberExpr 0x13f128760 <line:7:32, col:40> '<dependent type>' contains-errors lvalue ->local_window_size
+    |     `-RecoveryExpr 0x13f128740 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13f141ad0 <line:8:3, line:11:3>
+    | |-BinaryOperator 0x13f141858 <line:8:7, col:13> 'int' '!='
+    | | |-ImplicitCastExpr 0x13f141840 <col:7> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13f141800 <col:7> 'int' lvalue Var 0x13f128488 'rv' 'int'
+    | | `-IntegerLiteral 0x13f141820 <col:13> 'int' 0
+    | `-CompoundStmt 0x13f141ab8 <col:16, line:11:3>
+    |   `-ReturnStmt 0x13f141aa8 <line:9:5, line:10:69>
+    |     `-CallExpr 0x13f141a70 <line:9:12, line:10:69> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13f141958 <line:9:12> 'int ()' Function 0x13f1418a0 'nghttp2_session_add_rst_stream' 'int ()'
+    |       |-RecoveryExpr 0x13f141978 <col:43> '<dependent type>' contains-errors lvalue
+    |       |-CXXDependentScopeMemberExpr 0x13f1419b8 <col:52, col:60> '<dependent type>' contains-errors lvalue ->stream_id
+    |       | `-RecoveryExpr 0x13f141998 <col:52> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x13f141a50 <line:10:43> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13f142370 <line:14:3, line:27:3>
+    | |-RecoveryExpr 0x13f141e58 <line:14:7, line:18:65> '_Bool' contains-errors
+    | `-CompoundStmt 0x13f142348 <col:68, line:27:3>
+    |   |-BinaryOperator 0x13f142160 <line:19:5, line:21:68> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13f141e78 <line:19:5> 'int' lvalue Var 0x13f128488 'rv' 'int'
+    |   | `-CallExpr 0x13f142120 <col:10, line:21:68> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13f141f78 <line:19:10> 'int ()' Function 0x13f141ec0 'nghttp2_session_add_window_update' 'int ()'
+    |   |   |-RecoveryExpr 0x13f141f98 <col:44> '<dependent type>' contains-errors lvalue
+    |   |   |-RecoveryExpr 0x13f142100 <col:53> '<dependent type>' contains-errors lvalue
+    |   |   |-CXXDependentScopeMemberExpr 0x13f141ff0 <line:20:44, col:52> '<dependent type>' contains-errors lvalue ->stream_id
+    |   |   | `-RecoveryExpr 0x13f141fd0 <col:44> '<dependent type>' contains-errors lvalue
+    |   |   `-CXXDependentScopeMemberExpr 0x13f142058 <line:21:44, col:52> '<dependent type>' contains-errors lvalue ->recv_window_size
+    |   |     `-RecoveryExpr 0x13f142038 <col:44> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x13f142258 <line:22:5, line:24:5>
+    |   | |-BinaryOperator 0x13f1421d8 <line:22:9, col:15> 'int' '!='
+    |   | | |-ImplicitCastExpr 0x13f1421c0 <col:9> 'int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x13f142180 <col:9> 'int' lvalue Var 0x13f128488 'rv' 'int'
+    |   | | `-IntegerLiteral 0x13f1421a0 <col:15> 'int' 0
+    |   | `-CompoundStmt 0x13f142240 <col:18, line:24:5>
+    |   |   `-ReturnStmt 0x13f142230 <line:23:7, col:14>
+    |   |     `-ImplicitCastExpr 0x13f142218 <col:14> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x13f1421f8 <col:14> 'int' lvalue Var 0x13f128488 'rv' 'int'
+    |   `-BinaryOperator 0x13f142328 <line:26:5, col:32> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x13f1422c0 <col:5, col:13> '<dependent type>' contains-errors lvalue ->recv_window_size
+    |     | `-RecoveryExpr 0x13f142298 <col:5> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x13f142278 <col:5> 'int *' lvalue ParmVar 0x13f1281a8 'stream' 'int *'
+    |     `-IntegerLiteral 0x13f142308 <col:32> 'int' 0
+    `-ReturnStmt 0x13f1423b0 <line:28:3, col:10>
+      `-IntegerLiteral 0x13f142390 <col:10> 'int' 0

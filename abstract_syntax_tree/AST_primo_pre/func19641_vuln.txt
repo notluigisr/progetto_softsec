@@ -1,0 +1,50 @@
+`-FunctionDecl 0x1278268b8  line:1:1 show_signal_msg 'int (struct pt_regs *, unsigned long, unsigned long, struct task_struct *)'
+  |-ParmVarDecl 0x12780e248 <col:17, col:33> col:33 used regs 'struct pt_regs *'
+  |-ParmVarDecl 0x12780e2c8 <col:39, col:53> col:53 used error_code 'unsigned long'
+  |-ParmVarDecl 0x12780e348 <line:2:3, col:17> col:17 used address 'unsigned long'
+  |-ParmVarDecl 0x127826768 <col:26, col:46> col:46 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x138810ce8 <line:3:1, line:21:1>
+    |-DeclStmt 0x127826e38 <line:4:2, col:68>
+    | `-VarDecl 0x1278269e0 <col:2, col:58> col:14 used loglvl 'const char *' cinit
+    |   `-ConditionalOperator 0x127826e08 <col:23, col:58> '<dependent type>' contains-errors
+    |     |-BinaryOperator 0x127826da8 <col:23, col:42> 'int' '>'
+    |     | |-CallExpr 0x127826d68 <col:23, col:38> 'int'
+    |     | | |-ImplicitCastExpr 0x127826d50 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x127826b70 <col:23> 'int ()' Function 0x127826ab8 'task_pid_nr' 'int ()'
+    |     | | `-ImplicitCastExpr 0x127826d90 <col:35> 'struct task_struct *' <LValueToRValue>
+    |     | |   `-DeclRefExpr 0x127826b90 <col:35> 'struct task_struct *' lvalue ParmVar 0x127826768 'tsk' 'struct task_struct *'
+    |     | `-IntegerLiteral 0x127826c38 <col:42> 'int' 1
+    |     |-RecoveryExpr 0x127826dc8 <col:46> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x127826de8 <col:58> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x127827048 <line:6:2, line:7:3>
+    | |-UnaryOperator 0x127827020 <line:6:6, col:36> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x127826ff0 <col:7, col:36> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x127826f30 <col:7> 'int ()' Function 0x127826e78 'unhandled_signal' 'int ()'
+    | |   |-DeclRefExpr 0x127826f50 <col:24> 'struct task_struct *' lvalue ParmVar 0x127826768 'tsk' 'struct task_struct *'
+    | |   `-RecoveryExpr 0x127826fd0 <col:29> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x127827038 <line:7:3>
+    |-IfStmt 0x1278271c8 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x1278271a0 <line:9:6, col:24> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x127827180 <col:7, col:24> 'int'
+    | |   `-ImplicitCastExpr 0x127827168 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x127827148 <col:7> 'int ()' Function 0x127827090 'printk_ratelimit' 'int ()'
+    | `-ReturnStmt 0x1278271b8 <line:10:3>
+    `-CallExpr 0x138810a00 <line:12:2, line:14:49> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1278272c8 <line:12:2> 'int ()' Function 0x127827210 'printk' 'int ()'
+      |-StringLiteral 0x127827330 <col:9> 'char[4]' lvalue "STR"
+      |-DeclRefExpr 0x127827350 <line:13:3> 'const char *' contains-errors lvalue Var 0x1278269e0 'loglvl' 'const char *'
+      |-RecoveryExpr 0x1278273a8 <col:11, col:16> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x127827370 <col:11> 'struct task_struct *' lvalue ParmVar 0x127826768 'tsk' 'struct task_struct *'
+      |-CallExpr 0x127827428 <col:22, col:37> 'int'
+      | |-ImplicitCastExpr 0x127827410 <col:22> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x1278273d0 <col:22> 'int ()' Function 0x127826ab8 'task_pid_nr' 'int ()'
+      | `-ImplicitCastExpr 0x127827450 <col:34> 'struct task_struct *' <LValueToRValue>
+      |   `-DeclRefExpr 0x1278273f0 <col:34> 'struct task_struct *' lvalue ParmVar 0x127826768 'tsk' 'struct task_struct *'
+      |-DeclRefExpr 0x127827468 <col:40> 'unsigned long' lvalue ParmVar 0x12780e348 'address' 'unsigned long'
+      |-CStyleCastExpr 0x127827500 <line:14:3, col:17> 'void *' contains-errors <Dependent>
+      | `-RecoveryExpr 0x1278274c0 <col:11, col:17> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x127827488 <col:11> 'struct pt_regs *' lvalue ParmVar 0x12780e248 'regs' 'struct pt_regs *'
+      |-CStyleCastExpr 0x1278275a0 <col:21, col:35> 'void *' contains-errors <Dependent>
+      | `-RecoveryExpr 0x127827560 <col:29, col:35> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x127827528 <col:29> 'struct pt_regs *' lvalue ParmVar 0x12780e248 'regs' 'struct pt_regs *'
+      `-DeclRefExpr 0x1278275c8 <col:39> 'unsigned long' lvalue ParmVar 0x12780e2c8 'error_code' 'unsigned long'

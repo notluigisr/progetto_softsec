@@ -1,0 +1,105 @@
+`-FunctionDecl 0x157140a00  line:1:13 nfs4_open_prepare 'void (struct rpc_task *, void *)' static
+  |-ParmVarDecl 0x157128648 <col:31, col:48> col:48 used task 'struct rpc_task *'
+  |-ParmVarDecl 0x1571286c8 <col:54, col:60> col:60 used calldata 'void *'
+  `-CompoundStmt 0x157144ca8 <line:2:1, line:36:1>
+    |-DeclStmt 0x157140d38 <line:3:2, col:39>
+    | |-RecordDecl 0x157140b00 <col:2, col:9> col:9 struct nfs4_opendata
+    | `-VarDecl 0x157140c68 <col:2, col:31> col:24 used data 'struct nfs4_opendata *' cinit
+    |   `-ImplicitCastExpr 0x157140d08 <col:31> 'struct nfs4_opendata *' <BitCast>
+    |     `-ImplicitCastExpr 0x157140cf0 <col:31> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x157140cd0 <col:31> 'void *' lvalue ParmVar 0x1571286c8 'calldata' 'void *'
+    |-DeclStmt 0x157140f98 <line:4:2, col:43>
+    | |-RecordDecl 0x157140d50 <col:2, col:9> col:9 struct nfs4_state_owner
+    | `-VarDecl 0x157140eb8 <col:2, col:38> col:27 used sp 'struct nfs4_state_owner *' cinit
+    |   `-RecoveryExpr 0x157140f58 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157140f20 <col:32> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    |-IfStmt 0x157141248 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x157141218 <line:6:6, col:55> 'int' contains-errors '!='
+    | | |-CallExpr 0x1571411c8 <col:6, col:50> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1571410e0 <col:6> 'int ()' Function 0x157141028 'nfs_wait_on_sequence' 'int ()'
+    | | | |-CXXDependentScopeMemberExpr 0x157141160 <col:27, col:39> '<dependent type>' contains-errors lvalue .seqid
+    | | | | `-RecoveryExpr 0x157141138 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x157141100 <col:27> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    | | | `-DeclRefExpr 0x1571411a8 <col:46> 'struct rpc_task *' lvalue ParmVar 0x157128648 'task' 'struct rpc_task *'
+    | | `-IntegerLiteral 0x1571411f8 <col:55> 'int' 0
+    | `-ReturnStmt 0x157141238 <line:7:3>
+    |-IfStmt 0x1571442f0 <line:9:2, line:22:2>
+    | |-BinaryOperator 0x157141320 <line:9:6, col:21> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x1571412a0 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x157141268 <col:6> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    | | `-RecoveryExpr 0x157141300 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1571442b0 <col:27, line:22:2>
+    |   |-DeclStmt 0x157141528 <line:10:3, col:36>
+    |   | |-RecordDecl 0x157141340 <col:3, col:10> col:10 struct nfs_delegation
+    |   | `-VarDecl 0x1571414a8 <col:3, col:26> col:26 used delegation 'struct nfs_delegation *'
+    |   |-IfStmt 0x157141858 <line:12:3, line:13:9>
+    |   | |-RecoveryExpr 0x1571417d0 <line:12:7, col:92> '_Bool' contains-errors
+    |   | `-GotoStmt 0x157141840 <line:13:4, col:9> 'out_no_action' 0x1571417f0
+    |   |-CallExpr 0x1571419c8 <line:14:3, col:17> 'int'
+    |   | `-ImplicitCastExpr 0x1571419b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x157141958 <col:3> 'int ()' Function 0x1571418a0 'rcu_read_lock' 'int ()'
+    |   |-BinaryOperator 0x157143d60 <line:15:3, col:69> 'struct nfs_delegation *' contains-errors '='
+    |   | |-DeclRefExpr 0x157143a00 <col:3> 'struct nfs_delegation *' lvalue Var 0x1571414a8 'delegation' 'struct nfs_delegation *'
+    |   | `-CallExpr 0x157143d38 <col:16, col:69> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x157143b00 <col:16> 'int ()' Function 0x157143a48 'rcu_dereference' 'int ()'
+    |   |   `-CXXDependentScopeMemberExpr 0x157143cf0 <col:32, col:59> '<dependent type>' contains-errors lvalue ->delegation
+    |   |     `-CallExpr 0x157143cc8 <col:32, col:56> '<dependent type>' contains-errors
+    |   |       |-DeclRefExpr 0x157143c00 <col:32> 'int ()' Function 0x157143b48 'NFS_I' 'int ()'
+    |   |       `-CXXDependentScopeMemberExpr 0x157143c80 <col:38, col:51> '<dependent type>' contains-errors lvalue ->inode
+    |   |         `-RecoveryExpr 0x157143c58 <col:38, col:44> '<dependent type>' contains-errors lvalue
+    |   |           `-DeclRefExpr 0x157143c20 <col:38> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    |   |-IfStmt 0x157144238 <line:16:3, line:20:3>
+    |   | |-BinaryOperator 0x1571440a8 <line:16:7, line:17:68> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x157144018 <line:16:7, col:21> 'int' contains-errors '!='
+    |   | | | |-DeclRefExpr 0x157143d80 <col:7> 'struct nfs_delegation *' lvalue Var 0x1571414a8 'delegation' 'struct nfs_delegation *'
+    |   | | | `-RecoveryExpr 0x157143ff8 <col:21> '<dependent type>' contains-errors lvalue
+    |   | | `-BinaryOperator 0x157144088 <line:17:7, col:68> 'int' contains-errors '=='
+    |   | |   |-CallExpr 0x157144058 <col:7, col:63> '<dependent type>' contains-errors
+    |   | |   | |-DeclRefExpr 0x157143eb8 <col:7> 'int ()' Function 0x157143e00 'test_bit' 'int ()'
+    |   | |   | |-RecoveryExpr 0x157144038 <col:16> '<dependent type>' contains-errors lvalue
+    |   | |   | `-UnaryOperator 0x157143f50 <col:45, col:58> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   |   `-RecoveryExpr 0x157143f28 <col:46, col:58> '<dependent type>' contains-errors lvalue
+    |   | |   |     `-DeclRefExpr 0x157143ef0 <col:46> 'struct nfs_delegation *' lvalue Var 0x1571414a8 'delegation' 'struct nfs_delegation *'
+    |   | |   `-IntegerLiteral 0x157143f98 <col:68> 'int' 0
+    |   | `-CompoundStmt 0x157144218 <col:71, line:20:3>
+    |   |   |-CallExpr 0x1571441e0 <line:18:4, col:20> 'int'
+    |   |   | `-ImplicitCastExpr 0x1571441c8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   |   `-DeclRefExpr 0x1571441a8 <col:4> 'int ()' Function 0x1571440f0 'rcu_read_unlock' 'int ()'
+    |   |   `-GotoStmt 0x157144200 <line:19:4, col:9> 'out_no_action' 0x1571417f0
+    |   `-CallExpr 0x157144290 <line:21:3, col:19> 'int'
+    |     `-ImplicitCastExpr 0x157144278 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x157144258 <col:3> 'int ()' Function 0x1571440f0 'rcu_read_unlock' 'int ()'
+    |-BinaryOperator 0x157144460 <line:24:2, col:35> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x157144370 <col:2, col:14> '<dependent type>' contains-errors lvalue .id
+    | | `-RecoveryExpr 0x157144348 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x157144310 <col:2> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    | `-CXXDependentScopeMemberExpr 0x157144418 <col:19, col:35> '<dependent type>' contains-errors lvalue .id
+    |   `-RecoveryExpr 0x1571443f0 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1571443b8 <col:19> 'struct nfs4_state_owner *' contains-errors lvalue Var 0x157140eb8 'sp' 'struct nfs4_state_owner *'
+    |-BinaryOperator 0x1571445d0 <line:25:2, col:40> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1571444e0 <col:2, col:14> '<dependent type>' contains-errors lvalue .clientid
+    | | `-RecoveryExpr 0x1571444b8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x157144480 <col:2> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    | `-CXXDependentScopeMemberExpr 0x157144588 <col:25, col:40> '<dependent type>' contains-errors lvalue ->cl_clientid
+    |   `-RecoveryExpr 0x157144560 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157144528 <col:25> 'struct nfs4_state_owner *' contains-errors lvalue Var 0x157140eb8 'sp' 'struct nfs4_state_owner *'
+    |-IfStmt 0x157144a18 <line:26:2, line:29:2>
+    | |-RecoveryExpr 0x157144698 <line:26:6, col:27> '_Bool' contains-errors
+    | `-CompoundStmt 0x157144a00 <col:53, line:29:2>
+    |   `-CallExpr 0x1571449c8 <line:28:3, col:46> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x157144840 <col:3> 'int ()' Function 0x157144788 'nfs_copy_fh' 'int ()'
+    |     |-UnaryOperator 0x157144908 <col:15, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-CXXDependentScopeMemberExpr 0x1571448c0 <col:16, col:28> '<dependent type>' contains-errors lvalue .fh
+    |     |   `-RecoveryExpr 0x157144898 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x157144860 <col:16> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    |     `-CXXDependentScopeMemberExpr 0x157144980 <col:32, col:44> '<dependent type>' contains-errors lvalue .fh
+    |       `-RecoveryExpr 0x157144958 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x157144920 <col:32> 'struct nfs4_opendata *' lvalue Var 0x157140c68 'data' 'struct nfs4_opendata *'
+    |-CallExpr 0x157144bd0 <line:31:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x157144bb8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x157144b78 <col:2> 'int ()' Function 0x157144ac0 'rpc_call_start' 'int ()'
+    | `-ImplicitCastExpr 0x157144bf8 <col:17> 'struct rpc_task *' <LValueToRValue>
+    |   `-DeclRefExpr 0x157144b98 <col:17> 'struct rpc_task *' lvalue ParmVar 0x157128648 'task' 'struct rpc_task *'
+    |-ReturnStmt 0x157144c10 <line:32:2>
+    `-LabelStmt 0x157144c88 <line:33:1, col:14> 'out_no_action'
+      `-NullStmt 0x157144c80 <col:14>

@@ -1,0 +1,129 @@
+`-FunctionDecl 0x12a808378  line:1:20 invalid tun_net_xmit 'int (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x12980e268 <col:33, col:49> col:49 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x12a808258 <col:54, col:73> col:73 used dev 'struct net_device *'
+  `-CompoundStmt 0x12b009468 <line:2:1, line:71:1>
+    |-DeclStmt 0x12a808858 <line:3:2, col:43>
+    | |-RecordDecl 0x12a808430 <col:2, col:9> col:9 struct tun_struct
+    | `-VarDecl 0x12a808598 <col:2, col:42> col:21 used tun 'struct tun_struct *' cinit
+    |   `-ImplicitCastExpr 0x12a808828 <col:27, col:42> 'struct tun_struct *' <IntegralToPointer>
+    |     `-CallExpr 0x12a8087e8 <col:27, col:42> 'int'
+    |       |-ImplicitCastExpr 0x12a8087d0 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12a808760 <col:27> 'int ()' Function 0x12a8086a8 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x12a808810 <col:39> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12a808780 <col:39> 'struct net_device *' lvalue ParmVar 0x12a808258 'dev' 'struct net_device *'
+    |-DeclStmt 0x12a808950 <line:4:2, col:30>
+    | `-VarDecl 0x12a808888 <col:2, col:17> col:6 used txq 'int' cinit
+    |   `-RecoveryExpr 0x12a808928 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12a8088f0 <col:12> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x12a808b58 <line:5:2, col:24>
+    | |-RecordDecl 0x12a808968 <col:2, col:9> col:9 struct tun_file
+    | `-VarDecl 0x12a808ad8 <col:2, col:19> col:19 used tfile 'struct tun_file *'
+    |-CallExpr 0x12a808c88 <line:8:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x12a808c70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12a808c50 <col:2> 'int ()' Function 0x12a808b98 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x12a808ec0 <line:9:2, col:42> 'struct tun_file *' contains-errors '='
+    | |-DeclRefExpr 0x12a808ca8 <col:2> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    | `-CallExpr 0x12a808e98 <col:10, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a808da8 <col:10> 'int ()' Function 0x12a808cf0 'rcu_dereference' 'int ()'
+    |   `-ArraySubscriptExpr 0x12a808e78 <col:26, col:41> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x12a808e48 <col:26, col:31> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x12a808e00 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x12a808dc8 <col:26> 'struct tun_struct *' lvalue Var 0x12a808598 'tun' 'struct tun_struct *'
+    |     `-ImplicitCastExpr 0x12a808e60 <col:38> 'int' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x12a808e28 <col:38> 'int' contains-errors lvalue Var 0x12a808888 'txq' 'int'
+    |-IfStmt 0x12a809168 <line:13:2, line:14:8>
+    | |-BinaryOperator 0x12a8090e0 <line:13:6, col:13> 'int' contains-errors '>='
+    | | |-DeclRefExpr 0x12a809068 <col:6> 'int' contains-errors lvalue Var 0x12a808888 'txq' 'int'
+    | | `-RecoveryExpr 0x12a8090c0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x12a809150 <line:14:3, col:8> 'drop' 0x12a809100
+    |-CallExpr 0x129122e30 <line:32:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129122cb8 <col:2> 'int ()' Function 0x129122c00 'tun_debug' 'int ()'
+    | |-RecoveryExpr 0x129122e10 <col:12> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x129122cf0 <col:23> 'struct tun_struct *' lvalue Var 0x12a808598 'tun' 'struct tun_struct *'
+    | |-StringLiteral 0x129122d50 <col:28> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x129122da8 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x129122d70 <col:35> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-CallExpr 0x129122fd8 <line:34:2, col:15> 'int'
+    | |-ImplicitCastExpr 0x129122fc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129122f50 <col:2> 'int ()' Function 0x129122e98 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x129122fa8 <col:9, col:10> 'int' prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x129122f90 <col:10> 'struct tun_file *' <LValueToRValue>
+    |     `-DeclRefExpr 0x129122f70 <col:10> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    |-IfStmt 0x1291231f8 <line:37:2, line:38:8>
+    | |-UnaryOperator 0x1291231c8 <line:37:6, col:36> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x129123198 <col:7, col:36> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1291230e0 <col:7> 'int ()' Function 0x129123028 'check_filter' 'int ()'
+    | |   |-UnaryOperator 0x129123160 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-RecoveryExpr 0x129123138 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x129123100 <col:21> 'struct tun_struct *' lvalue Var 0x12a808598 'tun' 'struct tun_struct *'
+    | |   `-DeclRefExpr 0x129123178 <col:33> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x1291231e0 <line:38:3, col:8> 'drop' 0x12a809100
+    |-IfStmt 0x129123538 <line:40:2, line:42:8>
+    | |-BinaryOperator 0x129123500 <line:40:6, line:41:37> 'int' contains-errors '&&'
+    | | |-CXXDependentScopeMemberExpr 0x1291232c0 <line:40:6, col:24> '<dependent type>' contains-errors lvalue ->sk_filter
+    | | | `-CXXDependentScopeMemberExpr 0x129123278 <col:6, col:20> '<dependent type>' contains-errors lvalue .sk
+    | | |   `-RecoveryExpr 0x129123250 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x129123218 <col:6> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    | | `-CallExpr 0x1291234d0 <line:41:6, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1291233e8 <col:6> 'int ()' Function 0x129123330 'sk_filter' 'int ()'
+    | |   |-CXXDependentScopeMemberExpr 0x129123468 <col:16, col:30> '<dependent type>' contains-errors lvalue .sk
+    | |   | `-RecoveryExpr 0x129123440 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x129123408 <col:16> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    | |   `-DeclRefExpr 0x1291234b0 <col:34> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x129123520 <line:42:3, col:8> 'drop' 0x12a809100
+    |-IfStmt 0x1291237b0 <line:44:2, line:45:8>
+    | |-RecoveryExpr 0x129123778 <line:44:6, col:51> '_Bool' contains-errors
+    | `-GotoStmt 0x129123798 <line:45:3, col:8> 'drop' 0x12a809100
+    |-CallExpr 0x129123908 <line:47:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x1291238f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1291238b0 <col:2> 'int ()' Function 0x1291237f8 'skb_tx_timestamp' 'int ()'
+    | `-ImplicitCastExpr 0x129123930 <col:19> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1291238d0 <col:19> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-CallExpr 0x129123a80 <line:50:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x129123a68 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129123a28 <col:2> 'int ()' Function 0x129123970 'skb_orphan' 'int ()'
+    | `-ImplicitCastExpr 0x129123aa8 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x129123a48 <col:13> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-CallExpr 0x12b008800 <line:52:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x129123be0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129123ba0 <col:2> 'int ()' Function 0x129123ae8 'nf_reset' 'int ()'
+    | `-ImplicitCastExpr 0x12b008828 <col:11> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x129123bc0 <col:11> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-IfStmt 0x12b008a20 <line:54:2, line:55:8>
+    | |-CallExpr 0x12b0089d8 <line:54:6, col:45> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12b008920 <col:6> 'int ()' Function 0x12b008868 'skb_array_produce' 'int ()'
+    | | |-UnaryOperator 0x12b0089a0 <col:24, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-RecoveryExpr 0x12b008978 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x12b008940 <col:25> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    | | `-DeclRefExpr 0x12b0089b8 <col:42> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x12b008a08 <line:55:3, col:8> 'drop' 0x12a809100
+    |-CallExpr 0x12b008dd0 <line:60:2, col:50> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x12b008ce0 <col:2, col:20> '<dependent type>' contains-errors lvalue ->sk_data_ready
+    | | `-CXXDependentScopeMemberExpr 0x12b008c98 <col:2, col:16> '<dependent type>' contains-errors lvalue .sk
+    | |   `-RecoveryExpr 0x12b008c70 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12b008c38 <col:2> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    | `-CXXDependentScopeMemberExpr 0x12b008d88 <col:34, col:48> '<dependent type>' contains-errors lvalue .sk
+    |   `-RecoveryExpr 0x12b008d60 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12b008d28 <col:34> 'struct tun_file *' lvalue Var 0x12a808ad8 'tfile' 'struct tun_file *'
+    |-CallExpr 0x12b008f10 <line:62:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x12b008ef8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12b008ed8 <col:2> 'int ()' Function 0x12b008e20 'rcu_read_unlock' 'int ()'
+    |-LabelStmt 0x12b009100 <line:65:1, line:66:42> 'drop'
+    | `-CallExpr 0x12b0090d8 <col:2, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b009010 <col:2> 'int ()' Function 0x12b008f58 'this_cpu_inc' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x12b009090 <col:15, col:32> '<dependent type>' contains-errors lvalue ->tx_dropped
+    |     `-RecoveryExpr 0x12b009068 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12b009030 <col:15> 'struct tun_struct *' lvalue Var 0x12a808598 'tun' 'struct tun_struct *'
+    |-CallExpr 0x12b009258 <line:67:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x12b009240 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12b009200 <col:2> 'int ()' Function 0x12b009148 'skb_tx_error' 'int ()'
+    | `-ImplicitCastExpr 0x12b009280 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12b009220 <col:15> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    |-CallExpr 0x12b0093d0 <line:68:2, col:15> 'int'
+    | |-ImplicitCastExpr 0x12b0093b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12b009378 <col:2> 'int ()' Function 0x12b0092c0 'kfree_skb' 'int ()'
+    | `-ImplicitCastExpr 0x12b0093f8 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12b009398 <col:12> 'struct sk_buff *' lvalue ParmVar 0x12980e268 'skb' 'struct sk_buff *'
+    `-CallExpr 0x12b009448 <line:69:2, col:18> 'int'
+      `-ImplicitCastExpr 0x12b009430 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x12b009410 <col:2> 'int ()' Function 0x12b008e20 'rcu_read_unlock' 'int ()'

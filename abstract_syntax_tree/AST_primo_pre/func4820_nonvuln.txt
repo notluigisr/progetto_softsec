@@ -1,0 +1,42 @@
+`-FunctionDecl 0x11d940a00  line:1:13 svm_vcpu_load 'void (struct kvm_vcpu *, int)' static
+  |-ParmVarDecl 0x11d928648 <col:27, col:44> col:44 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x11d9286c8 <col:50, col:54> col:54 used cpu 'int'
+  `-CompoundStmt 0x11d9417b8 <line:2:1, line:11:1>
+    |-DeclStmt 0x11d940ef8 <line:3:2, col:37>
+    | |-RecordDecl 0x11d940b00 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x11d940c68 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x11d940ec8 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x11d940e88 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x11d940e70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x11d940e00 <col:25> 'int ()' Function 0x11d940d48 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x11d940eb0 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x11d940e20 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x11d928648 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x11d9412b0 <line:4:2, col:50>
+    | |-RecordDecl 0x11d940f10 <col:2, col:9> col:9 struct svm_cpu_data
+    | `-VarDecl 0x11d941078 <col:2, col:49> col:23 used sd 'struct svm_cpu_data *' cinit
+    |   `-CallExpr 0x11d941268 <col:28, col:49> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d9411c0 <col:28> 'int ()' Function 0x11d941108 'per_cpu' 'int ()'
+    |     |-RecoveryExpr 0x11d941248 <col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11d9411f8 <col:46> 'int' lvalue ParmVar 0x11d9286c8 'cpu' 'int'
+    |-IfStmt 0x11d9415e0 <line:6:2, line:9:2>
+    | |-BinaryOperator 0x11d941388 <line:6:6, col:31> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x11d941300 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x11d9412c8 <col:6> 'struct svm_cpu_data *' contains-errors lvalue Var 0x11d941078 'sd' 'struct svm_cpu_data *'
+    | | `-RecoveryExpr 0x11d941360 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d941328 <col:26> 'struct vcpu_svm *' lvalue Var 0x11d940c68 'svm' 'struct vcpu_svm *'
+    | `-CompoundStmt 0x11d9415c0 <col:37, line:9:2>
+    |   |-BinaryOperator 0x11d941468 <line:7:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x11d9413e0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11d9413a8 <col:3> 'struct svm_cpu_data *' contains-errors lvalue Var 0x11d941078 'sd' 'struct svm_cpu_data *'
+    |   | `-RecoveryExpr 0x11d941440 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11d941408 <col:22> 'struct vcpu_svm *' lvalue Var 0x11d940c68 'svm' 'struct vcpu_svm *'
+    |   `-CallExpr 0x11d9415a0 <line:8:3, col:38> 'int'
+    |     `-ImplicitCastExpr 0x11d941588 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x11d941568 <col:3> 'int ()' Function 0x11d9414b0 'indirect_branch_prediction_barrier' 'int ()'
+    `-CallExpr 0x11d941758 <line:10:2, col:26> 'int'
+      |-ImplicitCastExpr 0x11d941740 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x11d9416e0 <col:2> 'int ()' Function 0x11d941628 'avic_vcpu_load' 'int ()'
+      |-ImplicitCastExpr 0x11d941788 <col:17> 'struct kvm_vcpu *' <LValueToRValue>
+      | `-DeclRefExpr 0x11d941700 <col:17> 'struct kvm_vcpu *' lvalue ParmVar 0x11d928648 'vcpu' 'struct kvm_vcpu *'
+      `-ImplicitCastExpr 0x11d9417a0 <col:23> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x11d941720 <col:23> 'int' lvalue ParmVar 0x11d9286c8 'cpu' 'int'

@@ -1,0 +1,27 @@
+`-FunctionDecl 0x11f912d48  line:1:12 kvm_vcpu_ioctl_x86_set_xsave 'int (struct kvm_vcpu *, struct kvm_xsave *)' static
+  |-ParmVarDecl 0x11f8fa848 <col:41, col:58> col:58 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x11f912c28 <line:2:6, col:24> col:24 used guest_xsave 'struct kvm_xsave *'
+  `-CompoundStmt 0x11f913470 <line:3:1, line:10:1>
+    |-IfStmt 0x11f9130a8 <line:4:2, line:5:10>
+    | |-CallExpr 0x11f913050 <line:4:6, col:51> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x11f912f70 <col:6> 'int ()' Function 0x11f912eb8 'fpstate_is_confidential' 'int ()'
+    | | `-UnaryOperator 0x11f913038 <col:30, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-CXXDependentScopeMemberExpr 0x11f912ff0 <col:31, col:42> '<dependent type>' contains-errors lvalue .guest_fpu
+    | |     `-RecoveryExpr 0x11f912fc8 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x11f912f90 <col:31> 'struct kvm_vcpu *' lvalue ParmVar 0x11f8fa848 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x11f913098 <line:5:3, col:10>
+    |   `-IntegerLiteral 0x11f913078 <col:10> 'int' 0
+    `-ReturnStmt 0x11f913460 <line:7:2, line:9:44>
+      `-CallExpr 0x11f913420 <line:7:9, line:9:44> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x11f9131a8 <line:7:9> 'int ()' Function 0x11f9130f0 'fpu_copy_uabi_to_guest_fpstate' 'int ()'
+        |-UnaryOperator 0x11f913270 <col:40, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-CXXDependentScopeMemberExpr 0x11f913228 <col:41, col:52> '<dependent type>' contains-errors lvalue .guest_fpu
+        |   `-RecoveryExpr 0x11f913200 <col:41, col:47> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x11f9131c8 <col:41> 'struct kvm_vcpu *' lvalue ParmVar 0x11f8fa848 'vcpu' 'struct kvm_vcpu *'
+        |-RecoveryExpr 0x11f9132c0 <line:8:12, col:25> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x11f913288 <col:12> 'struct kvm_xsave *' lvalue ParmVar 0x11f912c28 'guest_xsave' 'struct kvm_xsave *'
+        |-RecoveryExpr 0x11f913400 <line:9:12> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x11f9133a8 <col:28, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x11f913360 <col:29, col:40> '<dependent type>' contains-errors lvalue .pkru
+            `-RecoveryExpr 0x11f913338 <col:29, col:35> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x11f913300 <col:29> 'struct kvm_vcpu *' lvalue ParmVar 0x11f8fa848 'vcpu' 'struct kvm_vcpu *'

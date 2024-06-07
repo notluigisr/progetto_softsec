@@ -1,0 +1,93 @@
+`-FunctionDecl 0x14b80dec8  line:1:12 referenced ep_loop_check_proc 'int (void *, void *, int)' static
+  |-ParmVarDecl 0x14b80dcd8 <col:31, col:37> col:37 used priv 'void *'
+  |-ParmVarDecl 0x14b80dd58 <col:43, col:49> col:49 cookie 'void *'
+  |-ParmVarDecl 0x14b80ddd8 <col:57, col:61> col:61 used call_nests 'int'
+  `-CompoundStmt 0x14b82de38 <line:2:1, line:23:1>
+    |-DeclStmt 0x14b80e070 <line:3:2, col:15>
+    | `-VarDecl 0x14b80dfe8 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x14b80e050 <col:14> 'int' 0
+    |-DeclStmt 0x14b80e2c8 <line:4:2, col:26>
+    | |-RecordDecl 0x14b80e088 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x14b80e1f8 <col:2, col:22> col:15 used file 'struct file *' cinit
+    |   `-ImplicitCastExpr 0x14b80e298 <col:22> 'struct file *' <BitCast>
+    |     `-ImplicitCastExpr 0x14b80e280 <col:22> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14b80e260 <col:22> 'void *' lvalue ParmVar 0x14b80dcd8 'priv' 'void *'
+    |-DeclStmt 0x14b82ad60 <line:5:2, col:43>
+    | |-RecordDecl 0x14b80e2e0 <col:2, col:9> col:9 struct eventpoll
+    | `-VarDecl 0x14b82a858 <col:2, col:31> col:20 used ep 'struct eventpoll *' cinit
+    |   `-RecoveryExpr 0x14b82ad20 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b82a8c0 <col:25> 'struct file *' lvalue Var 0x14b80e1f8 'file' 'struct file *'
+    |-DeclStmt 0x14b82af68 <line:6:2, col:21>
+    | |-RecordDecl 0x14b82ad78 <col:2, col:9> col:9 struct rb_node
+    | `-VarDecl 0x14b82aee8 <col:2, col:18> col:18 used rbp 'struct rb_node *'
+    |-DeclStmt 0x14b82b168 <line:7:2, col:20>
+    | |-RecordDecl 0x14b82af80 <col:2, col:9> col:9 struct epitem
+    | `-VarDecl 0x14b82b0e8 <col:2, col:17> col:17 used epi 'struct epitem *'
+    |-CallExpr 0x14b82b3c0 <line:9:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b82b2b0 <col:2> 'int ()' Function 0x14b82b1f8 'mutex_lock_nested' 'int ()'
+    | |-UnaryOperator 0x14b82b330 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14b82b308 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b82b2d0 <col:21> 'struct eventpoll *' contains-errors lvalue Var 0x14b82a858 'ep' 'struct eventpoll *'
+    | `-BinaryOperator 0x14b82b3a0 <col:30, col:43> 'int' '+'
+    |   |-ImplicitCastExpr 0x14b82b388 <col:30> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14b82b348 <col:30> 'int' lvalue ParmVar 0x14b80ddd8 'call_nests' 'int'
+    |   `-IntegerLiteral 0x14b82b368 <col:43> 'int' 1
+    |-ForStmt 0x14b82dc18 <line:10:2, line:19:2>
+    | |-BinaryOperator 0x14b82b5b0 <line:10:7, col:30> 'struct rb_node *' contains-errors '='
+    | | |-DeclRefExpr 0x14b82b3f0 <col:7> 'struct rb_node *' lvalue Var 0x14b82aee8 'rbp' 'struct rb_node *'
+    | | `-CallExpr 0x14b82b588 <col:13, col:30> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14b82b4f0 <col:13> 'int ()' Function 0x14b82b438 'rb_first' 'int ()'
+    | |   `-UnaryOperator 0x14b82b570 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x14b82b548 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x14b82b510 <col:23> 'struct eventpoll *' contains-errors lvalue Var 0x14b82a858 'ep' 'struct eventpoll *'
+    | |-<<<NULL>>>
+    | |-ImplicitCastExpr 0x14b82b5f0 <col:33> 'struct rb_node *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14b82b5d0 <col:33> 'struct rb_node *' lvalue Var 0x14b82aee8 'rbp' 'struct rb_node *'
+    | |-BinaryOperator 0x14b82d200 <col:38, col:55> 'struct rb_node *' '='
+    | | |-DeclRefExpr 0x14b82b608 <col:38> 'struct rb_node *' lvalue Var 0x14b82aee8 'rbp' 'struct rb_node *'
+    | | `-ImplicitCastExpr 0x14b82b7d8 <col:44, col:55> 'struct rb_node *' <IntegralToPointer>
+    | |   `-CallExpr 0x14b82b798 <col:44, col:55> 'int'
+    | |     |-ImplicitCastExpr 0x14b82b780 <col:44> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x14b82b708 <col:44> 'int ()' Function 0x14b82b650 'rb_next' 'int ()'
+    | |     `-ImplicitCastExpr 0x14b82b7c0 <col:52> 'struct rb_node *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x14b82b728 <col:52> 'struct rb_node *' lvalue Var 0x14b82aee8 'rbp' 'struct rb_node *'
+    | `-CompoundStmt 0x14b82dc00 <col:58, line:19:2>
+    |   `-IfStmt 0x14b82dbe0 <line:12:3, line:18:3>
+    |     |-CallExpr 0x14b82d668 <line:12:7, col:44> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x14b82d478 <col:7> 'int ()' Function 0x14b82d3c0 'unlikely' 'int ()'
+    |     | `-CallExpr 0x14b82d640 <col:16, col:43> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x14b82d578 <col:16> 'int ()' Function 0x14b82d4c0 'is_file_epoll' 'int ()'
+    |     |   `-CXXDependentScopeMemberExpr 0x14b82d5f8 <col:30, col:39> '<dependent type>' contains-errors lvalue .file
+    |     |     `-RecoveryExpr 0x14b82d5d0 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |     |       `-DeclRefExpr 0x14b82d598 <col:30> 'struct epitem *' lvalue Var 0x14b82b0e8 'epi' 'struct epitem *'
+    |     `-CompoundStmt 0x14b82dbc0 <col:47, line:18:3>
+    |       |-BinaryOperator 0x14b82db00 <line:13:4, line:15:49> 'int' contains-errors '='
+    |       | |-DeclRefExpr 0x14b82d690 <line:13:4> 'int' lvalue Var 0x14b80dfe8 'error' 'int'
+    |       | `-CallExpr 0x14b82dab0 <col:12, line:15:49> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x14b82d790 <line:13:12> 'int ()' Function 0x14b82d6d8 'ep_call_nested' 'int ()'
+    |       |   |-UnaryOperator 0x14b82da58 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |   | `-RecoveryExpr 0x14b82da38 <col:28> '<dependent type>' contains-errors lvalue
+    |       |   |-RecoveryExpr 0x14b82da70 <col:46> '<dependent type>' contains-errors lvalue
+    |       |   |-DeclRefExpr 0x14b82d7f8 <line:14:13> 'int (void *, void *, int)' Function 0x14b80dec8 'ep_loop_check_proc' 'int (void *, void *, int)'
+    |       |   |-CXXDependentScopeMemberExpr 0x14b82d878 <col:33, col:42> '<dependent type>' contains-errors lvalue .file
+    |       |   | `-RecoveryExpr 0x14b82d850 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x14b82d818 <col:33> 'struct epitem *' lvalue Var 0x14b82b0e8 'epi' 'struct epitem *'
+    |       |   |-CXXDependentScopeMemberExpr 0x14b82d968 <line:15:13, col:28> '<dependent type>' contains-errors lvalue ->private_data
+    |       |   | `-CXXDependentScopeMemberExpr 0x14b82d920 <col:13, col:22> '<dependent type>' contains-errors lvalue .file
+    |       |   |   `-RecoveryExpr 0x14b82d8f8 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |       |   |     `-DeclRefExpr 0x14b82d8c0 <col:13> 'struct epitem *' lvalue Var 0x14b82b0e8 'epi' 'struct epitem *'
+    |       |   `-RecoveryExpr 0x14b82da90 <col:42> '<dependent type>' contains-errors lvalue
+    |       `-IfStmt 0x14b82dba0 <line:16:4, line:17:5>
+    |         |-BinaryOperator 0x14b82db78 <line:16:8, col:17> 'int' '!='
+    |         | |-ImplicitCastExpr 0x14b82db60 <col:8> 'int' <LValueToRValue>
+    |         | | `-DeclRefExpr 0x14b82db20 <col:8> 'int' lvalue Var 0x14b80dfe8 'error' 'int'
+    |         | `-IntegerLiteral 0x14b82db40 <col:17> 'int' 0
+    |         `-BreakStmt 0x14b82db98 <line:17:5>
+    |-CallExpr 0x14b82ddc8 <line:20:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b82dd30 <col:2> 'int ()' Function 0x14b82dc78 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14b82ddb0 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b82dd88 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b82dd50 <col:16> 'struct eventpoll *' contains-errors lvalue Var 0x14b82a858 'ep' 'struct eventpoll *'
+    `-ReturnStmt 0x14b82de28 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x14b82de10 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14b82ddf0 <col:9> 'int' lvalue Var 0x14b80dfe8 'error' 'int'

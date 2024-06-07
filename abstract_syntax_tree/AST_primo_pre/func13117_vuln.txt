@@ -1,0 +1,26 @@
+`-FunctionDecl 0x1280267f8  line:1:14 dma_alloc_from_contiguous 'struct page *(struct device *, int, unsigned int)'
+  |-ParmVarDecl 0x12800e2e8 <col:40, col:55> col:55 used dev 'struct device *'
+  |-ParmVarDecl 0x12800e368 <col:60, col:64> col:64 used count 'int'
+  |-ParmVarDecl 0x128026600 <line:2:12, col:25> col:25 used align 'unsigned int'
+  `-CompoundStmt 0x128026e30 <line:3:1, line:8:1>
+    |-IfStmt 0x128026a48 <line:4:2, line:5:11>
+    | |-BinaryOperator 0x128026990 <line:4:6, col:14> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x128026900 <col:6> 'unsigned int' lvalue ParmVar 0x128026600 'align' 'unsigned int'
+    | | `-RecoveryExpr 0x128026970 <col:14> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x128026a28 <line:5:3, col:11> 'unsigned int' contains-errors '='
+    |   |-DeclRefExpr 0x1280269b0 <col:3> 'unsigned int' lvalue ParmVar 0x128026600 'align' 'unsigned int'
+    |   `-RecoveryExpr 0x128026a08 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x128026e20 <line:7:2, col:54>
+      `-ImplicitCastExpr 0x128026e08 <col:9, col:54> 'struct page *' <IntegralToPointer>
+        `-CallExpr 0x128026da0 <col:9, col:54> 'int'
+          |-ImplicitCastExpr 0x128026d88 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x128026b80 <col:9> 'int ()' Function 0x128026ac8 'cma_alloc' 'int ()'
+          |-CallExpr 0x128026d08 <col:19, col:39> 'int'
+          | |-ImplicitCastExpr 0x128026cf0 <col:19> 'int (*)()' <FunctionToPointerDecay>
+          | | `-DeclRefExpr 0x128026c80 <col:19> 'int ()' Function 0x128026bc8 'dev_get_cma_area' 'int ()'
+          | `-ImplicitCastExpr 0x128026d30 <col:36> 'struct device *' <LValueToRValue>
+          |   `-DeclRefExpr 0x128026ca0 <col:36> 'struct device *' lvalue ParmVar 0x12800e2e8 'dev' 'struct device *'
+          |-ImplicitCastExpr 0x128026dd8 <col:42> 'int' <LValueToRValue>
+          | `-DeclRefExpr 0x128026d48 <col:42> 'int' lvalue ParmVar 0x12800e368 'count' 'int'
+          `-ImplicitCastExpr 0x128026df0 <col:49> 'unsigned int' <LValueToRValue>
+            `-DeclRefExpr 0x128026d68 <col:49> 'unsigned int' lvalue ParmVar 0x128026600 'align' 'unsigned int'

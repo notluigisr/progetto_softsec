@@ -1,0 +1,25 @@
+`-FunctionDecl 0x12c8274d8  line:1:12 invalid fuse_writeback_range 'int (struct inode *, int, int)' static
+  |-ParmVarDecl 0x12c80e248 <col:33, col:47> col:47 used inode 'struct inode *'
+  |-ParmVarDecl 0x12c80e2e0 <col:54, col:61> col:61 invalid start 'int'
+  |-ParmVarDecl 0x12c80e360 <col:68, col:75> col:75 invalid end 'int'
+  `-CompoundStmt 0x12c827ae0 <line:2:1, line:9:1>
+    |-DeclStmt 0x12c827868 <line:3:2, col:70>
+    | `-VarDecl 0x12c8275b0 <col:2, col:69> col:6 used err 'int' cinit
+    |   `-CallExpr 0x12c827830 <col:12, col:69> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12c827770 <col:12> 'int ()' Function 0x12c8276b8 'filemap_write_and_wait_range' 'int ()'
+    |     |-RecoveryExpr 0x12c8277c8 <col:41, col:48> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12c827790 <col:41> 'struct inode *' lvalue ParmVar 0x12c80e248 'inode' 'struct inode *'
+    |     |-RecoveryExpr 0x12c8277f0 <col:59> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x12c827810 <col:66> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c827a78 <line:5:2, line:6:25>
+    | |-UnaryOperator 0x12c8278b8 <line:5:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12c8278a0 <col:7> 'int' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c827880 <col:7> 'int' contains-errors lvalue Var 0x12c8275b0 'err' 'int'
+    | `-CallExpr 0x12c827a38 <line:6:3, col:25> 'int'
+    |   |-ImplicitCastExpr 0x12c827a20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12c8279b0 <col:3> 'int ()' Function 0x12c8278f8 'fuse_sync_writes' 'int ()'
+    |   `-ImplicitCastExpr 0x12c827a60 <col:20> 'struct inode *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12c8279d0 <col:20> 'struct inode *' lvalue ParmVar 0x12c80e248 'inode' 'struct inode *'
+    `-ReturnStmt 0x12c827ad0 <line:8:2, col:9>
+      `-ImplicitCastExpr 0x12c827ab8 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x12c827a98 <col:9> 'int' contains-errors lvalue Var 0x12c8275b0 'err' 'int'

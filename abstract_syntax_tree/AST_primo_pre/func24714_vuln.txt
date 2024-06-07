@@ -1,0 +1,144 @@
+`-FunctionDecl 0x14b8268c8  line:1:12 invalid validate_user_key 'int (struct fscrypt_info *, struct fscrypt_context *, int *, const char *)' static
+  |-ParmVarDecl 0x14b80e248 <col:30, col:51> col:51 used crypt_info 'struct fscrypt_info *'
+  |-ParmVarDecl 0x14b826628 <line:2:4, col:28> col:28 used ctx 'struct fscrypt_context *'
+  |-ParmVarDecl 0x14b8266f8 <col:33, col:37> col:37 invalid raw_key 'int *'
+  |-ParmVarDecl 0x14b826778 <line:3:4, col:16> col:16 used prefix 'const char *'
+  `-CompoundStmt 0x14b830728 <line:4:1, line:56:1>
+    |-DeclStmt 0x14b826a10 <line:5:2, col:19>
+    | `-VarDecl 0x14b8269a8 <col:2, col:8> col:8 used description 'char *'
+    |-DeclStmt 0x14b826c18 <line:6:2, col:25>
+    | |-RecordDecl 0x14b826a28 <col:2, col:9> col:9 struct key
+    | `-VarDecl 0x14b826b98 <col:2, col:14> col:14 used keyring_key 'struct key *'
+    |-DeclStmt 0x14b826e18 <line:7:2, col:32>
+    | |-RecordDecl 0x14b826c30 <col:2, col:9> col:9 struct fscrypt_key
+    | `-VarDecl 0x14b826d98 <col:2, col:22> col:22 used master_key 'struct fscrypt_key *'
+    |-DeclStmt 0x14b827018 <line:8:2, col:36>
+    | |-RecordDecl 0x14b826e30 <col:8, col:15> col:15 struct user_key_payload
+    | `-VarDecl 0x14b826f98 <col:2, col:33> col:33 used ukp 'const struct user_key_payload *'
+    |-DeclStmt 0x14b8270b0 <line:9:2, col:9>
+    | `-VarDecl 0x14b827048 <col:2, col:6> col:6 used res 'int'
+    |-BinaryOperator 0x14b827468 <line:11:2, line:13:31> 'char *' contains-errors '='
+    | |-DeclRefExpr 0x14b8270c8 <line:11:2> 'char *' lvalue Var 0x14b8269a8 'description' 'char *'
+    | `-CallExpr 0x14b827420 <col:16, line:13:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b827240 <line:11:16> 'int ()' Function 0x14b827188 'kasprintf' 'int ()'
+    |   |-RecoveryExpr 0x14b8273e0 <col:26> '<dependent type>' contains-errors lvalue
+    |   |-StringLiteral 0x14b8272c0 <col:36> 'char[4]' lvalue "STR"
+    |   |-DeclRefExpr 0x14b8272e0 <col:43> 'const char *' lvalue ParmVar 0x14b826778 'prefix' 'const char *'
+    |   |-RecoveryExpr 0x14b827400 <line:12:5> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x14b827350 <line:13:5, col:10> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b827318 <col:5> 'struct fscrypt_context *' lvalue ParmVar 0x14b826628 'ctx' 'struct fscrypt_context *'
+    |-IfStmt 0x14b827580 <line:14:2, line:15:11>
+    | |-UnaryOperator 0x14b8274c0 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b8274a8 <col:7> 'char *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b827488 <col:7> 'char *' lvalue Var 0x14b8269a8 'description' 'char *'
+    | `-ReturnStmt 0x14b827570 <line:15:3, col:11>
+    |   `-UnaryOperator 0x14b827558 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14b827540 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14b827520 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14b829a28 <line:17:2, col:62> 'struct key *' contains-errors '='
+    | |-DeclRefExpr 0x14b8275a0 <col:2> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    | `-CallExpr 0x14b8299f0 <col:16, col:62> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b8298b8 <col:16> 'int ()' Function 0x14b829800 'request_key' 'int ()'
+    |   |-UnaryOperator 0x14b8299b8 <col:28, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x14b829998 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x14b829908 <col:45> 'char *' lvalue Var 0x14b8269a8 'description' 'char *'
+    |   `-RecoveryExpr 0x14b8299d0 <col:58> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14b829bb8 <line:18:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x14b829ba0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14b829b28 <col:2> 'int ()' Function 0x14b829a70 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x14b829be0 <col:8> 'char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14b829b48 <col:8> 'char *' lvalue Var 0x14b8269a8 'description' 'char *'
+    |-IfStmt 0x14b829ef8 <line:19:2, line:20:29>
+    | |-CallExpr 0x14b829d30 <line:19:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x14b829d18 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14b829cd8 <col:6> 'int ()' Function 0x14b829c20 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14b829d58 <col:13> 'struct key *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b829cf8 <col:13> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    | `-ReturnStmt 0x14b829ee8 <line:20:3, col:29>
+    |   `-CallExpr 0x14b829ea8 <col:10, col:29> 'int'
+    |     |-ImplicitCastExpr 0x14b829e90 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14b829e50 <col:10> 'int ()' Function 0x14b829d98 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x14b829ed0 <col:18> 'struct key *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14b829e70 <col:18> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |-IfStmt 0x14b82a2b8 <line:22:2, line:27:2>
+    | |-BinaryOperator 0x14b82a000 <line:22:6, col:28> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x14b829f50 <col:6, col:19> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14b829f18 <col:6> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    | | `-UnaryOperator 0x14b829fe8 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x14b829fc8 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14b82a298 <col:44, line:27:2>
+    |   |-BinaryOperator 0x14b82a210 <line:25:3, col:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14b82a138 <col:3> 'int' lvalue Var 0x14b827048 'res' 'int'
+    |   | `-UnaryOperator 0x14b82a1f8 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14b82a1e0 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14b82a1c0 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14b82a280 <line:26:3, col:8> 'out' 0x14b82a230
+    |-CallExpr 0x14b82a450 <line:28:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b82a3b8 <col:2> 'int ()' Function 0x14b82a300 'down_read' 'int ()'
+    | `-UnaryOperator 0x14b82a438 <col:12, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b82a410 <col:13, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b82a3d8 <col:13> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |-BinaryOperator 0x14b82a628 <line:29:2, col:36> 'const struct user_key_payload *' '='
+    | |-DeclRefExpr 0x14b82a478 <col:2> 'const struct user_key_payload *' lvalue Var 0x14b826f98 'ukp' 'const struct user_key_payload *'
+    | `-ImplicitCastExpr 0x14b82a610 <col:8, col:36> 'const struct user_key_payload *' <IntegralToPointer>
+    |   `-CallExpr 0x14b82a5d0 <col:8, col:36> 'int'
+    |     |-ImplicitCastExpr 0x14b82a5b8 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14b82a578 <col:8> 'int ()' Function 0x14b82a4c0 'user_key_payload' 'int ()'
+    |     `-ImplicitCastExpr 0x14b82a5f8 <col:25> 'struct key *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14b82a598 <col:25> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |-IfStmt 0x14b82fbb0 <line:30:2, line:34:2>
+    | |-RecoveryExpr 0x14b82a700 <line:30:6, col:47> '_Bool' contains-errors
+    | `-CompoundStmt 0x14b82fb90 <col:50, line:34:2>
+    |   |-CallExpr 0x14b82fb50 <line:32:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b82fab8 <col:3> 'int ()' Function 0x14b82fa00 'up_read' 'int ()'
+    |   | `-UnaryOperator 0x14b82fb38 <col:11, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14b82fb10 <col:12, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14b82fad8 <col:12> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |   `-GotoStmt 0x14b82fb78 <line:33:3, col:8> 'out' 0x14b82a230
+    |-BinaryOperator 0x14b82fcd0 <line:35:2, col:42> 'struct fscrypt_key *' contains-errors '='
+    | |-DeclRefExpr 0x14b82fbd0 <col:2> 'struct fscrypt_key *' lvalue Var 0x14b826d98 'master_key' 'struct fscrypt_key *'
+    | `-CStyleCastExpr 0x14b82fca8 <col:15, col:42> 'struct fscrypt_key *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x14b82fc28 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b82fbf0 <col:37> 'const struct user_key_payload *' lvalue Var 0x14b826f98 'ukp' 'const struct user_key_payload *'
+    |-IfStmt 0x14b8300d0 <line:38:2, line:45:2>
+    | |-RecoveryExpr 0x14b82fe50 <line:38:6, col:26> '_Bool' contains-errors
+    | `-CompoundStmt 0x14b8300b0 <col:51, line:45:2>
+    |   |-CallExpr 0x14b830070 <line:43:3, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b82ffd8 <col:3> 'int ()' Function 0x14b82fa00 'up_read' 'int ()'
+    |   | `-UnaryOperator 0x14b830058 <col:11, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x14b830030 <col:12, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x14b82fff8 <col:12> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |   `-GotoStmt 0x14b830098 <line:44:3, col:8> 'out' 0x14b82a230
+    |-BinaryOperator 0x14b830328 <line:46:2, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14b8300f0 <col:2> 'int' lvalue Var 0x14b827048 'res' 'int'
+    | `-CallExpr 0x14b8302f0 <col:8, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b8301f0 <col:8> 'int ()' Function 0x14b830138 'derive_key_aes' 'int ()'
+    |   |-RecoveryExpr 0x14b830248 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14b830210 <col:23> 'struct fscrypt_context *' lvalue ParmVar 0x14b826628 'ctx' 'struct fscrypt_context *'
+    |   |-RecoveryExpr 0x14b8302a8 <col:35, col:47> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14b830270 <col:35> 'struct fscrypt_key *' lvalue Var 0x14b826d98 'master_key' 'struct fscrypt_key *'
+    |   `-RecoveryExpr 0x14b8302d0 <col:52> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14b8303e0 <line:47:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b830348 <col:2> 'int ()' Function 0x14b82fa00 'up_read' 'int ()'
+    | `-UnaryOperator 0x14b8303c8 <col:10, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b8303a0 <col:11, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b830368 <col:11> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |-IfStmt 0x14b830458 <line:48:2, line:49:8>
+    | |-ImplicitCastExpr 0x14b830428 <line:48:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14b830408 <col:6> 'int' lvalue Var 0x14b827048 'res' 'int'
+    | `-GotoStmt 0x14b830440 <line:49:3, col:8> 'out' 0x14b82a230
+    |-BinaryOperator 0x14b8304f8 <line:51:2, col:31> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14b8304b0 <col:2, col:14> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14b830478 <col:2> 'struct fscrypt_info *' lvalue ParmVar 0x14b80e248 'crypt_info' 'struct fscrypt_info *'
+    | `-DeclRefExpr 0x14b8304d8 <col:31> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    |-ReturnStmt 0x14b830538 <line:52:2, col:9>
+    | `-IntegerLiteral 0x14b830518 <col:9> 'int' 0
+    |-LabelStmt 0x14b8306c0 <line:53:1, line:54:21> 'out'
+    | `-CallExpr 0x14b830680 <col:2, col:21> 'int'
+    |   |-ImplicitCastExpr 0x14b830668 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14b830628 <col:2> 'int ()' Function 0x14b830570 'key_put' 'int ()'
+    |   `-ImplicitCastExpr 0x14b8306a8 <col:10> 'struct key *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14b830648 <col:10> 'struct key *' lvalue Var 0x14b826b98 'keyring_key' 'struct key *'
+    `-ReturnStmt 0x14b830718 <line:55:2, col:9>
+      `-ImplicitCastExpr 0x14b830700 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14b8306e0 <col:9> 'int' lvalue Var 0x14b827048 'res' 'int'

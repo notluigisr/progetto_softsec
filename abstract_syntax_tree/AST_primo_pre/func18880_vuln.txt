@@ -1,0 +1,68 @@
+`-FunctionDecl 0x12912a4a8  line:1:12 rfcomm_sock_getname 'int (struct socket *, struct sockaddr *, int *, int)' static
+  |-ParmVarDecl 0x129111e48 <col:32, col:47> col:47 used sock 'struct socket *'
+  |-ParmVarDecl 0x12912a228 <col:53, col:70> col:70 used addr 'struct sockaddr *'
+  |-ParmVarDecl 0x12912a2d8 <col:76, col:81> col:81 used len 'int *'
+  |-ParmVarDecl 0x12912a358 <col:86, col:90> col:90 used peer 'int'
+  `-CompoundStmt 0x128014ad0 <line:2:1, line:17:1>
+    |-DeclStmt 0x12912a890 <line:3:2, col:54>
+    | |-RecordDecl 0x12912a5b8 <col:2, col:9> col:9 struct sockaddr_rc
+    | `-VarDecl 0x12912a728 <col:2, col:50> col:22 used sa 'struct sockaddr_rc *' cinit
+    |   `-CStyleCastExpr 0x12912a850 <col:27, col:50> 'struct sockaddr_rc *' <BitCast>
+    |     `-ImplicitCastExpr 0x12912a838 <col:50> 'struct sockaddr *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x12912a790 <col:50> 'struct sockaddr *' lvalue ParmVar 0x12912a228 'addr' 'struct sockaddr *'
+    |-DeclStmt 0x12912aaf8 <line:4:2, col:28>
+    | |-RecordDecl 0x12912a8a8 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x12912aa18 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x12912aab8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12912aa80 <col:20> 'struct socket *' lvalue ParmVar 0x129111e48 'sock' 'struct socket *'
+    |-CallExpr 0x12912ad48 <line:6:2, col:24> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12912ad30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12912ac40 <col:2> 'int ()' Function 0x12912ab88 'BT_DBG' 'int ()'
+    | |-ImplicitCastExpr 0x12912ad80 <col:9> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x12912aca0 <col:9> 'char[4]' lvalue "STR"
+    | |-ImplicitCastExpr 0x12912ad98 <col:16> 'struct socket *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12912acc0 <col:16> 'struct socket *' lvalue ParmVar 0x129111e48 'sock' 'struct socket *'
+    | `-ImplicitCastExpr 0x12912adb0 <col:22> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x12912ace0 <col:22> 'struct sock *' contains-errors lvalue Var 0x12912aa18 'sk' 'struct sock *'
+    |-BinaryOperator 0x12912ae80 <line:8:2, col:19> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12912ae00 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12912adc8 <col:2> 'struct sockaddr_rc *' lvalue Var 0x12912a728 'sa' 'struct sockaddr_rc *'
+    | `-RecoveryExpr 0x12912ae60 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12912b0a0 <line:9:2, col:34> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12912aed8 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12912aea0 <col:2> 'struct sockaddr_rc *' lvalue Var 0x12912a728 'sa' 'struct sockaddr_rc *'
+    | `-RecoveryExpr 0x12912b078 <col:19, col:34> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x12912b038 <col:19, col:31> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x12912b020 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12912afe0 <col:19> 'int ()' Function 0x12912af28 'rfcomm_pi' 'int ()'
+    |     `-ImplicitCastExpr 0x12912b060 <col:29> 'struct sock *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x12912b000 <col:29> 'struct sock *' contains-errors lvalue Var 0x12912aa18 'sk' 'struct sock *'
+    |-IfStmt 0x128014a00 <line:10:2, line:13:40> has_else
+    | |-ImplicitCastExpr 0x12912b0e0 <line:10:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12912b0c0 <col:6> 'int' lvalue ParmVar 0x12912a358 'peer' 'int'
+    | |-CallExpr 0x128014830 <line:11:3, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12912b1d8 <col:3> 'int ()' Function 0x12912b120 'bacpy' 'int ()'
+    | | |-UnaryOperator 0x128014660 <col:9, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-RecoveryExpr 0x128014638 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x128014600 <col:10> 'struct sockaddr_rc *' lvalue Var 0x12912a728 'sa' 'struct sockaddr_rc *'
+    | | `-UnaryOperator 0x128014818 <col:25, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1280147f0 <col:26, col:37> '<dependent type>' contains-errors lvalue
+    | |     `-CallExpr 0x1280147b0 <col:26, col:34> 'int' contains-errors
+    | |       |-ImplicitCastExpr 0x128014798 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x128014758 <col:26> 'int ()' Function 0x1280146a0 'bt_sk' 'int ()'
+    | |       `-ImplicitCastExpr 0x1280147d8 <col:32> 'struct sock *' contains-errors <LValueToRValue>
+    | |         `-DeclRefExpr 0x128014778 <col:32> 'struct sock *' contains-errors lvalue Var 0x12912aa18 'sk' 'struct sock *'
+    | `-CallExpr 0x1280149d0 <line:13:3, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x128014860 <col:3> 'int ()' Function 0x12912b120 'bacpy' 'int ()'
+    |   |-UnaryOperator 0x1280148e0 <col:9, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x1280148b8 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x128014880 <col:10> 'struct sockaddr_rc *' lvalue Var 0x12912a728 'sa' 'struct sockaddr_rc *'
+    |   `-UnaryOperator 0x1280149b8 <col:25, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x128014990 <col:26, col:37> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x128014950 <col:26, col:34> 'int' contains-errors
+    |         |-ImplicitCastExpr 0x128014938 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x1280148f8 <col:26> 'int ()' Function 0x1280146a0 'bt_sk' 'int ()'
+    |         `-ImplicitCastExpr 0x128014978 <col:32> 'struct sock *' contains-errors <LValueToRValue>
+    |           `-DeclRefExpr 0x128014918 <col:32> 'struct sock *' contains-errors lvalue Var 0x12912aa18 'sk' 'struct sock *'
+    `-ReturnStmt 0x128014ac0 <line:16:2, col:9>
+      `-IntegerLiteral 0x128014aa0 <col:9> 'int' 0

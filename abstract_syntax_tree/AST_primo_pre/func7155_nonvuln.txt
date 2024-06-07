@@ -1,0 +1,35 @@
+`-FunctionDecl 0x1489283a8  line:1:1 invalid queue_ref_for_analysis 'int (int *, const char *, int *, int *)'
+  |-ParmVarDecl 0x148928128 <col:25, col:44> col:44 invalid ref 'int *'
+  |-ParmVarDecl 0x1489281a8 <line:2:25, col:37> col:37 used arch 'const char *'
+  |-ParmVarDecl 0x148928228 <line:3:25, col:37> col:37 invalid analyzed_refs 'int *'
+  |-ParmVarDecl 0x1489282a8 <line:4:25, col:37> col:37 invalid refs_to_analyze 'int *'
+  `-CompoundStmt 0x148941df8 <line:5:1, line:14:1>
+    |-IfStmt 0x148928758 <line:6:3, line:7:5>
+    | |-BinaryOperator 0x148928728 <line:6:7, col:61> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x148928708 <col:7, col:15> 'int' contains-errors '!='
+    | | | |-DeclRefExpr 0x148928470 <col:7> 'const char *' lvalue ParmVar 0x1489281a8 'arch' 'const char *'
+    | | | `-RecoveryExpr 0x1489286e8 <col:15> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x1489286b0 <col:23, col:61> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x148928680 <col:24, col:61> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x148928620 <col:24> 'int ()' Function 0x148928568 'flatpak_decomposed_is_arch' 'int ()'
+    | |     |-RecoveryExpr 0x148928640 <col:52> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x148928660 <col:57> 'const char *' lvalue ParmVar 0x1489281a8 'arch' 'const char *'
+    | `-ReturnStmt 0x148928748 <line:7:5>
+    |-IfStmt 0x1489419d0 <line:9:3, line:10:5>
+    | |-BinaryOperator 0x1489419a0 <line:9:7, col:51> 'int' contains-errors '!='
+    | | |-CallExpr 0x148941918 <col:7, col:46> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1489418b8 <col:7> 'int ()' Function 0x148941800 'g_hash_table_lookup' 'int ()'
+    | | | |-RecoveryExpr 0x1489418d8 <col:28> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x1489418f8 <col:43> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x148941980 <col:51> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1489419c0 <line:10:5>
+    |-CallExpr 0x148941c58 <line:12:3, col:64> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x148941ad0 <col:3> 'int ()' Function 0x148941a18 'g_hash_table_add' 'int ()'
+    | |-RecoveryExpr 0x148941af0 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x148941c30 <col:36, col:63> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148941bf0 <col:36> 'int ()' Function 0x148941b38 'flatpak_decomposed_ref' 'int ()'
+    |   `-RecoveryExpr 0x148941c10 <col:60> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x148941dc8 <line:13:3, col:42> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x148941d68 <col:3> 'int ()' Function 0x148941cb0 'g_queue_push_tail' 'int ()'
+      |-RecoveryExpr 0x148941d88 <col:22> '<dependent type>' contains-errors lvalue
+      `-RecoveryExpr 0x148941da8 <col:39> '<dependent type>' contains-errors lvalue

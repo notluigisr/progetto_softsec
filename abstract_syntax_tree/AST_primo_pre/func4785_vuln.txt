@@ -1,0 +1,43 @@
+`-FunctionDecl 0x151922808  line:1:1 invalid remove_hrtimer 'int (struct hrtimer *, struct hrtimer_clock_base *, int)'
+  |-ParmVarDecl 0x15200e248 <col:16, col:32> col:32 used timer 'struct hrtimer *'
+  |-ParmVarDecl 0x151922628 <col:39, col:66> col:66 used base 'struct hrtimer_clock_base *'
+  |-ParmVarDecl 0x1519226c0 <col:72, col:77> col:77 invalid restart 'int'
+  `-CompoundStmt 0x151923468 <line:2:1, line:19:1>
+    |-IfStmt 0x151923418 <line:3:2, line:17:2>
+    | |-CallExpr 0x151922aa8 <line:3:6, col:29> 'int'
+    | | |-ImplicitCastExpr 0x151922a90 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x151922a20 <col:6> 'int ()' Function 0x151922968 'hrtimer_is_queued' 'int ()'
+    | | `-ImplicitCastExpr 0x151922ad0 <col:24> 'struct hrtimer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x151922a40 <col:24> 'struct hrtimer *' lvalue ParmVar 0x15200e248 'timer' 'struct hrtimer *'
+    | `-CompoundStmt 0x1519233d8 <col:32, line:17:2>
+    |   |-DeclStmt 0x151922b68 <line:5:3, col:16>
+    |   | `-VarDecl 0x151922b00 <col:3, col:7> col:7 used reprogram 'int'
+    |   |-CallExpr 0x151922cb8 <line:8:3, col:25> 'int'
+    |   | |-ImplicitCastExpr 0x151922ca0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x151922c60 <col:3> 'int ()' Function 0x151922ba8 'debug_deactivate' 'int ()'
+    |   | `-ImplicitCastExpr 0x151922ce0 <col:20> 'struct hrtimer *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x151922c80 <col:20> 'struct hrtimer *' lvalue ParmVar 0x15200e248 'timer' 'struct hrtimer *'
+    |   |-CallExpr 0x151922e30 <line:9:3, col:45> 'int'
+    |   | |-ImplicitCastExpr 0x151922e18 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x151922dd8 <col:3> 'int ()' Function 0x151922d20 'timer_stats_hrtimer_clear_start_info' 'int ()'
+    |   | `-ImplicitCastExpr 0x151922e58 <col:40> 'struct hrtimer *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x151922df8 <col:40> 'struct hrtimer *' lvalue ParmVar 0x15200e248 'timer' 'struct hrtimer *'
+    |   |-BinaryOperator 0x151923108 <line:10:3, col:60> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x151922e70 <col:3> 'int' lvalue Var 0x151922b00 'reprogram' 'int'
+    |   | `-BinaryOperator 0x1519230e8 <col:15, col:60> 'int' contains-errors '=='
+    |   |   |-RecoveryExpr 0x151922ec8 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x151922e90 <col:15> 'struct hrtimer_clock_base *' lvalue ParmVar 0x151922628 'base' 'struct hrtimer_clock_base *'
+    |   |   `-CallExpr 0x1519230c0 <col:33, col:60> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x151922fd0 <col:33> 'int ()' Function 0x151922f18 'this_cpu_ptr' 'int ()'
+    |   |     `-UnaryOperator 0x1519230a8 <col:46, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |       `-RecoveryExpr 0x151923088 <col:47> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x151923368 <line:15:3, col:49> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x151923270 <col:3> 'int ()' Function 0x1519231b8 '__remove_hrtimer' 'int ()'
+    |   | |-DeclRefExpr 0x151923290 <col:20> 'struct hrtimer *' lvalue ParmVar 0x15200e248 'timer' 'struct hrtimer *'
+    |   | |-DeclRefExpr 0x1519232b0 <col:27> 'struct hrtimer_clock_base *' lvalue ParmVar 0x151922628 'base' 'struct hrtimer_clock_base *'
+    |   | |-RecoveryExpr 0x151923348 <col:33> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1519232e8 <col:40> 'int' lvalue Var 0x151922b00 'reprogram' 'int'
+    |   `-ReturnStmt 0x1519233c8 <line:16:3, col:10>
+    |     `-IntegerLiteral 0x1519233a8 <col:10> 'int' 1
+    `-ReturnStmt 0x151923458 <line:18:2, col:9>
+      `-IntegerLiteral 0x151923438 <col:9> 'int' 0

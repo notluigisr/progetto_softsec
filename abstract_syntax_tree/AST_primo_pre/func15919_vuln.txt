@@ -1,0 +1,38 @@
+`-FunctionDecl 0x14f80df18  line:1:19 invalid get_len 'int (int *, int, int)' static inline
+  |-ParmVarDecl 0x14f80dd28 <col:27, col:39> col:39 invalid c 'int *'
+  |-ParmVarDecl 0x14f80dda8 <col:42, col:46> col:46 used x 'int'
+  |-ParmVarDecl 0x14f80de28 <col:49, col:53> col:53 used mask 'int'
+  `-CompoundStmt 0x14f827588 <line:2:1, line:10:1>
+    |-DeclStmt 0x14f80e0e8 <line:3:5, col:23>
+    | `-VarDecl 0x14f80dff0 <col:5, col:19> col:9 used cnt 'int' cinit
+    |   `-BinaryOperator 0x14f80e0c8 <col:15, col:19> 'int' '&'
+    |     |-ImplicitCastExpr 0x14f80e098 <col:15> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14f80e058 <col:15> 'int' lvalue ParmVar 0x14f80dda8 'x' 'int'
+    |     `-ImplicitCastExpr 0x14f80e0b0 <col:19> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x14f80e078 <col:19> 'int' lvalue ParmVar 0x14f80de28 'mask' 'int'
+    |-IfStmt 0x14f827520 <line:4:5, line:8:5>
+    | |-UnaryOperator 0x14f80e138 <line:4:9, col:10> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14f80e120 <col:10> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14f80e100 <col:10> 'int' lvalue Var 0x14f80dff0 'cnt' 'int'
+    | `-CompoundStmt 0x14f827500 <col:15, line:8:5>
+    |   |-WhileStmt 0x14f827400 <line:5:9, line:6:20>
+    |   | |-UnaryOperator 0x14f80e378 <line:5:16, col:33> 'int' contains-errors prefix '!' cannot overflow
+    |   | | `-ParenExpr 0x14f80e358 <col:17, col:33> 'int' contains-errors
+    |   | |   `-BinaryOperator 0x14f80e338 <col:18, col:32> 'int' contains-errors '='
+    |   | |     |-DeclRefExpr 0x14f80e150 <col:18> 'int' lvalue ParmVar 0x14f80dda8 'x' 'int'
+    |   | |     `-CallExpr 0x14f80e310 <col:22, col:32> '<dependent type>' contains-errors
+    |   | |       |-DeclRefExpr 0x14f80e2d0 <col:22> 'int ()' Function 0x14f80e218 'get_byte' 'int ()'
+    |   | |       `-RecoveryExpr 0x14f80e2f0 <col:31> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundAssignOperator 0x14f80e3d0 <line:6:13, col:20> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |   |   |-DeclRefExpr 0x14f80e390 <col:13> 'int' lvalue Var 0x14f80dff0 'cnt' 'int'
+    |   |   `-IntegerLiteral 0x14f80e3b0 <col:20> 'int' 255
+    |   `-CompoundAssignOperator 0x14f8274d0 <line:7:9, col:23> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+    |     |-DeclRefExpr 0x14f827420 <col:9> 'int' lvalue Var 0x14f80dff0 'cnt' 'int'
+    |     `-BinaryOperator 0x14f8274b0 <col:16, col:23> 'int' '+'
+    |       |-ImplicitCastExpr 0x14f827480 <col:16> 'int' <LValueToRValue>
+    |       | `-DeclRefExpr 0x14f827440 <col:16> 'int' lvalue ParmVar 0x14f80de28 'mask' 'int'
+    |       `-ImplicitCastExpr 0x14f827498 <col:23> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x14f827460 <col:23> 'int' lvalue ParmVar 0x14f80dda8 'x' 'int'
+    `-ReturnStmt 0x14f827578 <line:9:5, col:12>
+      `-ImplicitCastExpr 0x14f827560 <col:12> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14f827540 <col:12> 'int' lvalue Var 0x14f80dff0 'cnt' 'int'

@@ -1,0 +1,16 @@
+`-FunctionDecl 0x13b00dda8  line:1:16 invalid kvm_clock_read 'int (void)' static
+  `-CompoundStmt 0x13b027a78 <line:2:1, line:10:1>
+    |-DeclStmt 0x13b00e038 <line:3:2, col:36>
+    | |-RecordDecl 0x13b00de50 <col:2, col:9> col:9 struct pvclock_vcpu_time_info
+    | `-VarDecl 0x13b00dfb8 <col:2, col:33> col:33 used src 'struct pvclock_vcpu_time_info *'
+    |-BinaryOperator 0x13b00e2c8 <line:6:2, col:29> 'struct pvclock_vcpu_time_info *' contains-errors '='
+    | |-DeclRefExpr 0x13b00e050 <col:2> 'struct pvclock_vcpu_time_info *' lvalue Var 0x13b00dfb8 'src' 'struct pvclock_vcpu_time_info *'
+    | `-UnaryOperator 0x13b00e2b0 <col:8, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CallExpr 0x13b00e288 <col:9, col:29> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b00e1d0 <col:9> 'int ()' Function 0x13b00e118 'get_cpu_var' 'int ()'
+    |     `-RecoveryExpr 0x13b00e268 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13b027a08 <line:8:2, col:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b027988 <col:2> 'int ()' Function 0x13b0278d0 'put_cpu_var' 'int ()'
+    | `-RecoveryExpr 0x13b0279e8 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13b027a68 <line:9:2, col:9>
+      `-RecoveryExpr 0x13b027a48 <col:9> '<dependent type>' contains-errors lvalue

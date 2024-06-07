@@ -1,0 +1,35 @@
+`-FunctionDecl 0x15800e358  line:1:12 selinux_sb_statfs 'int (struct dentry *)' static
+  |-ParmVarDecl 0x15800e248 <col:30, col:45> col:45 used dentry 'struct dentry *'
+  `-CompoundStmt 0x15802b2d8 <line:2:1, line:9:1>
+    |-DeclStmt 0x15802ac08 <line:3:2, col:42>
+    | |-RecordDecl 0x15802a850 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x15802a9b8 <col:2, col:41> col:21 used cred 'const struct cred *' cinit
+    |   `-ImplicitCastExpr 0x15802abd8 <col:28, col:41> 'const struct cred *' <IntegralToPointer>
+    |     `-CallExpr 0x15802abb8 <col:28, col:41> 'int'
+    |       `-ImplicitCastExpr 0x15802aba0 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x15802ab50 <col:28> 'int ()' Function 0x15802aa98 'current_cred' 'int ()'
+    |-DeclStmt 0x15802ad98 <line:4:2, col:29>
+    | |-RecordDecl 0x15802ac20 <col:2, col:9> col:9 struct common_audit_data
+    | `-VarDecl 0x15802ad18 <col:2, col:27> col:27 referenced invalid ad 'struct common_audit_data'
+    |-BinaryOperator 0x15802ae98 <line:6:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15802adf8 <col:2, col:5> '<dependent type>' contains-errors lvalue .type
+    | | `-RecoveryExpr 0x15802add0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15802adb0 <col:2> 'struct common_audit_data' lvalue Var 0x15802ad18 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x15802ae78 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15802b038 <line:7:2, col:30> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15802af48 <col:2, col:7> '<dependent type>' contains-errors lvalue .dentry
+    | | `-CXXDependentScopeMemberExpr 0x15802af00 <col:2, col:5> '<dependent type>' contains-errors lvalue .u
+    | |   `-RecoveryExpr 0x15802aed8 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15802aeb8 <col:2> 'struct common_audit_data' lvalue Var 0x15802ad18 'ad' 'struct common_audit_data'
+    | `-CXXDependentScopeMemberExpr 0x15802aff0 <col:16, col:30> '<dependent type>' contains-errors lvalue ->s_root
+    |   `-RecoveryExpr 0x15802afc8 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15802af90 <col:16> 'struct dentry *' lvalue ParmVar 0x15800e248 'dentry' 'struct dentry *'
+    `-ReturnStmt 0x15802b2c8 <line:8:2, col:73>
+      `-CallExpr 0x15802b288 <col:9, col:73> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15802b138 <col:9> 'int ()' Function 0x15802b080 'superblock_has_perm' 'int ()'
+        |-DeclRefExpr 0x15802b158 <col:29> 'const struct cred *' lvalue Var 0x15802a9b8 'cred' 'const struct cred *'
+        |-RecoveryExpr 0x15802b1b0 <col:35, col:43> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x15802b178 <col:35> 'struct dentry *' lvalue ParmVar 0x15800e248 'dentry' 'struct dentry *'
+        |-RecoveryExpr 0x15802b268 <col:49> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x15802b210 <col:70, col:71> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x15802b1f0 <col:71> '<dependent type>' contains-errors lvalue

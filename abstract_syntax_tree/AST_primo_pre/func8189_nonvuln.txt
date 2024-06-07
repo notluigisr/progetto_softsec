@@ -1,0 +1,35 @@
+`-FunctionDecl 0x126026600  line:1:13 tipc_data_ready 'void (struct sock *, int)' static
+  |-ParmVarDecl 0x12600e248 <col:29, col:42> col:42 used sk 'struct sock *'
+  |-ParmVarDecl 0x12600e2c8 <col:46, col:50> col:50 len 'int'
+  `-CompoundStmt 0x126027250 <line:2:1, line:11:1>
+    |-DeclStmt 0x1260268e8 <line:3:2, col:22>
+    | |-RecordDecl 0x126026700 <col:2, col:9> col:9 struct socket_wq
+    | `-VarDecl 0x126026868 <col:2, col:20> col:20 used wq 'struct socket_wq *'
+    |-CallExpr 0x126026a98 <line:5:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x126026a80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x126026a30 <col:2> 'int ()' Function 0x126026978 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x126026c60 <line:6:2, col:32> 'struct socket_wq *' contains-errors '='
+    | |-DeclRefExpr 0x126026ab8 <col:2> 'struct socket_wq *' lvalue Var 0x126026868 'wq' 'struct socket_wq *'
+    | `-CallExpr 0x126026c38 <col:7, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x126026bb8 <col:7> 'int ()' Function 0x126026b00 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x126026c10 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x126026bd8 <col:23> 'struct sock *' lvalue ParmVar 0x12600e248 'sk' 'struct sock *'
+    |-IfStmt 0x1260270f8 <line:7:2, line:9:30>
+    | |-CallExpr 0x126026db8 <line:7:6, col:23> 'int'
+    | | |-ImplicitCastExpr 0x126026da0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x126026d60 <col:6> 'int ()' Function 0x126026ca8 'wq_has_sleeper' 'int ()'
+    | | `-ImplicitCastExpr 0x126026de0 <col:21> 'struct socket_wq *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x126026d80 <col:21> 'struct socket_wq *' lvalue Var 0x126026868 'wq' 'struct socket_wq *'
+    | `-CallExpr 0x1260270c8 <line:8:3, line:9:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x126026ed8 <line:8:3> 'int ()' Function 0x126026e20 'wake_up_interruptible_sync_poll' 'int ()'
+    |   |-UnaryOperator 0x126026f58 <col:35, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x126026f30 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x126026ef8 <col:36> 'struct socket_wq *' lvalue Var 0x126026868 'wq' 'struct socket_wq *'
+    |   `-BinaryOperator 0x1260270a8 <col:46, line:9:20> '<dependent type>' contains-errors '|'
+    |     |-BinaryOperator 0x126027068 <line:8:46, line:9:7> '<dependent type>' contains-errors '|'
+    |     | |-RecoveryExpr 0x126027028 <line:8:46> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x126027048 <line:9:7> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x126027088 <col:20> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x126027230 <line:10:2, col:18> 'int'
+      `-ImplicitCastExpr 0x126027218 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x1260271f8 <col:2> 'int ()' Function 0x126027140 'rcu_read_unlock' 'int ()'

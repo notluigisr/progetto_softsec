@@ -1,0 +1,72 @@
+`-FunctionDecl 0x142827768  line:1:13 invalid access_pmu_evcntr 'int (struct kvm_vcpu *, struct sys_reg_params *, const struct sys_reg_desc *)' static
+  |-ParmVarDecl 0x14280e268 <col:31, col:48> col:48 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x142827458 <line:2:10, col:33> col:33 used p 'struct sys_reg_params *'
+  |-ParmVarDecl 0x142827628 <line:3:10, col:37> col:37 used r 'const struct sys_reg_desc *'
+  `-CompoundStmt 0x14282a990 <line:4:1, line:50:1>
+    |-IfStmt 0x142827c68 <line:7:2, line:8:32>
+    | |-UnaryOperator 0x142827a48 <line:7:6, col:32> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x142827a08 <col:7, col:32> 'int'
+    | |   |-ImplicitCastExpr 0x1428279f0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x142827980 <col:7> 'int ()' Function 0x1428278c8 'kvm_arm_pmu_v3_ready' 'int ()'
+    | |   `-ImplicitCastExpr 0x142827a30 <col:28> 'struct kvm_vcpu *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1428279a0 <col:28> 'struct kvm_vcpu *' lvalue ParmVar 0x14280e268 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x142827c58 <line:8:3, col:32>
+    |   `-CallExpr 0x142827bd8 <col:10, col:32> 'int'
+    |     |-ImplicitCastExpr 0x142827bc0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x142827b40 <col:10> 'int ()' Function 0x142827a88 'trap_raz_wi' 'int ()'
+    |     |-ImplicitCastExpr 0x142827c10 <col:22> 'struct kvm_vcpu *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x142827b60 <col:22> 'struct kvm_vcpu *' lvalue ParmVar 0x14280e268 'vcpu' 'struct kvm_vcpu *'
+    |     |-ImplicitCastExpr 0x142827c28 <col:28> 'struct sys_reg_params *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x142827b80 <col:28> 'struct sys_reg_params *' lvalue ParmVar 0x142827458 'p' 'struct sys_reg_params *'
+    |     `-ImplicitCastExpr 0x142827c40 <col:31> 'const struct sys_reg_desc *' <LValueToRValue>
+    |       `-DeclRefExpr 0x142827ba0 <col:31> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    |-IfStmt 0x14282a2f8 <line:10:2, line:35:2> has_else
+    | |-BinaryOperator 0x142827dc8 <line:10:6, col:31> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x142827d08 <col:6, col:16> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x142827cc0 <col:6, col:9> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x142827c88 <col:6> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    | | | `-IntegerLiteral 0x142827ce8 <col:16> 'int' 9
+    | | `-BinaryOperator 0x142827da8 <col:21, col:31> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x142827d60 <col:21, col:24> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x142827d28 <col:21> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    | |   `-IntegerLiteral 0x142827d88 <col:31> 'int' 13
+    | |-CompoundStmt 0x142829dd8 <col:35, line:27:2>
+    | | `-IfStmt 0x142829da8 <line:11:3, line:26:3> has_else
+    | |   |-BinaryOperator 0x142827e68 <line:11:7, col:17> 'int' contains-errors '=='
+    | |   | |-RecoveryExpr 0x142827e20 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    | |   | | `-DeclRefExpr 0x142827de8 <col:7> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    | |   | `-IntegerLiteral 0x142827e48 <col:17> 'int' 2
+    | |   |-CompoundStmt 0x1428281b8 <col:20, line:18:3>
+    | |   `-IfStmt 0x142829d78 <col:10, line:26:3> has_else
+    | |     |-BinaryOperator 0x142828248 <line:18:14, col:24> 'int' contains-errors '=='
+    | |     | |-RecoveryExpr 0x142828200 <col:14, col:17> '<dependent type>' contains-errors lvalue
+    | |     | | `-DeclRefExpr 0x1428281c8 <col:14> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    | |     | `-IntegerLiteral 0x142828228 <col:24> 'int' 0
+    | |     |-CompoundStmt 0x142829c18 <col:27, line:24:3>
+    | |     `-CompoundStmt 0x142829d60 <col:10, line:26:3>
+    | |       `-CallExpr 0x142829d40 <line:25:4, col:8> 'int'
+    | |         `-ImplicitCastExpr 0x142829d28 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | |           `-DeclRefExpr 0x142829d08 <col:4> 'int ()' Function 0x142829c50 'BUG' 'int ()'
+    | `-IfStmt 0x14282a2c8 <line:27:9, line:35:2> has_else
+    |   |-BinaryOperator 0x142829f90 <line:27:13, col:46> 'int' contains-errors '&&'
+    |   | |-BinaryOperator 0x142829e70 <col:13, col:23> 'int' contains-errors '=='
+    |   | | |-RecoveryExpr 0x142829e28 <col:13, col:16> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x142829df0 <col:13> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    |   | | `-IntegerLiteral 0x142829e50 <col:23> 'int' 14
+    |   | `-BinaryOperator 0x142829f70 <col:29, col:46> 'int' contains-errors '=='
+    |   |   |-ParenExpr 0x142829f30 <col:29, col:41> '<dependent type>' contains-errors
+    |   |   | `-BinaryOperator 0x142829f10 <col:30, col:39> '<dependent type>' contains-errors '&'
+    |   |   |   |-RecoveryExpr 0x142829ec8 <col:30, col:33> '<dependent type>' contains-errors lvalue
+    |   |   |   | `-DeclRefExpr 0x142829e90 <col:30> 'const struct sys_reg_desc *' lvalue ParmVar 0x142827628 'r' 'const struct sys_reg_desc *'
+    |   |   |   `-IntegerLiteral 0x142829ef0 <col:39> 'int' 12
+    |   |   `-IntegerLiteral 0x142829f50 <col:46> 'int' 8
+    |   |-CompoundStmt 0x14282a248 <col:49, line:33:2>
+    |   `-CompoundStmt 0x14282a2b0 <col:9, line:35:2>
+    |     `-CallExpr 0x14282a290 <line:34:3, col:7> 'int'
+    |       `-ImplicitCastExpr 0x14282a278 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x14282a258 <col:3> 'int ()' Function 0x142829c50 'BUG' 'int ()'
+    `-IfStmt 0x14282a960 <line:40:2, line:47:2> has_else
+      |-RecoveryExpr 0x14282a4a0 <line:40:6, col:9> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x14282a468 <col:6> 'struct sys_reg_params *' lvalue ParmVar 0x142827458 'p' 'struct sys_reg_params *'
+      |-CompoundStmt 0x14282a7c0 <col:19, line:45:2>
+      `-CompoundStmt 0x14282a950 <col:9, line:47:2>

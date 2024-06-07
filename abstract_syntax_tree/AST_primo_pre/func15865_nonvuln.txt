@@ -1,0 +1,24 @@
+`-FunctionDecl 0x146128750  line:1:13 out_intr 'void (struct virtqueue *)' static
+  |-ParmVarDecl 0x146128648 <col:22, col:40> col:40 used vq 'struct virtqueue *'
+  `-CompoundStmt 0x1470088f8 <line:2:1, line:10:1>
+    |-DeclStmt 0x147008438 <line:3:2, col:19>
+    | |-RecordDecl 0x147008248 <col:2, col:9> col:9 struct port
+    | `-VarDecl 0x1470083b8 <col:2, col:15> col:15 used port 'struct port *'
+    |-BinaryOperator 0x1470086b8 <line:5:2, col:43> 'struct port *' contains-errors '='
+    | |-DeclRefExpr 0x147008450 <col:2> 'struct port *' lvalue Var 0x1470083b8 'port' 'struct port *'
+    | `-CallExpr 0x147008688 <col:9, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1470085a0 <col:9> 'int ()' Function 0x1470084e8 'find_port_by_vq' 'int ()'
+    |   |-CXXDependentScopeMemberExpr 0x147008620 <col:25, col:35> '<dependent type>' contains-errors lvalue ->priv
+    |   | `-RecoveryExpr 0x1470085f8 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1470085c0 <col:25> 'struct virtqueue *' lvalue ParmVar 0x146128648 'vq' 'struct virtqueue *'
+    |   `-DeclRefExpr 0x147008668 <col:41> 'struct virtqueue *' lvalue ParmVar 0x146128648 'vq' 'struct virtqueue *'
+    |-IfStmt 0x147008738 <line:6:2, line:7:3>
+    | |-UnaryOperator 0x147008710 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1470086f8 <col:7> 'struct port *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1470086d8 <col:7> 'struct port *' lvalue Var 0x1470083b8 'port' 'struct port *'
+    | `-ReturnStmt 0x147008728 <line:7:3>
+    `-CallExpr 0x1470088d0 <line:9:2, col:40> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x147008838 <col:2> 'int ()' Function 0x147008780 'wake_up_interruptible' 'int ()'
+      `-UnaryOperator 0x1470088b8 <col:24, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x147008890 <col:25, col:31> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x147008858 <col:25> 'struct port *' lvalue Var 0x1470083b8 'port' 'struct port *'

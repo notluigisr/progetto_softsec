@@ -1,0 +1,73 @@
+`-FunctionDecl 0x138940e88  line:1:12 invalid sco_sock_recvmsg 'int (struct kiocb *, struct socket *, struct msghdr *, int, int)' static
+  |-ParmVarDecl 0x138928648 <col:29, col:43> col:43 used iocb 'struct kiocb *'
+  |-ParmVarDecl 0x138940a28 <col:49, col:64> col:64 used sock 'struct socket *'
+  |-ParmVarDecl 0x138940bf8 <line:2:8, col:23> col:23 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x138940c90 <col:28, col:35> col:35 invalid len 'int'
+  |-ParmVarDecl 0x138940d10 <col:40, col:44> col:44 used flags 'int'
+  `-CompoundStmt 0x138947fd8 <line:3:1, line:21:1>
+    |-DeclStmt 0x1389411a8 <line:4:2, col:28>
+    | |-RecordDecl 0x138940f58 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1389410c8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x138941168 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138941130 <col:20> 'struct socket *' lvalue ParmVar 0x138940a28 'sock' 'struct socket *'
+    |-DeclStmt 0x1389415e8 <line:5:2, col:35>
+    | |-RecordDecl 0x1389411c0 <col:2, col:9> col:9 struct sco_pinfo
+    | `-VarDecl 0x138941328 <col:2, col:34> col:20 used pi 'struct sco_pinfo *' cinit
+    |   `-ImplicitCastExpr 0x1389415b8 <col:25, col:34> 'struct sco_pinfo *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x138941578 <col:25, col:34> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x138941560 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1389414f0 <col:25> 'int ()' Function 0x138941438 'sco_pi' 'int ()'
+    |       `-ImplicitCastExpr 0x1389415a0 <col:32> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x138941510 <col:32> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    |-CallExpr 0x138941738 <line:7:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x138941720 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1389416e0 <col:2> 'int ()' Function 0x138941628 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x138941760 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x138941700 <col:12> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    |-IfStmt 0x138947d28 <line:9:2, line:16:2>
+    | |-BinaryOperator 0x138947860 <line:9:6, line:10:51> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x138947758 <line:9:6, col:22> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x1389417b0 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x138941778 <col:6> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    | | | `-RecoveryExpr 0x138947738 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x138947830 <line:10:6, col:51> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1389418f0 <col:6> 'int ()' Function 0x138941838 'test_bit' 'int ()'
+    | |   |-RecoveryExpr 0x138947778 <col:15> '<dependent type>' contains-errors lvalue
+    | |   `-UnaryOperator 0x138947818 <col:34, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x1389477f0 <col:35, col:46> '<dependent type>' contains-errors lvalue
+    | |       `-CallExpr 0x1389477b0 <col:35, col:43> 'int' contains-errors
+    | |         |-ImplicitCastExpr 0x138947798 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    | |         | `-DeclRefExpr 0x138947610 <col:35> 'int ()' Function 0x138941950 'bt_sk' 'int ()'
+    | |         `-ImplicitCastExpr 0x1389477d8 <col:41> 'struct sock *' contains-errors <LValueToRValue>
+    | |           `-DeclRefExpr 0x138947630 <col:41> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    | `-CompoundStmt 0x138947cf8 <col:54, line:16:2>
+    |   |-CallExpr 0x138947a48 <line:11:3, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x138947960 <col:3> 'int ()' Function 0x1389478a8 'hci_conn_accept' 'int ()'
+    |   | |-CXXDependentScopeMemberExpr 0x1389479e0 <col:19, col:29> '<dependent type>' contains-errors lvalue ->hcon
+    |   | | `-RecoveryExpr 0x1389479b8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x138947980 <col:19> 'struct sco_pinfo *' contains-errors lvalue Var 0x138941328 'pi' 'struct sco_pinfo *'
+    |   | `-IntegerLiteral 0x138947a28 <col:35> 'int' 0
+    |   |-BinaryOperator 0x138947b30 <line:12:3, col:18> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x138947ab0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x138947a78 <col:3> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    |   | `-RecoveryExpr 0x138947b10 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x138947c88 <line:14:3, col:18> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x138947c70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x138947c30 <col:3> 'int ()' Function 0x138947b78 'release_sock' 'int ()'
+    |   | `-ImplicitCastExpr 0x138947cb0 <col:16> 'struct sock *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x138947c50 <col:16> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    |   `-ReturnStmt 0x138947ce8 <line:15:3, col:10>
+    |     `-IntegerLiteral 0x138947cc8 <col:10> 'int' 0
+    |-CallExpr 0x138947da0 <line:18:2, col:17> 'int' contains-errors
+    | |-ImplicitCastExpr 0x138947d88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x138947d48 <col:2> 'int ()' Function 0x138947b78 'release_sock' 'int ()'
+    | `-ImplicitCastExpr 0x138947dc8 <col:15> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x138947d68 <col:15> 'struct sock *' contains-errors lvalue Var 0x1389410c8 'sk' 'struct sock *'
+    `-ReturnStmt 0x138947fc8 <line:20:2, col:52>
+      `-CallExpr 0x138947f80 <col:9, col:52> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x138947ec0 <col:9> 'int ()' Function 0x138947e08 'bt_sock_recvmsg' 'int ()'
+        |-DeclRefExpr 0x138947ee0 <col:25> 'struct kiocb *' lvalue ParmVar 0x138928648 'iocb' 'struct kiocb *'
+        |-DeclRefExpr 0x138947f00 <col:31> 'struct socket *' lvalue ParmVar 0x138940a28 'sock' 'struct socket *'
+        |-DeclRefExpr 0x138947f20 <col:37> 'struct msghdr *' lvalue ParmVar 0x138940bf8 'msg' 'struct msghdr *'
+        |-RecoveryExpr 0x138947f40 <col:42> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x138947f60 <col:47> 'int' lvalue ParmVar 0x138940d10 'flags' 'int'

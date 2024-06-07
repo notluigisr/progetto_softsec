@@ -1,0 +1,41 @@
+`-FunctionDecl 0x121145a38  line:1:16 invalid proc_pid_attr_read 'int (struct file *, char)' static
+  |-ParmVarDecl 0x121128668 <col:35, col:49> col:49 used file 'struct file *'
+  |-ParmVarDecl 0x1211286e0 <col:55, col:60> col:60 __user 'char'
+  `-CompoundStmt 0x121147d18 <line:3:1, line:20:1>
+    |-DeclStmt 0x121145dc8 <line:4:2, col:53>
+    | |-RecordDecl 0x121145af0 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x121145c58 <col:2, col:46> col:17 used inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x121145d68 <col:25, col:46> '<dependent type>' contains-errors lvalue ->d_inode
+    |     `-CXXDependentScopeMemberExpr 0x121145d20 <col:25, col:38> '<dependent type>' contains-errors lvalue .dentry
+    |       `-RecoveryExpr 0x121145cf8 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x121145cc0 <col:25> 'struct file *' lvalue ParmVar 0x121128668 'file' 'struct file *'
+    |-DeclStmt 0x121145e98 <line:5:2, col:16>
+    | `-VarDecl 0x121145df8 <col:2, col:12> col:8 used p 'char *' cinit
+    |   `-RecoveryExpr 0x121145e78 <col:12> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x1211462d8 <line:7:2, col:49>
+    | |-RecordDecl 0x121145eb0 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x121146018 <col:2, col:48> col:22 used task 'struct task_struct *' cinit
+    |   `-ImplicitCastExpr 0x1211462a8 <col:29, col:48> 'struct task_struct *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x121146268 <col:29, col:48> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x121146250 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1211461e0 <col:29> 'int ()' Function 0x121146128 'get_proc_task' 'int ()'
+    |       `-ImplicitCastExpr 0x121146290 <col:43> 'struct inode *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x121146200 <col:43> 'struct inode *' contains-errors lvalue Var 0x121145c58 'inode' 'struct inode *'
+    |-IfStmt 0x1211463e8 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x121146328 <line:9:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x121146310 <col:7> 'struct task_struct *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1211462f0 <col:7> 'struct task_struct *' contains-errors lvalue Var 0x121146018 'task' 'struct task_struct *'
+    | `-ReturnStmt 0x1211463d8 <line:10:3, col:11>
+    |   `-UnaryOperator 0x1211463c0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1211463a8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x121146388 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1211468a8 <line:15:2, col:22> 'int' contains-errors
+    | |-ImplicitCastExpr 0x121146890 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x121146850 <col:2> 'int ()' Function 0x121146798 'put_task_struct' 'int ()'
+    | `-ImplicitCastExpr 0x1211468d0 <col:18> 'struct task_struct *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x121146870 <col:18> 'struct task_struct *' contains-errors lvalue Var 0x121146018 'task' 'struct task_struct *'
+    `-CallExpr 0x121147cd8 <line:18:2, col:9> 'int' contains-errors
+      |-ImplicitCastExpr 0x121147cc0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x121147c80 <col:2> 'int ()' Function 0x121147bc8 'kfree' 'int ()'
+      `-ImplicitCastExpr 0x121147d00 <col:8> 'char *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x121147ca0 <col:8> 'char *' contains-errors lvalue Var 0x121145df8 'p' 'char *'

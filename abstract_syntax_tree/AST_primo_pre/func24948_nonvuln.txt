@@ -1,0 +1,39 @@
+`-FunctionDecl 0x138922638  line:1:1 invalid __i915_gem_userptr_set_active 'int (struct drm_i915_gem_object *, int)'
+  |-ParmVarDecl 0x13900e248 <col:31, col:59> col:59 used obj 'struct drm_i915_gem_object *'
+  |-ParmVarDecl 0x13900e2e0 <col:64, col:69> col:69 invalid value 'int'
+  `-CompoundStmt 0x1389231d8 <line:2:1, line:15:1>
+    |-DeclStmt 0x138922980 <line:3:2, col:54>
+    | |-RecordDecl 0x1389226f0 <col:2, col:9> col:9 struct i915_mmu_object
+    | `-VarDecl 0x138922858 <col:2, col:44> col:26 used mo 'struct i915_mmu_object *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x138922920 <col:31, col:44> '<dependent type>' contains-errors lvalue .mmu_object
+    |     `-RecoveryExpr 0x1389228f8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1389228c0 <col:31> 'struct drm_i915_gem_object *' lvalue ParmVar 0x13900e248 'obj' 'struct drm_i915_gem_object *'
+    |-IfStmt 0x1389229f8 <line:6:2, line:7:3>
+    | |-UnaryOperator 0x1389229d0 <line:6:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1389229b8 <col:7> 'struct i915_mmu_object *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x138922998 <col:7> 'struct i915_mmu_object *' contains-errors lvalue Var 0x138922858 'mo' 'struct i915_mmu_object *'
+    | `-ReturnStmt 0x1389229e8 <line:7:3>
+    |-CallExpr 0x138922c50 <line:9:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138922b70 <col:2> 'int ()' Function 0x138922ab8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x138922c38 <col:12, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x138922bf0 <col:13, col:21> '<dependent type>' contains-errors lvalue ->lock
+    |     `-RecoveryExpr 0x138922bc8 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x138922b90 <col:13> 'struct i915_mmu_object *' contains-errors lvalue Var 0x138922858 'mo' 'struct i915_mmu_object *'
+    |-IfStmt 0x138922fc0 <line:10:2, line:13:16> has_else
+    | |-RecoveryExpr 0x138922c78 <line:10:6> '<dependent type>' contains-errors lvalue
+    | |-CallExpr 0x138922e08 <line:11:3, col:16> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x138922df0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x138922d78 <col:3> 'int ()' Function 0x138922cc0 'add_object' 'int ()'
+    | | `-ImplicitCastExpr 0x138922e30 <col:14> 'struct i915_mmu_object *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x138922d98 <col:14> 'struct i915_mmu_object *' contains-errors lvalue Var 0x138922858 'mo' 'struct i915_mmu_object *'
+    | `-CallExpr 0x138922f80 <line:13:3, col:16> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x138922f68 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x138922f28 <col:3> 'int ()' Function 0x138922e70 'del_object' 'int ()'
+    |   `-ImplicitCastExpr 0x138922fa8 <col:14> 'struct i915_mmu_object *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x138922f48 <col:14> 'struct i915_mmu_object *' contains-errors lvalue Var 0x138922858 'mo' 'struct i915_mmu_object *'
+    `-CallExpr 0x1389231b0 <line:14:2, col:27> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1389230d0 <col:2> 'int ()' Function 0x138923018 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x138923198 <col:14, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-CXXDependentScopeMemberExpr 0x138923150 <col:15, col:23> '<dependent type>' contains-errors lvalue ->lock
+          `-RecoveryExpr 0x138923128 <col:15, col:19> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x1389230f0 <col:15> 'struct i915_mmu_object *' contains-errors lvalue Var 0x138922858 'mo' 'struct i915_mmu_object *'

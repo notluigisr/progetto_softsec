@@ -1,0 +1,52 @@
+`-FunctionDecl 0x135944d48  line:1:12 msr_open 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x135928648 <col:21, col:35> col:35 inode 'struct inode *'
+  |-ParmVarDecl 0x135944c28 <col:42, col:55> col:55 used file 'struct file *'
+  `-CompoundStmt 0x135947030 <line:2:1, line:15:1>
+    |-DeclStmt 0x135944ec8 <line:3:2, col:18>
+    | `-VarDecl 0x135944e60 <col:2, col:15> col:15 used cpu 'unsigned int'
+    |-DeclStmt 0x1359450c8 <line:4:2, col:23>
+    | |-RecordDecl 0x135944ee0 <col:2, col:9> col:9 struct cpuinfo_x86
+    | `-VarDecl 0x135945048 <col:2, col:22> col:22 used c 'struct cpuinfo_x86 *'
+    |-BinaryOperator 0x135945368 <line:6:2, col:43> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x1359450e0 <col:2> 'unsigned int' lvalue Var 0x135944e60 'cpu' 'unsigned int'
+    | `-CallExpr 0x135945340 <col:8, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x135945230 <col:8> 'int ()' Function 0x135945178 'iminor' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x1359452f8 <col:15, col:36> '<dependent type>' contains-errors lvalue ->d_inode
+    |     `-CXXDependentScopeMemberExpr 0x1359452b0 <col:15, col:28> '<dependent type>' contains-errors lvalue .dentry
+    |       `-RecoveryExpr 0x135945288 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x135945250 <col:15> 'struct file *' lvalue ParmVar 0x135944c28 'file' 'struct file *'
+    |-IfStmt 0x135945738 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x135945670 <line:7:6, col:42> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x1359455e0 <col:6, col:13> 'int' contains-errors '>='
+    | | | |-DeclRefExpr 0x135945388 <col:6> 'unsigned int' lvalue Var 0x135944e60 'cpu' 'unsigned int'
+    | | | `-RecoveryExpr 0x1359455c0 <col:13> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x135945658 <col:27, col:42> 'int' prefix '!' cannot overflow
+    | |   `-CallExpr 0x135945618 <col:28, col:42> 'int'
+    | |     |-ImplicitCastExpr 0x135945600 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x1359454c0 <col:28> 'int ()' Function 0x135945408 'cpu_online' 'int ()'
+    | |     `-ImplicitCastExpr 0x135945640 <col:39> 'unsigned int' <LValueToRValue>
+    | |       `-DeclRefExpr 0x1359454e0 <col:39> 'unsigned int' lvalue Var 0x135944e60 'cpu' 'unsigned int'
+    | `-ReturnStmt 0x135945728 <line:8:3, col:11>
+    |   `-UnaryOperator 0x135945710 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1359456f8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1359456d8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x135945918 <line:10:2, col:19> 'struct cpuinfo_x86 *' contains-errors '='
+    | |-DeclRefExpr 0x135945758 <col:2> 'struct cpuinfo_x86 *' lvalue Var 0x135945048 'c' 'struct cpuinfo_x86 *'
+    | `-RecoveryExpr 0x1359458f0 <col:20, col:19> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x1359458b0 <col:7, col:19> 'int'
+    |     |-ImplicitCastExpr 0x135945898 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x135945858 <col:7> 'int ()' Function 0x1359457a0 'cpu_data' 'int ()'
+    |     `-ImplicitCastExpr 0x1359458d8 <col:16> 'unsigned int' <LValueToRValue>
+    |       `-DeclRefExpr 0x135945878 <col:16> 'unsigned int' lvalue Var 0x135944e60 'cpu' 'unsigned int'
+    |-IfStmt 0x135945bc8 <line:11:2, line:12:11>
+    | |-UnaryOperator 0x135945b08 <line:11:6, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x135945ad8 <col:7, col:33> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x135945a18 <col:7> 'int ()' Function 0x135945960 'cpu_has' 'int ()'
+    | |   |-DeclRefExpr 0x135945a38 <col:15> 'struct cpuinfo_x86 *' lvalue Var 0x135945048 'c' 'struct cpuinfo_x86 *'
+    | |   `-RecoveryExpr 0x135945ab8 <col:18> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x135945bb8 <line:12:3, col:11>
+    |   `-UnaryOperator 0x135945ba0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x135945b88 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x135945b68 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x135947020 <line:14:2, col:9>
+      `-IntegerLiteral 0x135947000 <col:9> 'int' 0

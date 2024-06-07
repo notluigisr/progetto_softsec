@@ -1,0 +1,37 @@
+`-FunctionDecl 0x149928750  line:1:13 netlink_rcv_wake 'void (struct sock *)' static
+  |-ParmVarDecl 0x149928648 <col:30, col:43> col:43 used sk 'struct sock *'
+  `-CompoundStmt 0x149941588 <line:2:1, line:9:1>
+    |-DeclStmt 0x149940e48 <line:3:2, col:39>
+    | |-RecordDecl 0x149940a48 <col:2, col:9> col:9 struct netlink_sock
+    | `-VarDecl 0x149940bb8 <col:2, col:38> col:23 used nlk 'struct netlink_sock *' cinit
+    |   `-ImplicitCastExpr 0x149940e18 <col:29, col:38> 'struct netlink_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x149940dd8 <col:29, col:38> 'int'
+    |       |-ImplicitCastExpr 0x149940dc0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x149940d50 <col:29> 'int ()' Function 0x149940c98 'nlk_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x149940e00 <col:36> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x149940d70 <col:36> 'struct sock *' lvalue ParmVar 0x149928648 'sk' 'struct sock *'
+    |-IfStmt 0x1499411c8 <line:5:2, line:6:27>
+    | |-CallExpr 0x149940fd8 <line:5:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x149940f40 <col:6> 'int ()' Function 0x149940e88 'skb_queue_empty' 'int ()'
+    | | `-UnaryOperator 0x149940fc0 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x149940f98 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x149940f60 <col:23> 'struct sock *' lvalue ParmVar 0x149928648 'sk' 'struct sock *'
+    | `-CallExpr 0x149941198 <line:6:3, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1499410e0 <col:3> 'int ()' Function 0x149941028 'clear_bit' 'int ()'
+    |   |-IntegerLiteral 0x149941100 <col:13> 'int' 0
+    |   `-UnaryOperator 0x149941180 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x149941158 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x149941120 <col:17> 'struct netlink_sock *' lvalue Var 0x149940bb8 'nlk' 'struct netlink_sock *'
+    `-IfStmt 0x149941568 <line:7:2, line:8:35>
+      |-UnaryOperator 0x1499413b0 <line:7:6, col:30> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x149941380 <col:7, col:30> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x1499412c8 <col:7> 'int ()' Function 0x149941210 'test_bit' 'int ()'
+      |   |-IntegerLiteral 0x1499412e8 <col:16> 'int' 0
+      |   `-UnaryOperator 0x149941368 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x149941340 <col:20, col:25> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x149941308 <col:20> 'struct netlink_sock *' lvalue Var 0x149940bb8 'nlk' 'struct netlink_sock *'
+      `-CallExpr 0x149941540 <line:8:3, col:35> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1499414a8 <col:3> 'int ()' Function 0x1499413f0 'wake_up_interruptible' 'int ()'
+        `-UnaryOperator 0x149941528 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x149941500 <col:26, col:31> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x1499414c8 <col:26> 'struct netlink_sock *' lvalue Var 0x149940bb8 'nlk' 'struct netlink_sock *'

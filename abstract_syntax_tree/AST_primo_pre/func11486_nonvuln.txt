@@ -1,0 +1,100 @@
+`-FunctionDecl 0x1068088d0  line:1:13 invalid mark_map_regs 'void (struct bpf_verifier_state *, int, int)' static
+  |-ParmVarDecl 0x120128648 <col:27, col:54> col:54 used vstate 'struct bpf_verifier_state *'
+  |-ParmVarDecl 0x1201286e0 <col:62, col:66> col:66 invalid regno 'int'
+  |-ParmVarDecl 0x120128760 <line:2:6, col:11> col:11 invalid is_null 'int'
+  `-CompoundStmt 0x107009060 <line:3:1, line:20:1>
+    |-DeclStmt 0x106808c88 <line:4:2, col:64>
+    | |-RecordDecl 0x106808990 <col:2, col:9> col:9 struct bpf_func_state
+    | `-VarDecl 0x106808af8 <col:2, col:63> col:25 used state 'struct bpf_func_state *' cinit
+    |   `-ArraySubscriptExpr 0x106808c50 <col:33, col:63> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x106808c20 <col:33, col:41> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x106808b98 <col:33, col:41> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x106808b60 <col:33> 'struct bpf_verifier_state *' lvalue ParmVar 0x120128648 'vstate' 'struct bpf_verifier_state *'
+    |     `-ImplicitCastExpr 0x106808c38 <col:47, col:55> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x106808bf8 <col:47, col:55> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x106808bc0 <col:47> 'struct bpf_verifier_state *' lvalue ParmVar 0x120128648 'vstate' 'struct bpf_verifier_state *'
+    |-DeclStmt 0x106808ee8 <line:5:2, col:42>
+    | |-RecordDecl 0x106808ca0 <col:2, col:9> col:9 struct bpf_reg_state
+    | `-VarDecl 0x106808e08 <col:2, col:38> col:24 used regs 'struct bpf_reg_state *' cinit
+    |   `-RecoveryExpr 0x106808ea8 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x106808e70 <col:31> 'struct bpf_func_state *' contains-errors lvalue Var 0x106808af8 'state' 'struct bpf_func_state *'
+    |-DeclStmt 0x106809018 <line:7:2, col:10>
+    | |-VarDecl 0x106808f18 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x106808f98 <col:2, col:9> col:9 used j 'int'
+    |-ForStmt 0x1068093f8 <line:9:2, line:10:36>
+    | |-BinaryOperator 0x106809070 <line:9:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x106809030 <col:7> 'int' lvalue Var 0x106808f18 'i' 'int'
+    | | `-IntegerLiteral 0x106809050 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x106809108 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x106809090 <col:14> 'int' lvalue Var 0x106808f18 'i' 'int'
+    | | `-RecoveryExpr 0x1068090e8 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x106809148 <col:31, col:32> 'int' postfix '++'
+    | | `-DeclRefExpr 0x106809128 <col:31> 'int' lvalue Var 0x106808f18 'i' 'int'
+    | `-CallExpr 0x1068093b8 <line:10:3, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1068092c0 <col:3> 'int ()' Function 0x106809208 'mark_map_reg' 'int ()'
+    |   |-DeclRefExpr 0x1068092e0 <col:16> 'struct bpf_reg_state *' contains-errors lvalue Var 0x106808e08 'regs' 'struct bpf_reg_state *'
+    |   |-DeclRefExpr 0x106809300 <col:22> 'int' lvalue Var 0x106808f18 'i' 'int'
+    |   |-RecoveryExpr 0x106809398 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x106809338 <col:29> '<dependent type>' contains-errors lvalue
+    `-ForStmt 0x107009028 <line:12:2, line:19:2>
+      |-BinaryOperator 0x106809470 <line:12:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x106809430 <col:7> 'int' lvalue Var 0x106808f98 'j' 'int'
+      | `-IntegerLiteral 0x106809450 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x106809510 <col:14, col:27> 'int' contains-errors '<='
+      | |-DeclRefExpr 0x106809490 <col:14> 'int' lvalue Var 0x106808f98 'j' 'int'
+      | `-RecoveryExpr 0x1068094e8 <col:19, col:27> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1068094b0 <col:19> 'struct bpf_verifier_state *' lvalue ParmVar 0x120128648 'vstate' 'struct bpf_verifier_state *'
+      |-UnaryOperator 0x106809550 <col:37, col:38> 'int' postfix '++'
+      | `-DeclRefExpr 0x106809530 <col:37> 'int' lvalue Var 0x106808f98 'j' 'int'
+      `-CompoundStmt 0x107009008 <col:42, line:19:2>
+        |-BinaryOperator 0x106809658 <line:13:3, col:26> 'struct bpf_func_state *' contains-errors '='
+        | |-DeclRefExpr 0x106809568 <col:3> 'struct bpf_func_state *' contains-errors lvalue Var 0x106808af8 'state' 'struct bpf_func_state *'
+        | `-ArraySubscriptExpr 0x106809638 <col:11, col:26> '<dependent type>' contains-errors lvalue
+        |   |-ImplicitCastExpr 0x106809608 <col:11, col:19> '<dependent type>' contains-errors <LValueToRValue>
+        |   | `-RecoveryExpr 0x1068095c0 <col:11, col:19> '<dependent type>' contains-errors lvalue
+        |   |   `-DeclRefExpr 0x106809588 <col:11> 'struct bpf_verifier_state *' lvalue ParmVar 0x120128648 'vstate' 'struct bpf_verifier_state *'
+        |   `-ImplicitCastExpr 0x106809620 <col:25> 'int' <LValueToRValue>
+        |     `-DeclRefExpr 0x1068095e8 <col:25> 'int' lvalue Var 0x106808f98 'j' 'int'
+        `-ForStmt 0x107008fd0 <line:14:3, line:18:3>
+          |-BinaryOperator 0x1068096b8 <line:14:8, col:12> 'int' '='
+          | |-DeclRefExpr 0x106809678 <col:8> 'int' lvalue Var 0x106808f18 'i' 'int'
+          | `-IntegerLiteral 0x106809698 <col:12> 'int' 0
+          |-<<<NULL>>>
+          |-BinaryOperator 0x107008800 <col:15, col:44> 'int' contains-errors '<'
+          | |-DeclRefExpr 0x1068096d8 <col:15> 'int' lvalue Var 0x106808f18 'i' 'int'
+          | `-BinaryOperator 0x1068097d0 <col:19, col:44> '<dependent type>' contains-errors '/'
+          |   |-RecoveryExpr 0x106809730 <col:19, col:26> '<dependent type>' contains-errors lvalue
+          |   | `-DeclRefExpr 0x1068096f8 <col:19> 'struct bpf_func_state *' contains-errors lvalue Var 0x106808af8 'state' 'struct bpf_func_state *'
+          |   `-RecoveryExpr 0x1068097b0 <col:44> '<dependent type>' contains-errors lvalue
+          |-UnaryOperator 0x107008840 <col:58, col:59> 'int' postfix '++'
+          | `-DeclRefExpr 0x107008820 <col:58> 'int' lvalue Var 0x106808f18 'i' 'int'
+          `-CompoundStmt 0x107008fb0 <col:63, line:18:3>
+            |-IfStmt 0x107008be8 <line:15:4, line:16:5>
+            | |-BinaryOperator 0x107008bc0 <line:15:8, col:40> 'int' contains-errors '!='
+            | | |-ArraySubscriptExpr 0x107008b80 <col:8, col:35> '<dependent type>' contains-errors lvalue
+            | | | |-ImplicitCastExpr 0x107008b68 <col:8, col:24> '<dependent type>' contains-errors <LValueToRValue>
+            | | | | `-CXXDependentScopeMemberExpr 0x107008b20 <col:8, col:24> '<dependent type>' contains-errors lvalue .slot_type
+            | | | |   `-ArraySubscriptExpr 0x107008b00 <col:8, col:22> '<dependent type>' contains-errors lvalue
+            | | | |     |-ImplicitCastExpr 0x107008ad0 <col:8, col:15> '<dependent type>' contains-errors <LValueToRValue>
+            | | | |     | `-RecoveryExpr 0x107008890 <col:8, col:15> '<dependent type>' contains-errors lvalue
+            | | | |     |   `-DeclRefExpr 0x107008858 <col:8> 'struct bpf_func_state *' contains-errors lvalue Var 0x106808af8 'state' 'struct bpf_func_state *'
+            | | | |     `-ImplicitCastExpr 0x107008ae8 <col:21> 'int' <LValueToRValue>
+            | | | |       `-DeclRefExpr 0x1070088b8 <col:21> 'int' lvalue Var 0x106808f18 'i' 'int'
+            | | | `-IntegerLiteral 0x107008970 <col:34> 'int' 0
+            | | `-RecoveryExpr 0x107008ba0 <col:40> '<dependent type>' contains-errors lvalue
+            | `-ContinueStmt 0x107008be0 <line:16:5>
+            `-CallExpr 0x107008f70 <line:17:4, col:61> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x107008c08 <col:4> 'int ()' Function 0x106809208 'mark_map_reg' 'int ()'
+              |-UnaryOperator 0x107008f38 <col:17, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+              | `-CXXDependentScopeMemberExpr 0x107008ef0 <col:18, col:34> '<dependent type>' contains-errors lvalue .spilled_ptr
+              |   `-ArraySubscriptExpr 0x107008ed0 <col:18, col:32> '<dependent type>' contains-errors lvalue
+              |     |-ImplicitCastExpr 0x107008ea0 <col:18, col:25> '<dependent type>' contains-errors <LValueToRValue>
+              |     | `-RecoveryExpr 0x107008c60 <col:18, col:25> '<dependent type>' contains-errors lvalue
+              |     |   `-DeclRefExpr 0x107008c28 <col:18> 'struct bpf_func_state *' contains-errors lvalue Var 0x106808af8 'state' 'struct bpf_func_state *'
+              |     `-ImplicitCastExpr 0x107008eb8 <col:31> 'int' <LValueToRValue>
+              |       `-DeclRefExpr 0x107008c88 <col:31> 'int' lvalue Var 0x106808f18 'i' 'int'
+              |-IntegerLiteral 0x107008d58 <col:47> 'int' 0
+              |-RecoveryExpr 0x107008f50 <col:50> '<dependent type>' contains-errors lvalue
+              `-RecoveryExpr 0x107008d90 <col:54> '<dependent type>' contains-errors lvalue

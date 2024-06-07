@@ -1,0 +1,29 @@
+`-FunctionDecl 0x12580e350  line:1:13 flush_tmregs_to_thread 'void (struct task_struct *)' static
+  |-ParmVarDecl 0x12580e248 <col:36, col:56> col:56 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x125826ef0 <line:2:1, line:14:1>
+    |-IfStmt 0x125826708 <line:5:2, line:6:3>
+    | |-BinaryOperator 0x1258266d8 <line:5:6, col:13> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x125826648 <col:6> 'struct task_struct *' lvalue ParmVar 0x12580e248 'tsk' 'struct task_struct *'
+    | | `-RecoveryExpr 0x1258266b8 <col:13> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1258266f8 <line:6:3>
+    `-IfStmt 0x125826ec0 <line:8:2, line:13:2> has_else
+      |-CallExpr 0x1258269e0 <line:8:6, col:30> 'int'
+      | |-ImplicitCastExpr 0x1258269c8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x125826840 <col:6> 'int ()' Function 0x125826788 'MSR_TM_SUSPENDED' 'int ()'
+      | `-CallExpr 0x1258269a8 <col:23, col:29> 'int'
+      |   `-ImplicitCastExpr 0x125826990 <col:23> 'int (*)()' <FunctionToPointerDecay>
+      |     `-DeclRefExpr 0x125826940 <col:23> 'int ()' Function 0x125826888 'mfmsr' 'int ()'
+      |-CompoundStmt 0x125826b90 <col:33, line:10:2>
+      | `-CallExpr 0x125826b68 <line:9:3, col:37> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x125826ae8 <col:3> 'int ()' Function 0x125826a30 'tm_reclaim_current' 'int ()'
+      |   `-RecoveryExpr 0x125826b48 <col:22> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x125826ea0 <line:10:9, line:13:2>
+        |-CallExpr 0x125826cc0 <line:11:3, col:13> 'int'
+        | `-ImplicitCastExpr 0x125826ca8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        |   `-DeclRefExpr 0x125826c88 <col:3> 'int ()' Function 0x125826bd0 'tm_enable' 'int ()'
+        `-CallExpr 0x125826e78 <line:12:3, col:30> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x125826dc0 <col:3> 'int ()' Function 0x125826d08 'tm_save_sprs' 'int ()'
+          `-UnaryOperator 0x125826e60 <col:16, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-ParenExpr 0x125826e40 <col:17, col:29> '<dependent type>' contains-errors lvalue
+              `-RecoveryExpr 0x125826e18 <col:18, col:23> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x125826de0 <col:18> 'struct task_struct *' lvalue ParmVar 0x12580e248 'tsk' 'struct task_struct *'

@@ -1,0 +1,18 @@
+`-FunctionDecl 0x137128750  line:1:13 esp_destroy 'void (struct xfrm_state *)' static
+  |-ParmVarDecl 0x137128648 <col:25, col:44> col:44 used x 'struct xfrm_state *'
+  `-CompoundStmt 0x137140f28 <line:2:1, line:9:1>
+    |-DeclStmt 0x137140c98 <line:3:2, col:36>
+    | |-RecordDecl 0x137140a48 <col:2, col:9> col:9 struct crypto_aead
+    | `-VarDecl 0x137140bb8 <col:2, col:32> col:22 used aead 'struct crypto_aead *' cinit
+    |   `-RecoveryExpr 0x137140c58 <col:29, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x137140c20 <col:29> 'struct xfrm_state *' lvalue ParmVar 0x137128648 'x' 'struct xfrm_state *'
+    |-IfStmt 0x137140d10 <line:5:2, line:6:3>
+    | |-UnaryOperator 0x137140ce8 <line:5:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x137140cd0 <col:7> 'struct crypto_aead *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x137140cb0 <col:7> 'struct crypto_aead *' contains-errors lvalue Var 0x137140bb8 'aead' 'struct crypto_aead *'
+    | `-ReturnStmt 0x137140d00 <line:6:3>
+    `-CallExpr 0x137140ee8 <line:8:2, col:23> 'int' contains-errors
+      |-ImplicitCastExpr 0x137140ed0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x137140e60 <col:2> 'int ()' Function 0x137140da8 'crypto_free_aead' 'int ()'
+      `-ImplicitCastExpr 0x137140f10 <col:19> 'struct crypto_aead *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x137140e80 <col:19> 'struct crypto_aead *' contains-errors lvalue Var 0x137140bb8 'aead' 'struct crypto_aead *'

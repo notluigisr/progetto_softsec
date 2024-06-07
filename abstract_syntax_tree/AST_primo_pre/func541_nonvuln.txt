@@ -1,0 +1,51 @@
+`-FunctionDecl 0x129940dc8  line:1:12 invalid inet6_fill_ifmcaddr 'int (struct sk_buff *, struct ifmcaddr6 *, int, int, int, int)' static
+  |-ParmVarDecl 0x129928648 <col:32, col:48> col:48 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x129940a28 <col:53, col:71> col:71 used ifmca 'struct ifmcaddr6 *'
+  |-ParmVarDecl 0x129940ac0 <line:2:5, col:9> col:9 invalid portid 'int'
+  |-ParmVarDecl 0x129940b40 <col:17, col:21> col:21 invalid seq 'int'
+  |-ParmVarDecl 0x129940bc0 <col:26, col:30> col:30 used event 'int'
+  |-ParmVarDecl 0x129940c40 <col:37, col:41> col:41 invalid flags 'int'
+  `-CompoundStmt 0x1299431d8 <line:3:1, line:25:1>
+    |-DeclStmt 0x129941088 <line:4:2, col:23>
+    | |-RecordDecl 0x129940ea0 <col:2, col:9> col:9 struct nlmsghdr
+    | `-VarDecl 0x129941008 <col:2, col:20> col:20 used nlh 'struct nlmsghdr *'
+    |-DeclStmt 0x129941210 <line:6:2, col:41>
+    | `-VarDecl 0x1299410b8 <col:2, col:34> col:6 used ifindex 'int' cinit
+    |   `-CXXDependentScopeMemberExpr 0x1299411c8 <col:16, col:34> '<dependent type>' contains-errors lvalue ->ifindex
+    |     `-CXXDependentScopeMemberExpr 0x129941180 <col:16, col:29> '<dependent type>' contains-errors lvalue ->dev
+    |       `-RecoveryExpr 0x129941158 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x129941120 <col:16> 'struct ifmcaddr6 *' lvalue ParmVar 0x129940a28 'ifmca' 'struct ifmcaddr6 *'
+    |-IfStmt 0x1299418c8 <line:12:2, line:13:11>
+    | |-BinaryOperator 0x129941800 <line:12:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x129941788 <col:6> 'struct nlmsghdr *' lvalue Var 0x129941008 'nlh' 'struct nlmsghdr *'
+    | | `-RecoveryExpr 0x1299417e0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1299418b8 <line:13:3, col:11>
+    |   `-UnaryOperator 0x1299418a0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x129941888 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x129941868 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x129942918 <line:15:2, col:57> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1299419c8 <col:2> 'int ()' Function 0x129941910 'put_ifaddrmsg' 'int ()'
+    | |-DeclRefExpr 0x129942800 <col:16> 'struct nlmsghdr *' lvalue Var 0x129941008 'nlh' 'struct nlmsghdr *'
+    | |-IntegerLiteral 0x129942820 <col:21> 'int' 128
+    | |-RecoveryExpr 0x1299428d8 <col:26> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x1299428f8 <col:43> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x129942870 <col:50> 'int' contains-errors lvalue Var 0x1299410b8 'ifindex' 'int'
+    |-IfStmt 0x129942fd0 <line:16:2, line:21:2>
+    | |-RecoveryExpr 0x129942db0 <line:16:6, line:18:48> '_Bool' contains-errors
+    | `-CompoundStmt 0x129942fb8 <col:51, line:21:2>
+    |   `-CallExpr 0x129942f58 <line:19:3, col:24> 'int'
+    |     |-ImplicitCastExpr 0x129942f40 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x129942eb0 <col:3> 'int ()' Function 0x129942df8 'nlmsg_cancel' 'int ()'
+    |     |-ImplicitCastExpr 0x129942f88 <col:16> 'struct sk_buff *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x129942ed0 <col:16> 'struct sk_buff *' lvalue ParmVar 0x129928648 'skb' 'struct sk_buff *'
+    |     `-ImplicitCastExpr 0x129942fa0 <col:21> 'struct nlmsghdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x129942ef0 <col:21> 'struct nlmsghdr *' lvalue Var 0x129941008 'nlh' 'struct nlmsghdr *'
+    |-CallExpr 0x129943148 <line:23:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x129943130 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1299430d0 <col:2> 'int ()' Function 0x129943018 'nlmsg_end' 'int ()'
+    | |-ImplicitCastExpr 0x129943178 <col:12> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1299430f0 <col:12> 'struct sk_buff *' lvalue ParmVar 0x129928648 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x129943190 <col:17> 'struct nlmsghdr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x129943110 <col:17> 'struct nlmsghdr *' lvalue Var 0x129941008 'nlh' 'struct nlmsghdr *'
+    `-ReturnStmt 0x1299431c8 <line:24:2, col:9>
+      `-IntegerLiteral 0x1299431a8 <col:9> 'int' 0

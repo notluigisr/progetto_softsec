@@ -1,0 +1,25 @@
+`-FunctionDecl 0x15000de80  line:1:6 invalid throw_exception 'void (int *, int)'
+  |-ParmVarDecl 0x15000dd28 <col:22, col:27> col:27 invalid c 'int *'
+  |-ParmVarDecl 0x15000dda8 <col:30, col:34> col:34 used v 'int'
+  `-CompoundStmt 0x150027508 <col:37, line:5:1>
+    |-IfStmt 0x15000e2a8 <line:2:5, line:3:20>
+    | |-BinaryOperator 0x15000e020 <line:2:8, col:18> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x15000df70 <col:8, col:9> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x15000df58 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x15000df38 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x15000e008 <col:14, col:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x15000dff0 <col:15, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-CXXDependentScopeMemberExpr 0x15000dfa8 <col:15, col:18> '<dependent type>' contains-errors lvalue ->exception_pointer
+    | |       `-RecoveryExpr 0x15000df88 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x15000e268 <line:3:9, col:20> 'int'
+    |   |-ImplicitCastExpr 0x15000e250 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15000e1a0 <col:9> 'int ()' Function 0x15000e0e8 'fatal' 'int ()'
+    |   `-ImplicitCastExpr 0x15000e290 <col:15> 'char *' <ArrayToPointerDecay>
+    |     `-StringLiteral 0x15000e200 <col:15> 'char[4]' lvalue "STR"
+    `-CallExpr 0x1500274d8 <line:4:5, col:37> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x150027400 <col:5> 'int ()' Function 0x15000e2f0 'longjmp' 'int ()'
+      |-UnaryOperator 0x1500274a0 <col:13, col:17> '<dependent type>' contains-errors prefix '*' cannot overflow
+      | `-ImplicitCastExpr 0x150027488 <col:14, col:17> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-CXXDependentScopeMemberExpr 0x150027440 <col:14, col:17> '<dependent type>' contains-errors lvalue ->exception_pointer
+      |     `-RecoveryExpr 0x150027420 <col:14> '<dependent type>' contains-errors lvalue
+      `-DeclRefExpr 0x1500274b8 <col:36> 'int' lvalue ParmVar 0x15000dda8 'v' 'int'

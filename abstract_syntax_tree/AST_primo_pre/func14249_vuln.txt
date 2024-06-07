@@ -1,0 +1,144 @@
+`-FunctionDecl 0x1490fabc0  line:1:6 invalid e2fsck_rehash_directories 'void (int)'
+  |-ParmVarDecl 0x1490faaf0 <col:32, col:41> col:41 referenced invalid ctx 'int'
+  `-CompoundStmt 0x1491187f0 <line:2:1, line:77:1>
+    |-DeclStmt 0x149114218 <line:3:2, col:29>
+    | |-RecordDecl 0x1490fac70 <col:2, col:9> col:9 struct problem_context
+    | `-VarDecl 0x1490fad68 <col:2, col:25> col:25 referenced invalid pctx 'struct problem_context'
+    |-DeclStmt 0x149114418 <line:7:2, col:23>
+    | |-RecordDecl 0x149114230 <col:2, col:9> col:9 struct dir_info
+    | `-VarDecl 0x149114398 <col:2, col:20> col:20 used dir 'struct dir_info *'
+    |-DeclStmt 0x149114650 <line:9:2, col:41>
+    | |-RecordDecl 0x149114430 <col:2, col:9> col:9 struct dir_info_iter
+    | `-VarDecl 0x149114598 <col:2, col:40> col:25 used dirinfo_iter 'struct dir_info_iter *' cinit
+    |   `-ImplicitCastExpr 0x149114620 <col:40> 'struct dir_info_iter *' <NullToPointer>
+    |     `-IntegerLiteral 0x149114600 <col:40> 'int' 0
+    |-DeclStmt 0x1491148b0 <line:12:2, col:37>
+    | |-VarDecl 0x149114680 <col:2, col:8> col:8 used cur 'int'
+    | |-VarDecl 0x149114700 <col:2, col:13> col:13 used max 'int'
+    | |-VarDecl 0x149114780 <col:2, col:18> col:18 used all_dirs 'int'
+    | `-VarDecl 0x149114800 <col:2, col:36> col:28 used first 'int' cinit
+    |   `-IntegerLiteral 0x149114868 <col:36> 'int' 1
+    |-CallExpr 0x149114b88 <line:14:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x149114a20 <col:2> 'int ()' Function 0x149114968 'init_resource_track' 'int ()'
+    | |-UnaryOperator 0x149114b70 <col:22, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x149114b50 <col:23> '<dependent type>' contains-errors lvalue
+    | `-CXXDependentScopeMemberExpr 0x149114ad8 <col:31, col:40> '<dependent type>' contains-errors lvalue ->io
+    |   `-CXXDependentScopeMemberExpr 0x149114a90 <col:31, col:36> '<dependent type>' contains-errors lvalue ->fs
+    |     `-RecoveryExpr 0x149114a70 <col:31> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x149114cd8 <line:15:2, col:28> 'int' contains-errors '='
+    | |-DeclRefExpr 0x149114bb8 <col:2> 'int' lvalue Var 0x149114780 'all_dirs' 'int'
+    | `-BinaryOperator 0x149114cb8 <col:13, col:28> '<dependent type>' contains-errors '&'
+    |   |-CXXDependentScopeMemberExpr 0x149114bf8 <col:13, col:18> '<dependent type>' contains-errors lvalue ->options
+    |   | `-RecoveryExpr 0x149114bd8 <col:13> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x149114c98 <col:28> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x149114e10 <line:17:2, line:18:3>
+    | |-BinaryOperator 0x149114de0 <line:17:6, col:29> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x149114d78 <col:6, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x149114d60 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-CXXDependentScopeMemberExpr 0x149114d18 <col:7, col:12> '<dependent type>' contains-errors lvalue ->dirs_to_hash
+    | | |     `-RecoveryExpr 0x149114cf8 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x149114dc8 <col:28, col:29> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x149114db0 <col:29> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x149114d90 <col:29> 'int' lvalue Var 0x149114780 'all_dirs' 'int'
+    | `-ReturnStmt 0x149114e00 <line:18:3>
+    |-CStyleCastExpr 0x149114fb0 <line:20:2, col:41> 'void' contains-errors <ToVoid>
+    | `-CallExpr 0x149114f70 <col:9, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149114f10 <col:9> 'int ()' Function 0x149114e58 'e2fsck_get_lost_and_found' 'int ()'
+    |   |-RecoveryExpr 0x149114f30 <col:35> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x149114f50 <col:40> 'int' 0
+    |-CallExpr 0x149115110 <line:22:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1491150b8 <col:2> 'int ()' Function 0x149115000 'clear_problem_context' 'int ()'
+    | `-UnaryOperator 0x1491150f8 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1491150d8 <col:25> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x149115178 <line:24:2, col:8> 'int' '='
+    | |-DeclRefExpr 0x149115138 <col:2> 'int' lvalue Var 0x149114680 'cur' 'int'
+    | `-IntegerLiteral 0x149115158 <col:8> 'int' 0
+    |-IfStmt 0x149117060 <line:25:2, line:37:2> has_else
+    | |-ImplicitCastExpr 0x1491151b8 <line:25:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x149115198 <col:6> 'int' lvalue Var 0x149114780 'all_dirs' 'int'
+    | |-CompoundStmt 0x1491168f0 <col:16, line:28:2>
+    | | |-BinaryOperator 0x149116748 <line:26:3, col:48> 'struct dir_info_iter *' contains-errors '='
+    | | | |-DeclRefExpr 0x1491151d0 <col:3> 'struct dir_info_iter *' lvalue Var 0x149114598 'dirinfo_iter' 'struct dir_info_iter *'
+    | | | `-CallExpr 0x149116720 <col:18, col:48> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1491166e0 <col:18> 'int ()' Function 0x149116628 'e2fsck_dir_info_iter_begin' 'int ()'
+    | | |   `-RecoveryExpr 0x149116700 <col:45> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x1491168d0 <line:27:3, col:35> 'int' contains-errors '='
+    | |   |-DeclRefExpr 0x149116768 <col:3> 'int' lvalue Var 0x149114700 'max' 'int'
+    | |   `-CallExpr 0x1491168a8 <col:9, col:35> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x149116868 <col:9> 'int ()' Function 0x1491167b0 'e2fsck_get_num_dirinfo' 'int ()'
+    | |     `-RecoveryExpr 0x149116888 <col:32> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x149117040 <line:28:9, line:37:2>
+    |   |-IfStmt 0x149116e50 <line:31:3, line:35:3>
+    |   | |-RecoveryExpr 0x149116af0 <line:31:7> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x149116e28 <col:15, line:35:3>
+    |   |   |-BinaryOperator 0x149116bf8 <line:32:4, col:19> '<dependent type>' contains-errors '='
+    |   |   | |-CXXDependentScopeMemberExpr 0x149116b58 <col:4, col:9> '<dependent type>' contains-errors lvalue .errcode
+    |   |   | | `-RecoveryExpr 0x149116b30 <col:4> '<dependent type>' contains-errors lvalue
+    |   |   | |   `-DeclRefExpr 0x149116b10 <col:4> 'struct problem_context' lvalue Var 0x1490fad68 'pctx' 'struct problem_context'
+    |   |   | `-RecoveryExpr 0x149116bd8 <col:19> '<dependent type>' contains-errors lvalue
+    |   |   |-CallExpr 0x149116de0 <line:33:4, col:47> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x149116cf8 <col:4> 'int ()' Function 0x149116c40 'fix_problem' 'int ()'
+    |   |   | |-RecoveryExpr 0x149116d18 <col:16> '<dependent type>' contains-errors lvalue
+    |   |   | |-RecoveryExpr 0x149116dc0 <col:21> '<dependent type>' contains-errors lvalue
+    |   |   | `-UnaryOperator 0x149116d70 <col:42, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   `-RecoveryExpr 0x149116d50 <col:43> '<dependent type>' contains-errors lvalue
+    |   |   `-ReturnStmt 0x149116e18 <line:34:4>
+    |   `-BinaryOperator 0x149117020 <line:36:3, col:48> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x149116e70 <col:3> 'int' lvalue Var 0x149114700 'max' 'int'
+    |     `-CallExpr 0x149116ff8 <col:9, col:48> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x149116f70 <col:9> 'int ()' Function 0x149116eb8 'ext2fs_u32_list_count' 'int ()'
+    |       `-CXXDependentScopeMemberExpr 0x149116fb0 <col:31, col:36> '<dependent type>' contains-errors lvalue ->dirs_to_hash
+    |         `-RecoveryExpr 0x149116f90 <col:31> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x149117fb8 <line:38:2, line:65:2>
+    | |-IntegerLiteral 0x149117090 <line:38:9> 'int' 1
+    | `-CompoundStmt 0x149117f90 <col:12, line:65:2>
+    |   |-IfStmt 0x1491174f8 <line:39:3, line:47:3> has_else
+    |   | |-ImplicitCastExpr 0x1491170d0 <line:39:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1491170b0 <col:7> 'int' lvalue Var 0x149114780 'all_dirs' 'int'
+    |   | |-CompoundStmt 0x149117380 <col:17, line:44:3>
+    |   | | `-IfStmt 0x149117300 <line:40:4, line:42:5>
+    |   | |   |-BinaryOperator 0x1491172d8 <line:40:8, line:41:26> 'int' contains-errors '=='
+    |   | |   | |-ParenExpr 0x149117298 <line:40:8, line:41:21> 'struct dir_info *' contains-errors
+    |   | |   | | `-BinaryOperator 0x149117278 <line:40:9, line:41:20> 'struct dir_info *' contains-errors '='
+    |   | |   | |   |-DeclRefExpr 0x1491170e8 <line:40:9> 'struct dir_info *' lvalue Var 0x149114398 'dir' 'struct dir_info *'
+    |   | |   | |   `-CallExpr 0x149117248 <col:15, line:41:20> '<dependent type>' contains-errors
+    |   | |   | |     |-DeclRefExpr 0x1491171e8 <line:40:15> 'int ()' Function 0x149117130 'e2fsck_dir_info_iter' 'int ()'
+    |   | |   | |     |-RecoveryExpr 0x149117208 <col:36> '<dependent type>' contains-errors lvalue
+    |   | |   | |     `-DeclRefExpr 0x149117228 <line:41:8> 'struct dir_info_iter *' lvalue Var 0x149114598 'dirinfo_iter' 'struct dir_info_iter *'
+    |   | |   | `-IntegerLiteral 0x1491172b8 <col:26> 'int' 0
+    |   | |   `-BreakStmt 0x1491172f8 <line:42:5>
+    |   | `-CompoundStmt 0x1491174e0 <line:44:10, line:47:3>
+    |   |   `-IfStmt 0x1491174c0 <line:45:4, line:46:5>
+    |   |     |-RecoveryExpr 0x149117498 <line:45:8, col:43> '_Bool' contains-errors
+    |   |     `-BreakStmt 0x1491174b8 <line:46:5>
+    |   |-IfStmt 0x1491176f0 <line:50:3, line:53:3>
+    |   | |-ImplicitCastExpr 0x1491175d8 <line:50:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x1491175b8 <col:7> 'int' lvalue Var 0x149114800 'first' 'int'
+    |   | `-CompoundStmt 0x1491176d8 <col:14, line:53:3>
+    |   |   `-BinaryOperator 0x1491176b8 <line:52:4, col:12> 'int' '='
+    |   |     |-DeclRefExpr 0x149117678 <col:4> 'int' lvalue Var 0x149114800 'first' 'int'
+    |   |     `-IntegerLiteral 0x149117698 <col:12> 'int' 0
+    |   `-IfStmt 0x149117b08 <line:58:3, line:61:3>
+    |     |-CXXDependentScopeMemberExpr 0x149117918 <line:58:7, col:12> '<dependent type>' contains-errors lvalue .errcode
+    |     | `-RecoveryExpr 0x1491178f8 <col:7> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x149117af8 <col:21, line:61:3>
+    |-IfStmt 0x1491182c8 <line:67:2, line:70:3> has_else
+    | |-ImplicitCastExpr 0x149118038 <line:67:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x149118018 <col:6> 'int' lvalue Var 0x149114780 'all_dirs' 'int'
+    | |-CallExpr 0x149118190 <line:68:3, col:45> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x149118130 <col:3> 'int ()' Function 0x149118078 'e2fsck_dir_info_iter_end' 'int ()'
+    | | |-RecoveryExpr 0x149118150 <col:28> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x149118170 <col:33> 'struct dir_info_iter *' lvalue Var 0x149114598 'dirinfo_iter' 'struct dir_info_iter *'
+    | `-NullStmt 0x1491182c0 <line:70:3>
+    |-IfStmt 0x1491184f0 <line:72:2, line:73:41>
+    | |-CXXDependentScopeMemberExpr 0x149118318 <line:72:6, col:11> '<dependent type>' contains-errors lvalue ->dirs_to_hash
+    | | `-RecoveryExpr 0x1491182f8 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x1491184c8 <line:73:3, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149118440 <col:3> 'int ()' Function 0x149118388 'ext2fs_u32_list_free' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x149118480 <col:24, col:29> '<dependent type>' contains-errors lvalue ->dirs_to_hash
+    |     `-RecoveryExpr 0x149118460 <col:24> '<dependent type>' contains-errors lvalue
+    `-BinaryOperator 0x1491185c0 <line:74:2, col:22> '<dependent type>' contains-errors '='
+      |-CXXDependentScopeMemberExpr 0x149118558 <col:2, col:7> '<dependent type>' contains-errors lvalue ->dirs_to_hash
+      | `-RecoveryExpr 0x149118530 <col:2> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x149118510 <col:2> 'int' lvalue ParmVar 0x1490faaf0 'ctx' 'int'
+      `-IntegerLiteral 0x1491185a0 <col:22> 'int' 0

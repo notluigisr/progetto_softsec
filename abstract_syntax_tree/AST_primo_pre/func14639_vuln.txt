@@ -1,0 +1,54 @@
+`-FunctionDecl 0x15910a658  line:1:7 invalid umm_realloc 'void *(void *, int)'
+  |-ParmVarDecl 0x15910a4d8 <col:20, col:26> col:26 used ptr 'void *'
+  |-ParmVarDecl 0x15910a570 <col:31, col:38> col:38 referenced invalid size 'int'
+  `-CompoundStmt 0x1490098d0 <col:45, line:24:1>
+    |-DeclStmt 0x15910a790 <line:2:3, col:12>
+    | `-VarDecl 0x15910a728 <col:3, col:9> col:9 used ret 'void *'
+    |-BinaryOperator 0x149008e70 <line:4:3, col:27> 'void *' '='
+    | |-DeclRefExpr 0x15910a7a8 <col:3> 'void *' lvalue ParmVar 0x15910a4d8 'ptr' 'void *'
+    | `-ImplicitCastExpr 0x15910a9e8 <col:9, col:27> 'void *' <IntegralToPointer>
+    |   `-CallExpr 0x15910a9a8 <col:9, col:27> 'int'
+    |     |-ImplicitCastExpr 0x15910a990 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15910a920 <col:9> 'int ()' Function 0x15910a868 'GET_UNPOISONED' 'int ()'
+    |     `-ImplicitCastExpr 0x15910a9d0 <col:24> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x15910a940 <col:24> 'void *' lvalue ParmVar 0x15910a4d8 'ptr' 'void *'
+    |-IfStmt 0x149009040 <line:7:3, line:9:3>
+    | |-UnaryOperator 0x149008fc8 <line:7:7, col:32> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x149008fa8 <col:8, col:32> 'int'
+    | |   `-ImplicitCastExpr 0x149008f90 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x149008f70 <col:8> 'int ()' Function 0x149008eb8 'CHECK_POISON_ALL_BLOCKS' 'int ()'
+    | `-CompoundStmt 0x149009028 <col:35, line:9:3>
+    |   `-ReturnStmt 0x149009018 <line:8:5, col:12>
+    |     `-RecoveryExpr 0x149008ff8 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x149009210 <line:12:3, line:14:3>
+    | |-UnaryOperator 0x149009198 <line:12:7, col:24> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x149009178 <col:8, col:24> 'int'
+    | |   `-ImplicitCastExpr 0x149009160 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x149009140 <col:8> 'int ()' Function 0x149009088 'INTEGRITY_CHECK' 'int ()'
+    | `-CompoundStmt 0x1490091f8 <col:27, line:14:3>
+    |   `-ReturnStmt 0x1490091e8 <line:13:5, col:12>
+    |     `-RecoveryExpr 0x1490091c8 <col:12> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x1490093c0 <line:16:3, col:27> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x149009250 <col:3> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x149009230 <col:3> 'int' lvalue ParmVar 0x15910a570 'size' 'int'
+    | `-CallExpr 0x149009398 <col:11, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149009358 <col:11> 'int ()' Function 0x1490092a0 'POISON_SIZE' 'int ()'
+    |   `-RecoveryExpr 0x149009378 <col:23> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x149009580 <line:17:3, col:33> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x1490093f0 <col:3> 'void *' lvalue Var 0x15910a728 'ret' 'void *'
+    | `-CallExpr 0x149009550 <col:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1490094f0 <col:9> 'int ()' Function 0x149009438 '_umm_realloc' 'int ()'
+    |   |-DeclRefExpr 0x149009510 <col:23> 'void *' lvalue ParmVar 0x15910a4d8 'ptr' 'void *'
+    |   `-RecoveryExpr 0x149009530 <col:28> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x149009730 <line:19:3, col:31> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x1490095a0 <col:3> 'void *' lvalue Var 0x15910a728 'ret' 'void *'
+    | `-CallExpr 0x149009700 <col:9, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1490096a0 <col:9> 'int ()' Function 0x1490095e8 'GET_POISONED' 'int ()'
+    |   |-DeclRefExpr 0x1490096c0 <col:22> 'void *' lvalue Var 0x15910a728 'ret' 'void *'
+    |   `-RecoveryExpr 0x1490096e0 <col:27> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x149009868 <line:21:3, col:31> 'int'
+    | `-ImplicitCastExpr 0x149009850 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x149009830 <col:3> 'int ()' Function 0x149009778 'umm_account_free_blocks_cnt' 'int ()'
+    `-ReturnStmt 0x1490098c0 <line:23:3, col:10>
+      `-ImplicitCastExpr 0x1490098a8 <col:10> 'void *' <LValueToRValue>
+        `-DeclRefExpr 0x149009888 <col:10> 'void *' lvalue Var 0x15910a728 'ret' 'void *'

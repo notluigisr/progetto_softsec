@@ -1,0 +1,28 @@
+`-FunctionDecl 0x132140b48  line:1:5 cipso_v4_sock_getattr 'int (struct sock *, struct netlbl_lsm_secattr *)'
+  |-ParmVarDecl 0x132128648 <col:27, col:40> col:40 used sk 'struct sock *'
+  |-ParmVarDecl 0x132140a28 <col:44, col:71> col:71 used secattr 'struct netlbl_lsm_secattr *'
+  `-CompoundStmt 0x1321415e8 <line:2:1, line:11:1>
+    |-DeclStmt 0x132140e38 <line:3:2, col:24>
+    | |-RecordDecl 0x132140c48 <col:2, col:9> col:9 struct ip_options
+    | `-VarDecl 0x132140db8 <col:2, col:21> col:21 used opt 'struct ip_options *'
+    |-BinaryOperator 0x132141090 <line:5:2, col:21> 'struct ip_options *' contains-errors '='
+    | |-DeclRefExpr 0x132140e50 <col:2> 'struct ip_options *' lvalue Var 0x132140db8 'opt' 'struct ip_options *'
+    | `-RecoveryExpr 0x132141068 <col:8, col:21> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x132141028 <col:8, col:18> 'int'
+    |     |-ImplicitCastExpr 0x132141010 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x132140fa0 <col:8> 'int ()' Function 0x132140ee8 'inet_sk' 'int ()'
+    |     `-ImplicitCastExpr 0x132141050 <col:16> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x132140fc0 <col:16> 'struct sock *' lvalue ParmVar 0x132128648 'sk' 'struct sock *'
+    `-IfStmt 0x1321412d0 <line:6:2, line:7:11>
+      |-BinaryOperator 0x132141208 <line:6:6, col:35> 'int' contains-errors '||'
+      | |-BinaryOperator 0x1321411e8 <col:6, col:13> 'int' contains-errors '=='
+      | | |-DeclRefExpr 0x1321410b0 <col:6> 'struct ip_options *' lvalue Var 0x132140db8 'opt' 'struct ip_options *'
+      | | `-RecoveryExpr 0x1321411c8 <col:13> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x132141188 <col:21, col:35> 'int' contains-errors '=='
+      |   |-RecoveryExpr 0x132141140 <col:21, col:26> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x132141108 <col:21> 'struct ip_options *' lvalue Var 0x132140db8 'opt' 'struct ip_options *'
+      |   `-IntegerLiteral 0x132141168 <col:35> 'int' 0
+      `-ReturnStmt 0x1321412c0 <line:7:3, col:11>
+        `-UnaryOperator 0x1321412a8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+          `-ImplicitCastExpr 0x132141290 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+            `-RecoveryExpr 0x132141270 <col:11> '<dependent type>' contains-errors lvalue

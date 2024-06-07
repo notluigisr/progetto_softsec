@@ -1,0 +1,94 @@
+`-FunctionDecl 0x14f00df48  line:1:1 invalid host_read_d2s 'int (int *, short *, int)'
+  |-ParmVarDecl 0x14f00dd28 <col:16, col:28> col:28 invalid psf 'int *'
+  |-ParmVarDecl 0x14f00ddd8 <col:33, col:40> col:40 used ptr 'short *'
+  |-ParmVarDecl 0x14f00de58 <col:45, col:56> col:56 referenced invalid len 'int'
+  `-CompoundStmt 0x14f02a2f8 <line:2:1, line:28:1>
+    |-DeclStmt 0x14f00e3d8 <line:3:2, col:58>
+    | `-VarDecl 0x14f00e370 <col:2, col:56> col:10 used convert 'void (*)(const double *, int, short *, double)'
+    |-DeclStmt 0x14f027518 <line:4:2, col:29>
+    | |-VarDecl 0x14f027418 <col:2, col:8> col:8 used bufferlen 'int'
+    | `-VarDecl 0x14f027498 <col:2, col:19> col:19 used readcount 'int'
+    |-DeclStmt 0x14f0275b0 <line:6:2, col:16>
+    | `-VarDecl 0x14f027548 <col:2, col:10> col:10 used scale 'double'
+    |-BinaryOperator 0x14f027760 <line:8:2, col:51> 'void (*)(const double *, int, short *, double)' contains-errors '='
+    | |-DeclRefExpr 0x14f0275c8 <col:2> 'void (*)(const double *, int, short *, double)' lvalue Var 0x14f00e370 'convert' 'void (*)(const double *, int, short *, double)'
+    | `-ConditionalOperator 0x14f027730 <col:12, col:51> '<dependent type>' contains-errors
+    |   |-ParenExpr 0x14f027650 <col:12, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-CXXDependentScopeMemberExpr 0x14f027608 <col:13, col:18> '<dependent type>' contains-errors lvalue ->add_clipping
+    |   |   `-RecoveryExpr 0x14f0275e8 <col:13> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x14f0276f0 <col:34> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x14f027710 <col:51> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14f027a58 <line:9:2, col:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14f027780 <col:2> 'int' lvalue Var 0x14f027418 'bufferlen' 'int'
+    | `-CallExpr 0x14f027a30 <col:14, col:34> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f027900 <col:14> 'int ()' Function 0x14f027848 'ARRAY_LEN' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x14f0279e8 <col:25, col:30> '<dependent type>' contains-errors lvalue .dbuf
+    |     `-RecoveryExpr 0x14f0279c8 <col:25> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14f027c58 <line:10:2, col:59> 'double' contains-errors '='
+    | |-DeclRefExpr 0x14f027a78 <col:2> 'double' lvalue Var 0x14f027548 'scale' 'double'
+    | `-ConditionalOperator 0x14f027c28 <col:10, col:59> '<dependent type>' contains-errors
+    |   |-ParenExpr 0x14f027b40 <col:10, col:35> 'int' contains-errors
+    |   | `-BinaryOperator 0x14f027b20 <col:11, col:34> 'int' contains-errors '=='
+    |   |   |-CXXDependentScopeMemberExpr 0x14f027ab8 <col:11, col:16> '<dependent type>' contains-errors lvalue ->float_int_mult
+    |   |   | `-RecoveryExpr 0x14f027a98 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-IntegerLiteral 0x14f027b00 <col:34> 'int' 0
+    |   |-FloatingLiteral 0x14f027b60 <col:39> 'double' 1.000000e+00
+    |   `-BinaryOperator 0x14f027c08 <col:45, col:59> '<dependent type>' contains-errors '/'
+    |     |-IntegerLiteral 0x14f027b80 <col:45> 'int' 32767
+    |     `-CXXDependentScopeMemberExpr 0x14f027bc0 <col:54, col:59> '<dependent type>' contains-errors lvalue ->float_max
+    |       `-RecoveryExpr 0x14f027ba0 <col:54> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x14f02a288 <line:12:2, line:25:3>
+    | |-BinaryOperator 0x14f027cb8 <line:12:9, col:15> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x14f027c78 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x14f027c98 <col:15> 'int' 0
+    | `-CompoundStmt 0x14f02a248 <line:13:2, line:25:3>
+    |   |-IfStmt 0x14f027dd8 <line:13:4, line:14:22>
+    |   | |-BinaryOperator 0x14f027d18 <line:13:8, col:14> 'int' contains-errors '<'
+    |   | | |-RecoveryExpr 0x14f027cd8 <col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14f027cf8 <col:14> 'int' lvalue Var 0x14f027418 'bufferlen' 'int'
+    |   | `-BinaryOperator 0x14f027db8 <line:14:4, col:22> 'int' contains-errors '='
+    |   |   |-DeclRefExpr 0x14f027d38 <col:4> 'int' lvalue Var 0x14f027418 'bufferlen' 'int'
+    |   |   `-CStyleCastExpr 0x14f027d90 <col:16, col:22> 'int' contains-errors <Dependent>
+    |   |     `-RecoveryExpr 0x14f027d58 <col:22> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x14f028130 <line:15:3, col:68> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14f027df8 <col:3> 'int' lvalue Var 0x14f027498 'readcount' 'int'
+    |   | `-CallExpr 0x14f0280f0 <col:15, col:68> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14f027ef8 <col:15> 'int ()' Function 0x14f027e40 'psf_fread' 'int ()'
+    |   |   |-CXXDependentScopeMemberExpr 0x14f028070 <col:26, col:31> '<dependent type>' contains-errors lvalue .dbuf
+    |   |   | `-RecoveryExpr 0x14f028050 <col:26> '<dependent type>' contains-errors lvalue
+    |   |   |-UnaryExprOrTypeTraitExpr 0x14f0280d0 <col:37, col:51> 'unsigned long' sizeof 'double'
+    |   |   |-DeclRefExpr 0x14f027fb0 <col:54> 'int' lvalue Var 0x14f027418 'bufferlen' 'int'
+    |   |   `-RecoveryExpr 0x14f027fd0 <col:65> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x14f029e78 <line:17:3, line:18:46>
+    |   | |-BinaryOperator 0x14f028210 <line:17:7, col:28> 'int' contains-errors '=='
+    |   | | |-CXXDependentScopeMemberExpr 0x14f028170 <col:7, col:12> '<dependent type>' contains-errors lvalue ->data_endswap
+    |   | | | `-RecoveryExpr 0x14f028150 <col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-RecoveryExpr 0x14f0281f0 <col:28> '<dependent type>' contains-errors lvalue
+    |   | `-CallExpr 0x14f029e48 <line:18:4, col:46> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14f028310 <col:4> 'int ()' Function 0x14f028258 'endswap_double_array' 'int ()'
+    |   |   |-CXXDependentScopeMemberExpr 0x14f029e00 <col:26, col:31> '<dependent type>' contains-errors lvalue .dbuf
+    |   |   | `-RecoveryExpr 0x14f0283e0 <col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14f028390 <col:37> 'int' lvalue Var 0x14f027498 'readcount' 'int'
+    |   |-CallExpr 0x14f02a098 <line:20:3, col:52> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14f029e98 <col:3> 'void (*)(const double *, int, short *, double)' lvalue Var 0x14f00e370 'convert' 'void (*)(const double *, int, short *, double)'
+    |   | |-CXXDependentScopeMemberExpr 0x14f02a010 <col:12, col:17> '<dependent type>' contains-errors lvalue .dbuf
+    |   | | `-RecoveryExpr 0x14f029ff0 <col:12> '<dependent type>' contains-errors lvalue
+    |   | |-DeclRefExpr 0x14f029f18 <col:23> 'int' lvalue Var 0x14f027498 'readcount' 'int'
+    |   | |-BinaryOperator 0x14f02a078 <col:34, col:40> '<dependent type>' contains-errors '+'
+    |   | | |-DeclRefExpr 0x14f029f38 <col:34> 'short *' lvalue ParmVar 0x14f00ddd8 'ptr' 'short *'
+    |   | | `-RecoveryExpr 0x14f02a058 <col:40> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14f029f90 <col:47> 'double' lvalue Var 0x14f027548 'scale' 'double'
+    |   |-CompoundAssignOperator 0x14f02a160 <line:22:3, col:10> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x14f02a118 <col:3> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14f02a0f8 <col:3> 'int' lvalue ParmVar 0x14f00de58 'len' 'int'
+    |   | `-DeclRefExpr 0x14f02a140 <col:10> 'int' lvalue Var 0x14f027498 'readcount' 'int'
+    |   `-IfStmt 0x14f02a228 <line:23:3, line:24:4>
+    |     |-BinaryOperator 0x14f02a200 <line:23:7, col:19> 'int' '<'
+    |     | |-ImplicitCastExpr 0x14f02a1d0 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x14f02a190 <col:7> 'int' lvalue Var 0x14f027498 'readcount' 'int'
+    |     | `-ImplicitCastExpr 0x14f02a1e8 <col:19> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x14f02a1b0 <col:19> 'int' lvalue Var 0x14f027418 'bufferlen' 'int'
+    |     `-BreakStmt 0x14f02a220 <line:24:4>
+    |-NullStmt 0x14f02a2a8 <line:25:5>
+    `-ReturnStmt 0x14f02a2e8 <line:27:2, col:9>
+      `-RecoveryExpr 0x14f02a2c8 <col:9> '<dependent type>' contains-errors lvalue

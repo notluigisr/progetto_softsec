@@ -1,0 +1,95 @@
+`-FunctionDecl 0x12d034a88  line:1:12 invalid local_remove 'int (int *, const char *)' static
+  |-ParmVarDecl 0x12d034928 <col:25, col:36> col:36 invalid ctx 'int *'
+  |-ParmVarDecl 0x12d0349a8 <col:41, col:53> col:53 used path 'const char *'
+  `-CompoundStmt 0x12e809300 <line:2:1, line:30:1>
+    |-DeclStmt 0x12d8fd328 <line:3:5, col:22>
+    | |-RecordDecl 0x12d034b40 <col:5, col:12> col:12 struct stat
+    | `-VarDecl 0x12d034c38 <col:5, col:17> col:17 invalid stbuf 'struct stat'
+    |-DeclStmt 0x12d8fd600 <line:4:5, col:45>
+    | `-VarDecl 0x12d8fd358 <col:5, col:44> col:11 used dirpath 'char *' cinit
+    |   `-ImplicitCastExpr 0x12d8fd5e8 <col:21, col:44> 'char *' <IntegralToPointer>
+    |     `-CallExpr 0x12d8fd5a8 <col:21, col:44> 'int'
+    |       |-ImplicitCastExpr 0x12d8fd590 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12d8fd520 <col:21> 'int ()' Function 0x12d8fd468 'g_path_get_dirname' 'int ()'
+    |       `-ImplicitCastExpr 0x12d8fd5d0 <col:40> 'const char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d8fd540 <col:40> 'const char *' lvalue ParmVar 0x12d0349a8 'path' 'const char *'
+    |-DeclStmt 0x12d8fd828 <line:5:5, col:43>
+    | `-VarDecl 0x12d8fd630 <col:5, col:42> col:11 used name 'char *' cinit
+    |   `-ImplicitCastExpr 0x12d8fd810 <col:18, col:42> 'char *' <IntegralToPointer>
+    |     `-CallExpr 0x12d8fd7d0 <col:18, col:42> 'int'
+    |       |-ImplicitCastExpr 0x12d8fd7b8 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12d8fd778 <col:18> 'int ()' Function 0x12d8fd6c0 'g_path_get_basename' 'int ()'
+    |       `-ImplicitCastExpr 0x12d8fd7f8 <col:38> 'const char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12d8fd798 <col:38> 'const char *' lvalue ParmVar 0x12d0349a8 'path' 'const char *'
+    |-DeclStmt 0x12d8fd8e0 <line:6:5, col:18>
+    | `-VarDecl 0x12d8fd858 <col:5, col:17> col:9 used flags 'int' cinit
+    |   `-IntegerLiteral 0x12d8fd8c0 <col:17> 'int' 0
+    |-DeclStmt 0x12d8fd978 <line:7:5, col:14>
+    | `-VarDecl 0x12d8fd910 <col:5, col:9> col:9 used dirfd 'int'
+    |-DeclStmt 0x12d8fda48 <line:8:5, col:17>
+    | `-VarDecl 0x12d8fd9a8 <col:5, col:16> col:9 used err 'int' cinit
+    |   `-UnaryOperator 0x12d8fda30 <col:15, col:16> 'int' prefix '-'
+    |     `-IntegerLiteral 0x12d8fda10 <col:16> 'int' 1
+    |-BinaryOperator 0x12d8fdbf0 <line:10:5, col:48> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12d8fda60 <col:5> 'int' lvalue Var 0x12d8fd910 'dirfd' 'int'
+    | `-CallExpr 0x12d8fdbc0 <col:13, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d8fdb60 <col:13> 'int ()' Function 0x12d8fdaa8 'local_opendir_nofollow' 'int ()'
+    |   |-RecoveryExpr 0x12d8fdb80 <col:36> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12d8fdba0 <col:41> 'char *' lvalue Var 0x12d8fd358 'dirpath' 'char *'
+    |-IfStmt 0x12d8fdd20 <line:11:5, line:13:5>
+    | |-BinaryOperator 0x12d8fdc80 <line:11:9, col:19> 'int' '=='
+    | | |-ImplicitCastExpr 0x12d8fdc68 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12d8fdc10 <col:9> 'int' lvalue Var 0x12d8fd910 'dirfd' 'int'
+    | | `-UnaryOperator 0x12d8fdc50 <col:18, col:19> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x12d8fdc30 <col:19> 'int' 1
+    | `-CompoundStmt 0x12d8fdd08 <col:22, line:13:5>
+    |   `-GotoStmt 0x12d8fdcf0 <line:12:9, col:14> 'out' 0x12d8fdca0
+    |-IfStmt 0x12d8fe050 <line:15:5, line:17:5>
+    | |-BinaryOperator 0x12d8fdfb0 <line:15:9, col:61> 'int' contains-errors '<'
+    | | |-CallExpr 0x12d8fdf70 <col:9, col:57> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12d8fde20 <col:9> 'int ()' Function 0x12d8fdd68 'fstatat' 'int ()'
+    | | | |-DeclRefExpr 0x12d8fde40 <col:17> 'int' lvalue Var 0x12d8fd910 'dirfd' 'int'
+    | | | |-DeclRefExpr 0x12d8fde60 <col:24> 'const char *' lvalue ParmVar 0x12d0349a8 'path' 'const char *'
+    | | | |-UnaryOperator 0x12d8fdea0 <col:30, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x12d8fde80 <col:31> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x12d8fdf50 <col:38> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x12d8fdf10 <col:61> 'int' 0
+    | `-CompoundStmt 0x12d8fe038 <col:64, line:17:5>
+    |   `-GotoStmt 0x12d8fe020 <line:16:9, col:14> 'err_out' 0x12d8fdfd0
+    |-IfStmt 0x12e808cd0 <line:19:5, line:21:5>
+    | |-CallExpr 0x12d8fe1d8 <line:19:9, col:30> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12d8fe150 <col:9> 'int ()' Function 0x12d8fe098 'S_ISDIR' 'int ()'
+    | | `-CXXDependentScopeMemberExpr 0x12d8fe190 <col:17, col:23> '<dependent type>' contains-errors lvalue .st_mode
+    | |   `-RecoveryExpr 0x12d8fe170 <col:17> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12e808cb8 <col:33, line:21:5>
+    |   `-CompoundAssignOperator 0x12e808c88 <line:20:9, col:18> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-DeclRefExpr 0x12e808c00 <col:9> 'int' lvalue Var 0x12d8fd858 'flags' 'int'
+    |     `-RecoveryExpr 0x12e808c68 <col:18> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12e808ed0 <line:23:5, col:56> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12e808cf0 <col:5> 'int' lvalue Var 0x12d8fd9a8 'err' 'int'
+    | `-CallExpr 0x12e808e90 <col:11, col:56> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e808df0 <col:11> 'int ()' Function 0x12e808d38 'local_unlinkat_common' 'int ()'
+    |   |-RecoveryExpr 0x12e808e10 <col:33> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x12e808e30 <col:38> 'int' lvalue Var 0x12d8fd910 'dirfd' 'int'
+    |   |-DeclRefExpr 0x12e808e50 <col:45> 'char *' lvalue Var 0x12d8fd630 'name' 'char *'
+    |   `-DeclRefExpr 0x12e808e70 <col:51> 'int' lvalue Var 0x12d8fd858 'flags' 'int'
+    |-LabelStmt 0x12e809068 <line:24:1, line:25:31> 'err_out'
+    | `-CallExpr 0x12e809028 <col:5, col:31> 'int'
+    |   |-ImplicitCastExpr 0x12e809010 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12e808fd0 <col:5> 'int ()' Function 0x12e808f18 'close_preserve_errno' 'int ()'
+    |   `-ImplicitCastExpr 0x12e809050 <col:26> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12e808ff0 <col:26> 'int' lvalue Var 0x12d8fd910 'dirfd' 'int'
+    |-LabelStmt 0x12e809200 <line:26:1, line:27:16> 'out'
+    | `-CallExpr 0x12e8091c0 <col:5, col:16> 'int'
+    |   |-ImplicitCastExpr 0x12e8091a8 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12e809168 <col:5> 'int ()' Function 0x12e8090b0 'g_free' 'int ()'
+    |   `-ImplicitCastExpr 0x12e8091e8 <col:12> 'char *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12e809188 <col:12> 'char *' lvalue Var 0x12d8fd630 'name' 'char *'
+    |-CallExpr 0x12e809278 <line:28:5, col:19> 'int'
+    | |-ImplicitCastExpr 0x12e809260 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12e809220 <col:5> 'int ()' Function 0x12e8090b0 'g_free' 'int ()'
+    | `-ImplicitCastExpr 0x12e8092a0 <col:12> 'char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12e809240 <col:12> 'char *' lvalue Var 0x12d8fd358 'dirpath' 'char *'
+    `-ReturnStmt 0x12e8092f0 <line:29:5, col:12>
+      `-ImplicitCastExpr 0x12e8092d8 <col:12> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12e8092b8 <col:12> 'int' lvalue Var 0x12d8fd9a8 'err' 'int'

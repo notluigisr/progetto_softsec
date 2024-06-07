@@ -1,0 +1,23 @@
+`-FunctionDecl 0x1399281a8  line:1:12 get_hstate_idx 'int (int)' static
+  |-ParmVarDecl 0x1399280d8 <col:27, col:31> col:31 used page_size_log 'int'
+  `-CompoundStmt 0x139941c30 <line:2:1, line:8:1>
+    |-DeclStmt 0x139941ab8 <line:3:2, col:50>
+    | |-RecordDecl 0x1399282a0 <col:2, col:9> col:9 struct hstate
+    | `-VarDecl 0x139928408 <col:2, col:49> col:17 used h 'struct hstate *' cinit
+    |   `-ImplicitCastExpr 0x139928668 <col:21, col:49> 'struct hstate *' <IntegralToPointer>
+    |     `-CallExpr 0x139928628 <col:21, col:49> 'int'
+    |       |-ImplicitCastExpr 0x139928610 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1399285a0 <col:21> 'int ()' Function 0x1399284e8 'hstate_sizelog' 'int ()'
+    |       `-ImplicitCastExpr 0x139928650 <col:36> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x1399285c0 <col:36> 'int' lvalue ParmVar 0x1399280d8 'page_size_log' 'int'
+    |-IfStmt 0x139941b68 <line:5:2, line:6:11>
+    | |-UnaryOperator 0x139941b08 <line:5:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139941af0 <col:7> 'struct hstate *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139941ad0 <col:7> 'struct hstate *' lvalue Var 0x139928408 'h' 'struct hstate *'
+    | `-ReturnStmt 0x139941b58 <line:6:3, col:11>
+    |   `-UnaryOperator 0x139941b40 <col:10, col:11> 'int' prefix '-'
+    |     `-IntegerLiteral 0x139941b20 <col:11> 'int' 1
+    `-ReturnStmt 0x139941c20 <line:7:2, col:13>
+      `-BinaryOperator 0x139941c00 <col:9, col:13> '<dependent type>' contains-errors '-'
+        |-DeclRefExpr 0x139941b88 <col:9> 'struct hstate *' lvalue Var 0x139928408 'h' 'struct hstate *'
+        `-RecoveryExpr 0x139941be0 <col:13> '<dependent type>' contains-errors lvalue

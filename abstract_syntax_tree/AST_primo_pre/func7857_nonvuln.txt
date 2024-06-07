@@ -1,0 +1,26 @@
+`-FunctionDecl 0x135940d80  line:1:13 invalid pq_set_src 'void (struct ioat_raw_descriptor **, int, int, int, int)' static
+  |-ParmVarDecl 0x135940a00 <col:24, col:59> col:52 used descs 'struct ioat_raw_descriptor **'
+  |-ParmVarDecl 0x135940a98 <line:2:10, col:21> col:21 invalid addr 'int'
+  |-ParmVarDecl 0x135940b18 <col:27, col:31> col:31 invalid offset 'int'
+  |-ParmVarDecl 0x135940b98 <col:39, col:42> col:42 invalid coef 'int'
+  |-ParmVarDecl 0x135940c18 <col:48, col:52> col:52 used idx 'int'
+  `-CompoundStmt 0x135941568 <line:3:1, line:9:1>
+    |-DeclStmt 0x135941180 <line:4:2, col:72>
+    | |-RecordDecl 0x135940e50 <col:2, col:9> col:9 struct ioat_pq_descriptor
+    | `-VarDecl 0x135940fb8 <col:2, col:71> col:29 used pq 'struct ioat_pq_descriptor *' cinit
+    |   `-CStyleCastExpr 0x135941140 <col:34, col:71> 'struct ioat_pq_descriptor *' <BitCast>
+    |     `-ImplicitCastExpr 0x135941128 <col:64, col:71> 'struct ioat_raw_descriptor *' <LValueToRValue> part_of_explicit_cast
+    |       `-ArraySubscriptExpr 0x135941078 <col:64, col:71> 'struct ioat_raw_descriptor *' lvalue
+    |         |-ImplicitCastExpr 0x135941060 <col:64> 'struct ioat_raw_descriptor **' <LValueToRValue>
+    |         | `-DeclRefExpr 0x135941020 <col:64> 'struct ioat_raw_descriptor **' lvalue ParmVar 0x135940a00 'descs' 'struct ioat_raw_descriptor **'
+    |         `-IntegerLiteral 0x135941040 <col:70> 'int' 0
+    |-DeclStmt 0x135941348 <line:5:2, col:68>
+    | `-VarDecl 0x135941228 <col:2, col:30> col:30 used raw 'struct ioat_raw_descriptor *'
+    `-BinaryOperator 0x135941548 <line:8:2, col:18> '<dependent type>' contains-errors '='
+      |-ArraySubscriptExpr 0x135941508 <col:2, col:14> '<dependent type>' contains-errors lvalue
+      | |-ImplicitCastExpr 0x1359414d8 <col:2, col:6> '<dependent type>' contains-errors <LValueToRValue>
+      | | `-RecoveryExpr 0x135941490 <col:2, col:6> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x135941458 <col:2> 'struct ioat_pq_descriptor *' lvalue Var 0x135940fb8 'pq' 'struct ioat_pq_descriptor *'
+      | `-ImplicitCastExpr 0x1359414f0 <col:11> 'int' <LValueToRValue>
+      |   `-DeclRefExpr 0x1359414b8 <col:11> 'int' lvalue ParmVar 0x135940c18 'idx' 'int'
+      `-RecoveryExpr 0x135941528 <col:18> '<dependent type>' contains-errors lvalue

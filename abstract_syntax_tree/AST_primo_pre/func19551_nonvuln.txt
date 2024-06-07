@@ -1,0 +1,35 @@
+`-FunctionDecl 0x1241281b8  line:1:5 invalid snmp_get_cpu_field64 'int (int)'
+  |-ParmVarDecl 0x1241280e8 <col:26, col:31> col:31 __percpu 'int'
+  `-CompoundStmt 0x12480a5e8 <line:3:1, line:17:1>
+    |-DeclStmt 0x1241282e8 <line:4:2, col:13>
+    | `-VarDecl 0x124128280 <col:2, col:8> col:8 used bhptr 'void *'
+    |-DeclStmt 0x1241284e8 <line:5:2, col:30>
+    | |-RecordDecl 0x124128300 <col:2, col:9> col:9 struct u64_stats_sync
+    | `-VarDecl 0x124128468 <col:2, col:25> col:25 used syncp 'struct u64_stats_sync *'
+    |-DeclStmt 0x124128580 <line:7:2, col:20>
+    | `-VarDecl 0x124128518 <col:2, col:15> col:15 used start 'unsigned int'
+    |-BinaryOperator 0x12480a030 <line:9:2, col:30> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x124128598 <col:2> 'void *' lvalue Var 0x124128280 'bhptr' 'void *'
+    | `-CallExpr 0x12480a000 <col:10, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x124128710 <col:10> 'int ()' Function 0x124128658 'per_cpu_ptr' 'int ()'
+    |   |-RecoveryExpr 0x1241287b0 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1241287d0 <col:27> '<dependent type>' contains-errors lvalue
+    |-DoStmt 0x12480a580 <line:11:2, line:14:50>
+    | |-CompoundStmt 0x12480a3b0 <line:11:5, line:14:2>
+    | | `-BinaryOperator 0x12480a360 <line:12:3, col:42> 'unsigned int' '='
+    | |   |-DeclRefExpr 0x12480a178 <col:3> 'unsigned int' lvalue Var 0x124128518 'start' 'unsigned int'
+    | |   `-ImplicitCastExpr 0x12480a348 <col:11, col:42> 'unsigned int' <IntegralCast>
+    | |     `-CallExpr 0x12480a308 <col:11, col:42> 'int'
+    | |       |-ImplicitCastExpr 0x12480a2f0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    | |       | `-DeclRefExpr 0x12480a278 <col:11> 'int ()' Function 0x12480a1c0 'u64_stats_fetch_begin_irq' 'int ()'
+    | |       `-ImplicitCastExpr 0x12480a330 <col:37> 'struct u64_stats_sync *' <LValueToRValue>
+    | |         `-DeclRefExpr 0x12480a298 <col:37> 'struct u64_stats_sync *' lvalue Var 0x124128468 'syncp' 'struct u64_stats_sync *'
+    | `-CallExpr 0x12480a520 <line:14:11, col:49> 'int'
+    |   |-ImplicitCastExpr 0x12480a508 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12480a4a8 <col:11> 'int ()' Function 0x12480a3f0 'u64_stats_fetch_retry_irq' 'int ()'
+    |   |-ImplicitCastExpr 0x12480a550 <col:37> 'struct u64_stats_sync *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12480a4c8 <col:37> 'struct u64_stats_sync *' lvalue Var 0x124128468 'syncp' 'struct u64_stats_sync *'
+    |   `-ImplicitCastExpr 0x12480a568 <col:44> 'unsigned int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12480a4e8 <col:44> 'unsigned int' lvalue Var 0x124128518 'start' 'unsigned int'
+    `-ReturnStmt 0x12480a5d8 <line:16:2, col:9>
+      `-RecoveryExpr 0x12480a5b8 <col:9> '<dependent type>' contains-errors lvalue

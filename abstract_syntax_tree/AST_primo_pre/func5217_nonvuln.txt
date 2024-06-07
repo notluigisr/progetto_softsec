@@ -1,0 +1,51 @@
+`-FunctionDecl 0x153140c98  line:1:18 fuse_get_req_nofail 'struct fuse_req *(struct fuse_conn *, struct file *)'
+  |-ParmVarDecl 0x1531286e8 <col:38, col:56> col:56 used fc 'struct fuse_conn *'
+  |-ParmVarDecl 0x153140ac8 <col:60, col:73> col:73 used file 'struct file *'
+  `-CompoundStmt 0x153141950 <line:2:1, line:14:1>
+    |-DeclStmt 0x153140e90 <line:3:2, col:22>
+    | `-VarDecl 0x153140e28 <col:2, col:19> col:19 used req 'struct fuse_req *'
+    |-CallExpr 0x153141068 <line:5:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153140fd0 <col:2> 'int ()' Function 0x153140f18 'atomic_inc' 'int ()'
+    | `-UnaryOperator 0x153141050 <col:13, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x153141028 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153140ff0 <col:14> 'struct fuse_conn *' lvalue ParmVar 0x1531286e8 'fc' 'struct fuse_conn *'
+    |-CallExpr 0x153141280 <line:6:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153141170 <col:2> 'int ()' Function 0x1531410b8 'wait_event' 'int ()'
+    | |-RecoveryExpr 0x1531411c8 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x153141190 <col:13> 'struct fuse_conn *' lvalue ParmVar 0x1531286e8 'fc' 'struct fuse_conn *'
+    | `-UnaryOperator 0x153141268 <col:32, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x153141250 <col:33, col:37> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x153141228 <col:33, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1531411f0 <col:33> 'struct fuse_conn *' lvalue ParmVar 0x1531286e8 'fc' 'struct fuse_conn *'
+    |-BinaryOperator 0x153141450 <line:7:2, col:27> 'struct fuse_req *' '='
+    | |-DeclRefExpr 0x1531412b0 <col:2> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'
+    | `-ImplicitCastExpr 0x153141438 <col:8, col:27> 'struct fuse_req *' <IntegralToPointer>
+    |   `-CallExpr 0x153141418 <col:8, col:27> 'int'
+    |     `-ImplicitCastExpr 0x153141400 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x1531413b0 <col:8> 'int ()' Function 0x1531412f8 'fuse_request_alloc' 'int ()'
+    |-IfStmt 0x1531416d0 <line:8:2, line:9:34>
+    | |-UnaryOperator 0x1531414a8 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x153141490 <col:7> 'struct fuse_req *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x153141470 <col:7> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'
+    | `-BinaryOperator 0x1531416b0 <line:9:3, col:34> 'struct fuse_req *' '='
+    |   |-DeclRefExpr 0x1531414c0 <col:3> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'
+    |   `-ImplicitCastExpr 0x153141698 <col:9, col:34> 'struct fuse_req *' <IntegralToPointer>
+    |     `-CallExpr 0x153141638 <col:9, col:34> 'int'
+    |       |-ImplicitCastExpr 0x153141620 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1531415c0 <col:9> 'int ()' Function 0x153141508 'get_reserved_req' 'int ()'
+    |       |-ImplicitCastExpr 0x153141668 <col:26> 'struct fuse_conn *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x1531415e0 <col:26> 'struct fuse_conn *' lvalue ParmVar 0x1531286e8 'fc' 'struct fuse_conn *'
+    |       `-ImplicitCastExpr 0x153141680 <col:30> 'struct file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x153141600 <col:30> 'struct file *' lvalue ParmVar 0x153140ac8 'file' 'struct file *'
+    |-CallExpr 0x153141828 <line:11:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x153141810 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1531417d0 <col:2> 'int ()' Function 0x153141718 'fuse_req_init_context' 'int ()'
+    | `-ImplicitCastExpr 0x153141850 <col:24> 'struct fuse_req *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1531417f0 <col:24> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'
+    |-BinaryOperator 0x1531418e8 <line:12:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1531418a0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x153141868 <col:2> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'
+    | `-IntegerLiteral 0x1531418c8 <col:17> 'int' 1
+    `-ReturnStmt 0x153141940 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x153141928 <col:9> 'struct fuse_req *' <LValueToRValue>
+        `-DeclRefExpr 0x153141908 <col:9> 'struct fuse_req *' lvalue Var 0x153140e28 'req' 'struct fuse_req *'

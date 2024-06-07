@@ -1,0 +1,61 @@
+`-FunctionDecl 0x13c027400  line:1:13 invalid rb_per_cpu_empty 'int (struct ring_buffer_per_cpu *)' static
+  |-ParmVarDecl 0x13c00e268 <col:30, col:58> col:58 used cpu_buffer 'struct ring_buffer_per_cpu *'
+  `-CompoundStmt 0x13c028238 <line:2:1, line:15:1>
+    |-DeclStmt 0x13c0276f8 <line:3:2, col:54>
+    | |-RecordDecl 0x13c0274b0 <col:2, col:9> col:9 struct buffer_page
+    | `-VarDecl 0x13c027618 <col:2, col:43> col:22 used reader 'struct buffer_page *' cinit
+    |   `-RecoveryExpr 0x13c0276b8 <col:31, col:43> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c027680 <col:31> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x13c00e268 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x13c027a40 <line:4:2, col:57>
+    | `-VarDecl 0x13c027798 <col:2, col:56> col:22 used head 'struct buffer_page *' cinit
+    |   `-ImplicitCastExpr 0x13c027a28 <col:29, col:56> 'struct buffer_page *' <IntegralToPointer>
+    |     `-CallExpr 0x13c0279e8 <col:29, col:56> 'int'
+    |       |-ImplicitCastExpr 0x13c0279d0 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13c027960 <col:29> 'int ()' Function 0x13c0278a8 'rb_set_head_page' 'int ()'
+    |       `-ImplicitCastExpr 0x13c027a10 <col:46> 'struct ring_buffer_per_cpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13c027980 <col:46> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x13c00e268 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-DeclStmt 0x13c027b48 <line:5:2, col:54>
+    | `-VarDecl 0x13c027a80 <col:2, col:43> col:22 used commit 'struct buffer_page *' cinit
+    |   `-RecoveryExpr 0x13c027b20 <col:31, col:43> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c027ae8 <col:31> 'struct ring_buffer_per_cpu *' lvalue ParmVar 0x13c00e268 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    |-IfStmt 0x13c027d38 <line:8:2, line:9:10>
+    | |-CallExpr 0x13c027cc8 <line:8:6, col:20> 'int'
+    | | |-ImplicitCastExpr 0x13c027cb0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13c027c40 <col:6> 'int ()' Function 0x13c027b88 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x13c027c98 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x13c027c80 <col:16> 'struct buffer_page *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13c027c60 <col:16> 'struct buffer_page *' lvalue Var 0x13c027798 'head' 'struct buffer_page *'
+    | `-ReturnStmt 0x13c027d28 <line:9:3, col:10>
+    |   `-RecoveryExpr 0x13c027d08 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13c028228 <line:11:2, line:14:42>
+      `-BinaryOperator 0x13c028208 <line:11:9, line:14:42> 'int' contains-errors '&&'
+        |-BinaryOperator 0x13c027f30 <line:11:9, col:46> 'int' contains-errors '=='
+        | |-RecoveryExpr 0x13c027d90 <col:9, col:17> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x13c027d58 <col:9> 'struct buffer_page *' contains-errors lvalue Var 0x13c027618 'reader' 'struct buffer_page *'
+        | `-CallExpr 0x13c027ef0 <col:25, col:46> 'int' contains-errors
+        |   |-ImplicitCastExpr 0x13c027ed8 <col:25> 'int (*)()' <FunctionToPointerDecay>
+        |   | `-DeclRefExpr 0x13c027e98 <col:25> 'int ()' Function 0x13c027de0 'rb_page_commit' 'int ()'
+        |   `-ImplicitCastExpr 0x13c027f18 <col:40> 'struct buffer_page *' contains-errors <LValueToRValue>
+        |     `-DeclRefExpr 0x13c027eb8 <col:40> 'struct buffer_page *' contains-errors lvalue Var 0x13c027618 'reader' 'struct buffer_page *'
+        `-ParenExpr 0x13c0281e8 <line:12:3, line:14:42> 'int' contains-errors
+          `-BinaryOperator 0x13c0281c8 <line:12:4, line:14:41> 'int' contains-errors '||'
+            |-BinaryOperator 0x13c027fc0 <line:12:4, col:14> 'int' contains-errors '=='
+            | |-ImplicitCastExpr 0x13c027f90 <col:4> 'struct buffer_page *' contains-errors <LValueToRValue>
+            | | `-DeclRefExpr 0x13c027f50 <col:4> 'struct buffer_page *' contains-errors lvalue Var 0x13c027a80 'commit' 'struct buffer_page *'
+            | `-ImplicitCastExpr 0x13c027fa8 <col:14> 'struct buffer_page *' contains-errors <LValueToRValue>
+            |   `-DeclRefExpr 0x13c027f70 <col:14> 'struct buffer_page *' contains-errors lvalue Var 0x13c027618 'reader' 'struct buffer_page *'
+            `-ParenExpr 0x13c0281a8 <line:13:4, line:14:41> 'int' contains-errors
+              `-BinaryOperator 0x13c028188 <line:13:5, line:14:40> 'int' contains-errors '&&'
+                |-BinaryOperator 0x13c028050 <line:13:5, col:15> 'int' contains-errors '=='
+                | |-ImplicitCastExpr 0x13c028020 <col:5> 'struct buffer_page *' contains-errors <LValueToRValue>
+                | | `-DeclRefExpr 0x13c027fe0 <col:5> 'struct buffer_page *' contains-errors lvalue Var 0x13c027a80 'commit' 'struct buffer_page *'
+                | `-ImplicitCastExpr 0x13c028038 <col:15> 'struct buffer_page *' <LValueToRValue>
+                |   `-DeclRefExpr 0x13c028000 <col:15> 'struct buffer_page *' lvalue Var 0x13c027798 'head' 'struct buffer_page *'
+                `-BinaryOperator 0x13c028168 <line:14:5, col:40> 'int' contains-errors '=='
+                  |-RecoveryExpr 0x13c0280a8 <col:5, col:11> '<dependent type>' contains-errors lvalue
+                  | `-DeclRefExpr 0x13c028070 <col:5> 'struct buffer_page *' lvalue Var 0x13c027798 'head' 'struct buffer_page *'
+                  `-CallExpr 0x13c028128 <col:19, col:40> 'int' contains-errors
+                    |-ImplicitCastExpr 0x13c028110 <col:19> 'int (*)()' <FunctionToPointerDecay>
+                    | `-DeclRefExpr 0x13c0280d0 <col:19> 'int ()' Function 0x13c027de0 'rb_page_commit' 'int ()'
+                    `-ImplicitCastExpr 0x13c028150 <col:34> 'struct buffer_page *' contains-errors <LValueToRValue>
+                      `-DeclRefExpr 0x13c0280f0 <col:34> 'struct buffer_page *' contains-errors lvalue Var 0x13c027a80 'commit' 'struct buffer_page *'

@@ -1,0 +1,37 @@
+`-FunctionDecl 0x14980ddf8  line:1:19 invalid vgettsc 'int (int *)' static inline
+  |-ParmVarDecl 0x14980dd28 <col:27, col:36> col:36 invalid cycle_now 'int *'
+  `-CompoundStmt 0x149827b60 <line:2:1, line:10:1>
+    |-DeclStmt 0x14980df28 <line:3:2, col:8>
+    | `-VarDecl 0x14980dec0 <col:2, col:7> col:7 used v 'long'
+    |-DeclStmt 0x14980e190 <line:4:2, col:53>
+    | |-RecordDecl 0x14980df40 <col:2, col:9> col:9 struct pvclock_gtod_data
+    | `-VarDecl 0x14980e0a8 <col:2, col:36> col:28 used gtod 'struct pvclock_gtod_data *' cinit
+    |   `-UnaryOperator 0x14980e160 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14980e140 <col:36> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14980e3d8 <line:6:2, col:24> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x14980e1e0 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x14980e1c8 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x14980e1a8 <col:3> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14980e3b8 <col:15, col:24> 'int'
+    |   `-ImplicitCastExpr 0x14980e3a0 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x14980e350 <col:15> 'int ()' Function 0x14980e298 'read_tsc' 'int ()'
+    |-BinaryOperator 0x149827a48 <line:8:2, col:58> 'long' contains-errors '='
+    | |-DeclRefExpr 0x149827400 <col:2> 'long' lvalue Var 0x14980dec0 'v' 'long'
+    | `-BinaryOperator 0x149827a28 <col:6, col:58> '<dependent type>' contains-errors '&'
+    |   |-ParenExpr 0x149827960 <col:6, col:42> '<dependent type>' contains-errors
+    |   | `-BinaryOperator 0x149827940 <col:7, col:32> '<dependent type>' contains-errors '-'
+    |   |   |-UnaryOperator 0x149827458 <col:7, col:8> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |   | `-ImplicitCastExpr 0x149827440 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |   `-RecoveryExpr 0x149827420 <col:8> '<dependent type>' contains-errors lvalue
+    |   |   `-CXXDependentScopeMemberExpr 0x1498278f8 <col:20, col:32> '<dependent type>' contains-errors lvalue .cycle_last
+    |   |     `-RecoveryExpr 0x1498278d0 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x149827470 <col:20> 'struct pvclock_gtod_data *' contains-errors lvalue Var 0x14980e0a8 'gtod' 'struct pvclock_gtod_data *'
+    |   `-CXXDependentScopeMemberExpr 0x1498279e0 <col:46, col:58> '<dependent type>' contains-errors lvalue .mask
+    |     `-RecoveryExpr 0x1498279b8 <col:46, col:52> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x149827980 <col:46> 'struct pvclock_gtod_data *' contains-errors lvalue Var 0x14980e0a8 'gtod' 'struct pvclock_gtod_data *'
+    `-ReturnStmt 0x149827b50 <line:9:2, col:25>
+      `-BinaryOperator 0x149827b30 <col:9, col:25> '<dependent type>' contains-errors '*'
+        |-DeclRefExpr 0x149827a68 <col:9> 'long' lvalue Var 0x14980dec0 'v' 'long'
+        `-CXXDependentScopeMemberExpr 0x149827ae8 <col:13, col:25> '<dependent type>' contains-errors lvalue .mult
+          `-RecoveryExpr 0x149827ac0 <col:13, col:19> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x149827a88 <col:13> 'struct pvclock_gtod_data *' contains-errors lvalue Var 0x14980e0a8 'gtod' 'struct pvclock_gtod_data *'

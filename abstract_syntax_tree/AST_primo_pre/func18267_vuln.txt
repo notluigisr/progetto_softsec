@@ -1,0 +1,89 @@
+`-FunctionDecl 0x12c1226d0  line:1:6 invalid kvm_write_wall_clock 'void (struct kvm *, int, int)'
+  |-ParmVarDecl 0x12c80e248 <col:27, col:39> col:39 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x12c80e2e0 <col:44, col:50> col:50 invalid wall_clock 'int'
+  |-ParmVarDecl 0x12c80e360 <col:62, col:66> col:66 used sec_hi_ofs 'int'
+  `-CompoundStmt 0x12c82bce0 <line:2:1, line:41:1>
+    |-DeclStmt 0x12c122810 <line:3:2, col:13>
+    | `-VarDecl 0x12c1227a8 <col:2, col:6> col:6 used version 'int'
+    |-DeclStmt 0x12c1228a8 <line:4:2, col:7>
+    | `-VarDecl 0x12c122840 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x12c122a38 <line:5:2, col:30>
+    | |-RecordDecl 0x12c1228c0 <col:2, col:9> col:9 struct pvclock_wall_clock
+    | `-VarDecl 0x12c1229b8 <col:2, col:28> col:28 referenced invalid wc 'struct pvclock_wall_clock'
+    |-IfStmt 0x12c122ab0 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x12c122a88 <line:9:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12c122a70 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x12c122a50 <col:7> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12c122aa0 <line:10:3>
+    |-BinaryOperator 0x12c122db8 <line:12:2, col:63> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12c122ad0 <col:2> 'int' lvalue Var 0x12c122840 'r' 'int'
+    | `-CallExpr 0x12c122d78 <col:6, col:63> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c122c50 <col:6> 'int ()' Function 0x12c122b98 'kvm_read_guest' 'int ()'
+    |   |-DeclRefExpr 0x12c122c70 <col:21> 'struct kvm *' lvalue ParmVar 0x12c80e248 'kvm' 'struct kvm *'
+    |   |-RecoveryExpr 0x12c122c90 <col:26> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x12c122d00 <col:38, col:39> 'int *' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x12c122cb0 <col:39> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    |   `-UnaryExprOrTypeTraitExpr 0x12c122d58 <col:48, col:62> 'unsigned long' sizeof
+    |     `-ParenExpr 0x12c122d38 <col:54, col:62> 'int' lvalue
+    |       `-DeclRefExpr 0x12c122d18 <col:55> 'int' lvalue Var 0x12c1227a8 'version' 'int' non_odr_use_unevaluated
+    |-IfStmt 0x12c122e20 <line:13:2, line:14:3>
+    | |-ImplicitCastExpr 0x12c122df8 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12c122dd8 <col:6> 'int' lvalue Var 0x12c122840 'r' 'int'
+    | `-ReturnStmt 0x12c122e10 <line:14:3>
+    |-IfStmt 0x12c122ef0 <line:16:2, line:17:5>
+    | |-BinaryOperator 0x12c122e98 <line:16:6, col:16> 'int' '&'
+    | | |-ImplicitCastExpr 0x12c122e80 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12c122e40 <col:6> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    | | `-IntegerLiteral 0x12c122e60 <col:16> 'int' 1
+    | `-UnaryOperator 0x12c122ed8 <line:17:3, col:5> 'int' prefix '++'
+    |   `-DeclRefExpr 0x12c122eb8 <col:5> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    |-UnaryOperator 0x12c122f30 <line:19:2, col:4> 'int' prefix '++'
+    | `-DeclRefExpr 0x12c122f10 <col:4> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    |-IfStmt 0x12c123170 <line:21:2, line:22:3>
+    | |-CallExpr 0x12c123120 <line:21:6, col:64> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12c123028 <col:6> 'int ()' Function 0x12c122f70 'kvm_write_guest' 'int ()'
+    | | |-DeclRefExpr 0x12c123048 <col:22> 'struct kvm *' lvalue ParmVar 0x12c80e248 'kvm' 'struct kvm *'
+    | | |-RecoveryExpr 0x12c123068 <col:27> '<dependent type>' contains-errors lvalue
+    | | |-UnaryOperator 0x12c1230a8 <col:39, col:40> 'int *' prefix '&' cannot overflow
+    | | | `-DeclRefExpr 0x12c123088 <col:40> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    | | `-UnaryExprOrTypeTraitExpr 0x12c123100 <col:49, col:63> 'unsigned long' sizeof
+    | |   `-ParenExpr 0x12c1230e0 <col:55, col:63> 'int' lvalue
+    | |     `-DeclRefExpr 0x12c1230c0 <col:56> 'int' lvalue Var 0x12c1227a8 'version' 'int' non_odr_use_unevaluated
+    | `-ReturnStmt 0x12c123160 <line:22:3>
+    |-BinaryOperator 0x12c82b6f8 <line:27:2, col:40> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12c1234d8 <col:2, col:5> '<dependent type>' contains-errors lvalue .nsec
+    | | `-RecoveryExpr 0x12c1234b0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12c123490 <col:2> 'struct pvclock_wall_clock' lvalue Var 0x12c1229b8 'wc' 'struct pvclock_wall_clock'
+    | `-CallExpr 0x12c82b6c8 <col:12, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c82b600 <col:12> 'int ()' Function 0x12c123548 'do_div' 'int ()'
+    |   |-RecoveryExpr 0x12c82b6a8 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x12c82b638 <col:30> 'int' 1000000000
+    |-BinaryOperator 0x12c82b870 <line:29:2, col:15> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12c82b808 <col:2, col:5> '<dependent type>' contains-errors lvalue .version
+    | | `-RecoveryExpr 0x12c82b7e0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12c82b7c0 <col:2> 'struct pvclock_wall_clock' lvalue Var 0x12c1229b8 'wc' 'struct pvclock_wall_clock'
+    | `-DeclRefExpr 0x12c82b850 <col:15> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    |-CallExpr 0x12c82b988 <line:31:2, col:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c82b890 <col:2> 'int ()' Function 0x12c122f70 'kvm_write_guest' 'int ()'
+    | |-DeclRefExpr 0x12c82b8b0 <col:18> 'struct kvm *' lvalue ParmVar 0x12c80e248 'kvm' 'struct kvm *'
+    | |-RecoveryExpr 0x12c82b8d0 <col:23> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x12c82b910 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12c82b8f0 <col:36> '<dependent type>' contains-errors lvalue
+    | `-UnaryExprOrTypeTraitExpr 0x12c82b968 <col:40, col:49> 'unsigned long' contains-errors sizeof
+    |   `-ParenExpr 0x12c82b948 <col:46, col:49> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x12c82b928 <col:47> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c82bb50 <line:33:2, line:37:2>
+    | |-ImplicitCastExpr 0x12c82b9e8 <line:33:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12c82b9c8 <col:6> 'int' lvalue ParmVar 0x12c80e360 'sec_hi_ofs' 'int'
+    | `-CompoundStmt 0x12c82bb40 <col:18, line:37:2>
+    |-UnaryOperator 0x12c82bb90 <line:39:2, col:9> 'int' postfix '++'
+    | `-DeclRefExpr 0x12c82bb70 <col:2> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+    `-CallExpr 0x12c82bca0 <line:40:2, col:60> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12c82bba8 <col:2> 'int ()' Function 0x12c122f70 'kvm_write_guest' 'int ()'
+      |-DeclRefExpr 0x12c82bbc8 <col:18> 'struct kvm *' lvalue ParmVar 0x12c80e248 'kvm' 'struct kvm *'
+      |-RecoveryExpr 0x12c82bbe8 <col:23> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x12c82bc28 <col:35, col:36> 'int *' prefix '&' cannot overflow
+      | `-DeclRefExpr 0x12c82bc08 <col:36> 'int' lvalue Var 0x12c1227a8 'version' 'int'
+      `-UnaryExprOrTypeTraitExpr 0x12c82bc80 <col:45, col:59> 'unsigned long' sizeof
+        `-ParenExpr 0x12c82bc60 <col:51, col:59> 'int' lvalue
+          `-DeclRefExpr 0x12c82bc40 <col:52> 'int' lvalue Var 0x12c1227a8 'version' 'int' non_odr_use_unevaluated

@@ -1,0 +1,22 @@
+`-FunctionDecl 0x14280e350  line:1:13 svm_cpuid_update 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x14280e248 <col:30, col:47> col:47 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x142826cb0 <line:2:1, line:7:1>
+    |-DeclStmt 0x142826a48 <line:3:2, col:37>
+    | |-RecordDecl 0x142826648 <col:2, col:9> col:9 struct vcpu_svm
+    | `-VarDecl 0x1428267b8 <col:2, col:36> col:19 used svm 'struct vcpu_svm *' cinit
+    |   `-ImplicitCastExpr 0x142826a18 <col:25, col:36> 'struct vcpu_svm *' <IntegralToPointer>
+    |     `-CallExpr 0x1428269d8 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1428269c0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x142826950 <col:25> 'int ()' Function 0x142826898 'to_svm' 'int ()'
+    |       `-ImplicitCastExpr 0x142826a00 <col:32> 'struct kvm_vcpu *' <LValueToRValue>
+    |         `-DeclRefExpr 0x142826970 <col:32> 'struct kvm_vcpu *' lvalue ParmVar 0x14280e248 'vcpu' 'struct kvm_vcpu *'
+    `-BinaryOperator 0x142826c90 <line:6:2, col:57> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x142826a98 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x142826a60 <col:2> 'struct vcpu_svm *' lvalue Var 0x1428267b8 'svm' 'struct vcpu_svm *'
+      `-UnaryOperator 0x142826c78 <col:23, col:57> '<dependent type>' contains-errors prefix '!' cannot overflow
+        `-UnaryOperator 0x142826c60 <col:24, col:57> '<dependent type>' contains-errors prefix '!' cannot overflow
+          `-CallExpr 0x142826c38 <col:25, col:57> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x142826ba0 <col:25> 'int ()' Function 0x142826ae8 'guest_cpuid_has_nrips' 'int ()'
+            `-UnaryOperator 0x142826c20 <col:47, col:53> '<dependent type>' contains-errors prefix '&' cannot overflow
+              `-RecoveryExpr 0x142826bf8 <col:48, col:53> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x142826bc0 <col:48> 'struct vcpu_svm *' lvalue Var 0x1428267b8 'svm' 'struct vcpu_svm *'

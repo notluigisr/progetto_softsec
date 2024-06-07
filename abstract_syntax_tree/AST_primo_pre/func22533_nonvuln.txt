@@ -1,0 +1,39 @@
+`-FunctionDecl 0x10580e2e8  line:1:5 bpf_prog_array_copy_info 'int (struct bpf_prog_array)'
+  |-ParmVarDecl 0x10580e1d8 <col:30, col:52> col:52 invalid __rcu 'struct bpf_prog_array'
+  `-CompoundStmt 0x1058272c0 <line:4:1, line:21:1>
+    |-DeclStmt 0x105826848 <line:5:2, col:24>
+    | |-RecordDecl 0x105826600 <col:2, col:9> col:9 struct bpf_prog
+    | `-VarDecl 0x1058267c8 <col:2, col:20> col:20 used prog 'struct bpf_prog **'
+    |-BinaryOperator 0x105826b10 <line:11:2, col:14> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x105826ad8 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x105826ac0 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x105826aa0 <col:3> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x105826af0 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x105826cd0 <line:14:2, line:15:10>
+    | |-BinaryOperator 0x105826c80 <line:14:6, col:23> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x105826c18 <col:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x105826c00 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x105826be0 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x105826c68 <col:22, col:23> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x105826c50 <col:23> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x105826c30 <col:23> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x105826cc0 <line:15:3, col:10>
+    |   `-IntegerLiteral 0x105826ca0 <col:10> 'int' 0
+    |-BinaryOperator 0x105826f78 <line:18:2, col:42> 'struct bpf_prog **' contains-errors '='
+    | |-DeclRefExpr 0x105826cf0 <col:2> 'struct bpf_prog **' lvalue Var 0x1058267c8 'prog' 'struct bpf_prog **'
+    | `-CXXDependentScopeMemberExpr 0x105826f30 <col:9, col:42> '<dependent type>' contains-errors lvalue ->progs
+    |   `-CallExpr 0x105826f00 <col:9, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x105826df0 <col:9> 'int ()' Function 0x105826d38 'rcu_dereference_check' 'int ()'
+    |     |-RecoveryExpr 0x105826ee0 <col:31> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x105826e28 <col:38> 'int' 1
+    `-ReturnStmt 0x1058272b0 <line:19:2, line:20:16>
+      `-ConditionalOperator 0x105827280 <line:19:9, line:20:16> '<dependent type>' contains-errors
+        |-CallExpr 0x1058271f8 <line:19:9, col:61> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x105827078 <col:9> 'int ()' Function 0x105826fc0 'bpf_prog_array_copy_core' 'int ()'
+        | |-DeclRefExpr 0x105827098 <col:34> 'struct bpf_prog **' lvalue Var 0x1058267c8 'prog' 'struct bpf_prog **'
+        | |-RecoveryExpr 0x1058271b8 <col:40> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x1058271d8 <col:50> '<dependent type>' contains-errors lvalue
+        |-UnaryOperator 0x105827268 <col:65, col:66> '<dependent type>' contains-errors prefix '-' cannot overflow
+        | `-ImplicitCastExpr 0x105827250 <col:66> '<dependent type>' contains-errors <LValueToRValue>
+        |   `-RecoveryExpr 0x105827230 <col:66> '<dependent type>' contains-errors lvalue
+        `-IntegerLiteral 0x105827168 <line:20:16> 'int' 0

@@ -1,0 +1,32 @@
+`-FunctionDecl 0x140026720  line:1:6 tcp_chrono_stop 'void (struct sock *, const enum tcp_chrono)'
+  |-ParmVarDecl 0x14000e248 <col:22, col:35> col:35 used sk 'struct sock *'
+  |-ParmVarDecl 0x140026600 <col:39, col:61> col:61 invalid type 'const enum tcp_chrono'
+  `-CompoundStmt 0x140027128 <line:2:1, line:11:1>
+    |-DeclStmt 0x140026c18 <line:3:2, col:34>
+    | |-RecordDecl 0x140026820 <col:2, col:9> col:9 struct tcp_sock
+    | `-VarDecl 0x140026988 <col:2, col:33> col:19 used tp 'struct tcp_sock *' cinit
+    |   `-ImplicitCastExpr 0x140026be8 <col:24, col:33> 'struct tcp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x140026ba8 <col:24, col:33> 'int'
+    |       |-ImplicitCastExpr 0x140026b90 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x140026b20 <col:24> 'int ()' Function 0x140026a68 'tcp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x140026bd0 <col:31> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x140026b40 <col:31> 'struct sock *' lvalue ParmVar 0x14000e248 'sk' 'struct sock *'
+    `-IfStmt 0x1400270f8 <line:7:2, line:10:37> has_else
+      |-CallExpr 0x140026d68 <line:7:6, col:39> 'int'
+      | |-ImplicitCastExpr 0x140026d50 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x140026d10 <col:6> 'int ()' Function 0x140026c58 'tcp_rtx_and_write_queues_empty' 'int ()'
+      | `-ImplicitCastExpr 0x140026d90 <col:37> 'struct sock *' <LValueToRValue>
+      |   `-DeclRefExpr 0x140026d30 <col:37> 'struct sock *' lvalue ParmVar 0x14000e248 'sk' 'struct sock *'
+      |-CallExpr 0x140026f30 <line:8:3, col:39> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x140026e88 <col:3> 'int ()' Function 0x140026dd0 'tcp_chrono_set' 'int ()'
+      | |-DeclRefExpr 0x140026ea8 <col:18> 'struct tcp_sock *' lvalue Var 0x140026988 'tp' 'struct tcp_sock *'
+      | `-RecoveryExpr 0x140026f10 <col:22> '<dependent type>' contains-errors lvalue
+      `-IfStmt 0x1400270d8 <line:9:7, line:10:37>
+        |-BinaryOperator 0x140026fe0 <line:9:11, col:23> 'int' contains-errors '=='
+        | |-RecoveryExpr 0x140026f60 <col:11> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x140026fb8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x140026f80 <col:19> 'struct tcp_sock *' lvalue Var 0x140026988 'tp' 'struct tcp_sock *'
+        `-CallExpr 0x1400270a8 <line:10:3, col:37> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x140027000 <col:3> 'int ()' Function 0x140026dd0 'tcp_chrono_set' 'int ()'
+          |-DeclRefExpr 0x140027020 <col:18> 'struct tcp_sock *' lvalue Var 0x140026988 'tp' 'struct tcp_sock *'
+          `-RecoveryExpr 0x140027088 <col:22> '<dependent type>' contains-errors lvalue

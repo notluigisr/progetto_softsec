@@ -1,0 +1,19 @@
+`-FunctionDecl 0x151928750  line:1:6 __cleanup_sighand 'void (struct sighand_struct *)'
+  |-ParmVarDecl 0x151928648 <col:24, col:47> col:47 used sighand 'struct sighand_struct *'
+  `-CompoundStmt 0x151940fd0 <line:2:1, line:8:1>
+    `-IfStmt 0x151940fb0 <line:3:2, line:7:2>
+      |-CallExpr 0x151940c08 <line:3:6, col:43> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x151940b70 <col:6> 'int ()' Function 0x151940ab8 'refcount_dec_and_test' 'int ()'
+      | `-UnaryOperator 0x151940bf0 <col:28, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x151940bc8 <col:29, col:38> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x151940b90 <col:29> 'struct sighand_struct *' lvalue ParmVar 0x151928648 'sighand' 'struct sighand_struct *'
+      `-CompoundStmt 0x151940f90 <col:46, line:7:2>
+        |-CallExpr 0x151940d98 <line:4:3, col:27> 'int'
+        | |-ImplicitCastExpr 0x151940d80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x151940d10 <col:3> 'int ()' Function 0x151940c58 'signalfd_cleanup' 'int ()'
+        | `-ImplicitCastExpr 0x151940dc0 <col:20> 'struct sighand_struct *' <LValueToRValue>
+        |   `-DeclRefExpr 0x151940d30 <col:20> 'struct sighand_struct *' lvalue ParmVar 0x151928648 'sighand' 'struct sighand_struct *'
+        `-CallExpr 0x151940f60 <line:6:3, col:42> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x151940eb8 <col:3> 'int ()' Function 0x151940e00 'kmem_cache_free' 'int ()'
+          |-RecoveryExpr 0x151940f40 <col:19> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x151940ef0 <col:35> 'struct sighand_struct *' lvalue ParmVar 0x151928648 'sighand' 'struct sighand_struct *'

@@ -1,0 +1,38 @@
+`-FunctionDecl 0x12d944d48  line:1:12 referenced md_seq_open 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x12d928648 <col:24, col:38> col:38 inode 'struct inode *'
+  |-ParmVarDecl 0x12d944c28 <col:45, col:58> col:58 used file 'struct file *'
+  `-CompoundStmt 0x12d945820 <line:2:1, line:13:1>
+    |-DeclStmt 0x12d945038 <line:3:2, col:22>
+    | |-RecordDecl 0x12d944e48 <col:2, col:9> col:9 struct seq_file
+    | `-VarDecl 0x12d944fb8 <col:2, col:19> col:19 used seq 'struct seq_file *'
+    |-DeclStmt 0x12d9450d0 <line:4:2, col:11>
+    | `-VarDecl 0x12d945068 <col:2, col:6> col:6 used error 'int'
+    |-BinaryOperator 0x12d945420 <line:6:2, col:36> 'int' '='
+    | |-DeclRefExpr 0x12d9450e8 <col:2> 'int' lvalue Var 0x12d945068 'error' 'int'
+    | `-CallExpr 0x12d9453d8 <col:10, col:36> 'int'
+    |   |-ImplicitCastExpr 0x12d9453c0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12d945230 <col:10> 'int ()' Function 0x12d945178 'seq_open' 'int ()'
+    |   |-ImplicitCastExpr 0x12d945408 <col:19> 'struct file *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12d945250 <col:19> 'struct file *' lvalue ParmVar 0x12d944c28 'file' 'struct file *'
+    |   `-UnaryOperator 0x12d945370 <col:25, col:26> 'int (*)(struct inode *, struct file *)' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x12d9452f0 <col:26> 'int (struct inode *, struct file *)' Function 0x12d944d48 'md_seq_open' 'int (struct inode *, struct file *)'
+    |-IfStmt 0x12d9454c0 <line:7:2, line:8:10>
+    | |-ImplicitCastExpr 0x12d945460 <line:7:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12d945440 <col:6> 'int' lvalue Var 0x12d945068 'error' 'int'
+    | `-ReturnStmt 0x12d9454b0 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x12d945498 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12d945478 <col:10> 'int' lvalue Var 0x12d945068 'error' 'int'
+    |-BinaryOperator 0x12d945560 <line:10:2, col:14> 'struct seq_file *' contains-errors '='
+    | |-DeclRefExpr 0x12d9454e0 <col:2> 'struct seq_file *' lvalue Var 0x12d944fb8 'seq' 'struct seq_file *'
+    | `-RecoveryExpr 0x12d945538 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12d945500 <col:8> 'struct file *' lvalue ParmVar 0x12d944c28 'file' 'struct file *'
+    |-BinaryOperator 0x12d9457b8 <line:11:2, col:47> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12d9455b8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12d945580 <col:2> 'struct seq_file *' lvalue Var 0x12d944fb8 'seq' 'struct seq_file *'
+    | `-CallExpr 0x12d945790 <col:20, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d9456c0 <col:20> 'int ()' Function 0x12d945608 'atomic_read' 'int ()'
+    |   `-UnaryOperator 0x12d945778 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12d945758 <col:33> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12d945810 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x12d9457f8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12d9457d8 <col:9> 'int' lvalue Var 0x12d945068 'error' 'int'

@@ -1,0 +1,86 @@
+`-FunctionDecl 0x155928758  line:1:14 munlock_vma_page 'unsigned int (struct page *)'
+  |-ParmVarDecl 0x155928648 <col:31, col:44> col:44 used page 'struct page *'
+  `-CompoundStmt 0x155947870 <line:2:1, line:29:1>
+    |-DeclStmt 0x155944cd0 <line:3:2, col:23>
+    | `-VarDecl 0x155944c68 <col:2, col:15> col:15 used nr_pages 'unsigned int'
+    |-DeclStmt 0x1559450e8 <line:4:2, col:37>
+    | |-RecordDecl 0x155944ce8 <col:2, col:9> col:9 struct zone
+    | `-VarDecl 0x155944e58 <col:2, col:36> col:15 used zone 'struct zone *' cinit
+    |   `-ImplicitCastExpr 0x1559450b8 <col:22, col:36> 'struct zone *' <IntegralToPointer>
+    |     `-CallExpr 0x155945078 <col:22, col:36> 'int'
+    |       |-ImplicitCastExpr 0x155945060 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x155944ff0 <col:22> 'int ()' Function 0x155944f38 'page_zone' 'int ()'
+    |       `-ImplicitCastExpr 0x1559450a0 <col:32> 'struct page *' <LValueToRValue>
+    |         `-DeclRefExpr 0x155945010 <col:32> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    |-CallExpr 0x1559453a8 <line:6:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x155945390 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1559451e0 <col:2> 'int ()' Function 0x155945128 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x155945378 <col:9, col:25> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x155945338 <col:10, col:25> 'int'
+    |     |-ImplicitCastExpr 0x155945320 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1559452e0 <col:10> 'int ()' Function 0x155945228 'PageLocked' 'int ()'
+    |     `-ImplicitCastExpr 0x155945360 <col:21> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x155945300 <col:21> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    |-CallExpr 0x155945548 <line:9:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1559454b0 <col:2> 'int ()' Function 0x1559453f8 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x155945530 <col:16, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x155945508 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1559454d0 <col:17> 'struct zone *' lvalue Var 0x155944e58 'zone' 'struct zone *'
+    |-BinaryOperator 0x155945720 <line:11:2, col:32> 'unsigned int' '='
+    | |-DeclRefExpr 0x155945570 <col:2> 'unsigned int' lvalue Var 0x155944c68 'nr_pages' 'unsigned int'
+    | `-ImplicitCastExpr 0x155945708 <col:13, col:32> 'unsigned int' <IntegralCast>
+    |   `-CallExpr 0x1559456c8 <col:13, col:32> 'int'
+    |     |-ImplicitCastExpr 0x1559456b0 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x155945670 <col:13> 'int ()' Function 0x1559455b8 'hpage_nr_pages' 'int ()'
+    |     `-ImplicitCastExpr 0x1559456f0 <col:28> 'struct page *' <LValueToRValue>
+    |       `-DeclRefExpr 0x155945690 <col:28> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    |-IfStmt 0x155945938 <line:12:2, line:13:8>
+    | |-UnaryOperator 0x1559458b8 <line:12:6, col:32> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x155945878 <col:7, col:32> 'int'
+    | |   |-ImplicitCastExpr 0x155945860 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x155945820 <col:7> 'int ()' Function 0x155945768 'TestClearPageMlocked' 'int ()'
+    | |   `-ImplicitCastExpr 0x1559458a0 <col:28> 'struct page *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x155945840 <col:28> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    | `-GotoStmt 0x155945920 <line:13:3, col:8> 'unlock_out' 0x1559458d0
+    |-CallExpr 0x155945b68 <line:15:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x155945a38 <col:2> 'int ()' Function 0x155945980 '__mod_zone_page_state' 'int ()'
+    | |-DeclRefExpr 0x155945a58 <col:24> 'struct zone *' lvalue Var 0x155944e58 'zone' 'struct zone *'
+    | |-RecoveryExpr 0x155945b18 <col:30> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x155945b50 <col:40, col:41> 'unsigned int' prefix '-'
+    |   `-ImplicitCastExpr 0x155945b38 <col:41> 'unsigned int' <LValueToRValue>
+    |     `-DeclRefExpr 0x155945a90 <col:41> 'unsigned int' lvalue Var 0x155944c68 'nr_pages' 'unsigned int'
+    |-IfStmt 0x155947538 <line:17:2, line:21:2>
+    | |-CallExpr 0x155947160 <line:17:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1559470b8 <col:6> 'int ()' Function 0x155947000 '__munlock_isolate_lru_page' 'int ()'
+    | | |-DeclRefExpr 0x1559470d8 <col:33> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    | | `-RecoveryExpr 0x155947140 <col:39> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x155947510 <col:46, line:21:2>
+    |   |-CallExpr 0x155947308 <line:18:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x155947270 <col:3> 'int ()' Function 0x1559471b8 'spin_unlock_irq' 'int ()'
+    |   | `-UnaryOperator 0x1559472f0 <col:19, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1559472c8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x155947290 <col:20> 'struct zone *' lvalue Var 0x155944e58 'zone' 'struct zone *'
+    |   |-CallExpr 0x155947468 <line:19:3, col:31> 'int'
+    |   | |-ImplicitCastExpr 0x155947450 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x155947410 <col:3> 'int ()' Function 0x155947358 '__munlock_isolated_page' 'int ()'
+    |   | `-ImplicitCastExpr 0x155947490 <col:27> 'struct page *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x155947430 <col:27> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    |   `-GotoStmt 0x1559474f8 <line:20:3, col:8> 'out' 0x1559474a8
+    |-CallExpr 0x155947690 <line:22:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x155947678 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x155947638 <col:2> 'int ()' Function 0x155947580 '__munlock_isolation_failed' 'int ()'
+    | `-ImplicitCastExpr 0x1559476b8 <col:29> 'struct page *' <LValueToRValue>
+    |   `-DeclRefExpr 0x155947658 <col:29> 'struct page *' lvalue ParmVar 0x155928648 'page' 'struct page *'
+    |-LabelStmt 0x155947790 <line:24:1, line:25:33> 'unlock_out'
+    | `-CallExpr 0x155947768 <col:2, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1559476d0 <col:2> 'int ()' Function 0x1559471b8 'spin_unlock_irq' 'int ()'
+    |   `-UnaryOperator 0x155947750 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x155947728 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1559476f0 <col:19> 'struct zone *' lvalue Var 0x155944e58 'zone' 'struct zone *'
+    `-LabelStmt 0x155947850 <line:27:1, line:28:20> 'out'
+      `-ReturnStmt 0x155947840 <col:2, col:20>
+        `-BinaryOperator 0x155947820 <col:9, col:20> 'unsigned int' '-'
+          |-ImplicitCastExpr 0x1559477f0 <col:9> 'unsigned int' <LValueToRValue>
+          | `-DeclRefExpr 0x1559477b0 <col:9> 'unsigned int' lvalue Var 0x155944c68 'nr_pages' 'unsigned int'
+          `-ImplicitCastExpr 0x155947808 <col:20> 'unsigned int' <IntegralCast>
+            `-IntegerLiteral 0x1559477d0 <col:20> 'int' 1

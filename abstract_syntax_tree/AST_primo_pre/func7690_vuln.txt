@@ -1,0 +1,99 @@
+`-FunctionDecl 0x158008a68  line:1:16 invalid cgroup_pressure_write 'int (struct kernfs_open_file *, char *, int, enum psi_res)' static
+  |-ParmVarDecl 0x14f928668 <col:38, col:63> col:63 used of 'struct kernfs_open_file *'
+  |-ParmVarDecl 0x14f9286e8 <col:67, col:73> col:73 used buf 'char *'
+  |-ParmVarDecl 0x14f928768 <line:2:8, col:15> col:15 invalid nbytes 'int'
+  |-ParmVarDecl 0x158008918 <col:23, col:36> col:36 invalid res 'enum psi_res'
+  `-CompoundStmt 0x15800b6f8 <line:3:1, line:28:1>
+    |-DeclStmt 0x158008d78 <line:4:2, col:40>
+    | |-RecordDecl 0x158008b30 <col:2, col:9> col:9 struct cgroup_file_ctx
+    | `-VarDecl 0x158008c98 <col:2, col:36> col:26 used ctx 'struct cgroup_file_ctx *' cinit
+    |   `-RecoveryExpr 0x158008d38 <col:32, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x158008d00 <col:32> 'struct kernfs_open_file *' lvalue ParmVar 0x14f928668 'of' 'struct kernfs_open_file *'
+    |-DeclStmt 0x158008f78 <line:5:2, col:25>
+    | |-RecordDecl 0x158008d90 <col:2, col:9> col:9 struct psi_trigger
+    | `-VarDecl 0x158008ef8 <col:2, col:22> col:22 used new 'struct psi_trigger *'
+    |-DeclStmt 0x158009178 <line:6:2, col:21>
+    | |-RecordDecl 0x158008f90 <col:2, col:9> col:9 struct cgroup
+    | `-VarDecl 0x1580090f8 <col:2, col:17> col:17 used cgrp 'struct cgroup *'
+    |-DeclStmt 0x158009378 <line:7:2, col:23>
+    | |-RecordDecl 0x158009190 <col:2, col:9> col:9 struct psi_group
+    | `-VarDecl 0x1580092f8 <col:2, col:20> col:20 used psi 'struct psi_group *'
+    |-BinaryOperator 0x158009648 <line:9:2, col:42> 'struct cgroup *' contains-errors '='
+    | |-DeclRefExpr 0x158009390 <col:2> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    | `-CallExpr 0x158009618 <col:9, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x158009510 <col:9> 'int ()' Function 0x158009458 'cgroup_kn_lock_live' 'int ()'
+    |   |-RecoveryExpr 0x158009568 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x158009530 <col:29> 'struct kernfs_open_file *' lvalue ParmVar 0x14f928668 'of' 'struct kernfs_open_file *'
+    |   `-RecoveryExpr 0x1580095f8 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x158009760 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x1580096a0 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x158009688 <col:7> 'struct cgroup *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x158009668 <col:7> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    | `-ReturnStmt 0x158009750 <line:11:3, col:11>
+    |   `-UnaryOperator 0x158009738 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x158009720 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x158009700 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15800a348 <line:13:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x15800a330 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15800a2b8 <col:2> 'int ()' Function 0x15800a200 'cgroup_get' 'int ()'
+    | `-ImplicitCastExpr 0x15800a370 <col:13> 'struct cgroup *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15800a2d8 <col:13> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    |-CallExpr 0x15800a4e8 <line:14:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15800a468 <col:2> 'int ()' Function 0x15800a3b0 'cgroup_kn_unlock' 'int ()'
+    | `-RecoveryExpr 0x15800a4c0 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15800a488 <col:19> 'struct kernfs_open_file *' lvalue ParmVar 0x14f928668 'of' 'struct kernfs_open_file *'
+    |-BinaryOperator 0x15800a938 <line:16:2, col:53> 'struct psi_group *' contains-errors '='
+    | |-DeclRefExpr 0x15800a510 <col:2> 'struct psi_group *' lvalue Var 0x1580092f8 'psi' 'struct psi_group *'
+    | `-ConditionalOperator 0x15800a908 <col:8, col:53> '<dependent type>' contains-errors
+    |   |-BinaryOperator 0x15800a8b0 <col:8, col:28> 'int' '=='
+    |   | |-CallExpr 0x15800a870 <col:8, col:23> 'int'
+    |   | | |-ImplicitCastExpr 0x15800a858 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x15800a610 <col:8> 'int ()' Function 0x15800a558 'cgroup_ino' 'int ()'
+    |   | | `-ImplicitCastExpr 0x15800a898 <col:19> 'struct cgroup *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x15800a630 <col:19> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    |   | `-IntegerLiteral 0x15800a6a8 <col:28> 'int' 1
+    |   |-UnaryOperator 0x15800a8f0 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x15800a8d0 <col:33> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x15800a778 <col:46, col:53> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15800a750 <col:47, col:53> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15800a718 <col:47> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    |-BinaryOperator 0x15800ab38 <line:17:2, col:48> 'struct psi_trigger *' contains-errors '='
+    | |-DeclRefExpr 0x15800a958 <col:2> 'struct psi_trigger *' lvalue Var 0x158008ef8 'new' 'struct psi_trigger *'
+    | `-CallExpr 0x15800aaf8 <col:8, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15800aa58 <col:8> 'int ()' Function 0x15800a9a0 'psi_trigger_create' 'int ()'
+    |   |-DeclRefExpr 0x15800aa78 <col:27> 'struct psi_group *' lvalue Var 0x1580092f8 'psi' 'struct psi_group *'
+    |   |-DeclRefExpr 0x15800aa98 <col:32> 'char *' lvalue ParmVar 0x14f9286e8 'buf' 'char *'
+    |   |-RecoveryExpr 0x15800aab8 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x15800aad8 <col:45> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15800aff0 <line:18:2, line:21:2>
+    | |-CallExpr 0x15800ac90 <line:18:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x15800ac78 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x15800ac38 <col:6> 'int ()' Function 0x15800ab80 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x15800acb8 <col:13> 'struct psi_trigger *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15800ac58 <col:13> 'struct psi_trigger *' lvalue Var 0x158008ef8 'new' 'struct psi_trigger *'
+    | `-CompoundStmt 0x15800afd0 <col:19, line:21:2>
+    |   |-CallExpr 0x15800ae08 <line:19:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x15800adf0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x15800adb0 <col:3> 'int ()' Function 0x15800acf8 'cgroup_put' 'int ()'
+    |   | `-ImplicitCastExpr 0x15800ae30 <col:14> 'struct cgroup *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x15800add0 <col:14> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    |   `-ReturnStmt 0x15800afc0 <line:20:3, col:21>
+    |     `-CallExpr 0x15800af80 <col:10, col:21> 'int'
+    |       |-ImplicitCastExpr 0x15800af68 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15800af28 <col:10> 'int ()' Function 0x15800ae70 'PTR_ERR' 'int ()'
+    |       `-ImplicitCastExpr 0x15800afa8 <col:18> 'struct psi_trigger *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15800af48 <col:18> 'struct psi_trigger *' lvalue Var 0x158008ef8 'new' 'struct psi_trigger *'
+    |-CallExpr 0x15800b600 <line:23:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15800b0f0 <col:2> 'int ()' Function 0x15800b038 'psi_trigger_replace' 'int ()'
+    | |-UnaryOperator 0x15800b1b8 <col:22, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x15800b170 <col:23, col:32> '<dependent type>' contains-errors lvalue .trigger
+    | |   `-RecoveryExpr 0x15800b148 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15800b110 <col:23> 'struct cgroup_file_ctx *' contains-errors lvalue Var 0x158008c98 'ctx' 'struct cgroup_file_ctx *'
+    | `-DeclRefExpr 0x15800b1d0 <col:41> 'struct psi_trigger *' lvalue Var 0x158008ef8 'new' 'struct psi_trigger *'
+    |-CallExpr 0x15800b688 <line:25:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x15800b670 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15800b630 <col:2> 'int ()' Function 0x15800acf8 'cgroup_put' 'int ()'
+    | `-ImplicitCastExpr 0x15800b6b0 <col:13> 'struct cgroup *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15800b650 <col:13> 'struct cgroup *' lvalue Var 0x1580090f8 'cgrp' 'struct cgroup *'
+    `-ReturnStmt 0x15800b6e8 <line:27:2, col:9>
+      `-RecoveryExpr 0x15800b6c8 <col:9> '<dependent type>' contains-errors lvalue

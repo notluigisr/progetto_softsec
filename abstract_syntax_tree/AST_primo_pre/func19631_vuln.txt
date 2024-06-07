@@ -1,0 +1,183 @@
+`-FunctionDecl 0x10580e350  line:1:13 perf_event_interrupt 'void (struct pt_regs *)' static
+  |-ParmVarDecl 0x10580e248 <col:34, col:50> col:50 used regs 'struct pt_regs *'
+  `-CompoundStmt 0x10582c720 <line:2:1, line:52:1>
+    |-DeclStmt 0x1058266c8 <line:3:2, col:7>
+    | `-VarDecl 0x105826660 <col:2, col:6> col:6 used i 'int'
+    |-DeclStmt 0x105826ad0 <line:4:2, col:61>
+    | |-RecordDecl 0x1058266e0 <col:2, col:9> col:9 struct cpu_hw_events
+    | `-VarDecl 0x105826848 <col:2, col:60> col:24 used cpuhw 'struct cpu_hw_events *' cinit
+    |   `-UnaryOperator 0x105826aa0 <col:32, col:60> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CallExpr 0x105826a78 <col:33, col:60> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x1058269e0 <col:33> 'int ()' Function 0x105826928 '__get_cpu_var' 'int ()'
+    |       `-RecoveryExpr 0x105826a58 <col:47> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x105826cd8 <line:5:2, col:26>
+    | |-RecordDecl 0x105826ae8 <col:2, col:9> col:9 struct perf_event
+    | `-VarDecl 0x105826c58 <col:2, col:21> col:21 used event 'struct perf_event *'
+    |-DeclStmt 0x105826d70 <line:6:2, col:19>
+    | `-VarDecl 0x105826d08 <col:2, col:16> col:16 used val 'unsigned long'
+    |-DeclStmt 0x105826e28 <line:7:2, col:15>
+    | `-VarDecl 0x105826da0 <col:2, col:14> col:6 used found 'int' cinit
+    |   `-IntegerLiteral 0x105826e08 <col:14> 'int' 0
+    |-DeclStmt 0x105826ec0 <line:8:2, col:9>
+    | `-VarDecl 0x105826e58 <col:2, col:6> col:6 used nmi 'int'
+    |-IfStmt 0x1058272f8 <line:10:2, line:12:22>
+    | |-RecoveryExpr 0x105826f10 <line:10:6, col:13> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x105826ed8 <col:6> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    | `-CallExpr 0x1058272c0 <line:11:3, line:12:22> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x105827018 <line:11:3> 'int ()' Function 0x105826f60 'freeze_limited_counters' 'int ()'
+    |   |-DeclRefExpr 0x105827038 <col:27> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    |   |-CallExpr 0x105827250 <col:34, col:49> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x105827138 <col:34> 'int ()' Function 0x105827080 'mfspr' 'int ()'
+    |   | `-RecoveryExpr 0x105827230 <col:40> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x105827298 <line:12:6, col:21> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x105827198 <col:6> 'int ()' Function 0x105827080 'mfspr' 'int ()'
+    |     `-RecoveryExpr 0x105827278 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x105827488 <line:14:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x105827470 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1058273f8 <col:2> 'int ()' Function 0x105827340 'perf_read_regs' 'int ()'
+    | `-ImplicitCastExpr 0x1058274b0 <col:17> 'struct pt_regs *' <LValueToRValue>
+    |   `-DeclRefExpr 0x105827418 <col:17> 'struct pt_regs *' lvalue ParmVar 0x10580e248 'regs' 'struct pt_regs *'
+    |-BinaryOperator 0x105829c78 <line:16:2, col:29> 'int' '='
+    | |-DeclRefExpr 0x1058274c8 <col:2> 'int' lvalue Var 0x105826e58 'nmi' 'int'
+    | `-CallExpr 0x105829c38 <col:8, col:29> 'int'
+    |   |-ImplicitCastExpr 0x105829c20 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1058275c8 <col:8> 'int ()' Function 0x105827510 'perf_intr_is_nmi' 'int ()'
+    |   `-ImplicitCastExpr 0x105829c60 <col:25> 'struct pt_regs *' <LValueToRValue>
+    |     `-DeclRefExpr 0x105829c00 <col:25> 'struct pt_regs *' lvalue ParmVar 0x10580e248 'regs' 'struct pt_regs *'
+    |-IfStmt 0x105829f40 <line:17:2, line:20:13> has_else
+    | |-ImplicitCastExpr 0x105829cb8 <line:17:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x105829c98 <col:6> 'int' lvalue Var 0x105826e58 'nmi' 'int'
+    | |-CallExpr 0x105829de8 <line:18:3, col:13> 'int'
+    | | `-ImplicitCastExpr 0x105829dd0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |   `-DeclRefExpr 0x105829db0 <col:3> 'int ()' Function 0x105829cf8 'nmi_enter' 'int ()'
+    | `-CallExpr 0x105829f20 <line:20:3, col:13> 'int'
+    |   `-ImplicitCastExpr 0x105829f08 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x105829ee8 <col:3> 'int ()' Function 0x105829e30 'irq_enter' 'int ()'
+    |-ForStmt 0x10582aa78 <line:22:2, line:32:2>
+    | |-BinaryOperator 0x105829fb0 <line:22:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x105829f70 <col:7> 'int' lvalue Var 0x105826660 'i' 'int'
+    | | `-IntegerLiteral 0x105829f90 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x10582a050 <col:14, col:25> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x105829fd0 <col:14> 'int' lvalue Var 0x105826660 'i' 'int'
+    | | `-RecoveryExpr 0x10582a028 <col:18, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x105829ff0 <col:18> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    | |-UnaryOperator 0x10582a090 <col:35, col:37> 'int' prefix '++'
+    | | `-DeclRefExpr 0x10582a070 <col:37> 'int' lvalue Var 0x105826660 'i' 'int'
+    | `-CompoundStmt 0x10582aa48 <col:40, line:32:2>
+    |   |-BinaryOperator 0x10582a198 <line:23:3, col:25> 'struct perf_event *' contains-errors '='
+    |   | |-DeclRefExpr 0x10582a0a8 <col:3> 'struct perf_event *' lvalue Var 0x105826c58 'event' 'struct perf_event *'
+    |   | `-ArraySubscriptExpr 0x10582a178 <col:11, col:25> '<dependent type>' contains-errors lvalue
+    |   |   |-ImplicitCastExpr 0x10582a148 <col:11, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | `-RecoveryExpr 0x10582a100 <col:11, col:18> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x10582a0c8 <col:11> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    |   |   `-ImplicitCastExpr 0x10582a160 <col:24> 'int' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x10582a128 <col:24> 'int' lvalue Var 0x105826660 'i' 'int'
+    |   |-IfStmt 0x10582a488 <line:24:3, line:25:4>
+    |   | |-BinaryOperator 0x10582a460 <line:24:7, col:53> 'int' contains-errors '||'
+    |   | | |-UnaryOperator 0x10582a278 <col:7, col:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | | `-ImplicitCastExpr 0x10582a260 <col:8, col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | |   `-CXXDependentScopeMemberExpr 0x10582a218 <col:8, col:18> '<dependent type>' contains-errors lvalue .idx
+    |   | | |     `-RecoveryExpr 0x10582a1f0 <col:8, col:15> '<dependent type>' contains-errors lvalue
+    |   | | |       `-DeclRefExpr 0x10582a1b8 <col:8> 'struct perf_event *' lvalue Var 0x105826c58 'event' 'struct perf_event *'
+    |   | | `-CallExpr 0x10582a438 <col:25, col:53> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x10582a370 <col:25> 'int ()' Function 0x10582a2b8 'is_limited_pmc' 'int ()'
+    |   | |   `-CXXDependentScopeMemberExpr 0x10582a3f0 <col:40, col:50> '<dependent type>' contains-errors lvalue .idx
+    |   | |     `-RecoveryExpr 0x10582a3c8 <col:40, col:47> '<dependent type>' contains-errors lvalue
+    |   | |       `-DeclRefExpr 0x10582a390 <col:40> 'struct perf_event *' lvalue Var 0x105826c58 'event' 'struct perf_event *'
+    |   | `-ContinueStmt 0x10582a480 <line:25:4>
+    |   |-BinaryOperator 0x10582a698 <line:26:3, col:31> 'unsigned long' contains-errors '='
+    |   | |-DeclRefExpr 0x10582a4a8 <col:3> 'unsigned long' lvalue Var 0x105826d08 'val' 'unsigned long'
+    |   | `-CallExpr 0x10582a670 <col:9, col:31> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x10582a5a8 <col:9> 'int ()' Function 0x10582a4f0 'read_pmc' 'int ()'
+    |   |   `-CXXDependentScopeMemberExpr 0x10582a628 <col:18, col:28> '<dependent type>' contains-errors lvalue .idx
+    |   |     `-RecoveryExpr 0x10582a600 <col:18, col:25> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x10582a5c8 <col:18> 'struct perf_event *' lvalue Var 0x105826c58 'event' 'struct perf_event *'
+    |   `-IfStmt 0x10582aa28 <line:27:3, line:31:3>
+    |     |-BinaryOperator 0x10582a750 <line:27:7, col:18> 'int' '<'
+    |     | |-CStyleCastExpr 0x10582a708 <col:7, col:12> 'int' <IntegralCast>
+    |     | | `-ImplicitCastExpr 0x10582a6f0 <col:12> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    |     | |   `-DeclRefExpr 0x10582a6b8 <col:12> 'unsigned long' lvalue Var 0x105826d08 'val' 'unsigned long'
+    |     | `-IntegerLiteral 0x10582a730 <col:18> 'int' 0
+    |     `-CompoundStmt 0x10582aa08 <col:21, line:31:3>
+    |       |-BinaryOperator 0x10582a7b0 <line:29:4, col:12> 'int' '='
+    |       | |-DeclRefExpr 0x10582a770 <col:4> 'int' lvalue Var 0x105826da0 'found' 'int'
+    |       | `-IntegerLiteral 0x10582a790 <col:12> 'int' 1
+    |       `-CallExpr 0x10582a968 <line:30:4, col:44> 'int'
+    |         |-ImplicitCastExpr 0x10582a950 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x10582a8b0 <col:4> 'int ()' Function 0x10582a7f8 'record_and_restart' 'int ()'
+    |         |-ImplicitCastExpr 0x10582a9a8 <col:23> 'struct perf_event *' <LValueToRValue>
+    |         | `-DeclRefExpr 0x10582a8d0 <col:23> 'struct perf_event *' lvalue Var 0x105826c58 'event' 'struct perf_event *'
+    |         |-ImplicitCastExpr 0x10582a9c0 <col:30> 'unsigned long' <LValueToRValue>
+    |         | `-DeclRefExpr 0x10582a8f0 <col:30> 'unsigned long' lvalue Var 0x105826d08 'val' 'unsigned long'
+    |         |-ImplicitCastExpr 0x10582a9d8 <col:35> 'struct pt_regs *' <LValueToRValue>
+    |         | `-DeclRefExpr 0x10582a910 <col:35> 'struct pt_regs *' lvalue ParmVar 0x10580e248 'regs' 'struct pt_regs *'
+    |         `-ImplicitCastExpr 0x10582a9f0 <col:41> 'int' <LValueToRValue>
+    |           `-DeclRefExpr 0x10582a930 <col:41> 'int' lvalue Var 0x105826e58 'nmi' 'int'
+    |-IfStmt 0x10582c220 <line:35:2, line:43:2>
+    | |-UnaryOperator 0x10582aae8 <line:35:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x10582aad0 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x10582aab0 <col:7> 'int' lvalue Var 0x105826da0 'found' 'int'
+    | `-CompoundStmt 0x10582c208 <col:14, line:43:2>
+    |   `-ForStmt 0x10582c1d0 <line:36:3, line:42:3>
+    |     |-BinaryOperator 0x10582ab40 <line:36:8, col:12> 'int' '='
+    |     | |-DeclRefExpr 0x10582ab00 <col:8> 'int' lvalue Var 0x105826660 'i' 'int'
+    |     | `-IntegerLiteral 0x10582ab20 <col:12> 'int' 0
+    |     |-<<<NULL>>>
+    |     |-BinaryOperator 0x10582bc68 <col:15, col:25> 'int' contains-errors '<'
+    |     | |-DeclRefExpr 0x10582ab60 <col:15> 'int' lvalue Var 0x105826660 'i' 'int'
+    |     | `-CXXDependentScopeMemberExpr 0x10582bc20 <col:19, col:25> '<dependent type>' contains-errors lvalue ->n_counter
+    |     |   `-RecoveryExpr 0x10582bc00 <col:19> '<dependent type>' contains-errors lvalue
+    |     |-UnaryOperator 0x10582bca8 <col:36, col:38> 'int' prefix '++'
+    |     | `-DeclRefExpr 0x10582bc88 <col:38> 'int' lvalue Var 0x105826660 'i' 'int'
+    |     `-CompoundStmt 0x10582c1a8 <col:41, line:42:3>
+    |       |-IfStmt 0x10582bda0 <line:37:4, line:38:5>
+    |       | |-CallExpr 0x10582bd70 <line:37:8, col:28> 'int'
+    |       | | |-ImplicitCastExpr 0x10582bd58 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       | | | `-DeclRefExpr 0x10582bcc0 <col:8> 'int ()' Function 0x10582a2b8 'is_limited_pmc' 'int ()'
+    |       | | `-BinaryOperator 0x10582bd38 <col:23, col:27> 'int' '+'
+    |       | |   |-ImplicitCastExpr 0x10582bd20 <col:23> 'int' <LValueToRValue>
+    |       | |   | `-DeclRefExpr 0x10582bce0 <col:23> 'int' lvalue Var 0x105826660 'i' 'int'
+    |       | |   `-IntegerLiteral 0x10582bd00 <col:27> 'int' 1
+    |       | `-ContinueStmt 0x10582bd98 <line:38:5>
+    |       |-BinaryOperator 0x10582bed0 <line:39:4, col:24> 'unsigned long' '='
+    |       | |-DeclRefExpr 0x10582bdc0 <col:4> 'unsigned long' lvalue Var 0x105826d08 'val' 'unsigned long'
+    |       | `-ImplicitCastExpr 0x10582beb8 <col:10, col:24> 'unsigned long' <IntegralCast>
+    |       |   `-CallExpr 0x10582be90 <col:10, col:24> 'int'
+    |       |     |-ImplicitCastExpr 0x10582be78 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       |     | `-DeclRefExpr 0x10582bde0 <col:10> 'int ()' Function 0x10582a4f0 'read_pmc' 'int ()'
+    |       |     `-BinaryOperator 0x10582be58 <col:19, col:23> 'int' '+'
+    |       |       |-ImplicitCastExpr 0x10582be40 <col:19> 'int' <LValueToRValue>
+    |       |       | `-DeclRefExpr 0x10582be00 <col:19> 'int' lvalue Var 0x105826660 'i' 'int'
+    |       |       `-IntegerLiteral 0x10582be20 <col:23> 'int' 1
+    |       `-IfStmt 0x10582c188 <line:40:4, line:41:23>
+    |         |-BinaryOperator 0x10582bf88 <line:40:8, col:19> 'int' '<'
+    |         | |-CStyleCastExpr 0x10582bf40 <col:8, col:13> 'int' <IntegralCast>
+    |         | | `-ImplicitCastExpr 0x10582bf28 <col:13> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    |         | |   `-DeclRefExpr 0x10582bef0 <col:13> 'unsigned long' lvalue Var 0x105826d08 'val' 'unsigned long'
+    |         | `-IntegerLiteral 0x10582bf68 <col:19> 'int' 0
+    |         `-CallExpr 0x10582c158 <line:41:5, col:23> 'int'
+    |           |-ImplicitCastExpr 0x10582c140 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |           | `-DeclRefExpr 0x10582c088 <col:5> 'int ()' Function 0x10582bfd0 'write_pmc' 'int ()'
+    |           |-BinaryOperator 0x10582c100 <col:15, col:19> 'int' '+'
+    |           | |-ImplicitCastExpr 0x10582c0e8 <col:15> 'int' <LValueToRValue>
+    |           | | `-DeclRefExpr 0x10582c0a8 <col:15> 'int' lvalue Var 0x105826660 'i' 'int'
+    |           | `-IntegerLiteral 0x10582c0c8 <col:19> 'int' 1
+    |           `-IntegerLiteral 0x10582c120 <col:22> 'int' 0
+    |-CallExpr 0x10582c418 <line:46:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x10582c320 <col:2> 'int ()' Function 0x10582c268 'write_mmcr0' 'int ()'
+    | |-DeclRefExpr 0x10582c340 <col:14> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    | `-ArraySubscriptExpr 0x10582c3f8 <col:21, col:34> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x10582c3e0 <col:21, col:28> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x10582c398 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x10582c360 <col:21> 'struct cpu_hw_events *' contains-errors lvalue Var 0x105826848 'cpuhw' 'struct cpu_hw_events *'
+    |   `-IntegerLiteral 0x10582c3c0 <col:33> 'int' 0
+    `-IfStmt 0x10582c6f0 <line:48:2, line:51:12> has_else
+      |-ImplicitCastExpr 0x10582c468 <line:48:6> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x10582c448 <col:6> 'int' lvalue Var 0x105826e58 'nmi' 'int'
+      |-CallExpr 0x10582c598 <line:49:3, col:12> 'int'
+      | `-ImplicitCastExpr 0x10582c580 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      |   `-DeclRefExpr 0x10582c560 <col:3> 'int ()' Function 0x10582c4a8 'nmi_exit' 'int ()'
+      `-CallExpr 0x10582c6d0 <line:51:3, col:12> 'int'
+        `-ImplicitCastExpr 0x10582c6b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x10582c698 <col:3> 'int ()' Function 0x10582c5e0 'irq_exit' 'int ()'

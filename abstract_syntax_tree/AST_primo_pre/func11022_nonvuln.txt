@@ -1,0 +1,26 @@
+`-FunctionDecl 0x12d83cd90  line:1:13 vmclear_local_vcpus 'void (void)' static
+  `-CompoundStmt 0x12d855130 <line:2:1, line:9:1>
+    |-DeclStmt 0x12d83d0b8 <line:3:2, col:34>
+    | `-VarDecl 0x12d83ce98 <col:2, col:33> col:6 used cpu 'int' cinit
+    |   `-CallExpr 0x12d83d098 <col:12, col:33> 'int'
+    |     `-ImplicitCastExpr 0x12d83d080 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x12d83d030 <col:12> 'int ()' Function 0x12d83cf78 'raw_smp_processor_id' 'int ()'
+    |-DeclStmt 0x12d83d350 <line:4:2, col:26>
+    | |-RecordDecl 0x12d83d0d0 <col:2, col:9> col:9 struct vcpu_vmx
+    | |-VarDecl 0x12d83d238 <col:2, col:19> col:19 used vmx 'struct vcpu_vmx *'
+    | `-VarDecl 0x12d83d2c8 <col:2, col:25> col:25 used n 'struct vcpu_vmx *'
+    |-CallExpr 0x12d854f78 <line:6:2, line:7:22> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d854cb8 <line:6:2> 'int ()' Function 0x12d854c00 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x12d854cd8 <col:27> 'struct vcpu_vmx *' lvalue Var 0x12d83d238 'vmx' 'struct vcpu_vmx *'
+    | |-DeclRefExpr 0x12d854cf8 <col:32> 'struct vcpu_vmx *' lvalue Var 0x12d83d2c8 'n' 'struct vcpu_vmx *'
+    | |-UnaryOperator 0x12d854f40 <col:35, col:61> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CallExpr 0x12d854f10 <col:36, col:61> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12d854df8 <col:36> 'int ()' Function 0x12d854d40 'per_cpu' 'int ()'
+    | |   |-RecoveryExpr 0x12d854ef0 <col:44> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12d854e30 <col:58> 'int' lvalue Var 0x12d83ce98 'cpu' 'int'
+    | `-RecoveryExpr 0x12d854f58 <line:7:6> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x12d8550f0 <line:8:3, col:19> 'int'
+      |-ImplicitCastExpr 0x12d8550d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12d855098 <col:3> 'int ()' Function 0x12d854fe0 '__vcpu_clear' 'int ()'
+      `-ImplicitCastExpr 0x12d855118 <col:16> 'struct vcpu_vmx *' <LValueToRValue>
+        `-DeclRefExpr 0x12d8550b8 <col:16> 'struct vcpu_vmx *' lvalue Var 0x12d83d238 'vmx' 'struct vcpu_vmx *'

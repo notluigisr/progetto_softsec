@@ -1,0 +1,88 @@
+`-FunctionDecl 0x153826770  line:1:19 invalid timestamp_truncate 'struct timespec64 (struct timespec64, struct inode *)'
+  |-ParmVarDecl 0x15380ddb0 <col:38, col:56> col:56 referenced invalid t 'struct timespec64'
+  |-ParmVarDecl 0x153826600 <col:59, col:73> col:73 used inode 'struct inode *'
+  `-CompoundStmt 0x15382dbc0 <line:2:1, line:20:1>
+    |-DeclStmt 0x153826ab8 <line:3:2, col:38>
+    | |-RecordDecl 0x153826870 <col:2, col:9> col:9 struct super_block
+    | `-VarDecl 0x1538269d8 <col:2, col:34> col:22 used sb 'struct super_block *' cinit
+    |   `-RecoveryExpr 0x153826a78 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153826a40 <col:27> 'struct inode *' lvalue ParmVar 0x153826600 'inode' 'struct inode *'
+    |-DeclStmt 0x153826bb0 <line:4:2, col:37>
+    | `-VarDecl 0x153826ae8 <col:2, col:26> col:15 used gran 'unsigned int' cinit
+    |   `-RecoveryExpr 0x153826b88 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153826b50 <col:22> 'struct super_block *' contains-errors lvalue Var 0x1538269d8 'sb' 'struct super_block *'
+    |-BinaryOperator 0x153826f00 <line:6:2, col:59> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x153826c10 <col:2, col:4> '<dependent type>' contains-errors lvalue .tv_sec
+    | | `-RecoveryExpr 0x153826be8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x153826bc8 <col:2> 'struct timespec64' lvalue ParmVar 0x15380ddb0 't' 'struct timespec64'
+    | `-CallExpr 0x153826ec8 <col:13, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153826d80 <col:13> 'int ()' Function 0x153826cc8 'clamp' 'int ()'
+    |   |-CXXDependentScopeMemberExpr 0x153826dc0 <col:19, col:21> '<dependent type>' contains-errors lvalue .tv_sec
+    |   | `-RecoveryExpr 0x153826da0 <col:19> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x153826e40 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x153826e08 <col:29> 'struct super_block *' contains-errors lvalue Var 0x1538269d8 'sb' 'struct super_block *'
+    |   `-RecoveryExpr 0x153826ea0 <col:45, col:49> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153826e68 <col:45> 'struct super_block *' contains-errors lvalue Var 0x1538269d8 'sb' 'struct super_block *'
+    |-IfStmt 0x153827308 <line:7:2, line:8:15>
+    | |-CallExpr 0x153827210 <line:7:6, col:71> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x153827000 <col:6> 'int ()' Function 0x153826f48 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x1538271f0 <col:15, col:61> 'int' contains-errors '||'
+    | |   |-BinaryOperator 0x1538270e8 <col:15, col:31> 'int' contains-errors '=='
+    | |   | |-CXXDependentScopeMemberExpr 0x153827040 <col:15, col:17> '<dependent type>' contains-errors lvalue .tv_sec
+    | |   | | `-RecoveryExpr 0x153827020 <col:15> '<dependent type>' contains-errors lvalue
+    | |   | `-RecoveryExpr 0x1538270c0 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x153827088 <col:27> 'struct super_block *' contains-errors lvalue Var 0x1538269d8 'sb' 'struct super_block *'
+    | |   `-BinaryOperator 0x1538271d0 <col:45, col:61> 'int' contains-errors '=='
+    | |     |-CXXDependentScopeMemberExpr 0x153827128 <col:45, col:47> '<dependent type>' contains-errors lvalue .tv_sec
+    | |     | `-RecoveryExpr 0x153827108 <col:45> '<dependent type>' contains-errors lvalue
+    | |     `-RecoveryExpr 0x1538271a8 <col:57, col:61> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x153827170 <col:57> 'struct super_block *' contains-errors lvalue Var 0x1538269d8 'sb' 'struct super_block *'
+    | `-BinaryOperator 0x1538272e8 <line:8:3, col:15> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x153827280 <col:3, col:5> '<dependent type>' contains-errors lvalue .tv_nsec
+    |   | `-RecoveryExpr 0x153827258 <col:3> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x153827238 <col:3> 'struct timespec64' lvalue ParmVar 0x15380ddb0 't' 'struct timespec64'
+    |   `-IntegerLiteral 0x1538272c8 <col:15> 'int' 0
+    |-IfStmt 0x15382db60 <line:11:2, line:18:22> has_else
+    | |-BinaryOperator 0x153827398 <line:11:6, col:14> 'int' contains-errors '=='
+    | | |-ImplicitCastExpr 0x153827368 <col:6> 'unsigned int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x153827328 <col:6> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    | | `-ImplicitCastExpr 0x153827380 <col:14> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x153827348 <col:14> 'int' 1
+    | |-NullStmt 0x1538273b8 <line:12:3>
+    | `-IfStmt 0x15382db30 <line:13:7, line:18:22> has_else
+    |   |-BinaryOperator 0x153827438 <line:13:11, col:19> 'int' contains-errors '=='
+    |   | |-DeclRefExpr 0x1538273c0 <col:11> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    |   | `-RecoveryExpr 0x153827418 <col:19> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x153827508 <line:14:3, col:15> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x1538274a0 <col:3, col:5> '<dependent type>' contains-errors lvalue .tv_nsec
+    |   | | `-RecoveryExpr 0x153827478 <col:3> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x153827458 <col:3> 'struct timespec64' lvalue ParmVar 0x15380ddb0 't' 'struct timespec64'
+    |   | `-IntegerLiteral 0x1538274e8 <col:15> 'int' 0
+    |   `-IfStmt 0x15382db00 <line:15:7, line:18:22> has_else
+    |     |-BinaryOperator 0x15382d720 <line:15:11, col:30> 'int' contains-errors '&&'
+    |     | |-BinaryOperator 0x15382d6c0 <col:11, col:18> 'int' contains-errors '>'
+    |     | | |-ImplicitCastExpr 0x15382d690 <col:11> 'unsigned int' contains-errors <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x153827528 <col:11> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    |     | | `-ImplicitCastExpr 0x15382d6a8 <col:18> 'unsigned int' <IntegralCast>
+    |     | |   `-IntegerLiteral 0x153827548 <col:18> 'int' 1
+    |     | `-BinaryOperator 0x15382d700 <col:23, col:30> 'int' contains-errors '<'
+    |     |   |-DeclRefExpr 0x1538275b8 <col:23> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    |     |   `-RecoveryExpr 0x15382d6e0 <col:30> '<dependent type>' contains-errors lvalue
+    |     |-CompoundAssignOperator 0x15382d878 <line:16:3, col:28> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-CXXDependentScopeMemberExpr 0x15382d788 <col:3, col:5> '<dependent type>' contains-errors lvalue .tv_nsec
+    |     | | `-RecoveryExpr 0x15382d760 <col:3> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x15382d740 <col:3> 'struct timespec64' lvalue ParmVar 0x15380ddb0 't' 'struct timespec64'
+    |     | `-BinaryOperator 0x15382d858 <col:16, col:28> '<dependent type>' contains-errors '%'
+    |     |   |-CXXDependentScopeMemberExpr 0x15382d7f0 <col:16, col:18> '<dependent type>' contains-errors lvalue .tv_nsec
+    |     |   | `-RecoveryExpr 0x15382d7d0 <col:16> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x15382d838 <col:28> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    |     `-CallExpr 0x15382da98 <line:18:3, col:22> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x15382da80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15382d988 <col:3> 'int ()' Function 0x15382d8d0 'WARN' 'int ()'
+    |       |-IntegerLiteral 0x15382d9a8 <col:8> 'int' 1
+    |       |-ImplicitCastExpr 0x15382dad0 <col:11> 'char *' <ArrayToPointerDecay>
+    |       | `-StringLiteral 0x15382da10 <col:11> 'char[4]' lvalue "STR"
+    |       `-ImplicitCastExpr 0x15382dae8 <col:18> 'unsigned int' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x15382da30 <col:18> 'unsigned int' contains-errors lvalue Var 0x153826ae8 'gran' 'unsigned int'
+    `-ReturnStmt 0x15382dbb0 <line:19:2, col:9>
+      `-RecoveryExpr 0x15382db90 <col:9> '<dependent type>' contains-errors lvalue

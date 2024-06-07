@@ -1,0 +1,133 @@
+`-FunctionDecl 0x14d826a88  line:1:5 invalid ip_build_and_send_pkt 'int (struct sk_buff *, struct sock *, int, int, struct ip_options *)'
+  |-ParmVarDecl 0x14d80e248 <col:27, col:43> col:43 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14d826628 <col:48, col:61> col:61 used sk 'struct sock *'
+  |-ParmVarDecl 0x14d8266c0 <line:2:6, col:13> col:13 invalid saddr 'int'
+  |-ParmVarDecl 0x14d826740 <col:20, col:27> col:27 invalid daddr 'int'
+  |-ParmVarDecl 0x14d826918 <col:34, col:53> col:53 used opt 'struct ip_options *'
+  `-CompoundStmt 0x14d827f30 <line:3:1, line:35:1>
+    |-DeclStmt 0x14d826f88 <line:4:2, col:38>
+    | |-RecordDecl 0x14d826b58 <col:2, col:9> col:9 struct inet_sock
+    | `-VarDecl 0x14d826cc8 <col:2, col:37> col:20 used inet 'struct inet_sock *' cinit
+    |   `-ImplicitCastExpr 0x14d826f58 <col:27, col:37> 'struct inet_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x14d826f18 <col:27, col:37> 'int'
+    |       |-ImplicitCastExpr 0x14d826f00 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14d826e90 <col:27> 'int ()' Function 0x14d826dd8 'inet_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x14d826f40 <col:35> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14d826eb0 <col:35> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    |-DeclStmt 0x14d827318 <line:5:2, col:37>
+    | |-RecordDecl 0x14d826fa0 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x14d827108 <col:2, col:36> col:17 used rt 'struct rtable *' cinit
+    |   `-ImplicitCastExpr 0x14d8272e8 <col:22, col:36> 'struct rtable *' <IntegralToPointer>
+    |     `-CallExpr 0x14d8272a8 <col:22, col:36> 'int'
+    |       |-ImplicitCastExpr 0x14d827290 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14d827250 <col:22> 'int ()' Function 0x14d827198 'skb_rtable' 'int ()'
+    |       `-ImplicitCastExpr 0x14d8272d0 <col:33> 'struct sk_buff *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14d827270 <col:33> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x14d827518 <line:6:2, col:19>
+    | |-RecordDecl 0x14d827330 <col:2, col:9> col:9 struct iphdr
+    | `-VarDecl 0x14d827498 <col:2, col:16> col:16 used iph 'struct iphdr *'
+    |-CallExpr 0x14e0098c8 <line:10:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x14e0098b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14e009870 <col:2> 'int ()' Function 0x14e0097b8 'skb_reset_network_header' 'int ()'
+    | `-ImplicitCastExpr 0x14e0098f0 <col:27> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14e009890 <col:27> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x14e009ab8 <line:11:2, col:18> 'struct iphdr *' '='
+    | |-DeclRefExpr 0x14e009908 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-ImplicitCastExpr 0x14e009aa0 <col:8, col:18> 'struct iphdr *' <IntegralToPointer>
+    |   `-CallExpr 0x14e009a60 <col:8, col:18> 'int'
+    |     |-ImplicitCastExpr 0x14e009a48 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14e009a08 <col:8> 'int ()' Function 0x14e009950 'ip_hdr' 'int ()'
+    |     `-ImplicitCastExpr 0x14e009a88 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14e009a28 <col:15> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x14e009b58 <line:12:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e009b10 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e009ad8 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-IntegerLiteral 0x14e009b38 <col:18> 'int' 4
+    |-BinaryOperator 0x14e009bf8 <line:13:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e009bb0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e009b78 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-IntegerLiteral 0x14e009bd8 <col:18> 'int' 5
+    |-BinaryOperator 0x14e009cd8 <line:14:2, col:24> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e009c50 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e009c18 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x14e009cb0 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14e009c78 <col:18> 'struct inet_sock *' lvalue Var 0x14d826cc8 'inet' 'struct inet_sock *'
+    |-IfStmt 0x14e00a0c8 <line:15:2, line:18:19> has_else
+    | |-CallExpr 0x14e009e90 <line:15:6, col:35> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14e009dd8 <col:6> 'int ()' Function 0x14e009d20 'ip_dont_fragment' 'int ()'
+    | | |-DeclRefExpr 0x14e009df8 <col:23> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    | | `-UnaryOperator 0x14e009e78 <col:27, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x14e009e50 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14e009e18 <col:28> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    | |-NullStmt 0x14e00a0c0 <line:16:3>
+    | `-BinaryOperator 0x14e00a0a0 <line:18:3, col:19> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x14e00a058 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14e00a020 <col:3> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    |   `-IntegerLiteral 0x14e00a080 <col:19> 'int' 0
+    |-BinaryOperator 0x14e00a320 <line:19:2, col:46> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e00a130 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e00a0f8 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-CallExpr 0x14e00a2f0 <col:18, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14e00a238 <col:18> 'int ()' Function 0x14e00a180 'ip_select_ttl' 'int ()'
+    |   |-DeclRefExpr 0x14e00a258 <col:32> 'struct inet_sock *' lvalue Var 0x14d826cc8 'inet' 'struct inet_sock *'
+    |   `-UnaryOperator 0x14e00a2d8 <col:38, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14e00a2b0 <col:39, col:43> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14e00a278 <col:39> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    |-BinaryOperator 0x14e00a400 <line:20:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e00a378 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e00a340 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x14e00a3d8 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14e00a3a0 <col:18> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    |-BinaryOperator 0x14e00a4e0 <line:21:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e00a458 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e00a420 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x14e00a4b8 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14e00a480 <col:18> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    |-BinaryOperator 0x14e00a5c0 <line:22:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14e00a538 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14e00a500 <col:2> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x14e00a598 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14e00a560 <col:18> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    |-CallExpr 0x14d8277b8 <line:23:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14d8276e0 <col:2> 'int ()' Function 0x14d827628 'ip_select_ident' 'int ()'
+    | |-DeclRefExpr 0x14d827700 <col:18> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    | |-UnaryOperator 0x14d827780 <col:23, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14d827758 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14d827720 <col:24> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    | `-DeclRefExpr 0x14d827798 <col:33> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    |-IfStmt 0x14d827bc8 <line:25:2, line:28:2>
+    | |-BinaryOperator 0x14d827870 <line:25:6, col:18> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x14d8277f0 <col:6> 'struct ip_options *' lvalue ParmVar 0x14d826918 'opt' 'struct ip_options *'
+    | | `-RecoveryExpr 0x14d827848 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14d827810 <col:13> 'struct ip_options *' lvalue ParmVar 0x14d826918 'opt' 'struct ip_options *'
+    | `-CompoundStmt 0x14d827ba8 <col:26, line:28:2>
+    |   |-CompoundAssignOperator 0x14d827990 <line:26:3, col:28> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x14d8278c8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14d827890 <col:3> 'struct iphdr *' lvalue Var 0x14d827498 'iph' 'struct iphdr *'
+    |   | `-BinaryOperator 0x14d827970 <col:15, col:28> '<dependent type>' contains-errors '>>'
+    |   |   |-RecoveryExpr 0x14d827928 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x14d8278f0 <col:15> 'struct ip_options *' lvalue ParmVar 0x14d826918 'opt' 'struct ip_options *'
+    |   |   `-IntegerLiteral 0x14d827950 <col:28> 'int' 2
+    |   `-CallExpr 0x14d827b60 <line:27:3, col:42> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14d827aa0 <col:3> 'int ()' Function 0x14d8279e8 'ip_options_build' 'int ()'
+    |     |-DeclRefExpr 0x14d827ac0 <col:20> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    |     |-DeclRefExpr 0x14d827ae0 <col:25> 'struct ip_options *' lvalue ParmVar 0x14d826918 'opt' 'struct ip_options *'
+    |     |-RecoveryExpr 0x14d827b00 <col:30> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x14d827b20 <col:37> 'struct rtable *' lvalue Var 0x14d827108 'rt' 'struct rtable *'
+    |     `-IntegerLiteral 0x14d827b40 <col:41> 'int' 0
+    |-BinaryOperator 0x14d827ca8 <line:30:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14d827c20 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14d827be8 <col:2> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x14d827c80 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14d827c48 <col:18> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    |-BinaryOperator 0x14d827d88 <line:31:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14d827d00 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14d827cc8 <col:2> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x14d827d60 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14d827d28 <col:14> 'struct sock *' lvalue ParmVar 0x14d826628 'sk' 'struct sock *'
+    `-ReturnStmt 0x14d827f20 <line:34:2, col:25>
+      `-CallExpr 0x14d827ee0 <col:9, col:25> 'int'
+        |-ImplicitCastExpr 0x14d827ec8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14d827e88 <col:9> 'int ()' Function 0x14d827dd0 'ip_local_out' 'int ()'
+        `-ImplicitCastExpr 0x14d827f08 <col:22> 'struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x14d827ea8 <col:22> 'struct sk_buff *' lvalue ParmVar 0x14d80e248 'skb' 'struct sk_buff *'

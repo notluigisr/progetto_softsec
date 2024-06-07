@@ -1,0 +1,22 @@
+`-FunctionDecl 0x145925b58  line:1:5 tpm_pm_resume 'int (struct device *)'
+  |-ParmVarDecl 0x145925a48 <col:19, col:34> col:34 used dev 'struct device *'
+  `-CompoundStmt 0x14593e3f0 <line:2:1, line:9:1>
+    |-DeclStmt 0x14593e248 <line:3:2, col:46>
+    | |-RecordDecl 0x14593de50 <col:2, col:9> col:9 struct tpm_chip
+    | `-VarDecl 0x14593dfb8 <col:2, col:45> col:19 used chip 'struct tpm_chip *' cinit
+    |   `-ImplicitCastExpr 0x14593e218 <col:26, col:45> 'struct tpm_chip *' <IntegralToPointer>
+    |     `-CallExpr 0x14593e1d8 <col:26, col:45> 'int'
+    |       |-ImplicitCastExpr 0x14593e1c0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14593e150 <col:26> 'int ()' Function 0x14593e098 'dev_get_drvdata' 'int ()'
+    |       `-ImplicitCastExpr 0x14593e200 <col:42> 'struct device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14593e170 <col:42> 'struct device *' lvalue ParmVar 0x145925a48 'dev' 'struct device *'
+    |-IfStmt 0x14593e3a0 <line:5:2, line:6:11>
+    | |-BinaryOperator 0x14593e2d8 <line:5:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14593e260 <col:6> 'struct tpm_chip *' lvalue Var 0x14593dfb8 'chip' 'struct tpm_chip *'
+    | | `-RecoveryExpr 0x14593e2b8 <col:14> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14593e390 <line:6:3, col:11>
+    |   `-UnaryOperator 0x14593e378 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14593e360 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14593e340 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14593e3e0 <line:8:2, col:9>
+      `-IntegerLiteral 0x14593e3c0 <col:9> 'int' 0

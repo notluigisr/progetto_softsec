@@ -1,0 +1,30 @@
+`-FunctionDecl 0x120140b48  line:1:5 input_get_keycode 'int (struct input_dev *, struct input_keymap_entry *)'
+  |-ParmVarDecl 0x120128648 <col:23, col:41> col:41 used dev 'struct input_dev *'
+  |-ParmVarDecl 0x120140a28 <col:46, col:73> col:73 used ke 'struct input_keymap_entry *'
+  `-CompoundStmt 0x1201412a8 <line:2:1, line:11:1>
+    |-DeclStmt 0x120140cc8 <line:3:2, col:21>
+    | `-VarDecl 0x120140c60 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x120140d60 <line:4:2, col:12>
+    | `-VarDecl 0x120140cf8 <col:2, col:6> col:6 used retval 'int'
+    |-CallExpr 0x120140f58 <line:6:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x120140ea0 <col:2> 'int ()' Function 0x120140de8 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x120140f20 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x120140ef8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x120140ec0 <col:21> 'struct input_dev *' lvalue ParmVar 0x120128648 'dev' 'struct input_dev *'
+    | `-DeclRefExpr 0x120140f38 <col:38> 'unsigned long' lvalue Var 0x120140c60 'flags' 'unsigned long'
+    |-BinaryOperator 0x120141078 <line:7:2, col:34> 'int' contains-errors '='
+    | |-DeclRefExpr 0x120140f88 <col:2> 'int' lvalue Var 0x120140cf8 'retval' 'int'
+    | `-CallExpr 0x120141048 <col:11, col:34> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x120140fe0 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x120140fa8 <col:11> 'struct input_dev *' lvalue ParmVar 0x120128648 'dev' 'struct input_dev *'
+    |   |-DeclRefExpr 0x120141008 <col:27> 'struct input_dev *' lvalue ParmVar 0x120128648 'dev' 'struct input_dev *'
+    |   `-DeclRefExpr 0x120141028 <col:32> 'struct input_keymap_entry *' lvalue ParmVar 0x120140a28 'ke' 'struct input_keymap_entry *'
+    |-CallExpr 0x120141230 <line:8:2, col:48> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x120141178 <col:2> 'int ()' Function 0x1201410c0 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x1201411f8 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1201411d0 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x120141198 <col:26> 'struct input_dev *' lvalue ParmVar 0x120128648 'dev' 'struct input_dev *'
+    | `-DeclRefExpr 0x120141210 <col:43> 'unsigned long' lvalue Var 0x120140c60 'flags' 'unsigned long'
+    `-ReturnStmt 0x120141298 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x120141280 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x120141260 <col:9> 'int' lvalue Var 0x120140cf8 'retval' 'int'

@@ -1,0 +1,17 @@
+`-FunctionDecl 0x12702cf78  line:1:12 invalid sched_slice 'int (struct cfs_rq *, struct sched_entity *)' static
+  |-ParmVarDecl 0x127010268 <col:24, col:39> col:39 used cfs_rq 'struct cfs_rq *'
+  |-ParmVarDecl 0x12702ce58 <col:47, col:68> col:68 used se 'struct sched_entity *'
+  `-CompoundStmt 0x12702d4a0 <line:2:1, line:5:1>
+    `-ReturnStmt 0x12702d490 <line:3:2, line:4:41>
+      `-CallExpr 0x12702d458 <line:3:9, line:4:41> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12702d190 <line:3:9> 'int ()' Function 0x12702d0d8 'calc_delta_mine' 'int ()'
+        |-CallExpr 0x12702d310 <col:25, col:58> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12702d290 <col:25> 'int ()' Function 0x12702d1d8 '__sched_period' 'int ()'
+        | `-RecoveryExpr 0x12702d2e8 <col:40, col:48> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x12702d2b0 <col:40> 'struct cfs_rq *' lvalue ParmVar 0x127010268 'cfs_rq' 'struct cfs_rq *'
+        |-CXXDependentScopeMemberExpr 0x12702d398 <line:4:11, col:20> '<dependent type>' contains-errors lvalue .weight
+        | `-RecoveryExpr 0x12702d370 <col:11, col:15> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x12702d338 <col:11> 'struct sched_entity *' lvalue ParmVar 0x12702ce58 'se' 'struct sched_entity *'
+        `-UnaryOperator 0x12702d440 <col:28, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x12702d418 <col:29, col:37> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x12702d3e0 <col:29> 'struct cfs_rq *' lvalue ParmVar 0x127010268 'cfs_rq' 'struct cfs_rq *'

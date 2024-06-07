@@ -1,0 +1,43 @@
+`-FunctionDecl 0x1460160d8  line:1:12 invalid smack_sk_alloc_security 'int (struct sock *, int, int)' static
+  |-ParmVarDecl 0x146917648 <col:36, col:49> col:49 used sk 'struct sock *'
+  |-ParmVarDecl 0x1469176c8 <col:53, col:57> col:57 family 'int'
+  |-ParmVarDecl 0x146917760 <col:65, col:71> col:71 invalid gfp_flags 'int'
+  `-CompoundStmt 0x146016c20 <line:2:1, line:17:1>
+    |-DeclStmt 0x146016410 <line:3:2, col:32>
+    | `-VarDecl 0x1460161b0 <col:2, col:31> col:8 used csp 'char *' cinit
+    |   `-ImplicitCastExpr 0x1460163f8 <col:14, col:31> 'char *' <IntegralToPointer>
+    |     `-CallExpr 0x1460163d8 <col:14, col:31> 'int'
+    |       `-ImplicitCastExpr 0x1460163c0 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x146016370 <col:14> 'int ()' Function 0x1460162b8 'current_security' 'int ()'
+    |-DeclStmt 0x146016618 <line:4:2, col:26>
+    | |-RecordDecl 0x146016428 <col:2, col:9> col:9 struct socket_smack
+    | `-VarDecl 0x146016598 <col:2, col:23> col:23 used ssp 'struct socket_smack *'
+    |-IfStmt 0x146016900 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x146016838 <line:7:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1460167c0 <col:6> 'struct socket_smack *' lvalue Var 0x146016598 'ssp' 'struct socket_smack *'
+    | | `-RecoveryExpr 0x146016818 <col:13> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1460168f0 <line:8:3, col:11>
+    |   `-UnaryOperator 0x1460168d8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1460168c0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1460168a0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1460169a0 <line:10:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x146016958 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x146016920 <col:2> 'struct socket_smack *' lvalue Var 0x146016598 'ssp' 'struct socket_smack *'
+    | `-DeclRefExpr 0x146016980 <col:16> 'char *' lvalue Var 0x1460161b0 'csp' 'char *'
+    |-BinaryOperator 0x146016a40 <line:11:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1460169f8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1460169c0 <col:2> 'struct socket_smack *' lvalue Var 0x146016598 'ssp' 'struct socket_smack *'
+    | `-DeclRefExpr 0x146016a20 <col:17> 'char *' lvalue Var 0x1460161b0 'csp' 'char *'
+    |-BinaryOperator 0x146016b30 <line:12:2, col:23> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x146016af8 <col:2, col:19> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x146016ae0 <col:2, col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x146016a98 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x146016a60 <col:2> 'struct socket_smack *' lvalue Var 0x146016598 'ssp' 'struct socket_smack *'
+    | | `-IntegerLiteral 0x146016ac0 <col:18> 'int' 0
+    | `-CharacterLiteral 0x146016b18 <col:23> 'int' 0
+    |-BinaryOperator 0x146016bd0 <line:14:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x146016b88 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x146016b50 <col:2> 'struct sock *' lvalue ParmVar 0x146917648 'sk' 'struct sock *'
+    | `-DeclRefExpr 0x146016bb0 <col:20> 'struct socket_smack *' lvalue Var 0x146016598 'ssp' 'struct socket_smack *'
+    `-ReturnStmt 0x146016c10 <line:16:2, col:9>
+      `-IntegerLiteral 0x146016bf0 <col:9> 'int' 0

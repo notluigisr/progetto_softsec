@@ -1,0 +1,82 @@
+`-FunctionDecl 0x12a144c00  line:1:12 userns_install 'int (struct nsproxy *, void *)' static
+  |-ParmVarDecl 0x12a128648 <col:27, col:43> col:43 nsproxy 'struct nsproxy *'
+  |-ParmVarDecl 0x12a1286c8 <col:52, col:58> col:58 used ns 'void *'
+  `-CompoundStmt 0x12a1471b0 <line:2:1, line:25:1>
+    |-DeclStmt 0x12a144f38 <line:3:2, col:37>
+    | |-RecordDecl 0x12a144d00 <col:2, col:9> col:9 struct user_namespace
+    | `-VarDecl 0x12a144e68 <col:2, col:35> col:25 used user_ns 'struct user_namespace *' cinit
+    |   `-ImplicitCastExpr 0x12a144f08 <col:35> 'struct user_namespace *' <BitCast>
+    |     `-ImplicitCastExpr 0x12a144ef0 <col:35> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a144ed0 <col:35> 'void *' lvalue ParmVar 0x12a1286c8 'ns' 'void *'
+    |-DeclStmt 0x12a145138 <line:4:2, col:19>
+    | |-RecordDecl 0x12a144f50 <col:2, col:9> col:9 struct cred
+    | `-VarDecl 0x12a1450b8 <col:2, col:15> col:15 used cred 'struct cred *'
+    |-IfStmt 0x12a145420 <line:7:2, line:8:11>
+    | |-BinaryOperator 0x12a145358 <line:7:6, col:33> 'int' '=='
+    | | |-ImplicitCastExpr 0x12a145328 <col:6> 'struct user_namespace *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12a145150 <col:6> 'struct user_namespace *' lvalue Var 0x12a144e68 'user_ns' 'struct user_namespace *'
+    | | `-ImplicitCastExpr 0x12a145340 <col:17, col:33> 'struct user_namespace *' <IntegralToPointer>
+    | |   `-CallExpr 0x12a145308 <col:17, col:33> 'int'
+    | |     `-ImplicitCastExpr 0x12a1452f0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    | |       `-DeclRefExpr 0x12a1452a0 <col:17> 'int ()' Function 0x12a1451e8 'current_user_ns' 'int ()'
+    | `-ReturnStmt 0x12a145410 <line:8:3, col:11>
+    |   `-UnaryOperator 0x12a1453f8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12a1453e0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12a1453c0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a145820 <line:11:2, line:12:11>
+    | |-BinaryOperator 0x12a145758 <line:11:6, col:44> 'int' contains-errors '>'
+    | | |-CallExpr 0x12a145730 <col:6, col:40> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12a145520 <col:6> 'int ()' Function 0x12a145468 'atomic_read' 'int ()'
+    | | | `-UnaryOperator 0x12a145718 <col:18, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-CXXDependentScopeMemberExpr 0x12a1456d0 <col:19, col:32> '<dependent type>' contains-errors lvalue ->mm_users
+    | | |     `-CXXDependentScopeMemberExpr 0x12a145688 <col:19, col:28> '<dependent type>' contains-errors lvalue ->mm
+    | | |       `-RecoveryExpr 0x12a145668 <col:19> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x12a145628 <col:44> 'int' 1
+    | `-ReturnStmt 0x12a145810 <line:12:3, col:11>
+    |   `-UnaryOperator 0x12a1457f8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12a1457e0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12a1457c0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a145ad0 <line:14:2, line:15:11>
+    | |-UnaryOperator 0x12a145a10 <line:14:6, col:40> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12a1459e0 <col:7, col:40> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12a145920 <col:7> 'int ()' Function 0x12a145868 'ns_capable' 'int ()'
+    | |   |-DeclRefExpr 0x12a145940 <col:18> 'struct user_namespace *' lvalue Var 0x12a144e68 'user_ns' 'struct user_namespace *'
+    | |   `-RecoveryExpr 0x12a1459c0 <col:27> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a145ac0 <line:15:3, col:11>
+    |   `-UnaryOperator 0x12a145aa8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12a145a90 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12a145a70 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a146a70 <line:17:2, col:23> 'struct cred *' '='
+    | |-DeclRefExpr 0x12a145af0 <col:2> 'struct cred *' lvalue Var 0x12a1450b8 'cred' 'struct cred *'
+    | `-ImplicitCastExpr 0x12a146a58 <col:9, col:23> 'struct cred *' <IntegralToPointer>
+    |   `-CallExpr 0x12a146a38 <col:9, col:23> 'int'
+    |     `-ImplicitCastExpr 0x12a146a20 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x12a146a00 <col:9> 'int ()' Function 0x12a145b38 'prepare_creds' 'int ()'
+    |-IfStmt 0x12a146b88 <line:18:2, line:19:11>
+    | |-UnaryOperator 0x12a146ac8 <line:18:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a146ab0 <col:7> 'struct cred *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a146a90 <col:7> 'struct cred *' lvalue Var 0x12a1450b8 'cred' 'struct cred *'
+    | `-ReturnStmt 0x12a146b78 <line:19:3, col:11>
+    |   `-UnaryOperator 0x12a146b60 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12a146b48 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12a146b28 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12a146d08 <line:21:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a146c88 <col:2> 'int ()' Function 0x12a146bd0 'put_user_ns' 'int ()'
+    | `-RecoveryExpr 0x12a146ce0 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12a146ca8 <col:14> 'struct cred *' lvalue Var 0x12a1450b8 'cred' 'struct cred *'
+    |-CallExpr 0x12a146fe0 <line:22:2, col:45> 'int'
+    | |-ImplicitCastExpr 0x12a146fc8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a146e10 <col:2> 'int ()' Function 0x12a146d58 'set_cred_user_ns' 'int ()'
+    | |-ImplicitCastExpr 0x12a147010 <col:19> 'struct cred *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12a146e30 <col:19> 'struct cred *' lvalue Var 0x12a1450b8 'cred' 'struct cred *'
+    | `-CallExpr 0x12a146f88 <col:25, col:44> 'int'
+    |   |-ImplicitCastExpr 0x12a146f70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a146f30 <col:25> 'int ()' Function 0x12a146e78 'get_user_ns' 'int ()'
+    |   `-ImplicitCastExpr 0x12a146fb0 <col:37> 'struct user_namespace *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a146f50 <col:37> 'struct user_namespace *' lvalue Var 0x12a144e68 'user_ns' 'struct user_namespace *'
+    `-ReturnStmt 0x12a1471a0 <line:24:2, col:26>
+      `-CallExpr 0x12a147160 <col:9, col:26> 'int'
+        |-ImplicitCastExpr 0x12a147148 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x12a147108 <col:9> 'int ()' Function 0x12a147050 'commit_creds' 'int ()'
+        `-ImplicitCastExpr 0x12a147188 <col:22> 'struct cred *' <LValueToRValue>
+          `-DeclRefExpr 0x12a147128 <col:22> 'struct cred *' lvalue Var 0x12a1450b8 'cred' 'struct cred *'

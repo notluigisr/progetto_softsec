@@ -1,0 +1,78 @@
+`-FunctionDecl 0x13b808348  line:1:12 packet_diag_dump 'int (struct sk_buff *, struct netlink_callback *)' static
+  |-ParmVarDecl 0x13b00e248 <col:29, col:45> col:45 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x13b808228 <col:50, col:75> col:75 used cb 'struct netlink_callback *'
+  `-CompoundStmt 0x13b026998 <line:2:1, line:35:1>
+    |-DeclStmt 0x13b808638 <line:3:2, col:34>
+    | |-VarDecl 0x13b808460 <col:2, col:12> col:6 used num 'int' cinit
+    | | `-IntegerLiteral 0x13b8084c8 <col:12> 'int' 0
+    | `-VarDecl 0x13b808500 <col:2, col:33> col:15 used s_num 'int' cinit
+    |   `-ArraySubscriptExpr 0x13b808600 <col:23, col:33> '<dependent type>' contains-errors lvalue
+    |     |-ImplicitCastExpr 0x13b8085e8 <col:23, col:27> '<dependent type>' contains-errors <LValueToRValue>
+    |     | `-RecoveryExpr 0x13b8085a0 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x13b808568 <col:23> 'struct netlink_callback *' lvalue ParmVar 0x13b808228 'cb' 'struct netlink_callback *'
+    |     `-IntegerLiteral 0x13b8085c8 <col:32> 'int' 0
+    |-DeclStmt 0x13b808838 <line:4:2, col:29>
+    | |-RecordDecl 0x13b808650 <col:2, col:9> col:9 struct packet_diag_req
+    | `-VarDecl 0x13b8087b8 <col:2, col:26> col:26 used req 'struct packet_diag_req *'
+    |-DeclStmt 0x13b808a38 <line:5:2, col:17>
+    | |-RecordDecl 0x13b808850 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x13b8089b8 <col:2, col:14> col:14 used net 'struct net *'
+    |-DeclStmt 0x13b808c38 <line:6:2, col:17>
+    | |-RecordDecl 0x13b808a50 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x13b808bb8 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-BinaryOperator 0x13b808e48 <line:9:2, col:24> 'struct net *' contains-errors '='
+    | |-DeclRefExpr 0x13b808c68 <col:2> 'struct net *' lvalue Var 0x13b8089b8 'net' 'struct net *'
+    | `-CallExpr 0x13b808e20 <col:8, col:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b808da0 <col:8> 'int ()' Function 0x13b808ce8 'sock_net' 'int ()'
+    |   `-RecoveryExpr 0x13b808df8 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b808dc0 <col:17> 'struct sk_buff *' lvalue ParmVar 0x13b00e248 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x13b809010 <line:10:2, col:26> 'struct packet_diag_req *' contains-errors '='
+    | |-DeclRefExpr 0x13b808e68 <col:2> 'struct packet_diag_req *' lvalue Var 0x13b8087b8 'req' 'struct packet_diag_req *'
+    | `-CallExpr 0x13b808fe8 <col:8, col:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b808f68 <col:8> 'int ()' Function 0x13b808eb0 'nlmsg_data' 'int ()'
+    |   `-RecoveryExpr 0x13b808fc0 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13b808f88 <col:19> 'struct netlink_callback *' lvalue ParmVar 0x13b808228 'cb' 'struct netlink_callback *'
+    |-CallExpr 0x13b80f798 <line:13:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b80f6b8 <col:2> 'int ()' Function 0x13b80f600 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13b80f780 <col:13, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13b80f738 <col:14, col:26> '<dependent type>' contains-errors lvalue .sklist_lock
+    |     `-RecoveryExpr 0x13b80f710 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13b80f6d8 <col:14> 'struct net *' lvalue Var 0x13b8089b8 'net' 'struct net *'
+    |-CallExpr 0x13b80f9a0 <line:14:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b80f8a0 <col:2> 'int ()' Function 0x13b80f7e8 'sk_for_each' 'int ()'
+    | |-DeclRefExpr 0x13b80f8c0 <col:14> 'struct sock *' lvalue Var 0x13b808bb8 'sk' 'struct sock *'
+    | `-UnaryOperator 0x13b80f988 <col:18, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13b80f940 <col:19, col:31> '<dependent type>' contains-errors lvalue .sklist
+    |     `-RecoveryExpr 0x13b80f918 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13b80f8e0 <col:19> 'struct net *' lvalue Var 0x13b8089b8 'net' 'struct net *'
+    |-CompoundStmt 0x13b026600 <col:39, line:29:2>
+    | |-IfStmt 0x13b80fd28 <line:17:3, line:18:9>
+    | | |-BinaryOperator 0x13b80fca0 <line:17:7, col:13> 'int' contains-errors '<'
+    | | | |-ImplicitCastExpr 0x13b80fc70 <col:7> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x13b80fc30 <col:7> 'int' lvalue Var 0x13b808460 'num' 'int'
+    | | | `-ImplicitCastExpr 0x13b80fc88 <col:13> 'int' contains-errors <LValueToRValue>
+    | | |   `-DeclRefExpr 0x13b80fc50 <col:13> 'int' contains-errors lvalue Var 0x13b808500 's_num' 'int'
+    | | `-GotoStmt 0x13b80fd10 <line:18:4, col:9> 'next' 0x13b80fcc0
+    | |-IfStmt 0x13b810570 <line:20:3, line:26:9>
+    | | |-RecoveryExpr 0x13b8104e8 <line:20:7, line:25:24> '_Bool' contains-errors
+    | | `-GotoStmt 0x13b810558 <line:26:4, col:9> 'done' 0x13b810508
+    | `-LabelStmt 0x13b8105c8 <line:27:1, line:28:6> 'next'
+    |   `-UnaryOperator 0x13b8105b0 <col:3, col:6> 'int' postfix '++'
+    |     `-DeclRefExpr 0x13b810590 <col:3> 'int' lvalue Var 0x13b808460 'num' 'int'
+    |-LabelStmt 0x13b026810 <line:30:1, line:31:39> 'done'
+    | `-CallExpr 0x13b0267e8 <col:2, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b026708 <col:2> 'int ()' Function 0x13b026650 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x13b0267d0 <col:15, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x13b026788 <col:16, col:28> '<dependent type>' contains-errors lvalue .sklist_lock
+    |       `-RecoveryExpr 0x13b026760 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x13b026728 <col:16> 'struct net *' lvalue Var 0x13b8089b8 'net' 'struct net *'
+    |-BinaryOperator 0x13b026908 <line:32:2, col:16> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x13b0268c8 <col:2, col:12> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x13b0268b0 <col:2, col:6> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x13b026868 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x13b026830 <col:2> 'struct netlink_callback *' lvalue ParmVar 0x13b808228 'cb' 'struct netlink_callback *'
+    | | `-IntegerLiteral 0x13b026890 <col:11> 'int' 0
+    | `-DeclRefExpr 0x13b0268e8 <col:16> 'int' lvalue Var 0x13b808460 'num' 'int'
+    `-ReturnStmt 0x13b026988 <line:34:2, col:14>
+      `-RecoveryExpr 0x13b026960 <col:9, col:14> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x13b026928 <col:9> 'struct sk_buff *' lvalue ParmVar 0x13b00e248 'skb' 'struct sk_buff *'

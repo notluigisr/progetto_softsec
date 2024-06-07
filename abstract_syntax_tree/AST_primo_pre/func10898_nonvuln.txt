@@ -1,0 +1,108 @@
+`-FunctionDecl 0x13480de58  line:1:20 invalid multi_interrupt 'int (int, void *)' static
+  |-ParmVarDecl 0x13480dcf0 <col:36, col:40> col:40 used irq 'int'
+  |-ParmVarDecl 0x13480dd70 <col:45, col:51> col:51 used dev_id 'void *'
+  `-CompoundStmt 0x13300db30 <line:2:1, line:45:1>
+    |-DeclStmt 0x13480e148 <line:3:2, col:33>
+    | |-RecordDecl 0x13480df10 <col:2, col:9> col:9 struct irq_info
+    | `-VarDecl 0x13480e078 <col:2, col:27> col:19 used iinfo 'struct irq_info *' cinit
+    |   `-ImplicitCastExpr 0x13480e118 <col:27> 'struct irq_info *' <BitCast>
+    |     `-ImplicitCastExpr 0x13480e100 <col:27> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13480e0e0 <col:27> 'void *' lvalue ParmVar 0x13480dd70 'dev_id' 'void *'
+    |-DeclStmt 0x13300b620 <line:4:2, col:38>
+    | |-RecordDecl 0x13480e160 <col:2, col:9> col:9 struct list_head
+    | |-VarDecl 0x13480e2c8 <col:2, col:20> col:20 used lhead 'struct list_head *'
+    | `-VarDecl 0x13480e358 <col:2, col:34> col:28 used end 'struct list_head *' cinit
+    |   `-RecoveryExpr 0x13480e3d8 <col:34> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13300b6d8 <line:5:2, col:22>
+    | `-VarDecl 0x13300b650 <col:2, col:21> col:6 used pass_counter 'int' cinit
+    |   `-IntegerLiteral 0x13300b6b8 <col:21> 'int' 0
+    |-CallExpr 0x13300bd10 <line:8:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13300b850 <col:2> 'int ()' Function 0x13300b798 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x13300bcf8 <col:12, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13300bcd0 <col:13, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13300b870 <col:13> 'struct irq_info *' lvalue Var 0x13480e078 'iinfo' 'struct irq_info *'
+    |-BinaryOperator 0x13300bdb8 <line:10:2, col:17> 'struct list_head *' contains-errors '='
+    | |-DeclRefExpr 0x13300bd38 <col:2> 'struct list_head *' lvalue Var 0x13480e2c8 'lhead' 'struct list_head *'
+    | `-RecoveryExpr 0x13300bd90 <col:10, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13300bd58 <col:10> 'struct irq_info *' lvalue Var 0x13480e078 'iinfo' 'struct irq_info *'
+    |-DoStmt 0x13300da50 <line:11:2, line:39:23>
+    | |-CompoundStmt 0x13300d978 <line:11:5, line:39:2>
+    | | |-DeclStmt 0x13300bfc8 <line:12:3, col:23>
+    | | | |-RecordDecl 0x13300bdd8 <col:3, col:10> col:10 struct mp_port
+    | | | `-VarDecl 0x13300bf48 <col:3, col:19> col:19 used mtpt 'struct mp_port *'
+    | | |-DeclStmt 0x13300c060 <line:13:3, col:19>
+    | | | `-VarDecl 0x13300bff8 <col:3, col:16> col:16 used iir 'unsigned int'
+    | | |-BinaryOperator 0x13300c3c8 <line:17:3, col:33> 'unsigned int' contains-errors '='
+    | | | |-DeclRefExpr 0x13300c1d0 <col:3> 'unsigned int' lvalue Var 0x13300bff8 'iir' 'unsigned int'
+    | | | `-CallExpr 0x13300c398 <col:9, col:33> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x13300c2d0 <col:9> 'int ()' Function 0x13300c218 'serial_in' 'int ()'
+    | | |   |-DeclRefExpr 0x13300c2f0 <col:19> 'struct mp_port *' lvalue Var 0x13300bf48 'mtpt' 'struct mp_port *'
+    | | |   `-RecoveryExpr 0x13300c378 <col:25> '<dependent type>' contains-errors lvalue
+    | | |-CallExpr 0x13300ce20 <line:18:3, col:37> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x13300c4c8 <col:3> 'int ()' Function 0x13300c410 'printk' 'int ()'
+    | | | |-StringLiteral 0x13300c530 <col:10> 'char[4]' lvalue "STR"
+    | | | |-CXXDependentScopeMemberExpr 0x13300c5b0 <col:17, col:28> '<dependent type>' contains-errors lvalue .line
+    | | | | `-RecoveryExpr 0x13300c588 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x13300c550 <col:17> 'struct mp_port *' lvalue Var 0x13300bf48 'mtpt' 'struct mp_port *'
+    | | | `-DeclRefExpr 0x13300ce00 <col:34> 'unsigned int' lvalue Var 0x13300bff8 'iir' 'unsigned int'
+    | | |-IfStmt 0x13300d600 <line:19:3, line:28:10> has_else
+    | | | |-RecoveryExpr 0x13300ceb0 <line:19:7, col:30> '_Bool' contains-errors
+    | | | |-CompoundStmt 0x13300d498 <line:20:3, line:27:3>
+    | | | | |-CallExpr 0x13300cf58 <line:21:4, col:16> 'int'
+    | | | | | |-ImplicitCastExpr 0x13300cf40 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | | `-DeclRefExpr 0x13300ced0 <col:4> 'int ()' Function 0x13300c410 'printk' 'int ()'
+    | | | | | `-ImplicitCastExpr 0x13300cf80 <col:11> 'char *' <ArrayToPointerDecay>
+    | | | | |   `-StringLiteral 0x13300cef0 <col:11> 'char[4]' lvalue "STR"
+    | | | | |-CallExpr 0x13300d078 <line:22:4, col:30> '<dependent type>' contains-errors
+    | | | | | |-DeclRefExpr 0x13300cf98 <col:4> 'int ()' Function 0x13300b798 'spin_lock' 'int ()'
+    | | | | | `-UnaryOperator 0x13300d060 <col:14, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | |   `-CXXDependentScopeMemberExpr 0x13300d018 <col:15, col:26> '<dependent type>' contains-errors lvalue .lock
+    | | | | |     `-RecoveryExpr 0x13300cff0 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    | | | | |       `-DeclRefExpr 0x13300cfb8 <col:15> 'struct mp_port *' lvalue Var 0x13300bf48 'mtpt' 'struct mp_port *'
+    | | | | |-CallExpr 0x13300d1d8 <line:23:4, col:26> 'int'
+    | | | | | |-ImplicitCastExpr 0x13300d1c0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | | `-DeclRefExpr 0x13300d180 <col:4> 'int ()' Function 0x13300d0c8 'multi_handle_port' 'int ()'
+    | | | | | `-ImplicitCastExpr 0x13300d200 <col:22> 'struct mp_port *' <LValueToRValue>
+    | | | | |   `-DeclRefExpr 0x13300d1a0 <col:22> 'struct mp_port *' lvalue Var 0x13300bf48 'mtpt' 'struct mp_port *'
+    | | | | |-CallExpr 0x13300d3d8 <line:24:4, col:32> '<dependent type>' contains-errors
+    | | | | | |-DeclRefExpr 0x13300d2f8 <col:4> 'int ()' Function 0x13300d240 'spin_unlock' 'int ()'
+    | | | | | `-UnaryOperator 0x13300d3c0 <col:16, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | |   `-CXXDependentScopeMemberExpr 0x13300d378 <col:17, col:28> '<dependent type>' contains-errors lvalue .lock
+    | | | | |     `-RecoveryExpr 0x13300d350 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | | | | |       `-DeclRefExpr 0x13300d318 <col:17> 'struct mp_port *' lvalue Var 0x13300bf48 'mtpt' 'struct mp_port *'
+    | | | | `-BinaryOperator 0x13300d478 <line:26:4, col:10> 'struct list_head *' contains-errors '='
+    | | | |   |-DeclRefExpr 0x13300d400 <col:4> 'struct list_head *' contains-errors lvalue Var 0x13480e358 'end' 'struct list_head *'
+    | | | |   `-RecoveryExpr 0x13300d458 <col:10> '<dependent type>' contains-errors lvalue
+    | | | `-IfStmt 0x13300d5e0 <line:27:10, line:28:10>
+    | | |   |-BinaryOperator 0x13300d548 <line:27:14, col:21> 'int' contains-errors '=='
+    | | |   | |-DeclRefExpr 0x13300d4d0 <col:14> 'struct list_head *' contains-errors lvalue Var 0x13480e358 'end' 'struct list_head *'
+    | | |   | `-RecoveryExpr 0x13300d528 <col:21> '<dependent type>' contains-errors lvalue
+    | | |   `-BinaryOperator 0x13300d5c0 <line:28:4, col:10> 'struct list_head *' contains-errors '='
+    | | |     |-DeclRefExpr 0x13300d568 <col:4> 'struct list_head *' contains-errors lvalue Var 0x13480e358 'end' 'struct list_head *'
+    | | |     `-ImplicitCastExpr 0x13300d5a8 <col:10> 'struct list_head *' <LValueToRValue>
+    | | |       `-DeclRefExpr 0x13300d588 <col:10> 'struct list_head *' lvalue Var 0x13480e2c8 'lhead' 'struct list_head *'
+    | | |-BinaryOperator 0x13300d6b0 <line:30:3, col:18> 'struct list_head *' contains-errors '='
+    | | | |-DeclRefExpr 0x13300d630 <col:3> 'struct list_head *' lvalue Var 0x13480e2c8 'lhead' 'struct list_head *'
+    | | | `-RecoveryExpr 0x13300d688 <col:11, col:18> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x13300d650 <col:11> 'struct list_head *' lvalue Var 0x13480e2c8 'lhead' 'struct list_head *'
+    | | `-IfStmt 0x13300d958 <line:31:3, line:38:3>
+    | |   |-RecoveryExpr 0x13300d7a8 <line:31:7, col:48> '_Bool' contains-errors
+    | |   `-CompoundStmt 0x13300d938 <line:32:3, line:38:3>
+    | |     |-CallExpr 0x13300d8d0 <line:35:4, line:36:16> 'int'
+    | |     | |-ImplicitCastExpr 0x13300d8b8 <line:35:4> 'int (*)()' <FunctionToPointerDecay>
+    | |     | | `-DeclRefExpr 0x13300d808 <col:4> 'int ()' Function 0x13300c410 'printk' 'int ()'
+    | |     | |-ImplicitCastExpr 0x13300d900 <col:12, line:36:6> 'char *' <ArrayToPointerDecay>
+    | |     | | `-StringLiteral 0x13300d870 <line:35:12, line:36:6> 'char[7]' lvalue "STRSTR"
+    | |     | `-ImplicitCastExpr 0x13300d918 <col:13> 'int' <LValueToRValue>
+    | |     |   `-DeclRefExpr 0x13300d898 <col:13> 'int' lvalue ParmVar 0x13480dcf0 'irq' 'int'
+    | |     `-BreakStmt 0x13300d930 <line:37:4>
+    | `-BinaryOperator 0x13300da30 <line:39:11, col:20> 'int' contains-errors '!='
+    |   |-ImplicitCastExpr 0x13300da00 <col:11> 'struct list_head *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x13300d9c0 <col:11> 'struct list_head *' lvalue Var 0x13480e2c8 'lhead' 'struct list_head *'
+    |   `-ImplicitCastExpr 0x13300da18 <col:20> 'struct list_head *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x13300d9e0 <col:20> 'struct list_head *' contains-errors lvalue Var 0x13480e358 'end' 'struct list_head *'
+    `-CallExpr 0x13300db08 <line:41:2, col:26> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13300da70 <col:2> 'int ()' Function 0x13300d240 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x13300daf0 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x13300dac8 <col:15, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x13300da90 <col:15> 'struct irq_info *' lvalue Var 0x13480e078 'iinfo' 'struct irq_info *'

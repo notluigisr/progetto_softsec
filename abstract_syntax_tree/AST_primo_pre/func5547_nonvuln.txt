@@ -1,0 +1,132 @@
+`-FunctionDecl 0x14c00e350  line:1:13 recalculate_apic_map 'void (struct kvm *)' static
+  |-ParmVarDecl 0x14c00e248 <col:34, col:46> col:46 used kvm 'struct kvm *'
+  `-CompoundStmt 0x14b923ad0 <line:2:1, line:61:1>
+    |-DeclStmt 0x14c02ab20 <line:3:2, col:39>
+    | |-RecordDecl 0x14c02a848 <col:2, col:9> col:9 struct kvm_apic_map
+    | |-VarDecl 0x14c02a9b8 <col:2, col:23> col:23 used new 'struct kvm_apic_map *'
+    | `-VarDecl 0x14c02aa48 <col:2, col:35> col:29 used old 'struct kvm_apic_map *' cinit
+    |   `-RecoveryExpr 0x14c02aae0 <col:35> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14c02ad28 <line:4:2, col:23>
+    | |-RecordDecl 0x14c02ab38 <col:2, col:9> col:9 struct kvm_vcpu
+    | `-VarDecl 0x14c02aca8 <col:2, col:19> col:19 used vcpu 'struct kvm_vcpu *'
+    |-DeclStmt 0x14c02adc0 <line:5:2, col:7>
+    | `-VarDecl 0x14c02ad58 <col:2, col:6> col:6 used i 'int'
+    |-CallExpr 0x14c02b158 <line:9:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02b078 <col:2> 'int ()' Function 0x14c02afc0 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14c02b140 <col:13, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14c02b0f8 <col:14, col:24> '<dependent type>' contains-errors lvalue .apic_map_lock
+    |     `-RecoveryExpr 0x14c02b0d0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14c02b098 <col:14> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-IfStmt 0x14c02b238 <line:11:2, line:12:8>
+    | |-UnaryOperator 0x14c02b1b8 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14c02b1a0 <col:7> 'struct kvm_apic_map *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c02b180 <col:7> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | `-GotoStmt 0x14c02b220 <line:12:3, col:8> 'out' 0x14c02b1d0
+    |-BinaryOperator 0x14c02b2d8 <line:14:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14c02b290 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c02b258 <col:2> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | `-IntegerLiteral 0x14c02b2b8 <col:18> 'int' 8
+    |-BinaryOperator 0x14c02b378 <line:16:2, col:19> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14c02b330 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c02b2f8 <col:2> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | `-IntegerLiteral 0x14c02b358 <col:19> 'int' 8
+    |-BinaryOperator 0x14c02b418 <line:17:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14c02b3d0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c02b398 <col:2> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | `-IntegerLiteral 0x14c02b3f8 <col:18> 'int' 0
+    |-BinaryOperator 0x14c02b4b8 <line:18:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14c02b470 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c02b438 <col:2> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | `-IntegerLiteral 0x14c02b498 <col:18> 'int' 255
+    |-CallExpr 0x14c02b688 <line:20:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x14c02b670 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c02b5b8 <col:2> 'int ()' Function 0x14c02b500 'kvm_for_each_vcpu' 'int ()'
+    | |-ImplicitCastExpr 0x14c02b6c0 <col:20> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02b5d8 <col:20> 'int' lvalue Var 0x14c02ad58 'i' 'int'
+    | |-ImplicitCastExpr 0x14c02b6d8 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02b5f8 <col:23> 'struct kvm_vcpu *' lvalue Var 0x14c02aca8 'vcpu' 'struct kvm_vcpu *'
+    | `-ImplicitCastExpr 0x14c02b6f0 <col:29> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02b618 <col:29> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-CompoundStmt 0x14b922fd8 <col:34, line:50:2>
+    | |-DeclStmt 0x14c02e5b0 <line:21:3, col:43>
+    | | |-RecordDecl 0x14c02b708 <col:3, col:10> col:10 struct kvm_lapic
+    | | `-VarDecl 0x14c02e488 <col:3, col:39> col:21 used apic 'struct kvm_lapic *' cinit
+    | |   `-CXXDependentScopeMemberExpr 0x14c02e550 <col:28, col:39> '<dependent type>' contains-errors lvalue .apic
+    | |     `-RecoveryExpr 0x14c02e528 <col:28, col:34> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x14c02e4f0 <col:28> 'struct kvm_vcpu *' lvalue Var 0x14c02aca8 'vcpu' 'struct kvm_vcpu *'
+    | |-IfStmt 0x14c02f108 <line:29:3, line:40:3> has_else
+    | | |-CallExpr 0x14c02e890 <line:29:7, col:28> 'int' contains-errors
+    | | | |-ImplicitCastExpr 0x14c02e878 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x14c02e838 <col:7> 'int ()' Function 0x14c02e780 'apic_x2apic_mode' 'int ()'
+    | | | `-ImplicitCastExpr 0x14c02e8b8 <col:24> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    | | |   `-DeclRefExpr 0x14c02e858 <col:24> 'struct kvm_lapic *' contains-errors lvalue Var 0x14c02e488 'apic' 'struct kvm_lapic *'
+    | | |-CompoundStmt 0x14c02eb50 <col:31, line:34:3>
+    | | | |-BinaryOperator 0x14c02e950 <line:30:4, col:20> '<dependent type>' contains-errors '='
+    | | | | |-RecoveryExpr 0x14c02e908 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | | | | | `-DeclRefExpr 0x14c02e8d0 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | | | | `-IntegerLiteral 0x14c02e930 <col:20> 'int' 32
+    | | | |-BinaryOperator 0x14c02e9f0 <line:31:4, col:21> '<dependent type>' contains-errors '='
+    | | | | |-RecoveryExpr 0x14c02e9a8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | | | | | `-DeclRefExpr 0x14c02e970 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | | | | `-IntegerLiteral 0x14c02e9d0 <col:21> 'int' 16
+    | | | `-BinaryOperator 0x14c02eb30 <line:33:4, col:20> '<dependent type>' contains-errors '='
+    | | |   |-RecoveryExpr 0x14c02eae8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x14c02eab0 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | | |   `-IntegerLiteral 0x14c02eb10 <col:20> 'int' 65535
+    | | `-IfStmt 0x14c02f0e8 <line:34:10, line:40:3>
+    | |   |-RecoveryExpr 0x14c02eec0 <line:34:14, line:36:41> '_Bool' contains-errors
+    | |   `-CompoundStmt 0x14c02f0c0 <col:59, line:40:3>
+    | |     |-BinaryOperator 0x14c02ef60 <line:37:4, col:21> '<dependent type>' contains-errors '='
+    | |     | |-RecoveryExpr 0x14c02ef18 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | |     | | `-DeclRefExpr 0x14c02eee0 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | |     | `-IntegerLiteral 0x14c02ef40 <col:21> 'int' 4
+    | |     |-BinaryOperator 0x14c02f000 <line:38:4, col:20> '<dependent type>' contains-errors '='
+    | |     | |-RecoveryExpr 0x14c02efb8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | |     | | `-DeclRefExpr 0x14c02ef80 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | |     | `-IntegerLiteral 0x14c02efe0 <col:20> 'int' 15
+    | |     `-BinaryOperator 0x14c02f0a0 <line:39:4, col:20> '<dependent type>' contains-errors '='
+    | |       |-RecoveryExpr 0x14c02f058 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | |       | `-DeclRefExpr 0x14c02f020 <col:4> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    | |       `-IntegerLiteral 0x14c02f080 <col:20> 'int' 15
+    | `-BinaryOperator 0x14c02f368 <line:42:3, col:38> '<dependent type>' contains-errors '='
+    |   |-ArraySubscriptExpr 0x14c02f328 <col:3, col:34> '<dependent type>' contains-errors lvalue
+    |   | |-ImplicitCastExpr 0x14c02f310 <col:3, col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | `-RecoveryExpr 0x14c02f170 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x14c02f138 <col:3> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    |   | `-CallExpr 0x14c02f2d0 <col:17, col:33> 'int' contains-errors
+    |   |   |-ImplicitCastExpr 0x14c02f2b8 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x14c02f278 <col:17> 'int ()' Function 0x14c02f1c0 'kvm_apic_id' 'int ()'
+    |   |   `-ImplicitCastExpr 0x14c02f2f8 <col:29> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14c02f298 <col:29> 'struct kvm_lapic *' contains-errors lvalue Var 0x14c02e488 'apic' 'struct kvm_lapic *'
+    |   `-DeclRefExpr 0x14c02f348 <col:38> 'struct kvm_lapic *' contains-errors lvalue Var 0x14c02e488 'apic' 'struct kvm_lapic *'
+    |-LabelStmt 0x14b923400 <line:51:1, line:53:45> 'out'
+    | `-BinaryOperator 0x14b9233e0 <line:52:2, line:53:45> 'struct kvm_apic_map *' contains-errors '='
+    |   |-DeclRefExpr 0x14b923000 <line:52:2> 'struct kvm_apic_map *' contains-errors lvalue Var 0x14c02aa48 'old' 'struct kvm_apic_map *'
+    |   `-CallExpr 0x14b9233b0 <col:8, line:53:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b923100 <line:52:8> 'int ()' Function 0x14b923048 'rcu_dereference_protected' 'int ()'
+    |     |-CXXDependentScopeMemberExpr 0x14b923180 <col:34, col:44> '<dependent type>' contains-errors lvalue .apic_map
+    |     | `-RecoveryExpr 0x14b923158 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x14b923120 <col:34> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |     `-CallExpr 0x14b923388 <line:53:4, col:44> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14b9232a8 <col:4> 'int ()' Function 0x14b9231f0 'lockdep_is_held' 'int ()'
+    |       `-UnaryOperator 0x14b923370 <col:20, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-CXXDependentScopeMemberExpr 0x14b923328 <col:21, col:31> '<dependent type>' contains-errors lvalue .apic_map_lock
+    |           `-RecoveryExpr 0x14b923300 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x14b9232c8 <col:21> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-CallExpr 0x14b9235e8 <line:54:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b923500 <col:2> 'int ()' Function 0x14b923448 'rcu_assign_pointer' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x14b923580 <col:21, col:31> '<dependent type>' contains-errors lvalue .apic_map
+    | | `-RecoveryExpr 0x14b923558 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b923520 <col:21> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    | `-DeclRefExpr 0x14b9235c8 <col:41> 'struct kvm_apic_map *' lvalue Var 0x14c02a9b8 'new' 'struct kvm_apic_map *'
+    |-CallExpr 0x14b9237d8 <line:55:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b9236f8 <col:2> 'int ()' Function 0x14b923640 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14b9237c0 <col:15, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14b923778 <col:16, col:26> '<dependent type>' contains-errors lvalue .apic_map_lock
+    |     `-RecoveryExpr 0x14b923750 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b923718 <col:16> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    `-CallExpr 0x14b923a90 <line:60:2, col:34> 'int'
+      |-ImplicitCastExpr 0x14b923a78 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x14b923a38 <col:2> 'int ()' Function 0x14b923980 'kvm_vcpu_request_scan_ioapic' 'int ()'
+      `-ImplicitCastExpr 0x14b923ab8 <col:31> 'struct kvm *' <LValueToRValue>
+        `-DeclRefExpr 0x14b923a58 <col:31> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'

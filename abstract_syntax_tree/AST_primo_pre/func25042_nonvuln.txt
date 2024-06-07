@@ -1,0 +1,16 @@
+`-FunctionDecl 0x11f928750  line:1:20 req_ref_get 'void (struct io_kiocb *)' static inline
+  |-ParmVarDecl 0x11f928648 <col:32, col:49> col:49 used req 'struct io_kiocb *'
+  `-CompoundStmt 0x11f940f18 <line:2:1, line:5:1>
+    |-CallExpr 0x11f940d50 <line:3:2, col:53> 'int'
+    | |-ImplicitCastExpr 0x11f940d38 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11f940b70 <col:2> 'int ()' Function 0x11f940ab8 'WARN_ON_ONCE' 'int ()'
+    | `-CallExpr 0x11f940cf8 <col:15, col:52> 'int'
+    |   |-ImplicitCastExpr 0x11f940ce0 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11f940c70 <col:15> 'int ()' Function 0x11f940bb8 'req_ref_zero_or_close_to_overflow' 'int ()'
+    |   `-ImplicitCastExpr 0x11f940d20 <col:49> 'struct io_kiocb *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11f940c90 <col:49> 'struct io_kiocb *' lvalue ParmVar 0x11f928648 'req' 'struct io_kiocb *'
+    `-CallExpr 0x11f940ef0 <line:4:2, col:23> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x11f940e58 <col:2> 'int ()' Function 0x11f940da0 'atomic_inc' 'int ()'
+      `-UnaryOperator 0x11f940ed8 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x11f940eb0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x11f940e78 <col:14> 'struct io_kiocb *' lvalue ParmVar 0x11f928648 'req' 'struct io_kiocb *'

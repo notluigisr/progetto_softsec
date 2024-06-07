@@ -1,0 +1,1 @@
+static inline int pni_mutex_unlock(pni_mutex_t *m) { return pthread_mutex_unlock(m); }

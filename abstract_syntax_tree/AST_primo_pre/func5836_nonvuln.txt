@@ -1,0 +1,121 @@
+`-FunctionDecl 0x15980e358  line:1:12 pppoe_release 'int (struct socket *)' static
+  |-ParmVarDecl 0x15980e248 <col:26, col:41> col:41 used sock 'struct socket *'
+  `-CompoundStmt 0x15a80b608 <line:2:1, line:44:1>
+    |-DeclStmt 0x159826898 <line:3:2, col:28>
+    | |-RecordDecl 0x159826650 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1598267b8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x159826858 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159826820 <col:20> 'struct socket *' lvalue ParmVar 0x15980e248 'sock' 'struct socket *'
+    |-DeclStmt 0x159826a98 <line:4:2, col:23>
+    | |-RecordDecl 0x1598268b0 <col:2, col:9> col:9 struct pppox_sock
+    | `-VarDecl 0x159826a18 <col:2, col:21> col:21 used po 'struct pppox_sock *'
+    |-DeclStmt 0x159826c98 <line:5:2, col:22>
+    | |-RecordDecl 0x159826ab0 <col:2, col:9> col:9 struct pppoe_net
+    | `-VarDecl 0x159826c18 <col:2, col:20> col:20 used pn 'struct pppoe_net *'
+    |-DeclStmt 0x159826ee8 <line:6:2, col:24>
+    | |-RecordDecl 0x159826cb0 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x159826e18 <col:2, col:20> col:14 used net 'struct net *' cinit
+    |   `-RecoveryExpr 0x159826eb0 <col:20> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x159826f80 <line:8:2, line:9:10>
+    | |-UnaryOperator 0x159826f38 <line:8:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x159826f20 <col:7> 'struct sock *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x159826f00 <col:7> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    | `-ReturnStmt 0x159826f70 <line:9:3, col:10>
+    |   `-IntegerLiteral 0x159826f50 <col:10> 'int' 0
+    |-CallExpr 0x159827138 <line:11:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x159827120 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1598270b0 <col:2> 'int ()' Function 0x159826ff8 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x159827160 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x1598270d0 <col:12> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-IfStmt 0x159827570 <line:12:2, line:15:2>
+    | |-CallExpr 0x159827300 <line:12:6, col:29> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x159827258 <col:6> 'int ()' Function 0x1598271a0 'sock_flag' 'int ()'
+    | | |-DeclRefExpr 0x159827278 <col:16> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    | | `-RecoveryExpr 0x1598272e0 <col:20> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x159827550 <col:32, line:15:2>
+    |   |-CallExpr 0x159827468 <line:13:3, col:18> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x159827450 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x159827410 <col:3> 'int ()' Function 0x159827358 'release_sock' 'int ()'
+    |   | `-ImplicitCastExpr 0x159827490 <col:16> 'struct sock *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x159827430 <col:16> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |   `-ReturnStmt 0x159827540 <line:14:3, col:11>
+    |     `-UnaryOperator 0x159827528 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x159827510 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1598274f0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15a809f68 <line:17:2, col:18> 'struct pppox_sock *' contains-errors '='
+    | |-DeclRefExpr 0x159827590 <col:2> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    | `-ImplicitCastExpr 0x15a809f50 <col:7, col:18> 'struct pppox_sock *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x15a809f10 <col:7, col:18> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15a809ef8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15a809eb8 <col:7> 'int ()' Function 0x15a809e00 'pppox_sk' 'int ()'
+    |     `-ImplicitCastExpr 0x15a809f38 <col:16> 'struct sock *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15a809ed8 <col:16> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-IfStmt 0x15a80a310 <line:19:2, line:22:2>
+    | |-RecoveryExpr 0x15a80a070 <line:19:6, col:66> '_Bool' contains-errors
+    | `-CompoundStmt 0x15a80a2f0 <col:69, line:22:2>
+    |   |-CallExpr 0x15a80a1f0 <line:20:3, col:24> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15a80a170 <col:3> 'int ()' Function 0x15a80a0b8 'dev_put' 'int ()'
+    |   | `-RecoveryExpr 0x15a80a1c8 <col:11, col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x15a80a190 <col:11> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    |   `-BinaryOperator 0x15a80a2d0 <line:21:3, col:19> '<dependent type>' contains-errors '='
+    |     |-RecoveryExpr 0x15a80a250 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x15a80a218 <col:3> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    |     `-RecoveryExpr 0x15a80a2b0 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a80a468 <line:24:2, col:22> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a80a450 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a80a410 <col:2> 'int ()' Function 0x15a80a358 'pppox_unbind_sock' 'int ()'
+    | `-ImplicitCastExpr 0x15a80a490 <col:20> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a80a430 <col:20> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-BinaryOperator 0x15a80a560 <line:27:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15a80a4e0 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15a80a4a8 <col:2> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    | `-RecoveryExpr 0x15a80a540 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15a80a730 <line:29:2, col:19> 'struct net *' contains-errors '='
+    | |-DeclRefExpr 0x15a80a580 <col:2> 'struct net *' contains-errors lvalue Var 0x159826e18 'net' 'struct net *'
+    | `-ImplicitCastExpr 0x15a80a718 <col:8, col:19> 'struct net *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x15a80a6d8 <col:8, col:19> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15a80a6c0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15a80a680 <col:8> 'int ()' Function 0x15a80a5c8 'sock_net' 'int ()'
+    |     `-ImplicitCastExpr 0x15a80a700 <col:17> 'struct sock *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15a80a6a0 <col:17> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-BinaryOperator 0x15a80a900 <line:30:2, col:23> 'struct pppoe_net *' contains-errors '='
+    | |-DeclRefExpr 0x15a80a750 <col:2> 'struct pppoe_net *' lvalue Var 0x159826c18 'pn' 'struct pppoe_net *'
+    | `-ImplicitCastExpr 0x15a80a8e8 <col:7, col:23> 'struct pppoe_net *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x15a80a8a8 <col:7, col:23> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15a80a890 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15a80a850 <col:7> 'int ()' Function 0x15a80a798 'pppoe_pernet' 'int ()'
+    |     `-ImplicitCastExpr 0x15a80a8d0 <col:20> 'struct net *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15a80a870 <col:20> 'struct net *' contains-errors lvalue Var 0x159826e18 'net' 'struct net *'
+    |-CallExpr 0x15a80abf0 <line:33:2, line:34:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a80aa00 <line:33:2> 'int ()' Function 0x15a80a948 'delete_item' 'int ()'
+    | |-DeclRefExpr 0x15a80aa20 <col:14> 'struct pppoe_net *' lvalue Var 0x159826c18 'pn' 'struct pppoe_net *'
+    | |-CXXDependentScopeMemberExpr 0x15a80aaa0 <col:18, col:31> '<dependent type>' contains-errors lvalue .sid
+    | | `-RecoveryExpr 0x15a80aa78 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15a80aa40 <col:18> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    | |-CXXDependentScopeMemberExpr 0x15a80ab48 <col:36, col:49> '<dependent type>' contains-errors lvalue .remote
+    | | `-RecoveryExpr 0x15a80ab20 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15a80aae8 <col:36> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    | `-RecoveryExpr 0x15a80abc8 <line:34:7, col:11> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15a80ab90 <col:7> 'struct pppox_sock *' lvalue Var 0x159826a18 'po' 'struct pppox_sock *'
+    |-CallExpr 0x15a80ad68 <line:36:2, col:16> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a80ad50 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a80ad10 <col:2> 'int ()' Function 0x15a80ac58 'sock_orphan' 'int ()'
+    | `-ImplicitCastExpr 0x15a80ad90 <col:14> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a80ad30 <col:14> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-CallExpr 0x15a80b3a0 <line:39:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a80b308 <col:2> 'int ()' Function 0x15a80b250 'skb_queue_purge' 'int ()'
+    | `-UnaryOperator 0x15a80b388 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x15a80b360 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15a80b328 <col:19> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-CallExpr 0x15a80b420 <line:40:2, col:17> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a80b408 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a80b3c8 <col:2> 'int ()' Function 0x159827358 'release_sock' 'int ()'
+    | `-ImplicitCastExpr 0x15a80b448 <col:15> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a80b3e8 <col:15> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    |-CallExpr 0x15a80b598 <line:41:2, col:13> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a80b580 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a80b540 <col:2> 'int ()' Function 0x15a80b488 'sock_put' 'int ()'
+    | `-ImplicitCastExpr 0x15a80b5c0 <col:11> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a80b560 <col:11> 'struct sock *' contains-errors lvalue Var 0x1598267b8 'sk' 'struct sock *'
+    `-ReturnStmt 0x15a80b5f8 <line:43:2, col:9>
+      `-IntegerLiteral 0x15a80b5d8 <col:9> 'int' 0

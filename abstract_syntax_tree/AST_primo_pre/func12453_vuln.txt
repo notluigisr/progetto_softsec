@@ -1,0 +1,30 @@
+`-FunctionDecl 0x11f9283e8  line:1:32 invalid sctp_auth_create_key 'struct sctp_auth_bytes *(int, int)' static
+  |-ParmVarDecl 0x11f928190 <col:53, col:59> col:59 invalid key_len 'int'
+  |-ParmVarDecl 0x11f928210 <col:68, col:74> col:74 invalid gfp 'int'
+  `-CompoundStmt 0x11f943120 <line:2:1, line:15:1>
+    |-DeclStmt 0x11f928590 <line:3:2, col:29>
+    | `-VarDecl 0x11f928528 <col:2, col:26> col:26 used key 'struct sctp_auth_bytes *'
+    |-IfStmt 0x11f942c68 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x11f942c08 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11f942bf0 <col:7> 'struct sctp_auth_bytes *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11f942bd0 <col:7> 'struct sctp_auth_bytes *' lvalue Var 0x11f928528 'key' 'struct sctp_auth_bytes *'
+    | `-ReturnStmt 0x11f942c58 <line:8:3, col:10>
+    |   `-RecoveryExpr 0x11f942c38 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11f942d08 <line:10:2, col:13> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f942cc0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f942c88 <col:2> 'struct sctp_auth_bytes *' lvalue Var 0x11f928528 'key' 'struct sctp_auth_bytes *'
+    | `-RecoveryExpr 0x11f942ce8 <col:13> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11f942ec0 <line:11:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f942e08 <col:2> 'int ()' Function 0x11f942d50 'atomic_set' 'int ()'
+    | |-UnaryOperator 0x11f942e88 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x11f942e60 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f942e28 <col:14> 'struct sctp_auth_bytes *' lvalue Var 0x11f928528 'key' 'struct sctp_auth_bytes *'
+    | `-IntegerLiteral 0x11f942ea0 <col:27> 'int' 1
+    |-CallExpr 0x11f943098 <line:12:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x11f943080 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11f942fd0 <col:2> 'int ()' Function 0x11f942f18 'SCTP_DBG_OBJCNT_INC' 'int ()'
+    | `-ImplicitCastExpr 0x11f9430c0 <col:22> 'struct sctp_auth_bytes *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11f943030 <col:22> 'struct sctp_auth_bytes *' lvalue Var 0x11f928528 'key' 'struct sctp_auth_bytes *'
+    `-ReturnStmt 0x11f943110 <line:14:2, col:9>
+      `-ImplicitCastExpr 0x11f9430f8 <col:9> 'struct sctp_auth_bytes *' <LValueToRValue>
+        `-DeclRefExpr 0x11f9430d8 <col:9> 'struct sctp_auth_bytes *' lvalue Var 0x11f928528 'key' 'struct sctp_auth_bytes *'

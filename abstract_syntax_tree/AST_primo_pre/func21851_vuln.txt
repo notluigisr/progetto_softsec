@@ -1,0 +1,41 @@
+`-FunctionDecl 0x12b128750  line:1:6 __kvm_migrate_pit_timer 'void (struct kvm_vcpu *)'
+  |-ParmVarDecl 0x12b128648 <col:30, col:47> col:47 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x12b141640 <line:2:1, line:12:1>
+    |-DeclStmt 0x12b140d28 <line:3:2, col:44>
+    | |-RecordDecl 0x12b140a48 <col:2, col:9> col:9 struct kvm_pit
+    | `-VarDecl 0x12b140bb8 <col:2, col:40> col:18 used pit 'struct kvm_pit *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12b140cc8 <col:24, col:40> '<dependent type>' contains-errors lvalue .vpit
+    |     `-CXXDependentScopeMemberExpr 0x12b140c80 <col:24, col:35> '<dependent type>' contains-errors lvalue ->arch
+    |       `-RecoveryExpr 0x12b140c58 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x12b140c20 <col:24> 'struct kvm_vcpu *' lvalue ParmVar 0x12b128648 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x12b140f28 <line:4:2, col:23>
+    | |-RecordDecl 0x12b140d40 <col:2, col:9> col:9 struct hrtimer
+    | `-VarDecl 0x12b140ea8 <col:2, col:18> col:18 used timer 'struct hrtimer *'
+    |-IfStmt 0x12b1411d0 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x12b1411a0 <line:6:6, col:33> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x12b141138 <col:6, col:27> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x12b1410f8 <col:7, col:27> 'int'
+    | | |   |-ImplicitCastExpr 0x12b1410e0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x12b141070 <col:7> 'int ()' Function 0x12b140fb8 'kvm_vcpu_is_bsp' 'int ()'
+    | | |   `-ImplicitCastExpr 0x12b141120 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x12b141090 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x12b128648 'vcpu' 'struct kvm_vcpu *'
+    | | `-UnaryOperator 0x12b141188 <col:32, col:33> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x12b141170 <col:33> 'struct kvm_pit *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x12b141150 <col:33> 'struct kvm_pit *' contains-errors lvalue Var 0x12b140bb8 'pit' 'struct kvm_pit *'
+    | `-ReturnStmt 0x12b1411c0 <line:7:3>
+    |-BinaryOperator 0x12b1412d0 <line:9:2, col:26> 'struct hrtimer *' contains-errors '='
+    | |-DeclRefExpr 0x12b1411f0 <col:2> 'struct hrtimer *' lvalue Var 0x12b140ea8 'timer' 'struct hrtimer *'
+    | `-UnaryOperator 0x12b1412b8 <col:10, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12b141270 <col:11, col:26> '<dependent type>' contains-errors lvalue .timer
+    |     `-RecoveryExpr 0x12b141248 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12b141210 <col:11> 'struct kvm_pit *' contains-errors lvalue Var 0x12b140bb8 'pit' 'struct kvm_pit *'
+    `-IfStmt 0x12b141620 <line:10:2, line:11:48>
+      |-CallExpr 0x12b141428 <line:10:6, col:26> 'int'
+      | |-ImplicitCastExpr 0x12b141410 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x12b1413d0 <col:6> 'int ()' Function 0x12b141318 'hrtimer_cancel' 'int ()'
+      | `-ImplicitCastExpr 0x12b141450 <col:21> 'struct hrtimer *' <LValueToRValue>
+      |   `-DeclRefExpr 0x12b1413f0 <col:21> 'struct hrtimer *' lvalue Var 0x12b140ea8 'timer' 'struct hrtimer *'
+      `-CallExpr 0x12b1415f0 <line:11:3, col:48> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12b141548 <col:3> 'int ()' Function 0x12b141490 'hrtimer_start_expires' 'int ()'
+        |-DeclRefExpr 0x12b141568 <col:25> 'struct hrtimer *' lvalue Var 0x12b140ea8 'timer' 'struct hrtimer *'
+        `-RecoveryExpr 0x12b1415d0 <col:32> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,108 @@
+`-FunctionDecl 0x150128518  line:1:1 SYSCALL_DEFINE6 'int ()'
+  `-CompoundStmt 0x1501439e8 <line:4:1, line:40:1>
+    |-DeclStmt 0x1501287f8 <line:5:2, col:21>
+    | |-RecordDecl 0x150128608 <col:2, col:9> col:9 struct socket
+    | `-VarDecl 0x150128778 <col:2, col:17> col:17 used sock 'struct socket *'
+    |-DeclStmt 0x150140fb8 <line:6:2, col:18>
+    | |-RecordDecl 0x150128810 <col:2, col:9> col:9 struct iovec
+    | `-VarDecl 0x150128908 <col:2, col:15> col:15 referenced invalid iov 'struct iovec'
+    |-DeclStmt 0x150141148 <line:7:2, col:19>
+    | |-RecordDecl 0x150140fd0 <col:2, col:9> col:9 struct msghdr
+    | `-VarDecl 0x1501410c8 <col:2, col:16> col:16 referenced invalid msg 'struct msghdr'
+    |-DeclStmt 0x1501412d8 <line:8:2, col:33>
+    | |-RecordDecl 0x150141160 <col:2, col:9> col:9 struct sockaddr_storage
+    | `-VarDecl 0x150141258 <col:2, col:26> col:26 invalid address 'struct sockaddr_storage'
+    |-DeclStmt 0x150141408 <line:9:2, col:15>
+    | |-VarDecl 0x150141308 <col:2, col:6> col:6 used err 'int'
+    | `-VarDecl 0x150141388 <col:2, col:11> col:11 used err2 'int'
+    |-DeclStmt 0x1501414a0 <line:10:2, col:17>
+    | `-VarDecl 0x150141438 <col:2, col:6> col:6 used fput_needed 'int'
+    |-BinaryOperator 0x150141820 <line:14:2, col:51> 'struct socket *' contains-errors '='
+    | |-DeclRefExpr 0x150141598 <col:2> 'struct socket *' lvalue Var 0x150128778 'sock' 'struct socket *'
+    | `-CallExpr 0x1501417e8 <col:9, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150141698 <col:9> 'int ()' Function 0x1501415e0 'sockfd_lookup_light' 'int ()'
+    |   |-RecoveryExpr 0x1501417c8 <col:29> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x150141720 <col:33, col:34> 'int *' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x1501416d0 <col:34> 'int' lvalue Var 0x150141308 'err' 'int'
+    |   `-UnaryOperator 0x150141758 <col:39, col:40> 'int *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x150141738 <col:40> 'int' lvalue Var 0x150141438 'fput_needed' 'int'
+    |-IfStmt 0x1501418f8 <line:15:2, line:16:8>
+    | |-UnaryOperator 0x150141878 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x150141860 <col:7> 'struct socket *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150141840 <col:7> 'struct socket *' lvalue Var 0x150128778 'sock' 'struct socket *'
+    | `-GotoStmt 0x1501418e0 <line:16:3, col:8> 'out' 0x150141890
+    |-BinaryOperator 0x150141a00 <line:18:2, col:20> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150141960 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_control
+    | | `-RecoveryExpr 0x150141938 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141918 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-RecoveryExpr 0x1501419e0 <col:20> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150141ad0 <line:19:2, col:23> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150141a68 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_controllen
+    | | `-RecoveryExpr 0x150141a40 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141a20 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-IntegerLiteral 0x150141ab0 <col:23> 'int' 0
+    |-BinaryOperator 0x150141ba0 <line:20:2, col:19> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150141b38 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_iovlen
+    | | `-RecoveryExpr 0x150141b10 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141af0 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-IntegerLiteral 0x150141b80 <col:19> 'int' 1
+    |-BinaryOperator 0x150141c88 <line:21:2, col:17> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150141c08 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_iov
+    | | `-RecoveryExpr 0x150141be0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141bc0 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-UnaryOperator 0x150141c70 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150141c50 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150141d90 <line:22:2, col:16> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150141cf0 <col:2, col:6> '<dependent type>' contains-errors lvalue .iov_len
+    | | `-RecoveryExpr 0x150141cc8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141ca8 <col:2> 'struct iovec' lvalue Var 0x150128908 'iov' 'struct iovec'
+    | `-RecoveryExpr 0x150141d70 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150142ca0 <line:23:2, col:17> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150142c00 <col:2, col:6> '<dependent type>' contains-errors lvalue .iov_base
+    | | `-RecoveryExpr 0x150141dd0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150141db0 <col:2> 'struct iovec' lvalue Var 0x150128908 'iov' 'struct iovec'
+    | `-RecoveryExpr 0x150142c80 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150142f20 <line:24:2, col:37> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150142d08 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_name
+    | | `-RecoveryExpr 0x150142ce0 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150142cc0 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-CStyleCastExpr 0x150142ef8 <col:17, col:37> 'struct sockaddr *' contains-errors <Dependent>
+    |   `-UnaryOperator 0x150142e10 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x150142df0 <col:37> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150143030 <line:25:2, col:34> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x150142f88 <col:2, col:6> '<dependent type>' contains-errors lvalue .msg_namelen
+    | | `-RecoveryExpr 0x150142f60 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150142f40 <col:2> 'struct msghdr' lvalue Var 0x1501410c8 'msg' 'struct msghdr'
+    | `-UnaryExprOrTypeTraitExpr 0x150143010 <col:20, col:34> 'unsigned long' contains-errors sizeof
+    |   `-ParenExpr 0x150142ff0 <col:26, col:34> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x150142fd0 <col:27> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150143410 <line:28:2, col:44> 'int' contains-errors '='
+    | |-DeclRefExpr 0x150143188 <col:2> 'int' lvalue Var 0x150141308 'err' 'int'
+    | `-CallExpr 0x1501433d0 <col:8, col:44> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x150143288 <col:8> 'int ()' Function 0x1501431d0 'sock_recvmsg' 'int ()'
+    |   |-DeclRefExpr 0x1501432a8 <col:21> 'struct socket *' lvalue Var 0x150128778 'sock' 'struct socket *'
+    |   |-UnaryOperator 0x1501432e8 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x1501432c8 <col:28> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x150143390 <col:33> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1501433b0 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1501437b0 <line:30:2, line:35:2>
+    | |-RecoveryExpr 0x1501434a8 <line:30:6, col:26> '_Bool' contains-errors
+    | `-CompoundStmt 0x150143798 <col:32, line:35:2>
+    |   `-IfStmt 0x150143778 <line:33:3, line:34:10>
+    |     |-BinaryOperator 0x1501436e0 <line:33:7, col:14> 'int' '<'
+    |     | |-ImplicitCastExpr 0x1501436c8 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x150143688 <col:7> 'int' lvalue Var 0x150141388 'err2' 'int'
+    |     | `-IntegerLiteral 0x1501436a8 <col:14> 'int' 0
+    |     `-BinaryOperator 0x150143758 <line:34:4, col:10> 'int' '='
+    |       |-DeclRefExpr 0x150143700 <col:4> 'int' lvalue Var 0x150141308 'err' 'int'
+    |       `-ImplicitCastExpr 0x150143740 <col:10> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x150143720 <col:10> 'int' lvalue Var 0x150141388 'err2' 'int'
+    |-CallExpr 0x150143950 <line:37:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1501438b0 <col:2> 'int ()' Function 0x1501437f8 'fput_light' 'int ()'
+    | |-RecoveryExpr 0x150143908 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1501438d0 <col:13> 'struct socket *' lvalue Var 0x150128778 'sock' 'struct socket *'
+    | `-DeclRefExpr 0x150143930 <col:25> 'int' lvalue Var 0x150141438 'fput_needed' 'int'
+    `-LabelStmt 0x1501439c8 <line:38:1, line:39:9> 'out'
+      `-ReturnStmt 0x1501439b8 <col:2, col:9>
+        `-ImplicitCastExpr 0x1501439a0 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x150143980 <col:9> 'int' lvalue Var 0x150141308 'err' 'int'

@@ -1,0 +1,30 @@
+`-FunctionDecl 0x133027400  line:1:14 invalid mailbox_delete 'int (struct mailbox **)'
+  |-ParmVarDecl 0x13300e2c8 <col:29, col:46> col:46 used mailboxptr 'struct mailbox **'
+  `-CompoundStmt 0x133027b40 <line:2:1, line:25:1>
+    |-DeclStmt 0x133027608 <line:3:5, col:42>
+    | `-VarDecl 0x133027538 <col:5, col:32> col:21 used mailbox 'struct mailbox *' cinit
+    |   `-ImplicitCastExpr 0x1330275f0 <col:31, col:32> 'struct mailbox *' <LValueToRValue>
+    |     `-UnaryOperator 0x1330275d8 <col:31, col:32> 'struct mailbox *' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x1330275c0 <col:32> 'struct mailbox **' <LValueToRValue>
+    |         `-DeclRefExpr 0x1330275a0 <col:32> 'struct mailbox **' lvalue ParmVar 0x13300e2c8 'mailboxptr' 'struct mailbox **'
+    |-DeclStmt 0x1330276a0 <line:4:5, col:10>
+    | `-VarDecl 0x133027638 <col:5, col:9> col:9 used r 'int'
+    |-BinaryOperator 0x1330278f8 <line:6:5, col:45> 'int' '='
+    | |-DeclRefExpr 0x1330276b8 <col:5> 'int' lvalue Var 0x133027638 'r' 'int'
+    | `-CallExpr 0x1330278b8 <col:9, col:45> 'int'
+    |   |-ImplicitCastExpr 0x1330278a0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x133027830 <col:9> 'int ()' Function 0x133027778 'mailbox_delete_conversations' 'int ()'
+    |   `-ImplicitCastExpr 0x1330278e0 <col:38> 'struct mailbox *' <LValueToRValue>
+    |     `-DeclRefExpr 0x133027850 <col:38> 'struct mailbox *' lvalue Var 0x133027538 'mailbox' 'struct mailbox *'
+    |-IfStmt 0x133027998 <line:7:5, col:19>
+    | |-ImplicitCastExpr 0x133027938 <col:9> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x133027918 <col:9> 'int' lvalue Var 0x133027638 'r' 'int'
+    | `-ReturnStmt 0x133027988 <col:12, col:19>
+    |   `-ImplicitCastExpr 0x133027970 <col:19> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x133027950 <col:19> 'int' lvalue Var 0x133027638 'r' 'int'
+    `-ReturnStmt 0x133027b30 <line:24:5, col:46>
+      `-CallExpr 0x133027af0 <col:12, col:46> 'int'
+        |-ImplicitCastExpr 0x133027ad8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x133027a98 <col:12> 'int ()' Function 0x1330279e0 'mailbox_delete_internal' 'int ()'
+        `-ImplicitCastExpr 0x133027b18 <col:36> 'struct mailbox **' <LValueToRValue>
+          `-DeclRefExpr 0x133027ab8 <col:36> 'struct mailbox **' lvalue ParmVar 0x13300e2c8 'mailboxptr' 'struct mailbox **'

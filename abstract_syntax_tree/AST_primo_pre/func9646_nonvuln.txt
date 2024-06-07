@@ -1,0 +1,23 @@
+`-FunctionDecl 0x130128750  line:1:13 referenced nfs_access_free_entry 'void (struct nfs_access_entry *)' static
+  |-ParmVarDecl 0x130128648 <col:35, col:60> col:60 used entry 'struct nfs_access_entry *'
+  `-CompoundStmt 0x130141270 <line:2:1, line:8:1>
+    |-CallExpr 0x130140bf0 <line:3:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130140b70 <col:2> 'int ()' Function 0x130140ab8 'put_rpccred' 'int ()'
+    | `-RecoveryExpr 0x130140bc8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x130140b90 <col:14> 'struct nfs_access_entry *' lvalue ParmVar 0x130128648 'entry' 'struct nfs_access_entry *'
+    |-CallExpr 0x130140d88 <line:4:2, col:13> 'int'
+    | |-ImplicitCastExpr 0x130140d70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x130140cf8 <col:2> 'int ()' Function 0x130140c40 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x130140db0 <col:8> 'struct nfs_access_entry *' <LValueToRValue>
+    |   `-DeclRefExpr 0x130140d18 <col:8> 'struct nfs_access_entry *' lvalue ParmVar 0x130128648 'entry' 'struct nfs_access_entry *'
+    |-CallExpr 0x130140ee0 <line:5:2, col:28> 'int'
+    | `-ImplicitCastExpr 0x130140ec8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x130140ea8 <col:2> 'int ()' Function 0x130140df0 'smp_mb__before_atomic_dec' 'int ()'
+    |-CallExpr 0x130141110 <line:6:2, col:40> 'int'
+    | |-ImplicitCastExpr 0x1301410f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x130140fe0 <col:2> 'int ()' Function 0x130140f28 'atomic_long_dec' 'int ()'
+    | `-UnaryOperator 0x1301410e0 <col:18, col:19> 'void (*)(struct nfs_access_entry *)' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x130141058 <col:19> 'void (struct nfs_access_entry *)' Function 0x130128750 'nfs_access_free_entry' 'void (struct nfs_access_entry *)'
+    `-CallExpr 0x130141250 <line:7:2, col:27> 'int'
+      `-ImplicitCastExpr 0x130141238 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x130141218 <col:2> 'int ()' Function 0x130141160 'smp_mb__after_atomic_dec' 'int ()'

@@ -1,0 +1,71 @@
+`-FunctionDecl 0x12e141f28  line:1:12 invalid xfrm_send_migrate 'int (const struct xfrm_selector *, int, int, const struct xfrm_migrate *, int, const struct xfrm_kmaddress *, const struct xfrm_encap_tmpl *)' static
+  |-ParmVarDecl 0x12e128648 <col:30, col:58> col:58 used sel 'const struct xfrm_selector *'
+  |-ParmVarDecl 0x12e1286e0 <col:63, col:66> col:66 invalid dir 'int'
+  |-ParmVarDecl 0x12e128760 <col:71, col:74> col:74 invalid type 'int'
+  |-ParmVarDecl 0x12e141968 <line:2:9, col:36> col:36 used m 'const struct xfrm_migrate *'
+  |-ParmVarDecl 0x12e1419e8 <col:39, col:43> col:43 used num_migrate 'int'
+  |-ParmVarDecl 0x12e141bb8 <line:3:9, col:38> col:38 used k 'const struct xfrm_kmaddress *'
+  |-ParmVarDecl 0x12e141d88 <line:4:9, col:39> col:39 used encap 'const struct xfrm_encap_tmpl *'
+  `-CompoundStmt 0x12e1475f0 <line:5:1, line:20:1>
+    |-DeclStmt 0x12e142260 <line:6:2, col:29>
+    | |-RecordDecl 0x12e142008 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x12e142178 <col:2, col:21> col:14 used net 'struct net *' cinit
+    |   `-UnaryOperator 0x12e142230 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12e142210 <col:21> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12e142468 <line:7:2, col:21>
+    | |-RecordDecl 0x12e142278 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x12e1423e8 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x12e142500 <line:8:2, col:9>
+    | `-VarDecl 0x12e142498 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x12e146df0 <line:10:2, line:11:14> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x12e142518 <line:10:2> 'struct sk_buff *' lvalue Var 0x12e1423e8 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x12e146dc0 <col:8, line:11:14> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e142690 <line:10:8> 'int ()' Function 0x12e1425d8 'nlmsg_new' 'int ()'
+    |   |-CallExpr 0x12e146d50 <col:18, col:64> 'int'
+    |   | |-ImplicitCastExpr 0x12e146d38 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12e142790 <col:18> 'int ()' Function 0x12e1426d8 'xfrm_migrate_msgsize' 'int ()'
+    |   | |-ImplicitCastExpr 0x12e146d88 <col:39> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x12e1427b0 <col:39> 'int' lvalue ParmVar 0x12e1419e8 'num_migrate' 'int'
+    |   | |-UnaryOperator 0x12e146cd8 <col:52, col:54> 'int' prefix '!' cannot overflow
+    |   | | `-UnaryOperator 0x12e146cc0 <col:53, col:54> 'int' prefix '!' cannot overflow
+    |   | |   `-ImplicitCastExpr 0x12e146ca8 <col:54> 'const struct xfrm_kmaddress *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x12e1427d0 <col:54> 'const struct xfrm_kmaddress *' lvalue ParmVar 0x12e141bb8 'k' 'const struct xfrm_kmaddress *'
+    |   | `-UnaryOperator 0x12e146d20 <col:57, col:59> 'int' prefix '!' cannot overflow
+    |   |   `-UnaryOperator 0x12e146d08 <col:58, col:59> 'int' prefix '!' cannot overflow
+    |   |     `-ImplicitCastExpr 0x12e146cf0 <col:59> 'const struct xfrm_encap_tmpl *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x12e146a48 <col:59> 'const struct xfrm_encap_tmpl *' lvalue ParmVar 0x12e141d88 'encap' 'const struct xfrm_encap_tmpl *'
+    |   `-RecoveryExpr 0x12e146da0 <line:11:4> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12e146f50 <line:12:2, line:13:11>
+    | |-BinaryOperator 0x12e146e88 <line:12:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x12e146e10 <col:6> 'struct sk_buff *' lvalue Var 0x12e1423e8 'skb' 'struct sk_buff *'
+    | | `-RecoveryExpr 0x12e146e68 <col:13> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12e146f40 <line:13:3, col:11>
+    |   `-UnaryOperator 0x12e146f28 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12e146f10 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12e146ef0 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12e1471f0 <line:16:2, col:67> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12e146f70 <col:2> 'int' lvalue Var 0x12e142498 'err' 'int'
+    | `-CallExpr 0x12e147190 <col:8, col:67> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e147070 <col:8> 'int ()' Function 0x12e146fb8 'build_migrate' 'int ()'
+    |   |-DeclRefExpr 0x12e147090 <col:22> 'struct sk_buff *' lvalue Var 0x12e1423e8 'skb' 'struct sk_buff *'
+    |   |-DeclRefExpr 0x12e1470b0 <col:27> 'const struct xfrm_migrate *' lvalue ParmVar 0x12e141968 'm' 'const struct xfrm_migrate *'
+    |   |-DeclRefExpr 0x12e1470d0 <col:30> 'int' lvalue ParmVar 0x12e1419e8 'num_migrate' 'int'
+    |   |-DeclRefExpr 0x12e1470f0 <col:43> 'const struct xfrm_kmaddress *' lvalue ParmVar 0x12e141bb8 'k' 'const struct xfrm_kmaddress *'
+    |   |-DeclRefExpr 0x12e147110 <col:46> 'const struct xfrm_selector *' lvalue ParmVar 0x12e128648 'sel' 'const struct xfrm_selector *'
+    |   |-DeclRefExpr 0x12e147130 <col:51> 'const struct xfrm_encap_tmpl *' lvalue ParmVar 0x12e141d88 'encap' 'const struct xfrm_encap_tmpl *'
+    |   |-RecoveryExpr 0x12e147150 <col:58> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x12e147170 <col:63> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12e1473a0 <line:17:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x12e147388 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12e1472f0 <col:2> 'int ()' Function 0x12e147238 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x12e147368 <col:9, col:15> 'int' '<'
+    |   |-ImplicitCastExpr 0x12e147350 <col:9> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12e147310 <col:9> 'int' lvalue Var 0x12e142498 'err' 'int'
+    |   `-IntegerLiteral 0x12e147330 <col:15> 'int' 0
+    `-ReturnStmt 0x12e1475e0 <line:19:2, col:60>
+      `-CallExpr 0x12e1475a0 <col:9, col:60> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12e1474a8 <col:9> 'int ()' Function 0x12e1473f0 'xfrm_nlmsg_multicast' 'int ()'
+        |-DeclRefExpr 0x12e1474c8 <col:30> 'struct net *' contains-errors lvalue Var 0x12e142178 'net' 'struct net *'
+        |-DeclRefExpr 0x12e1474e8 <col:35> 'struct sk_buff *' lvalue Var 0x12e1423e8 'skb' 'struct sk_buff *'
+        |-IntegerLiteral 0x12e147508 <col:40> 'int' 0
+        `-RecoveryExpr 0x12e147580 <col:43> '<dependent type>' contains-errors lvalue

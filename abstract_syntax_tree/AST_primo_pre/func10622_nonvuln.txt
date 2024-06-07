@@ -1,0 +1,47 @@
+`-FunctionDecl 0x12c8274d8  line:1:12 invalid bond_vlan_rx_kill_vid 'int (struct net_device *, int, int)' static
+  |-ParmVarDecl 0x12c80e248 <col:34, col:53> col:53 used bond_dev 'struct net_device *'
+  |-ParmVarDecl 0x12c80e2e0 <line:2:6, col:13> col:13 invalid proto 'int'
+  |-ParmVarDecl 0x12c80e360 <col:20, col:24> col:24 invalid vid 'int'
+  `-CompoundStmt 0x12c1226f0 <line:3:1, line:15:1>
+    |-DeclStmt 0x12c8279c8 <line:4:2, col:46>
+    | |-RecordDecl 0x12c827598 <col:2, col:9> col:9 struct bonding
+    | `-VarDecl 0x12c827708 <col:2, col:45> col:18 used bond 'struct bonding *' cinit
+    |   `-ImplicitCastExpr 0x12c827998 <col:25, col:45> 'struct bonding *' <IntegralToPointer>
+    |     `-CallExpr 0x12c827958 <col:25, col:45> 'int'
+    |       |-ImplicitCastExpr 0x12c827940 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12c8278d0 <col:25> 'int ()' Function 0x12c827818 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x12c827980 <col:37> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12c8278f0 <col:37> 'struct net_device *' lvalue ParmVar 0x12c80e248 'bond_dev' 'struct net_device *'
+    |-DeclStmt 0x12c827bc8 <line:5:2, col:24>
+    | |-RecordDecl 0x12c8279e0 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x12c827b48 <col:2, col:20> col:20 used iter 'struct list_head *'
+    |-DeclStmt 0x12c827dc8 <line:6:2, col:21>
+    | |-RecordDecl 0x12c827be0 <col:2, col:9> col:9 struct slave
+    | `-VarDecl 0x12c827d48 <col:2, col:16> col:16 used slave 'struct slave *'
+    |-CallExpr 0x12c827f58 <line:8:2, col:39> 'int'
+    | |-ImplicitCastExpr 0x12c827f40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12c827ec0 <col:2> 'int ()' Function 0x12c827e08 'bond_for_each_slave' 'int ()'
+    | |-ImplicitCastExpr 0x12c827f90 <col:22> 'struct bonding *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12c827ee0 <col:22> 'struct bonding *' lvalue Var 0x12c827708 'bond' 'struct bonding *'
+    | |-ImplicitCastExpr 0x12c827fa8 <col:28> 'struct slave *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12c827f00 <col:28> 'struct slave *' lvalue Var 0x12c827d48 'slave' 'struct slave *'
+    | `-ImplicitCastExpr 0x12c827fc0 <col:35> 'struct list_head *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12c827f20 <col:35> 'struct list_head *' lvalue Var 0x12c827b48 'iter' 'struct list_head *'
+    |-CallExpr 0x12c828178 <line:9:3, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c8280b8 <col:3> 'int ()' Function 0x12c828000 'vlan_vid_del' 'int ()'
+    | |-RecoveryExpr 0x12c828110 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12c8280d8 <col:16> 'struct slave *' lvalue Var 0x12c827d48 'slave' 'struct slave *'
+    | |-RecoveryExpr 0x12c828138 <col:28> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x12c828158 <col:35> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c1226a0 <line:11:2, line:12:32>
+    | |-CallExpr 0x12c8282e8 <line:11:6, col:21> 'int'
+    | | |-ImplicitCastExpr 0x12c8282d0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12c828290 <col:6> 'int ()' Function 0x12c8281d8 'bond_is_lb' 'int ()'
+    | | `-ImplicitCastExpr 0x12c828310 <col:17> 'struct bonding *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12c8282b0 <col:17> 'struct bonding *' lvalue Var 0x12c827708 'bond' 'struct bonding *'
+    | `-CallExpr 0x12c122670 <line:12:3, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c122610 <col:3> 'int ()' Function 0x12c828350 'bond_alb_clear_vlan' 'int ()'
+    |   |-DeclRefExpr 0x12c122630 <col:23> 'struct bonding *' lvalue Var 0x12c827708 'bond' 'struct bonding *'
+    |   `-RecoveryExpr 0x12c122650 <col:29> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12c1226e0 <line:14:2, col:9>
+      `-IntegerLiteral 0x12c1226c0 <col:9> 'int' 0

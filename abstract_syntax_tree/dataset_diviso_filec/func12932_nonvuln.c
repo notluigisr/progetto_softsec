@@ -1,0 +1,1 @@
+TEST_F(RouterTest, AppendCluster0) { testAppendCluster(absl::nullopt); }

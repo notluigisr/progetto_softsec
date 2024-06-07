@@ -1,0 +1,34 @@
+`-FunctionDecl 0x123128750  line:1:6 exit_aio 'void (struct mm_struct *)'
+  |-ParmVarDecl 0x123128648 <col:15, col:33> col:33 used mm 'struct mm_struct *'
+  `-CompoundStmt 0x123141930 <line:2:1, line:20:1>
+    |-DeclStmt 0x123140c38 <line:3:2, col:20>
+    | |-RecordDecl 0x123140a48 <col:2, col:9> col:9 struct kioctx
+    | `-VarDecl 0x123140bb8 <col:2, col:17> col:17 used ctx 'struct kioctx *'
+    `-WhileStmt 0x123141910 <line:5:2, line:19:2>
+      |-UnaryOperator 0x123140e40 <line:5:9, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x123140e18 <col:10, col:37> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x123140d80 <col:10> 'int ()' Function 0x123140cc8 'hlist_empty' 'int ()'
+      |   `-UnaryOperator 0x123140e00 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x123140dd8 <col:23, col:27> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x123140da0 <col:23> 'struct mm_struct *' lvalue ParmVar 0x123128648 'mm' 'struct mm_struct *'
+      `-CompoundStmt 0x1231418e0 <col:40, line:19:2>
+        |-CallExpr 0x1231411b0 <line:7:3, col:27> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x123141118 <col:3> 'int ()' Function 0x123141060 'hlist_del_rcu' 'int ()'
+        | `-UnaryOperator 0x123141198 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x123141170 <col:18, col:23> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x123141138 <col:18> 'struct kioctx *' lvalue Var 0x123140bb8 'ctx' 'struct kioctx *'
+        |-CallExpr 0x123141348 <line:9:3, col:15> 'int'
+        | |-ImplicitCastExpr 0x123141330 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x1231412b8 <col:3> 'int ()' Function 0x123141200 'kill_ctx' 'int ()'
+        | `-ImplicitCastExpr 0x123141370 <col:12> 'struct kioctx *' <LValueToRValue>
+        |   `-DeclRefExpr 0x1231412d8 <col:12> 'struct kioctx *' lvalue Var 0x123140bb8 'ctx' 'struct kioctx *'
+        |-BinaryOperator 0x123141748 <line:17:3, col:30> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x1231416e0 <col:3, col:18> '<dependent type>' contains-errors lvalue .mmap_size
+        | | `-RecoveryExpr 0x1231416b8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x123141680 <col:3> 'struct kioctx *' lvalue Var 0x123140bb8 'ctx' 'struct kioctx *'
+        | `-IntegerLiteral 0x123141728 <col:30> 'int' 0
+        `-CallExpr 0x1231418a0 <line:18:3, col:16> 'int'
+          |-ImplicitCastExpr 0x123141888 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x123141848 <col:3> 'int ()' Function 0x123141790 'put_ioctx' 'int ()'
+          `-ImplicitCastExpr 0x1231418c8 <col:13> 'struct kioctx *' <LValueToRValue>
+            `-DeclRefExpr 0x123141868 <col:13> 'struct kioctx *' lvalue Var 0x123140bb8 'ctx' 'struct kioctx *'

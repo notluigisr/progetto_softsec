@@ -1,0 +1,72 @@
+`-FunctionDecl 0x14700e350  line:1:6 referenced kthread_flush_work 'void (struct kthread_work *)'
+  |-ParmVarDecl 0x14700e248 <col:25, col:46> col:46 used work 'struct kthread_work *'
+  `-CompoundStmt 0x147027ef0 <line:2:1, line:30:1>
+    |-DeclStmt 0x1500087b8 <line:3:2, line:6:3>
+    | |-RecordDecl 0x150008248 <line:3:2, col:9> col:9 struct kthread_flush_work
+    | `-VarDecl 0x150008348 <col:2, col:28> col:28 used invalid fwork 'struct kthread_flush_work'
+    |-DeclStmt 0x1500089b8 <line:7:2, col:31>
+    | |-RecordDecl 0x1500087d0 <col:2, col:9> col:9 struct kthread_worker
+    | `-VarDecl 0x150008938 <col:2, col:25> col:25 used worker 'struct kthread_worker *'
+    |-BinaryOperator 0x150008a50 <line:10:2, col:17> 'struct kthread_worker *' contains-errors '='
+    | |-DeclRefExpr 0x1500089d0 <col:2> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    | `-RecoveryExpr 0x150008a28 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1500089f0 <col:11> 'struct kthread_work *' lvalue ParmVar 0x14700e248 'work' 'struct kthread_work *'
+    |-IfStmt 0x150008ad0 <line:11:2, line:12:3>
+    | |-UnaryOperator 0x150008aa8 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x150008a90 <col:7> 'struct kthread_worker *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150008a70 <col:7> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    | `-ReturnStmt 0x150008ac0 <line:12:3>
+    |-CallExpr 0x150008c68 <line:14:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150008bd0 <col:2> 'int ()' Function 0x150008b18 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x150008c50 <col:16, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x150008c28 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x150008bf0 <col:17> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    |-CallExpr 0x150008e30 <line:16:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x150008d70 <col:2> 'int ()' Function 0x150008cb8 'WARN_ON_ONCE' 'int ()'
+    | `-BinaryOperator 0x150008e10 <col:15, col:31> 'int' contains-errors '!='
+    |   |-RecoveryExpr 0x150008dc8 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x150008d90 <col:15> 'struct kthread_work *' lvalue ParmVar 0x14700e248 'work' 'struct kthread_work *'
+    |   `-DeclRefExpr 0x150008df0 <col:31> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    |-IfStmt 0x147027b38 <line:18:2, line:24:3> has_else
+    | |-UnaryOperator 0x150008ff8 <line:18:6, col:29> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x150008fd0 <col:7, col:29> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x150008f38 <col:7> 'int ()' Function 0x150008e80 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x150008fb8 <col:18, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x150008f90 <col:19, col:25> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x150008f58 <col:19> 'struct kthread_work *' lvalue ParmVar 0x14700e248 'work' 'struct kthread_work *'
+    | |-CallExpr 0x147027870 <line:19:3, col:59> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1500090f0 <col:3> 'int ()' Function 0x150009038 'kthread_insert_work' 'int ()'
+    | | |-DeclRefExpr 0x150009110 <col:23> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    | | |-UnaryOperator 0x150009198 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | `-CXXDependentScopeMemberExpr 0x150009150 <col:32, col:38> '<dependent type>' contains-errors lvalue .work
+    | | |   `-RecoveryExpr 0x150009130 <col:32> '<dependent type>' contains-errors lvalue
+    | | `-CXXDependentScopeMemberExpr 0x147027828 <col:44, col:55> '<dependent type>' contains-errors lvalue .next
+    | |   `-RecoveryExpr 0x147027800 <col:44, col:50> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1500091b0 <col:44> 'struct kthread_work *' lvalue ParmVar 0x14700e248 'work' 'struct kthread_work *'
+    | `-IfStmt 0x147027b08 <line:20:7, line:24:3> has_else
+    |   |-BinaryOperator 0x147027928 <line:20:11, col:35> 'int' contains-errors '=='
+    |   | |-RecoveryExpr 0x1470278e0 <col:11, col:19> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1470278a8 <col:11> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    |   | `-DeclRefExpr 0x147027908 <col:35> 'struct kthread_work *' lvalue ParmVar 0x14700e248 'work' 'struct kthread_work *'
+    |   |-CallExpr 0x147027ab0 <line:21:3, line:22:31> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x147027948 <line:21:3> 'int ()' Function 0x150009038 'kthread_insert_work' 'int ()'
+    |   | |-DeclRefExpr 0x147027968 <col:23> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    |   | |-UnaryOperator 0x1470279f0 <col:31, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-CXXDependentScopeMemberExpr 0x1470279a8 <col:32, col:38> '<dependent type>' contains-errors lvalue .work
+    |   | |   `-RecoveryExpr 0x147027988 <col:32> '<dependent type>' contains-errors lvalue
+    |   | `-CXXDependentScopeMemberExpr 0x147027a68 <line:22:9, col:27> '<dependent type>' contains-errors lvalue .next
+    |   |   `-RecoveryExpr 0x147027a40 <col:9, col:17> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x147027a08 <col:9> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    |   `-NullStmt 0x147027b00 <line:24:3>
+    |-CallExpr 0x147027ce0 <line:26:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147027c48 <col:2> 'int ()' Function 0x147027b90 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x147027cc8 <col:18, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x147027ca0 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x147027c68 <col:19> 'struct kthread_worker *' lvalue Var 0x150008938 'worker' 'struct kthread_worker *'
+    `-IfStmt 0x147027ed0 <line:28:2, line:29:34>
+      |-RecoveryExpr 0x147027d08 <line:28:6, col:7> '_Bool' contains-errors
+      `-CallExpr 0x147027ea8 <line:29:3, col:34> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x147027e08 <col:3> 'int ()' Function 0x147027d50 'wait_for_completion' 'int ()'
+        `-UnaryOperator 0x147027e90 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x147027e48 <col:24, col:30> '<dependent type>' contains-errors lvalue .done
+            `-RecoveryExpr 0x147027e28 <col:24> '<dependent type>' contains-errors lvalue

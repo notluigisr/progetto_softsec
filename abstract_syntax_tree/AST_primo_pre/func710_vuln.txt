@@ -1,0 +1,73 @@
+`-FunctionDecl 0x12a026600  line:1:12 perf_swevent_add 'int (struct perf_event *, int)' static
+  |-ParmVarDecl 0x12a00e248 <col:29, col:48> col:48 used event 'struct perf_event *'
+  |-ParmVarDecl 0x12a00e2c8 <col:55, col:59> col:59 used flags 'int'
+  `-CompoundStmt 0x129922cc8 <line:2:1, line:25:1>
+    |-DeclStmt 0x12a026af0 <line:3:2, col:63>
+    | |-RecordDecl 0x12a026700 <col:2, col:9> col:9 struct swevent_htable
+    | `-VarDecl 0x12a026868 <col:2, col:62> col:25 used swhash 'struct swevent_htable *' cinit
+    |   `-CallExpr 0x12a026ab0 <col:34, col:62> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x12a026a00 <col:34> 'int ()' Function 0x12a026948 'this_cpu_ptr' 'int ()'
+    |     `-UnaryOperator 0x12a026a98 <col:47, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x12a026a78 <col:48> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12a026d70 <line:4:2, col:40>
+    | |-RecordDecl 0x12a026b08 <col:2, col:9> col:9 struct hw_perf_event
+    | `-VarDecl 0x12a026c78 <col:2, col:38> col:24 used hwc 'struct hw_perf_event *' cinit
+    |   `-UnaryOperator 0x12a026d40 <col:30, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12a026d18 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a026ce0 <col:31> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    |-DeclStmt 0x12a026f78 <line:5:2, col:25>
+    | |-RecordDecl 0x12a026d88 <col:2, col:9> col:9 struct hlist_head
+    | `-VarDecl 0x12a026ef8 <col:2, col:21> col:21 used head 'struct hlist_head *'
+    |-IfStmt 0x12a0273b0 <line:7:2, line:10:2>
+    | |-CallExpr 0x12a0270f8 <line:7:6, col:29> 'int'
+    | | |-ImplicitCastExpr 0x12a0270e0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x12a027070 <col:6> 'int ()' Function 0x12a026fb8 'is_sampling_event' 'int ()'
+    | | `-ImplicitCastExpr 0x12a027120 <col:24> 'struct perf_event *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a027090 <col:24> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    | `-CompoundStmt 0x12a027390 <col:32, line:10:2>
+    |   |-BinaryOperator 0x12a0271f8 <line:8:3, col:27> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x12a027170 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x12a027138 <col:3> 'struct hw_perf_event *' contains-errors lvalue Var 0x12a026c78 'hwc' 'struct hw_perf_event *'
+    |   | `-RecoveryExpr 0x12a0271d0 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12a027198 <col:22> 'struct hw_perf_event *' contains-errors lvalue Var 0x12a026c78 'hwc' 'struct hw_perf_event *'
+    |   `-CallExpr 0x12a027350 <line:9:3, col:32> 'int'
+    |     |-ImplicitCastExpr 0x12a027338 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a0272f8 <col:3> 'int ()' Function 0x12a027240 'perf_swevent_set_period' 'int ()'
+    |     `-ImplicitCastExpr 0x12a027378 <col:27> 'struct perf_event *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a027318 <col:27> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    |-BinaryOperator 0x129922678 <line:14:2, col:40> 'struct hlist_head *' contains-errors '='
+    | |-DeclRefExpr 0x12a027488 <col:2> 'struct hlist_head *' lvalue Var 0x12a026ef8 'head' 'struct hlist_head *'
+    | `-ImplicitCastExpr 0x129922660 <col:9, col:40> 'struct hlist_head *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x129922600 <col:9, col:40> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x12a0275e8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12a027588 <col:9> 'int ()' Function 0x12a0274d0 'find_swevent_head' 'int ()'
+    |     |-ImplicitCastExpr 0x129922630 <col:27> 'struct swevent_htable *' contains-errors <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a0275a8 <col:27> 'struct swevent_htable *' contains-errors lvalue Var 0x12a026868 'swhash' 'struct swevent_htable *'
+    |     `-ImplicitCastExpr 0x129922648 <col:35> 'struct perf_event *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a0275c8 <col:35> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    |-IfStmt 0x129922938 <line:15:2, line:19:2>
+    | |-UnaryOperator 0x1299226d0 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1299226b8 <col:7> 'struct hlist_head *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x129922698 <col:7> 'struct hlist_head *' lvalue Var 0x12a026ef8 'head' 'struct hlist_head *'
+    | `-CompoundStmt 0x129922918 <col:13, line:19:2>
+    |   |-CallExpr 0x129922848 <line:17:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1299227c8 <col:3> 'int ()' Function 0x129922710 'WARN_ON_ONCE' 'int ()'
+    |   | `-RecoveryExpr 0x129922820 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1299227e8 <col:16> 'struct swevent_htable *' contains-errors lvalue Var 0x12a026868 'swhash' 'struct swevent_htable *'
+    |   `-ReturnStmt 0x129922908 <line:18:3, col:11>
+    |     `-UnaryOperator 0x1299228f0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1299228d8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1299228b8 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x129922af0 <line:21:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129922a38 <col:2> 'int ()' Function 0x129922980 'hlist_add_head_rcu' 'int ()'
+    | |-UnaryOperator 0x129922ab8 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x129922a90 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x129922a58 <col:22> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    | `-DeclRefExpr 0x129922ad0 <col:42> 'struct hlist_head *' lvalue Var 0x12a026ef8 'head' 'struct hlist_head *'
+    |-CallExpr 0x129922c58 <line:22:2, col:34> 'int'
+    | |-ImplicitCastExpr 0x129922c40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129922c00 <col:2> 'int ()' Function 0x129922b48 'perf_event_update_userpage' 'int ()'
+    | `-ImplicitCastExpr 0x129922c80 <col:29> 'struct perf_event *' <LValueToRValue>
+    |   `-DeclRefExpr 0x129922c20 <col:29> 'struct perf_event *' lvalue ParmVar 0x12a00e248 'event' 'struct perf_event *'
+    `-ReturnStmt 0x129922cb8 <line:24:2, col:9>
+      `-IntegerLiteral 0x129922c98 <col:9> 'int' 0

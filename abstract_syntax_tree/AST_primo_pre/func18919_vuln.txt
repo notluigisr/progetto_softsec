@@ -1,0 +1,32 @@
+`-FunctionDecl 0x136928750  line:1:13 put_ucounts 'void (struct ucounts *)' static
+  |-ParmVarDecl 0x136928648 <col:25, col:41> col:41 used ucounts 'struct ucounts *'
+  `-CompoundStmt 0x136945638 <line:2:1, line:12:1>
+    |-DeclStmt 0x136944cc8 <line:3:2, col:21>
+    | `-VarDecl 0x136944c60 <col:2, col:16> col:16 used flags 'unsigned long'
+    `-IfStmt 0x136945618 <line:5:2, line:11:2>
+      |-CallExpr 0x136944ea8 <line:5:6, col:41> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x136944e10 <col:6> 'int ()' Function 0x136944d58 'atomic_dec_and_test' 'int ()'
+      | `-UnaryOperator 0x136944e90 <col:26, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x136944e68 <col:27, col:36> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x136944e30 <col:27> 'struct ucounts *' lvalue ParmVar 0x136928648 'ucounts' 'struct ucounts *'
+      `-CompoundStmt 0x1369455e8 <col:44, line:11:2>
+        |-CallExpr 0x136945088 <line:6:3, col:41> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x136944fb0 <col:3> 'int ()' Function 0x136944ef8 'spin_lock_irqsave' 'int ()'
+        | |-UnaryOperator 0x136945070 <col:21, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x136945050 <col:22> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x136945000 <col:36> 'unsigned long' lvalue Var 0x136944c60 'flags' 'unsigned long'
+        |-CallExpr 0x136945230 <line:7:3, col:32> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x136945198 <col:3> 'int ()' Function 0x1369450e0 'hlist_del_init' 'int ()'
+        | `-UnaryOperator 0x136945218 <col:18, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x1369451f0 <col:19, col:28> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x1369451b8 <col:19> 'struct ucounts *' lvalue ParmVar 0x136928648 'ucounts' 'struct ucounts *'
+        |-CallExpr 0x136945410 <line:8:3, col:46> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x136945338 <col:3> 'int ()' Function 0x136945280 'spin_unlock_irqrestore' 'int ()'
+        | |-UnaryOperator 0x1369453f8 <col:26, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x1369453d8 <col:27> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x136945388 <col:41> 'unsigned long' lvalue Var 0x136944c60 'flags' 'unsigned long'
+        `-CallExpr 0x1369455a8 <line:10:3, col:16> 'int'
+          |-ImplicitCastExpr 0x136945590 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x136945520 <col:3> 'int ()' Function 0x136945468 'kfree' 'int ()'
+          `-ImplicitCastExpr 0x1369455d0 <col:9> 'struct ucounts *' <LValueToRValue>
+            `-DeclRefExpr 0x136945540 <col:9> 'struct ucounts *' lvalue ParmVar 0x136928648 'ucounts' 'struct ucounts *'

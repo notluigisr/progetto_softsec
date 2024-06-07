@@ -1,0 +1,1 @@
+void * nedmalloc(size_t size) THROWSPEC				{ return nedpmalloc(0, size); }

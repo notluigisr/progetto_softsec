@@ -1,0 +1,31 @@
+`-FunctionDecl 0x13f808340  line:1:13 anon_pipe_buf_release 'void (struct pipe_inode_info *, struct pipe_buffer *)' static
+  |-ParmVarDecl 0x13e928648 <col:35, col:59> col:59 used pipe 'struct pipe_inode_info *'
+  |-ParmVarDecl 0x13f808228 <line:2:7, col:27> col:27 used buf 'struct pipe_buffer *'
+  `-CompoundStmt 0x13f808bd0 <line:3:1, line:11:1>
+    |-DeclStmt 0x13f808688 <line:4:2, col:31>
+    | |-RecordDecl 0x13f808440 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x13f8085a8 <col:2, col:27> col:15 used page 'struct page *' cinit
+    |   `-RecoveryExpr 0x13f808648 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f808610 <col:22> 'struct pipe_buffer *' lvalue ParmVar 0x13f808228 'buf' 'struct pipe_buffer *'
+    `-IfStmt 0x13f808ba0 <line:7:2, line:10:16> has_else
+      |-BinaryOperator 0x13f808968 <line:7:6, col:38> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x13f8088b8 <col:6, col:26> 'int' contains-errors '=='
+      | | |-CallExpr 0x13f808858 <col:6, col:21> 'int' contains-errors
+      | | | |-ImplicitCastExpr 0x13f808840 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | | | `-DeclRefExpr 0x13f8087d0 <col:6> 'int ()' Function 0x13f808718 'page_count' 'int ()'
+      | | | `-ImplicitCastExpr 0x13f808880 <col:17> 'struct page *' contains-errors <LValueToRValue>
+      | | |   `-DeclRefExpr 0x13f8087f0 <col:17> 'struct page *' contains-errors lvalue Var 0x13f8085a8 'page' 'struct page *'
+      | | `-IntegerLiteral 0x13f808898 <col:26> 'int' 1
+      | `-UnaryOperator 0x13f808950 <col:31, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+      |   `-ImplicitCastExpr 0x13f808938 <col:32, col:38> '<dependent type>' contains-errors <LValueToRValue>
+      |     `-RecoveryExpr 0x13f808910 <col:32, col:38> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x13f8088d8 <col:32> 'struct pipe_inode_info *' lvalue ParmVar 0x13e928648 'pipe' 'struct pipe_inode_info *'
+      |-BinaryOperator 0x13f808a08 <line:8:3, col:20> '<dependent type>' contains-errors '='
+      | |-RecoveryExpr 0x13f8089c0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x13f808988 <col:3> 'struct pipe_inode_info *' lvalue ParmVar 0x13e928648 'pipe' 'struct pipe_inode_info *'
+      | `-DeclRefExpr 0x13f8089e8 <col:20> 'struct page *' contains-errors lvalue Var 0x13f8085a8 'page' 'struct page *'
+      `-CallExpr 0x13f808b60 <line:10:3, col:16> 'int' contains-errors
+        |-ImplicitCastExpr 0x13f808b48 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x13f808b08 <col:3> 'int ()' Function 0x13f808a50 'put_page' 'int ()'
+        `-ImplicitCastExpr 0x13f808b88 <col:12> 'struct page *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x13f808b28 <col:12> 'struct page *' contains-errors lvalue Var 0x13f8085a8 'page' 'struct page *'

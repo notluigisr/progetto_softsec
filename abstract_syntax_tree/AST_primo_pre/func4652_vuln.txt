@@ -1,0 +1,200 @@
+`-FunctionDecl 0x1418fe838  line:1:1 invalid ext4_read_block_bitmap_nowait 'int (struct super_block *, int)'
+  |-ParmVarDecl 0x14280e248 <col:31, col:51> col:51 used sb 'struct super_block *'
+  |-ParmVarDecl 0x14280e2e0 <col:55, col:68> col:68 invalid block_group 'int'
+  `-CompoundStmt 0x141902eb0 <line:2:1, line:65:1>
+    |-DeclStmt 0x1418fead8 <line:3:2, col:30>
+    | |-RecordDecl 0x1418fe8f0 <col:2, col:9> col:9 struct ext4_group_desc
+    | `-VarDecl 0x1418fea58 <col:2, col:26> col:26 used desc 'struct ext4_group_desc *'
+    |-DeclStmt 0x1418fecd8 <line:4:2, col:24>
+    | |-RecordDecl 0x1418feaf0 <col:2, col:9> col:9 struct buffer_head
+    | `-VarDecl 0x1418fec58 <col:2, col:22> col:22 used bh 'struct buffer_head *'
+    |-DeclStmt 0x1418fed70 <line:6:2, col:9>
+    | `-VarDecl 0x1418fed08 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x1418ff028 <line:8:2, col:50> 'struct ext4_group_desc *' contains-errors '='
+    | |-DeclRefExpr 0x1418fed88 <col:2> 'struct ext4_group_desc *' lvalue Var 0x1418fea58 'desc' 'struct ext4_group_desc *'
+    | `-CallExpr 0x1418feff0 <col:9, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1418fef00 <col:9> 'int ()' Function 0x1418fee48 'ext4_get_group_desc' 'int ()'
+    |   |-DeclRefExpr 0x1418fef20 <col:29> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   |-RecoveryExpr 0x1418fef40 <col:33> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1418fefd0 <col:46> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1418ff290 <line:9:2, line:10:31>
+    | |-UnaryOperator 0x1418ff080 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1418ff068 <col:7> 'struct ext4_group_desc *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1418ff048 <col:7> 'struct ext4_group_desc *' lvalue Var 0x1418fea58 'desc' 'struct ext4_group_desc *'
+    | `-ReturnStmt 0x1418ff280 <line:10:3, col:31>
+    |   `-CallExpr 0x1418ff258 <col:10, col:31> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1418ff178 <col:10> 'int ()' Function 0x1418ff0c0 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x1418ff240 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1418ff228 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1418ff208 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1418ff690 <line:12:2, col:31> 'struct buffer_head *' contains-errors '='
+    | |-DeclRefExpr 0x1418ff498 <col:2> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    | `-CallExpr 0x1418ff660 <col:7, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1418ff598 <col:7> 'int ()' Function 0x1418ff4e0 'sb_getblk' 'int ()'
+    |   |-DeclRefExpr 0x1418ff5b8 <col:17> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   `-RecoveryExpr 0x1418ff640 <col:21> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1419005d8 <line:13:2, line:18:2>
+    | |-CallExpr 0x141900218 <line:13:6, col:18> 'int'
+    | | |-ImplicitCastExpr 0x141900200 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1418ff790 <col:6> 'int ()' Function 0x1418ff6d8 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x1418ff7e8 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x1418ff7d0 <col:16> 'struct buffer_head *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1418ff7b0 <col:16> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    | `-CompoundStmt 0x1419005b8 <col:21, line:18:2>
+    |   |-CallExpr 0x141900460 <line:14:3, line:16:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x141900320 <line:14:3> 'int ()' Function 0x141900268 'ext4_error' 'int ()'
+    |   | |-DeclRefExpr 0x141900340 <col:14> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   | |-StringLiteral 0x1419003a0 <col:18, line:15:7> 'char[7]' lvalue "STRSTR"
+    |   | |-RecoveryExpr 0x1419003c8 <line:16:7> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x141900440 <col:20> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1419005a8 <line:17:3, col:25>
+    |     `-CallExpr 0x141900580 <col:10, col:25> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x1419004a0 <col:10> 'int ()' Function 0x1418ff0c0 'ERR_PTR' 'int ()'
+    |       `-UnaryOperator 0x141900568 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |         `-ImplicitCastExpr 0x141900550 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x141900530 <col:19> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1419007d8 <line:20:2, line:21:8>
+    | |-CallExpr 0x141900730 <line:20:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x141900718 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1419006d8 <col:6> 'int ()' Function 0x141900620 'bitmap_uptodate' 'int ()'
+    | | `-ImplicitCastExpr 0x141900758 <col:22> 'struct buffer_head *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1419006f8 <col:22> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    | `-GotoStmt 0x1419007c0 <line:21:3, col:8> 'verify' 0x141900770
+    |-CallExpr 0x141900930 <line:23:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x141900918 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1419008d8 <col:2> 'int ()' Function 0x141900820 'lock_buffer' 'int ()'
+    | `-ImplicitCastExpr 0x141900958 <col:14> 'struct buffer_head *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1419008f8 <col:14> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-IfStmt 0x141900bb8 <line:24:2, line:27:2>
+    | |-CallExpr 0x1419009c8 <line:24:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x1419009b0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x141900970 <col:6> 'int ()' Function 0x141900620 'bitmap_uptodate' 'int ()'
+    | | `-ImplicitCastExpr 0x1419009f0 <col:22> 'struct buffer_head *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x141900990 <col:22> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    | `-CompoundStmt 0x141900b98 <col:27, line:27:2>
+    |   |-CallExpr 0x141900b40 <line:25:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x141900b28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x141900ae8 <col:3> 'int ()' Function 0x141900a30 'unlock_buffer' 'int ()'
+    |   | `-ImplicitCastExpr 0x141900b68 <col:17> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x141900b08 <col:17> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   `-GotoStmt 0x141900b80 <line:26:3, col:8> 'verify' 0x141900770
+    |-CallExpr 0x141900d18 <line:28:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141900cb8 <col:2> 'int ()' Function 0x141900c00 'ext4_lock_group' 'int ()'
+    | |-DeclRefExpr 0x141900cd8 <col:18> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    | `-RecoveryExpr 0x141900cf8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x141901968 <line:29:2, line:42:2>
+    | |-RecoveryExpr 0x141900ea8 <line:29:6, col:55> '_Bool' contains-errors
+    | `-CompoundStmt 0x141901918 <col:58, line:42:2>
+    |   |-BinaryOperator 0x1419010a8 <line:30:3, col:57> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x141900ec8 <col:3> 'int' lvalue Var 0x1418fed08 'err' 'int'
+    |   | `-CallExpr 0x141901068 <col:9, col:57> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x141900fc8 <col:9> 'int ()' Function 0x141900f10 'ext4_init_block_bitmap' 'int ()'
+    |   |   |-DeclRefExpr 0x141900fe8 <col:32> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   |   |-DeclRefExpr 0x141901008 <col:36> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |   |-RecoveryExpr 0x141901028 <col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x141901048 <col:53> 'struct ext4_group_desc *' lvalue Var 0x1418fea58 'desc' 'struct ext4_group_desc *'
+    |   |-CallExpr 0x141901200 <line:31:3, col:25> 'int'
+    |   | |-ImplicitCastExpr 0x1419011e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1419011a8 <col:3> 'int ()' Function 0x1419010f0 'set_bitmap_uptodate' 'int ()'
+    |   | `-ImplicitCastExpr 0x141901228 <col:23> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1419011c8 <col:23> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |-CallExpr 0x141901378 <line:32:3, col:25> 'int'
+    |   | |-ImplicitCastExpr 0x141901360 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x141901320 <col:3> 'int ()' Function 0x141901268 'set_buffer_uptodate' 'int ()'
+    |   | `-ImplicitCastExpr 0x1419013a0 <col:23> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x141901340 <col:23> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |-CallExpr 0x1419014f0 <line:33:3, col:25> 'int'
+    |   | |-ImplicitCastExpr 0x1419014d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x141901498 <col:3> 'int ()' Function 0x1419013e0 'set_buffer_verified' 'int ()'
+    |   | `-ImplicitCastExpr 0x141901518 <col:23> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1419014b8 <col:23> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |-CallExpr 0x141901670 <line:34:3, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x141901610 <col:3> 'int ()' Function 0x141901558 'ext4_unlock_group' 'int ()'
+    |   | |-DeclRefExpr 0x141901630 <col:21> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   | `-RecoveryExpr 0x141901650 <col:25> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x1419016f8 <line:35:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x1419016e0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1419016a0 <col:3> 'int ()' Function 0x141900a30 'unlock_buffer' 'int ()'
+    |   | `-ImplicitCastExpr 0x141901720 <col:17> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1419016c0 <col:17> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |-IfStmt 0x1419018e0 <line:36:3, line:40:3>
+    |   | |-ImplicitCastExpr 0x141901758 <line:36:7> 'int' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x141901738 <col:7> 'int' lvalue Var 0x1418fed08 'err' 'int'
+    |   | `-CompoundStmt 0x1419018c0 <col:12, line:40:3>
+    |   |   |-CallExpr 0x141901818 <line:37:4, line:38:31> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x141901770 <line:37:4> 'int ()' Function 0x141900268 'ext4_error' 'int ()'
+    |   |   | |-DeclRefExpr 0x141901790 <col:15> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |   |   | |-StringLiteral 0x1419017b0 <col:19, line:38:8> 'char[7]' lvalue "STRSTR"
+    |   |   | |-RecoveryExpr 0x1419017d8 <col:15> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x1419017f8 <col:28> 'int' lvalue Var 0x1418fed08 'err' 'int'
+    |   |   `-GotoStmt 0x1419018a8 <line:39:4, col:9> 'out' 0x141901858
+    |   `-GotoStmt 0x141901900 <line:41:3, col:8> 'verify' 0x141900770
+    |-CallExpr 0x1419019e8 <line:43:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141901988 <col:2> 'int ()' Function 0x141901558 'ext4_unlock_group' 'int ()'
+    | |-DeclRefExpr 0x1419019a8 <col:20> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    | `-RecoveryExpr 0x1419019c8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x141901d00 <line:44:2, line:49:2>
+    | |-CallExpr 0x141901b50 <line:44:6, col:24> 'int'
+    | | |-ImplicitCastExpr 0x141901b38 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x141901af8 <col:6> 'int ()' Function 0x141901a40 'buffer_uptodate' 'int ()'
+    | | `-ImplicitCastExpr 0x141901b78 <col:22> 'struct buffer_head *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x141901b18 <col:22> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    | `-CompoundStmt 0x141901cd8 <col:27, line:49:2>
+    |   |-CallExpr 0x141901be8 <line:46:3, col:25> 'int'
+    |   | |-ImplicitCastExpr 0x141901bd0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x141901b90 <col:3> 'int ()' Function 0x1419010f0 'set_bitmap_uptodate' 'int ()'
+    |   | `-ImplicitCastExpr 0x141901c10 <col:23> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x141901bb0 <col:23> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   |-CallExpr 0x141901c80 <line:47:3, col:19> 'int'
+    |   | |-ImplicitCastExpr 0x141901c68 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x141901c28 <col:3> 'int ()' Function 0x141900a30 'unlock_buffer' 'int ()'
+    |   | `-ImplicitCastExpr 0x141901ca8 <col:17> 'struct buffer_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x141901c48 <col:17> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |   `-GotoStmt 0x141901cc0 <line:48:3, col:8> 'verify' 0x141900770
+    |-CallExpr 0x141901e58 <line:51:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x141901e40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x141901e00 <col:2> 'int ()' Function 0x141901d48 'set_buffer_new' 'int ()'
+    | `-ImplicitCastExpr 0x141901e80 <col:17> 'struct buffer_head *' <LValueToRValue>
+    |   `-DeclRefExpr 0x141901e20 <col:17> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-CallExpr 0x141901fd8 <line:52:2, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141901f78 <col:2> 'int ()' Function 0x141901ec0 'trace_ext4_read_block_bitmap_load' 'int ()'
+    | |-DeclRefExpr 0x141901f98 <col:36> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    | `-RecoveryExpr 0x141901fb8 <col:40> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1419021a0 <line:54:2, col:11> 'int'
+    | |-ImplicitCastExpr 0x141902188 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x141902148 <col:2> 'int ()' Function 0x141902090 'get_bh' 'int ()'
+    | `-ImplicitCastExpr 0x1419021c8 <col:9> 'struct buffer_head *' <LValueToRValue>
+    |   `-DeclRefExpr 0x141902168 <col:9> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-ReturnStmt 0x141902970 <line:56:2, col:9>
+    | `-ImplicitCastExpr 0x141902958 <col:9> 'int' <PointerToIntegral>
+    |   `-ImplicitCastExpr 0x141902940 <col:9> 'struct buffer_head *' <LValueToRValue>
+    |     `-DeclRefExpr 0x141902920 <col:9> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-LabelStmt 0x141902b80 <line:57:1, line:58:60> 'verify'
+    | `-BinaryOperator 0x141902b60 <col:2, col:60> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x141902980 <col:2> 'int' lvalue Var 0x1418fed08 'err' 'int'
+    |   `-CallExpr 0x141902b20 <col:8, col:60> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x141902a80 <col:8> 'int ()' Function 0x1419029c8 'ext4_validate_block_bitmap' 'int ()'
+    |     |-DeclRefExpr 0x141902aa0 <col:35> 'struct super_block *' lvalue ParmVar 0x14280e248 'sb' 'struct super_block *'
+    |     |-DeclRefExpr 0x141902ac0 <col:39> 'struct ext4_group_desc *' lvalue Var 0x1418fea58 'desc' 'struct ext4_group_desc *'
+    |     |-RecoveryExpr 0x141902ae0 <col:45> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x141902b00 <col:58> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-IfStmt 0x141902bf0 <line:59:2, line:60:8>
+    | |-ImplicitCastExpr 0x141902bc0 <line:59:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x141902ba0 <col:6> 'int' lvalue Var 0x1418fed08 'err' 'int'
+    | `-GotoStmt 0x141902bd8 <line:60:3, col:8> 'out' 0x141901858
+    |-ReturnStmt 0x141902c60 <line:61:2, col:9>
+    | `-ImplicitCastExpr 0x141902c48 <col:9> 'int' <PointerToIntegral>
+    |   `-ImplicitCastExpr 0x141902c30 <col:9> 'struct buffer_head *' <LValueToRValue>
+    |     `-DeclRefExpr 0x141902c10 <col:9> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    |-LabelStmt 0x141902de8 <line:62:1, line:63:11> 'out'
+    | `-CallExpr 0x141902da8 <col:2, col:11> 'int'
+    |   |-ImplicitCastExpr 0x141902d90 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x141902d50 <col:2> 'int ()' Function 0x141902c98 'put_bh' 'int ()'
+    |   `-ImplicitCastExpr 0x141902dd0 <col:9> 'struct buffer_head *' <LValueToRValue>
+    |     `-DeclRefExpr 0x141902d70 <col:9> 'struct buffer_head *' lvalue Var 0x1418fec58 'bh' 'struct buffer_head *'
+    `-ReturnStmt 0x141902ea0 <line:64:2, col:20>
+      `-CallExpr 0x141902e60 <col:9, col:20> 'int'
+        |-ImplicitCastExpr 0x141902e48 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x141902e08 <col:9> 'int ()' Function 0x1418ff0c0 'ERR_PTR' 'int ()'
+        `-ImplicitCastExpr 0x141902e88 <col:17> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x141902e28 <col:17> 'int' lvalue Var 0x1418fed08 'err' 'int'

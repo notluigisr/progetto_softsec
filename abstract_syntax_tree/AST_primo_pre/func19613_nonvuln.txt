@@ -1,0 +1,45 @@
+`-FunctionDecl 0x1538268a8  line:1:12 sctp_getname 'int (struct socket *, struct sockaddr *, int *, int)' static
+  |-ParmVarDecl 0x15380e248 <col:25, col:40> col:40 used sock 'struct socket *'
+  |-ParmVarDecl 0x153826628 <col:46, col:63> col:63 used uaddr 'struct sockaddr *'
+  |-ParmVarDecl 0x1538266d8 <line:2:4, col:9> col:9 used uaddr_len 'int *'
+  |-ParmVarDecl 0x153826758 <col:20, col:24> col:24 used peer 'int'
+  `-CompoundStmt 0x153827360 <line:3:1, line:15:1>
+    |-DeclStmt 0x153826a38 <line:4:2, col:8>
+    | `-VarDecl 0x1538269d0 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x153826d28 <line:6:2, col:49> 'int' '='
+    | |-DeclRefExpr 0x153826a50 <col:2> 'int' lvalue Var 0x1538269d0 'rc' 'int'
+    | `-CallExpr 0x153826c88 <col:7, col:49> 'int'
+    |   |-ImplicitCastExpr 0x153826c70 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x153826ba0 <col:7> 'int ()' Function 0x153826ae8 'inet6_getname' 'int ()'
+    |   |-ImplicitCastExpr 0x153826cc8 <col:21> 'struct socket *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x153826bc0 <col:21> 'struct socket *' lvalue ParmVar 0x15380e248 'sock' 'struct socket *'
+    |   |-ImplicitCastExpr 0x153826ce0 <col:27> 'struct sockaddr *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x153826be0 <col:27> 'struct sockaddr *' lvalue ParmVar 0x153826628 'uaddr' 'struct sockaddr *'
+    |   |-ImplicitCastExpr 0x153826cf8 <col:34> 'int *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x153826c00 <col:34> 'int *' lvalue ParmVar 0x1538266d8 'uaddr_len' 'int *'
+    |   `-ImplicitCastExpr 0x153826d10 <col:45> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x153826c20 <col:45> 'int' lvalue ParmVar 0x153826758 'peer' 'int'
+    |-IfStmt 0x153826e08 <line:8:2, line:9:10>
+    | |-BinaryOperator 0x153826da0 <line:8:6, col:12> 'int' '!='
+    | | |-ImplicitCastExpr 0x153826d88 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x153826d48 <col:6> 'int' lvalue Var 0x1538269d0 'rc' 'int'
+    | | `-IntegerLiteral 0x153826d68 <col:12> 'int' 0
+    | `-ReturnStmt 0x153826df8 <line:9:3, col:10>
+    |   `-ImplicitCastExpr 0x153826de0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x153826dc0 <col:10> 'int' lvalue Var 0x1538269d0 'rc' 'int'
+    |-BinaryOperator 0x1538272f8 <line:11:2, line:12:32> 'int' contains-errors '='
+    | |-UnaryOperator 0x153826e60 <line:11:2, col:3> 'int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x153826e48 <col:3> 'int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x153826e28 <col:3> 'int *' lvalue ParmVar 0x1538266d8 'uaddr_len' 'int *'
+    | `-CallExpr 0x1538272c8 <col:15, line:12:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153826f58 <line:11:15> 'int ()' Function 0x153826ea0 'sctp_v6_addr_to_user' 'int ()'
+    |   |-CallExpr 0x1538270d8 <col:36, col:52> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x153827058 <col:36> 'int ()' Function 0x153826fa0 'sctp_sk' 'int ()'
+    |   | `-RecoveryExpr 0x1538270b0 <col:44, col:50> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x153827078 <col:44> 'struct socket *' lvalue ParmVar 0x15380e248 'sock' 'struct socket *'
+    |   `-CStyleCastExpr 0x1538272a0 <line:12:8, col:27> 'union sctp_addr *' <BitCast>
+    |     `-ImplicitCastExpr 0x153827288 <col:27> 'struct sockaddr *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x1538271a0 <col:27> 'struct sockaddr *' lvalue ParmVar 0x153826628 'uaddr' 'struct sockaddr *'
+    `-ReturnStmt 0x153827350 <line:14:2, col:9>
+      `-ImplicitCastExpr 0x153827338 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x153827318 <col:9> 'int' lvalue Var 0x1538269d0 'rc' 'int'

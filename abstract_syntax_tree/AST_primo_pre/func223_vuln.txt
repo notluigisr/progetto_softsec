@@ -1,0 +1,70 @@
+`-FunctionDecl 0x133808200  line:1:1 find_extend_vma 'int (struct mm_struct *, unsigned long)'
+  |-ParmVarDecl 0x1330fb048 <col:17, col:35> col:35 used mm 'struct mm_struct *'
+  |-ParmVarDecl 0x1330fb0c8 <col:39, col:53> col:53 used addr 'unsigned long'
+  `-CompoundStmt 0x134808210 <line:2:1, line:20:1>
+    |-DeclStmt 0x1338084e8 <line:3:2, col:28>
+    | |-RecordDecl 0x133808300 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x133808468 <col:2, col:25> col:25 used vma 'struct vm_area_struct *'
+    |-DeclStmt 0x133808580 <line:4:2, col:21>
+    | `-VarDecl 0x133808518 <col:2, col:16> col:16 used start 'unsigned long'
+    |-CompoundAssignOperator 0x133808638 <line:6:2, col:10> 'unsigned long' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x133808598 <col:2> 'unsigned long' lvalue ParmVar 0x1330fb0c8 'addr' 'unsigned long'
+    | `-RecoveryExpr 0x133808618 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1338088c0 <line:7:2, col:25> 'struct vm_area_struct *' '='
+    | |-DeclRefExpr 0x133808668 <col:2> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    | `-ImplicitCastExpr 0x1338088a8 <col:8, col:25> 'struct vm_area_struct *' <IntegralToPointer>
+    |   `-CallExpr 0x133808848 <col:8, col:25> 'int'
+    |     |-ImplicitCastExpr 0x133808830 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1338087a0 <col:8> 'int ()' Function 0x1338086e8 'find_vma' 'int ()'
+    |     |-ImplicitCastExpr 0x133808878 <col:17> 'struct mm_struct *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1338087c0 <col:17> 'struct mm_struct *' lvalue ParmVar 0x1330fb048 'mm' 'struct mm_struct *'
+    |     `-ImplicitCastExpr 0x133808890 <col:21> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x1338087e0 <col:21> 'unsigned long' lvalue ParmVar 0x1330fb0c8 'addr' 'unsigned long'
+    |-IfStmt 0x133808978 <line:8:2, line:9:10>
+    | |-UnaryOperator 0x133808918 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x133808900 <col:7> 'struct vm_area_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1338088e0 <col:7> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    | `-ReturnStmt 0x133808968 <line:9:3, col:10>
+    |   `-RecoveryExpr 0x133808948 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x133808a98 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x133808a18 <line:10:6, col:23> 'int' contains-errors '<='
+    | | |-RecoveryExpr 0x1338089d0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x133808998 <col:6> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    | | `-DeclRefExpr 0x1338089f8 <col:23> 'unsigned long' lvalue ParmVar 0x1330fb0c8 'addr' 'unsigned long'
+    | `-ReturnStmt 0x133808a88 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x133808a70 <col:10> 'int' <PointerToIntegral>
+    |     `-ImplicitCastExpr 0x133808a58 <col:10> 'struct vm_area_struct *' <LValueToRValue>
+    |       `-DeclRefExpr 0x133808a38 <col:10> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    |-IfStmt 0x133808bb8 <line:12:2, line:13:10>
+    | |-RecoveryExpr 0x133808b50 <line:12:6, col:36> '_Bool' contains-errors
+    | `-ReturnStmt 0x133808ba8 <line:13:3, col:10>
+    |   `-RecoveryExpr 0x133808b88 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x133808c58 <line:14:2, col:15> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x133808bd8 <col:2> 'unsigned long' lvalue Var 0x133808518 'start' 'unsigned long'
+    | `-RecoveryExpr 0x133808c30 <col:10, col:15> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x133808bf8 <col:10> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    |-IfStmt 0x133808e78 <line:15:2, line:16:10>
+    | |-CallExpr 0x133808dd0 <line:15:6, col:28> 'int'
+    | | |-ImplicitCastExpr 0x133808db8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x133808d58 <col:6> 'int ()' Function 0x133808ca0 'expand_stack' 'int ()'
+    | | |-ImplicitCastExpr 0x133808e00 <col:19> 'struct vm_area_struct *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x133808d78 <col:19> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    | | `-ImplicitCastExpr 0x133808e18 <col:24> 'unsigned long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x133808d98 <col:24> 'unsigned long' lvalue ParmVar 0x1330fb0c8 'addr' 'unsigned long'
+    | `-ReturnStmt 0x133808e68 <line:16:3, col:10>
+    |   `-RecoveryExpr 0x133808e48 <col:10> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x133809188 <line:17:2, line:18:49>
+    | |-BinaryOperator 0x133808f50 <line:17:6, col:22> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x133808ed0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x133808e98 <col:6> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    | | `-RecoveryExpr 0x133808f30 <col:22> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x133809148 <line:18:3, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x133809050 <col:3> 'int ()' Function 0x133808f98 'populate_vma_page_range' 'int ()'
+    |   |-DeclRefExpr 0x133809070 <col:27> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'
+    |   |-DeclRefExpr 0x133809090 <col:32> 'unsigned long' lvalue ParmVar 0x1330fb0c8 'addr' 'unsigned long'
+    |   |-DeclRefExpr 0x1338090b0 <col:38> 'unsigned long' lvalue Var 0x133808518 'start' 'unsigned long'
+    |   `-RecoveryExpr 0x133809128 <col:45> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x134808200 <line:19:2, col:9>
+      `-ImplicitCastExpr 0x1338091e0 <col:9> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x1338091c8 <col:9> 'struct vm_area_struct *' <LValueToRValue>
+          `-DeclRefExpr 0x1338091a8 <col:9> 'struct vm_area_struct *' lvalue Var 0x133808468 'vma' 'struct vm_area_struct *'

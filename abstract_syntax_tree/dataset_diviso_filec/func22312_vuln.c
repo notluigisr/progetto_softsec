@@ -1,0 +1,1 @@
+  void OnDestruct() override { electron_browser_remote_.reset(); }

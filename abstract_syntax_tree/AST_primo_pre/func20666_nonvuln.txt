@@ -1,0 +1,51 @@
+`-FunctionDecl 0x148928750  line:1:13 kick_hub_wq 'void (struct usb_hub *)' static
+  |-ParmVarDecl 0x148928648 <col:25, col:41> col:41 used hub 'struct usb_hub *'
+  `-CompoundStmt 0x148942800 <line:2:1, line:19:1>
+    |-DeclStmt 0x148940c38 <line:3:2, col:28>
+    | |-RecordDecl 0x148940a48 <col:2, col:9> col:9 struct usb_interface
+    | `-VarDecl 0x148940bb8 <col:2, col:24> col:24 used intf 'struct usb_interface *'
+    |-IfStmt 0x148940ed0 <line:5:2, line:6:3>
+    | |-BinaryOperator 0x148940ea0 <line:5:6, col:52> 'int' contains-errors '||'
+    | | |-RecoveryExpr 0x148940c88 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x148940c50 <col:6> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+    | | `-CallExpr 0x148940e78 <col:27, col:52> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x148940de0 <col:27> 'int ()' Function 0x148940d28 'work_pending' 'int ()'
+    | |   `-UnaryOperator 0x148940e60 <col:40, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x148940e38 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x148940e00 <col:41> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+    | `-ReturnStmt 0x148940ec0 <line:6:3>
+    |-BinaryOperator 0x148941098 <line:9:2, col:38> 'struct usb_interface *' contains-errors '='
+    | |-DeclRefExpr 0x148940ef0 <col:2> 'struct usb_interface *' lvalue Var 0x148940bb8 'intf' 'struct usb_interface *'
+    | `-CallExpr 0x148941070 <col:9, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148940ff0 <col:9> 'int ()' Function 0x148940f38 'to_usb_interface' 'int ()'
+    |   `-RecoveryExpr 0x148941048 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148941010 <col:26> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+    |-CallExpr 0x148941228 <line:10:2, col:41> 'int'
+    | |-ImplicitCastExpr 0x148941210 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148941198 <col:2> 'int ()' Function 0x1489410e0 'usb_autopm_get_interface_no_resume' 'int ()'
+    | `-ImplicitCastExpr 0x148941250 <col:37> 'struct usb_interface *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1489411b8 <col:37> 'struct usb_interface *' lvalue Var 0x148940bb8 'intf' 'struct usb_interface *'
+    |-CallExpr 0x1489413e0 <line:11:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x148941348 <col:2> 'int ()' Function 0x148941290 'kref_get' 'int ()'
+    | `-UnaryOperator 0x1489413c8 <col:11, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1489413a0 <col:12, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x148941368 <col:12> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+    |-IfStmt 0x148941628 <line:13:2, line:14:3>
+    | |-CallExpr 0x1489415e8 <line:13:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1489414e8 <col:6> 'int ()' Function 0x148941430 'queue_work' 'int ()'
+    | | |-RecoveryExpr 0x1489415c8 <col:17> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x148941580 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x148941558 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x148941520 <col:26> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+    | `-ReturnStmt 0x148941618 <line:14:3>
+    |-CallExpr 0x148941780 <line:17:2, col:37> 'int'
+    | |-ImplicitCastExpr 0x148941768 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x148941728 <col:2> 'int ()' Function 0x148941670 'usb_autopm_put_interface_async' 'int ()'
+    | `-ImplicitCastExpr 0x1489417a8 <col:33> 'struct usb_interface *' <LValueToRValue>
+    |   `-DeclRefExpr 0x148941748 <col:33> 'struct usb_interface *' lvalue Var 0x148940bb8 'intf' 'struct usb_interface *'
+    `-CallExpr 0x1489419a0 <line:18:2, col:34> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1489418a0 <col:2> 'int ()' Function 0x1489417e8 'kref_put' 'int ()'
+      |-UnaryOperator 0x148941920 <col:11, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x1489418f8 <col:12, col:17> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1489418c0 <col:12> 'struct usb_hub *' lvalue ParmVar 0x148928648 'hub' 'struct usb_hub *'
+      `-RecoveryExpr 0x148941980 <col:23> '<dependent type>' contains-errors lvalue

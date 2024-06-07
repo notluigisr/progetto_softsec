@@ -1,0 +1,44 @@
+`-FunctionDecl 0x13d9281a0  line:1:6 force_sigsegv 'void (int)'
+  |-ParmVarDecl 0x13d9280d8 <col:20, col:24> col:24 used sig 'int'
+  `-CompoundStmt 0x13d9424e0 <line:2:1, line:12:1>
+    |-DeclStmt 0x13d9284d8 <line:3:2, col:33>
+    | |-RecordDecl 0x13d928298 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13d928408 <col:2, col:26> col:22 used p 'struct task_struct *' cinit
+    |   `-RecoveryExpr 0x13d9284a0 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13d942338 <line:5:2, line:10:2>
+    | |-BinaryOperator 0x13d928568 <line:5:6, col:13> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x13d9284f0 <col:6> 'int' lvalue ParmVar 0x13d9280d8 'sig' 'int'
+    | | `-RecoveryExpr 0x13d928548 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13d942308 <col:22, line:10:2>
+    |   |-DeclStmt 0x13d928608 <line:6:3, col:22>
+    |   | `-VarDecl 0x13d9285a0 <col:3, col:17> col:17 used flags 'unsigned long'
+    |   |-CallExpr 0x13d941c68 <line:7:3, col:48> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13d928730 <col:3> 'int ()' Function 0x13d928678 'spin_lock_irqsave' 'int ()'
+    |   | |-UnaryOperator 0x13d941c30 <col:21, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-CXXDependentScopeMemberExpr 0x13d941be8 <col:22, col:34> '<dependent type>' contains-errors lvalue ->siglock
+    |   | |   `-RecoveryExpr 0x13d941bc0 <col:22, col:25> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x13d928750 <col:22> 'struct task_struct *' contains-errors lvalue Var 0x13d928408 'p' 'struct task_struct *'
+    |   | `-DeclRefExpr 0x13d941c48 <col:43> 'unsigned long' lvalue Var 0x13d9285a0 'flags' 'unsigned long'
+    |   |-BinaryOperator 0x13d9420d8 <line:8:3, col:47> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x13d942070 <col:3, col:34> '<dependent type>' contains-errors lvalue .sa_handler
+    |   | | `-CXXDependentScopeMemberExpr 0x13d942028 <col:3, col:31> '<dependent type>' contains-errors lvalue .sa
+    |   | |   `-ArraySubscriptExpr 0x13d942008 <col:3, col:29> '<dependent type>' contains-errors lvalue
+    |   | |     |-ImplicitCastExpr 0x13d941ff0 <col:3, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |     | `-CXXDependentScopeMemberExpr 0x13d941cf8 <col:3, col:15> '<dependent type>' contains-errors lvalue ->action
+    |   | |     |   `-RecoveryExpr 0x13d941cd0 <col:3, col:6> '<dependent type>' contains-errors lvalue
+    |   | |     |     `-DeclRefExpr 0x13d941c98 <col:3> 'struct task_struct *' contains-errors lvalue Var 0x13d928408 'p' 'struct task_struct *'
+    |   | |     `-BinaryOperator 0x13d941fd0 <col:22, col:28> 'int' '-'
+    |   | |       |-ImplicitCastExpr 0x13d941fb8 <col:22> 'int' <LValueToRValue>
+    |   | |       | `-DeclRefExpr 0x13d941d40 <col:22> 'int' lvalue ParmVar 0x13d9280d8 'sig' 'int'
+    |   | |       `-IntegerLiteral 0x13d941d60 <col:28> 'int' 1
+    |   | `-RecoveryExpr 0x13d9420b8 <col:47> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x13d9422d8 <line:9:3, col:53> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13d9421d8 <col:3> 'int ()' Function 0x13d942120 'spin_unlock_irqrestore' 'int ()'
+    |     |-UnaryOperator 0x13d9422a0 <col:26, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-CXXDependentScopeMemberExpr 0x13d942258 <col:27, col:39> '<dependent type>' contains-errors lvalue ->siglock
+    |     |   `-RecoveryExpr 0x13d942230 <col:27, col:30> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x13d9421f8 <col:27> 'struct task_struct *' contains-errors lvalue Var 0x13d928408 'p' 'struct task_struct *'
+    |     `-DeclRefExpr 0x13d9422b8 <col:48> 'unsigned long' lvalue Var 0x13d9285a0 'flags' 'unsigned long'
+    `-CallExpr 0x13d9424b8 <line:11:2, col:19> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13d942438 <col:2> 'int ()' Function 0x13d942380 'force_sig' 'int ()'
+      `-RecoveryExpr 0x13d942498 <col:12> '<dependent type>' contains-errors lvalue

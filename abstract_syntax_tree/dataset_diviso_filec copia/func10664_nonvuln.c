@@ -1,0 +1,1 @@
+  void cut_subtree() { slave= 0; }

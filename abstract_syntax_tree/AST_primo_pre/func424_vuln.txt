@@ -1,0 +1,56 @@
+`-FunctionDecl 0x12e128250  line:1:13 invalid __evtchn_fifo_handle_events 'void (unsigned int, int)' static
+  |-ParmVarDecl 0x12e1280d8 <col:41, col:50> col:50 used cpu 'unsigned int'
+  |-ParmVarDecl 0x12e128170 <col:55, col:60> col:60 invalid drop 'int'
+  `-CompoundStmt 0x12e1425c0 <line:2:1, line:16:1>
+    |-DeclStmt 0x12e1284f8 <line:3:2, col:49>
+    | |-RecordDecl 0x12e128308 <col:2, col:9> col:9 struct evtchn_fifo_control_block
+    | `-VarDecl 0x12e128478 <col:2, col:36> col:36 used control_block 'struct evtchn_fifo_control_block *'
+    |-DeclStmt 0x12e128590 <line:4:2, col:21>
+    | `-VarDecl 0x12e128528 <col:2, col:16> col:16 used ready 'unsigned long'
+    |-DeclStmt 0x12e128628 <line:5:2, col:12>
+    | `-VarDecl 0x12e1285c0 <col:2, col:11> col:11 used q 'unsigned int'
+    |-BinaryOperator 0x12e141950 <line:7:2, col:48> 'struct evtchn_fifo_control_block *' '='
+    | |-DeclRefExpr 0x12e128640 <col:2> 'struct evtchn_fifo_control_block *' lvalue Var 0x12e128478 'control_block' 'struct evtchn_fifo_control_block *'
+    | `-ImplicitCastExpr 0x12e141938 <col:18, col:48> 'struct evtchn_fifo_control_block *' <IntegralToPointer>
+    |   `-CallExpr 0x12e1418d8 <col:18, col:48> 'int'
+    |     |-ImplicitCastExpr 0x12e1418c0 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12e1287c0 <col:18> 'int ()' Function 0x12e128708 'per_cpu' 'int ()'
+    |     |-ImplicitCastExpr 0x12e141908 <col:26> 'struct evtchn_fifo_control_block *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12e141870 <col:26> 'struct evtchn_fifo_control_block *' lvalue Var 0x12e128478 'control_block' 'struct evtchn_fifo_control_block *'
+    |     `-ImplicitCastExpr 0x12e141920 <col:45> 'unsigned int' <LValueToRValue>
+    |       `-DeclRefExpr 0x12e141800 <col:45> 'unsigned int' lvalue ParmVar 0x12e1280d8 'cpu' 'unsigned int'
+    |-BinaryOperator 0x12e141f80 <line:9:2, col:39> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x12e141970 <col:2> 'unsigned long' lvalue Var 0x12e128528 'ready' 'unsigned long'
+    | `-CallExpr 0x12e141f50 <col:10, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e141a70 <col:10> 'int ()' Function 0x12e1419b8 'xchg' 'int ()'
+    |   |-UnaryOperator 0x12e141f18 <col:15, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x12e141ef0 <col:16, col:31> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12e141a90 <col:16> 'struct evtchn_fifo_control_block *' lvalue Var 0x12e128478 'control_block' 'struct evtchn_fifo_control_block *'
+    |   `-IntegerLiteral 0x12e141f30 <col:38> 'int' 0
+    `-WhileStmt 0x12e1425a0 <line:11:2, line:15:2>
+      |-ImplicitCastExpr 0x12e141fc0 <line:11:9> 'unsigned long' <LValueToRValue>
+      | `-DeclRefExpr 0x12e141fa0 <col:9> 'unsigned long' lvalue Var 0x12e128528 'ready' 'unsigned long'
+      `-CompoundStmt 0x12e142578 <col:16, line:15:2>
+        |-BinaryOperator 0x12e142220 <line:12:3, col:52> 'unsigned int' contains-errors '='
+        | |-DeclRefExpr 0x12e141fd8 <col:3> 'unsigned int' lvalue Var 0x12e1285c0 'q' 'unsigned int'
+        | `-CallExpr 0x12e1421f0 <col:7, col:52> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x12e1420d8 <col:7> 'int ()' Function 0x12e142020 'find_first_bit' 'int ()'
+        |   |-UnaryOperator 0x12e142150 <col:22, col:23> 'unsigned long *' prefix '&' cannot overflow
+        |   | `-DeclRefExpr 0x12e1420f8 <col:23> 'unsigned long' lvalue Var 0x12e128528 'ready' 'unsigned long'
+        |   `-RecoveryExpr 0x12e1421d0 <col:30> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x12e1423f8 <line:13:3, col:56> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12e142320 <col:3> 'int ()' Function 0x12e142268 'consume_one_event' 'int ()'
+        | |-DeclRefExpr 0x12e142340 <col:21> 'unsigned int' lvalue ParmVar 0x12e1280d8 'cpu' 'unsigned int'
+        | |-DeclRefExpr 0x12e142360 <col:26> 'struct evtchn_fifo_control_block *' lvalue Var 0x12e128478 'control_block' 'struct evtchn_fifo_control_block *'
+        | |-DeclRefExpr 0x12e142380 <col:41> 'unsigned int' lvalue Var 0x12e1285c0 'q' 'unsigned int'
+        | |-UnaryOperator 0x12e1423c0 <col:44, col:45> 'unsigned long *' prefix '&' cannot overflow
+        | | `-DeclRefExpr 0x12e1423a0 <col:45> 'unsigned long' lvalue Var 0x12e128528 'ready' 'unsigned long'
+        | `-RecoveryExpr 0x12e1423d8 <col:52> '<dependent type>' contains-errors lvalue
+        `-CompoundAssignOperator 0x12e142548 <line:14:3, col:41> 'unsigned long' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          |-DeclRefExpr 0x12e142440 <col:3> 'unsigned long' lvalue Var 0x12e128528 'ready' 'unsigned long'
+          `-CallExpr 0x12e142518 <col:12, col:41> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x12e142460 <col:12> 'int ()' Function 0x12e1419b8 'xchg' 'int ()'
+            |-UnaryOperator 0x12e1424e0 <col:17, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+            | `-RecoveryExpr 0x12e1424b8 <col:18, col:33> '<dependent type>' contains-errors lvalue
+            |   `-DeclRefExpr 0x12e142480 <col:18> 'struct evtchn_fifo_control_block *' lvalue Var 0x12e128478 'control_block' 'struct evtchn_fifo_control_block *'
+            `-IntegerLiteral 0x12e1424f8 <col:40> 'int' 0

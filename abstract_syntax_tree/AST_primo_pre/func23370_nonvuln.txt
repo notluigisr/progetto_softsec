@@ -1,0 +1,31 @@
+`-FunctionDecl 0x157826600  line:1:12 usbhid_power 'int (struct hid_device *, int)' static
+  |-ParmVarDecl 0x15780e248 <col:25, col:44> col:44 used hid 'struct hid_device *'
+  |-ParmVarDecl 0x15780e2c8 <col:49, col:53> col:53 used lvl 'int'
+  `-CompoundStmt 0x157826ed0 <line:2:1, line:17:1>
+    |-DeclStmt 0x157826948 <line:3:2, col:49>
+    | |-RecordDecl 0x157826700 <col:2, col:9> col:9 struct usbhid_device
+    | `-VarDecl 0x157826868 <col:2, col:38> col:24 used usbhid 'struct usbhid_device *' cinit
+    |   `-RecoveryExpr 0x157826908 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1578268d0 <col:33> 'struct hid_device *' lvalue ParmVar 0x15780e248 'hid' 'struct hid_device *'
+    |-DeclStmt 0x157826a00 <line:4:2, col:11>
+    | `-VarDecl 0x157826978 <col:2, col:10> col:6 used r 'int' cinit
+    |   `-IntegerLiteral 0x1578269e0 <col:10> 'int' 0
+    |-SwitchStmt 0x157826a50 <line:6:2, line:14:2>
+    | |-ImplicitCastExpr 0x157826a38 <line:6:10> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x157826a18 <col:10> 'int' lvalue ParmVar 0x15780e2c8 'lvl' 'int'
+    | `-CompoundStmt 0x157826e58 <col:15, line:14:2>
+    |   |-BinaryOperator 0x157826c88 <line:8:3, col:44> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x157826aa8 <col:3> 'int' lvalue Var 0x157826978 'r' 'int'
+    |   | `-CallExpr 0x157826c60 <col:7, col:44> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x157826be0 <col:7> 'int ()' Function 0x157826b28 'usb_autopm_get_interface' 'int ()'
+    |   |   `-RecoveryExpr 0x157826c38 <col:32, col:40> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x157826c00 <col:32> 'struct usbhid_device *' contains-errors lvalue Var 0x157826868 'usbhid' 'struct usbhid_device *'
+    |   |-BreakStmt 0x157826ca8 <line:9:3>
+    |   |-CallExpr 0x157826e28 <line:12:3, col:40> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x157826da8 <col:3> 'int ()' Function 0x157826cf0 'usb_autopm_put_interface' 'int ()'
+    |   | `-RecoveryExpr 0x157826e00 <col:28, col:36> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x157826dc8 <col:28> 'struct usbhid_device *' contains-errors lvalue Var 0x157826868 'usbhid' 'struct usbhid_device *'
+    |   `-BreakStmt 0x157826e50 <line:13:3>
+    `-ReturnStmt 0x157826ec0 <line:16:2, col:9>
+      `-ImplicitCastExpr 0x157826ea8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x157826e88 <col:9> 'int' lvalue Var 0x157826978 'r' 'int'

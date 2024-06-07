@@ -1,0 +1,14 @@
+`-FunctionDecl 0x126026630  line:1:6 unlock_hrtimer_base 'void (const struct hrtimer *, unsigned long *)'
+  |-ParmVarDecl 0x12600e248 <col:26, col:48> col:48 used timer 'const struct hrtimer *'
+  |-ParmVarDecl 0x12600e2f8 <col:55, col:70> col:70 used flags 'unsigned long *'
+  `-CompoundStmt 0x126026a08 <line:2:1, line:4:1>
+    `-CallExpr 0x1260269d8 <line:3:2, col:61> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x126026860 <col:2> 'int ()' Function 0x1260267a8 'spin_unlock_irqrestore' 'int ()'
+      |-UnaryOperator 0x126026970 <col:25, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-CXXDependentScopeMemberExpr 0x126026928 <col:26, col:49> '<dependent type>' contains-errors lvalue ->lock
+      |   `-CXXDependentScopeMemberExpr 0x1260268e0 <col:26, col:39> '<dependent type>' contains-errors lvalue ->cpu_base
+      |     `-RecoveryExpr 0x1260268b8 <col:26, col:33> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x126026880 <col:26> 'const struct hrtimer *' lvalue ParmVar 0x12600e248 'timer' 'const struct hrtimer *'
+      `-UnaryOperator 0x1260269c0 <col:55, col:56> 'unsigned long' lvalue prefix '*' cannot overflow
+        `-ImplicitCastExpr 0x1260269a8 <col:56> 'unsigned long *' <LValueToRValue>
+          `-DeclRefExpr 0x126026988 <col:56> 'unsigned long *' lvalue ParmVar 0x12600e2f8 'flags' 'unsigned long *'

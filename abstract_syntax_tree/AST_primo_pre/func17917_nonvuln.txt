@@ -1,0 +1,62 @@
+`-FunctionDecl 0x121941800  line:1:13 invalid bond_vlan_rx_add_vid 'void (struct net_device *, int)' static
+  |-ParmVarDecl 0x121928648 <col:34, col:53> col:53 used bond_dev 'struct net_device *'
+  |-ParmVarDecl 0x1219286e0 <col:63, col:72> col:72 invalid vid 'int'
+  `-CompoundStmt 0x121946e80 <line:2:1, line:22:1>
+    |-DeclStmt 0x121941ce8 <line:3:2, col:46>
+    | |-RecordDecl 0x1219418b8 <col:2, col:9> col:9 struct bonding
+    | `-VarDecl 0x121941a28 <col:2, col:45> col:18 used bond 'struct bonding *' cinit
+    |   `-ImplicitCastExpr 0x121941cb8 <col:25, col:45> 'struct bonding *' <IntegralToPointer>
+    |     `-CallExpr 0x121941c78 <col:25, col:45> 'int'
+    |       |-ImplicitCastExpr 0x121941c60 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x121941bf0 <col:25> 'int ()' Function 0x121941b38 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x121941ca0 <col:37> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x121941c10 <col:37> 'struct net_device *' lvalue ParmVar 0x121928648 'bond_dev' 'struct net_device *'
+    |-DeclStmt 0x121941ee8 <line:4:2, col:21>
+    | |-RecordDecl 0x121941d00 <col:2, col:9> col:9 struct slave
+    | `-VarDecl 0x121941e68 <col:2, col:16> col:16 used slave 'struct slave *'
+    |-DeclStmt 0x121942018 <line:5:2, col:12>
+    | |-VarDecl 0x121941f18 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x121941f98 <col:2, col:9> col:9 used res 'int'
+    |-CallExpr 0x1219421a8 <line:7:2, col:36> 'int'
+    | |-ImplicitCastExpr 0x121942190 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x121942110 <col:2> 'int ()' Function 0x121942058 'bond_for_each_slave' 'int ()'
+    | |-ImplicitCastExpr 0x1219421e0 <col:22> 'struct bonding *' <LValueToRValue>
+    | | `-DeclRefExpr 0x121942130 <col:22> 'struct bonding *' lvalue Var 0x121941a28 'bond' 'struct bonding *'
+    | |-ImplicitCastExpr 0x1219421f8 <col:28> 'struct slave *' <LValueToRValue>
+    | | `-DeclRefExpr 0x121942150 <col:28> 'struct slave *' lvalue Var 0x121941e68 'slave' 'struct slave *'
+    | `-ImplicitCastExpr 0x121942210 <col:35> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x121942170 <col:35> 'int' lvalue Var 0x121941f18 'i' 'int'
+    |-CompoundStmt 0x121946a20 <col:38, line:15:2>
+    | |-DeclStmt 0x121942380 <line:8:3, col:44>
+    | | `-VarDecl 0x1219422b8 <col:3, col:41> col:22 used slave_dev 'struct net_device *' cinit
+    | |   `-RecoveryExpr 0x121942358 <col:34, col:41> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x121942320 <col:34> 'struct slave *' lvalue Var 0x121941e68 'slave' 'struct slave *'
+    | |-DeclStmt 0x1219425e8 <line:9:3, col:65>
+    | | |-RecordDecl 0x121942398 <col:9, col:16> col:16 struct net_device_ops
+    | | `-VarDecl 0x121942508 <col:3, col:55> col:32 used slave_ops 'const struct net_device_ops *' cinit
+    | |   `-RecoveryExpr 0x1219425a8 <col:44, col:55> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x121942570 <col:44> 'struct net_device *' contains-errors lvalue Var 0x1219422b8 'slave_dev' 'struct net_device *'
+    | `-IfStmt 0x121946a00 <line:11:3, line:14:3>
+    |   |-RecoveryExpr 0x1219426f8 <line:11:7, line:12:18> '_Bool' contains-errors
+    |   `-CompoundStmt 0x1219427e8 <col:39, line:14:3>
+    |     `-CallExpr 0x1219427b8 <line:13:4, col:49> '<dependent type>' contains-errors
+    |       |-RecoveryExpr 0x121942750 <col:4, col:15> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x121942718 <col:4> 'const struct net_device_ops *' contains-errors lvalue Var 0x121942508 'slave_ops' 'const struct net_device_ops *'
+    |       |-DeclRefExpr 0x121942778 <col:35> 'struct net_device *' contains-errors lvalue Var 0x1219422b8 'slave_dev' 'struct net_device *'
+    |       `-RecoveryExpr 0x121942798 <col:46> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x121946bd8 <line:17:2, col:31> 'int' contains-errors '='
+    | |-DeclRefExpr 0x121946a48 <col:2> 'int' lvalue Var 0x121941f98 'res' 'int'
+    | `-CallExpr 0x121946ba8 <col:8, col:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x121946b48 <col:8> 'int ()' Function 0x121946a90 'bond_add_vlan' 'int ()'
+    |   |-DeclRefExpr 0x121946b68 <col:22> 'struct bonding *' lvalue Var 0x121941a28 'bond' 'struct bonding *'
+    |   `-RecoveryExpr 0x121946b88 <col:28> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x121946e60 <line:18:2, line:21:2>
+      |-ImplicitCastExpr 0x121946c18 <line:18:6> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x121946bf8 <col:6> 'int' lvalue Var 0x121941f98 'res' 'int'
+      `-CompoundStmt 0x121946e48 <col:11, line:21:2>
+        `-CallExpr 0x121946e10 <line:19:3, line:20:29> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x121946d10 <line:19:3> 'int ()' Function 0x121946c58 'pr_err' 'int ()'
+          |-StringLiteral 0x121946d70 <col:10> 'char[4]' lvalue "STR"
+          |-RecoveryExpr 0x121946dc8 <line:20:10, col:20> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x121946d90 <col:10> 'struct net_device *' lvalue ParmVar 0x121928648 'bond_dev' 'struct net_device *'
+          `-RecoveryExpr 0x121946df0 <col:26> '<dependent type>' contains-errors lvalue

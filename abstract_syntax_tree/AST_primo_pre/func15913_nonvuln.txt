@@ -1,0 +1,99 @@
+`-FunctionDecl 0x12780a000  line:1:13 invalid vhost_vdpa_setup_vq_irq 'void (struct vhost_vdpa *, int)' static
+  |-ParmVarDecl 0x12710e848 <col:37, col:56> col:56 used v 'struct vhost_vdpa *'
+  |-ParmVarDecl 0x12710e8e0 <col:59, col:63> col:63 invalid qid 'int'
+  `-CompoundStmt 0x1271283f8 <line:2:1, line:22:1>
+    |-DeclStmt 0x12780a390 <line:3:2, col:43>
+    | |-RecordDecl 0x12780a0b8 <col:2, col:9> col:9 struct vhost_virtqueue
+    | `-VarDecl 0x12780a228 <col:2, col:42> col:26 used vq 'struct vhost_virtqueue *' cinit
+    |   `-UnaryOperator 0x12780a360 <col:31, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-ArraySubscriptExpr 0x12780a340 <col:32, col:42> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x12780a310 <col:32, col:35> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x12780a2c8 <col:32, col:35> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x12780a290 <col:32> 'struct vhost_vdpa *' lvalue ParmVar 0x12710e848 'v' 'struct vhost_vdpa *'
+    |       `-ImplicitCastExpr 0x12780a328 <col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x12780a2f0 <col:39> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12780a640 <line:4:2, col:53>
+    | |-RecordDecl 0x12780a3a8 <col:8, col:15> col:15 struct vdpa_config_ops
+    | `-VarDecl 0x12780a518 <col:2, col:47> col:32 used ops 'const struct vdpa_config_ops *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12780a5e0 <col:38, col:47> '<dependent type>' contains-errors lvalue ->config
+    |     `-RecoveryExpr 0x12780a5b8 <col:38, col:41> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12780a580 <col:38> 'struct vhost_vdpa *' lvalue ParmVar 0x12710e848 'v' 'struct vhost_vdpa *'
+    |-DeclStmt 0x12780a8a8 <line:5:2, col:36>
+    | |-RecordDecl 0x12780a658 <col:2, col:9> col:9 struct vdpa_device
+    | `-VarDecl 0x12780a7c8 <col:2, col:32> col:22 used vdpa 'struct vdpa_device *' cinit
+    |   `-RecoveryExpr 0x12780a868 <col:29, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12780a830 <col:29> 'struct vhost_vdpa *' lvalue ParmVar 0x12710e848 'v' 'struct vhost_vdpa *'
+    |-DeclStmt 0x12780a9d8 <line:6:2, col:14>
+    | |-VarDecl 0x12780a8d8 <col:2, col:6> col:6 used ret 'int'
+    | `-VarDecl 0x12780a958 <col:2, col:11> col:11 used irq 'int'
+    |-IfStmt 0x12780aa90 <line:8:2, line:9:3>
+    | |-UnaryOperator 0x12780aa68 <line:8:6, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12780aa50 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x12780aa28 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12780a9f0 <col:7> 'const struct vdpa_config_ops *' contains-errors lvalue Var 0x12780a518 'ops' 'const struct vdpa_config_ops *'
+    | `-ReturnStmt 0x12780aa80 <line:9:3>
+    |-BinaryOperator 0x12780aba0 <line:11:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12780aab0 <col:2> 'int' lvalue Var 0x12780a958 'irq' 'int'
+    | `-CallExpr 0x12780ab70 <col:8, col:33> '<dependent type>' contains-errors
+    |   |-RecoveryExpr 0x12780ab08 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12780aad0 <col:8> 'const struct vdpa_config_ops *' contains-errors lvalue Var 0x12780a518 'ops' 'const struct vdpa_config_ops *'
+    |   |-DeclRefExpr 0x12780ab30 <col:24> 'struct vdpa_device *' contains-errors lvalue Var 0x12780a7c8 'vdpa' 'struct vdpa_device *'
+    |   `-RecoveryExpr 0x12780ab50 <col:30> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12780ae00 <line:12:2, col:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12780ad20 <col:2> 'int ()' Function 0x12780ac68 'irq_bypass_unregister_producer' 'int ()'
+    | `-UnaryOperator 0x12780ade8 <col:33, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x12780ada0 <col:34, col:47> '<dependent type>' contains-errors lvalue .producer
+    |     `-RecoveryExpr 0x12780ad78 <col:34, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12780ad40 <col:34> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    |-IfStmt 0x12780afa8 <line:13:2, line:14:3>
+    | |-BinaryOperator 0x12780af78 <line:13:6, col:33> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x12780aee8 <col:6, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x12780aed0 <col:7, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-CXXDependentScopeMemberExpr 0x12780ae88 <col:7, col:20> '<dependent type>' contains-errors lvalue .ctx
+    | | |     `-RecoveryExpr 0x12780ae60 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x12780ae28 <col:7> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    | | `-BinaryOperator 0x12780af58 <col:27, col:33> 'int' '<'
+    | |   |-ImplicitCastExpr 0x12780af40 <col:27> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x12780af00 <col:27> 'int' lvalue Var 0x12780a958 'irq' 'int'
+    | |   `-IntegerLiteral 0x12780af20 <col:33> 'int' 0
+    | `-ReturnStmt 0x12780af98 <line:14:3>
+    |-BinaryOperator 0x127127b60 <line:16:2, col:45> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x127127a70 <col:2, col:24> '<dependent type>' contains-errors lvalue .token
+    | | `-CXXDependentScopeMemberExpr 0x127127a28 <col:2, col:15> '<dependent type>' contains-errors lvalue .producer
+    | |   `-RecoveryExpr 0x127127a00 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12780afc8 <col:2> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    | `-CXXDependentScopeMemberExpr 0x127127b18 <col:32, col:45> '<dependent type>' contains-errors lvalue .ctx
+    |   `-RecoveryExpr 0x127127af0 <col:32, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x127127ab8 <col:32> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    |-BinaryOperator 0x127127c90 <line:17:2, col:30> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x127127c28 <col:2, col:24> '<dependent type>' contains-errors lvalue .irq
+    | | `-CXXDependentScopeMemberExpr 0x127127be0 <col:2, col:15> '<dependent type>' contains-errors lvalue .producer
+    | |   `-RecoveryExpr 0x127127bb8 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x127127b80 <col:2> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    | `-DeclRefExpr 0x127127c70 <col:30> 'int' lvalue Var 0x12780a958 'irq' 'int'
+    |-BinaryOperator 0x127127eb8 <line:18:2, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x127127cb0 <col:2> 'int' lvalue Var 0x12780a8d8 'ret' 'int'
+    | `-CallExpr 0x127127e90 <col:8, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127127db0 <col:8> 'int ()' Function 0x127127cf8 'irq_bypass_register_producer' 'int ()'
+    |   `-UnaryOperator 0x127127e78 <col:37, col:51> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x127127e30 <col:38, col:51> '<dependent type>' contains-errors lvalue .producer
+    |       `-RecoveryExpr 0x127127e08 <col:38, col:42> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x127127dd0 <col:38> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+    `-IfStmt 0x1271283d8 <line:19:2, line:21:42>
+      |-CallExpr 0x127128048 <line:19:6, col:18> 'int'
+      | |-ImplicitCastExpr 0x127128030 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x127127fb8 <col:6> 'int ()' Function 0x127127f00 'unlikely' 'int ()'
+      | `-ImplicitCastExpr 0x127128070 <col:15> 'int' <LValueToRValue>
+      |   `-DeclRefExpr 0x127127fd8 <col:15> 'int' lvalue Var 0x12780a8d8 'ret' 'int'
+      `-CallExpr 0x127128390 <line:20:3, line:21:42> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x127128168 <line:20:3> 'int ()' Function 0x1271280b0 'dev_info' 'int ()'
+        |-UnaryOperator 0x1271281e8 <col:12, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x1271281c0 <col:13, col:16> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x127128188 <col:13> 'struct vhost_vdpa *' lvalue ParmVar 0x12710e848 'v' 'struct vhost_vdpa *'
+        |-StringLiteral 0x127128240 <col:21> 'char[4]' lvalue "STR"
+        |-RecoveryExpr 0x127128260 <line:21:5> '<dependent type>' contains-errors lvalue
+        |-CXXDependentScopeMemberExpr 0x127128328 <col:10, col:32> '<dependent type>' contains-errors lvalue .token
+        | `-CXXDependentScopeMemberExpr 0x1271282e0 <col:10, col:23> '<dependent type>' contains-errors lvalue .producer
+        |   `-RecoveryExpr 0x1271282b8 <col:10, col:14> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x127128280 <col:10> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x12780a228 'vq' 'struct vhost_virtqueue *'
+        `-DeclRefExpr 0x127128370 <col:39> 'int' lvalue Var 0x12780a8d8 'ret' 'int'

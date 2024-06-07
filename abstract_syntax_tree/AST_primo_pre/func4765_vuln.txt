@@ -1,0 +1,41 @@
+`-FunctionDecl 0x135082f50  line:1:13 io_rw_resubmit 'void (struct callback_head *)' static
+  |-ParmVarDecl 0x135082e48 <col:28, col:50> col:50 used cb 'struct callback_head *'
+  `-CompoundStmt 0x13509c018 <line:2:1, line:13:1>
+    |-DeclStmt 0x13509b5c0 <line:3:2, col:69>
+    | |-RecordDecl 0x13509b248 <col:2, col:9> col:9 struct io_kiocb
+    | `-VarDecl 0x13509b3b8 <col:2, col:19> col:19 used req 'struct io_kiocb *'
+    |-DeclStmt 0x13509b828 <line:4:2, col:36>
+    | |-RecordDecl 0x13509b5d8 <col:2, col:9> col:9 struct io_ring_ctx
+    | `-VarDecl 0x13509b748 <col:2, col:33> col:22 used ctx 'struct io_ring_ctx *' cinit
+    |   `-RecoveryExpr 0x13509b7e8 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13509b7b0 <col:28> 'struct io_kiocb *' lvalue Var 0x13509b3b8 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x13509b8c0 <line:5:2, col:9>
+    | `-VarDecl 0x13509b858 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x13509bae8 <line:7:2, col:40> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13509b8d8 <col:2> 'int' lvalue Var 0x13509b858 'err' 'int'
+    | `-CallExpr 0x13509ba88 <col:8, col:40> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x13509ba70 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13509b9d8 <col:8> 'int ()' Function 0x13509b920 'io_sq_thread_acquire_mm' 'int ()'
+    |   |-ImplicitCastExpr 0x13509bab8 <col:32> 'struct io_ring_ctx *' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x13509b9f8 <col:32> 'struct io_ring_ctx *' contains-errors lvalue Var 0x13509b748 'ctx' 'struct io_ring_ctx *'
+    |   `-ImplicitCastExpr 0x13509bad0 <col:37> 'struct io_kiocb *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13509ba18 <col:37> 'struct io_kiocb *' lvalue Var 0x13509b3b8 'req' 'struct io_kiocb *'
+    `-IfStmt 0x13509bff8 <line:9:2, line:12:2>
+      |-CallExpr 0x13509bc60 <line:9:6, col:31> 'int'
+      | |-ImplicitCastExpr 0x13509bc48 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x13509bbe8 <col:6> 'int ()' Function 0x13509bb30 'io_resubmit_prep' 'int ()'
+      | |-ImplicitCastExpr 0x13509bc90 <col:23> 'struct io_kiocb *' <LValueToRValue>
+      | | `-DeclRefExpr 0x13509bc08 <col:23> 'struct io_kiocb *' lvalue Var 0x13509b3b8 'req' 'struct io_kiocb *'
+      | `-ImplicitCastExpr 0x13509bca8 <col:28> 'int' <LValueToRValue>
+      |   `-DeclRefExpr 0x13509bc28 <col:28> 'int' lvalue Var 0x13509b858 'err' 'int'
+      `-CompoundStmt 0x13509bfd8 <col:34, line:12:2>
+        |-CallExpr 0x13509be38 <line:10:3, col:26> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13509bda0 <col:3> 'int ()' Function 0x13509bce8 'refcount_inc' 'int ()'
+        | `-UnaryOperator 0x13509be20 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x13509bdf8 <col:17, col:22> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13509bdc0 <col:17> 'struct io_kiocb *' lvalue Var 0x13509b3b8 'req' 'struct io_kiocb *'
+        `-CallExpr 0x13509bf98 <line:11:3, col:26> 'int'
+          |-ImplicitCastExpr 0x13509bf80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13509bf40 <col:3> 'int ()' Function 0x13509be88 'io_queue_async_work' 'int ()'
+          `-ImplicitCastExpr 0x13509bfc0 <col:23> 'struct io_kiocb *' <LValueToRValue>
+            `-DeclRefExpr 0x13509bf60 <col:23> 'struct io_kiocb *' lvalue Var 0x13509b3b8 'req' 'struct io_kiocb *'

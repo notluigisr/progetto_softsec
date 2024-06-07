@@ -1,0 +1,1 @@
+  inline st_select_lex_node* get_slave() { return slave; }

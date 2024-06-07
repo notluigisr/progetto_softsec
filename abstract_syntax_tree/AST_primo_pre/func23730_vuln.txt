@@ -1,0 +1,83 @@
+`-FunctionDecl 0x15b13e8f8  line:1:1 invalid tca_get_fill 'int (struct sk_buff *, struct tc_action *, int, int, int, int, int, int)'
+  |-ParmVarDecl 0x15b126048 <col:14, col:30> col:30 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x15b13e428 <col:35, col:53> col:53 used a 'struct tc_action *'
+  |-ParmVarDecl 0x15b13e4c0 <col:56, col:60> col:60 invalid pid 'int'
+  |-ParmVarDecl 0x15b13e540 <col:65, col:69> col:69 invalid seq 'int'
+  |-ParmVarDecl 0x15b13e5c0 <line:2:14, col:18> col:18 invalid flags 'int'
+  |-ParmVarDecl 0x15b13e640 <col:25, col:29> col:29 used event 'int'
+  |-ParmVarDecl 0x15b13e6c0 <col:36, col:40> col:40 used bind 'int'
+  |-ParmVarDecl 0x15b13e740 <col:46, col:50> col:50 used ref 'int'
+  `-CompoundStmt 0x15b141070 <line:3:1, line:29:1>
+    |-DeclStmt 0x15b13ebc8 <line:4:2, col:18>
+    | |-RecordDecl 0x15b13e9e0 <col:2, col:9> col:9 struct tcamsg
+    | `-VarDecl 0x15b13eb48 <col:2, col:17> col:17 used t 'struct tcamsg *'
+    |-DeclStmt 0x15b13edc8 <line:5:2, col:22>
+    | |-RecordDecl 0x15b13ebe0 <col:2, col:9> col:9 struct nlmsghdr
+    | `-VarDecl 0x15b13ed48 <col:2, col:19> col:19 used nlh 'struct nlmsghdr *'
+    |-DeclStmt 0x15b13eef0 <line:6:2, col:30>
+    | `-VarDecl 0x15b13ee28 <col:2, col:26> col:17 used b 'unsigned char *' cinit
+    |   `-RecoveryExpr 0x15b13eec8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15b13ee90 <col:21> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x15b13f0f8 <line:7:2, col:18>
+    | |-RecordDecl 0x15b13ef08 <col:2, col:9> col:9 struct rtattr
+    | `-VarDecl 0x15b13f078 <col:2, col:17> col:17 used x 'struct rtattr *'
+    |-BinaryOperator 0x15b1403c0 <line:11:2, col:20> 'struct tcamsg *' '='
+    | |-DeclRefExpr 0x15b13f3c0 <col:2> 'struct tcamsg *' lvalue Var 0x15b13eb48 't' 'struct tcamsg *'
+    | `-ImplicitCastExpr 0x15b1403a8 <col:6, col:20> 'struct tcamsg *' <IntegralToPointer>
+    |   `-CallExpr 0x15b140368 <col:6, col:20> 'int'
+    |     |-ImplicitCastExpr 0x15b140350 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15b1402e0 <col:6> 'int ()' Function 0x15b140228 'NLMSG_DATA' 'int ()'
+    |     `-ImplicitCastExpr 0x15b140390 <col:17> 'struct nlmsghdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x15b140300 <col:17> 'struct nlmsghdr *' lvalue Var 0x15b13ed48 'nlh' 'struct nlmsghdr *'
+    |-BinaryOperator 0x15b140498 <line:12:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15b140418 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15b1403e0 <col:2> 'struct tcamsg *' lvalue Var 0x15b13eb48 't' 'struct tcamsg *'
+    | `-RecoveryExpr 0x15b140478 <col:18> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15b1405f0 <line:14:2, col:28> 'struct rtattr *' contains-errors '='
+    | |-DeclRefExpr 0x15b1404b8 <col:2> 'struct rtattr *' lvalue Var 0x15b13f078 'x' 'struct rtattr *'
+    | `-CStyleCastExpr 0x15b1405c8 <col:6, col:28> 'struct rtattr *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x15b140510 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15b1404d8 <col:23> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    |-CallExpr 0x15b140800 <line:15:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15b1406f0 <col:2> 'int ()' Function 0x15b140638 'RTA_PUT' 'int ()'
+    | |-DeclRefExpr 0x15b140710 <col:10> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    | |-RecoveryExpr 0x15b1407c0 <col:15> '<dependent type>' contains-errors lvalue
+    | |-IntegerLiteral 0x15b140748 <col:28> 'int' 0
+    | `-RecoveryExpr 0x15b1407e0 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15b140b20 <line:17:2, line:18:8>
+    | |-BinaryOperator 0x15b140a98 <line:17:6, col:43> 'int' '<'
+    | | |-CallExpr 0x15b1409d8 <col:6, col:39> 'int'
+    | | | |-ImplicitCastExpr 0x15b1409c0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x15b140920 <col:6> 'int ()' Function 0x15b140868 'tcf_action_dump' 'int ()'
+    | | | |-ImplicitCastExpr 0x15b140a18 <col:22> 'struct sk_buff *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x15b140940 <col:22> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    | | | |-ImplicitCastExpr 0x15b140a30 <col:27> 'struct tc_action *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x15b140960 <col:27> 'struct tc_action *' lvalue ParmVar 0x15b13e428 'a' 'struct tc_action *'
+    | | | |-ImplicitCastExpr 0x15b140a48 <col:30> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x15b140980 <col:30> 'int' lvalue ParmVar 0x15b13e6c0 'bind' 'int'
+    | | | `-ImplicitCastExpr 0x15b140a60 <col:36> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x15b1409a0 <col:36> 'int' lvalue ParmVar 0x15b13e740 'ref' 'int'
+    | | `-IntegerLiteral 0x15b140a78 <col:43> 'int' 0
+    | `-GotoStmt 0x15b140b08 <line:18:3, col:8> 'rtattr_failure' 0x15b140ab8
+    |-BinaryOperator 0x15b140d18 <line:22:2, col:31> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15b140c50 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15b140c18 <col:2> 'struct nlmsghdr *' lvalue Var 0x15b13ed48 'nlh' 'struct nlmsghdr *'
+    | `-BinaryOperator 0x15b140cf8 <col:19, col:31> '<dependent type>' contains-errors '-'
+    |   |-RecoveryExpr 0x15b140cb0 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x15b140c78 <col:19> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    |   `-DeclRefExpr 0x15b140cd8 <col:31> 'unsigned char *' contains-errors lvalue Var 0x15b13ee28 'b' 'unsigned char *'
+    |-ReturnStmt 0x15b140d98 <line:23:2, col:14>
+    | `-RecoveryExpr 0x15b140d70 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15b140d38 <col:9> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    |-LabelStmt 0x15b141008 <line:25:1, line:27:29> 'rtattr_failure'
+    | `-LabelStmt 0x15b140fe8 <line:26:1, line:27:29> 'nlmsg_failure'
+    |   `-CallExpr 0x15b140f68 <col:2, col:29> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x15b140e88 <col:2> 'int ()' Function 0x15b140dd0 'skb_trim' 'int ()'
+    |     |-DeclRefExpr 0x15b140ea8 <col:11> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    |     `-BinaryOperator 0x15b140f48 <col:16, col:25> '<dependent type>' contains-errors '-'
+    |       |-DeclRefExpr 0x15b140ec8 <col:16> 'unsigned char *' contains-errors lvalue Var 0x15b13ee28 'b' 'unsigned char *'
+    |       `-RecoveryExpr 0x15b140f20 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x15b140ee8 <col:20> 'struct sk_buff *' lvalue ParmVar 0x15b126048 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x15b141060 <line:28:2, col:10>
+      `-UnaryOperator 0x15b141048 <col:9, col:10> 'int' prefix '-'
+        `-IntegerLiteral 0x15b141028 <col:10> 'int' 1

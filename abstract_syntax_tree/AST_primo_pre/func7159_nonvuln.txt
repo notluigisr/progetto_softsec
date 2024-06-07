@@ -1,0 +1,34 @@
+`-FunctionDecl 0x107024000  line:1:13 invalid tg3_rx_data_free 'void (struct tg3 *, struct ring_info *, int)' static
+  |-ParmVarDecl 0x120915648 <col:30, col:42> col:42 used tp 'struct tg3 *'
+  |-ParmVarDecl 0x107023e28 <col:46, col:64> col:64 used ri 'struct ring_info *'
+  |-ParmVarDecl 0x107023ec0 <col:68, col:72> col:72 invalid map_sz 'int'
+  `-CompoundStmt 0x107027000 <line:2:1, line:13:1>
+    |-DeclStmt 0x1070245e8 <line:3:2, line:4:52>
+    | `-VarDecl 0x1070240d8 <line:3:2, col:15> col:15 used skb_size 'unsigned int'
+    |-IfStmt 0x1070246a0 <line:6:2, line:7:3>
+    | |-UnaryOperator 0x107024678 <line:6:6, col:11> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x107024660 <col:7, col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x107024638 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x107024600 <col:7> 'struct ring_info *' lvalue ParmVar 0x107023e28 'ri' 'struct ring_info *'
+    | `-ReturnStmt 0x107024690 <line:7:3>
+    |-CallExpr 0x107024a70 <line:9:2, line:10:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1070247a0 <line:9:2> 'int ()' Function 0x1070246e8 'pci_unmap_single' 'int ()'
+    | |-RecoveryExpr 0x1070247f8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1070247c0 <col:19> 'struct tg3 *' lvalue ParmVar 0x120915648 'tp' 'struct tg3 *'
+    | |-CallExpr 0x107024a20 <col:29, col:55> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x107024900 <col:29> 'int ()' Function 0x107024848 'dma_unmap_addr' 'int ()'
+    | | |-DeclRefExpr 0x107024920 <col:44> 'struct ring_info *' lvalue ParmVar 0x107023e28 'ri' 'struct ring_info *'
+    | | `-RecoveryExpr 0x107024a00 <col:48> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x107024988 <line:10:5> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x107024a50 <col:13> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x107024cd8 <line:11:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x107024b90 <col:2> 'int ()' Function 0x107024ad8 'tg3_frag_free' 'int ()'
+    | |-BinaryOperator 0x107024cb8 <col:16, col:28> 'int' contains-errors '<='
+    | | |-DeclRefExpr 0x107024bb0 <col:16> 'unsigned int' lvalue Var 0x1070240d8 'skb_size' 'unsigned int'
+    | | `-RecoveryExpr 0x107024c98 <col:28> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x107024c40 <col:39, col:43> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x107024c08 <col:39> 'struct ring_info *' lvalue ParmVar 0x107023e28 'ri' 'struct ring_info *'
+    `-BinaryOperator 0x107024dc0 <line:12:2, col:13> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x107024d40 <col:2, col:6> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x107024d08 <col:2> 'struct ring_info *' lvalue ParmVar 0x107023e28 'ri' 'struct ring_info *'
+      `-RecoveryExpr 0x107024da0 <col:13> '<dependent type>' contains-errors lvalue

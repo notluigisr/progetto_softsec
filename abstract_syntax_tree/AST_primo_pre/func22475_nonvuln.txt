@@ -1,0 +1,22 @@
+`-FunctionDecl 0x144141a28  line:1:13 invalid ad_convert_truncate 'int (int *, struct adouble *, const struct smb_filename *)' static
+  |-ParmVarDecl 0x144128128 <col:33, col:52> col:52 invalid handle 'int *'
+  |-ParmVarDecl 0x144128718 <line:2:5, col:21> col:21 used ad 'struct adouble *'
+  |-ParmVarDecl 0x1441418e8 <line:3:5, col:32> col:32 smb_fname 'const struct smb_filename *'
+  `-CompoundStmt 0x1441420f8 <line:4:1, line:16:1>
+    |-DeclStmt 0x144141b68 <line:5:2, col:8>
+    | `-VarDecl 0x144141b00 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x144141fd0 <line:10:2, col:43> 'int' contains-errors '='
+    | |-DeclRefExpr 0x144141d98 <col:2> 'int' lvalue Var 0x144141b00 'rc' 'int'
+    | `-CallExpr 0x144141fa0 <col:7, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144141e98 <col:7> 'int ()' Function 0x144141de0 'SMB_VFS_FTRUNCATE' 'int ()'
+    |   |-RecoveryExpr 0x144141ef0 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x144141eb8 <col:25> 'struct adouble *' lvalue ParmVar 0x144128718 'ad' 'struct adouble *'
+    |   `-RecoveryExpr 0x144141f80 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x144142090 <line:11:2, line:13:2>
+    | |-BinaryOperator 0x144142048 <line:11:6, col:12> 'int' '!='
+    | | |-ImplicitCastExpr 0x144142030 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x144141ff0 <col:6> 'int' lvalue Var 0x144141b00 'rc' 'int'
+    | | `-IntegerLiteral 0x144142010 <col:12> 'int' 0
+    | `-CompoundStmt 0x144142080 <col:15, line:13:2>
+    `-ReturnStmt 0x1441420e8 <line:15:2, col:9>
+      `-RecoveryExpr 0x1441420c8 <col:9> '<dependent type>' contains-errors lvalue

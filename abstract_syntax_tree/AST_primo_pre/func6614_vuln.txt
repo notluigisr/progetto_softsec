@@ -1,0 +1,33 @@
+`-FunctionDecl 0x13900e350  line:1:13 vmx_complete_atomic_exit 'void (struct vcpu_vmx *)' static
+  |-ParmVarDecl 0x13900e248 <col:38, col:55> col:55 used vmx 'struct vcpu_vmx *'
+  `-CompoundStmt 0x1390272e0 <line:2:1, line:23:1>
+    |-IfStmt 0x1390267e0 <line:5:2, line:7:3>
+    | |-RecoveryExpr 0x1390267b0 <line:5:6, line:6:56> '_Bool' contains-errors
+    | `-ReturnStmt 0x1390267d0 <line:7:3>
+    |-BinaryOperator 0x139026a38 <line:9:2, col:53> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x139026838 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x139026800 <col:2> 'struct vcpu_vmx *' lvalue ParmVar 0x13900e248 'vmx' 'struct vcpu_vmx *'
+    | `-CallExpr 0x139026a10 <col:24, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139026970 <col:24> 'int ()' Function 0x1390268b8 'vmcs_read32' 'int ()'
+    |   `-RecoveryExpr 0x1390269f0 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139026da8 <line:13:2, line:14:21>
+    | |-CallExpr 0x139026c18 <line:13:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x139026b98 <col:6> 'int ()' Function 0x139026ae0 'is_machine_check' 'int ()'
+    | | `-RecoveryExpr 0x139026bf8 <col:23> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x139026d88 <line:14:3, col:21> 'int'
+    |   `-ImplicitCastExpr 0x139026d70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x139026d20 <col:3> 'int ()' Function 0x139026c68 'kvm_machine_check' 'int ()'
+    `-IfStmt 0x1390272c0 <line:17:2, line:22:2>
+      |-RecoveryExpr 0x139026e80 <line:17:6, line:18:44> '_Bool' contains-errors
+      `-CompoundStmt 0x139027298 <col:47, line:22:2>
+        |-CallExpr 0x139027018 <line:19:3, col:35> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x139026f80 <col:3> 'int ()' Function 0x139026ec8 'kvm_before_handle_nmi' 'int ()'
+        | `-UnaryOperator 0x139027000 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x139026fd8 <col:26, col:31> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x139026fa0 <col:26> 'struct vcpu_vmx *' lvalue ParmVar 0x13900e248 'vmx' 'struct vcpu_vmx *'
+        |-GCCAsmStmt 0x1390270a0 <line:20:3, col:12>
+        `-CallExpr 0x139027270 <line:21:3, col:34> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1390271d8 <col:3> 'int ()' Function 0x139027120 'kvm_after_handle_nmi' 'int ()'
+          `-UnaryOperator 0x139027258 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x139027230 <col:25, col:30> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x1390271f8 <col:25> 'struct vcpu_vmx *' lvalue ParmVar 0x13900e248 'vmx' 'struct vcpu_vmx *'

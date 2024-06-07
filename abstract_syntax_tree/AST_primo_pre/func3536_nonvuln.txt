@@ -1,0 +1,66 @@
+`-FunctionDecl 0x14b826a78  line:1:12 check_ctx_access 'int (struct bpf_verifier_env *, int, int, enum bpf_access_type, enum bpf_reg_type *)' static
+  |-ParmVarDecl 0x14b80e248 <col:29, col:54> col:54 used env 'struct bpf_verifier_env *'
+  |-ParmVarDecl 0x14b80e2c8 <col:59, col:63> col:63 used off 'int'
+  |-ParmVarDecl 0x14b80e348 <col:68, col:72> col:72 used size 'int'
+  |-ParmVarDecl 0x14b826718 <line:2:8, col:29> col:29 invalid t 'enum bpf_access_type'
+  |-ParmVarDecl 0x14b826908 <col:32, col:51> col:51 used reg_type 'enum bpf_reg_type *'
+  `-CompoundStmt 0x14b828ac0 <line:3:1, line:18:1>
+    |-IfStmt 0x14b826c20 <line:5:2, line:6:10>
+    | |-RecoveryExpr 0x14b826bc8 <line:5:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14b826b90 <col:6> 'struct bpf_verifier_env *' lvalue ParmVar 0x14b80e248 'env' 'struct bpf_verifier_env *'
+    | `-ReturnStmt 0x14b826c10 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x14b826bf0 <col:10> 'int' 0
+    |-IfStmt 0x14b827340 <line:8:2, line:14:2>
+    | |-BinaryOperator 0x14b826f70 <line:8:6, line:9:65> 'int' contains-errors '&&'
+    | | |-CXXDependentScopeMemberExpr 0x14b826d30 <line:8:6, col:27> '<dependent type>' contains-errors lvalue ->is_valid_access
+    | | | `-CXXDependentScopeMemberExpr 0x14b826ce8 <col:6, col:22> '<dependent type>' contains-errors lvalue ->ops
+    | | |   `-CXXDependentScopeMemberExpr 0x14b826ca0 <col:6, col:17> '<dependent type>' contains-errors lvalue ->aux
+    | | |     `-RecoveryExpr 0x14b826c78 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x14b826c40 <col:6> 'struct bpf_verifier_env *' lvalue ParmVar 0x14b80e248 'env' 'struct bpf_verifier_env *'
+    | | `-CallExpr 0x14b826f30 <line:9:6, col:65> '<dependent type>' contains-errors
+    | |   |-CXXDependentScopeMemberExpr 0x14b826e68 <col:6, col:27> '<dependent type>' contains-errors lvalue ->is_valid_access
+    | |   | `-CXXDependentScopeMemberExpr 0x14b826e20 <col:6, col:22> '<dependent type>' contains-errors lvalue ->ops
+    | |   |   `-CXXDependentScopeMemberExpr 0x14b826dd8 <col:6, col:17> '<dependent type>' contains-errors lvalue ->aux
+    | |   |     `-RecoveryExpr 0x14b826db0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | |   |       `-DeclRefExpr 0x14b826d78 <col:6> 'struct bpf_verifier_env *' lvalue ParmVar 0x14b80e248 'env' 'struct bpf_verifier_env *'
+    | |   |-DeclRefExpr 0x14b826eb0 <col:43> 'int' lvalue ParmVar 0x14b80e2c8 'off' 'int'
+    | |   |-DeclRefExpr 0x14b826ed0 <col:48> 'int' lvalue ParmVar 0x14b80e348 'size' 'int'
+    | |   |-RecoveryExpr 0x14b826ef0 <col:54> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b826f10 <col:57> 'enum bpf_reg_type *' lvalue ParmVar 0x14b826908 'reg_type' 'enum bpf_reg_type *'
+    | `-CompoundStmt 0x14b827320 <col:68, line:14:2>
+    |   |-IfStmt 0x14b8272d0 <line:11:3, line:12:43>
+    |   | |-BinaryOperator 0x14b827110 <line:11:7, col:46> 'int' contains-errors '<'
+    |   | | |-CXXDependentScopeMemberExpr 0x14b827038 <col:7, col:23> '<dependent type>' contains-errors lvalue ->max_ctx_offset
+    |   | | | `-CXXDependentScopeMemberExpr 0x14b826ff0 <col:7, col:18> '<dependent type>' contains-errors lvalue ->aux
+    |   | | |   `-RecoveryExpr 0x14b826fc8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | |     `-DeclRefExpr 0x14b826f90 <col:7> 'struct bpf_verifier_env *' lvalue ParmVar 0x14b80e248 'env' 'struct bpf_verifier_env *'
+    |   | | `-BinaryOperator 0x14b8270f0 <col:40, col:46> 'int' '+'
+    |   | |   |-ImplicitCastExpr 0x14b8270c0 <col:40> 'int' <LValueToRValue>
+    |   | |   | `-DeclRefExpr 0x14b827080 <col:40> 'int' lvalue ParmVar 0x14b80e2c8 'off' 'int'
+    |   | |   `-ImplicitCastExpr 0x14b8270d8 <col:46> 'int' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x14b8270a0 <col:46> 'int' lvalue ParmVar 0x14b80e348 'size' 'int'
+    |   | `-BinaryOperator 0x14b8272b0 <line:12:4, col:43> '<dependent type>' contains-errors '='
+    |   |   |-CXXDependentScopeMemberExpr 0x14b8271d8 <col:4, col:20> '<dependent type>' contains-errors lvalue ->max_ctx_offset
+    |   |   | `-CXXDependentScopeMemberExpr 0x14b827190 <col:4, col:15> '<dependent type>' contains-errors lvalue ->aux
+    |   |   |   `-RecoveryExpr 0x14b827168 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x14b827130 <col:4> 'struct bpf_verifier_env *' lvalue ParmVar 0x14b80e248 'env' 'struct bpf_verifier_env *'
+    |   |   `-BinaryOperator 0x14b827290 <col:37, col:43> 'int' '+'
+    |   |     |-ImplicitCastExpr 0x14b827260 <col:37> 'int' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x14b827220 <col:37> 'int' lvalue ParmVar 0x14b80e2c8 'off' 'int'
+    |   |     `-ImplicitCastExpr 0x14b827278 <col:43> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x14b827240 <col:43> 'int' lvalue ParmVar 0x14b80e348 'size' 'int'
+    |   `-ReturnStmt 0x14b827310 <line:13:3, col:10>
+    |     `-IntegerLiteral 0x14b8272f0 <col:10> 'int' 0
+    |-CallExpr 0x14b827598 <line:16:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x14b827580 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14b827490 <col:2> 'int ()' Function 0x14b8273d8 'verbose' 'int ()'
+    | |-ImplicitCastExpr 0x14b8275d0 <col:10> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x14b8274f0 <col:10> 'char[4]' lvalue "STR"
+    | |-ImplicitCastExpr 0x14b8275e8 <col:17> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14b827510 <col:17> 'int' lvalue ParmVar 0x14b80e2c8 'off' 'int'
+    | `-ImplicitCastExpr 0x14b828a00 <col:22> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x14b827530 <col:22> 'int' lvalue ParmVar 0x14b80e348 'size' 'int'
+    `-ReturnStmt 0x14b828ab0 <line:17:2, col:10>
+      `-UnaryOperator 0x14b828a98 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+        `-ImplicitCastExpr 0x14b828a80 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+          `-RecoveryExpr 0x14b828a60 <col:10> '<dependent type>' contains-errors lvalue

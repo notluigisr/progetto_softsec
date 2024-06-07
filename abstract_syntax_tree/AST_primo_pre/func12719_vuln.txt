@@ -1,0 +1,29 @@
+`-FunctionDecl 0x122826768  line:1:33 sem_lock_check 'struct sem_array *(struct ipc_namespace *, int)' static inline
+  |-ParmVarDecl 0x12280e2e8 <col:48, col:70> col:70 used ns 'struct ipc_namespace *'
+  |-ParmVarDecl 0x12280e368 <line:2:7, col:11> col:11 used id 'int'
+  `-CompoundStmt 0x122827250 <line:3:1, line:10:1>
+    |-DeclStmt 0x122826dc8 <line:4:2, col:63>
+    | |-RecordDecl 0x122826868 <col:2, col:9> col:9 struct kern_ipc_perm
+    | `-VarDecl 0x1228269d8 <col:2, col:62> col:24 used ipcp 'struct kern_ipc_perm *' cinit
+    |   `-CallExpr 0x122826d80 <col:31, col:62> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122826b70 <col:31> 'int ()' Function 0x122826ab8 'ipc_lock_check' 'int ()'
+    |     |-RecoveryExpr 0x122826d38 <col:58, col:57> '<dependent type>' contains-errors lvalue
+    |     | `-CallExpr 0x122826cf8 <col:47, col:57> 'int'
+    |     |   |-ImplicitCastExpr 0x122826ce0 <col:47> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x122826c70 <col:47> 'int ()' Function 0x122826bb8 'sem_ids' 'int ()'
+    |     |   `-ImplicitCastExpr 0x122826d20 <col:55> 'struct ipc_namespace *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x122826c90 <col:55> 'struct ipc_namespace *' lvalue ParmVar 0x12280e2e8 'ns' 'struct ipc_namespace *'
+    |     `-DeclRefExpr 0x122826d60 <col:60> 'int' lvalue ParmVar 0x12280e368 'id' 'int'
+    `-IfStmt 0x1228270f8 <line:6:2, line:7:23>
+      |-CallExpr 0x122826f18 <line:6:6, col:17> 'int' contains-errors
+      | |-ImplicitCastExpr 0x122826f00 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x122826ec0 <col:6> 'int ()' Function 0x122826e08 'IS_ERR' 'int ()'
+      | `-ImplicitCastExpr 0x122826f40 <col:13> 'struct kern_ipc_perm *' contains-errors <LValueToRValue>
+      |   `-DeclRefExpr 0x122826ee0 <col:13> 'struct kern_ipc_perm *' contains-errors lvalue Var 0x1228269d8 'ipcp' 'struct kern_ipc_perm *'
+      `-ReturnStmt 0x1228270e8 <line:7:3, col:23>
+        `-ImplicitCastExpr 0x1228270d0 <col:10, col:23> 'struct sem_array *' contains-errors <IntegralToPointer>
+          `-CallExpr 0x122827090 <col:10, col:23> 'int' contains-errors
+            |-ImplicitCastExpr 0x122827078 <col:10> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x122827038 <col:10> 'int ()' Function 0x122826f80 'ERR_CAST' 'int ()'
+            `-ImplicitCastExpr 0x1228270b8 <col:19> 'struct kern_ipc_perm *' contains-errors <LValueToRValue>
+              `-DeclRefExpr 0x122827058 <col:19> 'struct kern_ipc_perm *' contains-errors lvalue Var 0x1228269d8 'ipcp' 'struct kern_ipc_perm *'

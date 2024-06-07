@@ -1,0 +1,3 @@
+  ~RGWPutACLs() override {
+    free(data);
+  }

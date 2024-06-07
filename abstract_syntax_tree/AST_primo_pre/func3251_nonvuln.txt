@@ -1,0 +1,83 @@
+`-FunctionDecl 0x14493fc18  line:1:12 hidinput_setkeycode 'int (struct input_dev *, const struct input_keymap_entry *, unsigned int *)' static
+  |-ParmVarDecl 0x144927648 <col:32, col:50> col:50 used dev 'struct input_dev *'
+  |-ParmVarDecl 0x14493fa28 <line:2:11, col:44> col:44 used ke 'const struct input_keymap_entry *'
+  |-ParmVarDecl 0x14493fad8 <line:3:11, col:25> col:25 used old_keycode 'unsigned int *'
+  `-CompoundStmt 0x1449428a0 <line:4:1, line:27:1>
+    |-DeclStmt 0x144940118 <line:5:2, col:49>
+    | |-RecordDecl 0x14493fd20 <col:2, col:9> col:9 struct hid_device
+    | `-VarDecl 0x14493fe88 <col:2, col:48> col:21 used hid 'struct hid_device *' cinit
+    |   `-ImplicitCastExpr 0x1449400e8 <col:27, col:48> 'struct hid_device *' <IntegralToPointer>
+    |     `-CallExpr 0x1449400a8 <col:27, col:48> 'int'
+    |       |-ImplicitCastExpr 0x144940090 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x144940020 <col:27> 'int ()' Function 0x14493ff68 'input_get_drvdata' 'int ()'
+    |       `-ImplicitCastExpr 0x1449400d0 <col:45> 'struct input_dev *' <LValueToRValue>
+    |         `-DeclRefExpr 0x144940040 <col:45> 'struct input_dev *' lvalue ParmVar 0x144927648 'dev' 'struct input_dev *'
+    |-DeclStmt 0x144940318 <line:6:2, col:25>
+    | |-RecordDecl 0x144940130 <col:2, col:9> col:9 struct hid_usage
+    | `-VarDecl 0x144940298 <col:2, col:20> col:20 used usage 'struct hid_usage *'
+    |-BinaryOperator 0x144940558 <line:8:2, col:45> 'struct hid_usage *' contains-errors '='
+    | |-DeclRefExpr 0x144940330 <col:2> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+    | `-CallExpr 0x144940520 <col:10, col:45> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144940430 <col:10> 'int ()' Function 0x144940378 'hidinput_locate_usage' 'int ()'
+    |   |-DeclRefExpr 0x144940450 <col:32> 'struct hid_device *' lvalue Var 0x14493fe88 'hid' 'struct hid_device *'
+    |   |-DeclRefExpr 0x144940470 <col:37> 'const struct input_keymap_entry *' lvalue ParmVar 0x14493fa28 'ke' 'const struct input_keymap_entry *'
+    |   `-RecoveryExpr 0x144940500 <col:41> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x144942880 <line:9:2, line:24:2>
+      |-ImplicitCastExpr 0x144940598 <line:9:6> 'struct hid_usage *' <LValueToRValue>
+      | `-DeclRefExpr 0x144940578 <col:6> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+      `-CompoundStmt 0x144942838 <col:13, line:24:2>
+        |-BinaryOperator 0x144940850 <line:10:3, line:11:19> 'unsigned int' contains-errors '='
+        | |-UnaryOperator 0x1449407a8 <line:10:3, col:4> 'unsigned int' lvalue prefix '*' cannot overflow
+        | | `-ImplicitCastExpr 0x144940790 <col:4> 'unsigned int *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x1449405b0 <col:4> 'unsigned int *' lvalue ParmVar 0x14493fad8 'old_keycode' 'unsigned int *'
+        | `-ConditionalOperator 0x144940820 <col:18, line:11:19> '<dependent type>' contains-errors
+        |   |-BinaryOperator 0x1449407e0 <line:10:18, col:33> 'int' contains-errors '=='
+        |   | |-RecoveryExpr 0x144940638 <col:18, col:25> '<dependent type>' contains-errors lvalue
+        |   | | `-DeclRefExpr 0x144940600 <col:18> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        |   | `-RecoveryExpr 0x1449407c0 <col:33> '<dependent type>' contains-errors lvalue
+        |   |-RecoveryExpr 0x1449406d0 <line:11:5, col:12> '<dependent type>' contains-errors lvalue
+        |   | `-DeclRefExpr 0x144940698 <col:5> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        |   `-RecoveryExpr 0x144940800 <col:19> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x144940930 <line:12:3, col:21> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x1449408a8 <col:3, col:10> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x144940870 <col:3> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        | `-RecoveryExpr 0x144940908 <col:17, col:21> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x1449408d0 <col:17> 'const struct input_keymap_entry *' lvalue ParmVar 0x14493fa28 'ke' 'const struct input_keymap_entry *'
+        |-CallExpr 0x144941f88 <line:14:3, col:38> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144941eb8 <col:3> 'int ()' Function 0x144941e00 'clear_bit' 'int ()'
+        | |-UnaryOperator 0x144941f10 <col:13, col:14> 'unsigned int' lvalue prefix '*' cannot overflow
+        | | `-ImplicitCastExpr 0x144941ef8 <col:14> 'unsigned int *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x144941ed8 <col:14> 'unsigned int *' lvalue ParmVar 0x14493fad8 'old_keycode' 'unsigned int *'
+        | `-RecoveryExpr 0x144941f60 <col:27, col:32> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x144941f28 <col:27> 'struct input_dev *' lvalue ParmVar 0x144927648 'dev' 'struct input_dev *'
+        |-CallExpr 0x144942178 <line:15:3, col:35> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144942098 <col:3> 'int ()' Function 0x144941fe0 'set_bit' 'int ()'
+        | |-RecoveryExpr 0x1449420f0 <col:11, col:18> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x1449420b8 <col:11> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        | `-RecoveryExpr 0x144942150 <col:24, col:29> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x144942118 <col:24> 'struct input_dev *' lvalue ParmVar 0x144927648 'dev' 'struct input_dev *'
+        |-CallExpr 0x1449423d0 <line:16:3, line:17:27> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144942288 <line:16:3> 'int ()' Function 0x1449421d0 'dbg_hid' 'int ()'
+        | |-StringLiteral 0x1449422f0 <col:11> 'char[4]' lvalue "STR"
+        | |-RecoveryExpr 0x144942348 <line:17:4, col:11> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x144942310 <col:4> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        | `-RecoveryExpr 0x1449423a8 <col:17, col:24> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x144942370 <col:17> 'struct hid_usage *' lvalue Var 0x144940298 'usage' 'struct hid_usage *'
+        |-IfStmt 0x1449427e8 <line:20:3, line:21:37>
+        | |-CallExpr 0x1449426a8 <line:20:7, col:63> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x1449424e8 <col:7> 'int ()' Function 0x144942430 'hidinput_find_key' 'int ()'
+        | | |-DeclRefExpr 0x144942508 <col:25> 'struct hid_device *' lvalue Var 0x14493fe88 'hid' 'struct hid_device *'
+        | | |-RecoveryExpr 0x144942638 <col:30> '<dependent type>' contains-errors lvalue
+        | | |-UnaryOperator 0x144942670 <col:45, col:46> 'unsigned int' lvalue prefix '*' cannot overflow
+        | | | `-ImplicitCastExpr 0x144942658 <col:46> 'unsigned int *' <LValueToRValue>
+        | | |   `-DeclRefExpr 0x144942540 <col:46> 'unsigned int *' lvalue ParmVar 0x14493fad8 'old_keycode' 'unsigned int *'
+        | | `-RecoveryExpr 0x144942688 <col:59> '<dependent type>' contains-errors lvalue
+        | `-CallExpr 0x1449427b8 <line:21:4, col:37> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1449426e8 <col:4> 'int ()' Function 0x144941fe0 'set_bit' 'int ()'
+        |   |-UnaryOperator 0x144942740 <col:12, col:13> 'unsigned int' lvalue prefix '*' cannot overflow
+        |   | `-ImplicitCastExpr 0x144942728 <col:13> 'unsigned int *' <LValueToRValue>
+        |   |   `-DeclRefExpr 0x144942708 <col:13> 'unsigned int *' lvalue ParmVar 0x14493fad8 'old_keycode' 'unsigned int *'
+        |   `-RecoveryExpr 0x144942790 <col:26, col:31> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144942758 <col:26> 'struct input_dev *' lvalue ParmVar 0x144927648 'dev' 'struct input_dev *'
+        `-ReturnStmt 0x144942828 <line:23:3, col:10>
+          `-IntegerLiteral 0x144942808 <col:10> 'int' 0

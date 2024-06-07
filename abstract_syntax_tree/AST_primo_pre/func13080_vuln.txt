@@ -1,0 +1,22 @@
+`-FunctionDecl 0x12900e350  line:1:13 pcrypt_free 'void (struct crypto_instance *)' static
+  |-ParmVarDecl 0x12900e248 <col:25, col:49> col:49 used inst 'struct crypto_instance *'
+  `-CompoundStmt 0x129026d78 <line:2:1, line:7:1>
+    |-DeclStmt 0x129026a48 <line:3:2, col:61>
+    | |-RecordDecl 0x129026648 <col:2, col:9> col:9 struct pcrypt_instance_ctx
+    | `-VarDecl 0x1290267b8 <col:2, col:60> col:30 used ctx 'struct pcrypt_instance_ctx *' cinit
+    |   `-ImplicitCastExpr 0x129026a18 <col:36, col:60> 'struct pcrypt_instance_ctx *' <IntegralToPointer>
+    |     `-CallExpr 0x1290269d8 <col:36, col:60> 'int'
+    |       |-ImplicitCastExpr 0x1290269c0 <col:36> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x129026950 <col:36> 'int ()' Function 0x129026898 'crypto_instance_ctx' 'int ()'
+    |       `-ImplicitCastExpr 0x129026a00 <col:56> 'struct crypto_instance *' <LValueToRValue>
+    |         `-DeclRefExpr 0x129026970 <col:56> 'struct crypto_instance *' lvalue ParmVar 0x12900e248 'inst' 'struct crypto_instance *'
+    |-CallExpr 0x129026bd8 <line:5:2, col:30> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129026b40 <col:2> 'int ()' Function 0x129026a88 'crypto_drop_aead' 'int ()'
+    | `-UnaryOperator 0x129026bc0 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x129026b98 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129026b60 <col:20> 'struct pcrypt_instance_ctx *' lvalue Var 0x1290267b8 'ctx' 'struct pcrypt_instance_ctx *'
+    `-CallExpr 0x129026d38 <line:6:2, col:12> 'int'
+      |-ImplicitCastExpr 0x129026d20 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x129026ce0 <col:2> 'int ()' Function 0x129026c28 'kfree' 'int ()'
+      `-ImplicitCastExpr 0x129026d60 <col:8> 'struct crypto_instance *' <LValueToRValue>
+        `-DeclRefExpr 0x129026d00 <col:8> 'struct crypto_instance *' lvalue ParmVar 0x12900e248 'inst' 'struct crypto_instance *'

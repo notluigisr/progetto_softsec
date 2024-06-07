@@ -1,0 +1,23 @@
+`-FunctionDecl 0x134826600  line:1:6 kvm_arch_vcpu_load 'void (struct kvm_vcpu *, int)'
+  |-ParmVarDecl 0x13480e248 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x13480e2c8 <col:48, col:52> col:52 used cpu 'int'
+  `-CompoundStmt 0x134826b38 <line:2:1, line:8:1>
+    `-IfStmt 0x134826b18 <line:3:2, line:7:2>
+      |-BinaryOperator 0x134826780 <line:3:6, col:19> 'int' contains-errors '!='
+      | |-DeclRefExpr 0x134826700 <col:6> 'int' lvalue ParmVar 0x13480e2c8 'cpu' 'int'
+      | `-RecoveryExpr 0x134826758 <col:13, col:19> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x134826720 <col:13> 'struct kvm_vcpu *' lvalue ParmVar 0x13480e248 'vcpu' 'struct kvm_vcpu *'
+      `-CompoundStmt 0x134826af8 <col:24, line:7:2>
+        |-BinaryOperator 0x134826820 <line:4:3, col:15> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x1348267d8 <col:3, col:9> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x1348267a0 <col:3> 'struct kvm_vcpu *' lvalue ParmVar 0x13480e248 'vcpu' 'struct kvm_vcpu *'
+        | `-DeclRefExpr 0x134826800 <col:15> 'int' lvalue ParmVar 0x13480e2c8 'cpu' 'int'
+        `-IfStmt 0x134826ad8 <line:5:3, line:6:30>
+          |-CXXDependentScopeMemberExpr 0x1348268a0 <line:5:7, col:18> '<dependent type>' contains-errors lvalue .ht_active
+          | `-RecoveryExpr 0x134826878 <col:7, col:13> '<dependent type>' contains-errors lvalue
+          |   `-DeclRefExpr 0x134826840 <col:7> 'struct kvm_vcpu *' lvalue ParmVar 0x13480e248 'vcpu' 'struct kvm_vcpu *'
+          `-CallExpr 0x134826a98 <line:6:4, col:30> 'int'
+            |-ImplicitCastExpr 0x134826a80 <col:4> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x134826a10 <col:4> 'int ()' Function 0x134826958 'kvm_migrate_hlt_timer' 'int ()'
+            `-ImplicitCastExpr 0x134826ac0 <col:26> 'struct kvm_vcpu *' <LValueToRValue>
+              `-DeclRefExpr 0x134826a30 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x13480e248 'vcpu' 'struct kvm_vcpu *'

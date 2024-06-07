@@ -1,0 +1,1 @@
+  virtual const string name() { return "STR"; }

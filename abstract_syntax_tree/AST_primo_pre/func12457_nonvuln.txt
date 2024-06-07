@@ -1,0 +1,23 @@
+`-FunctionDecl 0x153928750  line:1:13 worker_leave_idle 'void (struct worker *)' static
+  |-ParmVarDecl 0x153928648 <col:31, col:46> col:46 used worker 'struct worker *'
+  `-CompoundStmt 0x1539454b8 <line:2:1, line:10:1>
+    |-DeclStmt 0x153944e98 <line:3:2, col:41>
+    | |-RecordDecl 0x153944c48 <col:2, col:9> col:9 struct worker_pool
+    | `-VarDecl 0x153944db8 <col:2, col:37> col:22 used pool 'struct worker_pool *' cinit
+    |   `-RecoveryExpr 0x153944e58 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153944e20 <col:29> 'struct worker *' lvalue ParmVar 0x153928648 'worker' 'struct worker *'
+    |-IfStmt 0x1539450c8 <line:5:2, line:6:3>
+    | |-RecoveryExpr 0x153945098 <line:5:6, col:49> '_Bool' contains-errors
+    | `-ReturnStmt 0x1539450b8 <line:6:3>
+    |-CallExpr 0x153945270 <line:7:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1539451c8 <col:2> 'int ()' Function 0x153945110 'worker_clr_flags' 'int ()'
+    | |-DeclRefExpr 0x1539451e8 <col:19> 'struct worker *' lvalue ParmVar 0x153928648 'worker' 'struct worker *'
+    | `-RecoveryExpr 0x153945250 <col:27> '<dependent type>' contains-errors lvalue
+    |-UnaryOperator 0x153945300 <line:8:2, col:15> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | `-RecoveryExpr 0x1539452d8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1539452a0 <col:2> 'struct worker_pool *' contains-errors lvalue Var 0x153944db8 'pool' 'struct worker_pool *'
+    `-CallExpr 0x153945490 <line:9:2, col:30> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1539453f8 <col:2> 'int ()' Function 0x153945340 'list_del_init' 'int ()'
+      `-UnaryOperator 0x153945478 <col:16, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x153945450 <col:17, col:25> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x153945418 <col:17> 'struct worker *' lvalue ParmVar 0x153928648 'worker' 'struct worker *'

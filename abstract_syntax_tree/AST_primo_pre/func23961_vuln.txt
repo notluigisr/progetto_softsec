@@ -1,0 +1,34 @@
+`-FunctionDecl 0x15200df58  line:1:18 invalid bpf_prog_get 'struct bpf_prog *(int)'
+  |-ParmVarDecl 0x15200dd90 <col:31, col:35> col:35 invalid ufd 'int'
+  `-CompoundStmt 0x1520287d8 <line:2:1, line:14:1>
+    |-DeclStmt 0x152027fa8 <line:3:2, col:26>
+    | |-RecordDecl 0x15200e008 <col:2, col:9> col:9 struct fd
+    | `-VarDecl 0x15200e108 <col:2, col:12> col:12 invalid f 'struct fd'
+    |-DeclStmt 0x1520280b0 <line:4:2, col:23>
+    | `-VarDecl 0x152028048 <col:2, col:19> col:19 used prog 'struct bpf_prog *'
+    |-BinaryOperator 0x152028230 <line:6:2, col:25> 'struct bpf_prog *' contains-errors '='
+    | |-DeclRefExpr 0x1520280c8 <col:2> 'struct bpf_prog *' lvalue Var 0x152028048 'prog' 'struct bpf_prog *'
+    | `-CallExpr 0x152028208 <col:9, col:25> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1520281c8 <col:9> 'int ()' Function 0x152028110 '__bpf_prog_get' 'int ()'
+    |   `-RecoveryExpr 0x1520281e8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152028440 <line:7:2, line:8:10>
+    | |-CallExpr 0x1520283b8 <line:7:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x1520283a0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x152028330 <col:6> 'int ()' Function 0x152028278 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x1520283e0 <col:13> 'struct bpf_prog *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152028350 <col:13> 'struct bpf_prog *' lvalue Var 0x152028048 'prog' 'struct bpf_prog *'
+    | `-ReturnStmt 0x152028430 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x152028418 <col:10> 'struct bpf_prog *' <LValueToRValue>
+    |     `-DeclRefExpr 0x1520283f8 <col:10> 'struct bpf_prog *' lvalue Var 0x152028048 'prog' 'struct bpf_prog *'
+    |-CallExpr 0x152028620 <line:10:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152028540 <col:2> 'int ()' Function 0x152028488 'atomic_inc' 'int ()'
+    | `-UnaryOperator 0x152028608 <col:13, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x1520285c0 <col:14, col:25> '<dependent type>' contains-errors lvalue ->refcnt
+    |     `-RecoveryExpr 0x152028598 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x152028560 <col:14> 'struct bpf_prog *' lvalue Var 0x152028048 'prog' 'struct bpf_prog *'
+    |-CallExpr 0x152028768 <line:11:2, col:9> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152028728 <col:2> 'int ()' Function 0x152028670 'fdput' 'int ()'
+    | `-RecoveryExpr 0x152028748 <col:8> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1520287c8 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x1520287b0 <col:9> 'struct bpf_prog *' <LValueToRValue>
+        `-DeclRefExpr 0x152028790 <col:9> 'struct bpf_prog *' lvalue Var 0x152028048 'prog' 'struct bpf_prog *'

@@ -1,0 +1,67 @@
+`-FunctionDecl 0x138944d48  line:1:5 ovl_setattr 'int (struct dentry *, struct iattr *)'
+  |-ParmVarDecl 0x138928648 <col:17, col:32> col:32 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x138944c28 <col:40, col:54> col:54 used attr 'struct iattr *'
+  `-CompoundStmt 0x138946e28 <line:2:1, line:21:1>
+    |-DeclStmt 0x138944ec8 <line:3:2, col:9>
+    | `-VarDecl 0x138944e60 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x138944fd0 <line:4:2, col:28>
+    | `-VarDecl 0x138944f68 <col:2, col:17> col:17 used upperdentry 'struct dentry *'
+    |-BinaryOperator 0x1389451f8 <line:6:2, col:29> 'int' '='
+    | |-DeclRefExpr 0x138944fe8 <col:2> 'int' lvalue Var 0x138944e60 'err' 'int'
+    | `-CallExpr 0x1389451b8 <col:8, col:29> 'int'
+    |   |-ImplicitCastExpr 0x1389451a0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x138945130 <col:8> 'int ()' Function 0x138945078 'ovl_want_write' 'int ()'
+    |   `-ImplicitCastExpr 0x1389451e0 <col:23> 'struct dentry *' <LValueToRValue>
+    |     `-DeclRefExpr 0x138945150 <col:23> 'struct dentry *' lvalue ParmVar 0x138928648 'dentry' 'struct dentry *'
+    |-IfStmt 0x1389452b8 <line:7:2, line:8:8>
+    | |-ImplicitCastExpr 0x138945238 <line:7:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x138945218 <col:6> 'int' lvalue Var 0x138944e60 'err' 'int'
+    | `-GotoStmt 0x1389452a0 <line:8:3, col:8> 'out' 0x138945250
+    |-BinaryOperator 0x138945488 <line:10:2, col:39> 'struct dentry *' '='
+    | |-DeclRefExpr 0x1389452d8 <col:2> 'struct dentry *' lvalue Var 0x138944f68 'upperdentry' 'struct dentry *'
+    | `-ImplicitCastExpr 0x138945470 <col:16, col:39> 'struct dentry *' <IntegralToPointer>
+    |   `-CallExpr 0x138945430 <col:16, col:39> 'int'
+    |     |-ImplicitCastExpr 0x138945418 <col:16> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1389453d8 <col:16> 'int ()' Function 0x138945320 'ovl_dentry_upper' 'int ()'
+    |     `-ImplicitCastExpr 0x138945458 <col:33> 'struct dentry *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1389453f8 <col:33> 'struct dentry *' lvalue ParmVar 0x138928648 'dentry' 'struct dentry *'
+    |-IfStmt 0x138946c18 <line:11:2, line:17:2> has_else
+    | |-ImplicitCastExpr 0x1389454c8 <line:11:6> 'struct dentry *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1389454a8 <col:6> 'struct dentry *' lvalue Var 0x138944f68 'upperdentry' 'struct dentry *'
+    | |-CompoundStmt 0x138945af8 <col:19, line:15:2>
+    | | |-CallExpr 0x1389456a0 <line:12:3, col:44> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1389455c0 <col:3> 'int ()' Function 0x138945508 'mutex_lock' 'int ()'
+    | | | `-UnaryOperator 0x138945688 <col:14, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-CXXDependentScopeMemberExpr 0x138945640 <col:15, col:37> '<dependent type>' contains-errors lvalue ->i_mutex
+    | | |     `-RecoveryExpr 0x138945618 <col:15, col:28> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x1389455e0 <col:15> 'struct dentry *' lvalue Var 0x138944f68 'upperdentry' 'struct dentry *'
+    | | |-BinaryOperator 0x1389458f0 <line:13:3, col:46> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x1389456c8 <col:3> 'int' lvalue Var 0x138944e60 'err' 'int'
+    | | | `-CallExpr 0x1389458b8 <col:9, col:46> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1389457c8 <col:9> 'int ()' Function 0x138945710 'notify_change' 'int ()'
+    | | |   |-DeclRefExpr 0x1389457e8 <col:23> 'struct dentry *' lvalue Var 0x138944f68 'upperdentry' 'struct dentry *'
+    | | |   |-DeclRefExpr 0x138945808 <col:36> 'struct iattr *' lvalue ParmVar 0x138944c28 'attr' 'struct iattr *'
+    | | |   `-RecoveryExpr 0x138945898 <col:42> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x138945ad0 <line:14:3, col:46> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1389459f0 <col:3> 'int ()' Function 0x138945938 'mutex_unlock' 'int ()'
+    | |   `-UnaryOperator 0x138945ab8 <col:16, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-CXXDependentScopeMemberExpr 0x138945a70 <col:17, col:39> '<dependent type>' contains-errors lvalue ->i_mutex
+    | |       `-RecoveryExpr 0x138945a48 <col:17, col:30> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x138945a10 <col:17> 'struct dentry *' lvalue Var 0x138944f68 'upperdentry' 'struct dentry *'
+    | `-CompoundStmt 0x138946c00 <line:15:9, line:17:2>
+    |   `-BinaryOperator 0x138946be0 <line:16:3, col:45> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x138945b20 <col:3> 'int' lvalue Var 0x138944e60 'err' 'int'
+    |     `-CallExpr 0x138946ba8 <col:9, col:45> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x138946ab8 <col:9> 'int ()' Function 0x138946a00 'ovl_copy_up_last' 'int ()'
+    |       |-DeclRefExpr 0x138946ad8 <col:26> 'struct dentry *' lvalue ParmVar 0x138928648 'dentry' 'struct dentry *'
+    |       |-DeclRefExpr 0x138946af8 <col:34> 'struct iattr *' lvalue ParmVar 0x138944c28 'attr' 'struct iattr *'
+    |       `-RecoveryExpr 0x138946b88 <col:40> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x138946d80 <line:18:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x138946d68 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x138946d28 <col:2> 'int ()' Function 0x138946c70 'ovl_drop_write' 'int ()'
+    | `-ImplicitCastExpr 0x138946da8 <col:17> 'struct dentry *' <LValueToRValue>
+    |   `-DeclRefExpr 0x138946d48 <col:17> 'struct dentry *' lvalue ParmVar 0x138928648 'dentry' 'struct dentry *'
+    `-LabelStmt 0x138946e08 <line:19:1, line:20:9> 'out'
+      `-ReturnStmt 0x138946df8 <col:2, col:9>
+        `-ImplicitCastExpr 0x138946de0 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x138946dc0 <col:9> 'int' lvalue Var 0x138944e60 'err' 'int'

@@ -1,0 +1,31 @@
+`-FunctionDecl 0x11d827858  line:1:19 invalid neigh_event_ns 'struct neighbour *(struct neigh_table *, int *, void *, struct net_device *)'
+  |-ParmVarDecl 0x11d80e2e8 <col:34, col:54> col:54 used tbl 'struct neigh_table *'
+  |-ParmVarDecl 0x11d827400 <line:2:6, col:10> col:10 invalid lladdr 'int *'
+  |-ParmVarDecl 0x11d827480 <col:18, col:24> col:24 used saddr 'void *'
+  |-ParmVarDecl 0x11d827658 <line:3:6, col:25> col:25 used dev 'struct net_device *'
+  `-CompoundStmt 0x11d827fe8 <line:4:1, line:11:1>
+    |-DeclStmt 0x11d827d00 <line:5:2, line:6:33>
+    | `-VarDecl 0x11d8279a8 <line:5:2, line:6:32> line:5:20 used neigh 'struct neighbour *' cinit
+    |   `-CallExpr 0x11d827cc0 <col:28, line:6:32> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d827b70 <line:5:28> 'int ()' Function 0x11d827ab8 '__neigh_lookup' 'int ()'
+    |     |-DeclRefExpr 0x11d827b90 <col:43> 'struct neigh_table *' lvalue ParmVar 0x11d80e2e8 'tbl' 'struct neigh_table *'
+    |     |-DeclRefExpr 0x11d827bb0 <col:48> 'void *' lvalue ParmVar 0x11d827480 'saddr' 'void *'
+    |     |-DeclRefExpr 0x11d827bd0 <col:55> 'struct net_device *' lvalue ParmVar 0x11d827658 'dev' 'struct net_device *'
+    |     `-BinaryOperator 0x11d827ca0 <line:6:8, col:24> 'int' contains-errors '||'
+    |       |-RecoveryExpr 0x11d827bf0 <col:8> '<dependent type>' contains-errors lvalue
+    |       `-UnaryOperator 0x11d827c88 <col:18, col:24> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |         `-ImplicitCastExpr 0x11d827c70 <col:19, col:24> '<dependent type>' contains-errors <LValueToRValue>
+    |           `-RecoveryExpr 0x11d827c48 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |             `-DeclRefExpr 0x11d827c10 <col:19> 'struct net_device *' lvalue ParmVar 0x11d827658 'dev' 'struct net_device *'
+    |-IfStmt 0x11d827f80 <line:7:2, line:9:32>
+    | |-ImplicitCastExpr 0x11d827d38 <line:7:6> 'struct neighbour *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x11d827d18 <col:6> 'struct neighbour *' contains-errors lvalue Var 0x11d8279a8 'neigh' 'struct neighbour *'
+    | `-CallExpr 0x11d827f40 <line:8:3, line:9:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11d827e30 <line:8:3> 'int ()' Function 0x11d827d78 'neigh_update' 'int ()'
+    |   |-DeclRefExpr 0x11d827e50 <col:16> 'struct neighbour *' contains-errors lvalue Var 0x11d8279a8 'neigh' 'struct neighbour *'
+    |   |-RecoveryExpr 0x11d827e70 <col:23> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x11d827f00 <col:31> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x11d827f20 <line:9:9> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x11d827fd8 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x11d827fc0 <col:9> 'struct neighbour *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x11d827fa0 <col:9> 'struct neighbour *' contains-errors lvalue Var 0x11d8279a8 'neigh' 'struct neighbour *'

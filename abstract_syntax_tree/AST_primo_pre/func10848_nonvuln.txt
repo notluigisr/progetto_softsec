@@ -1,0 +1,35 @@
+`-FunctionDecl 0x14d82aa08  line:1:19 invalid path_has_perm 'int (const struct cred *, struct path *, int)' static inline
+  |-ParmVarDecl 0x14d80e248 <col:33, col:52> col:52 used cred 'const struct cred *'
+  |-ParmVarDecl 0x14d82a828 <line:2:5, col:18> col:18 used path 'struct path *'
+  |-ParmVarDecl 0x14d82a8c0 <line:3:5, col:9> col:9 invalid av 'int'
+  `-CompoundStmt 0x14d82b3c8 <line:4:1, line:11:1>
+    |-DeclStmt 0x14d82ad60 <line:5:2, col:45>
+    | |-RecordDecl 0x14d82aac8 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x14d82ac38 <col:2, col:38> col:16 used inode 'struct inode *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x14d82ad00 <col:24, col:38> '<dependent type>' contains-errors lvalue ->d_inode
+    |     `-RecoveryExpr 0x14d82acd8 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14d82aca0 <col:24> 'struct path *' lvalue ParmVar 0x14d82a828 'path' 'struct path *'
+    |-DeclStmt 0x14d82aef8 <line:6:2, col:29>
+    | |-RecordDecl 0x14d82ad78 <col:2, col:9> col:9 struct common_audit_data
+    | `-VarDecl 0x14d82ae78 <col:2, col:27> col:27 referenced invalid ad 'struct common_audit_data'
+    |-BinaryOperator 0x14d82aff8 <line:8:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14d82af58 <col:2, col:5> '<dependent type>' contains-errors lvalue .type
+    | | `-RecoveryExpr 0x14d82af30 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14d82af10 <col:2> 'struct common_audit_data' lvalue Var 0x14d82ae78 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x14d82afd8 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14d82b140 <line:9:2, col:15> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x14d82b0a8 <col:2, col:7> '<dependent type>' contains-errors lvalue .path
+    | | `-CXXDependentScopeMemberExpr 0x14d82b060 <col:2, col:5> '<dependent type>' contains-errors lvalue .u
+    | |   `-RecoveryExpr 0x14d82b038 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14d82b018 <col:2> 'struct common_audit_data' lvalue Var 0x14d82ae78 'ad' 'struct common_audit_data'
+    | `-UnaryOperator 0x14d82b128 <col:14, col:15> 'struct path' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x14d82b110 <col:15> 'struct path *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14d82b0f0 <col:15> 'struct path *' lvalue ParmVar 0x14d82a828 'path' 'struct path *'
+    `-ReturnStmt 0x14d82b3b8 <line:10:2, col:44>
+      `-CallExpr 0x14d82b378 <col:9, col:44> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14d82b2c0 <col:9> 'int ()' Function 0x14d82b208 'inode_has_perm' 'int ()'
+        |-DeclRefExpr 0x14d82b2e0 <col:24> 'const struct cred *' lvalue ParmVar 0x14d80e248 'cred' 'const struct cred *'
+        |-DeclRefExpr 0x14d82b300 <col:30> 'struct inode *' contains-errors lvalue Var 0x14d82ac38 'inode' 'struct inode *'
+        |-RecoveryExpr 0x14d82b320 <col:37> '<dependent type>' contains-errors lvalue
+        `-UnaryOperator 0x14d82b360 <col:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x14d82b340 <col:42> '<dependent type>' contains-errors lvalue

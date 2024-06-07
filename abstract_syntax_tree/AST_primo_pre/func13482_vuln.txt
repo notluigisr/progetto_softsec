@@ -1,0 +1,91 @@
+`-FunctionDecl 0x13d1281a8  line:1:5 xenvif_kthread_guest_rx 'int (void *)'
+  |-ParmVarDecl 0x13d1280d8 <col:29, col:35> col:35 used data 'void *'
+  `-CompoundStmt 0x13d8096e8 <line:2:1, line:35:1>
+    |-DeclStmt 0x13d1284d8 <line:3:2, col:27>
+    | |-RecordDecl 0x13d1282a0 <col:2, col:9> col:9 struct xenvif
+    | `-VarDecl 0x13d128408 <col:2, col:23> col:17 used vif 'struct xenvif *' cinit
+    |   `-ImplicitCastExpr 0x13d1284a8 <col:23> 'struct xenvif *' <BitCast>
+    |     `-ImplicitCastExpr 0x13d128490 <col:23> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13d128470 <col:23> 'void *' lvalue ParmVar 0x13d1280d8 'data' 'void *'
+    |-DeclStmt 0x13d1286d8 <line:4:2, col:21>
+    | |-RecordDecl 0x13d1284f0 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x13d128658 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-WhileStmt 0x13d8092e0 <line:6:2, line:28:2>
+    | |-UnaryOperator 0x13d141948 <line:6:9, col:30> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x13d141928 <col:10, col:30> 'int'
+    | |   `-ImplicitCastExpr 0x13d141910 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x13d1418b8 <col:10> 'int ()' Function 0x13d141800 'kthread_should_stop' 'int ()'
+    | `-CompoundStmt 0x13d8092a0 <col:33, line:28:2>
+    |   |-CallExpr 0x13d1420d8 <line:7:3, line:9:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13d141a40 <line:7:3> 'int ()' Function 0x13d141988 'wait_event_interruptible' 'int ()'
+    |   | |-RecoveryExpr 0x13d141ec0 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13d141a60 <col:28> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   | `-BinaryOperator 0x13d1420b8 <line:8:7, line:9:27> 'int' '||'
+    |   |   |-CallExpr 0x13d142020 <line:8:7, col:23> 'int'
+    |   |   | |-ImplicitCastExpr 0x13d142008 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x13d141fc8 <col:7> 'int ()' Function 0x13d141f10 'rx_work_todo' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x13d142048 <col:20> 'struct xenvif *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x13d141fe8 <col:20> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   |   `-CallExpr 0x13d142098 <line:9:7, col:27> 'int'
+    |   |     `-ImplicitCastExpr 0x13d142080 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |       `-DeclRefExpr 0x13d142060 <col:7> 'int ()' Function 0x13d141800 'kthread_should_stop' 'int ()'
+    |   |-IfStmt 0x13d142168 <line:10:3, line:11:4>
+    |   | |-CallExpr 0x13d142140 <line:10:7, col:27> 'int'
+    |   | | `-ImplicitCastExpr 0x13d142128 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   `-DeclRefExpr 0x13d142108 <col:7> 'int ()' Function 0x13d141800 'kthread_should_stop' 'int ()'
+    |   | `-BreakStmt 0x13d142160 <line:11:4>
+    |   |-IfStmt 0x13d142418 <line:13:3, line:16:3>
+    |   | |-RecoveryExpr 0x13d1421c0 <line:13:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13d142188 <col:7> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   | `-CompoundStmt 0x13d142400 <col:28, line:16:3>
+    |   |   `-CallExpr 0x13d142360 <line:14:4, col:34> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x13d1422c8 <col:4> 'int ()' Function 0x13d142210 'skb_queue_purge' 'int ()'
+    |   |     `-UnaryOperator 0x13d142348 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |       `-RecoveryExpr 0x13d142320 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x13d1422e8 <col:21> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   |-IfStmt 0x13d142768 <line:18:3, line:19:24>
+    |   | |-UnaryOperator 0x13d1425d8 <line:18:7, col:38> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x13d1425b0 <col:8, col:38> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x13d142518 <col:8> 'int ()' Function 0x13d142460 'skb_queue_empty' 'int ()'
+    |   | |   `-UnaryOperator 0x13d142598 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |     `-RecoveryExpr 0x13d142570 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |   | |       `-DeclRefExpr 0x13d142538 <col:25> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   | `-CallExpr 0x13d142728 <line:19:4, col:24> 'int'
+    |   |   |-ImplicitCastExpr 0x13d142710 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x13d1426d0 <col:4> 'int ()' Function 0x13d142618 'xenvif_rx_action' 'int ()'
+    |   |   `-ImplicitCastExpr 0x13d142750 <col:21> 'struct xenvif *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x13d1426f0 <col:21> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   |-IfStmt 0x13d809148 <line:21:3, line:25:3>
+    |   | |-BinaryOperator 0x13d808df0 <line:21:7, line:22:35> 'int' contains-errors '&&'
+    |   | | |-CallExpr 0x13d808c40 <line:21:7, col:37> '<dependent type>' contains-errors
+    |   | | | |-DeclRefExpr 0x13d142788 <col:7> 'int ()' Function 0x13d142460 'skb_queue_empty' 'int ()'
+    |   | | | `-UnaryOperator 0x13d808c28 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | |   `-RecoveryExpr 0x13d808c00 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   | | |     `-DeclRefExpr 0x13d1427a8 <col:24> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   | | `-CallExpr 0x13d808dc8 <line:22:7, col:35> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x13d808d48 <col:7> 'int ()' Function 0x13d808c90 'netif_queue_stopped' 'int ()'
+    |   | |   `-RecoveryExpr 0x13d808da0 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x13d808d68 <col:27> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   | `-CompoundStmt 0x13d809128 <col:38, line:25:3>
+    |   |   |-CallExpr 0x13d808f88 <line:23:4, col:35> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x13d808ef0 <col:4> 'int ()' Function 0x13d808e38 'del_timer_sync' 'int ()'
+    |   |   | `-UnaryOperator 0x13d808f70 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   `-RecoveryExpr 0x13d808f48 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x13d808f10 <col:20> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   |   `-CallExpr 0x13d8090e8 <line:24:4, col:26> 'int'
+    |   |     |-ImplicitCastExpr 0x13d8090d0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x13d809090 <col:4> 'int ()' Function 0x13d808fd8 'xenvif_start_queue' 'int ()'
+    |   |     `-ImplicitCastExpr 0x13d809110 <col:23> 'struct xenvif *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x13d8090b0 <col:23> 'struct xenvif *' lvalue Var 0x13d128408 'vif' 'struct xenvif *'
+    |   `-CallExpr 0x13d809280 <line:27:3, col:16> 'int'
+    |     `-ImplicitCastExpr 0x13d809268 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x13d809248 <col:3> 'int ()' Function 0x13d809190 'cond_resched' 'int ()'
+    |-WhileStmt 0x13d809698 <line:31:2, line:32:20>
+    | |-RecoveryExpr 0x13d809500 <line:31:9, col:48> '_Bool' contains-errors
+    | `-CallExpr 0x13d809658 <line:32:3, col:20> 'int'
+    |   |-ImplicitCastExpr 0x13d809640 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13d809600 <col:3> 'int ()' Function 0x13d809548 'dev_kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x13d809680 <col:17> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13d809620 <col:17> 'struct sk_buff *' lvalue Var 0x13d128658 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x13d8096d8 <line:34:2, col:9>
+      `-IntegerLiteral 0x13d8096b8 <col:9> 'int' 0

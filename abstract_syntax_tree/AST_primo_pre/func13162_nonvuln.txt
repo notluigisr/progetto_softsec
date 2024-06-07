@@ -1,0 +1,20 @@
+`-FunctionDecl 0x13980ddc8  line:1:2 invalid __releases 'int (int)'
+  |-ParmVarDecl 0x13980dcf0 <col:13, <invalid sloc>> col:14 invalid 'int'
+  `-CompoundStmt 0x139827b48 <line:2:1, line:10:1>
+    |-CallExpr 0x13980e050 <line:3:2, col:19> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13980dfd0 <col:2> 'int ()' Function 0x13980df18 '__unqueue_futex' 'int ()'
+    | `-RecoveryExpr 0x13980e030 <col:18> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13980e2c8 <line:5:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13980e158 <col:2> 'int ()' Function 0x13980e0a0 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x13980e2b0 <col:9, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x13980e298 <col:10, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-CXXDependentScopeMemberExpr 0x13980e250 <col:10, col:13> '<dependent type>' contains-errors lvalue ->pi_state
+    |       `-RecoveryExpr 0x13980e230 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1398278f0 <line:6:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13980e3d0 <col:2> 'int ()' Function 0x13980e318 'free_pi_state' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x1398278a8 <col:16, col:19> '<dependent type>' contains-errors lvalue ->pi_state
+    |   `-RecoveryExpr 0x139827888 <col:16> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x139827b20 <line:9:2, col:25> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x139827a10 <col:2> 'int ()' Function 0x139827958 'spin_unlock' 'int ()'
+      `-CXXDependentScopeMemberExpr 0x139827ad8 <col:14, col:17> '<dependent type>' contains-errors lvalue ->lock_ptr
+        `-RecoveryExpr 0x139827ab8 <col:14> '<dependent type>' contains-errors lvalue

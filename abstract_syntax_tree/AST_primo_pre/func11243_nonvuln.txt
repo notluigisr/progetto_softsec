@@ -1,0 +1,25 @@
+`-FunctionDecl 0x14c1281c8  line:1:13 invalid pirq_needs_eoi_flag 'int (unsigned int)' static
+  |-ParmVarDecl 0x14c1280f0 <col:33, col:42> col:42 used irq 'unsigned int'
+  `-CompoundStmt 0x14c141ea0 <line:2:1, line:7:1>
+    |-DeclStmt 0x14c141ae8 <line:3:2, col:43>
+    | |-RecordDecl 0x14c128278 <col:2, col:9> col:9 struct irq_info
+    | `-VarDecl 0x14c1283e8 <col:2, col:42> col:19 used info 'struct irq_info *' cinit
+    |   `-ImplicitCastExpr 0x14c128678 <col:26, col:42> 'struct irq_info *' <IntegralToPointer>
+    |     `-CallExpr 0x14c128638 <col:26, col:42> 'int'
+    |       |-ImplicitCastExpr 0x14c128620 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14c1285b0 <col:26> 'int ()' Function 0x14c1284f8 'info_for_irq' 'int ()'
+    |       `-ImplicitCastExpr 0x14c128660 <col:39> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x14c1285d0 <col:39> 'unsigned int' lvalue ParmVar 0x14c1280f0 'irq' 'unsigned int'
+    |-CallExpr 0x14c141d00 <line:4:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c141be0 <col:2> 'int ()' Function 0x14c141b28 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x14c141ce0 <col:9, col:23> 'int' contains-errors '!='
+    |   |-RecoveryExpr 0x14c141c38 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14c141c00 <col:9> 'struct irq_info *' lvalue Var 0x14c1283e8 'info' 'struct irq_info *'
+    |   `-RecoveryExpr 0x14c141cc0 <col:23> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14c141e90 <line:6:2, col:30>
+      `-BinaryOperator 0x14c141e70 <col:9, col:30> '<dependent type>' contains-errors '&'
+        |-CXXDependentScopeMemberExpr 0x14c141dd0 <col:9, col:22> '<dependent type>' contains-errors lvalue .flags
+        | `-CXXDependentScopeMemberExpr 0x14c141d88 <col:9, col:17> '<dependent type>' contains-errors lvalue .pirq
+        |   `-RecoveryExpr 0x14c141d60 <col:9, col:15> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x14c141d28 <col:9> 'struct irq_info *' lvalue Var 0x14c1283e8 'info' 'struct irq_info *'
+        `-RecoveryExpr 0x14c141e50 <col:30> '<dependent type>' contains-errors lvalue

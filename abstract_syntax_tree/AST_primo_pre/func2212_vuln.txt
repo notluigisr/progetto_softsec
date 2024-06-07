@@ -1,0 +1,38 @@
+`-FunctionDecl 0x130141838  line:1:5 invalid dtls1_listen 'int (int *, struct sockaddr *)'
+  |-ParmVarDecl 0x130128128 <col:18, col:23> col:23 referenced invalid s 'int *'
+  |-ParmVarDecl 0x130128718 <col:26, col:43> col:43 used client 'struct sockaddr *'
+  `-CompoundStmt 0x130142238 <line:2:1, line:14:1>
+    |-DeclStmt 0x130141970 <line:3:5, col:12>
+    | `-VarDecl 0x130141908 <col:5, col:9> col:9 used ret 'int'
+    |-CallExpr 0x130141b88 <line:5:5, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x130141ae0 <col:5> 'int ()' Function 0x130141a28 'SSL_set_options' 'int ()'
+    | |-RecoveryExpr 0x130141b00 <col:21> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x130141b68 <col:24> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x130141cb0 <line:6:5, col:21> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x130141c48 <col:5, col:12> '<dependent type>' contains-errors lvalue ->listen
+    | | `-CXXDependentScopeMemberExpr 0x130141c00 <col:5, col:8> '<dependent type>' contains-errors lvalue ->d1
+    | |   `-RecoveryExpr 0x130141bd8 <col:5> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x130141bb8 <col:5> 'int *' lvalue ParmVar 0x130128128 's' 'int *'
+    | `-IntegerLiteral 0x130141c90 <col:21> 'int' 1
+    |-BinaryOperator 0x130141e38 <line:8:5, col:23> 'int' contains-errors '='
+    | |-DeclRefExpr 0x130141cd0 <col:5> 'int' lvalue Var 0x130141908 'ret' 'int'
+    | `-CallExpr 0x130141e10 <col:11, col:23> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x130141dd0 <col:11> 'int ()' Function 0x130141d18 'SSL_accept' 'int ()'
+    |   `-RecoveryExpr 0x130141df0 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x130141f18 <line:9:5, line:10:16>
+    | |-BinaryOperator 0x130141eb0 <line:9:9, col:16> 'int' '<='
+    | | |-ImplicitCastExpr 0x130141e98 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x130141e58 <col:9> 'int' lvalue Var 0x130141908 'ret' 'int'
+    | | `-IntegerLiteral 0x130141e78 <col:16> 'int' 0
+    | `-ReturnStmt 0x130141f08 <line:10:9, col:16>
+    |   `-ImplicitCastExpr 0x130141ef0 <col:16> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x130141ed0 <col:16> 'int' lvalue Var 0x130141908 'ret' 'int'
+    |-CStyleCastExpr 0x1301421e0 <line:12:5, col:53> 'void' contains-errors <ToVoid>
+    | `-CallExpr 0x1301421a0 <col:11, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x130142018 <col:11> 'int ()' Function 0x130141f60 'BIO_dgram_get_peer' 'int ()'
+    |   |-CallExpr 0x130142158 <col:30, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x130142118 <col:30> 'int ()' Function 0x130142060 'SSL_get_rbio' 'int ()'
+    |   | `-RecoveryExpr 0x130142138 <col:43> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x130142180 <col:47> 'struct sockaddr *' lvalue ParmVar 0x130128718 'client' 'struct sockaddr *'
+    `-ReturnStmt 0x130142228 <line:13:5, col:12>
+      `-IntegerLiteral 0x130142208 <col:12> 'int' 1

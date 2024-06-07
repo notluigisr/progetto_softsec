@@ -1,0 +1,101 @@
+`-FunctionDecl 0x151808340  line:1:13 tipc_sk_proto_rcv 'void (struct tipc_sock *, struct sk_buff *)' static
+  |-ParmVarDecl 0x151128648 <col:31, col:49> col:49 used tsk 'struct tipc_sock *'
+  |-ParmVarDecl 0x151808228 <col:54, col:70> col:70 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x1511418e8 <line:2:1, line:30:1>
+    |-DeclStmt 0x1518086a0 <line:3:2, col:28>
+    | |-RecordDecl 0x151808440 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x1518085a8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-UnaryOperator 0x151808670 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x151808648 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x151808610 <col:21> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    |-DeclStmt 0x151808ab8 <line:4:2, col:37>
+    | |-RecordDecl 0x1518086b8 <col:2, col:9> col:9 struct tipc_msg
+    | `-VarDecl 0x151808828 <col:2, col:36> col:19 used hdr 'struct tipc_msg *' cinit
+    |   `-ImplicitCastExpr 0x151808a88 <col:25, col:36> 'struct tipc_msg *' <IntegralToPointer>
+    |     `-CallExpr 0x151808a48 <col:25, col:36> 'int'
+    |       |-ImplicitCastExpr 0x151808a30 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1518089c0 <col:25> 'int ()' Function 0x151808908 'buf_msg' 'int ()'
+    |       `-ImplicitCastExpr 0x151808a70 <col:33> 'struct sk_buff *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1518089e0 <col:33> 'struct sk_buff *' lvalue ParmVar 0x151808228 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x151808cc8 <line:5:2, col:26>
+    | `-VarDecl 0x151808ae8 <col:2, col:25> col:6 used mtyp 'int' cinit
+    |   `-CallExpr 0x151808c88 <col:13, col:25> 'int'
+    |     |-ImplicitCastExpr 0x151808c70 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x151808c30 <col:13> 'int ()' Function 0x151808b78 'msg_type' 'int ()'
+    |     `-ImplicitCastExpr 0x151808cb0 <col:22> 'struct tipc_msg *' <LValueToRValue>
+    |       `-DeclRefExpr 0x151808c50 <col:22> 'struct tipc_msg *' lvalue Var 0x151808828 'hdr' 'struct tipc_msg *'
+    |-IfStmt 0x151808f18 <line:9:2, line:10:8>
+    | |-UnaryOperator 0x151808e98 <line:9:6, col:28> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x151808e38 <col:7, col:28> 'int'
+    | |   |-ImplicitCastExpr 0x151808e20 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x151808dc0 <col:7> 'int ()' Function 0x151808d08 'tsk_peer_msg' 'int ()'
+    | |   |-ImplicitCastExpr 0x151808e68 <col:20> 'struct tipc_sock *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x151808de0 <col:20> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    | |   `-ImplicitCastExpr 0x151808e80 <col:25> 'struct tipc_msg *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x151808e00 <col:25> 'struct tipc_msg *' lvalue Var 0x151808828 'hdr' 'struct tipc_msg *'
+    | `-GotoStmt 0x151808f00 <line:10:3, col:8> 'exit' 0x151808eb0
+    |-BinaryOperator 0x151808ff0 <line:12:2, col:23> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x151808f70 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x151808f38 <col:2> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    | `-RecoveryExpr 0x151808fd0 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x151141720 <line:14:2, line:27:2> has_else
+    | |-BinaryOperator 0x151809088 <line:14:6, col:14> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x151809010 <col:6> 'int' lvalue Var 0x151808ae8 'mtyp' 'int'
+    | | `-RecoveryExpr 0x151809068 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x151140c78 <col:26, line:18:2>
+    | | |-CallExpr 0x151140a50 <line:15:3, col:37> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x151809188 <col:3> 'int ()' Function 0x1518090d0 'msg_set_type' 'int ()'
+    | | | |-DeclRefExpr 0x1518091a8 <col:16> 'struct tipc_msg *' lvalue Var 0x151808828 'hdr' 'struct tipc_msg *'
+    | | | `-RecoveryExpr 0x151140a30 <col:21> '<dependent type>' contains-errors lvalue
+    | | |-CallExpr 0x151140c30 <line:16:3, col:35> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x151140b60 <col:3> 'int ()' Function 0x151140aa8 'tipc_sk_respond' 'int ()'
+    | | | |-DeclRefExpr 0x151140b80 <col:19> 'struct sock *' contains-errors lvalue Var 0x1518085a8 'sk' 'struct sock *'
+    | | | |-DeclRefExpr 0x151140ba0 <col:23> 'struct sk_buff *' lvalue ParmVar 0x151808228 'skb' 'struct sk_buff *'
+    | | | `-RecoveryExpr 0x151140c10 <col:28> '<dependent type>' contains-errors lvalue
+    | | `-ReturnStmt 0x151140c68 <line:17:3>
+    | `-IfStmt 0x1511416f0 <line:18:9, line:27:2> has_else
+    |   |-BinaryOperator 0x151140d18 <line:18:13, col:21> 'int' contains-errors '=='
+    |   | |-DeclRefExpr 0x151140ca0 <col:13> 'int' lvalue Var 0x151808ae8 'mtyp' 'int'
+    |   | `-RecoveryExpr 0x151140cf8 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-CompoundStmt 0x151141490 <col:31, line:25:2>
+    |   | |-CompoundAssignOperator 0x151141088 <line:20:3, col:39> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | | |-RecoveryExpr 0x151140ee8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x151140eb0 <col:3> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    |   | | `-CallExpr 0x151141048 <col:23, col:39> 'int'
+    |   | |   |-ImplicitCastExpr 0x151141030 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |   | |   | `-DeclRefExpr 0x151140ff0 <col:23> 'int ()' Function 0x151140f38 'msg_conn_ack' 'int ()'
+    |   | |   `-ImplicitCastExpr 0x151141070 <col:36> 'struct tipc_msg *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x151141010 <col:36> 'struct tipc_msg *' lvalue Var 0x151808828 'hdr' 'struct tipc_msg *'
+    |   | |-IfStmt 0x151141388 <line:21:3, line:22:34>
+    |   | | |-BinaryOperator 0x151141170 <line:21:7, col:24> '<dependent type>' contains-errors '&'
+    |   | | | |-RecoveryExpr 0x1511410f0 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | | | `-DeclRefExpr 0x1511410b8 <col:7> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    |   | | | `-RecoveryExpr 0x151141150 <col:24> '<dependent type>' contains-errors lvalue
+    |   | | `-BinaryOperator 0x151141368 <line:22:4, col:34> '<dependent type>' contains-errors '='
+    |   | |   |-RecoveryExpr 0x1511411c8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   | |   | `-DeclRefExpr 0x151141190 <col:4> 'struct tipc_sock *' lvalue ParmVar 0x151128648 'tsk' 'struct tipc_sock *'
+    |   | |   `-CallExpr 0x151141328 <col:19, col:34> 'int'
+    |   | |     |-ImplicitCastExpr 0x151141310 <col:19> 'int (*)()' <FunctionToPointerDecay>
+    |   | |     | `-DeclRefExpr 0x1511412d0 <col:19> 'int ()' Function 0x151141218 'msg_adv_win' 'int ()'
+    |   | |     `-ImplicitCastExpr 0x151141350 <col:31> 'struct tipc_msg *' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x1511412f0 <col:31> 'struct tipc_msg *' lvalue Var 0x151808828 'hdr' 'struct tipc_msg *'
+    |   | `-IfStmt 0x151141470 <line:23:3, line:24:25>
+    |   |   |-RecoveryExpr 0x1511413a8 <line:23:7> '_Bool' contains-errors
+    |   |   `-CallExpr 0x151141448 <line:24:4, col:25> '<dependent type>' contains-errors
+    |   |     |-RecoveryExpr 0x151141400 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |   |     | `-DeclRefExpr 0x1511413c8 <col:4> 'struct sock *' contains-errors lvalue Var 0x1518085a8 'sk' 'struct sock *'
+    |   |     `-DeclRefExpr 0x151141428 <col:23> 'struct sock *' contains-errors lvalue Var 0x1518085a8 'sk' 'struct sock *'
+    |   `-IfStmt 0x1511416d0 <line:25:9, line:27:2>
+    |     |-RecoveryExpr 0x1511414d8 <line:25:13, col:21> '_Bool' contains-errors
+    |     `-CompoundStmt 0x1511416b8 <col:39, line:27:2>
+    |       `-CallExpr 0x151141678 <line:26:3, col:16> 'int'
+    |         |-ImplicitCastExpr 0x151141660 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x1511415d8 <col:3> 'int ()' Function 0x151141520 'pr_warn' 'int ()'
+    |         `-ImplicitCastExpr 0x1511416a0 <col:11> 'char *' <ArrayToPointerDecay>
+    |           `-StringLiteral 0x151141640 <col:11> 'char[4]' lvalue "STR"
+    `-LabelStmt 0x1511418c8 <line:28:1, line:29:15> 'exit'
+      `-CallExpr 0x151141888 <col:2, col:15> 'int'
+        |-ImplicitCastExpr 0x151141870 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x151141830 <col:2> 'int ()' Function 0x151141778 'kfree_skb' 'int ()'
+        `-ImplicitCastExpr 0x1511418b0 <col:12> 'struct sk_buff *' <LValueToRValue>
+          `-DeclRefExpr 0x151141850 <col:12> 'struct sk_buff *' lvalue ParmVar 0x151808228 'skb' 'struct sk_buff *'

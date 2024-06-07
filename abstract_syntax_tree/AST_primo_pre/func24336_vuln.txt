@@ -1,0 +1,95 @@
+`-FunctionDecl 0x12f928750  line:1:13 fuse_evict_inode 'void (struct inode *)' static
+  |-ParmVarDecl 0x12f928648 <col:30, col:44> col:44 used inode 'struct inode *'
+  `-CompoundStmt 0x12f947530 <line:2:1, line:22:1>
+    |-DeclStmt 0x12f945048 <line:3:2, col:47>
+    | |-RecordDecl 0x12f944c48 <col:2, col:9> col:9 struct fuse_inode
+    | `-VarDecl 0x12f944db8 <col:2, col:46> col:21 used fi 'struct fuse_inode *' cinit
+    |   `-ImplicitCastExpr 0x12f945018 <col:26, col:46> 'struct fuse_inode *' <IntegralToPointer>
+    |     `-CallExpr 0x12f944fd8 <col:26, col:46> 'int'
+    |       |-ImplicitCastExpr 0x12f944fc0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12f944f50 <col:26> 'int ()' Function 0x12f944e98 'get_fuse_inode' 'int ()'
+    |       `-ImplicitCastExpr 0x12f945000 <col:41> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12f944f70 <col:41> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |-CallExpr 0x12f9451d8 <line:5:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12f945140 <col:2> 'int ()' Function 0x12f945088 'truncate_inode_pages_final' 'int ()'
+    | `-UnaryOperator 0x12f9451c0 <col:29, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12f945198 <col:30, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12f945160 <col:30> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |-CallExpr 0x12f945338 <line:6:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x12f945320 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12f9452e0 <col:2> 'int ()' Function 0x12f945228 'clear_inode' 'int ()'
+    | `-ImplicitCastExpr 0x12f945360 <col:14> 'struct inode *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12f945300 <col:14> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |-IfStmt 0x12f946d98 <line:7:2, line:17:2>
+    | |-BinaryOperator 0x12f945478 <line:7:6, col:29> '<dependent type>' contains-errors '&'
+    | | |-CXXDependentScopeMemberExpr 0x12f9453d8 <col:6, col:19> '<dependent type>' contains-errors lvalue ->s_flags
+    | | | `-RecoveryExpr 0x12f9453b0 <col:6, col:13> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x12f945378 <col:6> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    | | `-RecoveryExpr 0x12f945458 <col:29> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12f946d70 <col:40, line:17:2>
+    |   |-DeclStmt 0x12f945818 <line:8:3, col:46>
+    |   | |-RecordDecl 0x12f945498 <col:3, col:10> col:10 struct fuse_conn
+    |   | `-VarDecl 0x12f945608 <col:3, col:45> col:21 used fc 'struct fuse_conn *' cinit
+    |   |   `-ImplicitCastExpr 0x12f9457e8 <col:26, col:45> 'struct fuse_conn *' <IntegralToPointer>
+    |   |     `-CallExpr 0x12f9457a8 <col:26, col:45> 'int'
+    |   |       |-ImplicitCastExpr 0x12f945790 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x12f945750 <col:26> 'int ()' Function 0x12f945698 'get_fuse_conn' 'int ()'
+    |   |       `-ImplicitCastExpr 0x12f9457d0 <col:40> 'struct inode *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x12f945770 <col:40> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |   |-IfStmt 0x12f945b20 <line:10:3, line:11:32>
+    |   | |-CallExpr 0x12f945968 <line:10:7, col:24> 'int'
+    |   | | |-ImplicitCastExpr 0x12f945950 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x12f945910 <col:7> 'int ()' Function 0x12f945858 'FUSE_IS_DAX' 'int ()'
+    |   | | `-ImplicitCastExpr 0x12f945990 <col:19> 'struct inode *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x12f945930 <col:19> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |   | `-CallExpr 0x12f945ae0 <line:11:4, col:32> 'int'
+    |   |   |-ImplicitCastExpr 0x12f945ac8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x12f945a88 <col:4> 'int ()' Function 0x12f9459d0 'fuse_dax_inode_cleanup' 'int ()'
+    |   |   `-ImplicitCastExpr 0x12f945b08 <col:27> 'struct inode *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x12f945aa8 <col:27> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+    |   `-IfStmt 0x12f946d50 <line:12:3, line:16:3>
+    |     |-RecoveryExpr 0x12f945b78 <line:12:7, col:11> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12f945b40 <col:7> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+    |     `-CompoundStmt 0x12f946d30 <col:20, line:16:3>
+    |       |-CallExpr 0x12f946c18 <line:13:4, line:14:19> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x12f946ab8 <line:13:4> 'int ()' Function 0x12f946a00 'fuse_queue_forget' 'int ()'
+    |       | |-DeclRefExpr 0x12f946ad8 <col:22> 'struct fuse_conn *' lvalue Var 0x12f945608 'fc' 'struct fuse_conn *'
+    |       | |-RecoveryExpr 0x12f946b30 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x12f946af8 <col:26> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+    |       | |-RecoveryExpr 0x12f946b90 <col:38, col:42> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x12f946b58 <col:38> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+    |       | `-RecoveryExpr 0x12f946bf0 <line:14:8, col:12> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x12f946bb8 <col:8> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+    |       `-BinaryOperator 0x12f946d10 <line:15:4, col:17> '<dependent type>' contains-errors '='
+    |         |-RecoveryExpr 0x12f946c90 <col:4, col:8> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x12f946c58 <col:4> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+    |         `-RecoveryExpr 0x12f946cf0 <col:17> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x12f947510 <line:18:2, line:21:2>
+      |-BinaryOperator 0x12f9470d0 <line:18:6, col:51> 'int' contains-errors '&&'
+      | |-CallExpr 0x12f946f18 <col:6, col:27> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x12f946e98 <col:6> 'int ()' Function 0x12f946de0 'S_ISREG' 'int ()'
+      | | `-RecoveryExpr 0x12f946ef0 <col:14, col:21> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x12f946eb8 <col:14> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+      | `-UnaryOperator 0x12f9470b8 <col:32, col:51> 'int' prefix '!' cannot overflow
+      |   `-CallExpr 0x12f947078 <col:33, col:51> 'int'
+      |     |-ImplicitCastExpr 0x12f947060 <col:33> 'int (*)()' <FunctionToPointerDecay>
+      |     | `-DeclRefExpr 0x12f947020 <col:33> 'int ()' Function 0x12f946f68 'is_bad_inode' 'int ()'
+      |     `-ImplicitCastExpr 0x12f9470a0 <col:46> 'struct inode *' <LValueToRValue>
+      |       `-DeclRefExpr 0x12f947040 <col:46> 'struct inode *' lvalue ParmVar 0x12f928648 'inode' 'struct inode *'
+      `-CompoundStmt 0x12f9474f0 <col:54, line:21:2>
+        |-CallExpr 0x12f9473a8 <line:19:3, col:40> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x12f9471d0 <col:3> 'int ()' Function 0x12f947118 'WARN_ON' 'int ()'
+        | `-UnaryOperator 0x12f947390 <col:11, col:39> '<dependent type>' contains-errors prefix '!' cannot overflow
+        |   `-CallExpr 0x12f947368 <col:12, col:39> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x12f9472d0 <col:12> 'int ()' Function 0x12f947218 'list_empty' 'int ()'
+        |     `-UnaryOperator 0x12f947350 <col:23, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |       `-RecoveryExpr 0x12f947328 <col:24, col:28> '<dependent type>' contains-errors lvalue
+        |         `-DeclRefExpr 0x12f9472f0 <col:24> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'
+        `-CallExpr 0x12f9474c8 <line:20:3, col:42> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x12f9473d0 <col:3> 'int ()' Function 0x12f947118 'WARN_ON' 'int ()'
+          `-UnaryOperator 0x12f9474b0 <col:11, col:41> '<dependent type>' contains-errors prefix '!' cannot overflow
+            `-CallExpr 0x12f947488 <col:12, col:41> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x12f9473f0 <col:12> 'int ()' Function 0x12f947218 'list_empty' 'int ()'
+              `-UnaryOperator 0x12f947470 <col:23, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+                `-RecoveryExpr 0x12f947448 <col:24, col:28> '<dependent type>' contains-errors lvalue
+                  `-DeclRefExpr 0x12f947410 <col:24> 'struct fuse_inode *' lvalue Var 0x12f944db8 'fi' 'struct fuse_inode *'

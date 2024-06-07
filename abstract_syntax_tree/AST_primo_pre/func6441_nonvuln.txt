@@ -1,0 +1,40 @@
+`-FunctionDecl 0x1569418d8  line:1:17 invalid imap_done 'int (struct connectdata *, int, int)' static
+  |-ParmVarDecl 0x156928668 <col:27, col:47> col:47 used conn 'struct connectdata *'
+  |-ParmVarDecl 0x1569286e8 <col:53, col:62> col:62 invalid status 'int'
+  |-ParmVarDecl 0x156928768 <line:2:27, col:32> col:32 invalid premature 'int'
+  `-CompoundStmt 0x1569422d0 <line:3:1, line:22:1>
+    |-DeclStmt 0x156941be8 <line:4:3, col:42>
+    | |-RecordDecl 0x156941998 <col:3, col:10> col:10 struct SessionHandle
+    | `-VarDecl 0x156941b08 <col:3, col:38> col:25 used data 'struct SessionHandle *' cinit
+    |   `-RecoveryExpr 0x156941ba8 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x156941b70 <col:32> 'struct connectdata *' lvalue ParmVar 0x156928668 'conn' 'struct connectdata *'
+    |-DeclStmt 0x156941ed8 <line:5:3, col:44>
+    | |-RecordDecl 0x156941c00 <col:3, col:10> col:10 struct FTP
+    | `-VarDecl 0x156941d68 <col:3, col:40> col:15 used imap 'struct FTP *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x156941e78 <col:22, col:40> '<dependent type>' contains-errors lvalue .imap
+    |     `-CXXDependentScopeMemberExpr 0x156941e30 <col:22, col:34> '<dependent type>' contains-errors lvalue .proto
+    |       `-RecoveryExpr 0x156941e08 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x156941dd0 <col:22> 'struct SessionHandle *' contains-errors lvalue Var 0x156941b08 'data' 'struct SessionHandle *'
+    |-CStyleCastExpr 0x156941f38 <line:7:3, col:9> 'void' contains-errors <ToVoid>
+    | `-ImplicitCastExpr 0x156941f20 <col:9> '<dependent type>' contains-errors <LValueToRValue> part_of_explicit_cast
+    |   `-RecoveryExpr 0x156941ef0 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x156941ff8 <line:9:3, line:11:12>
+    | |-UnaryOperator 0x156941f98 <line:9:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x156941f80 <col:7> 'struct FTP *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x156941f60 <col:7> 'struct FTP *' contains-errors lvalue Var 0x156941d68 'imap' 'struct FTP *'
+    | `-ReturnStmt 0x156941fe8 <line:11:5, col:12>
+    |   `-RecoveryExpr 0x156941fc8 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x156942190 <line:13:3, line:16:3>
+    | |-RecoveryExpr 0x156942018 <line:13:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x156942178 <col:14, line:16:3>
+    |   `-BinaryOperator 0x156942138 <line:14:5, col:24> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x156942098 <col:5, col:16> '<dependent type>' contains-errors lvalue .close
+    |     | `-RecoveryExpr 0x156942070 <col:5, col:11> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x156942038 <col:5> 'struct connectdata *' lvalue ParmVar 0x156928668 'conn' 'struct connectdata *'
+    |     `-RecoveryExpr 0x156942118 <col:24> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x156942268 <line:19:3, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1569421e8 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1569421b0 <col:3> 'struct FTP *' contains-errors lvalue Var 0x156941d68 'imap' 'struct FTP *'
+    | `-RecoveryExpr 0x156942248 <col:20> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1569422c0 <line:21:3, col:10>
+      `-RecoveryExpr 0x1569422a0 <col:10> '<dependent type>' contains-errors lvalue

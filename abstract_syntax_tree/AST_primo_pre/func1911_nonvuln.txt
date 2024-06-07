@@ -1,0 +1,178 @@
+`-FunctionDecl 0x1390274d8  line:1:1 invalid gc_mark_children 'int (int *, int *, struct RBasic *)'
+  |-ParmVarDecl 0x13900dd28 <col:18, col:29> col:29 invalid mrb 'int *'
+  |-ParmVarDecl 0x13900dda8 <col:34, col:42> col:42 referenced invalid gc 'int *'
+  |-ParmVarDecl 0x13900e398 <col:46, col:61> col:61 used obj 'struct RBasic *'
+  `-CompoundStmt 0x13902ae98 <line:2:1, line:97:1>
+    |-CallExpr 0x1390278d0 <line:3:3, col:26> 'int'
+    | |-ImplicitCastExpr 0x1390278b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1390276f0 <col:3> 'int ()' Function 0x139027638 'mrb_assert' 'int ()'
+    | `-CallExpr 0x139027878 <col:14, col:25> 'int'
+    |   |-ImplicitCastExpr 0x139027860 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1390277f0 <col:14> 'int ()' Function 0x139027738 'is_gray' 'int ()'
+    |   `-ImplicitCastExpr 0x1390278a0 <col:22> 'struct RBasic *' <LValueToRValue>
+    |     `-DeclRefExpr 0x139027810 <col:22> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+    |-CallExpr 0x139027a30 <line:4:3, col:18> 'int'
+    | |-ImplicitCastExpr 0x139027a18 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1390279d8 <col:3> 'int ()' Function 0x139027920 'paint_black' 'int ()'
+    | `-ImplicitCastExpr 0x139027a58 <col:15> 'struct RBasic *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1390279f8 <col:15> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+    |-BinaryOperator 0x139027b60 <line:5:3, col:24> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x139027ab8 <col:3, col:7> '<dependent type>' contains-errors lvalue ->gray_list
+    | | `-RecoveryExpr 0x139027a90 <col:3> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x139027a70 <col:3> 'int *' lvalue ParmVar 0x13900dda8 'gc' 'int *'
+    | `-RecoveryExpr 0x139027b38 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x139027b00 <col:19> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+    |-CallExpr 0x139027db0 <line:6:3, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139027c60 <col:3> 'int ()' Function 0x139027ba8 'mrb_gc_mark' 'int ()'
+    | |-RecoveryExpr 0x139027c80 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CStyleCastExpr 0x139027d88 <col:20, col:41> 'struct RBasic *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x139027cd8 <col:36, col:41> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x139027ca0 <col:36> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+    `-SwitchStmt 0x139027e58 <line:7:3, line:96:3>
+      |-ImplicitCastExpr 0x139027e40 <line:7:11, col:16> '<dependent type>' contains-errors <LValueToRValue>
+      | `-RecoveryExpr 0x139027e18 <col:11, col:16> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x139027de0 <col:11> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+      `-CompoundStmt 0x13902ade8 <col:20, line:96:3>
+        |-CompoundStmt 0x138923318 <line:9:5, line:14:5>
+        | |-DeclStmt 0x139028170 <line:10:7, col:45>
+        | | |-RecordDecl 0x139027e98 <col:7, col:14> col:14 struct RClass
+        | | `-VarDecl 0x139028008 <col:7, col:42> col:22 used c 'struct RClass *' cinit
+        | |   `-CStyleCastExpr 0x139028130 <col:26, col:42> 'struct RClass *' <BitCast>
+        | |     `-ImplicitCastExpr 0x139028118 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        | |       `-DeclRefExpr 0x139028070 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        | |-IfStmt 0x138923148 <line:11:7, line:12:30>
+        | | |-CallExpr 0x139028310 <line:11:11, col:46> '<dependent type>' contains-errors
+        | | | |-DeclRefExpr 0x139028268 <col:11> 'int ()' Function 0x1390281b0 'MRB_FLAG_TEST' 'int ()'
+        | | | |-DeclRefExpr 0x139028288 <col:25> 'struct RClass *' lvalue Var 0x139028008 'c' 'struct RClass *'
+        | | | `-RecoveryExpr 0x1390282f0 <col:28> '<dependent type>' contains-errors lvalue
+        | | `-CallExpr 0x138923118 <line:12:9, col:30> '<dependent type>' contains-errors
+        | |   |-DeclRefExpr 0x1389230b8 <col:9> 'int ()' Function 0x138923000 'mrb_gc_mark_mt' 'int ()'
+        | |   |-RecoveryExpr 0x1389230d8 <col:24> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x1389230f8 <col:29> 'struct RClass *' lvalue Var 0x139028008 'c' 'struct RClass *'
+        | `-CallExpr 0x1389232e8 <line:13:7, col:68> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x138923168 <col:7> 'int ()' Function 0x139027ba8 'mrb_gc_mark' 'int ()'
+        |   |-RecoveryExpr 0x138923188 <col:19> '<dependent type>' contains-errors lvalue
+        |   `-CStyleCastExpr 0x1389232c0 <col:24, col:63> 'struct RBasic *' contains-errors <Dependent>
+        |     `-RecoveryExpr 0x138923270 <col:40, col:63> '<dependent type>' contains-errors lvalue
+        |       `-ParenListExpr 0x138923230 <col:40, col:60> 'NULL TYPE'
+        |         `-CStyleCastExpr 0x138923208 <col:41, col:57> 'struct RClass *' <BitCast>
+        |           `-ImplicitCastExpr 0x1389231f0 <col:57> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |             `-DeclRefExpr 0x1389231a8 <col:57> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-BreakStmt 0x138923340 <line:15:5>
+        |-CompoundStmt 0x138923828 <line:20:5, line:25:5>
+        | |-DeclStmt 0x138923660 <line:21:7, col:45>
+        | | |-RecordDecl 0x138923390 <col:7, col:14> col:14 struct RClass
+        | | `-VarDecl 0x1389234f8 <col:7, col:42> col:22 used c 'struct RClass *' cinit
+        | |   `-CStyleCastExpr 0x138923620 <col:26, col:42> 'struct RClass *' <BitCast>
+        | |     `-ImplicitCastExpr 0x138923608 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        | |       `-DeclRefExpr 0x138923560 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        | |-CallExpr 0x1389236d8 <line:23:7, col:28> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x138923678 <col:7> 'int ()' Function 0x138923000 'mrb_gc_mark_mt' 'int ()'
+        | | |-RecoveryExpr 0x138923698 <col:22> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x1389236b8 <col:27> 'struct RClass *' lvalue Var 0x1389234f8 'c' 'struct RClass *'
+        | `-CallExpr 0x1389237f8 <line:24:7, col:48> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x138923708 <col:7> 'int ()' Function 0x139027ba8 'mrb_gc_mark' 'int ()'
+        |   |-RecoveryExpr 0x138923728 <col:19> '<dependent type>' contains-errors lvalue
+        |   `-CStyleCastExpr 0x1389237d0 <col:24, col:43> 'struct RBasic *' contains-errors <Dependent>
+        |     `-RecoveryExpr 0x138923780 <col:40, col:43> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x138923748 <col:40> 'struct RClass *' lvalue Var 0x1389234f8 'c' 'struct RClass *'
+        |-CallExpr 0x138923b38 <line:31:5, col:45> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x138923930 <col:5> 'int ()' Function 0x138923878 'mrb_gc_mark_iv' 'int ()'
+        | |-RecoveryExpr 0x138923950 <col:20> '<dependent type>' contains-errors lvalue
+        | `-CStyleCastExpr 0x138923b10 <col:25, col:42> 'struct RObject *' <BitCast>
+        |   `-ImplicitCastExpr 0x138923af8 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |     `-DeclRefExpr 0x138923a10 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-BreakStmt 0x138923b68 <line:32:5>
+        |-CompoundStmt 0x1390292a8 <line:35:5, line:40:5>
+        | |-DeclStmt 0x138923e40 <line:36:7, col:43>
+        | | |-RecordDecl 0x138923b70 <col:7, col:14> col:14 struct RProc
+        | | `-VarDecl 0x138923cd8 <col:7, col:40> col:21 used p 'struct RProc *' cinit
+        | |   `-CStyleCastExpr 0x138923e00 <col:25, col:40> 'struct RProc *' <BitCast>
+        | |     `-ImplicitCastExpr 0x138923de8 <col:40> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        | |       `-DeclRefExpr 0x138923d40 <col:40> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        | |-CallExpr 0x138923f48 <line:38:7, col:46> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x138923e58 <col:7> 'int ()' Function 0x139027ba8 'mrb_gc_mark' 'int ()'
+        | | |-RecoveryExpr 0x138923e78 <col:19> '<dependent type>' contains-errors lvalue
+        | | `-CStyleCastExpr 0x138923f20 <col:24, col:43> 'struct RBasic *' contains-errors <Dependent>
+        | |   `-RecoveryExpr 0x138923ed0 <col:40, col:43> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x138923e98 <col:40> 'struct RProc *' lvalue Var 0x138923cd8 'p' 'struct RProc *'
+        | `-CallExpr 0x139029278 <line:39:7, col:55> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x138923f78 <col:7> 'int ()' Function 0x139027ba8 'mrb_gc_mark' 'int ()'
+        |   |-RecoveryExpr 0x138923f98 <col:19> '<dependent type>' contains-errors lvalue
+        |   `-CStyleCastExpr 0x139029250 <col:24, col:43> 'struct RBasic *' contains-errors <Dependent>
+        |     `-RecoveryExpr 0x139029200 <col:40, col:43> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x138923fb8 <col:40> 'struct RProc *' lvalue Var 0x138923cd8 'p' 'struct RProc *'
+        |-BreakStmt 0x1390292d0 <line:41:5>
+        |-CompoundStmt 0x1390298f0 <line:44:5, line:53:5>
+        | `-DeclStmt 0x1390295b0 <line:45:7, col:41>
+        |   |-RecordDecl 0x1390292d8 <col:7, col:14> col:14 struct REnv
+        |   `-VarDecl 0x139029448 <col:7, col:38> col:20 used e 'struct REnv *' cinit
+        |     `-CStyleCastExpr 0x139029570 <col:24, col:38> 'struct REnv *' <BitCast>
+        |       `-ImplicitCastExpr 0x139029558 <col:38> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |         `-DeclRefExpr 0x1390294b0 <col:38> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-BreakStmt 0x139029908 <line:54:5>
+        |-CompoundStmt 0x139029ee8 <line:57:5, line:61:5>
+        | |-DeclStmt 0x139029d08 <line:58:7, col:57>
+        | | |-RecordDecl 0x139029910 <col:7, col:14> col:14 struct mrb_context
+        | | `-VarDecl 0x139029a78 <col:7, col:54> col:27 used c 'struct mrb_context *' cinit
+        | |   `-RecoveryExpr 0x139029cc8 <col:31, col:54> '<dependent type>' contains-errors lvalue
+        | |     `-ParenExpr 0x139029ca8 <col:31, col:51> 'struct RFiber *'
+        | |       `-CStyleCastExpr 0x139029c80 <col:32, col:48> 'struct RFiber *' <BitCast>
+        | |         `-ImplicitCastExpr 0x139029c68 <col:48> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        | |           `-DeclRefExpr 0x139029b80 <col:48> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        | `-IfStmt 0x139029ec8 <line:60:7, col:33>
+        |   |-ImplicitCastExpr 0x139029d40 <col:11> 'struct mrb_context *' contains-errors <LValueToRValue>
+        |   | `-DeclRefExpr 0x139029d20 <col:11> 'struct mrb_context *' contains-errors lvalue Var 0x139029a78 'c' 'struct mrb_context *'
+        |   `-CallExpr 0x139029e98 <col:14, col:33> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x139029e38 <col:14> 'int ()' Function 0x139029d80 'mark_context' 'int ()'
+        |     |-RecoveryExpr 0x139029e58 <col:27> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x139029e78 <col:32> 'struct mrb_context *' contains-errors lvalue Var 0x139029a78 'c' 'struct mrb_context *'
+        |-BreakStmt 0x139029f08 <line:62:5>
+        |-CompoundStmt 0x13902a330 <line:65:5, line:72:5>
+        | `-DeclStmt 0x13902a1e0 <line:66:7, col:45>
+        |   |-RecordDecl 0x139029f10 <col:7, col:14> col:14 struct RArray
+        |   `-VarDecl 0x13902a078 <col:7, col:42> col:22 used a 'struct RArray *' cinit
+        |     `-CStyleCastExpr 0x13902a1a0 <col:26, col:42> 'struct RArray *' <BitCast>
+        |       `-ImplicitCastExpr 0x13902a188 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |         `-DeclRefExpr 0x13902a0e0 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-BreakStmt 0x13902a348 <line:73:5>
+        |-CallExpr 0x13902a478 <line:76:5, col:45> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13902a350 <col:5> 'int ()' Function 0x138923878 'mrb_gc_mark_iv' 'int ()'
+        | |-RecoveryExpr 0x13902a370 <col:20> '<dependent type>' contains-errors lvalue
+        | `-CStyleCastExpr 0x13902a450 <col:25, col:42> 'struct RObject *' <BitCast>
+        |   `-ImplicitCastExpr 0x13902a438 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |     `-DeclRefExpr 0x13902a390 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-CallExpr 0x13902a798 <line:77:5, col:45> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13902a588 <col:5> 'int ()' Function 0x13902a4d0 'mrb_gc_mark_hash' 'int ()'
+        | |-RecoveryExpr 0x13902a5a8 <col:22> '<dependent type>' contains-errors lvalue
+        | `-CStyleCastExpr 0x13902a770 <col:27, col:42> 'struct RHash *' <BitCast>
+        |   `-ImplicitCastExpr 0x13902a758 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        |     `-DeclRefExpr 0x13902a670 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        |-BreakStmt 0x13902a7c8 <line:78:5>
+        |-BreakStmt 0x13902a7d0 <line:81:5>
+        |-CompoundStmt 0x13902ad98 <line:84:5, line:91:5>
+        | |-DeclStmt 0x13902aab0 <line:85:7, col:45>
+        | | |-RecordDecl 0x13902a7d8 <col:7, col:14> col:14 struct RRange
+        | | `-VarDecl 0x13902a948 <col:7, col:42> col:22 used r 'struct RRange *' cinit
+        | |   `-CStyleCastExpr 0x13902aa70 <col:26, col:42> 'struct RRange *' <BitCast>
+        | |     `-ImplicitCastExpr 0x13902aa58 <col:42> 'struct RBasic *' <LValueToRValue> part_of_explicit_cast
+        | |       `-DeclRefExpr 0x13902a9b0 <col:42> 'struct RBasic *' lvalue ParmVar 0x13900e398 'obj' 'struct RBasic *'
+        | `-IfStmt 0x13902ad78 <line:87:7, line:90:7>
+        |   |-RecoveryExpr 0x13902ab00 <line:87:11, col:14> '<dependent type>' contains-errors lvalue
+        |   | `-DeclRefExpr 0x13902aac8 <col:11> 'struct RRange *' lvalue Var 0x13902a948 'r' 'struct RRange *'
+        |   `-CompoundStmt 0x13902ad58 <col:21, line:90:7>
+        |     |-CallExpr 0x13902ac10 <line:88:9, col:45> '<dependent type>' contains-errors
+        |     | |-DeclRefExpr 0x13902ab28 <col:9> 'int ()' Function 0x139029788 'mrb_gc_mark_value' 'int ()'
+        |     | |-RecoveryExpr 0x13902ab48 <col:27> '<dependent type>' contains-errors lvalue
+        |     | `-CXXDependentScopeMemberExpr 0x13902abc8 <col:32, col:42> '<dependent type>' contains-errors lvalue ->beg
+        |     |   `-RecoveryExpr 0x13902aba0 <col:32, col:35> '<dependent type>' contains-errors lvalue
+        |     |     `-DeclRefExpr 0x13902ab68 <col:32> 'struct RRange *' lvalue Var 0x13902a948 'r' 'struct RRange *'
+        |     `-CallExpr 0x13902ad28 <line:89:9, col:45> '<dependent type>' contains-errors
+        |       |-DeclRefExpr 0x13902ac40 <col:9> 'int ()' Function 0x139029788 'mrb_gc_mark_value' 'int ()'
+        |       |-RecoveryExpr 0x13902ac60 <col:27> '<dependent type>' contains-errors lvalue
+        |       `-CXXDependentScopeMemberExpr 0x13902ace0 <col:32, col:42> '<dependent type>' contains-errors lvalue ->end
+        |         `-RecoveryExpr 0x13902acb8 <col:32, col:35> '<dependent type>' contains-errors lvalue
+        |           `-DeclRefExpr 0x13902ac80 <col:32> 'struct RRange *' lvalue Var 0x13902a948 'r' 'struct RRange *'
+        |-BreakStmt 0x13902adb8 <line:92:5>
+        `-DefaultStmt 0x13902adc8 <line:94:3, line:95:5>
+          `-BreakStmt 0x13902adc0 <col:5>

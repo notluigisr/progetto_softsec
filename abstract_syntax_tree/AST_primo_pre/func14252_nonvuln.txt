@@ -1,0 +1,39 @@
+`-FunctionDecl 0x149128750  line:1:6 sctp_data_ready 'void (struct sock *)'
+  |-ParmVarDecl 0x149128648 <col:22, col:35> col:35 used sk 'struct sock *'
+  `-CompoundStmt 0x1491417a0 <line:2:1, line:12:1>
+    |-DeclStmt 0x149140c38 <line:3:2, col:22>
+    | |-RecordDecl 0x149140a48 <col:2, col:9> col:9 struct socket_wq
+    | `-VarDecl 0x149140bb8 <col:2, col:20> col:20 used wq 'struct socket_wq *'
+    |-CallExpr 0x149140de8 <line:5:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x149140dd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x149140d80 <col:2> 'int ()' Function 0x149140cc8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x149140fb0 <line:6:2, col:32> 'struct socket_wq *' contains-errors '='
+    | |-DeclRefExpr 0x149140e08 <col:2> 'struct socket_wq *' lvalue Var 0x149140bb8 'wq' 'struct socket_wq *'
+    | `-CallExpr 0x149140f88 <col:7, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149140f08 <col:7> 'int ()' Function 0x149140e50 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x149140f60 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x149140f28 <col:23> 'struct sock *' lvalue ParmVar 0x149128648 'sk' 'struct sock *'
+    |-IfStmt 0x149141448 <line:7:2, line:9:30>
+    | |-CallExpr 0x149141108 <line:7:6, col:25> 'int'
+    | | |-ImplicitCastExpr 0x1491410f0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1491410b0 <col:6> 'int ()' Function 0x149140ff8 'skwq_has_sleeper' 'int ()'
+    | | `-ImplicitCastExpr 0x149141130 <col:23> 'struct socket_wq *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1491410d0 <col:23> 'struct socket_wq *' lvalue Var 0x149140bb8 'wq' 'struct socket_wq *'
+    | `-CallExpr 0x149141418 <line:8:3, line:9:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x149141228 <line:8:3> 'int ()' Function 0x149141170 'wake_up_interruptible_sync_poll' 'int ()'
+    |   |-UnaryOperator 0x1491412a8 <col:35, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x149141280 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x149141248 <col:36> 'struct socket_wq *' lvalue Var 0x149140bb8 'wq' 'struct socket_wq *'
+    |   `-BinaryOperator 0x1491413f8 <col:46, line:9:20> '<dependent type>' contains-errors '|'
+    |     |-BinaryOperator 0x1491413b8 <line:8:46, line:9:7> '<dependent type>' contains-errors '|'
+    |     | |-RecoveryExpr 0x149141378 <line:8:46> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x149141398 <line:9:7> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x1491413d8 <col:20> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x149141630 <line:10:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x149141548 <col:2> 'int ()' Function 0x149141490 'sk_wake_async' 'int ()'
+    | |-DeclRefExpr 0x149141568 <col:16> 'struct sock *' lvalue ParmVar 0x149128648 'sk' 'struct sock *'
+    | |-RecoveryExpr 0x1491415f0 <col:20> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x149141610 <col:37> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x149141780 <line:11:2, col:18> 'int'
+      `-ImplicitCastExpr 0x149141768 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x149141748 <col:2> 'int ()' Function 0x149141690 'rcu_read_unlock' 'int ()'

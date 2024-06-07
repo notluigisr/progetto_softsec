@@ -1,0 +1,69 @@
+`-FunctionDecl 0x12b928750  line:1:20 ep_set_busy_poll_napi_id 'void (struct epitem *)' static inline
+  |-ParmVarDecl 0x12b928648 <col:45, col:60> col:60 used epi 'struct epitem *'
+  `-CompoundStmt 0x12b946c68 <line:2:1, line:29:1>
+    |-DeclStmt 0x12b940c38 <line:3:2, col:22>
+    | |-RecordDecl 0x12b940a48 <col:2, col:9> col:9 struct eventpoll
+    | `-VarDecl 0x12b940bb8 <col:2, col:20> col:20 used ep 'struct eventpoll *'
+    |-DeclStmt 0x12b940cd0 <line:4:2, col:22>
+    | `-VarDecl 0x12b940c68 <col:2, col:15> col:15 used napi_id 'unsigned int'
+    |-DeclStmt 0x12b940ed8 <line:5:2, col:21>
+    | |-RecordDecl 0x12b940ce8 <col:2, col:9> col:9 struct socket
+    | `-VarDecl 0x12b940e58 <col:2, col:17> col:17 used sock 'struct socket *'
+    |-DeclStmt 0x12b9410d8 <line:6:2, col:17>
+    | |-RecordDecl 0x12b940ef0 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x12b941058 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-DeclStmt 0x12b941170 <line:7:2, col:9>
+    | `-VarDecl 0x12b941108 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x12b941360 <line:9:2, line:10:3>
+    | |-UnaryOperator 0x12b941338 <line:9:6, col:24> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x12b941318 <col:7, col:24> 'int'
+    | |   `-ImplicitCastExpr 0x12b941300 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x12b9412b0 <col:7> 'int ()' Function 0x12b9411f8 'net_busy_loop_on' 'int ()'
+    | `-ReturnStmt 0x12b941350 <line:10:3>
+    |-BinaryOperator 0x12b9415e8 <line:12:2, col:43> 'struct socket *' contains-errors '='
+    | |-DeclRefExpr 0x12b941380 <col:2> 'struct socket *' lvalue Var 0x12b940e58 'sock' 'struct socket *'
+    | `-CallExpr 0x12b9415b8 <col:9, col:43> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b941480 <col:9> 'int ()' Function 0x12b9413c8 'sock_from_file' 'int ()'
+    |   |-CXXDependentScopeMemberExpr 0x12b941500 <col:24, col:33> '<dependent type>' contains-errors lvalue .file
+    |   | `-RecoveryExpr 0x12b9414d8 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12b9414a0 <col:24> 'struct epitem *' lvalue ParmVar 0x12b928648 'epi' 'struct epitem *'
+    |   `-UnaryOperator 0x12b9415a0 <col:39, col:40> 'int *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x12b941548 <col:40> 'int' lvalue Var 0x12b941108 'err' 'int'
+    |-IfStmt 0x12b941668 <line:13:2, line:14:3>
+    | |-UnaryOperator 0x12b941640 <line:13:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12b941628 <col:7> 'struct socket *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12b941608 <col:7> 'struct socket *' lvalue Var 0x12b940e58 'sock' 'struct socket *'
+    | `-ReturnStmt 0x12b941658 <line:14:3>
+    |-BinaryOperator 0x12b941708 <line:16:2, col:13> 'struct sock *' contains-errors '='
+    | |-DeclRefExpr 0x12b941688 <col:2> 'struct sock *' lvalue Var 0x12b941058 'sk' 'struct sock *'
+    | `-RecoveryExpr 0x12b9416e0 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12b9416a8 <col:7> 'struct socket *' lvalue Var 0x12b940e58 'sock' 'struct socket *'
+    |-IfStmt 0x12b941788 <line:17:2, line:18:3>
+    | |-UnaryOperator 0x12b941760 <line:17:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12b941748 <col:7> 'struct sock *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12b941728 <col:7> 'struct sock *' lvalue Var 0x12b941058 'sk' 'struct sock *'
+    | `-ReturnStmt 0x12b941778 <line:18:3>
+    |-BinaryOperator 0x12b941950 <line:20:2, col:36> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x12b9417a8 <col:2> 'unsigned int' lvalue Var 0x12b940c68 'napi_id' 'unsigned int'
+    | `-CallExpr 0x12b941928 <col:12, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b9418a8 <col:12> 'int ()' Function 0x12b9417f0 'READ_ONCE' 'int ()'
+    |   `-RecoveryExpr 0x12b941900 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12b9418c8 <col:22> 'struct sock *' lvalue Var 0x12b941058 'sk' 'struct sock *'
+    |-BinaryOperator 0x12b946a00 <line:21:2, col:12> 'struct eventpoll *' contains-errors '='
+    | |-DeclRefExpr 0x12b941970 <col:2> 'struct eventpoll *' lvalue Var 0x12b940bb8 'ep' 'struct eventpoll *'
+    | `-RecoveryExpr 0x12b9419c8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12b941990 <col:7> 'struct epitem *' lvalue ParmVar 0x12b928648 'epi' 'struct epitem *'
+    |-IfStmt 0x12b946ba8 <line:24:2, line:25:3>
+    | |-BinaryOperator 0x12b946b78 <line:24:6, col:46> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x12b946b58 <col:6, col:16> 'int' contains-errors '<'
+    | | | |-DeclRefExpr 0x12b946a20 <col:6> 'unsigned int' lvalue Var 0x12b940c68 'napi_id' 'unsigned int'
+    | | | `-RecoveryExpr 0x12b946b38 <col:16> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x12b946af8 <col:31, col:46> 'int' contains-errors '=='
+    | |   |-DeclRefExpr 0x12b946a78 <col:31> 'unsigned int' lvalue Var 0x12b940c68 'napi_id' 'unsigned int'
+    | |   `-RecoveryExpr 0x12b946ad0 <col:42, col:46> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12b946a98 <col:42> 'struct eventpoll *' lvalue Var 0x12b940bb8 'ep' 'struct eventpoll *'
+    | `-ReturnStmt 0x12b946b98 <line:25:3>
+    `-BinaryOperator 0x12b946c48 <line:28:2, col:16> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x12b946c00 <col:2, col:6> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x12b946bc8 <col:2> 'struct eventpoll *' lvalue Var 0x12b940bb8 'ep' 'struct eventpoll *'
+      `-DeclRefExpr 0x12b946c28 <col:16> 'unsigned int' lvalue Var 0x12b940c68 'napi_id' 'unsigned int'

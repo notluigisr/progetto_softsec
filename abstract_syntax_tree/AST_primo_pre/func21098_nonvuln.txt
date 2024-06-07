@@ -1,0 +1,36 @@
+`-FunctionDecl 0x142128750  line:1:13 scrub_submit 'void (struct scrub_ctx *)' static
+  |-ParmVarDecl 0x142128648 <col:26, col:44> col:44 used sctx 'struct scrub_ctx *'
+  `-CompoundStmt 0x1421412c0 <line:2:1, line:12:1>
+    |-DeclStmt 0x142140c38 <line:3:2, col:24>
+    | |-RecordDecl 0x142140a48 <col:2, col:9> col:9 struct scrub_bio
+    | `-VarDecl 0x142140bb8 <col:2, col:20> col:20 used sbio 'struct scrub_bio *'
+    |-IfStmt 0x142140d18 <line:5:2, line:6:3>
+    | |-BinaryOperator 0x142140ce8 <line:5:6, col:21> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x142140c88 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x142140c50 <col:6> 'struct scrub_ctx *' lvalue ParmVar 0x142128648 'sctx' 'struct scrub_ctx *'
+    | | `-UnaryOperator 0x142140cd0 <col:20, col:21> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x142140cb0 <col:21> 'int' 1
+    | `-ReturnStmt 0x142140d08 <line:6:3>
+    |-BinaryOperator 0x142140e68 <line:8:2, col:30> 'struct scrub_bio *' contains-errors '='
+    | |-DeclRefExpr 0x142140d38 <col:2> 'struct scrub_bio *' lvalue Var 0x142140bb8 'sbio' 'struct scrub_bio *'
+    | `-ArraySubscriptExpr 0x142140e48 <col:9, col:30> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x142140e18 <col:9, col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x142140d90 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x142140d58 <col:9> 'struct scrub_ctx *' lvalue ParmVar 0x142128648 'sctx' 'struct scrub_ctx *'
+    |   `-ImplicitCastExpr 0x142140e30 <col:20, col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x142140df0 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x142140db8 <col:20> 'struct scrub_ctx *' lvalue ParmVar 0x142128648 'sctx' 'struct scrub_ctx *'
+    |-BinaryOperator 0x142140f20 <line:9:2, col:16> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x142140ec0 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x142140e88 <col:2> 'struct scrub_ctx *' lvalue ParmVar 0x142128648 'sctx' 'struct scrub_ctx *'
+    | `-UnaryOperator 0x142140f08 <col:15, col:16> 'int' prefix '-'
+    |   `-IntegerLiteral 0x142140ee8 <col:16> 'int' 1
+    |-CallExpr 0x1421410f8 <line:10:2, col:28> 'int'
+    | |-ImplicitCastExpr 0x1421410e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x142141070 <col:2> 'int ()' Function 0x142140fb8 'scrub_pending_bio_inc' 'int ()'
+    | `-ImplicitCastExpr 0x142141120 <col:24> 'struct scrub_ctx *' <LValueToRValue>
+    |   `-DeclRefExpr 0x142141090 <col:24> 'struct scrub_ctx *' lvalue ParmVar 0x142128648 'sctx' 'struct scrub_ctx *'
+    `-CallExpr 0x142141298 <line:11:2, col:30> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x142141218 <col:2> 'int ()' Function 0x142141160 'btrfsic_submit_bio' 'int ()'
+      `-RecoveryExpr 0x142141270 <col:21, col:27> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x142141238 <col:21> 'struct scrub_bio *' lvalue Var 0x142140bb8 'sbio' 'struct scrub_bio *'

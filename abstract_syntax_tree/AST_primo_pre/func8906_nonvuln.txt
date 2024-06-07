@@ -1,0 +1,63 @@
+`-FunctionDecl 0x14b027558  line:1:12 invalid ip_vs_genl_fill_daemon 'int (struct sk_buff *, int, const char *, int)' static
+  |-ParmVarDecl 0x14b00e248 <col:35, col:51> col:51 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14b00e2e0 <col:56, col:63> col:63 invalid state 'int'
+  |-ParmVarDecl 0x14b00e360 <line:2:7, col:19> col:19 used mcast_ifn 'const char *'
+  |-ParmVarDecl 0x14b027400 <col:30, col:37> col:37 invalid syncid 'int'
+  `-CompoundStmt 0x14b02a458 <line:3:1, line:21:1>
+    |-DeclStmt 0x14b027808 <line:4:2, col:26>
+    | |-RecordDecl 0x14b027620 <col:2, col:9> col:9 struct nlattr
+    | `-VarDecl 0x14b027788 <col:2, col:17> col:17 used nl_daemon 'struct nlattr *'
+    |-BinaryOperator 0x14b027a98 <line:6:2, col:54> 'struct nlattr *' contains-errors '='
+    | |-DeclRefExpr 0x14b027820 <col:2> 'struct nlattr *' lvalue Var 0x14b027788 'nl_daemon' 'struct nlattr *'
+    | `-CallExpr 0x14b027a68 <col:14, col:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b0279a0 <col:14> 'int ()' Function 0x14b0278e8 'nla_nest_start' 'int ()'
+    |   |-DeclRefExpr 0x14b0279c0 <col:29> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    |   `-RecoveryExpr 0x14b027a48 <col:34> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14b027bb0 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x14b027af0 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b027ad8 <col:7> 'struct nlattr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b027ab8 <col:7> 'struct nlattr *' lvalue Var 0x14b027788 'nl_daemon' 'struct nlattr *'
+    | `-ReturnStmt 0x14b027ba0 <line:8:3, col:11>
+    |   `-UnaryOperator 0x14b027b88 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14b027b70 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14b027b50 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14b028190 <line:10:2, line:13:8>
+    | |-BinaryOperator 0x14b028108 <line:10:6, line:12:55> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x14b028090 <line:10:6, line:11:63> 'int' contains-errors '||'
+    | | | |-CallExpr 0x14b028000 <line:10:6, col:52> '<dependent type>' contains-errors
+    | | | | |-DeclRefExpr 0x14b027cb0 <col:6> 'int ()' Function 0x14b027bf8 'nla_put_u32' 'int ()'
+    | | | | |-DeclRefExpr 0x14b027cd0 <col:18> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    | | | | |-RecoveryExpr 0x14b027fe0 <col:23> '<dependent type>' contains-errors lvalue
+    | | | | `-RecoveryExpr 0x14b027d08 <col:47> '<dependent type>' contains-errors lvalue
+    | | | `-CallExpr 0x14b028058 <line:11:6, col:63> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x14b027e40 <col:6> 'int ()' Function 0x14b027d88 'nla_put_string' 'int ()'
+    | | |   |-DeclRefExpr 0x14b027e60 <col:21> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    | | |   |-RecoveryExpr 0x14b028038 <col:26> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14b027e98 <col:54> 'const char *' lvalue ParmVar 0x14b00e360 'mcast_ifn' 'const char *'
+    | | `-CallExpr 0x14b0280d0 <line:12:6, col:55> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14b027f10 <col:6> 'int ()' Function 0x14b027bf8 'nla_put_u32' 'int ()'
+    | |   |-DeclRefExpr 0x14b027f30 <col:18> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    | |   |-RecoveryExpr 0x14b0280b0 <col:23> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x14b027f68 <col:49> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x14b028178 <line:13:3, col:8> 'nla_put_failure' 0x14b028128
+    |-CallExpr 0x14b028338 <line:14:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x14b028320 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14b028290 <col:2> 'int ()' Function 0x14b0281d8 'nla_nest_end' 'int ()'
+    | |-ImplicitCastExpr 0x14b028368 <col:15> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14b0282b0 <col:15> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x14b028380 <col:20> 'struct nlattr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14b0282d0 <col:20> 'struct nlattr *' lvalue Var 0x14b027788 'nl_daemon' 'struct nlattr *'
+    |-ReturnStmt 0x14b0283b8 <line:16:2, col:9>
+    | `-IntegerLiteral 0x14b028398 <col:9> 'int' 0
+    |-LabelStmt 0x14b02a390 <line:18:1, line:19:32> 'nla_put_failure'
+    | `-CallExpr 0x14b02a330 <col:2, col:32> 'int'
+    |   |-ImplicitCastExpr 0x14b02a318 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14b02a2b8 <col:2> 'int ()' Function 0x14b02a200 'nla_nest_cancel' 'int ()'
+    |   |-ImplicitCastExpr 0x14b02a360 <col:18> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14b02a2d8 <col:18> 'struct sk_buff *' lvalue ParmVar 0x14b00e248 'skb' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x14b02a378 <col:23> 'struct nlattr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14b02a2f8 <col:23> 'struct nlattr *' lvalue Var 0x14b027788 'nl_daemon' 'struct nlattr *'
+    `-ReturnStmt 0x14b02a448 <line:20:2, col:10>
+      `-UnaryOperator 0x14b02a430 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+        `-ImplicitCastExpr 0x14b02a418 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+          `-RecoveryExpr 0x14b02a3f8 <col:10> '<dependent type>' contains-errors lvalue

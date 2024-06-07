@@ -1,0 +1,22 @@
+`-FunctionDecl 0x14b80e358  line:1:12 nested_vmx_check_permission 'int (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x14b80e248 <col:40, col:57> col:57 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x14b826b40 <line:2:1, line:8:1>
+    |-IfStmt 0x14b826af0 <line:3:2, line:6:2>
+    | |-UnaryOperator 0x14b8268d0 <line:3:6, col:28> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14b8268b8 <col:7, col:28> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x14b826870 <col:7, col:28> '<dependent type>' contains-errors lvalue .vmxon
+    | |     `-RecoveryExpr 0x14b826848 <col:7, col:21> '<dependent type>' contains-errors lvalue
+    | |       `-CallExpr 0x14b826808 <col:7, col:18> 'int'
+    | |         |-ImplicitCastExpr 0x14b8267f0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |         | `-DeclRefExpr 0x14b826780 <col:7> 'int ()' Function 0x14b8266c8 'to_vmx' 'int ()'
+    | |         `-ImplicitCastExpr 0x14b826830 <col:14> 'struct kvm_vcpu *' <LValueToRValue>
+    | |           `-DeclRefExpr 0x14b8267a0 <col:14> 'struct kvm_vcpu *' lvalue ParmVar 0x14b80e248 'vcpu' 'struct kvm_vcpu *'
+    | `-CompoundStmt 0x14b826ad0 <col:35, line:6:2>
+    |   |-CallExpr 0x14b826a70 <line:4:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14b8269c8 <col:3> 'int ()' Function 0x14b826910 'kvm_queue_exception' 'int ()'
+    |   | |-DeclRefExpr 0x14b8269e8 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x14b80e248 'vcpu' 'struct kvm_vcpu *'
+    |   | `-RecoveryExpr 0x14b826a50 <col:29> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x14b826ac0 <line:5:3, col:10>
+    |     `-IntegerLiteral 0x14b826aa0 <col:10> 'int' 0
+    `-ReturnStmt 0x14b826b30 <line:7:2, col:9>
+      `-IntegerLiteral 0x14b826b10 <col:9> 'int' 1

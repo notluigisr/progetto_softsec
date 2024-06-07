@@ -1,0 +1,32 @@
+`-FunctionDecl 0x142128358  line:1:17 invalid bpf_map_get_with_uref 'struct bpf_map *(int)'
+  |-ParmVarDecl 0x142128190 <col:39, col:43> col:43 invalid ufd 'int'
+  `-CompoundStmt 0x1421423a8 <line:2:1, line:14:1>
+    |-DeclStmt 0x142141ba8 <line:3:2, col:26>
+    | |-RecordDecl 0x142128408 <col:2, col:9> col:9 struct fd
+    | `-VarDecl 0x142128508 <col:2, col:12> col:12 invalid f 'struct fd'
+    |-DeclStmt 0x142141cb0 <line:4:2, col:21>
+    | `-VarDecl 0x142141c48 <col:2, col:18> col:18 used map 'struct bpf_map *'
+    |-BinaryOperator 0x142141e30 <line:6:2, col:23> 'struct bpf_map *' contains-errors '='
+    | |-DeclRefExpr 0x142141cc8 <col:2> 'struct bpf_map *' lvalue Var 0x142141c48 'map' 'struct bpf_map *'
+    | `-CallExpr 0x142141e08 <col:8, col:23> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x142141dc8 <col:8> 'int ()' Function 0x142141d10 '__bpf_map_get' 'int ()'
+    |   `-RecoveryExpr 0x142141de8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x142142040 <line:7:2, line:8:10>
+    | |-CallExpr 0x142141fb8 <line:7:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x142141fa0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x142141f30 <col:6> 'int ()' Function 0x142141e78 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x142141fe0 <col:13> 'struct bpf_map *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x142141f50 <col:13> 'struct bpf_map *' lvalue Var 0x142141c48 'map' 'struct bpf_map *'
+    | `-ReturnStmt 0x142142030 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x142142018 <col:10> 'struct bpf_map *' <LValueToRValue>
+    |     `-DeclRefExpr 0x142141ff8 <col:10> 'struct bpf_map *' lvalue Var 0x142141c48 'map' 'struct bpf_map *'
+    |-CallExpr 0x1421421e8 <line:10:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142142140 <col:2> 'int ()' Function 0x142142088 'bpf_map_inc' 'int ()'
+    | |-DeclRefExpr 0x142142160 <col:14> 'struct bpf_map *' lvalue Var 0x142141c48 'map' 'struct bpf_map *'
+    | `-RecoveryExpr 0x1421421c8 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x142142338 <line:11:2, col:9> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1421422f8 <col:2> 'int ()' Function 0x142142240 'fdput' 'int ()'
+    | `-RecoveryExpr 0x142142318 <col:8> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x142142398 <line:13:2, col:9>
+      `-ImplicitCastExpr 0x142142380 <col:9> 'struct bpf_map *' <LValueToRValue>
+        `-DeclRefExpr 0x142142360 <col:9> 'struct bpf_map *' lvalue Var 0x142141c48 'map' 'struct bpf_map *'

@@ -1,0 +1,70 @@
+`-FunctionDecl 0x135928150  line:1:6 sev_vm_destroy 'void (struct kvm *)'
+  |-ParmVarDecl 0x135928048 <col:21, col:33> col:33 used kvm 'struct kvm *'
+  `-CompoundStmt 0x137009478 <line:2:1, line:27:1>
+    |-DeclStmt 0x135944a70 <line:3:2, col:55>
+    | |-RecordDecl 0x135944648 <col:2, col:9> col:9 struct kvm_sev_info
+    | `-VarDecl 0x1359447b8 <col:2, col:47> col:23 used sev 'struct kvm_sev_info *' cinit
+    |   `-UnaryOperator 0x135944a40 <col:29, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x135944a18 <col:30, col:47> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x1359449d8 <col:30, col:44> 'int'
+    |         |-ImplicitCastExpr 0x1359449c0 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x135944950 <col:30> 'int ()' Function 0x135944898 'to_kvm_svm' 'int ()'
+    |         `-ImplicitCastExpr 0x135944a00 <col:41> 'struct kvm *' <LValueToRValue>
+    |           `-DeclRefExpr 0x135944970 <col:41> 'struct kvm *' lvalue ParmVar 0x135928048 'kvm' 'struct kvm *'
+    |-DeclStmt 0x135944cf0 <line:4:2, col:45>
+    | |-RecordDecl 0x135944a88 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x135944bf8 <col:2, col:33> col:20 used head 'struct list_head *' cinit
+    |   `-UnaryOperator 0x135944cc0 <col:27, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x135944c98 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x135944c60 <col:28> 'struct kvm_sev_info *' contains-errors lvalue Var 0x1359447b8 'sev' 'struct kvm_sev_info *'
+    |-DeclStmt 0x135944ea8 <line:5:2, col:27>
+    | |-VarDecl 0x135944d98 <col:2, col:20> col:20 used pos 'struct list_head *'
+    | `-VarDecl 0x135944e28 <col:2, col:26> col:26 used q 'struct list_head *'
+    |-IfStmt 0x135945060 <line:7:2, line:8:3>
+    | |-UnaryOperator 0x135945038 <line:7:6, col:20> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x135944ff8 <col:7, col:20> 'int'
+    | |   |-ImplicitCastExpr 0x135944fe0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x135944fa0 <col:7> 'int ()' Function 0x135944ee8 'sev_guest' 'int ()'
+    | |   `-ImplicitCastExpr 0x135945020 <col:17> 'struct kvm *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x135944fc0 <col:17> 'struct kvm *' lvalue ParmVar 0x135928048 'kvm' 'struct kvm *'
+    | `-ReturnStmt 0x135945050 <line:8:3>
+    |-CallExpr 0x1359451f8 <line:10:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135945160 <col:2> 'int ()' Function 0x1359450a8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1359451e0 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1359451b8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x135945180 <col:14> 'struct kvm *' lvalue ParmVar 0x135928048 'kvm' 'struct kvm *'
+    |-CallExpr 0x135945338 <line:13:2, col:21> 'int'
+    | `-ImplicitCastExpr 0x135945320 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x135945300 <col:2> 'int ()' Function 0x135945248 'wbinvd_on_all_cpus' 'int ()'
+    |-IfStmt 0x137008f80 <line:16:2, line:21:2>
+    | |-UnaryOperator 0x1359454d0 <line:16:6, col:22> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x135945490 <col:7, col:22> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x135945478 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x135945438 <col:7> 'int ()' Function 0x135945380 'list_empty' 'int ()'
+    | |   `-ImplicitCastExpr 0x1359454b8 <col:18> 'struct list_head *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x135945458 <col:18> 'struct list_head *' contains-errors lvalue Var 0x135944bf8 'head' 'struct list_head *'
+    | `-CompoundStmt 0x137008f60 <col:25, line:21:2>
+    |   |-CallExpr 0x137008c78 <line:17:3, col:34> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x137008c60 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1359455c8 <col:3> 'int ()' Function 0x135945510 'list_for_each_safe' 'int ()'
+    |   | |-ImplicitCastExpr 0x137008cb0 <col:22> 'struct list_head *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x137008c00 <col:22> 'struct list_head *' lvalue Var 0x135944d98 'pos' 'struct list_head *'
+    |   | |-ImplicitCastExpr 0x137008cc8 <col:27> 'struct list_head *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x137008c20 <col:27> 'struct list_head *' lvalue Var 0x135944e28 'q' 'struct list_head *'
+    |   | `-ImplicitCastExpr 0x137008ce0 <col:30> 'struct list_head *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x137008c40 <col:30> 'struct list_head *' contains-errors lvalue Var 0x135944bf8 'head' 'struct list_head *'
+    |   `-CompoundStmt 0x137008f50 <col:36, line:20:3>
+    |-CallExpr 0x137009118 <line:23:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x137009080 <col:2> 'int ()' Function 0x137008fc8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x137009100 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1370090d8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1370090a0 <col:16> 'struct kvm *' lvalue ParmVar 0x135928048 'kvm' 'struct kvm *'
+    |-CallExpr 0x1370092c0 <line:25:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x137009220 <col:2> 'int ()' Function 0x137009168 'sev_unbind_asid' 'int ()'
+    | |-DeclRefExpr 0x137009240 <col:18> 'struct kvm *' lvalue ParmVar 0x135928048 'kvm' 'struct kvm *'
+    | `-RecoveryExpr 0x137009298 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x137009260 <col:23> 'struct kvm_sev_info *' contains-errors lvalue Var 0x1359447b8 'sev' 'struct kvm_sev_info *'
+    `-CallExpr 0x137009450 <line:26:2, col:25> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1370093d0 <col:2> 'int ()' Function 0x137009318 'sev_asid_free' 'int ()'
+      `-RecoveryExpr 0x137009428 <col:16, col:21> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x1370093f0 <col:16> 'struct kvm_sev_info *' contains-errors lvalue Var 0x1359447b8 'sev' 'struct kvm_sev_info *'

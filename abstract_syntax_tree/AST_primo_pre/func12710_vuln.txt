@@ -1,0 +1,45 @@
+`-FunctionDecl 0x1568d5340  line:1:6 ion_free 'void (struct ion_client *, struct ion_handle *)'
+  |-ParmVarDecl 0x1568c6e48 <col:15, col:34> col:34 used client 'struct ion_client *'
+  |-ParmVarDecl 0x1568d5228 <col:42, col:61> col:61 used handle 'struct ion_handle *'
+  `-CompoundStmt 0x1568d6168 <line:2:1, line:17:1>
+    |-CallExpr 0x1568d5630 <line:5:2, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1568d5570 <col:2> 'int ()' Function 0x1568d54b8 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x1568d5610 <col:9, col:27> 'int' contains-errors '!='
+    |   |-DeclRefExpr 0x1568d5590 <col:9> 'struct ion_client *' lvalue ParmVar 0x1568c6e48 'client' 'struct ion_client *'
+    |   `-RecoveryExpr 0x1568d55e8 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1568d55b0 <col:19> 'struct ion_handle *' lvalue ParmVar 0x1568d5228 'handle' 'struct ion_handle *'
+    |-CallExpr 0x1568d57d0 <line:7:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1568d5738 <col:2> 'int ()' Function 0x1568d5680 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1568d57b8 <col:13, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1568d5790 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1568d5758 <col:14> 'struct ion_client *' lvalue ParmVar 0x1568c6e48 'client' 'struct ion_client *'
+    |-IfStmt 0x1568d5f10 <line:10:2, line:14:2>
+    | |-UnaryOperator 0x1568d5a68 <line:10:6, col:7> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1568d5a50 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1568d5a30 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1568d5ee8 <col:21, line:14:2>
+    |   |-CallExpr 0x1568d5cd0 <line:11:3, col:26> 'int'
+    |   | |-ImplicitCastExpr 0x1568d5cb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1568d5b60 <col:3> 'int ()' Function 0x1568d5aa8 'WARN' 'int ()'
+    |   | |-IntegerLiteral 0x1568d5b80 <col:8> 'int' 1
+    |   | |-ImplicitCastExpr 0x1568d5d08 <col:11> 'char *' <ArrayToPointerDecay>
+    |   | | `-StringLiteral 0x1568d5be0 <col:11> 'char[4]' lvalue "STR"
+    |   | `-ImplicitCastExpr 0x1568d5d20 <col:18> 'const char *' <ArrayToPointerDecay>
+    |   |   `-PredefinedExpr 0x1568d5ca0 <col:18> 'const char[9]' lvalue __func__
+    |   |     `-StringLiteral 0x1568d5c80 <col:18> 'const char[9]' lvalue "ion_free"
+    |   |-CallExpr 0x1568d5eb0 <line:12:3, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1568d5e18 <col:3> 'int ()' Function 0x1568d5d60 'mutex_unlock' 'int ()'
+    |   | `-UnaryOperator 0x1568d5e98 <col:16, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1568d5e70 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1568d5e38 <col:17> 'struct ion_client *' lvalue ParmVar 0x1568c6e48 'client' 'struct ion_client *'
+    |   `-ReturnStmt 0x1568d5ed8 <line:13:3>
+    |-CallExpr 0x1568d5fc8 <line:15:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1568d5f30 <col:2> 'int ()' Function 0x1568d5d60 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x1568d5fb0 <col:15, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1568d5f88 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1568d5f50 <col:16> 'struct ion_client *' lvalue ParmVar 0x1568c6e48 'client' 'struct ion_client *'
+    `-CallExpr 0x1568d6128 <line:16:2, col:23> 'int'
+      |-ImplicitCastExpr 0x1568d6110 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x1568d60d0 <col:2> 'int ()' Function 0x1568d6018 'ion_handle_put' 'int ()'
+      `-ImplicitCastExpr 0x1568d6150 <col:17> 'struct ion_handle *' <LValueToRValue>
+        `-DeclRefExpr 0x1568d60f0 <col:17> 'struct ion_handle *' lvalue ParmVar 0x1568d5228 'handle' 'struct ion_handle *'

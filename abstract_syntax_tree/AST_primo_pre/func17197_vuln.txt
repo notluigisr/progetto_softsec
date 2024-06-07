@@ -1,0 +1,42 @@
+`-FunctionDecl 0x1211282c0  line:1:13 save_key_to 'void (const char *, const char *, const char *)' static
+  |-ParmVarDecl 0x1211280d8 <col:25, col:37> col:37 algo 'const char *'
+  |-ParmVarDecl 0x121128158 <col:43, col:55> col:55 used name 'const char *'
+  |-ParmVarDecl 0x1211281d8 <col:61, col:73> col:73 used keydata 'const char *'
+  `-CompoundStmt 0x121142160 <line:2:1, line:12:1>
+    |-DeclStmt 0x121128448 <line:3:2, col:19>
+    | `-VarDecl 0x1211283e0 <col:2, col:14> col:14 used error 'const char *'
+    |-DeclStmt 0x121141840 <line:4:2, line:5:36>
+    | |-RecordDecl 0x121128460 <line:4:2, col:9> col:9 struct dict_transaction_context
+    | `-VarDecl 0x1211285c8 <col:2, line:5:35> line:4:35 used ctx 'struct dict_transaction_context *' cinit
+    |   `-CallExpr 0x121141800 <line:5:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x121128760 <col:3> 'int ()' Function 0x1211286a8 'dict_transaction_begin' 'int ()'
+    |     `-RecoveryExpr 0x1211287c0 <col:26> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x121141c40 <line:7:2, line:9:11> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x121141938 <line:7:2> 'int ()' Function 0x121141880 'dict_set' 'int ()'
+    | |-DeclRefExpr 0x121141958 <col:11> 'struct dict_transaction_context *' contains-errors lvalue Var 0x1211285c8 'ctx' 'struct dict_transaction_context *'
+    | |-CallExpr 0x121141c00 <col:16, line:8:17> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x121141a58 <line:7:16> 'int ()' Function 0x1211419a0 't_strconcat' 'int ()'
+    | | |-RecoveryExpr 0x121141bc0 <col:28> '<dependent type>' contains-errors lvalue
+    | | |-StringLiteral 0x121141ad0 <col:46> 'char[4]' lvalue "STR"
+    | | |-DeclRefExpr 0x121141af0 <line:8:7> 'const char *' lvalue ParmVar 0x121128158 'name' 'const char *'
+    | | `-RecoveryExpr 0x121141be0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x121141b68 <line:9:4> 'const char *' lvalue ParmVar 0x1211281d8 'keydata' 'const char *'
+    `-IfStmt 0x121142140 <line:10:2, line:11:29>
+      |-BinaryOperator 0x121141f28 <line:10:6, col:46> 'int' contains-errors '<'
+      | |-CallExpr 0x121141ed8 <col:6, col:42> 'int' contains-errors
+      | | |-ImplicitCastExpr 0x121141ec0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | | `-DeclRefExpr 0x121141d58 <col:6> 'int ()' Function 0x121141ca0 'dict_transaction_commit' 'int ()'
+      | | |-UnaryOperator 0x121141e00 <col:30, col:31> 'struct dict_transaction_context **' contains-errors prefix '&' cannot overflow
+      | | | `-DeclRefExpr 0x121141d78 <col:31> 'struct dict_transaction_context *' contains-errors lvalue Var 0x1211285c8 'ctx' 'struct dict_transaction_context *'
+      | | `-UnaryOperator 0x121141e70 <col:36, col:37> 'const char **' prefix '&' cannot overflow
+      | |   `-DeclRefExpr 0x121141e18 <col:37> 'const char *' lvalue Var 0x1211283e0 'error' 'const char *'
+      | `-IntegerLiteral 0x121141f08 <col:46> 'int' 0
+      `-CallExpr 0x1211420c0 <line:11:3, col:29> 'int'
+        |-ImplicitCastExpr 0x1211420a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x121142028 <col:3> 'int ()' Function 0x121141f70 'i_error' 'int ()'
+        |-ImplicitCastExpr 0x1211420f8 <col:11> 'char *' <ArrayToPointerDecay>
+        | `-StringLiteral 0x121142048 <col:11> 'char[4]' lvalue "STR"
+        |-ImplicitCastExpr 0x121142110 <col:18> 'const char *' <LValueToRValue>
+        | `-DeclRefExpr 0x121142068 <col:18> 'const char *' lvalue ParmVar 0x121128158 'name' 'const char *'
+        `-ImplicitCastExpr 0x121142128 <col:24> 'const char *' <LValueToRValue>
+          `-DeclRefExpr 0x121142088 <col:24> 'const char *' lvalue Var 0x1211283e0 'error' 'const char *'

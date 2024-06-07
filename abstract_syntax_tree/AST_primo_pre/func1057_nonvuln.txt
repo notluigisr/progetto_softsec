@@ -1,0 +1,27 @@
+`-FunctionDecl 0x15c826740  line:1:13 hns_nic_rx_up_pro 'void (struct hns_nic_ring_data *, struct sk_buff *)' static
+  |-ParmVarDecl 0x15c80e248 <col:31, col:57> col:57 used ring_data 'struct hns_nic_ring_data *'
+  |-ParmVarDecl 0x15c826628 <line:2:10, col:26> col:26 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x15c826f98 <line:3:1, line:8:1>
+    |-DeclStmt 0x15c826ad0 <line:4:2, col:47>
+    | |-RecordDecl 0x15c826840 <col:2, col:9> col:9 struct net_device
+    | `-VarDecl 0x15c8269a8 <col:2, col:44> col:21 used ndev 'struct net_device *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x15c826a70 <col:28, col:44> '<dependent type>' contains-errors lvalue .dev
+    |     `-RecoveryExpr 0x15c826a48 <col:28, col:39> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15c826a10 <col:28> 'struct hns_nic_ring_data *' lvalue ParmVar 0x15c80e248 'ring_data' 'struct hns_nic_ring_data *'
+    |-BinaryOperator 0x15c826d78 <line:6:2, col:42> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15c826b20 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15c826ae8 <col:2> 'struct sk_buff *' lvalue ParmVar 0x15c826628 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x15c826d18 <col:18, col:42> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15c826d00 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c826c70 <col:18> 'int ()' Function 0x15c826bb8 'eth_type_trans' 'int ()'
+    |   |-ImplicitCastExpr 0x15c826d48 <col:33> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x15c826c90 <col:33> 'struct sk_buff *' lvalue ParmVar 0x15c826628 'skb' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x15c826d60 <col:38> 'struct net_device *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15c826cb0 <col:38> 'struct net_device *' contains-errors lvalue Var 0x15c8269a8 'ndev' 'struct net_device *'
+    `-CStyleCastExpr 0x15c826f70 <line:7:2, col:46> 'void' contains-errors <ToVoid>
+      `-CallExpr 0x15c826f30 <col:8, col:46> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15c826e78 <col:8> 'int ()' Function 0x15c826dc0 'napi_gro_receive' 'int ()'
+        |-UnaryOperator 0x15c826ef8 <col:25, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x15c826ed0 <col:26, col:37> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x15c826e98 <col:26> 'struct hns_nic_ring_data *' lvalue ParmVar 0x15c80e248 'ring_data' 'struct hns_nic_ring_data *'
+        `-DeclRefExpr 0x15c826f10 <col:43> 'struct sk_buff *' lvalue ParmVar 0x15c826628 'skb' 'struct sk_buff *'

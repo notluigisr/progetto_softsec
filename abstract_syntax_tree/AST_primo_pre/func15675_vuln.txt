@@ -1,0 +1,34 @@
+`-FunctionDecl 0x144826670  line:1:13 ucma_lock_files 'void (struct ucma_file *, struct ucma_file *)' static
+  |-ParmVarDecl 0x14480e248 <col:29, col:47> col:47 used file1 'struct ucma_file *'
+  |-ParmVarDecl 0x14480e338 <col:54, col:72> col:72 used file2 'struct ucma_file *'
+  `-CompoundStmt 0x144826e60 <line:2:1, line:11:1>
+    `-IfStmt 0x144826e30 <line:4:2, line:10:2> has_else
+      |-BinaryOperator 0x1448267e0 <line:4:6, col:14> 'int' '<'
+      | |-ImplicitCastExpr 0x1448267b0 <col:6> 'struct ucma_file *' <LValueToRValue>
+      | | `-DeclRefExpr 0x144826770 <col:6> 'struct ucma_file *' lvalue ParmVar 0x14480e248 'file1' 'struct ucma_file *'
+      | `-ImplicitCastExpr 0x1448267c8 <col:14> 'struct ucma_file *' <LValueToRValue>
+      |   `-DeclRefExpr 0x144826790 <col:14> 'struct ucma_file *' lvalue ParmVar 0x14480e338 'file2' 'struct ucma_file *'
+      |-CompoundStmt 0x144826c00 <col:21, line:7:2>
+      | |-CallExpr 0x1448269c8 <line:5:3, col:25> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x144826930 <col:3> 'int ()' Function 0x144826878 'mutex_lock' 'int ()'
+      | | `-UnaryOperator 0x1448269b0 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | |   `-RecoveryExpr 0x144826988 <col:15, col:22> '<dependent type>' contains-errors lvalue
+      | |     `-DeclRefExpr 0x144826950 <col:15> 'struct ucma_file *' lvalue ParmVar 0x14480e248 'file1' 'struct ucma_file *'
+      | `-CallExpr 0x144826bd0 <line:6:3, col:54> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x144826ad0 <col:3> 'int ()' Function 0x144826a18 'mutex_lock_nested' 'int ()'
+      |   |-UnaryOperator 0x144826b50 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   | `-RecoveryExpr 0x144826b28 <col:22, col:29> '<dependent type>' contains-errors lvalue
+      |   |   `-DeclRefExpr 0x144826af0 <col:22> 'struct ucma_file *' lvalue ParmVar 0x14480e338 'file2' 'struct ucma_file *'
+      |   `-RecoveryExpr 0x144826bb0 <col:34> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x144826e10 <line:7:9, line:10:2>
+        |-CallExpr 0x144826cb8 <line:8:3, col:25> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144826c20 <col:3> 'int ()' Function 0x144826878 'mutex_lock' 'int ()'
+        | `-UnaryOperator 0x144826ca0 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x144826c78 <col:15, col:22> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x144826c40 <col:15> 'struct ucma_file *' lvalue ParmVar 0x14480e338 'file2' 'struct ucma_file *'
+        `-CallExpr 0x144826de0 <line:9:3, col:54> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x144826ce0 <col:3> 'int ()' Function 0x144826a18 'mutex_lock_nested' 'int ()'
+          |-UnaryOperator 0x144826d60 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+          | `-RecoveryExpr 0x144826d38 <col:22, col:29> '<dependent type>' contains-errors lvalue
+          |   `-DeclRefExpr 0x144826d00 <col:22> 'struct ucma_file *' lvalue ParmVar 0x14480e248 'file1' 'struct ucma_file *'
+          `-RecoveryExpr 0x144826dc0 <col:34> '<dependent type>' contains-errors lvalue

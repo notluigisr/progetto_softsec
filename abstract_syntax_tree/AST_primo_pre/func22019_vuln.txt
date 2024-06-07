@@ -1,0 +1,97 @@
+`-FunctionDecl 0x12a122600  line:1:5 kprobe_fault_handler 'int (struct pt_regs *, int)'
+  |-ParmVarDecl 0x12a80e248 <col:26, col:42> col:42 used regs 'struct pt_regs *'
+  |-ParmVarDecl 0x12a80e2c8 <col:48, col:52> col:52 used trapnr 'int'
+  `-CompoundStmt 0x12a1273b8 <line:2:1, line:35:1>
+    |-DeclStmt 0x12a122ab8 <line:3:2, col:39>
+    | |-RecordDecl 0x12a122700 <col:2, col:9> col:9 struct kprobe
+    | `-VarDecl 0x12a122868 <col:2, col:38> col:17 used cur 'struct kprobe *' cinit
+    |   `-ImplicitCastExpr 0x12a122a88 <col:23, col:38> 'struct kprobe *' <IntegralToPointer>
+    |     `-CallExpr 0x12a122a68 <col:23, col:38> 'int'
+    |       `-ImplicitCastExpr 0x12a122a50 <col:23> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x12a122a00 <col:23> 'int ()' Function 0x12a122948 'kprobe_running' 'int ()'
+    |-DeclStmt 0x12a122e08 <line:4:2, col:49>
+    | |-RecordDecl 0x12a122ad0 <col:2, col:9> col:9 struct kprobe_ctlblk
+    | `-VarDecl 0x12a122c38 <col:2, col:48> col:24 used kcb 'struct kprobe_ctlblk *' cinit
+    |   `-ImplicitCastExpr 0x12a122dd8 <col:30, col:48> 'struct kprobe_ctlblk *' <IntegralToPointer>
+    |     `-CallExpr 0x12a122db8 <col:30, col:48> 'int'
+    |       `-ImplicitCastExpr 0x12a122da0 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x12a122d80 <col:30> 'int ()' Function 0x12a122cc8 'get_kprobe_ctlblk' 'int ()'
+    |-IfStmt 0x12a127358 <line:6:2, line:32:2> has_else
+    | |-CallExpr 0x12a123088 <line:6:6, col:57> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12a122f00 <col:6> 'int ()' Function 0x12a122e48 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x12a123068 <col:15, col:53> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x12a122f58 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x12a122f20 <col:15> 'struct pt_regs *' lvalue ParmVar 0x12a80e248 'regs' 'struct pt_regs *'
+    | |   `-CStyleCastExpr 0x12a123040 <col:27, col:53> 'unsigned long' contains-errors <Dependent>
+    | |     `-CXXDependentScopeMemberExpr 0x12a122fe0 <col:42, col:53> '<dependent type>' contains-errors lvalue .insn
+    | |       `-RecoveryExpr 0x12a122fb8 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x12a122f80 <col:42> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    | |-CompoundStmt 0x12a126cf0 <col:60, line:18:2>
+    | | |-CallExpr 0x12a1233c8 <line:8:3, line:9:40> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12a123190 <line:8:3> 'int ()' Function 0x12a1230d8 'WARN_ON' 'int ()'
+    | | | `-BinaryOperator 0x12a1233a8 <col:11, line:9:26> 'int' contains-errors '&&'
+    | | |   |-BinaryOperator 0x12a123348 <line:8:11, col:33> 'int' contains-errors '!='
+    | | |   | |-RecoveryExpr 0x12a1231e8 <col:11, col:16> '<dependent type>' contains-errors lvalue
+    | | |   | | `-DeclRefExpr 0x12a1231b0 <col:11> 'struct kprobe_ctlblk *' lvalue Var 0x12a122c38 'kcb' 'struct kprobe_ctlblk *'
+    | | |   | `-RecoveryExpr 0x12a123328 <col:33> '<dependent type>' contains-errors lvalue
+    | | |   `-BinaryOperator 0x12a123388 <line:9:4, col:26> 'int' contains-errors '!='
+    | | |     |-RecoveryExpr 0x12a123280 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    | | |     | `-DeclRefExpr 0x12a123248 <col:4> 'struct kprobe_ctlblk *' lvalue Var 0x12a122c38 'kcb' 'struct kprobe_ctlblk *'
+    | | |     `-RecoveryExpr 0x12a123368 <col:26> '<dependent type>' contains-errors lvalue
+    | | |-BinaryOperator 0x12a1234f0 <line:11:3, col:34> '<dependent type>' contains-errors '='
+    | | | |-RecoveryExpr 0x12a123428 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x12a1233f0 <col:3> 'struct pt_regs *' lvalue ParmVar 0x12a80e248 'regs' 'struct pt_regs *'
+    | | | `-CStyleCastExpr 0x12a1234c8 <col:14, col:34> 'unsigned long' contains-errors <Dependent>
+    | | |   `-RecoveryExpr 0x12a123488 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x12a123450 <col:29> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    | | |-CompoundAssignOperator 0x12a1235d0 <line:12:3, col:23> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | | | |-RecoveryExpr 0x12a123548 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x12a123510 <col:3> 'struct pt_regs *' lvalue ParmVar 0x12a80e248 'regs' 'struct pt_regs *'
+    | | | `-RecoveryExpr 0x12a1235a8 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x12a123570 <col:18> 'struct kprobe_ctlblk *' lvalue Var 0x12a122c38 'kcb' 'struct kprobe_ctlblk *'
+    | | |-IfStmt 0x12a126b88 <line:13:3, line:16:25> has_else
+    | | | |-BinaryOperator 0x12a1268b8 <line:13:7, col:29> 'int' contains-errors '=='
+    | | | | |-RecoveryExpr 0x12a126838 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | | | | | `-DeclRefExpr 0x12a126800 <col:7> 'struct kprobe_ctlblk *' lvalue Var 0x12a122c38 'kcb' 'struct kprobe_ctlblk *'
+    | | | | `-RecoveryExpr 0x12a126898 <col:29> '<dependent type>' contains-errors lvalue
+    | | | |-CallExpr 0x12a126a10 <line:14:4, col:31> 'int'
+    | | | | |-ImplicitCastExpr 0x12a1269f8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | `-DeclRefExpr 0x12a1269b8 <col:4> 'int ()' Function 0x12a126900 'restore_previous_kprobe' 'int ()'
+    | | | | `-ImplicitCastExpr 0x12a126a38 <col:28> 'struct kprobe_ctlblk *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x12a1269d8 <col:28> 'struct kprobe_ctlblk *' lvalue Var 0x12a122c38 'kcb' 'struct kprobe_ctlblk *'
+    | | | `-CallExpr 0x12a126b68 <line:16:4, col:25> 'int'
+    | | |   `-ImplicitCastExpr 0x12a126b50 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    | | |     `-DeclRefExpr 0x12a126b30 <col:4> 'int ()' Function 0x12a126a78 'reset_current_kprobe' 'int ()'
+    | | `-CallExpr 0x12a126cd0 <line:17:3, col:29> 'int'
+    | |   `-ImplicitCastExpr 0x12a126cb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x12a126c98 <col:3> 'int ()' Function 0x12a126be0 'preempt_enable_no_resched' 'int ()'
+    | `-IfStmt 0x12a127338 <line:18:9, line:32:2>
+    |   |-RecoveryExpr 0x12a126de8 <line:18:13, line:19:28> '_Bool' contains-errors
+    |   `-CompoundStmt 0x12a127310 <col:47, line:32:2>
+    |     |-CallExpr 0x12a126f40 <line:21:3, col:32> 'int'
+    |     | |-ImplicitCastExpr 0x12a126f28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x12a126ee8 <col:3> 'int ()' Function 0x12a126e30 'kprobes_inc_nmissed_count' 'int ()'
+    |     | `-ImplicitCastExpr 0x12a126f68 <col:29> 'struct kprobe *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x12a126f08 <col:29> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    |     |-IfStmt 0x12a127128 <line:24:3, line:25:11>
+    |     | |-BinaryOperator 0x12a1270d8 <line:24:7, col:65> 'int' contains-errors '&&'
+    |     | | |-RecoveryExpr 0x12a126fb8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     | | | `-DeclRefExpr 0x12a126f80 <col:7> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    |     | | `-CallExpr 0x12a1270a0 <col:29, col:65> '<dependent type>' contains-errors
+    |     | |   |-RecoveryExpr 0x12a127018 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     | |   | `-DeclRefExpr 0x12a126fe0 <col:29> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    |     | |   |-DeclRefExpr 0x12a127040 <col:48> 'struct kprobe *' lvalue Var 0x12a122868 'cur' 'struct kprobe *'
+    |     | |   |-DeclRefExpr 0x12a127060 <col:53> 'struct pt_regs *' lvalue ParmVar 0x12a80e248 'regs' 'struct pt_regs *'
+    |     | |   `-DeclRefExpr 0x12a127080 <col:59> 'int' lvalue ParmVar 0x12a80e2c8 'trapnr' 'int'
+    |     | `-ReturnStmt 0x12a127118 <line:25:4, col:11>
+    |     |   `-IntegerLiteral 0x12a1270f8 <col:11> 'int' 1
+    |     `-IfStmt 0x12a1272f0 <line:28:3, line:29:11>
+    |       |-CallExpr 0x12a127280 <line:28:7, col:27> 'int'
+    |       | |-ImplicitCastExpr 0x12a127268 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x12a127228 <col:7> 'int ()' Function 0x12a127170 'fixup_exception' 'int ()'
+    |       | `-ImplicitCastExpr 0x12a1272a8 <col:23> 'struct pt_regs *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x12a127248 <col:23> 'struct pt_regs *' lvalue ParmVar 0x12a80e248 'regs' 'struct pt_regs *'
+    |       `-ReturnStmt 0x12a1272e0 <line:29:4, col:11>
+    |         `-IntegerLiteral 0x12a1272c0 <col:11> 'int' 1
+    `-ReturnStmt 0x12a1273a8 <line:34:2, col:9>
+      `-IntegerLiteral 0x12a127388 <col:9> 'int' 0

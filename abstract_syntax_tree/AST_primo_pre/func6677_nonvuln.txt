@@ -1,0 +1,36 @@
+`-FunctionDecl 0x12e941a18  line:1:16 invalid io_compat_import 'int (struct io_kiocb *, struct iovec *, unsigned int)' static
+  |-ParmVarDecl 0x12e928668 <col:33, col:50> col:50 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x12e941858 <col:55, col:69> col:69 used iov 'struct iovec *'
+  |-ParmVarDecl 0x12e9418d8 <line:2:5, col:18> col:18 used issue_flags 'unsigned int'
+  `-CompoundStmt 0x12e942ad8 <line:3:1, line:24:1>
+    |-DeclStmt 0x12e941c58 <line:4:2, col:29>
+    | |-RecordDecl 0x12e941ad8 <col:2, col:9> col:9 struct compat_iovec
+    | `-VarDecl 0x12e941bd8 <col:2, col:22> col:22 invalid __user 'struct compat_iovec'
+    |-DeclStmt 0x12e941ce8 <line:6:2, col:14>
+    | `-VarDecl 0x12e941c80 <col:2, col:7> col:7 invalid __user 'void'
+    |-BinaryOperator 0x12e941f70 <line:9:2, col:37> 'struct iovec *' contains-errors '='
+    | |-DeclRefExpr 0x12e941d00 <col:2> 'struct iovec *' lvalue ParmVar 0x12e941858 'iov' 'struct iovec *'
+    | `-CallExpr 0x12e941f48 <col:9, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12e941e80 <col:9> 'int ()' Function 0x12e941dc8 'u64_to_user_ptr' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x12e941f00 <col:25, col:33> '<dependent type>' contains-errors lvalue .addr
+    |     `-RecoveryExpr 0x12e941ed8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12e941ea0 <col:25> 'struct io_kiocb *' lvalue ParmVar 0x12e928668 'req' 'struct io_kiocb *'
+    |-IfStmt 0x12e942248 <line:10:2, line:11:11>
+    | |-RecoveryExpr 0x12e942180 <line:10:6, col:36> '_Bool' contains-errors
+    | `-ReturnStmt 0x12e942238 <line:11:3, col:11>
+    |   `-UnaryOperator 0x12e942220 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12e942208 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12e9421e8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12e9425a0 <line:12:2, line:13:11>
+    | |-CallExpr 0x12e9424c8 <line:12:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12e942348 <col:6> 'int ()' Function 0x12e942290 '__get_user' 'int ()'
+    | | |-RecoveryExpr 0x12e942428 <col:17> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x12e9424b0 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-CXXDependentScopeMemberExpr 0x12e942468 <col:24, col:30> '<dependent type>' contains-errors lvalue ->iov_len
+    | |     `-RecoveryExpr 0x12e942448 <col:24> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12e942590 <line:13:3, col:11>
+    |   `-UnaryOperator 0x12e942578 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12e942560 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12e942540 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12e942ac8 <line:23:2, col:9>
+      `-IntegerLiteral 0x12e942aa8 <col:9> 'int' 0

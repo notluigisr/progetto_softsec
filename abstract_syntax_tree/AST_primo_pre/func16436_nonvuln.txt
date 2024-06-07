@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12b128238  line:1:1 sync_ulong2olcsn 'int (unsigned long, char *)'
+  |-ParmVarDecl 0x12b1280d8 <col:18, col:32> col:32 used chgnr 'unsigned long'
+  |-ParmVarDecl 0x12b128158 <col:39, col:45> col:45 used buf 'char *'
+  `-CompoundStmt 0x12b1412b8 <col:50, line:8:1>
+    |-CallExpr 0x12b1284e8 <line:2:5, col:18> 'int'
+    | |-ImplicitCastExpr 0x12b1284d0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12b128460 <col:5> 'int ()' Function 0x12b1283a8 'PR_ASSERT' 'int ()'
+    | `-ImplicitCastExpr 0x12b128510 <col:15> 'char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12b128480 <col:15> 'char *' lvalue ParmVar 0x12b128158 'buf' 'char *'
+    |-DeclStmt 0x12b128640 <line:3:5, col:41>
+    | `-VarDecl 0x12b128540 <col:5, col:31> col:19 x 'unsigned long' cinit
+    |   `-BinaryOperator 0x12b128620 <col:23, col:31> '<dependent type>' contains-errors '+'
+    |     |-DeclRefExpr 0x12b1285a8 <col:23> 'unsigned long' lvalue ParmVar 0x12b1280d8 'chgnr' 'unsigned long'
+    |     `-RecoveryExpr 0x12b128600 <col:31> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12b140e88 <line:5:5, col:22>
+    | |-RecordDecl 0x12b128658 <col:5, col:12> col:12 struct tm
+    | `-VarDecl 0x12b128758 <col:5, col:15> col:15 invalid t 'struct tm'
+    |-CallExpr 0x12b141070 <line:6:5, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12b140f80 <col:5> 'int ()' Function 0x12b140ec8 'localtime_r' 'int ()'
+    | |-UnaryOperator 0x12b141058 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12b141038 <col:18> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x12b140ff0 <col:25, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12b140fd0 <col:26> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x12b141278 <line:7:5, col:32> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12b141180 <col:5> 'int ()' Function 0x12b1410c8 'strftime' 'int ()'
+      |-DeclRefExpr 0x12b1411a0 <col:14> 'char *' lvalue ParmVar 0x12b128158 'buf' 'char *'
+      |-IntegerLiteral 0x12b1411c0 <col:19> 'int' 15
+      |-StringLiteral 0x12b141220 <col:23> 'char[4]' lvalue "STR"
+      `-UnaryOperator 0x12b141260 <col:30, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x12b141240 <col:31> '<dependent type>' contains-errors lvalue

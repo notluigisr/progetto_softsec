@@ -1,0 +1,183 @@
+`-FunctionDecl 0x14c02b638  line:1:12 invalid kvm_vm_ioctl_create_vcpu 'int (struct kvm *, int)' static
+  |-ParmVarDecl 0x14c00e248 <col:37, col:49> col:49 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x14c00e2e0 <col:54, col:58> col:58 invalid id 'int'
+  `-CompoundStmt 0x14c02f110 <line:2:1, line:55:1>
+    |-DeclStmt 0x14c02b770 <line:3:2, col:7>
+    | `-VarDecl 0x14c02b708 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x14c02ba10 <line:4:2, col:27>
+    | |-RecordDecl 0x14c02b788 <col:2, col:9> col:9 struct kvm_vcpu
+    | |-VarDecl 0x14c02b8f8 <col:2, col:19> col:19 used vcpu 'struct kvm_vcpu *'
+    | `-VarDecl 0x14c02b988 <col:2, col:26> col:26 used v 'struct kvm_vcpu *'
+    |-BinaryOperator 0x14c02bc30 <line:6:2, col:37> 'struct kvm_vcpu *' contains-errors '='
+    | |-DeclRefExpr 0x14c02ba28 <col:2> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    | `-CallExpr 0x14c02bc00 <col:9, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c02bba0 <col:9> 'int ()' Function 0x14c02bae8 'kvm_arch_vcpu_create' 'int ()'
+    |   |-DeclRefExpr 0x14c02bbc0 <col:30> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |   `-RecoveryExpr 0x14c02bbe0 <col:35> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14c02bf80 <line:7:2, line:8:22>
+    | |-CallExpr 0x14c02bdb8 <line:7:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x14c02bda0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14c02bd30 <col:6> 'int ()' Function 0x14c02bc78 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14c02bde0 <col:13> 'struct kvm_vcpu *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c02bd50 <col:13> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x14c02bf70 <line:8:3, col:22>
+    |   `-CallExpr 0x14c02bf30 <col:10, col:22> 'int'
+    |     |-ImplicitCastExpr 0x14c02bf18 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14c02bed8 <col:10> 'int ()' Function 0x14c02be20 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x14c02bf58 <col:18> 'struct kvm_vcpu *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14c02bef8 <col:18> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x14c02c1b0 <line:10:2, col:65> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02c080 <col:2> 'int ()' Function 0x14c02bfc8 'preempt_notifier_init' 'int ()'
+    | |-UnaryOperator 0x14c02c100 <col:24, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x14c02c0d8 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14c02c0a0 <col:25> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    | `-UnaryOperator 0x14c02c198 <col:49, col:50> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c02c178 <col:50> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14c02c378 <line:12:2, col:30> 'int' '='
+    | |-DeclRefExpr 0x14c02c1e0 <col:2> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    | `-CallExpr 0x14c02c338 <col:6, col:30> 'int'
+    |   |-ImplicitCastExpr 0x14c02c320 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c02c2e0 <col:6> 'int ()' Function 0x14c02c228 'kvm_arch_vcpu_setup' 'int ()'
+    |   `-ImplicitCastExpr 0x14c02c360 <col:26> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c02c300 <col:26> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x14c02c438 <line:13:2, line:14:8>
+    | |-ImplicitCastExpr 0x14c02c3b8 <line:13:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02c398 <col:6> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    | `-GotoStmt 0x14c02c420 <line:14:3, col:8> 'vcpu_destroy' 0x14c02c3d0
+    |-CallExpr 0x14c02c5d0 <line:16:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02c538 <col:2> 'int ()' Function 0x14c02c480 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x14c02c5b8 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c02c590 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c02c558 <col:14> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-IfStmt 0x14c02d710 <line:17:2, line:20:2>
+    | |-UnaryOperator 0x14c02d578 <line:17:6, col:31> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x14c02d538 <col:7, col:31> 'int'
+    | |   |-ImplicitCastExpr 0x14c02d520 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14c02d4e0 <col:7> 'int ()' Function 0x14c02d428 'kvm_vcpu_compatible' 'int ()'
+    | |   `-ImplicitCastExpr 0x14c02d560 <col:27> 'struct kvm_vcpu *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14c02d500 <col:27> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    | `-CompoundStmt 0x14c02d6f0 <col:34, line:20:2>
+    |   |-BinaryOperator 0x14c02d668 <line:18:3, col:8> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14c02d590 <col:3> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    |   | `-UnaryOperator 0x14c02d650 <col:7, col:8> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14c02d638 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14c02d618 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14c02d6d8 <line:19:3, col:8> 'unlock_vcpu_destroy' 0x14c02d688
+    |-IfStmt 0x14c02da78 <line:21:2, line:24:2>
+    | |-BinaryOperator 0x14c02d928 <line:21:6, col:41> 'int' contains-errors '=='
+    | | |-CallExpr 0x14c02d8a8 <col:6, col:36> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x14c02d810 <col:6> 'int ()' Function 0x14c02d758 'atomic_read' 'int ()'
+    | | | `-UnaryOperator 0x14c02d890 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x14c02d868 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x14c02d830 <col:19> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    | | `-RecoveryExpr 0x14c02d908 <col:41> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14c02da58 <col:56, line:24:2>
+    |   |-BinaryOperator 0x14c02da20 <line:22:3, col:8> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14c02d948 <col:3> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    |   | `-UnaryOperator 0x14c02da08 <col:7, col:8> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14c02d9f0 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14c02d9d0 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14c02da40 <line:23:3, col:8> 'unlock_vcpu_destroy' 0x14c02d688
+    |-CallExpr 0x14c02dc10 <line:26:2, col:29> 'int'
+    | |-ImplicitCastExpr 0x14c02dbf8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c02db78 <col:2> 'int ()' Function 0x14c02dac0 'kvm_for_each_vcpu' 'int ()'
+    | |-ImplicitCastExpr 0x14c02dc48 <col:20> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02db98 <col:20> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    | |-ImplicitCastExpr 0x14c02dc60 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02dbb8 <col:23> 'struct kvm_vcpu *' lvalue Var 0x14c02b988 'v' 'struct kvm_vcpu *'
+    | `-ImplicitCastExpr 0x14c02dc78 <col:26> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02dbd8 <col:26> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-IfStmt 0x14c02de60 <line:27:3, line:30:3>
+    | |-BinaryOperator 0x14c02dd10 <line:27:7, col:21> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x14c02dcc8 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14c02dc90 <col:7> 'struct kvm_vcpu *' lvalue Var 0x14c02b988 'v' 'struct kvm_vcpu *'
+    | | `-RecoveryExpr 0x14c02dcf0 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x14c02de40 <col:25, line:30:3>
+    |   |-BinaryOperator 0x14c02de08 <line:28:4, col:9> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14c02dd30 <col:4> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    |   | `-UnaryOperator 0x14c02ddf0 <col:8, col:9> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   `-ImplicitCastExpr 0x14c02ddd8 <col:9> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x14c02ddb8 <col:9> '<dependent type>' contains-errors lvalue
+    |   `-GotoStmt 0x14c02de28 <line:29:4, col:9> 'unlock_vcpu_destroy' 0x14c02d688
+    |-CallExpr 0x14c02e0d8 <line:32:2, col:52> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02df60 <col:2> 'int ()' Function 0x14c02dea8 'BUG_ON' 'int ()'
+    | `-ArraySubscriptExpr 0x14c02e0b8 <col:9, col:51> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x14c02e0a0 <col:9, col:14> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x14c02dfb8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14c02df80 <col:9> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |   `-CallExpr 0x14c02e078 <col:20, col:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14c02dfe0 <col:20> 'int ()' Function 0x14c02d758 'atomic_read' 'int ()'
+    |     `-UnaryOperator 0x14c02e060 <col:32, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14c02e038 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14c02e000 <col:33> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-CallExpr 0x14c02e238 <line:35:2, col:17> 'int'
+    | |-ImplicitCastExpr 0x14c02e220 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c02e1e0 <col:2> 'int ()' Function 0x14c02e128 'kvm_get_kvm' 'int ()'
+    | `-ImplicitCastExpr 0x14c02e260 <col:14> 'struct kvm *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02e200 <col:14> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-BinaryOperator 0x14c02e418 <line:36:2, col:25> 'int' '='
+    | |-DeclRefExpr 0x14c02e278 <col:2> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    | `-CallExpr 0x14c02e3d0 <col:6, col:25> 'int'
+    |   |-ImplicitCastExpr 0x14c02e3b8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c02e378 <col:6> 'int ()' Function 0x14c02e2c0 'create_vcpu_fd' 'int ()'
+    |   `-ImplicitCastExpr 0x14c02e400 <col:21> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c02e398 <col:21> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x14c02e660 <line:37:2, line:40:2>
+    | |-BinaryOperator 0x14c02e490 <line:37:6, col:10> 'int' '<'
+    | | |-ImplicitCastExpr 0x14c02e478 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14c02e438 <col:6> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    | | `-IntegerLiteral 0x14c02e458 <col:10> 'int' 0
+    | `-CompoundStmt 0x14c02e640 <col:13, line:40:2>
+    |   |-CallExpr 0x14c02e5e8 <line:38:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x14c02e5d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14c02e590 <col:3> 'int ()' Function 0x14c02e4d8 'kvm_put_kvm' 'int ()'
+    |   | `-ImplicitCastExpr 0x14c02e610 <col:15> 'struct kvm *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14c02e5b0 <col:15> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |   `-GotoStmt 0x14c02e628 <line:39:3, col:8> 'unlock_vcpu_destroy' 0x14c02d688
+    |-BinaryOperator 0x14c02e7f8 <line:42:2, col:48> '<dependent type>' contains-errors '='
+    | |-ArraySubscriptExpr 0x14c02e7b8 <col:2, col:44> '<dependent type>' contains-errors lvalue
+    | | |-ImplicitCastExpr 0x14c02e7a0 <col:2, col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | | | `-RecoveryExpr 0x14c02e6b8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14c02e680 <col:2> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    | | `-CallExpr 0x14c02e778 <col:13, col:43> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14c02e6e0 <col:13> 'int ()' Function 0x14c02d758 'atomic_read' 'int ()'
+    | |   `-UnaryOperator 0x14c02e760 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x14c02e738 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x14c02e700 <col:26> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    | `-DeclRefExpr 0x14c02e7d8 <col:48> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    |-CallExpr 0x14c02e930 <line:43:2, col:10> 'int'
+    | `-ImplicitCastExpr 0x14c02e918 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14c02e8f8 <col:2> 'int ()' Function 0x14c02e840 'smp_wmb' 'int ()'
+    |-CallExpr 0x14c02eac8 <line:44:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02ea30 <col:2> 'int ()' Function 0x14c02e978 'atomic_inc' 'int ()'
+    | `-UnaryOperator 0x14c02eab0 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c02ea88 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c02ea50 <col:14> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-CallExpr 0x14c02ec68 <line:46:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c02ebd0 <col:2> 'int ()' Function 0x14c02eb18 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x14c02ec50 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14c02ec28 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c02ebf0 <col:16> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-CallExpr 0x14c02edc8 <line:47:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x14c02edb0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c02ed70 <col:2> 'int ()' Function 0x14c02ecb8 'kvm_arch_vcpu_postcreate' 'int ()'
+    | `-ImplicitCastExpr 0x14c02edf0 <col:27> 'struct kvm_vcpu *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02ed90 <col:27> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    |-ReturnStmt 0x14c02ee40 <line:48:2, col:9>
+    | `-ImplicitCastExpr 0x14c02ee28 <col:9> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02ee08 <col:9> 'int' lvalue Var 0x14c02b708 'r' 'int'
+    |-LabelStmt 0x14c02ef10 <line:50:1, line:51:25> 'unlock_vcpu_destroy'
+    | `-CallExpr 0x14c02eee8 <col:2, col:25> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c02ee50 <col:2> 'int ()' Function 0x14c02eb18 'mutex_unlock' 'int ()'
+    |   `-UnaryOperator 0x14c02eed0 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14c02eea8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14c02ee70 <col:16> 'struct kvm *' lvalue ParmVar 0x14c00e248 'kvm' 'struct kvm *'
+    |-LabelStmt 0x14c02f0a8 <line:52:1, line:53:28> 'vcpu_destroy'
+    | `-CallExpr 0x14c02f068 <col:2, col:28> 'int'
+    |   |-ImplicitCastExpr 0x14c02f050 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c02f010 <col:2> 'int ()' Function 0x14c02ef58 'kvm_arch_vcpu_destroy' 'int ()'
+    |   `-ImplicitCastExpr 0x14c02f090 <col:24> 'struct kvm_vcpu *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c02f030 <col:24> 'struct kvm_vcpu *' lvalue Var 0x14c02b8f8 'vcpu' 'struct kvm_vcpu *'
+    `-ReturnStmt 0x14c02f100 <line:54:2, col:9>
+      `-ImplicitCastExpr 0x14c02f0e8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14c02f0c8 <col:9> 'int' lvalue Var 0x14c02b708 'r' 'int'

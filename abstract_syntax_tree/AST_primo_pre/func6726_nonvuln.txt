@@ -1,0 +1,29 @@
+`-FunctionDecl 0x15a128750  line:1:13 perf_swevent_cancel_hrtimer 'void (struct perf_event *)' static
+  |-ParmVarDecl 0x15a128648 <col:41, col:60> col:60 used event 'struct perf_event *'
+  `-CompoundStmt 0x15a1413f8 <line:2:1, line:11:1>
+    |-DeclStmt 0x15a140cb0 <line:3:2, col:40>
+    | |-RecordDecl 0x15a140a48 <col:2, col:9> col:9 struct hw_perf_event
+    | `-VarDecl 0x15a140bb8 <col:2, col:38> col:24 used hwc 'struct hw_perf_event *' cinit
+    |   `-UnaryOperator 0x15a140c80 <col:30, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15a140c58 <col:31, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15a140c20 <col:31> 'struct perf_event *' lvalue ParmVar 0x15a128648 'event' 'struct perf_event *'
+    `-IfStmt 0x15a1413d8 <line:5:2, line:10:2>
+      |-CallExpr 0x15a140e78 <line:5:6, col:29> 'int'
+      | |-ImplicitCastExpr 0x15a140e60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x15a140df0 <col:6> 'int ()' Function 0x15a140d38 'is_sampling_event' 'int ()'
+      | `-ImplicitCastExpr 0x15a140ea0 <col:24> 'struct perf_event *' <LValueToRValue>
+      |   `-DeclRefExpr 0x15a140e10 <col:24> 'struct perf_event *' lvalue ParmVar 0x15a128648 'event' 'struct perf_event *'
+      `-CompoundStmt 0x15a1413b8 <col:32, line:10:2>
+        |-CallExpr 0x15a1411e8 <line:7:3, col:56> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x15a140f98 <col:3> 'int ()' Function 0x15a140ee0 'local64_set' 'int ()'
+        | |-UnaryOperator 0x15a141018 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x15a140ff0 <col:16, col:21> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x15a140fb8 <col:16> 'struct hw_perf_event *' contains-errors lvalue Var 0x15a140bb8 'hwc' 'struct hw_perf_event *'
+        | `-CallExpr 0x15a1411c0 <col:34, col:55> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x15a141110 <col:34> 'int ()' Function 0x15a141058 'ktime_to_ns' 'int ()'
+        |   `-RecoveryExpr 0x15a1411a0 <col:46> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x15a141390 <line:9:3, col:31> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x15a1412f8 <col:3> 'int ()' Function 0x15a141240 'hrtimer_cancel' 'int ()'
+          `-UnaryOperator 0x15a141378 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x15a141350 <col:19, col:24> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x15a141318 <col:19> 'struct hw_perf_event *' contains-errors lvalue Var 0x15a140bb8 'hwc' 'struct hw_perf_event *'

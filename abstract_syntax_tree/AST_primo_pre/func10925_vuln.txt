@@ -1,0 +1,44 @@
+`-FunctionDecl 0x137928288  line:1:12 invalid mem_resize 'int (int *, int)' static
+  |-ParmVarDecl 0x137928128 <col:23, col:44> col:44 referenced invalid m 'int *'
+  |-ParmVarDecl 0x1379281a8 <col:47, col:51> col:51 used bufsize 'int'
+  `-CompoundStmt 0x137941c78 <line:2:1, line:13:1>
+    |-DeclStmt 0x1379283f0 <line:3:2, col:20>
+    | `-VarDecl 0x137928388 <col:2, col:17> col:17 used buf 'unsigned char *'
+    |-CallExpr 0x1379285e8 <line:5:2, col:16> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x137928560 <col:2> 'int ()' Function 0x1379284a8 'assert' 'int ()'
+    | `-CXXDependentScopeMemberExpr 0x1379285a0 <col:9, col:12> '<dependent type>' contains-errors lvalue ->buf_
+    |   `-RecoveryExpr 0x137928580 <col:9> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1379286f8 <line:6:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x1379286e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x137928610 <col:2> 'int ()' Function 0x1379284a8 'assert' 'int ()'
+    | `-BinaryOperator 0x137928688 <col:9, col:20> 'int' '>='
+    |   |-ImplicitCastExpr 0x137928670 <col:9> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x137928630 <col:9> 'int' lvalue ParmVar 0x1379281a8 'bufsize' 'int'
+    |   `-IntegerLiteral 0x137928650 <col:20> 'int' 0
+    |-IfStmt 0x137941a88 <line:7:2, line:9:2>
+    | |-UnaryOperator 0x137941a10 <line:7:6, col:67> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ParenExpr 0x1379419f0 <col:7, col:67> 'unsigned char *' contains-errors
+    | |   `-BinaryOperator 0x1379419d0 <col:8, col:66> 'unsigned char *' contains-errors '='
+    | |     |-DeclRefExpr 0x137928720 <col:8> 'unsigned char *' lvalue Var 0x137928388 'buf' 'unsigned char *'
+    | |     `-CallExpr 0x137941998 <col:14, col:66> '<dependent type>' contains-errors
+    | |       |-DeclRefExpr 0x1379418b8 <col:14> 'int ()' Function 0x137941800 'jas_realloc2' 'int ()'
+    | |       |-CXXDependentScopeMemberExpr 0x1379418f8 <col:27, col:30> '<dependent type>' contains-errors lvalue ->buf_
+    | |       | `-RecoveryExpr 0x1379418d8 <col:27> '<dependent type>' contains-errors lvalue
+    | |       |-DeclRefExpr 0x137941940 <col:36> 'int' lvalue ParmVar 0x1379281a8 'bufsize' 'int'
+    | |       `-UnaryExprOrTypeTraitExpr 0x137941978 <col:45, col:65> 'unsigned long' sizeof 'unsigned char'
+    | `-CompoundStmt 0x137941a70 <col:70, line:9:2>
+    |   `-ReturnStmt 0x137941a60 <line:8:3, col:11>
+    |     `-UnaryOperator 0x137941a48 <col:10, col:11> 'int' prefix '-'
+    |       `-IntegerLiteral 0x137941a28 <col:11> 'int' 1
+    |-BinaryOperator 0x137941b58 <line:10:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x137941af0 <col:2, col:5> '<dependent type>' contains-errors lvalue ->buf_
+    | | `-RecoveryExpr 0x137941ac8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x137941aa8 <col:2> 'int *' lvalue ParmVar 0x137928128 'm' 'int *'
+    | `-DeclRefExpr 0x137941b38 <col:12> 'unsigned char *' lvalue Var 0x137928388 'buf' 'unsigned char *'
+    |-BinaryOperator 0x137941c28 <line:11:2, col:16> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x137941bc0 <col:2, col:5> '<dependent type>' contains-errors lvalue ->bufsize_
+    | | `-RecoveryExpr 0x137941b98 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x137941b78 <col:2> 'int *' lvalue ParmVar 0x137928128 'm' 'int *'
+    | `-DeclRefExpr 0x137941c08 <col:16> 'int' lvalue ParmVar 0x1379281a8 'bufsize' 'int'
+    `-ReturnStmt 0x137941c68 <line:12:2, col:9>
+      `-IntegerLiteral 0x137941c48 <col:9> 'int' 0

@@ -1,0 +1,36 @@
+`-FunctionDecl 0x14800a988  line:1:31 invalid softnet_get_online 'struct netif_rx_stats *(int *)' static
+  |-ParmVarDecl 0x14800a7c8 <col:50, col:58> col:58 invalid pos 'int *'
+  `-CompoundStmt 0x13e051c68 <line:2:1, line:12:1>
+    |-DeclStmt 0x14800ab68 <line:3:2, col:34>
+    | `-VarDecl 0x14800aac8 <col:2, col:30> col:25 used rc 'struct netif_rx_stats *' cinit
+    |   `-RecoveryExpr 0x14800ab48 <col:30> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x13e051c00 <line:5:2, line:10:7>
+    | |-BinaryOperator 0x14800ac88 <line:5:9, col:16> 'int' contains-errors '<'
+    | | |-UnaryOperator 0x14800ac50 <col:9, col:10> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | | `-ImplicitCastExpr 0x14800ac38 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x14800ab80 <col:10> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x14800ac68 <col:16> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x13e051bd0 <line:6:10, line:10:7> has_else
+    |   |-CallExpr 0x13e051870 <line:6:14, col:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13e051800 <col:14> 'int ()' Function 0x14800ad48 'cpu_online' 'int ()'
+    |   | `-UnaryOperator 0x13e051858 <col:25, col:26> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |   `-ImplicitCastExpr 0x13e051840 <col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x13e051820 <col:26> '<dependent type>' contains-errors lvalue
+    |   |-CompoundStmt 0x13e051b48 <col:32, line:9:3>
+    |   | |-BinaryOperator 0x13e051b20 <line:7:4, col:38> 'struct netif_rx_stats *' contains-errors '='
+    |   | | |-DeclRefExpr 0x13e051898 <col:4> 'struct netif_rx_stats *' contains-errors lvalue Var 0x14800aac8 'rc' 'struct netif_rx_stats *'
+    |   | | `-UnaryOperator 0x13e051b08 <col:9, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   `-CallExpr 0x13e051ad8 <col:10, col:38> '<dependent type>' contains-errors
+    |   | |     |-DeclRefExpr 0x13e051998 <col:10> 'int ()' Function 0x13e0518e0 'per_cpu' 'int ()'
+    |   | |     |-RecoveryExpr 0x13e051a88 <col:18> '<dependent type>' contains-errors lvalue
+    |   | |     `-UnaryOperator 0x13e051ac0 <col:34, col:35> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | |       `-ImplicitCastExpr 0x13e051aa8 <col:35> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |         `-RecoveryExpr 0x13e0519d0 <col:35> '<dependent type>' contains-errors lvalue
+    |   | `-BreakStmt 0x13e051b40 <line:8:4>
+    |   `-UnaryOperator 0x13e051bb8 <line:10:4, col:7> '<dependent type>' contains-errors prefix '++' cannot overflow
+    |     `-UnaryOperator 0x13e051ba0 <col:6, col:7> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x13e051b88 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x13e051b68 <col:7> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13e051c58 <line:11:2, col:9>
+      `-ImplicitCastExpr 0x13e051c40 <col:9> 'struct netif_rx_stats *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x13e051c20 <col:9> 'struct netif_rx_stats *' contains-errors lvalue Var 0x14800aac8 'rc' 'struct netif_rx_stats *'

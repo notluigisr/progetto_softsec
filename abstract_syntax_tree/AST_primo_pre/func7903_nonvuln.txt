@@ -1,0 +1,24 @@
+`-FunctionDecl 0x14f928750  line:1:13 put_pwq 'void (struct pool_workqueue *)' static
+  |-ParmVarDecl 0x14f928648 <col:21, col:44> col:44 used pwq 'struct pool_workqueue *'
+  `-CompoundStmt 0x14f941218 <line:2:1, line:10:1>
+    |-CallExpr 0x14f940c50 <line:3:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14f940b70 <col:2> 'int ()' Function 0x14f940ab8 'lockdep_assert_held' 'int ()'
+    | `-UnaryOperator 0x14f940c38 <col:22, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14f940bf0 <col:23, col:34> '<dependent type>' contains-errors lvalue ->lock
+    |     `-RecoveryExpr 0x14f940bc8 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14f940b90 <col:23> 'struct pool_workqueue *' lvalue ParmVar 0x14f928648 'pwq' 'struct pool_workqueue *'
+    |-IfStmt 0x14f940e28 <line:4:2, line:5:3>
+    | |-CallExpr 0x14f940df0 <line:4:6, col:26> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14f940d58 <col:6> 'int ()' Function 0x14f940ca0 'likely' 'int ()'
+    | | `-UnaryOperator 0x14f940dd8 <col:13, col:20> '<dependent type>' contains-errors prefix '--' cannot overflow
+    | |   `-RecoveryExpr 0x14f940db0 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x14f940d78 <col:15> 'struct pool_workqueue *' lvalue ParmVar 0x14f928648 'pwq' 'struct pool_workqueue *'
+    | `-ReturnStmt 0x14f940e18 <line:5:3>
+    |-IfStmt 0x14f941058 <line:6:2, line:7:3>
+    | |-RecoveryExpr 0x14f941028 <line:6:6, col:49> '_Bool' contains-errors
+    | `-ReturnStmt 0x14f941048 <line:7:3>
+    `-CallExpr 0x14f9411f0 <line:9:2, col:42> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f941158 <col:2> 'int ()' Function 0x14f9410a0 'schedule_work' 'int ()'
+      `-UnaryOperator 0x14f9411d8 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14f9411b0 <col:17, col:22> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14f941178 <col:17> 'struct pool_workqueue *' lvalue ParmVar 0x14f928648 'pwq' 'struct pool_workqueue *'

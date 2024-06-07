@@ -1,0 +1,59 @@
+`-FunctionDecl 0x13f928758  line:1:12 __aio_run_iocbs 'int (struct kioctx *)' static
+  |-ParmVarDecl 0x13f928648 <col:28, col:43> col:43 used ctx 'struct kioctx *'
+  `-CompoundStmt 0x148009208 <line:2:1, line:21:1>
+    |-DeclStmt 0x13f940c38 <line:3:2, col:20>
+    | |-RecordDecl 0x13f940a50 <col:2, col:9> col:9 struct kiocb
+    | `-VarDecl 0x13f940bb8 <col:2, col:16> col:16 used iocb 'struct kiocb *'
+    |-DeclStmt 0x13f940dc8 <line:4:2, col:27>
+    | |-RecordDecl 0x13f940c50 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x13f940d48 <col:2, col:19> col:19 referenced invalid run_list 'struct list_head'
+    |-CallExpr 0x13f940fa8 <line:6:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f940f10 <col:2> 'int ()' Function 0x13f940e58 'assert_spin_locked' 'int ()'
+    | `-UnaryOperator 0x13f940f90 <col:21, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f940f68 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f940f30 <col:22> 'struct kioctx *' lvalue ParmVar 0x13f928648 'ctx' 'struct kioctx *'
+    |-CallExpr 0x13f941180 <line:8:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f9410b0 <col:2> 'int ()' Function 0x13f940ff8 'list_replace_init' 'int ()'
+    | |-UnaryOperator 0x13f941130 <col:20, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13f941108 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13f9410d0 <col:21> 'struct kioctx *' lvalue ParmVar 0x13f928648 'ctx' 'struct kioctx *'
+    | `-UnaryOperator 0x13f941168 <col:36, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13f941148 <col:37> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x148009090 <line:9:2, line:17:3>
+    | |-UnaryOperator 0x13f941310 <line:9:9, col:30> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13f9412e8 <col:10, col:30> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13f941290 <col:10> 'int ()' Function 0x13f9411d8 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x13f9412d0 <col:21, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x13f9412b0 <col:22> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x148009060 <col:33, line:17:3>
+    |   |-CallExpr 0x13f941660 <line:12:3, col:30> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13f9415c8 <col:3> 'int ()' Function 0x13f941510 'list_del' 'int ()'
+    |   | `-UnaryOperator 0x13f941648 <col:12, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13f941620 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13f9415e8 <col:13> 'struct kiocb *' lvalue Var 0x13f940bb8 'iocb' 'struct kiocb *'
+    |   |-UnaryOperator 0x13f9416e8 <line:14:3, col:17> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | `-RecoveryExpr 0x13f9416c0 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x13f941688 <col:3> 'struct kiocb *' lvalue Var 0x13f940bb8 'iocb' 'struct kiocb *'
+    |   |-CallExpr 0x13f941868 <line:15:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x13f941850 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13f9417e0 <col:3> 'int ()' Function 0x13f941728 'aio_run_iocb' 'int ()'
+    |   | `-ImplicitCastExpr 0x13f941890 <col:16> 'struct kiocb *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13f941800 <col:16> 'struct kiocb *' lvalue Var 0x13f940bb8 'iocb' 'struct kiocb *'
+    |   `-CallExpr 0x148009000 <line:16:3, col:26> 'int'
+    |     |-ImplicitCastExpr 0x13f9419e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13f941988 <col:3> 'int ()' Function 0x13f9418d0 '__aio_put_req' 'int ()'
+    |     |-ImplicitCastExpr 0x148009030 <col:17> 'struct kioctx *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13f9419a8 <col:17> 'struct kioctx *' lvalue ParmVar 0x13f928648 'ctx' 'struct kioctx *'
+    |     `-ImplicitCastExpr 0x148009048 <col:22> 'struct kiocb *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13f9419c8 <col:22> 'struct kiocb *' lvalue Var 0x13f940bb8 'iocb' 'struct kiocb *'
+    |-IfStmt 0x1480091b8 <line:18:2, line:19:10>
+    | |-UnaryOperator 0x148009170 <line:18:6, col:32> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x148009148 <col:7, col:32> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1480090b0 <col:7> 'int ()' Function 0x13f9411d8 'list_empty' 'int ()'
+    | |   `-UnaryOperator 0x148009130 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x148009108 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1480090d0 <col:19> 'struct kioctx *' lvalue ParmVar 0x13f928648 'ctx' 'struct kioctx *'
+    | `-ReturnStmt 0x1480091a8 <line:19:3, col:10>
+    |   `-IntegerLiteral 0x148009188 <col:10> 'int' 1
+    `-ReturnStmt 0x1480091f8 <line:20:2, col:9>
+      `-IntegerLiteral 0x1480091d8 <col:9> 'int' 0

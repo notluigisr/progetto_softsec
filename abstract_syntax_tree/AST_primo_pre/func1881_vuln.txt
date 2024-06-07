@@ -1,0 +1,117 @@
+`-FunctionDecl 0x154123888  line:1:12 invalid irda_recvmsg_dgram 'int (struct kiocb *, struct socket *, struct msghdr *, int, int)' static
+  |-ParmVarDecl 0x15410b048 <col:31, col:45> col:45 iocb 'struct kiocb *'
+  |-ParmVarDecl 0x154123428 <col:51, col:66> col:66 used sock 'struct socket *'
+  |-ParmVarDecl 0x1541235f8 <line:2:10, col:25> col:25 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x154123690 <col:30, col:37> col:37 invalid size 'int'
+  |-ParmVarDecl 0x154123710 <col:43, col:47> col:47 used flags 'int'
+  `-CompoundStmt 0x156010458 <line:3:1, line:42:1>
+    |-DeclStmt 0x154123ba8 <line:4:2, col:28>
+    | |-RecordDecl 0x154123958 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x154123ac8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x154123b68 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x154123b30 <col:20> 'struct socket *' lvalue ParmVar 0x154123428 'sock' 'struct socket *'
+    |-DeclStmt 0x154123fe8 <line:5:2, col:38>
+    | |-RecordDecl 0x154123bc0 <col:2, col:9> col:9 struct irda_sock
+    | `-VarDecl 0x154123d28 <col:2, col:37> col:20 used self 'struct irda_sock *' cinit
+    |   `-ImplicitCastExpr 0x154123fb8 <col:27, col:37> 'struct irda_sock *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x154123f78 <col:27, col:37> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x154123f60 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x154123ef0 <col:27> 'int ()' Function 0x154123e38 'irda_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x154123fa0 <col:35> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x154123f10 <col:35> 'struct sock *' contains-errors lvalue Var 0x154123ac8 'sk' 'struct sock *'
+    |-DeclStmt 0x1541241e8 <line:6:2, col:21>
+    | |-RecordDecl 0x154124000 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x154124168 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-UnaryExprOrTypeTraitExpr 0x154124270 <line:7:2, col:9> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x154124250 <col:9> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x154124310 <line:8:2, col:9>
+    | `-VarDecl 0x1541242a8 <col:2, col:6> col:6 used err 'int'
+    |-CallExpr 0x15600ef90 <line:10:2, col:31> 'int'
+    | |-ImplicitCastExpr 0x15600ef78 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15600ee10 <col:2> 'int ()' Function 0x154124350 'IRDA_DEBUG' 'int ()'
+    | |-IntegerLiteral 0x15600ee30 <col:13> 'int' 4
+    | |-ImplicitCastExpr 0x15600efc8 <col:16> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x15600ee90 <col:16> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x15600efe0 <col:23> 'const char *' <ArrayToPointerDecay>
+    |   `-PredefinedExpr 0x15600ef60 <col:23> 'const char[19]' lvalue __func__
+    |     `-StringLiteral 0x15600ef30 <col:23> 'const char[19]' lvalue "irda_recvmsg_dgram"
+    |-BinaryOperator 0x15600f078 <line:12:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15600f030 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15600eff8 <col:2> 'struct msghdr *' lvalue ParmVar 0x1541235f8 'msg' 'struct msghdr *'
+    | `-IntegerLiteral 0x15600f058 <col:21> 'int' 0
+    |-BinaryOperator 0x15600f478 <line:14:2, line:15:31> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x15600f098 <line:14:2> 'struct sk_buff *' lvalue Var 0x154124168 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x15600f438 <col:8, line:15:31> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15600f198 <line:14:8> 'int ()' Function 0x15600f0e0 'skb_recv_datagram' 'int ()'
+    |   |-DeclRefExpr 0x15600f1b8 <col:26> 'struct sock *' contains-errors lvalue Var 0x154123ac8 'sk' 'struct sock *'
+    |   |-BinaryOperator 0x15600f3d8 <col:30, col:39> '<dependent type>' contains-errors '&'
+    |   | |-DeclRefExpr 0x15600f1d8 <col:30> 'int' lvalue ParmVar 0x154123710 'flags' 'int'
+    |   | `-UnaryOperator 0x15600f3c0 <col:38, col:39> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   |   `-ImplicitCastExpr 0x15600f3a8 <col:39> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     `-RecoveryExpr 0x15600f388 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x15600f418 <line:15:5, col:13> '<dependent type>' contains-errors '&'
+    |   | |-DeclRefExpr 0x15600f260 <col:5> 'int' lvalue ParmVar 0x154123710 'flags' 'int'
+    |   | `-RecoveryExpr 0x15600f3f8 <col:13> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x15600f310 <col:27, col:28> 'int *' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x15600f2b8 <col:28> 'int' lvalue Var 0x1541242a8 'err' 'int'
+    |-IfStmt 0x15600f530 <line:16:2, line:17:10>
+    | |-UnaryOperator 0x15600f4d0 <line:16:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15600f4b8 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15600f498 <col:7> 'struct sk_buff *' lvalue Var 0x154124168 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x15600f520 <line:17:3, col:10>
+    |   `-ImplicitCastExpr 0x15600f508 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x15600f4e8 <col:10> 'int' lvalue Var 0x1541242a8 'err' 'int'
+    |-CallExpr 0x15600f688 <line:19:2, col:32> 'int'
+    | |-ImplicitCastExpr 0x15600f670 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15600f630 <col:2> 'int ()' Function 0x15600f578 'skb_reset_transport_header' 'int ()'
+    | `-ImplicitCastExpr 0x15600f6b0 <col:29> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15600f650 <col:29> 'struct sk_buff *' lvalue Var 0x154124168 'skb' 'struct sk_buff *'
+    |-IfStmt 0x15600fa88 <line:22:2, line:27:2>
+    | |-BinaryOperator 0x15600f7a0 <line:22:6, col:15> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x15600f780 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x15600f740 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x15600fa68 <col:21, line:27:2>
+    |   |-CallExpr 0x15600f908 <line:23:3, line:24:29> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15600f7c0 <line:23:3> 'int ()' Function 0x154124350 'IRDA_DEBUG' 'int ()'
+    |   | |-IntegerLiteral 0x15600f7e0 <col:14> 'int' 2
+    |   | |-StringLiteral 0x15600f800 <col:17> 'char[4]' lvalue "STR"
+    |   | |-PredefinedExpr 0x15600f850 <line:24:7> 'const char[19]' lvalue __func__
+    |   | | `-StringLiteral 0x15600f820 <col:7> 'const char[19]' lvalue "irda_recvmsg_dgram"
+    |   | |-RecoveryExpr 0x15600f8e8 <col:17> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x15600f880 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-CompoundAssignOperator 0x15600fa38 <line:26:3, col:21> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x15600f9a8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x15600f970 <col:3> 'struct msghdr *' lvalue ParmVar 0x1541235f8 'msg' 'struct msghdr *'
+    |     `-RecoveryExpr 0x15600fa18 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15600fda0 <line:30:2, col:27> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15600fd88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15600fd28 <col:2> 'int ()' Function 0x15600fc70 'skb_free_datagram' 'int ()'
+    | |-ImplicitCastExpr 0x15600fdd0 <col:20> 'struct sock *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x15600fd48 <col:20> 'struct sock *' contains-errors lvalue Var 0x154123ac8 'sk' 'struct sock *'
+    | `-ImplicitCastExpr 0x15600fde8 <col:24> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15600fd68 <col:24> 'struct sk_buff *' lvalue Var 0x154124168 'skb' 'struct sk_buff *'
+    `-IfStmt 0x156010438 <line:33:2, line:39:2>
+      |-RecoveryExpr 0x15600fe60 <line:33:6, col:23> '_Bool' contains-errors
+      `-CompoundStmt 0x156010420 <col:34, line:39:2>
+        `-IfStmt 0x156010400 <line:34:3, line:38:3>
+          |-BinaryOperator 0x1560100e0 <line:34:7, col:53> 'int' contains-errors '<='
+          | |-ParenExpr 0x156010060 <col:7, col:44> '<dependent type>' contains-errors
+          | | `-BinaryOperator 0x156010040 <col:8, col:43> '<dependent type>' contains-errors '<<'
+          | |   |-CallExpr 0x15600fff8 <col:8, col:38> '<dependent type>' contains-errors
+          | |   | |-DeclRefExpr 0x15600ff60 <col:8> 'int ()' Function 0x15600fea8 'atomic_read' 'int ()'
+          | |   | `-UnaryOperator 0x15600ffe0 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+          | |   |   `-RecoveryExpr 0x15600ffb8 <col:21, col:25> '<dependent type>' contains-errors lvalue
+          | |   |     `-DeclRefExpr 0x15600ff80 <col:21> 'struct sock *' contains-errors lvalue Var 0x154123ac8 'sk' 'struct sock *'
+          | |   `-IntegerLiteral 0x156010020 <col:43> 'int' 2
+          | `-RecoveryExpr 0x1560100b8 <col:49, col:53> '<dependent type>' contains-errors lvalue
+          |   `-DeclRefExpr 0x156010080 <col:49> 'struct sock *' contains-errors lvalue Var 0x154123ac8 'sk' 'struct sock *'
+          `-CompoundStmt 0x1560103e8 <col:64, line:38:3>
+            `-CallExpr 0x1560101c0 <line:35:4, col:33> 'int'
+              |-ImplicitCastExpr 0x1560101a8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x156010100 <col:4> 'int ()' Function 0x154124350 'IRDA_DEBUG' 'int ()'
+              |-IntegerLiteral 0x156010120 <col:15> 'int' 2
+              |-ImplicitCastExpr 0x1560101f8 <col:18> 'char *' <ArrayToPointerDecay>
+              | `-StringLiteral 0x156010140 <col:18> 'char[4]' lvalue "STR"
+              `-ImplicitCastExpr 0x156010210 <col:25> 'const char *' <ArrayToPointerDecay>
+                `-PredefinedExpr 0x156010190 <col:25> 'const char[19]' lvalue __func__
+                  `-StringLiteral 0x156010160 <col:25> 'const char[19]' lvalue "irda_recvmsg_dgram"

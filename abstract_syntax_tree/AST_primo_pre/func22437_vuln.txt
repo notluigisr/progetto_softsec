@@ -1,0 +1,106 @@
+`-FunctionDecl 0x122122898  line:1:28 hns_roce_alloc_ucontext 'struct ib_ucontext *(struct ib_device *, struct ib_udata *)' static
+  |-ParmVarDecl 0x12280e2e8 <col:52, col:70> col:70 used ib_dev 'struct ib_device *'
+  |-ParmVarDecl 0x1221226c8 <line:2:10, col:27> col:27 used udata 'struct ib_udata *'
+  `-CompoundStmt 0x122124d20 <line:3:1, line:37:1>
+    |-DeclStmt 0x122122a38 <line:4:2, col:13>
+    | `-VarDecl 0x1221229b0 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x122122a18 <col:12> 'int' 0
+    |-DeclStmt 0x122122c38 <line:5:2, col:35>
+    | |-RecordDecl 0x122122a50 <col:2, col:9> col:9 struct hns_roce_ucontext
+    | `-VarDecl 0x122122bb8 <col:2, col:28> col:28 used context 'struct hns_roce_ucontext *'
+    |-DeclStmt 0x122122dc8 <line:6:2, col:45>
+    | |-RecordDecl 0x122122c50 <col:2, col:9> col:9 struct hns_roce_ib_alloc_ucontext_resp
+    | `-VarDecl 0x122122d48 <col:2, col:41> col:41 referenced invalid resp 'struct hns_roce_ib_alloc_ucontext_resp'
+    |-DeclStmt 0x1221231d8 <line:7:2, col:49>
+    | |-RecordDecl 0x122122de0 <col:2, col:9> col:9 struct hns_roce_dev
+    | `-VarDecl 0x122122f48 <col:2, col:48> col:23 used hr_dev 'struct hns_roce_dev *' cinit
+    |   `-ImplicitCastExpr 0x1221231a8 <col:32, col:48> 'struct hns_roce_dev *' <IntegralToPointer>
+    |     `-CallExpr 0x122123168 <col:32, col:48> 'int'
+    |       |-ImplicitCastExpr 0x122123150 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1221230e0 <col:32> 'int ()' Function 0x122123028 'to_hr_dev' 'int ()'
+    |       `-ImplicitCastExpr 0x122123190 <col:42> 'struct ib_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x122123100 <col:42> 'struct ib_device *' lvalue ParmVar 0x12280e2e8 'ib_dev' 'struct ib_device *'
+    |-BinaryOperator 0x122123328 <line:9:2, col:34> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x122123238 <col:2, col:7> '<dependent type>' contains-errors lvalue .qp_tab_size
+    | | `-RecoveryExpr 0x122123210 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1221231f0 <col:2> 'struct hns_roce_ib_alloc_ucontext_resp' lvalue Var 0x122122d48 'resp' 'struct hns_roce_ib_alloc_ucontext_resp'
+    | `-CXXDependentScopeMemberExpr 0x1221232e0 <col:21, col:34> '<dependent type>' contains-errors lvalue .num_qps
+    |   `-RecoveryExpr 0x1221232b8 <col:21, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122123280 <col:21> 'struct hns_roce_dev *' lvalue Var 0x122122f48 'hr_dev' 'struct hns_roce_dev *'
+    |-IfStmt 0x122123dd0 <line:12:2, line:13:25>
+    | |-UnaryOperator 0x122123528 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x122123510 <col:7> 'struct hns_roce_ucontext *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1221234f0 <col:7> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    | `-ReturnStmt 0x122123dc0 <line:13:3, col:25>
+    |   `-CallExpr 0x122123d98 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122123cb8 <col:10> 'int ()' Function 0x122123c00 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x122123d80 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x122123d68 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x122123d48 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x122123fd8 <line:15:2, col:48> 'int' contains-errors '='
+    | |-DeclRefExpr 0x122123df0 <col:2> 'int' lvalue Var 0x1221229b0 'ret' 'int'
+    | `-CallExpr 0x122123fa8 <col:8, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122123ef0 <col:8> 'int ()' Function 0x122123e38 'hns_roce_uar_alloc' 'int ()'
+    |   |-DeclRefExpr 0x122123f10 <col:27> 'struct hns_roce_dev *' lvalue Var 0x122122f48 'hr_dev' 'struct hns_roce_dev *'
+    |   `-UnaryOperator 0x122123f90 <col:35, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x122123f68 <col:36, col:45> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x122123f30 <col:36> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    |-IfStmt 0x122124098 <line:16:2, line:17:8>
+    | |-ImplicitCastExpr 0x122124018 <line:16:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x122123ff8 <col:6> 'int' lvalue Var 0x1221229b0 'ret' 'int'
+    | `-GotoStmt 0x122124080 <line:17:3, col:8> 'error_fail_uar_alloc' 0x122124030
+    |-IfStmt 0x122124538 <line:19:2, line:22:2>
+    | |-BinaryOperator 0x1221241b8 <line:19:6, col:27> '<dependent type>' contains-errors '&'
+    | | |-CXXDependentScopeMemberExpr 0x122124118 <col:6, col:19> '<dependent type>' contains-errors lvalue .flags
+    | | | `-RecoveryExpr 0x1221240f0 <col:6, col:14> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x1221240b8 <col:6> 'struct hns_roce_dev *' lvalue Var 0x122122f48 'hr_dev' 'struct hns_roce_dev *'
+    | | `-RecoveryExpr 0x122124198 <col:27> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x122124518 <col:56, line:22:2>
+    |   |-CallExpr 0x122124350 <line:20:3, col:37> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1221242b8 <col:3> 'int ()' Function 0x122124200 'INIT_LIST_HEAD' 'int ()'
+    |   | `-UnaryOperator 0x122124338 <col:18, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x122124310 <col:19, col:28> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1221242d8 <col:19> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    |   `-CallExpr 0x1221244f0 <line:21:3, col:34> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122124458 <col:3> 'int ()' Function 0x1221243a0 'mutex_init' 'int ()'
+    |     `-UnaryOperator 0x1221244d8 <col:14, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x1221244b0 <col:15, col:24> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x122124478 <col:15> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    |-BinaryOperator 0x122124768 <line:24:2, col:51> 'int' contains-errors '='
+    | |-DeclRefExpr 0x122124558 <col:2> 'int' lvalue Var 0x1221229b0 'ret' 'int'
+    | `-CallExpr 0x122124730 <col:8, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x122124658 <col:8> 'int ()' Function 0x1221245a0 'ib_copy_to_udata' 'int ()'
+    |   |-DeclRefExpr 0x122124678 <col:25> 'struct ib_udata *' lvalue ParmVar 0x1221226c8 'udata' 'struct ib_udata *'
+    |   |-UnaryOperator 0x1221246b8 <col:32, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x122124698 <col:33> '<dependent type>' contains-errors lvalue
+    |   `-UnaryExprOrTypeTraitExpr 0x122124710 <col:39, col:50> 'unsigned long' contains-errors sizeof
+    |     `-ParenExpr 0x1221246f0 <col:45, col:50> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x1221246d0 <col:46> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122124828 <line:25:2, line:26:8>
+    | |-ImplicitCastExpr 0x1221247a8 <line:25:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x122124788 <col:6> 'int' lvalue Var 0x1221229b0 'ret' 'int'
+    | `-GotoStmt 0x122124810 <line:26:3, col:8> 'error_fail_copy_to_udata' 0x1221247c0
+    |-ReturnStmt 0x1221248c0 <line:28:2, col:19>
+    | `-UnaryOperator 0x1221248a8 <col:9, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x122124880 <col:10, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122124848 <col:10> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    |-LabelStmt 0x122124a98 <line:30:1, line:31:41> 'error_fail_copy_to_udata'
+    | `-CallExpr 0x122124a68 <col:2, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1221249b0 <col:2> 'int ()' Function 0x1221248f8 'hns_roce_uar_free' 'int ()'
+    |   |-DeclRefExpr 0x1221249d0 <col:20> 'struct hns_roce_dev *' lvalue Var 0x122122f48 'hr_dev' 'struct hns_roce_dev *'
+    |   `-UnaryOperator 0x122124a50 <col:28, col:38> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x122124a28 <col:29, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1221249f0 <col:29> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    |-LabelStmt 0x122124c40 <line:33:1, line:34:15> 'error_fail_uar_alloc'
+    | `-CallExpr 0x122124c00 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x122124bd8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x122124b98 <col:2> 'int ()' Function 0x122124ae0 'kfree' 'int ()'
+    |   `-ImplicitCastExpr 0x122124c28 <col:8> 'struct hns_roce_ucontext *' <LValueToRValue>
+    |     `-DeclRefExpr 0x122124bb8 <col:8> 'struct hns_roce_ucontext *' lvalue Var 0x122122bb8 'context' 'struct hns_roce_ucontext *'
+    `-ReturnStmt 0x122124d10 <line:36:2, col:20>
+      `-ImplicitCastExpr 0x122124cf8 <col:9, col:20> 'struct ib_ucontext *' <IntegralToPointer>
+        `-CallExpr 0x122124cb8 <col:9, col:20> 'int'
+          |-ImplicitCastExpr 0x122124ca0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x122124c60 <col:9> 'int ()' Function 0x122123c00 'ERR_PTR' 'int ()'
+          `-ImplicitCastExpr 0x122124ce0 <col:17> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x122124c80 <col:17> 'int' lvalue Var 0x1221229b0 'ret' 'int'

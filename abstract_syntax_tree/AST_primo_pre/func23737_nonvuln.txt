@@ -1,0 +1,79 @@
+`-FunctionDecl 0x14c808538  line:1:12 calipso_sock_setattr 'int (struct sock *, const struct calipso_doi *, const struct netlbl_lsm_secattr *)' static
+  |-ParmVarDecl 0x14c128648 <col:33, col:46> col:46 used sk 'struct sock *'
+  |-ParmVarDecl 0x14c808228 <line:2:5, col:31> col:31 used doi_def 'const struct calipso_doi *'
+  |-ParmVarDecl 0x14c8083f8 <line:3:5, col:38> col:38 used secattr 'const struct netlbl_lsm_secattr *'
+  `-CompoundStmt 0x14c142108 <line:4:1, line:22:1>
+    |-DeclStmt 0x14c8086c0 <line:5:2, col:13>
+    | `-VarDecl 0x14c808658 <col:2, col:6> col:6 used ret_val 'int'
+    |-DeclStmt 0x14c808960 <line:6:2, col:32>
+    | |-RecordDecl 0x14c8086d8 <col:2, col:9> col:9 struct ipv6_opt_hdr
+    | |-VarDecl 0x14c808848 <col:2, col:23> col:23 used old 'struct ipv6_opt_hdr *'
+    | `-VarDecl 0x14c8088d8 <col:2, col:29> col:29 used new 'struct ipv6_opt_hdr *'
+    |-DeclStmt 0x14c808eb8 <line:7:2, col:57>
+    | |-RecordDecl 0x14c808978 <col:2, col:9> col:9 struct ipv6_txoptions
+    | `-VarDecl 0x14c808ae8 <col:2, col:56> col:25 used txopts 'struct ipv6_txoptions *' cinit
+    |   `-ImplicitCastExpr 0x14c808e88 <col:34, col:56> 'struct ipv6_txoptions *' <IntegralToPointer>
+    |     `-CallExpr 0x14c808e60 <col:34, col:56> 'int'
+    |       |-ImplicitCastExpr 0x14c808e48 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14c808c80 <col:34> 'int ()' Function 0x14c808bc8 'txopt_get' 'int ()'
+    |       `-CallExpr 0x14c808e08 <col:44, col:55> 'int'
+    |         |-ImplicitCastExpr 0x14c808df0 <col:44> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x14c808d80 <col:44> 'int ()' Function 0x14c808cc8 'inet6_sk' 'int ()'
+    |         `-ImplicitCastExpr 0x14c808e30 <col:53> 'struct sock *' <LValueToRValue>
+    |           `-DeclRefExpr 0x14c808da0 <col:53> 'struct sock *' lvalue ParmVar 0x14c128648 'sk' 'struct sock *'
+    |-BinaryOperator 0x14c808f48 <line:9:2, col:8> 'struct ipv6_opt_hdr *' contains-errors '='
+    | |-DeclRefExpr 0x14c808ed0 <col:2> 'struct ipv6_opt_hdr *' lvalue Var 0x14c808848 'old' 'struct ipv6_opt_hdr *'
+    | `-RecoveryExpr 0x14c808f28 <col:8> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14c809040 <line:10:2, line:11:17>
+    | |-ImplicitCastExpr 0x14c808f88 <line:10:6> 'struct ipv6_txoptions *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c808f68 <col:6> 'struct ipv6_txoptions *' lvalue Var 0x14c808ae8 'txopts' 'struct ipv6_txoptions *'
+    | `-BinaryOperator 0x14c809020 <line:11:3, col:17> 'struct ipv6_opt_hdr *' contains-errors '='
+    |   |-DeclRefExpr 0x14c808fa0 <col:3> 'struct ipv6_opt_hdr *' lvalue Var 0x14c808848 'old' 'struct ipv6_opt_hdr *'
+    |   `-RecoveryExpr 0x14c808ff8 <col:9, col:17> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c808fc0 <col:9> 'struct ipv6_txoptions *' lvalue Var 0x14c808ae8 'txopts' 'struct ipv6_txoptions *'
+    |-BinaryOperator 0x14c141898 <line:13:2, col:48> 'struct ipv6_opt_hdr *' '='
+    | |-DeclRefExpr 0x14c809060 <col:2> 'struct ipv6_opt_hdr *' lvalue Var 0x14c8088d8 'new' 'struct ipv6_opt_hdr *'
+    | `-ImplicitCastExpr 0x14c141880 <col:8, col:48> 'struct ipv6_opt_hdr *' <IntegralToPointer>
+    |   `-CallExpr 0x14c141800 <col:8, col:48> 'int'
+    |     |-ImplicitCastExpr 0x14c8091e0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14c809160 <col:8> 'int ()' Function 0x14c8090a8 'calipso_opt_insert' 'int ()'
+    |     |-ImplicitCastExpr 0x14c141838 <col:27> 'struct ipv6_opt_hdr *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14c809180 <col:27> 'struct ipv6_opt_hdr *' lvalue Var 0x14c808848 'old' 'struct ipv6_opt_hdr *'
+    |     |-ImplicitCastExpr 0x14c141850 <col:32> 'const struct calipso_doi *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14c8091a0 <col:32> 'const struct calipso_doi *' lvalue ParmVar 0x14c808228 'doi_def' 'const struct calipso_doi *'
+    |     `-ImplicitCastExpr 0x14c141868 <col:41> 'const struct netlbl_lsm_secattr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14c8091c0 <col:41> 'const struct netlbl_lsm_secattr *' lvalue ParmVar 0x14c8083f8 'secattr' 'const struct netlbl_lsm_secattr *'
+    |-CallExpr 0x14c1419f0 <line:14:2, col:18> 'int'
+    | |-ImplicitCastExpr 0x14c1419d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c141998 <col:2> 'int ()' Function 0x14c1418e0 'txopt_put' 'int ()'
+    | `-ImplicitCastExpr 0x14c141a18 <col:12> 'struct ipv6_txoptions *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c1419b8 <col:12> 'struct ipv6_txoptions *' lvalue Var 0x14c808ae8 'txopts' 'struct ipv6_txoptions *'
+    |-IfStmt 0x14c141d30 <line:15:2, line:16:21>
+    | |-CallExpr 0x14c141b68 <line:15:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x14c141b50 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14c141b10 <col:6> 'int ()' Function 0x14c141a58 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14c141b90 <col:13> 'struct ipv6_opt_hdr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c141b30 <col:13> 'struct ipv6_opt_hdr *' lvalue Var 0x14c8088d8 'new' 'struct ipv6_opt_hdr *'
+    | `-ReturnStmt 0x14c141d20 <line:16:3, col:21>
+    |   `-CallExpr 0x14c141ce0 <col:10, col:21> 'int'
+    |     |-ImplicitCastExpr 0x14c141cc8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14c141c88 <col:10> 'int ()' Function 0x14c141bd0 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x14c141d08 <col:18> 'struct ipv6_opt_hdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14c141ca8 <col:18> 'struct ipv6_opt_hdr *' lvalue Var 0x14c8088d8 'new' 'struct ipv6_opt_hdr *'
+    |-BinaryOperator 0x14c141f28 <line:18:2, col:38> 'int' '='
+    | |-DeclRefExpr 0x14c141d50 <col:2> 'int' lvalue Var 0x14c808658 'ret_val' 'int'
+    | `-CallExpr 0x14c141ec8 <col:12, col:38> 'int'
+    |   |-ImplicitCastExpr 0x14c141eb0 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c141e50 <col:12> 'int ()' Function 0x14c141d98 'calipso_opt_update' 'int ()'
+    |   |-ImplicitCastExpr 0x14c141ef8 <col:31> 'struct sock *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14c141e70 <col:31> 'struct sock *' lvalue ParmVar 0x14c128648 'sk' 'struct sock *'
+    |   `-ImplicitCastExpr 0x14c141f10 <col:35> 'struct ipv6_opt_hdr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c141e90 <col:35> 'struct ipv6_opt_hdr *' lvalue Var 0x14c8088d8 'new' 'struct ipv6_opt_hdr *'
+    |-CallExpr 0x14c142080 <line:20:2, col:11> 'int'
+    | |-ImplicitCastExpr 0x14c142068 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c142028 <col:2> 'int ()' Function 0x14c141f70 'kfree' 'int ()'
+    | `-ImplicitCastExpr 0x14c1420a8 <col:8> 'struct ipv6_opt_hdr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c142048 <col:8> 'struct ipv6_opt_hdr *' lvalue Var 0x14c8088d8 'new' 'struct ipv6_opt_hdr *'
+    `-ReturnStmt 0x14c1420f8 <line:21:2, col:9>
+      `-ImplicitCastExpr 0x14c1420e0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14c1420c0 <col:9> 'int' lvalue Var 0x14c808658 'ret_val' 'int'

@@ -1,0 +1,47 @@
+`-FunctionDecl 0x14e141048  line:1:1 acl_fetch_chdr_val 'int (struct proxy *, struct session *, void *, int, struct acl_expr *, struct acl_test *)'
+  |-ParmVarDecl 0x14e128648 <col:20, col:34> col:34 used px 'struct proxy *'
+  |-ParmVarDecl 0x14e140a28 <col:38, col:54> col:54 used l4 'struct session *'
+  |-ParmVarDecl 0x14e140aa8 <col:58, col:64> col:64 used l7 'void *'
+  |-ParmVarDecl 0x14e140b28 <col:68, col:72> col:72 dir 'int'
+  |-ParmVarDecl 0x14e140cf8 <line:2:6, col:23> col:23 used expr 'struct acl_expr *'
+  |-ParmVarDecl 0x14e140ec8 <col:29, col:46> col:46 used test 'struct acl_test *'
+  `-CompoundStmt 0x14e808260 <line:3:1, line:17:1>
+    |-DeclStmt 0x14e1413a8 <line:4:2, col:27>
+    | |-RecordDecl 0x14e141168 <col:2, col:9> col:9 struct http_txn
+    | `-VarDecl 0x14e1412d8 <col:2, col:25> col:19 used txn 'struct http_txn *' cinit
+    |   `-ImplicitCastExpr 0x14e141378 <col:25> 'struct http_txn *' <BitCast>
+    |     `-ImplicitCastExpr 0x14e141360 <col:25> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14e141340 <col:25> 'void *' lvalue ParmVar 0x14e140aa8 'l7' 'void *'
+    |-IfStmt 0x14e141440 <line:6:2, line:7:10>
+    | |-UnaryOperator 0x14e1413f8 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14e1413e0 <col:7> 'struct http_txn *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14e1413c0 <col:7> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+    | `-ReturnStmt 0x14e141430 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x14e141410 <col:10> 'int' 0
+    |-IfStmt 0x14e1415c8 <line:9:2, line:10:10>
+    | |-BinaryOperator 0x14e141578 <line:9:6, col:27> 'int' contains-errors '<'
+    | | |-CXXDependentScopeMemberExpr 0x14e1414c0 <col:6, col:15> '<dependent type>' contains-errors lvalue .msg_state
+    | | | `-RecoveryExpr 0x14e141498 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14e141460 <col:6> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+    | | `-RecoveryExpr 0x14e141558 <col:27> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14e1415b8 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x14e141598 <col:10> 'int' 0
+    |-IfStmt 0x14e141738 <line:12:2, line:14:10>
+    | |-BinaryOperator 0x14e1416e8 <line:12:6, col:28> 'int' contains-errors '!='
+    | | |-CXXDependentScopeMemberExpr 0x14e141648 <col:6, col:15> '<dependent type>' contains-errors lvalue .msg_state
+    | | | `-RecoveryExpr 0x14e141620 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14e1415e8 <col:6> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+    | | `-RecoveryExpr 0x14e1416c8 <col:28> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14e141728 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x14e141708 <col:10> 'int' 0
+    `-ReturnStmt 0x14e808250 <line:16:2, col:64>
+      `-CallExpr 0x14e808200 <col:9, col:64> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14e141870 <col:9> 'int ()' Function 0x14e1417b8 'acl_fetch_hdr_val' 'int ()'
+        |-DeclRefExpr 0x14e141890 <col:27> 'struct proxy *' lvalue ParmVar 0x14e128648 'px' 'struct proxy *'
+        |-DeclRefExpr 0x14e1418b0 <col:31> 'struct session *' lvalue ParmVar 0x14e140a28 'l4' 'struct session *'
+        |-DeclRefExpr 0x14e1418d0 <col:35> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+        |-CXXDependentScopeMemberExpr 0x14e141950 <col:40, col:49> '<dependent type>' contains-errors lvalue .sol
+        | `-RecoveryExpr 0x14e141928 <col:40, col:45> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x14e1418f0 <col:40> 'struct http_txn *' lvalue Var 0x14e1412d8 'txn' 'struct http_txn *'
+        |-DeclRefExpr 0x14e141998 <col:54> 'struct acl_expr *' lvalue ParmVar 0x14e140cf8 'expr' 'struct acl_expr *'
+        `-DeclRefExpr 0x14e1419b8 <col:60> 'struct acl_test *' lvalue ParmVar 0x14e140ec8 'test' 'struct acl_test *'

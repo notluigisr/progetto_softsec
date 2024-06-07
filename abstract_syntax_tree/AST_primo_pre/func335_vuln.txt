@@ -1,0 +1,121 @@
+`-FunctionDecl 0x131026a88  line:1:12 invalid hash_recvmsg 'int (struct kiocb *, struct socket *, struct msghdr *, int, int)' static
+  |-ParmVarDecl 0x13100e248 <col:25, col:39> col:39 unused 'struct kiocb *'
+  |-ParmVarDecl 0x131026628 <col:47, col:62> col:62 used sock 'struct socket *'
+  |-ParmVarDecl 0x1310267f8 <line:2:4, col:19> col:19 used msg 'struct msghdr *'
+  |-ParmVarDecl 0x131026890 <col:24, col:31> col:31 referenced invalid len 'int'
+  |-ParmVarDecl 0x131026910 <col:36, col:40> col:40 flags 'int'
+  `-CompoundStmt 0x132008c68 <line:3:1, line:33:1>
+    |-DeclStmt 0x131026da8 <line:4:2, col:28>
+    | |-RecordDecl 0x131026b58 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x131026cc8 <col:2, col:26> col:15 used sk 'struct sock *' cinit
+    |   `-RecoveryExpr 0x131026d68 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x131026d30 <col:20> 'struct socket *' lvalue ParmVar 0x131026628 'sock' 'struct socket *'
+    |-DeclStmt 0x1310271e8 <line:5:2, col:35>
+    | |-RecordDecl 0x131026dc0 <col:2, col:9> col:9 struct alg_sock
+    | `-VarDecl 0x131026f28 <col:2, col:34> col:19 used ask 'struct alg_sock *' cinit
+    |   `-ImplicitCastExpr 0x1310271b8 <col:25, col:34> 'struct alg_sock *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x131027178 <col:25, col:34> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x131027160 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1310270f0 <col:25> 'int ()' Function 0x131027038 'alg_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x1310271a0 <col:32> 'struct sock *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x131027110 <col:32> 'struct sock *' contains-errors lvalue Var 0x131026cc8 'sk' 'struct sock *'
+    |-DeclStmt 0x131027448 <line:6:2, col:37>
+    | |-RecordDecl 0x131027200 <col:2, col:9> col:9 struct hash_ctx
+    | `-VarDecl 0x131027368 <col:2, col:30> col:19 used ctx 'struct hash_ctx *' cinit
+    |   `-RecoveryExpr 0x131027408 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1310273d0 <col:25> 'struct alg_sock *' contains-errors lvalue Var 0x131026f28 'ask' 'struct alg_sock *'
+    |-DeclStmt 0x13102cdc8 <line:7:2, col:71>
+    | `-VarDecl 0x131027478 <col:2, col:70> col:11 used ds 'unsigned int' cinit
+    |   `-CallExpr 0x13102cda0 <col:16, col:70> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1310275c0 <col:16> 'int ()' Function 0x131027508 'crypto_ahash_digestsize' 'int ()'
+    |     `-CallExpr 0x13102cd78 <col:40, col:69> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13102cce0 <col:40> 'int ()' Function 0x13102cc28 'crypto_ahash_reqtfm' 'int ()'
+    |       `-UnaryOperator 0x13102cd60 <col:60, col:66> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x13102cd38 <col:61, col:66> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13102cd00 <col:61> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |-DeclStmt 0x13102ce60 <line:8:2, col:9>
+    | `-VarDecl 0x13102cdf8 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x13102d0d8 <line:10:2, line:13:21> has_else
+    | |-BinaryOperator 0x13102ceb8 <line:10:6, col:12> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x13102ce78 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13102ce98 <col:12> 'unsigned int' contains-errors lvalue Var 0x131027478 'ds' 'unsigned int'
+    | |-BinaryOperator 0x13102cf40 <line:11:3, col:9> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x13102cef8 <col:3> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x13102ced8 <col:3> 'int' lvalue ParmVar 0x131026890 'len' 'int'
+    | | `-DeclRefExpr 0x13102cf20 <col:9> 'unsigned int' contains-errors lvalue Var 0x131027478 'ds' 'unsigned int'
+    | `-IfStmt 0x13102d0b8 <line:12:7, line:13:21>
+    |   |-BinaryOperator 0x13102cfa0 <line:12:11, col:17> 'int' contains-errors '<'
+    |   | |-RecoveryExpr 0x13102cf60 <col:11> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x13102cf80 <col:17> 'unsigned int' contains-errors lvalue Var 0x131027478 'ds' 'unsigned int'
+    |   `-CompoundAssignOperator 0x13102d088 <line:13:3, col:21> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x13102cff8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x13102cfc0 <col:3> 'struct msghdr *' lvalue ParmVar 0x1310267f8 'msg' 'struct msghdr *'
+    |     `-RecoveryExpr 0x13102d068 <col:21> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13102d188 <line:15:2, col:21> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13102d140 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13102d108 <col:2> 'struct msghdr *' lvalue ParmVar 0x1310267f8 'msg' 'struct msghdr *'
+    | `-IntegerLiteral 0x13102d168 <col:21> 'int' 0
+    |-CallExpr 0x13102d2e0 <line:17:2, col:14> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13102d2c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13102d288 <col:2> 'int ()' Function 0x13102d1d0 'lock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x13102d308 <col:12> 'struct sock *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13102d2a8 <col:12> 'struct sock *' contains-errors lvalue Var 0x131026cc8 'sk' 'struct sock *'
+    |-IfStmt 0x13102db48 <line:18:2, line:25:2>
+    | |-RecoveryExpr 0x13102d358 <line:18:6, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13102d320 <col:6> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    | `-CompoundStmt 0x13102db18 <col:17, line:25:2>
+    |   |-BinaryOperator 0x13102d400 <line:19:3, col:15> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x13102d3b8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13102d380 <col:3> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   | `-IntegerLiteral 0x13102d3e0 <col:15> 'int' 0
+    |   |-CallExpr 0x13102d690 <line:20:3, col:58> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13102d500 <col:3> 'int ()' Function 0x13102d448 'ahash_request_set_crypt' 'int ()'
+    |   | |-UnaryOperator 0x13102d580 <col:27, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x13102d558 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13102d520 <col:28> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   | |-RecoveryExpr 0x13102d670 <col:38> '<dependent type>' contains-errors lvalue
+    |   | |-RecoveryExpr 0x13102d5e8 <col:44, col:49> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13102d5b0 <col:44> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   | `-IntegerLiteral 0x13102d610 <col:57> 'int' 0
+    |   |-BinaryOperator 0x13102da38 <line:21:3, line:22:24> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x13102d6d0 <line:21:3> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+    |   | `-CallExpr 0x13102da08 <col:9, line:22:24> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x13102d7d0 <line:21:9> 'int ()' Function 0x13102d718 'af_alg_wait_for_completion' 'int ()'
+    |   |   |-CallExpr 0x13102d968 <col:36, col:64> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x13102d8d0 <col:36> 'int ()' Function 0x13102d818 'crypto_ahash_final' 'int ()'
+    |   |   | `-UnaryOperator 0x13102d950 <col:55, col:61> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   `-RecoveryExpr 0x13102d928 <col:56, col:61> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x13102d8f0 <col:56> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   |   `-UnaryOperator 0x13102d9f0 <line:22:8, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x13102d9c8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x13102d990 <col:9> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   `-IfStmt 0x13102daf8 <line:23:3, line:24:9>
+    |     |-ImplicitCastExpr 0x13102da78 <line:23:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13102da58 <col:7> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+    |     `-GotoStmt 0x13102dae0 <line:24:4, col:9> 'unlock' 0x13102da90
+    |-BinaryOperator 0x1320089f0 <line:27:2, col:53> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13102db68 <col:2> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+    | `-CallExpr 0x1320089b8 <col:8, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1320088b8 <col:8> 'int ()' Function 0x132008800 'memcpy_toiovec' 'int ()'
+    |   |-RecoveryExpr 0x132008910 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1320088d8 <col:23> 'struct msghdr *' lvalue ParmVar 0x1310267f8 'msg' 'struct msghdr *'
+    |   |-RecoveryExpr 0x132008970 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x132008938 <col:37> 'struct hash_ctx *' contains-errors lvalue Var 0x131027368 'ctx' 'struct hash_ctx *'
+    |   `-RecoveryExpr 0x132008998 <col:50> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x132008b88 <line:29:1, line:30:17> 'unlock'
+    | `-CallExpr 0x132008b48 <col:2, col:17> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x132008b30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x132008af0 <col:2> 'int ()' Function 0x132008a38 'release_sock' 'int ()'
+    |   `-ImplicitCastExpr 0x132008b70 <col:15> 'struct sock *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x132008b10 <col:15> 'struct sock *' contains-errors lvalue Var 0x131026cc8 'sk' 'struct sock *'
+    `-ReturnStmt 0x132008c58 <line:32:2, col:16>
+      `-BinaryConditionalOperator 0x132008c18 <col:9, col:16> '<dependent type>' contains-errors
+        |-ImplicitCastExpr 0x132008be8 <col:9> 'int' <LValueToRValue>
+        | `-DeclRefExpr 0x132008ba8 <col:9> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+        |-OpaqueValueExpr 0x132008c00 <col:9> 'int'
+        | `-ImplicitCastExpr 0x132008be8 <col:9> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x132008ba8 <col:9> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+        |-OpaqueValueExpr 0x132008c00 <col:9> 'int'
+        | `-ImplicitCastExpr 0x132008be8 <col:9> 'int' <LValueToRValue>
+        |   `-DeclRefExpr 0x132008ba8 <col:9> 'int' lvalue Var 0x13102cdf8 'err' 'int'
+        `-RecoveryExpr 0x132008bc8 <col:16> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,88 @@
+`-FunctionDecl 0x138128750  line:1:6 __detach_mounts 'void (struct dentry *)'
+  |-ParmVarDecl 0x138128648 <col:22, col:37> col:37 used dentry 'struct dentry *'
+  `-CompoundStmt 0x138147848 <line:2:1, line:27:1>
+    |-DeclStmt 0x138144e38 <line:3:2, col:23>
+    | |-RecordDecl 0x138144c48 <col:2, col:9> col:9 struct mountpoint
+    | `-VarDecl 0x138144db8 <col:2, col:21> col:21 used mp 'struct mountpoint *'
+    |-DeclStmt 0x138145038 <line:4:2, col:19>
+    | |-RecordDecl 0x138144e50 <col:2, col:9> col:9 struct mount
+    | `-VarDecl 0x138144fb8 <col:2, col:16> col:16 used mnt 'struct mount *'
+    |-CallExpr 0x1381451e8 <line:6:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x1381451d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x138145180 <col:2> 'int ()' Function 0x1381450c8 'namespace_lock' 'int ()'
+    |-BinaryOperator 0x1381453b8 <line:7:2, col:31> 'struct mountpoint *' '='
+    | |-DeclRefExpr 0x138145208 <col:2> 'struct mountpoint *' lvalue Var 0x138144db8 'mp' 'struct mountpoint *'
+    | `-ImplicitCastExpr 0x1381453a0 <col:7, col:31> 'struct mountpoint *' <IntegralToPointer>
+    |   `-CallExpr 0x138145360 <col:7, col:31> 'int'
+    |     |-ImplicitCastExpr 0x138145348 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x138145308 <col:7> 'int ()' Function 0x138145250 'lookup_mountpoint' 'int ()'
+    |     `-ImplicitCastExpr 0x138145388 <col:25> 'struct dentry *' <LValueToRValue>
+    |       `-DeclRefExpr 0x138145328 <col:25> 'struct dentry *' lvalue ParmVar 0x138128648 'dentry' 'struct dentry *'
+    |-IfStmt 0x1381455b8 <line:8:2, line:9:8>
+    | |-CallExpr 0x138145510 <line:8:6, col:23> 'int'
+    | | |-ImplicitCastExpr 0x1381454f8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1381454b8 <col:6> 'int ()' Function 0x138145400 'IS_ERR_OR_NULL' 'int ()'
+    | | `-ImplicitCastExpr 0x138145538 <col:21> 'struct mountpoint *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1381454d8 <col:21> 'struct mountpoint *' lvalue Var 0x138144db8 'mp' 'struct mountpoint *'
+    | `-GotoStmt 0x1381455a0 <line:9:3, col:8> 'out_unlock' 0x138145550
+    |-CallExpr 0x1381456f0 <line:11:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1381456d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1381456b8 <col:2> 'int ()' Function 0x138145600 'lock_mount_hash' 'int ()'
+    |-WhileStmt 0x138147420 <line:12:2, line:22:2>
+    | |-UnaryOperator 0x1381458b0 <line:12:9, col:33> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x138145888 <col:10, col:33> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1381457f0 <col:10> 'int ()' Function 0x138145738 'hlist_empty' 'int ()'
+    | |   `-UnaryOperator 0x138145870 <col:22, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x138145848 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x138145810 <col:23> 'struct mountpoint *' lvalue Var 0x138144db8 'mp' 'struct mountpoint *'
+    | `-CompoundStmt 0x138147408 <col:36, line:22:2>
+    |   `-IfStmt 0x1381473d8 <line:14:3, line:21:26> has_else
+    |     |-BinaryOperator 0x138145ba8 <line:14:7, col:28> '<dependent type>' contains-errors '&'
+    |     | |-CXXDependentScopeMemberExpr 0x138145b08 <col:7, col:16> '<dependent type>' contains-errors lvalue .mnt_flags
+    |     | | `-RecoveryExpr 0x138145ae0 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x138145aa8 <col:7> 'struct mount *' lvalue Var 0x138144fb8 'mnt' 'struct mount *'
+    |     | `-RecoveryExpr 0x138145b88 <col:28> '<dependent type>' contains-errors lvalue
+    |     |-CompoundStmt 0x138147210 <col:40, line:20:3>
+    |     | |-DeclStmt 0x138146b68 <line:15:4, col:25>
+    |     | | |-VarDecl 0x138146a58 <col:4, col:18> col:18 used p 'struct mount *'
+    |     | | `-VarDecl 0x138146ae8 <col:4, col:22> col:22 used tmp 'struct mount *'
+    |     | |-CallExpr 0x138146db0 <line:16:4, col:65> '<dependent type>' contains-errors
+    |     | | |-DeclRefExpr 0x138146c60 <col:4> 'int ()' Function 0x138146ba8 'list_for_each_entry_safe' 'int ()'
+    |     | | |-DeclRefExpr 0x138146c80 <col:29> 'struct mount *' lvalue Var 0x138146a58 'p' 'struct mount *'
+    |     | | |-DeclRefExpr 0x138146ca0 <col:32> 'struct mount *' lvalue Var 0x138146ae8 'tmp' 'struct mount *'
+    |     | | |-UnaryOperator 0x138146d20 <col:37, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | | | `-RecoveryExpr 0x138146cf8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    |     | | |   `-DeclRefExpr 0x138146cc0 <col:38> 'struct mount *' lvalue Var 0x138144fb8 'mnt' 'struct mount *'
+    |     | | `-RecoveryExpr 0x138146d90 <col:56> '<dependent type>' contains-errors lvalue
+    |     | `-CompoundStmt 0x1381471f0 <col:67, line:19:4>
+    |     |   |-CallExpr 0x138147048 <line:17:5, col:53> '<dependent type>' contains-errors
+    |     |   | |-DeclRefExpr 0x138146ed0 <col:5> 'int ()' Function 0x138146e18 'hlist_add_head' 'int ()'
+    |     |   | |-UnaryOperator 0x138146f98 <col:20, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     |   | | `-CXXDependentScopeMemberExpr 0x138146f50 <col:21, col:35> '<dependent type>' contains-errors lvalue .s_list
+    |     |   | |   `-RecoveryExpr 0x138146f28 <col:21, col:24> '<dependent type>' contains-errors lvalue
+    |     |   | |     `-DeclRefExpr 0x138146ef0 <col:21> 'struct mount *' lvalue Var 0x138146a58 'p' 'struct mount *'
+    |     |   | `-UnaryOperator 0x138147030 <col:43, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     |   |   `-RecoveryExpr 0x138147010 <col:44> '<dependent type>' contains-errors lvalue
+    |     |   `-CallExpr 0x1381471b0 <line:18:5, col:17> 'int'
+    |     |     |-ImplicitCastExpr 0x138147198 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x138147158 <col:5> 'int ()' Function 0x1381470a0 'umount_mnt' 'int ()'
+    |     |     `-ImplicitCastExpr 0x1381471d8 <col:16> 'struct mount *' <LValueToRValue>
+    |     |       `-DeclRefExpr 0x138147178 <col:16> 'struct mount *' lvalue Var 0x138146a58 'p' 'struct mount *'
+    |     `-CallExpr 0x138147390 <line:21:8, col:26> 'int'
+    |       |-ImplicitCastExpr 0x138147378 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x138147318 <col:8> 'int ()' Function 0x138147260 'umount_tree' 'int ()'
+    |       |-ImplicitCastExpr 0x1381473c0 <col:20> 'struct mount *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x138147338 <col:20> 'struct mount *' lvalue Var 0x138144fb8 'mnt' 'struct mount *'
+    |       `-IntegerLiteral 0x138147358 <col:25> 'int' 0
+    |-CallExpr 0x138147558 <line:23:2, col:20> 'int'
+    | `-ImplicitCastExpr 0x138147540 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x138147520 <col:2> 'int ()' Function 0x138147468 'unlock_mount_hash' 'int ()'
+    |-CallExpr 0x1381476b0 <line:24:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x138147698 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x138147658 <col:2> 'int ()' Function 0x1381475a0 'put_mountpoint' 'int ()'
+    | `-ImplicitCastExpr 0x1381476d8 <col:17> 'struct mountpoint *' <LValueToRValue>
+    |   `-DeclRefExpr 0x138147678 <col:17> 'struct mountpoint *' lvalue Var 0x138144db8 'mp' 'struct mountpoint *'
+    `-LabelStmt 0x138147828 <line:25:1, line:26:19> 'out_unlock'
+      `-CallExpr 0x138147808 <col:2, col:19> 'int'
+        `-ImplicitCastExpr 0x1381477f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x1381477d0 <col:2> 'int ()' Function 0x138147718 'namespace_unlock' 'int ()'

@@ -1,0 +1,44 @@
+`-FunctionDecl 0x123026740  line:2:13 kvm_mmu_notifier_invalidate_range_end 'void (struct mmu_notifier *, const struct mmu_notifier_range *)' static
+  |-ParmVarDecl 0x12300e248 <col:51, col:72> col:72 used mn 'struct mmu_notifier *'
+  |-ParmVarDecl 0x123026628 <line:3:6, col:39> col:39 used range 'const struct mmu_notifier_range *'
+  `-CompoundStmt 0x12302d138 <line:4:1, line:28:38>
+    |-DeclStmt 0x123026c38 <line:5:2, col:43>
+    | |-RecordDecl 0x123026840 <col:2, col:9> col:9 struct kvm
+    | `-VarDecl 0x1230269a8 <col:2, col:42> col:14 used kvm 'struct kvm *' cinit
+    |   `-ImplicitCastExpr 0x123026c08 <col:20, col:42> 'struct kvm *' <IntegralToPointer>
+    |     `-CallExpr 0x123026bc8 <col:20, col:42> 'int'
+    |       |-ImplicitCastExpr 0x123026bb0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x123026b40 <col:20> 'int ()' Function 0x123026a88 'mmu_notifier_to_kvm' 'int ()'
+    |       `-ImplicitCastExpr 0x123026bf0 <col:40> 'struct mmu_notifier *' <LValueToRValue>
+    |         `-DeclRefExpr 0x123026b60 <col:40> 'struct mmu_notifier *' lvalue ParmVar 0x12300e248 'mn' 'struct mmu_notifier *'
+    |-DeclStmt 0x123027148 <line:6:2, line:14:3>
+    | |-RecordDecl 0x123026c50 <line:6:8, col:15> col:15 struct kvm_hva_range
+    | `-VarDecl 0x123026d48 <col:2, col:29> col:29 invalid hva_range 'const struct kvm_hva_range'
+    |-CallExpr 0x1230272b8 <line:17:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123027240 <col:2> 'int ()' Function 0x123027188 '__kvm_handle_hva_range' 'int ()'
+    | |-DeclRefExpr 0x123027260 <col:25> 'struct kvm *' lvalue Var 0x1230269a8 'kvm' 'struct kvm *'
+    | `-UnaryOperator 0x1230272a0 <col:30, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x123027280 <col:31> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x123027460 <line:20:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1230273c8 <col:2> 'int ()' Function 0x123027310 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x123027448 <col:12, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x123027420 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1230273e8 <col:13> 'struct kvm *' lvalue Var 0x1230269a8 'kvm' 'struct kvm *'
+    |-CallExpr 0x12302cd50 <line:22:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12302ccb8 <col:2> 'int ()' Function 0x12302cc00 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x12302cd38 <col:14, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12302cd10 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12302ccd8 <col:15> 'struct kvm *' lvalue Var 0x1230269a8 'kvm' 'struct kvm *'
+    |-IfStmt 0x12302cf50 <line:25:2, line:26:51>
+    | |-RecoveryExpr 0x12302cd90 <line:25:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x12302cf28 <line:26:3, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12302ce90 <col:3> 'int ()' Function 0x12302cdd8 'rcuwait_wake_up' 'int ()'
+    |   `-UnaryOperator 0x12302cf10 <col:19, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12302cee8 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12302ceb0 <col:20> 'struct kvm *' lvalue Var 0x1230269a8 'kvm' 'struct kvm *'
+    `-CallExpr 0x12302d110 <line:28:2, col:36> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12302d050 <col:2> 'int ()' Function 0x12302cf98 'BUG_ON' 'int ()'
+      `-BinaryOperator 0x12302d0f0 <col:9, col:35> 'int' contains-errors '<'
+        |-RecoveryExpr 0x12302d0a8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x12302d070 <col:9> 'struct kvm *' lvalue Var 0x1230269a8 'kvm' 'struct kvm *'
+        `-IntegerLiteral 0x12302d0d0 <col:35> 'int' 0

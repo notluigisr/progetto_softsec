@@ -1,0 +1,137 @@
+`-FunctionDecl 0x125026748  line:1:5 blk_mq_init_sched 'int (struct request_queue *, struct elevator_type *)'
+  |-ParmVarDecl 0x12500e248 <col:23, col:45> col:45 used q 'struct request_queue *'
+  |-ParmVarDecl 0x125026628 <col:48, col:70> col:70 used e 'struct elevator_type *'
+  `-CompoundStmt 0x125029018 <line:2:1, line:49:1>
+    |-DeclStmt 0x125026a38 <line:3:2, col:28>
+    | |-RecordDecl 0x125026848 <col:2, col:9> col:9 struct blk_mq_hw_ctx
+    | `-VarDecl 0x1250269b8 <col:2, col:24> col:24 used hctx 'struct blk_mq_hw_ctx *'
+    |-DeclStmt 0x125026c38 <line:4:2, col:27>
+    | |-RecordDecl 0x125026a50 <col:2, col:9> col:9 struct elevator_queue
+    | `-VarDecl 0x125026bb8 <col:2, col:25> col:25 used eq 'struct elevator_queue *'
+    |-DeclStmt 0x125026cd0 <line:5:2, col:16>
+    | `-VarDecl 0x125026c68 <col:2, col:15> col:15 used i 'unsigned int'
+    |-DeclStmt 0x125026d68 <line:6:2, col:9>
+    | `-VarDecl 0x125026d00 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x125027040 <line:8:2, line:12:2>
+    | |-UnaryOperator 0x125026db8 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x125026da0 <col:7> 'struct elevator_type *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x125026d80 <col:7> 'struct elevator_type *' lvalue ParmVar 0x125026628 'e' 'struct elevator_type *'
+    | `-CompoundStmt 0x125027018 <col:10, line:12:2>
+    |   |-BinaryOperator 0x125026ea0 <line:9:3, col:17> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x125026e08 <col:3, col:6> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x125026dd0 <col:3> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |   | `-RecoveryExpr 0x125026e80 <col:17> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x125026fc8 <line:10:3, col:32> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x125026ef8 <col:3, col:6> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x125026ec0 <col:3> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |   | `-CXXDependentScopeMemberExpr 0x125026f80 <col:20, col:32> '<dependent type>' contains-errors lvalue ->queue_depth
+    |   |   `-RecoveryExpr 0x125026f58 <col:20, col:23> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x125026f20 <col:20> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |   `-ReturnStmt 0x125027008 <line:11:3, col:10>
+    |     `-IntegerLiteral 0x125026fe8 <col:10> 'int' 0
+    |-CallExpr 0x125027478 <line:18:2, col:34> 'int'
+    | |-ImplicitCastExpr 0x125027460 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1250273b0 <col:2> 'int ()' Function 0x1250272f8 'queue_for_each_hw_ctx' 'int ()'
+    | |-ImplicitCastExpr 0x1250274b0 <col:24> 'struct request_queue *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1250273d0 <col:24> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    | |-ImplicitCastExpr 0x1250274c8 <col:27> 'struct blk_mq_hw_ctx *' <LValueToRValue>
+    | | `-DeclRefExpr 0x1250273f0 <col:27> 'struct blk_mq_hw_ctx *' lvalue Var 0x1250269b8 'hctx' 'struct blk_mq_hw_ctx *'
+    | `-ImplicitCastExpr 0x1250274e0 <col:33> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x125027410 <col:33> 'unsigned int' lvalue Var 0x125026c68 'i' 'unsigned int'
+    |-CompoundStmt 0x1260087f8 <col:36, line:22:2>
+    | |-BinaryOperator 0x126008718 <line:19:3, col:43> 'int' '='
+    | | |-DeclRefExpr 0x1250274f8 <col:3> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | | `-CallExpr 0x126008698 <col:9, col:43> 'int'
+    | |   |-ImplicitCastExpr 0x126008680 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x126008600 <col:9> 'int ()' Function 0x125027540 'blk_mq_sched_alloc_tags' 'int ()'
+    | |   |-ImplicitCastExpr 0x1260086d0 <col:33> 'struct request_queue *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x126008620 <col:33> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    | |   |-ImplicitCastExpr 0x1260086e8 <col:36> 'struct blk_mq_hw_ctx *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x126008640 <col:36> 'struct blk_mq_hw_ctx *' lvalue Var 0x1250269b8 'hctx' 'struct blk_mq_hw_ctx *'
+    | |   `-ImplicitCastExpr 0x126008700 <col:42> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x126008660 <col:42> 'unsigned int' lvalue Var 0x125026c68 'i' 'unsigned int'
+    | `-IfStmt 0x1260087d8 <line:20:3, line:21:9>
+    |   |-ImplicitCastExpr 0x126008758 <line:20:7> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x126008738 <col:7> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    |   `-GotoStmt 0x1260087c0 <line:21:4, col:9> 'err' 0x126008770
+    |-BinaryOperator 0x126008950 <line:24:2, col:30> 'int' contains-errors '='
+    | |-DeclRefExpr 0x126008818 <col:2> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | `-CallExpr 0x126008920 <col:8, col:30> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x126008898 <col:8, col:15> '<dependent type>' contains-errors lvalue .init_sched
+    |   | `-RecoveryExpr 0x126008870 <col:8, col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x126008838 <col:8> 'struct elevator_type *' lvalue ParmVar 0x125026628 'e' 'struct elevator_type *'
+    |   |-DeclRefExpr 0x1260088e0 <col:26> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |   `-DeclRefExpr 0x126008900 <col:29> 'struct elevator_type *' lvalue ParmVar 0x125026628 'e' 'struct elevator_type *'
+    |-IfStmt 0x1260089c0 <line:25:2, line:26:8>
+    | |-ImplicitCastExpr 0x126008990 <line:25:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x126008970 <col:6> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | `-GotoStmt 0x1260089a8 <line:26:3, col:8> 'err' 0x126008770
+    |-CallExpr 0x126008b18 <line:28:2, col:33> 'int'
+    | |-ImplicitCastExpr 0x126008b00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x126008ac0 <col:2> 'int ()' Function 0x126008a08 'blk_mq_debugfs_register_sched' 'int ()'
+    | `-ImplicitCastExpr 0x126008b40 <col:32> 'struct request_queue *' <LValueToRValue>
+    |   `-DeclRefExpr 0x126008ae0 <col:32> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |-CallExpr 0x126008bf0 <line:30:2, col:34> 'int'
+    | |-ImplicitCastExpr 0x126008bd8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x126008b58 <col:2> 'int ()' Function 0x1250272f8 'queue_for_each_hw_ctx' 'int ()'
+    | |-ImplicitCastExpr 0x126008c28 <col:24> 'struct request_queue *' <LValueToRValue>
+    | | `-DeclRefExpr 0x126008b78 <col:24> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    | |-ImplicitCastExpr 0x126008c40 <col:27> 'struct blk_mq_hw_ctx *' <LValueToRValue>
+    | | `-DeclRefExpr 0x126008b98 <col:27> 'struct blk_mq_hw_ctx *' lvalue Var 0x1250269b8 'hctx' 'struct blk_mq_hw_ctx *'
+    | `-ImplicitCastExpr 0x126008c58 <col:33> 'unsigned int' <LValueToRValue>
+    |   `-DeclRefExpr 0x126008bb8 <col:33> 'unsigned int' lvalue Var 0x125026c68 'i' 'unsigned int'
+    |-CompoundStmt 0x126009530 <col:36, line:41:2>
+    | |-IfStmt 0x126009358 <line:31:3, line:39:3>
+    | | |-CXXDependentScopeMemberExpr 0x126008cd0 <line:31:7, col:14> '<dependent type>' contains-errors lvalue .init_hctx
+    | | | `-RecoveryExpr 0x126008ca8 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x126008c70 <col:7> 'struct elevator_type *' lvalue ParmVar 0x125026628 'e' 'struct elevator_type *'
+    | | `-CompoundStmt 0x126009338 <col:25, line:39:3>
+    | |   |-BinaryOperator 0x126008e50 <line:32:4, col:34> 'int' contains-errors '='
+    | |   | |-DeclRefExpr 0x126008d18 <col:4> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | |   | `-CallExpr 0x126008e20 <col:10, col:34> '<dependent type>' contains-errors
+    | |   |   |-CXXDependentScopeMemberExpr 0x126008d98 <col:10, col:17> '<dependent type>' contains-errors lvalue .init_hctx
+    | |   |   | `-RecoveryExpr 0x126008d70 <col:10, col:13> '<dependent type>' contains-errors lvalue
+    | |   |   |   `-DeclRefExpr 0x126008d38 <col:10> 'struct elevator_type *' lvalue ParmVar 0x125026628 'e' 'struct elevator_type *'
+    | |   |   |-DeclRefExpr 0x126008de0 <col:27> 'struct blk_mq_hw_ctx *' lvalue Var 0x1250269b8 'hctx' 'struct blk_mq_hw_ctx *'
+    | |   |   `-DeclRefExpr 0x126008e00 <col:33> 'unsigned int' lvalue Var 0x125026c68 'i' 'unsigned int'
+    | |   `-IfStmt 0x126009318 <line:33:4, line:38:4>
+    | |     |-ImplicitCastExpr 0x126008e90 <line:33:8> 'int' <LValueToRValue>
+    | |     | `-DeclRefExpr 0x126008e70 <col:8> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | |     `-CompoundStmt 0x1260092e8 <col:13, line:38:4>
+    | |       |-BinaryOperator 0x126008f28 <line:34:5, col:13> 'struct elevator_queue *' contains-errors '='
+    | |       | |-DeclRefExpr 0x126008ea8 <col:5> 'struct elevator_queue *' lvalue Var 0x125026bb8 'eq' 'struct elevator_queue *'
+    | |       | `-RecoveryExpr 0x126008f00 <col:10, col:13> '<dependent type>' contains-errors lvalue
+    | |       |   `-DeclRefExpr 0x126008ec8 <col:10> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    | |       |-CallExpr 0x1260090a0 <line:35:5, col:28> 'int'
+    | |       | |-ImplicitCastExpr 0x126009088 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | |       | | `-DeclRefExpr 0x126009028 <col:5> 'int ()' Function 0x126008f70 'blk_mq_exit_sched' 'int ()'
+    | |       | |-ImplicitCastExpr 0x1260090d0 <col:23> 'struct request_queue *' <LValueToRValue>
+    | |       | | `-DeclRefExpr 0x126009048 <col:23> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    | |       | `-ImplicitCastExpr 0x1260090e8 <col:26> 'struct elevator_queue *' <LValueToRValue>
+    | |       |   `-DeclRefExpr 0x126009068 <col:26> 'struct elevator_queue *' lvalue Var 0x125026bb8 'eq' 'struct elevator_queue *'
+    | |       |-CallExpr 0x126009278 <line:36:5, col:26> '<dependent type>' contains-errors
+    | |       | |-DeclRefExpr 0x1260091e0 <col:5> 'int ()' Function 0x126009128 'kobject_put' 'int ()'
+    | |       | `-UnaryOperator 0x126009260 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |       |   `-RecoveryExpr 0x126009238 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | |       |     `-DeclRefExpr 0x126009200 <col:18> 'struct elevator_queue *' lvalue Var 0x125026bb8 'eq' 'struct elevator_queue *'
+    | |       `-ReturnStmt 0x1260092d8 <line:37:5, col:12>
+    | |         `-ImplicitCastExpr 0x1260092c0 <col:12> 'int' <LValueToRValue>
+    | |           `-DeclRefExpr 0x1260092a0 <col:12> 'int' lvalue Var 0x125026d00 'ret' 'int'
+    | `-CallExpr 0x1260094d0 <line:40:3, col:45> 'int'
+    |   |-ImplicitCastExpr 0x1260094b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x126009458 <col:3> 'int ()' Function 0x1260093a0 'blk_mq_debugfs_register_sched_hctx' 'int ()'
+    |   |-ImplicitCastExpr 0x126009500 <col:38> 'struct request_queue *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x126009478 <col:38> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    |   `-ImplicitCastExpr 0x126009518 <col:41> 'struct blk_mq_hw_ctx *' <LValueToRValue>
+    |     `-DeclRefExpr 0x126009498 <col:41> 'struct blk_mq_hw_ctx *' lvalue Var 0x1250269b8 'hctx' 'struct blk_mq_hw_ctx *'
+    |-ReturnStmt 0x126009570 <line:43:2, col:9>
+    | `-IntegerLiteral 0x126009550 <col:9> 'int' 0
+    |-LabelStmt 0x125028f50 <line:45:1, line:46:30> 'err'
+    | `-CallExpr 0x125028f10 <col:2, col:30> 'int'
+    |   |-ImplicitCastExpr 0x125028ef8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x125028eb8 <col:2> 'int ()' Function 0x125028e00 'blk_mq_sched_tags_teardown' 'int ()'
+    |   `-ImplicitCastExpr 0x125028f38 <col:29> 'struct request_queue *' <LValueToRValue>
+    |     `-DeclRefExpr 0x125028ed8 <col:29> 'struct request_queue *' lvalue ParmVar 0x12500e248 'q' 'struct request_queue *'
+    `-ReturnStmt 0x125029008 <line:48:2, col:9>
+      `-ImplicitCastExpr 0x125028ff0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x125028fd0 <col:9> 'int' lvalue Var 0x125026d00 'ret' 'int'

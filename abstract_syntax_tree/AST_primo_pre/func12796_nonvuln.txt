@@ -1,0 +1,72 @@
+`-FunctionDecl 0x141941a18  line:2:13 invalid io_kill_timeouts 'int (struct io_ring_ctx *, struct task_struct *, int)' static
+  |-ParmVarDecl 0x141928668 <col:30, col:50> col:50 used ctx 'struct io_ring_ctx *'
+  |-ParmVarDecl 0x141941858 <col:55, col:75> col:75 used tsk 'struct task_struct *'
+  |-ParmVarDecl 0x1419418d8 <line:3:9, col:14> col:14 invalid cancel_all 'int'
+  `-CompoundStmt 0x142009220 <line:4:1, line:20:23>
+    |-DeclStmt 0x141941d60 <line:5:2, col:28>
+    | |-RecordDecl 0x141941ad8 <col:2, col:9> col:9 struct io_kiocb
+    | |-VarDecl 0x141941c48 <col:2, col:19> col:19 used req 'struct io_kiocb *'
+    | `-VarDecl 0x141941cd8 <col:2, col:25> col:25 used tmp 'struct io_kiocb *'
+    |-DeclStmt 0x141941e18 <line:6:2, col:18>
+    | `-VarDecl 0x141941d90 <col:2, col:17> col:6 used canceled 'int' cinit
+    |   `-IntegerLiteral 0x141941df8 <col:17> 'int' 0
+    |-CallExpr 0x141942028 <line:8:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141941f90 <col:2> 'int ()' Function 0x141941ed8 'spin_lock_irq' 'int ()'
+    | `-UnaryOperator 0x141942010 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x141941fe8 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x141941fb0 <col:17> 'struct io_ring_ctx *' lvalue ParmVar 0x141928668 'ctx' 'struct io_ring_ctx *'
+    |-CallExpr 0x141942310 <line:9:2, col:69> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141942130 <col:2> 'int ()' Function 0x141942078 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x141942150 <col:27> 'struct io_kiocb *' lvalue Var 0x141941c48 'req' 'struct io_kiocb *'
+    | |-DeclRefExpr 0x141942170 <col:32> 'struct io_kiocb *' lvalue Var 0x141941cd8 'tmp' 'struct io_kiocb *'
+    | |-UnaryOperator 0x1419421f0 <col:37, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1419421c8 <col:38, col:43> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x141942190 <col:38> 'struct io_ring_ctx *' lvalue ParmVar 0x141928668 'ctx' 'struct io_ring_ctx *'
+    | `-CXXDependentScopeMemberExpr 0x1419422c8 <col:57, col:65> '<dependent type>' contains-errors lvalue .list
+    |   `-RecoveryExpr 0x1419422a8 <col:57> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x141942778 <col:71, line:14:2>
+    | `-IfStmt 0x141942758 <line:10:3, line:13:3>
+    |   |-CallExpr 0x1419424b0 <line:10:7, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x141942430 <col:7> 'int ()' Function 0x141942378 'io_match_task' 'int ()'
+    |   | |-DeclRefExpr 0x141942450 <col:21> 'struct io_kiocb *' lvalue Var 0x141941c48 'req' 'struct io_kiocb *'
+    |   | |-DeclRefExpr 0x141942470 <col:26> 'struct task_struct *' lvalue ParmVar 0x141941858 'tsk' 'struct task_struct *'
+    |   | `-RecoveryExpr 0x141942490 <col:31> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x141942738 <col:44, line:13:3>
+    |     |-CallExpr 0x1419426d0 <line:11:4, col:35> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x1419425c8 <col:4> 'int ()' Function 0x141942510 'io_kill_timeout' 'int ()'
+    |     | |-DeclRefExpr 0x1419425e8 <col:20> 'struct io_kiocb *' lvalue Var 0x141941c48 'req' 'struct io_kiocb *'
+    |     | `-UnaryOperator 0x1419426b8 <col:25, col:26> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     |   `-ImplicitCastExpr 0x1419426a0 <col:26> '<dependent type>' contains-errors <LValueToRValue>
+    |     |     `-RecoveryExpr 0x141942680 <col:26> '<dependent type>' contains-errors lvalue
+    |     `-UnaryOperator 0x141942720 <line:12:4, col:12> 'int' postfix '++'
+    |       `-DeclRefExpr 0x141942700 <col:4> 'int' lvalue Var 0x141941d90 'canceled' 'int'
+    |-IfStmt 0x142008dc8 <line:15:2, line:16:23>
+    | |-BinaryOperator 0x142008c00 <line:15:6, col:18> 'int' '!='
+    | | |-ImplicitCastExpr 0x1419427d0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x141942790 <col:6> 'int' lvalue Var 0x141941d90 'canceled' 'int'
+    | | `-IntegerLiteral 0x1419427b0 <col:18> 'int' 0
+    | `-CallExpr 0x142008d88 <line:16:3, col:23> 'int'
+    |   |-ImplicitCastExpr 0x142008d70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x142008d00 <col:3> 'int ()' Function 0x142008c48 'io_commit_cqring' 'int ()'
+    |   `-ImplicitCastExpr 0x142008db0 <col:20> 'struct io_ring_ctx *' <LValueToRValue>
+    |     `-DeclRefExpr 0x142008d20 <col:20> 'struct io_ring_ctx *' lvalue ParmVar 0x141928668 'ctx' 'struct io_ring_ctx *'
+    |-CallExpr 0x142008f60 <line:17:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x142008ec8 <col:2> 'int ()' Function 0x142008e10 'spin_unlock_irq' 'int ()'
+    | `-UnaryOperator 0x142008f48 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x142008f20 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x142008ee8 <col:19> 'struct io_ring_ctx *' lvalue ParmVar 0x141928668 'ctx' 'struct io_ring_ctx *'
+    |-IfStmt 0x142009178 <line:18:2, line:19:26>
+    | |-BinaryOperator 0x142008fe0 <line:18:6, col:18> 'int' '!='
+    | | |-ImplicitCastExpr 0x142008fc8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x142008f88 <col:6> 'int' lvalue Var 0x141941d90 'canceled' 'int'
+    | | `-IntegerLiteral 0x142008fa8 <col:18> 'int' 0
+    | `-CallExpr 0x142009138 <line:19:3, col:26> 'int'
+    |   |-ImplicitCastExpr 0x142009120 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1420090e0 <col:3> 'int ()' Function 0x142009028 'io_cqring_ev_posted' 'int ()'
+    |   `-ImplicitCastExpr 0x142009160 <col:23> 'struct io_ring_ctx *' <LValueToRValue>
+    |     `-DeclRefExpr 0x142009100 <col:23> 'struct io_ring_ctx *' lvalue ParmVar 0x141928668 'ctx' 'struct io_ring_ctx *'
+    `-ReturnStmt 0x142009210 <line:20:2, col:21>
+      `-BinaryOperator 0x1420091f0 <col:9, col:21> 'int' '!='
+        |-ImplicitCastExpr 0x1420091d8 <col:9> 'int' <LValueToRValue>
+        | `-DeclRefExpr 0x142009198 <col:9> 'int' lvalue Var 0x141941d90 'canceled' 'int'
+        `-IntegerLiteral 0x1420091b8 <col:21> 'int' 0

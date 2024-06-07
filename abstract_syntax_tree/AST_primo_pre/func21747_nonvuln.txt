@@ -1,0 +1,21 @@
+`-FunctionDecl 0x14b80df18  line:1:7 invalid Init 'void *(int *, const char *, int)'
+  |-ParmVarDecl 0x14b80dd28 <col:12, col:27> col:27 referenced invalid context 'int *'
+  |-ParmVarDecl 0x14b80dda8 <col:36, col:48> col:48 buffer 'const char *'
+  |-ParmVarDecl 0x14b80de28 <col:56, col:63> col:63 invalid length 'int'
+  `-CompoundStmt 0x14b8276b8 <col:71, line:9:1>
+    |-DeclStmt 0x14b80e090 <line:5:3, col:23>
+    | `-VarDecl 0x14b80dff0 <col:3, col:19> col:9 used op_data 'int *' auto cinit
+    |   `-RecoveryExpr 0x14b80e070 <col:19> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14b827620 <line:6:3, line:7:53> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x14b80e0f0 <line:6:3, col:12> '<dependent type>' contains-errors lvalue ->AddTensors
+    | | `-RecoveryExpr 0x14b80e0c8 <col:3> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x14b80e0a8 <col:3> 'int *' lvalue ParmVar 0x14b80dd28 'context' 'int *'
+    | |-RecoveryExpr 0x14b80e138 <col:23> '<dependent type>' contains-errors lvalue
+    | |-IntegerLiteral 0x14b80e158 <col:32> 'int' 5
+    | `-UnaryOperator 0x14b827608 <line:7:23, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x14b8275e0 <col:24, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b80e178 <col:24> 'int *' contains-errors lvalue Var 0x14b80dff0 'op_data' 'int *'
+    `-ReturnStmt 0x14b8276a8 <line:8:3, col:10>
+      `-ImplicitCastExpr 0x14b827690 <col:10> 'void *' contains-errors <BitCast>
+        `-ImplicitCastExpr 0x14b827678 <col:10> 'int *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x14b827658 <col:10> 'int *' contains-errors lvalue Var 0x14b80dff0 'op_data' 'int *'

@@ -1,0 +1,131 @@
+`-FunctionDecl 0x11d80e350  line:1:13 validate_mm 'void (struct mm_struct *)' static
+  |-ParmVarDecl 0x11d80e248 <col:25, col:43> col:43 used mm 'struct mm_struct *'
+  `-CompoundStmt 0x11d123568 <line:2:1, line:39:1>
+    |-DeclStmt 0x11d8266e8 <line:3:2, col:13>
+    | `-VarDecl 0x11d826660 <col:2, col:12> col:6 used bug 'int' cinit
+    |   `-IntegerLiteral 0x11d8266c8 <col:12> 'int' 0
+    |-DeclStmt 0x11d8267a0 <line:4:2, col:11>
+    | `-VarDecl 0x11d826718 <col:2, col:10> col:6 used i 'int' cinit
+    |   `-IntegerLiteral 0x11d826780 <col:10> 'int' 0
+    |-DeclStmt 0x11d826870 <line:5:2, col:35>
+    | `-VarDecl 0x11d8267d0 <col:2, col:34> col:16 used highest_address 'unsigned long' cinit
+    |   `-ImplicitCastExpr 0x11d826858 <col:34> 'unsigned long' <IntegralCast>
+    |     `-IntegerLiteral 0x11d826838 <col:34> 'int' 0
+    |-DeclStmt 0x11d826ad8 <line:6:2, col:39>
+    | |-RecordDecl 0x11d826888 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x11d8269f8 <col:2, col:35> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-RecoveryExpr 0x11d826a98 <col:31, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11d826a60 <col:31> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    |-WhileStmt 0x11d122958 <line:8:2, line:22:2>
+    | |-ImplicitCastExpr 0x11d826b10 <line:8:9> 'struct vm_area_struct *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x11d826af0 <col:9> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    | `-CompoundStmt 0x11d122918 <col:14, line:22:2>
+    |   |-DeclStmt 0x11d826d78 <line:9:3, col:44>
+    |   | |-RecordDecl 0x11d826b28 <col:3, col:10> col:10 struct anon_vma
+    |   | `-VarDecl 0x11d826c98 <col:3, col:36> col:20 used anon_vma 'struct anon_vma *' cinit
+    |   |   `-RecoveryExpr 0x11d826d38 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x11d826d00 <col:31> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    |   |-DeclStmt 0x11d826f78 <line:10:3, col:29>
+    |   | |-RecordDecl 0x11d826d90 <col:3, col:10> col:10 struct anon_vma_chain
+    |   | `-VarDecl 0x11d826ef8 <col:3, col:26> col:26 used avc 'struct anon_vma_chain *'
+    |   |-IfStmt 0x11d122780 <line:12:3, line:17:3>
+    |   | |-ImplicitCastExpr 0x11d826fb0 <line:12:7> 'struct anon_vma *' contains-errors <LValueToRValue>
+    |   | | `-DeclRefExpr 0x11d826f90 <col:7> 'struct anon_vma *' contains-errors lvalue Var 0x11d826c98 'anon_vma' 'struct anon_vma *'
+    |   | `-CompoundStmt 0x11d122750 <col:17, line:17:3>
+    |   |   |-CallExpr 0x11d827178 <line:13:4, col:31> 'int' contains-errors
+    |   |   | |-ImplicitCastExpr 0x11d827160 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x11d8270f0 <col:4> 'int ()' Function 0x11d827038 'anon_vma_lock_read' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x11d8271a0 <col:23> 'struct anon_vma *' contains-errors <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x11d827110 <col:23> 'struct anon_vma *' contains-errors lvalue Var 0x11d826c98 'anon_vma' 'struct anon_vma *'
+    |   |   |-CallExpr 0x11d8273c0 <line:14:4, col:59> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x11d827298 <col:4> 'int ()' Function 0x11d8271e0 'list_for_each_entry' 'int ()'
+    |   |   | |-DeclRefExpr 0x11d8272b8 <col:24> 'struct anon_vma_chain *' lvalue Var 0x11d826ef8 'avc' 'struct anon_vma_chain *'
+    |   |   | |-UnaryOperator 0x11d827338 <col:29, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | | `-RecoveryExpr 0x11d827310 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   |   | |   `-DeclRefExpr 0x11d8272d8 <col:30> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    |   |   | `-RecoveryExpr 0x11d8273a0 <col:51> '<dependent type>' contains-errors lvalue
+    |   |   |-CallExpr 0x11d827530 <line:15:5, col:38> 'int'
+    |   |   | |-ImplicitCastExpr 0x11d827518 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x11d8274d8 <col:5> 'int ()' Function 0x11d827420 'anon_vma_interval_tree_verify' 'int ()'
+    |   |   | `-ImplicitCastExpr 0x11d827558 <col:35> 'struct anon_vma_chain *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x11d8274f8 <col:35> 'struct anon_vma_chain *' lvalue Var 0x11d826ef8 'avc' 'struct anon_vma_chain *'
+    |   |   `-CallExpr 0x11d122710 <line:16:4, col:33> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11d1226f8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11d1226b8 <col:4> 'int ()' Function 0x11d122600 'anon_vma_unlock_read' 'int ()'
+    |   |     `-ImplicitCastExpr 0x11d122738 <col:25> 'struct anon_vma *' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11d1226d8 <col:25> 'struct anon_vma *' contains-errors lvalue Var 0x11d826c98 'anon_vma' 'struct anon_vma *'
+    |   |-BinaryOperator 0x11d122820 <line:19:3, col:26> 'unsigned long' contains-errors '='
+    |   | |-DeclRefExpr 0x11d1227a0 <col:3> 'unsigned long' lvalue Var 0x11d8267d0 'highest_address' 'unsigned long'
+    |   | `-RecoveryExpr 0x11d1227f8 <col:21, col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11d1227c0 <col:21> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    |   |-BinaryOperator 0x11d1228c0 <line:20:3, col:14> 'struct vm_area_struct *' contains-errors '='
+    |   | |-DeclRefExpr 0x11d122840 <col:3> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    |   | `-RecoveryExpr 0x11d122898 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11d122860 <col:9> 'struct vm_area_struct *' contains-errors lvalue Var 0x11d8269f8 'vma' 'struct vm_area_struct *'
+    |   `-UnaryOperator 0x11d122900 <line:21:3, col:4> 'int' postfix '++'
+    |     `-DeclRefExpr 0x11d1228e0 <col:3> 'int' lvalue Var 0x11d826718 'i' 'int'
+    |-IfStmt 0x11d122cb8 <line:23:2, line:26:2>
+    | |-BinaryOperator 0x11d1229f8 <line:23:6, col:15> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x11d122978 <col:6> 'int' lvalue Var 0x11d826718 'i' 'int'
+    | | `-RecoveryExpr 0x11d1229d0 <col:11, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d122998 <col:11> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    | `-CompoundStmt 0x11d122c98 <col:26, line:26:2>
+    |   |-CallExpr 0x11d122c00 <line:24:3, col:35> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11d122af8 <col:3> 'int ()' Function 0x11d122a40 'pr_emerg' 'int ()'
+    |   | |-StringLiteral 0x11d122b60 <col:12> 'char[4]' lvalue "STR"
+    |   | |-RecoveryExpr 0x11d122bb8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11d122b80 <col:19> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    |   | `-DeclRefExpr 0x11d122be0 <col:34> 'int' lvalue Var 0x11d826718 'i' 'int'
+    |   `-BinaryOperator 0x11d122c78 <line:25:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x11d122c38 <col:3> 'int' lvalue Var 0x11d826660 'bug' 'int'
+    |     `-IntegerLiteral 0x11d122c58 <col:9> 'int' 1
+    |-IfStmt 0x11d122ef0 <line:27:2, line:31:2>
+    | |-BinaryOperator 0x11d122d58 <line:27:6, col:29> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x11d122cd8 <col:6> 'unsigned long' lvalue Var 0x11d8267d0 'highest_address' 'unsigned long'
+    | | `-RecoveryExpr 0x11d122d30 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d122cf8 <col:25> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    | `-CompoundStmt 0x11d122ed0 <col:45, line:31:2>
+    |   |-CallExpr 0x11d122e38 <line:28:3, line:29:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x11d122d78 <line:28:3> 'int ()' Function 0x11d122a40 'pr_emerg' 'int ()'
+    |   | |-StringLiteral 0x11d122d98 <col:12> 'char[4]' lvalue "STR"
+    |   | |-RecoveryExpr 0x11d122df0 <line:29:6, col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x11d122db8 <col:6> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    |   | `-DeclRefExpr 0x11d122e18 <col:26> 'unsigned long' lvalue Var 0x11d8267d0 'highest_address' 'unsigned long'
+    |   `-BinaryOperator 0x11d122eb0 <line:30:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x11d122e70 <col:3> 'int' lvalue Var 0x11d826660 'bug' 'int'
+    |     `-IntegerLiteral 0x11d122e90 <col:9> 'int' 1
+    |-BinaryOperator 0x11d1230a8 <line:32:2, col:18> 'int' '='
+    | |-DeclRefExpr 0x11d122f10 <col:2> 'int' lvalue Var 0x11d826718 'i' 'int'
+    | `-CallExpr 0x11d123068 <col:6, col:18> 'int'
+    |   |-ImplicitCastExpr 0x11d123050 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11d123010 <col:6> 'int ()' Function 0x11d122f58 'browse_rb' 'int ()'
+    |   `-ImplicitCastExpr 0x11d123090 <col:16> 'struct mm_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11d123030 <col:16> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    |-IfStmt 0x11d123390 <line:33:2, line:37:2>
+    | |-BinaryOperator 0x11d123148 <line:33:6, col:15> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x11d1230c8 <col:6> 'int' lvalue Var 0x11d826718 'i' 'int'
+    | | `-RecoveryExpr 0x11d123120 <col:11, col:15> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11d1230e8 <col:11> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    | `-CompoundStmt 0x11d123370 <col:26, line:37:2>
+    |   |-IfStmt 0x11d1232f0 <line:34:3, line:35:36>
+    |   | |-BinaryOperator 0x11d1231d8 <line:34:7, col:13> 'int' '!='
+    |   | | |-ImplicitCastExpr 0x11d1231c0 <col:7> 'int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x11d123168 <col:7> 'int' lvalue Var 0x11d826718 'i' 'int'
+    |   | | `-UnaryOperator 0x11d1231a8 <col:12, col:13> 'int' prefix '-'
+    |   | |   `-IntegerLiteral 0x11d123188 <col:13> 'int' 1
+    |   | `-CallExpr 0x11d1232b8 <line:35:4, col:36> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x11d1231f8 <col:4> 'int ()' Function 0x11d122a40 'pr_emerg' 'int ()'
+    |   |   |-StringLiteral 0x11d123218 <col:13> 'char[4]' lvalue "STR"
+    |   |   |-RecoveryExpr 0x11d123270 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x11d123238 <col:20> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'
+    |   |   `-DeclRefExpr 0x11d123298 <col:35> 'int' lvalue Var 0x11d826718 'i' 'int'
+    |   `-BinaryOperator 0x11d123350 <line:36:3, col:9> 'int' '='
+    |     |-DeclRefExpr 0x11d123310 <col:3> 'int' lvalue Var 0x11d826660 'bug' 'int'
+    |     `-IntegerLiteral 0x11d123330 <col:9> 'int' 1
+    `-CallExpr 0x11d123508 <line:38:2, col:22> 'int'
+      |-ImplicitCastExpr 0x11d1234f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x11d123490 <col:2> 'int ()' Function 0x11d1233d8 'VM_BUG_ON_MM' 'int ()'
+      |-ImplicitCastExpr 0x11d123538 <col:15> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x11d1234b0 <col:15> 'int' lvalue Var 0x11d826660 'bug' 'int'
+      `-ImplicitCastExpr 0x11d123550 <col:20> 'struct mm_struct *' <LValueToRValue>
+        `-DeclRefExpr 0x11d1234d0 <col:20> 'struct mm_struct *' lvalue ParmVar 0x11d80e248 'mm' 'struct mm_struct *'

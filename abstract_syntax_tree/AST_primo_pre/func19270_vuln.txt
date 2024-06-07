@@ -1,0 +1,90 @@
+`-FunctionDecl 0x14d928d58  line:1:5 invalid ip_check_mc_rcu 'int (struct in_device *, int, int, int)'
+  |-ParmVarDecl 0x14d90fa48 <col:21, col:39> col:39 used in_dev 'struct in_device *'
+  |-ParmVarDecl 0x14d90fae0 <col:47, col:54> col:54 invalid mc_addr 'int'
+  |-ParmVarDecl 0x14d90fb60 <col:63, col:70> col:70 invalid src_addr 'int'
+  |-ParmVarDecl 0x14d928c00 <col:80, col:83> col:83 invalid proto 'int'
+  `-CompoundStmt 0x14d92a9c8 <line:2:1, line:42:1>
+    |-DeclStmt 0x14d929008 <line:3:2, col:23>
+    | |-RecordDecl 0x14d928e20 <col:2, col:9> col:9 struct ip_mc_list
+    | `-VarDecl 0x14d928f88 <col:2, col:21> col:21 used im 'struct ip_mc_list *'
+    |-DeclStmt 0x14d9290d8 <line:4:2, col:26>
+    | `-VarDecl 0x14d929070 <col:2, col:20> col:20 invalid __rcu 'struct ip_mc_list'
+    |-DeclStmt 0x14d9292d8 <line:5:2, col:24>
+    | |-RecordDecl 0x14d9290f0 <col:2, col:9> col:9 struct ip_sf_list
+    | `-VarDecl 0x14d929258 <col:2, col:21> col:21 used psf 'struct ip_sf_list *'
+    |-DeclStmt 0x14d929390 <line:6:2, col:12>
+    | `-VarDecl 0x14d929308 <col:2, col:11> col:6 used rv 'int' cinit
+    |   `-IntegerLiteral 0x14d929370 <col:11> 'int' 0
+    |-IfStmt 0x14d929bb8 <line:9:2, line:23:2> has_else
+    | |-RecoveryExpr 0x14d9295c0 <line:9:6> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x14d9298e8 <col:15, line:18:2>
+    | | `-ForStmt 0x14d9298b0 <line:12:3, line:17:3>
+    | |   |-<<<NULL>>>
+    | |   |-<<<NULL>>>
+    | |   |-BinaryOperator 0x14d9296c8 <line:13:8, col:14> 'int' contains-errors '!='
+    | |   | |-DeclRefExpr 0x14d929650 <col:8> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    | |   | `-RecoveryExpr 0x14d9296a8 <col:14> '<dependent type>' contains-errors lvalue
+    | |   |-BinaryOperator 0x14d9297b0 <line:14:8, col:42> 'struct ip_mc_list *' contains-errors '='
+    | |   | |-DeclRefExpr 0x14d9296e8 <col:8> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    | |   | `-CallExpr 0x14d929788 <col:13, col:42> '<dependent type>' contains-errors
+    | |   |   |-DeclRefExpr 0x14d929708 <col:13> 'int ()' Function 0x14d929448 'rcu_dereference' 'int ()'
+    | |   |   `-RecoveryExpr 0x14d929760 <col:29, col:33> '<dependent type>' contains-errors lvalue
+    | |   |     `-DeclRefExpr 0x14d929728 <col:29> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    | |   `-CompoundStmt 0x14d929898 <col:45, line:17:3>
+    | |     `-IfStmt 0x14d929878 <line:15:4, line:16:5>
+    | |       |-BinaryOperator 0x14d929850 <line:15:8, col:25> 'int' contains-errors '=='
+    | |       | |-RecoveryExpr 0x14d929808 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    | |       | | `-DeclRefExpr 0x14d9297d0 <col:8> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    | |       | `-RecoveryExpr 0x14d929830 <col:25> '<dependent type>' contains-errors lvalue
+    | |       `-BreakStmt 0x14d929870 <line:16:5>
+    | `-CompoundStmt 0x14d929b98 <line:18:9, line:23:2>
+    |   |-CallExpr 0x14d929a88 <line:19:3, col:30> 'int'
+    |   | |-ImplicitCastExpr 0x14d929a70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14d9299e0 <col:3> 'int ()' Function 0x14d929928 'for_each_pmc_rcu' 'int ()'
+    |   | |-ImplicitCastExpr 0x14d929ab8 <col:20> 'struct in_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x14d929a00 <col:20> 'struct in_device *' lvalue ParmVar 0x14d90fa48 'in_dev' 'struct in_device *'
+    |   | `-ImplicitCastExpr 0x14d929ad0 <col:28> 'struct ip_mc_list *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x14d929a20 <col:28> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    |   `-CompoundStmt 0x14d929b88 <col:32, line:22:3>
+    |-IfStmt 0x14d92a950 <line:24:2, line:40:2> has_else
+    | |-BinaryOperator 0x14d92a2d8 <line:24:6, col:21> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x14d92a200 <col:6> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    | | `-BinaryOperator 0x14d92a2b8 <col:12, col:21> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x14d92a220 <col:12> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x14d92a298 <col:21> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x14d92a358 <col:35, line:26:2>
+    | | `-BinaryOperator 0x14d92a338 <line:25:3, col:8> 'int' '='
+    | |   |-DeclRefExpr 0x14d92a2f8 <col:3> 'int' lvalue Var 0x14d929308 'rv' 'int'
+    | |   `-IntegerLiteral 0x14d92a318 <col:8> 'int' 1
+    | `-IfStmt 0x14d92a930 <line:26:9, line:40:2>
+    |   |-ImplicitCastExpr 0x14d92a390 <line:26:13> 'struct ip_mc_list *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14d92a370 <col:13> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    |   `-CompoundStmt 0x14d92a918 <col:17, line:40:2>
+    |     `-IfStmt 0x14d92a8e8 <line:27:3, line:39:9> has_else
+    |       |-RecoveryExpr 0x14d92a3a8 <line:27:7> '<dependent type>' contains-errors lvalue
+    |       |-CompoundStmt 0x14d92a870 <col:17, line:38:3>
+    |       | `-ForStmt 0x14d92a620 <line:28:4, line:31:4>
+    |       |   |-BinaryOperator 0x14d92a448 <line:28:9, col:19> 'struct ip_sf_list *' contains-errors '='
+    |       |   | |-DeclRefExpr 0x14d92a3c8 <col:9> 'struct ip_sf_list *' lvalue Var 0x14d929258 'psf' 'struct ip_sf_list *'
+    |       |   | `-RecoveryExpr 0x14d92a420 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x14d92a3e8 <col:15> 'struct ip_mc_list *' lvalue Var 0x14d928f88 'im' 'struct ip_mc_list *'
+    |       |   |-<<<NULL>>>
+    |       |   |-ImplicitCastExpr 0x14d92a488 <col:28> 'struct ip_sf_list *' <LValueToRValue>
+    |       |   | `-DeclRefExpr 0x14d92a468 <col:28> 'struct ip_sf_list *' lvalue Var 0x14d929258 'psf' 'struct ip_sf_list *'
+    |       |   |-BinaryOperator 0x14d92a520 <col:33, col:44> 'struct ip_sf_list *' contains-errors '='
+    |       |   | |-DeclRefExpr 0x14d92a4a0 <col:33> 'struct ip_sf_list *' lvalue Var 0x14d929258 'psf' 'struct ip_sf_list *'
+    |       |   | `-RecoveryExpr 0x14d92a4f8 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |       |   |   `-DeclRefExpr 0x14d92a4c0 <col:39> 'struct ip_sf_list *' lvalue Var 0x14d929258 'psf' 'struct ip_sf_list *'
+    |       |   `-CompoundStmt 0x14d92a608 <col:53, line:31:4>
+    |       |     `-IfStmt 0x14d92a5e8 <line:29:5, line:30:6>
+    |       |       |-BinaryOperator 0x14d92a5c0 <line:29:9, col:27> 'int' contains-errors '=='
+    |       |       | |-RecoveryExpr 0x14d92a578 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |       |       | | `-DeclRefExpr 0x14d92a540 <col:9> 'struct ip_sf_list *' lvalue Var 0x14d929258 'psf' 'struct ip_sf_list *'
+    |       |       | `-RecoveryExpr 0x14d92a5a0 <col:27> '<dependent type>' contains-errors lvalue
+    |       |       `-BreakStmt 0x14d92a5e0 <line:30:6>
+    |       `-BinaryOperator 0x14d92a8c8 <line:39:4, col:9> 'int' '='
+    |         |-DeclRefExpr 0x14d92a888 <col:4> 'int' lvalue Var 0x14d929308 'rv' 'int'
+    |         `-IntegerLiteral 0x14d92a8a8 <col:9> 'int' 1
+    `-ReturnStmt 0x14d92a9b8 <line:41:2, col:9>
+      `-ImplicitCastExpr 0x14d92a9a0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14d92a980 <col:9> 'int' lvalue Var 0x14d929308 'rv' 'int'

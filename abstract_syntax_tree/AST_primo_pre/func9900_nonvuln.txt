@@ -1,0 +1,33 @@
+`-FunctionDecl 0x12504b348  line:1:12 uas_switch_interface 'int (struct usb_device *, struct usb_interface *)' static
+  |-ParmVarDecl 0x12501ee48 <col:33, col:52> col:52 used udev 'struct usb_device *'
+  |-ParmVarDecl 0x12504b228 <line:2:5, col:27> col:27 used intf 'struct usb_interface *'
+  `-CompoundStmt 0x12504bc70 <line:3:1, line:12:1>
+    |-DeclStmt 0x12504b638 <line:4:2, col:32>
+    | |-RecordDecl 0x12504b448 <col:2, col:9> col:9 struct usb_host_interface
+    | `-VarDecl 0x12504b5b8 <col:2, col:29> col:29 used alt 'struct usb_host_interface *'
+    |-BinaryOperator 0x12504b880 <line:6:2, col:37> 'struct usb_host_interface *' '='
+    | |-DeclRefExpr 0x12504b650 <col:2> 'struct usb_host_interface *' lvalue Var 0x12504b5b8 'alt' 'struct usb_host_interface *'
+    | `-ImplicitCastExpr 0x12504b868 <col:8, col:37> 'struct usb_host_interface *' <IntegralToPointer>
+    |   `-CallExpr 0x12504b828 <col:8, col:37> 'int'
+    |     |-ImplicitCastExpr 0x12504b810 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12504b7a0 <col:8> 'int ()' Function 0x12504b6e8 'uas_find_uas_alt_setting' 'int ()'
+    |     `-ImplicitCastExpr 0x12504b850 <col:33> 'struct usb_interface *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12504b7c0 <col:33> 'struct usb_interface *' lvalue ParmVar 0x12504b228 'intf' 'struct usb_interface *'
+    |-IfStmt 0x12504b998 <line:7:2, line:8:11>
+    | |-UnaryOperator 0x12504b8d8 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12504b8c0 <col:7> 'struct usb_host_interface *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12504b8a0 <col:7> 'struct usb_host_interface *' lvalue Var 0x12504b5b8 'alt' 'struct usb_host_interface *'
+    | `-ReturnStmt 0x12504b988 <line:8:3, col:11>
+    |   `-UnaryOperator 0x12504b970 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12504b958 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12504b938 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12504bc60 <line:10:2, line:11:31>
+      `-CallExpr 0x12504bc28 <line:10:9, line:11:31> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12504ba98 <line:10:9> 'int ()' Function 0x12504b9e0 'usb_set_interface' 'int ()'
+        |-DeclRefExpr 0x12504bab8 <col:27> 'struct usb_device *' lvalue ParmVar 0x12501ee48 'udev' 'struct usb_device *'
+        |-CXXDependentScopeMemberExpr 0x12504bb38 <col:33, col:43> '<dependent type>' contains-errors lvalue .bInterfaceNumber
+        | `-RecoveryExpr 0x12504bb10 <col:33, col:38> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x12504bad8 <col:33> 'struct usb_host_interface *' lvalue Var 0x12504b5b8 'alt' 'struct usb_host_interface *'
+        `-CXXDependentScopeMemberExpr 0x12504bbe0 <line:11:4, col:14> '<dependent type>' contains-errors lvalue .bAlternateSetting
+          `-RecoveryExpr 0x12504bbb8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x12504bb80 <col:4> 'struct usb_host_interface *' lvalue Var 0x12504b5b8 'alt' 'struct usb_host_interface *'

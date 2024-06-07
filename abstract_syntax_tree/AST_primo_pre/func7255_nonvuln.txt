@@ -1,0 +1,27 @@
+`-FunctionDecl 0x156140c70  line:1:13 trace 'void (struct kmem_cache *, struct page *, void *, int)' static
+  |-ParmVarDecl 0x156128648 <col:19, col:38> col:38 used s 'struct kmem_cache *'
+  |-ParmVarDecl 0x156140a28 <col:41, col:54> col:54 page 'struct page *'
+  |-ParmVarDecl 0x156140aa8 <col:60, col:66> col:66 used object 'void *'
+  |-ParmVarDecl 0x156140b28 <col:74, col:78> col:78 used alloc 'int'
+  `-CompoundStmt 0x156141448 <line:2:1, line:15:1>
+    `-IfStmt 0x156141428 <line:3:2, line:14:2>
+      |-BinaryOperator 0x156140e50 <line:3:6, col:17> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x156140db8 <col:6, col:9> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x156140d80 <col:6> 'struct kmem_cache *' lvalue ParmVar 0x156128648 's' 'struct kmem_cache *'
+      | `-RecoveryExpr 0x156140e30 <col:17> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x156141408 <col:29, line:14:2>
+        |-IfStmt 0x156141280 <line:10:3, line:11:51>
+        | |-UnaryOperator 0x156140ff0 <line:10:7, col:8> 'int' prefix '!' cannot overflow
+        | | `-ImplicitCastExpr 0x156140fd8 <col:8> 'int' <LValueToRValue>
+        | |   `-DeclRefExpr 0x156140fb8 <col:8> 'int' lvalue ParmVar 0x156140b28 'alloc' 'int'
+        | `-CallExpr 0x156141248 <line:11:4, col:51> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1561410e8 <col:4> 'int ()' Function 0x156141030 'print_section' 'int ()'
+        |   |-StringLiteral 0x156141150 <col:18> 'char[4]' lvalue "STR"
+        |   |-CStyleCastExpr 0x1561411c0 <col:25, col:33> 'void *' <NoOp>
+        |   | `-ImplicitCastExpr 0x1561411a8 <col:33> 'void *' <LValueToRValue> part_of_explicit_cast
+        |   |   `-DeclRefExpr 0x156141170 <col:33> 'void *' lvalue ParmVar 0x156140aa8 'object' 'void *'
+        |   `-RecoveryExpr 0x156141220 <col:41, col:44> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x1561411e8 <col:41> 'struct kmem_cache *' lvalue ParmVar 0x156128648 's' 'struct kmem_cache *'
+        `-CallExpr 0x1561413e8 <line:13:3, col:14> 'int'
+          `-ImplicitCastExpr 0x1561413d0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+            `-DeclRefExpr 0x156141380 <col:3> 'int ()' Function 0x1561412c8 'dump_stack' 'int ()'

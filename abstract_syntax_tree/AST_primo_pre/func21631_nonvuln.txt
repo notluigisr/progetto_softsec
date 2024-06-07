@@ -1,0 +1,69 @@
+`-FunctionDecl 0x1541282e0  line:1:13 invalid bpf_ringbuf_commit 'void (void *, int, int)' static
+  |-ParmVarDecl 0x1541280d8 <col:32, col:38> col:38 used sample 'void *'
+  |-ParmVarDecl 0x154128170 <col:46, col:50> col:50 invalid flags 'int'
+  |-ParmVarDecl 0x1541281f0 <col:57, col:62> col:62 invalid discard 'int'
+  `-CompoundStmt 0x154131d80 <line:2:1, line:25:1>
+    |-DeclStmt 0x1541284b8 <line:3:2, col:33>
+    | |-VarDecl 0x1541283b8 <col:2, col:16> col:16 used rec_pos 'unsigned long'
+    | `-VarDecl 0x154128438 <col:2, col:25> col:25 used cons_pos 'unsigned long'
+    |-DeclStmt 0x1541286b8 <line:4:2, col:29>
+    | |-RecordDecl 0x1541284d0 <col:2, col:9> col:9 struct bpf_ringbuf_hdr
+    | `-VarDecl 0x154128638 <col:2, col:26> col:26 used hdr 'struct bpf_ringbuf_hdr *'
+    |-DeclStmt 0x1548196d8 <line:5:2, col:24>
+    | |-RecordDecl 0x1541286d0 <col:2, col:9> col:9 struct bpf_ringbuf
+    | `-VarDecl 0x154819658 <col:2, col:22> col:22 used rb 'struct bpf_ringbuf *'
+    |-BinaryOperator 0x1548197c8 <line:8:2, col:17> 'struct bpf_ringbuf_hdr *' contains-errors '='
+    | |-DeclRefExpr 0x1548196f0 <col:2> 'struct bpf_ringbuf_hdr *' lvalue Var 0x154128638 'hdr' 'struct bpf_ringbuf_hdr *'
+    | `-BinaryOperator 0x1548197a8 <col:8, col:17> '<dependent type>' contains-errors '-'
+    |   |-DeclRefExpr 0x154819710 <col:8> 'void *' lvalue ParmVar 0x1541280d8 'sample' 'void *'
+    |   `-RecoveryExpr 0x154819788 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x154819e60 <line:9:2, col:39> 'struct bpf_ringbuf *' '='
+    | |-DeclRefExpr 0x1548197e8 <col:2> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'
+    | `-ImplicitCastExpr 0x154819a28 <col:7, col:39> 'struct bpf_ringbuf *' <IntegralToPointer>
+    |   `-CallExpr 0x1548199e8 <col:7, col:39> 'int'
+    |     |-ImplicitCastExpr 0x1548199d0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x154819960 <col:7> 'int ()' Function 0x1548198a8 'bpf_ringbuf_restore_from_rec' 'int ()'
+    |     `-ImplicitCastExpr 0x154819a10 <col:36> 'struct bpf_ringbuf_hdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x154819980 <col:36> 'struct bpf_ringbuf_hdr *' lvalue Var 0x154128638 'hdr' 'struct bpf_ringbuf_hdr *'
+    |-CallExpr 0x15481a130 <line:15:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15481a030 <col:2> 'int ()' Function 0x154819f78 'xchg' 'int ()'
+    | |-UnaryOperator 0x15481a0b0 <col:7, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15481a088 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15481a050 <col:8> 'struct bpf_ringbuf_hdr *' lvalue Var 0x154128638 'hdr' 'struct bpf_ringbuf_hdr *'
+    | `-RecoveryExpr 0x15481a110 <col:18> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15481a2d0 <line:18:2, col:38> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x15481a160 <col:2> 'unsigned long' lvalue Var 0x1541283b8 'rec_pos' 'unsigned long'
+    | `-ImplicitCastExpr 0x15481a2b8 <col:12, col:38> 'unsigned long' contains-errors <IntegralCast>
+    |   `-BinaryOperator 0x15481a298 <col:12, col:38> 'long' contains-errors '-'
+    |     |-CStyleCastExpr 0x15481a1d0 <col:12, col:20> 'void *' <BitCast>
+    |     | `-ImplicitCastExpr 0x15481a1b8 <col:20> 'struct bpf_ringbuf_hdr *' <LValueToRValue> part_of_explicit_cast
+    |     |   `-DeclRefExpr 0x15481a180 <col:20> 'struct bpf_ringbuf_hdr *' lvalue Var 0x154128638 'hdr' 'struct bpf_ringbuf_hdr *'
+    |     `-CStyleCastExpr 0x15481a270 <col:26, col:38> 'void *' contains-errors <Dependent>
+    |       `-RecoveryExpr 0x15481a230 <col:34, col:38> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x15481a1f8 <col:34> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'
+    |-BinaryOperator 0x15481a530 <line:19:2, col:55> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x15481a2f0 <col:2> 'unsigned long' lvalue Var 0x154128438 'cons_pos' 'unsigned long'
+    | `-BinaryOperator 0x15481a510 <col:13, col:55> '<dependent type>' contains-errors '&'
+    |   |-CallExpr 0x15481a488 <col:13, col:47> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x15481a3f0 <col:13> 'int ()' Function 0x15481a338 'smp_load_acquire' 'int ()'
+    |   | `-UnaryOperator 0x15481a470 <col:30, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x15481a448 <col:31, col:35> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x15481a410 <col:31> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'
+    |   `-RecoveryExpr 0x15481a4e8 <col:51, col:55> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15481a4b0 <col:51> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'
+    `-IfStmt 0x154131d50 <line:21:2, line:24:27> has_else
+      |-BinaryOperator 0x15481a5c8 <line:21:6, col:14> '<dependent type>' contains-errors '&'
+      | |-RecoveryExpr 0x15481a550 <col:6> '<dependent type>' contains-errors lvalue
+      | `-RecoveryExpr 0x15481a5a8 <col:14> '<dependent type>' contains-errors lvalue
+      |-CallExpr 0x154131b78 <line:22:3, col:27> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x154131ae0 <col:3> 'int ()' Function 0x154131a28 'irq_work_queue' 'int ()'
+      | `-UnaryOperator 0x154131b60 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x154131b38 <col:19, col:23> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x154131b00 <col:19> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'
+      `-IfStmt 0x154131d30 <line:23:7, line:24:27>
+        |-RecoveryExpr 0x154131c50 <line:23:11, col:60> '_Bool' contains-errors
+        `-CallExpr 0x154131d08 <line:24:3, col:27> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x154131c70 <col:3> 'int ()' Function 0x154131a28 'irq_work_queue' 'int ()'
+          `-UnaryOperator 0x154131cf0 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x154131cc8 <col:19, col:23> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x154131c90 <col:19> 'struct bpf_ringbuf *' lvalue Var 0x154819658 'rb' 'struct bpf_ringbuf *'

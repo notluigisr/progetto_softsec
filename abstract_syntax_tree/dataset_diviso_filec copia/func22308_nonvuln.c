@@ -1,0 +1,1 @@
+  Hybrid_type(const Hybrid_type &rhs) :traits(rhs.traits) {}

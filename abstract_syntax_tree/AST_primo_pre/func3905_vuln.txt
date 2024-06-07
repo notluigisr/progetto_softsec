@@ -1,0 +1,113 @@
+`-FunctionDecl 0x12a026750  line:1:6 flush_tlb_mm_range 'void (struct mm_struct *, unsigned long, unsigned long, unsigned long)'
+  |-ParmVarDecl 0x12a00e248 <col:25, col:43> col:43 used mm 'struct mm_struct *'
+  |-ParmVarDecl 0x12a00e2c8 <col:47, col:61> col:61 used start 'unsigned long'
+  |-ParmVarDecl 0x12a00e348 <line:2:5, col:19> col:19 used end 'unsigned long'
+  |-ParmVarDecl 0x12a026600 <col:24, col:38> col:38 used vmflag 'unsigned long'
+  `-CompoundStmt 0x12a02a338 <line:3:1, line:40:1>
+    |-DeclStmt 0x12a0268e0 <line:4:2, col:20>
+    | `-VarDecl 0x12a026878 <col:2, col:16> col:16 used addr 'unsigned long'
+    |-DeclStmt 0x12a0269c8 <line:6:2, col:51>
+    | `-VarDecl 0x12a026910 <col:2, col:38> col:16 used base_pages_to_flush 'unsigned long' cinit
+    |   `-RecoveryExpr 0x12a0269a8 <col:38> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12a026b58 <line:8:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x12a026b40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x12a026af0 <col:2> 'int ()' Function 0x12a026a38 'preempt_disable' 'int ()'
+    |-IfStmt 0x12a026d08 <line:9:2, line:10:8>
+    | |-BinaryOperator 0x12a026c80 <line:9:6, col:28> 'int' contains-errors '!='
+    | | |-CXXDependentScopeMemberExpr 0x12a026c38 <col:6, col:15> '<dependent type>' contains-errors lvalue ->active_mm
+    | | | `-RecoveryExpr 0x12a026c18 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12a026bd8 <col:28> 'struct mm_struct *' lvalue ParmVar 0x12a00e248 'mm' 'struct mm_struct *'
+    | `-GotoStmt 0x12a026cf0 <line:10:3, col:8> 'out' 0x12a026ca0
+    |-IfStmt 0x12a027100 <line:12:2, line:15:2>
+    | |-UnaryOperator 0x12a026e38 <line:12:6, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a026e20 <col:7, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x12a026dd8 <col:7, col:16> '<dependent type>' contains-errors lvalue ->mm
+    | |     `-RecoveryExpr 0x12a026db8 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12a0270e0 <col:20, line:15:2>
+    |   |-CallExpr 0x12a0270a0 <line:13:3, col:30> 'int'
+    |   | |-ImplicitCastExpr 0x12a027088 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12a026f30 <col:3> 'int ()' Function 0x12a026e78 'leave_mm' 'int ()'
+    |   | `-CallExpr 0x12a027068 <col:12, col:29> 'int'
+    |   |   `-ImplicitCastExpr 0x12a027050 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x12a027030 <col:12> 'int ()' Function 0x12a026f78 'smp_processor_id' 'int ()'
+    |   `-GotoStmt 0x12a0270c8 <line:14:3, col:8> 'out' 0x12a026ca0
+    |-IfStmt 0x12a027458 <line:17:2, line:18:42>
+    | |-RecoveryExpr 0x12a0271d0 <line:17:6, col:53> '_Bool' contains-errors
+    | `-BinaryOperator 0x12a027438 <line:18:3, col:42> 'unsigned long' contains-errors '='
+    |   |-DeclRefExpr 0x12a0271f0 <col:3> 'unsigned long' contains-errors lvalue Var 0x12a026910 'base_pages_to_flush' 'unsigned long'
+    |   `-BinaryOperator 0x12a027418 <col:25, col:42> '<dependent type>' contains-errors '>>'
+    |     |-ParenExpr 0x12a0273d8 <col:25, col:37> 'unsigned long'
+    |     | `-BinaryOperator 0x12a0273b8 <col:26, col:32> 'unsigned long' '-'
+    |     |   |-ImplicitCastExpr 0x12a027388 <col:26> 'unsigned long' <LValueToRValue>
+    |     |   | `-DeclRefExpr 0x12a027210 <col:26> 'unsigned long' lvalue ParmVar 0x12a00e348 'end' 'unsigned long'
+    |     |   `-ImplicitCastExpr 0x12a0273a0 <col:32> 'unsigned long' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x12a027230 <col:32> 'unsigned long' lvalue ParmVar 0x12a00e2c8 'start' 'unsigned long'
+    |     `-RecoveryExpr 0x12a0273f8 <col:42> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a029910 <line:20:2, line:30:2> has_else
+    | |-BinaryOperator 0x12a0274f0 <line:20:6, col:28> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x12a027478 <col:6> 'unsigned long' contains-errors lvalue Var 0x12a026910 'base_pages_to_flush' 'unsigned long'
+    | | `-RecoveryExpr 0x12a0274d0 <col:28> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x12a029498 <col:59, line:24:2>
+    | | |-BinaryOperator 0x12a027588 <line:21:3, col:25> 'unsigned long' contains-errors '='
+    | | | |-DeclRefExpr 0x12a027510 <col:3> 'unsigned long' contains-errors lvalue Var 0x12a026910 'base_pages_to_flush' 'unsigned long'
+    | | | `-RecoveryExpr 0x12a027568 <col:25> '<dependent type>' contains-errors lvalue
+    | | |-CallExpr 0x12a029338 <line:22:3, col:44> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12a0292b8 <col:3> 'int ()' Function 0x12a029200 'count_vm_tlb_event' 'int ()'
+    | | | `-RecoveryExpr 0x12a029318 <col:22> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x12a029478 <line:23:3, col:19> 'int'
+    | |   `-ImplicitCastExpr 0x12a029460 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | |     `-DeclRefExpr 0x12a029440 <col:3> 'int ()' Function 0x12a029388 'local_flush_tlb' 'int ()'
+    | `-CompoundStmt 0x12a0298f8 <line:24:9, line:30:2>
+    |   `-ForStmt 0x12a0298c0 <line:26:3, line:29:3>
+    |     |-BinaryOperator 0x12a029518 <line:26:8, col:15> 'unsigned long' '='
+    |     | |-DeclRefExpr 0x12a0294c0 <col:8> 'unsigned long' lvalue Var 0x12a026878 'addr' 'unsigned long'
+    |     | `-ImplicitCastExpr 0x12a029500 <col:15> 'unsigned long' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x12a0294e0 <col:15> 'unsigned long' lvalue ParmVar 0x12a00e2c8 'start' 'unsigned long'
+    |     |-<<<NULL>>>
+    |     |-BinaryOperator 0x12a0295a8 <col:22, col:29> 'int' '<'
+    |     | |-ImplicitCastExpr 0x12a029578 <col:22> 'unsigned long' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x12a029538 <col:22> 'unsigned long' lvalue Var 0x12a026878 'addr' 'unsigned long'
+    |     | `-ImplicitCastExpr 0x12a029590 <col:29> 'unsigned long' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x12a029558 <col:29> 'unsigned long' lvalue ParmVar 0x12a00e348 'end' 'unsigned long'
+    |     |-CompoundAssignOperator 0x12a029650 <col:34, col:42> 'unsigned long' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     | |-DeclRefExpr 0x12a0295c8 <col:34> 'unsigned long' lvalue Var 0x12a026878 'addr' 'unsigned long'
+    |     | `-RecoveryExpr 0x12a029630 <col:42> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x12a0298a0 <col:53, line:29:3>
+    |       |-CallExpr 0x12a029700 <line:27:4, col:45> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x12a029680 <col:4> 'int ()' Function 0x12a029200 'count_vm_tlb_event' 'int ()'
+    |       | `-RecoveryExpr 0x12a0296e0 <col:23> '<dependent type>' contains-errors lvalue
+    |       `-CallExpr 0x12a029860 <line:28:4, col:27> 'int'
+    |         |-ImplicitCastExpr 0x12a029848 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x12a029808 <col:4> 'int ()' Function 0x12a029750 '__flush_tlb_single' 'int ()'
+    |         `-ImplicitCastExpr 0x12a029888 <col:23> 'unsigned long' <LValueToRValue>
+    |           `-DeclRefExpr 0x12a029828 <col:23> 'unsigned long' lvalue Var 0x12a026878 'addr' 'unsigned long'
+    |-CallExpr 0x12a029ac8 <line:31:2, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a029a20 <col:2> 'int ()' Function 0x12a029968 'trace_tlb_flush' 'int ()'
+    | |-RecoveryExpr 0x12a029aa8 <col:18> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x12a029a58 <col:42> 'unsigned long' contains-errors lvalue Var 0x12a026910 'base_pages_to_flush' 'unsigned long'
+    |-LabelStmt 0x12a029bf0 <line:32:1, line:36:2> 'out'
+    | `-IfStmt 0x12a029bd0 <line:33:2, line:36:2>
+    |   |-RecoveryExpr 0x12a029b18 <line:33:6, col:29> '_Bool' contains-errors
+    |   `-CompoundStmt 0x12a029bb8 <col:44, line:36:2>
+    |     `-BinaryOperator 0x12a029b78 <line:34:3, col:11> 'unsigned long' '='
+    |       |-DeclRefExpr 0x12a029b38 <col:3> 'unsigned long' lvalue ParmVar 0x12a00e2c8 'start' 'unsigned long'
+    |       `-IntegerLiteral 0x12a029b58 <col:11> 'unsigned long' 0
+    |-IfStmt 0x12a02a1e0 <line:37:2, line:38:50>
+    | |-RecoveryExpr 0x12a029f28 <line:37:6, col:60> '_Bool' contains-errors
+    | `-CallExpr 0x12a02a158 <line:38:3, col:50> 'int'
+    |   |-ImplicitCastExpr 0x12a02a140 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12a02a028 <col:3> 'int ()' Function 0x12a029f70 'flush_tlb_others' 'int ()'
+    |   |-CallExpr 0x12a02a0a0 <col:20, col:33> 'int'
+    |   | |-ImplicitCastExpr 0x12a02a088 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12a02a048 <col:20> 'int ()' Function 0x12a029d38 'mm_cpumask' 'int ()'
+    |   | `-ImplicitCastExpr 0x12a02a0c8 <col:31> 'struct mm_struct *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x12a02a068 <col:31> 'struct mm_struct *' lvalue ParmVar 0x12a00e248 'mm' 'struct mm_struct *'
+    |   |-ImplicitCastExpr 0x12a02a198 <col:36> 'struct mm_struct *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a02a0e0 <col:36> 'struct mm_struct *' lvalue ParmVar 0x12a00e248 'mm' 'struct mm_struct *'
+    |   |-ImplicitCastExpr 0x12a02a1b0 <col:40> 'unsigned long' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12a02a100 <col:40> 'unsigned long' lvalue ParmVar 0x12a00e2c8 'start' 'unsigned long'
+    |   `-ImplicitCastExpr 0x12a02a1c8 <col:47> 'unsigned long' <LValueToRValue>
+    |     `-DeclRefExpr 0x12a02a120 <col:47> 'unsigned long' lvalue ParmVar 0x12a00e348 'end' 'unsigned long'
+    `-CallExpr 0x12a02a318 <line:39:2, col:17> 'int'
+      `-ImplicitCastExpr 0x12a02a300 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x12a02a2e0 <col:2> 'int ()' Function 0x12a02a228 'preempt_enable' 'int ()'

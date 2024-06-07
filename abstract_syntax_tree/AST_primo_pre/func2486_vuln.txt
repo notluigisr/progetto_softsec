@@ -1,0 +1,110 @@
+`-FunctionDecl 0x12180c488  line:1:13 snd_timer_user_ioctl 'long (struct file *, unsigned int, unsigned long)' static
+  |-ParmVarDecl 0x121128e48 <col:34, col:47> col:47 used file 'struct file *'
+  |-ParmVarDecl 0x121128ec8 <col:53, col:66> col:66 used cmd 'unsigned int'
+  |-ParmVarDecl 0x121128f48 <line:2:6, col:20> col:20 used arg 'unsigned long'
+  `-CompoundStmt 0x1211439f0 <line:3:1, line:59:1>
+    |-DeclStmt 0x12180c778 <line:4:2, col:27>
+    | |-RecordDecl 0x12180c590 <col:2, col:9> col:9 struct snd_timer_user
+    | `-VarDecl 0x12180c6f8 <col:2, col:25> col:25 used tu 'struct snd_timer_user *'
+    |-DeclStmt 0x12180c808 <line:5:2, col:14>
+    | `-VarDecl 0x12180c7a0 <col:2, col:7> col:7 invalid __user 'void'
+    |-DeclStmt 0x12180c8a0 <line:6:2, col:13>
+    | `-VarDecl 0x12180c838 <col:2, col:6> col:6 invalid __user 'int'
+    |-BinaryOperator 0x12180c938 <line:8:2, col:13> 'struct snd_timer_user *' contains-errors '='
+    | |-DeclRefExpr 0x12180c8b8 <col:2> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+    | `-RecoveryExpr 0x12180c910 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12180c8d8 <col:7> 'struct file *' lvalue ParmVar 0x121128e48 'file' 'struct file *'
+    `-SwitchStmt 0x12180c990 <line:9:2, line:57:2>
+      |-ImplicitCastExpr 0x12180c978 <line:9:10> 'unsigned int' <LValueToRValue>
+      | `-DeclRefExpr 0x12180c958 <col:10> 'unsigned int' lvalue ParmVar 0x121128ec8 'cmd' 'unsigned int'
+      `-CompoundStmt 0x1211439a8 <col:15, line:57:2>
+        |-ReturnStmt 0x12180cd08 <line:11:3, col:55>
+        | `-ConditionalOperator 0x12180ccd8 <col:10, col:55> '<dependent type>' contains-errors
+        |   |-CallExpr 0x12180cc58 <col:10, col:41> '<dependent type>' contains-errors
+        |   | |-DeclRefExpr 0x12180cb00 <col:10> 'int ()' Function 0x12180ca48 'put_user' 'int ()'
+        |   | |-RecoveryExpr 0x12180cc18 <col:19> '<dependent type>' contains-errors lvalue
+        |   | `-RecoveryExpr 0x12180cc38 <col:40> '<dependent type>' contains-errors lvalue
+        |   |-UnaryOperator 0x12180ccc0 <col:45, col:46> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |   | `-ImplicitCastExpr 0x12180cca8 <col:46> '<dependent type>' contains-errors <LValueToRValue>
+        |   |   `-RecoveryExpr 0x12180cc88 <col:46> '<dependent type>' contains-errors lvalue
+        |   `-IntegerLiteral 0x12180cbc8 <col:55> 'int' 0
+        |-ReturnStmt 0x12180cf30 <line:13:3, col:41>
+        | `-ImplicitCastExpr 0x12180cf18 <col:10, col:41> 'long' <IntegralCast>
+        |   `-CallExpr 0x12180ced8 <col:10, col:41> 'int'
+        |     |-ImplicitCastExpr 0x12180cec0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x12180ce10 <col:10> 'int ()' Function 0x12180cd58 'snd_timer_user_next_device' 'int ()'
+        |     `-ImplicitCastExpr 0x12180cf00 <col:37> 'unsigned long' <LValueToRValue>
+        |       `-DeclRefExpr 0x12180ce70 <col:37> 'unsigned long' lvalue ParmVar 0x121128f48 'arg' 'unsigned long'
+        |-CompoundStmt 0x121142ae8 <line:15:2, line:30:2>
+        | |-DeclStmt 0x12180cfd8 <line:16:3, col:11>
+        | | `-VarDecl 0x12180cf70 <col:3, col:7> col:7 used xarg 'int'
+        | |-CallExpr 0x12180d168 <line:18:3, col:28> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x12180d0d0 <col:3> 'int ()' Function 0x12180d018 'mutex_lock' 'int ()'
+        | | `-UnaryOperator 0x12180d150 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   `-RecoveryExpr 0x12180d128 <col:15, col:19> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x12180d0f0 <col:15> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | |-IfStmt 0x121142660 <line:19:3, line:22:3>
+        | | |-RecoveryExpr 0x12180d1c8 <line:19:7, col:11> '<dependent type>' contains-errors lvalue
+        | | | `-DeclRefExpr 0x12180d190 <col:7> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | | `-CompoundStmt 0x121142640 <col:19, line:22:3>
+        | |   |-CallExpr 0x12180d368 <line:20:4, col:31> '<dependent type>' contains-errors
+        | |   | |-DeclRefExpr 0x12180d2d0 <col:4> 'int ()' Function 0x12180d218 'mutex_unlock' 'int ()'
+        | |   | `-UnaryOperator 0x12180d350 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   |   `-RecoveryExpr 0x12180d328 <col:18, col:22> '<dependent type>' contains-errors lvalue
+        | |   |     `-DeclRefExpr 0x12180d2f0 <col:18> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | |   `-ReturnStmt 0x121142630 <line:21:4, col:12>
+        | |     `-UnaryOperator 0x121142618 <col:11, col:12> '<dependent type>' contains-errors prefix '-' cannot overflow
+        | |       `-ImplicitCastExpr 0x121142600 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+        | |         `-RecoveryExpr 0x12180d3d8 <col:12> '<dependent type>' contains-errors lvalue
+        | |-IfStmt 0x121142898 <line:23:3, line:26:3>
+        | | |-RecoveryExpr 0x1211427a0 <line:23:7, col:23> '_Bool' contains-errors
+        | | `-CompoundStmt 0x121142880 <col:26, line:26:3>
+        | |   `-CallExpr 0x121142858 <line:24:4, col:31> '<dependent type>' contains-errors
+        | |     |-DeclRefExpr 0x1211427c0 <col:4> 'int ()' Function 0x12180d218 'mutex_unlock' 'int ()'
+        | |     `-UnaryOperator 0x121142840 <col:17, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |       `-RecoveryExpr 0x121142818 <col:18, col:22> '<dependent type>' contains-errors lvalue
+        | |         `-DeclRefExpr 0x1211427e0 <col:18> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | |-BinaryOperator 0x1211429c0 <line:27:3, col:26> '<dependent type>' contains-errors '='
+        | | |-RecoveryExpr 0x1211428f0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+        | | | `-DeclRefExpr 0x1211428b8 <col:3> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | | `-ConditionalOperator 0x121142990 <col:15, col:26> 'int'
+        | |   |-ImplicitCastExpr 0x121142978 <col:15> 'int' <LValueToRValue>
+        | |   | `-DeclRefExpr 0x121142918 <col:15> 'int' lvalue Var 0x12180cf70 'xarg' 'int'
+        | |   |-IntegerLiteral 0x121142938 <col:22> 'int' 1
+        | |   `-IntegerLiteral 0x121142958 <col:26> 'int' 0
+        | |-CallExpr 0x121142a78 <line:28:3, col:30> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x1211429e0 <col:3> 'int ()' Function 0x12180d218 'mutex_unlock' 'int ()'
+        | | `-UnaryOperator 0x121142a60 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   `-RecoveryExpr 0x121142a38 <col:17, col:21> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x121142a00 <col:17> 'struct snd_timer_user *' lvalue Var 0x12180c6f8 'tu' 'struct snd_timer_user *'
+        | `-ReturnStmt 0x121142ad8 <line:29:3, col:10>
+        |   `-ImplicitCastExpr 0x121142ac0 <col:10> 'long' <IntegralCast>
+        |     `-IntegerLiteral 0x121142aa0 <col:10> 'int' 0
+        |-ReturnStmt 0x1211434a0 <line:47:3, col:35>
+        | `-ImplicitCastExpr 0x121143488 <col:10, col:35> 'long' <IntegralCast>
+        |   `-CallExpr 0x121143448 <col:10, col:35> 'int'
+        |     |-ImplicitCastExpr 0x121143430 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x1211433f0 <col:10> 'int ()' Function 0x121143338 'snd_timer_user_start' 'int ()'
+        |     `-ImplicitCastExpr 0x121143470 <col:31> 'struct file *' <LValueToRValue>
+        |       `-DeclRefExpr 0x121143410 <col:31> 'struct file *' lvalue ParmVar 0x121128e48 'file' 'struct file *'
+        |-ReturnStmt 0x121143658 <line:50:3, col:34>
+        | `-ImplicitCastExpr 0x121143640 <col:10, col:34> 'long' <IntegralCast>
+        |   `-CallExpr 0x121143600 <col:10, col:34> 'int'
+        |     |-ImplicitCastExpr 0x1211435d0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x121143590 <col:10> 'int ()' Function 0x1211434d8 'snd_timer_user_stop' 'int ()'
+        |     `-ImplicitCastExpr 0x121143628 <col:30> 'struct file *' <LValueToRValue>
+        |       `-DeclRefExpr 0x1211435b0 <col:30> 'struct file *' lvalue ParmVar 0x121128e48 'file' 'struct file *'
+        |-ReturnStmt 0x1211437f8 <line:53:3, col:38>
+        | `-ImplicitCastExpr 0x1211437e0 <col:10, col:38> 'long' <IntegralCast>
+        |   `-CallExpr 0x1211437a0 <col:10, col:38> 'int'
+        |     |-ImplicitCastExpr 0x121143788 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x121143748 <col:10> 'int ()' Function 0x121143690 'snd_timer_user_continue' 'int ()'
+        |     `-ImplicitCastExpr 0x1211437c8 <col:34> 'struct file *' <LValueToRValue>
+        |       `-DeclRefExpr 0x121143768 <col:34> 'struct file *' lvalue ParmVar 0x121128e48 'file' 'struct file *'
+        `-ReturnStmt 0x121143998 <line:56:3, col:35>
+          `-ImplicitCastExpr 0x121143980 <col:10, col:35> 'long' <IntegralCast>
+            `-CallExpr 0x121143940 <col:10, col:35> 'int'
+              |-ImplicitCastExpr 0x121143928 <col:10> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x1211438e8 <col:10> 'int ()' Function 0x121143830 'snd_timer_user_pause' 'int ()'
+              `-ImplicitCastExpr 0x121143968 <col:31> 'struct file *' <LValueToRValue>
+                `-DeclRefExpr 0x121143908 <col:31> 'struct file *' lvalue ParmVar 0x121128e48 'file' 'struct file *'

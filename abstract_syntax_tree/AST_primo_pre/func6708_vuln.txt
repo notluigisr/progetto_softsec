@@ -1,0 +1,26 @@
+`-FunctionDecl 0x135128528  line:1:1 invalid hostkey_method_ssh_rsa_sig_verify 'int (int *, const unsigned char *, int, const unsigned char *, int, void **)'
+  |-ParmVarDecl 0x135128128 <col:35, col:53> col:53 invalid session 'int *'
+  |-ParmVarDecl 0x1351281d8 <line:2:35, col:56> col:56 used sig 'const unsigned char *'
+  |-ParmVarDecl 0x135128258 <line:3:35, col:42> col:42 referenced invalid sig_len 'int'
+  |-ParmVarDecl 0x1351282d8 <line:4:35, col:56> col:56 used m 'const unsigned char *'
+  |-ParmVarDecl 0x135128358 <line:5:35, col:42> col:42 invalid m_len 'int'
+  |-ParmVarDecl 0x135128408 <col:49, col:56> col:56 used abstract 'void **'
+  `-CompoundStmt 0x135142ad8 <line:6:1, line:14:1>
+    |-CStyleCastExpr 0x1351286c8 <line:8:5, col:12> 'void' contains-errors <ToVoid>
+    | `-ImplicitCastExpr 0x1351286b0 <col:12> '<dependent type>' contains-errors <LValueToRValue> part_of_explicit_cast
+    |   `-RecoveryExpr 0x135128680 <col:12> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x135128730 <line:11:5, col:12> 'const unsigned char *' '+=' ComputeLHSTy='const unsigned char *' ComputeResultTy='const unsigned char *'
+    | |-DeclRefExpr 0x1351286f0 <col:5> 'const unsigned char *' lvalue ParmVar 0x1351281d8 'sig' 'const unsigned char *'
+    | `-IntegerLiteral 0x135128710 <col:12> 'int' 15
+    |-CompoundAssignOperator 0x1351287c8 <line:12:5, col:16> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x135128780 <col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x135128760 <col:5> 'int' lvalue ParmVar 0x135128258 'sig_len' 'int'
+    | `-IntegerLiteral 0x1351287a8 <col:16> 'int' 15
+    `-ReturnStmt 0x135142ac8 <line:13:5, col:67>
+      `-CallExpr 0x135142a80 <col:12, col:67> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x135142960 <col:12> 'int ()' Function 0x1351428a8 '_libssh2_rsa_sha1_verify' 'int ()'
+        |-RecoveryExpr 0x135142a60 <col:37> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x135142998 <col:45> 'const unsigned char *' lvalue ParmVar 0x1351281d8 'sig' 'const unsigned char *'
+        |-RecoveryExpr 0x1351429b8 <col:50> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x1351429d8 <col:59> 'const unsigned char *' lvalue ParmVar 0x1351282d8 'm' 'const unsigned char *'
+        `-RecoveryExpr 0x1351429f8 <col:62> '<dependent type>' contains-errors lvalue

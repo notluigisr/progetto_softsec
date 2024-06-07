@@ -1,0 +1,22 @@
+`-FunctionDecl 0x124928150  line:1:13 __giveup_fpu 'void (struct task_struct *)' static
+  |-ParmVarDecl 0x124928048 <col:26, col:46> col:46 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x1249409e0 <line:2:1, line:13:1>
+    |-DeclStmt 0x1249404c8 <line:3:2, col:19>
+    | `-VarDecl 0x124940460 <col:2, col:16> col:16 used msr 'unsigned long'
+    |-CallExpr 0x124940698 <line:5:2, col:14> 'int'
+    | |-ImplicitCastExpr 0x124940680 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x124940610 <col:2> 'int ()' Function 0x124940558 'save_fpu' 'int ()'
+    | `-ImplicitCastExpr 0x1249406c0 <col:11> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x124940630 <col:11> 'struct task_struct *' lvalue ParmVar 0x124928048 'tsk' 'struct task_struct *'
+    |-BinaryOperator 0x1249407e8 <line:6:2, col:26> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x1249406d8 <col:2> 'unsigned long' lvalue Var 0x124940460 'msr' 'unsigned long'
+    | `-CXXDependentScopeMemberExpr 0x1249407a0 <col:8, col:26> '<dependent type>' contains-errors lvalue ->msr
+    |   `-CXXDependentScopeMemberExpr 0x124940758 <col:8, col:20> '<dependent type>' contains-errors lvalue .regs
+    |     `-RecoveryExpr 0x124940730 <col:8, col:13> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1249406f8 <col:8> 'struct task_struct *' lvalue ParmVar 0x124928048 'tsk' 'struct task_struct *'
+    `-BinaryOperator 0x1249409c0 <line:12:2, col:26> '<dependent type>' contains-errors '='
+      |-CXXDependentScopeMemberExpr 0x124940958 <col:2, col:20> '<dependent type>' contains-errors lvalue ->msr
+      | `-CXXDependentScopeMemberExpr 0x124940910 <col:2, col:14> '<dependent type>' contains-errors lvalue .regs
+      |   `-RecoveryExpr 0x1249408e8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x1249408b0 <col:2> 'struct task_struct *' lvalue ParmVar 0x124928048 'tsk' 'struct task_struct *'
+      `-DeclRefExpr 0x1249409a0 <col:26> 'unsigned long' lvalue Var 0x124940460 'msr' 'unsigned long'

@@ -1,0 +1,36 @@
+`-FunctionDecl 0x138026600  line:1:13 m_stop 'void (struct seq_file *, void *)' static
+  |-ParmVarDecl 0x13800e248 <col:20, col:37> col:37 used m 'struct seq_file *'
+  |-ParmVarDecl 0x13800e2c8 <col:40, col:46> col:46 used v 'void *'
+  `-CompoundStmt 0x1380271a0 <line:2:1, line:10:1>
+    |-DeclStmt 0x138026948 <line:3:2, col:45>
+    | |-RecordDecl 0x138026700 <col:2, col:9> col:9 struct proc_maps_private
+    | `-VarDecl 0x138026868 <col:2, col:38> col:28 used priv 'struct proc_maps_private *' cinit
+    |   `-RecoveryExpr 0x138026908 <col:35, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1380268d0 <col:35> 'struct seq_file *' lvalue ParmVar 0x13800e248 'm' 'struct seq_file *'
+    |-DeclStmt 0x138026b98 <line:4:2, col:32>
+    | |-RecordDecl 0x138026960 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x138026ac8 <col:2, col:31> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-ImplicitCastExpr 0x138026b68 <col:31> 'struct vm_area_struct *' <BitCast>
+    |     `-ImplicitCastExpr 0x138026b50 <col:31> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x138026b30 <col:31> 'void *' lvalue ParmVar 0x13800e2c8 'v' 'void *'
+    |-IfStmt 0x138026f78 <line:6:2, line:7:21>
+    | |-UnaryOperator 0x138026da8 <line:6:6, col:17> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x138026d68 <col:7, col:17> 'int'
+    | |   |-ImplicitCastExpr 0x138026d50 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x138026ce0 <col:7> 'int ()' Function 0x138026c28 'IS_ERR' 'int ()'
+    | |   `-ImplicitCastExpr 0x138026d90 <col:14> 'struct vm_area_struct *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x138026d00 <col:14> 'struct vm_area_struct *' lvalue Var 0x138026ac8 'vma' 'struct vm_area_struct *'
+    | `-CallExpr 0x138026f18 <line:7:3, col:21> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x138026f00 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x138026ea0 <col:3> 'int ()' Function 0x138026de8 'vma_stop' 'int ()'
+    |   |-ImplicitCastExpr 0x138026f48 <col:12> 'struct proc_maps_private *' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x138026ec0 <col:12> 'struct proc_maps_private *' contains-errors lvalue Var 0x138026868 'priv' 'struct proc_maps_private *'
+    |   `-ImplicitCastExpr 0x138026f60 <col:18> 'struct vm_area_struct *' <LValueToRValue>
+    |     `-DeclRefExpr 0x138026ee0 <col:18> 'struct vm_area_struct *' lvalue Var 0x138026ac8 'vma' 'struct vm_area_struct *'
+    `-IfStmt 0x138027180 <line:8:2, line:9:29>
+      |-RecoveryExpr 0x138026fd0 <line:8:6, col:12> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x138026f98 <col:6> 'struct proc_maps_private *' contains-errors lvalue Var 0x138026868 'priv' 'struct proc_maps_private *'
+      `-CallExpr 0x138027158 <line:9:3, col:29> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1380270d8 <col:3> 'int ()' Function 0x138027020 'put_task_struct' 'int ()'
+        `-RecoveryExpr 0x138027130 <col:19, col:25> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1380270f8 <col:19> 'struct proc_maps_private *' contains-errors lvalue Var 0x138026868 'priv' 'struct proc_maps_private *'

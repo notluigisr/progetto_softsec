@@ -1,0 +1,108 @@
+`-FunctionDecl 0x1520085c8  line:1:12 lo_do_open 'int (struct lo_data *, struct lo_inode *, int, struct fuse_file_info *)' static
+  |-ParmVarDecl 0x151928648 <col:23, col:39> col:39 used lo 'struct lo_data *'
+  |-ParmVarDecl 0x152008228 <col:43, col:60> col:60 used inode 'struct lo_inode *'
+  |-ParmVarDecl 0x1520082a8 <line:2:23, col:27> col:27 used existing_fd 'int'
+  |-ParmVarDecl 0x152008478 <col:40, col:63> col:63 used fi 'struct fuse_file_info *'
+  `-CompoundStmt 0x153809ab0 <line:3:1, line:47:1>
+    |-DeclStmt 0x1520087a8 <line:5:5, col:25>
+    | `-VarDecl 0x152008708 <col:5, col:14> col:9 used fd 'int' cinit
+    |   `-ImplicitCastExpr 0x152008790 <col:14> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x152008770 <col:14> 'int' lvalue ParmVar 0x1520082a8 'existing_fd' 'int'
+    |-DeclStmt 0x152008840 <line:6:5, col:12>
+    | `-VarDecl 0x1520087d8 <col:5, col:9> col:9 used err 'int'
+    |-CallExpr 0x152008a70 <line:10:5, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152008970 <col:5> 'int ()' Function 0x1520088b8 'update_open_flags' 'int ()'
+    | |-RecoveryExpr 0x1520089c8 <col:23, col:27> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152008990 <col:23> 'struct lo_data *' lvalue ParmVar 0x151928648 'lo' 'struct lo_data *'
+    | |-RecoveryExpr 0x152008a28 <col:38, col:42> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1520089f0 <col:38> 'struct lo_data *' lvalue ParmVar 0x151928648 'lo' 'struct lo_data *'
+    | `-DeclRefExpr 0x152008a50 <col:59> 'struct fuse_file_info *' lvalue ParmVar 0x152008478 'fi' 'struct fuse_file_info *'
+    |-IfStmt 0x153809040 <line:12:5, line:30:5>
+    | |-BinaryOperator 0x152008b00 <line:12:9, col:14> 'int' '<'
+    | | |-ImplicitCastExpr 0x152008ae8 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x152008aa8 <col:9> 'int' lvalue Var 0x152008708 'fd' 'int'
+    | | `-IntegerLiteral 0x152008ac8 <col:14> 'int' 0
+    | `-CompoundStmt 0x153809010 <col:17, line:30:5>
+    |   |-IfStmt 0x152008ec0 <line:13:9, line:18:9>
+    |   | |-RecoveryExpr 0x152008b38 <line:13:13> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x152008ea0 <col:27, line:18:9>
+    |   |   |-BinaryOperator 0x152008dc8 <line:14:13, col:64> 'int' contains-errors '='
+    |   |   | |-DeclRefExpr 0x152008b58 <col:13> 'int' lvalue Var 0x1520087d8 'err' 'int'
+    |   |   | `-CallExpr 0x152008d98 <col:19, col:64> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x152008c58 <col:19> 'int ()' Function 0x152008ba0 'drop_effective_cap' 'int ()'
+    |   |   |   |-StringLiteral 0x152008cc0 <col:38> 'char[4]' lvalue "STR"
+    |   |   |   `-UnaryOperator 0x152008d80 <col:45, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |     `-RecoveryExpr 0x152008d60 <col:46> '<dependent type>' contains-errors lvalue
+    |   |   `-IfStmt 0x152008e80 <line:15:13, line:17:13>
+    |   |     |-ImplicitCastExpr 0x152008e08 <line:15:17> 'int' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x152008de8 <col:17> 'int' lvalue Var 0x1520087d8 'err' 'int'
+    |   |     `-CompoundStmt 0x152008e68 <col:22, line:17:13>
+    |   |       `-ReturnStmt 0x152008e58 <line:16:17, col:24>
+    |   |         `-ImplicitCastExpr 0x152008e40 <col:24> 'int' <LValueToRValue>
+    |   |           `-DeclRefExpr 0x152008e20 <col:24> 'int' lvalue Var 0x1520087d8 'err' 'int'
+    |   |-BinaryOperator 0x1520090d8 <line:20:9, col:48> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x152008ee0 <col:9> 'int' lvalue Var 0x152008708 'fd' 'int'
+    |   | `-CallExpr 0x1520090a0 <col:14, col:48> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x152008fe0 <col:14> 'int ()' Function 0x152008f28 'lo_inode_open' 'int ()'
+    |   |   |-DeclRefExpr 0x152009000 <col:28> 'struct lo_data *' lvalue ParmVar 0x151928648 'lo' 'struct lo_data *'
+    |   |   |-DeclRefExpr 0x152009020 <col:32> 'struct lo_inode *' lvalue ParmVar 0x152008228 'inode' 'struct lo_inode *'
+    |   |   `-RecoveryExpr 0x152009078 <col:39, col:43> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x152009040 <col:39> 'struct fuse_file_info *' lvalue ParmVar 0x152008478 'fi' 'struct fuse_file_info *'
+    |   |-IfStmt 0x153808ee0 <line:22:9, line:26:9>
+    |   | |-RecoveryExpr 0x152009110 <line:22:13> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x153808ec8 <col:33, line:26:9>
+    |   |   `-IfStmt 0x153808ea8 <line:23:13, line:25:13>
+    |   |     |-CallExpr 0x153808c98 <line:23:17, col:41> 'int'
+    |   |     | |-ImplicitCastExpr 0x153808c80 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | | `-DeclRefExpr 0x153808c10 <col:17> 'int ()' Function 0x152009158 'gain_effective_cap' 'int ()'
+    |   |     | `-ImplicitCastExpr 0x153808cc0 <col:36> 'char *' <ArrayToPointerDecay>
+    |   |     |   `-StringLiteral 0x153808c30 <col:36> 'char[4]' lvalue "STR"
+    |   |     `-CompoundStmt 0x153808e90 <col:44, line:25:13>
+    |   |       `-CallExpr 0x153808e60 <line:24:17, col:45> '<dependent type>' contains-errors
+    |   |         |-DeclRefExpr 0x153808db8 <col:17> 'int ()' Function 0x153808d00 'fuse_log' 'int ()'
+    |   |         |-RecoveryExpr 0x153808e40 <col:26> '<dependent type>' contains-errors lvalue
+    |   |         `-StringLiteral 0x153808df0 <col:40> 'char[4]' lvalue "STR"
+    |   `-IfStmt 0x153808ff0 <line:27:9, line:29:9>
+    |     |-BinaryOperator 0x153808f58 <line:27:13, col:18> 'int' '<'
+    |     | |-ImplicitCastExpr 0x153808f40 <col:13> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x153808f00 <col:13> 'int' lvalue Var 0x152008708 'fd' 'int'
+    |     | `-IntegerLiteral 0x153808f20 <col:18> 'int' 0
+    |     `-CompoundStmt 0x153808fd8 <col:21, line:29:9>
+    |       `-ReturnStmt 0x153808fc8 <line:28:13, col:21>
+    |         `-UnaryOperator 0x153808fb0 <col:20, col:21> 'int' prefix '-'
+    |           `-ImplicitCastExpr 0x153808f98 <col:21> 'int' <LValueToRValue>
+    |             `-DeclRefExpr 0x153808f78 <col:21> 'int' lvalue Var 0x152008708 'fd' 'int'
+    |-CallExpr 0x1538091d8 <line:32:5, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153809140 <col:5> 'int ()' Function 0x153809088 'pthread_mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1538091c0 <col:24, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x153809198 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x153809160 <col:25> 'struct lo_data *' lvalue ParmVar 0x151928648 'lo' 'struct lo_data *'
+    |-CallExpr 0x153809530 <line:34:5, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153809498 <col:5> 'int ()' Function 0x1538093e0 'pthread_mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x153809518 <col:26, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1538094f0 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1538094b8 <col:27> 'struct lo_data *' lvalue ParmVar 0x151928648 'lo' 'struct lo_data *'
+    |-IfStmt 0x153809740 <line:35:5, line:38:5>
+    | |-RecoveryExpr 0x153809590 <line:35:9, col:16> '_Bool' contains-errors
+    | `-CompoundStmt 0x153809728 <col:19, line:38:5>
+    |   `-CallExpr 0x1538096e8 <line:36:9, col:17> 'int'
+    |     |-ImplicitCastExpr 0x1538096d0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x153809690 <col:9> 'int ()' Function 0x1538095d8 'close' 'int ()'
+    |     `-ImplicitCastExpr 0x153809710 <col:15> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x1538096b0 <col:15> 'int' lvalue Var 0x152008708 'fd' 'int'
+    |-IfStmt 0x153809a50 <line:41:5, line:45:5> has_else
+    | |-RecoveryExpr 0x153809820 <line:41:9, col:22> '_Bool' contains-errors
+    | |-CompoundStmt 0x1538098e0 <col:34, line:43:5>
+    | | `-BinaryOperator 0x1538098c0 <line:42:9, col:25> '<dependent type>' contains-errors '='
+    | |   |-RecoveryExpr 0x153809878 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x153809840 <col:9> 'struct fuse_file_info *' lvalue ParmVar 0x152008478 'fi' 'struct fuse_file_info *'
+    | |   `-IntegerLiteral 0x1538098a0 <col:25> 'int' 1
+    | `-IfStmt 0x153809a30 <line:43:12, line:45:5>
+    |   |-RecoveryExpr 0x153809958 <line:43:16, col:29> '_Bool' contains-errors
+    |   `-CompoundStmt 0x153809a18 <col:43, line:45:5>
+    |     `-BinaryOperator 0x1538099f8 <line:44:9, col:26> '<dependent type>' contains-errors '='
+    |       |-RecoveryExpr 0x1538099b0 <col:9, col:13> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x153809978 <col:9> 'struct fuse_file_info *' lvalue ParmVar 0x152008478 'fi' 'struct fuse_file_info *'
+    |       `-IntegerLiteral 0x1538099d8 <col:26> 'int' 1
+    `-ReturnStmt 0x153809aa0 <line:46:5, col:12>
+      `-IntegerLiteral 0x153809a80 <col:12> 'int' 0

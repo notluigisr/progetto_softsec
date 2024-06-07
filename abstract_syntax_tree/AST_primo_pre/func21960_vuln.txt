@@ -1,0 +1,90 @@
+`-FunctionDecl 0x154940b40  line:1:13 freeary 'void (struct ipc_namespace *, struct kern_ipc_perm *)' static
+  |-ParmVarDecl 0x154928648 <col:21, col:43> col:43 used ns 'struct ipc_namespace *'
+  |-ParmVarDecl 0x154940a28 <col:47, col:69> col:69 used ipcp 'struct kern_ipc_perm *'
+  `-CompoundStmt 0x156008be0 <line:2:1, line:42:1>
+    |-DeclStmt 0x154940ec0 <line:3:2, col:26>
+    | |-RecordDecl 0x154940c40 <col:2, col:9> col:9 struct sem_undo
+    | |-VarDecl 0x154940da8 <col:2, col:19> col:19 used un 'struct sem_undo *'
+    | `-VarDecl 0x154940e38 <col:2, col:24> col:24 used tu 'struct sem_undo *'
+    |-DeclStmt 0x154941160 <line:4:2, col:26>
+    | |-RecordDecl 0x154940ed8 <col:2, col:9> col:9 struct sem_queue
+    | |-VarDecl 0x154941048 <col:2, col:20> col:20 used q 'struct sem_queue *'
+    | `-VarDecl 0x1549410d8 <col:2, col:24> col:24 used tq 'struct sem_queue *'
+    |-DeclStmt 0x1549414f0 <line:5:2, col:72>
+    | |-RecordDecl 0x154941178 <col:2, col:9> col:9 struct sem_array
+    | `-VarDecl 0x1549412e8 <col:2, col:20> col:20 used sma 'struct sem_array *'
+    |-DeclStmt 0x154941688 <line:6:2, col:24>
+    | |-RecordDecl 0x154941508 <col:2, col:9> col:9 struct list_head
+    | `-VarDecl 0x154941608 <col:2, col:19> col:19 invalid tasks 'struct list_head'
+    |-DeclStmt 0x154941720 <line:7:2, col:7>
+    | `-VarDecl 0x1549416b8 <col:2, col:6> col:6 i 'int'
+    |-CallExpr 0x1549418f8 <line:10:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x154941818 <col:2> 'int ()' Function 0x154941760 'assert_spin_locked' 'int ()'
+    | `-UnaryOperator 0x1549418e0 <col:21, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x154941898 <col:22, col:36> '<dependent type>' contains-errors lvalue .lock
+    |     `-RecoveryExpr 0x154941870 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x154941838 <col:22> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'
+    |-CallExpr 0x154942f50 <line:11:2, col:57> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x154942e00 <col:2> 'int ()' Function 0x154941948 'list_for_each_entry_safe' 'int ()'
+    | |-DeclRefExpr 0x154942e20 <col:27> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    | |-DeclRefExpr 0x154942e40 <col:31> 'struct sem_undo *' lvalue Var 0x154940e38 'tu' 'struct sem_undo *'
+    | |-UnaryOperator 0x154942ec0 <col:35, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x154942e98 <col:36, col:41> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x154942e60 <col:36> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'
+    | `-RecoveryExpr 0x154942f30 <col:50> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x154943878 <col:59, line:18:2>
+    | |-CallExpr 0x154943108 <line:12:3, col:24> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x154943070 <col:3> 'int ()' Function 0x154942fb8 'list_del' 'int ()'
+    | | `-UnaryOperator 0x1549430f0 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x1549430c8 <col:13, col:17> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x154943090 <col:13> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    | |-CallExpr 0x1549432f0 <line:13:3, col:27> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x154943210 <col:3> 'int ()' Function 0x154943158 'spin_lock' 'int ()'
+    | | `-UnaryOperator 0x1549432d8 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-CXXDependentScopeMemberExpr 0x154943290 <col:14, col:23> '<dependent type>' contains-errors lvalue ->lock
+    | |     `-RecoveryExpr 0x154943268 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x154943230 <col:14> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    | |-BinaryOperator 0x1549433b0 <line:14:3, col:16> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x154943350 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x154943318 <col:3> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    | | `-UnaryOperator 0x154943398 <col:15, col:16> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x154943378 <col:16> 'int' 1
+    | |-CallExpr 0x154943548 <line:15:3, col:30> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1549434b0 <col:3> 'int ()' Function 0x1549433f8 'list_del_rcu' 'int ()'
+    | | `-UnaryOperator 0x154943530 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x154943508 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1549434d0 <col:17> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    | `-CallExpr 0x154943730 <line:16:3, col:29> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x154943650 <col:3> 'int ()' Function 0x154943598 'spin_unlock' 'int ()'
+    |   `-UnaryOperator 0x154943718 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x1549436d0 <col:16, col:25> '<dependent type>' contains-errors lvalue ->lock
+    |       `-RecoveryExpr 0x1549436a8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x154943670 <col:16> 'struct sem_undo *' lvalue Var 0x154940da8 'un' 'struct sem_undo *'
+    |-CallExpr 0x1549439e8 <line:21:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x154943990 <col:2> 'int ()' Function 0x1549438d8 'INIT_LIST_HEAD' 'int ()'
+    | `-UnaryOperator 0x1549439d0 <col:17, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1549439b0 <col:18> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x154943c58 <line:36:2, col:16> 'int'
+    | |-ImplicitCastExpr 0x154943c40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x154943bc8 <col:2> 'int ()' Function 0x154943b10 'sem_unlock' 'int ()'
+    | `-ImplicitCastExpr 0x154943c80 <col:13> 'struct sem_array *' <LValueToRValue>
+    |   `-DeclRefExpr 0x154943be8 <col:13> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'
+    |-CallExpr 0x154943dd0 <line:38:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x154943d78 <col:2> 'int ()' Function 0x154943cc0 'wake_up_sem_queue_do' 'int ()'
+    | `-UnaryOperator 0x154943db8 <col:23, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x154943d98 <col:24> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x1560088c0 <line:39:2, col:24> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x156008838 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x156008800 <col:2> 'struct ipc_namespace *' lvalue ParmVar 0x154928648 'ns' 'struct ipc_namespace *'
+    | `-RecoveryExpr 0x156008898 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x156008860 <col:19> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'
+    |-CallExpr 0x156008a28 <line:40:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x156008a10 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1560089d0 <col:2> 'int ()' Function 0x156008918 'security_sem_free' 'int ()'
+    | `-ImplicitCastExpr 0x156008a50 <col:20> 'struct sem_array *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1560089f0 <col:20> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'
+    `-CallExpr 0x156008ba0 <line:41:2, col:20> 'int'
+      |-ImplicitCastExpr 0x156008b88 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x156008b48 <col:2> 'int ()' Function 0x156008a90 'ipc_rcu_putref' 'int ()'
+      `-ImplicitCastExpr 0x156008bc8 <col:17> 'struct sem_array *' <LValueToRValue>
+        `-DeclRefExpr 0x156008b68 <col:17> 'struct sem_array *' lvalue Var 0x1549412e8 'sma' 'struct sem_array *'

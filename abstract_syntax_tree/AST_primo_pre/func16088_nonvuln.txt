@@ -1,0 +1,23 @@
+`-FunctionDecl 0x144928750  line:1:13 ext4_blkdev_remove 'void (struct ext4_sb_info *)' static
+  |-ParmVarDecl 0x144928648 <col:32, col:53> col:53 used sbi 'struct ext4_sb_info *'
+  `-CompoundStmt 0x144941030 <line:2:1, line:9:1>
+    |-DeclStmt 0x144940c38 <line:3:2, col:27>
+    | |-RecordDecl 0x144940a48 <col:2, col:9> col:9 struct block_device
+    | `-VarDecl 0x144940bb8 <col:2, col:23> col:23 used bdev 'struct block_device *'
+    |-BinaryOperator 0x144940cd0 <line:4:2, col:14> 'struct block_device *' contains-errors '='
+    | |-DeclRefExpr 0x144940c50 <col:2> 'struct block_device *' lvalue Var 0x144940bb8 'bdev' 'struct block_device *'
+    | `-RecoveryExpr 0x144940ca8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x144940c70 <col:9> 'struct ext4_sb_info *' lvalue ParmVar 0x144928648 'sbi' 'struct ext4_sb_info *'
+    `-IfStmt 0x144941010 <line:5:2, line:8:2>
+      |-ImplicitCastExpr 0x144940d10 <line:5:6> 'struct block_device *' <LValueToRValue>
+      | `-DeclRefExpr 0x144940cf0 <col:6> 'struct block_device *' lvalue Var 0x144940bb8 'bdev' 'struct block_device *'
+      `-CompoundStmt 0x144940ff0 <col:12, line:8:2>
+        |-CallExpr 0x144940ed8 <line:6:3, col:23> 'int'
+        | |-ImplicitCastExpr 0x144940ec0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x144940e50 <col:3> 'int ()' Function 0x144940d98 'ext4_blkdev_put' 'int ()'
+        | `-ImplicitCastExpr 0x144940f00 <col:19> 'struct block_device *' <LValueToRValue>
+        |   `-DeclRefExpr 0x144940e70 <col:19> 'struct block_device *' lvalue Var 0x144940bb8 'bdev' 'struct block_device *'
+        `-BinaryOperator 0x144940fd0 <line:7:3, col:23> '<dependent type>' contains-errors '='
+          |-RecoveryExpr 0x144940f50 <col:3, col:8> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x144940f18 <col:3> 'struct ext4_sb_info *' lvalue ParmVar 0x144928648 'sbi' 'struct ext4_sb_info *'
+          `-RecoveryExpr 0x144940fb0 <col:23> '<dependent type>' contains-errors lvalue

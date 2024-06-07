@@ -1,0 +1,26 @@
+`-FunctionDecl 0x13c026938  line:1:1 invalid dma_async_memcpy_buf_to_pg 'int (struct dma_chan *, struct page *, unsigned int, void *, int)'
+  |-ParmVarDecl 0x13c00e248 <col:28, col:45> col:45 used chan 'struct dma_chan *'
+  |-ParmVarDecl 0x13c026628 <col:51, col:64> col:64 used page 'struct page *'
+  |-ParmVarDecl 0x13c0266a8 <line:2:7, col:20> col:20 used offset 'unsigned int'
+  |-ParmVarDecl 0x13c026728 <col:28, col:34> col:34 used kdata 'void *'
+  |-ParmVarDecl 0x13c0267c0 <col:41, col:48> col:48 invalid len 'int'
+  `-CompoundStmt 0x13c027108 <line:3:1, line:7:1>
+    `-ReturnStmt 0x13c0270f8 <line:4:2, line:6:46>
+      `-CallExpr 0x13c0270a8 <line:4:9, line:6:46> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13c026b60 <line:4:9> 'int ()' Function 0x13c026aa8 'dma_async_memcpy_pg_to_pg' 'int ()'
+        |-DeclRefExpr 0x13c026b80 <col:35> 'struct dma_chan *' lvalue ParmVar 0x13c00e248 'chan' 'struct dma_chan *'
+        |-DeclRefExpr 0x13c026ba0 <col:41> 'struct page *' lvalue ParmVar 0x13c026628 'page' 'struct page *'
+        |-DeclRefExpr 0x13c026bc0 <col:47> 'unsigned int' lvalue ParmVar 0x13c0266a8 'offset' 'unsigned int'
+        |-CallExpr 0x13c026fa0 <line:5:7, col:25> 'int'
+        | |-ImplicitCastExpr 0x13c026f88 <col:7> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x13c026cc0 <col:7> 'int ()' Function 0x13c026c08 'virt_to_page' 'int ()'
+        | `-ImplicitCastExpr 0x13c026fc8 <col:20> 'void *' <LValueToRValue>
+        |   `-DeclRefExpr 0x13c026ce0 <col:20> 'void *' lvalue ParmVar 0x13c026728 'kdata' 'void *'
+        |-BinaryOperator 0x13c027088 <line:6:7, col:32> '<dependent type>' contains-errors '&'
+        | |-CStyleCastExpr 0x13c027010 <col:7, col:23> 'unsigned long' <PointerToIntegral>
+        | | `-ImplicitCastExpr 0x13c026ff8 <col:23> 'void *' <LValueToRValue> part_of_explicit_cast
+        | |   `-DeclRefExpr 0x13c026d88 <col:23> 'void *' lvalue ParmVar 0x13c026728 'kdata' 'void *'
+        | `-UnaryOperator 0x13c027070 <col:31, col:32> '<dependent type>' contains-errors prefix '~' cannot overflow
+        |   `-ImplicitCastExpr 0x13c027058 <col:32> '<dependent type>' contains-errors <LValueToRValue>
+        |     `-RecoveryExpr 0x13c027038 <col:32> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x13c026e68 <col:43> '<dependent type>' contains-errors lvalue

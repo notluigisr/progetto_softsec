@@ -1,0 +1,43 @@
+`-FunctionDecl 0x143128750  line:1:6 vmacache_flush_all 'void (struct mm_struct *)'
+  |-ParmVarDecl 0x143128648 <col:25, col:43> col:43 used mm 'struct mm_struct *'
+  `-CompoundStmt 0x143141778 <line:2:1, line:18:1>
+    |-DeclStmt 0x143140cd0 <line:3:2, col:27>
+    | |-RecordDecl 0x143140a48 <col:2, col:9> col:9 struct task_struct
+    | |-VarDecl 0x143140bb8 <col:2, col:22> col:22 used g 'struct task_struct *'
+    | `-VarDecl 0x143140c48 <col:2, col:26> col:26 used p 'struct task_struct *'
+    |-CallExpr 0x143140e90 <line:5:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x143140e10 <col:2> 'int ()' Function 0x143140d58 'count_vm_vmacache_event' 'int ()'
+    | `-RecoveryExpr 0x143140e70 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1431410a8 <line:8:2, line:9:3>
+    | |-BinaryOperator 0x143141078 <line:8:6, col:36> 'int' contains-errors '=='
+    | | |-CallExpr 0x143141030 <col:6, col:31> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x143140f98 <col:6> 'int ()' Function 0x143140ee0 'atomic_read' 'int ()'
+    | | | `-UnaryOperator 0x143141018 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x143140ff0 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x143140fb8 <col:19> 'struct mm_struct *' lvalue ParmVar 0x143128648 'mm' 'struct mm_struct *'
+    | | `-IntegerLiteral 0x143141058 <col:36> 'int' 1
+    | `-ReturnStmt 0x143141098 <line:9:3>
+    |-CallExpr 0x143141218 <line:11:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x143141200 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1431411a8 <col:2> 'int ()' Function 0x1431410f0 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x143141390 <line:12:2, col:30> 'int'
+    | |-ImplicitCastExpr 0x143141378 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x143141318 <col:2> 'int ()' Function 0x143141260 'for_each_process_thread' 'int ()'
+    | |-ImplicitCastExpr 0x1431413c0 <col:26> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x143141338 <col:26> 'struct task_struct *' lvalue Var 0x143140bb8 'g' 'struct task_struct *'
+    | `-ImplicitCastExpr 0x1431413d8 <col:29> 'struct task_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x143141358 <col:29> 'struct task_struct *' lvalue Var 0x143140c48 'p' 'struct task_struct *'
+    |-CompoundStmt 0x143141628 <col:32, line:16:2>
+    | `-IfStmt 0x143141608 <line:14:3, line:15:20>
+    |   |-BinaryOperator 0x143141470 <line:14:7, col:16> 'int' contains-errors '=='
+    |   | |-DeclRefExpr 0x1431413f0 <col:7> 'struct mm_struct *' lvalue ParmVar 0x143128648 'mm' 'struct mm_struct *'
+    |   | `-RecoveryExpr 0x143141448 <col:13, col:16> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x143141410 <col:13> 'struct task_struct *' lvalue Var 0x143140c48 'p' 'struct task_struct *'
+    |   `-CallExpr 0x1431415c8 <line:15:4, col:20> 'int'
+    |     |-ImplicitCastExpr 0x1431415b0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x143141570 <col:4> 'int ()' Function 0x1431414b8 'vmacache_flush' 'int ()'
+    |     `-ImplicitCastExpr 0x1431415f0 <col:19> 'struct task_struct *' <LValueToRValue>
+    |       `-DeclRefExpr 0x143141590 <col:19> 'struct task_struct *' lvalue Var 0x143140c48 'p' 'struct task_struct *'
+    `-CallExpr 0x143141758 <line:17:2, col:18> 'int'
+      `-ImplicitCastExpr 0x143141740 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x143141720 <col:2> 'int ()' Function 0x143141668 'rcu_read_unlock' 'int ()'

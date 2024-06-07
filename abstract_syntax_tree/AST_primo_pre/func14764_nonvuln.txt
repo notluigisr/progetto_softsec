@@ -1,0 +1,109 @@
+`-FunctionDecl 0x157140b48  line:1:22 mb2_cache_scan 'unsigned long (struct shrinker *, struct shrink_control *)' static
+  |-ParmVarDecl 0x157128648 <col:37, col:54> col:54 used shrink 'struct shrinker *'
+  |-ParmVarDecl 0x157140a28 <line:2:9, col:32> col:32 used sc 'struct shrink_control *'
+  `-CompoundStmt 0x16000a5d0 <line:3:1, line:34:1>
+    |-DeclStmt 0x157140d28 <line:4:2, col:33>
+    | `-VarDecl 0x157140c60 <col:2, col:23> col:6 used nr_to_scan 'int' cinit
+    |   `-RecoveryExpr 0x157140d00 <col:19, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157140cc8 <col:19> 'struct shrink_control *' lvalue ParmVar 0x157140a28 'sc' 'struct shrink_control *'
+    |-DeclStmt 0x1571410d0 <line:5:2, line:6:21>
+    | |-RecordDecl 0x157140d40 <line:5:2, col:9> col:9 struct mb2_cache
+    | `-VarDecl 0x157140ea8 <col:2, col:20> col:20 used cache 'struct mb2_cache *'
+    |-DeclStmt 0x1571412d8 <line:7:2, col:31>
+    | |-RecordDecl 0x1571410e8 <col:2, col:9> col:9 struct mb2_cache_entry
+    | `-VarDecl 0x157141258 <col:2, col:26> col:26 used entry 'struct mb2_cache_entry *'
+    |-DeclStmt 0x1571414d8 <line:8:2, col:28>
+    | |-RecordDecl 0x1571412f0 <col:2, col:9> col:9 struct hlist_bl_head
+    | `-VarDecl 0x157141458 <col:2, col:24> col:24 used head 'struct hlist_bl_head *'
+    |-DeclStmt 0x1571415a8 <line:9:2, col:25>
+    | `-VarDecl 0x157141508 <col:2, col:24> col:15 used shrunk 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x157141590 <col:24> 'unsigned int' <IntegralCast>
+    |     `-IntegerLiteral 0x157141570 <col:24> 'int' 0
+    |-CallExpr 0x157141738 <line:11:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1571416a0 <col:2> 'int ()' Function 0x1571415e8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x157141720 <col:12, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1571416f8 <col:13, col:20> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1571416c0 <col:13> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    |-WhileStmt 0x16000a490 <line:12:2, line:30:2>
+    | |-BinaryOperator 0x157141950 <line:12:9, col:55> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x157141780 <col:9, col:19> 'int' contains-errors postfix '--'
+    | | | `-DeclRefExpr 0x157141760 <col:9> 'int' contains-errors lvalue Var 0x157140c60 'nr_to_scan' 'int'
+    | | `-UnaryOperator 0x157141938 <col:25, col:55> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x157141910 <col:26, col:55> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x157141878 <col:26> 'int ()' Function 0x1571417c0 'list_empty' 'int ()'
+    | |     `-UnaryOperator 0x1571418f8 <col:37, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |       `-RecoveryExpr 0x1571418d0 <col:38, col:45> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x157141898 <col:38> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    | `-CompoundStmt 0x16000a430 <col:58, line:30:2>
+    |   |-CallExpr 0x1600094e0 <line:15:3, col:35> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x160009448 <col:3> 'int ()' Function 0x160009390 'list_del_init' 'int ()'
+    |   | `-UnaryOperator 0x1600094c8 <col:17, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1600094a0 <col:18, col:25> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x160009468 <col:18> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   |-UnaryOperator 0x160009568 <line:16:3, col:23> '<dependent type>' contains-errors postfix '--' cannot overflow
+    |   | `-RecoveryExpr 0x160009540 <col:3, col:10> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x160009508 <col:3> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    |   |-CallExpr 0x1600096f8 <line:18:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x160009660 <col:3> 'int ()' Function 0x1600095a8 'spin_unlock' 'int ()'
+    |   | `-UnaryOperator 0x1600096e0 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x1600096b8 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x160009680 <col:16> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    |   |-BinaryOperator 0x1600097a0 <line:19:3, col:17> 'struct hlist_bl_head *' contains-errors '='
+    |   | |-DeclRefExpr 0x160009720 <col:3> 'struct hlist_bl_head *' lvalue Var 0x157141458 'head' 'struct hlist_bl_head *'
+    |   | `-RecoveryExpr 0x160009778 <col:10, col:17> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x160009740 <col:10> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   |-CallExpr 0x160009928 <line:20:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x160009910 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1600098a0 <col:3> 'int ()' Function 0x1600097e8 'hlist_bl_lock' 'int ()'
+    |   | `-ImplicitCastExpr 0x160009950 <col:17> 'struct hlist_bl_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1600098c0 <col:17> 'struct hlist_bl_head *' lvalue Var 0x157141458 'head' 'struct hlist_bl_head *'
+    |   |-IfStmt 0x160009e80 <line:21:3, line:24:3>
+    |   | |-UnaryOperator 0x160009b08 <line:21:7, col:45> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x160009ae0 <col:8, col:45> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x160009a48 <col:8> 'int ()' Function 0x160009990 'hlist_bl_unhashed' 'int ()'
+    |   | |   `-UnaryOperator 0x160009ac8 <col:26, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |     `-RecoveryExpr 0x160009aa0 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    |   | |       `-DeclRefExpr 0x160009a68 <col:27> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   | `-CompoundStmt 0x160009e60 <col:48, line:24:3>
+    |   |   |-CallExpr 0x160009c98 <line:22:4, col:41> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x160009c00 <col:4> 'int ()' Function 0x160009b48 'hlist_bl_del_init' 'int ()'
+    |   |   | `-UnaryOperator 0x160009c80 <col:22, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   `-RecoveryExpr 0x160009c58 <col:23, col:30> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x160009c20 <col:23> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   |   `-CallExpr 0x160009e38 <line:23:4, col:31> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x160009da0 <col:4> 'int ()' Function 0x160009ce8 'atomic_dec' 'int ()'
+    |   |     `-UnaryOperator 0x160009e20 <col:15, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |       `-RecoveryExpr 0x160009df8 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x160009dc0 <col:16> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   |-CallExpr 0x160009fd8 <line:25:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x160009fc0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x160009f80 <col:3> 'int ()' Function 0x160009ec8 'hlist_bl_unlock' 'int ()'
+    |   | `-ImplicitCastExpr 0x16000a000 <col:19> 'struct hlist_bl_head *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x160009fa0 <col:19> 'struct hlist_bl_head *' lvalue Var 0x157141458 'head' 'struct hlist_bl_head *'
+    |   |-IfStmt 0x16000a218 <line:26:3, line:27:10>
+    |   | |-CallExpr 0x16000a170 <line:26:7, col:39> 'int'
+    |   | | |-ImplicitCastExpr 0x16000a158 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x16000a0f8 <col:7> 'int ()' Function 0x16000a040 'mb2_cache_entry_put' 'int ()'
+    |   | | |-ImplicitCastExpr 0x16000a1a0 <col:27> 'struct mb2_cache *' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x16000a118 <col:27> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    |   | | `-ImplicitCastExpr 0x16000a1b8 <col:34> 'struct mb2_cache_entry *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x16000a138 <col:34> 'struct mb2_cache_entry *' lvalue Var 0x157141258 'entry' 'struct mb2_cache_entry *'
+    |   | `-UnaryOperator 0x16000a200 <line:27:4, col:10> 'unsigned int' postfix '++'
+    |   |   `-DeclRefExpr 0x16000a1d0 <col:4> 'unsigned int' lvalue Var 0x157141508 'shrunk' 'unsigned int'
+    |   |-CallExpr 0x16000a350 <line:28:3, col:16> 'int'
+    |   | `-ImplicitCastExpr 0x16000a338 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x16000a318 <col:3> 'int ()' Function 0x16000a260 'cond_resched' 'int ()'
+    |   `-CallExpr 0x16000a408 <line:29:3, col:36> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x16000a370 <col:3> 'int ()' Function 0x1571415e8 'spin_lock' 'int ()'
+    |     `-UnaryOperator 0x16000a3f0 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x16000a3c8 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x16000a390 <col:14> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    |-CallExpr 0x16000a548 <line:31:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x16000a4b0 <col:2> 'int ()' Function 0x1600095a8 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x16000a530 <col:14, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x16000a508 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x16000a4d0 <col:15> 'struct mb2_cache *' lvalue Var 0x157140ea8 'cache' 'struct mb2_cache *'
+    `-ReturnStmt 0x16000a5c0 <line:33:2, col:9>
+      `-ImplicitCastExpr 0x16000a5a8 <col:9> 'unsigned long' <IntegralCast>
+        `-ImplicitCastExpr 0x16000a590 <col:9> 'unsigned int' <LValueToRValue>
+          `-DeclRefExpr 0x16000a570 <col:9> 'unsigned int' lvalue Var 0x157141508 'shrunk' 'unsigned int'

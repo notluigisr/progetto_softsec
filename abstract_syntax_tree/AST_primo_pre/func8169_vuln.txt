@@ -1,0 +1,93 @@
+`-FunctionDecl 0x14f941ae8  line:1:12 invalid translate_desc 'int (struct vhost_dev *, int, int, int, int)' static
+  |-ParmVarDecl 0x14f928648 <col:27, col:45> col:45 used dev 'struct vhost_dev *'
+  |-ParmVarDecl 0x14f9286e0 <col:50, col:54> col:54 referenced invalid addr 'int'
+  |-ParmVarDecl 0x14f928760 <col:60, col:64> col:64 invalid len 'int'
+  |-ParmVarDecl 0x14f9418f0 <line:2:6, col:19> col:19 invalid iov 'int'
+  |-ParmVarDecl 0x14f941970 <col:26, col:30> col:30 used iov_size 'int'
+  `-CompoundStmt 0x14f943488 <line:3:1, line:36:1>
+    |-DeclStmt 0x14f941da8 <line:4:2, col:39>
+    | |-RecordDecl 0x14f941bb8 <col:8, col:15> col:15 struct vhost_memory_region
+    | `-VarDecl 0x14f941d28 <col:2, col:36> col:36 used reg 'const struct vhost_memory_region *'
+    |-DeclStmt 0x14f941fa8 <line:5:2, col:26>
+    | |-RecordDecl 0x14f941dc0 <col:2, col:9> col:9 struct vhost_memory
+    | `-VarDecl 0x14f941f28 <col:2, col:23> col:23 used mem 'struct vhost_memory *'
+    |-DeclStmt 0x14f9420e0 <line:6:2, col:20>
+    | `-VarDecl 0x14f942078 <col:2, col:16> col:16 used _iov 'struct iovec *'
+    |-DeclStmt 0x14f942198 <line:8:2, col:13>
+    | `-VarDecl 0x14f942110 <col:2, col:12> col:6 used ret 'int' cinit
+    |   `-IntegerLiteral 0x14f942178 <col:12> 'int' 0
+    |-CallExpr 0x14f942378 <line:10:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x14f942360 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14f942310 <col:2> 'int ()' Function 0x14f942258 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x14f942540 <line:12:2, col:35> 'struct vhost_memory *' contains-errors '='
+    | |-DeclRefExpr 0x14f942398 <col:2> 'struct vhost_memory *' lvalue Var 0x14f941f28 'mem' 'struct vhost_memory *'
+    | `-CallExpr 0x14f942518 <col:8, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14f942498 <col:8> 'int ()' Function 0x14f9423e0 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x14f9424f0 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14f9424b8 <col:24> 'struct vhost_dev *' lvalue ParmVar 0x14f928648 'dev' 'struct vhost_dev *'
+    |-WhileStmt 0x14f9432e8 <line:13:2, line:32:2>
+    | |-RecoveryExpr 0x14f942578 <line:13:9, col:20> '_Bool' contains-errors
+    | `-CompoundStmt 0x14f9432a8 <col:23, line:32:2>
+    |   |-IfStmt 0x14f942898 <line:15:3, line:18:3>
+    |   | |-CallExpr 0x14f942740 <line:15:7, col:31> 'int'
+    |   | | |-ImplicitCastExpr 0x14f942728 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x14f942678 <col:7> 'int ()' Function 0x14f9425c0 'unlikely' 'int ()'
+    |   | | `-BinaryOperator 0x14f942708 <col:16, col:23> 'int' '>='
+    |   | |   |-ImplicitCastExpr 0x14f9426d8 <col:16> 'int' <LValueToRValue>
+    |   | |   | `-DeclRefExpr 0x14f942698 <col:16> 'int' lvalue Var 0x14f942110 'ret' 'int'
+    |   | |   `-ImplicitCastExpr 0x14f9426f0 <col:23> 'int' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x14f9426b8 <col:23> 'int' lvalue ParmVar 0x14f941970 'iov_size' 'int'
+    |   | `-CompoundStmt 0x14f942878 <col:34, line:18:3>
+    |   |   |-BinaryOperator 0x14f942850 <line:16:4, col:11> 'int' contains-errors '='
+    |   |   | |-DeclRefExpr 0x14f942768 <col:4> 'int' lvalue Var 0x14f942110 'ret' 'int'
+    |   |   | `-UnaryOperator 0x14f942838 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |   `-ImplicitCastExpr 0x14f942820 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |     `-RecoveryExpr 0x14f942800 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-BreakStmt 0x14f942870 <line:17:4>
+    |   |-BinaryOperator 0x14f942a70 <line:19:3, col:35> 'const struct vhost_memory_region *' contains-errors '='
+    |   | |-DeclRefExpr 0x14f9428b8 <col:3> 'const struct vhost_memory_region *' lvalue Var 0x14f941d28 'reg' 'const struct vhost_memory_region *'
+    |   | `-CallExpr 0x14f942a38 <col:9, col:35> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14f9429b8 <col:9> 'int ()' Function 0x14f942900 'find_region' 'int ()'
+    |   |   |-DeclRefExpr 0x14f9429d8 <col:21> 'struct vhost_memory *' lvalue Var 0x14f941f28 'mem' 'struct vhost_memory *'
+    |   |   |-RecoveryExpr 0x14f9429f8 <col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-RecoveryExpr 0x14f942a18 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-IfStmt 0x14f942c60 <line:20:3, line:23:3>
+    |   | |-CallExpr 0x14f942b18 <line:20:7, col:20> 'int'
+    |   | | |-ImplicitCastExpr 0x14f942b00 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x14f942a90 <col:7> 'int ()' Function 0x14f9425c0 'unlikely' 'int ()'
+    |   | | `-UnaryOperator 0x14f942ae8 <col:16, col:17> 'int' prefix '!' cannot overflow
+    |   | |   `-ImplicitCastExpr 0x14f942ad0 <col:17> 'const struct vhost_memory_region *' <LValueToRValue>
+    |   | |     `-DeclRefExpr 0x14f942ab0 <col:17> 'const struct vhost_memory_region *' lvalue Var 0x14f941d28 'reg' 'const struct vhost_memory_region *'
+    |   | `-CompoundStmt 0x14f942c40 <col:23, line:23:3>
+    |   |   |-BinaryOperator 0x14f942c18 <line:21:4, col:11> 'int' contains-errors '='
+    |   |   | |-DeclRefExpr 0x14f942b40 <col:4> 'int' lvalue Var 0x14f942110 'ret' 'int'
+    |   |   | `-UnaryOperator 0x14f942c00 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |   `-ImplicitCastExpr 0x14f942be8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |     `-RecoveryExpr 0x14f942bc8 <col:11> '<dependent type>' contains-errors lvalue
+    |   |   `-BreakStmt 0x14f942c38 <line:22:4>
+    |   |-BinaryOperator 0x14f942d00 <line:24:3, col:16> 'struct iovec *' contains-errors '='
+    |   | |-DeclRefExpr 0x14f942c80 <col:3> 'struct iovec *' lvalue Var 0x14f942078 '_iov' 'struct iovec *'
+    |   | `-BinaryOperator 0x14f942ce0 <col:10, col:16> '<dependent type>' contains-errors '+'
+    |   |   |-RecoveryExpr 0x14f942ca0 <col:10> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14f942cc0 <col:16> 'int' lvalue Var 0x14f942110 'ret' 'int'
+    |   |-BinaryOperator 0x14f943208 <line:27:3, line:28:54> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x14f943008 <line:27:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x14f942fd0 <col:3> 'struct iovec *' lvalue Var 0x14f942078 '_iov' 'struct iovec *'
+    |   | `-CStyleCastExpr 0x14f9431e0 <col:20, line:28:54> 'void' contains-errors <ToVoid>
+    |   |   `-CStyleCastExpr 0x14f9431a8 <line:27:35, line:28:54> 'unsigned long' contains-errors <Dependent>
+    |   |     `-ParenExpr 0x14f943188 <col:4, col:54> '<dependent type>' contains-errors
+    |   |       `-BinaryOperator 0x14f943130 <col:5, col:39> '<dependent type>' contains-errors '-'
+    |   |         |-BinaryOperator 0x14f9430b0 <col:5, col:27> '<dependent type>' contains-errors '+'
+    |   |         | |-RecoveryExpr 0x14f943068 <col:5, col:10> '<dependent type>' contains-errors lvalue
+    |   |         | | `-DeclRefExpr 0x14f943030 <col:5> 'const struct vhost_memory_region *' lvalue Var 0x14f941d28 'reg' 'const struct vhost_memory_region *'
+    |   |         | `-RecoveryExpr 0x14f943090 <col:27> '<dependent type>' contains-errors lvalue
+    |   |         `-RecoveryExpr 0x14f943108 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |   |           `-DeclRefExpr 0x14f9430d0 <col:34> 'const struct vhost_memory_region *' lvalue Var 0x14f941d28 'reg' 'const struct vhost_memory_region *'
+    |   `-UnaryOperator 0x14f943290 <line:31:3, col:5> 'int' prefix '++'
+    |     `-DeclRefExpr 0x14f943270 <col:5> 'int' lvalue Var 0x14f942110 'ret' 'int'
+    |-CallExpr 0x14f943420 <line:34:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x14f943408 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14f9433e8 <col:2> 'int ()' Function 0x14f943330 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x14f943478 <line:35:2, col:9>
+      `-ImplicitCastExpr 0x14f943460 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14f943440 <col:9> 'int' lvalue Var 0x14f942110 'ret' 'int'

@@ -1,0 +1,20 @@
+`-FunctionDecl 0x14800de90  line:1:16 invalid Raw 'int (int *, int, ...)' static
+  |-ParmVarDecl 0x14800dd28 <col:20, col:30> col:30 invalid p 'int *'
+  |-ParmVarDecl 0x14800dda8 <col:33, <invalid sloc>> col:38 invalid 'int'
+  `-CompoundStmt 0x150123668 <col:48, line:8:5>
+    |-DeclStmt 0x14800e1d8 <line:3:7, col:62>
+    | `-VarDecl 0x14800e128 <col:7, col:11> col:11 used rv 'int'
+    |-IfStmt 0x150123600 <line:4:7, line:6:7>
+    | |-BinaryOperator 0x14800e248 <line:4:11, col:17> 'int' '=='
+    | | |-ImplicitCastExpr 0x14800e230 <col:11> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14800e1f0 <col:11> 'int' lvalue Var 0x14800e128 'rv' 'int'
+    | | `-IntegerLiteral 0x14800e210 <col:17> 'int' 0
+    | `-CompoundStmt 0x14800e3d0 <col:20, line:6:7>
+    |   `-BinaryOperator 0x14800e3b0 <line:5:9, col:33> 'int' contains-errors '='
+    |     |-DeclRefExpr 0x14800e268 <col:9> 'int' lvalue Var 0x14800e128 'rv' 'int'
+    |     `-CallExpr 0x14800e390 <col:14, col:33> '<dependent type>' contains-errors
+    |       `-CXXDependentScopeMemberExpr 0x14800e348 <col:14, col:22> '<dependent type>' contains-errors lvalue ->MaybePause
+    |         `-RecoveryExpr 0x14800e328 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x150123658 <line:7:7, col:14>
+      `-ImplicitCastExpr 0x150123640 <col:14> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x150123620 <col:14> 'int' lvalue Var 0x14800e128 'rv' 'int'

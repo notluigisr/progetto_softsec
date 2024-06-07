@@ -1,0 +1,37 @@
+`-FunctionDecl 0x12a933400  line:1:12 device_cmp 'int (struct nf_conn *, void *)' static
+  |-ParmVarDecl 0x12a91b048 <col:23, col:39> col:39 used i 'struct nf_conn *'
+  |-ParmVarDecl 0x12a91b0c8 <col:42, col:48> col:48 used ifindex 'void *'
+  `-CompoundStmt 0x12a933de8 <line:2:1, line:10:1>
+    |-DeclStmt 0x12a9338f8 <line:3:2, col:45>
+    | |-RecordDecl 0x12a933500 <col:8, col:15> col:15 struct nf_conn_nat
+    | `-VarDecl 0x12a933668 <col:2, col:44> col:28 used nat 'const struct nf_conn_nat *' cinit
+    |   `-ImplicitCastExpr 0x12a9338c8 <col:34, col:44> 'const struct nf_conn_nat *' <IntegralToPointer>
+    |     `-CallExpr 0x12a933888 <col:34, col:44> 'int'
+    |       |-ImplicitCastExpr 0x12a933870 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12a933800 <col:34> 'int ()' Function 0x12a933748 'nfct_nat' 'int ()'
+    |       `-ImplicitCastExpr 0x12a9338b0 <col:43> 'struct nf_conn *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12a933820 <col:43> 'struct nf_conn *' lvalue ParmVar 0x12a91b048 'i' 'struct nf_conn *'
+    |-IfStmt 0x12a933990 <line:5:2, line:6:10>
+    | |-UnaryOperator 0x12a933948 <line:5:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x12a933930 <col:7> 'const struct nf_conn_nat *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12a933910 <col:7> 'const struct nf_conn_nat *' lvalue Var 0x12a933668 'nat' 'const struct nf_conn_nat *'
+    | `-ReturnStmt 0x12a933980 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x12a933960 <col:10> 'int' 0
+    |-IfStmt 0x12a933c80 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x12a933c30 <line:7:6, col:24> 'int' contains-errors '!='
+    | | |-CallExpr 0x12a933bd0 <col:6, col:19> 'int'
+    | | | |-ImplicitCastExpr 0x12a933bb8 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x12a933a90 <col:6> 'int ()' Function 0x12a9339d8 'nf_ct_l3num' 'int ()'
+    | | | `-ImplicitCastExpr 0x12a933bf8 <col:18> 'struct nf_conn *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12a933ab0 <col:18> 'struct nf_conn *' lvalue ParmVar 0x12a91b048 'i' 'struct nf_conn *'
+    | | `-RecoveryExpr 0x12a933c10 <col:24> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a933c70 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x12a933c50 <col:10> 'int' 0
+    `-ReturnStmt 0x12a933dd8 <line:9:2, col:39>
+      `-BinaryOperator 0x12a933db8 <col:9, col:39> 'int' contains-errors '=='
+        |-RecoveryExpr 0x12a933cd8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x12a933ca0 <col:9> 'const struct nf_conn_nat *' lvalue Var 0x12a933668 'nat' 'const struct nf_conn_nat *'
+        `-CStyleCastExpr 0x12a933d90 <col:28, col:39> 'int' <IntegralCast>
+          `-CStyleCastExpr 0x12a933d50 <col:33, col:39> 'long' <PointerToIntegral>
+            `-ImplicitCastExpr 0x12a933d38 <col:39> 'void *' <LValueToRValue> part_of_explicit_cast
+              `-DeclRefExpr 0x12a933d00 <col:39> 'void *' lvalue ParmVar 0x12a91b0c8 'ifindex' 'void *'

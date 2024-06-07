@@ -1,0 +1,36 @@
+`-FunctionDecl 0x147027748  line:1:5 invalid ip_route_input_noref 'int (struct sk_buff *, int, int, int, struct net_device *)'
+  |-ParmVarDecl 0x14700e248 <col:26, col:42> col:42 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14700e2e0 <col:47, col:54> col:54 invalid daddr 'int'
+  |-ParmVarDecl 0x14700e360 <col:61, col:68> col:68 invalid saddr 'int'
+  |-ParmVarDecl 0x147027400 <line:2:5, col:8> col:8 referenced invalid tos 'int'
+  |-ParmVarDecl 0x1470275d8 <col:13, col:32> col:32 used dev 'struct net_device *'
+  `-CompoundStmt 0x1470280f0 <line:3:1, line:13:1>
+    |-DeclStmt 0x147027998 <line:4:2, col:23>
+    | |-RecordDecl 0x147027818 <col:2, col:9> col:9 struct fib_result
+    | `-VarDecl 0x147027918 <col:2, col:20> col:20 invalid res 'struct fib_result'
+    |-DeclStmt 0x147027a30 <line:5:2, col:9>
+    | `-VarDecl 0x1470279c8 <col:2, col:6> col:6 used err 'int'
+    |-CompoundAssignOperator 0x147027af8 <line:7:2, col:9> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x147027a68 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x147027a48 <col:2> 'int' lvalue ParmVar 0x147027400 'tos' 'int'
+    | `-RecoveryExpr 0x147027ad8 <col:9> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147027ce8 <line:8:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x147027cd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x147027c80 <col:2> 'int ()' Function 0x147027bc8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x147027f50 <line:9:2, col:60> 'int' contains-errors '='
+    | |-DeclRefExpr 0x147027d08 <col:2> 'int' lvalue Var 0x1470279c8 'err' 'int'
+    | `-CallExpr 0x147027f00 <col:8, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147027e08 <col:8> 'int ()' Function 0x147027d50 'ip_route_input_rcu' 'int ()'
+    |   |-DeclRefExpr 0x147027e28 <col:27> 'struct sk_buff *' lvalue ParmVar 0x14700e248 'skb' 'struct sk_buff *'
+    |   |-RecoveryExpr 0x147027e48 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x147027e68 <col:39> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x147027e88 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x147027ea8 <col:51> 'struct net_device *' lvalue ParmVar 0x1470275d8 'dev' 'struct net_device *'
+    |   `-UnaryOperator 0x147027ee8 <col:56, col:57> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x147027ec8 <col:57> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147028088 <line:10:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x147028070 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x147028050 <col:2> 'int ()' Function 0x147027f98 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x1470280e0 <line:12:2, col:9>
+      `-ImplicitCastExpr 0x1470280c8 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1470280a8 <col:9> 'int' lvalue Var 0x1470279c8 'err' 'int'

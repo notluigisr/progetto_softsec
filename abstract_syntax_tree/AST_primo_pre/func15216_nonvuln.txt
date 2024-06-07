@@ -1,0 +1,29 @@
+`-FunctionDecl 0x136026740  line:1:6 audit_filter_inodes 'void (struct task_struct *, struct audit_context *)'
+  |-ParmVarDecl 0x13600e248 <col:26, col:46> col:46 used tsk 'struct task_struct *'
+  |-ParmVarDecl 0x136026628 <col:51, col:73> col:73 used ctx 'struct audit_context *'
+  `-CompoundStmt 0x1360272f8 <line:2:1, line:15:1>
+    |-DeclStmt 0x136026a28 <line:3:2, col:23>
+    | |-RecordDecl 0x136026840 <col:2, col:9> col:9 struct audit_names
+    | `-VarDecl 0x1360269a8 <col:2, col:22> col:22 used n 'struct audit_names *'
+    |-IfStmt 0x136026bb8 <line:5:2, line:6:3>
+    | |-BinaryOperator 0x136026b88 <line:5:6, col:32> 'int' contains-errors '&&'
+    | | |-RecoveryExpr 0x136026b28 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x136026b68 <col:19, col:32> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x136026aa8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x136026a70 <col:19> 'struct task_struct *' lvalue ParmVar 0x13600e248 'tsk' 'struct task_struct *'
+    | |   `-RecoveryExpr 0x136026b48 <col:32> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x136026ba8 <line:6:3>
+    |-CallExpr 0x136026d58 <line:8:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x136026d40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x136026cf0 <col:2> 'int ()' Function 0x136026c38 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x136026f80 <line:10:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136026e58 <col:2> 'int ()' Function 0x136026da0 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x136026e78 <col:22> 'struct audit_names *' lvalue Var 0x1360269a8 'n' 'struct audit_names *'
+    | |-UnaryOperator 0x136026ef8 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x136026ed0 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x136026e98 <col:26> 'struct audit_context *' lvalue ParmVar 0x136026628 'ctx' 'struct audit_context *'
+    | `-RecoveryExpr 0x136026f60 <col:43> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x1360271b0 <col:49, line:13:2>
+    `-CallExpr 0x1360272d8 <line:14:2, col:18> 'int'
+      `-ImplicitCastExpr 0x1360272c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x1360272a0 <col:2> 'int ()' Function 0x1360271e8 'rcu_read_unlock' 'int ()'

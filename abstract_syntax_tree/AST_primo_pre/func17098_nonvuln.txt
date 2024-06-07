@@ -1,0 +1,33 @@
+`-FunctionDecl 0x155826918  line:1:1 wake_affine_weight 'int (struct sched_domain *, struct task_struct *, int, int, int)'
+  |-ParmVarDecl 0x15580e248 <col:20, col:41> col:41 used sd 'struct sched_domain *'
+  |-ParmVarDecl 0x155826628 <col:45, col:65> col:65 used p 'struct task_struct *'
+  |-ParmVarDecl 0x1558266a8 <line:2:6, col:10> col:10 used this_cpu 'int'
+  |-ParmVarDecl 0x155826728 <col:20, col:24> col:24 used prev_cpu 'int'
+  |-ParmVarDecl 0x1558267a8 <col:34, col:38> col:38 used sync 'int'
+  `-CompoundStmt 0x155829df0 <line:3:1, line:36:1>
+    |-DeclStmt 0x155826ac8 <line:5:2, col:25>
+    | `-VarDecl 0x155826a60 <col:2, col:16> col:16 used task_load 'unsigned long'
+    |-IfStmt 0x155827190 <line:9:2, line:16:2>
+    | |-ImplicitCastExpr 0x155826e18 <line:9:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x155826df8 <col:6> 'int' lvalue ParmVar 0x1558267a8 'sync' 'int'
+    | `-CompoundStmt 0x155827170 <col:12, line:16:2>
+    |   |-DeclStmt 0x155827038 <line:10:3, col:52>
+    |   | `-VarDecl 0x155826e48 <col:3, col:51> col:17 used current_load 'unsigned long' cinit
+    |   |   `-CallExpr 0x155827010 <col:32, col:51> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x155826f90 <col:32> 'int ()' Function 0x155826ed8 'task_h_load' 'int ()'
+    |   |     `-RecoveryExpr 0x155826ff0 <col:44> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x155827130 <line:12:3, line:13:11>
+    |     |-BinaryOperator 0x1558270c8 <line:12:7, col:22> 'int' contains-errors '>'
+    |     | |-DeclRefExpr 0x155827050 <col:7> 'unsigned long' contains-errors lvalue Var 0x155826e48 'current_load' 'unsigned long'
+    |     | `-RecoveryExpr 0x1558270a8 <col:22> '<dependent type>' contains-errors lvalue
+    |     `-ReturnStmt 0x155827120 <line:13:4, col:11>
+    |       `-ImplicitCastExpr 0x155827108 <col:11> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x1558270e8 <col:11> 'int' lvalue ParmVar 0x1558266a8 'this_cpu' 'int'
+    `-BinaryOperator 0x155827280 <line:18:2, col:27> 'unsigned long' '='
+      |-DeclRefExpr 0x1558271b0 <col:2> 'unsigned long' lvalue Var 0x155826a60 'task_load' 'unsigned long'
+      `-ImplicitCastExpr 0x155827268 <col:14, col:27> 'unsigned long' <IntegralCast>
+        `-CallExpr 0x155827228 <col:14, col:27> 'int'
+          |-ImplicitCastExpr 0x155827210 <col:14> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x1558271d0 <col:14> 'int ()' Function 0x155826ed8 'task_h_load' 'int ()'
+          `-ImplicitCastExpr 0x155827250 <col:26> 'struct task_struct *' <LValueToRValue>
+            `-DeclRefExpr 0x1558271f0 <col:26> 'struct task_struct *' lvalue ParmVar 0x155826628 'p' 'struct task_struct *'

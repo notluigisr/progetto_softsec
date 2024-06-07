@@ -1,0 +1,72 @@
+`-FunctionDecl 0x14d84cd68  line:1:12 invalid command_read 'int (struct pci_dev *, int, int *, void *)' static
+  |-ParmVarDecl 0x14d830e48 <col:25, col:41> col:41 used dev 'struct pci_dev *'
+  |-ParmVarDecl 0x14d830ec8 <col:46, col:50> col:50 used offset 'int'
+  |-ParmVarDecl 0x14d830f98 <col:58, col:63> col:63 invalid value 'int *'
+  |-ParmVarDecl 0x14d84cc18 <col:70, col:76> col:76 used data 'void *'
+  `-CompoundStmt 0x14d84ea28 <line:2:1, line:18:1>
+    |-DeclStmt 0x14d84ceb0 <line:3:2, col:7>
+    | `-VarDecl 0x14d84ce48 <col:2, col:6> col:6 used i 'int'
+    |-DeclStmt 0x14d84cf48 <line:4:2, col:9>
+    | `-VarDecl 0x14d84cee0 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x14d84d1c0 <line:6:2, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14d84cf60 <col:2> 'int' lvalue Var 0x14d84cee0 'ret' 'int'
+    | `-CallExpr 0x14d84d180 <col:8, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14d84d0e0 <col:8> 'int ()' Function 0x14d84d028 'xen_pcibk_read_config_word' 'int ()'
+    |   |-DeclRefExpr 0x14d84d100 <col:35> 'struct pci_dev *' lvalue ParmVar 0x14d830e48 'dev' 'struct pci_dev *'
+    |   |-DeclRefExpr 0x14d84d120 <col:40> 'int' lvalue ParmVar 0x14d830ec8 'offset' 'int'
+    |   |-RecoveryExpr 0x14d84d140 <col:48> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14d84d160 <col:55> 'void *' lvalue ParmVar 0x14d84cc18 'data' 'void *'
+    |-IfStmt 0x14d84d3e8 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x14d84d388 <line:7:6, col:25> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x14d84d348 <col:7, col:25> 'int'
+    | |   |-ImplicitCastExpr 0x14d84d330 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14d84d2c0 <col:7> 'int ()' Function 0x14d84d208 'pci_is_enabled' 'int ()'
+    | |   `-ImplicitCastExpr 0x14d84d370 <col:22> 'struct pci_dev *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14d84d2e0 <col:22> 'struct pci_dev *' lvalue ParmVar 0x14d830e48 'dev' 'struct pci_dev *'
+    | `-ReturnStmt 0x14d84d3d8 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x14d84d3c0 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x14d84d3a0 <col:10> 'int' lvalue Var 0x14d84cee0 'ret' 'int'
+    |-ForStmt 0x14d84e9a8 <line:10:2, line:15:2>
+    | |-BinaryOperator 0x14d84d448 <line:10:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x14d84d408 <col:7> 'int' lvalue Var 0x14d84ce48 'i' 'int'
+    | | `-IntegerLiteral 0x14d84d428 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14d84d4e0 <col:14, col:18> 'int' contains-errors '<'
+    | | |-DeclRefExpr 0x14d84d468 <col:14> 'int' lvalue Var 0x14d84ce48 'i' 'int'
+    | | `-RecoveryExpr 0x14d84d4c0 <col:18> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x14d84d520 <col:36, col:37> 'int' postfix '++'
+    | | `-DeclRefExpr 0x14d84d500 <col:36> 'int' lvalue Var 0x14d84ce48 'i' 'int'
+    | `-CompoundStmt 0x14d84e988 <col:41, line:15:2>
+    |   |-IfStmt 0x14d84d940 <line:11:3, line:12:14>
+    |   | |-BinaryOperator 0x14d84d7d8 <line:11:7, col:32> '<dependent type>' contains-errors '&'
+    |   | | |-CXXDependentScopeMemberExpr 0x14d84d770 <col:7, col:24> '<dependent type>' contains-errors lvalue .flags
+    |   | | | `-ArraySubscriptExpr 0x14d84d750 <col:7, col:22> '<dependent type>' contains-errors lvalue
+    |   | | |   |-ImplicitCastExpr 0x14d84d720 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   | | |   | `-RecoveryExpr 0x14d84d570 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | | |   |   `-DeclRefExpr 0x14d84d538 <col:7> 'struct pci_dev *' lvalue ParmVar 0x14d830e48 'dev' 'struct pci_dev *'
+    |   | | |   `-ImplicitCastExpr 0x14d84d738 <col:21> 'int' <LValueToRValue>
+    |   | | |     `-DeclRefExpr 0x14d84d598 <col:21> 'int' lvalue Var 0x14d84ce48 'i' 'int'
+    |   | | `-RecoveryExpr 0x14d84d7b8 <col:32> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundAssignOperator 0x14d84d910 <line:12:4, col:14> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |   |-UnaryOperator 0x14d84d8d8 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |   | `-ImplicitCastExpr 0x14d84d8c0 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |   `-RecoveryExpr 0x14d84d7f8 <col:5> '<dependent type>' contains-errors lvalue
+    |   |   `-RecoveryExpr 0x14d84d8f0 <col:14> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x14d84e968 <line:13:3, line:14:14>
+    |     |-BinaryOperator 0x14d84e800 <line:13:7, col:32> '<dependent type>' contains-errors '&'
+    |     | |-CXXDependentScopeMemberExpr 0x14d84db98 <col:7, col:24> '<dependent type>' contains-errors lvalue .flags
+    |     | | `-ArraySubscriptExpr 0x14d84db78 <col:7, col:22> '<dependent type>' contains-errors lvalue
+    |     | |   |-ImplicitCastExpr 0x14d84db48 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |     | |   | `-RecoveryExpr 0x14d84d998 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |     | |   |   `-DeclRefExpr 0x14d84d960 <col:7> 'struct pci_dev *' lvalue ParmVar 0x14d830e48 'dev' 'struct pci_dev *'
+    |     | |   `-ImplicitCastExpr 0x14d84db60 <col:21> 'int' <LValueToRValue>
+    |     | |     `-DeclRefExpr 0x14d84d9c0 <col:21> 'int' lvalue Var 0x14d84ce48 'i' 'int'
+    |     | `-RecoveryExpr 0x14d84dbe0 <col:32> '<dependent type>' contains-errors lvalue
+    |     `-CompoundAssignOperator 0x14d84e938 <line:14:4, col:14> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       |-UnaryOperator 0x14d84e900 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       | `-ImplicitCastExpr 0x14d84e8e8 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+    |       |   `-RecoveryExpr 0x14d84e820 <col:5> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x14d84e918 <col:14> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14d84ea18 <line:17:2, col:9>
+      `-ImplicitCastExpr 0x14d84ea00 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14d84e9e0 <col:9> 'int' lvalue Var 0x14d84cee0 'ret' 'int'

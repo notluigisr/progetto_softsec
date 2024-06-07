@@ -1,0 +1,29 @@
+`-FunctionDecl 0x123008838  line:1:12 invalid pb0100_set_exposure 'int (struct gspca_dev *, int)' static
+  |-ParmVarDecl 0x123928048 <col:32, col:50> col:50 used gspca_dev 'struct gspca_dev *'
+  |-ParmVarDecl 0x1239280e0 <col:61, col:67> col:67 invalid val 'int'
+  `-CompoundStmt 0x123009208 <line:2:1, line:11:1>
+    |-DeclStmt 0x123008bc0 <line:3:2, col:41>
+    | |-RecordDecl 0x1230088f0 <col:2, col:9> col:9 struct sd
+    | `-VarDecl 0x123008a58 <col:2, col:32> col:13 used sd 'struct sd *' cinit
+    |   `-CStyleCastExpr 0x123008b80 <col:18, col:32> 'struct sd *' <BitCast>
+    |     `-ImplicitCastExpr 0x123008b68 <col:32> 'struct gspca_dev *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x123008ac0 <col:32> 'struct gspca_dev *' lvalue ParmVar 0x123928048 'gspca_dev' 'struct gspca_dev *'
+    |-DeclStmt 0x123008c58 <line:4:2, col:9>
+    | `-VarDecl 0x123008bf0 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x123008f18 <line:6:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x123008c70 <col:2> 'int' lvalue Var 0x123008bf0 'err' 'int'
+    | `-CallExpr 0x123008ee0 <col:8, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x123008df0 <col:8> 'int ()' Function 0x123008d38 'stv06xx_write_sensor' 'int ()'
+    |   |-DeclRefExpr 0x123008e10 <col:29> 'struct sd *' lvalue Var 0x123008a58 'sd' 'struct sd *'
+    |   |-RecoveryExpr 0x123008ec0 <col:33> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x123008e48 <col:46> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x123009178 <line:7:2, line:8:13> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x123009018 <line:7:2> 'int ()' Function 0x123008f60 'gspca_dbg' 'int ()'
+    | |-DeclRefExpr 0x123009038 <col:12> 'struct gspca_dev *' lvalue ParmVar 0x123928048 'gspca_dev' 'struct gspca_dev *'
+    | |-RecoveryExpr 0x123009158 <col:23> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x1230090b0 <col:31> 'char[4]' lvalue "STR"
+    | |-RecoveryExpr 0x1230090d0 <line:8:5> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x1230090f0 <col:10> 'int' lvalue Var 0x123008bf0 'err' 'int'
+    `-ReturnStmt 0x1230091f8 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x1230091e0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1230091c0 <col:9> 'int' lvalue Var 0x123008bf0 'err' 'int'

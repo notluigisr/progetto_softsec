@@ -1,0 +1,1 @@
+    virtual bool        isMemoryMapped () const { return false;}

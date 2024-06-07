@@ -1,0 +1,200 @@
+`-FunctionDecl 0x134942798  line:1:5 invalid hugetlb_mcopy_atomic_pte 'int (struct mm_struct *, int *, struct vm_area_struct *, unsigned long, unsigned long, struct page **)'
+  |-ParmVarDecl 0x134929048 <col:30, col:48> col:48 used dst_mm 'struct mm_struct *'
+  |-ParmVarDecl 0x134929118 <line:2:8, col:15> col:15 invalid dst_pte 'int *'
+  |-ParmVarDecl 0x1349422e8 <line:3:8, col:31> col:31 used dst_vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x134942368 <line:4:8, col:22> col:22 used dst_addr 'unsigned long'
+  |-ParmVarDecl 0x1349423e8 <line:5:8, col:22> col:22 used src_addr 'unsigned long'
+  |-ParmVarDecl 0x134942618 <line:6:8, col:22> col:22 used pagep 'struct page **'
+  `-CompoundStmt 0x13494bbd0 <line:7:1, line:92:1>
+    |-DeclStmt 0x1349429c8 <line:8:2, col:47>
+    | `-VarDecl 0x134942888 <col:2, col:38> col:6 used vm_shared 'int' cinit
+    |   `-BinaryOperator 0x1349429a8 <col:18, col:38> '<dependent type>' contains-errors '&'
+    |     |-RecoveryExpr 0x134942928 <col:18, col:27> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x1349428f0 <col:18> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    |     `-RecoveryExpr 0x134942988 <col:38> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x134942e08 <line:9:2, col:40>
+    | |-RecordDecl 0x1349429e0 <col:2, col:9> col:9 struct hstate
+    | `-VarDecl 0x134942b48 <col:2, col:39> col:17 used h 'struct hstate *' cinit
+    |   `-ImplicitCastExpr 0x134942dd8 <col:21, col:39> 'struct hstate *' <IntegralToPointer>
+    |     `-CallExpr 0x134942d98 <col:21, col:39> 'int'
+    |       |-ImplicitCastExpr 0x134942d80 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x134942d10 <col:21> 'int ()' Function 0x134942c58 'hstate_vma' 'int ()'
+    |       `-ImplicitCastExpr 0x134942dc0 <col:32> 'struct vm_area_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x134942d30 <col:32> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    |-DeclStmt 0x134942eb8 <line:12:2, col:9>
+    | `-VarDecl 0x134942e50 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x134942fc0 <line:13:2, col:19>
+    | `-VarDecl 0x134942f58 <col:2, col:15> col:15 used page 'struct page *'
+    |-IfStmt 0x134948300 <line:15:2, line:35:2> has_else
+    | |-UnaryOperator 0x134943040 <line:15:6, col:8> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x134943028 <col:7, col:8> 'struct page *' <LValueToRValue>
+    | |   `-UnaryOperator 0x134943010 <col:7, col:8> 'struct page *' lvalue prefix '*' cannot overflow
+    | |     `-ImplicitCastExpr 0x134942ff8 <col:8> 'struct page **' <LValueToRValue>
+    | |       `-DeclRefExpr 0x134942fd8 <col:8> 'struct page **' lvalue ParmVar 0x134942618 'pagep' 'struct page **'
+    | |-CompoundStmt 0x1349480d8 <col:15, line:32:2>
+    | | |-BinaryOperator 0x134943130 <line:16:3, col:10> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x134943058 <col:3> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    | | | `-UnaryOperator 0x134943118 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | | |   `-ImplicitCastExpr 0x134943100 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | |     `-RecoveryExpr 0x1349430e0 <col:10> '<dependent type>' contains-errors lvalue
+    | | |-BinaryOperator 0x1349475d0 <line:17:3, col:46> 'struct page *' '='
+    | | | |-DeclRefExpr 0x134943150 <col:3> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    | | | `-ImplicitCastExpr 0x1349475b8 <col:10, col:46> 'struct page *' <IntegralToPointer>
+    | | |   `-CallExpr 0x134947550 <col:10, col:46> 'int'
+    | | |     |-ImplicitCastExpr 0x134947538 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    | | |     | `-DeclRefExpr 0x1349474b8 <col:10> 'int ()' Function 0x134947400 'alloc_huge_page' 'int ()'
+    | | |     |-ImplicitCastExpr 0x134947588 <col:26> 'struct vm_area_struct *' <LValueToRValue>
+    | | |     | `-DeclRefExpr 0x1349474d8 <col:26> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    | | |     |-ImplicitCastExpr 0x1349475a0 <col:35> 'unsigned long' <LValueToRValue>
+    | | |     | `-DeclRefExpr 0x1349474f8 <col:35> 'unsigned long' lvalue ParmVar 0x134942368 'dst_addr' 'unsigned long'
+    | | |     `-IntegerLiteral 0x134947518 <col:45> 'int' 0
+    | | |-IfStmt 0x1349477d0 <line:18:3, line:19:9>
+    | | | |-CallExpr 0x134947728 <line:18:7, col:18> 'int'
+    | | | | |-ImplicitCastExpr 0x134947710 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | | | | `-DeclRefExpr 0x1349476d0 <col:7> 'int ()' Function 0x134947618 'IS_ERR' 'int ()'
+    | | | | `-ImplicitCastExpr 0x134947750 <col:14> 'struct page *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x1349476f0 <col:14> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    | | | `-GotoStmt 0x1349477b8 <line:19:4, col:9> 'out' 0x134947768
+    | | |-BinaryOperator 0x134947d40 <line:21:3, line:23:36> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x1349477f0 <line:21:3> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    | | | `-CallExpr 0x134947d00 <col:9, line:23:36> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1349478f0 <line:21:9> 'int ()' Function 0x134947838 'copy_huge_page_from_user' 'int ()'
+    | | |   |-DeclRefExpr 0x134947910 <col:34> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    | | |   |-CStyleCastExpr 0x134947c60 <line:22:7, col:29> 'void' <ToVoid>
+    | | |   | `-ImplicitCastExpr 0x134947c48 <col:29> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    | | |   |   `-DeclRefExpr 0x134947930 <col:29> 'unsigned long' lvalue ParmVar 0x1349423e8 'src_addr' 'unsigned long'
+    | | |   |-CallExpr 0x134947ca0 <line:23:7, col:28> 'int'
+    | | |   | |-ImplicitCastExpr 0x134947c88 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | | `-DeclRefExpr 0x134947a80 <col:7> 'int ()' Function 0x1349479c8 'pages_per_huge_page' 'int ()'
+    | | |   | `-ImplicitCastExpr 0x134947cc8 <col:27> 'struct hstate *' <LValueToRValue>
+    | | |   |   `-DeclRefExpr 0x134947aa0 <col:27> 'struct hstate *' lvalue Var 0x134942b48 'h' 'struct hstate *'
+    | | |   `-RecoveryExpr 0x134947ce0 <col:31> '<dependent type>' contains-errors lvalue
+    | | `-IfStmt 0x1349480b8 <line:26:3, line:31:3>
+    | |   |-CallExpr 0x134947e98 <line:26:7, col:19> 'int'
+    | |   | |-ImplicitCastExpr 0x134947e80 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x134947e40 <col:7> 'int ()' Function 0x134947d88 'unlikely' 'int ()'
+    | |   | `-ImplicitCastExpr 0x134947ec0 <col:16> 'int' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x134947e60 <col:16> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    | |   `-CompoundStmt 0x134948090 <col:22, line:31:3>
+    | |     |-BinaryOperator 0x134947fb0 <line:27:4, col:11> 'int' contains-errors '='
+    | |     | |-DeclRefExpr 0x134947ed8 <col:4> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    | |     | `-UnaryOperator 0x134947f98 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    | |     |   `-ImplicitCastExpr 0x134947f80 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |     |     `-RecoveryExpr 0x134947f60 <col:11> '<dependent type>' contains-errors lvalue
+    | |     |-BinaryOperator 0x134948058 <line:28:4, col:13> 'struct page *' '='
+    | |     | |-UnaryOperator 0x134948008 <col:4, col:5> 'struct page *' lvalue prefix '*' cannot overflow
+    | |     | | `-ImplicitCastExpr 0x134947ff0 <col:5> 'struct page **' <LValueToRValue>
+    | |     | |   `-DeclRefExpr 0x134947fd0 <col:5> 'struct page **' lvalue ParmVar 0x134942618 'pagep' 'struct page **'
+    | |     | `-ImplicitCastExpr 0x134948040 <col:13> 'struct page *' <LValueToRValue>
+    | |     |   `-DeclRefExpr 0x134948020 <col:13> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    | |     `-GotoStmt 0x134948078 <line:30:4, col:9> 'out' 0x134947768
+    | `-CompoundStmt 0x1349482e0 <line:32:9, line:35:2>
+    |   |-BinaryOperator 0x134948198 <line:33:3, col:11> 'struct page *' '='
+    |   | |-DeclRefExpr 0x134948110 <col:3> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |   | `-ImplicitCastExpr 0x134948180 <col:10, col:11> 'struct page *' <LValueToRValue>
+    |   |   `-UnaryOperator 0x134948168 <col:10, col:11> 'struct page *' lvalue prefix '*' cannot overflow
+    |   |     `-ImplicitCastExpr 0x134948150 <col:11> 'struct page **' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x134948130 <col:11> 'struct page **' lvalue ParmVar 0x134942618 'pagep' 'struct page **'
+    |   `-BinaryOperator 0x1349482c0 <line:34:3, col:12> 'struct page *' contains-errors '='
+    |     |-UnaryOperator 0x134948288 <col:3, col:4> 'struct page *' lvalue prefix '*' cannot overflow
+    |     | `-ImplicitCastExpr 0x134948270 <col:4> 'struct page **' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x1349481b8 <col:4> 'struct page **' lvalue ParmVar 0x134942618 'pagep' 'struct page **'
+    |     `-RecoveryExpr 0x1349482a0 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x134949468 <line:38:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x134949450 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x134949410 <col:2> 'int ()' Function 0x134948358 '__SetPageUptodate' 'int ()'
+    | `-ImplicitCastExpr 0x134949490 <col:20> 'struct page *' <LValueToRValue>
+    |   `-DeclRefExpr 0x134949430 <col:20> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |-CallExpr 0x1349495e0 <line:39:2, col:27> 'int'
+    | |-ImplicitCastExpr 0x1349495c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x134949588 <col:2> 'int ()' Function 0x1349494d0 'set_page_huge_active' 'int ()'
+    | `-ImplicitCastExpr 0x134949608 <col:23> 'struct page *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1349495a8 <col:23> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |-IfStmt 0x134949b48 <line:42:2, line:49:2>
+    | |-ImplicitCastExpr 0x134949640 <line:42:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x134949620 <col:6> 'int' contains-errors lvalue Var 0x134942888 'vm_shared' 'int'
+    | `-CompoundStmt 0x134949b28 <col:17, line:49:2>
+    |   |-DeclStmt 0x1349498f0 <line:43:3, col:62>
+    |   | |-RecordDecl 0x134949658 <col:3, col:10> col:10 struct address_space
+    |   | `-VarDecl 0x1349497c8 <col:3, col:53> col:25 used mapping 'struct address_space *' cinit
+    |   |   `-CXXDependentScopeMemberExpr 0x134949890 <col:35, col:53> '<dependent type>' contains-errors lvalue ->f_mapping
+    |   |     `-RecoveryExpr 0x134949868 <col:35, col:44> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x134949830 <col:35> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    |   `-IfStmt 0x134949b08 <line:47:3, line:48:9>
+    |     |-ImplicitCastExpr 0x134949a88 <line:47:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x134949a68 <col:7> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    |     `-GotoStmt 0x134949af0 <line:48:4, col:9> 'out_release_nounlock' 0x134949aa0
+    |-IfStmt 0x13494a110 <line:55:2, line:56:8>
+    | |-UnaryOperator 0x13494a090 <line:55:6, col:43> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13494a068 <col:7, col:43> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x134949f00 <col:7> 'int ()' Function 0x134949e48 'huge_pte_none' 'int ()'
+    | |   `-CallExpr 0x13494a040 <col:21, col:42> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x13494a000 <col:21> 'int ()' Function 0x134949f48 'huge_ptep_get' 'int ()'
+    | |     `-RecoveryExpr 0x13494a020 <col:35> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x13494a0f8 <line:56:3, col:8> 'out_release_unlock' 0x13494a0a8
+    |-IfStmt 0x13494a630 <line:58:2, line:63:2> has_else
+    | |-ImplicitCastExpr 0x13494a150 <line:58:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x13494a130 <col:6> 'int' contains-errors lvalue Var 0x134942888 'vm_shared' 'int'
+    | |-CompoundStmt 0x13494a288 <col:17, line:60:2>
+    | `-CompoundStmt 0x13494a610 <col:9, line:63:2>
+    |   |-CallExpr 0x13494a3d0 <line:61:3, col:24> 'int'
+    |   | |-ImplicitCastExpr 0x13494a3b8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13494a378 <col:3> 'int ()' Function 0x13494a2c0 'ClearPagePrivate' 'int ()'
+    |   | `-ImplicitCastExpr 0x13494a400 <col:20> 'struct page *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13494a398 <col:20> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |   `-CallExpr 0x13494a590 <line:62:3, col:53> 'int'
+    |     |-ImplicitCastExpr 0x13494a578 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13494a4f8 <col:3> 'int ()' Function 0x13494a440 'hugepage_add_new_anon_rmap' 'int ()'
+    |     |-ImplicitCastExpr 0x13494a5c8 <col:30> 'struct page *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13494a518 <col:30> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |     |-ImplicitCastExpr 0x13494a5e0 <col:36> 'struct vm_area_struct *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13494a538 <col:36> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    |     `-ImplicitCastExpr 0x13494a5f8 <col:45> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x13494a558 <col:45> 'unsigned long' lvalue ParmVar 0x134942368 'dst_addr' 'unsigned long'
+    |-CallExpr 0x13494af70 <line:74:2, col:50> 'int'
+    | |-ImplicitCastExpr 0x13494af58 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13494ae80 <col:2> 'int ()' Function 0x13494adc8 'hugetlb_count_add' 'int ()'
+    | |-CallExpr 0x13494aef8 <col:20, col:41> 'int'
+    | | |-ImplicitCastExpr 0x13494aee0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13494aea0 <col:20> 'int ()' Function 0x1349479c8 'pages_per_huge_page' 'int ()'
+    | | `-ImplicitCastExpr 0x13494af20 <col:40> 'struct hstate *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13494aec0 <col:40> 'struct hstate *' lvalue Var 0x134942b48 'h' 'struct hstate *'
+    | `-ImplicitCastExpr 0x13494afa0 <col:44> 'struct mm_struct *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13494af38 <col:44> 'struct mm_struct *' lvalue ParmVar 0x134929048 'dst_mm' 'struct mm_struct *'
+    |-CallExpr 0x13494b118 <line:77:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13494b098 <col:2> 'int ()' Function 0x13494afe0 'update_mmu_cache' 'int ()'
+    | |-DeclRefExpr 0x13494b0b8 <col:19> 'struct vm_area_struct *' lvalue ParmVar 0x1349422e8 'dst_vma' 'struct vm_area_struct *'
+    | |-DeclRefExpr 0x13494b0d8 <col:28> 'unsigned long' lvalue ParmVar 0x134942368 'dst_addr' 'unsigned long'
+    | `-RecoveryExpr 0x13494b0f8 <col:38> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13494b800 <line:80:2, line:81:19>
+    | |-ImplicitCastExpr 0x13494b270 <line:80:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x13494b250 <col:6> 'int' contains-errors lvalue Var 0x134942888 'vm_shared' 'int'
+    | `-CallExpr 0x13494b3c0 <line:81:3, col:19> 'int'
+    |   |-ImplicitCastExpr 0x13494b3a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13494b368 <col:3> 'int ()' Function 0x13494b2b0 'unlock_page' 'int ()'
+    |   `-ImplicitCastExpr 0x13494b3e8 <col:15> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13494b388 <col:15> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |-BinaryOperator 0x13494b860 <line:82:2, col:8> 'int' '='
+    | |-DeclRefExpr 0x13494b820 <col:2> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    | `-IntegerLiteral 0x13494b840 <col:8> 'int' 0
+    |-LabelStmt 0x13494b8c8 <line:83:1, line:84:9> 'out'
+    | `-ReturnStmt 0x13494b8b8 <col:2, col:9>
+    |   `-ImplicitCastExpr 0x13494b8a0 <col:9> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13494b880 <col:9> 'int' lvalue Var 0x134942e50 'ret' 'int'
+    |-LabelStmt 0x13494b910 <line:85:1, col:19> 'out_release_unlock'
+    | `-NullStmt 0x13494b908 <col:19>
+    |-IfStmt 0x13494ba00 <line:87:2, line:88:19>
+    | |-ImplicitCastExpr 0x13494b950 <line:87:6> 'int' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x13494b930 <col:6> 'int' contains-errors lvalue Var 0x134942888 'vm_shared' 'int'
+    | `-CallExpr 0x13494b9c0 <line:88:3, col:19> 'int'
+    |   |-ImplicitCastExpr 0x13494b9a8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13494b968 <col:3> 'int ()' Function 0x13494b2b0 'unlock_page' 'int ()'
+    |   `-ImplicitCastExpr 0x13494b9e8 <col:15> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13494b988 <col:15> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    |-LabelStmt 0x13494bb98 <line:89:1, line:90:15> 'out_release_nounlock'
+    | `-CallExpr 0x13494bb58 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x13494bb40 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13494bb00 <col:2> 'int ()' Function 0x13494ba48 'put_page' 'int ()'
+    |   `-ImplicitCastExpr 0x13494bb80 <col:11> 'struct page *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13494bb20 <col:11> 'struct page *' lvalue Var 0x134942f58 'page' 'struct page *'
+    `-GotoStmt 0x13494bbb8 <line:91:2, col:7> 'out' 0x134947768

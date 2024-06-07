@@ -1,0 +1,43 @@
+`-FunctionDecl 0x124940a70  line:1:6 vsock_enqueue_accept 'void (struct sock *, struct sock *)'
+  |-ParmVarDecl 0x124928648 <col:27, col:40> col:40 used listener 'struct sock *'
+  |-ParmVarDecl 0x124928738 <col:50, col:63> col:63 used connected 'struct sock *'
+  `-CompoundStmt 0x1249415e0 <line:2:1, line:12:1>
+    |-DeclStmt 0x124940d58 <line:3:2, col:30>
+    | |-RecordDecl 0x124940b70 <col:2, col:9> col:9 struct vsock_sock
+    | `-VarDecl 0x124940cd8 <col:2, col:21> col:21 used vlistener 'struct vsock_sock *'
+    |-DeclStmt 0x124940e60 <line:4:2, col:31>
+    | `-VarDecl 0x124940df8 <col:2, col:21> col:21 used vconnected 'struct vsock_sock *'
+    |-BinaryOperator 0x1249410a0 <line:6:2, col:31> 'struct vsock_sock *' '='
+    | |-DeclRefExpr 0x124940e78 <col:2> 'struct vsock_sock *' lvalue Var 0x124940cd8 'vlistener' 'struct vsock_sock *'
+    | `-ImplicitCastExpr 0x124941088 <col:14, col:31> 'struct vsock_sock *' <IntegralToPointer>
+    |   `-CallExpr 0x124941048 <col:14, col:31> 'int'
+    |     |-ImplicitCastExpr 0x124941030 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x124940fc0 <col:14> 'int ()' Function 0x124940f08 'vsock_sk' 'int ()'
+    |     `-ImplicitCastExpr 0x124941070 <col:23> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x124940fe0 <col:23> 'struct sock *' lvalue ParmVar 0x124928648 'listener' 'struct sock *'
+    |-BinaryOperator 0x124941190 <line:7:2, col:33> 'struct vsock_sock *' '='
+    | |-DeclRefExpr 0x1249410c0 <col:2> 'struct vsock_sock *' lvalue Var 0x124940df8 'vconnected' 'struct vsock_sock *'
+    | `-ImplicitCastExpr 0x124941178 <col:15, col:33> 'struct vsock_sock *' <IntegralToPointer>
+    |   `-CallExpr 0x124941138 <col:15, col:33> 'int'
+    |     |-ImplicitCastExpr 0x124941120 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1249410e0 <col:15> 'int ()' Function 0x124940f08 'vsock_sk' 'int ()'
+    |     `-ImplicitCastExpr 0x124941160 <col:24> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x124941100 <col:24> 'struct sock *' lvalue ParmVar 0x124928738 'connected' 'struct sock *'
+    |-CallExpr 0x1249412e8 <line:9:2, col:21> 'int'
+    | |-ImplicitCastExpr 0x1249412d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x124941290 <col:2> 'int ()' Function 0x1249411d8 'sock_hold' 'int ()'
+    | `-ImplicitCastExpr 0x124941310 <col:12> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1249412b0 <col:12> 'struct sock *' lvalue ParmVar 0x124928738 'connected' 'struct sock *'
+    |-CallExpr 0x124941380 <line:10:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x124941368 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x124941328 <col:2> 'int ()' Function 0x1249411d8 'sock_hold' 'int ()'
+    | `-ImplicitCastExpr 0x1249413a8 <col:12> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x124941348 <col:12> 'struct sock *' lvalue ParmVar 0x124928648 'listener' 'struct sock *'
+    `-CallExpr 0x1249415b0 <line:11:2, col:67> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1249414a0 <col:2> 'int ()' Function 0x1249413e8 'list_add_tail' 'int ()'
+      |-UnaryOperator 0x124941520 <col:16, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x1249414f8 <col:17, col:29> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x1249414c0 <col:17> 'struct vsock_sock *' lvalue Var 0x124940df8 'vconnected' 'struct vsock_sock *'
+      `-UnaryOperator 0x124941598 <col:43, col:55> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x124941570 <col:44, col:55> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x124941538 <col:44> 'struct vsock_sock *' lvalue Var 0x124940cd8 'vlistener' 'struct vsock_sock *'

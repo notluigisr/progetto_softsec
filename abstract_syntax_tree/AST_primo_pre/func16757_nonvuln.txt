@@ -1,0 +1,36 @@
+`-FunctionDecl 0x12c8274d8  line:1:17 invalid imap_state_starttls_resp 'int (struct connectdata *, int, int)' static
+  |-ParmVarDecl 0x12c80e268 <col:42, col:62> col:62 used conn 'struct connectdata *'
+  |-ParmVarDecl 0x12c80e2e8 <line:2:42, col:46> col:46 used imapcode 'int'
+  |-ParmVarDecl 0x12c80e368 <line:3:42, col:52> col:52 invalid instate 'int'
+  `-CompoundStmt 0x12c8280b8 <line:4:1, line:22:1>
+    |-DeclStmt 0x12c8277e8 <line:6:3, col:38>
+    | |-RecordDecl 0x12c827598 <col:3, col:10> col:10 struct Curl_easy
+    | `-VarDecl 0x12c827708 <col:3, col:34> col:21 used data 'struct Curl_easy *' cinit
+    |   `-RecoveryExpr 0x12c8277a8 <col:28, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c827770 <col:28> 'struct connectdata *' lvalue ParmVar 0x12c80e268 'conn' 'struct connectdata *'
+    |-CStyleCastExpr 0x12c827848 <line:8:3, col:9> 'void' contains-errors <ToVoid>
+    | `-ImplicitCastExpr 0x12c827830 <col:9> '<dependent type>' contains-errors <LValueToRValue> part_of_explicit_cast
+    |   `-RecoveryExpr 0x12c827800 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12c828040 <line:10:3, line:19:5> has_else
+    | |-BinaryOperator 0x12c8278e8 <line:10:6, col:18> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x12c827870 <col:6> 'int' lvalue ParmVar 0x12c80e2e8 'imapcode' 'int'
+    | | `-RecoveryExpr 0x12c8278c8 <col:18> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x12c827ea8 <col:32, line:17:3>
+    | | `-IfStmt 0x12c827e78 <line:11:5, line:16:7> has_else
+    | |   |-BinaryOperator 0x12c827a08 <line:11:8, col:29> 'int' contains-errors '!='
+    | |   | |-CXXDependentScopeMemberExpr 0x12c827968 <col:8, col:18> '<dependent type>' contains-errors lvalue .use_ssl
+    | |   | | `-RecoveryExpr 0x12c827940 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x12c827908 <col:8> 'struct Curl_easy *' contains-errors lvalue Var 0x12c827708 'data' 'struct Curl_easy *'
+    | |   | `-RecoveryExpr 0x12c8279e8 <col:29> '<dependent type>' contains-errors lvalue
+    | |   |-CompoundStmt 0x12c827ce0 <col:45, line:14:5>
+    | |   | `-CallExpr 0x12c827c68 <line:12:7, col:24> 'int' contains-errors
+    | |   |   |-ImplicitCastExpr 0x12c827c50 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   |   | `-DeclRefExpr 0x12c827b80 <col:7> 'int ()' Function 0x12c827ac8 'failf' 'int ()'
+    | |   |   |-ImplicitCastExpr 0x12c827c98 <col:13> 'struct Curl_easy *' contains-errors <LValueToRValue>
+    | |   |   | `-DeclRefExpr 0x12c827ba0 <col:13> 'struct Curl_easy *' contains-errors lvalue Var 0x12c827708 'data' 'struct Curl_easy *'
+    | |   |   `-ImplicitCastExpr 0x12c827cb0 <col:19> 'char *' <ArrayToPointerDecay>
+    | |   |     `-StringLiteral 0x12c827c00 <col:19> 'char[4]' lvalue "STR"
+    | |   `-NullStmt 0x12c827e70 <line:16:7>
+    | `-NullStmt 0x12c828038 <line:19:5>
+    `-ReturnStmt 0x12c8280a8 <line:21:3, col:10>
+      `-RecoveryExpr 0x12c828088 <col:10> '<dependent type>' contains-errors lvalue

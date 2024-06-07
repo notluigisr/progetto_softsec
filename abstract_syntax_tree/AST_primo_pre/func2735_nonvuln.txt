@@ -1,0 +1,47 @@
+`-FunctionDecl 0x12d1418d8  line:1:1 invalid evbuffer_setcb 'int (struct evbuffer *, int, void *)'
+  |-ParmVarDecl 0x12d128648 <col:16, col:33> col:33 used buffer 'struct evbuffer *'
+  |-ParmVarDecl 0x12d1286e0 <col:41, col:53> col:53 invalid cb 'int'
+  |-ParmVarDecl 0x12d128760 <col:57, col:63> col:63 used cbarg 'void *'
+  `-CompoundStmt 0x12d1426b8 <line:2:1, line:15:1>
+    |-CallExpr 0x12d141b78 <line:3:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x12d141b60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12d141af0 <col:2> 'int ()' Function 0x12d141a38 'EVBUFFER_LOCK' 'int ()'
+    | `-ImplicitCastExpr 0x12d141ba0 <col:16> 'struct evbuffer *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12d141b10 <col:16> 'struct evbuffer *' lvalue ParmVar 0x12d128648 'buffer' 'struct evbuffer *'
+    |-IfStmt 0x12d141ee8 <line:5:2, line:6:39>
+    | |-UnaryOperator 0x12d141d58 <line:5:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x12d141d30 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12d141c98 <col:7> 'int ()' Function 0x12d141be0 'TAILQ_EMPTY' 'int ()'
+    | |   `-UnaryOperator 0x12d141d18 <col:19, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x12d141cf0 <col:20, col:28> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x12d141cb8 <col:20> 'struct evbuffer *' lvalue ParmVar 0x12d128648 'buffer' 'struct evbuffer *'
+    | `-CallExpr 0x12d141ea8 <line:6:3, col:39> 'int'
+    |   |-ImplicitCastExpr 0x12d141e90 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12d141e50 <col:3> 'int ()' Function 0x12d141d98 'evbuffer_remove_all_callbacks' 'int ()'
+    |   `-ImplicitCastExpr 0x12d141ed0 <col:33> 'struct evbuffer *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12d141e70 <col:33> 'struct evbuffer *' lvalue ParmVar 0x12d128648 'buffer' 'struct evbuffer *'
+    |-IfStmt 0x12d142520 <line:8:2, line:13:2>
+    | |-RecoveryExpr 0x12d141f08 <line:8:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12d1424f8 <col:10, line:13:2>
+    |   |-DeclStmt 0x12d142300 <line:9:3, line:10:43>
+    |   | |-RecordDecl 0x12d141f28 <line:9:3, col:10> col:10 struct evbuffer_cb_entry
+    |   | `-VarDecl 0x12d142098 <col:3, line:10:42> line:9:29 used ent 'struct evbuffer_cb_entry *' cinit
+    |   |   `-CallExpr 0x12d1422b0 <line:10:7, col:42> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x12d1421e0 <col:7> 'int ()' Function 0x12d142128 'evbuffer_add_cb' 'int ()'
+    |   |     |-DeclRefExpr 0x12d142200 <col:23> 'struct evbuffer *' lvalue ParmVar 0x12d128648 'buffer' 'struct evbuffer *'
+    |   |     |-RecoveryExpr 0x12d142290 <col:31> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x12d142238 <col:37> 'void *' lvalue ParmVar 0x12d128760 'cbarg' 'void *'
+    |   |-BinaryOperator 0x12d1423e0 <line:11:3, col:25> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x12d142378 <col:3, col:11> '<dependent type>' contains-errors lvalue .cb_obsolete
+    |   | | `-RecoveryExpr 0x12d142350 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x12d142318 <col:3> 'struct evbuffer_cb_entry *' contains-errors lvalue Var 0x12d142098 'ent' 'struct evbuffer_cb_entry *'
+    |   | `-RecoveryExpr 0x12d1423c0 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-CompoundAssignOperator 0x12d1424c8 <line:12:3, col:17> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-RecoveryExpr 0x12d142438 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x12d142400 <col:3> 'struct evbuffer_cb_entry *' contains-errors lvalue Var 0x12d142098 'ent' 'struct evbuffer_cb_entry *'
+    |     `-RecoveryExpr 0x12d1424a8 <col:17> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x12d142678 <line:14:2, col:24> 'int'
+      |-ImplicitCastExpr 0x12d142660 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12d142620 <col:2> 'int ()' Function 0x12d142568 'EVBUFFER_UNLOCK' 'int ()'
+      `-ImplicitCastExpr 0x12d1426a0 <col:18> 'struct evbuffer *' <LValueToRValue>
+        `-DeclRefExpr 0x12d142640 <col:18> 'struct evbuffer *' lvalue ParmVar 0x12d128648 'buffer' 'struct evbuffer *'

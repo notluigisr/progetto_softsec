@@ -1,0 +1,60 @@
+`-FunctionDecl 0x14400dfa0  line:1:6 invalid ComparisonQuantized 'void (const int *, const int *, int *, int)'
+  |-ParmVarDecl 0x14400dcf0 <col:26, col:46> col:46 invalid input1 'const int *'
+  |-ParmVarDecl 0x14400dd70 <col:54, col:74> col:74 invalid input2 'const int *'
+  |-ParmVarDecl 0x14400de28 <line:2:26, col:40> col:40 invalid output 'int *'
+  |-ParmVarDecl 0x14400dea8 <col:48, col:53> col:53 invalid requires_broadcast 'int'
+  `-CompoundStmt 0x144028800 <col:73, line:37:1>
+    `-IfStmt 0x1440287e0 <line:3:3, line:36:3>
+      |-BinaryOperator 0x14400e248 <line:3:7, col:55> 'int' contains-errors '||'
+      | |-BinaryOperator 0x14400e1e8 <col:7, col:23> 'int' contains-errors '=='
+      | | |-CXXDependentScopeMemberExpr 0x14400e088 <col:7, col:15> '<dependent type>' contains-errors lvalue ->type
+      | | | `-RecoveryExpr 0x14400e068 <col:7> '<dependent type>' contains-errors lvalue
+      | | `-RecoveryExpr 0x14400e1c8 <col:23> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x14400e228 <col:39, col:55> 'int' contains-errors '=='
+      |   |-CXXDependentScopeMemberExpr 0x14400e128 <col:39, col:47> '<dependent type>' contains-errors lvalue ->type
+      |   | `-RecoveryExpr 0x14400e108 <col:39> '<dependent type>' contains-errors lvalue
+      |   `-RecoveryExpr 0x14400e208 <col:55> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x144028790 <col:68, line:36:3>
+        |-DeclStmt 0x14400e3c8 <line:4:5, col:52>
+        | `-VarDecl 0x14400e280 <col:5, col:42> col:10 used input1_offset 'int' auto cinit
+        |   `-UnaryOperator 0x14400e3b0 <col:26, col:42> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x14400e398 <col:27, col:42> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-CXXDependentScopeMemberExpr 0x14400e350 <col:27, col:42> '<dependent type>' contains-errors lvalue .zero_point
+        |         `-CXXDependentScopeMemberExpr 0x14400e308 <col:27, col:35> '<dependent type>' contains-errors lvalue ->params
+        |           `-RecoveryExpr 0x14400e2e8 <col:27> '<dependent type>' contains-errors lvalue
+        |-DeclStmt 0x144027f48 <line:5:5, col:52>
+        | `-VarDecl 0x144027e00 <col:5, col:42> col:10 used input2_offset 'int' auto cinit
+        |   `-UnaryOperator 0x144027f30 <col:26, col:42> '<dependent type>' contains-errors prefix '-' cannot overflow
+        |     `-ImplicitCastExpr 0x144027f18 <col:27, col:42> '<dependent type>' contains-errors <LValueToRValue>
+        |       `-CXXDependentScopeMemberExpr 0x144027ed0 <col:27, col:42> '<dependent type>' contains-errors lvalue .zero_point
+        |         `-CXXDependentScopeMemberExpr 0x144027e88 <col:27, col:35> '<dependent type>' contains-errors lvalue ->params
+        |           `-RecoveryExpr 0x144027e68 <col:27> '<dependent type>' contains-errors lvalue
+        |-DeclStmt 0x144028000 <line:6:5, col:29>
+        | `-VarDecl 0x144027f78 <col:5, col:28> col:15 used left_shift 'const int' cinit
+        |   `-IntegerLiteral 0x144027fe0 <col:28> 'int' 8
+        |-DeclStmt 0x144028098 <line:9:5, col:21>
+        | `-VarDecl 0x144028030 <col:5, col:9> col:9 used input1_shift 'int'
+        |-CallExpr 0x1440283b8 <line:10:5, line:11:74> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144028210 <line:10:5> 'int ()' Function 0x144028158 'QuantizeMultiplierSmallerThanOneExp' 'int ()'
+        | |-CXXDependentScopeMemberExpr 0x144028298 <col:41, col:56> '<dependent type>' contains-errors lvalue .scale
+        | | `-CXXDependentScopeMemberExpr 0x144028250 <col:41, col:49> '<dependent type>' contains-errors lvalue ->params
+        | |   `-RecoveryExpr 0x144028230 <col:41> '<dependent type>' contains-errors lvalue
+        | |-UnaryOperator 0x1440283a0 <line:11:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x144028380 <col:42> '<dependent type>' contains-errors lvalue
+        | `-UnaryOperator 0x144028330 <col:61, col:62> 'int *' prefix '&' cannot overflow
+        |   `-DeclRefExpr 0x144028310 <col:62> 'int' lvalue Var 0x144028030 'input1_shift' 'int'
+        |-DeclStmt 0x144028470 <line:13:5, col:21>
+        | `-VarDecl 0x144028408 <col:5, col:9> col:9 used input2_shift 'int'
+        |-CallExpr 0x144028630 <line:14:5, line:15:74> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x144028488 <line:14:5> 'int ()' Function 0x144028158 'QuantizeMultiplierSmallerThanOneExp' 'int ()'
+        | |-CXXDependentScopeMemberExpr 0x144028510 <col:41, col:56> '<dependent type>' contains-errors lvalue .scale
+        | | `-CXXDependentScopeMemberExpr 0x1440284c8 <col:41, col:49> '<dependent type>' contains-errors lvalue ->params
+        | |   `-RecoveryExpr 0x1440284a8 <col:41> '<dependent type>' contains-errors lvalue
+        | |-UnaryOperator 0x144028618 <line:15:41, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x1440285f8 <col:42> '<dependent type>' contains-errors lvalue
+        | `-UnaryOperator 0x1440285a8 <col:61, col:62> 'int *' prefix '&' cannot overflow
+        |   `-DeclRefExpr 0x144028588 <col:62> 'int' lvalue Var 0x144028408 'input2_shift' 'int'
+        `-IfStmt 0x144028760 <line:25:5, line:35:5> has_else
+          |-RecoveryExpr 0x144028720 <line:25:9> '<dependent type>' contains-errors lvalue
+          |-CompoundStmt 0x144028740 <col:29, line:30:5>
+          `-CompoundStmt 0x144028750 <col:12, line:35:5>

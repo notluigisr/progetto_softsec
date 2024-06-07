@@ -1,0 +1,26 @@
+`-FunctionDecl 0x15e8277d8  line:1:1 invalid SMB2_set_ea 'int (const unsigned int, struct cifs_tcon *, int, int, struct smb2_file_full_ea_info *, int)'
+  |-ParmVarDecl 0x15e80dcd8 <col:13, col:32> col:32 used xid 'const unsigned int'
+  |-ParmVarDecl 0x15e80e2c8 <col:37, col:55> col:55 used tcon 'struct cifs_tcon *'
+  |-ParmVarDecl 0x15e80e360 <line:2:6, col:10> col:10 invalid persistent_fid 'int'
+  |-ParmVarDecl 0x15e827400 <col:26, col:30> col:30 invalid volatile_fid 'int'
+  |-ParmVarDecl 0x15e8275d8 <line:3:6, col:37> col:37 used buf 'struct smb2_file_full_ea_info *'
+  |-ParmVarDecl 0x15e827658 <col:42, col:46> col:46 used len 'int'
+  `-CompoundStmt 0x15e827ee0 <line:4:1, line:8:1>
+    `-ReturnStmt 0x15e827ed0 <line:5:2, line:7:28>
+      `-CallExpr 0x15e827e58 <line:5:9, line:7:28> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x15e827a10 <line:5:9> 'int ()' Function 0x15e827958 'send_set_info' 'int ()'
+        |-DeclRefExpr 0x15e827a30 <col:23> 'const unsigned int' lvalue ParmVar 0x15e80dcd8 'xid' 'const unsigned int'
+        |-DeclRefExpr 0x15e827a50 <col:28> 'struct cifs_tcon *' lvalue ParmVar 0x15e80e2c8 'tcon' 'struct cifs_tcon *'
+        |-RecoveryExpr 0x15e827a70 <col:34> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x15e827a90 <col:50> '<dependent type>' contains-errors lvalue
+        |-CXXDependentScopeMemberExpr 0x15e827d90 <line:6:3, col:12> '<dependent type>' contains-errors lvalue ->tgid
+        | `-RecoveryExpr 0x15e827d70 <col:3> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x15e827dd8 <col:18> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x15e827df8 <col:44> '<dependent type>' contains-errors lvalue
+        |-IntegerLiteral 0x15e827b40 <line:7:3> 'int' 0
+        |-IntegerLiteral 0x15e827b60 <col:6> 'int' 1
+        |-CStyleCastExpr 0x15e827e30 <col:9, col:19> 'void **' <BitCast>
+        | `-UnaryOperator 0x15e827c00 <col:18, col:19> 'struct smb2_file_full_ea_info **' prefix '&' cannot overflow
+        |   `-DeclRefExpr 0x15e827b80 <col:19> 'struct smb2_file_full_ea_info *' lvalue ParmVar 0x15e8275d8 'buf' 'struct smb2_file_full_ea_info *'
+        `-UnaryOperator 0x15e827ce0 <col:24, col:25> 'int *' prefix '&' cannot overflow
+          `-DeclRefExpr 0x15e827c90 <col:25> 'int' lvalue ParmVar 0x15e827658 'len' 'int'

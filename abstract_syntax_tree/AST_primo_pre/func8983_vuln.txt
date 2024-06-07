@@ -1,0 +1,84 @@
+`-FunctionDecl 0x14200de88  line:1:1 invalid cmp_addr_policies 'int (int *, int *)'
+  |-ParmVarDecl 0x14200dd28 <col:19, col:32> col:32 invalid a 'int *'
+  |-ParmVarDecl 0x14200dda8 <col:35, col:48> col:48 invalid b 'int *'
+  `-CompoundStmt 0x142027d98 <line:2:1, line:17:1>
+    |-DeclStmt 0x14200e058 <line:3:3, col:11>
+    | |-VarDecl 0x14200df58 <col:3, col:7> col:7 used r 'int'
+    | `-VarDecl 0x14200dfd8 <col:3, col:10> col:10 used i 'int'
+    |-DeclStmt 0x14200e328 <line:4:3, col:39>
+    | `-VarDecl 0x14200e088 <col:3, col:38> col:7 used len_a 'int' cinit
+    |   `-ConditionalOperator 0x14200e2f8 <col:15, col:38> '<dependent type>' contains-errors
+    |     |-RecoveryExpr 0x14200e0f0 <col:15> '<dependent type>' contains-errors lvalue
+    |     |-CallExpr 0x14200e2b0 <col:19, col:34> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x14200e270 <col:19> 'int ()' Function 0x14200e1b8 'smartlist_len' 'int ()'
+    |     | `-RecoveryExpr 0x14200e290 <col:33> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x14200e2d8 <col:38> 'int' 0
+    |-DeclStmt 0x142027498 <line:5:3, col:39>
+    | `-VarDecl 0x14200e358 <col:3, col:38> col:7 used len_b 'int' cinit
+    |   `-ConditionalOperator 0x142027468 <col:15, col:38> '<dependent type>' contains-errors
+    |     |-RecoveryExpr 0x14200e3c0 <col:15> '<dependent type>' contains-errors lvalue
+    |     |-CallExpr 0x142027420 <col:19, col:34> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x14200e3e0 <col:19> 'int ()' Function 0x14200e1b8 'smartlist_len' 'int ()'
+    |     | `-RecoveryExpr 0x142027400 <col:33> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x142027448 <col:38> 'int' 0
+    |-ForStmt 0x142027a98 <line:7:3, line:10:3>
+    | |-BinaryOperator 0x1420274f0 <line:7:8, col:12> 'int' '='
+    | | |-DeclRefExpr 0x1420274b0 <col:8> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | | `-IntegerLiteral 0x1420274d0 <col:12> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x142027630 <col:15, col:32> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x142027580 <col:15, col:19> 'int' contains-errors '<'
+    | | | |-ImplicitCastExpr 0x142027550 <col:15> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x142027510 <col:15> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | | | `-ImplicitCastExpr 0x142027568 <col:19> 'int' contains-errors <LValueToRValue>
+    | | |   `-DeclRefExpr 0x142027530 <col:19> 'int' contains-errors lvalue Var 0x14200e088 'len_a' 'int'
+    | | `-BinaryOperator 0x142027610 <col:28, col:32> 'int' contains-errors '<'
+    | |   |-ImplicitCastExpr 0x1420275e0 <col:28> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x1420275a0 <col:28> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | |   `-ImplicitCastExpr 0x1420275f8 <col:32> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x1420275c0 <col:32> 'int' contains-errors lvalue Var 0x14200e358 'len_b' 'int'
+    | |-UnaryOperator 0x142027670 <col:39, col:41> 'int' prefix '++'
+    | | `-DeclRefExpr 0x142027650 <col:41> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | `-CompoundStmt 0x142027a80 <col:44, line:10:3>
+    |   `-IfStmt 0x142027a60 <line:8:5, line:9:14>
+    |     |-ParenExpr 0x1420279f8 <line:8:9, col:78> 'int' contains-errors
+    |     | `-BinaryOperator 0x1420279d8 <col:10, col:77> 'int' contains-errors '='
+    |     |   |-DeclRefExpr 0x142027688 <col:10> 'int' lvalue Var 0x14200df58 'r' 'int'
+    |     |   `-CallExpr 0x1420279a8 <col:14, col:77> '<dependent type>' contains-errors
+    |     |     |-DeclRefExpr 0x142027788 <col:14> 'int ()' Function 0x1420276d0 'cmp_single_addr_policy' 'int ()'
+    |     |     |-CallExpr 0x1420278e8 <col:37, col:55> '<dependent type>' contains-errors
+    |     |     | |-DeclRefExpr 0x142027888 <col:37> 'int ()' Function 0x1420277d0 'smartlist_get' 'int ()'
+    |     |     | |-RecoveryExpr 0x1420278a8 <col:51> '<dependent type>' contains-errors lvalue
+    |     |     | `-DeclRefExpr 0x1420278c8 <col:54> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    |     |     `-CallExpr 0x142027978 <col:58, col:76> '<dependent type>' contains-errors
+    |     |       |-DeclRefExpr 0x142027918 <col:58> 'int ()' Function 0x1420277d0 'smartlist_get' 'int ()'
+    |     |       |-RecoveryExpr 0x142027938 <col:72> '<dependent type>' contains-errors lvalue
+    |     |       `-DeclRefExpr 0x142027958 <col:75> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    |     `-ReturnStmt 0x142027a50 <line:9:7, col:14>
+    |       `-ImplicitCastExpr 0x142027a38 <col:14> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x142027a18 <col:14> 'int' lvalue Var 0x14200df58 'r' 'int'
+    |-IfStmt 0x142027c40 <line:11:3, line:12:12>
+    | |-BinaryOperator 0x142027bf0 <line:11:7, col:26> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x142027b40 <col:7, col:12> 'int' contains-errors '=='
+    | | | |-ImplicitCastExpr 0x142027b10 <col:7> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x142027ad0 <col:7> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | | | `-ImplicitCastExpr 0x142027b28 <col:12> 'int' contains-errors <LValueToRValue>
+    | | |   `-DeclRefExpr 0x142027af0 <col:12> 'int' contains-errors lvalue Var 0x14200e088 'len_a' 'int'
+    | | `-BinaryOperator 0x142027bd0 <col:21, col:26> 'int' contains-errors '=='
+    | |   |-ImplicitCastExpr 0x142027ba0 <col:21> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x142027b60 <col:21> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+    | |   `-ImplicitCastExpr 0x142027bb8 <col:26> 'int' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x142027b80 <col:26> 'int' contains-errors lvalue Var 0x14200e358 'len_b' 'int'
+    | `-ReturnStmt 0x142027c30 <line:12:5, col:12>
+    |   `-IntegerLiteral 0x142027c10 <col:12> 'int' 0
+    `-IfStmt 0x142027d68 <line:13:3, line:16:12> has_else
+      |-BinaryOperator 0x142027cd0 <line:13:7, col:11> 'int' contains-errors '<'
+      | |-ImplicitCastExpr 0x142027ca0 <col:7> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x142027c60 <col:7> 'int' lvalue Var 0x14200dfd8 'i' 'int'
+      | `-ImplicitCastExpr 0x142027cb8 <col:11> 'int' contains-errors <LValueToRValue>
+      |   `-DeclRefExpr 0x142027c80 <col:11> 'int' contains-errors lvalue Var 0x14200e088 'len_a' 'int'
+      |-ReturnStmt 0x142027d28 <line:14:5, col:13>
+      | `-UnaryOperator 0x142027d10 <col:12, col:13> 'int' prefix '-'
+      |   `-IntegerLiteral 0x142027cf0 <col:13> 'int' 1
+      `-ReturnStmt 0x142027d58 <line:16:5, col:12>
+        `-IntegerLiteral 0x142027d38 <col:12> 'int' 1

@@ -1,0 +1,39 @@
+`-FunctionDecl 0x14e827600  line:1:13 invalid tcp_illinois_info 'void (struct sock *, int, struct sk_buff *)' static
+  |-ParmVarDecl 0x14e80e248 <col:31, col:44> col:44 used sk 'struct sock *'
+  |-ParmVarDecl 0x14e80e2e0 <col:48, col:52> col:52 invalid ext 'int'
+  |-ParmVarDecl 0x14e8274c8 <line:2:10, col:26> col:26 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x14e122708 <line:3:1, line:19:1>
+    |-DeclStmt 0x14e827ae8 <line:4:2, col:45>
+    | |-RecordDecl 0x14e8276c0 <col:8, col:15> col:15 struct illinois
+    | `-VarDecl 0x14e827828 <col:2, col:44> col:25 used ca 'const struct illinois *' cinit
+    |   `-ImplicitCastExpr 0x14e827ab8 <col:30, col:44> 'const struct illinois *' <IntegralToPointer>
+    |     `-CallExpr 0x14e827a78 <col:30, col:44> 'int'
+    |       |-ImplicitCastExpr 0x14e827a60 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14e8279f0 <col:30> 'int ()' Function 0x14e827938 'inet_csk_ca' 'int ()'
+    |       `-ImplicitCastExpr 0x14e827aa0 <col:42> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14e827a10 <col:42> 'struct sock *' lvalue ParmVar 0x14e80e248 'sk' 'struct sock *'
+    `-IfStmt 0x14e1226e8 <line:6:2, line:18:2>
+      |-RecoveryExpr 0x14e827b98 <line:6:6, col:43> '_Bool' contains-errors
+      `-CompoundStmt 0x14e1226b8 <col:46, line:18:2>
+        |-DeclStmt 0x14e827f30 <line:7:3, line:11:4>
+        | |-RecordDecl 0x14e827bb8 <line:7:3, col:10> col:10 struct tcpvegas_info
+        | `-VarDecl 0x14e827cb8 <col:3, col:24> col:24 referenced invalid info 'struct tcpvegas_info'
+        |-CallExpr 0x14e828110 <line:14:3, col:24> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x14e828028 <col:3> 'int ()' Function 0x14e827f70 'do_div' 'int ()'
+        | |-RecoveryExpr 0x14e8280f0 <col:10> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x14e828098 <col:13, col:17> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x14e828060 <col:13> 'const struct illinois *' lvalue Var 0x14e827828 'ca' 'const struct illinois *'
+        |-BinaryOperator 0x14e828228 <line:15:3, col:19> '<dependent type>' contains-errors '='
+        | |-CXXDependentScopeMemberExpr 0x14e828188 <col:3, col:8> '<dependent type>' contains-errors lvalue .tcpv_rtt
+        | | `-RecoveryExpr 0x14e828160 <col:3> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x14e828140 <col:3> 'struct tcpvegas_info' lvalue Var 0x14e827cb8 'info' 'struct tcpvegas_info'
+        | `-RecoveryExpr 0x14e828208 <col:19> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x14e122678 <line:17:3, col:56> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x14e828328 <col:3> 'int ()' Function 0x14e828270 'nla_put' 'int ()'
+          |-DeclRefExpr 0x14e828348 <col:11> 'struct sk_buff *' lvalue ParmVar 0x14e8274c8 'skb' 'struct sk_buff *'
+          |-RecoveryExpr 0x14e122658 <col:16> '<dependent type>' contains-errors lvalue
+          |-UnaryExprOrTypeTraitExpr 0x14e8283c0 <col:37, col:48> 'unsigned long' contains-errors sizeof
+          | `-ParenExpr 0x14e8283a0 <col:43, col:48> '<dependent type>' contains-errors lvalue
+          |   `-RecoveryExpr 0x14e828380 <col:44> '<dependent type>' contains-errors lvalue
+          `-UnaryOperator 0x14e122600 <col:51, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x14e8283e0 <col:52> '<dependent type>' contains-errors lvalue

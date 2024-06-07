@@ -1,0 +1,23 @@
+`-FunctionDecl 0x124008200  line:1:20 invalid intel_pmu_needs_lbr_smpl 'int (struct perf_event *)' static inline
+  |-ParmVarDecl 0x1230fc068 <col:45, col:64> col:64 used event 'struct perf_event *'
+  `-CompoundStmt 0x124008840 <line:2:1, line:12:1>
+    |-IfStmt 0x124008520 <line:4:2, line:5:10>
+    | |-CallExpr 0x124008498 <line:4:6, col:28> 'int'
+    | | |-ImplicitCastExpr 0x124008480 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x124008410 <col:6> 'int ()' Function 0x124008358 'has_branch_stack' 'int ()'
+    | | `-ImplicitCastExpr 0x1240084c0 <col:23> 'struct perf_event *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x124008430 <col:23> 'struct perf_event *' lvalue ParmVar 0x1230fc068 'event' 'struct perf_event *'
+    | `-ReturnStmt 0x124008510 <line:5:3, col:10>
+    |   `-RecoveryExpr 0x1240084f0 <col:10> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x124008808 <line:8:2, line:9:10>
+      |-BinaryOperator 0x1240087a0 <line:8:6, col:62> 'int' contains-errors '&&'
+      | |-CXXDependentScopeMemberExpr 0x124008758 <col:6, col:24> '<dependent type>' contains-errors lvalue .pebs_trap
+      | | `-CXXDependentScopeMemberExpr 0x124008710 <col:6, col:14> '<dependent type>' contains-errors lvalue .intel_cap
+      | |   `-RecoveryExpr 0x1240086f0 <col:6> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x1240086b0 <col:37, col:62> 'int' contains-errors '>'
+      |   |-CXXDependentScopeMemberExpr 0x124008648 <col:37, col:49> '<dependent type>' contains-errors lvalue .precise_ip
+      |   | `-RecoveryExpr 0x124008620 <col:37, col:44> '<dependent type>' contains-errors lvalue
+      |   |   `-DeclRefExpr 0x1240085e8 <col:37> 'struct perf_event *' lvalue ParmVar 0x1230fc068 'event' 'struct perf_event *'
+      |   `-IntegerLiteral 0x124008690 <col:62> 'int' 1
+      `-ReturnStmt 0x1240087f8 <line:9:3, col:10>
+        `-RecoveryExpr 0x1240087d8 <col:10> '<dependent type>' contains-errors lvalue

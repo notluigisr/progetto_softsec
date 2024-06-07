@@ -1,0 +1,26 @@
+`-FunctionDecl 0x12700dda8  line:1:1 referenced burn_stack 'int (int)'
+  |-ParmVarDecl 0x12700dcd8 <col:13, col:17> col:17 used bytes 'int'
+  `-CompoundStmt 0x127026600 <line:2:1, line:9:1>
+    |-DeclStmt 0x12700dfa8 <line:3:5, col:18>
+    | `-VarDecl 0x12700df40 <col:5, col:17> col:10 used buf 'char[128]'
+    |-CallExpr 0x12700e1b8 <line:5:5, col:30> 'int'
+    | |-ImplicitCastExpr 0x12700e1a0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12700e0f0 <col:5> 'int ()' Function 0x12700e038 'wipememory' 'int ()'
+    | |-ImplicitCastExpr 0x12700e1e8 <col:16> 'char *' <ArrayToPointerDecay>
+    | | `-DeclRefExpr 0x12700e110 <col:16> 'char[128]' lvalue Var 0x12700df40 'buf' 'char[128]'
+    | `-UnaryExprOrTypeTraitExpr 0x12700e150 <col:20, col:27> 'unsigned long' sizeof
+    |   `-DeclRefExpr 0x12700e130 <col:27> 'char[128]' lvalue Var 0x12700df40 'buf' 'char[128]' non_odr_use_unevaluated
+    |-CompoundAssignOperator 0x12700e260 <line:6:5, col:21> 'int' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    | |-DeclRefExpr 0x12700e200 <col:5> 'int' lvalue ParmVar 0x12700dcd8 'bytes' 'int'
+    | `-UnaryExprOrTypeTraitExpr 0x12700e240 <col:14, col:21> 'unsigned long' sizeof
+    |   `-DeclRefExpr 0x12700e220 <col:21> 'char[128]' lvalue Var 0x12700df40 'buf' 'char[128]' non_odr_use_unevaluated
+    `-IfStmt 0x12700e3d8 <line:7:5, line:8:26>
+      |-BinaryOperator 0x12700e2e8 <line:7:9, col:17> 'int' '>'
+      | |-ImplicitCastExpr 0x12700e2d0 <col:9> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x12700e290 <col:9> 'int' lvalue ParmVar 0x12700dcd8 'bytes' 'int'
+      | `-IntegerLiteral 0x12700e2b0 <col:17> 'int' 0
+      `-CallExpr 0x12700e398 <line:8:9, col:26> 'int'
+        |-ImplicitCastExpr 0x12700e380 <col:9> 'int (*)(int)' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x12700e308 <col:9> 'int (int)' Function 0x12700dda8 'burn_stack' 'int (int)'
+        `-ImplicitCastExpr 0x12700e3c0 <col:21> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x12700e328 <col:21> 'int' lvalue ParmVar 0x12700dcd8 'bytes' 'int'

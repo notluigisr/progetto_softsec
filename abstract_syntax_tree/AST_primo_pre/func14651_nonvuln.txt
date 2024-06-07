@@ -1,0 +1,31 @@
+`-FunctionDecl 0x1290083e8  line:1:1 seq_print_acct 'int (struct seq_file *, const struct nf_conn *, int)'
+  |-ParmVarDecl 0x12880e248 <col:16, col:33> col:33 used s 'struct seq_file *'
+  |-ParmVarDecl 0x129008228 <col:36, col:58> col:58 used ct 'const struct nf_conn *'
+  |-ParmVarDecl 0x1290082a8 <col:62, col:66> col:66 used dir 'int'
+  `-CompoundStmt 0x129009030 <line:2:1, line:16:1>
+    |-DeclStmt 0x1290086d8 <line:3:2, col:27>
+    | |-RecordDecl 0x1290084f0 <col:2, col:9> col:9 struct nf_conn_acct
+    | `-VarDecl 0x129008658 <col:2, col:23> col:23 used acct 'struct nf_conn_acct *'
+    |-DeclStmt 0x1290088d8 <line:4:2, col:33>
+    | |-RecordDecl 0x1290086f0 <col:2, col:9> col:9 struct nf_conn_counter
+    | `-VarDecl 0x129008858 <col:2, col:26> col:26 used counter 'struct nf_conn_counter *'
+    |-BinaryOperator 0x129008b20 <line:6:2, col:29> 'struct nf_conn_acct *' '='
+    | |-DeclRefExpr 0x1290088f0 <col:2> 'struct nf_conn_acct *' lvalue Var 0x129008658 'acct' 'struct nf_conn_acct *'
+    | `-ImplicitCastExpr 0x129008b08 <col:9, col:29> 'struct nf_conn_acct *' <IntegralToPointer>
+    |   `-CallExpr 0x129008ac8 <col:9, col:29> 'int'
+    |     |-ImplicitCastExpr 0x129008ab0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x129008a40 <col:9> 'int ()' Function 0x129008988 'nf_conn_acct_find' 'int ()'
+    |     `-ImplicitCastExpr 0x129008af0 <col:27> 'const struct nf_conn *' <LValueToRValue>
+    |       `-DeclRefExpr 0x129008a60 <col:27> 'const struct nf_conn *' lvalue ParmVar 0x129008228 'ct' 'const struct nf_conn *'
+    |-IfStmt 0x129008bc0 <line:7:2, line:8:10>
+    | |-UnaryOperator 0x129008b78 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x129008b60 <col:7> 'struct nf_conn_acct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x129008b40 <col:7> 'struct nf_conn_acct *' lvalue Var 0x129008658 'acct' 'struct nf_conn_acct *'
+    | `-ReturnStmt 0x129008bb0 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x129008b90 <col:10> 'int' 0
+    |-BinaryOperator 0x129008c60 <line:10:2, col:18> 'struct nf_conn_counter *' contains-errors '='
+    | |-DeclRefExpr 0x129008be0 <col:2> 'struct nf_conn_counter *' lvalue Var 0x129008858 'counter' 'struct nf_conn_counter *'
+    | `-RecoveryExpr 0x129008c38 <col:12, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x129008c00 <col:12> 'struct nf_conn_acct *' lvalue Var 0x129008658 'acct' 'struct nf_conn_acct *'
+    `-ReturnStmt 0x129009020 <line:15:2, col:9>
+      `-IntegerLiteral 0x129009000 <col:9> 'int' 0

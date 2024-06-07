@@ -1,0 +1,68 @@
+`-FunctionDecl 0x12b916df8  line:1:12 invalid check_trust 'int (int *)' static
+  |-ParmVarDecl 0x12b916d28 <col:24, col:40> col:40 referenced invalid ctx 'int *'
+  `-CompoundStmt 0x12b931108 <line:2:1, line:25:1>
+    |-DeclStmt 0x12b916fc0 <line:6:2, col:11>
+    | |-VarDecl 0x12b916ec0 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x12b916f40 <col:2, col:9> col:9 used ok 'int'
+    |-DeclStmt 0x12b917270 <line:8:2, col:41>
+    | `-VarDecl 0x12b917208 <col:2, col:40> col:8 used cb 'int (*)(int, int *)'
+    |-BinaryOperator 0x12b917310 <line:9:2, col:10> 'int (*)(int, int *)' contains-errors '='
+    | |-DeclRefExpr 0x12b917288 <col:2> 'int (*)(int, int *)' lvalue Var 0x12b917208 'cb' 'int (*)(int, int *)'
+    | `-CXXDependentScopeMemberExpr 0x12b9172c8 <col:5, col:10> '<dependent type>' contains-errors lvalue ->verify_cb
+    |   `-RecoveryExpr 0x12b9172a8 <col:5> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12b9305a8 <line:11:2, col:32> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12b917330 <col:2> 'int' lvalue Var 0x12b916ec0 'i' 'int'
+    | `-BinaryOperator 0x12b930588 <col:6, col:32> '<dependent type>' contains-errors '-'
+    |   |-CallExpr 0x12b930540 <col:6, col:28> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12b9304b8 <col:6> 'int ()' Function 0x12b930400 'sk_X509_num' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x12b9304f8 <col:18, col:23> '<dependent type>' contains-errors lvalue ->chain
+    |   |   `-RecoveryExpr 0x12b9304d8 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x12b930568 <col:32> 'int' 1
+    |-BinaryOperator 0x12b930a38 <line:13:2, col:47> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12b930780 <col:2> 'int' lvalue Var 0x12b916f40 'ok' 'int'
+    | `-CallExpr 0x12b930a00 <col:7, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b930880 <col:7> 'int ()' Function 0x12b9307c8 'X509_check_trust' 'int ()'
+    |   |-RecoveryExpr 0x12b9309e0 <col:24> '<dependent type>' contains-errors lvalue
+    |   |-CXXDependentScopeMemberExpr 0x12b930920 <col:27, col:39> '<dependent type>' contains-errors lvalue ->trust
+    |   | `-CXXDependentScopeMemberExpr 0x12b9308d8 <col:27, col:32> '<dependent type>' contains-errors lvalue ->param
+    |   |   `-RecoveryExpr 0x12b9308b8 <col:27> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x12b930968 <col:46> 'int' 0
+    |-IfStmt 0x12b930b20 <line:14:2, line:15:10>
+    | |-BinaryOperator 0x12b930ad0 <line:14:6, col:12> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x12b930a58 <col:6> 'int' lvalue Var 0x12b916f40 'ok' 'int'
+    | | `-RecoveryExpr 0x12b930ab0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12b930b10 <line:15:3, col:10>
+    |   `-IntegerLiteral 0x12b930af0 <col:10> 'int' 1
+    |-BinaryOperator 0x12b930bf0 <line:16:2, col:21> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12b930b88 <col:2, col:7> '<dependent type>' contains-errors lvalue ->error_depth
+    | | `-RecoveryExpr 0x12b930b60 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12b930b40 <col:2> 'int *' lvalue ParmVar 0x12b916d28 'ctx' 'int *'
+    | `-DeclRefExpr 0x12b930bd0 <col:21> 'int' lvalue Var 0x12b916ec0 'i' 'int'
+    |-BinaryOperator 0x12b930cf8 <line:17:2, col:22> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12b930c58 <col:2, col:7> '<dependent type>' contains-errors lvalue ->current_cert
+    | | `-RecoveryExpr 0x12b930c30 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12b930c10 <col:2> 'int *' lvalue ParmVar 0x12b916d28 'ctx' 'int *'
+    | `-RecoveryExpr 0x12b930cd8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12b930fc0 <line:18:2, line:21:16> has_else
+    | |-BinaryOperator 0x12b930d90 <line:18:6, col:12> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x12b930d18 <col:6> 'int' lvalue Var 0x12b916f40 'ok' 'int'
+    | | `-RecoveryExpr 0x12b930d70 <col:12> '<dependent type>' contains-errors lvalue
+    | |-BinaryOperator 0x12b930e98 <line:19:3, col:16> '<dependent type>' contains-errors '='
+    | | |-CXXDependentScopeMemberExpr 0x12b930df8 <col:3, col:8> '<dependent type>' contains-errors lvalue ->error
+    | | | `-RecoveryExpr 0x12b930dd0 <col:3> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x12b930db0 <col:3> 'int *' lvalue ParmVar 0x12b916d28 'ctx' 'int *'
+    | | `-RecoveryExpr 0x12b930e78 <col:16> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x12b930fa0 <line:21:3, col:16> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x12b930f00 <col:3, col:8> '<dependent type>' contains-errors lvalue ->error
+    |   | `-RecoveryExpr 0x12b930ed8 <col:3> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12b930eb8 <col:3> 'int *' lvalue ParmVar 0x12b916d28 'ctx' 'int *'
+    |   `-RecoveryExpr 0x12b930f80 <col:16> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12b9310a0 <line:22:2, col:16> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12b930ff0 <col:2> 'int' lvalue Var 0x12b916f40 'ok' 'int'
+    | `-CallExpr 0x12b931070 <col:7, col:16> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12b931010 <col:7> 'int (*)(int, int *)' lvalue Var 0x12b917208 'cb' 'int (*)(int, int *)'
+    |   |-IntegerLiteral 0x12b931030 <col:10> 'int' 0
+    |   `-RecoveryExpr 0x12b931050 <col:13> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12b9310f8 <line:23:2, col:9>
+      `-ImplicitCastExpr 0x12b9310e0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12b9310c0 <col:9> 'int' lvalue Var 0x12b916f40 'ok' 'int'

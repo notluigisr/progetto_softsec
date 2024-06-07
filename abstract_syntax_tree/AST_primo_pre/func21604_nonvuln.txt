@@ -1,0 +1,39 @@
+`-FunctionDecl 0x150145ca8  line:1:6 invalid kvm_mmu_slot_gfn_write_protect 'int (struct kvm *, struct kvm_memory_slot *, int, int)'
+  |-ParmVarDecl 0x150128668 <col:37, col:49> col:49 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x150145a58 <line:2:9, col:33> col:33 used slot 'struct kvm_memory_slot *'
+  |-ParmVarDecl 0x150145ad8 <col:39, col:43> col:43 invalid gfn 'int'
+  |-ParmVarDecl 0x150145b58 <line:3:9, col:13> col:13 used min_level 'int'
+  `-CompoundStmt 0x1488082c8 <line:4:1, line:21:1>
+    |-DeclStmt 0x150145f58 <line:5:2, col:33>
+    | |-RecordDecl 0x150145d70 <col:2, col:9> col:9 struct kvm_rmap_head
+    | `-VarDecl 0x150145ed8 <col:2, col:24> col:24 used rmap_head 'struct kvm_rmap_head *'
+    |-DeclStmt 0x150145ff0 <line:6:2, col:7>
+    | `-VarDecl 0x150145f88 <col:2, col:6> col:6 used i 'int'
+    |-IfStmt 0x150146718 <line:9:2, line:14:2>
+    | |-CallExpr 0x1501461e8 <line:9:6, col:33> 'int'
+    | | |-ImplicitCastExpr 0x1501461d0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x150146160 <col:6> 'int ()' Function 0x1501460a8 'kvm_memslots_have_rmaps' 'int ()'
+    | | `-ImplicitCastExpr 0x150146210 <col:30> 'struct kvm *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x150146180 <col:30> 'struct kvm *' lvalue ParmVar 0x150128668 'kvm' 'struct kvm *'
+    | `-CompoundStmt 0x150146700 <col:36, line:14:2>
+    |   `-ForStmt 0x1501466c8 <line:10:3, line:13:3>
+    |     |-BinaryOperator 0x150146280 <line:10:8, col:12> 'int' '='
+    |     | |-DeclRefExpr 0x150146228 <col:8> 'int' lvalue Var 0x150145f88 'i' 'int'
+    |     | `-ImplicitCastExpr 0x150146268 <col:12> 'int' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x150146248 <col:12> 'int' lvalue ParmVar 0x150145b58 'min_level' 'int'
+    |     |-<<<NULL>>>
+    |     |-BinaryOperator 0x150146318 <col:23, col:28> 'int' contains-errors '<='
+    |     | |-DeclRefExpr 0x1501462a0 <col:23> 'int' lvalue Var 0x150145f88 'i' 'int'
+    |     | `-RecoveryExpr 0x1501462f8 <col:28> '<dependent type>' contains-errors lvalue
+    |     |-UnaryOperator 0x150146358 <col:52, col:54> 'int' prefix '++'
+    |     | `-DeclRefExpr 0x150146338 <col:54> 'int' lvalue Var 0x150145f88 'i' 'int'
+    |     `-CompoundStmt 0x1501466b0 <col:57, line:13:3>
+    |       `-BinaryOperator 0x150146528 <line:11:4, col:40> 'struct kvm_rmap_head *' contains-errors '='
+    |         |-DeclRefExpr 0x150146370 <col:4> 'struct kvm_rmap_head *' lvalue Var 0x150145ed8 'rmap_head' 'struct kvm_rmap_head *'
+    |         `-CallExpr 0x1501464f0 <col:16, col:40> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x150146470 <col:16> 'int ()' Function 0x1501463b8 'gfn_to_rmap' 'int ()'
+    |           |-RecoveryExpr 0x150146490 <col:28> '<dependent type>' contains-errors lvalue
+    |           |-DeclRefExpr 0x1501464b0 <col:33> 'int' lvalue Var 0x150145f88 'i' 'int'
+    |           `-DeclRefExpr 0x1501464d0 <col:36> 'struct kvm_memory_slot *' lvalue ParmVar 0x150145a58 'slot' 'struct kvm_memory_slot *'
+    `-ReturnStmt 0x1488082b8 <line:20:2, col:9>
+      `-RecoveryExpr 0x148808298 <col:9> '<dependent type>' contains-errors lvalue

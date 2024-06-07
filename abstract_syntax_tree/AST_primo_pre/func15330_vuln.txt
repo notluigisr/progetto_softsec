@@ -1,0 +1,116 @@
+`-FunctionDecl 0x11d922860  line:1:6 invalid hrtimer_start_range_ns 'void (struct hrtimer *, int, int, const enum hrtimer_mode)'
+  |-ParmVarDecl 0x11e00e248 <col:29, col:45> col:45 used timer 'struct hrtimer *'
+  |-ParmVarDecl 0x11e00e2e0 <col:52, col:60> col:60 referenced invalid tim 'int'
+  |-ParmVarDecl 0x11e00e360 <line:2:8, col:12> col:12 invalid delta_ns 'int'
+  |-ParmVarDecl 0x11d922718 <col:22, col:46> col:46 invalid mode 'const enum hrtimer_mode'
+  `-CompoundStmt 0x11e0275b0 <line:3:1, line:38:1>
+    |-DeclStmt 0x11d922bb0 <line:4:2, col:44>
+    | |-RecordDecl 0x11d922928 <col:2, col:9> col:9 struct hrtimer_clock_base
+    | |-VarDecl 0x11d922a98 <col:2, col:29> col:29 used base 'struct hrtimer_clock_base *'
+    | `-VarDecl 0x11d922b28 <col:2, col:36> col:36 used new_base 'struct hrtimer_clock_base *'
+    |-DeclStmt 0x11d922c48 <line:5:2, col:21>
+    | `-VarDecl 0x11d922be0 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x11d922ce0 <line:6:2, col:14>
+    | `-VarDecl 0x11d922c78 <col:2, col:6> col:6 used leftmost 'int'
+    |-BinaryOperator 0x11d922fc8 <line:8:2, col:40> 'struct hrtimer_clock_base *' '='
+    | |-DeclRefExpr 0x11d922cf8 <col:2> 'struct hrtimer_clock_base *' lvalue Var 0x11d922a98 'base' 'struct hrtimer_clock_base *'
+    | `-ImplicitCastExpr 0x11d922fb0 <col:9, col:40> 'struct hrtimer_clock_base *' <IntegralToPointer>
+    |   `-CallExpr 0x11d922f68 <col:9, col:40> 'int'
+    |     |-ImplicitCastExpr 0x11d922f50 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11d922e70 <col:9> 'int ()' Function 0x11d922db8 'lock_hrtimer_base' 'int ()'
+    |     |-ImplicitCastExpr 0x11d922f98 <col:27> 'struct hrtimer *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x11d922e90 <col:27> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |     `-UnaryOperator 0x11d922f00 <col:34, col:35> 'unsigned long *' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x11d922eb0 <col:35> 'unsigned long' lvalue Var 0x11d922be0 'flags' 'unsigned long'
+    |-CallExpr 0x11d923198 <line:11:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11d9230c8 <col:2> 'int ()' Function 0x11d923010 'remove_hrtimer' 'int ()'
+    | |-DeclRefExpr 0x11d9230e8 <col:17> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    | |-DeclRefExpr 0x11d923108 <col:24> 'struct hrtimer_clock_base *' lvalue Var 0x11d922a98 'base' 'struct hrtimer_clock_base *'
+    | `-RecoveryExpr 0x11d923178 <col:30> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11d9234a0 <line:13:2, line:14:45>
+    | |-BinaryOperator 0x11d923248 <line:13:6, col:13> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x11d9231d0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x11d923228 <col:13> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x11d923480 <line:14:3, col:45> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x11d923288 <col:3> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x11d923268 <col:3> 'int' lvalue ParmVar 0x11e00e2e0 'tim' 'int'
+    |   `-CallExpr 0x11d923450 <col:9, col:45> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x11d923390 <col:9> 'int ()' Function 0x11d9232d8 'ktime_add_safe' 'int ()'
+    |     |-RecoveryExpr 0x11d9233b0 <col:24> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x11d923430 <col:29, col:44> '<dependent type>' contains-errors
+    |       `-RecoveryExpr 0x11d923408 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x11d9233d0 <col:29> 'struct hrtimer_clock_base *' lvalue Var 0x11d922a98 'base' 'struct hrtimer_clock_base *'
+    |-BinaryOperator 0x11d9240b8 <line:16:2, col:46> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11d9234e0 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11d9234c0 <col:2> 'int' lvalue ParmVar 0x11e00e2e0 'tim' 'int'
+    | `-CallExpr 0x11d924080 <col:8, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11d924000 <col:8> 'int ()' Function 0x11d923530 'hrtimer_update_lowres' 'int ()'
+    |   |-DeclRefExpr 0x11d924020 <col:30> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |   |-RecoveryExpr 0x11d924040 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x11d924060 <col:42> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11d924238 <line:18:2, col:51> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11d9241b8 <col:2> 'int ()' Function 0x11d924100 'hrtimer_set_expires_range_ns' 'int ()'
+    | |-DeclRefExpr 0x11d9241d8 <col:31> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    | |-RecoveryExpr 0x11d9241f8 <col:38> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x11d924218 <col:43> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11d9244f8 <line:21:2, col:72> 'struct hrtimer_clock_base *' contains-errors '='
+    | |-DeclRefExpr 0x11d924270 <col:2> 'struct hrtimer_clock_base *' lvalue Var 0x11d922b28 'new_base' 'struct hrtimer_clock_base *'
+    | `-CallExpr 0x11d9244c0 <col:13, col:72> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11d924370 <col:13> 'int ()' Function 0x11d9242b8 'switch_hrtimer_base' 'int ()'
+    |   |-DeclRefExpr 0x11d924390 <col:33> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |   |-DeclRefExpr 0x11d9243b0 <col:40> 'struct hrtimer_clock_base *' lvalue Var 0x11d922a98 'base' 'struct hrtimer_clock_base *'
+    |   `-BinaryOperator 0x11d9244a0 <col:46, col:53> '<dependent type>' contains-errors '&'
+    |     |-RecoveryExpr 0x11d9243d0 <col:46> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x11d924480 <col:53> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11d924650 <line:23:2, col:42> 'int'
+    | |-ImplicitCastExpr 0x11d924638 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11d9245f8 <col:2> 'int ()' Function 0x11d924540 'timer_stats_hrtimer_set_start_info' 'int ()'
+    | `-ImplicitCastExpr 0x11d924678 <col:37> 'struct hrtimer *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11d924618 <col:37> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |-BinaryOperator 0x11d924868 <line:25:2, col:44> 'int' '='
+    | |-DeclRefExpr 0x11d924690 <col:2> 'int' lvalue Var 0x11d922c78 'leftmost' 'int'
+    | `-CallExpr 0x11d924808 <col:13, col:44> 'int'
+    |   |-ImplicitCastExpr 0x11d9247f0 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x11d924790 <col:13> 'int ()' Function 0x11d9246d8 'enqueue_hrtimer' 'int ()'
+    |   |-ImplicitCastExpr 0x11d924838 <col:29> 'struct hrtimer *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x11d9247b0 <col:29> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |   `-ImplicitCastExpr 0x11d924850 <col:36> 'struct hrtimer_clock_base *' <LValueToRValue>
+    |     `-DeclRefExpr 0x11d9247d0 <col:36> 'struct hrtimer_clock_base *' lvalue Var 0x11d922b28 'new_base' 'struct hrtimer_clock_base *'
+    |-IfStmt 0x11d924940 <line:26:2, line:27:8>
+    | |-UnaryOperator 0x11d9248c0 <line:26:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x11d9248a8 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11d924888 <col:7> 'int' lvalue Var 0x11d922c78 'leftmost' 'int'
+    | `-GotoStmt 0x11d924928 <line:27:3, col:8> 'unlock' 0x11d9248d8
+    |-IfStmt 0x11d924f70 <line:29:2, line:35:2> has_else
+    | |-UnaryOperator 0x11d924ad8 <line:29:6, col:35> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x11d924a98 <col:7, col:35> 'int'
+    | |   |-ImplicitCastExpr 0x11d924a80 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x11d924a40 <col:7> 'int ()' Function 0x11d924988 'hrtimer_is_hres_active' 'int ()'
+    | |   `-ImplicitCastExpr 0x11d924ac0 <col:30> 'struct hrtimer *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x11d924a60 <col:30> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    | |-CompoundStmt 0x11d924d88 <col:38, line:33:2>
+    | | `-IfStmt 0x11d924d68 <line:31:3, line:32:44>
+    | |   |-CXXDependentScopeMemberExpr 0x11d924b50 <line:31:7, col:27> '<dependent type>' contains-errors lvalue ->nohz_active
+    | |   | `-RecoveryExpr 0x11d924b28 <col:7, col:17> '<dependent type>' contains-errors lvalue
+    | |   |   `-DeclRefExpr 0x11d924af0 <col:7> 'struct hrtimer_clock_base *' lvalue Var 0x11d922b28 'new_base' 'struct hrtimer_clock_base *'
+    | |   `-CallExpr 0x11d924d40 <line:32:4, col:44> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x11d924c78 <col:4> 'int ()' Function 0x11d924bc0 'wake_up_nohz_cpu' 'int ()'
+    | |     `-CXXDependentScopeMemberExpr 0x11d924cf8 <col:21, col:41> '<dependent type>' contains-errors lvalue ->cpu
+    | |       `-RecoveryExpr 0x11d924cd0 <col:21, col:31> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x11d924c98 <col:21> 'struct hrtimer_clock_base *' lvalue Var 0x11d922b28 'new_base' 'struct hrtimer_clock_base *'
+    | `-CompoundStmt 0x11d924f58 <line:33:9, line:35:2>
+    |   `-CallExpr 0x11d924ef8 <line:34:3, col:36> 'int'
+    |     |-ImplicitCastExpr 0x11d924ee0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11d924e80 <col:3> 'int ()' Function 0x11d924dc8 'hrtimer_reprogram' 'int ()'
+    |     |-ImplicitCastExpr 0x11d924f28 <col:21> 'struct hrtimer *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x11d924ea0 <col:21> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+    |     `-ImplicitCastExpr 0x11d924f40 <col:28> 'struct hrtimer_clock_base *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11d924ec0 <col:28> 'struct hrtimer_clock_base *' lvalue Var 0x11d922b28 'new_base' 'struct hrtimer_clock_base *'
+    `-LabelStmt 0x11e027590 <line:36:1, line:37:35> 'unlock'
+      `-CallExpr 0x11e027548 <col:2, col:35> 'int'
+        |-ImplicitCastExpr 0x11e027530 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x11e0274b8 <col:2> 'int ()' Function 0x11e027400 'unlock_hrtimer_base' 'int ()'
+        |-ImplicitCastExpr 0x11e027578 <col:22> 'struct hrtimer *' <LValueToRValue>
+        | `-DeclRefExpr 0x11e0274d8 <col:22> 'struct hrtimer *' lvalue ParmVar 0x11e00e248 'timer' 'struct hrtimer *'
+        `-UnaryOperator 0x11e027518 <col:29, col:30> 'unsigned long *' prefix '&' cannot overflow
+          `-DeclRefExpr 0x11e0274f8 <col:30> 'unsigned long' lvalue Var 0x11d922be0 'flags' 'unsigned long'

@@ -1,0 +1,76 @@
+`-FunctionDecl 0x14b80e1e8  line:1:14 invalid EvalHybridPerChannel 'int (int *, int *, int *, int *, const int *, const int *, const int *, int *)'
+  |-ParmVarDecl 0x14b80dd28 <col:35, col:50> col:50 invalid context 'int *'
+  |-ParmVarDecl 0x14b80dda8 <col:59, col:71> col:71 invalid node 'int *'
+  |-ParmVarDecl 0x14b80de28 <line:2:35, col:62> col:62 invalid params 'int *'
+  |-ParmVarDecl 0x14b80dea8 <line:3:35, col:43> col:43 invalid data 'int *'
+  |-ParmVarDecl 0x14b80df28 <col:49, col:69> col:69 invalid input 'const int *'
+  |-ParmVarDecl 0x14b80dfa8 <line:4:35, col:55> col:55 invalid filter 'const int *'
+  |-ParmVarDecl 0x14b80e028 <line:5:35, col:55> col:55 invalid bias 'const int *'
+  |-ParmVarDecl 0x14b80e0a8 <line:6:35, col:49> col:49 invalid output 'int *'
+  `-CompoundStmt 0x14b123b88 <col:57, line:70:1>
+    |-DeclStmt 0x14b80e3e8 <line:7:3, col:53>
+    | |-VarDecl 0x14b80e2e8 <col:3, col:9> col:9 used output_activation_min 'float'
+    | `-VarDecl 0x14b80e368 <col:3, col:32> col:32 used output_activation_max 'float'
+    |-CallExpr 0x14b827690 <line:8:3, line:9:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b827560 <line:8:3> 'int ()' Function 0x14b8274a8 'CalculateActivationRange' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x14b8275a0 <col:28, col:36> '<dependent type>' contains-errors lvalue ->activation
+    | | `-RecoveryExpr 0x14b827580 <col:28> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x14b827640 <col:48, col:49> 'float *' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x14b8275e8 <col:49> 'float' lvalue Var 0x14b80e2e8 'output_activation_min' 'float'
+    | `-UnaryOperator 0x14b827678 <line:9:28, col:29> 'float *' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x14b827658 <col:29> 'float' lvalue Var 0x14b80e368 'output_activation_max' 'float'
+    |-DeclStmt 0x14b827a20 <line:10:3, col:72>
+    | `-VarDecl 0x14b8276e0 <col:3, col:71> col:13 used input_size 'const int' cinit
+    |   `-BinaryOperator 0x14b827a00 <col:26, col:71> '<dependent type>' contains-errors '/'
+    |     |-CallExpr 0x14b827868 <col:26, col:43> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x14b827828 <col:26> 'int ()' Function 0x14b827770 'NumElements' 'int ()'
+    |     | `-RecoveryExpr 0x14b827848 <col:38> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x14b8279d0 <col:47, col:71> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14b827970 <col:47> 'int ()' Function 0x14b8278b8 'SizeOfDimension' 'int ()'
+    |       |-RecoveryExpr 0x14b827990 <col:63> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x14b8279b0 <col:70> 'int' 0
+    |-DeclStmt 0x14b827b48 <line:11:3, col:51>
+    | `-VarDecl 0x14b827a50 <col:3, col:50> col:13 used batch_size 'const int' cinit
+    |   `-CallExpr 0x14b827b18 <col:26, col:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b827ab8 <col:26> 'int ()' Function 0x14b8278b8 'SizeOfDimension' 'int ()'
+    |     |-RecoveryExpr 0x14b827ad8 <col:42> '<dependent type>' contains-errors lvalue
+    |     `-IntegerLiteral 0x14b827af8 <col:49> 'int' 0
+    |-CallExpr 0x14b827f58 <line:13:3, line:15:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b827c58 <line:13:3> 'int ()' Function 0x14b827ba0 'TF_LITE_ENSURE_OK' 'int ()'
+    | |-RecoveryExpr 0x14b827c78 <col:21> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14b827f18 <line:14:21, line:15:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b827d78 <line:14:21> 'int ()' Function 0x14b827cc0 'GetTemporarySafe' 'int ()'
+    |   |-RecoveryExpr 0x14b827d98 <col:38> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x14b827db8 <col:47> '<dependent type>' contains-errors lvalue
+    |   |-CXXDependentScopeMemberExpr 0x14b827df8 <col:53, col:59> '<dependent type>' contains-errors lvalue ->input_quantized_index
+    |   | `-RecoveryExpr 0x14b827dd8 <col:53> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x14b827f00 <line:15:38, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14b827ee0 <col:39> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14b8281d0 <line:21:3, col:76>
+    | `-VarDecl 0x14b828168 <col:3, col:10> col:10 scaling_factors_ptr 'float *'
+    |-ForStmt 0x14b1235b0 <line:28:3, line:34:3>
+    | |-DeclStmt 0x14b828390 <line:28:8, col:17>
+    | | `-VarDecl 0x14b828308 <col:8, col:16> col:12 used b 'int' cinit
+    | |   `-IntegerLiteral 0x14b828370 <col:16> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x14b123418 <col:19, col:23> 'int' contains-errors '<'
+    | | |-ImplicitCastExpr 0x14b8283e8 <col:19> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14b8283a8 <col:19> 'int' lvalue Var 0x14b828308 'b' 'int'
+    | | `-ImplicitCastExpr 0x14b123400 <col:23> 'int' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x14b8283c8 <col:23> 'const int' contains-errors lvalue Var 0x14b827a50 'batch_size' 'const int'
+    | |-UnaryOperator 0x14b123458 <col:35, col:37> 'int' prefix '++'
+    | | `-DeclRefExpr 0x14b123438 <col:37> 'int' lvalue Var 0x14b828308 'b' 'int'
+    | `-CompoundStmt 0x14b123598 <col:40, line:34:3>
+    |   `-DeclStmt 0x14b123580 <line:29:5, col:38>
+    |     `-VarDecl 0x14b123488 <col:5, col:28> col:15 offset 'const int' cinit
+    |       `-BinaryOperator 0x14b123560 <col:24, col:28> 'int' contains-errors '*'
+    |         |-ImplicitCastExpr 0x14b123530 <col:24> 'int' <LValueToRValue>
+    |         | `-DeclRefExpr 0x14b1234f0 <col:24> 'int' lvalue Var 0x14b828308 'b' 'int'
+    |         `-ImplicitCastExpr 0x14b123548 <col:28> 'int' contains-errors <LValueToRValue>
+    |           `-DeclRefExpr 0x14b123510 <col:28> 'const int' contains-errors lvalue Var 0x14b8276e0 'input_size' 'const int'
+    |-DeclStmt 0x14b123b00 <line:49:3, line:50:79>
+    | `-VarDecl 0x14b1239c8 <line:49:3, col:15> col:15 affine_quantization 'const int *' auto
+    `-IfStmt 0x14b123b58 <line:51:3, line:67:3> has_else
+      |-RecoveryExpr 0x14b123b18 <line:51:7, col:22> '_Bool' contains-errors
+      |-CompoundStmt 0x14b123b38 <col:34, line:59:3>
+      `-CompoundStmt 0x14b123b48 <col:10, line:67:3>

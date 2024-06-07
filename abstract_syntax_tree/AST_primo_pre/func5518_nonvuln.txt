@@ -1,0 +1,33 @@
+`-FunctionDecl 0x131826600  line:1:12 io_fsetxattr 'int (struct io_kiocb *, unsigned int)' static
+  |-ParmVarDecl 0x13180e248 <col:25, col:42> col:42 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x13180e2c8 <col:47, col:60> col:60 used issue_flags 'unsigned int'
+  `-CompoundStmt 0x131826dd8 <line:2:1, line:12:1>
+    |-DeclStmt 0x131826780 <line:3:2, col:9>
+    | `-VarDecl 0x131826718 <col:2, col:6> col:6 used ret 'int'
+    |-IfStmt 0x1318268f0 <line:5:2, line:6:11>
+    | |-BinaryOperator 0x131826828 <line:5:6, col:20> '<dependent type>' contains-errors '&'
+    | | |-DeclRefExpr 0x131826798 <col:6> 'unsigned int' lvalue ParmVar 0x13180e2c8 'issue_flags' 'unsigned int'
+    | | `-RecoveryExpr 0x131826808 <col:20> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1318268e0 <line:6:3, col:11>
+    |   `-UnaryOperator 0x1318268c8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1318268b0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x131826890 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x131826b98 <line:8:2, col:58> 'int' contains-errors '='
+    | |-DeclRefExpr 0x131826910 <col:2> 'int' lvalue Var 0x131826718 'ret' 'int'
+    | `-CallExpr 0x131826b60 <col:8, col:58> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x131826a40 <col:8> 'int ()' Function 0x131826988 '__io_setxattr' 'int ()'
+    |   |-DeclRefExpr 0x131826a60 <col:22> 'struct io_kiocb *' lvalue ParmVar 0x13180e248 'req' 'struct io_kiocb *'
+    |   |-DeclRefExpr 0x131826a80 <col:27> 'unsigned int' lvalue ParmVar 0x13180e2c8 'issue_flags' 'unsigned int'
+    |   `-UnaryOperator 0x131826b48 <col:40, col:52> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x131826b00 <col:41, col:52> '<dependent type>' contains-errors lvalue ->f_path
+    |       `-RecoveryExpr 0x131826ad8 <col:41, col:46> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x131826aa0 <col:41> 'struct io_kiocb *' lvalue ParmVar 0x13180e248 'req' 'struct io_kiocb *'
+    |-CallExpr 0x131826d48 <line:9:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x131826d30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x131826c98 <col:2> 'int ()' Function 0x131826be0 'io_xattr_finish' 'int ()'
+    | |-ImplicitCastExpr 0x131826d78 <col:18> 'struct io_kiocb *' <LValueToRValue>
+    | | `-DeclRefExpr 0x131826cb8 <col:18> 'struct io_kiocb *' lvalue ParmVar 0x13180e248 'req' 'struct io_kiocb *'
+    | `-ImplicitCastExpr 0x131826d90 <col:23> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x131826cd8 <col:23> 'int' lvalue Var 0x131826718 'ret' 'int'
+    `-ReturnStmt 0x131826dc8 <line:11:2, col:9>
+      `-IntegerLiteral 0x131826da8 <col:9> 'int' 0

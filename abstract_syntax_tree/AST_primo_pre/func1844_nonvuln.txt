@@ -1,0 +1,27 @@
+`-FunctionDecl 0x13800de58  line:1:1 invalid addr_is_in_cc_list 'int (int, const int *)'
+  |-ParmVarDecl 0x13800dcf0 <col:20, col:29> col:29 invalid addr 'int'
+  |-ParmVarDecl 0x13800dd70 <col:35, col:54> col:54 invalid cc_list 'const int *'
+  `-CompoundStmt 0x139009168 <line:2:1, line:14:1>
+    |-DeclStmt 0x13800df90 <line:4:3, col:19>
+    | `-VarDecl 0x13800df28 <col:3, col:15> col:15 used name 'const char *'
+    |-IfStmt 0x13800e028 <line:7:3, line:8:12>
+    | |-UnaryOperator 0x13800dfe0 <line:7:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13800dfc8 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x13800dfa8 <col:8> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x13800e018 <line:8:5, col:12>
+    |   `-IntegerLiteral 0x13800dff8 <col:12> 'int' 0
+    |-CallExpr 0x13800e278 <line:10:3, col:33> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13800e1a0 <col:3> 'int ()' Function 0x13800e0e8 'tor_addr_from_ipv4h' 'int ()'
+    | |-UnaryOperator 0x13800e260 <col:23, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x13800e240 <col:24> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x13800e1f0 <col:29> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x139008fc8 <line:12:3, col:40> 'const char *' contains-errors '='
+    | |-DeclRefExpr 0x139008e00 <col:3> 'const char *' lvalue Var 0x13800df28 'name' 'const char *'
+    | `-CallExpr 0x139008fa0 <col:10, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139008f00 <col:10> 'int ()' Function 0x139008e48 'geoip_get_country_name' 'int ()'
+    |   `-RecoveryExpr 0x139008f80 <col:33> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x139009158 <line:13:3, col:54>
+      `-CallExpr 0x139009128 <col:10, col:54> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1390090c8 <col:10> 'int ()' Function 0x139009010 'smartlist_contains_string_case' 'int ()'
+        |-RecoveryExpr 0x1390090e8 <col:41> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x139009108 <col:50> 'const char *' lvalue Var 0x13800df28 'name' 'const char *'

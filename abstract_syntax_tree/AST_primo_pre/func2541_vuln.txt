@@ -1,0 +1,68 @@
+`-FunctionDecl 0x11f928318  line:1:1 invalid memxor_different_alignment 'int (int *, const char *, int)'
+  |-ParmVarDecl 0x11f928128 <col:29, col:37> col:37 referenced invalid dst 'int *'
+  |-ParmVarDecl 0x11f9281a8 <col:42, col:54> col:54 used src 'const char *'
+  |-ParmVarDecl 0x11f928228 <col:59, col:66> col:66 referenced invalid n 'int'
+  `-CompoundStmt 0x11f9427a8 <line:2:1, line:31:1>
+    |-DeclStmt 0x11f9284f0 <line:3:3, col:15>
+    | |-VarDecl 0x11f9283f0 <col:3, col:7> col:7 used shl 'int'
+    | `-VarDecl 0x11f928470 <col:3, col:12> col:12 used shr 'int'
+    |-DeclStmt 0x11f928588 <line:4:3, col:25>
+    | `-VarDecl 0x11f928520 <col:3, col:17> col:17 referenced invalid src_word 'const int *'
+    |-DeclStmt 0x11f941870 <line:5:3, col:39>
+    | `-VarDecl 0x11f9285b8 <col:3, col:38> col:12 used offset 'unsigned int' cinit
+    |   `-ImplicitCastExpr 0x11f941858 <col:21, col:38> 'unsigned int' <IntegralCast>
+    |     `-CallExpr 0x11f941818 <col:21, col:38> 'int'
+    |       |-ImplicitCastExpr 0x11f941800 <col:21> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x11f928780 <col:21> 'int ()' Function 0x11f9286c8 'ALIGN_OFFSET' 'int ()'
+    |       `-ImplicitCastExpr 0x11f941840 <col:35> 'const char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x11f9287a0 <col:35> 'const char *' lvalue ParmVar 0x11f9281a8 'src' 'const char *'
+    |-BinaryOperator 0x11f941960 <line:8:3, col:20> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11f941888 <col:3> 'int' lvalue Var 0x11f9283f0 'shl' 'int'
+    | `-BinaryOperator 0x11f941940 <col:9, col:20> '<dependent type>' contains-errors '*'
+    |   |-RecoveryExpr 0x11f941920 <col:9> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11f9418c0 <col:20> 'unsigned int' lvalue Var 0x11f9285b8 'offset' 'unsigned int'
+    |-IfStmt 0x11f9420e0 <line:13:3, line:21:5> has_else
+    | |-BinaryOperator 0x11f941a78 <line:13:7, col:11> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x11f941a38 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x11f941a58 <col:11> 'int' 1
+    | |-CompoundStmt 0x11f942028 <line:14:5, line:19:5>
+    | | |-UnaryOperator 0x11f941ae0 <line:15:7, col:8> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | | | `-RecoveryExpr 0x11f941ab8 <col:7> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x11f941a98 <col:7> 'int' lvalue ParmVar 0x11f928228 'n' 'int'
+    | | `-CompoundAssignOperator 0x11f941ff8 <line:18:7, col:40> '<dependent type>' contains-errors '^=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |   |-ArraySubscriptExpr 0x11f941f58 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |   | |-ImplicitCastExpr 0x11f941f28 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | | `-RecoveryExpr 0x11f941c60 <col:7> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x11f941c40 <col:7> 'int *' lvalue ParmVar 0x11f928128 'dst' 'int *'
+    | |   | `-ImplicitCastExpr 0x11f941f40 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |   `-RecoveryExpr 0x11f941c88 <col:11> '<dependent type>' contains-errors lvalue
+    | |   `-CallExpr 0x11f941fb8 <col:17, col:40> '<dependent type>' contains-errors
+    | |     |-DeclRefExpr 0x11f941dd8 <col:17> 'int ()' Function 0x11f941d20 'MERGE' 'int ()'
+    | |     |-RecoveryExpr 0x11f941f78 <col:24> '<dependent type>' contains-errors lvalue
+    | |     |-DeclRefExpr 0x11f941e10 <col:28> 'int' lvalue Var 0x11f9283f0 'shl' 'int'
+    | |     |-RecoveryExpr 0x11f941f98 <col:33> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11f941e48 <col:37> 'int' lvalue Var 0x11f928470 'shr' 'int'
+    | `-NullStmt 0x11f9420d8 <line:21:5>
+    `-WhileStmt 0x11f942788 <line:23:3, line:30:5>
+      |-BinaryOperator 0x11f942150 <line:23:10, col:14> 'int' contains-errors '>'
+      | |-RecoveryExpr 0x11f942110 <col:10> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x11f942130 <col:14> 'int' 0
+      `-CompoundStmt 0x11f942768 <line:24:5, line:30:5>
+        |-CompoundAssignOperator 0x11f9421d8 <line:25:7, col:12> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+        | |-RecoveryExpr 0x11f942190 <col:7> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x11f942170 <col:7> 'int' lvalue ParmVar 0x11f928228 'n' 'int'
+        | `-IntegerLiteral 0x11f9421b8 <col:12> 'int' 2
+        `-CompoundAssignOperator 0x11f942590 <line:27:7, col:41> '<dependent type>' contains-errors '^=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          |-ArraySubscriptExpr 0x11f9424f0 <col:7, col:14> '<dependent type>' contains-errors lvalue
+          | |-ImplicitCastExpr 0x11f9424d8 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+          | | `-RecoveryExpr 0x11f9422e0 <col:7> '<dependent type>' contains-errors lvalue
+          | |   `-DeclRefExpr 0x11f9422c0 <col:7> 'int *' lvalue ParmVar 0x11f928128 'dst' 'int *'
+          | `-BinaryOperator 0x11f942348 <col:11, col:13> '<dependent type>' contains-errors '+'
+          |   |-RecoveryExpr 0x11f942308 <col:11> '<dependent type>' contains-errors lvalue
+          |   `-IntegerLiteral 0x11f942328 <col:13> 'int' 1
+          `-CallExpr 0x11f942550 <col:19, col:41> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x11f9423a0 <col:19> 'int ()' Function 0x11f941d20 'MERGE' 'int ()'
+            |-RecoveryExpr 0x11f942510 <col:25> '<dependent type>' contains-errors lvalue
+            |-DeclRefExpr 0x11f9423d8 <col:29> 'int' lvalue Var 0x11f9283f0 'shl' 'int'
+            |-RecoveryExpr 0x11f942530 <col:34> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x11f942410 <col:38> 'int' lvalue Var 0x11f928470 'shr' 'int'

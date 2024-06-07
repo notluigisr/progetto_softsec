@@ -1,0 +1,79 @@
+`-FunctionDecl 0x146827c00  line:1:13 invalid accept_cr 'void (struct iwch_ep *, int, struct sk_buff *)' static
+  |-ParmVarDecl 0x14680e848 <col:23, col:39> col:39 used ep 'struct iwch_ep *'
+  |-ParmVarDecl 0x14680e8e0 <col:43, col:50> col:50 invalid peer_ip 'int'
+  |-ParmVarDecl 0x146827ac8 <col:59, col:75> col:75 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x147125810 <line:2:1, line:37:1>
+    |-DeclStmt 0x146827ea8 <line:3:2, col:33>
+    | |-RecordDecl 0x146827cc0 <col:2, col:9> col:9 struct cpl_pass_accept_rpl
+    | `-VarDecl 0x146827e28 <col:2, col:30> col:30 used rpl 'struct cpl_pass_accept_rpl *'
+    |-DeclStmt 0x146827f40 <line:4:2, col:22>
+    | `-VarDecl 0x146827ed8 <col:2, col:15> col:15 used mtu_idx 'unsigned int'
+    |-DeclStmt 0x146827fd8 <line:6:2, col:12>
+    | `-VarDecl 0x146827f70 <col:2, col:6> col:6 used wscale 'int'
+    |-CallExpr 0x1468282f8 <line:8:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x1468282e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146828150 <col:2> 'int ()' Function 0x146828098 'PDBG' 'int ()'
+    | |-ImplicitCastExpr 0x146828330 <col:7> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x1468281b0 <col:7> 'char[4]' lvalue "STR"
+    | |-ImplicitCastExpr 0x146828348 <col:14> 'const char *' <ArrayToPointerDecay>
+    | | `-PredefinedExpr 0x146828278 <col:14> 'const char[10]' lvalue __func__
+    | |   `-StringLiteral 0x146828250 <col:14> 'const char[10]' lvalue "accept_cr"
+    | `-ImplicitCastExpr 0x146828360 <col:24> 'struct iwch_ep *' <LValueToRValue>
+    |   `-DeclRefExpr 0x146828290 <col:24> 'struct iwch_ep *' lvalue ParmVar 0x14680e848 'ep' 'struct iwch_ep *'
+    |-CallExpr 0x146828608 <line:9:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x1468285f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x146828458 <col:2> 'int ()' Function 0x1468283a0 'BUG_ON' 'int ()'
+    | `-CallExpr 0x1468285b0 <col:9, col:23> 'int'
+    |   |-ImplicitCastExpr 0x146828598 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x146828558 <col:9> 'int ()' Function 0x1468284a0 'skb_cloned' 'int ()'
+    |   `-ImplicitCastExpr 0x1468285d8 <col:20> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x146828578 <col:20> 'struct sk_buff *' lvalue ParmVar 0x146827ac8 'skb' 'struct sk_buff *'
+    |-CallExpr 0x1468288f8 <line:11:2, col:13> 'int'
+    | |-ImplicitCastExpr 0x1468288e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1468288a0 <col:2> 'int ()' Function 0x1468287e8 'skb_get' 'int ()'
+    | `-ImplicitCastExpr 0x146828920 <col:10> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1468288c0 <col:10> 'struct sk_buff *' lvalue ParmVar 0x146827ac8 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x147122a60 <line:12:2, col:66> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x146828938 <col:2> 'unsigned int' lvalue Var 0x146827ed8 'mtu_idx' 'unsigned int'
+    | `-CallExpr 0x147122a30 <col:12, col:66> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1471226b8 <col:12> 'int ()' Function 0x147122600 'find_best_mtu' 'int ()'
+    |   |-CallExpr 0x147122880 <col:26, col:47> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1471227b8 <col:26> 'int ()' Function 0x147122700 'T3C_DATA' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x147122838 <col:35, col:43> '<dependent type>' contains-errors lvalue .tdev
+    |   |   `-RecoveryExpr 0x147122810 <col:35, col:39> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1471227d8 <col:35> 'struct iwch_ep *' lvalue ParmVar 0x14680e848 'ep' 'struct iwch_ep *'
+    |   `-CallExpr 0x147122a08 <col:50, col:65> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x147122988 <col:50> 'int ()' Function 0x1471228d0 'dst_mtu' 'int ()'
+    |     `-RecoveryExpr 0x1471229e0 <col:58, col:62> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1471229a8 <col:58> 'struct iwch_ep *' lvalue ParmVar 0x14680e848 'ep' 'struct iwch_ep *'
+    |-BinaryOperator 0x147122c48 <line:13:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x147122a80 <col:2> 'int' lvalue Var 0x146827f70 'wscale' 'int'
+    | `-CallExpr 0x147122c20 <col:11, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147122b80 <col:11> 'int ()' Function 0x147122ac8 'compute_wscale' 'int ()'
+    |   `-RecoveryExpr 0x147122c00 <col:26> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x147124c80 <line:25:2, col:18> 'struct cpl_pass_accept_rpl *' '='
+    | |-DeclRefExpr 0x147124ad0 <col:2> 'struct cpl_pass_accept_rpl *' lvalue Var 0x146827e28 'rpl' 'struct cpl_pass_accept_rpl *'
+    | `-ImplicitCastExpr 0x147124c68 <col:8, col:18> 'struct cpl_pass_accept_rpl *' <IntegralToPointer>
+    |   `-CallExpr 0x147124c28 <col:8, col:18> 'int'
+    |     |-ImplicitCastExpr 0x147124c10 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x147124bd0 <col:8> 'int ()' Function 0x147124b18 'cplhdr' 'int ()'
+    |     `-ImplicitCastExpr 0x147124c50 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |       `-DeclRefExpr 0x147124bf0 <col:15> 'struct sk_buff *' lvalue ParmVar 0x146827ac8 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x1471252c0 <line:28:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x147125278 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x147125240 <col:2> 'struct cpl_pass_accept_rpl *' lvalue Var 0x146827e28 'rpl' 'struct cpl_pass_accept_rpl *'
+    | `-RecoveryExpr 0x1471252a0 <col:17> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x147125520 <line:32:2, col:19> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x147125498 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x147125460 <col:2> 'struct cpl_pass_accept_rpl *' lvalue Var 0x146827e28 'rpl' 'struct cpl_pass_accept_rpl *'
+    | `-RecoveryExpr 0x1471254f8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1471254c0 <col:14> 'struct cpl_pass_accept_rpl *' lvalue Var 0x146827e28 'rpl' 'struct cpl_pass_accept_rpl *'
+    |-CallExpr 0x1471257c8 <line:34:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147125680 <col:2> 'int ()' Function 0x1471255c8 'iwch_l2t_send' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x147125700 <col:16, col:24> '<dependent type>' contains-errors lvalue .tdev
+    | | `-RecoveryExpr 0x1471256d8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1471256a0 <col:16> 'struct iwch_ep *' lvalue ParmVar 0x14680e848 'ep' 'struct iwch_ep *'
+    | |-DeclRefExpr 0x147125748 <col:30> 'struct sk_buff *' lvalue ParmVar 0x146827ac8 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x1471257a0 <col:35, col:39> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x147125768 <col:35> 'struct iwch_ep *' lvalue ParmVar 0x14680e848 'ep' 'struct iwch_ep *'
+    `-ReturnStmt 0x147125800 <line:36:2>

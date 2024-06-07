@@ -1,0 +1,75 @@
+`-FunctionDecl 0x15383e950  line:1:13 __sctp_write_space 'void (struct sctp_association *)' static
+  |-ParmVarDecl 0x15383e848 <col:32, col:57> col:57 used asoc 'struct sctp_association *'
+  `-CompoundStmt 0x15385e058 <line:2:1, line:21:1>
+    |-DeclStmt 0x153856ee0 <line:3:2, col:33>
+    | |-RecordDecl 0x153856c48 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x153856db8 <col:2, col:31> col:15 used sk 'struct sock *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x153856e80 <col:20, col:31> '<dependent type>' contains-errors lvalue .sk
+    |     `-RecoveryExpr 0x153856e58 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x153856e20 <col:20> 'struct sctp_association *' lvalue ParmVar 0x15383e848 'asoc' 'struct sctp_association *'
+    |-DeclStmt 0x153857148 <line:4:2, col:37>
+    | |-RecordDecl 0x153856ef8 <col:2, col:9> col:9 struct socket
+    | `-VarDecl 0x153857068 <col:2, col:28> col:17 used sock 'struct socket *' cinit
+    |   `-RecoveryExpr 0x153857108 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1538570d0 <col:24> 'struct sock *' contains-errors lvalue Var 0x153856db8 'sk' 'struct sock *'
+    `-IfStmt 0x15385e038 <line:6:2, line:20:2>
+      |-BinaryOperator 0x1538573f0 <line:6:6, col:33> 'int' contains-errors '&&'
+      | |-ParenExpr 0x153857398 <col:6, col:28> 'int'
+      | | `-BinaryOperator 0x153857378 <col:7, col:27> 'int' '>'
+      | |   |-CallExpr 0x153857318 <col:7, col:23> 'int'
+      | |   | |-ImplicitCastExpr 0x153857300 <col:7> 'int (*)()' <FunctionToPointerDecay>
+      | |   | | `-DeclRefExpr 0x153857290 <col:7> 'int ()' Function 0x1538571d8 'sctp_wspace' 'int ()'
+      | |   | `-ImplicitCastExpr 0x153857340 <col:19> 'struct sctp_association *' <LValueToRValue>
+      | |   |   `-DeclRefExpr 0x1538572b0 <col:19> 'struct sctp_association *' lvalue ParmVar 0x15383e848 'asoc' 'struct sctp_association *'
+      | |   `-IntegerLiteral 0x153857358 <col:27> 'int' 0
+      | `-ImplicitCastExpr 0x1538573d8 <col:33> 'struct socket *' contains-errors <LValueToRValue>
+      |   `-DeclRefExpr 0x1538573b8 <col:33> 'struct socket *' contains-errors lvalue Var 0x153857068 'sock' 'struct socket *'
+      `-CompoundStmt 0x15385e018 <col:39, line:20:2>
+        |-IfStmt 0x153857750 <line:7:3, line:8:37>
+        | |-CallExpr 0x153857588 <line:7:7, col:35> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x1538574f0 <col:7> 'int ()' Function 0x153857438 'waitqueue_active' 'int ()'
+        | | `-UnaryOperator 0x153857570 <col:24, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   `-RecoveryExpr 0x153857548 <col:25, col:31> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x153857510 <col:25> 'struct sctp_association *' lvalue ParmVar 0x15383e848 'asoc' 'struct sctp_association *'
+        | `-CallExpr 0x153857728 <line:8:4, col:37> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x153857690 <col:4> 'int ()' Function 0x1538575d8 'wake_up_interruptible' 'int ()'
+        |   `-UnaryOperator 0x153857710 <col:26, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x1538576e8 <col:27, col:33> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x1538576b0 <col:27> 'struct sctp_association *' lvalue ParmVar 0x15383e848 'asoc' 'struct sctp_association *'
+        `-IfStmt 0x15385dff8 <line:10:3, line:19:3>
+          |-CallExpr 0x1538578a8 <line:10:7, col:24> 'int' contains-errors
+          | |-ImplicitCastExpr 0x153857890 <col:7> 'int (*)()' <FunctionToPointerDecay>
+          | | `-DeclRefExpr 0x153857850 <col:7> 'int ()' Function 0x153857798 'sctp_writeable' 'int ()'
+          | `-ImplicitCastExpr 0x1538578d0 <col:22> 'struct sock *' contains-errors <LValueToRValue>
+          |   `-DeclRefExpr 0x153857870 <col:22> 'struct sock *' contains-errors lvalue Var 0x153856db8 'sk' 'struct sock *'
+          `-CompoundStmt 0x15385dfd8 <col:27, line:19:3>
+            |-IfStmt 0x15385dc80 <line:11:4, line:12:39>
+            | |-BinaryOperator 0x153857b58 <line:11:8, col:53> 'int' contains-errors '&&'
+            | | |-CallExpr 0x153857a20 <col:8, col:19> 'int' contains-errors
+            | | | |-ImplicitCastExpr 0x153857a08 <col:8> 'int (*)()' <FunctionToPointerDecay>
+            | | | | `-DeclRefExpr 0x1538579c8 <col:8> 'int ()' Function 0x153857910 'sk_sleep' 'int ()'
+            | | | `-ImplicitCastExpr 0x153857a48 <col:17> 'struct sock *' contains-errors <LValueToRValue>
+            | | |   `-DeclRefExpr 0x1538579e8 <col:17> 'struct sock *' contains-errors lvalue Var 0x153856db8 'sk' 'struct sock *'
+            | | `-CallExpr 0x153857b30 <col:24, col:53> 'int' contains-errors
+            | |   |-ImplicitCastExpr 0x153857b18 <col:24> 'int (*)()' <FunctionToPointerDecay>
+            | |   | `-DeclRefExpr 0x153857a60 <col:24> 'int ()' Function 0x153857438 'waitqueue_active' 'int ()'
+            | |   `-CallExpr 0x153857ad8 <col:41, col:52> 'int' contains-errors
+            | |     |-ImplicitCastExpr 0x153857ac0 <col:41> 'int (*)()' <FunctionToPointerDecay>
+            | |     | `-DeclRefExpr 0x153857a80 <col:41> 'int ()' Function 0x153857910 'sk_sleep' 'int ()'
+            | |     `-ImplicitCastExpr 0x153857b00 <col:50> 'struct sock *' contains-errors <LValueToRValue>
+            | |       `-DeclRefExpr 0x153857aa0 <col:50> 'struct sock *' contains-errors lvalue Var 0x153856db8 'sk' 'struct sock *'
+            | `-CallExpr 0x15385dc58 <line:12:5, col:39> 'int' contains-errors
+            |   |-ImplicitCastExpr 0x15385dc40 <col:5> 'int (*)()' <FunctionToPointerDecay>
+            |   | `-DeclRefExpr 0x153857b78 <col:5> 'int ()' Function 0x1538575d8 'wake_up_interruptible' 'int ()'
+            |   `-CallExpr 0x15385dc00 <col:27, col:38> 'int' contains-errors
+            |     |-ImplicitCastExpr 0x153857bd8 <col:27> 'int (*)()' <FunctionToPointerDecay>
+            |     | `-DeclRefExpr 0x153857b98 <col:27> 'int ()' Function 0x153857910 'sk_sleep' 'int ()'
+            |     `-ImplicitCastExpr 0x15385dc28 <col:36> 'struct sock *' contains-errors <LValueToRValue>
+            |       `-DeclRefExpr 0x153857bb8 <col:36> 'struct sock *' contains-errors lvalue Var 0x153856db8 'sk' 'struct sock *'
+            `-IfStmt 0x15385dfb8 <line:15:4, line:18:32>
+              |-RecoveryExpr 0x15385dd98 <line:15:8, line:16:41> '_Bool' contains-errors
+              `-CallExpr 0x15385df80 <line:17:5, line:18:32> '<dependent type>' contains-errors
+                |-DeclRefExpr 0x15385de98 <line:17:5> 'int ()' Function 0x15385dde0 'sock_wake_async' 'int ()'
+                |-DeclRefExpr 0x15385deb8 <col:21> 'struct socket *' contains-errors lvalue Var 0x153857068 'sock' 'struct socket *'
+                |-RecoveryExpr 0x15385df40 <line:18:7> '<dependent type>' contains-errors lvalue
+                `-RecoveryExpr 0x15385df60 <col:24> '<dependent type>' contains-errors lvalue

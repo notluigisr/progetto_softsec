@@ -1,0 +1,30 @@
+`-FunctionDecl 0x15a940b40  line:1:13 do_inotify_remove_from_idr 'void (struct fsnotify_group *, struct inotify_inode_mark *)' static
+  |-ParmVarDecl 0x15a928648 <col:40, col:63> col:63 used group 'struct fsnotify_group *'
+  |-ParmVarDecl 0x15a940a28 <line:2:12, col:39> col:39 used i_mark 'struct inotify_inode_mark *'
+  `-CompoundStmt 0x15a941638 <line:3:1, line:14:1>
+    |-DeclStmt 0x15a940ee8 <line:4:2, col:44>
+    | |-RecordDecl 0x15a940c40 <col:2, col:9> col:9 struct idr
+    | `-VarDecl 0x15a940da8 <col:2, col:41> col:14 used idr 'struct idr *' cinit
+    |   `-UnaryOperator 0x15a940eb8 <col:20, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x15a940e70 <col:21, col:41> '<dependent type>' contains-errors lvalue .idr
+    |       `-RecoveryExpr 0x15a940e48 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x15a940e10 <col:21> 'struct fsnotify_group *' lvalue ParmVar 0x15a928648 'group' 'struct fsnotify_group *'
+    |-DeclStmt 0x15a9410d0 <line:6:2, col:21>
+    | `-VarDecl 0x15a941008 <col:2, col:19> col:6 used wd 'int' cinit
+    |   `-RecoveryExpr 0x15a9410a8 <col:11, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15a941070 <col:11> 'struct inotify_inode_mark *' lvalue ParmVar 0x15a940a28 'i_mark' 'struct inotify_inode_mark *'
+    |-CallExpr 0x15a941280 <line:8:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a941200 <col:2> 'int ()' Function 0x15a941148 'assert_spin_locked' 'int ()'
+    | `-RecoveryExpr 0x15a941260 <col:21> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15a941438 <line:10:2, col:20> 'int' contains-errors
+    | |-ImplicitCastExpr 0x15a941420 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a941388 <col:2> 'int ()' Function 0x15a9412d0 'idr_remove' 'int ()'
+    | |-ImplicitCastExpr 0x15a941468 <col:13> 'struct idr *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x15a9413a8 <col:13> 'struct idr *' contains-errors lvalue Var 0x15a940da8 'idr' 'struct idr *'
+    | `-ImplicitCastExpr 0x15a941480 <col:18> 'int' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x15a9413c8 <col:18> 'int' contains-errors lvalue Var 0x15a941008 'wd' 'int'
+    `-CallExpr 0x15a941610 <line:13:2, col:37> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15a941578 <col:2> 'int ()' Function 0x15a9414c0 'fsnotify_put_mark' 'int ()'
+      `-UnaryOperator 0x15a9415f8 <col:20, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x15a9415d0 <col:21, col:29> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x15a941598 <col:21> 'struct inotify_inode_mark *' lvalue ParmVar 0x15a940a28 'i_mark' 'struct inotify_inode_mark *'

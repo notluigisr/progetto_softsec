@@ -1,0 +1,56 @@
+`-FunctionDecl 0x11d00de88  line:1:12 invalid cmp 'int (int *, int *)' static
+  |-ParmVarDecl 0x11d00dd28 <col:16, col:24> col:24 invalid a 'int *'
+  |-ParmVarDecl 0x11d00dda8 <col:27, col:35> col:35 invalid b 'int *'
+  `-CompoundStmt 0x11d028888 <line:2:1, line:27:1>
+    |-DeclStmt 0x11d00e148 <line:4:2, col:10>
+    | |-VarDecl 0x11d00e048 <col:2, col:6> col:6 used i 'int'
+    | `-VarDecl 0x11d00e0c8 <col:2, col:9> col:9 used j 'int'
+    |-BinaryOperator 0x11d00e1e8 <line:6:2, col:9> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11d00e160 <col:2> 'int' lvalue Var 0x11d00e048 'i' 'int'
+    | `-CXXDependentScopeMemberExpr 0x11d00e1a0 <col:6, col:9> '<dependent type>' contains-errors lvalue ->wds
+    |   `-RecoveryExpr 0x11d00e180 <col:6> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x11d00e290 <line:7:2, col:9> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11d00e208 <col:2> 'int' lvalue Var 0x11d00e0c8 'j' 'int'
+    | `-CXXDependentScopeMemberExpr 0x11d00e248 <col:6, col:9> '<dependent type>' contains-errors lvalue ->wds
+    |   `-RecoveryExpr 0x11d00e228 <col:6> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11d00e380 <line:14:2, line:15:10>
+    | |-CompoundAssignOperator 0x11d00e308 <line:14:6, col:11> 'int' '-=' ComputeLHSTy='int' ComputeResultTy='int'
+    | | |-DeclRefExpr 0x11d00e2b0 <col:6> 'int' lvalue Var 0x11d00e048 'i' 'int'
+    | | `-ImplicitCastExpr 0x11d00e2f0 <col:11> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11d00e2d0 <col:11> 'int' lvalue Var 0x11d00e0c8 'j' 'int'
+    | `-ReturnStmt 0x11d00e370 <line:15:3, col:10>
+    |   `-ImplicitCastExpr 0x11d00e358 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x11d00e338 <col:10> 'int' lvalue Var 0x11d00e048 'i' 'int'
+    |-ForStmt 0x11d028820 <line:20:2, line:25:2>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | `-CompoundStmt 0x11d028800 <line:20:10, line:25:2>
+    |   |-IfStmt 0x11d028708 <line:21:3, line:22:28>
+    |   | |-BinaryOperator 0x11d0284b0 <line:21:7, col:19> 'int' contains-errors '!='
+    |   | | |-UnaryOperator 0x11d028448 <col:7, col:10> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | | | `-UnaryOperator 0x11d028430 <col:8, col:10> '<dependent type>' contains-errors prefix '--' cannot overflow
+    |   | | |   `-RecoveryExpr 0x11d028410 <col:10> '<dependent type>' contains-errors lvalue
+    |   | | `-UnaryOperator 0x11d028498 <col:16, col:19> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | |   `-UnaryOperator 0x11d028480 <col:17, col:19> '<dependent type>' contains-errors prefix '--' cannot overflow
+    |   | |     `-RecoveryExpr 0x11d028460 <col:19> '<dependent type>' contains-errors lvalue
+    |   | `-ReturnStmt 0x11d0286f8 <line:22:4, col:28>
+    |   |   `-ConditionalOperator 0x11d0286c8 <col:11, col:28> '<dependent type>' contains-errors
+    |   |     |-BinaryOperator 0x11d0286a8 <col:11, col:18> 'int' contains-errors '<'
+    |   |     | |-UnaryOperator 0x11d028640 <col:11, col:12> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |     | | `-ImplicitCastExpr 0x11d028628 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | |   `-RecoveryExpr 0x11d028608 <col:12> '<dependent type>' contains-errors lvalue
+    |   |     | `-UnaryOperator 0x11d028690 <col:17, col:18> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   |     |   `-ImplicitCastExpr 0x11d028678 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     |     `-RecoveryExpr 0x11d028658 <col:18> '<dependent type>' contains-errors lvalue
+    |   |     |-UnaryOperator 0x11d0285a0 <col:23, col:24> 'int' prefix '-'
+    |   |     | `-IntegerLiteral 0x11d028580 <col:24> 'int' 1
+    |   |     `-IntegerLiteral 0x11d0285b8 <col:28> 'int' 1
+    |   `-IfStmt 0x11d0287e0 <line:23:3, line:24:4>
+    |     |-BinaryOperator 0x11d0287b8 <line:23:7, col:13> 'int' contains-errors '<='
+    |     | |-RecoveryExpr 0x11d028778 <col:7> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x11d028798 <col:13> '<dependent type>' contains-errors lvalue
+    |     `-BreakStmt 0x11d0287d8 <line:24:4>
+    `-ReturnStmt 0x11d028878 <line:26:2, col:9>
+      `-IntegerLiteral 0x11d028858 <col:9> 'int' 0

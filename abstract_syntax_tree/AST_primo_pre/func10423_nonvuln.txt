@@ -1,0 +1,74 @@
+`-FunctionDecl 0x141826740  line:1:13 dev_queue_xmit_nit 'void (struct sk_buff *, struct net_device *)' static
+  |-ParmVarDecl 0x14180e248 <col:32, col:48> col:48 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x141826628 <col:53, col:72> col:72 used dev 'struct net_device *'
+  `-CompoundStmt 0x14182c110 <line:2:1, line:41:1>
+    |-DeclStmt 0x141826a28 <line:3:2, col:27>
+    | |-RecordDecl 0x141826840 <col:2, col:9> col:9 struct packet_type
+    | `-VarDecl 0x1418269a8 <col:2, col:22> col:22 used ptype 'struct packet_type *'
+    |-CallExpr 0x141826bf8 <line:9:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x141826be0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x141826b70 <col:2> 'int ()' Function 0x141826ab8 'net_timestamp_set' 'int ()'
+    | `-ImplicitCastExpr 0x141826c20 <col:20> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x141826b90 <col:20> 'struct sk_buff *' lvalue ParmVar 0x14180e248 'skb' 'struct sk_buff *'
+    |-CallExpr 0x141826d50 <line:12:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x141826d38 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x141826d18 <col:2> 'int ()' Function 0x141826c60 'rcu_read_lock' 'int ()'
+    |-CallExpr 0x141826f68 <line:13:2, col:49> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x141826e50 <col:2> 'int ()' Function 0x141826d98 'list_for_each_entry_rcu' 'int ()'
+    | |-DeclRefExpr 0x141826e70 <col:26> 'struct packet_type *' lvalue Var 0x1418269a8 'ptype' 'struct packet_type *'
+    | |-UnaryOperator 0x141826f30 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x141826f10 <col:34> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x141826f48 <col:45> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x14182bf70 <col:51, line:39:2>
+    | `-IfStmt 0x14182bf50 <line:15:3, line:38:3>
+    |   |-RecoveryExpr 0x141827440 <line:15:7, line:17:55> '_Bool' contains-errors
+    |   `-CompoundStmt 0x14182bf18 <col:58, line:38:3>
+    |     |-DeclStmt 0x14182b190 <line:18:4, col:53>
+    |     | `-VarDecl 0x1418274e8 <col:4, col:52> col:20 used skb2 'struct sk_buff *' cinit
+    |     |   `-CallExpr 0x14182b160 <col:27, col:52> '<dependent type>' contains-errors
+    |     |     |-DeclRefExpr 0x14182b0b8 <col:27> 'int ()' Function 0x14182b000 'skb_clone' 'int ()'
+    |     |     |-DeclRefExpr 0x14182b0d8 <col:37> 'struct sk_buff *' lvalue ParmVar 0x14180e248 'skb' 'struct sk_buff *'
+    |     |     `-RecoveryExpr 0x14182b140 <col:42> '<dependent type>' contains-errors lvalue
+    |     |-CallExpr 0x14182b330 <line:23:4, col:29> 'int' contains-errors
+    |     | |-ImplicitCastExpr 0x14182b318 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x14182b2d8 <col:4> 'int ()' Function 0x14182b220 'skb_reset_mac_header' 'int ()'
+    |     | `-ImplicitCastExpr 0x14182b358 <col:25> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x14182b2f8 <col:25> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     |-IfStmt 0x14182bc18 <line:25:4, line:33:4>
+    |     | |-BinaryOperator 0x14182b648 <line:25:8, line:26:37> 'int' contains-errors '||'
+    |     | | |-BinaryOperator 0x14182b548 <line:25:8, col:41> 'int' contains-errors '<'
+    |     | | | |-CallExpr 0x14182b4a8 <col:8, col:31> 'int' contains-errors
+    |     | | | | |-ImplicitCastExpr 0x14182b490 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | | | `-DeclRefExpr 0x14182b450 <col:8> 'int ()' Function 0x14182b398 'skb_network_header' 'int ()'
+    |     | | | | `-ImplicitCastExpr 0x14182b4d0 <col:27> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |     | | | |   `-DeclRefExpr 0x14182b470 <col:27> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     | | | `-RecoveryExpr 0x14182b520 <col:35, col:41> '<dependent type>' contains-errors lvalue
+    |     | | |   `-DeclRefExpr 0x14182b4e8 <col:35> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     | | `-BinaryOperator 0x14182b628 <line:26:8, col:37> 'int' contains-errors '>'
+    |     | |   |-RecoveryExpr 0x14182b5a0 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    |     | |   | `-DeclRefExpr 0x14182b568 <col:8> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     | |   `-RecoveryExpr 0x14182b600 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |     | |     `-DeclRefExpr 0x14182b5c8 <col:31> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     | `-CompoundStmt 0x14182bc00 <col:43, line:33:4>
+    |     |   `-CallExpr 0x14182bbc0 <line:32:5, col:34> 'int' contains-errors
+    |     |     |-ImplicitCastExpr 0x14182bba8 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |     |     | `-DeclRefExpr 0x14182bb68 <col:5> 'int ()' Function 0x14182bab0 'skb_reset_network_header' 'int ()'
+    |     |     `-ImplicitCastExpr 0x14182bbe8 <col:30> 'struct sk_buff *' contains-errors <LValueToRValue>
+    |     |       `-DeclRefExpr 0x14182bb88 <col:30> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     |-BinaryOperator 0x14182bcf8 <line:35:4, col:35> '<dependent type>' contains-errors '='
+    |     | |-RecoveryExpr 0x14182bc70 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x14182bc38 <col:4> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     | `-RecoveryExpr 0x14182bcd0 <col:29, col:35> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x14182bc98 <col:29> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |     `-CallExpr 0x14182bed8 <line:37:4, col:47> '<dependent type>' contains-errors
+    |       |-RecoveryExpr 0x14182bdb0 <col:4, col:11> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x14182bd78 <col:4> 'struct packet_type *' lvalue Var 0x1418269a8 'ptype' 'struct packet_type *'
+    |       |-DeclRefExpr 0x14182bdd8 <col:16> 'struct sk_buff *' contains-errors lvalue Var 0x1418274e8 'skb2' 'struct sk_buff *'
+    |       |-RecoveryExpr 0x14182be30 <col:22, col:27> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x14182bdf8 <col:22> 'struct sk_buff *' lvalue ParmVar 0x14180e248 'skb' 'struct sk_buff *'
+    |       |-DeclRefExpr 0x14182be58 <col:32> 'struct packet_type *' lvalue Var 0x1418269a8 'ptype' 'struct packet_type *'
+    |       `-RecoveryExpr 0x14182beb0 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14182be78 <col:39> 'struct sk_buff *' lvalue ParmVar 0x14180e248 'skb' 'struct sk_buff *'
+    `-CallExpr 0x14182c0f0 <line:40:2, col:18> 'int'
+      `-ImplicitCastExpr 0x14182c0d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+        `-DeclRefExpr 0x14182c0b8 <col:2> 'int ()' Function 0x14182c000 'rcu_read_unlock' 'int ()'

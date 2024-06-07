@@ -1,0 +1,78 @@
+`-FunctionDecl 0x11d940b48  line:1:12 ax88179_rx_fixup 'int (struct usbnet *, struct sk_buff *)' static
+  |-ParmVarDecl 0x11d928648 <col:29, col:44> col:44 used dev 'struct usbnet *'
+  |-ParmVarDecl 0x11d940a28 <col:49, col:65> col:65 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x11f009440 <line:2:1, line:61:1>
+    |-DeclStmt 0x11d940d40 <line:3:2, col:24>
+    | `-VarDecl 0x11d940cd8 <col:2, col:18> col:18 used ax_skb 'struct sk_buff *'
+    |-DeclStmt 0x11d940dd8 <line:4:2, col:13>
+    | `-VarDecl 0x11d940d70 <col:2, col:6> col:6 used pkt_cnt 'int'
+    |-IfStmt 0x11d940f98 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x11d940f48 <line:10:6, col:27> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x11d940e78 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x11d940e40 <col:6> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    | | `-CXXDependentScopeMemberExpr 0x11d940f00 <col:17, col:27> '<dependent type>' contains-errors lvalue ->hard_header_len
+    | |   `-RecoveryExpr 0x11d940ed8 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11d940ea0 <col:17> 'struct usbnet *' lvalue ParmVar 0x11d928648 'dev' 'struct usbnet *'
+    | `-ReturnStmt 0x11d940f88 <line:11:3, col:10>
+    |   `-IntegerLiteral 0x11d940f68 <col:10> 'int' 0
+    |-CallExpr 0x11d9411b0 <line:13:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11d9410d0 <col:2> 'int ()' Function 0x11d941018 'skb_trim' 'int ()'
+    | |-DeclRefExpr 0x11d9410f0 <col:11> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    | `-BinaryOperator 0x11d941190 <col:16, col:27> '<dependent type>' contains-errors '-'
+    |   |-RecoveryExpr 0x11d941148 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x11d941110 <col:16> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    |   `-IntegerLiteral 0x11d941170 <col:27> 'int' 4
+    |-WhileStmt 0x11f0093f0 <line:20:2, line:59:2>
+    | |-UnaryOperator 0x11d941640 <line:20:9, col:16> 'int' postfix '--'
+    | | `-DeclRefExpr 0x11d941620 <col:9> 'int' lvalue Var 0x11d940d70 'pkt_cnt' 'int'
+    | `-CompoundStmt 0x11f0093c8 <col:20, line:59:2>
+    |   |-IfStmt 0x11d941938 <line:27:3, line:32:3>
+    |   | |-RecoveryExpr 0x11d941798 <line:27:7, line:28:36> '_Bool' contains-errors
+    |   | `-CompoundStmt 0x11d941920 <col:39, line:32:3>
+    |   |   `-ContinueStmt 0x11d941918 <line:31:4>
+    |   |-IfStmt 0x11f008ca8 <line:34:3, line:42:3>
+    |   | |-BinaryOperator 0x11d9419b0 <line:34:7, col:18> 'int' '=='
+    |   | | |-ImplicitCastExpr 0x11d941998 <col:7> 'int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x11d941958 <col:7> 'int' lvalue Var 0x11d940d70 'pkt_cnt' 'int'
+    |   | | `-IntegerLiteral 0x11d941978 <col:18> 'int' 0
+    |   | `-CompoundStmt 0x11f008c80 <col:21, line:42:3>
+    |   |   |-CallExpr 0x11f0088b8 <line:37:4, col:19> 'int'
+    |   |   | |-ImplicitCastExpr 0x11f0088a0 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x11f008840 <col:4> 'int ()' Function 0x11d9417e0 'skb_pull' 'int ()'
+    |   |   | |-ImplicitCastExpr 0x11f0088e8 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   | | `-DeclRefExpr 0x11f008860 <col:13> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    |   |   | `-IntegerLiteral 0x11f008880 <col:18> 'int' 2
+    |   |   |-CallExpr 0x11f008a80 <line:38:4, col:38> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x11f0089e0 <col:4> 'int ()' Function 0x11f008928 'skb_set_tail_pointer' 'int ()'
+    |   |   | |-DeclRefExpr 0x11f008a00 <col:25> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    |   |   | `-RecoveryExpr 0x11f008a58 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   |   |   `-DeclRefExpr 0x11f008a20 <col:30> 'struct sk_buff *' lvalue ParmVar 0x11d940a28 'skb' 'struct sk_buff *'
+    |   |   `-ReturnStmt 0x11f008c70 <line:41:4, col:11>
+    |   |     `-IntegerLiteral 0x11f008c50 <col:11> 'int' 1
+    |   `-IfStmt 0x11f009318 <line:45:3, line:55:3> has_else
+    |     |-ImplicitCastExpr 0x11f008e28 <line:45:7> 'struct sk_buff *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x11f008e08 <col:7> 'struct sk_buff *' lvalue Var 0x11d940cd8 'ax_skb' 'struct sk_buff *'
+    |     |-CompoundStmt 0x11f0092a8 <col:15, line:53:3>
+    |     | |-CallExpr 0x11f008f18 <line:48:4, col:22> 'int'
+    |     | | |-ImplicitCastExpr 0x11f008f00 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     | | | `-DeclRefExpr 0x11f008ea0 <col:4> 'int ()' Function 0x11d9417e0 'skb_pull' 'int ()'
+    |     | | |-ImplicitCastExpr 0x11f008f48 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x11f008ec0 <col:13> 'struct sk_buff *' lvalue Var 0x11d940cd8 'ax_skb' 'struct sk_buff *'
+    |     | | `-IntegerLiteral 0x11f008ee0 <col:21> 'int' 2
+    |     | |-CallExpr 0x11f009000 <line:49:4, col:44> '<dependent type>' contains-errors
+    |     | | |-DeclRefExpr 0x11f008f60 <col:4> 'int ()' Function 0x11f008928 'skb_set_tail_pointer' 'int ()'
+    |     | | |-DeclRefExpr 0x11f008f80 <col:25> 'struct sk_buff *' lvalue Var 0x11d940cd8 'ax_skb' 'struct sk_buff *'
+    |     | | `-RecoveryExpr 0x11f008fd8 <col:33, col:41> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x11f008fa0 <col:33> 'struct sk_buff *' lvalue Var 0x11d940cd8 'ax_skb' 'struct sk_buff *'
+    |     | `-CallExpr 0x11f009248 <line:52:4, col:33> 'int'
+    |     |   |-ImplicitCastExpr 0x11f009230 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x11f0091d0 <col:4> 'int ()' Function 0x11f009118 'usbnet_skb_return' 'int ()'
+    |     |   |-ImplicitCastExpr 0x11f009278 <col:22> 'struct usbnet *' <LValueToRValue>
+    |     |   | `-DeclRefExpr 0x11f0091f0 <col:22> 'struct usbnet *' lvalue ParmVar 0x11d928648 'dev' 'struct usbnet *'
+    |     |   `-ImplicitCastExpr 0x11f009290 <col:27> 'struct sk_buff *' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x11f009210 <col:27> 'struct sk_buff *' lvalue Var 0x11d940cd8 'ax_skb' 'struct sk_buff *'
+    |     `-CompoundStmt 0x11f009300 <line:53:10, line:55:3>
+    |       `-ReturnStmt 0x11f0092f0 <line:54:4, col:11>
+    |         `-IntegerLiteral 0x11f0092d0 <col:11> 'int' 0
+    `-ReturnStmt 0x11f009430 <line:60:2, col:9>
+      `-IntegerLiteral 0x11f009410 <col:9> 'int' 1

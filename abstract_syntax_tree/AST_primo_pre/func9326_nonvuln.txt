@@ -1,0 +1,59 @@
+`-FunctionDecl 0x11f141958  line:1:12 invalid vm_set_prot 'int (struct user_ta_ctx *, int, int, int)'
+  |-ParmVarDecl 0x11f128668 <col:24, col:44> col:44 used utc 'struct user_ta_ctx *'
+  |-ParmVarDecl 0x11f1286e8 <col:49, col:57> col:57 invalid va 'int'
+  |-ParmVarDecl 0x11f128768 <col:61, col:68> col:68 referenced invalid len 'int'
+  |-ParmVarDecl 0x11f141800 <line:2:10, col:19> col:19 invalid prot 'int'
+  `-CompoundStmt 0x11f142bd8 <line:3:1, line:29:1>
+    |-DeclStmt 0x11f141c08 <line:4:2, col:21>
+    | |-RecordDecl 0x11f141a20 <col:2, col:9> col:9 struct vm_region
+    | `-VarDecl 0x11f141b88 <col:2, col:20> col:20 used r 'struct vm_region *'
+    |-CallExpr 0x11f141f10 <line:7:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f141d80 <col:2> 'int ()' Function 0x11f141cc8 'TAILQ_FOREACH' 'int ()'
+    | |-DeclRefExpr 0x11f141da0 <col:16> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+    | |-UnaryOperator 0x11f141e68 <col:19, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x11f141e20 <col:20, col:34> '<dependent type>' contains-errors lvalue ->regions
+    | |   `-RecoveryExpr 0x11f141df8 <col:20, col:25> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x11f141dc0 <col:20> 'struct user_ta_ctx *' lvalue ParmVar 0x11f128668 'utc' 'struct user_ta_ctx *'
+    | `-RecoveryExpr 0x11f141ef0 <col:43> '<dependent type>' contains-errors lvalue
+    `-CompoundStmt 0x11f142bc0 <col:49, line:26:2>
+      `-IfStmt 0x11f142ba0 <line:8:3, line:25:3>
+        |-CallExpr 0x11f142148 <line:8:7, col:55> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f142028 <col:7> 'int ()' Function 0x11f141f70 'core_is_buffer_intersect' 'int ()'
+        | |-RecoveryExpr 0x11f142080 <col:32, col:35> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x11f142048 <col:32> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+        | |-RecoveryExpr 0x11f1420e0 <col:39, col:42> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x11f1420a8 <col:39> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+        | |-RecoveryExpr 0x11f142108 <col:48> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x11f142128 <col:52> '<dependent type>' contains-errors lvalue
+        `-CompoundStmt 0x11f142b80 <col:58, line:25:3>
+          |-IfStmt 0x11f142330 <line:9:4, line:10:12>
+          | |-BinaryOperator 0x11f1422c8 <line:9:8, col:34> 'int' contains-errors '||'
+          | | |-BinaryOperator 0x11f142208 <col:8, col:17> 'int' contains-errors '!='
+          | | | |-RecoveryExpr 0x11f1421c0 <col:8, col:11> '<dependent type>' contains-errors lvalue
+          | | | | `-DeclRefExpr 0x11f142188 <col:8> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+          | | | `-RecoveryExpr 0x11f1421e8 <col:17> '<dependent type>' contains-errors lvalue
+          | | `-BinaryOperator 0x11f1422a8 <col:23, col:34> 'int' contains-errors '!='
+          | |   |-RecoveryExpr 0x11f142260 <col:23, col:26> '<dependent type>' contains-errors lvalue
+          | |   | `-DeclRefExpr 0x11f142228 <col:23> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+          | |   `-RecoveryExpr 0x11f142288 <col:34> '<dependent type>' contains-errors lvalue
+          | `-ReturnStmt 0x11f142320 <line:10:5, col:12>
+          |   `-RecoveryExpr 0x11f142300 <col:12> '<dependent type>' contains-errors lvalue
+          `-IfStmt 0x11f142a70 <line:11:4, line:21:4> has_else
+            |-CallExpr 0x11f1424b0 <line:11:8, col:29> '<dependent type>' contains-errors
+            | |-DeclRefExpr 0x11f142430 <col:8> 'int ()' Function 0x11f142378 'mobj_is_paged' 'int ()'
+            | `-RecoveryExpr 0x11f142488 <col:22, col:25> '<dependent type>' contains-errors lvalue
+            |   `-DeclRefExpr 0x11f142450 <col:22> 'struct vm_region *' lvalue Var 0x11f141b88 'r' 'struct vm_region *'
+            |-CompoundStmt 0x11f142718 <col:32, line:15:4>
+            | `-IfStmt 0x11f1426f8 <line:12:5, line:14:13>
+            |   |-UnaryOperator 0x11f142698 <line:12:9, line:13:14> '<dependent type>' contains-errors prefix '!' cannot overflow
+            |   | `-CallExpr 0x11f142658 <line:12:10, line:13:14> '<dependent type>' contains-errors
+            |   |   |-DeclRefExpr 0x11f1425b8 <line:12:10> 'int ()' Function 0x11f142500 'tee_pager_set_uta_area_attr' 'int ()'
+            |   |   |-DeclRefExpr 0x11f1425d8 <col:38> 'struct user_ta_ctx *' lvalue ParmVar 0x11f128668 'utc' 'struct user_ta_ctx *'
+            |   |   |-RecoveryExpr 0x11f1425f8 <col:43> '<dependent type>' contains-errors lvalue
+            |   |   |-RecoveryExpr 0x11f142618 <col:47> '<dependent type>' contains-errors lvalue
+            |   |   `-RecoveryExpr 0x11f142638 <line:13:10> '<dependent type>' contains-errors lvalue
+            |   `-ReturnStmt 0x11f1426e8 <line:14:6, col:13>
+            |     `-RecoveryExpr 0x11f1426c8 <col:13> '<dependent type>' contains-errors lvalue
+            `-IfStmt 0x11f142a50 <line:15:11, line:21:4>
+              |-RecoveryExpr 0x11f142800 <line:15:15, line:16:48> '_Bool' contains-errors
+              `-CompoundStmt 0x11f142a40 <col:51, line:21:4>

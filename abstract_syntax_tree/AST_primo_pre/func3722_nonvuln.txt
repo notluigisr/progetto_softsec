@@ -1,0 +1,32 @@
+`-FunctionDecl 0x135122918  line:1:17 invalid property_get_address 'int (const int *, int *, void *)' static
+  |-ParmVarDecl 0x1351226f0 <col:38, col:64> col:64 invalid property 'const int *'
+  |-ParmVarDecl 0x1351227a8 <line:2:6, col:23> col:23 invalid iter 'int *'
+  |-ParmVarDecl 0x135122828 <col:29, col:35> col:35 used user_data 'void *'
+  `-CompoundStmt 0x135809530 <line:3:1, line:13:1>
+    |-DeclStmt 0x135122c18 <line:4:2, col:41>
+    | |-RecordDecl 0x1351229d8 <col:2, col:9> col:9 struct btd_adapter
+    | `-VarDecl 0x135122b48 <col:2, col:32> col:22 used adapter 'struct btd_adapter *' cinit
+    |   `-ImplicitCastExpr 0x135122be8 <col:32> 'struct btd_adapter *' <BitCast>
+    |     `-ImplicitCastExpr 0x135122bd0 <col:32> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x135122bb0 <col:32> 'void *' lvalue ParmVar 0x135122828 'user_data' 'void *'
+    |-DeclStmt 0x135122d38 <line:5:2, col:15>
+    | `-VarDecl 0x135122cd0 <col:2, col:14> col:7 used addr 'char[18]'
+    |-DeclStmt 0x135808c30 <line:6:2, col:24>
+    | `-VarDecl 0x135122d68 <col:2, col:20> col:14 used str 'const char *' cinit
+    |   `-ImplicitCastExpr 0x135808c18 <col:20> 'const char *' <NoOp>
+    |     `-ImplicitCastExpr 0x135808c00 <col:20> 'char *' <ArrayToPointerDecay>
+    |       `-DeclRefExpr 0x135122dd0 <col:20> 'char[18]' lvalue Var 0x135122cd0 'addr' 'char[18]'
+    |-CallExpr 0x135809280 <line:8:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135808da0 <col:2> 'int ()' Function 0x135808ce8 'ba2str' 'int ()'
+    | |-UnaryOperator 0x135809248 <col:9, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x135809220 <col:10, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x135808dc0 <col:10> 'struct btd_adapter *' lvalue Var 0x135122b48 'adapter' 'struct btd_adapter *'
+    | `-DeclRefExpr 0x135809260 <col:27> 'char[18]' lvalue Var 0x135122cd0 'addr' 'char[18]'
+    |-CallExpr 0x1358094b0 <line:10:2, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x135809390 <col:2> 'int ()' Function 0x1358092d8 'dbus_message_iter_append_basic' 'int ()'
+    | |-RecoveryExpr 0x1358093b0 <col:33> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x135809490 <col:39> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x135809440 <col:57, col:58> 'const char **' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x1358093e8 <col:58> 'const char *' lvalue Var 0x135122d68 'str' 'const char *'
+    `-ReturnStmt 0x135809520 <line:12:2, col:9>
+      `-RecoveryExpr 0x135809500 <col:9> '<dependent type>' contains-errors lvalue

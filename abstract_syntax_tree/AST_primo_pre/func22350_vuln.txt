@@ -1,0 +1,38 @@
+`-FunctionDecl 0x14183b568  line:1:1 referenced invalid rx_cache_insert 'int (int *, const char *, const struct ip *, int)'
+  |-ParmVarDecl 0x1420fa328 <col:17, col:37> col:37 invalid ndo 'int *'
+  |-ParmVarDecl 0x1420fa3a8 <line:2:17, col:31> col:31 used bp 'const char *'
+  |-ParmVarDecl 0x1420fa998 <col:35, col:52> col:52 used ip 'const struct ip *'
+  |-ParmVarDecl 0x14183b418 <col:56, col:60> col:60 used dport 'int'
+  `-CompoundStmt 0x142113c80 <line:3:1, line:21:1>
+    |-DeclStmt 0x14183b818 <line:4:2, col:30>
+    | |-RecordDecl 0x14183b630 <col:2, col:9> col:9 struct rx_cache_entry
+    | `-VarDecl 0x14183b798 <col:2, col:25> col:25 used rxent 'struct rx_cache_entry *'
+    |-DeclStmt 0x14183bb00 <line:5:2, col:61>
+    | |-RecordDecl 0x14183b830 <col:8, col:15> col:15 struct rx_header
+    | `-VarDecl 0x14183b998 <col:2, col:59> col:26 used rxh 'const struct rx_header *' cinit
+    |   `-CStyleCastExpr 0x14183bac0 <col:32, col:59> 'const struct rx_header *' <BitCast>
+    |     `-ImplicitCastExpr 0x14183baa8 <col:59> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x14183ba00 <col:59> 'const char *' lvalue ParmVar 0x1420fa3a8 'bp' 'const char *'
+    |-IfStmt 0x14183bc68 <line:7:2, line:8:3>
+    | |-RecoveryExpr 0x14183bc38 <line:7:6, col:83> '_Bool' contains-errors
+    | `-ReturnStmt 0x14183bc58 <line:8:3>
+    |-BinaryOperator 0x14183c090 <line:15:2, col:50> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14183be50 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14183be18 <col:2> 'struct rx_cache_entry *' lvalue Var 0x14183b798 'rxent' 'struct rx_cache_entry *'
+    | `-CallExpr 0x14183c068 <col:19, col:50> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14183bfd0 <col:19> 'int ()' Function 0x14183bf18 'EXTRACT_32BITS' 'int ()'
+    |   `-UnaryOperator 0x14183c050 <col:34, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14183c028 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14183bff0 <col:35> 'const struct rx_header *' lvalue Var 0x14183b998 'rxh' 'const struct rx_header *'
+    |-BinaryOperator 0x142113a60 <line:18:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x142113a18 <col:2, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14183c3e0 <col:2> 'struct rx_cache_entry *' lvalue Var 0x14183b798 'rxent' 'struct rx_cache_entry *'
+    | `-DeclRefExpr 0x142113a40 <col:17> 'int' lvalue ParmVar 0x14183b418 'dport' 'int'
+    `-BinaryOperator 0x142113ba0 <line:19:2, col:51> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x142113ab8 <col:2, col:9> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x142113a80 <col:2> 'struct rx_cache_entry *' lvalue Var 0x14183b798 'rxent' 'struct rx_cache_entry *'
+      `-CallExpr 0x142113b78 <col:21, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x142113ae0 <col:21> 'int ()' Function 0x14183bf18 'EXTRACT_32BITS' 'int ()'
+        `-UnaryOperator 0x142113b60 <col:36, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x142113b38 <col:37, col:42> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x142113b00 <col:37> 'const struct rx_header *' lvalue Var 0x14183b998 'rxh' 'const struct rx_header *'

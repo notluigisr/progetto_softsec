@@ -1,0 +1,1 @@
+JSObject *create(JSContext *cx) { return JS_NewObjectWithGivenProto(cx, &class_, proto_obj); }

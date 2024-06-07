@@ -1,0 +1,40 @@
+`-FunctionDecl 0x14100de68  line:1:12 keyring_detect_cycle_iterator 'int (const void *, void *)' static
+  |-ParmVarDecl 0x14100dd08 <col:42, col:54> col:54 used object 'const void *'
+  |-ParmVarDecl 0x14100dd88 <line:2:7, col:13> col:13 used iterator_data 'void *'
+  `-CompoundStmt 0x14102ca80 <line:3:1, line:12:1>
+    |-DeclStmt 0x14100e1a8 <line:4:2, col:52>
+    | |-RecordDecl 0x14100df68 <col:2, col:9> col:9 struct keyring_search_context
+    | `-VarDecl 0x14100e0d8 <col:2, col:39> col:33 used ctx 'struct keyring_search_context *' cinit
+    |   `-ImplicitCastExpr 0x14100e178 <col:39> 'struct keyring_search_context *' <BitCast>
+    |     `-ImplicitCastExpr 0x14100e160 <col:39> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14100e140 <col:39> 'void *' lvalue ParmVar 0x14100dd88 'iterator_data' 'void *'
+    |-DeclStmt 0x14102c3f8 <line:5:2, col:52>
+    | |-RecordDecl 0x14100e1c0 <col:8, col:15> col:15 struct key
+    | `-VarDecl 0x14100e328 <col:2, col:51> col:20 used key 'const struct key *' cinit
+    |   `-ImplicitCastExpr 0x14102bfa8 <col:26, col:51> 'const struct key *' <IntegralToPointer>
+    |     `-CallExpr 0x14102bf68 <col:26, col:51> 'int'
+    |       |-ImplicitCastExpr 0x14102bf50 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14102bee0 <col:26> 'int ()' Function 0x14102be28 'keyring_ptr_to_key' 'int ()'
+    |       `-ImplicitCastExpr 0x14102bf90 <col:45> 'const void *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14102bf00 <col:45> 'const void *' lvalue ParmVar 0x14100dd08 'object' 'const void *'
+    |-CallExpr 0x14102c5d0 <line:7:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14102c4f0 <col:2> 'int ()' Function 0x14102c438 'kenter' 'int ()'
+    | |-StringLiteral 0x14102c550 <col:9> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x14102c5a8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14102c570 <col:16> 'const struct key *' lvalue Var 0x14100e328 'key' 'const struct key *'
+    |-CallExpr 0x14102c7a0 <line:9:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14102c6e0 <col:2> 'int ()' Function 0x14102c628 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x14102c780 <col:9, col:21> 'int' contains-errors '!='
+    |   |-DeclRefExpr 0x14102c700 <col:9> 'const struct key *' lvalue Var 0x14100e328 'key' 'const struct key *'
+    |   `-RecoveryExpr 0x14102c758 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14102c720 <col:16> 'struct keyring_search_context *' lvalue Var 0x14100e0d8 'ctx' 'struct keyring_search_context *'
+    |-BinaryOperator 0x14102ca30 <line:10:2, col:32> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14102c800 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14102c7c8 <col:2> 'struct keyring_search_context *' lvalue Var 0x14100e0d8 'ctx' 'struct keyring_search_context *'
+    | `-CallExpr 0x14102ca08 <col:16, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14102c908 <col:16> 'int ()' Function 0x14102c850 'ERR_PTR' 'int ()'
+    |   `-UnaryOperator 0x14102c9f0 <col:24, col:25> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14102c9d8 <col:25> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14102c9b8 <col:25> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14102ca70 <line:11:2, col:9>
+      `-IntegerLiteral 0x14102ca50 <col:9> 'int' 1

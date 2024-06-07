@@ -1,0 +1,58 @@
+`-FunctionDecl 0x15200e350  line:1:6 snd_pcm_period_elapsed 'void (struct snd_pcm_substream *)'
+  |-ParmVarDecl 0x15200e248 <col:29, col:55> col:55 used substream 'struct snd_pcm_substream *'
+  `-CompoundStmt 0x1520275a8 <line:2:1, line:22:1>
+    |-DeclStmt 0x152026838 <line:3:2, col:33>
+    | |-RecordDecl 0x152026648 <col:2, col:9> col:9 struct snd_pcm_runtime
+    | `-VarDecl 0x1520267b8 <col:2, col:26> col:26 used runtime 'struct snd_pcm_runtime *'
+    |-DeclStmt 0x1520268d0 <line:4:2, col:21>
+    | `-VarDecl 0x152026868 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-IfStmt 0x152026ae8 <line:6:2, line:7:3>
+    | |-CallExpr 0x152026a98 <line:6:6, col:33> 'int'
+    | | |-ImplicitCastExpr 0x152026a80 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x152026a10 <col:6> 'int ()' Function 0x152026958 'PCM_RUNTIME_CHECK' 'int ()'
+    | | `-ImplicitCastExpr 0x152026ac0 <col:24> 'struct snd_pcm_substream *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x152026a30 <col:24> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    | `-ReturnStmt 0x152026ad8 <line:7:3>
+    |-BinaryOperator 0x152026b88 <line:8:2, col:23> 'struct snd_pcm_runtime *' contains-errors '='
+    | |-DeclRefExpr 0x152026b08 <col:2> 'struct snd_pcm_runtime *' lvalue Var 0x1520267b8 'runtime' 'struct snd_pcm_runtime *'
+    | `-RecoveryExpr 0x152026b60 <col:12, col:23> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x152026b28 <col:12> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    |-CallExpr 0x152026d00 <line:10:2, col:46> 'int'
+    | |-ImplicitCastExpr 0x152026ce8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x152026c88 <col:2> 'int ()' Function 0x152026bd0 'snd_pcm_stream_lock_irqsave' 'int ()'
+    | |-ImplicitCastExpr 0x152026d30 <col:30> 'struct snd_pcm_substream *' <LValueToRValue>
+    | | `-DeclRefExpr 0x152026ca8 <col:30> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    | `-ImplicitCastExpr 0x152026d48 <col:41> 'unsigned long' <LValueToRValue>
+    |   `-DeclRefExpr 0x152026cc8 <col:41> 'unsigned long' lvalue Var 0x152026868 'flags' 'unsigned long'
+    |-IfStmt 0x152027158 <line:11:2, line:13:8>
+    | |-BinaryOperator 0x1520270d0 <line:11:6, line:12:45> 'int' '||'
+    | | |-UnaryOperator 0x152026ed8 <line:11:6, col:32> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x152026e98 <col:7, col:32> 'int'
+    | | |   |-ImplicitCastExpr 0x152026e80 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x152026e40 <col:7> 'int ()' Function 0x152026d88 'snd_pcm_running' 'int ()'
+    | | |   `-ImplicitCastExpr 0x152026ec0 <col:23> 'struct snd_pcm_substream *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x152026e60 <col:23> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    | | `-BinaryOperator 0x1520270b0 <line:12:6, col:45> 'int' '<'
+    | |   |-CallExpr 0x152027048 <col:6, col:41> 'int'
+    | |   | |-ImplicitCastExpr 0x152027030 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | |   | | `-DeclRefExpr 0x152026fd0 <col:6> 'int ()' Function 0x152026f18 'snd_pcm_update_hw_ptr0' 'int ()'
+    | |   | |-ImplicitCastExpr 0x152027078 <col:29> 'struct snd_pcm_substream *' <LValueToRValue>
+    | |   | | `-DeclRefExpr 0x152026ff0 <col:29> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    | |   | `-IntegerLiteral 0x152027010 <col:40> 'int' 1
+    | |   `-IntegerLiteral 0x152027090 <col:45> 'int' 0
+    | `-GotoStmt 0x152027140 <line:13:3, col:8> '_end' 0x1520270f0
+    |-LabelStmt 0x152027330 <line:19:2, line:20:51> '_end'
+    | `-CallExpr 0x1520272d0 <col:2, col:51> 'int'
+    |   |-ImplicitCastExpr 0x1520272b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x152027258 <col:2> 'int ()' Function 0x1520271a0 'snd_pcm_stream_unlock_irqrestore' 'int ()'
+    |   |-ImplicitCastExpr 0x152027300 <col:35> 'struct snd_pcm_substream *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x152027278 <col:35> 'struct snd_pcm_substream *' lvalue ParmVar 0x15200e248 'substream' 'struct snd_pcm_substream *'
+    |   `-ImplicitCastExpr 0x152027318 <col:46> 'unsigned long' <LValueToRValue>
+    |     `-DeclRefExpr 0x152027298 <col:46> 'unsigned long' lvalue Var 0x152026868 'flags' 'unsigned long'
+    `-CallExpr 0x152027570 <line:21:2, col:46> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x152027430 <col:2> 'int ()' Function 0x152027378 'kill_fasync' 'int ()'
+      |-UnaryOperator 0x1520274b0 <col:14, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x152027488 <col:15, col:24> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x152027450 <col:15> 'struct snd_pcm_runtime *' lvalue Var 0x1520267b8 'runtime' 'struct snd_pcm_runtime *'
+      |-RecoveryExpr 0x152027530 <col:32> '<dependent type>' contains-errors lvalue
+      `-RecoveryExpr 0x152027550 <col:39> '<dependent type>' contains-errors lvalue

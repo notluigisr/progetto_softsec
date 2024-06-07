@@ -1,0 +1,36 @@
+`-FunctionDecl 0x133128498  line:1:12 invalid pkey_sm2_decrypt 'int (int *, unsigned char *, int *, const unsigned char *, int)' static
+  |-ParmVarDecl 0x133128128 <col:29, col:43> col:43 referenced invalid ctx 'int *'
+  |-ParmVarDecl 0x1331281d8 <line:2:29, col:44> col:44 used out 'unsigned char *'
+  |-ParmVarDecl 0x133128258 <col:49, col:57> col:57 invalid outlen 'int *'
+  |-ParmVarDecl 0x133128308 <line:3:29, col:50> col:50 used in 'const unsigned char *'
+  |-ParmVarDecl 0x133128388 <col:54, col:61> col:61 invalid inlen 'int'
+  `-CompoundStmt 0x133142118 <line:4:1, line:17:1>
+    |-DeclStmt 0x133141ab8 <line:7:5, col:65>
+    | `-VarDecl 0x133128730 <col:5, col:19> col:19 invalid md 'const int *'
+    |-IfStmt 0x133141e70 <line:9:5, line:14:5>
+    | |-BinaryOperator 0x133141b48 <line:9:9, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x133141ad0 <col:9> 'unsigned char *' lvalue ParmVar 0x1331281d8 'out' 'unsigned char *'
+    | | `-RecoveryExpr 0x133141b28 <col:16> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x133141e58 <col:22, line:14:5>
+    |   `-IfStmt 0x133141e28 <line:10:9, line:13:20> has_else
+    |     |-UnaryOperator 0x133141d98 <line:10:13, col:54> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |     | `-CallExpr 0x133141d58 <col:14, col:54> '<dependent type>' contains-errors
+    |     |   |-DeclRefExpr 0x133141c48 <col:14> 'int ()' Function 0x133141b90 'sm2_plaintext_size' 'int ()'
+    |     |   |-RecoveryExpr 0x133141d38 <col:33> '<dependent type>' contains-errors lvalue
+    |     |   |-RecoveryExpr 0x133141c80 <col:37> '<dependent type>' contains-errors lvalue
+    |     |   |-RecoveryExpr 0x133141ca0 <col:41> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x133141cc0 <col:48> '<dependent type>' contains-errors lvalue
+    |     |-ReturnStmt 0x133141de8 <line:11:13, col:21>
+    |     | `-UnaryOperator 0x133141dd0 <col:20, col:21> 'int' prefix '-'
+    |     |   `-IntegerLiteral 0x133141db0 <col:21> 'int' 1
+    |     `-ReturnStmt 0x133141e18 <line:13:13, col:20>
+    |       `-IntegerLiteral 0x133141df8 <col:20> 'int' 1
+    `-ReturnStmt 0x133142108 <line:16:5, col:54>
+      `-CallExpr 0x1331420b8 <col:12, col:54> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x133141f70 <col:12> 'int ()' Function 0x133141eb8 'sm2_decrypt' 'int ()'
+        |-RecoveryExpr 0x133142098 <col:24> '<dependent type>' contains-errors lvalue
+        |-RecoveryExpr 0x133141fa8 <col:28> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x133141fc8 <col:32> 'const unsigned char *' lvalue ParmVar 0x133128308 'in' 'const unsigned char *'
+        |-RecoveryExpr 0x133141fe8 <col:36> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x133142008 <col:43> 'unsigned char *' lvalue ParmVar 0x1331281d8 'out' 'unsigned char *'
+        `-RecoveryExpr 0x133142028 <col:48> '<dependent type>' contains-errors lvalue

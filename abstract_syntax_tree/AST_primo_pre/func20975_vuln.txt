@@ -1,0 +1,59 @@
+`-FunctionDecl 0x144945b48  line:1:10 invalid psi_trigger_poll 'int (void **, struct file *, int *)'
+  |-ParmVarDecl 0x144928128 <col:27, col:34> col:34 used trigger_ptr 'void **'
+  |-ParmVarDecl 0x144928718 <line:2:5, col:18> col:18 used file 'struct file *'
+  |-ParmVarDecl 0x144945a00 <col:24, col:36> col:36 invalid wait 'int *'
+  `-CompoundStmt 0x145009198 <line:3:1, line:29:1>
+    |-DeclStmt 0x144945df8 <line:5:2, col:23>
+    | |-RecordDecl 0x144945c08 <col:2, col:9> col:9 struct psi_trigger
+    | `-VarDecl 0x144945d78 <col:2, col:22> col:22 used t 'struct psi_trigger *'
+    |-IfStmt 0x144946180 <line:7:2, line:8:40>
+    | |-CallExpr 0x144946020 <line:7:6, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x144945f70 <col:6> 'int ()' Function 0x144945eb8 'static_branch_likely' 'int ()'
+    | | `-UnaryOperator 0x144946008 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x144945fe8 <col:28> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x144946170 <line:8:3, col:40>
+    |   `-BinaryOperator 0x144946150 <col:10, col:40> '<dependent type>' contains-errors '|'
+    |     |-BinaryOperator 0x144946110 <col:10, col:29> '<dependent type>' contains-errors '|'
+    |     | |-RecoveryExpr 0x1449460d0 <col:10> '<dependent type>' contains-errors lvalue
+    |     | `-RecoveryExpr 0x1449460f0 <col:29> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x144946130 <col:40> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1449462e8 <line:10:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1449462d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x144946280 <col:2> 'int ()' Function 0x1449461c8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x1449464e8 <line:12:2, col:57> 'struct psi_trigger *' contains-errors '='
+    | |-DeclRefExpr 0x144946308 <col:2> 'struct psi_trigger *' lvalue Var 0x144945d78 't' 'struct psi_trigger *'
+    | `-CallExpr 0x1449464c0 <col:6, col:57> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144946408 <col:6> 'int ()' Function 0x144946350 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x144946498 <col:22, col:46> '<dependent type>' contains-errors lvalue
+    |     `-CStyleCastExpr 0x144946470 <col:23, col:46> 'void' <ToVoid>
+    |       `-ImplicitCastExpr 0x144946458 <col:46> 'void **' <LValueToRValue> part_of_explicit_cast
+    |         `-DeclRefExpr 0x144946428 <col:46> 'void **' lvalue ParmVar 0x144928128 'trigger_ptr' 'void **'
+    |-IfStmt 0x1449467e8 <line:13:2, line:16:2>
+    | |-UnaryOperator 0x144946540 <line:13:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x144946528 <col:7> 'struct psi_trigger *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x144946508 <col:7> 'struct psi_trigger *' lvalue Var 0x144945d78 't' 'struct psi_trigger *'
+    | `-CompoundStmt 0x1449467c8 <col:10, line:16:2>
+    |   |-CallExpr 0x144946670 <line:14:3, col:19> 'int'
+    |   | `-ImplicitCastExpr 0x144946658 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x144946638 <col:3> 'int ()' Function 0x144946580 'rcu_read_unlock' 'int ()'
+    |   `-ReturnStmt 0x1449467b8 <line:15:3, col:40>
+    |     `-BinaryOperator 0x144946798 <col:10, col:40> '<dependent type>' contains-errors '|'
+    |       |-BinaryOperator 0x144946758 <col:10, col:29> '<dependent type>' contains-errors '|'
+    |       | |-RecoveryExpr 0x144946718 <col:10> '<dependent type>' contains-errors lvalue
+    |       | `-RecoveryExpr 0x144946738 <col:29> '<dependent type>' contains-errors lvalue
+    |       `-RecoveryExpr 0x144946778 <col:40> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x144946980 <line:17:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1449468e8 <col:2> 'int ()' Function 0x144946830 'kref_get' 'int ()'
+    | `-UnaryOperator 0x144946968 <col:11, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x144946940 <col:12, col:15> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x144946908 <col:12> 'struct psi_trigger *' lvalue Var 0x144945d78 't' 'struct psi_trigger *'
+    |-CallExpr 0x1449469e0 <line:19:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1449469c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1449469a8 <col:2> 'int ()' Function 0x144946580 'rcu_read_unlock' 'int ()'
+    `-CallExpr 0x145008db8 <line:21:2, col:38> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x145008ce0 <col:2> 'int ()' Function 0x145008c28 'poll_wait' 'int ()'
+      |-DeclRefExpr 0x145008d00 <col:12> 'struct file *' lvalue ParmVar 0x144928718 'file' 'struct file *'
+      |-UnaryOperator 0x145008d80 <col:18, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x145008d58 <col:19, col:22> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x145008d20 <col:19> 'struct psi_trigger *' lvalue Var 0x144945d78 't' 'struct psi_trigger *'
+      `-RecoveryExpr 0x145008d98 <col:34> '<dependent type>' contains-errors lvalue

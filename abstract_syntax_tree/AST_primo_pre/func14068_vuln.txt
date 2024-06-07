@@ -1,0 +1,96 @@
+`-FunctionDecl 0x142809948  line:1:12 invalid pppol2tp_session_create 'int (struct net *, int, int, int, struct l2tp_session_cfg *)' static
+  |-ParmVarDecl 0x141128648 <col:36, col:48> col:48 used net 'struct net *'
+  |-ParmVarDecl 0x1411286e0 <col:53, col:57> col:57 invalid tunnel_id 'int'
+  |-ParmVarDecl 0x141128760 <col:68, col:72> col:72 invalid session_id 'int'
+  |-ParmVarDecl 0x142809600 <col:84, col:88> col:88 invalid peer_session_id 'int'
+  |-ParmVarDecl 0x1428097d8 <col:105, col:130> col:130 used cfg 'struct l2tp_session_cfg *'
+  `-CompoundStmt 0x14280c2c8 <line:2:1, line:44:1>
+    |-DeclStmt 0x142809a98 <line:3:2, col:11>
+    | `-VarDecl 0x142809a30 <col:2, col:6> col:6 used error 'int'
+    |-DeclStmt 0x142809c98 <line:4:2, col:28>
+    | |-RecordDecl 0x142809ab0 <col:2, col:9> col:9 struct l2tp_tunnel
+    | `-VarDecl 0x142809c18 <col:2, col:22> col:22 used tunnel 'struct l2tp_tunnel *'
+    |-DeclStmt 0x142809e98 <line:5:2, col:30>
+    | |-RecordDecl 0x142809cb0 <col:2, col:9> col:9 struct l2tp_session
+    | `-VarDecl 0x142809e18 <col:2, col:23> col:23 used session 'struct l2tp_session *'
+    |-DeclStmt 0x14280a098 <line:6:2, col:29>
+    | |-RecordDecl 0x142809eb0 <col:2, col:9> col:9 struct pppol2tp_session
+    | `-VarDecl 0x14280a018 <col:2, col:27> col:27 used ps 'struct pppol2tp_session *'
+    |-BinaryOperator 0x14280a2c0 <line:8:2, col:42> 'struct l2tp_tunnel *' contains-errors '='
+    | |-DeclRefExpr 0x14280a0b0 <col:2> 'struct l2tp_tunnel *' lvalue Var 0x142809c18 'tunnel' 'struct l2tp_tunnel *'
+    | `-CallExpr 0x14280a290 <col:11, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14280a230 <col:11> 'int ()' Function 0x14280a178 'l2tp_tunnel_find' 'int ()'
+    |   |-DeclRefExpr 0x14280a250 <col:28> 'struct net *' lvalue ParmVar 0x141128648 'net' 'struct net *'
+    |   `-RecoveryExpr 0x14280a270 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14280a3b8 <line:11:2, col:11> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14280a2e0 <col:2> 'int' lvalue Var 0x142809a30 'error' 'int'
+    | `-UnaryOperator 0x14280a3a0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   `-ImplicitCastExpr 0x14280a388 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x14280a368 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14280a4d8 <line:12:2, line:13:8>
+    | |-BinaryOperator 0x14280a450 <line:12:6, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x14280a3d8 <col:6> 'struct l2tp_tunnel *' lvalue Var 0x142809c18 'tunnel' 'struct l2tp_tunnel *'
+    | | `-RecoveryExpr 0x14280a430 <col:16> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x14280a4c0 <line:13:3, col:8> 'out' 0x14280a470
+    |-IfStmt 0x14280b400 <line:16:2, line:17:8>
+    | |-BinaryOperator 0x14280a5b0 <line:16:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x14280a530 <col:6, col:14> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14280a4f8 <col:6> 'struct l2tp_tunnel *' lvalue Var 0x142809c18 'tunnel' 'struct l2tp_tunnel *'
+    | | `-RecoveryExpr 0x14280a590 <col:22> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x14280a5d0 <line:17:3, col:8> 'out' 0x14280a470
+    |-IfStmt 0x14280b5f8 <line:20:2, line:21:21>
+    | |-BinaryOperator 0x14280b4a0 <line:20:6, col:18> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x14280b458 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14280b420 <col:6> 'struct l2tp_session_cfg *' lvalue ParmVar 0x1428097d8 'cfg' 'struct l2tp_session_cfg *'
+    | | `-IntegerLiteral 0x14280b480 <col:18> 'int' 0
+    | `-BinaryOperator 0x14280b5d8 <line:21:3, col:21> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x14280b4f8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14280b4c0 <col:3> 'struct l2tp_session_cfg *' lvalue ParmVar 0x1428097d8 'cfg' 'struct l2tp_session_cfg *'
+    |   `-BinaryOperator 0x14280b5b8 <col:14, col:21> '<dependent type>' contains-errors '-'
+    |     |-IntegerLiteral 0x14280b520 <col:14> 'int' 1500
+    |     `-RecoveryExpr 0x14280b598 <col:21> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14280b798 <line:22:2, line:23:19>
+    | |-BinaryOperator 0x14280b698 <line:22:6, col:18> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x14280b650 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x14280b618 <col:6> 'struct l2tp_session_cfg *' lvalue ParmVar 0x1428097d8 'cfg' 'struct l2tp_session_cfg *'
+    | | `-IntegerLiteral 0x14280b678 <col:18> 'int' 0
+    | `-BinaryOperator 0x14280b778 <line:23:3, col:19> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x14280b6f0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14280b6b8 <col:3> 'struct l2tp_session_cfg *' lvalue ParmVar 0x1428097d8 'cfg' 'struct l2tp_session_cfg *'
+    |   `-RecoveryExpr 0x14280b750 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14280b718 <col:14> 'struct l2tp_session_cfg *' lvalue ParmVar 0x1428097d8 'cfg' 'struct l2tp_session_cfg *'
+    |-IfStmt 0x14280bd48 <line:29:2, line:32:2>
+    | |-CallExpr 0x14280bb18 <line:29:6, col:20> 'int'
+    | | |-ImplicitCastExpr 0x14280bb00 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14280ba90 <col:6> 'int ()' Function 0x14280b9d8 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x14280bb40 <col:13> 'struct l2tp_session *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14280bab0 <col:13> 'struct l2tp_session *' lvalue Var 0x142809e18 'session' 'struct l2tp_session *'
+    | `-CompoundStmt 0x14280bd28 <col:23, line:32:2>
+    |   |-BinaryOperator 0x14280bcf0 <line:30:3, col:26> 'int' '='
+    |   | |-DeclRefExpr 0x14280bb58 <col:3> 'int' lvalue Var 0x142809a30 'error' 'int'
+    |   | `-CallExpr 0x14280bcb0 <col:11, col:26> 'int'
+    |   |   |-ImplicitCastExpr 0x14280bc98 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x14280bc58 <col:11> 'int ()' Function 0x14280bba0 'PTR_ERR' 'int ()'
+    |   |   `-ImplicitCastExpr 0x14280bcd8 <col:19> 'struct l2tp_session *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x14280bc78 <col:19> 'struct l2tp_session *' lvalue Var 0x142809e18 'session' 'struct l2tp_session *'
+    |   `-GotoStmt 0x14280bd10 <line:31:3, col:8> 'out' 0x14280a470
+    |-BinaryOperator 0x14280bf18 <line:34:2, col:32> 'struct pppol2tp_session *' '='
+    | |-DeclRefExpr 0x14280bd68 <col:2> 'struct pppol2tp_session *' lvalue Var 0x14280a018 'ps' 'struct pppol2tp_session *'
+    | `-ImplicitCastExpr 0x14280bf00 <col:7, col:32> 'struct pppol2tp_session *' <IntegralToPointer>
+    |   `-CallExpr 0x14280bec0 <col:7, col:32> 'int'
+    |     |-ImplicitCastExpr 0x14280bea8 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14280be68 <col:7> 'int ()' Function 0x14280bdb0 'l2tp_session_priv' 'int ()'
+    |     `-ImplicitCastExpr 0x14280bee8 <col:25> 'struct l2tp_session *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14280be88 <col:25> 'struct l2tp_session *' lvalue Var 0x142809e18 'session' 'struct l2tp_session *'
+    |-BinaryOperator 0x14280bff8 <line:35:2, col:28> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14280bf70 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14280bf38 <col:2> 'struct pppol2tp_session *' lvalue Var 0x14280a018 'ps' 'struct pppol2tp_session *'
+    | `-RecoveryExpr 0x14280bfd0 <col:20, col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14280bf98 <col:20> 'struct l2tp_tunnel *' lvalue Var 0x142809c18 'tunnel' 'struct l2tp_tunnel *'
+    |-BinaryOperator 0x14280c240 <line:40:2, col:10> 'int' '='
+    | |-DeclRefExpr 0x14280c200 <col:2> 'int' lvalue Var 0x142809a30 'error' 'int'
+    | `-IntegerLiteral 0x14280c220 <col:10> 'int' 0
+    `-LabelStmt 0x14280c2a8 <line:42:1, line:43:9> 'out'
+      `-ReturnStmt 0x14280c298 <col:2, col:9>
+        `-ImplicitCastExpr 0x14280c280 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x14280c260 <col:9> 'int' lvalue Var 0x142809a30 'error' 'int'

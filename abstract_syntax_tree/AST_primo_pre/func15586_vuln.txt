@@ -1,0 +1,31 @@
+`-FunctionDecl 0x12d128758  line:1:12 referenced ion_handle_put 'int (struct ion_handle *)' static
+  |-ParmVarDecl 0x12d128648 <col:27, col:46> col:46 used handle 'struct ion_handle *'
+  `-CompoundStmt 0x12d141388 <line:2:1, line:11:1>
+    |-DeclStmt 0x12d140c98 <line:3:2, col:44>
+    | |-RecordDecl 0x12d140a50 <col:2, col:9> col:9 struct ion_client
+    | `-VarDecl 0x12d140bb8 <col:2, col:38> col:21 used client 'struct ion_client *' cinit
+    |   `-RecoveryExpr 0x12d140c58 <col:30, col:38> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d140c20 <col:30> 'struct ion_handle *' lvalue ParmVar 0x12d128648 'handle' 'struct ion_handle *'
+    |-DeclStmt 0x12d140d30 <line:4:2, col:9>
+    | `-VarDecl 0x12d140cc8 <col:2, col:6> col:6 used ret 'int'
+    |-CallExpr 0x12d140f08 <line:6:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d140e70 <col:2> 'int ()' Function 0x12d140db8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12d140ef0 <col:13, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12d140ec8 <col:14, col:22> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d140e90 <col:14> 'struct ion_client *' contains-errors lvalue Var 0x12d140bb8 'client' 'struct ion_client *'
+    |-BinaryOperator 0x12d141180 <line:7:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12d140f30 <col:2> 'int' lvalue Var 0x12d140cc8 'ret' 'int'
+    | `-CallExpr 0x12d141150 <col:8, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12d141030 <col:8> 'int ()' Function 0x12d140f78 'kref_put' 'int ()'
+    |   |-UnaryOperator 0x12d1410b0 <col:17, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x12d141088 <col:18, col:26> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x12d141050 <col:18> 'struct ion_handle *' lvalue ParmVar 0x12d128648 'handle' 'struct ion_handle *'
+    |   `-DeclRefExpr 0x12d141130 <col:31> 'int (struct ion_handle *)' Function 0x12d128758 'ion_handle_put' 'int (struct ion_handle *)'
+    |-CallExpr 0x12d141318 <line:8:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12d141280 <col:2> 'int ()' Function 0x12d1411c8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x12d141300 <col:15, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12d1412d8 <col:16, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d1412a0 <col:16> 'struct ion_client *' contains-errors lvalue Var 0x12d140bb8 'client' 'struct ion_client *'
+    `-ReturnStmt 0x12d141378 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x12d141360 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12d141340 <col:9> 'int' lvalue Var 0x12d140cc8 'ret' 'int'

@@ -1,0 +1,1 @@
+  virtual void setEndStream(bool end) { end_stream_ = end; }

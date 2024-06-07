@@ -1,0 +1,53 @@
+`-FunctionDecl 0x11f144d48  line:1:14 proc_pid_follow_link 'void *(struct dentry *, struct nameidata *)' static
+  |-ParmVarDecl 0x11f128648 <col:35, col:50> col:50 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x11f144c28 <col:58, col:76> col:76 used nd 'struct nameidata *'
+  `-CompoundStmt 0x11f145ba0 <line:2:1, line:17:1>
+    |-DeclStmt 0x11f145098 <line:3:2, col:39>
+    | |-RecordDecl 0x11f144e48 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x11f144fb8 <col:2, col:32> col:16 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x11f145058 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f145020 <col:24> 'struct dentry *' lvalue ParmVar 0x11f128648 'dentry' 'struct dentry *'
+    |-DeclStmt 0x11f1451e0 <line:4:2, col:21>
+    | `-VarDecl 0x11f1450c8 <col:2, col:15> col:6 used error 'int' cinit
+    |   `-UnaryOperator 0x11f1451c8 <col:14, col:15> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x11f1451b0 <col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x11f145190 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x11f1453a8 <line:7:2, col:20> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f145310 <col:2> 'int ()' Function 0x11f145258 'path_put' 'int ()'
+    | `-UnaryOperator 0x11f145390 <col:11, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x11f145368 <col:12, col:16> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x11f145330 <col:12> 'struct nameidata *' lvalue ParmVar 0x11f144c28 'nd' 'struct nameidata *'
+    |-IfStmt 0x11f1455f8 <line:10:2, line:11:8>
+    | |-UnaryOperator 0x11f145578 <line:10:6, col:35> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x11f145538 <col:7, col:35> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x11f145520 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x11f1454b0 <col:7> 'int ()' Function 0x11f1453f8 'proc_fd_access_allowed' 'int ()'
+    | |   `-ImplicitCastExpr 0x11f145560 <col:30> 'struct inode *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x11f1454d0 <col:30> 'struct inode *' contains-errors lvalue Var 0x11f144fb8 'inode' 'struct inode *'
+    | `-GotoStmt 0x11f1455e0 <line:11:3, col:8> 'out' 0x11f145590
+    |-BinaryOperator 0x11f1458e8 <line:13:2, col:58> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11f145618 <col:2> 'int' contains-errors lvalue Var 0x11f1450c8 'error' 'int'
+    | `-CallExpr 0x11f1458b8 <col:10, col:58> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x11f1457d8 <col:10, col:28> '<dependent type>' contains-errors lvalue .proc_get_link
+    |   | `-RecoveryExpr 0x11f1457b0 <col:10, col:25> '<dependent type>' contains-errors lvalue
+    |   |   `-CallExpr 0x11f145770 <col:10, col:22> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x11f145758 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x11f145718 <col:10> 'int ()' Function 0x11f145660 'PROC_I' 'int ()'
+    |   |     `-ImplicitCastExpr 0x11f145798 <col:17> 'struct inode *' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x11f145738 <col:17> 'struct inode *' contains-errors lvalue Var 0x11f144fb8 'inode' 'struct inode *'
+    |   |-DeclRefExpr 0x11f145820 <col:42> 'struct inode *' contains-errors lvalue Var 0x11f144fb8 'inode' 'struct inode *'
+    |   `-UnaryOperator 0x11f1458a0 <col:49, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x11f145878 <col:50, col:54> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x11f145840 <col:50> 'struct nameidata *' lvalue ParmVar 0x11f144c28 'nd' 'struct nameidata *'
+    |-BinaryOperator 0x11f1459c0 <line:14:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f145940 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f145908 <col:2> 'struct nameidata *' lvalue ParmVar 0x11f144c28 'nd' 'struct nameidata *'
+    | `-RecoveryExpr 0x11f1459a0 <col:18> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x11f145b80 <line:15:1, line:16:22> 'out'
+      `-ReturnStmt 0x11f145b70 <col:2, col:22>
+        `-ImplicitCastExpr 0x11f145b58 <col:9, col:22> 'void *' contains-errors <IntegralToPointer>
+          `-CallExpr 0x11f145b18 <col:9, col:22> 'int' contains-errors
+            |-ImplicitCastExpr 0x11f145b00 <col:9> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x11f145ac0 <col:9> 'int ()' Function 0x11f145a08 'ERR_PTR' 'int ()'
+            `-ImplicitCastExpr 0x11f145b40 <col:17> 'int' contains-errors <LValueToRValue>
+              `-DeclRefExpr 0x11f145ae0 <col:17> 'int' contains-errors lvalue Var 0x11f1450c8 'error' 'int'

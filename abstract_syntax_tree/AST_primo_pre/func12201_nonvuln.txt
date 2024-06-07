@@ -1,0 +1,19 @@
+`-FunctionDecl 0x12d145c28  line:1:5 invalid ext4_handle_dirty_dirent_node 'int (int *, struct inode *, struct buffer_head *)'
+  |-ParmVarDecl 0x12d128128 <col:35, col:45> col:45 invalid handle 'int *'
+  |-ParmVarDecl 0x12d128718 <line:2:7, col:21> col:21 used inode 'struct inode *'
+  |-ParmVarDecl 0x12d145ae8 <line:3:7, col:27> col:27 used bh 'struct buffer_head *'
+  `-CompoundStmt 0x12d1462a8 <line:4:1, line:7:1>
+    |-CallExpr 0x12d1460b8 <line:5:2, col:65> 'int' contains-errors
+    | |-ImplicitCastExpr 0x12d1460a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12d145e40 <col:2> 'int ()' Function 0x12d145d88 'ext4_dirent_csum_set' 'int ()'
+    | |-ImplicitCastExpr 0x12d1460e8 <col:23> 'struct inode *' <LValueToRValue>
+    | | `-DeclRefExpr 0x12d145e60 <col:23> 'struct inode *' lvalue ParmVar 0x12d128718 'inode' 'struct inode *'
+    | `-CStyleCastExpr 0x12d146048 <col:30, col:59> 'struct ext4_dir_entry *' contains-errors <Dependent>
+    |   `-RecoveryExpr 0x12d145f58 <col:55, col:59> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12d145f20 <col:55> 'struct buffer_head *' lvalue ParmVar 0x12d145ae8 'bh' 'struct buffer_head *'
+    `-ReturnStmt 0x12d146298 <line:6:2, col:53>
+      `-CallExpr 0x12d146260 <col:9, col:53> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12d1461e0 <col:9> 'int ()' Function 0x12d146128 'ext4_handle_dirty_metadata' 'int ()'
+        |-RecoveryExpr 0x12d146200 <col:36> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x12d146220 <col:44> 'struct inode *' lvalue ParmVar 0x12d128718 'inode' 'struct inode *'
+        `-DeclRefExpr 0x12d146240 <col:51> 'struct buffer_head *' lvalue ParmVar 0x12d145ae8 'bh' 'struct buffer_head *'

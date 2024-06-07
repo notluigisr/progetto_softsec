@@ -1,0 +1,61 @@
+`-FunctionDecl 0x126109ad8  line:1:13 invalid add_free_nid 'int (struct f2fs_sb_info *, int, int)' static
+  |-ParmVarDecl 0x125011e68 <col:26, col:47> col:47 used sbi 'struct f2fs_sb_info *'
+  |-ParmVarDecl 0x125011ee8 <col:52, col:58> col:58 invalid nid 'int'
+  |-ParmVarDecl 0x125011f68 <col:63, col:68> col:68 invalid build 'int'
+  `-CompoundStmt 0x124813c38 <line:2:1, line:38:1>
+    |-DeclStmt 0x126109fc8 <line:3:2, col:39>
+    | |-RecordDecl 0x126109b98 <col:2, col:9> col:9 struct f2fs_nm_info
+    | `-VarDecl 0x126109d08 <col:2, col:38> col:23 used nm_i 'struct f2fs_nm_info *' cinit
+    |   `-ImplicitCastExpr 0x126109f98 <col:30, col:38> 'struct f2fs_nm_info *' <IntegralToPointer>
+    |     `-CallExpr 0x126109f58 <col:30, col:38> 'int'
+    |       |-ImplicitCastExpr 0x126109f40 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x126109ed0 <col:30> 'int ()' Function 0x126109e18 'NM_I' 'int ()'
+    |       `-ImplicitCastExpr 0x126109f80 <col:35> 'struct f2fs_sb_info *' <LValueToRValue>
+    |         `-DeclRefExpr 0x126109ef0 <col:35> 'struct f2fs_sb_info *' lvalue ParmVar 0x125011e68 'sbi' 'struct f2fs_sb_info *'
+    |-DeclStmt 0x12610a1c8 <line:4:2, col:20>
+    | |-RecordDecl 0x126109fe0 <col:2, col:9> col:9 struct free_nid
+    | `-VarDecl 0x12610a148 <col:2, col:19> col:19 used i 'struct free_nid *'
+    |-DeclStmt 0x12610a3c8 <line:5:2, col:22>
+    | |-RecordDecl 0x12610a1e0 <col:2, col:9> col:9 struct nat_entry
+    | `-VarDecl 0x12610a348 <col:2, col:20> col:20 used ne 'struct nat_entry *'
+    |-DeclStmt 0x12610a460 <line:6:2, col:9>
+    | `-VarDecl 0x12610a3f8 <col:2, col:6> col:6 used err 'int'
+    |-IfStmt 0x124812ff8 <line:12:2, line:18:2>
+    | |-RecoveryExpr 0x12610a618 <line:12:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x124812fe0 <col:13, line:18:2>
+    |   `-BinaryOperator 0x12610a7c8 <line:14:3, col:36> 'struct nat_entry *' contains-errors '='
+    |     |-DeclRefExpr 0x12610a638 <col:3> 'struct nat_entry *' lvalue Var 0x12610a348 'ne' 'struct nat_entry *'
+    |     `-CallExpr 0x12610a798 <col:8, col:36> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x12610a738 <col:8> 'int ()' Function 0x12610a680 '__lookup_nat_cache' 'int ()'
+    |       |-DeclRefExpr 0x12610a758 <col:27> 'struct f2fs_nm_info *' lvalue Var 0x126109d08 'nm_i' 'struct f2fs_nm_info *'
+    |       `-RecoveryExpr 0x12610a778 <col:33> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x124813228 <line:20:2, col:51> 'struct free_nid *' contains-errors '='
+    | |-DeclRefExpr 0x124813018 <col:2> 'struct free_nid *' lvalue Var 0x12610a148 'i' 'struct free_nid *'
+    | `-CallExpr 0x1248131f8 <col:6, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x124813118 <col:6> 'int ()' Function 0x124813060 'f2fs_kmem_cache_alloc' 'int ()'
+    |   |-RecoveryExpr 0x1248131b8 <col:28> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1248131d8 <col:43> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1248132c8 <line:21:2, col:11> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x124813280 <col:2, col:5> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x124813248 <col:2> 'struct free_nid *' lvalue Var 0x12610a148 'i' 'struct free_nid *'
+    | `-RecoveryExpr 0x1248132a8 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x124813598 <line:24:2, line:27:2>
+    | |-RecoveryExpr 0x124813448 <line:24:6, col:33> '_Bool' contains-errors
+    | `-CompoundStmt 0x124813588 <col:36, line:27:2>
+    |-CallExpr 0x124813730 <line:29:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124813698 <col:2> 'int ()' Function 0x1248135e0 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x124813718 <col:12, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1248136f0 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1248136b8 <col:13> 'struct f2fs_nm_info *' lvalue Var 0x126109d08 'nm_i' 'struct f2fs_nm_info *'
+    |-CallExpr 0x124813a30 <line:31:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124813998 <col:2> 'int ()' Function 0x1248138e0 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x124813a18 <col:14, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1248139f0 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1248139b8 <col:15> 'struct f2fs_nm_info *' lvalue Var 0x126109d08 'nm_i' 'struct f2fs_nm_info *'
+    |-CallExpr 0x124813b70 <line:32:2, col:25> 'int'
+    | `-ImplicitCastExpr 0x124813b58 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x124813b38 <col:2> 'int ()' Function 0x124813a80 'radix_tree_preload_end' 'int ()'
+    `-IfStmt 0x124813c18 <line:33:2, line:36:2>
+      |-ImplicitCastExpr 0x124813bb0 <line:33:6> 'int' <LValueToRValue>
+      | `-DeclRefExpr 0x124813b90 <col:6> 'int' lvalue Var 0x12610a3f8 'err' 'int'
+      `-CompoundStmt 0x124813c08 <col:11, line:36:2>

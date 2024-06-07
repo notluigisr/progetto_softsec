@@ -1,0 +1,59 @@
+`-FunctionDecl 0x15c145c88  line:1:13 invalid bio_clone_fast 'struct bio *(struct bio *, int, struct bio_set *)'
+  |-ParmVarDecl 0x15c128218 <col:28, col:40> col:40 used bio 'struct bio *'
+  |-ParmVarDecl 0x15c1282b0 <col:45, col:51> col:51 invalid gfp_mask 'int'
+  |-ParmVarDecl 0x15c145ac8 <col:61, col:77> col:77 used bs 'struct bio_set *'
+  `-CompoundStmt 0x15c808200 <line:2:1, line:23:1>
+    |-DeclStmt 0x15c145dd8 <line:3:2, col:15>
+    | `-VarDecl 0x15c145d70 <col:2, col:14> col:14 used b 'struct bio *'
+    |-BinaryOperator 0x15c146028 <line:5:2, col:38> 'struct bio *' contains-errors '='
+    | |-DeclRefExpr 0x15c145df0 <col:2> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'
+    | `-CallExpr 0x15c145ff0 <col:6, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c145f70 <col:6> 'int ()' Function 0x15c145eb8 'bio_alloc_bioset' 'int ()'
+    |   |-RecoveryExpr 0x15c145f90 <col:23> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x15c145fb0 <col:33> 'int' 0
+    |   `-DeclRefExpr 0x15c145fd0 <col:36> 'struct bio_set *' lvalue ParmVar 0x15c145ac8 'bs' 'struct bio_set *'
+    |-IfStmt 0x15c1460e0 <line:6:2, line:7:10>
+    | |-UnaryOperator 0x15c146080 <line:6:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c146068 <col:7> 'struct bio *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c146048 <col:7> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'
+    | `-ReturnStmt 0x15c1460d0 <line:7:3, col:10>
+    |   `-RecoveryExpr 0x15c1460b0 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15c146288 <line:9:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x15c146270 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c1461e0 <col:2> 'int ()' Function 0x15c146128 '__bio_clone_fast' 'int ()'
+    | |-ImplicitCastExpr 0x15c1462b8 <col:19> 'struct bio *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c146200 <col:19> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'
+    | `-ImplicitCastExpr 0x15c1462d0 <col:22> 'struct bio *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15c146220 <col:22> 'struct bio *' lvalue ParmVar 0x15c128218 'bio' 'struct bio *'
+    |-IfStmt 0x15c146970 <line:11:2, line:20:2>
+    | |-CallExpr 0x15c146420 <line:11:6, col:23> 'int'
+    | | |-ImplicitCastExpr 0x15c146408 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x15c1463c8 <col:6> 'int ()' Function 0x15c146310 'bio_integrity' 'int ()'
+    | | `-ImplicitCastExpr 0x15c146448 <col:20> 'struct bio *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c1463e8 <col:20> 'struct bio *' lvalue ParmVar 0x15c128218 'bio' 'struct bio *'
+    | `-CompoundStmt 0x15c146948 <col:26, line:20:2>
+    |   |-DeclStmt 0x15c1464e0 <line:12:3, col:10>
+    |   | `-VarDecl 0x15c146478 <col:3, col:7> col:7 used ret 'int'
+    |   |-BinaryOperator 0x15c1466b0 <line:14:3, col:45> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x15c1464f8 <col:3> 'int' lvalue Var 0x15c146478 'ret' 'int'
+    |   | `-CallExpr 0x15c146678 <col:9, col:45> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x15c1465f8 <col:9> 'int ()' Function 0x15c146540 'bio_integrity_clone' 'int ()'
+    |   |   |-DeclRefExpr 0x15c146618 <col:29> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'
+    |   |   |-DeclRefExpr 0x15c146638 <col:32> 'struct bio *' lvalue ParmVar 0x15c128218 'bio' 'struct bio *'
+    |   |   `-RecoveryExpr 0x15c146658 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x15c146928 <line:16:3, line:19:3>
+    |     |-BinaryOperator 0x15c146728 <line:16:7, col:13> 'int' '<'
+    |     | |-ImplicitCastExpr 0x15c146710 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x15c1466d0 <col:7> 'int' lvalue Var 0x15c146478 'ret' 'int'
+    |     | `-IntegerLiteral 0x15c1466f0 <col:13> 'int' 0
+    |     `-CompoundStmt 0x15c146908 <col:16, line:19:3>
+    |       |-CallExpr 0x15c146880 <line:17:4, col:13> 'int'
+    |       | |-ImplicitCastExpr 0x15c146868 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |       | | `-DeclRefExpr 0x15c146828 <col:4> 'int ()' Function 0x15c146770 'bio_put' 'int ()'
+    |       | `-ImplicitCastExpr 0x15c1468a8 <col:12> 'struct bio *' <LValueToRValue>
+    |       |   `-DeclRefExpr 0x15c146848 <col:12> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'
+    |       `-ReturnStmt 0x15c1468f8 <line:18:4, col:11>
+    |         `-RecoveryExpr 0x15c1468d8 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x15c1469c8 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x15c1469b0 <col:9> 'struct bio *' <LValueToRValue>
+        `-DeclRefExpr 0x15c146990 <col:9> 'struct bio *' lvalue Var 0x15c145d70 'b' 'struct bio *'

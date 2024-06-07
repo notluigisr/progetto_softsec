@@ -1,0 +1,48 @@
+`-FunctionDecl 0x14c80e358  line:1:12 cit_get_packet_size 'int (struct gspca_dev *)' static
+  |-ParmVarDecl 0x14c80e248 <col:32, col:50> col:50 used gspca_dev 'struct gspca_dev *'
+  `-CompoundStmt 0x14c82b660 <line:2:1, line:14:1>
+    |-DeclStmt 0x14c82aa38 <line:3:2, col:32>
+    | |-RecordDecl 0x14c82a850 <col:2, col:9> col:9 struct usb_host_interface
+    | `-VarDecl 0x14c82a9b8 <col:2, col:29> col:29 used alt 'struct usb_host_interface *'
+    |-DeclStmt 0x14c82ac38 <line:4:2, col:28>
+    | |-RecordDecl 0x14c82aa50 <col:2, col:9> col:9 struct usb_interface
+    | `-VarDecl 0x14c82abb8 <col:2, col:24> col:24 used intf 'struct usb_interface *'
+    |-BinaryOperator 0x14c82aeb0 <line:6:2, col:57> 'struct usb_interface *' contains-errors '='
+    | |-DeclRefExpr 0x14c82ac50 <col:2> 'struct usb_interface *' lvalue Var 0x14c82abb8 'intf' 'struct usb_interface *'
+    | `-CallExpr 0x14c82ae80 <col:9, col:57> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c82ada0 <col:9> 'int ()' Function 0x14c82ace8 'usb_ifnum_to_if' 'int ()'
+    |   |-RecoveryExpr 0x14c82adf8 <col:25, col:36> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x14c82adc0 <col:25> 'struct gspca_dev *' lvalue ParmVar 0x14c80e248 'gspca_dev' 'struct gspca_dev *'
+    |   `-RecoveryExpr 0x14c82ae58 <col:41, col:52> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c82ae20 <col:41> 'struct gspca_dev *' lvalue ParmVar 0x14c80e248 'gspca_dev' 'struct gspca_dev *'
+    |-BinaryOperator 0x14c82b0a0 <line:7:2, col:53> 'struct usb_host_interface *' contains-errors '='
+    | |-DeclRefExpr 0x14c82aed0 <col:2> 'struct usb_host_interface *' lvalue Var 0x14c82a9b8 'alt' 'struct usb_host_interface *'
+    | `-CallExpr 0x14c82b070 <col:8, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c82afd0 <col:8> 'int ()' Function 0x14c82af18 'usb_altnum_to_altsetting' 'int ()'
+    |   |-DeclRefExpr 0x14c82aff0 <col:33> 'struct usb_interface *' lvalue Var 0x14c82abb8 'intf' 'struct usb_interface *'
+    |   `-RecoveryExpr 0x14c82b048 <col:39, col:50> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14c82b010 <col:39> 'struct gspca_dev *' lvalue ParmVar 0x14c80e248 'gspca_dev' 'struct gspca_dev *'
+    |-IfStmt 0x14c82b3c0 <line:8:2, line:11:2>
+    | |-UnaryOperator 0x14c82b0f8 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14c82b0e0 <col:7> 'struct usb_host_interface *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c82b0c0 <col:7> 'struct usb_host_interface *' lvalue Var 0x14c82a9b8 'alt' 'struct usb_host_interface *'
+    | `-CompoundStmt 0x14c82b3a0 <col:12, line:11:2>
+    |   |-CallExpr 0x14c82b2b8 <line:9:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x14c82b2a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14c82b1f0 <col:3> 'int ()' Function 0x14c82b138 'pr_err' 'int ()'
+    |   | `-ImplicitCastExpr 0x14c82b2e0 <col:10> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x14c82b250 <col:10> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x14c82b390 <line:10:3, col:11>
+    |     `-UnaryOperator 0x14c82b378 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x14c82b360 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x14c82b340 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14c82b650 <line:13:2, col:57>
+      `-CallExpr 0x14c82b628 <col:9, col:57> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14c82b4c0 <col:9> 'int ()' Function 0x14c82b408 'le16_to_cpu' 'int ()'
+        `-CXXDependentScopeMemberExpr 0x14c82b5e0 <col:21, col:43> '<dependent type>' contains-errors lvalue .wMaxPacketSize
+          `-CXXDependentScopeMemberExpr 0x14c82b598 <col:21, col:38> '<dependent type>' contains-errors lvalue .desc
+            `-ArraySubscriptExpr 0x14c82b578 <col:21, col:36> '<dependent type>' contains-errors lvalue
+              |-ImplicitCastExpr 0x14c82b560 <col:21, col:26> '<dependent type>' contains-errors <LValueToRValue>
+              | `-RecoveryExpr 0x14c82b518 <col:21, col:26> '<dependent type>' contains-errors lvalue
+              |   `-DeclRefExpr 0x14c82b4e0 <col:21> 'struct usb_host_interface *' lvalue Var 0x14c82a9b8 'alt' 'struct usb_host_interface *'
+              `-IntegerLiteral 0x14c82b540 <col:35> 'int' 0

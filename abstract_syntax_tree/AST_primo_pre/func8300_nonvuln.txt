@@ -1,0 +1,26 @@
+`-FunctionDecl 0x13c144d48  line:1:12 sysvipc_proc_release 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x13c128648 <col:33, col:47> col:47 used inode 'struct inode *'
+  |-ParmVarDecl 0x13c144c28 <col:54, col:67> col:67 used file 'struct file *'
+  `-CompoundStmt 0x13c1456e8 <line:2:1, line:7:1>
+    |-DeclStmt 0x13c145098 <line:3:2, col:43>
+    | |-RecordDecl 0x13c144e48 <col:2, col:9> col:9 struct seq_file
+    | `-VarDecl 0x13c144fb8 <col:2, col:31> col:19 used seq 'struct seq_file *' cinit
+    |   `-RecoveryExpr 0x13c145058 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c145020 <col:25> 'struct file *' lvalue ParmVar 0x13c144c28 'file' 'struct file *'
+    |-DeclStmt 0x13c1452f8 <line:4:2, col:43>
+    | |-RecordDecl 0x13c1450b0 <col:2, col:9> col:9 struct ipc_proc_iter
+    | `-VarDecl 0x13c145218 <col:2, col:36> col:24 used iter 'struct ipc_proc_iter *' cinit
+    |   `-RecoveryExpr 0x13c1452b8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13c145280 <col:31> 'struct seq_file *' contains-errors lvalue Var 0x13c144fb8 'seq' 'struct seq_file *'
+    |-CallExpr 0x13c1454c0 <line:5:2, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c145440 <col:2> 'int ()' Function 0x13c145388 'put_ipc_ns' 'int ()'
+    | `-RecoveryExpr 0x13c145498 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13c145460 <col:13> 'struct ipc_proc_iter *' contains-errors lvalue Var 0x13c145218 'iter' 'struct ipc_proc_iter *'
+    `-ReturnStmt 0x13c1456d8 <line:6:2, col:40>
+      `-CallExpr 0x13c145678 <col:9, col:40> 'int'
+        |-ImplicitCastExpr 0x13c145660 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x13c1455c8 <col:9> 'int ()' Function 0x13c145510 'seq_release_private' 'int ()'
+        |-ImplicitCastExpr 0x13c1456a8 <col:29> 'struct inode *' <LValueToRValue>
+        | `-DeclRefExpr 0x13c1455e8 <col:29> 'struct inode *' lvalue ParmVar 0x13c128648 'inode' 'struct inode *'
+        `-ImplicitCastExpr 0x13c1456c0 <col:36> 'struct file *' <LValueToRValue>
+          `-DeclRefExpr 0x13c145608 <col:36> 'struct file *' lvalue ParmVar 0x13c144c28 'file' 'struct file *'

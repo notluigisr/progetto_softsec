@@ -1,0 +1,60 @@
+`-FunctionDecl 0x12a0274d8  line:1:5 invalid kvm_x2apic_msr_read 'int (struct kvm_vcpu *, int, int *)'
+  |-ParmVarDecl 0x12a00e248 <col:25, col:42> col:42 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x12a00e2e0 <col:48, col:52> col:52 invalid msr 'int'
+  |-ParmVarDecl 0x12a00e398 <col:57, col:62> col:62 invalid data 'int *'
+  `-CompoundStmt 0x12a029848 <line:2:1, line:20:1>
+    |-DeclStmt 0x12a027830 <line:3:2, col:42>
+    | |-RecordDecl 0x12a027598 <col:2, col:9> col:9 struct kvm_lapic
+    | `-VarDecl 0x12a027708 <col:2, col:38> col:20 used apic 'struct kvm_lapic *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12a0277d0 <col:27, col:38> '<dependent type>' contains-errors lvalue .apic
+    |     `-RecoveryExpr 0x12a0277a8 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12a027770 <col:27> 'struct kvm_vcpu *' lvalue ParmVar 0x12a00e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x12a027c60 <line:6:2, line:7:10>
+    | |-BinaryOperator 0x12a027c10 <line:6:6, col:54> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x12a027a68 <col:6, col:27> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x12a027a28 <col:7, col:27> 'int'
+    | | |   |-ImplicitCastExpr 0x12a027a10 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x12a0279a0 <col:7> 'int ()' Function 0x12a0278e8 'lapic_in_kernel' 'int ()'
+    | | |   `-ImplicitCastExpr 0x12a027a50 <col:23> 'struct kvm_vcpu *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x12a0279c0 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x12a00e248 'vcpu' 'struct kvm_vcpu *'
+    | | `-UnaryOperator 0x12a027bf8 <col:32, col:54> 'int' contains-errors prefix '!' cannot overflow
+    | |   `-CallExpr 0x12a027bb8 <col:33, col:54> 'int' contains-errors
+    | |     |-ImplicitCastExpr 0x12a027ba0 <col:33> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x12a027b60 <col:33> 'int ()' Function 0x12a027aa8 'apic_x2apic_mode' 'int ()'
+    | |     `-ImplicitCastExpr 0x12a027be0 <col:50> 'struct kvm_lapic *' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x12a027b80 <col:50> 'struct kvm_lapic *' contains-errors lvalue Var 0x12a027708 'apic' 'struct kvm_lapic *'
+    | `-ReturnStmt 0x12a027c50 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x12a027c30 <col:10> 'int' 1
+    |-IfStmt 0x12a027e50 <line:9:2, line:10:10>
+    | |-BinaryOperator 0x12a027e00 <line:9:6, col:32> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x12a027d80 <col:6, col:13> 'int' contains-errors '=='
+    | | | |-RecoveryExpr 0x12a027d40 <col:6> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x12a027d60 <col:13> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x12a027de0 <col:25, col:32> 'int' contains-errors '=='
+    | |   |-RecoveryExpr 0x12a027da0 <col:25> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x12a027dc0 <col:32> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a027e40 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x12a027e20 <col:10> 'int' 1
+    |-IfStmt 0x12a028100 <line:12:2, line:13:10>
+    | |-CallExpr 0x12a028090 <line:12:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x12a027f50 <col:6> 'int ()' Function 0x12a027e98 'kvm_lapic_reg_read' 'int ()'
+    | | |-DeclRefExpr 0x12a027f70 <col:25> 'struct kvm_lapic *' contains-errors lvalue Var 0x12a027708 'apic' 'struct kvm_lapic *'
+    | | |-RecoveryExpr 0x12a028038 <col:31> '<dependent type>' contains-errors lvalue
+    | | |-IntegerLiteral 0x12a027fa8 <col:36> 'int' 4
+    | | `-UnaryOperator 0x12a028078 <col:39, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x12a028058 <col:40> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x12a0280f0 <line:13:3, col:10>
+    |   `-IntegerLiteral 0x12a0280d0 <col:10> 'int' 1
+    |-IfStmt 0x12a028350 <line:14:2, line:15:47>
+    | |-BinaryOperator 0x12a0281b0 <line:14:6, col:13> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x12a028170 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x12a028190 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x12a028310 <line:15:3, col:47> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a0281d0 <col:3> 'int ()' Function 0x12a027e98 'kvm_lapic_reg_read' 'int ()'
+    |   |-DeclRefExpr 0x12a0281f0 <col:22> 'struct kvm_lapic *' contains-errors lvalue Var 0x12a027708 'apic' 'struct kvm_lapic *'
+    |   |-RecoveryExpr 0x12a0282b8 <col:28> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x12a028228 <col:39> 'int' 4
+    |   `-UnaryOperator 0x12a0282f8 <col:42, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12a0282d8 <col:43> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12a029838 <line:19:2, col:9>
+      `-IntegerLiteral 0x12a029818 <col:9> 'int' 0

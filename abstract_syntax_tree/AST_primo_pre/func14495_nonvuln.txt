@@ -1,0 +1,42 @@
+`-FunctionDecl 0x1299226d8  line:1:12 referenced invalid __cfs_schedulable 'int (struct task_group *, int, int)' static
+  |-ParmVarDecl 0x12a00e248 <col:30, col:49> col:49 used tg 'struct task_group *'
+  |-ParmVarDecl 0x12a00e2e0 <col:53, col:57> col:57 invalid period 'int'
+  |-ParmVarDecl 0x12a00e360 <col:65, col:69> col:69 invalid quota 'int'
+  `-CompoundStmt 0x129923530 <line:2:1, line:20:1>
+    |-DeclStmt 0x129922818 <line:3:2, col:9>
+    | `-VarDecl 0x1299227b0 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x129922b20 <line:4:2, line:8:3>
+    | |-RecordDecl 0x129922830 <line:4:2, col:9> col:9 struct cfs_schedulable_data
+    | `-VarDecl 0x129922928 <col:2, col:30> col:30 invalid data 'struct cfs_schedulable_data'
+    |-IfStmt 0x129922f90 <line:10:2, line:13:2>
+    | |-BinaryOperator 0x129922bb0 <line:10:6, col:15> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x129922b38 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x129922b90 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x129922f70 <col:28, line:13:2>
+    |   |-CallExpr 0x129922e20 <line:11:3, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x129922d30 <col:3> 'int ()' Function 0x129922c78 'do_div' 'int ()'
+    |   | |-CXXDependentScopeMemberExpr 0x129922d70 <col:10, col:15> '<dependent type>' contains-errors lvalue .period
+    |   | | `-RecoveryExpr 0x129922d50 <col:10> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x129922e00 <col:23> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x129922f40 <line:12:3, col:35> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x129922e50 <col:3> 'int ()' Function 0x129922c78 'do_div' 'int ()'
+    |     |-CXXDependentScopeMemberExpr 0x129922e90 <col:10, col:15> '<dependent type>' contains-errors lvalue .quota
+    |     | `-RecoveryExpr 0x129922e70 <col:10> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x129922f20 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1299230f8 <line:15:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x1299230e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x129923090 <col:2> 'int ()' Function 0x129922fd8 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x129923390 <line:16:2, col:59> 'int' contains-errors '='
+    | |-DeclRefExpr 0x129923118 <col:2> 'int' lvalue Var 0x1299227b0 'ret' 'int'
+    | `-CallExpr 0x129923358 <col:8, col:59> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x129923218 <col:8> 'int ()' Function 0x129923160 'walk_tg_tree' 'int ()'
+    |   |-RecoveryExpr 0x129923318 <col:21> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x129923338 <col:46> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x129923288 <col:54, col:55> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x129923268 <col:55> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1299234c8 <line:17:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x1299234b0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x129923490 <col:2> 'int ()' Function 0x1299233d8 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x129923520 <line:19:2, col:9>
+      `-ImplicitCastExpr 0x129923508 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1299234e8 <col:9> 'int' lvalue Var 0x1299227b0 'ret' 'int'

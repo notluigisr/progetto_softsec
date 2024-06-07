@@ -1,0 +1,53 @@
+`-FunctionDecl 0x12100de88  line:1:1 invalid sys_auth_passwd 'int (int *, const char *)'
+  |-ParmVarDecl 0x12100dd28 <col:17, col:27> col:27 referenced invalid authctxt 'int *'
+  |-ParmVarDecl 0x12100dda8 <col:37, col:49> col:49 used password 'const char *'
+  `-CompoundStmt 0x12102a4c8 <line:2:1, line:23:1>
+    |-DeclStmt 0x12100e190 <line:3:2, col:34>
+    | |-RecordDecl 0x12100df40 <col:2, col:9> col:9 struct passwd
+    | `-VarDecl 0x12100e0a8 <col:2, col:32> col:17 used pw 'struct passwd *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x12100e130 <col:22, col:32> '<dependent type>' contains-errors lvalue ->pw
+    |     `-RecoveryExpr 0x12100e110 <col:22> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12100e260 <line:5:2, col:31>
+    | `-VarDecl 0x12100e1d8 <col:2, col:30> col:13 used expire_checked 'int' static cinit
+    |   `-IntegerLiteral 0x12100e240 <col:30> 'int' 0
+    |-IfStmt 0x121027b08 <line:9:2, line:10:12>
+    | |-BinaryOperator 0x121027a98 <line:9:6, col:12> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x121027a58 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x121027a78 <col:12> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x121027af8 <line:10:3, col:12>
+    |   `-ParenExpr 0x121027ad8 <col:10, col:12> 'int'
+    |     `-IntegerLiteral 0x121027ab8 <col:11> 'int' 0
+    `-IfStmt 0x12102a498 <line:11:2, line:22:2> has_else
+      |-BinaryOperator 0x121027d08 <line:11:6, col:26> '<dependent type>' contains-errors '&'
+      | |-CallExpr 0x121027cc0 <col:6, col:22> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x121027c08 <col:6> 'int ()' Function 0x121027b50 'auth_getstate' 'int ()'
+      | | `-RecoveryExpr 0x121027ca0 <col:20> '<dependent type>' contains-errors lvalue
+      | `-RecoveryExpr 0x121027ce8 <col:26> '<dependent type>' contains-errors lvalue
+      |-CompoundStmt 0x121028138 <col:42, line:16:2>
+      | |-CallExpr 0x121027e88 <line:12:3, col:16> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x121027e08 <col:3> 'int ()' Function 0x121027d50 'auth_close' 'int ()'
+      | | `-RecoveryExpr 0x121027e68 <col:14> '<dependent type>' contains-errors lvalue
+      | |-CallExpr 0x121027ff8 <line:13:3, col:22> 'int'
+      | | `-ImplicitCastExpr 0x121027fe0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      | |   `-DeclRefExpr 0x121027f90 <col:3> 'int ()' Function 0x121027ed8 'disable_forwarding' 'int ()'
+      | |-BinaryOperator 0x1210280c8 <line:14:3, col:30> '<dependent type>' contains-errors '='
+      | | |-CXXDependentScopeMemberExpr 0x121028060 <col:3, col:13> '<dependent type>' contains-errors lvalue ->force_pwchange
+      | | | `-RecoveryExpr 0x121028038 <col:3> '<dependent type>' contains-errors lvalue
+      | | |   `-DeclRefExpr 0x121028018 <col:3> 'int *' lvalue ParmVar 0x12100dd28 'authctxt' 'int *'
+      | | `-IntegerLiteral 0x1210280a8 <col:30> 'int' 1
+      | `-ReturnStmt 0x121028128 <line:15:3, col:12>
+      |   `-ParenExpr 0x121028108 <col:10, col:12> 'int'
+      |     `-IntegerLiteral 0x1210280e8 <col:11> 'int' 1
+      `-CompoundStmt 0x12102a480 <line:16:9, line:22:2>
+        `-IfStmt 0x12102a400 <line:17:3, line:20:3>
+          |-UnaryOperator 0x1210281a0 <line:17:7, col:8> 'int' prefix '!' cannot overflow
+          | `-ImplicitCastExpr 0x121028188 <col:8> 'int' <LValueToRValue>
+          |   `-DeclRefExpr 0x121028168 <col:8> 'int' lvalue Var 0x12100e1d8 'expire_checked' 'int'
+          `-CompoundStmt 0x1210283d0 <col:24, line:20:3>
+            |-BinaryOperator 0x1210281f8 <line:18:4, col:21> 'int' '='
+            | |-DeclRefExpr 0x1210281b8 <col:4> 'int' lvalue Var 0x12100e1d8 'expire_checked' 'int'
+            | `-IntegerLiteral 0x1210281d8 <col:21> 'int' 1
+            `-CallExpr 0x1210283a0 <line:19:4, col:28> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x1210282f8 <col:4> 'int ()' Function 0x121028240 'warn_expiry' 'int ()'
+              |-RecoveryExpr 0x121028318 <col:16> '<dependent type>' contains-errors lvalue
+              `-RecoveryExpr 0x121028380 <col:26> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,133 @@
+`-FunctionDecl 0x12f141138  line:1:17 __skb_recv_datagram 'struct sk_buff *(struct sock *, unsigned int, int *, int *, int *)'
+  |-ParmVarDecl 0x12f128ae8 <col:37, col:50> col:50 used sk 'struct sock *'
+  |-ParmVarDecl 0x12f128b68 <col:54, col:67> col:67 used flags 'unsigned int'
+  |-ParmVarDecl 0x12f140e18 <line:2:9, col:14> col:14 used peeked 'int *'
+  |-ParmVarDecl 0x12f140e98 <col:22, col:27> col:27 used off 'int *'
+  |-ParmVarDecl 0x12f140f18 <col:32, col:37> col:37 used err 'int *'
+  `-CompoundStmt 0x12f808968 <line:3:1, line:49:1>
+    |-DeclStmt 0x12f141340 <line:4:2, col:21>
+    | `-VarDecl 0x12f1412d8 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-DeclStmt 0x12f1413d8 <line:5:2, col:12>
+    | `-VarDecl 0x12f141370 <col:2, col:7> col:7 used timeo 'long'
+    |-DeclStmt 0x12f141668 <line:7:2, col:28>
+    | `-VarDecl 0x12f141408 <col:2, col:27> col:6 used error 'int' cinit
+    |   `-CallExpr 0x12f141628 <col:14, col:27> 'int'
+    |     |-ImplicitCastExpr 0x12f141610 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12f1415a0 <col:14> 'int ()' Function 0x12f1414e8 'sock_error' 'int ()'
+    |     `-ImplicitCastExpr 0x12f141650 <col:25> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12f1415c0 <col:25> 'struct sock *' lvalue ParmVar 0x12f128ae8 'sk' 'struct sock *'
+    |-IfStmt 0x12f141720 <line:9:2, line:10:8>
+    | |-ImplicitCastExpr 0x12f1416a0 <line:9:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x12f141680 <col:6> 'int' lvalue Var 0x12f141408 'error' 'int'
+    | `-GotoStmt 0x12f141708 <line:10:3, col:8> 'no_packet' 0x12f1416b8
+    |-BinaryOperator 0x12f141998 <line:12:2, col:48> 'long' contains-errors '='
+    | |-DeclRefExpr 0x12f141740 <col:2> 'long' lvalue Var 0x12f141370 'timeo' 'long'
+    | `-CallExpr 0x12f141968 <col:10, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12f141840 <col:10> 'int ()' Function 0x12f141788 'sock_rcvtimeo' 'int ()'
+    |   |-DeclRefExpr 0x12f141860 <col:24> 'struct sock *' lvalue ParmVar 0x12f128ae8 'sk' 'struct sock *'
+    |   `-BinaryOperator 0x12f141948 <col:28, col:36> '<dependent type>' contains-errors '&'
+    |     |-DeclRefExpr 0x12f141880 <col:28> 'unsigned int' lvalue ParmVar 0x12f128b68 'flags' 'unsigned int'
+    |     `-RecoveryExpr 0x12f141928 <col:36> '<dependent type>' contains-errors lvalue
+    |-DoStmt 0x12f808880 <line:14:2, line:42:44>
+    | |-CompoundStmt 0x12f1439c8 <line:14:5, line:42:2>
+    | | |-DeclStmt 0x12f141a38 <line:16:3, col:26>
+    | | | `-VarDecl 0x12f1419d0 <col:3, col:17> col:17 used cpu_flags 'unsigned long'
+    | | |-DeclStmt 0x12f141cb0 <line:17:3, col:53>
+    | | | |-RecordDecl 0x12f141a50 <col:3, col:10> col:10 struct sk_buff_head
+    | | | `-VarDecl 0x12f141bb8 <col:3, col:37> col:24 used queue 'struct sk_buff_head *' cinit
+    | | |   `-UnaryOperator 0x12f141c80 <col:32, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |     `-RecoveryExpr 0x12f141c58 <col:33, col:37> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x12f141c20 <col:33> 'struct sock *' lvalue ParmVar 0x12f128ae8 'sk' 'struct sock *'
+    | | |-CallExpr 0x12f142c60 <line:19:3, col:44> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12f141da8 <col:3> 'int ()' Function 0x12f141cf0 'spin_lock_irqsave' 'int ()'
+    | | | |-UnaryOperator 0x12f142c28 <col:21, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x12f142c00 <col:22, col:29> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x12f141dc8 <col:22> 'struct sk_buff_head *' contains-errors lvalue Var 0x12f141bb8 'queue' 'struct sk_buff_head *'
+    | | | `-DeclRefExpr 0x12f142c40 <col:35> 'unsigned long' lvalue Var 0x12f1419d0 'cpu_flags' 'unsigned long'
+    | | |-CallExpr 0x12f142de8 <line:20:3, col:28> 'int' contains-errors
+    | | | |-ImplicitCastExpr 0x12f142dd0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x12f142d70 <col:3> 'int ()' Function 0x12f142cb8 'skb_queue_walk' 'int ()'
+    | | | |-ImplicitCastExpr 0x12f142e18 <col:18> 'struct sk_buff_head *' contains-errors <LValueToRValue>
+    | | | | `-DeclRefExpr 0x12f142d90 <col:18> 'struct sk_buff_head *' contains-errors lvalue Var 0x12f141bb8 'queue' 'struct sk_buff_head *'
+    | | | `-ImplicitCastExpr 0x12f142e30 <col:25> 'struct sk_buff *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12f142db0 <col:25> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | |-CompoundStmt 0x12f143808 <col:30, line:34:3>
+    | | | |-BinaryOperator 0x12f142ef8 <line:21:4, col:19> 'int' contains-errors '='
+    | | | | |-UnaryOperator 0x12f142e80 <col:4, col:5> 'int' lvalue prefix '*' cannot overflow
+    | | | | | `-ImplicitCastExpr 0x12f142e68 <col:5> 'int *' <LValueToRValue>
+    | | | | |   `-DeclRefExpr 0x12f142e48 <col:5> 'int *' lvalue ParmVar 0x12f140e18 'peeked' 'int *'
+    | | | | `-RecoveryExpr 0x12f142ed0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x12f142e98 <col:14> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | |-IfStmt 0x12f1435c8 <line:22:4, line:30:28> has_else
+    | | | | |-BinaryOperator 0x12f142f90 <line:22:8, col:16> '<dependent type>' contains-errors '&'
+    | | | | | |-DeclRefExpr 0x12f142f18 <col:8> 'unsigned int' lvalue ParmVar 0x12f128b68 'flags' 'unsigned int'
+    | | | | | `-RecoveryExpr 0x12f142f70 <col:16> '<dependent type>' contains-errors lvalue
+    | | | | |-CompoundStmt 0x12f1433e8 <col:26, line:29:4>
+    | | | | | |-IfStmt 0x12f143188 <line:23:5, line:26:5>
+    | | | | | | |-BinaryOperator 0x12f143060 <line:23:9, col:22> 'int' contains-errors '>='
+    | | | | | | | |-UnaryOperator 0x12f142fe8 <col:9, col:10> 'int' lvalue prefix '*' cannot overflow
+    | | | | | | | | `-ImplicitCastExpr 0x12f142fd0 <col:10> 'int *' <LValueToRValue>
+    | | | | | | | |   `-DeclRefExpr 0x12f142fb0 <col:10> 'int *' lvalue ParmVar 0x12f140e98 'off' 'int *'
+    | | | | | | | `-RecoveryExpr 0x12f143038 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    | | | | | | |   `-DeclRefExpr 0x12f143000 <col:17> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | | | | `-CompoundStmt 0x12f143168 <col:27, line:26:5>
+    | | | | | |   |-CompoundAssignOperator 0x12f143130 <line:24:6, col:19> 'int' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | | | | | |   | |-UnaryOperator 0x12f1430b8 <col:6, col:7> 'int' lvalue prefix '*' cannot overflow
+    | | | | | |   | | `-ImplicitCastExpr 0x12f1430a0 <col:7> 'int *' <LValueToRValue>
+    | | | | | |   | |   `-DeclRefExpr 0x12f143080 <col:7> 'int *' lvalue ParmVar 0x12f140e98 'off' 'int *'
+    | | | | | |   | `-RecoveryExpr 0x12f143108 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    | | | | | |   |   `-DeclRefExpr 0x12f1430d0 <col:14> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | | | |   `-ContinueStmt 0x12f143160 <line:25:6>
+    | | | | | |-BinaryOperator 0x12f143228 <line:27:5, col:19> '<dependent type>' contains-errors '='
+    | | | | | | |-RecoveryExpr 0x12f1431e0 <col:5, col:10> '<dependent type>' contains-errors lvalue
+    | | | | | | | `-DeclRefExpr 0x12f1431a8 <col:5> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | | | | `-IntegerLiteral 0x12f143208 <col:19> 'int' 1
+    | | | | | `-CallExpr 0x12f1433c0 <line:28:5, col:27> '<dependent type>' contains-errors
+    | | | | |   |-DeclRefExpr 0x12f143328 <col:5> 'int ()' Function 0x12f143270 'atomic_inc' 'int ()'
+    | | | | |   `-UnaryOperator 0x12f1433a8 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | |     `-RecoveryExpr 0x12f143380 <col:17, col:22> '<dependent type>' contains-errors lvalue
+    | | | | |       `-DeclRefExpr 0x12f143348 <col:17> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | | `-CallExpr 0x12f143568 <line:30:5, col:28> 'int' contains-errors
+    | | | |   |-ImplicitCastExpr 0x12f143550 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | | |   | `-DeclRefExpr 0x12f1434f0 <col:5> 'int ()' Function 0x12f143438 '__skb_unlink' 'int ()'
+    | | | |   |-ImplicitCastExpr 0x12f143598 <col:18> 'struct sk_buff *' <LValueToRValue>
+    | | | |   | `-DeclRefExpr 0x12f143510 <col:18> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | | |   `-ImplicitCastExpr 0x12f1435b0 <col:23> 'struct sk_buff_head *' contains-errors <LValueToRValue>
+    | | | |     `-DeclRefExpr 0x12f143530 <col:23> 'struct sk_buff_head *' contains-errors lvalue Var 0x12f141bb8 'queue' 'struct sk_buff_head *'
+    | | | |-CallExpr 0x12f143790 <line:32:4, col:50> '<dependent type>' contains-errors
+    | | | | |-DeclRefExpr 0x12f1436d8 <col:4> 'int ()' Function 0x12f143620 'spin_unlock_irqrestore' 'int ()'
+    | | | | |-UnaryOperator 0x12f143758 <col:27, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | | `-RecoveryExpr 0x12f143730 <col:28, col:35> '<dependent type>' contains-errors lvalue
+    | | | | |   `-DeclRefExpr 0x12f1436f8 <col:28> 'struct sk_buff_head *' contains-errors lvalue Var 0x12f141bb8 'queue' 'struct sk_buff_head *'
+    | | | | `-DeclRefExpr 0x12f143770 <col:41> 'unsigned long' lvalue Var 0x12f1419d0 'cpu_flags' 'unsigned long'
+    | | | `-ReturnStmt 0x12f1437f8 <line:33:4, col:11>
+    | | |   `-ImplicitCastExpr 0x12f1437e0 <col:11> 'struct sk_buff *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x12f1437c0 <col:11> 'struct sk_buff *' lvalue Var 0x12f1412d8 'skb' 'struct sk_buff *'
+    | | |-CallExpr 0x12f1438f0 <line:35:3, col:49> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12f143838 <col:3> 'int ()' Function 0x12f143620 'spin_unlock_irqrestore' 'int ()'
+    | | | |-UnaryOperator 0x12f1438b8 <col:26, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x12f143890 <col:27, col:34> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x12f143858 <col:27> 'struct sk_buff_head *' contains-errors lvalue Var 0x12f141bb8 'queue' 'struct sk_buff_head *'
+    | | | `-DeclRefExpr 0x12f1438d0 <col:40> 'unsigned long' lvalue Var 0x12f1419d0 'cpu_flags' 'unsigned long'
+    | | `-IfStmt 0x12f1439a8 <line:39:3, line:40:9>
+    | |   |-UnaryOperator 0x12f143978 <line:39:7, col:8> 'int' prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x12f143960 <col:8> 'long' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x12f143940 <col:8> 'long' lvalue Var 0x12f141370 'timeo' 'long'
+    | |   `-GotoStmt 0x12f143990 <line:40:4, col:9> 'no_packet' 0x12f1416b8
+    | `-UnaryOperator 0x12f808868 <line:42:11, col:43> 'int' prefix '!' cannot overflow
+    |   `-CallExpr 0x12f808800 <col:12, col:43> 'int'
+    |     |-ImplicitCastExpr 0x12f143bb8 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12f143af0 <col:12> 'int ()' Function 0x12f143a38 'wait_for_packet' 'int ()'
+    |     |-ImplicitCastExpr 0x12f808838 <col:28> 'struct sock *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12f143b10 <col:28> 'struct sock *' lvalue ParmVar 0x12f128ae8 'sk' 'struct sock *'
+    |     |-ImplicitCastExpr 0x12f808850 <col:32> 'int *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12f143b30 <col:32> 'int *' lvalue ParmVar 0x12f140f18 'err' 'int *'
+    |     `-UnaryOperator 0x12f143ba0 <col:37, col:38> 'long *' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x12f143b50 <col:38> 'long' lvalue Var 0x12f141370 'timeo' 'long'
+    `-LabelStmt 0x12f808948 <line:46:1, line:47:9> 'no_packet'
+      `-BinaryOperator 0x12f808928 <col:2, col:9> 'int' '='
+        |-UnaryOperator 0x12f8088d8 <col:2, col:3> 'int' lvalue prefix '*' cannot overflow
+        | `-ImplicitCastExpr 0x12f8088c0 <col:3> 'int *' <LValueToRValue>
+        |   `-DeclRefExpr 0x12f8088a0 <col:3> 'int *' lvalue ParmVar 0x12f140f18 'err' 'int *'
+        `-ImplicitCastExpr 0x12f808910 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x12f8088f0 <col:9> 'int' lvalue Var 0x12f141408 'error' 'int'

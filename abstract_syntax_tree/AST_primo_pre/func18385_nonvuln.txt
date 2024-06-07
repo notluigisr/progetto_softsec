@@ -1,0 +1,29 @@
+`-FunctionDecl 0x151940488  line:1:5 perf_proc_update_handler 'int (struct ctl_table *, int, int)'
+  |-ParmVarDecl 0x151928048 <col:30, col:48> col:48 used table 'struct ctl_table *'
+  |-ParmVarDecl 0x1519280c8 <col:55, col:59> col:59 used write 'int'
+  |-ParmVarDecl 0x151928140 <line:2:3, col:8> col:8 __user 'int'
+  `-CompoundStmt 0x151940d48 <line:4:1, line:15:1>
+    |-DeclStmt 0x1519408d8 <line:5:2, col:66>
+    | `-VarDecl 0x1519405a8 <col:2, col:65> col:6 used ret 'int' cinit
+    |   `-CallExpr 0x151940890 <col:12, col:65> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x151940740 <col:12> 'int ()' Function 0x151940688 'proc_dointvec_minmax' 'int ()'
+    |     |-DeclRefExpr 0x151940760 <col:33> 'struct ctl_table *' lvalue ParmVar 0x151928048 'table' 'struct ctl_table *'
+    |     |-DeclRefExpr 0x151940780 <col:40> 'int' lvalue ParmVar 0x1519280c8 'write' 'int'
+    |     |-RecoveryExpr 0x151940830 <col:47> '<dependent type>' contains-errors lvalue
+    |     |-RecoveryExpr 0x151940850 <col:55> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x151940870 <col:61> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1519409e0 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x151940978 <line:7:6, col:14> 'int' contains-errors '||'
+    | | |-ImplicitCastExpr 0x151940960 <col:6> 'int' contains-errors <LValueToRValue>
+    | | | `-DeclRefExpr 0x1519408f0 <col:6> 'int' contains-errors lvalue Var 0x1519405a8 'ret' 'int'
+    | | `-UnaryOperator 0x151940948 <col:13, col:14> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x151940930 <col:14> 'int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x151940910 <col:14> 'int' lvalue ParmVar 0x1519280c8 'write' 'int'
+    | `-ReturnStmt 0x1519409d0 <line:8:3, col:10>
+    |   `-ImplicitCastExpr 0x1519409b8 <col:10> 'int' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x151940998 <col:10> 'int' contains-errors lvalue Var 0x1519405a8 'ret' 'int'
+    |-CallExpr 0x151940cf8 <line:12:2, col:25> 'int'
+    | `-ImplicitCastExpr 0x151940ce0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x151940c90 <col:2> 'int ()' Function 0x151940bd8 'update_perf_cpu_limits' 'int ()'
+    `-ReturnStmt 0x151940d38 <line:14:2, col:9>
+      `-IntegerLiteral 0x151940d18 <col:9> 'int' 0

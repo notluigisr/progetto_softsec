@@ -1,0 +1,32 @@
+`-FunctionDecl 0x14080df38  line:1:23 fakegetpwnam 'struct passwd *(const char *const)' static
+  |-ParmVarDecl 0x14080dd78 <col:36, col:55> col:55 used name 'const char *const'
+  `-CompoundStmt 0x140826d48 <line:2:1, line:13:1>
+    |-DeclStmt 0x140826710 <line:3:5, col:29>
+    | `-VarDecl 0x14080e080 <col:5, col:26> col:26 referenced invalid pwd 'struct passwd' static
+    |-CStyleCastExpr 0x140826770 <line:5:5, col:12> 'void' <ToVoid>
+    | `-ImplicitCastExpr 0x140826758 <col:12> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |   `-DeclRefExpr 0x140826728 <col:12> 'const char *const' lvalue ParmVar 0x14080dd78 'name' 'const char *const'
+    |-BinaryOperator 0x1408269a0 <line:6:5, col:49> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1408267e0 <col:5, col:9> '<dependent type>' contains-errors lvalue .pw_name
+    | | `-RecoveryExpr 0x1408267b8 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x140826798 <col:5> 'struct passwd' lvalue Var 0x14080e080 'pwd' 'struct passwd'
+    | `-BinaryOperator 0x140826980 <col:19, col:49> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x140826848 <col:19, col:23> '<dependent type>' contains-errors lvalue .pw_gecos
+    |   | `-RecoveryExpr 0x140826828 <col:19> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x140826960 <col:34, col:49> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x1408268b0 <col:34, col:38> '<dependent type>' contains-errors lvalue .pw_shell
+    |     | `-RecoveryExpr 0x140826890 <col:34> '<dependent type>' contains-errors lvalue
+    |     `-StringLiteral 0x140826940 <col:49> 'char[4]' lvalue "STR"
+    |-BinaryOperator 0x140826a70 <line:7:5, col:21> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x140826a08 <col:5, col:9> '<dependent type>' contains-errors lvalue .pw_passwd
+    | | `-RecoveryExpr 0x1408269e0 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1408269c0 <col:5> 'struct passwd' lvalue Var 0x14080e080 'pwd' 'struct passwd'
+    | `-StringLiteral 0x140826a50 <col:21> 'char[4]' lvalue "STR"
+    |-BinaryOperator 0x140826ce0 <line:10:5, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x140826c40 <col:5, col:9> '<dependent type>' contains-errors lvalue .pw_dir
+    | | `-RecoveryExpr 0x140826c18 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x140826bf8 <col:5> 'struct passwd' lvalue Var 0x14080e080 'pwd' 'struct passwd'
+    | `-RecoveryExpr 0x140826cc0 <col:18> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x140826d38 <line:12:5, col:13>
+      `-UnaryOperator 0x140826d20 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x140826d00 <col:13> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,46 @@
+`-FunctionDecl 0x12480dda8  line:1:12 diff_check 'int (const char *)' static
+  |-ParmVarDecl 0x12480dcd8 <col:23, col:35> col:35 used diff_name 'const char *'
+  `-CompoundStmt 0x124828c20 <line:2:1, line:19:1>
+    |-DeclStmt 0x12480dfd8 <line:4:3, col:16>
+    | `-VarDecl 0x12480df70 <col:3, col:15> col:8 used buf 'char[128]'
+    |-DeclStmt 0x12480e090 <line:5:3, col:19>
+    | `-VarDecl 0x12480e008 <col:3, col:18> col:7 used have_diff 'int' cinit
+    |   `-IntegerLiteral 0x12480e070 <col:18> 'int' 0
+    |-CallExpr 0x12480e328 <line:7:3, col:49> 'int'
+    | |-ImplicitCastExpr 0x12480e310 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12480e1c0 <col:3> 'int ()' Function 0x12480e108 'my_snprintf' 'int ()'
+    | |-ImplicitCastExpr 0x12480e368 <col:15> 'char *' <ArrayToPointerDecay>
+    | | `-DeclRefExpr 0x12480e1e0 <col:15> 'char[128]' lvalue Var 0x12480df70 'buf' 'char[128]'
+    | |-UnaryExprOrTypeTraitExpr 0x12480e240 <col:20, col:30> 'unsigned long' sizeof
+    | | `-ParenExpr 0x12480e220 <col:26, col:30> 'char[128]' lvalue
+    | |   `-DeclRefExpr 0x12480e200 <col:27> 'char[128]' lvalue Var 0x12480df70 'buf' 'char[128]' non_odr_use_unevaluated
+    | |-ImplicitCastExpr 0x12480e380 <col:33> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x12480e2a0 <col:33> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x12480e398 <col:40> 'const char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x12480e2c0 <col:40> 'const char *' lvalue ParmVar 0x12480dcd8 'diff_name' 'const char *'
+    |-IfStmt 0x124828788 <line:9:3, line:10:19>
+    | |-RecoveryExpr 0x1248285b0 <line:9:7, col:36> '_Bool' contains-errors
+    | `-CallExpr 0x124828728 <line:10:5, col:19> 'int'
+    |   |-ImplicitCastExpr 0x124828710 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1248286b0 <col:5> 'int ()' Function 0x1248285f8 'die' 'int ()'
+    |   |-ImplicitCastExpr 0x124828758 <col:9> 'char *' <ArrayToPointerDecay>
+    |   | `-StringLiteral 0x1248286d0 <col:9> 'char[4]' lvalue "STR"
+    |   `-ImplicitCastExpr 0x124828770 <col:16> 'char *' <ArrayToPointerDecay>
+    |     `-DeclRefExpr 0x1248286f0 <col:16> 'char[128]' lvalue Var 0x12480df70 'buf' 'char[128]'
+    |-IfStmt 0x124828a30 <line:13:3, line:14:16>
+    | |-CallExpr 0x124828998 <line:13:7, col:39> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x124828888 <col:7> 'int ()' Function 0x1248287d0 'fgets' 'int ()'
+    | | |-DeclRefExpr 0x1248288a8 <col:13> 'char[128]' lvalue Var 0x12480df70 'buf' 'char[128]'
+    | | |-UnaryExprOrTypeTraitExpr 0x124828908 <col:18, col:28> 'unsigned long' sizeof
+    | | | `-ParenExpr 0x1248288e8 <col:24, col:28> 'char[128]' lvalue
+    | | |   `-DeclRefExpr 0x1248288c8 <col:25> 'char[128]' lvalue Var 0x12480df70 'buf' 'char[128]' non_odr_use_unevaluated
+    | | `-RecoveryExpr 0x124828978 <col:31> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x124828a10 <line:14:5, col:16> 'int' '='
+    |   |-DeclRefExpr 0x1248289d0 <col:5> 'int' lvalue Var 0x12480e008 'have_diff' 'int'
+    |   `-IntegerLiteral 0x1248289f0 <col:16> 'int' 1
+    |-CallExpr 0x124828bb0 <line:16:3, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x124828b30 <col:3> 'int ()' Function 0x124828a78 'pclose' 'int ()'
+    | `-RecoveryExpr 0x124828b90 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x124828c10 <line:18:3, col:10>
+      `-ImplicitCastExpr 0x124828bf8 <col:10> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x124828bd8 <col:10> 'int' lvalue Var 0x12480e008 'have_diff' 'int'

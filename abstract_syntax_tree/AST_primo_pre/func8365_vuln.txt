@@ -1,0 +1,112 @@
+`-FunctionDecl 0x152826680  line:1:13 __io_cqring_fill_event 'void (struct io_kiocb *, long, long)' static
+  |-ParmVarDecl 0x15280e248 <col:36, col:53> col:53 used req 'struct io_kiocb *'
+  |-ParmVarDecl 0x15280e2c8 <col:58, col:63> col:63 used res 'long'
+  |-ParmVarDecl 0x15280e348 <col:68, col:73> col:73 used cflags 'long'
+  `-CompoundStmt 0x152124350 <line:2:1, line:29:1>
+    |-DeclStmt 0x1528269d8 <line:3:2, col:36>
+    | |-RecordDecl 0x152826788 <col:2, col:9> col:9 struct io_ring_ctx
+    | `-VarDecl 0x1528268f8 <col:2, col:33> col:22 used ctx 'struct io_ring_ctx *' cinit
+    |   `-RecoveryExpr 0x152826998 <col:28, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x152826960 <col:28> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+    |-DeclStmt 0x152826bd8 <line:4:2, col:26>
+    | |-RecordDecl 0x1528269f0 <col:2, col:9> col:9 struct io_uring_cqe
+    | `-VarDecl 0x152826b58 <col:2, col:23> col:23 used cqe 'struct io_uring_cqe *'
+    |-CallExpr 0x152826de0 <line:6:2, col:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x152826d20 <col:2> 'int ()' Function 0x152826c68 'trace_io_uring_complete' 'int ()'
+    | |-DeclRefExpr 0x152826d40 <col:26> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+    | |-RecoveryExpr 0x152826d98 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x152826d60 <col:31> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+    | `-DeclRefExpr 0x152826dc0 <col:47> 'long' lvalue ParmVar 0x15280e2c8 'res' 'long'
+    |-BinaryOperator 0x152827000 <line:9:2, col:25> 'struct io_uring_cqe *' contains-errors '='
+    | |-DeclRefExpr 0x152826e18 <col:2> 'struct io_uring_cqe *' lvalue Var 0x152826b58 'cqe' 'struct io_uring_cqe *'
+    | `-ImplicitCastExpr 0x152826fe8 <col:8, col:25> 'struct io_uring_cqe *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x152826fa8 <col:8, col:25> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x152826f90 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x152826f18 <col:8> 'int ()' Function 0x152826e60 'io_get_cqring' 'int ()'
+    |     `-ImplicitCastExpr 0x152826fd0 <col:22> 'struct io_ring_ctx *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x152826f38 <col:22> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+    `-IfStmt 0x152124320 <line:10:2, line:28:2> has_else
+      |-CallExpr 0x152827158 <line:10:6, col:16> 'int'
+      | |-ImplicitCastExpr 0x152827140 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x152827100 <col:6> 'int ()' Function 0x152827048 'likely' 'int ()'
+      | `-ImplicitCastExpr 0x152827180 <col:13> 'struct io_uring_cqe *' <LValueToRValue>
+      |   `-DeclRefExpr 0x152827120 <col:13> 'struct io_uring_cqe *' lvalue Var 0x152826b58 'cqe' 'struct io_uring_cqe *'
+      |-CompoundStmt 0x152827528 <col:19, line:14:2>
+      | |-CallExpr 0x152827358 <line:11:3, col:44> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x152827278 <col:3> 'int ()' Function 0x1528271c0 'WRITE_ONCE' 'int ()'
+      | | |-RecoveryExpr 0x1528272d0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x152827298 <col:14> 'struct io_uring_cqe *' lvalue Var 0x152826b58 'cqe' 'struct io_uring_cqe *'
+      | | `-RecoveryExpr 0x152827330 <col:30, col:35> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x1528272f8 <col:30> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+      | |-CallExpr 0x152827428 <line:12:3, col:27> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x152827388 <col:3> 'int ()' Function 0x1528271c0 'WRITE_ONCE' 'int ()'
+      | | |-RecoveryExpr 0x1528273e0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+      | | | `-DeclRefExpr 0x1528273a8 <col:14> 'struct io_uring_cqe *' lvalue Var 0x152826b58 'cqe' 'struct io_uring_cqe *'
+      | | `-DeclRefExpr 0x152827408 <col:24> 'long' lvalue ParmVar 0x15280e2c8 'res' 'long'
+      | `-CallExpr 0x1528274f8 <line:13:3, col:32> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x152827458 <col:3> 'int ()' Function 0x1528271c0 'WRITE_ONCE' 'int ()'
+      |   |-RecoveryExpr 0x1528274b0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+      |   | `-DeclRefExpr 0x152827478 <col:14> 'struct io_uring_cqe *' lvalue Var 0x152826b58 'cqe' 'struct io_uring_cqe *'
+      |   `-DeclRefExpr 0x1528274d8 <col:26> 'long' lvalue ParmVar 0x15280e348 'cflags' 'long'
+      `-IfStmt 0x1521242f0 <line:14:9, line:28:2> has_else
+        |-RecoveryExpr 0x152827588 <line:14:13, col:18> '<dependent type>' contains-errors lvalue
+        | `-DeclRefExpr 0x152827550 <col:13> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+        |-CompoundStmt 0x152123658 <col:39, line:17:2>
+        | `-CallExpr 0x152123628 <line:15:3, line:16:48> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1528275b0 <line:15:3> 'int ()' Function 0x1528271c0 'WRITE_ONCE' 'int ()'
+        |   |-CXXDependentScopeMemberExpr 0x152123440 <col:14, col:26> '<dependent type>' contains-errors lvalue ->cq_overflow
+        |   | `-RecoveryExpr 0x152123418 <col:14, col:19> '<dependent type>' contains-errors lvalue
+        |   |   `-DeclRefExpr 0x1528275d0 <col:14> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+        |   `-CallExpr 0x152123600 <line:16:5, col:47> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x152123568 <col:5> 'int ()' Function 0x1521234b0 'atomic_inc_return' 'int ()'
+        |     `-UnaryOperator 0x1521235e8 <col:23, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |       `-RecoveryExpr 0x1521235c0 <col:24, col:29> '<dependent type>' contains-errors lvalue
+        |         `-DeclRefExpr 0x152123588 <col:24> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+        `-CompoundStmt 0x1521242b0 <line:17:9, line:28:2>
+          |-IfStmt 0x152123b88 <line:18:3, line:22:3>
+          | |-CallExpr 0x1521237e8 <line:18:7, col:40> '<dependent type>' contains-errors
+          | | |-DeclRefExpr 0x152123750 <col:7> 'int ()' Function 0x152123698 'list_empty' 'int ()'
+          | | `-UnaryOperator 0x1521237d0 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+          | |   `-RecoveryExpr 0x1521237a8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+          | |     `-DeclRefExpr 0x152123770 <col:19> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+          | `-CompoundStmt 0x152123b68 <col:43, line:22:3>
+          |   |-CallExpr 0x1521239a8 <line:19:4, col:38> '<dependent type>' contains-errors
+          |   | |-DeclRefExpr 0x1521238f0 <col:4> 'int ()' Function 0x152123838 'set_bit' 'int ()'
+          |   | |-IntegerLiteral 0x152123910 <col:12> 'int' 0
+          |   | `-UnaryOperator 0x152123990 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+          |   |   `-RecoveryExpr 0x152123968 <col:16, col:21> '<dependent type>' contains-errors lvalue
+          |   |     `-DeclRefExpr 0x152123930 <col:16> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+          |   `-CallExpr 0x152123a90 <line:20:4, col:38> '<dependent type>' contains-errors
+          |     |-DeclRefExpr 0x1521239d8 <col:4> 'int ()' Function 0x152123838 'set_bit' 'int ()'
+          |     |-IntegerLiteral 0x1521239f8 <col:12> 'int' 0
+          |     `-UnaryOperator 0x152123a78 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+          |       `-RecoveryExpr 0x152123a50 <col:16, col:21> '<dependent type>' contains-errors lvalue
+          |         `-DeclRefExpr 0x152123a18 <col:16> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'
+          |-CallExpr 0x152123ce0 <line:23:3, col:18> 'int'
+          | |-ImplicitCastExpr 0x152123cc8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | | `-DeclRefExpr 0x152123c88 <col:3> 'int ()' Function 0x152123bd0 'io_clean_op' 'int ()'
+          | `-ImplicitCastExpr 0x152123d08 <col:15> 'struct io_kiocb *' <LValueToRValue>
+          |   `-DeclRefExpr 0x152123ca8 <col:15> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+          |-BinaryOperator 0x152123da0 <line:24:3, col:17> '<dependent type>' contains-errors '='
+          | |-RecoveryExpr 0x152123d58 <col:3, col:8> '<dependent type>' contains-errors lvalue
+          | | `-DeclRefExpr 0x152123d20 <col:3> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+          | `-DeclRefExpr 0x152123d80 <col:17> 'long' lvalue ParmVar 0x15280e2c8 'res' 'long'
+          |-BinaryOperator 0x152123e88 <line:25:3, col:23> '<dependent type>' contains-errors '='
+          | |-CXXDependentScopeMemberExpr 0x152123e20 <col:3, col:14> '<dependent type>' contains-errors lvalue .cflags
+          | | `-RecoveryExpr 0x152123df8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+          | |   `-DeclRefExpr 0x152123dc0 <col:3> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+          | `-DeclRefExpr 0x152123e68 <col:23> 'long' lvalue ParmVar 0x15280e348 'cflags' 'long'
+          |-CallExpr 0x152124020 <line:26:3, col:26> '<dependent type>' contains-errors
+          | |-DeclRefExpr 0x152123f88 <col:3> 'int ()' Function 0x152123ed0 'refcount_inc' 'int ()'
+          | `-UnaryOperator 0x152124008 <col:16, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+          |   `-RecoveryExpr 0x152123fe0 <col:17, col:22> '<dependent type>' contains-errors lvalue
+          |     `-DeclRefExpr 0x152123fa8 <col:17> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+          `-CallExpr 0x152124280 <line:27:3, col:57> '<dependent type>' contains-errors
+            |-DeclRefExpr 0x152124128 <col:3> 'int ()' Function 0x152124070 'list_add_tail' 'int ()'
+            |-UnaryOperator 0x1521241f0 <col:17, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+            | `-CXXDependentScopeMemberExpr 0x1521241a8 <col:18, col:29> '<dependent type>' contains-errors lvalue .list
+            |   `-RecoveryExpr 0x152124180 <col:18, col:23> '<dependent type>' contains-errors lvalue
+            |     `-DeclRefExpr 0x152124148 <col:18> 'struct io_kiocb *' lvalue ParmVar 0x15280e248 'req' 'struct io_kiocb *'
+            `-UnaryOperator 0x152124268 <col:35, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+              `-RecoveryExpr 0x152124240 <col:36, col:41> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x152124208 <col:36> 'struct io_ring_ctx *' contains-errors lvalue Var 0x1528268f8 'ctx' 'struct io_ring_ctx *'

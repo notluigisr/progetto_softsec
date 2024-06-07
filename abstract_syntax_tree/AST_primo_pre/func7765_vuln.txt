@@ -1,0 +1,58 @@
+`-FunctionDecl 0x12d826600  line:1:12 xenvif_poll 'int (struct napi_struct *, int)' static
+  |-ParmVarDecl 0x12d80e248 <col:24, col:44> col:44 used napi 'struct napi_struct *'
+  |-ParmVarDecl 0x12d80e2c8 <col:50, col:54> col:54 used budget 'int'
+  `-CompoundStmt 0x12d1226a8 <line:2:1, line:24:1>
+    |-DeclStmt 0x12d826a78 <line:3:2, col:62>
+    | |-RecordDecl 0x12d826700 <col:2, col:9> col:9 struct xenvif
+    | `-VarDecl 0x12d826868 <col:2, col:17> col:17 used vif 'struct xenvif *'
+    |-DeclStmt 0x12d826b10 <line:4:2, col:15>
+    | `-VarDecl 0x12d826aa8 <col:2, col:6> col:6 used work_done 'int'
+    |-BinaryOperator 0x12d826d38 <line:6:2, col:42> 'int' '='
+    | |-DeclRefExpr 0x12d826b28 <col:2> 'int' lvalue Var 0x12d826aa8 'work_done' 'int'
+    | `-CallExpr 0x12d826cd8 <col:14, col:42> 'int'
+    |   |-ImplicitCastExpr 0x12d826cc0 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12d826c28 <col:14> 'int ()' Function 0x12d826b70 'xenvif_tx_action' 'int ()'
+    |   |-ImplicitCastExpr 0x12d826d08 <col:31> 'struct xenvif *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12d826c48 <col:31> 'struct xenvif *' lvalue Var 0x12d826868 'vif' 'struct xenvif *'
+    |   `-ImplicitCastExpr 0x12d826d20 <col:36> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x12d826c68 <col:36> 'int' lvalue ParmVar 0x12d80e2c8 'budget' 'int'
+    |-IfStmt 0x12d122640 <line:8:2, line:21:2>
+    | |-BinaryOperator 0x12d826dc8 <line:8:6, col:18> 'int' '<'
+    | | |-ImplicitCastExpr 0x12d826d98 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12d826d58 <col:6> 'int' lvalue Var 0x12d826aa8 'work_done' 'int'
+    | | `-ImplicitCastExpr 0x12d826db0 <col:18> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x12d826d78 <col:18> 'int' lvalue ParmVar 0x12d80e2c8 'budget' 'int'
+    | `-CompoundStmt 0x12d122600 <col:26, line:21:2>
+    |   |-DeclStmt 0x12d826e88 <line:9:3, col:21>
+    |   | `-VarDecl 0x12d826e00 <col:3, col:20> col:7 used more_to_do 'int' cinit
+    |   |   `-IntegerLiteral 0x12d826e68 <col:20> 'int' 0
+    |   |-DeclStmt 0x12d826f20 <line:10:3, col:22>
+    |   | `-VarDecl 0x12d826eb8 <col:3, col:17> col:17 used flags 'unsigned long'
+    |   |-CallExpr 0x12d827070 <line:14:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x12d827058 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x12d827018 <col:3> 'int ()' Function 0x12d826f60 'local_irq_save' 'int ()'
+    |   | `-ImplicitCastExpr 0x12d827098 <col:18> 'unsigned long' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x12d827038 <col:18> 'unsigned long' lvalue Var 0x12d826eb8 'flags' 'unsigned long'
+    |   |-CallExpr 0x12d827248 <line:16:3, col:53> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x12d827190 <col:3> 'int ()' Function 0x12d8270d8 'RING_FINAL_CHECK_FOR_REQUESTS' 'int ()'
+    |   | |-UnaryOperator 0x12d827210 <col:33, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x12d8271e8 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x12d8271b0 <col:34> 'struct xenvif *' lvalue Var 0x12d826868 'vif' 'struct xenvif *'
+    |   | `-DeclRefExpr 0x12d827228 <col:43> 'int' lvalue Var 0x12d826e00 'more_to_do' 'int'
+    |   |-IfStmt 0x12d827440 <line:17:3, line:18:24>
+    |   | |-UnaryOperator 0x12d8272b0 <line:17:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x12d827298 <col:8> 'int' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x12d827278 <col:8> 'int' lvalue Var 0x12d826e00 'more_to_do' 'int'
+    |   | `-CallExpr 0x12d827400 <line:18:4, col:24> 'int'
+    |   |   |-ImplicitCastExpr 0x12d8273e8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x12d8273a8 <col:4> 'int ()' Function 0x12d8272f0 '__napi_complete' 'int ()'
+    |   |   `-ImplicitCastExpr 0x12d827428 <col:20> 'struct napi_struct *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x12d8273c8 <col:20> 'struct napi_struct *' lvalue ParmVar 0x12d80e248 'napi' 'struct napi_struct *'
+    |   `-CallExpr 0x12d827598 <line:20:3, col:26> 'int'
+    |     |-ImplicitCastExpr 0x12d827580 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12d827540 <col:3> 'int ()' Function 0x12d827488 'local_irq_restore' 'int ()'
+    |     `-ImplicitCastExpr 0x12d8275c0 <col:21> 'unsigned long' <LValueToRValue>
+    |       `-DeclRefExpr 0x12d827560 <col:21> 'unsigned long' lvalue Var 0x12d826eb8 'flags' 'unsigned long'
+    `-ReturnStmt 0x12d122698 <line:23:2, col:9>
+      `-ImplicitCastExpr 0x12d122680 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12d122660 <col:9> 'int' lvalue Var 0x12d826aa8 'work_done' 'int'

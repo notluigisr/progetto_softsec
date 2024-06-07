@@ -1,0 +1,13 @@
+`-FunctionDecl 0x12c00ddc8  line:1:12 invalid xen_read_msr 'int (unsigned int)' static
+  |-ParmVarDecl 0x12c00dcf0 <col:25, col:38> col:38 used msr 'unsigned int'
+  `-CompoundStmt 0x12c00e1c0 <line:2:1, line:7:1>
+    |-DeclStmt 0x12c00def8 <line:4:2, col:9>
+    | `-VarDecl 0x12c00de90 <col:2, col:6> col:6 used err 'int'
+    `-ReturnStmt 0x12c00e1b0 <line:6:2, col:36>
+      `-CallExpr 0x12c00e168 <col:9, col:36> 'int'
+        |-ImplicitCastExpr 0x12c00e150 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x12c00e070 <col:9> 'int ()' Function 0x12c00dfb8 'xen_read_msr_safe' 'int ()'
+        |-ImplicitCastExpr 0x12c00e198 <col:27> 'unsigned int' <LValueToRValue>
+        | `-DeclRefExpr 0x12c00e090 <col:27> 'unsigned int' lvalue ParmVar 0x12c00dcf0 'msr' 'unsigned int'
+        `-UnaryOperator 0x12c00e100 <col:32, col:33> 'int *' prefix '&' cannot overflow
+          `-DeclRefExpr 0x12c00e0b0 <col:33> 'int' lvalue Var 0x12c00de90 'err' 'int'

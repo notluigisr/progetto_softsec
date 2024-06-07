@@ -1,0 +1,60 @@
+`-FunctionDecl 0x1268266d8  line:1:12 invalid ghash_update 'int (struct shash_desc *, const int *, unsigned int)' static
+  |-ParmVarDecl 0x12680e248 <col:25, col:44> col:44 used desc 'struct shash_desc *'
+  |-ParmVarDecl 0x12680e2e0 <line:2:5, col:15> col:15 referenced invalid src 'const int *'
+  |-ParmVarDecl 0x12680e360 <col:20, col:33> col:33 used srclen 'unsigned int'
+  `-CompoundStmt 0x1268290a8 <line:3:1, line:36:1>
+    |-DeclStmt 0x126826bc8 <line:4:2, col:52>
+    | |-RecordDecl 0x126826798 <col:2, col:9> col:9 struct ghash_desc_ctx
+    | `-VarDecl 0x126826908 <col:2, col:51> col:25 used dctx 'struct ghash_desc_ctx *' cinit
+    |   `-ImplicitCastExpr 0x126826b98 <col:32, col:51> 'struct ghash_desc_ctx *' <IntegralToPointer>
+    |     `-CallExpr 0x126826b58 <col:32, col:51> 'int'
+    |       |-ImplicitCastExpr 0x126826b40 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x126826ad0 <col:32> 'int ()' Function 0x126826a18 'shash_desc_ctx' 'int ()'
+    |       `-ImplicitCastExpr 0x126826b80 <col:47> 'struct shash_desc *' <LValueToRValue>
+    |         `-DeclRefExpr 0x126826af0 <col:47> 'struct shash_desc *' lvalue ParmVar 0x12680e248 'desc' 'struct shash_desc *'
+    |-DeclStmt 0x126826f50 <line:5:2, col:53>
+    | |-RecordDecl 0x126826be0 <col:2, col:9> col:9 struct ghash_ctx
+    | `-VarDecl 0x126826d48 <col:2, col:52> col:20 used ctx 'struct ghash_ctx *' cinit
+    |   `-CallExpr 0x126826f10 <col:26, col:52> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x126826e90 <col:26> 'int ()' Function 0x126826dd8 'crypto_shash_ctx' 'int ()'
+    |     `-RecoveryExpr 0x126826ee8 <col:43, col:49> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x126826eb0 <col:43> 'struct shash_desc *' lvalue ParmVar 0x12680e248 'desc' 'struct shash_desc *'
+    |-IfStmt 0x126828c70 <line:8:2, line:20:2>
+    | |-RecoveryExpr 0x126827018 <line:8:6, col:12> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x126826fe0 <col:6> 'struct ghash_desc_ctx *' lvalue Var 0x126826908 'dctx' 'struct ghash_desc_ctx *'
+    | `-CompoundStmt 0x126828c40 <col:19, line:20:2>
+    |   |-DeclStmt 0x126827270 <line:9:3, col:35>
+    |   | `-VarDecl 0x126827058 <col:3, col:34> col:7 used n 'int' cinit
+    |   |   `-CallExpr 0x126827240 <col:11, col:34> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x1268271a0 <col:11> 'int ()' Function 0x1268270e8 'min' 'int ()'
+    |   |     |-DeclRefExpr 0x1268271c0 <col:15> 'unsigned int' lvalue ParmVar 0x12680e360 'srclen' 'unsigned int'
+    |   |     `-RecoveryExpr 0x126827218 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |   |       `-DeclRefExpr 0x1268271e0 <col:23> 'struct ghash_desc_ctx *' lvalue Var 0x126826908 'dctx' 'struct ghash_desc_ctx *'
+    |   |-CompoundAssignOperator 0x1268273d0 <line:12:3, col:18> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x126827388 <col:3, col:9> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x126827350 <col:3> 'struct ghash_desc_ctx *' lvalue Var 0x126826908 'dctx' 'struct ghash_desc_ctx *'
+    |   | `-DeclRefExpr 0x1268273b0 <col:18> 'int' contains-errors lvalue Var 0x126827058 'n' 'int'
+    |   |-CompoundAssignOperator 0x126827470 <line:13:3, col:13> 'unsigned int' contains-errors '-=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+    |   | |-DeclRefExpr 0x126827400 <col:3> 'unsigned int' lvalue ParmVar 0x12680e360 'srclen' 'unsigned int'
+    |   | `-ImplicitCastExpr 0x126827458 <col:13> 'unsigned int' contains-errors <IntegralCast>
+    |   |   `-ImplicitCastExpr 0x126827440 <col:13> 'int' contains-errors <LValueToRValue>
+    |   |     `-DeclRefExpr 0x126827420 <col:13> 'int' contains-errors lvalue Var 0x126827058 'n' 'int'
+    |   `-WhileStmt 0x126828a30 <line:15:3, line:16:18>
+    |     |-UnaryOperator 0x1268274c0 <line:15:10, col:11> 'int' contains-errors postfix '--'
+    |     | `-DeclRefExpr 0x1268274a0 <col:10> 'int' contains-errors lvalue Var 0x126827058 'n' 'int'
+    |     `-CompoundAssignOperator 0x126828a00 <line:16:4, col:18> '<dependent type>' contains-errors '^=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       |-UnaryOperator 0x1268275d8 <col:4, col:8> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       | `-UnaryOperator 0x1268275c0 <col:5, col:8> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |       |   `-RecoveryExpr 0x1268275a0 <col:5> '<dependent type>' contains-errors lvalue
+    |       `-UnaryOperator 0x126827558 <col:14, col:18> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |         `-UnaryOperator 0x126827540 <col:15, col:18> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |           `-RecoveryExpr 0x126827520 <col:15> '<dependent type>' contains-errors lvalue
+    |-WhileStmt 0x126828ee8 <line:22:2, line:27:2>
+    | |-RecoveryExpr 0x126828cb0 <line:22:9, col:19> '_Bool' contains-errors
+    | `-CompoundStmt 0x126828ed8 <col:37, line:27:2>
+    |-IfStmt 0x126829058 <line:29:2, line:33:2>
+    | |-ImplicitCastExpr 0x126828f28 <line:29:6> 'unsigned int' <LValueToRValue>
+    | | `-DeclRefExpr 0x126828f08 <col:6> 'unsigned int' lvalue ParmVar 0x12680e360 'srclen' 'unsigned int'
+    | `-CompoundStmt 0x126829048 <col:14, line:33:2>
+    `-ReturnStmt 0x126829098 <line:35:2, col:9>
+      `-IntegerLiteral 0x126829078 <col:9> 'int' 0

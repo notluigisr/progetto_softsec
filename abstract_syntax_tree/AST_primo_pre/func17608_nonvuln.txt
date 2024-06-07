@@ -1,0 +1,28 @@
+`-FunctionDecl 0x122940a70  line:1:6 vsock_remove_pending 'void (struct sock *, struct sock *)'
+  |-ParmVarDecl 0x122928648 <col:27, col:40> col:40 used listener 'struct sock *'
+  |-ParmVarDecl 0x122928738 <col:50, col:63> col:63 used pending 'struct sock *'
+  `-CompoundStmt 0x122941330 <line:2:1, line:8:1>
+    |-DeclStmt 0x122940f68 <line:3:2, col:49>
+    | |-RecordDecl 0x122940b70 <col:2, col:9> col:9 struct vsock_sock
+    | `-VarDecl 0x122940cd8 <col:2, col:48> col:21 used vpending 'struct vsock_sock *' cinit
+    |   `-ImplicitCastExpr 0x122940f38 <col:32, col:48> 'struct vsock_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x122940ef8 <col:32, col:48> 'int'
+    |       |-ImplicitCastExpr 0x122940ee0 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x122940e70 <col:32> 'int ()' Function 0x122940db8 'vsock_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x122940f20 <col:41> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x122940e90 <col:41> 'struct sock *' lvalue ParmVar 0x122928738 'pending' 'struct sock *'
+    |-CallExpr 0x1229410f8 <line:5:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x122941060 <col:2> 'int ()' Function 0x122940fa8 'list_del_init' 'int ()'
+    | `-UnaryOperator 0x1229410e0 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1229410b8 <col:17, col:27> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122941080 <col:17> 'struct vsock_sock *' lvalue Var 0x122940cd8 'vpending' 'struct vsock_sock *'
+    |-CallExpr 0x122941258 <line:6:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x122941240 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x122941200 <col:2> 'int ()' Function 0x122941148 'sock_put' 'int ()'
+    | `-ImplicitCastExpr 0x122941280 <col:11> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x122941220 <col:11> 'struct sock *' lvalue ParmVar 0x122928648 'listener' 'struct sock *'
+    `-CallExpr 0x1229412f0 <line:7:2, col:18> 'int'
+      |-ImplicitCastExpr 0x1229412d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x122941298 <col:2> 'int ()' Function 0x122941148 'sock_put' 'int ()'
+      `-ImplicitCastExpr 0x122941318 <col:11> 'struct sock *' <LValueToRValue>
+        `-DeclRefExpr 0x1229412b8 <col:11> 'struct sock *' lvalue ParmVar 0x122928738 'pending' 'struct sock *'

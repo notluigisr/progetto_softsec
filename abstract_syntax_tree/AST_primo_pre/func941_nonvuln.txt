@@ -1,0 +1,189 @@
+`-FunctionDecl 0x14c0a34d8  line:1:9 invalid dmar_assign_irte 'int (const struct intr_source *, union dmar_ir_entry *, int, int *)'
+  |-ParmVarDecl 0x14c08a068 <col:26, col:52> col:52 used intr_src 'const struct intr_source *'
+  |-ParmVarDecl 0x14c0a3258 <col:62, col:83> col:83 used irte 'union dmar_ir_entry *'
+  |-ParmVarDecl 0x14c0a32d8 <line:2:2, col:11> col:11 invalid idx_in 'int'
+  |-ParmVarDecl 0x14c0a3388 <col:19, col:29> col:29 invalid idx_out 'int *'
+  `-CompoundStmt 0x14c0a6b60 <line:3:1, line:64:1>
+    |-DeclStmt 0x14c0a3788 <line:4:2, col:32>
+    | |-RecordDecl 0x14c0a35a0 <col:2, col:9> col:9 struct dmar_drhd_rt
+    | `-VarDecl 0x14c0a3708 <col:2, col:23> col:23 used dmar_unit 'struct dmar_drhd_rt *'
+    |-DeclStmt 0x14c0a3938 <line:5:2, col:42>
+    | |-VarDecl 0x14c0a3828 <col:2, col:23> col:23 used ir_table 'union dmar_ir_entry *'
+    | `-VarDecl 0x14c0a38b8 <col:2, col:34> col:34 used ir_entry 'union dmar_ir_entry *'
+    |-DeclStmt 0x14c0a3ac8 <line:6:2, col:19>
+    | |-RecordDecl 0x14c0a3950 <col:2, col:8> col:8 union pci_bdf
+    | `-VarDecl 0x14c0a3a48 <col:2, col:16> col:16 referenced invalid sid 'union pci_bdf'
+    |-IfStmt 0x14b841b58 <line:10:2, line:17:2> has_else
+    | |-RecoveryExpr 0x14c0a3b18 <line:10:6, col:16> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c0a3ae0 <col:6> 'const struct intr_source *' lvalue ParmVar 0x14c08a068 'intr_src' 'const struct intr_source *'
+    | |-CompoundStmt 0x14c0a3fe8 <col:24, line:14:2>
+    | `-CompoundStmt 0x14b841b40 <col:9, line:17:2>
+    |   `-BinaryOperator 0x14b841a30 <line:15:3, col:60> 'struct dmar_drhd_rt *' contains-errors '='
+    |     |-DeclRefExpr 0x14c0a3ff8 <col:3> 'struct dmar_drhd_rt *' lvalue Var 0x14c0a3708 'dmar_unit' 'struct dmar_drhd_rt *'
+    |     `-CallExpr 0x14b841a00 <col:15, col:60> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14c0a40f8 <col:15> 'int ()' Function 0x14c0a4040 'ioapic_to_dmaru' 'int ()'
+    |       |-CXXDependentScopeMemberExpr 0x14c0a4178 <col:31, col:45> '<dependent type>' contains-errors lvalue .ioapic_id
+    |       | `-RecoveryExpr 0x14c0a4150 <col:31, col:41> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x14c0a4118 <col:31> 'const struct intr_source *' lvalue ParmVar 0x14c08a068 'intr_src' 'const struct intr_source *'
+    |       `-UnaryOperator 0x14c0a41e0 <col:56, col:57> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-RecoveryExpr 0x14c0a41c0 <col:57> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x14c0a6b40 <line:19:2, line:61:2>
+      |-CallExpr 0x14b841cc8 <line:19:6, col:39> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x14b841c68 <col:6> 'int ()' Function 0x14b841bb0 'is_dmar_unit_valid' 'int ()'
+      | |-DeclRefExpr 0x14b841c88 <col:25> 'struct dmar_drhd_rt *' lvalue Var 0x14c0a3708 'dmar_unit' 'struct dmar_drhd_rt *'
+      | `-RecoveryExpr 0x14b841ca8 <col:36> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x14c0a6b08 <col:42, line:61:2>
+        |-CallExpr 0x14b841e68 <line:20:3, col:39> 'int'
+        | |-ImplicitCastExpr 0x14b841e50 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x14b841dd8 <col:3> 'int ()' Function 0x14b841d20 'dmar_enable_intr_remapping' 'int ()'
+        | `-ImplicitCastExpr 0x14b841e90 <col:30> 'struct dmar_drhd_rt *' <LValueToRValue>
+        |   `-DeclRefExpr 0x14b841df8 <col:30> 'struct dmar_drhd_rt *' lvalue Var 0x14c0a3708 'dmar_unit' 'struct dmar_drhd_rt *'
+        |-BinaryOperator 0x14b8420a0 <line:22:3, col:69> 'union dmar_ir_entry *' contains-errors '='
+        | |-DeclRefExpr 0x14b841ea8 <col:3> 'union dmar_ir_entry *' lvalue Var 0x14c0a3828 'ir_table' 'union dmar_ir_entry *'
+        | `-CStyleCastExpr 0x14b842078 <col:14, col:69> 'union dmar_ir_entry *' contains-errors <Dependent>
+        |   `-CallExpr 0x14b842028 <col:37, col:69> '<dependent type>' contains-errors
+        |     |-DeclRefExpr 0x14b841fa8 <col:37> 'int ()' Function 0x14b841ef0 'hpa2hva' 'int ()'
+        |     `-RecoveryExpr 0x14b842000 <col:45, col:56> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x14b841fc8 <col:45> 'struct dmar_drhd_rt *' lvalue Var 0x14c0a3708 'dmar_unit' 'struct dmar_drhd_rt *'
+        |-BinaryOperator 0x14b842130 <line:23:3, col:14> '<dependent type>' contains-errors '='
+        | |-UnaryOperator 0x14b8420f8 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+        | | `-ImplicitCastExpr 0x14b8420e0 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+        | |   `-RecoveryExpr 0x14b8420c0 <col:4> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x14b842110 <col:14> '<dependent type>' contains-errors lvalue
+        |-IfStmt 0x14b8423b8 <line:24:3, line:26:3>
+        | |-RecoveryExpr 0x14b842170 <line:24:7, col:17> '_Bool' contains-errors
+        | `-CompoundStmt 0x14b8423a0 <col:34, line:26:3>
+        |   `-BinaryOperator 0x14b842380 <line:25:4, col:40> '<dependent type>' contains-errors '='
+        |     |-UnaryOperator 0x14b8421c8 <col:4, col:5> '<dependent type>' contains-errors prefix '*' cannot overflow
+        |     | `-ImplicitCastExpr 0x14b8421b0 <col:5> '<dependent type>' contains-errors <LValueToRValue>
+        |     |   `-RecoveryExpr 0x14b842190 <col:5> '<dependent type>' contains-errors lvalue
+        |     `-CallExpr 0x14b842338 <col:15, col:40> 'int'
+        |       |-ImplicitCastExpr 0x14b842320 <col:15> 'int (*)()' <FunctionToPointerDecay>
+        |       | `-DeclRefExpr 0x14b8422c0 <col:15> 'int ()' Function 0x14b842208 'alloc_irtes' 'int ()'
+        |       |-ImplicitCastExpr 0x14b842368 <col:27> 'struct dmar_drhd_rt *' <LValueToRValue>
+        |       | `-DeclRefExpr 0x14b8422e0 <col:27> 'struct dmar_drhd_rt *' lvalue Var 0x14c0a3708 'dmar_unit' 'struct dmar_drhd_rt *'
+        |       `-IntegerLiteral 0x14b842300 <col:38> 'unsigned int' 1
+        `-IfStmt 0x14c0a6ac8 <line:27:3, line:59:3>
+          |-RecoveryExpr 0x14b842428 <line:27:7, col:18> '_Bool' contains-errors
+          `-CompoundStmt 0x14c0a6aa8 <col:41, line:59:3>
+            |-BinaryOperator 0x14b8424f8 <line:28:4, col:27> 'union dmar_ir_entry *' contains-errors '='
+            | |-DeclRefExpr 0x14b842448 <col:4> 'union dmar_ir_entry *' lvalue Var 0x14c0a38b8 'ir_entry' 'union dmar_ir_entry *'
+            | `-BinaryOperator 0x14b8424d8 <col:15, col:27> '<dependent type>' contains-errors '+'
+            |   |-DeclRefExpr 0x14b842468 <col:15> 'union dmar_ir_entry *' lvalue Var 0x14c0a3828 'ir_table' 'union dmar_ir_entry *'
+            |   `-UnaryOperator 0x14b8424c0 <col:26, col:27> '<dependent type>' contains-errors prefix '*' cannot overflow
+            |     `-ImplicitCastExpr 0x14b8424a8 <col:27> '<dependent type>' contains-errors <LValueToRValue>
+            |       `-RecoveryExpr 0x14b842488 <col:27> '<dependent type>' contains-errors lvalue
+            `-IfStmt 0x14c0a67a8 <line:30:4, line:56:4> has_else
+              |-BinaryOperator 0x14b842598 <line:30:8, col:31> 'int' contains-errors '!='
+              | |-RecoveryExpr 0x14b842550 <col:8, col:18> '<dependent type>' contains-errors lvalue
+              | | `-DeclRefExpr 0x14b842518 <col:8> 'const struct intr_source *' lvalue ParmVar 0x14c08a068 'intr_src' 'const struct intr_source *'
+              | `-IntegerLiteral 0x14b842578 <col:31> 'unsigned long' 0
+              |-CompoundStmt 0x14c0a6130 <col:36, line:48:4>
+              | |-DeclStmt 0x14b842640 <line:31:5, col:32>
+              | | `-VarDecl 0x14b8425d8 <col:5, col:25> col:25 referenced invalid irte_pi 'union dmar_ir_entry'
+              | |-BinaryOperator 0x14b842750 <line:34:5, col:27> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14b8426e8 <col:5, col:19> '<dependent type>' contains-errors lvalue .lo_64
+              | | | `-CXXDependentScopeMemberExpr 0x14b8426a0 <col:5, col:13> '<dependent type>' contains-errors lvalue .value
+              | | |   `-RecoveryExpr 0x14b842678 <col:5> '<dependent type>' contains-errors lvalue
+              | | |     `-DeclRefExpr 0x14b842658 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-IntegerLiteral 0x14b842730 <col:27> 'unsigned long' 0
+              | |-BinaryOperator 0x14b842868 <line:35:5, col:27> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14b842800 <col:5, col:19> '<dependent type>' contains-errors lvalue .hi_64
+              | | | `-CXXDependentScopeMemberExpr 0x14b8427b8 <col:5, col:13> '<dependent type>' contains-errors lvalue .value
+              | | |   `-RecoveryExpr 0x14b842790 <col:5> '<dependent type>' contains-errors lvalue
+              | | |     `-DeclRefExpr 0x14b842770 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-IntegerLiteral 0x14b842848 <col:27> 'unsigned long' 0
+              | |-BinaryOperator 0x14c0a56b8 <line:37:5, col:49> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14b842960 <col:5, col:23> '<dependent type>' contains-errors lvalue .vector
+              | | | `-CXXDependentScopeMemberExpr 0x14b842918 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14b8428d0 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14b8428a8 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14b842888 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-CXXDependentScopeMemberExpr 0x14c0a5670 <col:32, col:49> '<dependent type>' contains-errors lvalue .vector
+              | |   `-CXXDependentScopeMemberExpr 0x14c0a5628 <col:32, col:43> '<dependent type>' contains-errors lvalue .remap
+              | |     `-RecoveryExpr 0x14c0a5600 <col:32, col:38> '<dependent type>' contains-errors lvalue
+              | |       `-DeclRefExpr 0x14b8429a8 <col:32> 'union dmar_ir_entry *' lvalue ParmVar 0x14c0a3258 'irte' 'union dmar_ir_entry *'
+              | |-BinaryOperator 0x14c0a5818 <line:39:5, col:29> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a57b0 <col:5, col:23> '<dependent type>' contains-errors lvalue .svt
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a5768 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5720 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a56f8 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a56d8 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-IntegerLiteral 0x14c0a57f8 <col:29> 'unsigned long' 1
+              | |-BinaryOperator 0x14c0a59c0 <line:40:5, col:33> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a5910 <col:5, col:23> '<dependent type>' contains-errors lvalue .sid
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a58c8 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5880 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a5858 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a5838 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-CXXDependentScopeMemberExpr 0x14c0a5978 <col:29, col:33> '<dependent type>' contains-errors lvalue .value
+              | |   `-RecoveryExpr 0x14c0a5958 <col:29> '<dependent type>' contains-errors lvalue
+              | |-BinaryOperator 0x14c0a5b20 <line:41:5, col:33> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a5ab8 <col:5, col:23> '<dependent type>' contains-errors lvalue .present
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a5a70 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5a28 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a5a00 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a59e0 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-IntegerLiteral 0x14c0a5b00 <col:33> 'unsigned long' 1
+              | |-BinaryOperator 0x14c0a5c80 <line:42:5, col:30> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a5c18 <col:5, col:23> '<dependent type>' contains-errors lvalue .mode
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a5bd0 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5b88 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a5b60 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a5b40 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-IntegerLiteral 0x14c0a5c60 <col:30> 'unsigned long' 1
+              | |-BinaryOperator 0x14c0a5e80 <line:44:5, col:56> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a5d78 <col:5, col:23> '<dependent type>' contains-errors lvalue .pda_l
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a5d30 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5ce8 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a5cc0 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a5ca0 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-BinaryOperator 0x14c0a5e60 <col:31, col:56> '<dependent type>' contains-errors '>>'
+              | |   |-ParenExpr 0x14c0a5e20 <col:31, col:51> '<dependent type>' contains-errors lvalue
+              | |   | `-RecoveryExpr 0x14c0a5df8 <col:32, col:42> '<dependent type>' contains-errors lvalue
+              | |   |   `-DeclRefExpr 0x14c0a5dc0 <col:32> 'const struct intr_source *' lvalue ParmVar 0x14c08a068 'intr_src' 'const struct intr_source *'
+              | |   `-IntegerLiteral 0x14c0a5e40 <col:56> 'unsigned int' 6
+              | |-BinaryOperator 0x14c0a6080 <line:45:5, col:56> '<dependent type>' contains-errors '='
+              | | |-CXXDependentScopeMemberExpr 0x14c0a5f78 <col:5, col:23> '<dependent type>' contains-errors lvalue .pda_h
+              | | | `-CXXDependentScopeMemberExpr 0x14c0a5f30 <col:5, col:18> '<dependent type>' contains-errors lvalue .post
+              | | |   `-CXXDependentScopeMemberExpr 0x14c0a5ee8 <col:5, col:13> '<dependent type>' contains-errors lvalue .bits
+              | | |     `-RecoveryExpr 0x14c0a5ec0 <col:5> '<dependent type>' contains-errors lvalue
+              | | |       `-DeclRefExpr 0x14c0a5ea0 <col:5> 'union dmar_ir_entry' lvalue Var 0x14b8425d8 'irte_pi' 'union dmar_ir_entry'
+              | | `-BinaryOperator 0x14c0a6060 <col:31, col:56> '<dependent type>' contains-errors '>>'
+              | |   |-ParenExpr 0x14c0a6020 <col:31, col:51> '<dependent type>' contains-errors lvalue
+              | |   | `-RecoveryExpr 0x14c0a5ff8 <col:32, col:42> '<dependent type>' contains-errors lvalue
+              | |   |   `-DeclRefExpr 0x14c0a5fc0 <col:32> 'const struct intr_source *' lvalue ParmVar 0x14c08a068 'intr_src' 'const struct intr_source *'
+              | |   `-IntegerLiteral 0x14c0a6040 <col:56> 'unsigned int' 32
+              | `-BinaryOperator 0x14c0a6110 <line:47:5, col:17> 'union dmar_ir_entry' contains-errors '='
+              |   |-UnaryOperator 0x14c0a60d8 <col:5, col:6> 'union dmar_ir_entry' lvalue prefix '*' cannot overflow
+              |   | `-ImplicitCastExpr 0x14c0a60c0 <col:6> 'union dmar_ir_entry *' <LValueToRValue>
+              |   |   `-DeclRefExpr 0x14c0a60a0 <col:6> 'union dmar_ir_entry *' lvalue Var 0x14c0a38b8 'ir_entry' 'union dmar_ir_entry *'
+              |   `-RecoveryExpr 0x14c0a60f0 <col:17> '<dependent type>' contains-errors lvalue
+              `-CompoundStmt 0x14c0a6778 <line:48:11, line:56:4>
+                |-BinaryOperator 0x14c0a62a8 <line:50:5, col:28> '<dependent type>' contains-errors '='
+                | |-CXXDependentScopeMemberExpr 0x14c0a6240 <col:5, col:22> '<dependent type>' contains-errors lvalue .svt
+                | | `-CXXDependentScopeMemberExpr 0x14c0a61f8 <col:5, col:16> '<dependent type>' contains-errors lvalue .remap
+                | |   `-RecoveryExpr 0x14c0a61d0 <col:5, col:11> '<dependent type>' contains-errors lvalue
+                | |     `-DeclRefExpr 0x14c0a6198 <col:5> 'union dmar_ir_entry *' lvalue ParmVar 0x14c0a3258 'irte' 'union dmar_ir_entry *'
+                | `-IntegerLiteral 0x14c0a6288 <col:28> 'unsigned long' 1
+                |-BinaryOperator 0x14c0a6420 <line:51:5, col:32> '<dependent type>' contains-errors '='
+                | |-CXXDependentScopeMemberExpr 0x14c0a6370 <col:5, col:22> '<dependent type>' contains-errors lvalue .sid
+                | | `-CXXDependentScopeMemberExpr 0x14c0a6328 <col:5, col:16> '<dependent type>' contains-errors lvalue .remap
+                | |   `-RecoveryExpr 0x14c0a6300 <col:5, col:11> '<dependent type>' contains-errors lvalue
+                | |     `-DeclRefExpr 0x14c0a62c8 <col:5> 'union dmar_ir_entry *' lvalue ParmVar 0x14c0a3258 'irte' 'union dmar_ir_entry *'
+                | `-CXXDependentScopeMemberExpr 0x14c0a63d8 <col:28, col:32> '<dependent type>' contains-errors lvalue .value
+                |   `-RecoveryExpr 0x14c0a63b8 <col:28> '<dependent type>' contains-errors lvalue
+                |-BinaryOperator 0x14c0a6550 <line:52:5, col:32> '<dependent type>' contains-errors '='
+                | |-CXXDependentScopeMemberExpr 0x14c0a64e8 <col:5, col:22> '<dependent type>' contains-errors lvalue .present
+                | | `-CXXDependentScopeMemberExpr 0x14c0a64a0 <col:5, col:16> '<dependent type>' contains-errors lvalue .remap
+                | |   `-RecoveryExpr 0x14c0a6478 <col:5, col:11> '<dependent type>' contains-errors lvalue
+                | |     `-DeclRefExpr 0x14c0a6440 <col:5> 'union dmar_ir_entry *' lvalue ParmVar 0x14c0a3258 'irte' 'union dmar_ir_entry *'
+                | `-IntegerLiteral 0x14c0a6530 <col:32> 'unsigned long' 1
+                `-ImplicitCastExpr 0x14c0a6760 <line:55:5, col:18> '<dependent type>' contains-errors <LValueToRValue>
+                  `-RecoveryExpr 0x14c0a6730 <col:5, col:18> '<dependent type>' contains-errors lvalue
+                    |-UnaryOperator 0x14c0a66c8 <col:5, col:6> 'union dmar_ir_entry' lvalue prefix '*' cannot overflow
+                    | `-ImplicitCastExpr 0x14c0a66b0 <col:6> 'union dmar_ir_entry *' <LValueToRValue>
+                    |   `-DeclRefExpr 0x14c0a6690 <col:6> 'union dmar_ir_entry *' lvalue Var 0x14c0a38b8 'ir_entry' 'union dmar_ir_entry *'
+                    `-UnaryOperator 0x14c0a6718 <col:17, col:18> 'union dmar_ir_entry' lvalue prefix '*' cannot overflow
+                      `-ImplicitCastExpr 0x14c0a6700 <col:18> 'union dmar_ir_entry *' <LValueToRValue>
+                        `-DeclRefExpr 0x14c0a66e0 <col:18> 'union dmar_ir_entry *' lvalue ParmVar 0x14c0a3258 'irte' 'union dmar_ir_entry *'

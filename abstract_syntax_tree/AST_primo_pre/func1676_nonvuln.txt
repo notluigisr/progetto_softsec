@@ -1,0 +1,71 @@
+`-FunctionDecl 0x12502abc8  line:1:1 invalid ipf_extract_frags_from_batch 'int (struct ipf *, struct dp_packet_batch *, int, int, long long, int)'
+  |-ParmVarDecl 0x12500e248 <col:30, col:42> col:42 used ipf 'struct ipf *'
+  |-ParmVarDecl 0x12502a828 <col:47, col:71> col:71 used pb 'struct dp_packet_batch *'
+  |-ParmVarDecl 0x12502a8c0 <line:2:30, col:39> col:39 invalid dl_type 'int'
+  |-ParmVarDecl 0x12502a940 <col:48, col:57> col:57 invalid zone 'int'
+  |-ParmVarDecl 0x12502a9c0 <col:63, col:73> col:73 used now 'long long'
+  |-ParmVarDecl 0x12502aa40 <line:3:30, col:39> col:39 invalid hash_basis 'int'
+  `-CompoundStmt 0x124924990 <line:4:1, line:27:1>
+    |-DeclStmt 0x12502af48 <line:5:5, col:51>
+    | `-VarDecl 0x12502acb8 <col:5, col:18> col:18 invalid pb_cnt 'const int'
+    |-DeclStmt 0x12502afe0 <line:6:5, col:15>
+    | `-VarDecl 0x12502af78 <col:5, col:9> col:9 used pb_idx 'int'
+    |-DeclStmt 0x12502b1e8 <line:7:5, col:26>
+    | |-RecordDecl 0x12502aff8 <col:5, col:12> col:12 struct dp_packet
+    | `-VarDecl 0x12502b168 <col:5, col:23> col:23 used pkt 'struct dp_packet *'
+    |-CallExpr 0x12502b380 <line:9:5, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12502b2e0 <col:5> 'int ()' Function 0x12502b228 'DP_PACKET_BATCH_REFILL_FOR_EACH' 'int ()'
+    | |-DeclRefExpr 0x12502b300 <col:38> 'int' lvalue Var 0x12502af78 'pb_idx' 'int'
+    | |-RecoveryExpr 0x12502b320 <col:46> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x12502b340 <col:54> 'struct dp_packet *' lvalue Var 0x12502b168 'pkt' 'struct dp_packet *'
+    | `-DeclRefExpr 0x12502b360 <col:59> 'struct dp_packet_batch *' lvalue ParmVar 0x12502a828 'pb' 'struct dp_packet_batch *'
+    `-CompoundStmt 0x124924978 <col:63, line:26:5>
+      `-IfStmt 0x124924948 <line:10:9, line:25:9> has_else
+        |-RecoveryExpr 0x124923e98 <line:10:13, line:14:58> '_Bool' contains-errors
+        |-CompoundStmt 0x1249247f0 <col:61, line:23:9>
+        | |-CallExpr 0x124924030 <line:16:13, col:42> '<dependent type>' contains-errors
+        | | |-DeclRefExpr 0x124923f98 <col:13> 'int ()' Function 0x124923ee0 'ovs_mutex_lock' 'int ()'
+        | | `-UnaryOperator 0x124924018 <col:28, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |   `-RecoveryExpr 0x124923ff0 <col:29, col:34> '<dependent type>' contains-errors lvalue
+        | |     `-DeclRefExpr 0x124923fb8 <col:29> 'struct ipf *' lvalue ParmVar 0x12500e248 'ipf' 'struct ipf *'
+        | |-IfStmt 0x124924620 <line:17:13, line:21:13> has_else
+        | | |-UnaryOperator 0x124924268 <line:17:17, col:74> '<dependent type>' contains-errors prefix '!' cannot overflow
+        | | | `-CallExpr 0x124924218 <col:18, col:74> '<dependent type>' contains-errors
+        | | |   |-DeclRefExpr 0x124924138 <col:18> 'int ()' Function 0x124924080 'ipf_handle_frag' 'int ()'
+        | | |   |-DeclRefExpr 0x124924158 <col:34> 'struct ipf *' lvalue ParmVar 0x12500e248 'ipf' 'struct ipf *'
+        | | |   |-DeclRefExpr 0x124924178 <col:39> 'struct dp_packet *' lvalue Var 0x12502b168 'pkt' 'struct dp_packet *'
+        | | |   |-RecoveryExpr 0x124924198 <col:44> '<dependent type>' contains-errors lvalue
+        | | |   |-RecoveryExpr 0x1249241b8 <col:53> '<dependent type>' contains-errors lvalue
+        | | |   |-DeclRefExpr 0x1249241d8 <col:59> 'long long' lvalue ParmVar 0x12502a9c0 'now' 'long long'
+        | | |   `-RecoveryExpr 0x1249241f8 <col:64> '<dependent type>' contains-errors lvalue
+        | | |-CompoundStmt 0x124924478 <col:77, line:19:13>
+        | | | `-CallExpr 0x1249243f8 <line:18:17, col:55> 'int'
+        | | |   |-ImplicitCastExpr 0x1249243e0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+        | | |   | `-DeclRefExpr 0x124924360 <col:17> 'int ()' Function 0x1249242a8 'dp_packet_batch_refill' 'int ()'
+        | | |   |-ImplicitCastExpr 0x124924430 <col:40> 'struct dp_packet_batch *' <LValueToRValue>
+        | | |   | `-DeclRefExpr 0x124924380 <col:40> 'struct dp_packet_batch *' lvalue ParmVar 0x12502a828 'pb' 'struct dp_packet_batch *'
+        | | |   |-ImplicitCastExpr 0x124924448 <col:44> 'struct dp_packet *' <LValueToRValue>
+        | | |   | `-DeclRefExpr 0x1249243a0 <col:44> 'struct dp_packet *' lvalue Var 0x12502b168 'pkt' 'struct dp_packet *'
+        | | |   `-ImplicitCastExpr 0x124924460 <col:49> 'int' <LValueToRValue>
+        | | |     `-DeclRefExpr 0x1249243c0 <col:49> 'int' lvalue Var 0x12502af78 'pb_idx' 'int'
+        | | `-CompoundStmt 0x124924608 <line:19:20, line:21:13>
+        | |   `-CallExpr 0x1249245c8 <line:20:17, col:37> 'int'
+        | |     |-ImplicitCastExpr 0x1249245b0 <col:17> 'int (*)()' <FunctionToPointerDecay>
+        | |     | `-DeclRefExpr 0x124924570 <col:17> 'int ()' Function 0x1249244b8 'dp_packet_delete' 'int ()'
+        | |     `-ImplicitCastExpr 0x1249245f0 <col:34> 'struct dp_packet *' <LValueToRValue>
+        | |       `-DeclRefExpr 0x124924590 <col:34> 'struct dp_packet *' lvalue Var 0x12502b168 'pkt' 'struct dp_packet *'
+        | `-CallExpr 0x1249247c8 <line:22:13, col:44> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x124924730 <col:13> 'int ()' Function 0x124924678 'ovs_mutex_unlock' 'int ()'
+        |   `-UnaryOperator 0x1249247b0 <col:30, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x124924788 <col:31, col:36> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x124924750 <col:31> 'struct ipf *' lvalue ParmVar 0x12500e248 'ipf' 'struct ipf *'
+        `-CompoundStmt 0x124924930 <line:23:16, line:25:9>
+          `-CallExpr 0x1249248b0 <line:24:13, col:51> 'int'
+            |-ImplicitCastExpr 0x124924898 <col:13> 'int (*)()' <FunctionToPointerDecay>
+            | `-DeclRefExpr 0x124924818 <col:13> 'int ()' Function 0x1249242a8 'dp_packet_batch_refill' 'int ()'
+            |-ImplicitCastExpr 0x1249248e8 <col:36> 'struct dp_packet_batch *' <LValueToRValue>
+            | `-DeclRefExpr 0x124924838 <col:36> 'struct dp_packet_batch *' lvalue ParmVar 0x12502a828 'pb' 'struct dp_packet_batch *'
+            |-ImplicitCastExpr 0x124924900 <col:40> 'struct dp_packet *' <LValueToRValue>
+            | `-DeclRefExpr 0x124924858 <col:40> 'struct dp_packet *' lvalue Var 0x12502b168 'pkt' 'struct dp_packet *'
+            `-ImplicitCastExpr 0x124924918 <col:45> 'int' <LValueToRValue>
+              `-DeclRefExpr 0x124924878 <col:45> 'int' lvalue Var 0x12502af78 'pb_idx' 'int'

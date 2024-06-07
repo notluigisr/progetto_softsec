@@ -1,0 +1,54 @@
+`-FunctionDecl 0x1360436d8  line:1:12 invalid _hostsock_getsockname 'int (int *, struct oe_sockaddr *, int *)' static
+  |-ParmVarDecl 0x1358edb28 <line:2:5, col:14> col:14 referenced invalid sock_ 'int *'
+  |-ParmVarDecl 0x1358ee118 <line:3:5, col:25> col:25 used addr 'struct oe_sockaddr *'
+  |-ParmVarDecl 0x1358ee198 <line:4:5, col:19> col:19 referenced invalid addrlen 'int *'
+  `-CompoundStmt 0x136044530 <line:5:1, line:31:1>
+    |-DeclStmt 0x136043850 <line:6:5, col:17>
+    | `-VarDecl 0x1360437b0 <col:5, col:16> col:9 used ret 'int' cinit
+    |   `-UnaryOperator 0x136043838 <col:15, col:16> 'int' prefix '-'
+    |     `-IntegerLiteral 0x136043818 <col:16> 'int' 1
+    |-BinaryOperator 0x136043b28 <line:7:5, col:36> '<dependent type>' contains-errors '='
+    | |-BinaryOperator 0x136043b08 <col:5, col:13> '<dependent type>' contains-errors '*'
+    | | |-RecoveryExpr 0x136043888 <col:5> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x136043868 <col:5> 'int *' lvalue ParmVar 0x1358edb28 'sock_' 'int *'
+    | | `-RecoveryExpr 0x136043ae8 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x136043a80 <col:20, col:36> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x136043a40 <col:20> 'int ()' Function 0x136043988 '_cast_sock' 'int ()'
+    |   `-RecoveryExpr 0x136043a60 <col:31> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x136043da8 <line:12:5, line:13:33>
+    | |-UnaryOperator 0x136043c08 <line:12:9, col:10> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x136043bf0 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x136043bd0 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x136043d80 <line:13:9, col:33> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x136043d00 <col:9> 'int ()' Function 0x136043c48 'OE_RAISE_ERRNO' 'int ()'
+    |   `-RecoveryExpr 0x136043d60 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x136043ea0 <line:15:5, line:16:23>
+    | |-RecoveryExpr 0x136043dc8 <line:15:9> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x136043e80 <line:16:9, col:23> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x136043e08 <col:9> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x136043de8 <col:9> 'int *' lvalue ParmVar 0x1358ee198 'addrlen' 'int *'
+    |   `-UnaryOperator 0x136043e68 <col:22, col:23> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     `-ImplicitCastExpr 0x136043e50 <col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x136043e30 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x136044458 <line:18:5, line:26:5>
+    | |-BinaryOperator 0x136044378 <line:18:9, line:23:25> 'int' contains-errors '!='
+    | | |-CallExpr 0x136044310 <line:18:9, line:23:20> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x136043fa0 <line:18:9> 'int ()' Function 0x136043ee8 'oe_syscall_getsockname_ocall' 'int ()'
+    | | | |-UnaryOperator 0x136043fe0 <line:19:13, col:14> 'int *' prefix '&' cannot overflow
+    | | | | `-DeclRefExpr 0x136043fc0 <col:14> 'int' lvalue Var 0x1360437b0 'ret' 'int'
+    | | | |-CXXDependentScopeMemberExpr 0x136044240 <line:20:13, col:19> '<dependent type>' contains-errors lvalue ->host_fd
+    | | | | `-RecoveryExpr 0x136044220 <col:13> '<dependent type>' contains-errors lvalue
+    | | | |-CStyleCastExpr 0x1360442c8 <line:21:13, col:34> 'struct oe_sockaddr *' <NoOp>
+    | | | | `-ImplicitCastExpr 0x1360442b0 <col:34> 'struct oe_sockaddr *' <LValueToRValue> part_of_explicit_cast
+    | | | |   `-DeclRefExpr 0x136044058 <col:34> 'struct oe_sockaddr *' lvalue ParmVar 0x1358ee118 'addr' 'struct oe_sockaddr *'
+    | | | |-RecoveryExpr 0x1360442f0 <line:22:13> '<dependent type>' contains-errors lvalue
+    | | | `-RecoveryExpr 0x136044160 <line:23:13> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x136044358 <col:25> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x136044440 <line:24:5, line:26:5>
+    |   `-CallExpr 0x136044418 <line:25:9, col:33> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x136044398 <col:9> 'int ()' Function 0x136043c48 'OE_RAISE_ERRNO' 'int ()'
+    |     `-RecoveryExpr 0x1360443f8 <col:24> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x136044510 <line:28:1, line:30:12> 'done'
+      `-ReturnStmt 0x1360444b0 <col:5, col:12>
+        `-ImplicitCastExpr 0x136044498 <col:12> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x136044478 <col:12> 'int' lvalue Var 0x1360437b0 'ret' 'int'

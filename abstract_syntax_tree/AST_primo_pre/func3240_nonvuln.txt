@@ -1,0 +1,31 @@
+`-FunctionDecl 0x151941b68  line:1:13 invalid trap_bcr 'int (struct kvm_vcpu *, struct sys_reg_params *, const struct sys_reg_desc *)' static
+  |-ParmVarDecl 0x151928668 <col:22, col:39> col:39 used vcpu 'struct kvm_vcpu *'
+  |-ParmVarDecl 0x151941858 <line:2:8, col:31> col:31 used p 'struct sys_reg_params *'
+  |-ParmVarDecl 0x151941a28 <line:3:8, col:35> col:35 used rd 'const struct sys_reg_desc *'
+  `-CompoundStmt 0x1519426a8 <line:4:1, line:15:1>
+    |-IfStmt 0x1519422a0 <line:7:2, line:10:30> has_else
+    | |-RecoveryExpr 0x151941e30 <line:7:6, col:9> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x151941df8 <col:6> 'struct sys_reg_params *' lvalue ParmVar 0x151941858 'p' 'struct sys_reg_params *'
+    | |-CallExpr 0x151942080 <line:8:3, col:30> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x151941fb0 <col:3> 'int ()' Function 0x151941ef8 'reg_to_dbg' 'int ()'
+    | | |-DeclRefExpr 0x151941fd0 <col:14> 'struct kvm_vcpu *' lvalue ParmVar 0x151928668 'vcpu' 'struct kvm_vcpu *'
+    | | |-DeclRefExpr 0x151941ff0 <col:20> 'struct sys_reg_params *' lvalue ParmVar 0x151941858 'p' 'struct sys_reg_params *'
+    | | `-RecoveryExpr 0x151942060 <col:23> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x151942268 <line:10:3, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x151942198 <col:3> 'int ()' Function 0x1519420e0 'dbg_to_reg' 'int ()'
+    |   |-DeclRefExpr 0x1519421b8 <col:14> 'struct kvm_vcpu *' lvalue ParmVar 0x151928668 'vcpu' 'struct kvm_vcpu *'
+    |   |-DeclRefExpr 0x1519421d8 <col:20> 'struct sys_reg_params *' lvalue ParmVar 0x151941858 'p' 'struct sys_reg_params *'
+    |   `-RecoveryExpr 0x151942248 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x151942620 <line:12:2, col:57> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1519423b0 <col:2> 'int ()' Function 0x1519422f8 'trace_trap_reg' 'int ()'
+    | |-PredefinedExpr 0x151942470 <col:17> 'const char[9]' lvalue __func__
+    | | `-StringLiteral 0x151942450 <col:17> 'const char[9]' lvalue "trap_bcr"
+    | |-RecoveryExpr 0x1519424c0 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x151942488 <col:27> 'const struct sys_reg_desc *' lvalue ParmVar 0x151941a28 'rd' 'const struct sys_reg_desc *'
+    | |-RecoveryExpr 0x151942520 <col:36, col:39> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1519424e8 <col:36> 'struct sys_reg_params *' lvalue ParmVar 0x151941858 'p' 'struct sys_reg_params *'
+    | `-UnaryOperator 0x151942608 <col:49, col:50> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x1519425f0 <col:50> '<dependent type>' contains-errors <LValueToRValue>
+    |     `-RecoveryExpr 0x1519425d0 <col:50> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x151942698 <line:14:2, col:9>
+      `-RecoveryExpr 0x151942678 <col:9> '<dependent type>' contains-errors lvalue

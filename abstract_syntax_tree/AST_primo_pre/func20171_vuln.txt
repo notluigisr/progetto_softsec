@@ -1,0 +1,30 @@
+`-FunctionDecl 0x12980ddf8  line:1:17 invalid scsi_init_iovec 'int (int *)' static
+  |-ParmVarDecl 0x12980dd28 <col:33, col:46> col:46 referenced invalid r 'int *'
+  `-CompoundStmt 0x1298275d8 <line:2:1, line:6:1>
+    |-BinaryOperator 0x12980e260 <line:3:5, col:66> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12980df38 <col:5, col:12> '<dependent type>' contains-errors lvalue .iov_len
+    | | `-CXXDependentScopeMemberExpr 0x12980def0 <col:5, col:8> '<dependent type>' contains-errors lvalue ->iov
+    | |   `-RecoveryExpr 0x12980dec8 <col:5> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12980dea8 <col:5> 'int *' lvalue ParmVar 0x12980dd28 'r' 'int *'
+    | `-CallExpr 0x12980e230 <col:22, col:66> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12980e0e0 <col:22> 'int ()' Function 0x12980e028 'MIN' 'int ()'
+    |   |-BinaryOperator 0x12980e188 <col:26, col:44> '<dependent type>' contains-errors '*'
+    |   | |-CXXDependentScopeMemberExpr 0x12980e120 <col:26, col:29> '<dependent type>' contains-errors lvalue ->sector_count
+    |   | | `-RecoveryExpr 0x12980e100 <col:26> '<dependent type>' contains-errors lvalue
+    |   | `-IntegerLiteral 0x12980e168 <col:44> 'int' 512
+    |   `-RecoveryExpr 0x12980e210 <col:49> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1298274a0 <line:4:5, col:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12980e360 <col:5> 'int ()' Function 0x12980e2a8 'qemu_iovec_init_external' 'int ()'
+    | |-UnaryOperator 0x12980e3e8 <col:30, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x12980e3a0 <col:31, col:34> '<dependent type>' contains-errors lvalue ->qiov
+    | |   `-RecoveryExpr 0x12980e380 <col:31> '<dependent type>' contains-errors lvalue
+    | |-UnaryOperator 0x129827468 <col:40, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x129827420 <col:41, col:44> '<dependent type>' contains-errors lvalue ->iov
+    | |   `-RecoveryExpr 0x129827400 <col:41> '<dependent type>' contains-errors lvalue
+    | `-IntegerLiteral 0x129827480 <col:49> 'int' 1
+    `-ReturnStmt 0x1298275c8 <line:5:5, col:27>
+      `-BinaryOperator 0x1298275a8 <col:12, col:27> '<dependent type>' contains-errors '/'
+        |-CXXDependentScopeMemberExpr 0x129827540 <col:12, col:20> '<dependent type>' contains-errors lvalue .size
+        | `-CXXDependentScopeMemberExpr 0x1298274f8 <col:12, col:15> '<dependent type>' contains-errors lvalue ->qiov
+        |   `-RecoveryExpr 0x1298274d8 <col:12> '<dependent type>' contains-errors lvalue
+        `-IntegerLiteral 0x129827588 <col:27> 'int' 512

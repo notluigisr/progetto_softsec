@@ -1,0 +1,64 @@
+`-FunctionDecl 0x12c128318  line:1:5 invalid qcow2_alloc_clusters_at 'int (int *, int, int)'
+  |-ParmVarDecl 0x12c128128 <col:29, col:47> col:47 invalid bs 'int *'
+  |-ParmVarDecl 0x12c1281a8 <col:51, col:60> col:60 invalid offset 'int'
+  |-ParmVarDecl 0x12c128228 <line:2:5, col:9> col:9 used nb_clusters 'int'
+  `-CompoundStmt 0x12c142260 <line:3:1, line:40:1>
+    |-DeclStmt 0x12c128570 <line:8:5, col:22>
+    | |-VarDecl 0x12c128470 <col:5, col:9> col:9 used refcount 'int'
+    | `-VarDecl 0x12c1284f0 <col:5, col:19> col:19 used ret 'int'
+    |-CallExpr 0x12c1287c8 <line:10:5, col:28> 'int'
+    | |-ImplicitCastExpr 0x12c1287b0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12c1286e0 <col:5> 'int ()' Function 0x12c128628 'assert' 'int ()'
+    | `-BinaryOperator 0x12c128758 <col:12, col:27> 'int' '>='
+    |   |-ImplicitCastExpr 0x12c128740 <col:12> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12c128700 <col:12> 'int' lvalue ParmVar 0x12c128228 'nb_clusters' 'int'
+    |   `-IntegerLiteral 0x12c128720 <col:27> 'int' 0
+    |-IfStmt 0x12c1418c0 <line:11:5, line:13:5>
+    | |-BinaryOperator 0x12c141858 <line:11:9, col:24> 'int' '=='
+    | | |-ImplicitCastExpr 0x12c141840 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12c141800 <col:9> 'int' lvalue ParmVar 0x12c128228 'nb_clusters' 'int'
+    | | `-IntegerLiteral 0x12c141820 <col:24> 'int' 0
+    | `-CompoundStmt 0x12c1418a8 <col:27, line:13:5>
+    |   `-ReturnStmt 0x12c141898 <line:12:9, col:16>
+    |     `-IntegerLiteral 0x12c141878 <col:16> 'int' 0
+    |-ForStmt 0x12c141f00 <line:17:5, line:25:5>
+    | |-<<<NULL>>>
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x12c141a50 <line:17:16, col:20> 'int' contains-errors '<'
+    | | |-RecoveryExpr 0x12c141a30 <col:16> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12c1419f0 <col:20> 'int' lvalue ParmVar 0x12c128228 'nb_clusters' 'int'
+    | |-UnaryOperator 0x12c141ac0 <col:33, col:34> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | | `-RecoveryExpr 0x12c141aa0 <col:33> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x12c141ee0 <col:38, line:25:5>
+    |   |-BinaryOperator 0x12c141d00 <line:18:9, col:52> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x12c141ad8 <col:9> 'int' lvalue Var 0x12c128470 'refcount' 'int'
+    |   | `-CallExpr 0x12c141cd0 <col:20, col:52> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x12c141bd8 <col:20> 'int ()' Function 0x12c141b20 'get_refcount' 'int ()'
+    |   |   |-RecoveryExpr 0x12c141bf8 <col:33> '<dependent type>' contains-errors lvalue
+    |   |   `-UnaryOperator 0x12c141cb8 <col:37, col:50> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   |     `-RecoveryExpr 0x12c141c98 <col:37> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x12c141eb0 <line:20:9, line:24:9> has_else
+    |     |-BinaryOperator 0x12c141d78 <line:20:13, col:24> 'int' '<'
+    |     | |-ImplicitCastExpr 0x12c141d60 <col:13> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x12c141d20 <col:13> 'int' lvalue Var 0x12c128470 'refcount' 'int'
+    |     | `-IntegerLiteral 0x12c141d40 <col:24> 'int' 0
+    |     |-CompoundStmt 0x12c141de0 <col:27, line:22:9>
+    |     | `-ReturnStmt 0x12c141dd0 <line:21:13, col:20>
+    |     |   `-ImplicitCastExpr 0x12c141db8 <col:20> 'int' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x12c141d98 <col:20> 'int' lvalue Var 0x12c128470 'refcount' 'int'
+    |     `-IfStmt 0x12c141e90 <line:22:16, line:24:9>
+    |       |-BinaryOperator 0x12c141e50 <line:22:20, col:32> 'int' '!='
+    |       | |-ImplicitCastExpr 0x12c141e38 <col:20> 'int' <LValueToRValue>
+    |       | | `-DeclRefExpr 0x12c141df8 <col:20> 'int' lvalue Var 0x12c128470 'refcount' 'int'
+    |       | `-IntegerLiteral 0x12c141e18 <col:32> 'int' 0
+    |       `-CompoundStmt 0x12c141e78 <col:35, line:24:9>
+    |         `-BreakStmt 0x12c141e70 <line:23:13>
+    `-IfStmt 0x12c142240 <line:33:5, line:35:5>
+      |-BinaryOperator 0x12c1421c0 <line:33:9, col:15> 'int' '<'
+      | |-ImplicitCastExpr 0x12c1421a8 <col:9> 'int' <LValueToRValue>
+      | | `-DeclRefExpr 0x12c142168 <col:9> 'int' lvalue Var 0x12c1284f0 'ret' 'int'
+      | `-IntegerLiteral 0x12c142188 <col:15> 'int' 0
+      `-CompoundStmt 0x12c142228 <col:18, line:35:5>
+        `-ReturnStmt 0x12c142218 <line:34:9, col:16>
+          `-ImplicitCastExpr 0x12c142200 <col:16> 'int' <LValueToRValue>
+            `-DeclRefExpr 0x12c1421e0 <col:16> 'int' lvalue Var 0x12c1284f0 'ret' 'int'

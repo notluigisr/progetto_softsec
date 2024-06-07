@@ -1,0 +1,29 @@
+`-FunctionDecl 0x12b1065c8  line:1:1 skiptodigit 'int (char *)'
+  |-ParmVarDecl 0x12b1064f0 <col:13, col:21> col:21 used q 'char *'
+  `-CompoundStmt 0x12b11f2e0 <line:2:1, line:8:1>
+    |-DeclStmt 0x12b106778 <line:3:5, col:18>
+    | `-VarDecl 0x12b1066d8 <col:5, col:17> col:13 used p 'char *' cinit
+    |   `-ImplicitCastExpr 0x12b106760 <col:17> 'char *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12b106740 <col:17> 'char *' lvalue ParmVar 0x12b1064f0 'q' 'char *'
+    |-WhileStmt 0x12b11ee38 <line:5:5, line:6:4>
+    | |-BinaryOperator 0x12b106bd0 <line:5:12, col:40> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x12b106af8 <col:12, col:18> 'int' contains-errors '!='
+    | | | |-UnaryOperator 0x12b106ac0 <col:12, col:13> 'char' lvalue prefix '*' cannot overflow
+    | | | | `-ImplicitCastExpr 0x12b106aa8 <col:13> 'char *' <LValueToRValue>
+    | | | |   `-DeclRefExpr 0x12b106790 <col:13> 'char *' lvalue Var 0x12b1066d8 'p' 'char *'
+    | | | `-RecoveryExpr 0x12b106ad8 <col:18> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x12b106bb8 <col:25, col:40> 'int' prefix '!' cannot overflow
+    | |   `-CallExpr 0x12b106b60 <col:26, col:40> 'int'
+    | |     |-ImplicitCastExpr 0x12b106b48 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x12b106930 <col:26> 'int ()' Function 0x12b106878 'VIM_ISDIGIT' 'int ()'
+    | |     `-ImplicitCastExpr 0x12b106ba0 <col:38, col:39> 'int' <IntegralCast>
+    | |       `-ImplicitCastExpr 0x12b106b88 <col:38, col:39> 'char' <LValueToRValue>
+    | |         `-UnaryOperator 0x12b106b30 <col:38, col:39> 'char' lvalue prefix '*' cannot overflow
+    | |           `-ImplicitCastExpr 0x12b106b18 <col:39> 'char *' <LValueToRValue>
+    | |             `-DeclRefExpr 0x12b106950 <col:39> 'char *' lvalue Var 0x12b1066d8 'p' 'char *'
+    | `-UnaryOperator 0x12b11ee20 <line:6:2, col:4> 'char *' prefix '++'
+    |   `-DeclRefExpr 0x12b11ee00 <col:4> 'char *' lvalue Var 0x12b1066d8 'p' 'char *'
+    `-ReturnStmt 0x12b11f2d0 <line:7:5, col:12>
+      `-ImplicitCastExpr 0x12b11ee90 <col:12> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x12b11ee78 <col:12> 'char *' <LValueToRValue>
+          `-DeclRefExpr 0x12b11ee58 <col:12> 'char *' lvalue Var 0x12b1066d8 'p' 'char *'

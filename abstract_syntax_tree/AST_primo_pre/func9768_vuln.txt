@@ -1,0 +1,24 @@
+`-FunctionDecl 0x14a928758  line:1:12 restore_fp 'int (struct task_struct *)' static
+  |-ParmVarDecl 0x14a928648 <col:23, col:43> col:43 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x14a941080 <line:2:1, line:9:1>
+    |-IfStmt 0x14a941030 <line:3:2, line:7:2>
+    | |-BinaryOperator 0x14a940ce8 <line:3:6, col:50> 'int' contains-errors '||'
+    | | |-CXXDependentScopeMemberExpr 0x14a940ab0 <col:6, col:18> '<dependent type>' contains-errors lvalue .load_fp
+    | | | `-RecoveryExpr 0x14a940a88 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x14a940a50 <col:6> 'struct task_struct *' lvalue ParmVar 0x14a928648 'tsk' 'struct task_struct *'
+    | | `-CallExpr 0x14a940ca8 <col:29, col:50> 'int'
+    | |   |-ImplicitCastExpr 0x14a940c90 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x14a940c20 <col:29> 'int ()' Function 0x14a940b68 'tm_active_with_fp' 'int ()'
+    | |   `-ImplicitCastExpr 0x14a940cd0 <col:47> 'struct task_struct *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14a940c40 <col:47> 'struct task_struct *' lvalue ParmVar 0x14a928648 'tsk' 'struct task_struct *'
+    | `-CompoundStmt 0x14a941010 <col:53, line:7:2>
+    |   |-CallExpr 0x14a940fb8 <line:4:3, col:42> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14a940de8 <col:3> 'int ()' Function 0x14a940d30 'load_fp_state' 'int ()'
+    |   | `-UnaryOperator 0x14a940fa0 <col:17, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x14a940f58 <col:18, col:34> '<dependent type>' contains-errors lvalue .fp_state
+    |   |     `-CXXDependentScopeMemberExpr 0x14a940f10 <col:18, col:27> '<dependent type>' contains-errors lvalue ->thread
+    |   |       `-RecoveryExpr 0x14a940ef0 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x14a941000 <line:6:3, col:10>
+    |     `-IntegerLiteral 0x14a940fe0 <col:10> 'int' 1
+    `-ReturnStmt 0x14a941070 <line:8:2, col:9>
+      `-IntegerLiteral 0x14a941050 <col:9> 'int' 0

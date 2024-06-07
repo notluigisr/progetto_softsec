@@ -1,0 +1,63 @@
+`-FunctionDecl 0x14c027878  line:1:12 invalid rtnl_net_fill 'int (struct sk_buff *, int, int, int, int, struct net *, int)' static
+  |-ParmVarDecl 0x14c00e248 <col:26, col:42> col:42 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x14c00e2e0 <col:47, col:51> col:51 invalid portid 'int'
+  |-ParmVarDecl 0x14c00e360 <col:59, col:63> col:63 invalid seq 'int'
+  |-ParmVarDecl 0x14c027400 <col:68, col:72> col:72 used flags 'int'
+  |-ParmVarDecl 0x14c027480 <line:2:5, col:9> col:9 used cmd 'int'
+  |-ParmVarDecl 0x14c027658 <col:14, col:26> col:26 net 'struct net *'
+  |-ParmVarDecl 0x14c0276d8 <col:31, col:35> col:35 used nsid 'int'
+  `-CompoundStmt 0x14c02d6f8 <line:3:1, line:23:1>
+    |-DeclStmt 0x14c027b48 <line:4:2, col:22>
+    | |-RecordDecl 0x14c027958 <col:2, col:9> col:9 struct nlmsghdr
+    | `-VarDecl 0x14c027ac8 <col:2, col:19> col:19 used nlh 'struct nlmsghdr *'
+    |-DeclStmt 0x14c027d48 <line:5:2, col:22>
+    | |-RecordDecl 0x14c027b60 <col:2, col:9> col:9 struct rtgenmsg
+    | `-VarDecl 0x14c027cc8 <col:2, col:19> col:19 used rth 'struct rtgenmsg *'
+    |-IfStmt 0x14c028108 <line:8:2, line:9:11>
+    | |-UnaryOperator 0x14c028048 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14c028030 <col:7> 'struct nlmsghdr *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c028010 <col:7> 'struct nlmsghdr *' lvalue Var 0x14c027ac8 'nlh' 'struct nlmsghdr *'
+    | `-ReturnStmt 0x14c0280f8 <line:9:3, col:11>
+    |   `-UnaryOperator 0x14c0280e0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14c0280c8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14c0280a8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14c028310 <line:11:2, col:22> 'struct rtgenmsg *' '='
+    | |-DeclRefExpr 0x14c028128 <col:2> 'struct rtgenmsg *' lvalue Var 0x14c027cc8 'rth' 'struct rtgenmsg *'
+    | `-ImplicitCastExpr 0x14c0282f8 <col:8, col:22> 'struct rtgenmsg *' <IntegralToPointer>
+    |   `-CallExpr 0x14c0282b8 <col:8, col:22> 'int'
+    |     |-ImplicitCastExpr 0x14c0282a0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14c028228 <col:8> 'int ()' Function 0x14c028170 'nlmsg_data' 'int ()'
+    |     `-ImplicitCastExpr 0x14c0282e0 <col:19> 'struct nlmsghdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14c028248 <col:19> 'struct nlmsghdr *' lvalue Var 0x14c027ac8 'nlh' 'struct nlmsghdr *'
+    |-BinaryOperator 0x14c02d000 <line:12:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14c028368 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c028330 <col:2> 'struct rtgenmsg *' lvalue Var 0x14c027cc8 'rth' 'struct rtgenmsg *'
+    | `-RecoveryExpr 0x14c0283c8 <col:22> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14c02d270 <line:14:2, line:15:8>
+    | |-CallExpr 0x14c02d1d0 <line:14:6, col:40> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14c02d100 <col:6> 'int ()' Function 0x14c02d048 'nla_put_s32' 'int ()'
+    | | |-DeclRefExpr 0x14c02d120 <col:18> 'struct sk_buff *' lvalue ParmVar 0x14c00e248 'skb' 'struct sk_buff *'
+    | | |-RecoveryExpr 0x14c02d1b0 <col:23> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14c02d158 <col:36> 'int' lvalue ParmVar 0x14c0276d8 'nsid' 'int'
+    | `-GotoStmt 0x14c02d258 <line:15:3, col:8> 'nla_put_failure' 0x14c02d208
+    |-CallExpr 0x14c02d3e8 <line:17:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x14c02d3d0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14c02d370 <col:2> 'int ()' Function 0x14c02d2b8 'nlmsg_end' 'int ()'
+    | |-ImplicitCastExpr 0x14c02d418 <col:12> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14c02d390 <col:12> 'struct sk_buff *' lvalue ParmVar 0x14c00e248 'skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x14c02d430 <col:17> 'struct nlmsghdr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14c02d3b0 <col:17> 'struct nlmsghdr *' lvalue Var 0x14c027ac8 'nlh' 'struct nlmsghdr *'
+    |-ReturnStmt 0x14c02d468 <line:18:2, col:9>
+    | `-IntegerLiteral 0x14c02d448 <col:9> 'int' 0
+    |-LabelStmt 0x14c02d630 <line:20:1, line:21:23> 'nla_put_failure'
+    | `-CallExpr 0x14c02d5d0 <col:2, col:23> 'int'
+    |   |-ImplicitCastExpr 0x14c02d5b8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c02d558 <col:2> 'int ()' Function 0x14c02d4a0 'nlmsg_cancel' 'int ()'
+    |   |-ImplicitCastExpr 0x14c02d600 <col:15> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14c02d578 <col:15> 'struct sk_buff *' lvalue ParmVar 0x14c00e248 'skb' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x14c02d618 <col:20> 'struct nlmsghdr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c02d598 <col:20> 'struct nlmsghdr *' lvalue Var 0x14c027ac8 'nlh' 'struct nlmsghdr *'
+    `-ReturnStmt 0x14c02d6e8 <line:22:2, col:10>
+      `-UnaryOperator 0x14c02d6d0 <col:9, col:10> '<dependent type>' contains-errors prefix '-' cannot overflow
+        `-ImplicitCastExpr 0x14c02d6b8 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+          `-RecoveryExpr 0x14c02d698 <col:10> '<dependent type>' contains-errors lvalue

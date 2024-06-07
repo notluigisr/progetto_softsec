@@ -1,0 +1,55 @@
+`-FunctionDecl 0x15480e008  line:1:12 invalid allmbox_p 'int (void *, const char *, int, const char *, int)' static
+  |-ParmVarDecl 0x15480dcd8 <col:22, col:28> col:28 used rock 'void *'
+  |-ParmVarDecl 0x15480dd58 <line:2:22, col:34> col:34 used key 'const char *'
+  |-ParmVarDecl 0x15480ddf0 <line:3:22, col:29> col:29 invalid keylen 'int'
+  |-ParmVarDecl 0x15480de70 <line:4:22, col:34> col:34 used data 'const char *'
+  |-ParmVarDecl 0x15480def0 <line:5:22, col:29> col:29 invalid datalen 'int'
+  `-CompoundStmt 0x154829158 <line:6:1, line:23:1>
+    |-DeclStmt 0x15480e3b0 <line:7:5, col:58>
+    | |-RecordDecl 0x15480e0d8 <col:5, col:12> col:12 struct allmb_rock
+    | `-VarDecl 0x15480e248 <col:5, col:54> col:24 used mbrock 'struct allmb_rock *' cinit
+    |   `-CStyleCastExpr 0x15480e370 <col:33, col:54> 'struct allmb_rock *' <BitCast>
+    |     `-ImplicitCastExpr 0x15480e358 <col:54> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x15480e2b0 <col:54> 'void *' lvalue ParmVar 0x15480dcd8 'rock' 'void *'
+    |-DeclStmt 0x154828468 <line:8:5, col:10>
+    | `-VarDecl 0x154828400 <col:5, col:9> col:9 used r 'int'
+    |-IfStmt 0x1548285d0 <line:11:5, col:41>
+    | |-BinaryOperator 0x154828580 <col:9, col:29> 'int' contains-errors '&&'
+    | | |-RecoveryExpr 0x154828480 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x154828560 <col:19, col:29> 'int' '=='
+    | |   |-ImplicitCastExpr 0x154828548 <col:19, col:24> 'int' <IntegralCast>
+    | |   | `-ImplicitCastExpr 0x154828530 <col:19, col:24> 'char' <LValueToRValue>
+    | |   |   `-ArraySubscriptExpr 0x1548284f8 <col:19, col:24> 'const char' lvalue
+    | |   |     |-ImplicitCastExpr 0x1548284e0 <col:19> 'const char *' <LValueToRValue>
+    | |   |     | `-DeclRefExpr 0x1548284a0 <col:19> 'const char *' lvalue ParmVar 0x15480dd58 'key' 'const char *'
+    | |   |     `-IntegerLiteral 0x1548284c0 <col:23> 'int' 0
+    | |   `-CharacterLiteral 0x154828518 <col:29> 'int' 36
+    | `-ReturnStmt 0x1548285c0 <col:34, col:41>
+    |   `-IntegerLiteral 0x1548285a0 <col:41> 'int' 0
+    |-CallExpr 0x154828c10 <line:14:5, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x154828750 <col:5> 'int ()' Function 0x154828698 'mboxlist_entry_free' 'int ()'
+    | `-UnaryOperator 0x154828bf8 <col:25, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x154828bd0 <col:26, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x154828770 <col:26> 'struct allmb_rock *' lvalue Var 0x15480e248 'mbrock' 'struct allmb_rock *'
+    |-BinaryOperator 0x154828e98 <line:16:5, col:74> 'int' contains-errors '='
+    | |-DeclRefExpr 0x154828c38 <col:5> 'int' lvalue Var 0x154828400 'r' 'int'
+    | `-CallExpr 0x154828e50 <col:9, col:74> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x154828d38 <col:9> 'int ()' Function 0x154828c80 'mboxlist_parse_entry' 'int ()'
+    |   |-UnaryOperator 0x154828db8 <col:30, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x154828d90 <col:31, col:39> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x154828d58 <col:31> 'struct allmb_rock *' lvalue Var 0x15480e248 'mbrock' 'struct allmb_rock *'
+    |   |-DeclRefExpr 0x154828dd0 <col:48> 'const char *' lvalue ParmVar 0x15480dd58 'key' 'const char *'
+    |   |-RecoveryExpr 0x154828df0 <col:53> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x154828e10 <col:61> 'const char *' lvalue ParmVar 0x15480de70 'data' 'const char *'
+    |   `-RecoveryExpr 0x154828e30 <col:67> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x154828f20 <line:17:5, col:19>
+    | |-ImplicitCastExpr 0x154828ed8 <col:9> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x154828eb8 <col:9> 'int' lvalue Var 0x154828400 'r' 'int'
+    | `-ReturnStmt 0x154828f10 <col:12, col:19>
+    |   `-IntegerLiteral 0x154828ef0 <col:19> 'int' 0
+    |-IfStmt 0x154829108 <line:19:5, line:20:16>
+    | |-RecoveryExpr 0x1548290b8 <line:19:9, col:92> '_Bool' contains-errors
+    | `-ReturnStmt 0x1548290f8 <line:20:9, col:16>
+    |   `-IntegerLiteral 0x1548290d8 <col:16> 'int' 0
+    `-ReturnStmt 0x154829148 <line:22:5, col:12>
+      `-IntegerLiteral 0x154829128 <col:12> 'int' 1

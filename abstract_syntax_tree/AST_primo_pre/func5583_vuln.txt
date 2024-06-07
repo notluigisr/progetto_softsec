@@ -1,0 +1,37 @@
+`-FunctionDecl 0x13284b000  line:1:13 invalid consume_one_event 'void (unsigned int, struct evtchn_fifo_control_block *, unsigned int, unsigned long *, int)' static
+  |-ParmVarDecl 0x1328324d8 <col:31, col:40> col:40 used cpu 'unsigned int'
+  |-ParmVarDecl 0x132832ac8 <line:2:10, col:44> col:44 used control_block 'struct evtchn_fifo_control_block *'
+  |-ParmVarDecl 0x132832b48 <line:3:10, col:19> col:19 used priority 'unsigned int'
+  |-ParmVarDecl 0x13284ae00 <col:29, col:44> col:44 used ready 'unsigned long *'
+  |-ParmVarDecl 0x13284ae98 <line:4:10, col:15> col:15 invalid drop 'int'
+  `-CompoundStmt 0x13284ddb0 <line:5:1, line:35:1>
+    |-DeclStmt 0x13284b520 <line:6:2, col:56>
+    | |-RecordDecl 0x13284b0d0 <col:2, col:9> col:9 struct evtchn_fifo_queue
+    | `-VarDecl 0x13284b238 <col:2, col:55> col:28 used q 'struct evtchn_fifo_queue *' cinit
+    |   `-UnaryOperator 0x13284b4f0 <col:32, col:55> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CallExpr 0x13284b4c0 <col:33, col:55> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x13284b400 <col:33> 'int ()' Function 0x13284b348 'per_cpu' 'int ()'
+    |       |-RecoveryExpr 0x13284b4a0 <col:41> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13284b438 <col:52> 'unsigned int' lvalue ParmVar 0x1328324d8 'cpu' 'unsigned int'
+    |-IfStmt 0x13284b9e0 <line:14:2, line:17:2>
+    | |-BinaryOperator 0x13284b718 <line:14:6, col:14> 'int' '=='
+    | | |-ImplicitCastExpr 0x13284b6e8 <col:6> 'unsigned long *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13284b6c8 <col:6> 'unsigned long *' lvalue ParmVar 0x13284ae00 'ready' 'unsigned long *'
+    | | `-ImplicitCastExpr 0x13284b700 <col:14> 'unsigned long *' <NullToPointer>
+    | |   `-IntegerLiteral 0x13284b688 <col:14> 'int' 0
+    | `-CompoundStmt 0x13284b9c8 <col:17, line:17:2>
+    |   `-CallExpr 0x13284b888 <line:15:3, col:12> 'int'
+    |     `-ImplicitCastExpr 0x13284b870 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x13284b818 <col:3> 'int ()' Function 0x13284b760 'virt_rmb' 'int ()'
+    |-IfStmt 0x13284d678 <line:24:2, line:25:28>
+    | |-RecoveryExpr 0x13284bc98 <line:24:6, col:14> '_Bool' contains-errors
+    | `-CallExpr 0x13284d618 <line:25:3, col:28> 'int'
+    |   |-ImplicitCastExpr 0x13284d600 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13284bd98 <col:3> 'int ()' Function 0x13284bce0 'clear_bit' 'int ()'
+    |   |-ImplicitCastExpr 0x13284d648 <col:13> 'unsigned int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x13284bdb8 <col:13> 'unsigned int' lvalue ParmVar 0x132832b48 'priority' 'unsigned int'
+    |   `-ImplicitCastExpr 0x13284d660 <col:23> 'unsigned long *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13284bdd8 <col:23> 'unsigned long *' lvalue ParmVar 0x13284ae00 'ready' 'unsigned long *'
+    `-IfStmt 0x13284dc70 <line:27:2, line:32:2>
+      |-RecoveryExpr 0x13284d898 <line:27:6, col:65> '_Bool' contains-errors
+      `-CompoundStmt 0x13284dc60 <col:68, line:32:2>

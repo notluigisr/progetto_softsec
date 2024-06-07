@@ -1,0 +1,121 @@
+`-FunctionDecl 0x123027608  line:1:5 invalid nfc_genl_se_transaction 'int (struct nfc_dev *, int, struct nfc_evt_transaction *)'
+  |-ParmVarDecl 0x12300e248 <col:29, col:45> col:45 used dev 'struct nfc_dev *'
+  |-ParmVarDecl 0x12300e2e0 <col:50, col:53> col:53 invalid se_idx 'int'
+  |-ParmVarDecl 0x1230274c8 <line:2:8, col:36> col:36 used evt_transaction 'struct nfc_evt_transaction *'
+  `-CompoundStmt 0x122923718 <line:3:1, line:45:1>
+    |-DeclStmt 0x1230278b8 <line:4:2, col:19>
+    | |-RecordDecl 0x1230276c8 <col:2, col:9> col:9 struct nfc_se
+    | `-VarDecl 0x123027838 <col:2, col:17> col:17 used se 'struct nfc_se *'
+    |-DeclStmt 0x123027ab8 <line:5:2, col:21>
+    | |-RecordDecl 0x1230278d0 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x123027a38 <col:2, col:18> col:18 used msg 'struct sk_buff *'
+    |-DeclStmt 0x123027b50 <line:6:2, col:11>
+    | `-VarDecl 0x123027ae8 <col:2, col:8> col:8 used hdr 'void *'
+    |-BinaryOperator 0x123027df0 <line:8:2, col:48> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x123027b68 <col:2> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | `-CallExpr 0x123027dc0 <col:8, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x123027ce0 <col:8> 'int ()' Function 0x123027c28 'nlmsg_new' 'int ()'
+    |   |-RecoveryExpr 0x123027d80 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x123027da0 <col:38> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x123027f08 <line:9:2, line:10:11>
+    | |-UnaryOperator 0x123027e48 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x123027e30 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x123027e10 <col:7> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | `-ReturnStmt 0x123027ef8 <line:10:3, col:11>
+    |   `-UnaryOperator 0x123027ee0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x123027ec8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x123027ea8 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x123028228 <line:12:2, line:13:30> 'void *' contains-errors '='
+    | |-DeclRefExpr 0x123027f28 <line:12:2> 'void *' lvalue Var 0x123027ae8 'hdr' 'void *'
+    | `-CallExpr 0x1230281d8 <col:8, line:13:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x123028028 <line:12:8> 'int ()' Function 0x123027f70 'genlmsg_put' 'int ()'
+    |   |-DeclRefExpr 0x123028048 <col:20> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    |   |-IntegerLiteral 0x123028068 <col:25> 'int' 0
+    |   |-IntegerLiteral 0x123028088 <col:28> 'int' 0
+    |   |-UnaryOperator 0x1230281a0 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x123028180 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x1230280d8 <col:49> 'int' 0
+    |   `-RecoveryExpr 0x1230281b8 <line:13:6> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x123028300 <line:14:2, line:15:8>
+    | |-UnaryOperator 0x123028280 <line:14:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x123028268 <col:7> 'void *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x123028248 <col:7> 'void *' lvalue Var 0x123027ae8 'hdr' 'void *'
+    | `-GotoStmt 0x1230282e8 <line:15:3, col:8> 'free_msg' 0x123028298
+    |-BinaryOperator 0x123029948 <line:17:2, col:30> 'struct nfc_se *' contains-errors '='
+    | |-DeclRefExpr 0x123028320 <col:2> 'struct nfc_se *' lvalue Var 0x123027838 'se' 'struct nfc_se *'
+    | `-CallExpr 0x123029918 <col:7, col:30> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1230298b8 <col:7> 'int ()' Function 0x123029800 'nfc_find_se' 'int ()'
+    |   |-DeclRefExpr 0x1230298d8 <col:19> 'struct nfc_dev *' lvalue ParmVar 0x12300e248 'dev' 'struct nfc_dev *'
+    |   `-RecoveryExpr 0x1230298f8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1230299d0 <line:18:2, line:19:8>
+    | |-UnaryOperator 0x1230299a0 <line:18:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x123029988 <col:7> 'struct nfc_se *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x123029968 <col:7> 'struct nfc_se *' lvalue Var 0x123027838 'se' 'struct nfc_se *'
+    | `-GotoStmt 0x1230299b8 <line:19:3, col:8> 'free_msg' 0x123028298
+    |-IfStmt 0x12302a500 <line:21:2, line:28:8>
+    | |-BinaryOperator 0x12302a478 <line:21:6, line:27:30> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x12302a3f8 <line:21:6, line:25:27> 'int' contains-errors '||'
+    | | | |-BinaryOperator 0x12302a378 <line:21:6, line:23:48> 'int' contains-errors '||'
+    | | | | |-BinaryOperator 0x12302a300 <line:21:6, line:22:48> 'int' contains-errors '||'
+    | | | | | |-CallExpr 0x12302a270 <line:21:6, col:54> '<dependent type>' contains-errors
+    | | | | | | |-DeclRefExpr 0x123029ad0 <col:6> 'int ()' Function 0x123029a18 'nla_put_u32' 'int ()'
+    | | | | | | |-DeclRefExpr 0x123029af0 <col:18> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | | | | | | |-RecoveryExpr 0x12302a250 <col:23> '<dependent type>' contains-errors lvalue
+    | | | | | | `-RecoveryExpr 0x123029b60 <col:46, col:51> '<dependent type>' contains-errors lvalue
+    | | | | | |   `-DeclRefExpr 0x123029b28 <col:46> 'struct nfc_dev *' lvalue ParmVar 0x12300e248 'dev' 'struct nfc_dev *'
+    | | | | | `-CallExpr 0x12302a2c8 <line:22:6, col:48> '<dependent type>' contains-errors
+    | | | | |   |-DeclRefExpr 0x123029bc0 <col:6> 'int ()' Function 0x123029a18 'nla_put_u32' 'int ()'
+    | | | | |   |-DeclRefExpr 0x123029be0 <col:18> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | | | | |   |-RecoveryExpr 0x12302a2a8 <col:23> '<dependent type>' contains-errors lvalue
+    | | | | |   `-RecoveryExpr 0x123029c18 <col:42> '<dependent type>' contains-errors lvalue
+    | | | | `-CallExpr 0x12302a340 <line:23:6, col:48> '<dependent type>' contains-errors
+    | | | |   |-DeclRefExpr 0x123029d70 <col:6> 'int ()' Function 0x123029cb8 'nla_put_u8' 'int ()'
+    | | | |   |-DeclRefExpr 0x123029d90 <col:17> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | | | |   |-RecoveryExpr 0x12302a320 <col:22> '<dependent type>' contains-errors lvalue
+    | | | |   `-RecoveryExpr 0x123029e00 <col:40, col:44> '<dependent type>' contains-errors lvalue
+    | | | |     `-DeclRefExpr 0x123029dc8 <col:40> 'struct nfc_se *' lvalue Var 0x123027838 'se' 'struct nfc_se *'
+    | | | `-CallExpr 0x12302a3b8 <line:24:6, line:25:27> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x123029f60 <line:24:6> 'int ()' Function 0x123029ea8 'nla_put' 'int ()'
+    | | |   |-DeclRefExpr 0x123029f80 <col:14> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | | |   |-RecoveryExpr 0x12302a398 <col:19> '<dependent type>' contains-errors lvalue
+    | | |   |-RecoveryExpr 0x123029ff0 <col:36, col:53> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x123029fb8 <col:36> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    | | |   `-RecoveryExpr 0x12302a050 <line:25:7, col:24> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x12302a018 <col:7> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    | | `-CallExpr 0x12302a438 <line:26:6, line:27:30> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x12302a0d8 <line:26:6> 'int ()' Function 0x123029ea8 'nla_put' 'int ()'
+    | |   |-DeclRefExpr 0x12302a0f8 <col:14> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | |   |-RecoveryExpr 0x12302a418 <col:19> '<dependent type>' contains-errors lvalue
+    | |   |-RecoveryExpr 0x12302a168 <col:39, col:56> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x12302a130 <col:39> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    | |   `-RecoveryExpr 0x12302a1c8 <line:27:7, col:24> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x12302a190 <col:7> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    | `-GotoStmt 0x12302a4e8 <line:28:3, col:8> 'nla_put_failure' 0x12302a498
+    |-CallExpr 0x12302a6b8 <line:31:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12302a600 <col:2> 'int ()' Function 0x12302a548 'devm_kfree' 'int ()'
+    | |-UnaryOperator 0x12302a680 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12302a658 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12302a620 <col:14> 'struct nfc_dev *' lvalue ParmVar 0x12300e248 'dev' 'struct nfc_dev *'
+    | `-DeclRefExpr 0x12302a698 <col:24> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    |-CallExpr 0x122923288 <line:33:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x122923270 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12302a7c8 <col:2> 'int ()' Function 0x12302a710 'genlmsg_end' 'int ()'
+    | |-ImplicitCastExpr 0x1229232b8 <col:14> 'struct sk_buff *' <LValueToRValue>
+    | | `-DeclRefExpr 0x122923200 <col:14> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x1229232d0 <col:19> 'void *' <LValueToRValue>
+    |   `-DeclRefExpr 0x122923220 <col:19> 'void *' lvalue Var 0x123027ae8 'hdr' 'void *'
+    |-ReturnStmt 0x122923468 <line:37:2, col:9>
+    | `-IntegerLiteral 0x122923448 <col:9> 'int' 0
+    |-LabelStmt 0x122923580 <line:39:1, line:42:39> 'nla_put_failure'
+    | `-LabelStmt 0x122923560 <line:40:1, line:42:39> 'free_msg'
+    |   `-CallExpr 0x122923530 <col:2, col:39> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122923478 <col:2> 'int ()' Function 0x12302a548 'devm_kfree' 'int ()'
+    |     |-UnaryOperator 0x1229234f8 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | `-RecoveryExpr 0x1229234d0 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x122923498 <col:14> 'struct nfc_dev *' lvalue ParmVar 0x12300e248 'dev' 'struct nfc_dev *'
+    |     `-DeclRefExpr 0x122923510 <col:24> 'struct nfc_evt_transaction *' lvalue ParmVar 0x1230274c8 'evt_transaction' 'struct nfc_evt_transaction *'
+    `-CallExpr 0x1229236d8 <line:43:2, col:16> 'int'
+      |-ImplicitCastExpr 0x1229236c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x122923680 <col:2> 'int ()' Function 0x1229235c8 'nlmsg_free' 'int ()'
+      `-ImplicitCastExpr 0x122923700 <col:13> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x1229236a0 <col:13> 'struct sk_buff *' lvalue Var 0x123027a38 'msg' 'struct sk_buff *'

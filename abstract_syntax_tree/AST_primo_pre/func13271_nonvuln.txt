@@ -1,0 +1,39 @@
+`-FunctionDecl 0x14a826898  line:1:27 __bond_sk_get_lower_dev 'struct net_device *(struct bonding *, struct sock *)' static
+  |-ParmVarDecl 0x14a80e2e8 <col:51, col:67> col:67 used bond 'struct bonding *'
+  |-ParmVarDecl 0x14a8266c8 <line:2:9, col:22> col:22 used sk 'struct sock *'
+  `-CompoundStmt 0x14b809188 <line:3:1, line:18:1>
+    |-DeclStmt 0x14a826b88 <line:4:2, col:30>
+    | |-RecordDecl 0x14a826998 <col:2, col:9> col:9 struct bond_up_slave
+    | `-VarDecl 0x14a826b08 <col:2, col:24> col:24 used slaves 'struct bond_up_slave *'
+    |-DeclStmt 0x14a826d88 <line:5:2, col:21>
+    | |-RecordDecl 0x14a826ba0 <col:2, col:9> col:9 struct slave
+    | `-VarDecl 0x14a826d08 <col:2, col:16> col:16 used slave 'struct slave *'
+    |-DeclStmt 0x14a826e20 <line:6:2, col:20>
+    | `-VarDecl 0x14a826db8 <col:2, col:15> col:15 used count 'unsigned int'
+    |-BinaryOperator 0x14a827028 <line:9:2, col:46> 'struct bond_up_slave *' contains-errors '='
+    | |-DeclRefExpr 0x14a826e50 <col:2> 'struct bond_up_slave *' lvalue Var 0x14a826b08 'slaves' 'struct bond_up_slave *'
+    | `-CallExpr 0x14a827000 <col:11, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a826f80 <col:11> 'int ()' Function 0x14a826ec8 'rcu_dereference' 'int ()'
+    |   `-RecoveryExpr 0x14a826fd8 <col:27, col:33> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14a826fa0 <col:27> 'struct bonding *' lvalue ParmVar 0x14a80e2e8 'bond' 'struct bonding *'
+    |-BinaryOperator 0x14a827260 <line:10:2, col:46> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x14a827048 <col:2> 'unsigned int' lvalue Var 0x14a826db8 'count' 'unsigned int'
+    | `-ConditionalOperator 0x14a827230 <col:10, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a827068 <col:10> 'struct bond_up_slave *' lvalue Var 0x14a826b08 'slaves' 'struct bond_up_slave *'
+    |   |-CallExpr 0x14a8271e8 <col:19, col:42> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x14a827168 <col:19> 'int ()' Function 0x14a8270b0 'READ_ONCE' 'int ()'
+    |   | `-RecoveryExpr 0x14a8271c0 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x14a827188 <col:29> 'struct bond_up_slave *' lvalue Var 0x14a826b08 'slaves' 'struct bond_up_slave *'
+    |   `-IntegerLiteral 0x14a827210 <col:46> 'int' 0
+    |-IfStmt 0x14a827488 <line:11:2, line:12:10>
+    | |-CallExpr 0x14a827418 <line:11:6, col:21> 'int'
+    | | |-ImplicitCastExpr 0x14a827400 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14a827360 <col:6> 'int ()' Function 0x14a8272a8 'unlikely' 'int ()'
+    | | `-UnaryOperator 0x14a8273b8 <col:15, col:16> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x14a8273a0 <col:16> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x14a827380 <col:16> 'unsigned int' lvalue Var 0x14a826db8 'count' 'unsigned int'
+    | `-ReturnStmt 0x14a827478 <line:12:3, col:10>
+    |   `-RecoveryExpr 0x14a827458 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14b809178 <line:17:2, col:16>
+      `-RecoveryExpr 0x14b809150 <col:9, col:16> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x14b809118 <col:9> 'struct slave *' lvalue Var 0x14a826d08 'slave' 'struct slave *'

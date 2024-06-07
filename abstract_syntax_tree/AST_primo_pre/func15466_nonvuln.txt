@@ -1,0 +1,34 @@
+`-FunctionDecl 0x1328082d8  line:1:1 register_address_increment 'int (struct x86_emulate_ctxt *, unsigned long *, int)'
+  |-ParmVarDecl 0x132128648 <col:28, col:53> col:53 used ctxt 'struct x86_emulate_ctxt *'
+  |-ParmVarDecl 0x1321286f8 <col:59, col:74> col:74 used reg 'unsigned long *'
+  |-ParmVarDecl 0x132128778 <col:79, col:83> col:83 used inc 'int'
+  `-CompoundStmt 0x132808a38 <line:2:1, line:10:1>
+    |-DeclStmt 0x132808478 <line:3:2, col:12>
+    | `-VarDecl 0x132808410 <col:2, col:8> col:8 used mask 'long'
+    |-IfStmt 0x132808810 <line:5:2, line:8:22> has_else
+    | |-BinaryOperator 0x132808528 <line:5:6, col:44> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x1328084c8 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x132808490 <col:6> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x132128648 'ctxt' 'struct x86_emulate_ctxt *'
+    | | `-UnaryExprOrTypeTraitExpr 0x132808508 <col:24, col:44> 'unsigned long' sizeof 'unsigned long'
+    | |-BinaryOperator 0x1328085b8 <line:6:3, col:11> 'long' '='
+    | | |-DeclRefExpr 0x132808548 <col:3> 'long' lvalue Var 0x132808410 'mask' 'long'
+    | | `-ImplicitCastExpr 0x1328085a0 <col:10, col:11> 'long' <IntegralCast>
+    | |   `-UnaryOperator 0x132808588 <col:10, col:11> 'unsigned long' prefix '~' cannot overflow
+    | |     `-IntegerLiteral 0x132808568 <col:11> 'unsigned long' 0
+    | `-BinaryOperator 0x1328087f0 <line:8:3, col:22> 'long' '='
+    |   |-DeclRefExpr 0x1328085d8 <col:3> 'long' lvalue Var 0x132808410 'mask' 'long'
+    |   `-ImplicitCastExpr 0x1328087d8 <col:10, col:22> 'long' <IntegralCast>
+    |     `-CallExpr 0x132808798 <col:10, col:22> 'int'
+    |       |-ImplicitCastExpr 0x132808780 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x132808710 <col:10> 'int ()' Function 0x132808658 'ad_mask' 'int ()'
+    |       `-ImplicitCastExpr 0x1328087c0 <col:18> 'struct x86_emulate_ctxt *' <LValueToRValue>
+    |         `-DeclRefExpr 0x132808730 <col:18> 'struct x86_emulate_ctxt *' lvalue ParmVar 0x132128648 'ctxt' 'struct x86_emulate_ctxt *'
+    `-CallExpr 0x1328089b8 <line:9:2, col:33> 'int'
+      |-ImplicitCastExpr 0x1328089a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x132808920 <col:2> 'int ()' Function 0x132808868 'masked_increment' 'int ()'
+      |-ImplicitCastExpr 0x1328089f0 <col:19> 'unsigned long *' <LValueToRValue>
+      | `-DeclRefExpr 0x132808940 <col:19> 'unsigned long *' lvalue ParmVar 0x1321286f8 'reg' 'unsigned long *'
+      |-ImplicitCastExpr 0x132808a08 <col:24> 'long' <LValueToRValue>
+      | `-DeclRefExpr 0x132808960 <col:24> 'long' lvalue Var 0x132808410 'mask' 'long'
+      `-ImplicitCastExpr 0x132808a20 <col:30> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x132808980 <col:30> 'int' lvalue ParmVar 0x132128778 'inc' 'int'

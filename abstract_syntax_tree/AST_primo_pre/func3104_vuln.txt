@@ -1,0 +1,83 @@
+`-FunctionDecl 0x13b8276d8  line:1:13 invalid dccp_new 'int (struct nf_conn *, const struct sk_buff *, unsigned int, unsigned int *)' static
+  |-ParmVarDecl 0x13b80e268 <col:22, col:38> col:38 used ct 'struct nf_conn *'
+  |-ParmVarDecl 0x13b827458 <col:42, col:64> col:64 used skb 'const struct sk_buff *'
+  |-ParmVarDecl 0x13b8274d8 <line:2:8, col:21> col:21 used dataoff 'unsigned int'
+  |-ParmVarDecl 0x13b827588 <col:30, col:44> col:44 timeouts 'unsigned int *'
+  `-CompoundStmt 0x13b82e318 <line:3:1, line:41:1>
+    |-DeclStmt 0x13b827bc8 <line:4:2, col:33>
+    | |-RecordDecl 0x13b8277a0 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x13b827908 <col:2, col:32> col:14 used net 'struct net *' cinit
+    |   `-ImplicitCastExpr 0x13b827b98 <col:20, col:32> 'struct net *' <IntegralToPointer>
+    |     `-CallExpr 0x13b827b58 <col:20, col:32> 'int'
+    |       |-ImplicitCastExpr 0x13b827b40 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13b827ad0 <col:20> 'int ()' Function 0x13b827a18 'nf_ct_net' 'int ()'
+    |       `-ImplicitCastExpr 0x13b827b80 <col:30> 'struct nf_conn *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13b827af0 <col:30> 'struct nf_conn *' lvalue ParmVar 0x13b80e268 'ct' 'struct nf_conn *'
+    |-DeclStmt 0x13b827dc8 <line:5:2, col:21>
+    | |-RecordDecl 0x13b827be0 <col:2, col:9> col:9 struct dccp_net
+    | `-VarDecl 0x13b827d48 <col:2, col:19> col:19 used dn 'struct dccp_net *'
+    |-DeclStmt 0x13b828050 <line:6:2, col:26>
+    | |-RecordDecl 0x13b827de0 <col:2, col:9> col:9 struct dccp_hdr
+    | |-VarDecl 0x13b827ed8 <col:2, col:18> col:18 invalid _dh 'struct dccp_hdr'
+    | `-VarDecl 0x13b827fc8 <col:2, col:24> col:24 used dh 'struct dccp_hdr *'
+    |-DeclStmt 0x13b8280e8 <line:7:2, col:17>
+    | `-VarDecl 0x13b828080 <col:2, col:14> col:14 used msg 'const char *'
+    |-BinaryOperator 0x13b82d000 <line:10:2, col:56> 'struct dccp_hdr *' contains-errors '='
+    | |-DeclRefExpr 0x13b828100 <col:2> 'struct dccp_hdr *' lvalue Var 0x13b827fc8 'dh' 'struct dccp_hdr *'
+    | `-ImplicitCastExpr 0x13b8283e0 <col:7, col:56> 'struct dccp_hdr *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x13b828370 <col:7, col:56> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x13b828358 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13b828200 <col:7> 'int ()' Function 0x13b828148 'skb_header_pointer' 'int ()'
+    |     |-ImplicitCastExpr 0x13b8283b0 <col:26> 'const struct sk_buff *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13b828220 <col:26> 'const struct sk_buff *' lvalue ParmVar 0x13b827458 'skb' 'const struct sk_buff *'
+    |     |-ImplicitCastExpr 0x13b8283c8 <col:31> 'unsigned int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13b828240 <col:31> 'unsigned int' lvalue ParmVar 0x13b8274d8 'dataoff' 'unsigned int'
+    |     |-UnaryExprOrTypeTraitExpr 0x13b8282a0 <col:40, col:50> 'unsigned long' contains-errors sizeof
+    |     | `-ParenExpr 0x13b828280 <col:46, col:50> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x13b828260 <col:47> '<dependent type>' contains-errors lvalue
+    |     `-UnaryOperator 0x13b828340 <col:53, col:54> 'struct dccp_hdr **' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x13b8282c0 <col:54> 'struct dccp_hdr *' lvalue Var 0x13b827fc8 'dh' 'struct dccp_hdr *'
+    |-CallExpr 0x13b82d1e0 <line:11:2, col:19> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b82d100 <col:2> 'int ()' Function 0x13b82d048 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x13b82d1c0 <col:9, col:15> 'int' contains-errors '=='
+    |   |-DeclRefExpr 0x13b82d120 <col:9> 'struct dccp_hdr *' lvalue Var 0x13b827fc8 'dh' 'struct dccp_hdr *'
+    |   `-RecoveryExpr 0x13b82d1a0 <col:15> '<dependent type>' contains-errors lvalue
+    |-SwitchStmt 0x13b82d300 <line:14:2, line:26:2>
+    | |-RecoveryExpr 0x13b82d2e0 <line:14:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13b82d818 <col:17, line:26:2>
+    |   |-DefaultStmt 0x13b82d4f8 <line:15:2, line:16:23>
+    |   | `-BinaryOperator 0x13b82d4d8 <col:3, col:23> 'struct dccp_net *' '='
+    |   |   |-DeclRefExpr 0x13b82d328 <col:3> 'struct dccp_net *' lvalue Var 0x13b827d48 'dn' 'struct dccp_net *'
+    |   |   `-ImplicitCastExpr 0x13b82d4c0 <col:8, col:23> 'struct dccp_net *' <IntegralToPointer>
+    |   |     `-CallExpr 0x13b82d480 <col:8, col:23> 'int'
+    |   |       |-ImplicitCastExpr 0x13b82d468 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |       | `-DeclRefExpr 0x13b82d428 <col:8> 'int ()' Function 0x13b82d370 'dccp_pernet' 'int ()'
+    |   |       `-ImplicitCastExpr 0x13b82d4a8 <col:20> 'struct net *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x13b82d448 <col:20> 'struct net *' lvalue Var 0x13b827908 'net' 'struct net *'
+    |   |-IfStmt 0x13b82d718 <line:17:3, line:20:3>
+    |   | |-BinaryOperator 0x13b82d598 <line:17:7, col:25> 'int' contains-errors '=='
+    |   | | |-RecoveryExpr 0x13b82d550 <col:7, col:11> '<dependent type>' contains-errors lvalue
+    |   | | | `-DeclRefExpr 0x13b82d518 <col:7> 'struct dccp_net *' lvalue Var 0x13b827d48 'dn' 'struct dccp_net *'
+    |   | | `-IntegerLiteral 0x13b82d578 <col:25> 'int' 0
+    |   | `-CompoundStmt 0x13b82d6f8 <col:28, line:20:3>
+    |   |   |-BinaryOperator 0x13b82d670 <line:18:4, col:10> 'const char *' '='
+    |   |   | |-DeclRefExpr 0x13b82d5b8 <col:4> 'const char *' lvalue Var 0x13b828080 'msg' 'const char *'
+    |   |   | `-ImplicitCastExpr 0x13b82d658 <col:10> 'const char *' <NoOp>
+    |   |   |   `-ImplicitCastExpr 0x13b82d640 <col:10> 'char *' <ArrayToPointerDecay>
+    |   |   |     `-StringLiteral 0x13b82d620 <col:10> 'char[4]' lvalue "STR"
+    |   |   `-GotoStmt 0x13b82d6e0 <line:19:4, col:9> 'out_invalid' 0x13b82d690
+    |   |-BreakStmt 0x13b82d750 <line:22:3>
+    |   |-BinaryOperator 0x13b82d7e0 <line:24:3, col:9> 'const char *' '='
+    |   | |-DeclRefExpr 0x13b82d770 <col:3> 'const char *' lvalue Var 0x13b828080 'msg' 'const char *'
+    |   | `-ImplicitCastExpr 0x13b82d7c8 <col:9> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x13b82d7b0 <col:9> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x13b82d790 <col:9> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x13b82d800 <line:25:3, col:8> 'out_invalid' 0x13b82d690
+    |-BinaryOperator 0x13b82de10 <line:33:2, col:33> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x13b82dda8 <col:2, col:17> '<dependent type>' contains-errors lvalue .handshake_seq
+    | | `-CXXDependentScopeMemberExpr 0x13b82dd60 <col:2, col:12> '<dependent type>' contains-errors lvalue .dccp
+    | |   `-RecoveryExpr 0x13b82dd38 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13b82dd00 <col:2> 'struct nf_conn *' lvalue ParmVar 0x13b80e268 'ct' 'struct nf_conn *'
+    | `-IntegerLiteral 0x13b82ddf0 <col:33> 'int' 0
+    `-LabelStmt 0x13b82e2f8 <line:36:1, col:12> 'out_invalid'
+      `-NullStmt 0x13b82e2f0 <col:12>

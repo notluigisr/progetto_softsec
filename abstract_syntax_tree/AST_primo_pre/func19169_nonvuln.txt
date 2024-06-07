@@ -1,0 +1,79 @@
+`-FunctionDecl 0x136141800  line:1:12 invalid brcmf_inform_bss 'int (struct brcmf_cfg80211_info *)' static
+  |-ParmVarDecl 0x136128668 <col:29, col:57> col:57 used cfg 'struct brcmf_cfg80211_info *'
+  `-CompoundStmt 0x136808fe8 <line:2:1, line:24:1>
+    |-DeclStmt 0x136141cd8 <line:3:2, col:41>
+    | |-RecordDecl 0x1361418b0 <col:2, col:9> col:9 struct wiphy
+    | `-VarDecl 0x136141a18 <col:2, col:40> col:16 used wiphy 'struct wiphy *' cinit
+    |   `-ImplicitCastExpr 0x136141ca8 <col:24, col:40> 'struct wiphy *' <IntegralToPointer>
+    |     `-CallExpr 0x136141c68 <col:24, col:40> 'int'
+    |       |-ImplicitCastExpr 0x136141c50 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x136141be0 <col:24> 'int ()' Function 0x136141b28 'cfg_to_wiphy' 'int ()'
+    |       `-ImplicitCastExpr 0x136141c90 <col:37> 'struct brcmf_cfg80211_info *' <LValueToRValue>
+    |         `-DeclRefExpr 0x136141c00 <col:37> 'struct brcmf_cfg80211_info *' lvalue ParmVar 0x136128668 'cfg' 'struct brcmf_cfg80211_info *'
+    |-DeclStmt 0x136141ed8 <line:4:2, col:37>
+    | |-RecordDecl 0x136141cf0 <col:2, col:9> col:9 struct brcmf_scan_results
+    | `-VarDecl 0x136141e58 <col:2, col:29> col:29 used bss_list 'struct brcmf_scan_results *'
+    |-DeclStmt 0x136142110 <line:5:2, col:37>
+    | |-RecordDecl 0x136141ef0 <col:2, col:9> col:9 struct brcmf_bss_info_le
+    | `-VarDecl 0x136142058 <col:2, col:33> col:28 used bi 'struct brcmf_bss_info_le *' cinit
+    |   `-RecoveryExpr 0x1361420d8 <col:33> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x1361421a8 <line:7:2, col:7>
+    | `-VarDecl 0x136142140 <col:2, col:6> col:6 used i 'int'
+    |-BinaryOperator 0x136142340 <line:9:2, col:58> 'struct brcmf_scan_results *' contains-errors '='
+    | |-DeclRefExpr 0x1361421c0 <col:2> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+    | `-CStyleCastExpr 0x136142318 <col:13, col:58> 'struct brcmf_scan_results *' contains-errors <Dependent>
+    |   `-CXXDependentScopeMemberExpr 0x136142240 <col:42, col:58> '<dependent type>' contains-errors lvalue .escan_buf
+    |     `-RecoveryExpr 0x136142218 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1361421e0 <col:42> 'struct brcmf_cfg80211_info *' lvalue ParmVar 0x136128668 'cfg' 'struct brcmf_cfg80211_info *'
+    |-IfStmt 0x136808800 <line:10:2, line:15:2>
+    | |-BinaryOperator 0x1361424f8 <line:10:6, line:11:27> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x1361423e0 <line:10:6, col:25> 'int' contains-errors '!='
+    | | | |-RecoveryExpr 0x136142398 <col:6, col:16> '<dependent type>' contains-errors lvalue
+    | | | | `-DeclRefExpr 0x136142360 <col:6> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+    | | | `-IntegerLiteral 0x1361423c0 <col:25> 'int' 0
+    | | `-BinaryOperator 0x1361424d8 <line:11:6, col:27> 'int' contains-errors '!='
+    | |   |-RecoveryExpr 0x136142438 <col:6, col:16> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x136142400 <col:6> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+    | |   `-RecoveryExpr 0x1361424b8 <col:27> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1361427e0 <col:51, line:15:2>
+    |   |-CallExpr 0x136142700 <line:12:3, line:13:22> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1361425f8 <line:12:3> 'int ()' Function 0x136142540 'bphy_err' 'int ()'
+    |   | |-DeclRefExpr 0x136142618 <col:12> 'struct wiphy *' lvalue Var 0x136141a18 'wiphy' 'struct wiphy *'
+    |   | |-StringLiteral 0x136142680 <col:19> 'char[4]' lvalue "STR"
+    |   | `-RecoveryExpr 0x1361426d8 <line:13:5, col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1361426a0 <col:5> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+    |   `-ReturnStmt 0x1361427d0 <line:14:3, col:11>
+    |     `-UnaryOperator 0x1361427b8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x1361427a0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x136142780 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x136808a10 <line:16:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136808900 <col:2> 'int ()' Function 0x136808848 'brcmf_dbg' 'int ()'
+    | |-RecoveryExpr 0x1368089f0 <col:12> '<dependent type>' contains-errors lvalue
+    | |-StringLiteral 0x136808938 <col:18> 'char[4]' lvalue "STR"
+    | `-RecoveryExpr 0x136808990 <col:25, col:35> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x136808958 <col:25> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+    `-ForStmt 0x136808fb0 <line:17:2, line:22:2>
+      |-BinaryOperator 0x136808a88 <line:17:7, col:11> 'int' '='
+      | |-DeclRefExpr 0x136808a48 <col:7> 'int' lvalue Var 0x136142140 'i' 'int'
+      | `-IntegerLiteral 0x136808a68 <col:11> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x136808b28 <col:14, col:28> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x136808aa8 <col:14> 'int' lvalue Var 0x136142140 'i' 'int'
+      | `-RecoveryExpr 0x136808b00 <col:18, col:28> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x136808ac8 <col:18> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+      |-UnaryOperator 0x136808b68 <col:35, col:36> 'int' postfix '++'
+      | `-DeclRefExpr 0x136808b48 <col:35> 'int' lvalue Var 0x136142140 'i' 'int'
+      `-CompoundStmt 0x136808f90 <col:40, line:22:2>
+        |-BinaryOperator 0x136808d70 <line:18:3, col:32> 'struct brcmf_bss_info_le *' contains-errors '='
+        | |-DeclRefExpr 0x136808b80 <col:3> 'struct brcmf_bss_info_le *' contains-errors lvalue Var 0x136142058 'bi' 'struct brcmf_bss_info_le *'
+        | `-ImplicitCastExpr 0x136808d58 <col:8, col:32> 'struct brcmf_bss_info_le *' contains-errors <IntegralToPointer>
+        |   `-CallExpr 0x136808cf8 <col:8, col:32> 'int' contains-errors
+        |     |-ImplicitCastExpr 0x136808ce0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x136808c80 <col:8> 'int ()' Function 0x136808bc8 'next_bss_le' 'int ()'
+        |     |-ImplicitCastExpr 0x136808d28 <col:20> 'struct brcmf_scan_results *' <LValueToRValue>
+        |     | `-DeclRefExpr 0x136808ca0 <col:20> 'struct brcmf_scan_results *' lvalue Var 0x136141e58 'bss_list' 'struct brcmf_scan_results *'
+        |     `-ImplicitCastExpr 0x136808d40 <col:30> 'struct brcmf_bss_info_le *' contains-errors <LValueToRValue>
+        |       `-DeclRefExpr 0x136808cc0 <col:30> 'struct brcmf_bss_info_le *' contains-errors lvalue Var 0x136142058 'bi' 'struct brcmf_bss_info_le *'
+        `-IfStmt 0x136808f70 <line:20:3, line:21:4>
+          |-RecoveryExpr 0x136808f48 <line:20:7> '_Bool' contains-errors
+          `-BreakStmt 0x136808f68 <line:21:4>

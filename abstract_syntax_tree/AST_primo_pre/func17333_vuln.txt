@@ -1,0 +1,66 @@
+`-FunctionDecl 0x15980e958  line:1:12 io_uring_get_fd 'int (struct io_ring_ctx *)' static
+  |-ParmVarDecl 0x15980e848 <col:28, col:48> col:48 used ctx 'struct io_ring_ctx *'
+  `-CompoundStmt 0x15a122240 <line:2:1, line:36:1>
+    |-DeclStmt 0x159826e38 <line:3:2, col:19>
+    | |-RecordDecl 0x159826c50 <col:2, col:9> col:9 struct file
+    | `-VarDecl 0x159826db8 <col:2, col:15> col:15 used file 'struct file *'
+    |-DeclStmt 0x159826ed0 <line:4:2, col:9>
+    | `-VarDecl 0x159826e68 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x159827170 <line:13:2, col:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x159826ee8 <col:2> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    | `-CallExpr 0x159827148 <col:8, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x159827030 <col:8> 'int ()' Function 0x159826f78 'get_unused_fd_flags' 'int ()'
+    |   `-BinaryOperator 0x159827128 <col:28, col:37> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x1598270e8 <col:28> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x159827108 <col:37> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x159827270 <line:14:2, line:15:8>
+    | |-BinaryOperator 0x1598271e8 <line:14:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x1598271d0 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x159827190 <col:6> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    | | `-IntegerLiteral 0x1598271b0 <col:12> 'int' 0
+    | `-GotoStmt 0x159827258 <line:15:3, col:8> 'err' 0x159827208
+    |-BinaryOperator 0x1598275e8 <line:17:2, line:18:24> 'struct file *' contains-errors '='
+    | |-DeclRefExpr 0x159827290 <line:17:2> 'struct file *' lvalue Var 0x159826db8 'file' 'struct file *'
+    | `-CallExpr 0x1598275a8 <col:9, line:18:24> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x159827390 <line:17:9> 'int ()' Function 0x1598272d8 'anon_inode_getfile' 'int ()'
+    |   |-StringLiteral 0x1598273f0 <col:28> 'char[4]' lvalue "STR"
+    |   |-UnaryOperator 0x159827530 <col:35, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-RecoveryExpr 0x159827510 <col:36> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x159827440 <col:51> 'struct io_ring_ctx *' lvalue ParmVar 0x15980e848 'ctx' 'struct io_ring_ctx *'
+    |   `-BinaryOperator 0x159827588 <line:18:6, col:15> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x159827548 <col:6> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x159827568 <col:15> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x159827b28 <line:19:2, line:23:2>
+    | |-CallExpr 0x159827778 <line:19:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x159827760 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1598276e8 <col:6> 'int ()' Function 0x159827630 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x1598277a0 <col:13> 'struct file *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x159827708 <col:13> 'struct file *' lvalue Var 0x159826db8 'file' 'struct file *'
+    | `-CompoundStmt 0x159827b00 <col:20, line:23:2>
+    |   |-CallExpr 0x1598278f0 <line:20:3, col:20> 'int'
+    |   | |-ImplicitCastExpr 0x1598278d8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x159827898 <col:3> 'int ()' Function 0x1598277e0 'put_unused_fd' 'int ()'
+    |   | `-ImplicitCastExpr 0x159827918 <col:17> 'int' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x1598278b8 <col:17> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    |   |-BinaryOperator 0x159827ac8 <line:21:3, col:21> 'int' '='
+    |   | |-DeclRefExpr 0x159827930 <col:3> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    |   | `-CallExpr 0x159827a88 <col:9, col:21> 'int'
+    |   |   |-ImplicitCastExpr 0x159827a70 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x159827a30 <col:9> 'int ()' Function 0x159827978 'PTR_ERR' 'int ()'
+    |   |   `-ImplicitCastExpr 0x159827ab0 <col:17> 'struct file *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x159827a50 <col:17> 'struct file *' lvalue Var 0x159826db8 'file' 'struct file *'
+    |   `-GotoStmt 0x159827ae8 <line:22:3, col:8> 'err' 0x159827208
+    |-CallExpr 0x15a122130 <line:28:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x15a122118 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15a1220b8 <col:2> 'int ()' Function 0x15a122000 'fd_install' 'int ()'
+    | |-ImplicitCastExpr 0x15a122160 <col:13> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x15a1220d8 <col:13> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    | `-ImplicitCastExpr 0x15a122178 <col:18> 'struct file *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15a1220f8 <col:18> 'struct file *' lvalue Var 0x159826db8 'file' 'struct file *'
+    |-ReturnStmt 0x15a1221c8 <line:29:2, col:9>
+    | `-ImplicitCastExpr 0x15a1221b0 <col:9> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x15a122190 <col:9> 'int' lvalue Var 0x159826e68 'ret' 'int'
+    `-LabelStmt 0x15a122220 <line:30:1, line:35:9> 'err'
+      `-ReturnStmt 0x15a122210 <col:2, col:9>
+        `-ImplicitCastExpr 0x15a1221f8 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x15a1221d8 <col:9> 'int' lvalue Var 0x159826e68 'ret' 'int'

@@ -1,0 +1,54 @@
+`-FunctionDecl 0x15280ddf8  line:1:12 invalid esp_select 'int (int *)' static
+  |-ParmVarDecl 0x15280dd28 <col:23, col:33> col:33 referenced invalid s 'int *'
+  `-CompoundStmt 0x1528283a8 <line:2:1, line:30:1>
+    |-DeclStmt 0x15280df28 <line:3:5, col:15>
+    | `-VarDecl 0x15280dec0 <col:5, col:9> col:9 used target 'int'
+    |-BinaryOperator 0x15280e0a8 <line:7:5, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15280e040 <col:5, col:8> '<dependent type>' contains-errors lvalue ->ti_size
+    | | `-RecoveryExpr 0x15280e018 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15280dff8 <col:5> 'int *' lvalue ParmVar 0x15280dd28 's' 'int *'
+    | `-IntegerLiteral 0x15280e088 <col:18> 'int' 0
+    |-CallExpr 0x15280e2c0 <line:8:5, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15280e220 <col:5> 'int ()' Function 0x15280e168 'fifo8_reset' 'int ()'
+    | `-UnaryOperator 0x15280e2a8 <col:17, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x15280e260 <col:18, col:21> '<dependent type>' contains-errors lvalue ->fifo
+    |     `-RecoveryExpr 0x15280e240 <col:18> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x152827a58 <line:10:5, line:14:5>
+    | |-CXXDependentScopeMemberExpr 0x15280e308 <line:10:9, col:12> '<dependent type>' contains-errors lvalue ->current_req
+    | | `-RecoveryExpr 0x15280e2e8 <col:9> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x152827a38 <col:25, line:14:5>
+    |   |-CallExpr 0x152827940 <line:12:9, col:39> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1528278b8 <col:9> 'int ()' Function 0x152827800 'scsi_req_cancel' 'int ()'
+    |   | `-CXXDependentScopeMemberExpr 0x1528278f8 <col:25, col:28> '<dependent type>' contains-errors lvalue ->current_req
+    |   |   `-RecoveryExpr 0x1528278d8 <col:25> '<dependent type>' contains-errors lvalue
+    |   `-BinaryOperator 0x152827a18 <line:13:9, col:24> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x1528279b0 <col:9, col:12> '<dependent type>' contains-errors lvalue ->async_len
+    |     | `-RecoveryExpr 0x152827988 <col:9> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x152827968 <col:9> 'int *' lvalue ParmVar 0x15280dd28 's' 'int *'
+    |     `-IntegerLiteral 0x1528279f8 <col:24> 'int' 0
+    |-BinaryOperator 0x152827d28 <line:16:5, col:60> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x152827ac0 <col:5, col:8> '<dependent type>' contains-errors lvalue ->current_dev
+    | | `-RecoveryExpr 0x152827a98 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x152827a78 <col:5> 'int *' lvalue ParmVar 0x15280dd28 's' 'int *'
+    | `-CallExpr 0x152827ce8 <col:22, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x152827be8 <col:22> 'int ()' Function 0x152827b30 'scsi_device_find' 'int ()'
+    |   |-UnaryOperator 0x152827c70 <col:39, col:43> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x152827c28 <col:40, col:43> '<dependent type>' contains-errors lvalue ->bus
+    |   |   `-RecoveryExpr 0x152827c08 <col:40> '<dependent type>' contains-errors lvalue
+    |   |-IntegerLiteral 0x152827c88 <col:48> 'int' 0
+    |   |-DeclRefExpr 0x152827ca8 <col:51> 'int' lvalue Var 0x15280dec0 'target' 'int'
+    |   `-IntegerLiteral 0x152827cc8 <col:59> 'int' 0
+    |-IfStmt 0x1528281d8 <line:17:5, line:24:5>
+    | |-UnaryOperator 0x152827dc8 <line:17:9, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x152827db0 <col:10, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x152827d68 <col:10, col:13> '<dependent type>' contains-errors lvalue ->current_dev
+    | |     `-RecoveryExpr 0x152827d48 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1528281b8 <col:26, line:24:5>
+    |   |-CallExpr 0x152828148 <line:22:9, col:24> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x152828108 <col:9> 'int ()' Function 0x152828050 'esp_raise_irq' 'int ()'
+    |   | `-RecoveryExpr 0x152828128 <col:23> '<dependent type>' contains-errors lvalue
+    |   `-ReturnStmt 0x1528281a8 <line:23:9, col:17>
+    |     `-UnaryOperator 0x152828190 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x152828170 <col:17> 'int' 1
+    `-ReturnStmt 0x152828398 <line:29:5, col:12>
+      `-IntegerLiteral 0x152828378 <col:12> 'int' 0

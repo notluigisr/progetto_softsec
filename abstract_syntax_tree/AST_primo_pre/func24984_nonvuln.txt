@@ -1,0 +1,96 @@
+`-FunctionDecl 0x127928750  line:1:6 referenced unregister_sysctl_table 'void (struct ctl_table_header *)'
+  |-ParmVarDecl 0x127928648 <col:30, col:56> col:56 used header 'struct ctl_table_header *'
+  `-CompoundStmt 0x127944028 <line:2:1, line:28:1>
+    |-DeclStmt 0x127940ac8 <line:3:2, col:19>
+    | `-VarDecl 0x127940a60 <col:2, col:6> col:6 used nr_subheaders 'int'
+    |-CallExpr 0x127940c78 <line:4:2, col:14> 'int'
+    | `-ImplicitCastExpr 0x127940c60 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x127940c10 <col:2> 'int ()' Function 0x127940b58 'might_sleep' 'int ()'
+    |-IfStmt 0x127940d40 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x127940d10 <line:6:6, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x127940c98 <col:6> 'struct ctl_table_header *' lvalue ParmVar 0x127928648 'header' 'struct ctl_table_header *'
+    | | `-RecoveryExpr 0x127940cf0 <col:16> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x127940d30 <line:7:3>
+    |-BinaryOperator 0x127940f08 <line:9:2, col:56> 'int' contains-errors '='
+    | |-DeclRefExpr 0x127940d60 <col:2> 'int' lvalue Var 0x127940a60 'nr_subheaders' 'int'
+    | `-CallExpr 0x127940ee0 <col:18, col:56> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x127940e60 <col:18> 'int ()' Function 0x127940da8 'count_subheaders' 'int ()'
+    |   `-RecoveryExpr 0x127940eb8 <col:35, col:43> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x127940e80 <col:35> 'struct ctl_table_header *' lvalue ParmVar 0x127928648 'header' 'struct ctl_table_header *'
+    |-IfStmt 0x127943b20 <line:10:2, line:23:2>
+    | |-CallExpr 0x1279410b8 <line:10:6, col:32> 'int'
+    | | |-ImplicitCastExpr 0x1279410a0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x127941008 <col:6> 'int ()' Function 0x127940f50 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x127941080 <col:15, col:31> 'int' '>'
+    | |   |-ImplicitCastExpr 0x127941068 <col:15> 'int' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x127941028 <col:15> 'int' lvalue Var 0x127940a60 'nr_subheaders' 'int'
+    | |   `-IntegerLiteral 0x127941048 <col:31> 'int' 1
+    | `-CompoundStmt 0x127943ae0 <col:35, line:23:2>
+    |   |-DeclStmt 0x127941230 <line:11:3, col:39>
+    |   | `-VarDecl 0x1279411c8 <col:3, col:29> col:29 used subheaders 'struct ctl_table_header **'
+    |   |-DeclStmt 0x1279412c8 <line:12:3, col:8>
+    |   | `-VarDecl 0x127941260 <col:3, col:7> col:7 used i 'int'
+    |   |-BinaryOperator 0x127941418 <line:14:3, col:55> 'struct ctl_table_header **' contains-errors '='
+    |   | |-DeclRefExpr 0x1279412e0 <col:3> 'struct ctl_table_header **' lvalue Var 0x1279411c8 'subheaders' 'struct ctl_table_header **'
+    |   | `-CStyleCastExpr 0x1279413f0 <col:16, col:55> 'struct ctl_table_header **' contains-errors <Dependent>
+    |   |   `-ParenExpr 0x1279413d0 <col:44, col:55> '<dependent type>' contains-errors lvalue
+    |   |     `-RecoveryExpr 0x127941358 <col:45, col:54> '<dependent type>' contains-errors lvalue
+    |   |       |-DeclRefExpr 0x127941300 <col:45> 'struct ctl_table_header *' lvalue ParmVar 0x127928648 'header' 'struct ctl_table_header *'
+    |   |       `-IntegerLiteral 0x127941320 <col:54> 'int' 1
+    |   |-ForStmt 0x127943a00 <line:15:3, line:20:3>
+    |   | |-BinaryOperator 0x1279414d0 <line:15:8, col:27> 'int' '='
+    |   | | |-DeclRefExpr 0x127941438 <col:8> 'int' lvalue Var 0x127941260 'i' 'int'
+    |   | | `-BinaryOperator 0x1279414b0 <col:12, col:27> 'int' '-'
+    |   | |   |-ImplicitCastExpr 0x127941498 <col:12> 'int' <LValueToRValue>
+    |   | |   | `-DeclRefExpr 0x127941458 <col:12> 'int' lvalue Var 0x127940a60 'nr_subheaders' 'int'
+    |   | |   `-IntegerLiteral 0x127941478 <col:27> 'int' 1
+    |   | |-<<<NULL>>>
+    |   | |-BinaryOperator 0x127941548 <col:30, col:35> 'int' '>='
+    |   | | |-ImplicitCastExpr 0x127941530 <col:30> 'int' <LValueToRValue>
+    |   | | | `-DeclRefExpr 0x1279414f0 <col:30> 'int' lvalue Var 0x127941260 'i' 'int'
+    |   | | `-IntegerLiteral 0x127941510 <col:35> 'int' 0
+    |   | |-UnaryOperator 0x127941588 <col:38, col:39> 'int' postfix '--'
+    |   | | `-DeclRefExpr 0x127941568 <col:38> 'int' lvalue Var 0x127941260 'i' 'int'
+    |   | `-CompoundStmt 0x1279439d0 <col:43, line:20:3>
+    |   |   |-DeclStmt 0x1279416d8 <line:16:4, col:49>
+    |   |   | `-VarDecl 0x1279415c8 <col:4, col:48> col:29 used subh 'struct ctl_table_header *' cinit
+    |   |   |   `-ImplicitCastExpr 0x1279416c0 <col:36, col:48> 'struct ctl_table_header *' <LValueToRValue>
+    |   |   |     `-ArraySubscriptExpr 0x1279416a0 <col:36, col:48> 'struct ctl_table_header *' lvalue
+    |   |   |       |-ImplicitCastExpr 0x127941670 <col:36> 'struct ctl_table_header **' <LValueToRValue>
+    |   |   |       | `-DeclRefExpr 0x127941630 <col:36> 'struct ctl_table_header **' lvalue Var 0x1279411c8 'subheaders' 'struct ctl_table_header **'
+    |   |   |       `-ImplicitCastExpr 0x127941688 <col:47> 'int' <LValueToRValue>
+    |   |   |         `-DeclRefExpr 0x127941650 <col:47> 'int' lvalue Var 0x127941260 'i' 'int'
+    |   |   |-DeclStmt 0x127941938 <line:17:4, col:49>
+    |   |   | |-RecordDecl 0x1279416f0 <col:4, col:11> col:11 struct ctl_table
+    |   |   | `-VarDecl 0x127941858 <col:4, col:36> col:22 used table 'struct ctl_table *' cinit
+    |   |   |   `-RecoveryExpr 0x1279418f8 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x1279418c0 <col:30> 'struct ctl_table_header *' lvalue Var 0x1279415c8 'subh' 'struct ctl_table_header *'
+    |   |   |-CallExpr 0x127943818 <line:18:4, col:32> 'void'
+    |   |   | |-ImplicitCastExpr 0x127943800 <col:4> 'void (*)(struct ctl_table_header *)' <FunctionToPointerDecay>
+    |   |   | | `-DeclRefExpr 0x127941950 <col:4> 'void (struct ctl_table_header *)' Function 0x127928750 'unregister_sysctl_table' 'void (struct ctl_table_header *)'
+    |   |   | `-ImplicitCastExpr 0x127943840 <col:28> 'struct ctl_table_header *' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x127941970 <col:28> 'struct ctl_table_header *' lvalue Var 0x1279415c8 'subh' 'struct ctl_table_header *'
+    |   |   `-CallExpr 0x127943990 <line:19:4, col:15> 'int' contains-errors
+    |   |     |-ImplicitCastExpr 0x127943978 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x127943938 <col:4> 'int ()' Function 0x127943880 'kfree' 'int ()'
+    |   |     `-ImplicitCastExpr 0x1279439b8 <col:10> 'struct ctl_table *' contains-errors <LValueToRValue>
+    |   |       `-DeclRefExpr 0x127943958 <col:10> 'struct ctl_table *' contains-errors lvalue Var 0x127941858 'table' 'struct ctl_table *'
+    |   |-CallExpr 0x127943a90 <line:21:3, col:15> 'int'
+    |   | |-ImplicitCastExpr 0x127943a78 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x127943a38 <col:3> 'int ()' Function 0x127943880 'kfree' 'int ()'
+    |   | `-ImplicitCastExpr 0x127943ab8 <col:9> 'struct ctl_table_header *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x127943a58 <col:9> 'struct ctl_table_header *' lvalue ParmVar 0x127928648 'header' 'struct ctl_table_header *'
+    |   `-ReturnStmt 0x127943ad0 <line:22:3>
+    |-CallExpr 0x127943cd0 <line:25:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x127943c20 <col:2> 'int ()' Function 0x127943b68 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x127943cb8 <col:12, col:13> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x127943c98 <col:13> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x127943e30 <line:26:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x127943e18 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x127943dd8 <col:2> 'int ()' Function 0x127943d20 'drop_sysctl_table' 'int ()'
+    | `-ImplicitCastExpr 0x127943e58 <col:20> 'struct ctl_table_header *' <LValueToRValue>
+    |   `-DeclRefExpr 0x127943df8 <col:20> 'struct ctl_table_header *' lvalue ParmVar 0x127928648 'header' 'struct ctl_table_header *'
+    `-CallExpr 0x127944000 <line:27:2, col:26> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x127943f50 <col:2> 'int ()' Function 0x127943e98 'spin_unlock' 'int ()'
+      `-UnaryOperator 0x127943fe8 <col:14, col:15> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x127943fc8 <col:15> '<dependent type>' contains-errors lvalue

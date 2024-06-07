@@ -1,0 +1,96 @@
+`-FunctionDecl 0x13b827668  line:1:5 invalid sctp_do_peeloff 'int (struct sock *, int, struct socket **)'
+  |-ParmVarDecl 0x13b80e248 <col:21, col:34> col:34 used sk 'struct sock *'
+  |-ParmVarDecl 0x13b80e2e0 <col:38, col:51> col:51 invalid id 'int'
+  |-ParmVarDecl 0x13b827528 <col:55, col:71> col:71 used sockp 'struct socket **'
+  `-CompoundStmt 0x13b82e0e8 <line:2:1, line:35:1>
+    |-DeclStmt 0x13b827b08 <line:3:2, col:55>
+    | |-RecordDecl 0x13b827728 <col:2, col:9> col:9 struct sctp_association
+    | `-VarDecl 0x13b827898 <col:2, col:54> col:27 used asoc 'struct sctp_association *' cinit
+    |   `-CallExpr 0x13b827ac0 <col:34, col:54> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b827a60 <col:34> 'int ()' Function 0x13b8279a8 'sctp_id2assoc' 'int ()'
+    |     |-DeclRefExpr 0x13b827a80 <col:48> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    |     `-RecoveryExpr 0x13b827aa0 <col:52> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13b827ec8 <line:4:2, col:36>
+    | |-RecordDecl 0x13b827b20 <col:2, col:9> col:9 struct sctp_sock
+    | `-VarDecl 0x13b827c88 <col:2, col:35> col:20 used sp 'struct sctp_sock *' cinit
+    |   `-ImplicitCastExpr 0x13b827e98 <col:25, col:35> 'struct sctp_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x13b827e58 <col:25, col:35> 'int'
+    |       |-ImplicitCastExpr 0x13b827e40 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13b827dd0 <col:25> 'int ()' Function 0x13b827d18 'sctp_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x13b827e80 <col:33> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13b827df0 <col:33> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    |-DeclStmt 0x13b827fd0 <line:5:2, col:21>
+    | `-VarDecl 0x13b827f68 <col:2, col:17> col:17 used sock 'struct socket *'
+    |-DeclStmt 0x13b828088 <line:6:2, col:13>
+    | `-VarDecl 0x13b828000 <col:2, col:12> col:6 used err 'int' cinit
+    |   `-IntegerLiteral 0x13b828068 <col:12> 'int' 0
+    |-IfStmt 0x13b828198 <line:8:2, line:9:11>
+    | |-UnaryOperator 0x13b8280d8 <line:8:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13b8280c0 <col:7> 'struct sctp_association *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b8280a0 <col:7> 'struct sctp_association *' contains-errors lvalue Var 0x13b827898 'asoc' 'struct sctp_association *'
+    | `-ReturnStmt 0x13b828188 <line:9:3, col:11>
+    |   `-UnaryOperator 0x13b828170 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13b828158 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13b828138 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13b82d400 <line:12:2, line:13:11>
+    | |-CallExpr 0x13b828330 <line:12:6, col:34> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x13b828298 <col:6> 'int ()' Function 0x13b8281e0 'waitqueue_active' 'int ()'
+    | | `-UnaryOperator 0x13b828318 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x13b8282f0 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13b8282b8 <col:24> 'struct sctp_association *' contains-errors lvalue Var 0x13b827898 'asoc' 'struct sctp_association *'
+    | `-ReturnStmt 0x13b8283f0 <line:13:3, col:11>
+    |   `-UnaryOperator 0x13b8283d8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13b8283c0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13b8283a0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13b82d6b0 <line:16:2, line:17:11>
+    | |-UnaryOperator 0x13b82d5f0 <line:16:6, col:25> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13b82d5c0 <col:7, col:25> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13b82d500 <col:7> 'int ()' Function 0x13b82d448 'sctp_style' 'int ()'
+    | |   |-DeclRefExpr 0x13b82d520 <col:18> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    | |   `-RecoveryExpr 0x13b82d5a0 <col:22> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x13b82d6a0 <line:17:3, col:11>
+    |   `-UnaryOperator 0x13b82d688 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x13b82d670 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13b82d650 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x13b82d9c8 <line:20:2, col:70> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13b82d6d0 <col:2> 'int' lvalue Var 0x13b828000 'err' 'int'
+    | `-CallExpr 0x13b82d988 <col:8, col:70> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b82d7d0 <col:8> 'int ()' Function 0x13b82d718 'sock_create' 'int ()'
+    |   |-RecoveryExpr 0x13b82d828 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x13b82d7f0 <col:20> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    |   |-RecoveryExpr 0x13b82d948 <col:35> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x13b82d968 <col:51> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x13b82d8d0 <col:65, col:66> 'struct socket **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x13b82d880 <col:66> 'struct socket *' lvalue Var 0x13b827f68 'sock' 'struct socket *'
+    |-IfStmt 0x13b82daa8 <line:21:2, line:22:10>
+    | |-BinaryOperator 0x13b82da40 <line:21:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x13b82da28 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13b82d9e8 <col:6> 'int' lvalue Var 0x13b828000 'err' 'int'
+    | | `-IntegerLiteral 0x13b82da08 <col:12> 'int' 0
+    | `-ReturnStmt 0x13b82da98 <line:22:3, col:10>
+    |   `-ImplicitCastExpr 0x13b82da80 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x13b82da60 <col:10> 'int' lvalue Var 0x13b828000 'err' 'int'
+    |-CallExpr 0x13b82dc68 <line:24:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b82dba8 <col:2> 'int ()' Function 0x13b82daf0 'sctp_copy_sock' 'int ()'
+    | |-RecoveryExpr 0x13b82dc00 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13b82dbc8 <col:17> 'struct socket *' lvalue Var 0x13b827f68 'sock' 'struct socket *'
+    | |-DeclRefExpr 0x13b82dc28 <col:27> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    | `-DeclRefExpr 0x13b82dc48 <col:31> 'struct sctp_association *' contains-errors lvalue Var 0x13b827898 'asoc' 'struct sctp_association *'
+    |-CallExpr 0x13b82de28 <line:27:2, col:50> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x13b82dd00 <col:2, col:10> '<dependent type>' contains-errors lvalue ->to_sk_daddr
+    | | `-RecoveryExpr 0x13b82dcd8 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13b82dca0 <col:2> 'struct sctp_sock *' lvalue Var 0x13b827c88 'sp' 'struct sctp_sock *'
+    | |-UnaryOperator 0x13b82ddf0 <col:22, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x13b82dda8 <col:23, col:34> '<dependent type>' contains-errors lvalue .primary_addr
+    | |   `-RecoveryExpr 0x13b82dd80 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13b82dd48 <col:23> 'struct sctp_association *' contains-errors lvalue Var 0x13b827898 'asoc' 'struct sctp_association *'
+    | `-DeclRefExpr 0x13b82de08 <col:48> 'struct sock *' lvalue ParmVar 0x13b80e248 'sk' 'struct sock *'
+    |-BinaryOperator 0x13b82e080 <line:32:2, col:11> 'struct socket *' '='
+    | |-UnaryOperator 0x13b82e030 <col:2, col:3> 'struct socket *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x13b82e018 <col:3> 'struct socket **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b82dff8 <col:3> 'struct socket **' lvalue ParmVar 0x13b827528 'sockp' 'struct socket **'
+    | `-ImplicitCastExpr 0x13b82e068 <col:11> 'struct socket *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13b82e048 <col:11> 'struct socket *' lvalue Var 0x13b827f68 'sock' 'struct socket *'
+    `-ReturnStmt 0x13b82e0d8 <line:34:2, col:9>
+      `-ImplicitCastExpr 0x13b82e0c0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13b82e0a0 <col:9> 'int' lvalue Var 0x13b828000 'err' 'int'

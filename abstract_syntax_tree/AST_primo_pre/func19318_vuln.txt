@@ -1,0 +1,86 @@
+`-FunctionDecl 0x151928758  line:1:1 scsi_nl_rcv_msg 'int (struct sk_buff *)'
+  |-ParmVarDecl 0x151928648 <col:17, col:33> col:33 used skb 'struct sk_buff *'
+  `-CompoundStmt 0x151944a88 <line:2:1, line:71:1>
+    |-DeclStmt 0x151940c38 <line:3:2, col:22>
+    | |-RecordDecl 0x151940a50 <col:2, col:9> col:9 struct nlmsghdr
+    | `-VarDecl 0x151940bb8 <col:2, col:19> col:19 used nlh 'struct nlmsghdr *'
+    |-DeclStmt 0x151940e38 <line:4:2, col:25>
+    | |-RecordDecl 0x151940c50 <col:2, col:9> col:9 struct scsi_nl_hdr
+    | `-VarDecl 0x151940db8 <col:2, col:22> col:22 used hdr 'struct scsi_nl_hdr *'
+    |-DeclStmt 0x151940f80 <line:6:2, col:16>
+    | |-VarDecl 0x151940e80 <col:2, col:6> col:6 used err 'int'
+    | `-VarDecl 0x151940f00 <col:2, col:11> col:11 used tport 'int'
+    `-WhileStmt 0x151944a68 <line:8:2, line:70:2>
+      |-BinaryOperator 0x151941050 <line:8:9, col:21> 'int' contains-errors '>='
+      | |-RecoveryExpr 0x151940fd0 <col:9, col:14> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x151940f98 <col:9> 'struct sk_buff *' lvalue ParmVar 0x151928648 'skb' 'struct sk_buff *'
+      | `-RecoveryExpr 0x151941030 <col:21> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x151944a00 <col:35, line:70:2>
+        |-BinaryOperator 0x1519410b0 <line:9:3, col:9> 'int' '='
+        | |-DeclRefExpr 0x151941070 <col:3> 'int' lvalue Var 0x151940e80 'err' 'int'
+        | `-IntegerLiteral 0x151941090 <col:9> 'int' 0
+        |-BinaryOperator 0x1519412e0 <line:11:3, col:22> 'struct nlmsghdr *' '='
+        | |-DeclRefExpr 0x1519410d0 <col:3> 'struct nlmsghdr *' lvalue Var 0x151940bb8 'nlh' 'struct nlmsghdr *'
+        | `-ImplicitCastExpr 0x1519412c8 <col:9, col:22> 'struct nlmsghdr *' <IntegralToPointer>
+        |   `-CallExpr 0x151941288 <col:9, col:22> 'int'
+        |     |-ImplicitCastExpr 0x151941270 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x151941200 <col:9> 'int ()' Function 0x151941148 'nlmsg_hdr' 'int ()'
+        |     `-ImplicitCastExpr 0x1519412b0 <col:19> 'struct sk_buff *' <LValueToRValue>
+        |       `-DeclRefExpr 0x151941220 <col:19> 'struct sk_buff *' lvalue ParmVar 0x151928648 'skb' 'struct sk_buff *'
+        |-IfStmt 0x1519416a0 <line:12:3, line:17:3>
+        | |-RecoveryExpr 0x151941540 <line:12:7, line:13:33> '_Bool' contains-errors
+        | `-CompoundStmt 0x151941688 <col:36, line:17:3>
+        |   `-ReturnStmt 0x151941678 <line:16:4>
+        |-IfStmt 0x151942ea0 <line:23:3, line:26:3>
+        | |-RecoveryExpr 0x1519419e0 <line:23:7, col:26> '_Bool' contains-errors
+        | `-CompoundStmt 0x151942e88 <col:46, line:26:3>
+        |   `-GotoStmt 0x151942e70 <line:25:4, col:9> 'next_msg' 0x151942e20
+        |-BinaryOperator 0x151943070 <line:28:3, col:23> 'struct scsi_nl_hdr *' '='
+        | |-DeclRefExpr 0x151942ec0 <col:3> 'struct scsi_nl_hdr *' lvalue Var 0x151940db8 'hdr' 'struct scsi_nl_hdr *'
+        | `-ImplicitCastExpr 0x151943058 <col:9, col:23> 'struct scsi_nl_hdr *' <IntegralToPointer>
+        |   `-CallExpr 0x151943018 <col:9, col:23> 'int'
+        |     |-ImplicitCastExpr 0x151943000 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        |     | `-DeclRefExpr 0x151942fc0 <col:9> 'int ()' Function 0x151942f08 'nlmsg_data' 'int ()'
+        |     `-ImplicitCastExpr 0x151943040 <col:20> 'struct nlmsghdr *' <LValueToRValue>
+        |       `-DeclRefExpr 0x151942fe0 <col:20> 'struct nlmsghdr *' lvalue Var 0x151940bb8 'nlh' 'struct nlmsghdr *'
+        |-IfStmt 0x1519431c0 <line:29:3, line:33:3>
+        | |-RecoveryExpr 0x151943150 <line:29:7, line:30:35> '_Bool' contains-errors
+        | `-CompoundStmt 0x1519431a8 <col:38, line:33:3>
+        |   `-GotoStmt 0x151943190 <line:32:4, col:9> 'next_msg' 0x151942e20
+        |-IfStmt 0x151943350 <line:35:3, line:38:3>
+        | |-RecoveryExpr 0x1519432e0 <line:35:7, col:29> '_Bool' contains-errors
+        | `-CompoundStmt 0x151943338 <col:32, line:38:3>
+        |   `-GotoStmt 0x151943320 <line:37:4, col:9> 'next_msg' 0x151942e20
+        |-IfStmt 0x1519435d0 <line:40:3, line:44:3>
+        | |-RecoveryExpr 0x1519434a0 <line:40:7, col:51> '_Bool' contains-errors
+        | `-CompoundStmt 0x1519435b8 <col:54, line:44:3>
+        |   `-GotoStmt 0x1519435a0 <line:43:4, col:9> 'next_msg' 0x151942e20
+        |-BinaryOperator 0x151943670 <line:47:3, col:16> 'int' contains-errors '='
+        | |-DeclRefExpr 0x1519435f0 <col:3> 'int' lvalue Var 0x151940f00 'tport' 'int'
+        | `-RecoveryExpr 0x151943648 <col:11, col:16> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x151943610 <col:11> 'struct scsi_nl_hdr *' lvalue Var 0x151940db8 'hdr' 'struct scsi_nl_hdr *'
+        |-IfStmt 0x151943968 <line:48:3, line:63:4> has_else
+        | |-RecoveryExpr 0x1519436b0 <line:48:7, col:16> '_Bool' contains-errors
+        | |-CompoundStmt 0x151943928 <col:35, line:61:3>
+        | | `-SwitchStmt 0x151943748 <line:49:4, line:57:4>
+        | |   |-ImplicitCastExpr 0x151943730 <line:49:12, col:17> '<dependent type>' contains-errors <LValueToRValue>
+        | |   | `-RecoveryExpr 0x151943708 <col:12, col:17> '<dependent type>' contains-errors lvalue
+        | |   |   `-DeclRefExpr 0x1519436d0 <col:12> 'struct scsi_nl_hdr *' lvalue Var 0x151940db8 'hdr' 'struct scsi_nl_hdr *'
+        | |   `-CompoundStmt 0x1519437e8 <col:26, line:57:4>
+        | |     |-BreakStmt 0x151943790 <line:53:5>
+        | |     |-DefaultStmt 0x1519437c0 <line:54:4, col:11>
+        | |     | `-NullStmt 0x1519437b8 <col:11>
+        | |     `-BreakStmt 0x1519437e0 <line:56:5>
+        | `-NullStmt 0x151943960 <line:63:4>
+        `-LabelStmt 0x151943c70 <line:65:1, line:67:29> 'next_msg'
+          `-IfStmt 0x151943c50 <line:66:3, line:67:29>
+            |-RecoveryExpr 0x151943a38 <line:66:7, col:45> '_Bool' contains-errors
+            `-CallExpr 0x151943bd0 <line:67:4, col:29> 'int'
+              |-ImplicitCastExpr 0x151943bb8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x151943b38 <col:4> 'int ()' Function 0x151943a80 'netlink_ack' 'int ()'
+              |-ImplicitCastExpr 0x151943c08 <col:16> 'struct sk_buff *' <LValueToRValue>
+              | `-DeclRefExpr 0x151943b58 <col:16> 'struct sk_buff *' lvalue ParmVar 0x151928648 'skb' 'struct sk_buff *'
+              |-ImplicitCastExpr 0x151943c20 <col:21> 'struct nlmsghdr *' <LValueToRValue>
+              | `-DeclRefExpr 0x151943b78 <col:21> 'struct nlmsghdr *' lvalue Var 0x151940bb8 'nlh' 'struct nlmsghdr *'
+              `-ImplicitCastExpr 0x151943c38 <col:26> 'int' <LValueToRValue>
+                `-DeclRefExpr 0x151943b98 <col:26> 'int' lvalue Var 0x151940e80 'err' 'int'

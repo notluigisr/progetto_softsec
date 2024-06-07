@@ -1,0 +1,21 @@
+`-FunctionDecl 0x12b145b78  line:1:20 invalid bio_check_ro 'int (struct bio *, struct hd_struct *)' static inline
+  |-ParmVarDecl 0x12b128668 <col:33, col:45> col:45 used bio 'struct bio *'
+  |-ParmVarDecl 0x12b145a58 <col:50, col:68> col:68 used part 'struct hd_struct *'
+  `-CompoundStmt 0x12b146278 <line:2:1, line:14:1>
+    `-IfStmt 0x12b146240 <line:3:2, line:11:2>
+      |-BinaryOperator 0x12b145ff8 <line:3:6, col:45> 'int' contains-errors '&&'
+      | |-RecoveryExpr 0x12b145c68 <col:6, col:12> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x12b145c30 <col:6> 'struct hd_struct *' lvalue ParmVar 0x12b145a58 'part' 'struct hd_struct *'
+      | `-CallExpr 0x12b145fd0 <col:22, col:45> 'int'
+      |   |-ImplicitCastExpr 0x12b145fb8 <col:22> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x12b145df0 <col:22> 'int ()' Function 0x12b145d38 'op_is_write' 'int ()'
+      |   `-CallExpr 0x12b145f78 <col:34, col:44> 'int'
+      |     |-ImplicitCastExpr 0x12b145f60 <col:34> 'int (*)()' <FunctionToPointerDecay>
+      |     | `-DeclRefExpr 0x12b145ef0 <col:34> 'int ()' Function 0x12b145e38 'bio_op' 'int ()'
+      |     `-ImplicitCastExpr 0x12b145fa0 <col:41> 'struct bio *' <LValueToRValue>
+      |       `-DeclRefExpr 0x12b145f10 <col:41> 'struct bio *' lvalue ParmVar 0x12b128668 'bio' 'struct bio *'
+      `-CompoundStmt 0x12b146220 <col:48, line:11:2>
+        |-DeclStmt 0x12b1460a8 <line:4:3, col:24>
+        | `-VarDecl 0x12b146040 <col:3, col:8> col:8 invalid b 'char'
+        `-ReturnStmt 0x12b146210 <line:10:3, col:10>
+          `-RecoveryExpr 0x12b1461f0 <col:10> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,60 @@
+`-FunctionDecl 0x1441229b8  line:1:26 ip6_sk_dst_check 'struct dst_entry *(struct sock *, struct dst_entry *, const struct flowi6 *)' static
+  |-ParmVarDecl 0x14480e2e8 <col:43, col:56> col:56 used sk 'struct sock *'
+  |-ParmVarDecl 0x144122628 <line:2:8, col:26> col:26 used dst 'struct dst_entry *'
+  |-ParmVarDecl 0x1441227f8 <line:3:8, col:29> col:29 used fl6 'const struct flowi6 *'
+  `-CompoundStmt 0x144125dc0 <line:4:1, line:23:1>
+    |-DeclStmt 0x144122eb8 <line:5:2, col:38>
+    | |-RecordDecl 0x144122ac0 <col:2, col:9> col:9 struct ipv6_pinfo
+    | `-VarDecl 0x144122c28 <col:2, col:37> col:21 used np 'struct ipv6_pinfo *' cinit
+    |   `-ImplicitCastExpr 0x144122e88 <col:26, col:37> 'struct ipv6_pinfo *' <IntegralToPointer>
+    |     `-CallExpr 0x144122e48 <col:26, col:37> 'int'
+    |       |-ImplicitCastExpr 0x144122e30 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x144122dc0 <col:26> 'int ()' Function 0x144122d08 'inet6_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x144122e70 <col:35> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x144122de0 <col:35> 'struct sock *' lvalue ParmVar 0x14480e2e8 'sk' 'struct sock *'
+    |-DeclStmt 0x1441231a0 <line:6:2, col:46>
+    | |-RecordDecl 0x144122ed0 <col:2, col:9> col:9 struct rt6_info
+    | `-VarDecl 0x144123038 <col:2, col:43> col:19 used rt 'struct rt6_info *' cinit
+    |   `-CStyleCastExpr 0x144123160 <col:24, col:43> 'struct rt6_info *' <BitCast>
+    |     `-ImplicitCastExpr 0x144123148 <col:43> 'struct dst_entry *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x1441230a0 <col:43> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'
+    |-IfStmt 0x144123270 <line:8:2, line:9:8>
+    | |-UnaryOperator 0x1441231f0 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1441231d8 <col:7> 'struct dst_entry *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1441231b8 <col:7> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'
+    | `-GotoStmt 0x144123258 <line:9:3, col:8> 'out' 0x144123208
+    |-IfStmt 0x144125d38 <line:12:2, line:19:2>
+    | |-BinaryOperator 0x144125ae8 <line:12:6, line:16:62> 'int' contains-errors '||'
+    | | |-CallExpr 0x1441234e0 <line:12:6, col:62> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x144123370 <col:6> 'int ()' Function 0x1441232b8 'ip6_rt_check' 'int ()'
+    | | | |-UnaryOperator 0x1441233f0 <col:19, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x1441233c8 <col:20, col:24> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x144123390 <col:20> 'struct rt6_info *' lvalue Var 0x144123038 'rt' 'struct rt6_info *'
+    | | | |-UnaryOperator 0x144123468 <col:34, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-RecoveryExpr 0x144123440 <col:35, col:40> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x144123408 <col:35> 'const struct flowi6 *' lvalue ParmVar 0x1441227f8 'fl6' 'const struct flowi6 *'
+    | | | `-RecoveryExpr 0x1441234b8 <col:47, col:51> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x144123480 <col:47> 'struct ipv6_pinfo *' lvalue Var 0x144122c28 'np' 'struct ipv6_pinfo *'
+    | | `-ParenExpr 0x144125ac8 <line:16:6, col:62> 'int' contains-errors
+    | |   `-BinaryOperator 0x144125aa8 <col:7, col:55> 'int' contains-errors '&&'
+    | |     |-RecoveryExpr 0x144123550 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x144123518 <col:7> 'const struct flowi6 *' lvalue ParmVar 0x1441227f8 'fl6' 'const struct flowi6 *'
+    | |     `-BinaryOperator 0x144125a88 <col:26, col:55> 'int' contains-errors '!='
+    | |       |-RecoveryExpr 0x1441235b0 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    | |       | `-DeclRefExpr 0x144123578 <col:26> 'const struct flowi6 *' lvalue ParmVar 0x1441227f8 'fl6' 'const struct flowi6 *'
+    | |       `-CXXDependentScopeMemberExpr 0x144125a40 <col:45, col:55> '<dependent type>' contains-errors lvalue ->ifindex
+    | |         `-RecoveryExpr 0x144125a18 <col:45, col:50> '<dependent type>' contains-errors lvalue
+    | |           `-DeclRefExpr 0x1441235d8 <col:45> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'
+    | `-CompoundStmt 0x144125d18 <col:65, line:19:2>
+    |   |-CallExpr 0x144125c40 <line:17:3, col:18> 'int'
+    |   | |-ImplicitCastExpr 0x144125c28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x144125be8 <col:3> 'int ()' Function 0x144125b30 'dst_release' 'int ()'
+    |   | `-ImplicitCastExpr 0x144125c68 <col:15> 'struct dst_entry *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x144125c08 <col:15> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'
+    |   `-BinaryOperator 0x144125cf8 <line:18:3, col:9> 'struct dst_entry *' contains-errors '='
+    |     |-DeclRefExpr 0x144125c80 <col:3> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'
+    |     `-RecoveryExpr 0x144125cd8 <col:9> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x144125da0 <line:21:1, line:22:9> 'out'
+      `-ReturnStmt 0x144125d90 <col:2, col:9>
+        `-ImplicitCastExpr 0x144125d78 <col:9> 'struct dst_entry *' <LValueToRValue>
+          `-DeclRefExpr 0x144125d58 <col:9> 'struct dst_entry *' lvalue ParmVar 0x144122628 'dst' 'struct dst_entry *'

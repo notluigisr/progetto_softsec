@@ -1,0 +1,25 @@
+`-FunctionDecl 0x12480de68  line:1:12 compare_recurid 'int (const void *, const void *)' static
+  |-ParmVarDecl 0x12480dd08 <col:28, col:40> col:40 used key 'const void *'
+  |-ParmVarDecl 0x12480dd88 <col:45, col:57> col:57 used mem 'const void *'
+  `-CompoundStmt 0x124828630 <line:2:1, line:7:1>
+    |-DeclStmt 0x12480e240 <line:3:5, col:63>
+    | |-RecordDecl 0x12480df68 <col:5, col:12> col:12 struct icaltimetype
+    | `-VarDecl 0x12480e0d8 <col:5, col:60> col:26 used recurid 'struct icaltimetype *' cinit
+    |   `-CStyleCastExpr 0x12480e200 <col:36, col:60> 'struct icaltimetype *' <BitCast>
+    |     `-ImplicitCastExpr 0x12480e1e8 <col:60> 'const void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x12480e140 <col:60> 'const void *' lvalue ParmVar 0x12480dd08 'key' 'const void *'
+    |-DeclStmt 0x124827f70 <line:4:5, col:50>
+    | |-RecordDecl 0x12480e258 <col:5, col:12> col:12 struct freebusy
+    | `-VarDecl 0x124827e00 <col:5, col:47> col:22 used fb 'struct freebusy *' cinit
+    |   `-CStyleCastExpr 0x124827f30 <col:27, col:47> 'struct freebusy *' <BitCast>
+    |     `-ImplicitCastExpr 0x124827f18 <col:47> 'const void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x124827e68 <col:47> 'const void *' lvalue ParmVar 0x12480dd88 'mem' 'const void *'
+    `-ReturnStmt 0x124828620 <line:6:5, col:52>
+      `-CallExpr 0x1248285f0 <col:12, col:52> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1248280b0 <col:12> 'int ()' Function 0x124827ff8 'icaltime_compare' 'int ()'
+        |-UnaryOperator 0x124828108 <col:29, col:30> 'struct icaltimetype' lvalue prefix '*' cannot overflow
+        | `-ImplicitCastExpr 0x1248280f0 <col:30> 'struct icaltimetype *' <LValueToRValue>
+        |   `-DeclRefExpr 0x1248280d0 <col:30> 'struct icaltimetype *' lvalue Var 0x12480e0d8 'recurid' 'struct icaltimetype *'
+        `-CXXDependentScopeMemberExpr 0x1248285a8 <col:39, col:47> '<dependent type>' contains-errors lvalue .start
+          `-RecoveryExpr 0x124828580 <col:39, col:43> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x124828120 <col:39> 'struct freebusy *' lvalue Var 0x124827e00 'fb' 'struct freebusy *'

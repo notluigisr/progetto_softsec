@@ -1,0 +1,30 @@
+`-FunctionDecl 0x140945c88  line:1:12 invalid __ipv6_select_ident 'int (struct net *, const struct in6_addr *, const struct in6_addr *)' static
+  |-ParmVarDecl 0x140928668 <col:32, col:44> col:44 used net 'struct net *'
+  |-ParmVarDecl 0x140945a58 <line:2:11, col:34> col:34 dst 'const struct in6_addr *'
+  |-ParmVarDecl 0x140945b48 <line:3:11, col:34> col:34 src 'const struct in6_addr *'
+  `-CompoundStmt 0x140946b28 <line:4:1, line:27:1>
+    |-DeclStmt 0x140946070 <line:5:2, line:8:33>
+    | |-RecordDecl 0x140945d48 <line:5:8, line:8:2> line:5:8 invalid struct definition
+    | | |-FieldDecl 0x140945e10 <line:6:3, col:19> col:19 invalid dst 'struct in6_addr'
+    | | `-FieldDecl 0x140945e80 <line:7:3, col:19> col:19 invalid src 'struct in6_addr'
+    | `-FunctionDecl 0x140945fa0 parent 0x140855608 <line:5:2, line:8:31> col:4 invalid __aligned 'const struct (unnamed struct at dataset_diviso_filec/func9543_vuln.c:5:8) ()'
+    `-IfStmt 0x1409466e8 <line:15:2, line:17:33>
+      |-CallExpr 0x1409463e8 <line:15:6, col:56> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1409461e0 <col:6> 'int ()' Function 0x140946128 'unlikely' 'int ()'
+      | `-CallExpr 0x1409463c0 <col:15, col:55> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x1409462e0 <col:15> 'int ()' Function 0x140946228 'siphash_key_is_zero' 'int ()'
+      |   `-UnaryOperator 0x1409463a8 <col:35, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-CXXDependentScopeMemberExpr 0x140946360 <col:36, col:46> '<dependent type>' contains-errors lvalue .ip_id_key
+      |       `-RecoveryExpr 0x140946338 <col:36, col:41> '<dependent type>' contains-errors lvalue
+      |         `-DeclRefExpr 0x140946300 <col:36> 'struct net *' lvalue ParmVar 0x140928668 'net' 'struct net *'
+      `-CallExpr 0x1409466b8 <line:16:3, line:17:33> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1409464f0 <line:16:3> 'int ()' Function 0x140946438 'get_random_bytes' 'int ()'
+        |-UnaryOperator 0x1409465b8 <col:20, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-CXXDependentScopeMemberExpr 0x140946570 <col:21, col:31> '<dependent type>' contains-errors lvalue .ip_id_key
+        |   `-RecoveryExpr 0x140946548 <col:21, col:26> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x140946510 <col:21> 'struct net *' lvalue ParmVar 0x140928668 'net' 'struct net *'
+        `-UnaryExprOrTypeTraitExpr 0x140946698 <line:17:6, col:32> 'unsigned long' contains-errors sizeof
+          `-ParenExpr 0x140946678 <col:12, col:32> '<dependent type>' contains-errors lvalue
+            `-CXXDependentScopeMemberExpr 0x140946630 <col:13, col:23> '<dependent type>' contains-errors lvalue .ip_id_key
+              `-RecoveryExpr 0x140946608 <col:13, col:18> '<dependent type>' contains-errors lvalue
+                `-DeclRefExpr 0x1409465d0 <col:13> 'struct net *' lvalue ParmVar 0x140928668 'net' 'struct net *' non_odr_use_unevaluated

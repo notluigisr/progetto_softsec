@@ -1,0 +1,102 @@
+`-FunctionDecl 0x148940dd8  line:1:12 s390_compat_regs_set 'int (struct task_struct *, const struct user_regset *, unsigned int, unsigned int, const void *, int)' static
+  |-ParmVarDecl 0x148928648 <col:33, col:53> col:53 used target 'struct task_struct *'
+  |-ParmVarDecl 0x148940a28 <line:2:5, col:31> col:31 regset 'const struct user_regset *'
+  |-ParmVarDecl 0x148940aa8 <line:3:5, col:18> col:18 used pos 'unsigned int'
+  |-ParmVarDecl 0x148940b28 <col:23, col:36> col:36 used count 'unsigned int'
+  |-ParmVarDecl 0x148940bd8 <line:4:5, col:17> col:17 used kbuf 'const void *'
+  |-ParmVarDecl 0x148940c50 <col:23, col:34> col:34 __user 'int'
+  `-CompoundStmt 0x1489478c0 <line:5:1, line:35:1>
+    |-DeclStmt 0x148940f98 <line:6:2, col:12>
+    | `-VarDecl 0x148940f10 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-IntegerLiteral 0x148940f78 <col:11> 'int' 0
+    |-IfStmt 0x148941260 <line:8:2, line:9:39>
+    | |-BinaryOperator 0x148941040 <line:8:6, col:16> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x148940fb0 <col:6> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    | | `-RecoveryExpr 0x148941020 <col:16> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x148941238 <line:9:3, col:39> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148941170 <col:3> 'int ()' Function 0x1489410b8 'save_access_regs' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x1489411f0 <col:20, col:35> '<dependent type>' contains-errors lvalue .acrs
+    |     `-RecoveryExpr 0x1489411c8 <col:20, col:28> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x148941190 <col:20> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    |-IfStmt 0x148947498 <line:11:2, line:29:2> has_else
+    | |-ImplicitCastExpr 0x1489412a0 <line:11:6> 'const void *' <LValueToRValue>
+    | | `-DeclRefExpr 0x148941280 <col:6> 'const void *' lvalue ParmVar 0x148940bd8 'kbuf' 'const void *'
+    | |-CompoundStmt 0x148941880 <col:12, line:18:2>
+    | | |-DeclStmt 0x148941358 <line:12:3, col:33>
+    | | | `-VarDecl 0x1489412d0 <col:3, col:25> col:25 invalid k 'const int *'
+    | | `-WhileStmt 0x148941860 <line:13:3, line:17:3>
+    | |   |-BinaryOperator 0x148941450 <line:13:10, col:24> 'int' '&&'
+    | |   | |-BinaryOperator 0x1489413e0 <col:10, col:18> 'int' '>'
+    | |   | | |-ImplicitCastExpr 0x1489413b0 <col:10> 'unsigned int' <LValueToRValue>
+    | |   | | | `-DeclRefExpr 0x148941370 <col:10> 'unsigned int' lvalue ParmVar 0x148940b28 'count' 'unsigned int'
+    | |   | | `-ImplicitCastExpr 0x1489413c8 <col:18> 'unsigned int' <IntegralCast>
+    | |   | |   `-IntegerLiteral 0x148941390 <col:18> 'int' 0
+    | |   | `-UnaryOperator 0x148941438 <col:23, col:24> 'int' prefix '!' cannot overflow
+    | |   |   `-ImplicitCastExpr 0x148941420 <col:24> 'int' <LValueToRValue>
+    | |   |     `-DeclRefExpr 0x148941400 <col:24> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    | |   `-CompoundStmt 0x148941838 <col:28, line:17:3>
+    | |     |-BinaryOperator 0x148941658 <line:14:4, col:45> 'int' contains-errors '='
+    | |     | |-DeclRefExpr 0x148941470 <col:4> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    | |     | `-CallExpr 0x148941620 <col:9, col:45> '<dependent type>' contains-errors
+    | |     |   |-DeclRefExpr 0x148941570 <col:9> 'int ()' Function 0x1489414b8 '__poke_user_compat' 'int ()'
+    | |     |   |-DeclRefExpr 0x148941590 <col:28> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    | |     |   |-DeclRefExpr 0x1489415b0 <col:36> 'unsigned int' lvalue ParmVar 0x148940aa8 'pos' 'unsigned int'
+    | |     |   `-UnaryOperator 0x148941608 <col:41, col:43> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |     |     `-UnaryOperator 0x1489415f0 <col:42, col:43> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | |     |       `-RecoveryExpr 0x1489415d0 <col:42> '<dependent type>' contains-errors lvalue
+    | |     |-CompoundAssignOperator 0x148941728 <line:15:4, col:22> 'unsigned int' contains-errors '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    | |     | |-DeclRefExpr 0x148941678 <col:4> 'unsigned int' lvalue ParmVar 0x148940b28 'count' 'unsigned int'
+    | |     | `-UnaryExprOrTypeTraitExpr 0x148941708 <col:13, col:22> 'unsigned long' contains-errors sizeof
+    | |     |   `-ParenExpr 0x1489416e8 <col:19, col:22> '<dependent type>' contains-errors
+    | |     |     `-UnaryOperator 0x1489416d0 <col:20, col:21> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |     |       `-ImplicitCastExpr 0x1489416b8 <col:21> '<dependent type>' contains-errors <LValueToRValue>
+    | |     |         `-RecoveryExpr 0x148941698 <col:21> '<dependent type>' contains-errors lvalue
+    | |     `-CompoundAssignOperator 0x148941808 <line:16:4, col:20> 'unsigned int' contains-errors '+=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    | |       |-DeclRefExpr 0x148941758 <col:4> 'unsigned int' lvalue ParmVar 0x148940aa8 'pos' 'unsigned int'
+    | |       `-UnaryExprOrTypeTraitExpr 0x1489417e8 <col:11, col:20> 'unsigned long' contains-errors sizeof
+    | |         `-ParenExpr 0x1489417c8 <col:17, col:20> '<dependent type>' contains-errors
+    | |           `-UnaryOperator 0x1489417b0 <col:18, col:19> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |             `-ImplicitCastExpr 0x148941798 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    | |               `-RecoveryExpr 0x148941778 <col:19> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x148947478 <line:18:9, line:29:2>
+    |   |-DeclStmt 0x148941920 <line:19:3, col:32>
+    |   | `-VarDecl 0x1489418b8 <col:3, col:25> col:25 invalid __user 'const int'
+    |   `-WhileStmt 0x148947458 <line:20:3, line:28:3>
+    |     |-BinaryOperator 0x148947018 <line:20:10, col:24> 'int' '&&'
+    |     | |-BinaryOperator 0x1489419a8 <col:10, col:18> 'int' '>'
+    |     | | |-ImplicitCastExpr 0x148941978 <col:10> 'unsigned int' <LValueToRValue>
+    |     | | | `-DeclRefExpr 0x148941938 <col:10> 'unsigned int' lvalue ParmVar 0x148940b28 'count' 'unsigned int'
+    |     | | `-ImplicitCastExpr 0x148941990 <col:18> 'unsigned int' <IntegralCast>
+    |     | |   `-IntegerLiteral 0x148941958 <col:18> 'int' 0
+    |     | `-UnaryOperator 0x148947000 <col:23, col:24> 'int' prefix '!' cannot overflow
+    |     |   `-ImplicitCastExpr 0x1489419e8 <col:24> 'int' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x1489419c8 <col:24> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    |     `-CompoundStmt 0x148947438 <col:28, line:28:3>
+    |       |-IfStmt 0x1489471e0 <line:23:4, line:24:5>
+    |       | |-ImplicitCastExpr 0x1489471c0 <line:23:8> 'int' <LValueToRValue>
+    |       | | `-DeclRefExpr 0x1489471a0 <col:8> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    |       | `-BreakStmt 0x1489471d8 <line:24:5>
+    |       `-BinaryOperator 0x148947348 <line:25:4, col:45> 'int' contains-errors '='
+    |         |-DeclRefExpr 0x148947200 <col:4> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    |         `-CallExpr 0x148947310 <col:9, col:45> '<dependent type>' contains-errors
+    |           |-DeclRefExpr 0x148947220 <col:9> 'int ()' Function 0x1489414b8 '__poke_user_compat' 'int ()'
+    |           |-DeclRefExpr 0x148947240 <col:28> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    |           |-DeclRefExpr 0x148947260 <col:36> 'unsigned int' lvalue ParmVar 0x148940aa8 'pos' 'unsigned int'
+    |           `-RecoveryExpr 0x1489472f0 <col:41> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x148947858 <line:31:2, line:32:42>
+    | |-BinaryOperator 0x148947668 <line:31:6, col:27> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x148947608 <col:6, col:12> 'int' '=='
+    | | | |-ImplicitCastExpr 0x1489475f0 <col:6> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x1489474c8 <col:6> 'int' lvalue Var 0x148940f10 'rc' 'int'
+    | | | `-IntegerLiteral 0x1489474e8 <col:12> 'int' 0
+    | | `-BinaryOperator 0x148947648 <col:17, col:27> 'int' contains-errors '=='
+    | |   |-DeclRefExpr 0x148947540 <col:17> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    | |   `-RecoveryExpr 0x148947628 <col:27> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x148947830 <line:32:3, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x148947768 <col:3> 'int ()' Function 0x1489476b0 'restore_access_regs' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x1489477e8 <col:23, col:38> '<dependent type>' contains-errors lvalue .acrs
+    |     `-RecoveryExpr 0x1489477c0 <col:23, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x148947788 <col:23> 'struct task_struct *' lvalue ParmVar 0x148928648 'target' 'struct task_struct *'
+    `-ReturnStmt 0x1489478b0 <line:34:2, col:9>
+      `-ImplicitCastExpr 0x148947898 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x148947878 <col:9> 'int' lvalue Var 0x148940f10 'rc' 'int'

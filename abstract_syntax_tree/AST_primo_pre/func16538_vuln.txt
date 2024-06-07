@@ -1,0 +1,68 @@
+`-FunctionDecl 0x14b827578  line:1:12 invalid smaps_pte_range 'int (int *, unsigned long, unsigned long, struct mm_walk *)' static
+  |-ParmVarDecl 0x14b80dd28 <col:28, col:35> col:35 invalid pmd 'int *'
+  |-ParmVarDecl 0x14b80dda8 <col:40, col:54> col:54 used addr 'unsigned long'
+  |-ParmVarDecl 0x14b80de28 <col:60, col:74> col:74 used end 'unsigned long'
+  |-ParmVarDecl 0x14b827428 <line:2:7, col:23> col:23 used walk 'struct mm_walk *'
+  `-CompoundStmt 0x14b82a078 <line:3:1, line:31:1>
+    |-DeclStmt 0x14b827888 <line:4:2, col:44>
+    | |-RecordDecl 0x14b827640 <col:2, col:9> col:9 struct mem_size_stats
+    | `-VarDecl 0x14b8277a8 <col:2, col:37> col:25 used mss 'struct mem_size_stats *' cinit
+    |   `-RecoveryExpr 0x14b827848 <col:31, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b827810 <col:31> 'struct mm_walk *' lvalue ParmVar 0x14b827428 'walk' 'struct mm_walk *'
+    |-DeclStmt 0x14b827ae8 <line:5:2, col:39>
+    | |-RecordDecl 0x14b8278a0 <col:2, col:9> col:9 struct vm_area_struct
+    | `-VarDecl 0x14b827a08 <col:2, col:36> col:25 used vma 'struct vm_area_struct *' cinit
+    |   `-RecoveryExpr 0x14b827aa8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14b827a70 <col:31> 'struct mem_size_stats *' contains-errors lvalue Var 0x14b8277a8 'mss' 'struct mem_size_stats *'
+    |-CallExpr 0x14b827d70 <line:9:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14b827c90 <col:2> 'int ()' Function 0x14b827bd8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x14b827d58 <col:12, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x14b827d10 <col:13, col:23> '<dependent type>' contains-errors lvalue ->page_table_lock
+    |     `-RecoveryExpr 0x14b827ce8 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14b827cb0 <col:13> 'struct mm_walk *' lvalue ParmVar 0x14b827428 'walk' 'struct mm_walk *'
+    |-IfStmt 0x14b829ae0 <line:10:2, line:23:2> has_else
+    | |-CallExpr 0x14b827ee8 <line:10:6, col:25> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14b827e78 <col:6> 'int ()' Function 0x14b827dc0 'pmd_trans_huge' 'int ()'
+    | | `-UnaryOperator 0x14b827ed0 <col:21, col:22> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x14b827eb8 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x14b827e98 <col:22> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x14b8299a8 <col:28, line:21:2>
+    | | `-IfStmt 0x14b829978 <line:11:3, line:20:3> has_else
+    | |   |-CallExpr 0x14b828060 <line:11:7, col:31> '<dependent type>' contains-errors
+    | |   | |-DeclRefExpr 0x14b827ff0 <col:7> 'int ()' Function 0x14b827f38 'pmd_trans_splitting' 'int ()'
+    | |   | `-UnaryOperator 0x14b828048 <col:27, col:28> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   |   `-ImplicitCastExpr 0x14b828030 <col:28> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |     `-RecoveryExpr 0x14b828010 <col:28> '<dependent type>' contains-errors lvalue
+    | |   |-CompoundStmt 0x14b829630 <col:34, line:14:3>
+    | |   | |-CallExpr 0x14b828248 <line:12:4, col:42> '<dependent type>' contains-errors
+    | |   | | |-DeclRefExpr 0x14b828168 <col:4> 'int ()' Function 0x14b8280b0 'spin_unlock' 'int ()'
+    | |   | | `-UnaryOperator 0x14b828230 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | |   `-CXXDependentScopeMemberExpr 0x14b8281e8 <col:17, col:27> '<dependent type>' contains-errors lvalue ->page_table_lock
+    | |   | |     `-RecoveryExpr 0x14b8281c0 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | |   | |       `-DeclRefExpr 0x14b828188 <col:17> 'struct mm_walk *' lvalue ParmVar 0x14b827428 'walk' 'struct mm_walk *'
+    | |   | `-CallExpr 0x14b829600 <line:13:4, col:43> '<dependent type>' contains-errors
+    | |   |   |-DeclRefExpr 0x14b828350 <col:4> 'int ()' Function 0x14b828298 'wait_split_huge_page' 'int ()'
+    | |   |   |-RecoveryExpr 0x14b8283a8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    | |   |   | `-DeclRefExpr 0x14b828370 <col:25> 'struct vm_area_struct *' contains-errors lvalue Var 0x14b827a08 'vma' 'struct vm_area_struct *'
+    | |   |   `-RecoveryExpr 0x14b8283d0 <col:40> '<dependent type>' contains-errors lvalue
+    | |   `-CompoundStmt 0x14b829958 <line:14:10, line:20:3>
+    | |     |-CallExpr 0x14b8298a0 <line:17:4, col:42> '<dependent type>' contains-errors
+    | |     | |-DeclRefExpr 0x14b8297c0 <col:4> 'int ()' Function 0x14b8280b0 'spin_unlock' 'int ()'
+    | |     | `-UnaryOperator 0x14b829888 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     |   `-CXXDependentScopeMemberExpr 0x14b829840 <col:17, col:27> '<dependent type>' contains-errors lvalue ->page_table_lock
+    | |     |     `-RecoveryExpr 0x14b829818 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | |     |       `-DeclRefExpr 0x14b8297e0 <col:17> 'struct mm_walk *' lvalue ParmVar 0x14b827428 'walk' 'struct mm_walk *'
+    | |     `-ReturnStmt 0x14b829948 <line:19:4, col:11>
+    | |       `-IntegerLiteral 0x14b829928 <col:11> 'int' 0
+    | `-CompoundStmt 0x14b829ac8 <line:21:9, line:23:2>
+    |   `-CallExpr 0x14b829aa0 <line:22:3, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14b8299c0 <col:3> 'int ()' Function 0x14b8280b0 'spin_unlock' 'int ()'
+    |     `-UnaryOperator 0x14b829a88 <col:15, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x14b829a40 <col:16, col:26> '<dependent type>' contains-errors lvalue ->page_table_lock
+    |         `-RecoveryExpr 0x14b829a18 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x14b8299e0 <col:16> 'struct mm_walk *' lvalue ParmVar 0x14b827428 'walk' 'struct mm_walk *'
+    |-CallExpr 0x14b82a028 <line:29:2, col:15> 'int'
+    | `-ImplicitCastExpr 0x14b82a010 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x14b829fc0 <col:2> 'int ()' Function 0x14b829f08 'cond_resched' 'int ()'
+    `-ReturnStmt 0x14b82a068 <line:30:2, col:9>
+      `-IntegerLiteral 0x14b82a048 <col:9> 'int' 0

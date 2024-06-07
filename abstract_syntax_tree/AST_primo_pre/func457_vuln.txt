@@ -1,0 +1,93 @@
+`-FunctionDecl 0x13200e350  line:1:13 sctp_assoc_bh_rcv 'void (struct work_struct *)' static
+  |-ParmVarDecl 0x13200e248 <col:31, col:51> col:51 used work 'struct work_struct *'
+  `-CompoundStmt 0x13202a978 <line:2:1, line:46:1>
+    |-DeclStmt 0x1320269c0 <line:3:2, line:5:32>
+    | |-RecordDecl 0x132026648 <line:3:2, col:9> col:9 struct sctp_association
+    | `-VarDecl 0x1320267b8 <col:2, col:27> col:27 used asoc 'struct sctp_association *'
+    |-DeclStmt 0x132026bc8 <line:6:2, col:26>
+    | |-RecordDecl 0x1320269d8 <col:2, col:9> col:9 struct sctp_endpoint
+    | `-VarDecl 0x132026b48 <col:2, col:24> col:24 used ep 'struct sctp_endpoint *'
+    |-DeclStmt 0x132026dc8 <line:7:2, col:26>
+    | |-RecordDecl 0x132026be0 <col:2, col:9> col:9 struct sctp_chunk
+    | `-VarDecl 0x132026d48 <col:2, col:21> col:21 used chunk 'struct sctp_chunk *'
+    |-DeclStmt 0x132026fc8 <line:8:2, col:17>
+    | |-RecordDecl 0x132026de0 <col:2, col:9> col:9 struct sock
+    | `-VarDecl 0x132026f48 <col:2, col:15> col:15 used sk 'struct sock *'
+    |-DeclStmt 0x1320271c8 <line:9:2, col:26>
+    | |-RecordDecl 0x132026fe0 <col:2, col:9> col:9 struct sctp_inq
+    | `-VarDecl 0x132027148 <col:2, col:19> col:19 used inqueue 'struct sctp_inq *'
+    |-DeclStmt 0x132027260 <line:10:2, col:11>
+    | `-VarDecl 0x1320271f8 <col:2, col:6> col:6 used state 'int'
+    |-DeclStmt 0x132027318 <line:12:2, col:15>
+    | `-VarDecl 0x132027290 <col:2, col:14> col:6 used error 'int' cinit
+    |   `-IntegerLiteral 0x1320272f8 <col:14> 'int' 0
+    |-BinaryOperator 0x1320273b0 <line:15:2, col:13> 'struct sctp_endpoint *' contains-errors '='
+    | |-DeclRefExpr 0x132027330 <col:2> 'struct sctp_endpoint *' lvalue Var 0x132026b48 'ep' 'struct sctp_endpoint *'
+    | `-RecoveryExpr 0x132027388 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x132027350 <col:7> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |-BinaryOperator 0x132027498 <line:16:2, col:18> 'struct sock *' contains-errors '='
+    | |-DeclRefExpr 0x1320273d0 <col:2> 'struct sock *' lvalue Var 0x132026f48 'sk' 'struct sock *'
+    | `-CXXDependentScopeMemberExpr 0x132027450 <col:7, col:18> '<dependent type>' contains-errors lvalue .sk
+    |   `-RecoveryExpr 0x132027428 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1320273f0 <col:7> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |-BinaryOperator 0x132027598 <line:18:2, col:24> 'struct sctp_inq *' contains-errors '='
+    | |-DeclRefExpr 0x1320274b8 <col:2> 'struct sctp_inq *' lvalue Var 0x132027148 'inqueue' 'struct sctp_inq *'
+    | `-UnaryOperator 0x132027580 <col:12, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x132027538 <col:13, col:24> '<dependent type>' contains-errors lvalue .inqueue
+    |     `-RecoveryExpr 0x132027510 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1320274d8 <col:13> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |-CallExpr 0x132028f48 <line:19:2, col:28> 'int'
+    | |-ImplicitCastExpr 0x132028f30 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x132028eb8 <col:2> 'int ()' Function 0x132028e00 'sctp_association_hold' 'int ()'
+    | `-ImplicitCastExpr 0x132028f70 <col:24> 'struct sctp_association *' <LValueToRValue>
+    |   `-DeclRefExpr 0x132028ed8 <col:24> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |-WhileStmt 0x132029de0 <line:20:2, line:44:2>
+    | |-BinaryOperator 0x132029280 <line:20:9, col:47> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x1320291b0 <col:9> '<dependent type>' contains-errors lvalue
+    | | `-ParenExpr 0x132029260 <col:17, col:47> 'struct sctp_chunk *'
+    | |   `-BinaryOperator 0x132029240 <col:18, col:46> 'struct sctp_chunk *' '='
+    | |     |-DeclRefExpr 0x132028fa0 <col:18> 'struct sctp_chunk *' lvalue Var 0x132026d48 'chunk' 'struct sctp_chunk *'
+    | |     `-ImplicitCastExpr 0x132029228 <col:26, col:46> 'struct sctp_chunk *' <IntegralToPointer>
+    | |       `-CallExpr 0x1320291e8 <col:26, col:46> 'int'
+    | |         |-ImplicitCastExpr 0x1320291d0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    | |         | `-DeclRefExpr 0x1320290a0 <col:26> 'int ()' Function 0x132028fe8 'sctp_inq_pop' 'int ()'
+    | |         `-ImplicitCastExpr 0x132029210 <col:39> 'struct sctp_inq *' <LValueToRValue>
+    | |           `-DeclRefExpr 0x1320290c0 <col:39> 'struct sctp_inq *' lvalue Var 0x132027148 'inqueue' 'struct sctp_inq *'
+    | `-CompoundStmt 0x132029db0 <col:50, line:44:2>
+    |   |-BinaryOperator 0x132029320 <line:21:3, col:17> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x1320292a0 <col:3> 'int' lvalue Var 0x1320271f8 'state' 'int'
+    |   | `-RecoveryExpr 0x1320292f8 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x1320292c0 <col:11> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |   |-IfStmt 0x1320298b8 <line:25:3, line:28:4> has_else
+    |   | |-CallExpr 0x132029648 <line:25:7, col:31> 'int'
+    |   | | |-ImplicitCastExpr 0x132029630 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x1320295f0 <col:7> 'int ()' Function 0x132029538 'sctp_chunk_is_data' 'int ()'
+    |   | | `-ImplicitCastExpr 0x132029670 <col:26> 'struct sctp_chunk *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x132029610 <col:26> 'struct sctp_chunk *' lvalue Var 0x132026d48 'chunk' 'struct sctp_chunk *'
+    |   | |-BinaryOperator 0x132029790 <line:26:4, col:39> '<dependent type>' contains-errors '='
+    |   | | |-CXXDependentScopeMemberExpr 0x1320296e8 <col:4, col:15> '<dependent type>' contains-errors lvalue .last_data_from
+    |   | | | `-RecoveryExpr 0x1320296c0 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   | | |   `-DeclRefExpr 0x132029688 <col:4> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |   | | `-RecoveryExpr 0x132029768 <col:32, col:39> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x132029730 <col:32> 'struct sctp_chunk *' lvalue Var 0x132026d48 'chunk' 'struct sctp_chunk *'
+    |   | `-NullStmt 0x1320298b0 <line:28:4>
+    |   |-IfStmt 0x132029c40 <line:38:3, line:39:4>
+    |   | |-CXXDependentScopeMemberExpr 0x132029bf0 <line:38:7, col:18> '<dependent type>' contains-errors lvalue .dead
+    |   | | `-RecoveryExpr 0x132029bc8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x132029b90 <col:7> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'
+    |   | `-BreakStmt 0x132029c38 <line:39:4>
+    |   `-IfStmt 0x132029d90 <line:42:3, line:43:22>
+    |     |-BinaryOperator 0x132029cd0 <line:42:7, col:16> 'int' '&&'
+    |     | |-ImplicitCastExpr 0x132029ca0 <col:7> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x132029c60 <col:7> 'int' lvalue Var 0x132027290 'error' 'int'
+    |     | `-ImplicitCastExpr 0x132029cb8 <col:16> 'struct sctp_chunk *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x132029c80 <col:16> 'struct sctp_chunk *' lvalue Var 0x132026d48 'chunk' 'struct sctp_chunk *'
+    |     `-BinaryOperator 0x132029d70 <line:43:4, col:22> '<dependent type>' contains-errors '='
+    |       |-RecoveryExpr 0x132029d28 <col:4, col:11> '<dependent type>' contains-errors lvalue
+    |       | `-DeclRefExpr 0x132029cf0 <col:4> 'struct sctp_chunk *' lvalue Var 0x132026d48 'chunk' 'struct sctp_chunk *'
+    |       `-IntegerLiteral 0x132029d50 <col:22> 'int' 1
+    `-CallExpr 0x13202a938 <line:45:2, col:27> 'int'
+      |-ImplicitCastExpr 0x13202a920 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x13202a8e0 <col:2> 'int ()' Function 0x13202a828 'sctp_association_put' 'int ()'
+      `-ImplicitCastExpr 0x13202a960 <col:23> 'struct sctp_association *' <LValueToRValue>
+        `-DeclRefExpr 0x13202a900 <col:23> 'struct sctp_association *' lvalue Var 0x1320267b8 'asoc' 'struct sctp_association *'

@@ -1,0 +1,22 @@
+`-FunctionDecl 0x12800e350  line:1:20 clr_dr_intercepts 'void (struct vcpu_svm *)' static inline
+  |-ParmVarDecl 0x12800e248 <col:38, col:55> col:55 used svm 'struct vcpu_svm *'
+  `-CompoundStmt 0x11f9304c0 <line:2:1, line:8:1>
+    |-DeclStmt 0x11f930248 <line:3:2, col:40>
+    | |-RecordDecl 0x11f92fe48 <col:2, col:9> col:9 struct vmcb
+    | `-VarDecl 0x11f92ffb8 <col:2, col:39> col:15 used vmcb 'struct vmcb *' cinit
+    |   `-ImplicitCastExpr 0x11f930218 <col:22, col:39> 'struct vmcb *' <IntegralToPointer>
+    |     `-CallExpr 0x11f9301d8 <col:22, col:39> 'int'
+    |       |-ImplicitCastExpr 0x11f9301c0 <col:22> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x11f930150 <col:22> 'int ()' Function 0x11f930098 'get_host_vmcb' 'int ()'
+    |       `-ImplicitCastExpr 0x11f930200 <col:36> 'struct vcpu_svm *' <LValueToRValue>
+    |         `-DeclRefExpr 0x11f930170 <col:36> 'struct vcpu_svm *' lvalue ParmVar 0x12800e248 'svm' 'struct vcpu_svm *'
+    |-BinaryOperator 0x11f930328 <line:5:2, col:31> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x11f9302c0 <col:2, col:16> '<dependent type>' contains-errors lvalue .intercept_dr
+    | | `-RecoveryExpr 0x11f930298 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x11f930260 <col:2> 'struct vmcb *' lvalue Var 0x11f92ffb8 'vmcb' 'struct vmcb *'
+    | `-IntegerLiteral 0x11f930308 <col:31> 'int' 0
+    `-CallExpr 0x11f930480 <line:7:2, col:23> 'int'
+      |-ImplicitCastExpr 0x11f930468 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x11f930428 <col:2> 'int ()' Function 0x11f930370 'recalc_intercepts' 'int ()'
+      `-ImplicitCastExpr 0x11f9304a8 <col:20> 'struct vcpu_svm *' <LValueToRValue>
+        `-DeclRefExpr 0x11f930448 <col:20> 'struct vcpu_svm *' lvalue ParmVar 0x12800e248 'svm' 'struct vcpu_svm *'

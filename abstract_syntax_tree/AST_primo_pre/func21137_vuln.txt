@@ -1,0 +1,48 @@
+`-FunctionDecl 0x139040a38  line:1:16 invalid write_mem 'int (struct file *, const char)' static
+  |-ParmVarDecl 0x13a80e268 <col:26, col:39> col:39 file 'struct file *'
+  |-ParmVarDecl 0x13a80e2e0 <col:45, col:56> col:56 __user 'const char'
+  `-CompoundStmt 0x139047b38 <line:3:1, line:60:1>
+    |-DeclStmt 0x139040b70 <line:6:2, col:22>
+    | `-VarDecl 0x139040b08 <col:2, col:16> col:16 used copied 'unsigned long'
+    |-DeclStmt 0x139040c08 <line:7:2, col:11>
+    | `-VarDecl 0x139040ba0 <col:2, col:8> col:8 used ptr 'void *'
+    |-IfStmt 0x139040dd8 <line:9:2, line:10:11>
+    | |-BinaryOperator 0x139040d10 <line:9:6, col:12> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x139040ca0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x139040cf8 <col:11, col:12> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x139040ce0 <col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x139040cc0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x139040dc8 <line:10:3, col:11>
+    |   `-UnaryOperator 0x139040db0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x139040d98 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x139040d78 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139041118 <line:12:2, line:13:11>
+    | |-UnaryOperator 0x139041058 <line:12:6, col:37> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x139041028 <col:7, col:37> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x139040f50 <col:7> 'int ()' Function 0x139040e98 'valid_phys_addr_range' 'int ()'
+    | |   |-RecoveryExpr 0x139040fe8 <col:29> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x139041008 <col:32> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x139041108 <line:13:3, col:11>
+    |   `-UnaryOperator 0x1390410f0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1390410d8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1390410b8 <col:11> '<dependent type>' contains-errors lvalue
+    `-WhileStmt 0x139047b18 <line:29:2, line:56:2>
+      |-BinaryOperator 0x1390411d0 <line:29:9, col:17> 'int' contains-errors '>'
+      | |-RecoveryExpr 0x1390411b0 <col:9> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x139041170 <col:17> 'int' 0
+      `-CompoundStmt 0x139047af8 <col:20, line:56:2>
+        |-IfStmt 0x139041798 <line:37:3, line:41:3>
+        | |-UnaryOperator 0x139041720 <line:37:7, col:8> 'int' prefix '!' cannot overflow
+        | | `-ImplicitCastExpr 0x139041708 <col:8> 'void *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x1390416e8 <col:8> 'void *' lvalue Var 0x139040ba0 'ptr' 'void *'
+        | `-CompoundStmt 0x139041780 <col:13, line:41:3>
+        |   `-IfStmt 0x139041760 <line:38:4, line:39:5>
+        |     |-RecoveryExpr 0x139041738 <line:38:8> '_Bool' contains-errors
+        |     `-BreakStmt 0x139041758 <line:39:5>
+        `-IfStmt 0x139047ad8 <line:45:3, line:50:3>
+          |-ImplicitCastExpr 0x139047a40 <line:45:7> 'unsigned long' <LValueToRValue>
+          | `-DeclRefExpr 0x139047a20 <col:7> 'unsigned long' lvalue Var 0x139040b08 'copied' 'unsigned long'
+          `-CompoundStmt 0x139047ac0 <col:15, line:50:3>
+            `-IfStmt 0x139047aa0 <line:47:4, line:48:5>
+              |-RecoveryExpr 0x139047a78 <line:47:8> '_Bool' contains-errors
+              `-BreakStmt 0x139047a98 <line:48:5>

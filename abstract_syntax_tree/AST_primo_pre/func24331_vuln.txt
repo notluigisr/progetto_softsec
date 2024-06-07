@@ -1,0 +1,122 @@
+`-FunctionDecl 0x149141958  line:1:12 invalid command_write 'int (struct pci_dev *, int, int, void *)' static
+  |-ParmVarDecl 0x149128648 <col:26, col:42> col:42 used dev 'struct pci_dev *'
+  |-ParmVarDecl 0x1491286c8 <col:47, col:51> col:51 used offset 'int'
+  |-ParmVarDecl 0x149128760 <col:59, col:63> col:63 referenced invalid value 'int'
+  |-ParmVarDecl 0x149141800 <col:70, col:76> col:76 data 'void *'
+  `-CompoundStmt 0x149144708 <line:2:1, line:46:1>
+    |-DeclStmt 0x149141c08 <line:3:2, col:37>
+    | |-RecordDecl 0x149141a20 <col:2, col:9> col:9 struct xen_pcibk_dev_data
+    | `-VarDecl 0x149141b88 <col:2, col:29> col:29 used dev_data 'struct xen_pcibk_dev_data *'
+    |-DeclStmt 0x149141ca0 <line:4:2, col:9>
+    | `-VarDecl 0x149141c38 <col:2, col:6> col:6 used err 'int'
+    |-BinaryOperator 0x149141f10 <line:6:2, col:32> 'struct xen_pcibk_dev_data *' '='
+    | |-DeclRefExpr 0x149141cb8 <col:2> 'struct xen_pcibk_dev_data *' lvalue Var 0x149141b88 'dev_data' 'struct xen_pcibk_dev_data *'
+    | `-ImplicitCastExpr 0x149141ef8 <col:13, col:32> 'struct xen_pcibk_dev_data *' <IntegralToPointer>
+    |   `-CallExpr 0x149141eb8 <col:13, col:32> 'int'
+    |     |-ImplicitCastExpr 0x149141ea0 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x149141e30 <col:13> 'int ()' Function 0x149141d78 'pci_get_drvdata' 'int ()'
+    |     `-ImplicitCastExpr 0x149141ee0 <col:29> 'struct pci_dev *' <LValueToRValue>
+    |       `-DeclRefExpr 0x149141e50 <col:29> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |-IfStmt 0x149143310 <line:7:2, line:23:2> has_else
+    | |-BinaryOperator 0x149142208 <line:7:6, col:49> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x1491420a8 <col:6, col:25> 'int' prefix '!' cannot overflow
+    | | | `-CallExpr 0x149142068 <col:7, col:25> 'int'
+    | | |   |-ImplicitCastExpr 0x149142050 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x149142010 <col:7> 'int ()' Function 0x149141f58 'pci_is_enabled' 'int ()'
+    | | |   `-ImplicitCastExpr 0x149142090 <col:22> 'struct pci_dev *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x149142030 <col:22> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    | | `-CallExpr 0x1491421e0 <col:30, col:49> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1491421a0 <col:30> 'int ()' Function 0x1491420e8 'is_enable_cmd' 'int ()'
+    | |   `-RecoveryExpr 0x1491421c0 <col:44> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x149142e20 <col:52, line:16:2>
+    | | |-BinaryOperator 0x149142660 <line:11:3, col:30> 'int' '='
+    | | | |-DeclRefExpr 0x1491424c8 <col:3> 'int' lvalue Var 0x149141c38 'err' 'int'
+    | | | `-CallExpr 0x149142620 <col:9, col:30> 'int'
+    | | |   |-ImplicitCastExpr 0x149142608 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x1491425c8 <col:9> 'int ()' Function 0x149142510 'pci_enable_device' 'int ()'
+    | | |   `-ImplicitCastExpr 0x149142648 <col:27> 'struct pci_dev *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x1491425e8 <col:27> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    | | |-IfStmt 0x149142700 <line:12:3, line:13:11>
+    | | | |-ImplicitCastExpr 0x1491426a0 <line:12:7> 'int' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x149142680 <col:7> 'int' lvalue Var 0x149141c38 'err' 'int'
+    | | | `-ReturnStmt 0x1491426f0 <line:13:4, col:11>
+    | | |   `-ImplicitCastExpr 0x1491426d8 <col:11> 'int' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x1491426b8 <col:11> 'int' lvalue Var 0x149141c38 'err' 'int'
+    | | `-IfStmt 0x149142e00 <line:14:3, line:15:28>
+    | |   |-ImplicitCastExpr 0x149142740 <line:14:7> 'struct xen_pcibk_dev_data *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x149142720 <col:7> 'struct xen_pcibk_dev_data *' lvalue Var 0x149141b88 'dev_data' 'struct xen_pcibk_dev_data *'
+    | |   `-BinaryOperator 0x1491427d8 <line:15:4, col:28> '<dependent type>' contains-errors '='
+    | |     |-RecoveryExpr 0x149142790 <col:4, col:14> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x149142758 <col:4> 'struct xen_pcibk_dev_data *' lvalue Var 0x149141b88 'dev_data' 'struct xen_pcibk_dev_data *'
+    | |     `-IntegerLiteral 0x1491427b8 <col:28> 'int' 1
+    | `-IfStmt 0x1491432f0 <line:16:9, line:23:2>
+    |   |-BinaryOperator 0x149142f60 <line:16:13, col:56> 'int' contains-errors '&&'
+    |   | |-CallExpr 0x149142ea0 <col:13, col:31> 'int'
+    |   | | |-ImplicitCastExpr 0x149142e88 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   | | | `-DeclRefExpr 0x149142e48 <col:13> 'int ()' Function 0x149141f58 'pci_is_enabled' 'int ()'
+    |   | | `-ImplicitCastExpr 0x149142ec8 <col:28> 'struct pci_dev *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x149142e68 <col:28> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |   | `-UnaryOperator 0x149142f48 <col:36, col:56> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |   `-CallExpr 0x149142f20 <col:37, col:56> '<dependent type>' contains-errors
+    |   |     |-DeclRefExpr 0x149142ee0 <col:37> 'int ()' Function 0x1491420e8 'is_enable_cmd' 'int ()'
+    |   |     `-RecoveryExpr 0x149142f00 <col:51> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x1491432d0 <col:59, line:23:2>
+    |     |-CallExpr 0x149143198 <line:20:3, col:25> 'int'
+    |     | |-ImplicitCastExpr 0x149143180 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x149143140 <col:3> 'int ()' Function 0x149143088 'pci_disable_device' 'int ()'
+    |     | `-ImplicitCastExpr 0x1491431c0 <col:22> 'struct pci_dev *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x149143160 <col:22> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |     `-IfStmt 0x1491432b0 <line:21:3, line:22:28>
+    |       |-ImplicitCastExpr 0x1491431f8 <line:21:7> 'struct xen_pcibk_dev_data *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x1491431d8 <col:7> 'struct xen_pcibk_dev_data *' lvalue Var 0x149141b88 'dev_data' 'struct xen_pcibk_dev_data *'
+    |       `-BinaryOperator 0x149143290 <line:22:4, col:28> '<dependent type>' contains-errors '='
+    |         |-RecoveryExpr 0x149143248 <col:4, col:14> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x149143210 <col:4> 'struct xen_pcibk_dev_data *' lvalue Var 0x149141b88 'dev_data' 'struct xen_pcibk_dev_data *'
+    |         `-IntegerLiteral 0x149143270 <col:28> 'int' 0
+    |-IfStmt 0x1491438a0 <line:25:2, line:30:2>
+    | |-BinaryOperator 0x149143518 <line:25:6, col:47> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x1491433b8 <col:6, col:12> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x1491433a0 <col:7, col:12> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x149143378 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x149143340 <col:7> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    | | `-CallExpr 0x1491434f0 <col:28, col:47> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1491434b0 <col:28> 'int ()' Function 0x1491433f8 'is_master_cmd' 'int ()'
+    | |   `-RecoveryExpr 0x1491434d0 <col:42> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x149143888 <col:50, line:30:2>
+    |   `-CallExpr 0x149143848 <line:29:3, col:21> 'int'
+    |     |-ImplicitCastExpr 0x149143830 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1491437f0 <col:3> 'int ()' Function 0x149143738 'pci_set_master' 'int ()'
+    |     `-ImplicitCastExpr 0x149143870 <col:18> 'struct pci_dev *' <LValueToRValue>
+    |       `-DeclRefExpr 0x149143810 <col:18> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |-IfStmt 0x149144540 <line:32:2, line:43:2>
+    | |-RecoveryExpr 0x1491438e0 <line:32:6, col:14> '_Bool' contains-errors
+    | `-CompoundStmt 0x149144520 <col:38, line:43:2>
+    |   |-BinaryOperator 0x149143b90 <line:37:3, col:24> 'int' '='
+    |   | |-DeclRefExpr 0x1491439f8 <col:3> 'int' lvalue Var 0x149141c38 'err' 'int'
+    |   | `-CallExpr 0x149143b50 <col:9, col:24> 'int'
+    |   |   |-ImplicitCastExpr 0x149143b38 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x149143af8 <col:9> 'int ()' Function 0x149143a40 'pci_set_mwi' 'int ()'
+    |   |   `-ImplicitCastExpr 0x149143b78 <col:21> 'struct pci_dev *' <LValueToRValue>
+    |   |     `-DeclRefExpr 0x149143b18 <col:21> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |   `-IfStmt 0x149144500 <line:38:3, line:42:3>
+    |     |-ImplicitCastExpr 0x149143bd0 <line:38:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x149143bb0 <col:7> 'int' lvalue Var 0x149141c38 'err' 'int'
+    |     `-CompoundStmt 0x1491444e8 <col:12, line:42:3>
+    |       `-CallExpr 0x149144438 <line:39:4, line:40:23> 'int'
+    |         |-ImplicitCastExpr 0x149144420 <line:39:4> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x149143cc8 <col:4> 'int ()' Function 0x149143c10 'pr_warn' 'int ()'
+    |         |-ImplicitCastExpr 0x149144470 <col:12> 'char *' <ArrayToPointerDecay>
+    |         | `-StringLiteral 0x149143d30 <col:12> 'char[4]' lvalue "STR"
+    |         |-CallExpr 0x149143da8 <line:40:5, col:17> 'int'
+    |         | |-ImplicitCastExpr 0x149143d90 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |         | | `-DeclRefExpr 0x149143d50 <col:5> 'int ()' Function 0x1491435c0 'pci_name' 'int ()'
+    |         | `-ImplicitCastExpr 0x149143dd0 <col:14> 'struct pci_dev *' <LValueToRValue>
+    |         |   `-DeclRefExpr 0x149143d70 <col:14> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+    |         `-ImplicitCastExpr 0x149144488 <col:20> 'int' <LValueToRValue>
+    |           `-DeclRefExpr 0x149144400 <col:20> 'int' lvalue Var 0x149141c38 'err' 'int'
+    `-ReturnStmt 0x1491446f8 <line:45:2, col:49>
+      `-CallExpr 0x1491446c0 <col:9, col:49> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x149144640 <col:9> 'int ()' Function 0x149144588 'pci_write_config_word' 'int ()'
+        |-DeclRefExpr 0x149144660 <col:31> 'struct pci_dev *' lvalue ParmVar 0x149128648 'dev' 'struct pci_dev *'
+        |-DeclRefExpr 0x149144680 <col:36> 'int' lvalue ParmVar 0x1491286c8 'offset' 'int'
+        `-RecoveryExpr 0x1491446a0 <col:44> '<dependent type>' contains-errors lvalue

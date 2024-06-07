@@ -1,0 +1,31 @@
+`-FunctionDecl 0x12a808368  line:1:1 invalid rsa_decrypt 'int (const struct rsa_private_key *, int *, int *, const int)'
+  |-ParmVarDecl 0x12a00e248 <col:13, col:43> col:43 used key 'const struct rsa_private_key *'
+  |-ParmVarDecl 0x12a00e318 <line:2:6, col:14> col:14 invalid length 'int *'
+  |-ParmVarDecl 0x12a00e398 <col:22, col:31> col:31 invalid message 'int *'
+  |-ParmVarDecl 0x12a808218 <line:3:6, col:18> col:18 invalid gibberish 'const int'
+  `-CompoundStmt 0x12a808d38 <line:4:1, line:14:1>
+    |-DeclStmt 0x12a8084b0 <line:6:3, col:10>
+    | `-VarDecl 0x12a808448 <col:3, col:7> col:7 used res 'int'
+    |-CallExpr 0x12a8086a0 <line:8:3, col:13> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a808620 <col:3> 'int ()' Function 0x12a808568 'mpz_init' 'int ()'
+    | `-RecoveryExpr 0x12a808680 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12a808878 <line:9:3, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a8087a8 <col:3> 'int ()' Function 0x12a8086f0 'rsa_compute_root' 'int ()'
+    | |-DeclRefExpr 0x12a8087c8 <col:20> 'const struct rsa_private_key *' lvalue ParmVar 0x12a00e248 'key' 'const struct rsa_private_key *'
+    | |-RecoveryExpr 0x12a808858 <col:25> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x12a808800 <col:28> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a808b48 <line:11:3, col:53> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12a8088b0 <col:3> 'int' lvalue Var 0x12a808448 'res' 'int'
+    | `-CallExpr 0x12a808b08 <col:9, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a8089b0 <col:9> 'int ()' Function 0x12a8088f8 'pkcs1_decrypt' 'int ()'
+    |   |-RecoveryExpr 0x12a808a08 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12a8089d0 <col:24> 'const struct rsa_private_key *' lvalue ParmVar 0x12a00e248 'key' 'const struct rsa_private_key *'
+    |   |-RecoveryExpr 0x12a808ae8 <col:35> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x12a808a48 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x12a808a68 <col:46> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x12a808cc8 <line:12:3, col:14> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a808c48 <col:3> 'int ()' Function 0x12a808b90 'mpz_clear' 'int ()'
+    | `-RecoveryExpr 0x12a808ca8 <col:13> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12a808d28 <line:13:3, col:10>
+      `-ImplicitCastExpr 0x12a808d10 <col:10> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x12a808cf0 <col:10> 'int' lvalue Var 0x12a808448 'res' 'int'

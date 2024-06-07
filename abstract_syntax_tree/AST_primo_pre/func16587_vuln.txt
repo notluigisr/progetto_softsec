@@ -1,0 +1,18 @@
+`-FunctionDecl 0x139941978  line:1:13 invalid nested_vmcb_checks 'int (struct vcpu_svm *, struct vmcb *)' static
+  |-ParmVarDecl 0x139928668 <col:32, col:49> col:49 used svm 'struct vcpu_svm *'
+  |-ParmVarDecl 0x139941858 <col:54, col:67> col:67 used vmcb12 'struct vmcb *'
+  `-CompoundStmt 0x13b008ca8 <line:2:1, line:34:1>
+    |-IfStmt 0x13b008878 <line:16:2, line:29:2> has_else
+    | |-RecoveryExpr 0x139942358 <line:16:6, col:7> '_Bool' contains-errors
+    | |-CompoundStmt 0x139942620 <col:19, line:24:2>
+    | | `-IfStmt 0x1399425f0 <line:17:3, line:23:3> has_else
+    | |   |-RecoveryExpr 0x139942420 <line:17:7, col:26> '_Bool' contains-errors
+    | |   |-CompoundStmt 0x139942508 <col:39, line:20:3>
+    | |   `-CompoundStmt 0x1399425e0 <col:10, line:23:3>
+    | `-CompoundStmt 0x13b008868 <line:24:9, line:29:2>
+    `-ReturnStmt 0x13b008c98 <line:33:2, col:52>
+      `-CallExpr 0x13b008c70 <col:9, col:52> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13b008bd8 <col:9> 'int ()' Function 0x13b008b20 'nested_vmcb_check_controls' 'int ()'
+        `-UnaryOperator 0x13b008c58 <col:36, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-RecoveryExpr 0x13b008c30 <col:37, col:45> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x13b008bf8 <col:37> 'struct vmcb *' lvalue ParmVar 0x139941858 'vmcb12' 'struct vmcb *'

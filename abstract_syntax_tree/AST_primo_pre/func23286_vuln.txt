@@ -1,0 +1,143 @@
+`-FunctionDecl 0x128109cf8  line:1:12 transfer_file_attrs 'int (const char *, const char *, const char **)' static
+  |-ParmVarDecl 0x128109ad8 <col:32, col:44> col:44 used from 'const char *'
+  |-ParmVarDecl 0x128109b58 <col:50, col:62> col:62 used to 'const char *'
+  |-ParmVarDecl 0x128109c08 <line:2:32, col:45> col:45 used err_status 'const char **'
+  `-CompoundStmt 0x128125458 <col:57, line:36:1>
+    |-DeclStmt 0x1281225b8 <line:3:5, col:19>
+    | |-RecordDecl 0x128109e00 <col:5, col:12> col:12 struct stat
+    | `-VarDecl 0x128109ef8 <col:5, col:17> col:17 invalid st 'struct stat'
+    |-DeclStmt 0x128122670 <line:4:5, col:16>
+    | `-VarDecl 0x1281225e8 <col:5, col:15> col:9 used ret 'int' cinit
+    |   `-IntegerLiteral 0x128122650 <col:15> 'int' 0
+    |-DeclStmt 0x128122918 <line:5:5, col:53>
+    | `-VarDecl 0x1281226a0 <col:5, col:52> col:9 used selinux_enabled 'int' cinit
+    |   `-ParenExpr 0x1281228f8 <col:27, col:52> 'int'
+    |     `-BinaryOperator 0x1281228d8 <col:28, col:51> 'int' '>'
+    |       |-CallExpr 0x128122898 <col:28, col:47> 'int'
+    |       | `-ImplicitCastExpr 0x128122880 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |       |   `-DeclRefExpr 0x128122830 <col:28> 'int ()' Function 0x128122778 'is_selinux_enabled' 'int ()'
+    |       `-IntegerLiteral 0x1281228b8 <col:51> 'int' 0
+    |-BinaryOperator 0x128122ad8 <line:8:5, col:26> 'int' contains-errors '='
+    | |-DeclRefExpr 0x128122930 <col:5> 'int' lvalue Var 0x1281225e8 'ret' 'int'
+    | `-CallExpr 0x128122aa8 <col:11, col:26> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x128122a30 <col:11> 'int ()' Function 0x128122978 'lstat' 'int ()'
+    |   |-DeclRefExpr 0x128122a50 <col:17> 'const char *' lvalue ParmVar 0x128109ad8 'from' 'const char *'
+    |   `-UnaryOperator 0x128122a90 <col:23, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x128122a70 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x128122cd8 <line:9:5, line:12:5>
+    | |-BinaryOperator 0x128122b50 <line:9:9, col:15> 'int' '<'
+    | | |-ImplicitCastExpr 0x128122b38 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x128122af8 <col:9> 'int' lvalue Var 0x1281225e8 'ret' 'int'
+    | | `-IntegerLiteral 0x128122b18 <col:15> 'int' 0
+    | `-CompoundStmt 0x128122cb8 <col:18, line:12:5>
+    |   |-BinaryOperator 0x128122c50 <line:10:9, col:23> 'const char *' '='
+    |   | |-UnaryOperator 0x128122ba8 <col:9, col:10> 'const char *' lvalue prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x128122b90 <col:10> 'const char **' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x128122b70 <col:10> 'const char **' lvalue ParmVar 0x128109c08 'err_status' 'const char **'
+    |   | `-ImplicitCastExpr 0x128122c38 <col:23> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x128122c20 <col:23> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x128122c00 <col:23> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x128122ca8 <line:11:9, col:17>
+    |     `-UnaryOperator 0x128122c90 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x128122c70 <col:17> 'int' 1
+    |-IfStmt 0x1281231c8 <line:13:5, line:18:5>
+    | |-ImplicitCastExpr 0x128122d18 <line:13:9> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x128122cf8 <col:9> 'int' lvalue Var 0x1281226a0 'selinux_enabled' 'int'
+    | `-CompoundStmt 0x1281231b0 <col:26, line:18:5>
+    |   `-IfStmt 0x128123190 <line:14:9, line:17:9>
+    |     |-BinaryOperator 0x128123048 <line:14:13, col:53> 'int' contains-errors '&&'
+    |     | |-BinaryOperator 0x128122fc8 <col:13, col:39> 'int' contains-errors '<'
+    |     | | |-CallExpr 0x128122f98 <col:13, col:35> '<dependent type>' contains-errors
+    |     | | | |-DeclRefExpr 0x128122e10 <col:13> 'int ()' Function 0x128122d58 'lgetfilecon' 'int ()'
+    |     | | | |-DeclRefExpr 0x128122e30 <col:25> 'const char *' lvalue ParmVar 0x128109ad8 'from' 'const char *'
+    |     | | | `-UnaryOperator 0x128122f80 <col:31, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     | | |   `-RecoveryExpr 0x128122f60 <col:32> '<dependent type>' contains-errors lvalue
+    |     | | `-IntegerLiteral 0x128122eb0 <col:39> 'int' 0
+    |     | `-BinaryOperator 0x128123028 <col:44, col:53> 'int' contains-errors '!='
+    |     |   |-RecoveryExpr 0x128122fe8 <col:44> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x128123008 <col:53> '<dependent type>' contains-errors lvalue
+    |     `-CompoundStmt 0x128123170 <col:62, line:17:9>
+    |       |-BinaryOperator 0x128123108 <line:15:13, col:27> 'const char *' '='
+    |       | |-UnaryOperator 0x1281230a0 <col:13, col:14> 'const char *' lvalue prefix '*' cannot overflow
+    |       | | `-ImplicitCastExpr 0x128123088 <col:14> 'const char **' <LValueToRValue>
+    |       | |   `-DeclRefExpr 0x128123068 <col:14> 'const char **' lvalue ParmVar 0x128109c08 'err_status' 'const char **'
+    |       | `-ImplicitCastExpr 0x1281230f0 <col:27> 'const char *' <NoOp>
+    |       |   `-ImplicitCastExpr 0x1281230d8 <col:27> 'char *' <ArrayToPointerDecay>
+    |       |     `-StringLiteral 0x1281230b8 <col:27> 'char[4]' lvalue "STR"
+    |       `-ReturnStmt 0x128123160 <line:16:13, col:21>
+    |         `-UnaryOperator 0x128123148 <col:20, col:21> 'int' prefix '-'
+    |           `-IntegerLiteral 0x128123128 <col:21> 'int' 1
+    |-IfStmt 0x1281249a0 <line:20:5, line:23:5>
+    | |-BinaryOperator 0x128124858 <line:20:9, col:44> 'int' contains-errors '<'
+    | | |-CallExpr 0x128124800 <col:9, col:40> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x1281232c8 <col:9> 'int ()' Function 0x128123210 'lchown' 'int ()'
+    | | | |-DeclRefExpr 0x1281232e8 <col:16> 'const char *' lvalue ParmVar 0x128109b58 'to' 'const char *'
+    | | | |-CXXDependentScopeMemberExpr 0x128123328 <col:20, col:23> '<dependent type>' contains-errors lvalue .st_uid
+    | | | | `-RecoveryExpr 0x128123308 <col:20> '<dependent type>' contains-errors lvalue
+    | | | `-CXXDependentScopeMemberExpr 0x128123390 <col:31, col:34> '<dependent type>' contains-errors lvalue .st_gid
+    | | |   `-RecoveryExpr 0x128123370 <col:31> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x128124838 <col:44> 'int' 0
+    | `-CompoundStmt 0x128124980 <col:47, line:23:5>
+    |   |-BinaryOperator 0x128124918 <line:21:9, col:23> 'const char *' '='
+    |   | |-UnaryOperator 0x1281248b0 <col:9, col:10> 'const char *' lvalue prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x128124898 <col:10> 'const char **' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x128124878 <col:10> 'const char **' lvalue ParmVar 0x128109c08 'err_status' 'const char **'
+    |   | `-ImplicitCastExpr 0x128124900 <col:23> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x1281248e8 <col:23> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x1281248c8 <col:23> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x128124970 <line:22:9, col:17>
+    |     `-UnaryOperator 0x128124958 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x128124938 <col:17> 'int' 1
+    |-IfStmt 0x128124ce0 <line:24:5, line:27:5>
+    | |-BinaryOperator 0x128124b98 <line:24:9, col:33> 'int' contains-errors '<'
+    | | |-CallExpr 0x128124b48 <col:9, col:29> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x128124aa0 <col:9> 'int ()' Function 0x1281249e8 'chmod' 'int ()'
+    | | | |-DeclRefExpr 0x128124ac0 <col:15> 'const char *' lvalue ParmVar 0x128109b58 'to' 'const char *'
+    | | | `-CXXDependentScopeMemberExpr 0x128124b00 <col:19, col:22> '<dependent type>' contains-errors lvalue .st_mode
+    | | |   `-RecoveryExpr 0x128124ae0 <col:19> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x128124b78 <col:33> 'int' 0
+    | `-CompoundStmt 0x128124cc0 <col:36, line:27:5>
+    |   |-BinaryOperator 0x128124c58 <line:25:9, col:23> 'const char *' '='
+    |   | |-UnaryOperator 0x128124bf0 <col:9, col:10> 'const char *' lvalue prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x128124bd8 <col:10> 'const char **' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x128124bb8 <col:10> 'const char **' lvalue ParmVar 0x128109c08 'err_status' 'const char **'
+    |   | `-ImplicitCastExpr 0x128124c40 <col:23> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x128124c28 <col:23> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x128124c08 <col:23> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x128124cb0 <line:26:9, col:17>
+    |     `-UnaryOperator 0x128124c98 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x128124c78 <col:17> 'int' 1
+    |-IfStmt 0x128125408 <line:28:5, line:34:5>
+    | |-BinaryOperator 0x128124df0 <line:28:9, col:35> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x128124d00 <col:9> 'int' lvalue Var 0x1281226a0 'selinux_enabled' 'int'
+    | | `-BinaryOperator 0x128124dd0 <col:28, col:35> 'int' contains-errors '!='
+    | |   |-RecoveryExpr 0x128124d90 <col:28> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x128124db0 <col:35> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1281253e8 <col:41, line:34:5>
+    |   |-IfStmt 0x128125240 <line:29:9, line:32:9>
+    |   | |-BinaryOperator 0x1281250f8 <line:29:13, col:50> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x128125078 <col:13, col:36> 'int' contains-errors '<'
+    |   | | | |-CallExpr 0x128125048 <col:13, col:32> '<dependent type>' contains-errors
+    |   | | | | |-DeclRefExpr 0x128124ef0 <col:13> 'int ()' Function 0x128124e38 'lsetfilecon' 'int ()'
+    |   | | | | |-DeclRefExpr 0x128124f10 <col:25> 'const char *' lvalue ParmVar 0x128109b58 'to' 'const char *'
+    |   | | | | `-RecoveryExpr 0x128125028 <col:29> '<dependent type>' contains-errors lvalue
+    |   | | | `-IntegerLiteral 0x128124f78 <col:36> 'int' 0
+    |   | | `-BinaryOperator 0x1281250d8 <col:41, col:50> 'int' contains-errors '!='
+    |   | |   |-RecoveryExpr 0x128125098 <col:41> '<dependent type>' contains-errors lvalue
+    |   | |   `-RecoveryExpr 0x1281250b8 <col:50> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x128125220 <col:59, line:32:9>
+    |   |   |-BinaryOperator 0x1281251b8 <line:30:13, col:27> 'const char *' '='
+    |   |   | |-UnaryOperator 0x128125150 <col:13, col:14> 'const char *' lvalue prefix '*' cannot overflow
+    |   |   | | `-ImplicitCastExpr 0x128125138 <col:14> 'const char **' <LValueToRValue>
+    |   |   | |   `-DeclRefExpr 0x128125118 <col:14> 'const char **' lvalue ParmVar 0x128109c08 'err_status' 'const char **'
+    |   |   | `-ImplicitCastExpr 0x1281251a0 <col:27> 'const char *' <NoOp>
+    |   |   |   `-ImplicitCastExpr 0x128125188 <col:27> 'char *' <ArrayToPointerDecay>
+    |   |   |     `-StringLiteral 0x128125168 <col:27> 'char[4]' lvalue "STR"
+    |   |   `-ReturnStmt 0x128125210 <line:31:13, col:21>
+    |   |     `-UnaryOperator 0x1281251f8 <col:20, col:21> 'int' prefix '-'
+    |   |       `-IntegerLiteral 0x1281251d8 <col:21> 'int' 1
+    |   `-CallExpr 0x1281253c0 <line:33:9, col:20> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x128125340 <col:9> 'int ()' Function 0x128125288 'freecon' 'int ()'
+    |     `-RecoveryExpr 0x1281253a0 <col:17> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x128125448 <line:35:5, col:12>
+      `-IntegerLiteral 0x128125428 <col:12> 'int' 0

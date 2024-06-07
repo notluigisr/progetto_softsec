@@ -1,0 +1,46 @@
+`-FunctionDecl 0x134128750  line:1:6 dn_dev_down 'void (struct net_device *)'
+  |-ParmVarDecl 0x134128648 <col:18, col:37> col:37 used dev 'struct net_device *'
+  `-CompoundStmt 0x1341417d0 <line:2:1, line:15:1>
+    |-DeclStmt 0x134140e10 <line:3:2, col:54>
+    | |-RecordDecl 0x134140a48 <col:2, col:9> col:9 struct dn_dev
+    | `-VarDecl 0x134140bb8 <col:2, col:53> col:17 used dn_db 'struct dn_dev *' cinit
+    |   `-CallExpr 0x134140dd0 <col:25, col:53> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x134140d50 <col:25> 'int ()' Function 0x134140c98 'rtnl_dereference' 'int ()'
+    |     `-RecoveryExpr 0x134140da8 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x134140d70 <col:42> 'struct net_device *' lvalue ParmVar 0x134128648 'dev' 'struct net_device *'
+    |-DeclStmt 0x134141018 <line:4:2, col:23>
+    | |-RecordDecl 0x134140e28 <col:2, col:9> col:9 struct dn_ifaddr
+    | `-VarDecl 0x134140f98 <col:2, col:20> col:20 used ifa 'struct dn_ifaddr *'
+    |-IfStmt 0x1341410d8 <line:6:2, line:7:3>
+    | |-BinaryOperator 0x1341410a8 <line:6:6, col:15> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x134141030 <col:6> 'struct dn_dev *' contains-errors lvalue Var 0x134140bb8 'dn_db' 'struct dn_dev *'
+    | | `-RecoveryExpr 0x134141088 <col:15> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1341410c8 <line:7:3>
+    |-WhileStmt 0x134141638 <line:9:2, line:12:2>
+    | |-BinaryOperator 0x134141258 <line:9:9, col:54> 'int' contains-errors '!='
+    | | |-ParenExpr 0x1341411e0 <col:9, col:49> 'struct dn_ifaddr *' contains-errors
+    | | | `-BinaryOperator 0x1341411c0 <col:10, col:48> 'struct dn_ifaddr *' contains-errors '='
+    | | |   |-DeclRefExpr 0x1341410f8 <col:10> 'struct dn_ifaddr *' lvalue Var 0x134140f98 'ifa' 'struct dn_ifaddr *'
+    | | |   `-CallExpr 0x134141198 <col:16, col:48> '<dependent type>' contains-errors
+    | | |     |-DeclRefExpr 0x134141118 <col:16> 'int ()' Function 0x134140c98 'rtnl_dereference' 'int ()'
+    | | |     `-RecoveryExpr 0x134141170 <col:33, col:40> '<dependent type>' contains-errors lvalue
+    | | |       `-DeclRefExpr 0x134141138 <col:33> 'struct dn_dev *' contains-errors lvalue Var 0x134140bb8 'dn_db' 'struct dn_dev *'
+    | | `-RecoveryExpr 0x134141238 <col:54> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x134141618 <col:60, line:12:2>
+    |   |-CallExpr 0x134141430 <line:10:3, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x134141358 <col:3> 'int ()' Function 0x1341412a0 'dn_dev_del_ifa' 'int ()'
+    |   | |-DeclRefExpr 0x134141378 <col:18> 'struct dn_dev *' contains-errors lvalue Var 0x134140bb8 'dn_db' 'struct dn_dev *'
+    |   | |-UnaryOperator 0x1341413f8 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x1341413d0 <col:26, col:33> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x134141398 <col:26> 'struct dn_dev *' contains-errors lvalue Var 0x134140bb8 'dn_db' 'struct dn_dev *'
+    |   | `-IntegerLiteral 0x134141410 <col:43> 'int' 0
+    |   `-CallExpr 0x1341415d8 <line:11:3, col:22> 'int'
+    |     |-ImplicitCastExpr 0x1341415c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x134141548 <col:3> 'int ()' Function 0x134141490 'dn_dev_free_ifa' 'int ()'
+    |     `-ImplicitCastExpr 0x134141600 <col:19> 'struct dn_ifaddr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x134141568 <col:19> 'struct dn_ifaddr *' lvalue Var 0x134140f98 'ifa' 'struct dn_ifaddr *'
+    `-CallExpr 0x134141790 <line:14:2, col:19> 'int'
+      |-ImplicitCastExpr 0x134141778 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x134141738 <col:2> 'int ()' Function 0x134141680 'dn_dev_delete' 'int ()'
+      `-ImplicitCastExpr 0x1341417b8 <col:16> 'struct net_device *' <LValueToRValue>
+        `-DeclRefExpr 0x134141758 <col:16> 'struct net_device *' lvalue ParmVar 0x134128648 'dev' 'struct net_device *'

@@ -1,0 +1,50 @@
+`-FunctionDecl 0x137827688  line:1:21 invalid __fget_files 'struct file *(struct files_struct *, unsigned int, int, unsigned int)' static
+  |-ParmVarDecl 0x13780e2e8 <col:34, col:55> col:55 used files 'struct files_struct *'
+  |-ParmVarDecl 0x13780e368 <col:62, col:75> col:75 used fd 'unsigned int'
+  |-ParmVarDecl 0x137827400 <line:2:6, col:14> col:14 invalid mask 'int'
+  |-ParmVarDecl 0x137827480 <col:20, col:33> col:33 used refs 'unsigned int'
+  `-CompoundStmt 0x137828218 <line:3:1, line:19:1>
+    |-DeclStmt 0x137827840 <line:4:2, col:19>
+    | `-VarDecl 0x1378277d8 <col:2, col:15> col:15 used file 'struct file *'
+    |-CallExpr 0x137827a18 <line:6:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x137827a00 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1378279b0 <col:2> 'int ()' Function 0x1378278f8 'rcu_read_lock' 'int ()'
+    |-LabelStmt 0x137827c98 <line:7:1, line:8:38> 'loop'
+    | `-BinaryOperator 0x137827c28 <col:2, col:38> 'struct file *' '='
+    |   |-DeclRefExpr 0x137827a38 <col:2> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'
+    |   `-ImplicitCastExpr 0x137827c10 <col:9, col:38> 'struct file *' <IntegralToPointer>
+    |     `-CallExpr 0x137827bb0 <col:9, col:38> 'int'
+    |       |-ImplicitCastExpr 0x137827b98 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x137827b38 <col:9> 'int ()' Function 0x137827a80 'files_lookup_fd_rcu' 'int ()'
+    |       |-ImplicitCastExpr 0x137827be0 <col:29> 'struct files_struct *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x137827b58 <col:29> 'struct files_struct *' lvalue ParmVar 0x13780e2e8 'files' 'struct files_struct *'
+    |       `-ImplicitCastExpr 0x137827bf8 <col:36> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x137827b78 <col:36> 'unsigned int' lvalue ParmVar 0x13780e368 'fd' 'unsigned int'
+    |-IfStmt 0x137828078 <line:9:2, line:15:2>
+    | |-ImplicitCastExpr 0x137827cd8 <line:9:6> 'struct file *' <LValueToRValue>
+    | | `-DeclRefExpr 0x137827cb8 <col:6> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'
+    | `-CompoundStmt 0x137828060 <col:12, line:15:2>
+    |   `-IfStmt 0x137828030 <line:11:3, line:14:9> has_else
+    |     |-BinaryOperator 0x137827d70 <line:11:7, col:22> '<dependent type>' contains-errors '&'
+    |     | |-RecoveryExpr 0x137827d28 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x137827cf0 <col:7> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'
+    |     | `-RecoveryExpr 0x137827d50 <col:22> '<dependent type>' contains-errors lvalue
+    |     |-BinaryOperator 0x137827e08 <line:12:4, col:11> 'struct file *' contains-errors '='
+    |     | |-DeclRefExpr 0x137827d90 <col:4> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'
+    |     | `-RecoveryExpr 0x137827de8 <col:11> '<dependent type>' contains-errors lvalue
+    |     `-IfStmt 0x137828010 <line:13:8, line:14:9>
+    |       |-UnaryOperator 0x137827fe0 <line:13:12, col:41> 'int' prefix '!' cannot overflow
+    |       | `-CallExpr 0x137827f80 <col:13, col:41> 'int'
+    |       |   |-ImplicitCastExpr 0x137827f68 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |       |   | `-DeclRefExpr 0x137827f08 <col:13> 'int ()' Function 0x137827e50 'get_file_rcu_many' 'int ()'
+    |       |   |-ImplicitCastExpr 0x137827fb0 <col:31> 'struct file *' <LValueToRValue>
+    |       |   | `-DeclRefExpr 0x137827f28 <col:31> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'
+    |       |   `-ImplicitCastExpr 0x137827fc8 <col:37> 'unsigned int' <LValueToRValue>
+    |       |     `-DeclRefExpr 0x137827f48 <col:37> 'unsigned int' lvalue ParmVar 0x137827480 'refs' 'unsigned int'
+    |       `-GotoStmt 0x137827ff8 <line:14:4, col:9> 'loop' 0x137827c48
+    |-CallExpr 0x1378281b0 <line:16:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x137828198 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x137828178 <col:2> 'int ()' Function 0x1378280c0 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x137828208 <line:18:2, col:9>
+      `-ImplicitCastExpr 0x1378281f0 <col:9> 'struct file *' <LValueToRValue>
+        `-DeclRefExpr 0x1378281d0 <col:9> 'struct file *' lvalue Var 0x1378277d8 'file' 'struct file *'

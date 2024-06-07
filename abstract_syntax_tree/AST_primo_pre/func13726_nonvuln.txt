@@ -1,0 +1,27 @@
+`-FunctionDecl 0x150026600  line:1:1 ring_buffer_read_events_cpu 'int (struct ring_buffer *, int)'
+  |-ParmVarDecl 0x15000e248 <col:29, col:49> col:49 used buffer 'struct ring_buffer *'
+  |-ParmVarDecl 0x15000e2c8 <col:57, col:61> col:61 used cpu 'int'
+  `-CompoundStmt 0x150026ce8 <line:2:1, line:10:1>
+    |-DeclStmt 0x1500268e8 <line:3:2, col:40>
+    | |-RecordDecl 0x150026700 <col:2, col:9> col:9 struct ring_buffer_per_cpu
+    | `-VarDecl 0x150026868 <col:2, col:30> col:30 used cpu_buffer 'struct ring_buffer_per_cpu *'
+    |-IfStmt 0x150026b48 <line:5:2, line:6:10>
+    | |-UnaryOperator 0x150026b00 <line:5:6, col:44> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x150026ad0 <col:7, col:44> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x150026a30 <col:7> 'int ()' Function 0x150026978 'cpumask_test_cpu' 'int ()'
+    | |   |-DeclRefExpr 0x150026a50 <col:24> 'int' lvalue ParmVar 0x15000e2c8 'cpu' 'int'
+    | |   `-RecoveryExpr 0x150026aa8 <col:29, col:37> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x150026a70 <col:29> 'struct ring_buffer *' lvalue ParmVar 0x15000e248 'buffer' 'struct ring_buffer *'
+    | `-ReturnStmt 0x150026b38 <line:6:3, col:10>
+    |   `-IntegerLiteral 0x150026b18 <col:10> 'int' 0
+    |-BinaryOperator 0x150026c58 <line:8:2, col:34> 'struct ring_buffer_per_cpu *' contains-errors '='
+    | |-DeclRefExpr 0x150026b68 <col:2> 'struct ring_buffer_per_cpu *' lvalue Var 0x150026868 'cpu_buffer' 'struct ring_buffer_per_cpu *'
+    | `-ArraySubscriptExpr 0x150026c38 <col:15, col:34> '<dependent type>' contains-errors lvalue
+    |   |-ImplicitCastExpr 0x150026c08 <col:15, col:23> '<dependent type>' contains-errors <LValueToRValue>
+    |   | `-RecoveryExpr 0x150026bc0 <col:15, col:23> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x150026b88 <col:15> 'struct ring_buffer *' lvalue ParmVar 0x15000e248 'buffer' 'struct ring_buffer *'
+    |   `-ImplicitCastExpr 0x150026c20 <col:31> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x150026be8 <col:31> 'int' lvalue ParmVar 0x15000e2c8 'cpu' 'int'
+    `-ReturnStmt 0x150026cd8 <line:9:2, col:21>
+      `-RecoveryExpr 0x150026cb0 <col:9, col:21> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x150026c78 <col:9> 'struct ring_buffer_per_cpu *' lvalue Var 0x150026868 'cpu_buffer' 'struct ring_buffer_per_cpu *'

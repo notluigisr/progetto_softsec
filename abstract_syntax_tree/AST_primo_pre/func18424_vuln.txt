@@ -1,0 +1,72 @@
+`-FunctionDecl 0x157140cc8  line:1:5 invalid dsdb_user_obj_set_account_type 'int (struct ldb_context *, struct ldb_message *, int, int *)'
+  |-ParmVarDecl 0x157128648 <col:36, col:56> col:56 used ldb 'struct ldb_context *'
+  |-ParmVarDecl 0x157140a28 <col:61, col:81> col:81 used usr_obj 'struct ldb_message *'
+  |-ParmVarDecl 0x157140ac0 <line:2:8, col:17> col:17 invalid user_account_control 'int'
+  |-ParmVarDecl 0x157140b78 <col:39, col:49> col:49 referenced invalid account_type_p 'int *'
+  `-CompoundStmt 0x160808c88 <line:3:1, line:27:1>
+    |-DeclStmt 0x157140e10 <line:4:2, col:9>
+    | `-VarDecl 0x157140da8 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x157141018 <line:6:2, col:32>
+    | |-RecordDecl 0x157140e28 <col:2, col:9> col:9 struct ldb_message_element
+    | `-VarDecl 0x157140f98 <col:2, col:30> col:30 used el 'struct ldb_message_element *'
+    |-BinaryOperator 0x157141238 <line:8:2, col:49> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157141050 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157141030 <col:2> 'int *' lvalue ParmVar 0x157140b78 'account_type_p' 'int *'
+    | `-CallExpr 0x157141210 <col:17, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1571411d0 <col:17> 'int ()' Function 0x157141118 'ds_uf2atype' 'int ()'
+    |   `-RecoveryExpr 0x1571411f0 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1571415a0 <line:9:2, line:12:2>
+    | |-BinaryOperator 0x1571412f0 <line:9:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x1571412d0 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x157141270 <col:22> 'int' 0
+    | `-CompoundStmt 0x157141580 <col:25, line:12:2>
+    |   |-CallExpr 0x1571414d8 <line:10:3, col:31> 'int'
+    |   | |-ImplicitCastExpr 0x1571414c0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1571413f0 <col:3> 'int ()' Function 0x157141338 'ldb_set_errstring' 'int ()'
+    |   | |-ImplicitCastExpr 0x157141508 <col:21> 'struct ldb_context *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x157141410 <col:21> 'struct ldb_context *' lvalue ParmVar 0x157128648 'ldb' 'struct ldb_context *'
+    |   | `-ImplicitCastExpr 0x157141520 <col:26> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x157141470 <col:26> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x157141570 <line:11:3, col:10>
+    |     `-RecoveryExpr 0x157141550 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x157141868 <line:13:2, line:15:18> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1571415c0 <line:13:2> 'int' lvalue Var 0x157140da8 'ret' 'int'
+    | `-CallExpr 0x157141820 <col:8, line:15:18> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1571416c0 <line:13:8> 'int ()' Function 0x157141608 'samdb_msg_add_uint' 'int ()'
+    |   |-DeclRefExpr 0x1571416e0 <col:27> 'struct ldb_context *' lvalue ParmVar 0x157128648 'ldb' 'struct ldb_context *'
+    |   |-DeclRefExpr 0x157141700 <col:32> 'struct ldb_message *' lvalue ParmVar 0x157140a28 'usr_obj' 'struct ldb_message *'
+    |   |-DeclRefExpr 0x157141720 <col:41> 'struct ldb_message *' lvalue ParmVar 0x157140a28 'usr_obj' 'struct ldb_message *'
+    |   |-StringLiteral 0x157141740 <line:14:6> 'char[4]' lvalue "STR"
+    |   `-RecoveryExpr 0x157141800 <line:15:6> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x157141980 <line:16:2, line:18:2>
+    | |-BinaryOperator 0x157141900 <line:16:6, col:13> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x157141888 <col:6> 'int' lvalue Var 0x157140da8 'ret' 'int'
+    | | `-RecoveryExpr 0x1571418e0 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x157141968 <col:26, line:18:2>
+    |   `-ReturnStmt 0x157141958 <line:17:3, col:10>
+    |     `-ImplicitCastExpr 0x157141940 <col:10> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x157141920 <col:10> 'int' lvalue Var 0x157140da8 'ret' 'int'
+    |-BinaryOperator 0x1608089a8 <line:19:2, col:42> 'struct ldb_message_element *' '='
+    | |-DeclRefExpr 0x1571419a0 <col:2> 'struct ldb_message_element *' lvalue Var 0x157140f98 'el' 'struct ldb_message_element *'
+    | `-ImplicitCastExpr 0x160808990 <col:7, col:42> 'struct ldb_message_element *' <IntegralToPointer>
+    |   `-CallExpr 0x160808930 <col:7, col:42> 'int'
+    |     |-ImplicitCastExpr 0x160808918 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1608088b8 <col:7> 'int ()' Function 0x160808800 'ldb_msg_find_element' 'int ()'
+    |     |-ImplicitCastExpr 0x160808960 <col:28> 'struct ldb_message *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x1608088d8 <col:28> 'struct ldb_message *' lvalue ParmVar 0x157140a28 'usr_obj' 'struct ldb_message *'
+    |     `-ImplicitCastExpr 0x160808978 <col:37> 'char *' <ArrayToPointerDecay>
+    |       `-StringLiteral 0x1608088f8 <col:37> 'char[4]' lvalue "STR"
+    |-BinaryOperator 0x160808a80 <line:20:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x160808a00 <col:2, col:6> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1608089c8 <col:2> 'struct ldb_message_element *' lvalue Var 0x157140f98 'el' 'struct ldb_message_element *'
+    | `-RecoveryExpr 0x160808a60 <col:14> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x160808c20 <line:22:2, line:24:2>
+    | |-RecoveryExpr 0x160808aa0 <line:22:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x160808c08 <col:22, line:24:2>
+    |   `-BinaryOperator 0x160808be8 <line:23:3, col:21> '<dependent type>' contains-errors '='
+    |     |-UnaryOperator 0x160808bb0 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |     | `-ImplicitCastExpr 0x160808b98 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+    |     |   `-RecoveryExpr 0x160808ac0 <col:4> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x160808bc8 <col:21> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x160808c78 <line:26:2, col:9>
+      `-RecoveryExpr 0x160808c58 <col:9> '<dependent type>' contains-errors lvalue

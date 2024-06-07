@@ -1,0 +1,143 @@
+`-FunctionDecl 0x15c049038  line:1:10 invalid winsdb_set_maxVersion 'int (struct winsdb_handle *, int)'
+  |-ParmVarDecl 0x15c01f868 <col:32, col:54> col:54 used h 'struct winsdb_handle *'
+  |-ParmVarDecl 0x15c01f8e8 <col:57, col:66> col:66 referenced invalid newMaxVersion 'int'
+  `-CompoundStmt 0x15c04cd00 <line:2:1, line:59:1>
+    |-DeclStmt 0x15c049170 <line:3:2, col:11>
+    | `-VarDecl 0x15c049108 <col:2, col:6> col:6 used trans 'int'
+    |-DeclStmt 0x15c049208 <line:4:2, col:9>
+    | `-VarDecl 0x15c0491a0 <col:2, col:6> col:6 used ret 'int'
+    |-DeclStmt 0x15c049408 <line:5:2, col:19>
+    | |-RecordDecl 0x15c049220 <col:2, col:9> col:9 struct ldb_dn
+    | `-VarDecl 0x15c049388 <col:2, col:17> col:17 used dn 'struct ldb_dn *'
+    |-DeclStmt 0x15c049640 <line:6:2, col:31>
+    | |-RecordDecl 0x15c049420 <col:2, col:9> col:9 struct ldb_result
+    | `-VarDecl 0x15c049588 <col:2, col:27> col:21 used res 'struct ldb_result *' cinit
+    |   `-RecoveryExpr 0x15c049608 <col:27> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15c049880 <line:7:2, col:32>
+    | |-RecordDecl 0x15c049658 <col:2, col:9> col:9 struct ldb_message
+    | `-VarDecl 0x15c0497c8 <col:2, col:28> col:22 used msg 'struct ldb_message *' cinit
+    |   `-RecoveryExpr 0x15c049848 <col:28> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x15c049ae8 <line:8:2, col:38>
+    | |-RecordDecl 0x15c049898 <col:2, col:9> col:9 struct ldb_context
+    | `-VarDecl 0x15c049a08 <col:2, col:35> col:22 used wins_db 'struct ldb_context *' cinit
+    |   `-RecoveryExpr 0x15c049aa8 <col:32, col:35> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x15c049a70 <col:32> 'struct winsdb_handle *' lvalue ParmVar 0x15c01f868 'h' 'struct winsdb_handle *'
+    |-BinaryOperator 0x15c049ed0 <line:12:2, col:39> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c049d38 <col:2> 'int' lvalue Var 0x15c049108 'trans' 'int'
+    | `-CallExpr 0x15c049e90 <col:10, col:39> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15c049e78 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c049e38 <col:10> 'int ()' Function 0x15c049d80 'ldb_transaction_start' 'int ()'
+    |   `-ImplicitCastExpr 0x15c049eb8 <col:32> 'struct ldb_context *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15c049e58 <col:32> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |-IfStmt 0x15c04aa00 <line:13:2, col:33>
+    | |-BinaryOperator 0x15c049f68 <col:6, col:15> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x15c049ef0 <col:6> 'int' lvalue Var 0x15c049108 'trans' 'int'
+    | | `-RecoveryExpr 0x15c049f48 <col:15> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x15c049fd8 <col:28, col:33> 'failed' 0x15c049f88
+    |-BinaryOperator 0x15c04ac90 <line:15:2, col:41> 'struct ldb_dn *' contains-errors '='
+    | |-DeclRefExpr 0x15c04aa20 <col:2> 'struct ldb_dn *' lvalue Var 0x15c049388 'dn' 'struct ldb_dn *'
+    | `-CallExpr 0x15c04ac58 <col:7, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c04ab20 <col:7> 'int ()' Function 0x15c04aa68 'ldb_dn_new' 'int ()'
+    |   |-RecoveryExpr 0x15c04ac38 <col:18> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x15c04ab58 <col:27> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |   `-StringLiteral 0x15c04abc0 <col:36> 'char[4]' lvalue "STR"
+    |-IfStmt 0x15c04ad18 <line:16:2, col:16>
+    | |-UnaryOperator 0x15c04ace8 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c04acd0 <col:7> 'struct ldb_dn *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c04acb0 <col:7> 'struct ldb_dn *' lvalue Var 0x15c049388 'dn' 'struct ldb_dn *'
+    | `-GotoStmt 0x15c04ad00 <col:11, col:16> 'failed' 0x15c049f88
+    |-BinaryOperator 0x15c04b0e0 <line:19:2, col:73> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c04ad38 <col:2> 'int' lvalue Var 0x15c0491a0 'ret' 'int'
+    | `-CallExpr 0x15c04b088 <col:8, col:73> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c04ae38 <col:8> 'int ()' Function 0x15c04ad80 'ldb_search' 'int ()'
+    |   |-DeclRefExpr 0x15c04ae58 <col:19> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |   |-RecoveryExpr 0x15c04b008 <col:28> '<dependent type>' contains-errors lvalue
+    |   |-UnaryOperator 0x15c04af10 <col:37, col:38> 'struct ldb_result **' contains-errors prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x15c04ae90 <col:38> 'struct ldb_result *' contains-errors lvalue Var 0x15c049588 'res' 'struct ldb_result *'
+    |   |-DeclRefExpr 0x15c04af28 <col:43> 'struct ldb_dn *' lvalue Var 0x15c049388 'dn' 'struct ldb_dn *'
+    |   |-RecoveryExpr 0x15c04b028 <col:47> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x15c04b048 <col:63> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x15c04b068 <col:69> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15c04b1b0 <line:20:2, col:31>
+    | |-BinaryOperator 0x15c04b178 <col:6, col:13> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x15c04b100 <col:6> 'int' lvalue Var 0x15c0491a0 'ret' 'int'
+    | | `-RecoveryExpr 0x15c04b158 <col:13> '<dependent type>' contains-errors lvalue
+    | `-GotoStmt 0x15c04b198 <col:26, col:31> 'failed' 0x15c049f88
+    |-IfStmt 0x15c04b288 <line:21:2, col:27>
+    | |-BinaryOperator 0x15c04b250 <col:6, col:19> 'int' contains-errors '>'
+    | | |-RecoveryExpr 0x15c04b208 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15c04b1d0 <col:6> 'struct ldb_result *' contains-errors lvalue Var 0x15c049588 'res' 'struct ldb_result *'
+    | | `-IntegerLiteral 0x15c04b230 <col:19> 'int' 1
+    | `-GotoStmt 0x15c04b270 <col:22, col:27> 'failed' 0x15c049f88
+    |-IfStmt 0x15c04b588 <line:23:2, line:25:2>
+    | |-BinaryOperator 0x15c04b328 <line:23:6, col:20> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x15c04b2e0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x15c04b2a8 <col:6> 'struct ldb_result *' contains-errors lvalue Var 0x15c049588 'res' 'struct ldb_result *'
+    | | `-IntegerLiteral 0x15c04b308 <col:20> 'int' 1
+    | `-CompoundStmt 0x15c04b578 <col:23, line:25:2>
+    |-IfStmt 0x15c04b7f8 <line:27:2, line:31:2> has_else
+    | |-BinaryOperator 0x15c04b5e8 <line:27:6, col:23> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x15c04b5a8 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x15c04b5c8 <col:23> 'int' 0
+    | |-CompoundStmt 0x15c04b670 <col:26, line:29:2>
+    | `-CompoundStmt 0x15c04b7e8 <col:9, line:31:2>
+    |-IfStmt 0x15c04b9b0 <line:34:2, col:17>
+    | |-UnaryOperator 0x15c04b980 <col:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c04b968 <col:7> 'struct ldb_message *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c04b948 <col:7> 'struct ldb_message *' contains-errors lvalue Var 0x15c0497c8 'msg' 'struct ldb_message *'
+    | `-GotoStmt 0x15c04b998 <col:12, col:17> 'failed' 0x15c049f88
+    |-BinaryOperator 0x15c04be60 <line:35:2, col:12> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x15c04be18 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15c04b9d0 <col:2> 'struct ldb_message *' contains-errors lvalue Var 0x15c0497c8 'msg' 'struct ldb_message *'
+    | `-DeclRefExpr 0x15c04be40 <col:12> 'struct ldb_dn *' lvalue Var 0x15c049388 'dn' 'struct ldb_dn *'
+    |-IfStmt 0x15c04c038 <line:40:2, col:31>
+    | |-RecoveryExpr 0x15c04c000 <col:6, col:13> '_Bool' contains-errors
+    | `-GotoStmt 0x15c04c020 <col:26, col:31> 'failed' 0x15c049f88
+    |-IfStmt 0x15c04c270 <line:43:2, col:31>
+    | |-RecoveryExpr 0x15c04c238 <col:6, col:13> '_Bool' contains-errors
+    | `-GotoStmt 0x15c04c258 <col:26, col:31> 'failed' 0x15c049f88
+    |-BinaryOperator 0x15c04c468 <line:45:2, col:31> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c04c290 <col:2> 'int' lvalue Var 0x15c0491a0 'ret' 'int'
+    | `-CallExpr 0x15c04c408 <col:8, col:31> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15c04c3f0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c04c390 <col:8> 'int ()' Function 0x15c04c2d8 'ldb_modify' 'int ()'
+    |   |-ImplicitCastExpr 0x15c04c438 <col:19> 'struct ldb_context *' contains-errors <LValueToRValue>
+    |   | `-DeclRefExpr 0x15c04c3b0 <col:19> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |   `-ImplicitCastExpr 0x15c04c450 <col:28> 'struct ldb_message *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15c04c3d0 <col:28> 'struct ldb_message *' contains-errors lvalue Var 0x15c0497c8 'msg' 'struct ldb_message *'
+    |-IfStmt 0x15c04c6c0 <line:46:2, col:52>
+    | |-RecoveryExpr 0x15c04c4a8 <col:6, col:13> '_Bool' contains-errors
+    | `-BinaryOperator 0x15c04c6a0 <col:26, col:52> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x15c04c4c8 <col:26> 'int' lvalue Var 0x15c0491a0 'ret' 'int'
+    |   `-CallExpr 0x15c04c640 <col:32, col:52> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15c04c628 <col:32> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15c04c5c8 <col:32> 'int ()' Function 0x15c04c510 'ldb_add' 'int ()'
+    |     |-ImplicitCastExpr 0x15c04c670 <col:40> 'struct ldb_context *' contains-errors <LValueToRValue>
+    |     | `-DeclRefExpr 0x15c04c5e8 <col:40> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |     `-ImplicitCastExpr 0x15c04c688 <col:49> 'struct ldb_message *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15c04c608 <col:49> 'struct ldb_message *' contains-errors lvalue Var 0x15c0497c8 'msg' 'struct ldb_message *'
+    |-IfStmt 0x15c04c738 <line:47:2, col:31>
+    | |-RecoveryExpr 0x15c04c700 <col:6, col:13> '_Bool' contains-errors
+    | `-GotoStmt 0x15c04c720 <col:26, col:31> 'failed' 0x15c049f88
+    |-BinaryOperator 0x15c04c8f0 <line:49:2, col:40> 'int' contains-errors '='
+    | |-DeclRefExpr 0x15c04c758 <col:2> 'int' lvalue Var 0x15c049108 'trans' 'int'
+    | `-CallExpr 0x15c04c8b0 <col:10, col:40> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x15c04c898 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c04c858 <col:10> 'int ()' Function 0x15c04c7a0 'ldb_transaction_commit' 'int ()'
+    |   `-ImplicitCastExpr 0x15c04c8d8 <col:33> 'struct ldb_context *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x15c04c878 <col:33> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    |-IfStmt 0x15c04c968 <line:50:2, col:33>
+    | |-RecoveryExpr 0x15c04c930 <col:6, col:15> '_Bool' contains-errors
+    | `-GotoStmt 0x15c04c950 <col:28, col:33> 'failed' 0x15c049f88
+    |-ReturnStmt 0x15c04caa8 <line:53:2, col:9>
+    | `-RecoveryExpr 0x15c04ca88 <col:9> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x15c04cc90 <line:55:1, line:56:58> 'failed'
+    | `-IfStmt 0x15c04cc70 <col:2, col:58>
+    |   |-RecoveryExpr 0x15c04cad8 <col:6, col:15> '_Bool' contains-errors
+    |   `-CallExpr 0x15c04cc30 <col:28, col:58> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x15c04cc18 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x15c04cbd8 <col:28> 'int ()' Function 0x15c04cb20 'ldb_transaction_cancel' 'int ()'
+    |     `-ImplicitCastExpr 0x15c04cc58 <col:51> 'struct ldb_context *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x15c04cbf8 <col:51> 'struct ldb_context *' contains-errors lvalue Var 0x15c049a08 'wins_db' 'struct ldb_context *'
+    `-ReturnStmt 0x15c04ccf0 <line:58:2, col:9>
+      `-IntegerLiteral 0x15c04ccd0 <col:9> 'int' 0

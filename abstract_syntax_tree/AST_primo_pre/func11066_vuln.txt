@@ -1,0 +1,78 @@
+`-FunctionDecl 0x12c940f18  line:1:12 neightbl_fill_param_info 'int (struct neigh_table *, struct neigh_parms *, struct sk_buff *, struct netlink_callback *)' static
+  |-ParmVarDecl 0x12c928648 <col:37, col:57> col:57 used tbl 'struct neigh_table *'
+  |-ParmVarDecl 0x12c940a28 <line:2:9, col:29> col:29 used parms 'struct neigh_parms *'
+  |-ParmVarDecl 0x12c940bf8 <line:3:9, col:25> col:25 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x12c940dc8 <line:4:9, col:34> col:34 used cb 'struct netlink_callback *'
+  `-CompoundStmt 0x12c948c78 <line:5:1, line:30:1>
+    |-DeclStmt 0x12c941218 <line:6:2, col:23>
+    | |-RecordDecl 0x12c941028 <col:2, col:9> col:9 struct ndtmsg
+    | `-VarDecl 0x12c941198 <col:2, col:17> col:17 used ndtmsg 'struct ndtmsg *'
+    |-DeclStmt 0x12c941418 <line:7:2, col:22>
+    | |-RecordDecl 0x12c941230 <col:2, col:9> col:9 struct nlmsghdr
+    | `-VarDecl 0x12c941398 <col:2, col:19> col:19 used nlh 'struct nlmsghdr *'
+    |-BinaryOperator 0x12c941850 <line:12:2, col:25> 'struct ndtmsg *' '='
+    | |-DeclRefExpr 0x12c941668 <col:2> 'struct ndtmsg *' lvalue Var 0x12c941198 'ndtmsg' 'struct ndtmsg *'
+    | `-ImplicitCastExpr 0x12c941838 <col:11, col:25> 'struct ndtmsg *' <IntegralToPointer>
+    |   `-CallExpr 0x12c9417f8 <col:11, col:25> 'int'
+    |     |-ImplicitCastExpr 0x12c9417e0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x12c941768 <col:11> 'int ()' Function 0x12c9416b0 'NLMSG_DATA' 'int ()'
+    |     `-ImplicitCastExpr 0x12c941820 <col:22> 'struct nlmsghdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12c941788 <col:22> 'struct nlmsghdr *' lvalue Var 0x12c941398 'nlh' 'struct nlmsghdr *'
+    |-CallExpr 0x12c948000 <line:14:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c941950 <col:2> 'int ()' Function 0x12c941898 'read_lock_bh' 'int ()'
+    | `-UnaryOperator 0x12c9419d0 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c9419a8 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c941970 <col:16> 'struct neigh_table *' lvalue ParmVar 0x12c928648 'tbl' 'struct neigh_table *'
+    |-BinaryOperator 0x12c9480e8 <line:15:2, col:29> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12c948060 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12c948028 <col:2> 'struct ndtmsg *' lvalue Var 0x12c941198 'ndtmsg' 'struct ndtmsg *'
+    | `-RecoveryExpr 0x12c9480c0 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12c948088 <col:24> 'struct neigh_table *' lvalue ParmVar 0x12c928648 'tbl' 'struct neigh_table *'
+    |-CallExpr 0x12c9482f8 <line:16:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c9481e8 <col:2> 'int ()' Function 0x12c948130 'RTA_PUT_STRING' 'int ()'
+    | |-DeclRefExpr 0x12c948208 <col:17> 'struct sk_buff *' lvalue ParmVar 0x12c940bf8 'skb' 'struct sk_buff *'
+    | |-RecoveryExpr 0x12c9482d8 <col:22> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x12c948278 <col:33, col:38> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x12c948240 <col:33> 'struct neigh_table *' lvalue ParmVar 0x12c928648 'tbl' 'struct neigh_table *'
+    |-IfStmt 0x12c948590 <line:18:2, line:19:8>
+    | |-BinaryOperator 0x12c948508 <line:18:6, col:40> 'int' '<'
+    | | |-CallExpr 0x12c948488 <col:6, col:36> 'int'
+    | | | |-ImplicitCastExpr 0x12c948470 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x12c948410 <col:6> 'int ()' Function 0x12c948358 'neightbl_fill_parms' 'int ()'
+    | | | |-ImplicitCastExpr 0x12c9484b8 <col:26> 'struct sk_buff *' <LValueToRValue>
+    | | | | `-DeclRefExpr 0x12c948430 <col:26> 'struct sk_buff *' lvalue ParmVar 0x12c940bf8 'skb' 'struct sk_buff *'
+    | | | `-ImplicitCastExpr 0x12c9484d0 <col:31> 'struct neigh_parms *' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x12c948450 <col:31> 'struct neigh_parms *' lvalue ParmVar 0x12c940a28 'parms' 'struct neigh_parms *'
+    | | `-IntegerLiteral 0x12c9484e8 <col:40> 'int' 0
+    | `-GotoStmt 0x12c948578 <line:19:3, col:8> 'rtattr_failure' 0x12c948528
+    |-CallExpr 0x12c948728 <line:21:2, col:27> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c948690 <col:2> 'int ()' Function 0x12c9485d8 'read_unlock_bh' 'int ()'
+    | `-UnaryOperator 0x12c948710 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c9486e8 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c9486b0 <col:18> 'struct neigh_table *' lvalue ParmVar 0x12c928648 'tbl' 'struct neigh_table *'
+    |-ReturnStmt 0x12c948908 <line:22:2, col:27>
+    | `-CallExpr 0x12c9488a8 <col:9, col:27> 'int'
+    |   |-ImplicitCastExpr 0x12c948890 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12c948830 <col:9> 'int ()' Function 0x12c948778 'NLMSG_END' 'int ()'
+    |   |-ImplicitCastExpr 0x12c9488d8 <col:19> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12c948850 <col:19> 'struct sk_buff *' lvalue ParmVar 0x12c940bf8 'skb' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x12c9488f0 <col:24> 'struct nlmsghdr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12c948870 <col:24> 'struct nlmsghdr *' lvalue Var 0x12c941398 'nlh' 'struct nlmsghdr *'
+    |-LabelStmt 0x12c9489d8 <line:24:1, line:25:27> 'rtattr_failure'
+    | `-CallExpr 0x12c9489b0 <col:2, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12c948918 <col:2> 'int ()' Function 0x12c9485d8 'read_unlock_bh' 'int ()'
+    |   `-UnaryOperator 0x12c948998 <col:17, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12c948970 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12c948938 <col:18> 'struct neigh_table *' lvalue ParmVar 0x12c928648 'tbl' 'struct neigh_table *'
+    |-ReturnStmt 0x12c948bb0 <line:26:2, col:30>
+    | `-CallExpr 0x12c948b50 <col:9, col:30> 'int'
+    |   |-ImplicitCastExpr 0x12c948b38 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x12c948ad8 <col:9> 'int ()' Function 0x12c948a20 'NLMSG_CANCEL' 'int ()'
+    |   |-ImplicitCastExpr 0x12c948b80 <col:22> 'struct sk_buff *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x12c948af8 <col:22> 'struct sk_buff *' lvalue ParmVar 0x12c940bf8 'skb' 'struct sk_buff *'
+    |   `-ImplicitCastExpr 0x12c948b98 <col:27> 'struct nlmsghdr *' <LValueToRValue>
+    |     `-DeclRefExpr 0x12c948b18 <col:27> 'struct nlmsghdr *' lvalue Var 0x12c941398 'nlh' 'struct nlmsghdr *'
+    `-LabelStmt 0x12c948c58 <line:28:1, line:29:10> 'nlmsg_failure'
+      `-ReturnStmt 0x12c948bf8 <col:2, col:10>
+        `-UnaryOperator 0x12c948be0 <col:9, col:10> 'int' prefix '-'
+          `-IntegerLiteral 0x12c948bc0 <col:10> 'int' 1

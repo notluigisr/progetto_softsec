@@ -1,0 +1,56 @@
+`-FunctionDecl 0x11f940a78  line:1:12 selinux_socket_accept 'int (struct socket *, struct socket *)' static
+  |-ParmVarDecl 0x11f928648 <col:34, col:49> col:49 used sock 'struct socket *'
+  |-ParmVarDecl 0x11f928738 <col:55, col:70> col:70 used newsock 'struct socket *'
+  `-CompoundStmt 0x11f941800 <line:2:1, line:19:1>
+    |-DeclStmt 0x11f940bf8 <line:3:2, col:9>
+    | `-VarDecl 0x11f940b90 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x11f940df8 <line:4:2, col:36>
+    | |-RecordDecl 0x11f940c10 <col:2, col:9> col:9 struct inode_security_struct
+    | `-VarDecl 0x11f940d78 <col:2, col:32> col:32 used isec 'struct inode_security_struct *'
+    |-DeclStmt 0x11f940f00 <line:5:2, col:39>
+    | `-VarDecl 0x11f940e98 <col:2, col:32> col:32 used newisec 'struct inode_security_struct *'
+    |-BinaryOperator 0x11f9411a0 <line:7:2, col:53> 'int' contains-errors '='
+    | |-DeclRefExpr 0x11f940f18 <col:2> 'int' lvalue Var 0x11f940b90 'err' 'int'
+    | `-CallExpr 0x11f941168 <col:8, col:53> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11f941060 <col:8> 'int ()' Function 0x11f940fa8 'socket_has_perm' 'int ()'
+    |   |-RecoveryExpr 0x11f941128 <col:24> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x11f941098 <col:33> 'struct socket *' lvalue ParmVar 0x11f928648 'sock' 'struct socket *'
+    |   `-RecoveryExpr 0x11f941148 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x11f941240 <line:8:2, line:9:10>
+    | |-ImplicitCastExpr 0x11f9411e0 <line:8:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x11f9411c0 <col:6> 'int' lvalue Var 0x11f940b90 'err' 'int'
+    | `-ReturnStmt 0x11f941230 <line:9:3, col:10>
+    |   `-ImplicitCastExpr 0x11f941218 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x11f9411f8 <col:10> 'int' lvalue Var 0x11f940b90 'err' 'int'
+    |-BinaryOperator 0x11f941450 <line:11:2, col:33> 'struct inode_security_struct *' contains-errors '='
+    | |-DeclRefExpr 0x11f941260 <col:2> 'struct inode_security_struct *' lvalue Var 0x11f940e98 'newisec' 'struct inode_security_struct *'
+    | `-RecoveryExpr 0x11f941428 <col:12, col:33> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x11f9413e8 <col:12, col:30> 'int'
+    |     |-ImplicitCastExpr 0x11f9413d0 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11f941360 <col:12> 'int ()' Function 0x11f9412a8 'SOCK_INODE' 'int ()'
+    |     `-ImplicitCastExpr 0x11f941410 <col:23> 'struct socket *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11f941380 <col:23> 'struct socket *' lvalue ParmVar 0x11f928738 'newsock' 'struct socket *'
+    |-BinaryOperator 0x11f941550 <line:13:2, col:27> 'struct inode_security_struct *' contains-errors '='
+    | |-DeclRefExpr 0x11f941470 <col:2> 'struct inode_security_struct *' lvalue Var 0x11f940d78 'isec' 'struct inode_security_struct *'
+    | `-RecoveryExpr 0x11f941528 <col:9, col:27> '<dependent type>' contains-errors lvalue
+    |   `-CallExpr 0x11f9414e8 <col:9, col:24> 'int'
+    |     |-ImplicitCastExpr 0x11f9414d0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11f941490 <col:9> 'int ()' Function 0x11f9412a8 'SOCK_INODE' 'int ()'
+    |     `-ImplicitCastExpr 0x11f941510 <col:20> 'struct socket *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11f9414b0 <col:20> 'struct socket *' lvalue ParmVar 0x11f928648 'sock' 'struct socket *'
+    |-BinaryOperator 0x11f941630 <line:14:2, col:26> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f9415a8 <col:2, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f941570 <col:2> 'struct inode_security_struct *' lvalue Var 0x11f940e98 'newisec' 'struct inode_security_struct *'
+    | `-RecoveryExpr 0x11f941608 <col:20, col:26> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11f9415d0 <col:20> 'struct inode_security_struct *' lvalue Var 0x11f940d78 'isec' 'struct inode_security_struct *'
+    |-BinaryOperator 0x11f941710 <line:15:2, col:23> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f941688 <col:2, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f941650 <col:2> 'struct inode_security_struct *' lvalue Var 0x11f940e98 'newisec' 'struct inode_security_struct *'
+    | `-RecoveryExpr 0x11f9416e8 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x11f9416b0 <col:17> 'struct inode_security_struct *' lvalue Var 0x11f940d78 'isec' 'struct inode_security_struct *'
+    |-BinaryOperator 0x11f9417b0 <line:16:2, col:25> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11f941768 <col:2, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11f941730 <col:2> 'struct inode_security_struct *' lvalue Var 0x11f940e98 'newisec' 'struct inode_security_struct *'
+    | `-IntegerLiteral 0x11f941790 <col:25> 'int' 1
+    `-ReturnStmt 0x11f9417f0 <line:18:2, col:9>
+      `-IntegerLiteral 0x11f9417d0 <col:9> 'int' 0

@@ -1,0 +1,87 @@
+`-FunctionDecl 0x1560268a8  line:1:12 selinux_binder_transfer_file 'int (struct task_struct *, struct task_struct *, struct file *)' static
+  |-ParmVarDecl 0x15600e248 <col:41, col:61> col:61 from 'struct task_struct *'
+  |-ParmVarDecl 0x15600e338 <line:2:6, col:26> col:26 to 'struct task_struct *'
+  |-ParmVarDecl 0x156026768 <line:3:6, col:19> col:19 used file 'struct file *'
+  `-CompoundStmt 0x15602df50 <line:4:1, line:38:1>
+    |-DeclStmt 0x156026da8 <line:6:2, col:56>
+    | |-RecordDecl 0x1560269c8 <col:2, col:9> col:9 struct file_security_struct
+    | `-VarDecl 0x156026b38 <col:2, col:55> col:31 used fsec 'struct file_security_struct *' cinit
+    |   `-ImplicitCastExpr 0x156026d78 <col:38, col:55> 'struct file_security_struct *' <IntegralToPointer>
+    |     `-CallExpr 0x156026d38 <col:38, col:55> 'int'
+    |       |-ImplicitCastExpr 0x156026d20 <col:38> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x156026cb0 <col:38> 'int ()' Function 0x156026bf8 'selinux_file' 'int ()'
+    |       `-ImplicitCastExpr 0x156026d60 <col:51> 'struct file *' <LValueToRValue>
+    |         `-DeclRefExpr 0x156026cd0 <col:51> 'struct file *' lvalue ParmVar 0x156026768 'file' 'struct file *'
+    |-DeclStmt 0x156027050 <line:7:2, col:45>
+    | |-RecordDecl 0x156026dc0 <col:2, col:9> col:9 struct dentry
+    | `-VarDecl 0x156026f28 <col:2, col:39> col:17 used dentry 'struct dentry *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x156026ff0 <col:26, col:39> '<dependent type>' contains-errors lvalue .dentry
+    |     `-RecoveryExpr 0x156026fc8 <col:26, col:32> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x156026f90 <col:26> 'struct file *' lvalue ParmVar 0x156026768 'file' 'struct file *'
+    |-DeclStmt 0x156027258 <line:8:2, col:36>
+    | |-RecordDecl 0x156027068 <col:2, col:9> col:9 struct inode_security_struct
+    | `-VarDecl 0x1560271d8 <col:2, col:32> col:32 used isec 'struct inode_security_struct *'
+    |-DeclStmt 0x1560273e8 <line:9:2, col:29>
+    | |-RecordDecl 0x156027270 <col:2, col:9> col:9 struct common_audit_data
+    | `-VarDecl 0x156027368 <col:2, col:27> col:27 referenced invalid ad 'struct common_audit_data'
+    |-DeclStmt 0x156027480 <line:10:2, col:8>
+    | `-VarDecl 0x156027418 <col:2, col:6> col:6 used rc 'int'
+    |-BinaryOperator 0x156027580 <line:12:2, col:12> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1560274e0 <col:2, col:5> '<dependent type>' contains-errors lvalue .type
+    | | `-RecoveryExpr 0x1560274b8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x156027498 <col:2> 'struct common_audit_data' lvalue Var 0x156027368 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x156027560 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x15602d0f0 <line:13:2, col:20> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x15602d048 <col:2, col:7> '<dependent type>' contains-errors lvalue .path
+    | | `-CXXDependentScopeMemberExpr 0x15602d000 <col:2, col:5> '<dependent type>' contains-errors lvalue .u
+    | |   `-RecoveryExpr 0x1560275c0 <col:2> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x1560275a0 <col:2> 'struct common_audit_data' lvalue Var 0x156027368 'ad' 'struct common_audit_data'
+    | `-RecoveryExpr 0x15602d0c8 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x15602d090 <col:14> 'struct file *' lvalue ParmVar 0x156026768 'file' 'struct file *'
+    |-IfStmt 0x15602d688 <line:15:2, line:23:2>
+    | |-BinaryOperator 0x15602d1c8 <line:15:6, col:19> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x15602d1a8 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x15602d160 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15602d128 <col:13> 'struct file_security_struct *' lvalue Var 0x156026b38 'fsec' 'struct file_security_struct *'
+    | `-CompoundStmt 0x15602d668 <col:24, line:23:2>
+    |   |-BinaryOperator 0x15602d5a8 <line:16:3, line:20:10> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x15602d1e8 <line:16:3> 'int' lvalue Var 0x156027418 'rc' 'int'
+    |   | `-CallExpr 0x15602d558 <col:8, line:20:10> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x15602d2e8 <line:16:8> 'int ()' Function 0x15602d230 'avc_has_perm' 'int ()'
+    |   |   |-UnaryOperator 0x15602d4e0 <col:21, col:22> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | `-RecoveryExpr 0x15602d4c0 <col:22> '<dependent type>' contains-errors lvalue
+    |   |   |-RecoveryExpr 0x15602d4f8 <line:17:7> '<dependent type>' contains-errors lvalue
+    |   |   |-RecoveryExpr 0x15602d388 <col:12, col:18> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x15602d350 <col:12> 'struct file_security_struct *' lvalue Var 0x156026b38 'fsec' 'struct file_security_struct *'
+    |   |   |-RecoveryExpr 0x15602d518 <line:18:7> '<dependent type>' contains-errors lvalue
+    |   |   |-RecoveryExpr 0x15602d538 <line:19:7> '<dependent type>' contains-errors lvalue
+    |   |   `-UnaryOperator 0x15602d400 <line:20:7, col:8> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-RecoveryExpr 0x15602d3e0 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x15602d648 <line:21:3, line:22:11>
+    |     |-ImplicitCastExpr 0x15602d5e8 <line:21:7> 'int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x15602d5c8 <col:7> 'int' lvalue Var 0x156027418 'rc' 'int'
+    |     `-ReturnStmt 0x15602d638 <line:22:4, col:11>
+    |       `-ImplicitCastExpr 0x15602d620 <col:11> 'int' <LValueToRValue>
+    |         `-DeclRefExpr 0x15602d600 <col:11> 'int' lvalue Var 0x156027418 'rc' 'int'
+    |-IfStmt 0x15602dad0 <line:31:2, line:32:10>
+    | |-CallExpr 0x15602da78 <line:31:6, col:50> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x15602da60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x15602d788 <col:6> 'int ()' Function 0x15602d6d0 'unlikely' 'int ()'
+    | | `-CallExpr 0x15602da38 <col:15, col:49> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x15602da20 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x15602d888 <col:15> 'int ()' Function 0x15602d7d0 'IS_PRIVATE' 'int ()'
+    | |   `-CallExpr 0x15602d9e0 <col:26, col:48> 'int' contains-errors
+    | |     |-ImplicitCastExpr 0x15602d9c8 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x15602d988 <col:26> 'int ()' Function 0x15602d8d0 'd_backing_inode' 'int ()'
+    | |     `-ImplicitCastExpr 0x15602da08 <col:42> 'struct dentry *' contains-errors <LValueToRValue>
+    | |       `-DeclRefExpr 0x15602d9a8 <col:42> 'struct dentry *' contains-errors lvalue Var 0x156026f28 'dentry' 'struct dentry *'
+    | `-ReturnStmt 0x15602dac0 <line:32:3, col:10>
+    |   `-IntegerLiteral 0x15602daa0 <col:10> 'int' 0
+    `-BinaryOperator 0x15602dca0 <line:34:2, col:38> 'struct inode_security_struct *' contains-errors '='
+      |-DeclRefExpr 0x15602daf0 <col:2> 'struct inode_security_struct *' lvalue Var 0x1560271d8 'isec' 'struct inode_security_struct *'
+      `-ImplicitCastExpr 0x15602dc88 <col:9, col:38> 'struct inode_security_struct *' contains-errors <IntegralToPointer>
+        `-CallExpr 0x15602dc48 <col:9, col:38> 'int' contains-errors
+          |-ImplicitCastExpr 0x15602dc30 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x15602dbf0 <col:9> 'int ()' Function 0x15602db38 'backing_inode_security' 'int ()'
+          `-ImplicitCastExpr 0x15602dc70 <col:32> 'struct dentry *' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x15602dc10 <col:32> 'struct dentry *' contains-errors lvalue Var 0x156026f28 'dentry' 'struct dentry *'

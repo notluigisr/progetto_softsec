@@ -1,0 +1,38 @@
+`-FunctionDecl 0x14a940ad8  line:1:12 debugfs_remount 'int (struct super_block *, int *, char *)' static
+  |-ParmVarDecl 0x14a928648 <col:28, col:48> col:48 used sb 'struct super_block *'
+  |-ParmVarDecl 0x14a9286f8 <col:52, col:57> col:57 flags 'int *'
+  |-ParmVarDecl 0x14a928778 <col:64, col:70> col:70 used data 'char *'
+  `-CompoundStmt 0x14a941580 <line:2:1, line:15:1>
+    |-DeclStmt 0x14a940c60 <line:3:2, col:9>
+    | `-VarDecl 0x14a940bf8 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x14a940ec8 <line:4:2, col:45>
+    | |-RecordDecl 0x14a940c78 <col:2, col:9> col:9 struct debugfs_fs_info
+    | `-VarDecl 0x14a940de8 <col:2, col:36> col:26 used fsi 'struct debugfs_fs_info *' cinit
+    |   `-RecoveryExpr 0x14a940e88 <col:32, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x14a940e50 <col:32> 'struct super_block *' lvalue ParmVar 0x14a928648 'sb' 'struct super_block *'
+    |-CallExpr 0x14a941098 <line:6:2, col:20> 'int'
+    | |-ImplicitCastExpr 0x14a941080 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a941010 <col:2> 'int ()' Function 0x14a940f58 'sync_filesystem' 'int ()'
+    | `-ImplicitCastExpr 0x14a9410c0 <col:18> 'struct super_block *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a941030 <col:18> 'struct super_block *' lvalue ParmVar 0x14a928648 'sb' 'struct super_block *'
+    |-BinaryOperator 0x14a9412c0 <line:7:2, col:52> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14a9410d8 <col:2> 'int' lvalue Var 0x14a940bf8 'err' 'int'
+    | `-CallExpr 0x14a941290 <col:8, col:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a9411d8 <col:8> 'int ()' Function 0x14a941120 'debugfs_parse_options' 'int ()'
+    |   |-DeclRefExpr 0x14a9411f8 <col:30> 'char *' lvalue ParmVar 0x14a928778 'data' 'char *'
+    |   `-UnaryOperator 0x14a941278 <col:36, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x14a941250 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14a941218 <col:37> 'struct debugfs_fs_info *' contains-errors lvalue Var 0x14a940de8 'fsi' 'struct debugfs_fs_info *'
+    |-IfStmt 0x14a941380 <line:8:2, line:9:8>
+    | |-ImplicitCastExpr 0x14a941300 <line:8:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14a9412e0 <col:6> 'int' lvalue Var 0x14a940bf8 'err' 'int'
+    | `-GotoStmt 0x14a941368 <line:9:3, col:8> 'fail' 0x14a941318
+    |-CallExpr 0x14a9414d8 <line:11:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x14a9414c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14a941480 <col:2> 'int ()' Function 0x14a9413c8 'debugfs_apply_options' 'int ()'
+    | `-ImplicitCastExpr 0x14a941500 <col:24> 'struct super_block *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14a9414a0 <col:24> 'struct super_block *' lvalue ParmVar 0x14a928648 'sb' 'struct super_block *'
+    `-LabelStmt 0x14a941560 <line:13:1, line:14:9> 'fail'
+      `-ReturnStmt 0x14a941550 <col:2, col:9>
+        `-ImplicitCastExpr 0x14a941538 <col:9> 'int' <LValueToRValue>
+          `-DeclRefExpr 0x14a941518 <col:9> 'int' lvalue Var 0x14a940bf8 'err' 'int'

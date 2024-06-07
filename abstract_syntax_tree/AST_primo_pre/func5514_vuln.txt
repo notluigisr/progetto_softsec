@@ -1,0 +1,61 @@
+`-FunctionDecl 0x14d88e338  line:1:5 invalid diskutil_ddzero 'int (const char *, const long long, int)'
+  |-ParmVarDecl 0x14d88e0d8 <col:21, col:33> col:33 used path 'const char *'
+  |-ParmVarDecl 0x14d88e158 <col:39, col:55> col:55 used sectors 'const long long'
+  |-ParmVarDecl 0x14d88e1f0 <col:64, col:72> col:72 invalid zero_fill 'int'
+  `-CompoundStmt 0x14d04e4b0 <line:2:1, line:25:1>
+    |-DeclStmt 0x14d88e4b0 <line:3:5, col:24>
+    | `-VarDecl 0x14d88e410 <col:5, col:20> col:11 used output 'char *' cinit
+    |   `-RecoveryExpr 0x14d88e490 <col:20> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x14d88e580 <line:4:5, col:24>
+    | `-VarDecl 0x14d88e4e0 <col:5, col:23> col:15 used count 'long long' cinit
+    |   `-ImplicitCastExpr 0x14d88e568 <col:23> 'long long' <IntegralCast>
+    |     `-IntegerLiteral 0x14d88e548 <col:23> 'int' 1
+    |-DeclStmt 0x14d88e6a8 <line:5:5, col:33>
+    | `-VarDecl 0x14d88e5b0 <col:5, col:32> col:15 used seek 'long long' cinit
+    |   `-BinaryOperator 0x14d88e688 <col:22, col:32> 'long long' '-'
+    |     |-ImplicitCastExpr 0x14d88e658 <col:22> 'long long' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14d88e618 <col:22> 'const long long' lvalue ParmVar 0x14d88e158 'sectors' 'const long long'
+    |     `-ImplicitCastExpr 0x14d88e670 <col:32> 'long long' <IntegralCast>
+    |       `-IntegerLiteral 0x14d88e638 <col:32> 'int' 1
+    |-IfStmt 0x14d04e180 <line:7:5, line:21:5>
+    | |-ImplicitCastExpr 0x14d88e6e0 <line:7:9> 'const char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14d88e6c0 <col:9> 'const char *' lvalue ParmVar 0x14d88e0d8 'path' 'const char *'
+    | `-CompoundStmt 0x14d04e158 <col:15, line:21:5>
+    |   |-IfStmt 0x14d04da40 <line:8:9, line:11:9>
+    |   | |-RecoveryExpr 0x14d88e6f8 <line:8:13> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x14d04da20 <col:24, line:11:9>
+    |   |   |-BinaryOperator 0x14d88e770 <line:9:13, col:21> 'long long' '='
+    |   |   | |-DeclRefExpr 0x14d88e718 <col:13> 'long long' lvalue Var 0x14d88e4e0 'count' 'long long'
+    |   |   | `-ImplicitCastExpr 0x14d88e758 <col:21> 'long long' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x14d88e738 <col:21> 'const long long' lvalue ParmVar 0x14d88e158 'sectors' 'const long long'
+    |   |   `-BinaryOperator 0x14d04da00 <line:10:13, col:20> 'long long' '='
+    |   |     |-DeclRefExpr 0x14d88e790 <col:13> 'long long' lvalue Var 0x14d88e5b0 'seek' 'long long'
+    |   |     `-ImplicitCastExpr 0x14d88e7d0 <col:20> 'long long' <IntegralCast>
+    |   |       `-IntegerLiteral 0x14d88e7b0 <col:20> 'int' 0
+    |   |-IfStmt 0x14d04dfa8 <line:14:9, line:17:9>
+    |   | |-UnaryOperator 0x14d04dd78 <line:14:13, col:14> 'int' contains-errors prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x14d04dd60 <col:14> 'char *' contains-errors <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x14d04dd40 <col:14> 'char *' contains-errors lvalue Var 0x14d88e410 'output' 'char *'
+    |   | `-CompoundStmt 0x14d04df90 <col:22, line:17:9>
+    |   |   `-CallExpr 0x14d04df18 <line:15:13, col:33> 'int'
+    |   |     |-ImplicitCastExpr 0x14d04df00 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x14d04de70 <col:13> 'int ()' Function 0x14d04ddb8 'LOGERROR' 'int ()'
+    |   |     |-ImplicitCastExpr 0x14d04df48 <col:22> 'char *' <ArrayToPointerDecay>
+    |   |     | `-StringLiteral 0x14d04de90 <col:22> 'char[4]' lvalue "STR"
+    |   |     `-ImplicitCastExpr 0x14d04df60 <col:29> 'const char *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x14d04deb0 <col:29> 'const char *' lvalue ParmVar 0x14d88e0d8 'path' 'const char *'
+    |   `-CallExpr 0x14d04e100 <line:19:9, col:25> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x14d04e0e8 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14d04e0a8 <col:9> 'int ()' Function 0x14d04dff0 'EUCA_FREE' 'int ()'
+    |     `-ImplicitCastExpr 0x14d04e128 <col:19> 'char *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x14d04e0c8 <col:19> 'char *' contains-errors lvalue Var 0x14d88e410 'output' 'char *'
+    `-CallExpr 0x14d04e450 <line:23:5, col:28> 'int'
+      |-ImplicitCastExpr 0x14d04e438 <col:5> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x14d04e280 <col:5> 'int ()' Function 0x14d04e1c8 'LOGWARN' 'int ()'
+      |-ImplicitCastExpr 0x14d04e480 <col:13> 'char *' <ArrayToPointerDecay>
+      | `-StringLiteral 0x14d04e2a0 <col:13> 'char[4]' lvalue "STR"
+      `-CallExpr 0x14d04e3f8 <col:20, col:27> 'int'
+        |-ImplicitCastExpr 0x14d04e3e0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x14d04e3a0 <col:20> 'int ()' Function 0x14d04e2e8 'SP' 'int ()'
+        `-ImplicitCastExpr 0x14d04e420 <col:23> 'const char *' <LValueToRValue>
+          `-DeclRefExpr 0x14d04e3c0 <col:23> 'const char *' lvalue ParmVar 0x14d88e0d8 'path' 'const char *'

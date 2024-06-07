@@ -1,0 +1,35 @@
+`-FunctionDecl 0x13382a948  line:1:5 nfsd_pool_stats_release 'int (struct inode *, struct file *)'
+  |-ParmVarDecl 0x13380e248 <col:29, col:43> col:43 used inode 'struct inode *'
+  |-ParmVarDecl 0x13382a828 <col:50, col:63> col:63 used file 'struct file *'
+  `-CompoundStmt 0x13382b4e8 <line:2:1, line:11:1>
+    |-DeclStmt 0x13382acf8 <line:3:2, col:36>
+    | `-VarDecl 0x13382aa60 <col:2, col:35> col:6 used ret 'int' cinit
+    |   `-CallExpr 0x13382ac98 <col:12, col:35> 'int'
+    |     |-ImplicitCastExpr 0x13382ac80 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13382abf0 <col:12> 'int ()' Function 0x13382ab38 'seq_release' 'int ()'
+    |     |-ImplicitCastExpr 0x13382acc8 <col:24> 'struct inode *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13382ac10 <col:24> 'struct inode *' lvalue ParmVar 0x13380e248 'inode' 'struct inode *'
+    |     `-ImplicitCastExpr 0x13382ace0 <col:31> 'struct file *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13382ac30 <col:31> 'struct file *' lvalue ParmVar 0x13382a828 'file' 'struct file *'
+    |-DeclStmt 0x13382afa0 <line:4:2, col:42>
+    | |-RecordDecl 0x13382ad10 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x13382ae78 <col:2, col:33> col:14 used net 'struct net *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13382af40 <col:20, col:33> '<dependent type>' contains-errors lvalue ->s_fs_info
+    |     `-RecoveryExpr 0x13382af18 <col:20, col:27> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13382aee0 <col:20> 'struct inode *' lvalue ParmVar 0x13380e248 'inode' 'struct inode *'
+    |-CallExpr 0x13382b148 <line:6:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13382b098 <col:2> 'int ()' Function 0x13382afe0 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13382b130 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13382b110 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13382b2a8 <line:8:2, col:18> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13382b290 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13382b250 <col:2> 'int ()' Function 0x13382b198 'nfsd_destroy' 'int ()'
+    | `-ImplicitCastExpr 0x13382b2d0 <col:15> 'struct net *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x13382b270 <col:15> 'struct net *' contains-errors lvalue Var 0x13382ae78 'net' 'struct net *'
+    |-CallExpr 0x13382b478 <line:9:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13382b3c8 <col:2> 'int ()' Function 0x13382b310 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x13382b460 <col:15, col:16> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x13382b440 <col:16> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13382b4d8 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x13382b4c0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13382b4a0 <col:9> 'int' lvalue Var 0x13382aa60 'ret' 'int'

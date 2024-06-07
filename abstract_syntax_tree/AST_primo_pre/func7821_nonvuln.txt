@@ -1,0 +1,44 @@
+`-FunctionDecl 0x13c80e158  line:1:5 invalid DSA_sign 'int (int, const unsigned char *, int, unsigned char *, unsigned int *, int *)'
+  |-ParmVarDecl 0x13c80dcd8 <col:14, col:18> col:18 type 'int'
+  |-ParmVarDecl 0x13c80dd88 <col:24, col:45> col:45 used dgst 'const unsigned char *'
+  |-ParmVarDecl 0x13c80de08 <col:51, col:55> col:55 used dlen 'int'
+  |-ParmVarDecl 0x13c80deb8 <col:61, col:76> col:76 used sig 'unsigned char *'
+  |-ParmVarDecl 0x13c80df68 <line:2:7, col:21> col:21 used siglen 'unsigned int *'
+  |-ParmVarDecl 0x13c80e038 <col:29, col:34> col:34 invalid dsa 'int *'
+  `-CompoundStmt 0x13c8280f0 <line:3:2, line:15:2>
+    |-CallExpr 0x13c827848 <line:5:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x13c827830 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13c80e3a0 <col:2> 'int ()' Function 0x13c80e2e8 'RAND_seed' 'int ()'
+    | |-ImplicitCastExpr 0x13c827878 <col:12> 'const unsigned char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13c80e3c0 <col:12> 'const unsigned char *' lvalue ParmVar 0x13c80dd88 'dgst' 'const unsigned char *'
+    | `-ImplicitCastExpr 0x13c827890 <col:18> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x13c80e3e0 <col:18> 'int' lvalue ParmVar 0x13c80de08 'dlen' 'int'
+    |-IfStmt 0x13c827c08 <line:7:2, line:11:3>
+    | |-BinaryOperator 0x13c827ad0 <line:7:6, col:11> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x13c827a90 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x13c827ab0 <col:11> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13c827be8 <line:8:3, line:11:3>
+    |   |-BinaryOperator 0x13c827b78 <line:9:3, col:11> 'unsigned int' '='
+    |   | |-UnaryOperator 0x13c827b28 <col:3, col:4> 'unsigned int' lvalue prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x13c827b10 <col:4> 'unsigned int *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13c827af0 <col:4> 'unsigned int *' lvalue ParmVar 0x13c80df68 'siglen' 'unsigned int *'
+    |   | `-ImplicitCastExpr 0x13c827b60 <col:11> 'unsigned int' <IntegralCast>
+    |   |   `-IntegerLiteral 0x13c827b40 <col:11> 'int' 0
+    |   `-ReturnStmt 0x13c827bd8 <line:10:3, col:11>
+    |     `-ParenExpr 0x13c827bb8 <col:9, col:11> 'int'
+    |       `-IntegerLiteral 0x13c827b98 <col:10> 'int' 0
+    |-BinaryOperator 0x13c827ef8 <line:12:2, col:28> 'unsigned int' contains-errors '='
+    | |-UnaryOperator 0x13c827e90 <col:2, col:3> 'unsigned int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x13c827e78 <col:3> 'unsigned int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13c827c28 <col:3> 'unsigned int *' lvalue ParmVar 0x13c80df68 'siglen' 'unsigned int *'
+    | `-CallExpr 0x13c827ec8 <col:10, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13c827d58 <col:10> 'int ()' Function 0x13c827ca0 'i2d_DSA_SIG' 'int ()'
+    |   |-RecoveryExpr 0x13c827ea8 <col:22> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x13c827de0 <col:24, col:25> 'unsigned char **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x13c827d90 <col:25> 'unsigned char *' lvalue ParmVar 0x13c80deb8 'sig' 'unsigned char *'
+    |-CallExpr 0x13c828078 <line:13:2, col:16> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13c827ff8 <col:2> 'int ()' Function 0x13c827f40 'DSA_SIG_free' 'int ()'
+    | `-RecoveryExpr 0x13c828058 <col:15> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13c8280e0 <line:14:2, col:10>
+      `-ParenExpr 0x13c8280c0 <col:8, col:10> 'int'
+        `-IntegerLiteral 0x13c8280a0 <col:9> 'int' 1

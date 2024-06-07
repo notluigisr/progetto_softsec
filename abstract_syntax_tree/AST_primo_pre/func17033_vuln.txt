@@ -1,0 +1,74 @@
+`-FunctionDecl 0x13a140d38  line:1:5 pid_getattr 'int (struct vfsmount *, struct dentry *, struct kstat *)'
+  |-ParmVarDecl 0x13a128648 <col:17, col:34> col:34 mnt 'struct vfsmount *'
+  |-ParmVarDecl 0x13a140a28 <col:39, col:54> col:54 used dentry 'struct dentry *'
+  |-ParmVarDecl 0x13a140bf8 <col:62, col:76> col:76 used stat 'struct kstat *'
+  `-CompoundStmt 0x13a80ac08 <line:2:1, line:23:1>
+    |-DeclStmt 0x13a141088 <line:3:2, col:39>
+    | |-RecordDecl 0x13a140e40 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x13a140fa8 <col:2, col:32> col:16 used inode 'struct inode *' cinit
+    |   `-RecoveryExpr 0x13a141048 <col:24, col:32> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13a141010 <col:24> 'struct dentry *' lvalue ParmVar 0x13a140a28 'dentry' 'struct dentry *'
+    |-DeclStmt 0x13a141288 <line:4:2, col:26>
+    | |-RecordDecl 0x13a1410a0 <col:2, col:9> col:9 struct task_struct
+    | `-VarDecl 0x13a141208 <col:2, col:22> col:22 used task 'struct task_struct *'
+    |-DeclStmt 0x13a141488 <line:5:2, col:25>
+    | |-RecordDecl 0x13a1412a0 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x13a141408 <col:2, col:21> col:21 used cred 'const struct cred *'
+    |-CallExpr 0x13a141678 <line:7:2, col:30> 'int' contains-errors
+    | |-ImplicitCastExpr 0x13a141660 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a1415d0 <col:2> 'int ()' Function 0x13a141518 'generic_fillattr' 'int ()'
+    | |-ImplicitCastExpr 0x13a1416a8 <col:19> 'struct inode *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x13a1415f0 <col:19> 'struct inode *' contains-errors lvalue Var 0x13a140fa8 'inode' 'struct inode *'
+    | `-ImplicitCastExpr 0x13a1416c0 <col:26> 'struct kstat *' <LValueToRValue>
+    |   `-DeclRefExpr 0x13a141610 <col:26> 'struct kstat *' lvalue ParmVar 0x13a140bf8 'stat' 'struct kstat *'
+    |-CallExpr 0x13a1417f0 <line:9:2, col:16> 'int'
+    | `-ImplicitCastExpr 0x13a1417d8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13a1417b8 <col:2> 'int ()' Function 0x13a141700 'rcu_read_lock' 'int ()'
+    |-BinaryOperator 0x13a141890 <line:10:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13a141848 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13a141810 <col:2> 'struct kstat *' lvalue ParmVar 0x13a140bf8 'stat' 'struct kstat *'
+    | `-IntegerLiteral 0x13a141870 <col:14> 'int' 0
+    |-BinaryOperator 0x13a141930 <line:11:2, col:14> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x13a1418e8 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x13a1418b0 <col:2> 'struct kstat *' lvalue ParmVar 0x13a140bf8 'stat' 'struct kstat *'
+    | `-IntegerLiteral 0x13a141910 <col:14> 'int' 0
+    |-BinaryOperator 0x13a80a3b8 <line:12:2, col:46> 'struct task_struct *' contains-errors '='
+    | |-DeclRefExpr 0x13a141950 <col:2> 'struct task_struct *' lvalue Var 0x13a141208 'task' 'struct task_struct *'
+    | `-CallExpr 0x13a80a388 <col:9, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13a80a0b8 <col:9> 'int ()' Function 0x13a80a000 'pid_task' 'int ()'
+    |   |-CallExpr 0x13a80a328 <col:18, col:32> 'int' contains-errors
+    |   | |-ImplicitCastExpr 0x13a80a310 <col:18> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13a80a1b8 <col:18> 'int ()' Function 0x13a80a100 'proc_pid' 'int ()'
+    |   | `-ImplicitCastExpr 0x13a80a350 <col:27> 'struct inode *' contains-errors <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13a80a1d8 <col:27> 'struct inode *' contains-errors lvalue Var 0x13a140fa8 'inode' 'struct inode *'
+    |   `-RecoveryExpr 0x13a80a368 <col:35> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13a80aa80 <line:13:2, line:20:2>
+    | |-ImplicitCastExpr 0x13a80a3f8 <line:13:6> 'struct task_struct *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13a80a3d8 <col:6> 'struct task_struct *' lvalue Var 0x13a141208 'task' 'struct task_struct *'
+    | `-CompoundStmt 0x13a80aa68 <col:12, line:20:2>
+    |   `-IfStmt 0x13a80aa48 <line:14:3, line:19:3>
+    |     |-RecoveryExpr 0x13a80a670 <line:14:7, line:15:25> '_Bool' contains-errors
+    |     `-CompoundStmt 0x13a80aa20 <col:28, line:19:3>
+    |       |-BinaryOperator 0x13a80a840 <line:16:4, col:27> 'const struct cred *' '='
+    |       | |-DeclRefExpr 0x13a80a690 <col:4> 'const struct cred *' lvalue Var 0x13a141408 'cred' 'const struct cred *'
+    |       | `-ImplicitCastExpr 0x13a80a828 <col:11, col:27> 'const struct cred *' <IntegralToPointer>
+    |       |   `-CallExpr 0x13a80a7e8 <col:11, col:27> 'int'
+    |       |     |-ImplicitCastExpr 0x13a80a7d0 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |       |     | `-DeclRefExpr 0x13a80a790 <col:11> 'int ()' Function 0x13a80a6d8 '__task_cred' 'int ()'
+    |       |     `-ImplicitCastExpr 0x13a80a810 <col:23> 'struct task_struct *' <LValueToRValue>
+    |       |       `-DeclRefExpr 0x13a80a7b0 <col:23> 'struct task_struct *' lvalue Var 0x13a141208 'task' 'struct task_struct *'
+    |       |-BinaryOperator 0x13a80a920 <line:17:4, col:22> '<dependent type>' contains-errors '='
+    |       | |-RecoveryExpr 0x13a80a898 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |       | | `-DeclRefExpr 0x13a80a860 <col:4> 'struct kstat *' lvalue ParmVar 0x13a140bf8 'stat' 'struct kstat *'
+    |       | `-RecoveryExpr 0x13a80a8f8 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |       |   `-DeclRefExpr 0x13a80a8c0 <col:16> 'const struct cred *' lvalue Var 0x13a141408 'cred' 'const struct cred *'
+    |       `-BinaryOperator 0x13a80aa00 <line:18:4, col:22> '<dependent type>' contains-errors '='
+    |         |-RecoveryExpr 0x13a80a978 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |         | `-DeclRefExpr 0x13a80a940 <col:4> 'struct kstat *' lvalue ParmVar 0x13a140bf8 'stat' 'struct kstat *'
+    |         `-RecoveryExpr 0x13a80a9d8 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13a80a9a0 <col:16> 'const struct cred *' lvalue Var 0x13a141408 'cred' 'const struct cred *'
+    |-CallExpr 0x13a80abb8 <line:21:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x13a80aba0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x13a80ab80 <col:2> 'int ()' Function 0x13a80aac8 'rcu_read_unlock' 'int ()'
+    `-ReturnStmt 0x13a80abf8 <line:22:2, col:9>
+      `-IntegerLiteral 0x13a80abd8 <col:9> 'int' 0

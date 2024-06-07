@@ -1,0 +1,33 @@
+`-FunctionDecl 0x140941800  line:1:14 invalid napi_gro_frags 'int (struct napi_struct *)'
+  |-ParmVarDecl 0x140928668 <col:29, col:49> col:49 used napi 'struct napi_struct *'
+  `-CompoundStmt 0x140942130 <line:2:1, line:9:1>
+    |-DeclStmt 0x140941cd8 <line:3:2, col:44>
+    | |-RecordDecl 0x1409418b0 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x140941a18 <col:2, col:43> col:18 used skb 'struct sk_buff *' cinit
+    |   `-ImplicitCastExpr 0x140941ca8 <col:24, col:43> 'struct sk_buff *' <IntegralToPointer>
+    |     `-CallExpr 0x140941c68 <col:24, col:43> 'int'
+    |       |-ImplicitCastExpr 0x140941c50 <col:24> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x140941be0 <col:24> 'int ()' Function 0x140941b28 'napi_frags_skb' 'int ()'
+    |       `-ImplicitCastExpr 0x140941c90 <col:39> 'struct napi_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x140941c00 <col:39> 'struct napi_struct *' lvalue ParmVar 0x140928668 'napi' 'struct napi_struct *'
+    |-IfStmt 0x140941d88 <line:5:2, line:6:10>
+    | |-UnaryOperator 0x140941d28 <line:5:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x140941d10 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x140941cf0 <col:7> 'struct sk_buff *' lvalue Var 0x140941a18 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x140941d78 <line:6:3, col:10>
+    |   `-RecoveryExpr 0x140941d58 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x140942120 <line:8:2, col:67>
+      `-CallExpr 0x1409420b8 <col:9, col:67> 'int'
+        |-ImplicitCastExpr 0x1409420a0 <col:9> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x140941e88 <col:9> 'int ()' Function 0x140941dd0 'napi_frags_finish' 'int ()'
+        |-ImplicitCastExpr 0x1409420f0 <col:27> 'struct napi_struct *' <LValueToRValue>
+        | `-DeclRefExpr 0x140941ea8 <col:27> 'struct napi_struct *' lvalue ParmVar 0x140928668 'napi' 'struct napi_struct *'
+        |-ImplicitCastExpr 0x140942108 <col:33> 'struct sk_buff *' <LValueToRValue>
+        | `-DeclRefExpr 0x140941ec8 <col:33> 'struct sk_buff *' lvalue Var 0x140941a18 'skb' 'struct sk_buff *'
+        `-CallExpr 0x140942040 <col:38, col:66> 'int'
+          |-ImplicitCastExpr 0x140942028 <col:38> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x140941fc8 <col:38> 'int ()' Function 0x140941f10 '__napi_gro_receive' 'int ()'
+          |-ImplicitCastExpr 0x140942070 <col:57> 'struct napi_struct *' <LValueToRValue>
+          | `-DeclRefExpr 0x140941fe8 <col:57> 'struct napi_struct *' lvalue ParmVar 0x140928668 'napi' 'struct napi_struct *'
+          `-ImplicitCastExpr 0x140942088 <col:63> 'struct sk_buff *' <LValueToRValue>
+            `-DeclRefExpr 0x140942008 <col:63> 'struct sk_buff *' lvalue Var 0x140941a18 'skb' 'struct sk_buff *'

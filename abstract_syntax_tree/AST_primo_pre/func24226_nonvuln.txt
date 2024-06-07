@@ -1,0 +1,21 @@
+`-FunctionDecl 0x13580e358  line:1:12 round_event_name_len 'int (struct fsnotify_event *)' static
+  |-ParmVarDecl 0x13580e248 <col:33, col:56> col:56 used fsn_event 'struct fsnotify_event *'
+  `-CompoundStmt 0x135122e18 <line:2:1, line:9:1>
+    |-DeclStmt 0x135122838 <line:3:2, col:34>
+    | |-RecordDecl 0x135122650 <col:2, col:9> col:9 struct inotify_event_info
+    | `-VarDecl 0x1351227b8 <col:2, col:29> col:29 used event 'struct inotify_event_info *'
+    |-BinaryOperator 0x135122a80 <line:5:2, col:29> 'struct inotify_event_info *' '='
+    | |-DeclRefExpr 0x135122850 <col:2> 'struct inotify_event_info *' lvalue Var 0x1351227b8 'event' 'struct inotify_event_info *'
+    | `-ImplicitCastExpr 0x135122a68 <col:10, col:29> 'struct inotify_event_info *' <IntegralToPointer>
+    |   `-CallExpr 0x135122a28 <col:10, col:29> 'int'
+    |     |-ImplicitCastExpr 0x135122a10 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x1351229a0 <col:10> 'int ()' Function 0x1351228e8 'INOTIFY_E' 'int ()'
+    |     `-ImplicitCastExpr 0x135122a50 <col:20> 'struct fsnotify_event *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1351229c0 <col:20> 'struct fsnotify_event *' lvalue ParmVar 0x13580e248 'fsn_event' 'struct fsnotify_event *'
+    `-IfStmt 0x135122b60 <line:6:2, line:7:10>
+      |-UnaryOperator 0x135122b18 <line:6:6, col:14> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-ImplicitCastExpr 0x135122b00 <col:7, col:14> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x135122ad8 <col:7, col:14> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x135122aa0 <col:7> 'struct inotify_event_info *' lvalue Var 0x1351227b8 'event' 'struct inotify_event_info *'
+      `-ReturnStmt 0x135122b50 <line:7:3, col:10>
+        `-IntegerLiteral 0x135122b30 <col:10> 'int' 0

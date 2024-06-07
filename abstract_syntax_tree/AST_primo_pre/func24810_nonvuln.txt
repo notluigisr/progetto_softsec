@@ -1,0 +1,36 @@
+`-FunctionDecl 0x15c0269e8  line:1:20 sctp_make_violation_paramlen 'struct sctp_chunk *(const struct sctp_association *, const struct sctp_chunk *, struct sctp_paramhdr *)'
+  |-ParmVarDecl 0x15c00e2e8 <line:2:2, col:33> col:33 used asoc 'const struct sctp_association *'
+  |-ParmVarDecl 0x15c026628 <line:3:2, col:27> col:27 used chunk 'const struct sctp_chunk *'
+  |-ParmVarDecl 0x15c0267f8 <line:4:2, col:24> col:24 used param 'struct sctp_paramhdr *'
+  `-CompoundStmt 0x15c029798 <line:5:1, line:22:1>
+    |-DeclStmt 0x15c026bb0 <line:6:2, col:27>
+    | `-VarDecl 0x15c026b48 <col:2, col:21> col:21 used retval 'struct sctp_chunk *'
+    |-DeclStmt 0x15c026d60 <line:7:2, col:35>
+    | `-VarDecl 0x15c026c50 <col:2, col:30> col:20 used error 'const char[4]' static cinit
+    |   `-StringLiteral 0x15c026d00 <col:30> 'const char[4]' "STR"
+    |-BinaryOperator 0x15c0270b8 <line:11:2, col:51> 'struct sctp_chunk *' contains-errors '='
+    | |-DeclRefExpr 0x15c026e58 <col:2> 'struct sctp_chunk *' lvalue Var 0x15c026b48 'retval' 'struct sctp_chunk *'
+    | `-CallExpr 0x15c027080 <col:11, col:51> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x15c026f90 <col:11> 'int ()' Function 0x15c026ed8 'sctp_make_abort' 'int ()'
+    |   |-DeclRefExpr 0x15c026fb0 <col:27> 'const struct sctp_association *' lvalue ParmVar 0x15c00e2e8 'asoc' 'const struct sctp_association *'
+    |   |-DeclRefExpr 0x15c026fd0 <col:33> 'const struct sctp_chunk *' lvalue ParmVar 0x15c026628 'chunk' 'const struct sctp_chunk *'
+    |   `-RecoveryExpr 0x15c027060 <col:40> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15c027190 <line:12:2, line:13:8>
+    | |-UnaryOperator 0x15c027110 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c0270f8 <col:7> 'struct sctp_chunk *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c0270d8 <col:7> 'struct sctp_chunk *' lvalue Var 0x15c026b48 'retval' 'struct sctp_chunk *'
+    | `-GotoStmt 0x15c027178 <line:13:3, col:8> 'nodata' 0x15c027128
+    |-CallExpr 0x15c027548 <line:17:2, col:47> 'int'
+    | |-ImplicitCastExpr 0x15c027530 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c027440 <col:2> 'int ()' Function 0x15c027388 'sctp_addto_chunk' 'int ()'
+    | |-ImplicitCastExpr 0x15c027580 <col:19> 'struct sctp_chunk *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c027460 <col:19> 'struct sctp_chunk *' lvalue Var 0x15c026b48 'retval' 'struct sctp_chunk *'
+    | |-UnaryExprOrTypeTraitExpr 0x15c0274c0 <col:27, col:39> 'unsigned long' sizeof
+    | | `-ParenExpr 0x15c0274a0 <col:33, col:39> 'const char[4]' lvalue
+    | |   `-DeclRefExpr 0x15c027480 <col:34> 'const char[4]' lvalue Var 0x15c026c50 'error' 'const char[4]' non_odr_use_unevaluated
+    | `-ImplicitCastExpr 0x15c027598 <col:42> 'const char *' <ArrayToPointerDecay>
+    |   `-DeclRefExpr 0x15c0274e0 <col:42> 'const char[4]' lvalue Var 0x15c026c50 'error' 'const char[4]'
+    `-LabelStmt 0x15c029778 <line:20:1, line:21:9> 'nodata'
+      `-ReturnStmt 0x15c029768 <col:2, col:9>
+        `-ImplicitCastExpr 0x15c029750 <col:9> 'struct sctp_chunk *' <LValueToRValue>
+          `-DeclRefExpr 0x15c029730 <col:9> 'struct sctp_chunk *' lvalue Var 0x15c026b48 'retval' 'struct sctp_chunk *'

@@ -1,0 +1,47 @@
+`-FunctionDecl 0x13a854198  line:2:12 bfq_request_merge 'int (struct request_queue *, struct request **, struct bio *)' static
+  |-ParmVarDecl 0x13a830e48 <col:30, col:52> col:52 used q 'struct request_queue *'
+  |-ParmVarDecl 0x13a853e88 <col:55, col:72> col:72 used req 'struct request **'
+  |-ParmVarDecl 0x13a854058 <line:3:9, col:21> col:21 used bio 'struct bio *'
+  `-CompoundStmt 0x13a854ca8 <line:4:1, line:14:27>
+    |-DeclStmt 0x13a854530 <line:5:2, col:52>
+    | |-RecordDecl 0x13a8542a0 <col:2, col:9> col:9 struct bfq_data
+    | `-VarDecl 0x13a854408 <col:2, col:39> col:19 used bfqd 'struct bfq_data *' cinit
+    |   `-CXXDependentScopeMemberExpr 0x13a8544d0 <col:26, col:39> '<dependent type>' contains-errors lvalue ->elevator_data
+    |     `-RecoveryExpr 0x13a8544a8 <col:26, col:29> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13a854470 <col:26> 'struct request_queue *' lvalue ParmVar 0x13a830e48 'q' 'struct request_queue *'
+    |-DeclStmt 0x13a854640 <line:6:2, col:22>
+    | `-VarDecl 0x13a8545d8 <col:2, col:18> col:18 used __rq 'struct request *'
+    |-BinaryOperator 0x13a854900 <line:8:2, col:40> 'struct request *' contains-errors '='
+    | |-DeclRefExpr 0x13a854658 <col:2> 'struct request *' lvalue Var 0x13a8545d8 '__rq' 'struct request *'
+    | `-ImplicitCastExpr 0x13a8548e8 <col:9, col:40> 'struct request *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x13a854868 <col:9, col:40> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x13a854850 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13a8547a0 <col:9> 'int ()' Function 0x13a8546e8 'bfq_find_rq_fmerge' 'int ()'
+    |     |-ImplicitCastExpr 0x13a8548a0 <col:28> 'struct bfq_data *' contains-errors <LValueToRValue>
+    |     | `-DeclRefExpr 0x13a8547c0 <col:28> 'struct bfq_data *' contains-errors lvalue Var 0x13a854408 'bfqd' 'struct bfq_data *'
+    |     |-ImplicitCastExpr 0x13a8548b8 <col:34> 'struct bio *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13a8547e0 <col:34> 'struct bio *' lvalue ParmVar 0x13a854058 'bio' 'struct bio *'
+    |     `-ImplicitCastExpr 0x13a8548d0 <col:39> 'struct request_queue *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13a854800 <col:39> 'struct request_queue *' lvalue ParmVar 0x13a830e48 'q' 'struct request_queue *'
+    |-IfStmt 0x13a854c40 <line:9:2, line:12:2>
+    | |-BinaryOperator 0x13a854b10 <line:9:6, col:40> 'int' '&&'
+    | | |-ImplicitCastExpr 0x13a854af8 <col:6> 'struct request *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13a854920 <col:6> 'struct request *' lvalue Var 0x13a8545d8 '__rq' 'struct request *'
+    | | `-CallExpr 0x13a854a98 <col:14, col:40> 'int'
+    | |   |-ImplicitCastExpr 0x13a854a80 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13a854a20 <col:14> 'int ()' Function 0x13a854968 'elv_bio_merge_ok' 'int ()'
+    | |   |-ImplicitCastExpr 0x13a854ac8 <col:31> 'struct request *' <LValueToRValue>
+    | |   | `-DeclRefExpr 0x13a854a40 <col:31> 'struct request *' lvalue Var 0x13a8545d8 '__rq' 'struct request *'
+    | |   `-ImplicitCastExpr 0x13a854ae0 <col:37> 'struct bio *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x13a854a60 <col:37> 'struct bio *' lvalue ParmVar 0x13a854058 'bio' 'struct bio *'
+    | `-CompoundStmt 0x13a854c20 <col:43, line:12:2>
+    |   |-BinaryOperator 0x13a854bb8 <line:10:3, col:10> 'struct request *' '='
+    |   | |-UnaryOperator 0x13a854b68 <col:3, col:4> 'struct request *' lvalue prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x13a854b50 <col:4> 'struct request **' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x13a854b30 <col:4> 'struct request **' lvalue ParmVar 0x13a853e88 'req' 'struct request **'
+    |   | `-ImplicitCastExpr 0x13a854ba0 <col:10> 'struct request *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13a854b80 <col:10> 'struct request *' lvalue Var 0x13a8545d8 '__rq' 'struct request *'
+    |   `-ReturnStmt 0x13a854c10 <line:11:3, col:10>
+    |     `-RecoveryExpr 0x13a854bf0 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13a854c98 <line:14:2, col:9>
+      `-RecoveryExpr 0x13a854c78 <col:9> '<dependent type>' contains-errors lvalue

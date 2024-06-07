@@ -1,0 +1,254 @@
+`-FunctionDecl 0x137026a28  line:1:23 copy_mnt_ns 'struct mnt_namespace *(unsigned long, struct mnt_namespace *, struct user_namespace *, struct fs_struct *)'
+  |-ParmVarDecl 0x13700dd78 <col:35, col:49> col:49 used flags 'unsigned long'
+  |-ParmVarDecl 0x13700de98 <col:56, col:78> col:78 used ns 'struct mnt_namespace *'
+  |-ParmVarDecl 0x137026688 <line:2:3, col:26> col:26 used user_ns 'struct user_namespace *'
+  |-ParmVarDecl 0x137026858 <col:35, col:53> col:53 used new_fs 'struct fs_struct *'
+  `-CompoundStmt 0x136924d30 <line:3:1, line:68:1>
+    |-DeclStmt 0x137026bc8 <line:4:2, col:30>
+    | `-VarDecl 0x137026b60 <col:2, col:24> col:24 used new_ns 'struct mnt_namespace *'
+    |-DeclStmt 0x137026ee8 <line:5:2, col:49>
+    | |-RecordDecl 0x137026be0 <col:2, col:9> col:9 struct vfsmount
+    | |-VarDecl 0x137026d48 <col:2, col:29> col:19 used rootmnt 'struct vfsmount *' cinit
+    | | `-RecoveryExpr 0x137026de0 <col:29> '<dependent type>' contains-errors lvalue
+    | `-VarDecl 0x137026e28 <col:2, col:45> col:36 used pwdmnt 'struct vfsmount *' cinit
+    |   `-RecoveryExpr 0x137026ea8 <col:45> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x137027180 <line:6:2, col:21>
+    | |-RecordDecl 0x137026f00 <col:2, col:9> col:9 struct mount
+    | |-VarDecl 0x137027068 <col:2, col:16> col:16 used p 'struct mount *'
+    | `-VarDecl 0x1370270f8 <col:2, col:20> col:20 used q 'struct mount *'
+    |-DeclStmt 0x137027290 <line:7:2, col:19>
+    | `-VarDecl 0x137027228 <col:2, col:16> col:16 used old 'struct mount *'
+    |-DeclStmt 0x137027338 <line:8:2, col:19>
+    | `-VarDecl 0x1370272d0 <col:2, col:16> col:16 used new 'struct mount *'
+    |-DeclStmt 0x1370273d0 <line:9:2, col:16>
+    | `-VarDecl 0x137027368 <col:2, col:6> col:6 used copy_flags 'int'
+    |-CallExpr 0x1370275b8 <line:11:2, col:12> 'int'
+    | |-ImplicitCastExpr 0x1370275a0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x137027500 <col:2> 'int ()' Function 0x137027448 'BUG_ON' 'int ()'
+    | `-UnaryOperator 0x137027558 <col:9, col:10> 'int' prefix '!' cannot overflow
+    |   `-ImplicitCastExpr 0x137027540 <col:10> 'struct mnt_namespace *' <LValueToRValue>
+    |     `-DeclRefExpr 0x137027520 <col:10> 'struct mnt_namespace *' lvalue ParmVar 0x13700de98 'ns' 'struct mnt_namespace *'
+    |-IfStmt 0x137029158 <line:13:2, line:16:2>
+    | |-RecoveryExpr 0x137028f58 <line:13:6, col:35> '_Bool' contains-errors
+    | `-CompoundStmt 0x137029138 <col:38, line:16:2>
+    |   |-CallExpr 0x1370290b0 <line:14:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x137029098 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x137029058 <col:3> 'int ()' Function 0x137028fa0 'get_mnt_ns' 'int ()'
+    |   | `-ImplicitCastExpr 0x1370290d8 <col:14> 'struct mnt_namespace *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x137029078 <col:14> 'struct mnt_namespace *' lvalue ParmVar 0x13700de98 'ns' 'struct mnt_namespace *'
+    |   `-ReturnStmt 0x137029128 <line:15:3, col:10>
+    |     `-ImplicitCastExpr 0x137029110 <col:10> 'struct mnt_namespace *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1370290f0 <col:10> 'struct mnt_namespace *' lvalue ParmVar 0x13700de98 'ns' 'struct mnt_namespace *'
+    |-BinaryOperator 0x1370291f8 <line:18:2, col:12> 'struct mount *' contains-errors '='
+    | |-DeclRefExpr 0x137029178 <col:2> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    | `-RecoveryExpr 0x1370291d0 <col:8, col:12> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x137029198 <col:8> 'struct mnt_namespace *' lvalue ParmVar 0x13700de98 'ns' 'struct mnt_namespace *'
+    |-BinaryOperator 0x1370293c8 <line:20:2, col:31> 'struct mnt_namespace *' '='
+    | |-DeclRefExpr 0x137029218 <col:2> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    | `-ImplicitCastExpr 0x1370293b0 <col:11, col:31> 'struct mnt_namespace *' <IntegralToPointer>
+    |   `-CallExpr 0x137029370 <col:11, col:31> 'int'
+    |     |-ImplicitCastExpr 0x137029358 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x137029318 <col:11> 'int ()' Function 0x137029260 'alloc_mnt_ns' 'int ()'
+    |     `-ImplicitCastExpr 0x137029398 <col:24> 'struct user_namespace *' <LValueToRValue>
+    |       `-DeclRefExpr 0x137029338 <col:24> 'struct user_namespace *' lvalue ParmVar 0x137026688 'user_ns' 'struct user_namespace *'
+    |-IfStmt 0x1370295a8 <line:21:2, line:22:10>
+    | |-CallExpr 0x137029520 <line:21:6, col:19> 'int'
+    | | |-ImplicitCastExpr 0x137029508 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1370294c8 <col:6> 'int ()' Function 0x137029410 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x137029548 <col:13> 'struct mnt_namespace *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1370294e8 <col:13> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    | `-ReturnStmt 0x137029598 <line:22:3, col:10>
+    |   `-ImplicitCastExpr 0x137029580 <col:10> 'struct mnt_namespace *' <LValueToRValue>
+    |     `-DeclRefExpr 0x137029560 <col:10> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    |-CallExpr 0x1370296e0 <line:24:2, col:17> 'int'
+    | `-ImplicitCastExpr 0x1370296c8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1370296a8 <col:2> 'int ()' Function 0x1370295f0 'namespace_lock' 'int ()'
+    |-BinaryOperator 0x1370297f0 <line:26:2, col:36> 'int' contains-errors '='
+    | |-DeclRefExpr 0x137029700 <col:2> 'int' lvalue Var 0x137027368 'copy_flags' 'int'
+    | `-BinaryOperator 0x1370297d0 <col:15, col:36> '<dependent type>' contains-errors '|'
+    |   |-RecoveryExpr 0x137029790 <col:15> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1370297b0 <col:36> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1370299e0 <line:27:2, line:28:38>
+    | |-BinaryOperator 0x137029890 <line:27:6, col:21> 'int' contains-errors '!='
+    | | |-DeclRefExpr 0x137029810 <col:6> 'struct user_namespace *' lvalue ParmVar 0x137026688 'user_ns' 'struct user_namespace *'
+    | | `-RecoveryExpr 0x137029868 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x137029830 <col:17> 'struct mnt_namespace *' lvalue ParmVar 0x13700de98 'ns' 'struct mnt_namespace *'
+    | `-CompoundAssignOperator 0x1370299b0 <line:28:3, col:38> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |-DeclRefExpr 0x1370298b0 <col:3> 'int' lvalue Var 0x137027368 'copy_flags' 'int'
+    |   `-BinaryOperator 0x137029990 <col:17, col:38> '<dependent type>' contains-errors '|'
+    |     |-RecoveryExpr 0x137029950 <col:17> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x137029970 <col:38> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x137029c40 <line:29:2, col:52> 'struct mount *' contains-errors '='
+    | |-DeclRefExpr 0x137029a00 <col:2> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    | `-CallExpr 0x137029c08 <col:8, col:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x137029b00 <col:8> 'int ()' Function 0x137029a48 'copy_tree' 'int ()'
+    |   |-DeclRefExpr 0x137029b20 <col:18> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    |   |-CXXDependentScopeMemberExpr 0x137029ba0 <col:23, col:32> '<dependent type>' contains-errors lvalue .mnt_root
+    |   | `-RecoveryExpr 0x137029b78 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x137029b40 <col:23> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    |   `-DeclRefExpr 0x137029be8 <col:42> 'int' lvalue Var 0x137027368 'copy_flags' 'int'
+    |-IfStmt 0x136923578 <line:30:2, line:34:2>
+    | |-CallExpr 0x137029cb8 <line:30:6, col:16> 'int'
+    | | |-ImplicitCastExpr 0x137029ca0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x137029c60 <col:6> 'int ()' Function 0x137029410 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x137029ce0 <col:13> 'struct mount *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x137029c80 <col:13> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    | `-CompoundStmt 0x136923550 <col:19, line:34:2>
+    |   |-CallExpr 0x136923218 <line:31:3, col:20> 'int'
+    |   | `-ImplicitCastExpr 0x136923200 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x137029dd8 <col:3> 'int ()' Function 0x137029d20 'namespace_unlock' 'int ()'
+    |   |-CallExpr 0x136923370 <line:32:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x136923358 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x136923318 <col:3> 'int ()' Function 0x136923260 'free_mnt_ns' 'int ()'
+    |   | `-ImplicitCastExpr 0x136923398 <col:15> 'struct mnt_namespace *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x136923338 <col:15> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    |   `-ReturnStmt 0x136923540 <line:33:3, col:22>
+    |     `-ImplicitCastExpr 0x136923528 <col:10, col:22> 'struct mnt_namespace *' <IntegralToPointer>
+    |       `-CallExpr 0x1369234e8 <col:10, col:22> 'int'
+    |         |-ImplicitCastExpr 0x1369234d0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |         | `-DeclRefExpr 0x136923490 <col:10> 'int ()' Function 0x1369233d8 'ERR_CAST' 'int ()'
+    |         `-ImplicitCastExpr 0x136923510 <col:19> 'struct mount *' <LValueToRValue>
+    |           `-DeclRefExpr 0x1369234b0 <col:19> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    |-BinaryOperator 0x136923618 <line:35:2, col:17> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1369235d0 <col:2, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x136923598 <col:2> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    | `-DeclRefExpr 0x1369235f8 <col:17> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    |-CallExpr 0x136923828 <line:36:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x136923718 <col:2> 'int ()' Function 0x136923660 'list_add_tail' 'int ()'
+    | |-UnaryOperator 0x136923798 <col:16, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x136923770 <col:17, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x136923738 <col:17> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    | `-UnaryOperator 0x136923810 <col:31, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1369237e8 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1369237b0 <col:32> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    |-BinaryOperator 0x1369238b0 <line:39:2, col:6> 'struct mount *' '='
+    | |-DeclRefExpr 0x136923858 <col:2> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    | `-ImplicitCastExpr 0x136923898 <col:6> 'struct mount *' <LValueToRValue>
+    |   `-DeclRefExpr 0x136923878 <col:6> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    |-BinaryOperator 0x136923928 <line:40:2, col:6> 'struct mount *' '='
+    | |-DeclRefExpr 0x1369238d0 <col:2> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    | `-ImplicitCastExpr 0x136923910 <col:6> 'struct mount *' <LValueToRValue>
+    |   `-DeclRefExpr 0x1369238f0 <col:6> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    |-WhileStmt 0x1369249b0 <line:41:2, line:59:2>
+    | |-ImplicitCastExpr 0x136923968 <line:41:9> 'struct mount *' <LValueToRValue>
+    | | `-DeclRefExpr 0x136923948 <col:9> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    | `-CompoundStmt 0x136924970 <col:12, line:59:2>
+    |   |-BinaryOperator 0x136923a00 <line:42:3, col:15> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x1369239b8 <col:3, col:6> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x136923980 <col:3> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   | `-DeclRefExpr 0x1369239e0 <col:15> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'
+    |   |-IfStmt 0x1369242d8 <line:43:3, line:52:3>
+    |   | |-ImplicitCastExpr 0x136923a40 <line:43:7> 'struct fs_struct *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x136923a20 <col:7> 'struct fs_struct *' lvalue ParmVar 0x137026858 'new_fs' 'struct fs_struct *'
+    |   | `-CompoundStmt 0x1369242b8 <col:15, line:52:3>
+    |   |   |-IfStmt 0x136923ed8 <line:44:4, line:47:4>
+    |   |   | |-BinaryOperator 0x136923b78 <line:44:8, col:32> 'int' contains-errors '=='
+    |   |   | | |-UnaryOperator 0x136923ab8 <col:8, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   | | | `-RecoveryExpr 0x136923a90 <col:9, col:12> '<dependent type>' contains-errors lvalue
+    |   |   | | |   `-DeclRefExpr 0x136923a58 <col:9> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   |   | | `-CXXDependentScopeMemberExpr 0x136923b30 <col:19, col:32> '<dependent type>' contains-errors lvalue .mnt
+    |   |   | |   `-RecoveryExpr 0x136923b08 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    |   |   | |     `-DeclRefExpr 0x136923ad0 <col:19> 'struct fs_struct *' lvalue ParmVar 0x137026858 'new_fs' 'struct fs_struct *'
+    |   |   | `-CompoundStmt 0x136923eb8 <col:37, line:47:4>
+    |   |   |   |-BinaryOperator 0x136923de0 <line:45:5, col:38> '<dependent type>' contains-errors '='
+    |   |   |   | |-CXXDependentScopeMemberExpr 0x136923bf8 <col:5, col:18> '<dependent type>' contains-errors lvalue .mnt
+    |   |   |   | | `-RecoveryExpr 0x136923bd0 <col:5, col:13> '<dependent type>' contains-errors lvalue
+    |   |   |   | |   `-DeclRefExpr 0x136923b98 <col:5> 'struct fs_struct *' lvalue ParmVar 0x137026858 'new_fs' 'struct fs_struct *'
+    |   |   |   | `-CallExpr 0x136923db8 <col:24, col:38> '<dependent type>' contains-errors
+    |   |   |   |   |-DeclRefExpr 0x136923d20 <col:24> 'int ()' Function 0x136923c68 'mntget' 'int ()'
+    |   |   |   |   `-UnaryOperator 0x136923da0 <col:31, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   |     `-RecoveryExpr 0x136923d78 <col:32, col:35> '<dependent type>' contains-errors lvalue
+    |   |   |   |       `-DeclRefExpr 0x136923d40 <col:32> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   |   |   `-BinaryOperator 0x136923e98 <line:46:5, col:19> 'struct vfsmount *' contains-errors '='
+    |   |   |     |-DeclRefExpr 0x136923e00 <col:5> 'struct vfsmount *' contains-errors lvalue Var 0x137026d48 'rootmnt' 'struct vfsmount *'
+    |   |   |     `-UnaryOperator 0x136923e80 <col:15, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |       `-RecoveryExpr 0x136923e58 <col:16, col:19> '<dependent type>' contains-errors lvalue
+    |   |   |         `-DeclRefExpr 0x136923e20 <col:16> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   |   `-IfStmt 0x136924298 <line:48:4, line:51:4>
+    |   |     |-BinaryOperator 0x136924018 <line:48:8, col:31> 'int' contains-errors '=='
+    |   |     | |-UnaryOperator 0x136923f58 <col:8, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     | | `-RecoveryExpr 0x136923f30 <col:9, col:12> '<dependent type>' contains-errors lvalue
+    |   |     | |   `-DeclRefExpr 0x136923ef8 <col:9> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   |     | `-CXXDependentScopeMemberExpr 0x136923fd0 <col:19, col:31> '<dependent type>' contains-errors lvalue .mnt
+    |   |     |   `-RecoveryExpr 0x136923fa8 <col:19, col:27> '<dependent type>' contains-errors lvalue
+    |   |     |     `-DeclRefExpr 0x136923f70 <col:19> 'struct fs_struct *' lvalue ParmVar 0x137026858 'new_fs' 'struct fs_struct *'
+    |   |     `-CompoundStmt 0x136924278 <col:36, line:51:4>
+    |   |       |-BinaryOperator 0x1369241a0 <line:49:5, col:37> '<dependent type>' contains-errors '='
+    |   |       | |-CXXDependentScopeMemberExpr 0x136924098 <col:5, col:17> '<dependent type>' contains-errors lvalue .mnt
+    |   |       | | `-RecoveryExpr 0x136924070 <col:5, col:13> '<dependent type>' contains-errors lvalue
+    |   |       | |   `-DeclRefExpr 0x136924038 <col:5> 'struct fs_struct *' lvalue ParmVar 0x137026858 'new_fs' 'struct fs_struct *'
+    |   |       | `-CallExpr 0x136924178 <col:23, col:37> '<dependent type>' contains-errors
+    |   |       |   |-DeclRefExpr 0x1369240e0 <col:23> 'int ()' Function 0x136923c68 'mntget' 'int ()'
+    |   |       |   `-UnaryOperator 0x136924160 <col:30, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |       |     `-RecoveryExpr 0x136924138 <col:31, col:34> '<dependent type>' contains-errors lvalue
+    |   |       |       `-DeclRefExpr 0x136924100 <col:31> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   |       `-BinaryOperator 0x136924258 <line:50:5, col:18> 'struct vfsmount *' contains-errors '='
+    |   |         |-DeclRefExpr 0x1369241c0 <col:5> 'struct vfsmount *' contains-errors lvalue Var 0x137026e28 'pwdmnt' 'struct vfsmount *'
+    |   |         `-UnaryOperator 0x136924240 <col:14, col:18> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |           `-RecoveryExpr 0x136924218 <col:15, col:18> '<dependent type>' contains-errors lvalue
+    |   |             `-DeclRefExpr 0x1369241e0 <col:15> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   |-BinaryOperator 0x1369244e8 <line:53:3, col:22> 'struct mount *' '='
+    |   | |-DeclRefExpr 0x1369242f8 <col:3> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   | `-ImplicitCastExpr 0x1369244d0 <col:7, col:22> 'struct mount *' <IntegralToPointer>
+    |   |   `-CallExpr 0x136924470 <col:7, col:22> 'int'
+    |   |     |-ImplicitCastExpr 0x136924458 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x1369243f8 <col:7> 'int ()' Function 0x136924340 'next_mnt' 'int ()'
+    |   |     |-ImplicitCastExpr 0x1369244a0 <col:16> 'struct mount *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x136924418 <col:16> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |   |     `-ImplicitCastExpr 0x1369244b8 <col:19> 'struct mount *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x136924438 <col:19> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    |   |-BinaryOperator 0x136924618 <line:54:3, col:22> 'struct mount *' '='
+    |   | |-DeclRefExpr 0x136924508 <col:3> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   | `-ImplicitCastExpr 0x136924600 <col:7, col:22> 'struct mount *' <IntegralToPointer>
+    |   |   `-CallExpr 0x1369245a0 <col:7, col:22> 'int'
+    |   |     |-ImplicitCastExpr 0x136924588 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   |     | `-DeclRefExpr 0x136924528 <col:7> 'int ()' Function 0x136924340 'next_mnt' 'int ()'
+    |   |     |-ImplicitCastExpr 0x1369245d0 <col:16> 'struct mount *' <LValueToRValue>
+    |   |     | `-DeclRefExpr 0x136924548 <col:16> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   |     `-ImplicitCastExpr 0x1369245e8 <col:19> 'struct mount *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x136924568 <col:19> 'struct mount *' lvalue Var 0x1370272d0 'new' 'struct mount *'
+    |   |-IfStmt 0x136924690 <line:55:3, line:56:4>
+    |   | |-UnaryOperator 0x136924670 <line:55:7, col:8> 'int' prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x136924658 <col:8> 'struct mount *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x136924638 <col:8> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |   | `-BreakStmt 0x136924688 <line:56:4>
+    |   `-WhileStmt 0x136924950 <line:57:3, line:58:23>
+    |     |-BinaryOperator 0x136924800 <line:57:10, col:36> 'int' contains-errors '!='
+    |     | |-CXXDependentScopeMemberExpr 0x136924710 <col:10, col:17> '<dependent type>' contains-errors lvalue .mnt_root
+    |     | | `-RecoveryExpr 0x1369246e8 <col:10, col:13> '<dependent type>' contains-errors lvalue
+    |     | |   `-DeclRefExpr 0x1369246b0 <col:10> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |     | `-CXXDependentScopeMemberExpr 0x1369247b8 <col:29, col:36> '<dependent type>' contains-errors lvalue .mnt_root
+    |     |   `-RecoveryExpr 0x136924790 <col:29, col:32> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x136924758 <col:29> 'struct mount *' lvalue Var 0x1370270f8 'q' 'struct mount *'
+    |     `-BinaryOperator 0x136924930 <line:58:4, col:23> 'struct mount *' '='
+    |       |-DeclRefExpr 0x136924820 <col:4> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |       `-ImplicitCastExpr 0x136924918 <col:8, col:23> 'struct mount *' <IntegralToPointer>
+    |         `-CallExpr 0x1369248b8 <col:8, col:23> 'int'
+    |           |-ImplicitCastExpr 0x1369248a0 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |           | `-DeclRefExpr 0x136924840 <col:8> 'int ()' Function 0x136924340 'next_mnt' 'int ()'
+    |           |-ImplicitCastExpr 0x1369248e8 <col:17> 'struct mount *' <LValueToRValue>
+    |           | `-DeclRefExpr 0x136924860 <col:17> 'struct mount *' lvalue Var 0x137027068 'p' 'struct mount *'
+    |           `-ImplicitCastExpr 0x136924900 <col:20> 'struct mount *' <LValueToRValue>
+    |             `-DeclRefExpr 0x136924880 <col:20> 'struct mount *' lvalue Var 0x137027228 'old' 'struct mount *'
+    |-CallExpr 0x136924a08 <line:60:2, col:19> 'int'
+    | `-ImplicitCastExpr 0x1369249f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x1369249d0 <col:2> 'int ()' Function 0x137029d20 'namespace_unlock' 'int ()'
+    |-IfStmt 0x136924bd8 <line:62:2, line:63:17>
+    | |-ImplicitCastExpr 0x136924a48 <line:62:6> 'struct vfsmount *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x136924a28 <col:6> 'struct vfsmount *' contains-errors lvalue Var 0x137026d48 'rootmnt' 'struct vfsmount *'
+    | `-CallExpr 0x136924b98 <line:63:3, col:17> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x136924b80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x136924b40 <col:3> 'int ()' Function 0x136924a88 'mntput' 'int ()'
+    |   `-ImplicitCastExpr 0x136924bc0 <col:10> 'struct vfsmount *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x136924b60 <col:10> 'struct vfsmount *' contains-errors lvalue Var 0x137026d48 'rootmnt' 'struct vfsmount *'
+    |-IfStmt 0x136924cc8 <line:64:2, line:65:16>
+    | |-ImplicitCastExpr 0x136924c18 <line:64:6> 'struct vfsmount *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x136924bf8 <col:6> 'struct vfsmount *' contains-errors lvalue Var 0x137026e28 'pwdmnt' 'struct vfsmount *'
+    | `-CallExpr 0x136924c88 <line:65:3, col:16> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x136924c70 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x136924c30 <col:3> 'int ()' Function 0x136924a88 'mntput' 'int ()'
+    |   `-ImplicitCastExpr 0x136924cb0 <col:10> 'struct vfsmount *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x136924c50 <col:10> 'struct vfsmount *' contains-errors lvalue Var 0x137026e28 'pwdmnt' 'struct vfsmount *'
+    `-ReturnStmt 0x136924d20 <line:67:2, col:9>
+      `-ImplicitCastExpr 0x136924d08 <col:9> 'struct mnt_namespace *' <LValueToRValue>
+        `-DeclRefExpr 0x136924ce8 <col:9> 'struct mnt_namespace *' lvalue Var 0x137026b60 'new_ns' 'struct mnt_namespace *'

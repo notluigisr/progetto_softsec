@@ -1,0 +1,59 @@
+`-FunctionDecl 0x1530268a0  line:1:20 switch_mm 'void (struct mm_struct *, struct mm_struct *, struct task_struct *)' static inline
+  |-ParmVarDecl 0x15300e248 <col:30, col:48> col:48 used prev 'struct mm_struct *'
+  |-ParmVarDecl 0x15300e338 <col:54, col:72> col:72 used next 'struct mm_struct *'
+  |-ParmVarDecl 0x153026768 <line:2:9, col:29> col:29 tsk 'struct task_struct *'
+  `-CompoundStmt 0x153029810 <line:3:1, line:18:1>
+    |-DeclStmt 0x153026bd8 <line:4:2, col:30>
+    | `-VarDecl 0x1530269c0 <col:2, col:29> col:6 used cpu 'int' cinit
+    |   `-CallExpr 0x153026bb8 <col:12, col:29> 'int'
+    |     `-ImplicitCastExpr 0x153026ba0 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |       `-DeclRefExpr 0x153026b50 <col:12> 'int ()' Function 0x153026a98 'smp_processor_id' 'int ()'
+    |-IfStmt 0x153026ee0 <line:7:2, line:8:3>
+    | |-BinaryOperator 0x153026eb0 <line:7:6, col:14> 'int' '=='
+    | | |-ImplicitCastExpr 0x153026e80 <col:6> 'struct mm_struct *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x153026e40 <col:6> 'struct mm_struct *' lvalue ParmVar 0x15300e248 'prev' 'struct mm_struct *'
+    | | `-ImplicitCastExpr 0x153026e98 <col:14> 'struct mm_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x153026e60 <col:14> 'struct mm_struct *' lvalue ParmVar 0x15300e338 'next' 'struct mm_struct *'
+    | `-ReturnStmt 0x153026ed0 <line:8:3>
+    |-IfStmt 0x153027148 <line:9:2, line:10:54>
+    | |-RecoveryExpr 0x153026f18 <line:9:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x153027118 <line:10:3, col:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153027018 <col:3> 'int ()' Function 0x153026f60 'cpumask_set_cpu' 'int ()'
+    |   |-DeclRefExpr 0x153027038 <col:19> 'int' lvalue Var 0x1530269c0 'cpu' 'int'
+    |   `-UnaryOperator 0x153027100 <col:24, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x1530270b8 <col:25, col:39> '<dependent type>' contains-errors lvalue .cpu_attach_mask
+    |       `-RecoveryExpr 0x153027090 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x153027058 <col:25> 'struct mm_struct *' lvalue ParmVar 0x15300e338 'next' 'struct mm_struct *'
+    |-CallExpr 0x1530273a8 <line:12:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153027248 <col:2> 'int ()' Function 0x153027190 '__ctl_load' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x153027360 <col:13, col:26> '<dependent type>' contains-errors lvalue .kernel_asce
+    | | `-RecoveryExpr 0x153027340 <col:13> '<dependent type>' contains-errors lvalue
+    | |-IntegerLiteral 0x1530272c8 <col:39> 'int' 1
+    | `-IntegerLiteral 0x1530272e8 <col:42> 'int' 1
+    |-CallExpr 0x153027540 <line:13:2, col:43> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1530273e0 <col:2> 'int ()' Function 0x153027190 '__ctl_load' 'int ()'
+    | |-CXXDependentScopeMemberExpr 0x1530274f8 <col:13, col:26> '<dependent type>' contains-errors lvalue .kernel_asce
+    | | `-RecoveryExpr 0x1530274d8 <col:13> '<dependent type>' contains-errors lvalue
+    | |-IntegerLiteral 0x153027460 <col:39> 'int' 7
+    | `-IntegerLiteral 0x153027480 <col:42> 'int' 7
+    |-CallExpr 0x153029398 <line:14:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1530292b8 <col:2> 'int ()' Function 0x153029200 'atomic_inc' 'int ()'
+    | `-UnaryOperator 0x153029380 <col:13, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x153029338 <col:14, col:28> '<dependent type>' contains-errors lvalue .attach_count
+    |     `-RecoveryExpr 0x153029310 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1530292d8 <col:14> 'struct mm_struct *' lvalue ParmVar 0x15300e338 'next' 'struct mm_struct *'
+    |-CallExpr 0x153029580 <line:15:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1530294a0 <col:2> 'int ()' Function 0x1530293e8 'atomic_dec' 'int ()'
+    | `-UnaryOperator 0x153029568 <col:13, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x153029520 <col:14, col:28> '<dependent type>' contains-errors lvalue .attach_count
+    |     `-RecoveryExpr 0x1530294f8 <col:14, col:20> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1530294c0 <col:14> 'struct mm_struct *' lvalue ParmVar 0x15300e248 'prev' 'struct mm_struct *'
+    `-IfStmt 0x1530297f0 <line:16:2, line:17:56>
+      |-RecoveryExpr 0x1530295c0 <line:16:6> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x1530297c0 <line:17:3, col:56> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1530296c0 <col:3> 'int ()' Function 0x153029608 'cpumask_clear_cpu' 'int ()'
+        |-DeclRefExpr 0x1530296e0 <col:21> 'int' lvalue Var 0x1530269c0 'cpu' 'int'
+        `-UnaryOperator 0x1530297a8 <col:26, col:41> '<dependent type>' contains-errors prefix '&' cannot overflow
+          `-CXXDependentScopeMemberExpr 0x153029760 <col:27, col:41> '<dependent type>' contains-errors lvalue .cpu_attach_mask
+            `-RecoveryExpr 0x153029738 <col:27, col:33> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x153029700 <col:27> 'struct mm_struct *' lvalue ParmVar 0x15300e248 'prev' 'struct mm_struct *'

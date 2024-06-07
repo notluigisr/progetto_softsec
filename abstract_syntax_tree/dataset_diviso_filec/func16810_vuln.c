@@ -1,0 +1,1 @@
+    int length() { return ptr - start; }

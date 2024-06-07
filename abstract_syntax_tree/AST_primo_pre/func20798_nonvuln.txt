@@ -1,0 +1,30 @@
+`-FunctionDecl 0x140027548  line:1:12 invalid apparmor_cred_prepare 'int (struct cred *, const struct cred *, int)' static
+  |-ParmVarDecl 0x14000e248 <col:34, col:47> col:47 used new 'struct cred *'
+  |-ParmVarDecl 0x14000e368 <col:52, col:71> col:71 used old 'const struct cred *'
+  |-ParmVarDecl 0x140027400 <line:2:6, col:12> col:12 invalid gfp 'int'
+  `-CompoundStmt 0x140027d70 <line:3:1, line:12:1>
+    |-DeclStmt 0x1400279c0 <line:5:2, col:54>
+    | |-RecordDecl 0x140027608 <col:2, col:9> col:9 struct aa_task_cxt
+    | `-VarDecl 0x140027778 <col:2, col:53> col:22 used cxt 'struct aa_task_cxt *' cinit
+    |   `-CallExpr 0x140027980 <col:28, col:53> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x140027940 <col:28> 'int ()' Function 0x140027888 'aa_alloc_task_context' 'int ()'
+    |     `-RecoveryExpr 0x140027960 <col:50> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x140027ad0 <line:6:2, line:7:11>
+    | |-UnaryOperator 0x140027a10 <line:6:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1400279f8 <col:7> 'struct aa_task_cxt *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x1400279d8 <col:7> 'struct aa_task_cxt *' contains-errors lvalue Var 0x140027778 'cxt' 'struct aa_task_cxt *'
+    | `-ReturnStmt 0x140027ac0 <line:7:3, col:11>
+    |   `-UnaryOperator 0x140027aa8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x140027a90 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x140027a70 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x140027c70 <line:9:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x140027bd0 <col:2> 'int ()' Function 0x140027b18 'aa_dup_task_context' 'int ()'
+    | |-DeclRefExpr 0x140027bf0 <col:22> 'struct aa_task_cxt *' contains-errors lvalue Var 0x140027778 'cxt' 'struct aa_task_cxt *'
+    | `-RecoveryExpr 0x140027c48 <col:27, col:32> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x140027c10 <col:27> 'const struct cred *' lvalue ParmVar 0x14000e368 'old' 'const struct cred *'
+    |-BinaryOperator 0x140027d20 <line:10:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x140027cd8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x140027ca0 <col:2> 'struct cred *' lvalue ParmVar 0x14000e248 'new' 'struct cred *'
+    | `-DeclRefExpr 0x140027d00 <col:18> 'struct aa_task_cxt *' contains-errors lvalue Var 0x140027778 'cxt' 'struct aa_task_cxt *'
+    `-ReturnStmt 0x140027d60 <line:11:2, col:9>
+      `-IntegerLiteral 0x140027d40 <col:9> 'int' 0

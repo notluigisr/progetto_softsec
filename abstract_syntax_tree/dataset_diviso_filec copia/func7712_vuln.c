@@ -1,0 +1,1 @@
+    void reposition(int pos) { ptr = start + pos; }

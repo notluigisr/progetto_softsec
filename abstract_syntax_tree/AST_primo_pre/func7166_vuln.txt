@@ -1,0 +1,30 @@
+`-FunctionDecl 0x1530274d0  line:1:13 invalid touch_pmd 'void (struct vm_area_struct *, unsigned long, int *)' static
+  |-ParmVarDecl 0x15300e248 <col:23, col:46> col:46 used vma 'struct vm_area_struct *'
+  |-ParmVarDecl 0x15300e2c8 <col:51, col:65> col:65 used addr 'unsigned long'
+  |-ParmVarDecl 0x15300e398 <line:2:3, col:10> col:10 referenced invalid pmd 'int *'
+  `-CompoundStmt 0x153027d88 <line:3:1, line:11:1>
+    |-BinaryOperator 0x1530278f0 <line:7:2, col:38> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1530275b0 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x153027590 <col:2> 'int *' lvalue ParmVar 0x15300e398 'pmd' 'int *'
+    | `-CallExpr 0x1530278c8 <col:9, col:38> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x153027730 <col:9> 'int ()' Function 0x153027678 'pmd_mkyoung' 'int ()'
+    |   `-CallExpr 0x1530278a0 <col:21, col:37> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x153027830 <col:21> 'int ()' Function 0x153027778 'pmd_mkdirty' 'int ()'
+    |     `-UnaryOperator 0x153027888 <col:33, col:34> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x153027870 <col:34> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x153027850 <col:34> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x153027d68 <line:8:2, line:10:38>
+      |-CallExpr 0x153027b88 <line:8:6, line:9:18> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1530279f0 <line:8:6> 'int ()' Function 0x153027938 'pmdp_set_access_flags' 'int ()'
+      | |-DeclRefExpr 0x153027a10 <col:28> 'struct vm_area_struct *' lvalue ParmVar 0x15300e248 'vma' 'struct vm_area_struct *'
+      | |-BinaryOperator 0x153027b48 <col:33, col:40> '<dependent type>' contains-errors '&'
+      | | |-DeclRefExpr 0x153027a30 <col:33> 'unsigned long' lvalue ParmVar 0x15300e2c8 'addr' 'unsigned long'
+      | | `-RecoveryExpr 0x153027b28 <col:40> '<dependent type>' contains-errors lvalue
+      | |-RecoveryExpr 0x153027a88 <line:9:5> '<dependent type>' contains-errors lvalue
+      | |-RecoveryExpr 0x153027b68 <col:10> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x153027ac0 <col:17> 'int' 1
+      `-CallExpr 0x153027d30 <line:10:3, col:38> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x153027cb0 <col:3> 'int ()' Function 0x153027bf8 'update_mmu_cache_pmd' 'int ()'
+        |-DeclRefExpr 0x153027cd0 <col:24> 'struct vm_area_struct *' lvalue ParmVar 0x15300e248 'vma' 'struct vm_area_struct *'
+        |-DeclRefExpr 0x153027cf0 <col:29> 'unsigned long' lvalue ParmVar 0x15300e2c8 'addr' 'unsigned long'
+        `-RecoveryExpr 0x153027d10 <col:35> '<dependent type>' contains-errors lvalue

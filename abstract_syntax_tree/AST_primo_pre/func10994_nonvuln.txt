@@ -1,0 +1,37 @@
+`-FunctionDecl 0x11f0f9550  line:1:6 putname 'void (struct filename *)'
+  |-ParmVarDecl 0x11f0f9448 <col:14, col:31> col:31 used name 'struct filename *'
+  `-CompoundStmt 0x11f112040 <line:2:1, line:13:1>
+    |-CallExpr 0x11f111a30 <line:3:2, col:26> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x11f111970 <col:2> 'int ()' Function 0x11f1118b8 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x11f111a10 <col:9, col:25> 'int' contains-errors '<='
+    |   |-RecoveryExpr 0x11f1119c8 <col:9, col:15> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x11f111990 <col:9> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+    |   `-IntegerLiteral 0x11f1119f0 <col:25> 'int' 0
+    |-IfStmt 0x11f111b20 <line:5:2, line:6:3>
+    | |-BinaryOperator 0x11f111af0 <line:5:6, col:23> 'int' contains-errors '>'
+    | | |-UnaryOperator 0x11f111ab8 <col:6, col:14> '<dependent type>' contains-errors prefix '--' cannot overflow
+    | | | `-RecoveryExpr 0x11f111a90 <col:8, col:14> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x11f111a58 <col:8> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+    | | `-IntegerLiteral 0x11f111ad0 <col:23> 'int' 0
+    | `-ReturnStmt 0x11f111b10 <line:6:3>
+    `-IfStmt 0x11f112010 <line:8:2, line:12:17> has_else
+      |-BinaryOperator 0x11f111c00 <line:8:6, col:26> 'int' contains-errors '!='
+      | |-RecoveryExpr 0x11f111b78 <col:6, col:12> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x11f111b40 <col:6> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+      | `-RecoveryExpr 0x11f111bd8 <col:20, col:26> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x11f111ba0 <col:20> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+      |-CompoundStmt 0x11f111f58 <col:33, line:11:2>
+      | |-CallExpr 0x11f111d80 <line:9:3, col:23> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x11f111d00 <col:3> 'int ()' Function 0x11f111c48 '__putname' 'int ()'
+      | | `-RecoveryExpr 0x11f111d58 <col:13, col:19> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x11f111d20 <col:13> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+      | `-CallExpr 0x11f111f18 <line:10:3, col:13> 'int'
+      |   |-ImplicitCastExpr 0x11f111f00 <col:3> 'int (*)()' <FunctionToPointerDecay>
+      |   | `-DeclRefExpr 0x11f111e88 <col:3> 'int ()' Function 0x11f111dd0 'kfree' 'int ()'
+      |   `-ImplicitCastExpr 0x11f111f40 <col:9> 'struct filename *' <LValueToRValue>
+      |     `-DeclRefExpr 0x11f111ea8 <col:9> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'
+      `-CallExpr 0x11f111fd0 <line:12:3, col:17> 'int'
+        |-ImplicitCastExpr 0x11f111fb8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x11f111f78 <col:3> 'int ()' Function 0x11f111c48 '__putname' 'int ()'
+        `-ImplicitCastExpr 0x11f111ff8 <col:13> 'struct filename *' <LValueToRValue>
+          `-DeclRefExpr 0x11f111f98 <col:13> 'struct filename *' lvalue ParmVar 0x11f0f9448 'name' 'struct filename *'

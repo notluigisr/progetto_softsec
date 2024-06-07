@@ -1,0 +1,131 @@
+`-FunctionDecl 0x157140e88  line:1:5 invalid ip_build_and_send_pkt 'int (struct sk_buff *, struct sock *, int, int, struct ip_options *)'
+  |-ParmVarDecl 0x157128648 <col:27, col:43> col:43 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x157140a28 <col:48, col:61> col:61 used sk 'struct sock *'
+  |-ParmVarDecl 0x157140ac0 <line:2:6, col:10> col:10 invalid saddr 'int'
+  |-ParmVarDecl 0x157140b40 <col:17, col:21> col:21 invalid daddr 'int'
+  |-ParmVarDecl 0x157140d18 <col:28, col:47> col:47 used opt 'struct ip_options *'
+  `-CompoundStmt 0x157145880 <line:3:1, line:40:1>
+    |-DeclStmt 0x157141388 <line:4:2, col:38>
+    | |-RecordDecl 0x157140f58 <col:2, col:9> col:9 struct inet_sock
+    | `-VarDecl 0x1571410c8 <col:2, col:37> col:20 used inet 'struct inet_sock *' cinit
+    |   `-ImplicitCastExpr 0x157141358 <col:27, col:37> 'struct inet_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x157141318 <col:27, col:37> 'int'
+    |       |-ImplicitCastExpr 0x157141300 <col:27> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x157141290 <col:27> 'int ()' Function 0x1571411d8 'inet_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x157141340 <col:35> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x1571412b0 <col:35> 'struct sock *' lvalue ParmVar 0x157140a28 'sk' 'struct sock *'
+    |-DeclStmt 0x157141698 <line:5:2, col:47>
+    | |-RecordDecl 0x1571413a0 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x157141508 <col:2, col:44> col:17 used rt 'struct rtable *' cinit
+    |   `-CStyleCastExpr 0x157141658 <col:22, col:44> 'struct rtable *' contains-errors <Dependent>
+    |     `-RecoveryExpr 0x1571415a8 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x157141570 <col:39> 'struct sk_buff *' lvalue ParmVar 0x157128648 'skb' 'struct sk_buff *'
+    |-DeclStmt 0x157141898 <line:6:2, col:19>
+    | |-RecordDecl 0x1571416b0 <col:2, col:9> col:9 struct iphdr
+    | `-VarDecl 0x157141818 <col:2, col:16> col:16 used iph 'struct iphdr *'
+    |-BinaryOperator 0x157143ff0 <line:14:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157143fa8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157143f70 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-IntegerLiteral 0x157143fd0 <col:18> 'int' 4
+    |-BinaryOperator 0x157144090 <line:15:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157144048 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144010 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-IntegerLiteral 0x157144070 <col:18> 'int' 5
+    |-BinaryOperator 0x157144170 <line:16:2, col:24> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1571440e8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1571440b0 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x157144148 <col:18, col:24> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x157144110 <col:18> 'struct inet_sock *' lvalue Var 0x1571410c8 'inet' 'struct inet_sock *'
+    |-IfStmt 0x157144668 <line:17:2, line:20:19> has_else
+    | |-CallExpr 0x157144370 <line:17:6, col:37> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x157144270 <col:6> 'int ()' Function 0x1571441b8 'ip_dont_fragment' 'int ()'
+    | | |-DeclRefExpr 0x157144290 <col:23> 'struct sock *' lvalue ParmVar 0x157140a28 'sk' 'struct sock *'
+    | | `-UnaryOperator 0x157144358 <col:27, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-CXXDependentScopeMemberExpr 0x157144310 <col:28, col:34> '<dependent type>' contains-errors lvalue .dst
+    | |     `-RecoveryExpr 0x1571442e8 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1571442b0 <col:28> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    | |-BinaryOperator 0x1571445a8 <line:18:3, col:30> '<dependent type>' contains-errors '='
+    | | |-RecoveryExpr 0x1571443d8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x1571443a0 <col:3> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | | `-CallExpr 0x157144580 <col:19, col:30> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x1571444e0 <col:19> 'int ()' Function 0x157144428 'htons' 'int ()'
+    | |   `-RecoveryExpr 0x157144560 <col:25> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x157144648 <line:20:3, col:19> '<dependent type>' contains-errors '='
+    |   |-RecoveryExpr 0x157144600 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x1571445c8 <col:3> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    |   `-IntegerLiteral 0x157144628 <col:19> 'int' 0
+    |-BinaryOperator 0x157144908 <line:21:2, col:48> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1571446d0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144698 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-CallExpr 0x1571448d8 <col:18, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1571447d8 <col:18> 'int ()' Function 0x157144720 'ip_select_ttl' 'int ()'
+    |   |-DeclRefExpr 0x1571447f8 <col:32> 'struct inet_sock *' lvalue Var 0x1571410c8 'inet' 'struct inet_sock *'
+    |   `-UnaryOperator 0x1571448c0 <col:38, col:45> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x157144878 <col:39, col:45> '<dependent type>' contains-errors lvalue .dst
+    |       `-RecoveryExpr 0x157144850 <col:39, col:43> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x157144818 <col:39> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    |-BinaryOperator 0x1571449e8 <line:22:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157144960 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144928 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x1571449c0 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x157144988 <col:18> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    |-BinaryOperator 0x157144ac8 <line:23:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157144a40 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144a08 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x157144aa0 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x157144a68 <col:18> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    |-BinaryOperator 0x157144ba8 <line:24:2, col:22> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157144b20 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144ae8 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-RecoveryExpr 0x157144b80 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x157144b48 <col:18> 'struct sock *' lvalue ParmVar 0x157140a28 'sk' 'struct sock *'
+    |-BinaryOperator 0x157144cd0 <line:25:2, col:32> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x157144c00 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x157144bc8 <col:2> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | `-CallExpr 0x157144ca8 <col:18, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x157144c28 <col:18> 'int ()' Function 0x157144428 'htons' 'int ()'
+    |   `-RecoveryExpr 0x157144c80 <col:24, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x157144c48 <col:24> 'struct sk_buff *' lvalue ParmVar 0x157128648 'skb' 'struct sk_buff *'
+    |-CallExpr 0x157144f00 <line:26:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x157144dd0 <col:2> 'int ()' Function 0x157144d18 'ip_select_ident' 'int ()'
+    | |-DeclRefExpr 0x157144e00 <col:18> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    | |-UnaryOperator 0x157144ec8 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x157144e80 <col:24, col:30> '<dependent type>' contains-errors lvalue .dst
+    | |   `-RecoveryExpr 0x157144e58 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x157144e20 <col:24> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    | `-DeclRefExpr 0x157144ee0 <col:35> 'struct sock *' lvalue ParmVar 0x157140a28 'sk' 'struct sock *'
+    |-BinaryOperator 0x157145000 <line:27:2, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x157144f98 <col:2, col:10> '<dependent type>' contains-errors lvalue .iph
+    | | `-RecoveryExpr 0x157144f70 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x157144f38 <col:2> 'struct sk_buff *' lvalue ParmVar 0x157128648 'skb' 'struct sk_buff *'
+    | `-DeclRefExpr 0x157144fe0 <col:18> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    |-IfStmt 0x1571453f8 <line:29:2, line:32:2>
+    | |-BinaryOperator 0x1571450a0 <line:29:6, col:18> 'int' contains-errors '&&'
+    | | |-DeclRefExpr 0x157145020 <col:6> 'struct ip_options *' lvalue ParmVar 0x157140d18 'opt' 'struct ip_options *'
+    | | `-RecoveryExpr 0x157145078 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x157145040 <col:13> 'struct ip_options *' lvalue ParmVar 0x157140d18 'opt' 'struct ip_options *'
+    | `-CompoundStmt 0x1571453d8 <col:26, line:32:2>
+    |   |-CompoundAssignOperator 0x1571451c0 <line:30:3, col:28> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   | |-RecoveryExpr 0x1571450f8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x1571450c0 <col:3> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    |   | `-BinaryOperator 0x1571451a0 <col:15, col:28> '<dependent type>' contains-errors '>>'
+    |   |   |-RecoveryExpr 0x157145158 <col:15, col:20> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x157145120 <col:15> 'struct ip_options *' lvalue ParmVar 0x157140d18 'opt' 'struct ip_options *'
+    |   |   `-IntegerLiteral 0x157145180 <col:28> 'int' 2
+    |   `-CallExpr 0x157145390 <line:31:3, col:42> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1571452d0 <col:3> 'int ()' Function 0x157145218 'ip_options_build' 'int ()'
+    |     |-DeclRefExpr 0x1571452f0 <col:20> 'struct sk_buff *' lvalue ParmVar 0x157128648 'skb' 'struct sk_buff *'
+    |     |-DeclRefExpr 0x157145310 <col:25> 'struct ip_options *' lvalue ParmVar 0x157140d18 'opt' 'struct ip_options *'
+    |     |-RecoveryExpr 0x157145330 <col:30> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x157145350 <col:37> 'struct rtable *' contains-errors lvalue Var 0x157141508 'rt' 'struct rtable *'
+    |     `-IntegerLiteral 0x157145370 <col:41> 'int' 0
+    |-CallExpr 0x157145550 <line:33:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x157145538 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1571454f8 <col:2> 'int ()' Function 0x157145440 'ip_send_check' 'int ()'
+    | `-ImplicitCastExpr 0x157145578 <col:16> 'struct iphdr *' <LValueToRValue>
+    |   `-DeclRefExpr 0x157145518 <col:16> 'struct iphdr *' lvalue Var 0x157141818 'iph' 'struct iphdr *'
+    `-BinaryOperator 0x157145650 <line:35:2, col:22> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x1571455c8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x157145590 <col:2> 'struct sk_buff *' lvalue ParmVar 0x157128648 'skb' 'struct sk_buff *'
+      `-RecoveryExpr 0x157145628 <col:18, col:22> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x1571455f0 <col:18> 'struct sock *' lvalue ParmVar 0x157140a28 'sk' 'struct sock *'

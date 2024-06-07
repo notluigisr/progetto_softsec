@@ -1,0 +1,33 @@
+`-FunctionDecl 0x12580dfb8  line:1:5 invalid x509_get_serial 'int (unsigned char **, const unsigned char *, int *)'
+  |-ParmVarDecl 0x12580dd40 <col:22, col:38> col:38 used p 'unsigned char **'
+  |-ParmVarDecl 0x12580ddf8 <col:41, col:62> col:62 used end 'const unsigned char *'
+  |-ParmVarDecl 0x12580dec8 <line:2:22, col:32> col:32 referenced invalid serial 'int *'
+  `-CompoundStmt 0x125829028 <line:3:1, line:24:1>
+    |-DeclStmt 0x12580e0f8 <line:4:5, col:12>
+    | `-VarDecl 0x12580e090 <col:5, col:9> col:9 used ret 'int'
+    |-BinaryOperator 0x125828a68 <line:15:5, col:24> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x125828980 <col:5, col:13> '<dependent type>' contains-errors lvalue ->tag
+    | | `-RecoveryExpr 0x125828958 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x125828938 <col:5> 'int *' lvalue ParmVar 0x12580dec8 'serial' 'int *'
+    | `-UnaryOperator 0x125828a50 <col:19, col:24> 'unsigned char' lvalue prefix '*' cannot overflow
+    |   `-UnaryOperator 0x125828a38 <col:20, col:24> 'unsigned char *' postfix '++'
+    |     `-ParenExpr 0x125828a18 <col:20, col:23> 'unsigned char *' lvalue
+    |       `-UnaryOperator 0x125828a00 <col:21, col:22> 'unsigned char *' lvalue prefix '*' cannot overflow
+    |         `-ImplicitCastExpr 0x1258289e8 <col:22> 'unsigned char **' <LValueToRValue>
+    |           `-DeclRefExpr 0x1258289c8 <col:22> 'unsigned char **' lvalue ParmVar 0x12580dd40 'p' 'unsigned char **'
+    |-BinaryOperator 0x125828ed0 <line:20:5, col:18> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x125828e38 <col:5, col:13> '<dependent type>' contains-errors lvalue ->p
+    | | `-RecoveryExpr 0x125828e10 <col:5> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x125828df0 <col:5> 'int *' lvalue ParmVar 0x12580dec8 'serial' 'int *'
+    | `-UnaryOperator 0x125828eb8 <col:17, col:18> 'unsigned char *' lvalue prefix '*' cannot overflow
+    |   `-ImplicitCastExpr 0x125828ea0 <col:18> 'unsigned char **' <LValueToRValue>
+    |     `-DeclRefExpr 0x125828e80 <col:18> 'unsigned char **' lvalue ParmVar 0x12580dd40 'p' 'unsigned char **'
+    |-CompoundAssignOperator 0x125828fa8 <line:21:5, col:19> 'unsigned char *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-UnaryOperator 0x125828f28 <col:5, col:6> 'unsigned char *' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x125828f10 <col:6> 'unsigned char **' <LValueToRValue>
+    | |   `-DeclRefExpr 0x125828ef0 <col:6> 'unsigned char **' lvalue ParmVar 0x12580dd40 'p' 'unsigned char **'
+    | `-CXXDependentScopeMemberExpr 0x125828f60 <col:11, col:19> '<dependent type>' contains-errors lvalue ->len
+    |   `-RecoveryExpr 0x125828f40 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x125829018 <line:23:5, col:15>
+      `-ParenExpr 0x125828ff8 <col:11, col:15> 'int'
+        `-IntegerLiteral 0x125828fd8 <col:13> 'int' 0

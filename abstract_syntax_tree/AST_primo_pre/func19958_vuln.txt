@@ -1,0 +1,59 @@
+`-FunctionDecl 0x13480dec8  line:1:6 invalid compat_get_bitmap 'long (unsigned long *, const int)'
+  |-ParmVarDecl 0x13480dd08 <col:24, col:39> col:39 used mask 'unsigned long *'
+  |-ParmVarDecl 0x13480dda0 <col:45, col:66> col:66 invalid __user 'const int'
+  `-CompoundStmt 0x1350098d8 <line:3:1, line:29:1>
+    |-DeclStmt 0x13480e000 <line:4:2, col:31>
+    | `-VarDecl 0x13480df98 <col:2, col:16> col:16 used nr_compat_longs 'unsigned long'
+    |-BinaryOperator 0x13480e3b8 <line:8:2, col:52> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x13480e1f0 <col:2> 'unsigned long' lvalue Var 0x13480df98 'nr_compat_longs' 'unsigned long'
+    | `-CallExpr 0x13480e390 <col:20, col:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13480e2f0 <col:20> 'int ()' Function 0x13480e238 'BITS_TO_COMPAT_LONGS' 'int ()'
+    |   `-RecoveryExpr 0x13480e370 <col:41> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x135008f00 <line:10:2, line:11:11>
+    | |-UnaryOperator 0x135008e40 <line:10:6, col:39> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x135008e10 <col:7, col:39> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x135008cb8 <col:7> 'int ()' Function 0x135008c00 'access_ok' 'int ()'
+    | |   |-RecoveryExpr 0x135008db0 <col:17> '<dependent type>' contains-errors lvalue
+    | |   `-BinaryOperator 0x135008df0 <col:24, col:38> '<dependent type>' contains-errors '/'
+    | |     |-RecoveryExpr 0x135008dd0 <col:24> '<dependent type>' contains-errors lvalue
+    | |     `-IntegerLiteral 0x135008d08 <col:38> 'int' 8
+    | `-ReturnStmt 0x135008ef0 <line:11:3, col:11>
+    |   `-UnaryOperator 0x135008ed8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x135008ec0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x135008ea0 <col:11> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x135009068 <line:13:2, col:20> 'int'
+    | `-ImplicitCastExpr 0x135009050 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x135009000 <col:2> 'int ()' Function 0x135008f48 'user_access_begin' 'int ()'
+    |-WhileStmt 0x1350095c8 <line:14:2, line:20:2>
+    | |-BinaryOperator 0x1350090f8 <line:14:9, col:27> 'int' '>'
+    | | |-ImplicitCastExpr 0x1350090c8 <col:9> 'unsigned long' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135009088 <col:9> 'unsigned long' lvalue Var 0x13480df98 'nr_compat_longs' 'unsigned long'
+    | | `-ImplicitCastExpr 0x1350090e0 <col:27> 'unsigned long' <IntegralCast>
+    | |   `-IntegerLiteral 0x1350090a8 <col:27> 'int' 1
+    | `-CompoundStmt 0x1350095a0 <col:30, line:20:2>
+    |   |-CallExpr 0x135009328 <line:16:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1350091f8 <col:3> 'int ()' Function 0x135009140 'unsafe_get_user' 'int ()'
+    |   | |-RecoveryExpr 0x1350092b0 <col:19> '<dependent type>' contains-errors lvalue
+    |   | |-UnaryOperator 0x1350092f0 <col:23, col:28> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | | `-RecoveryExpr 0x1350092d0 <col:23> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x135009308 <col:32> '<dependent type>' contains-errors lvalue
+    |   |-CallExpr 0x135009490 <line:17:3, col:38> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x135009360 <col:3> 'int ()' Function 0x135009140 'unsafe_get_user' 'int ()'
+    |   | |-RecoveryExpr 0x135009418 <col:19> '<dependent type>' contains-errors lvalue
+    |   | |-UnaryOperator 0x135009458 <col:23, col:28> '<dependent type>' contains-errors postfix '++' cannot overflow
+    |   | | `-RecoveryExpr 0x135009438 <col:23> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x135009470 <col:32> '<dependent type>' contains-errors lvalue
+    |   `-CompoundAssignOperator 0x135009570 <line:19:3, col:22> 'unsigned long' '-=' ComputeLHSTy='unsigned long' ComputeResultTy='unsigned long'
+    |     |-DeclRefExpr 0x135009518 <col:3> 'unsigned long' lvalue Var 0x13480df98 'nr_compat_longs' 'unsigned long'
+    |     `-ImplicitCastExpr 0x135009558 <col:22> 'unsigned long' <IntegralCast>
+    |       `-IntegerLiteral 0x135009538 <col:22> 'int' 2
+    |-CallExpr 0x1350097a8 <line:23:2, col:18> 'int'
+    | `-ImplicitCastExpr 0x135009790 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x135009770 <col:2> 'int ()' Function 0x1350096b8 'user_access_end' 'int ()'
+    |-ReturnStmt 0x135009800 <line:24:2, col:9>
+    | `-ImplicitCastExpr 0x1350097e8 <col:9> 'long' <IntegralCast>
+    |   `-IntegerLiteral 0x1350097c8 <col:9> 'int' 0
+    `-LabelStmt 0x1350098b8 <line:26:1, line:27:18> 'Efault'
+      `-CallExpr 0x135009848 <col:2, col:18> 'int'
+        `-ImplicitCastExpr 0x135009830 <col:2> 'int (*)()' <FunctionToPointerDecay>
+          `-DeclRefExpr 0x135009810 <col:2> 'int ()' Function 0x1350096b8 'user_access_end' 'int ()'

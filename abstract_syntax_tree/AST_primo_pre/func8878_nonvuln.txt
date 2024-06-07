@@ -1,0 +1,17 @@
+`-FunctionDecl 0x1439281f8  line:1:1 invalid ex_ni 'int (int *)'
+  |-ParmVarDecl 0x143928128 <col:7, col:16> col:16 referenced invalid eap 'int *'
+  `-CompoundStmt 0x143928678 <line:2:1, line:5:1>
+    `-IfStmt 0x143928658 <line:3:5, line:4:24>
+      |-UnaryOperator 0x143928328 <line:3:9, col:15> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-ImplicitCastExpr 0x143928310 <col:10, col:15> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-CXXDependentScopeMemberExpr 0x1439282c8 <col:10, col:15> '<dependent type>' contains-errors lvalue ->skip
+      |     `-RecoveryExpr 0x1439282a8 <col:10> '<dependent type>' contains-errors lvalue
+      `-BinaryOperator 0x143928638 <line:4:2, col:24> '<dependent type>' contains-errors '='
+        |-CXXDependentScopeMemberExpr 0x143928388 <col:2, col:7> '<dependent type>' contains-errors lvalue ->errmsg
+        | `-RecoveryExpr 0x143928360 <col:2> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x143928340 <col:2> 'int *' lvalue ParmVar 0x143928128 'eap' 'int *'
+        `-CallExpr 0x1439285f8 <col:16, col:24> 'int'
+          |-ImplicitCastExpr 0x1439285e0 <col:16> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x143928530 <col:16> 'int ()' Function 0x143928478 'N_' 'int ()'
+          `-ImplicitCastExpr 0x143928620 <col:19> 'char *' <ArrayToPointerDecay>
+            `-StringLiteral 0x143928590 <col:19> 'char[4]' lvalue "STR"

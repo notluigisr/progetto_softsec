@@ -1,0 +1,18 @@
+`-FunctionDecl 0x145122600  line:1:6 invalid md_unplug 'void (struct blk_plug_cb *, int)'
+  |-ParmVarDecl 0x14580e248 <col:16, col:36> col:36 used cb 'struct blk_plug_cb *'
+  |-ParmVarDecl 0x14580e2e0 <col:40, col:45> col:45 invalid from_schedule 'int'
+  `-CompoundStmt 0x145122cd8 <line:2:1, line:6:1>
+    |-DeclStmt 0x145122908 <line:3:2, col:32>
+    | |-RecordDecl 0x1451226b8 <col:2, col:9> col:9 struct mddev
+    | `-VarDecl 0x145122828 <col:2, col:28> col:16 used mddev 'struct mddev *' cinit
+    |   `-RecoveryExpr 0x1451228c8 <col:24, col:28> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145122890 <col:24> 'struct blk_plug_cb *' lvalue ParmVar 0x14580e248 'cb' 'struct blk_plug_cb *'
+    |-CallExpr 0x145122b00 <line:4:2, col:32> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x145122a80 <col:2> 'int ()' Function 0x1451229c8 'md_wakeup_thread' 'int ()'
+    | `-RecoveryExpr 0x145122ad8 <col:19, col:26> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x145122aa0 <col:19> 'struct mddev *' contains-errors lvalue Var 0x145122828 'mddev' 'struct mddev *'
+    `-CallExpr 0x145122c98 <line:5:2, col:10> 'int'
+      |-ImplicitCastExpr 0x145122c80 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x145122c08 <col:2> 'int ()' Function 0x145122b50 'kfree' 'int ()'
+      `-ImplicitCastExpr 0x145122cc0 <col:8> 'struct blk_plug_cb *' <LValueToRValue>
+        `-DeclRefExpr 0x145122c28 <col:8> 'struct blk_plug_cb *' lvalue ParmVar 0x14580e248 'cb' 'struct blk_plug_cb *'

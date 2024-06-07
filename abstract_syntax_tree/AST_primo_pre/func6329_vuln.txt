@@ -1,0 +1,127 @@
+`-FunctionDecl 0x13b826748  line:1:12 vhost_net_rx_peek_head_len 'int (struct vhost_net *, struct sock *)' static
+  |-ParmVarDecl 0x13b80e248 <col:39, col:57> col:57 used net 'struct vhost_net *'
+  |-ParmVarDecl 0x13b826628 <col:62, col:75> col:75 used sk 'struct sock *'
+  `-CompoundStmt 0x13b82b0a0 <line:2:1, line:37:1>
+    |-DeclStmt 0x13b826ac8 <line:3:2, col:62>
+    | |-RecordDecl 0x13b826848 <col:2, col:9> col:9 struct vhost_net_virtqueue
+    | `-VarDecl 0x13b8269b8 <col:2, col:30> col:30 used rvq 'struct vhost_net_virtqueue *'
+    |-DeclStmt 0x13b826c48 <line:4:2, col:62>
+    | `-VarDecl 0x13b826b68 <col:2, col:30> col:30 used nvq 'struct vhost_net_virtqueue *'
+    |-DeclStmt 0x13b826ec0 <line:5:2, col:39>
+    | |-RecordDecl 0x13b826c60 <col:2, col:9> col:9 struct vhost_virtqueue
+    | `-VarDecl 0x13b826dc8 <col:2, col:37> col:26 used vq 'struct vhost_virtqueue *' cinit
+    |   `-UnaryOperator 0x13b826e90 <col:31, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x13b826e68 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13b826e30 <col:32> 'struct vhost_net_virtqueue *' lvalue Var 0x13b826b68 'nvq' 'struct vhost_net_virtqueue *'
+    |-DeclStmt 0x13b826ff0 <line:6:2, col:42>
+    | `-FunctionDecl 0x13b826f38 parent 0x13b055608 <col:2, col:41> col:16 invalid uninitialized_var 'unsigned long ()'
+    |-DeclStmt 0x13b8272a8 <line:7:2, col:34>
+    | `-VarDecl 0x13b827020 <col:2, col:33> col:6 used len 'int' cinit
+    |   `-CallExpr 0x13b827248 <col:12, col:33> 'int'
+    |     |-ImplicitCastExpr 0x13b827230 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x13b8271a0 <col:12> 'int ()' Function 0x13b8270e8 'peek_head_len' 'int ()'
+    |     |-ImplicitCastExpr 0x13b827278 <col:26> 'struct vhost_net_virtqueue *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x13b8271c0 <col:26> 'struct vhost_net_virtqueue *' lvalue Var 0x13b8269b8 'rvq' 'struct vhost_net_virtqueue *'
+    |     `-ImplicitCastExpr 0x13b827290 <col:31> 'struct sock *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13b8271e0 <col:31> 'struct sock *' lvalue ParmVar 0x13b826628 'sk' 'struct sock *'
+    |-IfStmt 0x13b82b038 <line:9:2, line:34:2>
+    | |-BinaryOperator 0x13b827370 <line:9:6, col:18> 'int' contains-errors '&&'
+    | | |-UnaryOperator 0x13b8272f8 <col:6, col:7> 'int' prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x13b8272e0 <col:7> 'int' <LValueToRValue>
+    | | |   `-DeclRefExpr 0x13b8272c0 <col:7> 'int' lvalue Var 0x13b827020 'len' 'int'
+    | | `-RecoveryExpr 0x13b827348 <col:14, col:18> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x13b827310 <col:14> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    | `-CompoundStmt 0x13b82afe8 <col:36, line:34:2>
+    |   |-CallExpr 0x13b827528 <line:11:3, col:34> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13b827470 <col:3> 'int ()' Function 0x13b8273b8 'mutex_lock_nested' 'int ()'
+    |   | |-UnaryOperator 0x13b8274f0 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x13b8274c8 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13b827490 <col:22> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   | `-IntegerLiteral 0x13b827508 <col:33> 'int' 1
+    |   |-CallExpr 0x13b828f70 <line:12:3, col:37> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13b828eb8 <col:3> 'int ()' Function 0x13b828e00 'vhost_disable_notify' 'int ()'
+    |   | |-UnaryOperator 0x13b828f38 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x13b828f10 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13b828ed8 <col:25> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   | `-DeclRefExpr 0x13b828f50 <col:35> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   |-CallExpr 0x13b8290b8 <line:14:3, col:19> 'int'
+    |   | `-ImplicitCastExpr 0x13b8290a0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x13b829080 <col:3> 'int ()' Function 0x13b828fc8 'preempt_disable' 'int ()'
+    |   |-WhileStmt 0x13b829a20 <line:17:3, line:20:14>
+    |   | |-BinaryOperator 0x13b8298c8 <line:17:10, line:19:44> 'int' contains-errors '&&'
+    |   | | |-BinaryOperator 0x13b8298a8 <line:17:10, line:18:28> 'int' contains-errors '&&'
+    |   | | | |-CallExpr 0x13b829808 <line:17:10, col:48> '<dependent type>' contains-errors
+    |   | | | | |-DeclRefExpr 0x13b829370 <col:10> 'int ()' Function 0x13b8292b8 'vhost_can_busy_poll' 'int ()'
+    |   | | | | |-UnaryOperator 0x13b8293f0 <col:30, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | | | | `-RecoveryExpr 0x13b8293c8 <col:31, col:36> '<dependent type>' contains-errors lvalue
+    |   | | | | |   `-DeclRefExpr 0x13b829390 <col:31> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   | | | | `-RecoveryExpr 0x13b8297e8 <col:41> '<dependent type>' contains-errors lvalue
+    |   | | | `-UnaryOperator 0x13b829890 <line:18:10, col:28> 'int' prefix '!' cannot overflow
+    |   | | |   `-CallExpr 0x13b829850 <col:11, col:28> 'int'
+    |   | | |     |-ImplicitCastExpr 0x13b829838 <col:11> 'int (*)()' <FunctionToPointerDecay>
+    |   | | |     | `-DeclRefExpr 0x13b829530 <col:11> 'int ()' Function 0x13b829478 'sk_has_rx_data' 'int ()'
+    |   | | |     `-ImplicitCastExpr 0x13b829878 <col:26> 'struct sock *' <LValueToRValue>
+    |   | | |       `-DeclRefExpr 0x13b829550 <col:26> 'struct sock *' lvalue ParmVar 0x13b826628 'sk' 'struct sock *'
+    |   | | `-CallExpr 0x13b829798 <line:19:10, col:44> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x13b8296e0 <col:10> 'int ()' Function 0x13b829628 'vhost_vq_avail_empty' 'int ()'
+    |   | |   |-UnaryOperator 0x13b829760 <col:31, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   | `-RecoveryExpr 0x13b829738 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |   | |   |   `-DeclRefExpr 0x13b829700 <col:32> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   | |   `-DeclRefExpr 0x13b829778 <col:42> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   | `-CallExpr 0x13b829a00 <line:20:4, col:14> 'int'
+    |   |   `-ImplicitCastExpr 0x13b8299e8 <col:4> 'int (*)()' <FunctionToPointerDecay>
+    |   |     `-DeclRefExpr 0x13b8299c8 <col:4> 'int ()' Function 0x13b829910 'cpu_relax' 'int ()'
+    |   |-CallExpr 0x13b829b58 <line:22:3, col:18> 'int'
+    |   | `-ImplicitCastExpr 0x13b829b40 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   `-DeclRefExpr 0x13b829b20 <col:3> 'int ()' Function 0x13b829a68 'preempt_enable' 'int ()'
+    |   |-IfStmt 0x13b82ad00 <line:24:3, line:29:3> has_else
+    |   | |-UnaryOperator 0x13b829c60 <line:24:7, col:42> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-CallExpr 0x13b829c30 <col:8, col:42> '<dependent type>' contains-errors
+    |   | |   |-DeclRefExpr 0x13b829b78 <col:8> 'int ()' Function 0x13b829628 'vhost_vq_avail_empty' 'int ()'
+    |   | |   |-UnaryOperator 0x13b829bf8 <col:29, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   | `-RecoveryExpr 0x13b829bd0 <col:30, col:35> '<dependent type>' contains-errors lvalue
+    |   | |   |   `-DeclRefExpr 0x13b829b98 <col:30> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   | |   `-DeclRefExpr 0x13b829c10 <col:40> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   | |-CallExpr 0x13b82a800 <line:25:4, col:30> '<dependent type>' contains-errors
+    |   | | |-DeclRefExpr 0x13b829d58 <col:4> 'int ()' Function 0x13b829ca0 'vhost_poll_queue' 'int ()'
+    |   | | `-UnaryOperator 0x13b829dd8 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | |   `-RecoveryExpr 0x13b829db0 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |   | |     `-DeclRefExpr 0x13b829d78 <col:22> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   | `-IfStmt 0x13b82ace0 <line:26:8, line:29:3>
+    |   |   |-CallExpr 0x13b82aaf0 <line:26:12, col:55> '<dependent type>' contains-errors
+    |   |   | |-DeclRefExpr 0x13b82a908 <col:12> 'int ()' Function 0x13b82a850 'unlikely' 'int ()'
+    |   |   | `-CallExpr 0x13b82aac0 <col:21, col:54> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x13b82aa08 <col:21> 'int ()' Function 0x13b82a950 'vhost_enable_notify' 'int ()'
+    |   |   |   |-UnaryOperator 0x13b82aa88 <col:41, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   | `-RecoveryExpr 0x13b82aa60 <col:42, col:47> '<dependent type>' contains-errors lvalue
+    |   |   |   |   `-DeclRefExpr 0x13b82aa28 <col:42> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   |   |   `-DeclRefExpr 0x13b82aaa0 <col:52> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   |   `-CompoundStmt 0x13b82acc0 <col:58, line:29:3>
+    |   |     |-CallExpr 0x13b82abd0 <line:27:4, col:38> '<dependent type>' contains-errors
+    |   |     | |-DeclRefExpr 0x13b82ab18 <col:4> 'int ()' Function 0x13b828e00 'vhost_disable_notify' 'int ()'
+    |   |     | |-UnaryOperator 0x13b82ab98 <col:25, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     | | `-RecoveryExpr 0x13b82ab70 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |   |     | |   `-DeclRefExpr 0x13b82ab38 <col:26> 'struct vhost_net *' lvalue ParmVar 0x13b80e248 'net' 'struct vhost_net *'
+    |   |     | `-DeclRefExpr 0x13b82abb0 <col:36> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   |     `-CallExpr 0x13b82ac98 <line:28:4, col:30> '<dependent type>' contains-errors
+    |   |       |-DeclRefExpr 0x13b82ac00 <col:4> 'int ()' Function 0x13b829ca0 'vhost_poll_queue' 'int ()'
+    |   |       `-UnaryOperator 0x13b82ac80 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |         `-RecoveryExpr 0x13b82ac58 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |   |           `-DeclRefExpr 0x13b82ac20 <col:22> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   |-CallExpr 0x13b82aea8 <line:31:3, col:26> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13b82ae10 <col:3> 'int ()' Function 0x13b82ad58 'mutex_unlock' 'int ()'
+    |   | `-UnaryOperator 0x13b82ae90 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x13b82ae68 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13b82ae30 <col:17> 'struct vhost_virtqueue *' contains-errors lvalue Var 0x13b826dc8 'vq' 'struct vhost_virtqueue *'
+    |   `-BinaryOperator 0x13b82afc8 <line:33:3, col:30> 'int' '='
+    |     |-DeclRefExpr 0x13b82aed0 <col:3> 'int' lvalue Var 0x13b827020 'len' 'int'
+    |     `-CallExpr 0x13b82af68 <col:9, col:30> 'int'
+    |       |-ImplicitCastExpr 0x13b82af50 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13b82aef0 <col:9> 'int ()' Function 0x13b8270e8 'peek_head_len' 'int ()'
+    |       |-ImplicitCastExpr 0x13b82af98 <col:23> 'struct vhost_net_virtqueue *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x13b82af10 <col:23> 'struct vhost_net_virtqueue *' lvalue Var 0x13b8269b8 'rvq' 'struct vhost_net_virtqueue *'
+    |       `-ImplicitCastExpr 0x13b82afb0 <col:28> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13b82af30 <col:28> 'struct sock *' lvalue ParmVar 0x13b826628 'sk' 'struct sock *'
+    `-ReturnStmt 0x13b82b090 <line:36:2, col:9>
+      `-ImplicitCastExpr 0x13b82b078 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x13b82b058 <col:9> 'int' lvalue Var 0x13b827020 'len' 'int'

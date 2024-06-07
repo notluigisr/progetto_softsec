@@ -1,0 +1,88 @@
+`-FunctionDecl 0x14a1459f8  line:1:27 invalid sctp_sf_violation_paramlen 'int (struct net *, const struct sctp_endpoint *, const struct sctp_association *, const int, void *, void *, int *)' static
+  |-ParmVarDecl 0x14a128068 <line:2:10, col:22> col:22 used net 'struct net *'
+  |-ParmVarDecl 0x14a145458 <line:3:10, col:38> col:38 used ep 'const struct sctp_endpoint *'
+  |-ParmVarDecl 0x14a145628 <line:4:10, col:41> col:41 used asoc 'const struct sctp_association *'
+  |-ParmVarDecl 0x14a1456a8 <line:5:10, col:31> col:31 invalid type 'const int'
+  |-ParmVarDecl 0x14a145728 <line:6:10, col:16> col:16 used arg 'void *'
+  |-ParmVarDecl 0x14a1457a8 <col:21, col:27> col:27 used ext 'void *'
+  |-ParmVarDecl 0x14a145858 <line:7:10, col:26> col:26 invalid commands 'int *'
+  `-CompoundStmt 0x14b008a58 <line:8:1, line:36:1>
+    |-DeclStmt 0x14a145d18 <line:9:2, col:33>
+    | |-RecordDecl 0x14a145ad8 <col:2, col:9> col:9 struct sctp_chunk
+    | `-VarDecl 0x14a145c48 <col:2, col:30> col:21 used chunk 'struct sctp_chunk *' cinit
+    |   `-ImplicitCastExpr 0x14a145ce8 <col:30> 'struct sctp_chunk *' <BitCast>
+    |     `-ImplicitCastExpr 0x14a145cd0 <col:30> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14a145cb0 <col:30> 'void *' lvalue ParmVar 0x14a145728 'arg' 'void *'
+    |-DeclStmt 0x14a145f68 <line:10:2, col:35>
+    | |-RecordDecl 0x14a145d30 <col:2, col:9> col:9 struct sctp_paramhdr
+    | `-VarDecl 0x14a145e98 <col:2, col:32> col:24 used param 'struct sctp_paramhdr *' cinit
+    |   `-ImplicitCastExpr 0x14a145f38 <col:32> 'struct sctp_paramhdr *' <BitCast>
+    |     `-ImplicitCastExpr 0x14a145f20 <col:32> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14a145f00 <col:32> 'void *' lvalue ParmVar 0x14a1457a8 'ext' 'void *'
+    |-DeclStmt 0x14a1460a8 <line:11:2, col:33>
+    | `-VarDecl 0x14a146008 <col:2, col:29> col:21 used abort 'struct sctp_chunk *' cinit
+    |   `-RecoveryExpr 0x14a146088 <col:29> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14a146360 <line:13:2, line:14:8>
+    | |-CallExpr 0x14a1462c8 <line:13:6, col:45> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x14a146220 <col:6> 'int ()' Function 0x14a146168 'sctp_auth_recv_cid' 'int ()'
+    | | |-RecoveryExpr 0x14a1462a8 <col:25> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14a146258 <col:41> 'const struct sctp_association *' lvalue ParmVar 0x14a145628 'asoc' 'const struct sctp_association *'
+    | `-GotoStmt 0x14a146348 <line:14:3, col:8> 'discard' 0x14a1462f8
+    |-BinaryOperator 0x14a146c20 <line:17:2, col:57> 'struct sctp_chunk *' contains-errors '='
+    | |-DeclRefExpr 0x14a146380 <col:2> 'struct sctp_chunk *' contains-errors lvalue Var 0x14a146008 'abort' 'struct sctp_chunk *'
+    | `-ImplicitCastExpr 0x14a146c08 <col:10, col:57> 'struct sctp_chunk *' <IntegralToPointer>
+    |   `-CallExpr 0x14a146b88 <col:10, col:57> 'int'
+    |     |-ImplicitCastExpr 0x14a146b70 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14a146ab8 <col:10> 'int ()' Function 0x14a146a00 'sctp_make_violation_paramlen' 'int ()'
+    |     |-ImplicitCastExpr 0x14a146bc0 <col:39> 'const struct sctp_association *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14a146ad8 <col:39> 'const struct sctp_association *' lvalue ParmVar 0x14a145628 'asoc' 'const struct sctp_association *'
+    |     |-ImplicitCastExpr 0x14a146bd8 <col:45> 'struct sctp_chunk *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x14a146af8 <col:45> 'struct sctp_chunk *' lvalue Var 0x14a145c48 'chunk' 'struct sctp_chunk *'
+    |     `-ImplicitCastExpr 0x14a146bf0 <col:52> 'struct sctp_paramhdr *' <LValueToRValue>
+    |       `-DeclRefExpr 0x14a146b18 <col:52> 'struct sctp_paramhdr *' lvalue Var 0x14a145e98 'param' 'struct sctp_paramhdr *'
+    |-IfStmt 0x14a146cf8 <line:18:2, line:19:8>
+    | |-UnaryOperator 0x14a146c78 <line:18:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a146c60 <col:7> 'struct sctp_chunk *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a146c40 <col:7> 'struct sctp_chunk *' contains-errors lvalue Var 0x14a146008 'abort' 'struct sctp_chunk *'
+    | `-GotoStmt 0x14a146ce0 <line:19:3, col:8> 'nomem' 0x14a146c90
+    |-CallExpr 0x14a147078 <line:21:2, col:61> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a146df8 <col:2> 'int ()' Function 0x14a146d40 'sctp_add_cmd_sf' 'int ()'
+    | |-RecoveryExpr 0x14a146e18 <col:18> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x14a147000 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14a147038 <col:44, col:60> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x14a147020 <col:44> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14a146f30 <col:44> 'int ()' Function 0x14a146e78 'SCTP_CHUNK' 'int ()'
+    |   `-ImplicitCastExpr 0x14a147060 <col:55> 'struct sctp_chunk *' contains-errors <LValueToRValue>
+    |     `-DeclRefExpr 0x14a146f50 <col:55> 'struct sctp_chunk *' contains-errors lvalue Var 0x14a146008 'abort' 'struct sctp_chunk *'
+    |-CallExpr 0x14a147238 <line:22:2, col:44> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a147190 <col:2> 'int ()' Function 0x14a1470d8 'SCTP_INC_STATS' 'int ()'
+    | |-DeclRefExpr 0x14a1471b0 <col:17> 'struct net *' lvalue ParmVar 0x14a128068 'net' 'struct net *'
+    | `-RecoveryExpr 0x14a147218 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14a1474a0 <line:24:2, line:25:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a147268 <line:24:2> 'int ()' Function 0x14a146d40 'sctp_add_cmd_sf' 'int ()'
+    | |-RecoveryExpr 0x14a147288 <col:18> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x14a147438 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14a147478 <line:25:4, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a1473a0 <col:4> 'int ()' Function 0x14a1472e8 'SCTP_ERROR' 'int ()'
+    |   `-RecoveryExpr 0x14a147458 <col:15> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14a147710 <line:26:2, line:27:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14a1474d8 <line:26:2> 'int ()' Function 0x14a146d40 'sctp_add_cmd_sf' 'int ()'
+    | |-RecoveryExpr 0x14a1474f8 <col:18> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x14a1476a8 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14a1476e8 <line:27:4, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a147610 <col:4> 'int ()' Function 0x14a147558 'SCTP_PERR' 'int ()'
+    |   `-RecoveryExpr 0x14a1476c8 <col:14> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x14b008a10 <line:31:1, line:32:65> 'discard'
+    | `-CallExpr 0x14b0089c0 <col:2, col:65> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a147988 <col:2> 'int ()' Function 0x14a1478d0 'sctp_sf_pdiscard' 'int ()'
+    |   |-DeclRefExpr 0x14a1479a8 <col:19> 'struct net *' lvalue ParmVar 0x14a128068 'net' 'struct net *'
+    |   |-DeclRefExpr 0x14a1479c8 <col:24> 'const struct sctp_endpoint *' lvalue ParmVar 0x14a145458 'ep' 'const struct sctp_endpoint *'
+    |   |-DeclRefExpr 0x14b008800 <col:28> 'const struct sctp_association *' lvalue ParmVar 0x14a145628 'asoc' 'const struct sctp_association *'
+    |   |-CallExpr 0x14b008958 <col:34, col:49> 'int'
+    |   | |-ImplicitCastExpr 0x14b008940 <col:34> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x14b008900 <col:34> 'int ()' Function 0x14b008848 'SCTP_ST_CHUNK' 'int ()'
+    |   | `-IntegerLiteral 0x14b008920 <col:48> 'int' 0
+    |   |-DeclRefExpr 0x14b008980 <col:52> 'void *' lvalue ParmVar 0x14a145728 'arg' 'void *'
+    |   `-RecoveryExpr 0x14b0089a0 <col:57> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x14b008a38 <line:34:1, col:6> 'nomem'
+      `-NullStmt 0x14b008a30 <col:6>

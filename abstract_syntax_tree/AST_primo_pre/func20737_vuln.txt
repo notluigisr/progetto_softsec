@@ -1,0 +1,109 @@
+`-FunctionDecl 0x1600083e8  line:1:5 sk_receive_skb 'int (struct sock *, struct sk_buff *, const int)'
+  |-ParmVarDecl 0x157017a48 <col:20, col:33> col:33 used sk 'struct sock *'
+  |-ParmVarDecl 0x160008228 <col:37, col:53> col:53 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x1600082a8 <col:58, col:68> col:68 used nested 'const int'
+  `-CompoundStmt 0x16000c580 <line:2:1, line:34:1>
+    |-DeclStmt 0x1600085c0 <line:3:2, col:25>
+    | `-VarDecl 0x160008508 <col:2, col:11> col:6 used rc 'int' cinit
+    |   `-RecoveryExpr 0x1600085a0 <col:11> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x160008860 <line:5:2, line:6:8>
+    | |-CallExpr 0x160008798 <line:5:6, col:23> 'int'
+    | | |-ImplicitCastExpr 0x160008780 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1600086f0 <col:6> 'int ()' Function 0x160008638 'sk_filter' 'int ()'
+    | | |-ImplicitCastExpr 0x1600087c8 <col:16> 'struct sock *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x160008710 <col:16> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | | `-ImplicitCastExpr 0x1600087e0 <col:20> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x160008730 <col:20> 'struct sk_buff *' lvalue ParmVar 0x160008228 'skb' 'struct sk_buff *'
+    | `-GotoStmt 0x160008848 <line:6:3, col:8> 'discard_and_relse' 0x1600087f8
+    |-BinaryOperator 0x160008938 <line:8:2, col:13> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x1600088b8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x160008880 <col:2> 'struct sk_buff *' lvalue ParmVar 0x160008228 'skb' 'struct sk_buff *'
+    | `-RecoveryExpr 0x160008918 <col:13> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x160008c80 <line:10:2, line:13:18> has_else
+    | |-ImplicitCastExpr 0x160008978 <line:10:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x160008958 <col:6> 'const int' lvalue ParmVar 0x1600082a8 'nested' 'const int'
+    | |-CallExpr 0x160008ac8 <line:11:3, col:25> 'int'
+    | | |-ImplicitCastExpr 0x160008ab0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x160008a70 <col:3> 'int ()' Function 0x1600089b8 'bh_lock_sock_nested' 'int ()'
+    | | `-ImplicitCastExpr 0x160008af0 <col:23> 'struct sock *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x160008a90 <col:23> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | `-CallExpr 0x160008c40 <line:13:3, col:18> 'int'
+    |   |-ImplicitCastExpr 0x160008c28 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x160008be8 <col:3> 'int ()' Function 0x160008b30 'bh_lock_sock' 'int ()'
+    |   `-ImplicitCastExpr 0x160008c68 <col:16> 'struct sock *' <LValueToRValue>
+    |     `-DeclRefExpr 0x160008c08 <col:16> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |-IfStmt 0x16000c0d8 <line:14:2, line:25:2> has_else
+    | |-UnaryOperator 0x160008e28 <line:14:6, col:28> 'int' prefix '!' cannot overflow
+    | | `-CallExpr 0x160008de8 <col:7, col:28> 'int'
+    | |   |-ImplicitCastExpr 0x160008dd0 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x160008d90 <col:7> 'int ()' Function 0x160008cd8 'sock_owned_by_user' 'int ()'
+    | |   `-ImplicitCastExpr 0x160008e10 <col:26> 'struct sock *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x160008db0 <col:26> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | |-CompoundStmt 0x16000bb80 <col:31, line:21:2>
+    | | |-CallExpr 0x1600090b8 <line:16:3, col:53> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x160008f20 <col:3> 'int ()' Function 0x160008e68 'mutex_acquire' 'int ()'
+    | | | |-UnaryOperator 0x160008fe8 <col:17, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | | | `-CXXDependentScopeMemberExpr 0x160008fa0 <col:18, col:30> '<dependent type>' contains-errors lvalue .dep_map
+    | | | |   `-RecoveryExpr 0x160008f78 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | | | |     `-DeclRefExpr 0x160008f40 <col:18> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | | | |-IntegerLiteral 0x160009000 <col:39> 'int' 0
+    | | | |-IntegerLiteral 0x160009020 <col:42> 'int' 1
+    | | | `-RecoveryExpr 0x160009098 <col:45> '<dependent type>' contains-errors lvalue
+    | | |-BinaryOperator 0x16000b8d8 <line:18:3, col:30> 'int' contains-errors '='
+    | | | |-DeclRefExpr 0x1600090f8 <col:3> 'int' contains-errors lvalue Var 0x160008508 'rc' 'int'
+    | | | `-CallExpr 0x16000b878 <col:8, col:30> 'int'
+    | | |   |-ImplicitCastExpr 0x16000b860 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    | | |   | `-DeclRefExpr 0x16000b800 <col:8> 'int ()' Function 0x160009140 'sk_backlog_rcv' 'int ()'
+    | | |   |-ImplicitCastExpr 0x16000b8a8 <col:23> 'struct sock *' <LValueToRValue>
+    | | |   | `-DeclRefExpr 0x16000b820 <col:23> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | | |   `-ImplicitCastExpr 0x16000b8c0 <col:27> 'struct sk_buff *' <LValueToRValue>
+    | | |     `-DeclRefExpr 0x16000b840 <col:27> 'struct sk_buff *' lvalue ParmVar 0x160008228 'skb' 'struct sk_buff *'
+    | | `-CallExpr 0x16000bb48 <line:20:3, col:50> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x16000b9d8 <col:3> 'int ()' Function 0x16000b920 'mutex_release' 'int ()'
+    | |   |-UnaryOperator 0x16000baa0 <col:17, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | `-CXXDependentScopeMemberExpr 0x16000ba58 <col:18, col:30> '<dependent type>' contains-errors lvalue .dep_map
+    | |   |   `-RecoveryExpr 0x16000ba30 <col:18, col:22> '<dependent type>' contains-errors lvalue
+    | |   |     `-DeclRefExpr 0x16000b9f8 <col:18> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    | |   |-IntegerLiteral 0x16000bab8 <col:39> 'int' 1
+    | |   `-RecoveryExpr 0x16000bb28 <col:42> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x16000c0b8 <line:21:9, line:25:2>
+    |   |-CallExpr 0x16000bd00 <line:21:13, col:35> 'int'
+    |   | |-ImplicitCastExpr 0x16000bce8 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x16000bc88 <col:13> 'int ()' Function 0x16000bbd0 'sk_add_backlog' 'int ()'
+    |   | |-ImplicitCastExpr 0x16000bd30 <col:28> 'struct sock *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x16000bca8 <col:28> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |   | `-ImplicitCastExpr 0x16000bd48 <col:32> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x16000bcc8 <col:32> 'struct sk_buff *' lvalue ParmVar 0x160008228 'skb' 'struct sk_buff *'
+    |   `-CompoundStmt 0x16000c090 <col:38, line:25:2>
+    |     |-CallExpr 0x16000be98 <line:22:3, col:20> 'int'
+    |     | |-ImplicitCastExpr 0x16000be80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |     | | `-DeclRefExpr 0x16000be40 <col:3> 'int ()' Function 0x16000bd88 'bh_unlock_sock' 'int ()'
+    |     | `-ImplicitCastExpr 0x16000bec0 <col:18> 'struct sock *' <LValueToRValue>
+    |     |   `-DeclRefExpr 0x16000be60 <col:18> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |     |-CallExpr 0x16000c050 <line:23:3, col:27> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x16000bfb8 <col:3> 'int ()' Function 0x16000bf00 'atomic_inc' 'int ()'
+    |     | `-UnaryOperator 0x16000c038 <col:14, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     |   `-RecoveryExpr 0x16000c010 <col:15, col:19> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x16000bfd8 <col:15> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |     `-GotoStmt 0x16000c078 <line:24:3, col:8> 'discard_and_relse' 0x1600087f8
+    |-CallExpr 0x16000c160 <line:27:2, col:19> 'int'
+    | |-ImplicitCastExpr 0x16000c148 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x16000c108 <col:2> 'int ()' Function 0x16000bd88 'bh_unlock_sock' 'int ()'
+    | `-ImplicitCastExpr 0x16000c188 <col:17> 'struct sock *' <LValueToRValue>
+    |   `-DeclRefExpr 0x16000c128 <col:17> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |-LabelStmt 0x16000c368 <line:28:1, line:29:13> 'out'
+    | `-CallExpr 0x16000c2d8 <col:2, col:13> 'int'
+    |   |-ImplicitCastExpr 0x16000c2c0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x16000c280 <col:2> 'int ()' Function 0x16000c1c8 'sock_put' 'int ()'
+    |   `-ImplicitCastExpr 0x16000c300 <col:11> 'struct sock *' <LValueToRValue>
+    |     `-DeclRefExpr 0x16000c2a0 <col:11> 'struct sock *' lvalue ParmVar 0x157017a48 'sk' 'struct sock *'
+    |-ReturnStmt 0x16000c3c0 <line:30:2, col:9>
+    | `-ImplicitCastExpr 0x16000c3a8 <col:9> 'int' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x16000c388 <col:9> 'int' contains-errors lvalue Var 0x160008508 'rc' 'int'
+    |-LabelStmt 0x16000c548 <line:31:1, line:32:15> 'discard_and_relse'
+    | `-CallExpr 0x16000c508 <col:2, col:15> 'int'
+    |   |-ImplicitCastExpr 0x16000c4f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x16000c4b0 <col:2> 'int ()' Function 0x16000c3f8 'kfree_skb' 'int ()'
+    |   `-ImplicitCastExpr 0x16000c530 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |     `-DeclRefExpr 0x16000c4d0 <col:12> 'struct sk_buff *' lvalue ParmVar 0x160008228 'skb' 'struct sk_buff *'
+    `-GotoStmt 0x16000c568 <line:33:2, col:7> 'out' 0x16000c318

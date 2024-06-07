@@ -1,0 +1,1 @@
+  virtual int start() { started = true; return 0; }

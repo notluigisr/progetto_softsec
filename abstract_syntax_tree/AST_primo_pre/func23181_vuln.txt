@@ -1,0 +1,32 @@
+`-FunctionDecl 0x154826600  line:1:14 bpf_any_get 'void *(void *, enum bpf_type)' static
+  |-ParmVarDecl 0x15480dcd8 <col:26, col:32> col:32 used raw 'void *'
+  |-ParmVarDecl 0x15480e278 <col:37, col:51> col:51 referenced invalid type 'enum bpf_type'
+  `-CompoundStmt 0x154826fa0 <line:2:1, line:16:1>
+    |-SwitchStmt 0x154826738 <line:3:2, line:13:2>
+    | |-ImplicitCastExpr 0x154826720 <line:3:10> '<dependent type>' contains-errors <LValueToRValue>
+    | | `-RecoveryExpr 0x154826700 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x154826f18 <col:16, line:13:2>
+    |   |-CallExpr 0x154826b30 <line:5:3, col:52> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1548268a0 <col:3> 'int ()' Function 0x1548267e8 'atomic_inc' 'int ()'
+    |   | `-UnaryOperator 0x154826b18 <col:14, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-CXXDependentScopeMemberExpr 0x154826ad0 <col:15, col:46> '<dependent type>' contains-errors lvalue ->refcnt
+    |   |     `-RecoveryExpr 0x154826aa8 <col:15, col:41> '<dependent type>' contains-errors lvalue
+    |   |       `-ParenExpr 0x154826a88 <col:15, col:38> 'struct bpf_prog *'
+    |   |         `-CStyleCastExpr 0x154826a60 <col:16, col:35> 'struct bpf_prog *' <BitCast>
+    |   |           `-ImplicitCastExpr 0x154826a48 <col:35> 'void *' <LValueToRValue> part_of_explicit_cast
+    |   |             `-DeclRefExpr 0x154826960 <col:35> 'void *' lvalue ParmVar 0x15480dcd8 'raw' 'void *'
+    |   |-BreakStmt 0x154826b58 <line:6:3>
+    |   |-CallExpr 0x154826d20 <line:8:3, col:24> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x154826c58 <col:3> 'int ()' Function 0x154826ba0 'bpf_map_inc' 'int ()'
+    |   | |-DeclRefExpr 0x154826c78 <col:15> 'void *' lvalue ParmVar 0x15480dcd8 'raw' 'void *'
+    |   | `-RecoveryExpr 0x154826d00 <col:20> '<dependent type>' contains-errors lvalue
+    |   |-BreakStmt 0x154826d50 <line:9:3>
+    |   |-DefaultStmt 0x154826ef0 <line:10:2, line:11:17>
+    |   | `-CallExpr 0x154826ec8 <col:3, col:17> 'int'
+    |   |   |-ImplicitCastExpr 0x154826eb0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x154826e38 <col:3> 'int ()' Function 0x154826d80 'WARN_ON_ONCE' 'int ()'
+    |   |   `-IntegerLiteral 0x154826e58 <col:16> 'int' 1
+    |   `-BreakStmt 0x154826f10 <line:12:3>
+    `-ReturnStmt 0x154826f90 <line:15:2, col:9>
+      `-ImplicitCastExpr 0x154826f78 <col:9> 'void *' <LValueToRValue>
+        `-DeclRefExpr 0x154826f58 <col:9> 'void *' lvalue ParmVar 0x15480dcd8 'raw' 'void *'

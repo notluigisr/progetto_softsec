@@ -1,0 +1,41 @@
+`-FunctionDecl 0x128940b40  line:1:13 br_multicast_del_pg 'void (struct net_bridge *, struct net_bridge_port_group *)' static
+  |-ParmVarDecl 0x128928648 <col:33, col:52> col:52 used br 'struct net_bridge *'
+  |-ParmVarDecl 0x128940a28 <line:2:5, col:35> col:35 used pg 'struct net_bridge_port_group *'
+  `-CompoundStmt 0x12a0095c8 <line:3:1, line:34:1>
+    |-DeclStmt 0x128940e28 <line:4:2, col:35>
+    | |-RecordDecl 0x128940c40 <col:2, col:9> col:9 struct net_bridge_mdb_htable
+    | `-VarDecl 0x128940da8 <col:2, col:32> col:32 used mdb 'struct net_bridge_mdb_htable *'
+    |-DeclStmt 0x128941028 <line:5:2, col:33>
+    | |-RecordDecl 0x128940e40 <col:2, col:9> col:9 struct net_bridge_mdb_entry
+    | `-VarDecl 0x128940fa8 <col:2, col:31> col:31 used mp 'struct net_bridge_mdb_entry *'
+    |-DeclStmt 0x128941130 <line:6:2, col:33>
+    | `-VarDecl 0x1289410c8 <col:2, col:32> col:32 used p 'struct net_bridge_port_group *'
+    |-DeclStmt 0x1289411d0 <line:7:2, col:37>
+    | `-VarDecl 0x128941168 <col:2, col:31> col:31 invalid __rcu 'struct net_bridge_port_group'
+    |-BinaryOperator 0x128941400 <line:9:2, col:37> 'struct net_bridge_mdb_htable *' contains-errors '='
+    | |-DeclRefExpr 0x1289411e8 <col:2> 'struct net_bridge_mdb_htable *' lvalue Var 0x128940da8 'mdb' 'struct net_bridge_mdb_htable *'
+    | `-CallExpr 0x1289413d0 <col:8, col:37> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x128941330 <col:8> 'int ()' Function 0x128941278 'mlock_dereference' 'int ()'
+    |   |-RecoveryExpr 0x128941388 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x128941350 <col:26> 'struct net_bridge *' lvalue ParmVar 0x128928648 'br' 'struct net_bridge *'
+    |   `-DeclRefExpr 0x1289413b0 <col:35> 'struct net_bridge *' lvalue ParmVar 0x128928648 'br' 'struct net_bridge *'
+    |-BinaryOperator 0x128941608 <line:11:2, col:35> 'struct net_bridge_mdb_entry *' contains-errors '='
+    | |-DeclRefExpr 0x128941420 <col:2> 'struct net_bridge_mdb_entry *' lvalue Var 0x128940fa8 'mp' 'struct net_bridge_mdb_entry *'
+    | `-CallExpr 0x1289415d8 <col:7, col:35> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x128941520 <col:7> 'int ()' Function 0x128941468 'br_mdb_ip_get' 'int ()'
+    |   |-DeclRefExpr 0x128941540 <col:21> 'struct net_bridge_mdb_htable *' lvalue Var 0x128940da8 'mdb' 'struct net_bridge_mdb_htable *'
+    |   `-UnaryOperator 0x1289415c0 <col:26, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x128941598 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x128941560 <col:27> 'struct net_bridge_port_group *' lvalue ParmVar 0x128940a28 'pg' 'struct net_bridge_port_group *'
+    |-IfStmt 0x128941800 <line:12:2, line:13:3>
+    | |-CallExpr 0x1289417c8 <line:12:6, col:17> 'int'
+    | | |-ImplicitCastExpr 0x1289417b0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x128941708 <col:6> 'int ()' Function 0x128941650 'WARN_ON' 'int ()'
+    | | `-UnaryOperator 0x128941760 <col:14, col:15> 'int' prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x128941748 <col:15> 'struct net_bridge_mdb_entry *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x128941728 <col:15> 'struct net_bridge_mdb_entry *' lvalue Var 0x128940fa8 'mp' 'struct net_bridge_mdb_entry *'
+    | `-ReturnStmt 0x1289417f0 <line:13:3>
+    `-CallExpr 0x12a0095a0 <line:33:2, col:11> 'int'
+      |-ImplicitCastExpr 0x12a009588 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12a009548 <col:2> 'int ()' Function 0x128941650 'WARN_ON' 'int ()'
+      `-IntegerLiteral 0x12a009568 <col:10> 'int' 1

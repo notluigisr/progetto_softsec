@@ -1,0 +1,1 @@
+    int overrun(int itemSize, int nItems, bool wait) { throw EndOfStream(); }

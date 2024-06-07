@@ -1,0 +1,84 @@
+`-FunctionDecl 0x13f128758  line:1:1 sess_establish_session 'int (struct sess_data *)'
+  |-ParmVarDecl 0x13f128648 <col:24, col:42> col:42 used sess_data 'struct sess_data *'
+  `-CompoundStmt 0x13f147260 <line:2:1, line:30:1>
+    |-DeclStmt 0x13f144e98 <line:3:2, col:39>
+    | |-RecordDecl 0x13f144c50 <col:2, col:9> col:9 struct cifs_ses
+    | `-VarDecl 0x13f144db8 <col:2, col:36> col:19 used ses 'struct cifs_ses *' cinit
+    |   `-RecoveryExpr 0x13f144e58 <col:25, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f144e20 <col:25> 'struct sess_data *' lvalue ParmVar 0x13f128648 'sess_data' 'struct sess_data *'
+    |-CallExpr 0x13f1450c0 <line:5:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f144fe0 <col:2> 'int ()' Function 0x13f144f28 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x13f1450a8 <col:13, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13f145060 <col:14, col:27> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |     `-RecoveryExpr 0x13f145038 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13f145000 <col:14> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |-IfStmt 0x13f146ce0 <line:6:2, line:20:2>
+    | |-UnaryOperator 0x13f1451a8 <line:6:6, col:20> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13f145190 <col:7, col:20> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x13f145148 <col:7, col:20> '<dependent type>' contains-errors lvalue ->session_estab
+    | |     `-RecoveryExpr 0x13f145120 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13f1450e8 <col:7> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    | `-CompoundStmt 0x13f146cb8 <col:35, line:20:2>
+    |   |-IfStmt 0x13f146a90 <line:7:3, line:17:3>
+    |   | |-CXXDependentScopeMemberExpr 0x13f145220 <line:7:7, col:20> '<dependent type>' contains-errors lvalue ->sign
+    |   | | `-RecoveryExpr 0x13f1451f8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13f1451c0 <col:7> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   | `-CompoundStmt 0x13f146a68 <col:26, line:17:3>
+    |   |   |-BinaryOperator 0x13f145670 <line:8:4, line:10:34> '<dependent type>' contains-errors '='
+    |   |   | |-CXXDependentScopeMemberExpr 0x13f145310 <line:8:4, col:29> '<dependent type>' contains-errors lvalue .response
+    |   |   | | `-CXXDependentScopeMemberExpr 0x13f1452c8 <col:4, col:17> '<dependent type>' contains-errors lvalue ->session_key
+    |   |   | |   `-RecoveryExpr 0x13f1452a0 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   |   | |     `-DeclRefExpr 0x13f145268 <col:4> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |   | `-CallExpr 0x13f145638 <line:9:5, line:10:34> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x13f145438 <line:9:5> 'int ()' Function 0x13f145380 'kmemdup' 'int ()'
+    |   |   |   |-CXXDependentScopeMemberExpr 0x13f1454b8 <col:13, col:27> '<dependent type>' contains-errors lvalue .response
+    |   |   |   | `-RecoveryExpr 0x13f145490 <col:13, col:18> '<dependent type>' contains-errors lvalue
+    |   |   |   |   `-DeclRefExpr 0x13f145458 <col:13> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |   |   |-CXXDependentScopeMemberExpr 0x13f145560 <line:10:5, col:19> '<dependent type>' contains-errors lvalue .len
+    |   |   |   | `-RecoveryExpr 0x13f145538 <col:5, col:10> '<dependent type>' contains-errors lvalue
+    |   |   |   |   `-DeclRefExpr 0x13f145500 <col:5> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |   |   `-RecoveryExpr 0x13f145618 <col:24> '<dependent type>' contains-errors lvalue
+    |   |   |-IfStmt 0x13f145a60 <line:11:4, line:14:4>
+    |   |   | |-UnaryOperator 0x13f145798 <line:11:8, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   |   | | `-ImplicitCastExpr 0x13f145780 <col:9, col:34> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   | |   `-CXXDependentScopeMemberExpr 0x13f145738 <col:9, col:34> '<dependent type>' contains-errors lvalue .response
+    |   |   | |     `-CXXDependentScopeMemberExpr 0x13f1456f0 <col:9, col:22> '<dependent type>' contains-errors lvalue ->session_key
+    |   |   | |       `-RecoveryExpr 0x13f1456c8 <col:9, col:14> '<dependent type>' contains-errors lvalue
+    |   |   | |         `-DeclRefExpr 0x13f145690 <col:9> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |   | `-CompoundStmt 0x13f145a40 <col:44, line:14:4>
+    |   |   |   |-CallExpr 0x13f145970 <line:12:5, col:41> '<dependent type>' contains-errors
+    |   |   |   | |-DeclRefExpr 0x13f145890 <col:5> 'int ()' Function 0x13f1457d8 'mutex_unlock' 'int ()'
+    |   |   |   | `-UnaryOperator 0x13f145958 <col:18, col:32> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   |   |   `-CXXDependentScopeMemberExpr 0x13f145910 <col:19, col:32> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |   |   |   |     `-RecoveryExpr 0x13f1458e8 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    |   |   |   |       `-DeclRefExpr 0x13f1458b0 <col:19> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |   |   `-ReturnStmt 0x13f145a30 <line:13:5, col:13>
+    |   |   |     `-UnaryOperator 0x13f145a18 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |   |   |       `-ImplicitCastExpr 0x13f145a00 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+    |   |   |         `-RecoveryExpr 0x13f1459e0 <col:13> '<dependent type>' contains-errors lvalue
+    |   |   `-BinaryOperator 0x13f146a48 <line:15:4, line:16:21> '<dependent type>' contains-errors '='
+    |   |     |-CXXDependentScopeMemberExpr 0x13f145b28 <line:15:4, col:29> '<dependent type>' contains-errors lvalue .len
+    |   |     | `-CXXDependentScopeMemberExpr 0x13f145ae0 <col:4, col:17> '<dependent type>' contains-errors lvalue ->session_key
+    |   |     |   `-RecoveryExpr 0x13f145ab8 <col:4, col:9> '<dependent type>' contains-errors lvalue
+    |   |     |     `-DeclRefExpr 0x13f145a80 <col:4> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |     `-CXXDependentScopeMemberExpr 0x13f146a00 <line:16:7, col:21> '<dependent type>' contains-errors lvalue .len
+    |   |       `-RecoveryExpr 0x13f145ba8 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    |   |         `-DeclRefExpr 0x13f145b70 <col:7> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   |-BinaryOperator 0x13f146b78 <line:18:3, col:34> '<dependent type>' contains-errors '='
+    |   | |-CXXDependentScopeMemberExpr 0x13f146b10 <col:3, col:16> '<dependent type>' contains-errors lvalue ->sequence_number
+    |   | | `-RecoveryExpr 0x13f146ae8 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x13f146ab0 <col:3> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |   | `-IntegerLiteral 0x13f146b58 <col:34> 'int' 2
+    |   `-BinaryOperator 0x13f146c98 <line:19:3, col:32> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x13f146bf8 <col:3, col:16> '<dependent type>' contains-errors lvalue ->session_estab
+    |     | `-RecoveryExpr 0x13f146bd0 <col:3, col:8> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x13f146b98 <col:3> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    |     `-RecoveryExpr 0x13f146c78 <col:32> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13f146de0 <line:21:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f146d00 <col:2> 'int ()' Function 0x13f1457d8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x13f146dc8 <col:15, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13f146d80 <col:16, col:29> '<dependent type>' contains-errors lvalue ->srv_mutex
+    |     `-RecoveryExpr 0x13f146d58 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13f146d20 <col:16> 'struct cifs_ses *' contains-errors lvalue Var 0x13f144db8 'ses' 'struct cifs_ses *'
+    `-ReturnStmt 0x13f147250 <line:29:2, col:9>
+      `-IntegerLiteral 0x13f147230 <col:9> 'int' 0

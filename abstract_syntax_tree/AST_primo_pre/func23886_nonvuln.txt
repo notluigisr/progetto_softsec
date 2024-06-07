@@ -1,0 +1,47 @@
+`-FunctionDecl 0x1398276b8  line:1:1 invalid next_extents 'int (void *, int, int, int, struct nbdkit_extents *, int *)'
+  |-ParmVarDecl 0x13980dcd8 <col:15, col:21> col:21 used nxdata 'void *'
+  |-ParmVarDecl 0x13980dd70 <col:29, col:38> col:38 invalid count 'int'
+  |-ParmVarDecl 0x13980ddf0 <col:45, col:54> col:54 invalid offset 'int'
+  |-ParmVarDecl 0x13980de70 <col:62, col:71> col:71 invalid flags 'int'
+  |-ParmVarDecl 0x139827488 <line:2:15, col:38> col:38 used extents 'struct nbdkit_extents *'
+  |-ParmVarDecl 0x139827538 <col:47, col:52> col:52 used err 'int *'
+  `-CompoundStmt 0x139828060 <line:3:1, line:12:1>
+    |-DeclStmt 0x1398279c8 <line:4:3, col:33>
+    | |-RecordDecl 0x139827790 <col:3, col:10> col:10 struct b_conn
+    | `-VarDecl 0x1398278f8 <col:3, col:27> col:18 used b_conn 'struct b_conn *' cinit
+    |   `-ImplicitCastExpr 0x139827998 <col:27> 'struct b_conn *' <BitCast>
+    |     `-ImplicitCastExpr 0x139827980 <col:27> 'void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x139827960 <col:27> 'void *' lvalue ParmVar 0x13980dcd8 'nxdata' 'void *'
+    |-DeclStmt 0x139827a60 <line:5:3, col:8>
+    | `-VarDecl 0x1398279f8 <col:3, col:7> col:7 used r 'int'
+    |-BinaryOperator 0x139827cf8 <line:7:3, line:8:39> 'int' contains-errors '='
+    | |-DeclRefExpr 0x139827a78 <line:7:3> 'int' lvalue Var 0x1398279f8 'r' 'int'
+    | `-CallExpr 0x139827ca0 <col:7, line:8:39> '<dependent type>' contains-errors
+    |   |-CXXDependentScopeMemberExpr 0x139827af8 <line:7:7, col:18> '<dependent type>' contains-errors lvalue ->extents
+    |   | `-RecoveryExpr 0x139827ad0 <col:7, col:15> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x139827a98 <col:7> 'struct b_conn *' lvalue Var 0x1398278f8 'b_conn' 'struct b_conn *'
+    |   |-RecoveryExpr 0x139827b78 <col:27, col:35> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x139827b40 <col:27> 'struct b_conn *' lvalue Var 0x1398278f8 'b_conn' 'struct b_conn *'
+    |   |-RecoveryExpr 0x139827bd8 <col:38, col:46> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x139827ba0 <col:38> 'struct b_conn *' lvalue Var 0x1398278f8 'b_conn' 'struct b_conn *'
+    |   |-RecoveryExpr 0x139827c00 <col:52> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x139827c20 <col:59> '<dependent type>' contains-errors lvalue
+    |   |-RecoveryExpr 0x139827c40 <col:67> '<dependent type>' contains-errors lvalue
+    |   |-DeclRefExpr 0x139827c60 <line:8:27> 'struct nbdkit_extents *' lvalue ParmVar 0x139827488 'extents' 'struct nbdkit_extents *'
+    |   `-DeclRefExpr 0x139827c80 <col:36> 'int *' lvalue ParmVar 0x139827538 'err' 'int *'
+    |-IfStmt 0x139827ff8 <line:9:3, line:10:17>
+    | |-BinaryOperator 0x139827d88 <line:9:7, col:13> 'int' '=='
+    | | |-ImplicitCastExpr 0x139827d70 <col:7> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x139827d18 <col:7> 'int' lvalue Var 0x1398279f8 'r' 'int'
+    | | `-UnaryOperator 0x139827d58 <col:12, col:13> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x139827d38 <col:13> 'int' 1
+    | `-CallExpr 0x139827fb8 <line:10:5, col:17> 'int'
+    |   |-ImplicitCastExpr 0x139827fa0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x139827f00 <col:5> 'int ()' Function 0x139827e48 'assert' 'int ()'
+    |   `-ImplicitCastExpr 0x139827fe0 <col:13, col:14> 'int' <LValueToRValue>
+    |     `-UnaryOperator 0x139827f58 <col:13, col:14> 'int' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x139827f40 <col:14> 'int *' <LValueToRValue>
+    |         `-DeclRefExpr 0x139827f20 <col:14> 'int *' lvalue ParmVar 0x139827538 'err' 'int *'
+    `-ReturnStmt 0x139828050 <line:11:3, col:10>
+      `-ImplicitCastExpr 0x139828038 <col:10> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x139828018 <col:10> 'int' lvalue Var 0x1398279f8 'r' 'int'

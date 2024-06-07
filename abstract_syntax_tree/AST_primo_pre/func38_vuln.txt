@@ -1,0 +1,65 @@
+`-FunctionDecl 0x1581284c8  line:1:1 invalid memxor3_different_alignment_all 'int (int *, const char *, const char *, unsigned int, unsigned int, int)'
+  |-ParmVarDecl 0x158128128 <col:34, col:42> col:42 referenced invalid dst 'int *'
+  |-ParmVarDecl 0x1581281a8 <line:2:6, col:18> col:18 a 'const char *'
+  |-ParmVarDecl 0x158128228 <col:21, col:33> col:33 b 'const char *'
+  |-ParmVarDecl 0x1581282a8 <line:3:6, col:15> col:15 used a_offset 'unsigned int'
+  |-ParmVarDecl 0x158128328 <col:25, col:34> col:34 used b_offset 'unsigned int'
+  |-ParmVarDecl 0x1581283a8 <line:4:6, col:13> col:13 referenced invalid n 'int'
+  `-CompoundStmt 0x150008810 <line:5:1, line:42:1>
+    |-DeclStmt 0x1581287c8 <line:6:3, col:21>
+    | |-VarDecl 0x1581285b8 <col:3, col:7> col:7 used al 'int'
+    | |-VarDecl 0x158128638 <col:3, col:11> col:11 used ar 'int'
+    | |-VarDecl 0x1581286b8 <col:3, col:15> col:15 used bl 'int'
+    | `-VarDecl 0x158128738 <col:3, col:19> col:19 used br 'int'
+    |-DeclStmt 0x158141868 <line:7:3, col:23>
+    | `-VarDecl 0x158141800 <col:3, col:17> col:17 referenced invalid a_word 'const int *'
+    |-DeclStmt 0x158141900 <line:8:3, col:23>
+    | `-VarDecl 0x158141898 <col:3, col:17> col:17 referenced invalid b_word 'const int *'
+    |-BinaryOperator 0x1581419f0 <line:12:3, col:19> 'int' contains-errors '='
+    | |-DeclRefExpr 0x158141918 <col:3> 'int' lvalue Var 0x1581285b8 'al' 'int'
+    | `-BinaryOperator 0x1581419d0 <col:8, col:19> '<dependent type>' contains-errors '*'
+    |   |-RecoveryExpr 0x1581419b0 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x158141950 <col:19> 'unsigned int' lvalue ParmVar 0x1581282a8 'a_offset' 'unsigned int'
+    |-BinaryOperator 0x158141b58 <line:14:3, col:19> 'int' contains-errors '='
+    | |-DeclRefExpr 0x158141a80 <col:3> 'int' lvalue Var 0x1581286b8 'bl' 'int'
+    | `-BinaryOperator 0x158141b38 <col:8, col:19> '<dependent type>' contains-errors '*'
+    |   |-RecoveryExpr 0x158141b18 <col:8> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x158141ab8 <col:19> 'unsigned int' lvalue ParmVar 0x158128328 'b_offset' 'unsigned int'
+    |-IfStmt 0x1581426f0 <line:20:3, line:32:5> has_else
+    | |-BinaryOperator 0x158141cb8 <line:20:7, col:11> '<dependent type>' contains-errors '&'
+    | | |-RecoveryExpr 0x158141c78 <col:7> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x158141c98 <col:11> 'int' 1
+    | |-CompoundStmt 0x1581425a0 <line:21:5, line:27:5>
+    | | |-UnaryOperator 0x158141d20 <line:22:7, col:8> '<dependent type>' contains-errors postfix '--' cannot overflow
+    | | | `-RecoveryExpr 0x158141cf8 <col:7> '<dependent type>' contains-errors lvalue
+    | | |   `-DeclRefExpr 0x158141cd8 <col:7> 'int' lvalue ParmVar 0x1581283a8 'n' 'int'
+    | | `-BinaryOperator 0x158142580 <line:26:7, col:62> '<dependent type>' contains-errors '='
+    | |   |-ArraySubscriptExpr 0x158142440 <col:7, col:12> '<dependent type>' contains-errors lvalue
+    | |   | |-ImplicitCastExpr 0x158142410 <col:7> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | | `-RecoveryExpr 0x158141fe8 <col:7> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x158141fc8 <col:7> 'int *' lvalue ParmVar 0x158128128 'dst' 'int *'
+    | |   | `-ImplicitCastExpr 0x158142428 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |   `-RecoveryExpr 0x158142010 <col:11> '<dependent type>' contains-errors lvalue
+    | |   `-BinaryOperator 0x158142560 <col:16, col:62> '<dependent type>' contains-errors '^'
+    | |     |-CallExpr 0x1581424a0 <col:16, col:37> '<dependent type>' contains-errors
+    | |     | |-DeclRefExpr 0x1581421e0 <col:16> 'int ()' Function 0x158142128 'MERGE' 'int ()'
+    | |     | |-RecoveryExpr 0x158142460 <col:23> '<dependent type>' contains-errors lvalue
+    | |     | |-DeclRefExpr 0x158142218 <col:27> 'int' lvalue Var 0x1581285b8 'al' 'int'
+    | |     | |-RecoveryExpr 0x158142480 <col:31> '<dependent type>' contains-errors lvalue
+    | |     | `-DeclRefExpr 0x158142250 <col:35> 'int' lvalue Var 0x158128638 'ar' 'int'
+    | |     `-CallExpr 0x158142520 <col:41, col:62> '<dependent type>' contains-errors
+    | |       |-DeclRefExpr 0x1581422b0 <col:41> 'int ()' Function 0x158142128 'MERGE' 'int ()'
+    | |       |-RecoveryExpr 0x1581424e0 <col:48> '<dependent type>' contains-errors lvalue
+    | |       |-DeclRefExpr 0x1581422e8 <col:52> 'int' lvalue Var 0x1581286b8 'bl' 'int'
+    | |       |-RecoveryExpr 0x158142500 <col:56> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x158142320 <col:60> 'int' lvalue Var 0x158128738 'br' 'int'
+    | `-CompoundStmt 0x1581426e0 <line:29:5, line:32:5>
+    `-WhileStmt 0x1500087f0 <line:34:3, line:41:5>
+      |-BinaryOperator 0x158142760 <line:34:10, col:14> 'int' contains-errors '>'
+      | |-RecoveryExpr 0x158142720 <col:10> '<dependent type>' contains-errors lvalue
+      | `-IntegerLiteral 0x158142740 <col:14> 'int' 0
+      `-CompoundStmt 0x1500087d8 <line:35:5, line:41:5>
+        `-CompoundAssignOperator 0x150008200 <line:36:7, col:12> '<dependent type>' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          |-RecoveryExpr 0x1581427a0 <col:7> '<dependent type>' contains-errors lvalue
+          | `-DeclRefExpr 0x158142780 <col:7> 'int' lvalue ParmVar 0x1581283a8 'n' 'int'
+          `-IntegerLiteral 0x1581427c8 <col:12> 'int' 2

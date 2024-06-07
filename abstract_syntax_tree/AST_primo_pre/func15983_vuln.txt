@@ -1,0 +1,47 @@
+`-FunctionDecl 0x14582b7f8  line:1:5 invalid kvm_read_guest_page 'int (struct kvm *, int, void *, int, int)'
+  |-ParmVarDecl 0x14580e248 <col:25, col:37> col:37 used kvm 'struct kvm *'
+  |-ParmVarDecl 0x14580e2e0 <col:42, col:48> col:48 invalid gfn 'int'
+  |-ParmVarDecl 0x14580e360 <col:53, col:59> col:59 used data 'void *'
+  |-ParmVarDecl 0x14582b600 <col:65, col:69> col:69 used offset 'int'
+  |-ParmVarDecl 0x14582b680 <line:2:4, col:8> col:8 used len 'int'
+  `-CompoundStmt 0x14582c250 <line:3:1, line:14:1>
+    |-DeclStmt 0x14582b948 <line:4:2, col:7>
+    | `-VarDecl 0x14582b8e0 <col:2, col:6> col:6 used r 'int'
+    |-DeclStmt 0x14582b9e0 <line:5:2, col:20>
+    | `-VarDecl 0x14582b978 <col:2, col:16> col:16 used addr 'unsigned long'
+    |-BinaryOperator 0x14582bc00 <line:7:2, col:28> 'unsigned long' contains-errors '='
+    | |-DeclRefExpr 0x14582b9f8 <col:2> 'unsigned long' lvalue Var 0x14582b978 'addr' 'unsigned long'
+    | `-CallExpr 0x14582bbd0 <col:9, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14582bb70 <col:9> 'int ()' Function 0x14582bab8 'gfn_to_hva' 'int ()'
+    |   |-DeclRefExpr 0x14582bb90 <col:20> 'struct kvm *' lvalue ParmVar 0x14580e248 'kvm' 'struct kvm *'
+    |   `-RecoveryExpr 0x14582bbb0 <col:25> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14582be70 <line:8:2, line:9:11>
+    | |-CallExpr 0x14582bd88 <line:8:6, col:27> 'int'
+    | | |-ImplicitCastExpr 0x14582bd70 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14582bd00 <col:6> 'int ()' Function 0x14582bc48 'kvm_is_error_hva' 'int ()'
+    | | `-ImplicitCastExpr 0x14582bdb0 <col:23> 'unsigned long' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14582bd20 <col:23> 'unsigned long' lvalue Var 0x14582b978 'addr' 'unsigned long'
+    | `-ReturnStmt 0x14582be60 <line:9:3, col:11>
+    |   `-UnaryOperator 0x14582be48 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14582be30 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14582be10 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14582c100 <line:10:2, col:60> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14582be90 <col:2> 'int' lvalue Var 0x14582b8e0 'r' 'int'
+    | `-CallExpr 0x14582c0c8 <col:6, col:60> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14582bf90 <col:6> 'int ()' Function 0x14582bed8 'copy_from_user' 'int ()'
+    |   |-DeclRefExpr 0x14582bfb0 <col:21> 'void *' lvalue ParmVar 0x14580e360 'data' 'void *'
+    |   |-RecoveryExpr 0x14582c078 <col:27, col:49> '<dependent type>' contains-errors lvalue
+    |   | |-CStyleCastExpr 0x14582c018 <col:27, col:42> 'void' <ToVoid>
+    |   | | `-ImplicitCastExpr 0x14582c000 <col:42> 'unsigned long' <LValueToRValue> part_of_explicit_cast
+    |   | |   `-DeclRefExpr 0x14582bfd0 <col:42> 'unsigned long' lvalue Var 0x14582b978 'addr' 'unsigned long'
+    |   | `-DeclRefExpr 0x14582c040 <col:49> 'int' lvalue ParmVar 0x14582b600 'offset' 'int'
+    |   `-DeclRefExpr 0x14582c0a8 <col:57> 'int' lvalue ParmVar 0x14582b680 'len' 'int'
+    |-IfStmt 0x14582c200 <line:11:2, line:12:11>
+    | |-ImplicitCastExpr 0x14582c140 <line:11:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x14582c120 <col:6> 'int' lvalue Var 0x14582b8e0 'r' 'int'
+    | `-ReturnStmt 0x14582c1f0 <line:12:3, col:11>
+    |   `-UnaryOperator 0x14582c1d8 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x14582c1c0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x14582c1a0 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14582c240 <line:13:2, col:9>
+      `-IntegerLiteral 0x14582c220 <col:9> 'int' 0

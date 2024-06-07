@@ -1,0 +1,49 @@
+`-FunctionDecl 0x12800de88  line:1:1 invalid parsegid 'int (const char *, int *)'
+  |-ParmVarDecl 0x12800dcd8 <col:10, col:22> col:22 used s 'const char *'
+  |-ParmVarDecl 0x12800dda8 <col:25, col:32> col:32 invalid gid 'int *'
+  `-CompoundStmt 0x11e836bc8 <line:2:1, line:18:1>
+    |-DeclStmt 0x12800e128 <line:3:2, col:18>
+    | |-RecordDecl 0x12800df40 <col:2, col:9> col:9 struct group
+    | `-VarDecl 0x12800e0a8 <col:2, col:16> col:16 used gr 'struct group *'
+    |-DeclStmt 0x12800e1c0 <line:4:2, col:20>
+    | `-VarDecl 0x12800e158 <col:2, col:14> col:14 used errstr 'const char *'
+    |-IfStmt 0x11e836788 <line:6:2, line:9:2>
+    | |-BinaryOperator 0x11e836648 <line:6:6, col:28> 'int' contains-errors '!='
+    | | |-ParenExpr 0x11e836608 <col:6, col:23> 'struct group *'
+    | | | `-BinaryOperator 0x11e8365e8 <col:7, col:22> 'struct group *' '='
+    | | |   |-DeclRefExpr 0x12800e1d8 <col:7> 'struct group *' lvalue Var 0x12800e0a8 'gr' 'struct group *'
+    | | |   `-ImplicitCastExpr 0x11e8365d0 <col:12, col:22> 'struct group *' <IntegralToPointer>
+    | | |     `-CallExpr 0x11e836590 <col:12, col:22> 'int'
+    | | |       |-ImplicitCastExpr 0x11e836578 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    | | |       | `-DeclRefExpr 0x12800e350 <col:12> 'int ()' Function 0x12800e298 'getgrnam' 'int ()'
+    | | |       `-ImplicitCastExpr 0x11e8365b8 <col:21> 'const char *' <LValueToRValue>
+    | | |         `-DeclRefExpr 0x12800e370 <col:21> 'const char *' lvalue ParmVar 0x12800dcd8 's' 'const char *'
+    | | `-RecoveryExpr 0x11e836628 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x11e836768 <col:34, line:9:2>
+    |   |-BinaryOperator 0x11e836718 <line:7:3, col:14> '<dependent type>' contains-errors '='
+    |   | |-UnaryOperator 0x11e8366a0 <col:3, col:4> '<dependent type>' contains-errors prefix '*' cannot overflow
+    |   | | `-ImplicitCastExpr 0x11e836688 <col:4> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |   `-RecoveryExpr 0x11e836668 <col:4> '<dependent type>' contains-errors lvalue
+    |   | `-RecoveryExpr 0x11e8366f0 <col:10, col:14> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x11e8366b8 <col:10> 'struct group *' lvalue Var 0x12800e0a8 'gr' 'struct group *'
+    |   `-ReturnStmt 0x11e836758 <line:8:3, col:10>
+    |     `-IntegerLiteral 0x11e836738 <col:10> 'int' 0
+    |-BinaryOperator 0x11e836ad8 <line:11:2, col:40> '<dependent type>' contains-errors '='
+    | |-UnaryOperator 0x11e836a60 <col:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x11e836a48 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x11e8367a8 <col:3> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x11e836a98 <col:9, col:40> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x11e8368d8 <col:9> 'int ()' Function 0x11e836820 'strtonum' 'int ()'
+    |   |-DeclRefExpr 0x11e8368f8 <col:18> 'const char *' lvalue ParmVar 0x12800dcd8 's' 'const char *'
+    |   |-IntegerLiteral 0x11e836918 <col:21> 'int' 0
+    |   |-RecoveryExpr 0x11e836a78 <col:24> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x11e8369a0 <col:33, col:34> 'const char **' prefix '&' cannot overflow
+    |     `-DeclRefExpr 0x11e836950 <col:34> 'const char *' lvalue Var 0x12800e158 'errstr' 'const char *'
+    |-IfStmt 0x11e836b78 <line:15:2, line:16:11>
+    | |-ImplicitCastExpr 0x11e836b18 <line:15:6> 'const char *' <LValueToRValue>
+    | | `-DeclRefExpr 0x11e836af8 <col:6> 'const char *' lvalue Var 0x12800e158 'errstr' 'const char *'
+    | `-ReturnStmt 0x11e836b68 <line:16:3, col:11>
+    |   `-UnaryOperator 0x11e836b50 <col:10, col:11> 'int' prefix '-'
+    |     `-IntegerLiteral 0x11e836b30 <col:11> 'int' 1
+    `-ReturnStmt 0x11e836bb8 <line:17:2, col:9>
+      `-IntegerLiteral 0x11e836b98 <col:9> 'int' 0

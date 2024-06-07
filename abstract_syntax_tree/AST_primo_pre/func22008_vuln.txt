@@ -1,0 +1,23 @@
+`-FunctionDecl 0x13f00df18  line:1:5 invalid pmd_set_huge 'int (int *, int, int)'
+  |-ParmVarDecl 0x13f00dd28 <col:18, col:25> col:25 invalid pmdp 'int *'
+  |-ParmVarDecl 0x13f00dda8 <col:31, col:43> col:43 invalid phys 'int'
+  |-ParmVarDecl 0x13f00de28 <col:49, col:58> col:58 invalid prot 'int'
+  `-CompoundStmt 0x13f027748 <line:2:1, line:8:1>
+    |-CallExpr 0x13f00e270 <line:5:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f00e130 <col:2> 'int ()' Function 0x13f00e078 'BUG_ON' 'int ()'
+    | `-BinaryOperator 0x13f00e250 <col:9, col:17> '<dependent type>' contains-errors '&'
+    |   |-RecoveryExpr 0x13f00e150 <col:9> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x13f00e238 <col:16, col:17> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |     `-ImplicitCastExpr 0x13f00e220 <col:17> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x13f00e200 <col:17> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13f0276e8 <line:6:2, col:55> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f00e378 <col:2> 'int ()' Function 0x13f00e2c0 'set_pmd' 'int ()'
+    | |-RecoveryExpr 0x13f00e398 <col:10> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x13f0276b8 <col:16, col:54> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13f0274b8 <col:16> 'int ()' Function 0x13f027400 'pfn_pmd' 'int ()'
+    |   |-CallExpr 0x13f0275f8 <col:24, col:42> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13f0275b8 <col:24> 'int ()' Function 0x13f027500 '__phys_to_pfn' 'int ()'
+    |   | `-RecoveryExpr 0x13f0275d8 <col:38> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x13f027698 <col:45> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13f027738 <line:7:2, col:9>
+      `-IntegerLiteral 0x13f027718 <col:9> 'int' 1

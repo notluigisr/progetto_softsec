@@ -1,0 +1,118 @@
+`-FunctionDecl 0x151853e38  line:1:7 idr_get_next 'void *(struct idr *, int *)'
+  |-ParmVarDecl 0x15183d248 <col:20, col:32> col:32 used idp 'struct idr *'
+  |-ParmVarDecl 0x15183d2f8 <col:37, col:42> col:42 used nextidp 'int *'
+  `-CompoundStmt 0x153009770 <line:2:1, line:35:1>
+    |-DeclStmt 0x151854158 <line:3:2, col:41>
+    | |-RecordDecl 0x151853f38 <col:2, col:9> col:9 struct idr_layer
+    | `-VarDecl 0x1518540a8 <col:2, col:20> col:20 used p 'struct idr_layer *'
+    |-DeclStmt 0x1518542f8 <line:4:2, col:33>
+    | `-VarDecl 0x151854258 <col:2, col:21> col:21 used paa 'struct idr_layer **'
+    |-DeclStmt 0x1518543f8 <line:5:2, col:19>
+    | `-VarDecl 0x151854328 <col:2, col:12> col:6 used id 'int' cinit
+    |   `-ImplicitCastExpr 0x1518543e0 <col:11, col:12> 'int' <LValueToRValue>
+    |     `-UnaryOperator 0x1518543c8 <col:11, col:12> 'int' lvalue prefix '*' cannot overflow
+    |       `-ImplicitCastExpr 0x1518543b0 <col:12> 'int *' <LValueToRValue>
+    |         `-DeclRefExpr 0x151854390 <col:12> 'int *' lvalue ParmVar 0x15183d2f8 'nextidp' 'int *'
+    |-DeclStmt 0x151854528 <line:6:2, col:12>
+    | |-VarDecl 0x151854428 <col:2, col:6> col:6 used n 'int'
+    | `-VarDecl 0x1518544a8 <col:2, col:9> col:9 used max 'int'
+    |-BinaryOperator 0x151854718 <line:9:2, col:34> 'struct idr_layer *' contains-errors '='
+    | |-DeclRefExpr 0x151854540 <col:2> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    | `-CallExpr 0x1518546f0 <col:6, col:34> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x151854670 <col:6> 'int ()' Function 0x1518545b8 'rcu_dereference_raw' 'int ()'
+    |   `-RecoveryExpr 0x1518546c8 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x151854690 <col:26> 'struct idr *' lvalue ParmVar 0x15183d248 'idp' 'struct idr *'
+    |-IfStmt 0x1518547d0 <line:10:2, line:11:10>
+    | |-UnaryOperator 0x151854770 <line:10:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x151854758 <col:7> 'struct idr_layer *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x151854738 <col:7> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    | `-ReturnStmt 0x1518547c0 <line:11:3, col:10>
+    |   `-RecoveryExpr 0x1518547a0 <col:10> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x151854968 <line:12:2, col:23> 'int' contains-errors '='
+    | |-DeclRefExpr 0x1518547f0 <col:2> 'int' lvalue Var 0x151854428 'n' 'int'
+    | `-BinaryOperator 0x151854948 <col:6, col:23> '<dependent type>' contains-errors '*'
+    |   |-ParenExpr 0x1518548b0 <col:6, col:19> '<dependent type>' contains-errors
+    |   | `-BinaryOperator 0x151854890 <col:7, col:18> '<dependent type>' contains-errors '+'
+    |   |   |-RecoveryExpr 0x151854848 <col:7, col:10> '<dependent type>' contains-errors lvalue
+    |   |   | `-DeclRefExpr 0x151854810 <col:7> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |   |   `-IntegerLiteral 0x151854870 <col:18> 'int' 1
+    |   `-RecoveryExpr 0x151854928 <col:23> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x151854a20 <line:13:2, col:13> 'int' '='
+    | |-DeclRefExpr 0x151854988 <col:2> 'int' lvalue Var 0x1518544a8 'max' 'int'
+    | `-BinaryOperator 0x151854a00 <col:8, col:13> 'int' '<<'
+    |   |-IntegerLiteral 0x1518549a8 <col:8> 'int' 1
+    |   `-ImplicitCastExpr 0x1518549e8 <col:13> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1518549c8 <col:13> 'int' lvalue Var 0x151854428 'n' 'int'
+    |-WhileStmt 0x153009708 <line:15:2, line:33:2>
+    | |-BinaryOperator 0x151854ab0 <line:15:9, col:14> 'int' '<'
+    | | |-ImplicitCastExpr 0x151854a80 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x151854a40 <col:9> 'int' lvalue Var 0x151854328 'id' 'int'
+    | | `-ImplicitCastExpr 0x151854a98 <col:14> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x151854a60 <col:14> 'int' lvalue Var 0x1518544a8 'max' 'int'
+    | `-CompoundStmt 0x1530096d8 <col:19, line:33:2>
+    |   |-WhileStmt 0x153008f20 <line:16:3, line:20:3>
+    |   | |-BinaryOperator 0x151854b80 <line:16:10, col:19> 'int' '&&'
+    |   | | |-BinaryOperator 0x151854b28 <col:10, col:14> 'int' '>'
+    |   | | | |-ImplicitCastExpr 0x151854b10 <col:10> 'int' <LValueToRValue>
+    |   | | | | `-DeclRefExpr 0x151854ad0 <col:10> 'int' lvalue Var 0x151854428 'n' 'int'
+    |   | | | `-IntegerLiteral 0x151854af0 <col:14> 'int' 0
+    |   | | `-ImplicitCastExpr 0x151854b68 <col:19> 'struct idr_layer *' <LValueToRValue>
+    |   | |   `-DeclRefExpr 0x151854b48 <col:19> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |   | `-CompoundStmt 0x153008f00 <col:22, line:20:3>
+    |   |   |-CompoundAssignOperator 0x151854c28 <line:17:4, col:9> 'int' contains-errors '-=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |   |   | |-DeclRefExpr 0x151854ba0 <col:4> 'int' lvalue Var 0x151854428 'n' 'int'
+    |   |   | `-RecoveryExpr 0x151854c08 <col:9> '<dependent type>' contains-errors lvalue
+    |   |   `-BinaryOperator 0x151854ce0 <line:18:4, col:13> 'struct idr_layer *' '='
+    |   |     |-UnaryOperator 0x151854c90 <col:4, col:8> 'struct idr_layer *' lvalue prefix '*' cannot overflow
+    |   |     | `-UnaryOperator 0x151854c78 <col:5, col:8> 'struct idr_layer **' postfix '++'
+    |   |     |   `-DeclRefExpr 0x151854c58 <col:5> 'struct idr_layer **' lvalue Var 0x151854258 'paa' 'struct idr_layer **'
+    |   |     `-ImplicitCastExpr 0x151854cc8 <col:13> 'struct idr_layer *' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x151854ca8 <col:13> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |   |-IfStmt 0x1530090a0 <line:22:3, line:25:3>
+    |   | |-ImplicitCastExpr 0x153008f60 <line:22:7> 'struct idr_layer *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x153008f40 <col:7> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |   | `-CompoundStmt 0x153009080 <col:10, line:25:3>
+    |   |   |-BinaryOperator 0x153009000 <line:23:4, col:15> 'int' '='
+    |   |   | |-UnaryOperator 0x153008fb0 <col:4, col:5> 'int' lvalue prefix '*' cannot overflow
+    |   |   | | `-ImplicitCastExpr 0x153008f98 <col:5> 'int *' <LValueToRValue>
+    |   |   | |   `-DeclRefExpr 0x153008f78 <col:5> 'int *' lvalue ParmVar 0x15183d2f8 'nextidp' 'int *'
+    |   |   | `-ImplicitCastExpr 0x153008fe8 <col:15> 'int' <LValueToRValue>
+    |   |   |   `-DeclRefExpr 0x153008fc8 <col:15> 'int' lvalue Var 0x151854328 'id' 'int'
+    |   |   `-ReturnStmt 0x153009070 <line:24:4, col:11>
+    |   |     `-ImplicitCastExpr 0x153009058 <col:11> 'void *' <BitCast>
+    |   |       `-ImplicitCastExpr 0x153009040 <col:11> 'struct idr_layer *' <LValueToRValue>
+    |   |         `-DeclRefExpr 0x153009020 <col:11> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |   |-BinaryOperator 0x153009348 <line:28:3, col:31> 'int' '='
+    |   | |-DeclRefExpr 0x1530090c0 <col:3> 'int' lvalue Var 0x151854328 'id' 'int'
+    |   | `-CallExpr 0x153009318 <col:8, col:31> 'int'
+    |   |   |-ImplicitCastExpr 0x153009300 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   |   | `-DeclRefExpr 0x1530091c0 <col:8> 'int ()' Function 0x153009108 'round_up' 'int ()'
+    |   |   |-BinaryOperator 0x153009238 <col:17, col:22> 'int' '+'
+    |   |   | |-ImplicitCastExpr 0x153009220 <col:17> 'int' <LValueToRValue>
+    |   |   | | `-DeclRefExpr 0x1530091e0 <col:17> 'int' lvalue Var 0x151854328 'id' 'int'
+    |   |   | `-IntegerLiteral 0x153009200 <col:22> 'int' 1
+    |   |   `-BinaryOperator 0x1530092b0 <col:25, col:30> 'int' '<<'
+    |   |     |-IntegerLiteral 0x153009258 <col:25> 'int' 1
+    |   |     `-ImplicitCastExpr 0x153009298 <col:30> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x153009278 <col:30> 'int' lvalue Var 0x151854428 'n' 'int'
+    |   `-WhileStmt 0x1530096b8 <line:29:3, line:32:3>
+    |     |-BinaryOperator 0x153009518 <line:29:10, col:20> 'int' '<'
+    |     | |-ImplicitCastExpr 0x153009500 <col:10> 'int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x153009368 <col:10> 'int' lvalue Var 0x151854428 'n' 'int'
+    |     | `-CallExpr 0x1530094c0 <col:14, col:20> 'int'
+    |     |   |-ImplicitCastExpr 0x1530094a8 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |     |   | `-DeclRefExpr 0x153009468 <col:14> 'int ()' Function 0x1530093b0 'fls' 'int ()'
+    |     |   `-ImplicitCastExpr 0x1530094e8 <col:18> 'int' <LValueToRValue>
+    |     |     `-DeclRefExpr 0x153009488 <col:18> 'int' lvalue Var 0x151854328 'id' 'int'
+    |     `-CompoundStmt 0x153009698 <col:23, line:32:3>
+    |       |-CompoundAssignOperator 0x1530095c0 <line:30:4, col:9> 'int' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |       | |-DeclRefExpr 0x153009538 <col:4> 'int' lvalue Var 0x151854428 'n' 'int'
+    |       | `-RecoveryExpr 0x1530095a0 <col:9> '<dependent type>' contains-errors lvalue
+    |       `-BinaryOperator 0x153009678 <line:31:4, col:11> 'struct idr_layer *' '='
+    |         |-DeclRefExpr 0x1530095f0 <col:4> 'struct idr_layer *' lvalue Var 0x1518540a8 'p' 'struct idr_layer *'
+    |         `-ImplicitCastExpr 0x153009660 <col:8, col:11> 'struct idr_layer *' <LValueToRValue>
+    |           `-UnaryOperator 0x153009648 <col:8, col:11> 'struct idr_layer *' lvalue prefix '*' cannot overflow
+    |             `-UnaryOperator 0x153009630 <col:9, col:11> 'struct idr_layer **' prefix '--'
+    |               `-DeclRefExpr 0x153009610 <col:11> 'struct idr_layer **' lvalue Var 0x151854258 'paa' 'struct idr_layer **'
+    `-ReturnStmt 0x153009760 <line:34:2, col:9>
+      `-RecoveryExpr 0x153009740 <col:9> '<dependent type>' contains-errors lvalue

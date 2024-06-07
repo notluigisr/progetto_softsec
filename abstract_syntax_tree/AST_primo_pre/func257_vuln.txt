@@ -1,0 +1,29 @@
+`-FunctionDecl 0x13400e0c0  line:1:13 invalid zlib_stateful_free_ex_data 'void (void *, void *, int *, int, long, void *)' static
+  |-ParmVarDecl 0x13400dcd8 <col:40, col:46> col:46 obj 'void *'
+  |-ParmVarDecl 0x13400dd58 <col:51, col:57> col:57 used item 'void *'
+  |-ParmVarDecl 0x13400de28 <line:2:2, col:18> col:18 invalid ad 'int *'
+  |-ParmVarDecl 0x13400dea8 <col:22, col:26> col:26 ind 'int'
+  |-ParmVarDecl 0x13400df28 <col:30, col:35> col:35 argl 'long'
+  |-ParmVarDecl 0x13400dfa8 <col:41, col:47> col:47 argp 'void *'
+  `-CompoundStmt 0x134027e28 <line:3:2, line:8:2>
+    |-DeclStmt 0x134027480 <line:4:2, col:54>
+    | |-RecordDecl 0x13400e198 <col:2, col:9> col:9 struct zlib_state
+    | `-VarDecl 0x13400e308 <col:2, col:50> col:21 used state 'struct zlib_state *' cinit
+    |   `-CStyleCastExpr 0x134027440 <col:29, col:50> 'struct zlib_state *' <BitCast>
+    |     `-ImplicitCastExpr 0x134027428 <col:50> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x13400e370 <col:50> 'void *' lvalue ParmVar 0x13400dd58 'item' 'void *'
+    |-CallExpr 0x134027ab0 <line:5:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1340275f0 <col:2> 'int ()' Function 0x134027538 'inflateEnd' 'int ()'
+    | `-UnaryOperator 0x134027a98 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x134027a70 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x134027610 <col:14> 'struct zlib_state *' lvalue Var 0x13400e308 'state' 'struct zlib_state *'
+    |-CallExpr 0x134027c50 <line:6:2, col:28> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x134027bb8 <col:2> 'int ()' Function 0x134027b00 'deflateEnd' 'int ()'
+    | `-UnaryOperator 0x134027c38 <col:13, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x134027c10 <col:14, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x134027bd8 <col:14> 'struct zlib_state *' lvalue Var 0x13400e308 'state' 'struct zlib_state *'
+    `-CallExpr 0x134027de8 <line:7:2, col:20> 'int'
+      |-ImplicitCastExpr 0x134027dd0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x134027d58 <col:2> 'int ()' Function 0x134027ca0 'OPENSSL_free' 'int ()'
+      `-ImplicitCastExpr 0x134027e10 <col:15> 'struct zlib_state *' <LValueToRValue>
+        `-DeclRefExpr 0x134027d78 <col:15> 'struct zlib_state *' lvalue Var 0x13400e308 'state' 'struct zlib_state *'

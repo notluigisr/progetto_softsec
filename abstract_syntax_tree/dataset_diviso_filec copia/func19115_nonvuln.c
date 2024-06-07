@@ -1,0 +1,4 @@
+X509_STORE_CTX_verify_fn X509_STORE_CTX_get_verify(X509_STORE_CTX *ctx)
+{
+    return ctx->verify;
+}

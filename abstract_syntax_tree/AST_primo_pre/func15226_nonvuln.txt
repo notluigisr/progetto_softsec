@@ -1,0 +1,50 @@
+`-FunctionDecl 0x153928198  line:1:5 referenced perf_event_task_enable 'int (void)'
+  `-CompoundStmt 0x1539430b8 <line:2:1, line:15:1>
+    |-DeclStmt 0x153928478 <line:3:2, col:32>
+    | |-RecordDecl 0x153928288 <col:2, col:9> col:9 struct perf_event_context
+    | `-VarDecl 0x1539283f8 <col:2, col:29> col:29 used ctx 'struct perf_event_context *'
+    |-DeclStmt 0x153928678 <line:4:2, col:26>
+    | |-RecordDecl 0x153928490 <col:2, col:9> col:9 struct perf_event
+    | `-VarDecl 0x1539285f8 <col:2, col:21> col:21 used event 'struct perf_event *'
+    |-CallExpr 0x153941908 <line:6:2, col:39> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1539287c0 <col:2> 'int ()' Function 0x153928708 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1539418f0 <col:13, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x1539418a8 <col:14, col:23> '<dependent type>' contains-errors lvalue ->perf_event_mutex
+    |     `-RecoveryExpr 0x153941888 <col:14> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x153941bb8 <line:7:2, col:67> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153941a10 <col:2> 'int ()' Function 0x153941958 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x153941a30 <col:22> 'struct perf_event *' lvalue Var 0x1539285f8 'event' 'struct perf_event *'
+    | |-UnaryOperator 0x153941b80 <col:29, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-CXXDependentScopeMemberExpr 0x153941b38 <col:30, col:39> '<dependent type>' contains-errors lvalue ->perf_event_list
+    | |   `-RecoveryExpr 0x153941b18 <col:30> '<dependent type>' contains-errors lvalue
+    | `-RecoveryExpr 0x153941b98 <col:56> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x153942600 <col:69, line:11:2>
+    | |-BinaryOperator 0x1539421f0 <line:8:3, col:34> 'struct perf_event_context *' '='
+    | | |-DeclRefExpr 0x153941bf0 <col:3> 'struct perf_event_context *' lvalue Var 0x1539283f8 'ctx' 'struct perf_event_context *'
+    | | `-ImplicitCastExpr 0x153941db8 <col:9, col:34> 'struct perf_event_context *' <IntegralToPointer>
+    | |   `-CallExpr 0x153941d78 <col:9, col:34> 'int'
+    | |     |-ImplicitCastExpr 0x153941d60 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x153941cf0 <col:9> 'int ()' Function 0x153941c38 'perf_event_ctx_lock' 'int ()'
+    | |     `-ImplicitCastExpr 0x153941da0 <col:29> 'struct perf_event *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x153941d10 <col:29> 'struct perf_event *' lvalue Var 0x1539285f8 'event' 'struct perf_event *'
+    | |-CallExpr 0x1539423b0 <line:9:3, col:54> 'int'
+    | | |-ImplicitCastExpr 0x153942398 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x1539422f0 <col:3> 'int ()' Function 0x153942238 'perf_event_for_each_child' 'int ()'
+    | | |-ImplicitCastExpr 0x1539423e0 <col:29> 'struct perf_event *' <LValueToRValue>
+    | | | `-DeclRefExpr 0x153942310 <col:29> 'struct perf_event *' lvalue Var 0x1539285f8 'event' 'struct perf_event *'
+    | | `-ImplicitCastExpr 0x153942430 <col:36> 'int (*)(void)' <FunctionToPointerDecay>
+    | |   `-DeclRefExpr 0x153942378 <col:36> 'int (void)' Function 0x153928198 'perf_event_task_enable' 'int (void)'
+    | `-CallExpr 0x1539425a0 <line:10:3, col:35> 'int'
+    |   |-ImplicitCastExpr 0x153942588 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x153942528 <col:3> 'int ()' Function 0x153942470 'perf_event_ctx_unlock' 'int ()'
+    |   |-ImplicitCastExpr 0x1539425d0 <col:25> 'struct perf_event *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x153942548 <col:25> 'struct perf_event *' lvalue Var 0x1539285f8 'event' 'struct perf_event *'
+    |   `-ImplicitCastExpr 0x1539425e8 <col:32> 'struct perf_event_context *' <LValueToRValue>
+    |     `-DeclRefExpr 0x153942568 <col:32> 'struct perf_event_context *' lvalue Var 0x1539283f8 'ctx' 'struct perf_event_context *'
+    |-CallExpr 0x153943060 <line:12:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x153942708 <col:2> 'int ()' Function 0x153942650 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x153943048 <col:15, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x153943000 <col:16, col:25> '<dependent type>' contains-errors lvalue ->perf_event_mutex
+    |     `-RecoveryExpr 0x1539427c8 <col:16> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1539430a8 <line:14:2, col:9>
+      `-IntegerLiteral 0x153943088 <col:9> 'int' 0

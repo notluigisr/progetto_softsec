@@ -1,0 +1,59 @@
+`-FunctionDecl 0x13b8f5c08  line:1:12 invalid __skb_get_nlattr 'int (int, int, int, int, int)' static
+  |-ParmVarDecl 0x13b8f58f0 <col:29, col:33> col:33 invalid ctx 'int'
+  |-ParmVarDecl 0x13b8f5970 <col:38, col:42> col:42 invalid A 'int'
+  |-ParmVarDecl 0x13b8f59f0 <col:45, col:49> col:49 invalid X 'int'
+  |-ParmVarDecl 0x13b8f5a70 <col:52, col:56> col:56 invalid r4 'int'
+  |-ParmVarDecl 0x13b8f5af0 <col:60, col:64> col:64 invalid r5 'int'
+  `-CompoundStmt 0x13d00a770 <line:2:1, line:17:1>
+    |-DeclStmt 0x13b8f5fd8 <line:3:2, col:52>
+    | |-RecordDecl 0x13b8f5cd8 <col:2, col:9> col:9 struct sk_buff
+    | `-VarDecl 0x13b8f5e48 <col:2, col:49> col:18 used skb 'struct sk_buff *' cinit
+    |   `-CStyleCastExpr 0x13b8f5f98 <col:24, col:49> 'struct sk_buff *' contains-errors <Dependent>
+    |     `-CStyleCastExpr 0x13b8f5ee8 <col:42, col:49> 'long' contains-errors <Dependent>
+    |       `-RecoveryExpr 0x13b8f5eb0 <col:49> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13d0099e8 <line:4:2, col:20>
+    | |-RecordDecl 0x13d009800 <col:2, col:9> col:9 struct nlattr
+    | `-VarDecl 0x13d009968 <col:2, col:17> col:17 used nla 'struct nlattr *'
+    |-IfStmt 0x13d009c58 <line:6:2, line:7:10>
+    | |-CallExpr 0x13d009be8 <line:6:6, col:26> 'int' contains-errors
+    | | |-ImplicitCastExpr 0x13d009bd0 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x13d009b60 <col:6> 'int ()' Function 0x13d009aa8 'skb_is_nonlinear' 'int ()'
+    | | `-ImplicitCastExpr 0x13d009c10 <col:23> 'struct sk_buff *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x13d009b80 <col:23> 'struct sk_buff *' contains-errors lvalue Var 0x13b8f5e48 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x13d009c48 <line:7:3, col:10>
+    |   `-IntegerLiteral 0x13d009c28 <col:10> 'int' 0
+    |-IfStmt 0x13d00a1c0 <line:9:2, line:10:10>
+    | |-RecoveryExpr 0x13d00a170 <line:9:6, col:41> '_Bool' contains-errors
+    | `-ReturnStmt 0x13d00a1b0 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x13d00a190 <col:10> 'int' 0
+    |-BinaryOperator 0x13d00a568 <line:12:2, col:65> 'struct nlattr *' contains-errors '='
+    | |-DeclRefExpr 0x13d00a1e0 <col:2> 'struct nlattr *' lvalue Var 0x13d009968 'nla' 'struct nlattr *'
+    | `-CallExpr 0x13d00a530 <col:8, col:65> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13d00a2e0 <col:8> 'int ()' Function 0x13d00a228 'nla_find' 'int ()'
+    |   |-CStyleCastExpr 0x13d00a448 <col:17, col:47> 'struct nlattr *' contains-errors <Dependent>
+    |   | `-UnaryOperator 0x13d00a3d0 <col:35, col:47> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-ArraySubscriptExpr 0x13d00a3b0 <col:36, col:47> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x13d00a380 <col:36, col:41> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-RecoveryExpr 0x13d00a338 <col:36, col:41> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x13d00a300 <col:36> 'struct sk_buff *' contains-errors lvalue Var 0x13b8f5e48 'skb' 'struct sk_buff *'
+    |   |     `-ImplicitCastExpr 0x13d00a398 <col:46> '<dependent type>' contains-errors <LValueToRValue>
+    |   |       `-RecoveryExpr 0x13d00a360 <col:46> '<dependent type>' contains-errors lvalue
+    |   |-BinaryOperator 0x13d00a4f0 <col:50, col:61> '<dependent type>' contains-errors '-'
+    |   | |-RecoveryExpr 0x13d00a4a8 <col:50, col:55> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x13d00a470 <col:50> 'struct sk_buff *' contains-errors lvalue Var 0x13b8f5e48 'skb' 'struct sk_buff *'
+    |   | `-RecoveryExpr 0x13d00a4d0 <col:61> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x13d00a510 <col:64> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x13d00a720 <line:13:2, line:14:39>
+    | |-ImplicitCastExpr 0x13d00a5a8 <line:13:6> 'struct nlattr *' <LValueToRValue>
+    | | `-DeclRefExpr 0x13d00a588 <col:6> 'struct nlattr *' lvalue Var 0x13d009968 'nla' 'struct nlattr *'
+    | `-ReturnStmt 0x13d00a710 <line:14:3, col:39>
+    |   `-ImplicitCastExpr 0x13d00a6f8 <col:10, col:39> 'int' contains-errors <IntegralCast>
+    |     `-BinaryOperator 0x13d00a6d8 <col:10, col:39> 'long' contains-errors '-'
+    |       |-CStyleCastExpr 0x13d00a610 <col:10, col:19> 'void *' <BitCast>
+    |       | `-ImplicitCastExpr 0x13d00a5f8 <col:19> 'struct nlattr *' <LValueToRValue> part_of_explicit_cast
+    |       |   `-DeclRefExpr 0x13d00a5c0 <col:19> 'struct nlattr *' lvalue Var 0x13d009968 'nla' 'struct nlattr *'
+    |       `-CStyleCastExpr 0x13d00a6b0 <col:25, col:39> 'void *' contains-errors <Dependent>
+    |         `-RecoveryExpr 0x13d00a670 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13d00a638 <col:34> 'struct sk_buff *' contains-errors lvalue Var 0x13b8f5e48 'skb' 'struct sk_buff *'
+    `-ReturnStmt 0x13d00a760 <line:16:2, col:9>
+      `-IntegerLiteral 0x13d00a740 <col:9> 'int' 0

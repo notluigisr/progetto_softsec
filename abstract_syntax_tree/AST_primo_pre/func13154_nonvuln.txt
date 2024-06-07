@@ -1,0 +1,23 @@
+`-FunctionDecl 0x13a80deb0  line:1:13 invalid strv_fprintf 'void (int *, char **)' static
+  |-ParmVarDecl 0x13a80dd28 <col:26, col:32> col:32 invalid f 'int *'
+  |-ParmVarDecl 0x13a80ddd8 <col:35, col:42> col:42 used l 'char **'
+  `-CompoundStmt 0x13a8275e8 <col:45, line:8:1>
+    |-DeclStmt 0x13a80dfe8 <line:2:9, col:17>
+    | `-VarDecl 0x13a80df80 <col:9, col:16> col:16 used g 'char **'
+    |-CallExpr 0x13a80e1a0 <line:4:9, col:17> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13a80e160 <col:9> 'int ()' Function 0x13a80e0a8 'assert' 'int ()'
+    | `-RecoveryExpr 0x13a80e180 <col:16> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13a80e358 <line:6:9, col:26> 'int'
+    | |-ImplicitCastExpr 0x13a80e340 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13a80e2a8 <col:9> 'int ()' Function 0x13a80e1f0 'STRV_FOREACH' 'int ()'
+    | |-ImplicitCastExpr 0x13a80e388 <col:22> 'char **' <LValueToRValue>
+    | | `-DeclRefExpr 0x13a80e2c8 <col:22> 'char **' lvalue Var 0x13a80df80 'g' 'char **'
+    | `-ImplicitCastExpr 0x13a80e3a0 <col:25> 'char **' <LValueToRValue>
+    |   `-DeclRefExpr 0x13a80e2e8 <col:25> 'char **' lvalue ParmVar 0x13a80ddd8 'l' 'char **'
+    `-CallExpr 0x13a8275b0 <line:7:17, col:37> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x13a8274b8 <col:17> 'int ()' Function 0x13a827400 'fprintf' 'int ()'
+      |-RecoveryExpr 0x13a8274d8 <col:25> '<dependent type>' contains-errors lvalue
+      |-StringLiteral 0x13a827540 <col:28> 'char[4]' lvalue "STR"
+      `-UnaryOperator 0x13a827598 <col:35, col:36> 'char *' lvalue prefix '*' cannot overflow
+        `-ImplicitCastExpr 0x13a827580 <col:36> 'char **' <LValueToRValue>
+          `-DeclRefExpr 0x13a827560 <col:36> 'char **' lvalue Var 0x13a80df80 'g' 'char **'

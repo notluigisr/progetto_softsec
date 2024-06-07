@@ -1,0 +1,157 @@
+`-FunctionDecl 0x1471281f8  line:1:1 invalid _build_env 'int (int *)'
+  |-ParmVarDecl 0x147128128 <col:12, col:23> col:23 referenced invalid job_env 'int *'
+  `-CompoundStmt 0x147145c70 <line:2:1, line:54:1>
+    |-DeclStmt 0x1471431e0 <line:3:2, col:38>
+    | `-VarDecl 0x1471282f8 <col:2, col:37> col:9 used env 'char **' cinit
+    |   `-ImplicitCastExpr 0x147128590 <col:15, col:37> 'char **' <IntegralToPointer>
+    |     `-CallExpr 0x147128568 <col:15, col:37> 'int'
+    |       |-ImplicitCastExpr 0x147128550 <col:15> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x1471284c0 <col:15> 'int ()' Function 0x147128408 'xmalloc' 'int ()'
+    |       `-UnaryExprOrTypeTraitExpr 0x1471284f8 <col:23, col:36> 'unsigned long' sizeof 'char *'
+    |-BinaryOperator 0x147143338 <line:6:2, col:12> 'char *' contains-errors '='
+    | |-ArraySubscriptExpr 0x1471432f8 <col:2, col:7> 'char *' lvalue
+    | | |-ImplicitCastExpr 0x1471432e0 <col:2> 'char **' <LValueToRValue>
+    | | | `-DeclRefExpr 0x1471431f8 <col:2> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | | `-IntegerLiteral 0x147143218 <col:6> 'int' 0
+    | `-RecoveryExpr 0x147143318 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147143788 <line:7:2, line:13:2>
+    | |-UnaryOperator 0x1471435c8 <line:7:6, line:9:18> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x147143590 <line:7:7, line:9:18> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x147143438 <line:7:7> 'int ()' Function 0x147143380 'valid_spank_job_env' 'int ()'
+    | |   |-CXXDependentScopeMemberExpr 0x147143478 <col:27, col:36> '<dependent type>' contains-errors lvalue ->spank_job_env
+    | |   | `-RecoveryExpr 0x147143458 <col:27> '<dependent type>' contains-errors lvalue
+    | |   |-CXXDependentScopeMemberExpr 0x1471434e0 <line:8:6, col:15> '<dependent type>' contains-errors lvalue ->spank_job_env_size
+    | |   | `-RecoveryExpr 0x1471434c0 <col:6> '<dependent type>' contains-errors lvalue
+    | |   `-CXXDependentScopeMemberExpr 0x147143548 <line:9:6, col:15> '<dependent type>' contains-errors lvalue ->uid
+    | |     `-RecoveryExpr 0x147143528 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x147143770 <col:21, line:13:2>
+    |   `-BinaryOperator 0x147143690 <line:11:3, col:33> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x147143628 <col:3, col:12> '<dependent type>' contains-errors lvalue ->spank_job_env_size
+    |     | `-RecoveryExpr 0x147143600 <col:3> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x1471435e0 <col:3> 'int *' lvalue ParmVar 0x147128128 'job_env' 'int *'
+    |     `-IntegerLiteral 0x147143670 <col:33> 'int' 0
+    |-IfStmt 0x147143a98 <line:14:2, line:15:63>
+    | |-CXXDependentScopeMemberExpr 0x1471437c8 <line:14:6, col:15> '<dependent type>' contains-errors lvalue ->spank_job_env_size
+    | | `-RecoveryExpr 0x1471437a8 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x147143a68 <line:15:3, col:63> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x147143a50 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x1471438f0 <col:3> 'int ()' Function 0x147143838 'env_array_merge' 'int ()'
+    |   |-UnaryOperator 0x147143960 <col:19, col:20> 'char ***' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x147143910 <col:20> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    |   `-CStyleCastExpr 0x147143a28 <col:25, col:50> 'const char **' contains-errors <Dependent>
+    |     `-CXXDependentScopeMemberExpr 0x147143998 <col:41, col:50> '<dependent type>' contains-errors lvalue ->spank_job_env
+    |       `-RecoveryExpr 0x147143978 <col:41> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147143cd8 <line:17:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147143b98 <col:2> 'int ()' Function 0x147143ae0 'slurm_mutex_lock' 'int ()'
+    | `-UnaryOperator 0x147143cc0 <col:19, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x147143c78 <col:20, col:26> '<dependent type>' contains-errors lvalue ->config_mutex
+    |     `-RecoveryExpr 0x147143c58 <col:20> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147143fa0 <line:18:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147143de0 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147143e20 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x147143e00 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147143e80 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147143f58 <col:23, col:29> '<dependent type>' contains-errors lvalue ->node_name
+    |   `-RecoveryExpr 0x147143f38 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144158 <line:19:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147143fd8 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147144020 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x147144000 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147144038 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144110 <col:23, col:29> '<dependent type>' contains-errors lvalue ->conffile
+    |   `-RecoveryExpr 0x1471440f0 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1471443b0 <line:20:2, col:40> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147144270 <col:2> 'int ()' Function 0x1471441b8 'slurm_mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x147144398 <col:21, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x147144350 <col:22, col:28> '<dependent type>' contains-errors lvalue ->config_mutex
+    |     `-RecoveryExpr 0x147144330 <col:22> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144550 <line:22:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1471443d8 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147144418 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x1471443f8 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147144430 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144508 <col:23, col:29> '<dependent type>' contains-errors lvalue ->cluster_name
+    |   `-RecoveryExpr 0x1471444e8 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144668 <line:23:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147144588 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x1471445c8 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x1471445a8 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x1471445e0 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144620 <col:23, col:32> '<dependent type>' contains-errors lvalue ->jobid
+    |   `-RecoveryExpr 0x147144600 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144780 <line:24:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1471446a0 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x1471446e0 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x1471446c0 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x1471446f8 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144738 <col:23, col:32> '<dependent type>' contains-errors lvalue ->uid
+    |   `-RecoveryExpr 0x147144718 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147144ac8 <line:28:2, line:31:2>
+    | |-UnaryOperator 0x147144838 <line:28:6, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x147144820 <col:7, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-CXXDependentScopeMemberExpr 0x1471447d8 <col:7, col:16> '<dependent type>' contains-errors lvalue ->user_name
+    | |     `-RecoveryExpr 0x1471447b8 <col:7> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x147144ab0 <col:27, line:31:2>
+    |   `-BinaryOperator 0x147144a70 <line:29:3, col:50> '<dependent type>' contains-errors '='
+    |     |-CXXDependentScopeMemberExpr 0x147144898 <col:3, col:12> '<dependent type>' contains-errors lvalue ->user_name
+    |     | `-RecoveryExpr 0x147144870 <col:3> '<dependent type>' contains-errors lvalue
+    |     |   `-DeclRefExpr 0x147144850 <col:3> 'int *' lvalue ParmVar 0x147128128 'job_env' 'int *'
+    |     `-CallExpr 0x147144a48 <col:24, col:50> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x1471449c0 <col:24> 'int ()' Function 0x147144908 'uid_to_string' 'int ()'
+    |       `-CXXDependentScopeMemberExpr 0x147144a00 <col:38, col:47> '<dependent type>' contains-errors lvalue ->uid
+    |         `-RecoveryExpr 0x1471449e0 <col:38> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144bc8 <line:34:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147144ae8 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147144b28 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x147144b08 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147144b40 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144b80 <col:23, col:32> '<dependent type>' contains-errors lvalue ->user_name
+    |   `-RecoveryExpr 0x147144b60 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147144dc8 <line:35:2, line:36:27>
+    | |-RecoveryExpr 0x147144c18 <line:35:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x147144da0 <line:36:3, col:27> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147144d18 <col:3> 'int ()' Function 0x147144c60 'xfree' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x147144d58 <col:9, col:18> '<dependent type>' contains-errors lvalue ->user_name
+    |     `-RecoveryExpr 0x147144d38 <col:9> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147144ec8 <line:38:2, col:37> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147144de8 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147144e28 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x147144e08 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147144e40 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144e80 <col:23, col:32> '<dependent type>' contains-errors lvalue ->jobid
+    |   `-RecoveryExpr 0x147144e60 <col:23> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x147145800 <line:39:2, col:35> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x147144f00 <col:2> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    | |-UnaryOperator 0x147144f40 <col:10, col:11> 'char ***' prefix '&' cannot overflow
+    | | `-DeclRefExpr 0x147144f20 <col:11> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    | |-StringLiteral 0x147144f58 <col:16> 'char[4]' lvalue "STR"
+    | `-CXXDependentScopeMemberExpr 0x147144f98 <col:23, col:32> '<dependent type>' contains-errors lvalue ->uid
+    |   `-RecoveryExpr 0x147144f78 <col:23> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1471459b8 <line:40:2, line:41:42>
+    | |-CXXDependentScopeMemberExpr 0x147145858 <line:40:6, col:15> '<dependent type>' contains-errors lvalue ->node_list
+    | | `-RecoveryExpr 0x147145838 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x147145980 <line:41:3, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1471458a0 <col:3> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    |   |-UnaryOperator 0x1471458e0 <col:11, col:12> 'char ***' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x1471458c0 <col:12> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    |   |-StringLiteral 0x1471458f8 <col:17> 'char[4]' lvalue "STR"
+    |   `-CXXDependentScopeMemberExpr 0x147145938 <col:24, col:33> '<dependent type>' contains-errors lvalue ->node_list
+    |     `-RecoveryExpr 0x147145918 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147145b58 <line:43:2, line:44:42>
+    | |-CXXDependentScopeMemberExpr 0x1471459f8 <line:43:6, col:15> '<dependent type>' contains-errors lvalue ->partition
+    | | `-RecoveryExpr 0x1471459d8 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x147145b20 <line:44:3, col:42> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x147145a40 <col:3> 'int ()' Function 0x147143d28 'setenvf' 'int ()'
+    |   |-UnaryOperator 0x147145a80 <col:11, col:12> 'char ***' prefix '&' cannot overflow
+    |   | `-DeclRefExpr 0x147145a60 <col:12> 'char **' lvalue Var 0x1471282f8 'env' 'char **'
+    |   |-StringLiteral 0x147145a98 <col:17> 'char[4]' lvalue "STR"
+    |   `-CXXDependentScopeMemberExpr 0x147145ad8 <col:24, col:33> '<dependent type>' contains-errors lvalue ->partition
+    |     `-RecoveryExpr 0x147145ab8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x147145bf0 <line:46:2, line:52:2>
+    | |-CXXDependentScopeMemberExpr 0x147145b98 <line:46:6, col:15> '<dependent type>' contains-errors lvalue ->resv_id
+    | | `-RecoveryExpr 0x147145b78 <col:6> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x147145be0 <col:24, line:52:2>
+    `-ReturnStmt 0x147145c60 <line:53:2, col:9>
+      `-ImplicitCastExpr 0x147145c48 <col:9> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x147145c30 <col:9> 'char **' <LValueToRValue>
+          `-DeclRefExpr 0x147145c10 <col:9> 'char **' lvalue Var 0x1471282f8 'env' 'char **'

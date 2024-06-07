@@ -1,0 +1,56 @@
+`-FunctionDecl 0x129940c18  line:2:19 io_cqring_wait_schedule 'int (struct io_ring_ctx *, struct io_wait_queue *, long *)' static inline
+  |-ParmVarDecl 0x129928648 <col:43, col:63> col:63 used ctx 'struct io_ring_ctx *'
+  |-ParmVarDecl 0x129940a28 <line:3:8, col:30> col:30 used iowq 'struct io_wait_queue *'
+  |-ParmVarDecl 0x129940ad8 <line:4:8, col:21> col:21 used timeout 'long *'
+  `-CompoundStmt 0x129941890 <line:5:1, line:17:32>
+    |-DeclStmt 0x129940da0 <line:6:2, col:9>
+    | `-VarDecl 0x129940d38 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x129940f88 <line:9:2, col:29> 'int' '='
+    | |-DeclRefExpr 0x129940db8 <col:2> 'int' lvalue Var 0x129940d38 'ret' 'int'
+    | `-CallExpr 0x129940f68 <col:8, col:29> 'int'
+    |   `-ImplicitCastExpr 0x129940f50 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     `-DeclRefExpr 0x129940f00 <col:8> 'int ()' Function 0x129940e48 'io_run_task_work_sig' 'int ()'
+    |-IfStmt 0x1299411c0 <line:10:2, line:11:10>
+    | |-BinaryOperator 0x129941158 <line:10:6, col:32> 'int' '||'
+    | | |-ImplicitCastExpr 0x129941140 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x129940fa8 <col:6> 'int' lvalue Var 0x129940d38 'ret' 'int'
+    | | `-CallExpr 0x129941100 <col:13, col:32> 'int'
+    | |   |-ImplicitCastExpr 0x1299410e8 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x1299410a8 <col:13> 'int ()' Function 0x129940ff0 'io_should_wake' 'int ()'
+    | |   `-ImplicitCastExpr 0x129941128 <col:28> 'struct io_wait_queue *' <LValueToRValue>
+    | |     `-DeclRefExpr 0x1299410c8 <col:28> 'struct io_wait_queue *' lvalue ParmVar 0x129940a28 'iowq' 'struct io_wait_queue *'
+    | `-ReturnStmt 0x1299411b0 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x129941198 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x129941178 <col:10> 'int' lvalue Var 0x129940d38 'ret' 'int'
+    |-IfStmt 0x1299413d8 <line:13:2, line:14:10>
+    | |-CallExpr 0x129941378 <line:13:6, col:41> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1299412c0 <col:6> 'int ()' Function 0x129941208 'test_bit' 'int ()'
+    | | |-IntegerLiteral 0x1299412e0 <col:15> 'int' 0
+    | | `-UnaryOperator 0x129941360 <col:18, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x129941338 <col:19, col:24> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x129941300 <col:19> 'struct io_ring_ctx *' lvalue ParmVar 0x129928648 'ctx' 'struct io_ring_ctx *'
+    | `-ReturnStmt 0x1299413c8 <line:14:3, col:10>
+    |   `-IntegerLiteral 0x1299413a8 <col:10> 'int' 1
+    |-BinaryOperator 0x129941608 <line:16:2, col:38> 'long' '='
+    | |-UnaryOperator 0x129941430 <col:2, col:3> 'long' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x129941418 <col:3> 'long *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1299413f8 <col:3> 'long *' lvalue ParmVar 0x129940ad8 'timeout' 'long *'
+    | `-ImplicitCastExpr 0x1299415f0 <col:13, col:38> 'long' <IntegralCast>
+    |   `-CallExpr 0x1299415b0 <col:13, col:38> 'int'
+    |     |-ImplicitCastExpr 0x129941598 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x129941528 <col:13> 'int ()' Function 0x129941470 'schedule_timeout' 'int ()'
+    |     `-ImplicitCastExpr 0x1299415d8 <col:30, col:31> 'long' <LValueToRValue>
+    |       `-UnaryOperator 0x129941580 <col:30, col:31> 'long' lvalue prefix '*' cannot overflow
+    |         `-ImplicitCastExpr 0x129941568 <col:31> 'long *' <LValueToRValue>
+    |           `-DeclRefExpr 0x129941548 <col:31> 'long *' lvalue ParmVar 0x129940ad8 'timeout' 'long *'
+    `-ReturnStmt 0x129941880 <line:17:2, col:30>
+      `-ConditionalOperator 0x129941850 <col:9, col:30> '<dependent type>' contains-errors
+        |-UnaryOperator 0x1299417e8 <col:9, col:11> 'int' prefix '!' cannot overflow
+        | `-ImplicitCastExpr 0x1299417d0 <col:10, col:11> 'long' <LValueToRValue>
+        |   `-UnaryOperator 0x1299417b8 <col:10, col:11> 'long' lvalue prefix '*' cannot overflow
+        |     `-ImplicitCastExpr 0x1299417a0 <col:11> 'long *' <LValueToRValue>
+        |       `-DeclRefExpr 0x129941628 <col:11> 'long *' lvalue ParmVar 0x129940ad8 'timeout' 'long *'
+        |-UnaryOperator 0x129941838 <col:21, col:22> '<dependent type>' contains-errors prefix '-' cannot overflow
+        | `-ImplicitCastExpr 0x129941820 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+        |   `-RecoveryExpr 0x129941800 <col:22> '<dependent type>' contains-errors lvalue
+        `-IntegerLiteral 0x1299416f0 <col:30> 'int' 1

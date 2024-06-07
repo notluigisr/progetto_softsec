@@ -1,0 +1,23 @@
+`-FunctionDecl 0x11e80df68  line:1:20 invalid ResizeQuantumMemory 'int *(void *, const int, const int)'
+  |-ParmVarDecl 0x11e80dcf0 <col:40, col:46> col:46 used memory 'void *'
+  |-ParmVarDecl 0x11e80dd70 <col:53, col:66> col:66 invalid count 'const int'
+  |-ParmVarDecl 0x11e80ddf0 <line:2:3, col:16> col:16 invalid quantum 'const int'
+  `-CompoundStmt 0x11e827f60 <line:3:1, line:14:1>
+    |-UnaryExprOrTypeTraitExpr 0x11e80e080 <line:4:3, line:5:5> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x11e80e060 <col:5> '<dependent type>' contains-errors lvalue
+    `-IfStmt 0x11e827d78 <line:7:3, line:11:5>
+      |-BinaryOperator 0x11e80e2e8 <line:7:7, col:45> 'int' contains-errors '!='
+      | |-CallExpr 0x11e80e260 <col:7, col:40> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x11e80e200 <col:7> 'int ()' Function 0x11e80e148 'CheckMemoryOverflow' 'int ()'
+      | | |-RecoveryExpr 0x11e80e220 <col:27> '<dependent type>' contains-errors lvalue
+      | | `-RecoveryExpr 0x11e80e240 <col:33> '<dependent type>' contains-errors lvalue
+      | `-RecoveryExpr 0x11e80e2c8 <col:45> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x11e827d60 <line:8:5, line:11:5>
+        `-BinaryOperator 0x11e827d10 <line:9:7, col:43> 'void *' '='
+          |-DeclRefExpr 0x11e80e308 <col:7> 'void *' lvalue ParmVar 0x11e80dcf0 'memory' 'void *'
+          `-ImplicitCastExpr 0x11e8278d8 <col:14, col:43> 'void *' <IntegralToPointer>
+            `-CallExpr 0x11e827898 <col:14, col:43> 'int'
+              |-ImplicitCastExpr 0x11e827880 <col:14> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x11e827810 <col:14> 'int ()' Function 0x11e80e350 'RelinquishMagickMemory' 'int ()'
+              `-ImplicitCastExpr 0x11e8278c0 <col:37> 'void *' <LValueToRValue>
+                `-DeclRefExpr 0x11e827830 <col:37> 'void *' lvalue ParmVar 0x11e80dcf0 'memory' 'void *'

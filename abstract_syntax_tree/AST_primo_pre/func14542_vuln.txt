@@ -1,0 +1,28 @@
+`-FunctionDecl 0x135010750  line:1:20 iocb_put 'void (struct aio_kiocb *)' static inline
+  |-ParmVarDecl 0x135010648 <col:29, col:47> col:47 used iocb 'struct aio_kiocb *'
+  `-CompoundStmt 0x135029210 <line:2:1, line:8:1>
+    `-IfStmt 0x1350291f0 <line:3:2, line:7:2>
+      |-BinaryOperator 0x135028e10 <line:3:6, line:4:44> 'int' contains-errors '||'
+      | |-BinaryOperator 0x135028c50 <line:3:6, col:41> 'int' contains-errors '=='
+      | | |-CallExpr 0x135028c08 <col:6, col:36> '<dependent type>' contains-errors
+      | | | |-DeclRefExpr 0x135028b70 <col:6> 'int ()' Function 0x135028ab8 'refcount_read' 'int ()'
+      | | | `-UnaryOperator 0x135028bf0 <col:20, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | | |   `-RecoveryExpr 0x135028bc8 <col:21, col:27> '<dependent type>' contains-errors lvalue
+      | | |     `-DeclRefExpr 0x135028b90 <col:21> 'struct aio_kiocb *' lvalue ParmVar 0x135010648 'iocb' 'struct aio_kiocb *'
+      | | `-IntegerLiteral 0x135028c30 <col:41> 'int' 0
+      | `-CallExpr 0x135028de8 <line:4:6, col:44> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x135028d50 <col:6> 'int ()' Function 0x135028c98 'refcount_dec_and_test' 'int ()'
+      |   `-UnaryOperator 0x135028dd0 <col:28, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x135028da8 <col:29, col:35> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x135028d70 <col:29> 'struct aio_kiocb *' lvalue ParmVar 0x135010648 'iocb' 'struct aio_kiocb *'
+      `-CompoundStmt 0x1350291d0 <col:47, line:7:2>
+        |-CallExpr 0x135028ff0 <line:5:3, col:37> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x135028f10 <col:3> 'int ()' Function 0x135028e58 'percpu_ref_put' 'int ()'
+        | `-UnaryOperator 0x135028fd8 <col:18, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-CXXDependentScopeMemberExpr 0x135028f90 <col:19, col:33> '<dependent type>' contains-errors lvalue ->reqs
+        |     `-RecoveryExpr 0x135028f68 <col:19, col:25> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x135028f30 <col:19> 'struct aio_kiocb *' lvalue ParmVar 0x135010648 'iocb' 'struct aio_kiocb *'
+        `-CallExpr 0x1350291a0 <line:6:3, col:37> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x1350290f8 <col:3> 'int ()' Function 0x135029040 'kmem_cache_free' 'int ()'
+          |-RecoveryExpr 0x135029180 <col:19> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x135029130 <col:33> 'struct aio_kiocb *' lvalue ParmVar 0x135010648 'iocb' 'struct aio_kiocb *'

@@ -1,0 +1,63 @@
+`-FunctionDecl 0x12380df18  line:1:1 invalid eval_next_non_blank 'int (char *, int *, int *)'
+  |-ParmVarDecl 0x12380dcf0 <col:21, col:29> col:29 used arg 'char *'
+  |-ParmVarDecl 0x12380dda8 <col:34, col:45> col:45 invalid evalarg 'int *'
+  |-ParmVarDecl 0x12380de28 <col:54, col:59> col:59 used getnext 'int *'
+  `-CompoundStmt 0x12382a7e0 <line:2:1, line:29:1>
+    |-DeclStmt 0x1238268d0 <line:3:5, col:31>
+    | `-VarDecl 0x12380dff0 <col:5, col:30> col:13 used p 'char *' cinit
+    |   `-ImplicitCastExpr 0x12380e278 <col:17, col:30> 'char *' <IntegralToPointer>
+    |     `-CallExpr 0x12380e238 <col:17, col:30> 'int'
+    |       |-ImplicitCastExpr 0x12380e220 <col:17> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12380e1b0 <col:17> 'int ()' Function 0x12380e0f8 'skipwhite' 'int ()'
+    |       `-ImplicitCastExpr 0x12380e260 <col:27> 'char *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12380e1d0 <col:27> 'char *' lvalue ParmVar 0x12380dcf0 'arg' 'char *'
+    |-BinaryOperator 0x1238269f0 <line:5:5, col:16> 'int' contains-errors '='
+    | |-UnaryOperator 0x1238269b8 <col:5, col:6> 'int' lvalue prefix '*' cannot overflow
+    | | `-ImplicitCastExpr 0x1238269a0 <col:6> 'int *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x1238268e8 <col:6> 'int *' lvalue ParmVar 0x12380de28 'getnext' 'int *'
+    | `-RecoveryExpr 0x1238269d0 <col:16> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12382a760 <line:6:5, line:27:5>
+    | |-RecoveryExpr 0x123827338 <line:6:9, line:11:57> '_Bool' contains-errors
+    | `-CompoundStmt 0x12382a738 <line:12:5, line:27:5>
+    |   |-DeclStmt 0x1238273d8 <line:13:2, col:14>
+    |   | `-VarDecl 0x123827370 <col:2, col:10> col:10 used next 'char *'
+    |   |-IfStmt 0x12382a598 <line:15:2, line:20:59> has_else
+    |   | |-BinaryOperator 0x1238274f8 <line:15:6, col:12> 'int' contains-errors '=='
+    |   | | |-UnaryOperator 0x1238274c0 <col:6, col:7> 'char' lvalue prefix '*' cannot overflow
+    |   | | | `-ImplicitCastExpr 0x1238274a8 <col:7> 'char *' <LValueToRValue>
+    |   | | |   `-DeclRefExpr 0x1238273f0 <col:7> 'char *' lvalue Var 0x12380dff0 'p' 'char *'
+    |   | | `-RecoveryExpr 0x1238274d8 <col:12> '<dependent type>' contains-errors lvalue
+    |   | |-BinaryOperator 0x12382a168 <line:16:6, col:36> 'char *' '='
+    |   | | |-DeclRefExpr 0x123827518 <col:6> 'char *' lvalue Var 0x123827370 'next' 'char *'
+    |   | | `-ImplicitCastExpr 0x12382a150 <col:13, col:36> 'char *' <IntegralToPointer>
+    |   | |   `-CallExpr 0x12382a110 <col:13, col:36> 'int'
+    |   | |     |-ImplicitCastExpr 0x12382a0f8 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |   | |     | `-DeclRefExpr 0x12382a0b8 <col:13> 'int ()' Function 0x12382a000 'newline_skip_comments' 'int ()'
+    |   | |     `-ImplicitCastExpr 0x12382a138 <col:35> 'char *' <LValueToRValue>
+    |   | |       `-DeclRefExpr 0x12382a0d8 <col:35> 'char *' lvalue Var 0x12380dff0 'p' 'char *'
+    |   | `-IfStmt 0x12382a568 <line:17:7, line:20:59> has_else
+    |   |   |-RecoveryExpr 0x12382a1f0 <line:17:11, col:35> '_Bool' contains-errors
+    |   |   |-BinaryOperator 0x12382a378 <line:18:6, col:47> 'char *' contains-errors '='
+    |   |   | |-DeclRefExpr 0x12382a210 <col:6> 'char *' lvalue Var 0x123827370 'next' 'char *'
+    |   |   | `-CallExpr 0x12382a350 <col:13, col:47> '<dependent type>' contains-errors
+    |   |   |   |-DeclRefExpr 0x12382a310 <col:13> 'int ()' Function 0x12382a258 'getline_peek_skip_comments' 'int ()'
+    |   |   |   `-RecoveryExpr 0x12382a330 <col:40> '<dependent type>' contains-errors lvalue
+    |   |   `-BinaryOperator 0x12382a548 <line:20:6, col:59> 'char *' contains-errors '='
+    |   |     |-DeclRefExpr 0x12382a398 <col:6> 'char *' lvalue Var 0x123827370 'next' 'char *'
+    |   |     `-CallExpr 0x12382a520 <col:13, col:59> '<dependent type>' contains-errors
+    |   |       |-DeclRefExpr 0x12382a498 <col:13> 'int ()' Function 0x12382a3e0 'peek_next_line_from_context' 'int ()'
+    |   |       `-CXXDependentScopeMemberExpr 0x12382a4d8 <col:41, col:50> '<dependent type>' contains-errors lvalue ->eval_cctx
+    |   |         `-RecoveryExpr 0x12382a4b8 <col:41> '<dependent type>' contains-errors lvalue
+    |   `-IfStmt 0x12382a718 <line:22:2, line:26:2>
+    |     |-RecoveryExpr 0x12382a5e8 <line:22:6, col:14> '_Bool' contains-errors
+    |     `-CompoundStmt 0x12382a700 <line:23:2, line:26:2>
+    |       `-ReturnStmt 0x12382a6f0 <line:25:6, col:27>
+    |         `-CallExpr 0x12382a6b0 <col:13, col:27> 'int'
+    |           |-ImplicitCastExpr 0x12382a698 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |           | `-DeclRefExpr 0x12382a658 <col:13> 'int ()' Function 0x12380e0f8 'skipwhite' 'int ()'
+    |           `-ImplicitCastExpr 0x12382a6d8 <col:23> 'char *' <LValueToRValue>
+    |             `-DeclRefExpr 0x12382a678 <col:23> 'char *' lvalue Var 0x123827370 'next' 'char *'
+    `-ReturnStmt 0x12382a7d0 <line:28:5, col:12>
+      `-ImplicitCastExpr 0x12382a7b8 <col:12> 'int' <PointerToIntegral>
+        `-ImplicitCastExpr 0x12382a7a0 <col:12> 'char *' <LValueToRValue>
+          `-DeclRefExpr 0x12382a780 <col:12> 'char *' lvalue Var 0x12380dff0 'p' 'char *'

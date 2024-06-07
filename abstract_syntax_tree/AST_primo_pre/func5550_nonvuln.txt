@@ -1,0 +1,35 @@
+`-FunctionDecl 0x13e928750  line:1:13 vm_unlock_anon_vma 'void (struct anon_vma *)' static
+  |-ParmVarDecl 0x13e928648 <col:32, col:49> col:49 used anon_vma 'struct anon_vma *'
+  `-CompoundStmt 0x13e945580 <line:2:1, line:10:1>
+    `-IfStmt 0x13e945560 <line:3:2, line:9:2>
+      |-CallExpr 0x13e944f78 <line:3:6, col:68> 'int' contains-errors
+      | |-ImplicitCastExpr 0x13e944f60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x13e944d70 <col:6> 'int ()' Function 0x13e944cb8 'test_bit' 'int ()'
+      | |-IntegerLiteral 0x13e944d90 <col:15> 'int' 0
+      | `-CStyleCastExpr 0x13e944f08 <col:18, col:61> 'unsigned long *' contains-errors <Dependent>
+      |   `-UnaryOperator 0x13e944ea0 <col:36, col:61> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-CXXDependentScopeMemberExpr 0x13e944e58 <col:37, col:61> '<dependent type>' contains-errors lvalue .rb_node
+      |       `-CXXDependentScopeMemberExpr 0x13e944e10 <col:37, col:53> '<dependent type>' contains-errors lvalue ->rb_root
+      |         `-RecoveryExpr 0x13e944de8 <col:37, col:47> '<dependent type>' contains-errors lvalue
+      |           `-DeclRefExpr 0x13e944db0 <col:37> 'struct anon_vma *' lvalue ParmVar 0x13e928648 'anon_vma' 'struct anon_vma *'
+      `-CompoundStmt 0x13e945540 <col:71, line:9:2>
+        |-IfStmt 0x13e9453a8 <line:5:3, line:7:8>
+        | |-UnaryOperator 0x13e945258 <line:5:7, line:6:40> 'int' contains-errors prefix '!' cannot overflow
+        | | `-CallExpr 0x13e945228 <line:5:8, line:6:40> 'int' contains-errors
+        | |   |-ImplicitCastExpr 0x13e945210 <line:5:8> 'int (*)()' <FunctionToPointerDecay>
+        | |   | `-DeclRefExpr 0x13e945088 <col:8> 'int ()' Function 0x13e944fd0 '__test_and_clear_bit' 'int ()'
+        | |   |-IntegerLiteral 0x13e9450a8 <col:29> 'int' 0
+        | |   `-CStyleCastExpr 0x13e9451e8 <col:32, line:6:33> 'unsigned long *' contains-errors <Dependent>
+        | |     `-UnaryOperator 0x13e9451b8 <col:8, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | |       `-CXXDependentScopeMemberExpr 0x13e945170 <col:9, col:33> '<dependent type>' contains-errors lvalue .rb_node
+        | |         `-CXXDependentScopeMemberExpr 0x13e945128 <col:9, col:25> '<dependent type>' contains-errors lvalue ->rb_root
+        | |           `-RecoveryExpr 0x13e945100 <col:9, col:19> '<dependent type>' contains-errors lvalue
+        | |             `-DeclRefExpr 0x13e9450c8 <col:9> 'struct anon_vma *' lvalue ParmVar 0x13e928648 'anon_vma' 'struct anon_vma *'
+        | `-CallExpr 0x13e945388 <line:7:4, col:8> 'int'
+        |   `-ImplicitCastExpr 0x13e945370 <col:4> 'int (*)()' <FunctionToPointerDecay>
+        |     `-DeclRefExpr 0x13e945350 <col:4> 'int ()' Function 0x13e945298 'BUG' 'int ()'
+        `-CallExpr 0x13e945500 <line:8:3, col:33> 'int'
+          |-ImplicitCastExpr 0x13e9454e8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x13e9454a8 <col:3> 'int ()' Function 0x13e9453f0 'anon_vma_unlock_write' 'int ()'
+          `-ImplicitCastExpr 0x13e945528 <col:25> 'struct anon_vma *' <LValueToRValue>
+            `-DeclRefExpr 0x13e9454c8 <col:25> 'struct anon_vma *' lvalue ParmVar 0x13e928648 'anon_vma' 'struct anon_vma *'

@@ -1,0 +1,20 @@
+`-FunctionDecl 0x13780e358  line:1:12 vmmcall_interception 'int (struct vcpu_svm *)' static
+  |-ParmVarDecl 0x13780e248 <col:33, col:50> col:50 used svm 'struct vcpu_svm *'
+  `-CompoundStmt 0x137826ad0 <line:2:1, line:6:1>
+    |-BinaryOperator 0x1378268e0 <line:3:2, col:45> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x137826688 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x137826650 <col:2> 'struct vcpu_svm *' lvalue ParmVar 0x13780e248 'svm' 'struct vcpu_svm *'
+    | `-BinaryOperator 0x1378268c0 <col:18, col:45> '<dependent type>' contains-errors '+'
+    |   |-CallExpr 0x137826878 <col:18, col:41> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1378267e0 <col:18> 'int ()' Function 0x137826728 'kvm_rip_read' 'int ()'
+    |   | `-UnaryOperator 0x137826860 <col:31, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x137826838 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x137826800 <col:32> 'struct vcpu_svm *' lvalue ParmVar 0x13780e248 'svm' 'struct vcpu_svm *'
+    |   `-IntegerLiteral 0x1378268a0 <col:45> 'int' 3
+    |-CallExpr 0x137826a78 <line:4:2, col:34> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1378269e0 <col:2> 'int ()' Function 0x137826928 'kvm_emulate_hypercall' 'int ()'
+    | `-UnaryOperator 0x137826a60 <col:24, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x137826a38 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x137826a00 <col:25> 'struct vcpu_svm *' lvalue ParmVar 0x13780e248 'svm' 'struct vcpu_svm *'
+    `-ReturnStmt 0x137826ac0 <line:5:2, col:9>
+      `-IntegerLiteral 0x137826aa0 <col:9> 'int' 1

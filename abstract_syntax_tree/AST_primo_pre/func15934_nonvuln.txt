@@ -1,0 +1,62 @@
+`-FunctionDecl 0x13f828200  line:1:16 invalid __hrtimer_get_next_event 'int (struct hrtimer_cpu_base *)' static
+  |-ParmVarDecl 0x13f80f068 <col:41, col:66> col:66 used cpu_base 'struct hrtimer_cpu_base *'
+  `-CompoundStmt 0x149009bc0 <line:2:1, line:27:1>
+    |-DeclStmt 0x13f8284f8 <line:3:2, col:56>
+    | |-RecordDecl 0x13f8282b0 <col:2, col:9> col:9 struct hrtimer_clock_base
+    | `-VarDecl 0x13f828418 <col:2, col:46> col:29 used base 'struct hrtimer_clock_base *' cinit
+    |   `-RecoveryExpr 0x13f8284b8 <col:36, col:46> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f828480 <col:36> 'struct hrtimer_cpu_base *' lvalue ParmVar 0x13f80f068 'cpu_base' 'struct hrtimer_cpu_base *'
+    |-DeclStmt 0x13f8285f0 <line:4:2, col:46>
+    | `-VarDecl 0x13f828528 <col:2, col:34> col:15 used active 'unsigned int' cinit
+    |   `-RecoveryExpr 0x13f8285c8 <col:24, col:34> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13f828590 <col:24> 'struct hrtimer_cpu_base *' lvalue ParmVar 0x13f80f068 'cpu_base' 'struct hrtimer_cpu_base *'
+    |-CallExpr 0x13f828808 <line:7:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13f828760 <col:2> 'int ()' Function 0x13f8286a8 'hrtimer_update_next_timer' 'int ()'
+    | |-DeclRefExpr 0x13f828780 <col:28> 'struct hrtimer_cpu_base *' lvalue ParmVar 0x13f80f068 'cpu_base' 'struct hrtimer_cpu_base *'
+    | `-RecoveryExpr 0x13f8287e8 <col:38> '<dependent type>' contains-errors lvalue
+    `-ForStmt 0x149009b28 <line:8:2, line:22:2>
+      |-<<<NULL>>>
+      |-<<<NULL>>>
+      |-ImplicitCastExpr 0x13f828858 <line:8:9> 'unsigned int' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x13f828838 <col:9> 'unsigned int' contains-errors lvalue Var 0x13f828528 'active' 'unsigned int'
+      |-BinaryOperator 0x13f828940 <col:17, col:36> 'unsigned int' contains-errors ','
+      | |-RecoveryExpr 0x13f828890 <col:17, col:21> '<dependent type>' contains-errors lvalue
+      | | `-DeclRefExpr 0x13f828870 <col:17> 'struct hrtimer_clock_base *' contains-errors lvalue Var 0x13f828418 'base' 'struct hrtimer_clock_base *'
+      | `-CompoundAssignOperator 0x13f828910 <col:25, col:36> 'unsigned int' contains-errors '>>=' ComputeLHSTy='unsigned int' ComputeResultTy='unsigned int'
+      |   |-DeclRefExpr 0x13f8288b8 <col:25> 'unsigned int' contains-errors lvalue Var 0x13f828528 'active' 'unsigned int'
+      |   `-IntegerLiteral 0x13f8288d8 <col:36> 'int' 1
+      `-CompoundStmt 0x149009af0 <col:39, line:22:2>
+        |-DeclStmt 0x13f828b48 <line:9:3, col:31>
+        | |-RecordDecl 0x13f828960 <col:3, col:10> col:10 struct timerqueue_node
+        | `-VarDecl 0x13f828ac8 <col:3, col:27> col:27 used next 'struct timerqueue_node *'
+        |-DeclStmt 0x13f828d48 <line:10:3, col:24>
+        | |-RecordDecl 0x13f828b60 <col:3, col:10> col:10 struct hrtimer
+        | `-VarDecl 0x13f828cc8 <col:3, col:19> col:19 used timer 'struct hrtimer *'
+        |-IfStmt 0x13f828e30 <line:12:3, line:13:4>
+        | |-UnaryOperator 0x13f828e10 <line:12:7, col:22> 'int' contains-errors prefix '!' cannot overflow
+        | | `-ParenExpr 0x13f828df0 <col:8, col:22> 'unsigned int' contains-errors
+        | |   `-BinaryOperator 0x13f828dd0 <col:9, col:18> 'unsigned int' contains-errors '&'
+        | |     |-ImplicitCastExpr 0x13f828da0 <col:9> 'unsigned int' contains-errors <LValueToRValue>
+        | |     | `-DeclRefExpr 0x13f828d60 <col:9> 'unsigned int' contains-errors lvalue Var 0x13f828528 'active' 'unsigned int'
+        | |     `-ImplicitCastExpr 0x13f828db8 <col:18> 'unsigned int' <IntegralCast>
+        | |       `-IntegerLiteral 0x13f828d80 <col:18> 'int' 1
+        | `-ContinueStmt 0x13f828e28 <line:13:4>
+        |-BinaryOperator 0x13f829010 <line:15:3, col:42> 'struct timerqueue_node *' contains-errors '='
+        | |-DeclRefExpr 0x13f828e50 <col:3> 'struct timerqueue_node *' lvalue Var 0x13f828ac8 'next' 'struct timerqueue_node *'
+        | `-CallExpr 0x13f828fe8 <col:10, col:42> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x13f828f50 <col:10> 'int ()' Function 0x13f828e98 'timerqueue_getnext' 'int ()'
+        |   `-UnaryOperator 0x13f828fd0 <col:29, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |     `-RecoveryExpr 0x13f828fa8 <col:30, col:36> '<dependent type>' contains-errors lvalue
+        |       `-DeclRefExpr 0x13f828f70 <col:30> 'struct hrtimer_clock_base *' contains-errors lvalue Var 0x13f828418 'base' 'struct hrtimer_clock_base *'
+        `-IfStmt 0x149009ad0 <line:18:3, line:21:3>
+          |-BinaryOperator 0x1490099a8 <line:18:7, col:17> 'int' contains-errors '<'
+          | |-RecoveryExpr 0x149009968 <col:7> '<dependent type>' contains-errors lvalue
+          | `-RecoveryExpr 0x149009988 <col:17> '<dependent type>' contains-errors lvalue
+          `-CompoundStmt 0x149009ab8 <col:31, line:21:3>
+            `-CallExpr 0x149009a58 <line:20:4, col:45> 'int'
+              |-ImplicitCastExpr 0x149009a40 <col:4> 'int (*)()' <FunctionToPointerDecay>
+              | `-DeclRefExpr 0x1490099e0 <col:4> 'int ()' Function 0x13f8286a8 'hrtimer_update_next_timer' 'int ()'
+              |-ImplicitCastExpr 0x149009a88 <col:30> 'struct hrtimer_cpu_base *' <LValueToRValue>
+              | `-DeclRefExpr 0x149009a00 <col:30> 'struct hrtimer_cpu_base *' lvalue ParmVar 0x13f80f068 'cpu_base' 'struct hrtimer_cpu_base *'
+              `-ImplicitCastExpr 0x149009aa0 <col:40> 'struct hrtimer *' <LValueToRValue>
+                `-DeclRefExpr 0x149009a20 <col:40> 'struct hrtimer *' lvalue Var 0x13f828cc8 'timer' 'struct hrtimer *'

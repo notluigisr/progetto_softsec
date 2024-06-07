@@ -1,0 +1,20 @@
+`-FunctionDecl 0x15000e350  line:1:13 kmem_rcu_free 'void (struct rcu_head *)' static
+  |-ParmVarDecl 0x15000e248 <col:27, col:44> col:44 used head 'struct rcu_head *'
+  `-CompoundStmt 0x150026e88 <line:2:1, line:10:1>
+    |-DeclStmt 0x150026838 <line:3:2, col:27>
+    | |-RecordDecl 0x150026648 <col:2, col:9> col:9 struct kmem_cache
+    | `-VarDecl 0x1500267b8 <col:2, col:21> col:21 used cachep 'struct kmem_cache *'
+    |-DeclStmt 0x150026a38 <line:4:2, col:19>
+    | |-RecordDecl 0x150026850 <col:2, col:9> col:9 struct page
+    | `-VarDecl 0x1500269b8 <col:2, col:15> col:15 used page 'struct page *'
+    |-BinaryOperator 0x150026c78 <line:7:2, col:17> 'struct kmem_cache *' contains-errors '='
+    | |-DeclRefExpr 0x150026bf8 <col:2> 'struct kmem_cache *' lvalue Var 0x1500267b8 'cachep' 'struct kmem_cache *'
+    | `-RecoveryExpr 0x150026c50 <col:11, col:17> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x150026c18 <col:11> 'struct page *' lvalue Var 0x1500269b8 'page' 'struct page *'
+    `-CallExpr 0x150026e28 <line:9:2, col:29> 'int'
+      |-ImplicitCastExpr 0x150026e10 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x150026d78 <col:2> 'int ()' Function 0x150026cc0 'kmem_freepages' 'int ()'
+      |-ImplicitCastExpr 0x150026e58 <col:17> 'struct kmem_cache *' <LValueToRValue>
+      | `-DeclRefExpr 0x150026d98 <col:17> 'struct kmem_cache *' lvalue Var 0x1500267b8 'cachep' 'struct kmem_cache *'
+      `-ImplicitCastExpr 0x150026e70 <col:25> 'struct page *' <LValueToRValue>
+        `-DeclRefExpr 0x150026db8 <col:25> 'struct page *' lvalue Var 0x1500269b8 'page' 'struct page *'

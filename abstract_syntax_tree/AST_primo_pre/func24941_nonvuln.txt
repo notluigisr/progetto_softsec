@@ -1,0 +1,40 @@
+`-FunctionDecl 0x159128750  line:1:6 btrfs_init_devices_late 'void (struct btrfs_fs_info *)'
+  |-ParmVarDecl 0x159128648 <col:30, col:52> col:52 used fs_info 'struct btrfs_fs_info *'
+  `-CompoundStmt 0x159808e48 <line:2:1, line:14:1>
+    |-DeclStmt 0x159808498 <line:3:2, col:59>
+    | |-RecordDecl 0x159808248 <col:2, col:9> col:9 struct btrfs_fs_devices
+    | `-VarDecl 0x1598083b8 <col:2, col:49> col:27 used fs_devices 'struct btrfs_fs_devices *' cinit
+    |   `-RecoveryExpr 0x159808458 <col:40, col:49> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x159808420 <col:40> 'struct btrfs_fs_info *' lvalue ParmVar 0x159128648 'fs_info' 'struct btrfs_fs_info *'
+    |-DeclStmt 0x159808698 <line:4:2, col:29>
+    | |-RecordDecl 0x1598084b0 <col:2, col:9> col:9 struct btrfs_device
+    | `-VarDecl 0x159808618 <col:2, col:23> col:23 used device 'struct btrfs_device *'
+    `-WhileStmt 0x159808e28 <line:6:2, line:13:2>
+      |-ImplicitCastExpr 0x1598086d0 <line:6:9> 'struct btrfs_fs_devices *' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x1598086b0 <col:9> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'
+      `-CompoundStmt 0x159808df0 <col:21, line:13:2>
+        |-CallExpr 0x1598088a8 <line:7:3, col:44> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x159808810 <col:3> 'int ()' Function 0x159808758 'mutex_lock' 'int ()'
+        | `-UnaryOperator 0x159808890 <col:14, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x159808868 <col:15, col:27> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x159808830 <col:15> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'
+        |-CallExpr 0x159808ad8 <line:8:3, col:61> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1598089b0 <col:3> 'int ()' Function 0x1598088f8 'list_for_each_entry' 'int ()'
+        | |-DeclRefExpr 0x1598089d0 <col:23> 'struct btrfs_device *' lvalue Var 0x159808618 'device' 'struct btrfs_device *'
+        | |-UnaryOperator 0x159808a50 <col:31, col:44> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | | `-RecoveryExpr 0x159808a28 <col:32, col:44> '<dependent type>' contains-errors lvalue
+        | |   `-DeclRefExpr 0x1598089f0 <col:32> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'
+        | `-RecoveryExpr 0x159808ab8 <col:53> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x159808b90 <line:9:4, col:22> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x159808b48 <col:4, col:12> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x159808b10 <col:4> 'struct btrfs_device *' lvalue Var 0x159808618 'device' 'struct btrfs_device *'
+        | `-DeclRefExpr 0x159808b70 <col:22> 'struct btrfs_fs_info *' lvalue ParmVar 0x159128648 'fs_info' 'struct btrfs_fs_info *'
+        |-CallExpr 0x159808d28 <line:10:3, col:46> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x159808c90 <col:3> 'int ()' Function 0x159808bd8 'mutex_unlock' 'int ()'
+        | `-UnaryOperator 0x159808d10 <col:16, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x159808ce8 <col:17, col:29> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x159808cb0 <col:17> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'
+        `-BinaryOperator 0x159808dd0 <line:12:3, col:28> 'struct btrfs_fs_devices *' contains-errors '='
+          |-DeclRefExpr 0x159808d50 <col:3> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'
+          `-RecoveryExpr 0x159808da8 <col:16, col:28> '<dependent type>' contains-errors lvalue
+            `-DeclRefExpr 0x159808d70 <col:16> 'struct btrfs_fs_devices *' contains-errors lvalue Var 0x1598083b8 'fs_devices' 'struct btrfs_fs_devices *'

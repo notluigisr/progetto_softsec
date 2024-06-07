@@ -1,0 +1,99 @@
+`-FunctionDecl 0x12a1418d8  line:1:1 invalid juniper_services_print 'int (int *, const struct pcap_pkthdr *, const char *)'
+  |-ParmVarDecl 0x12a128128 <col:24, col:44> col:44 invalid ndo 'int *'
+  |-ParmVarDecl 0x12a128718 <line:2:24, col:50> col:50 used h 'const struct pcap_pkthdr *'
+  |-ParmVarDecl 0x12a128798 <col:53, col:76> col:76 used p 'const char *' register
+  `-CompoundStmt 0x12a144ee8 <line:3:1, line:36:1>
+    |-DeclStmt 0x12a141b18 <line:4:9, col:39>
+    | |-RecordDecl 0x12a141998 <col:9, col:16> col:16 struct juniper_l2info_t
+    | `-VarDecl 0x12a141a98 <col:9, col:33> col:33 referenced invalid l2info 'struct juniper_l2info_t'
+    |-DeclStmt 0x12a141e98 <line:5:9, line:10:10>
+    | `-RecordDecl 0x12a141b30 <line:5:9, line:10:9> line:5:16 invalid struct juniper_services_header definition
+    |   |-FieldDecl 0x12a141be8 <line:6:13, col:21> col:21 invalid svc_id 'int'
+    |   |-FieldDecl 0x12a141c50 <line:7:13, col:21> col:21 invalid flags_len 'int'
+    |   |-FieldDecl 0x12a141d48 <line:8:13, col:33> col:21 invalid svc_set_id 'int[2]'
+    |   `-FieldDecl 0x12a141e48 <line:9:13, col:30> col:21 invalid dir_iif 'int[4]'
+    |-DeclStmt 0x12a141fd0 <line:11:9, col:49>
+    | `-VarDecl 0x12a141f68 <col:9, col:47> col:47 used sh 'const struct juniper_services_header *'
+    |-BinaryOperator 0x12a1420d0 <line:13:9, col:26> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x12a142030 <col:9, col:16> '<dependent type>' contains-errors lvalue .pictype
+    | | `-RecoveryExpr 0x12a142008 <col:9> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12a141fe8 <col:9> 'struct juniper_l2info_t' lvalue Var 0x12a141a98 'l2info' 'struct juniper_l2info_t'
+    | `-RecoveryExpr 0x12a1420b0 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x12a142400 <line:14:9, line:15:27>
+    | |-BinaryOperator 0x12a142368 <line:14:13, col:57> 'int' contains-errors '=='
+    | | |-CallExpr 0x12a142308 <col:13, col:52> '<dependent type>' contains-errors
+    | | | |-DeclRefExpr 0x12a142250 <col:13> 'int ()' Function 0x12a142198 'juniper_parse_header' 'int ()'
+    | | | |-RecoveryExpr 0x12a142270 <col:34> '<dependent type>' contains-errors lvalue
+    | | | |-DeclRefExpr 0x12a142290 <col:39> 'const char *' lvalue ParmVar 0x12a128798 'p' 'const char *'
+    | | | |-DeclRefExpr 0x12a1422b0 <col:42> 'const struct pcap_pkthdr *' lvalue ParmVar 0x12a128718 'h' 'const struct pcap_pkthdr *'
+    | | | `-UnaryOperator 0x12a1422f0 <col:45, col:46> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x12a1422d0 <col:46> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x12a142348 <col:57> 'int' 0
+    | `-ReturnStmt 0x12a1423f0 <line:15:13, col:27>
+    |   `-CXXDependentScopeMemberExpr 0x12a1423a8 <col:20, col:27> '<dependent type>' contains-errors lvalue .header_len
+    |     `-RecoveryExpr 0x12a142388 <col:20> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x12a1424a8 <line:17:9, col:19> 'const char *' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-DeclRefExpr 0x12a142420 <col:9> 'const char *' lvalue ParmVar 0x12a128798 'p' 'const char *'
+    | `-CXXDependentScopeMemberExpr 0x12a142460 <col:12, col:19> '<dependent type>' contains-errors lvalue .header_len
+    |   `-RecoveryExpr 0x12a142440 <col:12> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x12a142580 <line:18:9, col:54> 'const struct juniper_services_header *' '='
+    | |-DeclRefExpr 0x12a1424d8 <col:9> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    | `-CStyleCastExpr 0x12a142558 <col:14, col:54> 'const struct juniper_services_header *' <BitCast>
+    |   `-ImplicitCastExpr 0x12a142540 <col:54> 'const char *' <LValueToRValue> part_of_explicit_cast
+    |     `-DeclRefExpr 0x12a1424f8 <col:54> 'const char *' lvalue ParmVar 0x12a128798 'p' 'const char *'
+    |-CallExpr 0x12a142738 <line:20:9, col:22> 'int'
+    | |-ImplicitCastExpr 0x12a142720 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x12a142680 <col:9> 'int ()' Function 0x12a1425c8 'ND_TCHECK' 'int ()'
+    | `-ImplicitCastExpr 0x12a142760 <col:19, col:20> 'struct juniper_services_header' <LValueToRValue>
+    |   `-UnaryOperator 0x12a1426d8 <col:19, col:20> 'const struct juniper_services_header' lvalue prefix '*' cannot overflow
+    |     `-ImplicitCastExpr 0x12a1426c0 <col:20> 'const struct juniper_services_header *' <LValueToRValue>
+    |       `-DeclRefExpr 0x12a1426a0 <col:20> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    |-IfStmt 0x12a144ac0 <line:21:9, line:26:52>
+    | |-CXXDependentScopeMemberExpr 0x12a142798 <line:21:13, col:18> '<dependent type>' contains-errors lvalue ->ndo_eflag
+    | | `-RecoveryExpr 0x12a142778 <col:13> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x12a144a98 <line:22:13, line:26:52> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a1444e0 <line:22:13> 'int ()' Function 0x12a144428 'ND_PRINT' 'int ()'
+    |   `-ParenExpr 0x12a144a78 <col:22, line:26:51> '<dependent type>' contains-errors
+    |     `-BinaryOperator 0x12a144a58 <line:22:23, line:26:50> '<dependent type>' contains-errors ','
+    |       |-BinaryOperator 0x12a144840 <line:22:23, line:25:50> '<dependent type>' contains-errors ','
+    |       | |-BinaryOperator 0x12a144680 <line:22:23, line:24:24> '<dependent type>' contains-errors ','
+    |       | | |-BinaryOperator 0x12a144600 <line:22:23, line:23:24> '<dependent type>' contains-errors ','
+    |       | | | |-BinaryOperator 0x12a144580 <line:22:23, col:28> 'char[4]' contains-errors ','
+    |       | | | | |-RecoveryExpr 0x12a144500 <col:23> '<dependent type>' contains-errors lvalue
+    |       | | | | `-StringLiteral 0x12a144560 <col:28> 'char[4]' lvalue "STR"
+    |       | | | `-RecoveryExpr 0x12a1445d8 <line:23:20, col:24> '<dependent type>' contains-errors lvalue
+    |       | | |   `-DeclRefExpr 0x12a1445a0 <col:20> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    |       | | `-RecoveryExpr 0x12a144658 <line:24:20, col:24> '<dependent type>' contains-errors lvalue
+    |       | |   `-DeclRefExpr 0x12a144620 <col:20> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    |       | `-CallExpr 0x12a144818 <line:25:20, col:50> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x12a144780 <col:20> 'int ()' Function 0x12a1446c8 'EXTRACT_16BITS' 'int ()'
+    |       |   `-UnaryOperator 0x12a144800 <col:35, col:40> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       |     `-RecoveryExpr 0x12a1447d8 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |       |       `-DeclRefExpr 0x12a1447a0 <col:36> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    |       `-CallExpr 0x12a144a30 <line:26:20, col:50> '<dependent type>' contains-errors
+    |         |-DeclRefExpr 0x12a144940 <col:20> 'int ()' Function 0x12a144888 'EXTRACT_24BITS' 'int ()'
+    |         `-UnaryOperator 0x12a144a18 <col:35, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |           `-ArraySubscriptExpr 0x12a1449f8 <col:36, col:49> '<dependent type>' contains-errors lvalue
+    |             |-ImplicitCastExpr 0x12a1449e0 <col:36, col:40> '<dependent type>' contains-errors <LValueToRValue>
+    |             | `-RecoveryExpr 0x12a144998 <col:36, col:40> '<dependent type>' contains-errors lvalue
+    |             |   `-DeclRefExpr 0x12a144960 <col:36> 'const struct juniper_services_header *' lvalue Var 0x12a141f68 'sh' 'const struct juniper_services_header *'
+    |             `-IntegerLiteral 0x12a1449c0 <col:48> 'int' 1
+    |-CallExpr 0x12a144c88 <line:29:9, col:50> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a144bc0 <col:9> 'int ()' Function 0x12a144b08 'ip_heuristic_guess' 'int ()'
+    | |-RecoveryExpr 0x12a144be0 <col:29> '<dependent type>' contains-errors lvalue
+    | |-DeclRefExpr 0x12a144c00 <col:34> 'const char *' lvalue ParmVar 0x12a128798 'p' 'const char *'
+    | `-CXXDependentScopeMemberExpr 0x12a144c40 <col:37, col:44> '<dependent type>' contains-errors lvalue .length
+    |   `-RecoveryExpr 0x12a144c20 <col:37> '<dependent type>' contains-errors lvalue
+    |-ReturnStmt 0x12a144d28 <line:31:9, col:23>
+    | `-CXXDependentScopeMemberExpr 0x12a144ce0 <col:16, col:23> '<dependent type>' contains-errors lvalue .header_len
+    |   `-RecoveryExpr 0x12a144cc0 <col:16> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x12a144e50 <line:33:1, line:34:23> 'trunc'
+    | `-CallExpr 0x12a144dd8 <col:2, col:23> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x12a144d38 <col:2> 'int ()' Function 0x12a144428 'ND_PRINT' 'int ()'
+    |   `-ParenExpr 0x12a144db8 <col:11, col:22> 'char[4]' contains-errors
+    |     `-BinaryOperator 0x12a144d98 <col:12, col:17> 'char[4]' contains-errors ','
+    |       |-RecoveryExpr 0x12a144d58 <col:12> '<dependent type>' contains-errors lvalue
+    |       `-StringLiteral 0x12a144d78 <col:17> 'char[4]' lvalue "STR"
+    `-ReturnStmt 0x12a144ed8 <line:35:2, col:16>
+      `-CXXDependentScopeMemberExpr 0x12a144e90 <col:9, col:16> '<dependent type>' contains-errors lvalue .header_len
+        `-RecoveryExpr 0x12a144e70 <col:9> '<dependent type>' contains-errors lvalue

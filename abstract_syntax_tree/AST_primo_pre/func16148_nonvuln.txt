@@ -1,0 +1,61 @@
+`-FunctionDecl 0x15a922958  line:1:24 invalid nft_set_lookup_byid 'struct nft_set *(const struct net *, const struct nlattr *, int)' static
+  |-ParmVarDecl 0x14a80e2e8 <col:44, col:62> col:62 used net 'const struct net *'
+  |-ParmVarDecl 0x15a9226c8 <line:2:9, col:30> col:30 nla 'const struct nlattr *'
+  |-ParmVarDecl 0x15a922760 <col:35, col:38> col:38 invalid genmask 'int'
+  `-CompoundStmt 0x14a82aec8 <line:3:1, line:18:1>
+    |-DeclStmt 0x15a922e48 <line:4:2, col:51>
+    | |-RecordDecl 0x15a922a18 <col:2, col:9> col:9 struct nftables_pernet
+    | `-VarDecl 0x15a922b88 <col:2, col:50> col:26 used nft_net 'struct nftables_pernet *' cinit
+    |   `-ImplicitCastExpr 0x15a922e18 <col:36, col:50> 'struct nftables_pernet *' <IntegralToPointer>
+    |     `-CallExpr 0x15a922dd8 <col:36, col:50> 'int'
+    |       |-ImplicitCastExpr 0x15a922dc0 <col:36> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x15a922d50 <col:36> 'int ()' Function 0x15a922c98 'nft_pernet' 'int ()'
+    |       `-ImplicitCastExpr 0x15a922e00 <col:47> 'const struct net *' <LValueToRValue>
+    |         `-DeclRefExpr 0x15a922d70 <col:47> 'const struct net *' lvalue ParmVar 0x14a80e2e8 'net' 'const struct net *'
+    |-DeclStmt 0x15a923048 <line:6:2, col:25>
+    | |-RecordDecl 0x15a922e60 <col:2, col:9> col:9 struct nft_trans
+    | `-VarDecl 0x15a922fc8 <col:2, col:20> col:20 used trans 'struct nft_trans *'
+    |-CallExpr 0x15a923268 <line:8:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15a923140 <col:2> 'int ()' Function 0x15a923088 'list_for_each_entry' 'int ()'
+    | |-DeclRefExpr 0x15a923160 <col:22> 'struct nft_trans *' lvalue Var 0x15a922fc8 'trans' 'struct nft_trans *'
+    | |-UnaryOperator 0x15a9231e0 <col:29, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x15a9231b8 <col:30, col:39> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x15a923180 <col:30> 'struct nftables_pernet *' lvalue Var 0x15a922b88 'nft_net' 'struct nftables_pernet *'
+    | `-RecoveryExpr 0x15a923248 <col:52> '<dependent type>' contains-errors lvalue
+    |-CompoundStmt 0x14a82acb8 <col:58, line:16:2>
+    | `-IfStmt 0x14a82ac98 <line:9:3, line:15:3>
+    |   |-BinaryOperator 0x15a923358 <line:9:7, col:26> 'int' contains-errors '=='
+    |   | |-RecoveryExpr 0x15a9232d8 <col:7, col:14> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x15a9232a0 <col:7> 'struct nft_trans *' lvalue Var 0x15a922fc8 'trans' 'struct nft_trans *'
+    |   | `-RecoveryExpr 0x15a923338 <col:26> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x14a82ac78 <col:42, line:15:3>
+    |     |-DeclStmt 0x14a82a800 <line:10:4, col:46>
+    |     | `-VarDecl 0x15a923408 <col:4, col:45> col:20 used set 'struct nft_set *' cinit
+    |     |   `-ImplicitCastExpr 0x15a9235e8 <col:26, col:45> 'struct nft_set *' <IntegralToPointer>
+    |     |     `-CallExpr 0x15a9235a8 <col:26, col:45> 'int'
+    |     |       |-ImplicitCastExpr 0x15a923590 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |     |       | `-DeclRefExpr 0x15a923550 <col:26> 'int ()' Function 0x15a923498 'nft_trans_set' 'int ()'
+    |     |       `-ImplicitCastExpr 0x15a9235d0 <col:40> 'struct nft_trans *' <LValueToRValue>
+    |     |         `-DeclRefExpr 0x15a923570 <col:40> 'struct nft_trans *' lvalue Var 0x15a922fc8 'trans' 'struct nft_trans *'
+    |     `-IfStmt 0x14a82ac58 <line:12:4, line:14:12>
+    |       |-BinaryOperator 0x14a82abf0 <line:12:8, line:13:39> 'int' contains-errors '&&'
+    |       | |-BinaryOperator 0x14a82abd0 <line:12:8, col:36> 'int' contains-errors '=='
+    |       | | |-RecoveryExpr 0x14a82ab58 <col:8> '<dependent type>' contains-errors lvalue
+    |       | | `-CallExpr 0x14a82ab90 <col:14, col:36> 'int'
+    |       | |   |-ImplicitCastExpr 0x14a82ab78 <col:14> 'int (*)()' <FunctionToPointerDecay>
+    |       | |   | `-DeclRefExpr 0x14a82a910 <col:14> 'int ()' Function 0x14a82a858 'nft_trans_set_id' 'int ()'
+    |       | |   `-ImplicitCastExpr 0x14a82abb8 <col:31> 'struct nft_trans *' <LValueToRValue>
+    |       | |     `-DeclRefExpr 0x14a82a930 <col:31> 'struct nft_trans *' lvalue Var 0x15a922fc8 'trans' 'struct nft_trans *'
+    |       | `-CallExpr 0x14a82ab08 <line:13:8, col:39> '<dependent type>' contains-errors
+    |       |   |-DeclRefExpr 0x14a82aaa8 <col:8> 'int ()' Function 0x14a82a9f0 'nft_active_genmask' 'int ()'
+    |       |   |-DeclRefExpr 0x14a82aac8 <col:27> 'struct nft_set *' lvalue Var 0x15a923408 'set' 'struct nft_set *'
+    |       |   `-RecoveryExpr 0x14a82aae8 <col:32> '<dependent type>' contains-errors lvalue
+    |       `-ReturnStmt 0x14a82ac48 <line:14:5, col:12>
+    |         `-ImplicitCastExpr 0x14a82ac30 <col:12> 'struct nft_set *' <LValueToRValue>
+    |           `-DeclRefExpr 0x14a82ac10 <col:12> 'struct nft_set *' lvalue Var 0x15a923408 'set' 'struct nft_set *'
+    `-ReturnStmt 0x14a82aeb8 <line:17:2, col:24>
+      `-CallExpr 0x14a82ae90 <col:9, col:24> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14a82adb0 <col:9> 'int ()' Function 0x14a82acf8 'ERR_PTR' 'int ()'
+        `-UnaryOperator 0x14a82ae78 <col:17, col:18> '<dependent type>' contains-errors prefix '-' cannot overflow
+          `-ImplicitCastExpr 0x14a82ae60 <col:18> '<dependent type>' contains-errors <LValueToRValue>
+            `-RecoveryExpr 0x14a82ae40 <col:18> '<dependent type>' contains-errors lvalue

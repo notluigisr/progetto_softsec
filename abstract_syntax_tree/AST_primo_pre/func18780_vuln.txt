@@ -1,0 +1,85 @@
+`-FunctionDecl 0x13b141978  line:1:12 invalid gather_pte_stats 'int (int *, unsigned long, unsigned long, struct mm_walk *)' static
+  |-ParmVarDecl 0x13b128128 <col:29, col:36> col:36 invalid pmd 'int *'
+  |-ParmVarDecl 0x13b1281a8 <col:41, col:55> col:55 used addr 'unsigned long'
+  |-ParmVarDecl 0x13b128228 <line:2:3, col:17> col:17 used end 'unsigned long'
+  |-ParmVarDecl 0x13b141828 <col:22, col:38> col:38 used walk 'struct mm_walk *'
+  `-CompoundStmt 0x13b148450 <line:3:1, line:40:1>
+    |-DeclStmt 0x13b141c28 <line:4:2, col:22>
+    | |-RecordDecl 0x13b141a40 <col:2, col:9> col:9 struct numa_maps
+    | `-VarDecl 0x13b141ba8 <col:2, col:20> col:20 used md 'struct numa_maps *'
+    |-BinaryOperator 0x13b141d08 <line:9:2, col:13> 'struct numa_maps *' contains-errors '='
+    | |-DeclRefExpr 0x13b141c88 <col:2> 'struct numa_maps *' lvalue Var 0x13b141ba8 'md' 'struct numa_maps *'
+    | `-RecoveryExpr 0x13b141ce0 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x13b141ca8 <col:7> 'struct mm_walk *' lvalue ParmVar 0x13b141828 'walk' 'struct mm_walk *'
+    |-CallExpr 0x13b141f60 <line:10:2, col:38> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13b141e80 <col:2> 'int ()' Function 0x13b141dc8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x13b141f48 <col:12, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-CXXDependentScopeMemberExpr 0x13b141f00 <col:13, col:23> '<dependent type>' contains-errors lvalue ->page_table_lock
+    |     `-RecoveryExpr 0x13b141ed8 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13b141ea0 <col:13> 'struct mm_walk *' lvalue ParmVar 0x13b141828 'walk' 'struct mm_walk *'
+    |-IfStmt 0x13b143a68 <line:11:2, line:28:2> has_else
+    | |-CallExpr 0x13b1420d8 <line:11:6, col:25> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x13b142068 <col:6> 'int ()' Function 0x13b141fb0 'pmd_trans_huge' 'int ()'
+    | | `-UnaryOperator 0x13b1420c0 <col:21, col:22> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   `-ImplicitCastExpr 0x13b1420a8 <col:22> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-RecoveryExpr 0x13b142088 <col:22> '<dependent type>' contains-errors lvalue
+    | |-CompoundStmt 0x13b143930 <col:28, line:26:2>
+    | | `-IfStmt 0x13b143900 <line:12:3, line:25:3> has_else
+    | |   |-CallExpr 0x13b142250 <line:12:7, col:31> '<dependent type>' contains-errors
+    | |   | |-DeclRefExpr 0x13b1421e0 <col:7> 'int ()' Function 0x13b142128 'pmd_trans_splitting' 'int ()'
+    | |   | `-UnaryOperator 0x13b142238 <col:27, col:28> '<dependent type>' contains-errors prefix '*' cannot overflow
+    | |   |   `-ImplicitCastExpr 0x13b142220 <col:28> '<dependent type>' contains-errors <LValueToRValue>
+    | |   |     `-RecoveryExpr 0x13b142200 <col:28> '<dependent type>' contains-errors lvalue
+    | |   |-CompoundStmt 0x13b142658 <col:34, line:15:3>
+    | |   | |-CallExpr 0x13b142438 <line:13:4, col:42> '<dependent type>' contains-errors
+    | |   | | |-DeclRefExpr 0x13b142358 <col:4> 'int ()' Function 0x13b1422a0 'spin_unlock' 'int ()'
+    | |   | | `-UnaryOperator 0x13b142420 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   | |   `-CXXDependentScopeMemberExpr 0x13b1423d8 <col:17, col:27> '<dependent type>' contains-errors lvalue ->page_table_lock
+    | |   | |     `-RecoveryExpr 0x13b1423b0 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | |   | |       `-DeclRefExpr 0x13b142378 <col:17> 'struct mm_walk *' lvalue ParmVar 0x13b141828 'walk' 'struct mm_walk *'
+    | |   | `-CallExpr 0x13b142628 <line:14:4, col:47> '<dependent type>' contains-errors
+    | |   |   |-DeclRefExpr 0x13b142540 <col:4> 'int ()' Function 0x13b142488 'wait_split_huge_page' 'int ()'
+    | |   |   |-CXXDependentScopeMemberExpr 0x13b1425c0 <col:25, col:34> '<dependent type>' contains-errors lvalue ->anon_vma
+    | |   |   | `-RecoveryExpr 0x13b142598 <col:25, col:29> '<dependent type>' contains-errors lvalue
+    | |   |   |   `-DeclRefExpr 0x13b142560 <col:25> 'struct numa_maps *' lvalue Var 0x13b141ba8 'md' 'struct numa_maps *'
+    | |   |   `-RecoveryExpr 0x13b142608 <col:44> '<dependent type>' contains-errors lvalue
+    | |   `-CompoundStmt 0x13b1438d0 <line:15:10, line:25:3>
+    | |     |-DeclStmt 0x13b143280 <line:17:4, col:21>
+    | |     | |-RecordDecl 0x13b142678 <col:4, col:11> col:11 struct page
+    | |     | `-VarDecl 0x13b143200 <col:4, col:17> col:17 used page 'struct page *'
+    | |     |-BinaryOperator 0x13b143500 <line:19:4, col:56> 'struct page *' contains-errors '='
+    | |     | |-DeclRefExpr 0x13b143298 <col:4> 'struct page *' lvalue Var 0x13b143200 'page' 'struct page *'
+    | |     | `-CallExpr 0x13b1434c8 <col:11, col:56> '<dependent type>' contains-errors
+    | |     |   |-DeclRefExpr 0x13b143398 <col:11> 'int ()' Function 0x13b1432e0 'can_gather_numa_stats' 'int ()'
+    | |     |   |-RecoveryExpr 0x13b1434a8 <col:33> '<dependent type>' contains-errors lvalue
+    | |     |   |-RecoveryExpr 0x13b143408 <col:43, col:47> '<dependent type>' contains-errors lvalue
+    | |     |   | `-DeclRefExpr 0x13b1433d0 <col:43> 'struct numa_maps *' lvalue Var 0x13b141ba8 'md' 'struct numa_maps *'
+    | |     |   `-DeclRefExpr 0x13b143430 <col:52> 'unsigned long' lvalue ParmVar 0x13b1281a8 'addr' 'unsigned long'
+    | |     |-CallExpr 0x13b143878 <line:23:4, col:42> '<dependent type>' contains-errors
+    | |     | |-DeclRefExpr 0x13b143798 <col:4> 'int ()' Function 0x13b1422a0 'spin_unlock' 'int ()'
+    | |     | `-UnaryOperator 0x13b143860 <col:16, col:27> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     |   `-CXXDependentScopeMemberExpr 0x13b143818 <col:17, col:27> '<dependent type>' contains-errors lvalue ->page_table_lock
+    | |     |     `-RecoveryExpr 0x13b1437f0 <col:17, col:23> '<dependent type>' contains-errors lvalue
+    | |     |       `-DeclRefExpr 0x13b1437b8 <col:17> 'struct mm_walk *' lvalue ParmVar 0x13b141828 'walk' 'struct mm_walk *'
+    | |     `-ReturnStmt 0x13b1438c0 <line:24:4, col:11>
+    | |       `-IntegerLiteral 0x13b1438a0 <col:11> 'int' 0
+    | `-CompoundStmt 0x13b143a50 <line:26:9, line:28:2>
+    |   `-CallExpr 0x13b143a28 <line:27:3, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b143948 <col:3> 'int ()' Function 0x13b1422a0 'spin_unlock' 'int ()'
+    |     `-UnaryOperator 0x13b143a10 <col:15, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x13b1439c8 <col:16, col:26> '<dependent type>' contains-errors lvalue ->page_table_lock
+    |         `-RecoveryExpr 0x13b1439a0 <col:16, col:22> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x13b143968 <col:16> 'struct mm_walk *' lvalue ParmVar 0x13b141828 'walk' 'struct mm_walk *'
+    |-DoStmt 0x13b1440e8 <line:31:2, line:37:48>
+    | |-CompoundStmt 0x13b143ff8 <line:31:5, line:37:2>
+    | | |-DeclStmt 0x13b143ec8 <line:32:3, col:65>
+    | | | |-RecordDecl 0x13b143c38 <col:3, col:10> col:10 struct page
+    | | | `-VarDecl 0x13b143da8 <col:3, col:16> col:16 used page 'struct page *'
+    | | `-IfStmt 0x13b143f38 <line:33:3, line:34:4>
+    | |   |-UnaryOperator 0x13b143f18 <line:33:7, col:8> 'int' prefix '!' cannot overflow
+    | |   | `-ImplicitCastExpr 0x13b143f00 <col:8> 'struct page *' <LValueToRValue>
+    | |   |   `-DeclRefExpr 0x13b143ee0 <col:8> 'struct page *' lvalue Var 0x13b143da8 'page' 'struct page *'
+    | |   `-ContinueStmt 0x13b143f30 <line:34:4>
+    | `-RecoveryExpr 0x13b1440c8 <line:37:11, col:45> '_Bool' contains-errors
+    `-ReturnStmt 0x13b148440 <line:39:2, col:9>
+      `-IntegerLiteral 0x13b148420 <col:9> 'int' 0

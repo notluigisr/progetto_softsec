@@ -1,0 +1,22 @@
+`-FunctionDecl 0x13e00ddc8  line:1:1 ignore_error_for_testing 'int (char *)'
+  |-ParmVarDecl 0x13e00dcf0 <col:26, col:34> col:34 used error 'char *'
+  `-CompoundStmt 0x13e0281d0 <line:2:1, line:10:1>
+    `-IfStmt 0x13e0281a0 <line:6:5, line:9:41> has_else
+      |-BinaryOperator 0x13e00e3d8 <line:6:9, col:33> 'int' '=='
+      | |-CallExpr 0x13e00e358 <col:9, col:28> 'int'
+      | | |-ImplicitCastExpr 0x13e00e340 <col:9> 'int (*)()' <FunctionToPointerDecay>
+      | | | `-DeclRefExpr 0x13e00e268 <col:9> 'int ()' Function 0x13e00e1b0 'STRCMP' 'int ()'
+      | | |-ImplicitCastExpr 0x13e00e388 <col:16> 'char *' <ArrayToPointerDecay>
+      | | | `-StringLiteral 0x13e00e2d0 <col:16> 'char[4]' lvalue "STR"
+      | | `-ImplicitCastExpr 0x13e00e3a0 <col:23> 'char *' <LValueToRValue>
+      | |   `-DeclRefExpr 0x13e00e2f0 <col:23> 'char *' lvalue ParmVar 0x13e00dcf0 'error' 'char *'
+      | `-IntegerLiteral 0x13e00e3b8 <col:33> 'int' 0
+      |-CallExpr 0x13e027f90 <line:7:2, col:37> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x13e027ee0 <col:2> 'int ()' Function 0x13e027e28 'ga_clear_strings' 'int ()'
+      | `-UnaryOperator 0x13e027f78 <col:19, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x13e027f58 <col:20> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x13e028170 <line:9:2, col:41> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x13e028098 <col:2> 'int ()' Function 0x13e027fe0 'ga_add_string' 'int ()'
+        |-UnaryOperator 0x13e028158 <col:16, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x13e028138 <col:17> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x13e0280e8 <col:36> 'char *' lvalue ParmVar 0x13e00dcf0 'error' 'char *'

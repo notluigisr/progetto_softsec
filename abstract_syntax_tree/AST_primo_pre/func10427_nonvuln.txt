@@ -1,0 +1,62 @@
+`-FunctionDecl 0x125028e78  line:1:12 selinux_socket_accept 'int (struct socket *, struct socket *)' static
+  |-ParmVarDecl 0x125010a48 <col:34, col:49> col:49 used sock 'struct socket *'
+  |-ParmVarDecl 0x125010b38 <col:55, col:70> col:70 used newsock 'struct socket *'
+  `-CompoundStmt 0x12502b4b8 <line:2:1, line:25:1>
+    |-DeclStmt 0x125028ff8 <line:3:2, col:9>
+    | `-VarDecl 0x125028f90 <col:2, col:6> col:6 used err 'int'
+    |-DeclStmt 0x1250291f8 <line:4:2, col:36>
+    | |-RecordDecl 0x125029010 <col:2, col:9> col:9 struct inode_security_struct
+    | `-VarDecl 0x125029178 <col:2, col:32> col:32 used isec 'struct inode_security_struct *'
+    |-DeclStmt 0x125029300 <line:5:2, col:39>
+    | `-VarDecl 0x125029298 <col:2, col:32> col:32 used newisec 'struct inode_security_struct *'
+    |-BinaryOperator 0x125029598 <line:9:2, col:46> 'int' contains-errors '='
+    | |-DeclRefExpr 0x125029330 <col:2> 'int' lvalue Var 0x125028f90 'err' 'int'
+    | `-CallExpr 0x125029568 <col:8, col:46> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x125029460 <col:8> 'int ()' Function 0x1250293a8 'sock_has_perm' 'int ()'
+    |   |-RecoveryExpr 0x1250294b8 <col:22, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x125029480 <col:22> 'struct socket *' lvalue ParmVar 0x125010a48 'sock' 'struct socket *'
+    |   `-RecoveryExpr 0x125029548 <col:32> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x125029638 <line:10:2, line:11:10>
+    | |-ImplicitCastExpr 0x1250295d8 <line:10:6> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x1250295b8 <col:6> 'int' lvalue Var 0x125028f90 'err' 'int'
+    | `-ReturnStmt 0x125029628 <line:11:3, col:10>
+    |   `-ImplicitCastExpr 0x125029610 <col:10> 'int' <LValueToRValue>
+    |     `-DeclRefExpr 0x1250295f0 <col:10> 'int' lvalue Var 0x125028f90 'err' 'int'
+    |-BinaryOperator 0x125029980 <line:13:2, col:51> 'struct inode_security_struct *' '='
+    | |-DeclRefExpr 0x125029658 <col:2> 'struct inode_security_struct *' lvalue Var 0x125029178 'isec' 'struct inode_security_struct *'
+    | `-ImplicitCastExpr 0x125029968 <col:9, col:51> 'struct inode_security_struct *' <IntegralToPointer>
+    |   `-CallExpr 0x125029940 <col:9, col:51> 'int'
+    |     |-ImplicitCastExpr 0x125029928 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x125029758 <col:9> 'int ()' Function 0x1250296a0 'inode_security_novalidate' 'int ()'
+    |     `-CallExpr 0x1250298e8 <col:35, col:50> 'int'
+    |       |-ImplicitCastExpr 0x1250298d0 <col:35> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x125029858 <col:35> 'int ()' Function 0x1250297a0 'SOCK_INODE' 'int ()'
+    |       `-ImplicitCastExpr 0x125029910 <col:46> 'struct socket *' <LValueToRValue>
+    |         `-DeclRefExpr 0x125029878 <col:46> 'struct socket *' lvalue ParmVar 0x125010a48 'sock' 'struct socket *'
+    |-CallExpr 0x125029b18 <line:14:2, col:23> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x125029a80 <col:2> 'int ()' Function 0x1250299c8 'spin_lock' 'int ()'
+    | `-UnaryOperator 0x125029b00 <col:12, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x125029ad8 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x125029aa0 <col:13> 'struct inode_security_struct *' lvalue Var 0x125029178 'isec' 'struct inode_security_struct *'
+    |-CallExpr 0x125029d78 <line:17:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x125029ce0 <col:2> 'int ()' Function 0x125029c28 'spin_unlock' 'int ()'
+    | `-UnaryOperator 0x125029d60 <col:14, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x125029d38 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x125029d00 <col:15> 'struct inode_security_struct *' lvalue Var 0x125029178 'isec' 'struct inode_security_struct *'
+    |-BinaryOperator 0x12502b2d0 <line:19:2, col:57> 'struct inode_security_struct *' '='
+    | |-DeclRefExpr 0x125029da0 <col:2> 'struct inode_security_struct *' lvalue Var 0x125029298 'newisec' 'struct inode_security_struct *'
+    | `-ImplicitCastExpr 0x12502b2b8 <col:12, col:57> 'struct inode_security_struct *' <IntegralToPointer>
+    |   `-CallExpr 0x12502b290 <col:12, col:57> 'int'
+    |     |-ImplicitCastExpr 0x12502b278 <col:12> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x125029dc0 <col:12> 'int ()' Function 0x1250296a0 'inode_security_novalidate' 'int ()'
+    |     `-CallExpr 0x12502b238 <col:38, col:56> 'int'
+    |       |-ImplicitCastExpr 0x12502b220 <col:38> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x125029de0 <col:38> 'int ()' Function 0x1250297a0 'SOCK_INODE' 'int ()'
+    |       `-ImplicitCastExpr 0x12502b260 <col:49> 'struct socket *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12502b200 <col:49> 'struct socket *' lvalue ParmVar 0x125010b38 'newsock' 'struct socket *'
+    |-BinaryOperator 0x12502b3a8 <line:20:2, col:20> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x12502b328 <col:2, col:11> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x12502b2f0 <col:2> 'struct inode_security_struct *' lvalue Var 0x125029298 'newisec' 'struct inode_security_struct *'
+    | `-RecoveryExpr 0x12502b388 <col:20> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x12502b4a8 <line:24:2, col:9>
+      `-IntegerLiteral 0x12502b488 <col:9> 'int' 0

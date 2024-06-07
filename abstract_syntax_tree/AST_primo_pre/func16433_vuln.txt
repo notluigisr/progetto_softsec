@@ -1,0 +1,64 @@
+`-FunctionDecl 0x11f928750  line:1:6 ping_unhash 'void (struct sock *)'
+  |-ParmVarDecl 0x11f928648 <col:18, col:31> col:31 used sk 'struct sock *'
+  `-CompoundStmt 0x11f940ed0 <line:2:1, line:14:1>
+    |-DeclStmt 0x128008648 <line:3:2, col:37>
+    | |-RecordDecl 0x128008248 <col:2, col:9> col:9 struct inet_sock
+    | `-VarDecl 0x1280083b8 <col:2, col:36> col:20 used isk 'struct inet_sock *' cinit
+    |   `-ImplicitCastExpr 0x128008618 <col:26, col:36> 'struct inet_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x1280085d8 <col:26, col:36> 'int'
+    |       |-ImplicitCastExpr 0x1280085c0 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x128008550 <col:26> 'int ()' Function 0x128008498 'inet_sk' 'int ()'
+    |       `-ImplicitCastExpr 0x128008600 <col:34> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x128008570 <col:34> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+    |-CallExpr 0x128008840 <line:4:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x128008740 <col:2> 'int ()' Function 0x128008688 'pr_debug' 'int ()'
+    | |-StringLiteral 0x1280087a0 <col:11> 'char[4]' lvalue "STR"
+    | |-DeclRefExpr 0x1280087c0 <col:18> 'struct inet_sock *' lvalue Var 0x1280083b8 'isk' 'struct inet_sock *'
+    | `-RecoveryExpr 0x128008818 <col:23, col:28> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1280087e0 <col:23> 'struct inet_sock *' lvalue Var 0x1280083b8 'isk' 'struct inet_sock *'
+    `-IfStmt 0x11f940eb0 <line:5:2, line:13:2>
+      |-CallExpr 0x1280089b0 <line:5:6, col:18> 'int'
+      | |-ImplicitCastExpr 0x128008998 <col:6> 'int (*)()' <FunctionToPointerDecay>
+      | | `-DeclRefExpr 0x128008958 <col:6> 'int ()' Function 0x1280088a0 'sk_hashed' 'int ()'
+      | `-ImplicitCastExpr 0x1280089d8 <col:16> 'struct sock *' <LValueToRValue>
+      |   `-DeclRefExpr 0x128008978 <col:16> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+      `-CompoundStmt 0x11f940e68 <col:21, line:13:2>
+        |-CallExpr 0x128008c10 <line:6:3, col:33> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x128008ad0 <col:3> 'int ()' Function 0x128008a18 'write_lock_bh' 'int ()'
+        | `-UnaryOperator 0x128008bf8 <col:17, col:29> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-CXXDependentScopeMemberExpr 0x128008bb0 <col:18, col:29> '<dependent type>' contains-errors lvalue .lock
+        |     `-RecoveryExpr 0x128008b90 <col:18> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x128008db0 <line:7:3, col:37> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x128008d18 <col:3> 'int ()' Function 0x128008c60 'hlist_nulls_del' 'int ()'
+        | `-UnaryOperator 0x128008d98 <col:19, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x128008d70 <col:20, col:24> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x128008d38 <col:20> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+        |-CallExpr 0x128008f10 <line:8:3, col:14> 'int'
+        | |-ImplicitCastExpr 0x128008ef8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x128008eb8 <col:3> 'int ()' Function 0x128008e00 'sock_put' 'int ()'
+        | `-ImplicitCastExpr 0x128008f38 <col:12> 'struct sock *' <LValueToRValue>
+        |   `-DeclRefExpr 0x128008ed8 <col:12> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+        |-BinaryOperator 0x128008fd0 <line:9:3, col:19> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x128008f88 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x128008f50 <col:3> 'struct inet_sock *' lvalue Var 0x1280083b8 'isk' 'struct inet_sock *'
+        | `-IntegerLiteral 0x128008fb0 <col:19> 'int' 0
+        |-BinaryOperator 0x128009070 <line:10:3, col:21> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x128009028 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x128008ff0 <col:3> 'struct inet_sock *' lvalue Var 0x1280083b8 'isk' 'struct inet_sock *'
+        | `-IntegerLiteral 0x128009050 <col:21> 'int' 0
+        |-CallExpr 0x11f940be8 <line:11:3, col:52> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x128009170 <col:3> 'int ()' Function 0x1280090b8 'sock_prot_inuse_add' 'int ()'
+        | |-CallExpr 0x11f940b10 <col:23, col:34> 'int'
+        | | |-ImplicitCastExpr 0x11f940af8 <col:23> 'int (*)()' <FunctionToPointerDecay>
+        | | | `-DeclRefExpr 0x11f940ab8 <col:23> 'int ()' Function 0x11f940a00 'sock_net' 'int ()'
+        | | `-ImplicitCastExpr 0x11f940b38 <col:32> 'struct sock *' <LValueToRValue>
+        | |   `-DeclRefExpr 0x11f940ad8 <col:32> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+        | |-RecoveryExpr 0x11f940b88 <col:37, col:41> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x11f940b50 <col:37> 'struct sock *' lvalue ParmVar 0x11f928648 'sk' 'struct sock *'
+        | `-UnaryOperator 0x11f940bd0 <col:50, col:51> 'int' prefix '-'
+        |   `-IntegerLiteral 0x11f940bb0 <col:51> 'int' 1
+        `-CallExpr 0x11f940e40 <line:12:3, col:35> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x11f940d00 <col:3> 'int ()' Function 0x11f940c48 'write_unlock_bh' 'int ()'
+          `-UnaryOperator 0x11f940e28 <col:19, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-CXXDependentScopeMemberExpr 0x11f940de0 <col:20, col:31> '<dependent type>' contains-errors lvalue .lock
+              `-RecoveryExpr 0x11f940dc0 <col:20> '<dependent type>' contains-errors lvalue

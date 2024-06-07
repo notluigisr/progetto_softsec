@@ -1,0 +1,83 @@
+`-FunctionDecl 0x14000de80  line:1:6 invalid jas_matrix_asr 'void (int *, int)'
+  |-ParmVarDecl 0x14000dd28 <col:21, col:35> col:35 invalid matrix 'int *'
+  |-ParmVarDecl 0x14000dda8 <col:43, col:47> col:47 used n 'int'
+  `-CompoundStmt 0x140028bc8 <line:2:1, line:21:1>
+    |-DeclStmt 0x14000dfb8 <line:3:2, col:7>
+    | `-VarDecl 0x14000df50 <col:2, col:6> col:6 used i 'int'
+    |-DeclStmt 0x14000e050 <line:4:2, col:7>
+    | `-VarDecl 0x14000dfe8 <col:2, col:6> col:6 used j 'int'
+    |-DeclStmt 0x14000e100 <line:6:2, col:13>
+    | `-VarDecl 0x14000e098 <col:2, col:6> col:6 used rowstep 'int'
+    |-CallExpr 0x14000e378 <line:9:2, col:15> 'int'
+    | |-ImplicitCastExpr 0x14000e360 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14000e290 <col:2> 'int ()' Function 0x14000e1d8 'assert' 'int ()'
+    | `-BinaryOperator 0x14000e308 <col:9, col:14> 'int' '>='
+    |   |-ImplicitCastExpr 0x14000e2f0 <col:9> 'int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14000e2b0 <col:9> 'int' lvalue ParmVar 0x14000dda8 'n' 'int'
+    |   `-IntegerLiteral 0x14000e2d0 <col:14> 'int' 0
+    `-IfStmt 0x140028ba8 <line:10:2, line:20:2>
+      |-BinaryOperator 0x1400280e8 <line:10:6, col:69> 'int' contains-errors '&&'
+      | |-BinaryOperator 0x140027f40 <col:6, col:35> 'int' contains-errors '>'
+      | | |-CallExpr 0x140027ef8 <col:6, col:31> '<dependent type>' contains-errors
+      | | | |-DeclRefExpr 0x140027eb8 <col:6> 'int ()' Function 0x140027e00 'jas_matrix_numrows' 'int ()'
+      | | | `-RecoveryExpr 0x140027ed8 <col:25> '<dependent type>' contains-errors lvalue
+      | | `-IntegerLiteral 0x140027f20 <col:35> 'int' 0
+      | `-BinaryOperator 0x1400280c8 <col:40, col:69> 'int' contains-errors '>'
+      |   |-CallExpr 0x140028080 <col:40, col:65> '<dependent type>' contains-errors
+      |   | |-DeclRefExpr 0x140028040 <col:40> 'int ()' Function 0x140027f88 'jas_matrix_numcols' 'int ()'
+      |   | `-RecoveryExpr 0x140028060 <col:59> '<dependent type>' contains-errors lvalue
+      |   `-IntegerLiteral 0x1400280a8 <col:69> 'int' 0
+      `-CompoundStmt 0x140028b80 <col:72, line:20:2>
+        |-CallExpr 0x140028190 <line:11:3, col:23> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x140028108 <col:3> 'int ()' Function 0x14000e1d8 'assert' 'int ()'
+        | `-CXXDependentScopeMemberExpr 0x140028148 <col:10, col:18> '<dependent type>' contains-errors lvalue ->rows_
+        |   `-RecoveryExpr 0x140028128 <col:10> '<dependent type>' contains-errors lvalue
+        |-BinaryOperator 0x140028320 <line:12:3, col:38> 'int' contains-errors '='
+        | |-DeclRefExpr 0x1400281b8 <col:3> 'int' lvalue Var 0x14000e098 'rowstep' 'int'
+        | `-CallExpr 0x1400282f8 <col:13, col:38> '<dependent type>' contains-errors
+        |   |-DeclRefExpr 0x1400282b8 <col:13> 'int ()' Function 0x140028200 'jas_matrix_rowstep' 'int ()'
+        |   `-RecoveryExpr 0x1400282d8 <col:32> '<dependent type>' contains-errors lvalue
+        `-ForStmt 0x140028b48 <line:13:3, line:19:3>
+          |-BinaryOperator 0x140028578 <line:13:8, col:56> 'int' contains-errors ','
+          | |-BinaryOperator 0x1400283c8 <col:8, col:20> 'int' contains-errors '='
+          | | |-DeclRefExpr 0x140028340 <col:8> 'int' lvalue Var 0x14000df50 'i' 'int'
+          | | `-CXXDependentScopeMemberExpr 0x140028380 <col:12, col:20> '<dependent type>' contains-errors lvalue ->numrows_
+          | |   `-RecoveryExpr 0x140028360 <col:12> '<dependent type>' contains-errors lvalue
+          | `-BinaryOperator 0x140028558 <col:30, col:56> 'int' contains-errors '='
+          |   |-DeclRefExpr 0x140028500 <col:30> 'int' lvalue Var 0x14000e098 'rowstep' 'int'
+          |   `-ArraySubscriptExpr 0x140028538 <col:41, col:56> '<dependent type>' contains-errors lvalue
+          |     |-ImplicitCastExpr 0x140028520 <col:41, col:49> '<dependent type>' contains-errors <LValueToRValue>
+          |     | `-CXXDependentScopeMemberExpr 0x140028420 <col:41, col:49> '<dependent type>' contains-errors lvalue ->rows_
+          |     |   `-RecoveryExpr 0x140028400 <col:41> '<dependent type>' contains-errors lvalue
+          |     `-IntegerLiteral 0x140028468 <col:55> 'int' 0
+          |-<<<NULL>>>
+          |-BinaryOperator 0x1400285f0 <col:59, col:63> 'int' '>'
+          | |-ImplicitCastExpr 0x1400285d8 <col:59> 'int' <LValueToRValue>
+          | | `-DeclRefExpr 0x140028598 <col:59> 'int' lvalue Var 0x14000df50 'i' 'int'
+          | `-IntegerLiteral 0x1400285b8 <col:63> 'int' 0
+          |-BinaryOperator 0x140028738 <col:66, line:14:17> 'int' ','
+          | |-UnaryOperator 0x140028630 <line:13:66, col:68> 'int' prefix '--'
+          | | `-DeclRefExpr 0x140028610 <col:68> 'int' lvalue Var 0x14000df50 'i' 'int'
+          | `-CompoundAssignOperator 0x140028708 <line:14:5, col:17> 'int' '+=' ComputeLHSTy='int' ComputeResultTy='int'
+          |   |-DeclRefExpr 0x1400286d0 <col:5> 'int' lvalue Var 0x14000e098 'rowstep' 'int'
+          |   `-ImplicitCastExpr 0x1400286f0 <col:17> 'int' <LValueToRValue>
+          |     `-DeclRefExpr 0x140028660 <col:17> 'int' lvalue Var 0x14000e098 'rowstep' 'int'
+          `-CompoundStmt 0x140028b30 <col:26, line:19:3>
+            `-ForStmt 0x140028af8 <line:15:4, line:18:4>
+              |-<<<NULL>>>
+              |-<<<NULL>>>
+              |-BinaryOperator 0x1400288c8 <line:15:48, col:52> 'int' '>'
+              | |-ImplicitCastExpr 0x1400288b0 <col:48> 'int' <LValueToRValue>
+              | | `-DeclRefExpr 0x140028870 <col:48> 'int' lvalue Var 0x14000dfe8 'j' 'int'
+              | `-IntegerLiteral 0x140028890 <col:52> 'int' 0
+              |-BinaryOperator 0x1400289a8 <col:55, line:16:8> '<dependent type>' contains-errors ','
+              | |-UnaryOperator 0x140028908 <line:15:55, col:57> 'int' prefix '--'
+              | | `-DeclRefExpr 0x1400288e8 <col:57> 'int' lvalue Var 0x14000dfe8 'j' 'int'
+              | `-UnaryOperator 0x140028990 <line:16:6, col:8> '<dependent type>' contains-errors prefix '++' cannot overflow
+              |   `-RecoveryExpr 0x140028970 <col:8> '<dependent type>' contains-errors lvalue
+              `-CompoundStmt 0x140028ae0 <col:14, line:18:4>
+                `-CompoundAssignOperator 0x140028ab0 <line:17:5, col:15> '<dependent type>' contains-errors '>>=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+                  |-UnaryOperator 0x140028a98 <col:5, col:6> '<dependent type>' contains-errors prefix '*' cannot overflow
+                  | `-ImplicitCastExpr 0x140028a80 <col:6> '<dependent type>' contains-errors <LValueToRValue>
+                  |   `-RecoveryExpr 0x140028a60 <col:6> '<dependent type>' contains-errors lvalue
+                  `-DeclRefExpr 0x140028a10 <col:15> 'int' lvalue ParmVar 0x14000dda8 'n' 'int'

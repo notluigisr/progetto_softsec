@@ -1,0 +1,34 @@
+`-FunctionDecl 0x11f08fa80  line:1:6 invalid msix_vector_unuse 'void (int *, unsigned int)'
+  |-ParmVarDecl 0x11f08f928 <col:24, col:35> col:35 invalid dev 'int *'
+  |-ParmVarDecl 0x11f08f9a8 <col:40, col:49> col:49 used vector 'unsigned int'
+  `-CompoundStmt 0x128008270 <line:2:1, line:10:1>
+    |-IfStmt 0x11f08fd30 <line:3:5, line:5:5>
+    | |-BinaryOperator 0x11f08fce8 <line:3:9, col:71> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x11f08fbc0 <col:9, col:24> 'int' contains-errors '>='
+    | | | |-DeclRefExpr 0x11f08fb38 <col:9> 'unsigned int' lvalue ParmVar 0x11f08f9a8 'vector' 'unsigned int'
+    | | | `-CXXDependentScopeMemberExpr 0x11f08fb78 <col:19, col:24> '<dependent type>' contains-errors lvalue ->msix_entries_nr
+    | | |   `-RecoveryExpr 0x11f08fb58 <col:19> '<dependent type>' contains-errors lvalue
+    | | `-UnaryOperator 0x11f08fcd0 <col:43, col:71> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |   `-ImplicitCastExpr 0x11f08fcb8 <col:44, col:71> '<dependent type>' contains-errors <LValueToRValue>
+    | |     `-ArraySubscriptExpr 0x11f08fc98 <col:44, col:71> '<dependent type>' contains-errors lvalue
+    | |       |-ImplicitCastExpr 0x11f08fc68 <col:44, col:49> '<dependent type>' contains-errors <LValueToRValue>
+    | |       | `-CXXDependentScopeMemberExpr 0x11f08fc00 <col:44, col:49> '<dependent type>' contains-errors lvalue ->msix_entry_used
+    | |       |   `-RecoveryExpr 0x11f08fbe0 <col:44> '<dependent type>' contains-errors lvalue
+    | |       `-ImplicitCastExpr 0x11f08fc80 <col:65> 'unsigned int' <LValueToRValue>
+    | |         `-DeclRefExpr 0x11f08fc48 <col:65> 'unsigned int' lvalue ParmVar 0x11f08f9a8 'vector' 'unsigned int'
+    | `-CompoundStmt 0x11f08fd18 <col:74, line:5:5>
+    |   `-ReturnStmt 0x11f08fd08 <line:4:9>
+    |-IfStmt 0x11f08fe68 <line:6:5, line:8:5>
+    | |-UnaryOperator 0x11f08fe28 <line:6:9, col:38> '<dependent type>' contains-errors prefix '--' cannot overflow
+    | | `-ArraySubscriptExpr 0x11f08fe08 <col:11, col:38> '<dependent type>' contains-errors lvalue
+    | |   |-ImplicitCastExpr 0x11f08fdd8 <col:11, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   | `-CXXDependentScopeMemberExpr 0x11f08fd70 <col:11, col:16> '<dependent type>' contains-errors lvalue ->msix_entry_used
+    | |   |   `-RecoveryExpr 0x11f08fd50 <col:11> '<dependent type>' contains-errors lvalue
+    | |   `-ImplicitCastExpr 0x11f08fdf0 <col:32> 'unsigned int' <LValueToRValue>
+    | |     `-DeclRefExpr 0x11f08fdb8 <col:32> 'unsigned int' lvalue ParmVar 0x11f08f9a8 'vector' 'unsigned int'
+    | `-CompoundStmt 0x11f08fe50 <col:41, line:8:5>
+    |   `-ReturnStmt 0x11f08fe40 <line:7:9>
+    `-CallExpr 0x128008240 <line:9:5, col:33> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x11f08ffe0 <col:5> 'int ()' Function 0x11f08ff28 'msix_clr_pending' 'int ()'
+      |-RecoveryExpr 0x128008200 <col:22> '<dependent type>' contains-errors lvalue
+      `-DeclRefExpr 0x128008220 <col:27> 'unsigned int' lvalue ParmVar 0x11f08f9a8 'vector' 'unsigned int'

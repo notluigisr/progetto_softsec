@@ -1,0 +1,19 @@
+`-FunctionDecl 0x123110280  line:1:13 invalid hns_gmac_get_link_status 'void (void *, int *)' static
+  |-ParmVarDecl 0x1231100d8 <col:38, col:44> col:44 used mac_drv 'void *'
+  |-ParmVarDecl 0x1231101a8 <col:53, col:58> col:58 invalid link_stat 'int *'
+  `-CompoundStmt 0x12312a9a0 <line:2:1, line:7:1>
+    |-DeclStmt 0x123110610 <line:3:2, col:55>
+    | |-RecordDecl 0x123110338 <col:2, col:9> col:9 struct mac_driver
+    | `-VarDecl 0x1231104a8 <col:2, col:48> col:21 used drv 'struct mac_driver *' cinit
+    |   `-CStyleCastExpr 0x1231105d0 <col:27, col:48> 'struct mac_driver *' <BitCast>
+    |     `-ImplicitCastExpr 0x1231105b8 <col:48> 'void *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x123110510 <col:48> 'void *' lvalue ParmVar 0x1231100d8 'mac_drv' 'void *'
+    `-BinaryOperator 0x12312a980 <line:5:2, line:6:40> '<dependent type>' contains-errors '='
+      |-UnaryOperator 0x12312a8f0 <line:5:2, col:3> '<dependent type>' contains-errors prefix '*' cannot overflow
+      | `-ImplicitCastExpr 0x12312a8d8 <col:3> '<dependent type>' contains-errors <LValueToRValue>
+      |   `-RecoveryExpr 0x123110628 <col:3> '<dependent type>' contains-errors lvalue
+      `-CallExpr 0x12312a948 <col:15, line:6:40> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x1231107d0 <line:5:15> 'int ()' Function 0x123110718 'dsaf_get_dev_bit' 'int ()'
+        |-DeclRefExpr 0x12312a800 <col:32> 'struct mac_driver *' lvalue Var 0x1231104a8 'drv' 'struct mac_driver *'
+        |-RecoveryExpr 0x12312a908 <col:37> '<dependent type>' contains-errors lvalue
+        `-RecoveryExpr 0x12312a928 <line:6:11> '<dependent type>' contains-errors lvalue

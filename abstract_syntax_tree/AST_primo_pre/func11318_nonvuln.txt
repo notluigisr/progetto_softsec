@@ -1,0 +1,54 @@
+`-FunctionDecl 0x1219226d0  line:1:6 invalid tcp_req_err 'void (struct sock *, int, int)'
+  |-ParmVarDecl 0x12200e248 <col:18, col:31> col:31 used sk 'struct sock *'
+  |-ParmVarDecl 0x12200e2e0 <col:35, col:39> col:39 invalid seq 'int'
+  |-ParmVarDecl 0x12200e360 <col:44, col:49> col:49 invalid abort 'int'
+  `-CompoundStmt 0x122027650 <line:2:1, line:15:1>
+    |-DeclStmt 0x121922bb8 <line:3:2, col:43>
+    | |-RecordDecl 0x121922790 <col:2, col:9> col:9 struct request_sock
+    | `-VarDecl 0x1219228f8 <col:2, col:42> col:23 used req 'struct request_sock *' cinit
+    |   `-ImplicitCastExpr 0x121922b88 <col:29, col:42> 'struct request_sock *' <IntegralToPointer>
+    |     `-CallExpr 0x121922b48 <col:29, col:42> 'int'
+    |       |-ImplicitCastExpr 0x121922b30 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x121922ac0 <col:29> 'int ()' Function 0x121922a08 'inet_reqsk' 'int ()'
+    |       `-ImplicitCastExpr 0x121922b70 <col:40> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x121922ae0 <col:40> 'struct sock *' lvalue ParmVar 0x12200e248 'sk' 'struct sock *'
+    |-DeclStmt 0x121922f48 <line:4:2, col:32>
+    | |-RecordDecl 0x121922bd0 <col:2, col:9> col:9 struct net
+    | `-VarDecl 0x121922d38 <col:2, col:31> col:14 used net 'struct net *' cinit
+    |   `-ImplicitCastExpr 0x121922f18 <col:20, col:31> 'struct net *' <IntegralToPointer>
+    |     `-CallExpr 0x121922ed8 <col:20, col:31> 'int'
+    |       |-ImplicitCastExpr 0x121922ec0 <col:20> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x121922e80 <col:20> 'int ()' Function 0x121922dc8 'sock_net' 'int ()'
+    |       `-ImplicitCastExpr 0x121922f00 <col:29> 'struct sock *' <LValueToRValue>
+    |         `-DeclRefExpr 0x121922ea0 <col:29> 'struct sock *' lvalue ParmVar 0x12200e248 'sk' 'struct sock *'
+    |-IfStmt 0x1220274a8 <line:7:2, line:13:2> has_else
+    | |-BinaryOperator 0x121923120 <line:7:6, col:27> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x121922f60 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x1219230f8 <col:13, col:27> '<dependent type>' contains-errors lvalue
+    | |   `-CallExpr 0x1219230b8 <col:13, col:24> 'int'
+    | |     |-ImplicitCastExpr 0x1219230a0 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    | |     | `-DeclRefExpr 0x121923060 <col:13> 'int ()' Function 0x121922fa8 'tcp_rsk' 'int ()'
+    | |     `-ImplicitCastExpr 0x1219230e0 <col:21> 'struct request_sock *' <LValueToRValue>
+    | |       `-DeclRefExpr 0x121923080 <col:21> 'struct request_sock *' lvalue Var 0x1219228f8 'req' 'struct request_sock *'
+    | |-CompoundStmt 0x1219232f8 <col:36, line:9:2>
+    | | `-CallExpr 0x1219232c8 <line:8:3, col:50> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x121923220 <col:3> 'int ()' Function 0x121923168 '__NET_INC_STATS' 'int ()'
+    | |   |-DeclRefExpr 0x121923240 <col:19> 'struct net *' lvalue Var 0x121922d38 'net' 'struct net *'
+    | |   `-RecoveryExpr 0x1219232a8 <col:24> '<dependent type>' contains-errors lvalue
+    | `-IfStmt 0x122027488 <line:9:9, line:13:2>
+    |   |-RecoveryExpr 0x121923310 <line:9:13> '<dependent type>' contains-errors lvalue
+    |   `-CompoundStmt 0x122027468 <col:20, line:13:2>
+    |     |-CallExpr 0x1219234b0 <line:11:3, col:51> '<dependent type>' contains-errors
+    |     | |-DeclRefExpr 0x121923410 <col:3> 'int ()' Function 0x121923358 'inet_csk_reqsk_queue_drop' 'int ()'
+    |     | |-RecoveryExpr 0x121923468 <col:29, col:34> '<dependent type>' contains-errors lvalue
+    |     | | `-DeclRefExpr 0x121923430 <col:29> 'struct request_sock *' lvalue Var 0x1219228f8 'req' 'struct request_sock *'
+    |     | `-DeclRefExpr 0x121923490 <col:48> 'struct request_sock *' lvalue Var 0x1219228f8 'req' 'struct request_sock *'
+    |     `-CallExpr 0x122027440 <line:12:3, col:35> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x1219235c0 <col:3> 'int ()' Function 0x121923508 'tcp_listendrop' 'int ()'
+    |       `-RecoveryExpr 0x122027418 <col:18, col:23> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x1219235e0 <col:18> 'struct request_sock *' lvalue Var 0x1219228f8 'req' 'struct request_sock *'
+    `-CallExpr 0x122027610 <line:14:2, col:15> 'int'
+      |-ImplicitCastExpr 0x1220275f8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x1220275b8 <col:2> 'int ()' Function 0x122027500 'reqsk_put' 'int ()'
+      `-ImplicitCastExpr 0x122027638 <col:12> 'struct request_sock *' <LValueToRValue>
+        `-DeclRefExpr 0x1220275d8 <col:12> 'struct request_sock *' lvalue Var 0x1219228f8 'req' 'struct request_sock *'

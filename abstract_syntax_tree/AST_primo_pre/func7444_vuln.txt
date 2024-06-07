@@ -1,0 +1,40 @@
+`-FunctionDecl 0x15000df18  line:1:6 invalid fix_session_vcol_expr_for_read 'int (int *, int *, int *)'
+  |-ParmVarDecl 0x15000dd28 <col:37, col:42> col:42 referenced invalid thd 'int *'
+  |-ParmVarDecl 0x15000dda8 <col:47, col:54> col:54 invalid field 'int *'
+  |-ParmVarDecl 0x15000de28 <line:2:37, col:58> col:58 invalid vcol 'int *'
+  `-CompoundStmt 0x150809348 <line:3:1, line:14:1>
+    |-CallExpr 0x15000e1f8 <line:4:3, col:19> 'int'
+    | |-ImplicitCastExpr 0x15000e1e0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15000e130 <col:3> 'int ()' Function 0x15000e078 'DBUG_ENTER' 'int ()'
+    | `-ImplicitCastExpr 0x15000e220 <col:14> 'char *' <ArrayToPointerDecay>
+    |   `-StringLiteral 0x15000e190 <col:14> 'char[4]' lvalue "STR"
+    |-IfStmt 0x150808e78 <line:6:3, line:7:18>
+    | |-BinaryOperator 0x150808cf8 <line:6:7, col:31> 'int' contains-errors '||'
+    | | |-UnaryOperator 0x150808c38 <col:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | | `-ImplicitCastExpr 0x150808c20 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    | | |   `-RecoveryExpr 0x150808c00 <col:8> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x150808cd8 <col:14, col:31> 'int' contains-errors '>='
+    | |   |-CXXDependentScopeMemberExpr 0x150808c70 <col:14, col:18> '<dependent type>' contains-errors lvalue ->lock_type
+    | |   | `-RecoveryExpr 0x150808c50 <col:14> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x150808cb8 <col:31> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x150808e50 <line:7:5, col:18> 'int'
+    |   |-ImplicitCastExpr 0x150808e38 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x150808df8 <col:5> 'int ()' Function 0x150808d40 'DBUG_RETURN' 'int ()'
+    |   `-IntegerLiteral 0x150808e18 <col:17> 'int' 0
+    |-IfStmt 0x150809178 <line:9:3, line:10:28>
+    | |-CXXDependentScopeMemberExpr 0x150808f98 <line:9:7, col:11> '<dependent type>' contains-errors lvalue ->security_ctx
+    | | `-RecoveryExpr 0x150808f78 <col:7> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x150809158 <line:10:5, col:28> '<dependent type>' contains-errors '='
+    |   |-CXXDependentScopeMemberExpr 0x150809028 <col:5, col:10> '<dependent type>' contains-errors lvalue ->security_ctx
+    |   | `-RecoveryExpr 0x150809000 <col:5> '<dependent type>' contains-errors lvalue
+    |   |   `-DeclRefExpr 0x150808fe0 <col:5> 'int *' lvalue ParmVar 0x15000dd28 'thd' 'int *'
+    |   `-CXXDependentScopeMemberExpr 0x150809110 <col:24, col:28> '<dependent type>' contains-errors lvalue ->security_ctx
+    |     `-RecoveryExpr 0x1508090f0 <col:24> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x150809280 <line:12:3, col:22> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1508091e0 <col:3, col:8> '<dependent type>' contains-errors lvalue ->security_ctx
+    | | `-RecoveryExpr 0x1508091b8 <col:3> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x150809198 <col:3> 'int *' lvalue ParmVar 0x15000dd28 'thd' 'int *'
+    | `-RecoveryExpr 0x150809260 <col:22> '<dependent type>' contains-errors lvalue
+    `-CallExpr 0x150809320 <line:13:3, col:18> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1508092a0 <col:3> 'int ()' Function 0x150808d40 'DBUG_RETURN' 'int ()'
+      `-RecoveryExpr 0x150809300 <col:15> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,41 @@
+`-FunctionDecl 0x12a040088  line:1:12 amd_gpio_direction_output 'int (struct gpio_chip *, unsigned int, int)' static
+  |-ParmVarDecl 0x12a015c48 <col:38, col:56> col:56 used gc 'struct gpio_chip *'
+  |-ParmVarDecl 0x12a015cc8 <col:60, col:69> col:69 used offset 'unsigned int'
+  |-ParmVarDecl 0x12a015d48 <line:2:3, col:7> col:7 used value 'int'
+  `-CompoundStmt 0x12a80ebd0 <line:3:1, line:19:1>
+    |-DeclStmt 0x12a040228 <line:5:2, col:21>
+    | `-VarDecl 0x12a0401c0 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-DeclStmt 0x12a040618 <line:6:2, col:51>
+    | |-RecordDecl 0x12a040240 <col:2, col:9> col:9 struct amd_gpio
+    | `-VarDecl 0x12a0403a8 <col:2, col:50> col:19 used gpio_dev 'struct amd_gpio *' cinit
+    |   `-ImplicitCastExpr 0x12a0405e8 <col:30, col:50> 'struct amd_gpio *' <IntegralToPointer>
+    |     `-CallExpr 0x12a0405a8 <col:30, col:50> 'int'
+    |       |-ImplicitCastExpr 0x12a040590 <col:30> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12a040520 <col:30> 'int ()' Function 0x12a040468 'gpiochip_get_data' 'int ()'
+    |       `-ImplicitCastExpr 0x12a0405d0 <col:48> 'struct gpio_chip *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12a040540 <col:48> 'struct gpio_chip *' lvalue ParmVar 0x12a015c48 'gc' 'struct gpio_chip *'
+    |-CallExpr 0x12a0407c8 <line:8:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a040710 <col:2> 'int ()' Function 0x12a040658 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x12a040790 <col:20, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12a040768 <col:21, col:31> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12a040730 <col:21> 'struct amd_gpio *' lvalue Var 0x12a0403a8 'gpio_dev' 'struct amd_gpio *'
+    | `-DeclRefExpr 0x12a0407a8 <col:37> 'unsigned long' lvalue Var 0x12a0401c0 'flags' 'unsigned long'
+    |-CallExpr 0x12a040f68 <line:15:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a040d60 <col:2> 'int ()' Function 0x12a040ca8 'writel' 'int ()'
+    | |-RecoveryExpr 0x12a040ed8 <col:9> '<dependent type>' contains-errors lvalue
+    | `-BinaryOperator 0x12a040f48 <col:18, col:44> '<dependent type>' contains-errors '+'
+    |   |-RecoveryExpr 0x12a040dd0 <col:18, col:28> '<dependent type>' contains-errors lvalue
+    |   | `-DeclRefExpr 0x12a040d98 <col:18> 'struct amd_gpio *' lvalue Var 0x12a0403a8 'gpio_dev' 'struct amd_gpio *'
+    |   `-BinaryOperator 0x12a040f28 <col:35, col:44> 'unsigned int' '*'
+    |     |-ImplicitCastExpr 0x12a040ef8 <col:35> 'unsigned int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x12a040df8 <col:35> 'unsigned int' lvalue ParmVar 0x12a015cc8 'offset' 'unsigned int'
+    |     `-ImplicitCastExpr 0x12a040f10 <col:44> 'unsigned int' <IntegralCast>
+    |       `-IntegerLiteral 0x12a040e18 <col:44> 'int' 4
+    |-CallExpr 0x12a80eb70 <line:16:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12a80eab8 <col:2> 'int ()' Function 0x12a80ea00 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x12a80eb38 <col:25, col:36> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x12a80eb10 <col:26, col:36> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12a80ead8 <col:26> 'struct amd_gpio *' lvalue Var 0x12a0403a8 'gpio_dev' 'struct amd_gpio *'
+    | `-DeclRefExpr 0x12a80eb50 <col:42> 'unsigned long' lvalue Var 0x12a0401c0 'flags' 'unsigned long'
+    `-ReturnStmt 0x12a80ebc0 <line:18:2, col:9>
+      `-IntegerLiteral 0x12a80eba0 <col:9> 'int' 0

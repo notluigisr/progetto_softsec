@@ -1,0 +1,57 @@
+`-FunctionDecl 0x12e027400  line:1:13 invalid ims_pcu_buttons_report 'void (struct ims_pcu *, int)' static
+  |-ParmVarDecl 0x12e00e248 <col:36, col:52> col:52 used pcu 'struct ims_pcu *'
+  |-ParmVarDecl 0x12e00e2e0 <col:57, col:61> col:61 invalid data 'int'
+  `-CompoundStmt 0x12e028238 <line:2:1, line:15:1>
+    |-DeclStmt 0x12e027720 <line:3:2, col:49>
+    | |-RecordDecl 0x12e0274b8 <col:2, col:9> col:9 struct ims_pcu_buttons
+    | `-VarDecl 0x12e027628 <col:2, col:42> col:26 used buttons 'struct ims_pcu_buttons *' cinit
+    |   `-UnaryOperator 0x12e0276f0 <col:36, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x12e0276c8 <col:37, col:42> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x12e027690 <col:37> 'struct ims_pcu *' lvalue ParmVar 0x12e00e248 'pcu' 'struct ims_pcu *'
+    |-DeclStmt 0x12e027988 <line:4:2, col:42>
+    | |-RecordDecl 0x12e027738 <col:2, col:9> col:9 struct input_dev
+    | `-VarDecl 0x12e0278a8 <col:2, col:37> col:20 used input 'struct input_dev *' cinit
+    |   `-RecoveryExpr 0x12e027948 <col:28, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12e027910 <col:28> 'struct ims_pcu_buttons *' contains-errors lvalue Var 0x12e027628 'buttons' 'struct ims_pcu_buttons *'
+    |-DeclStmt 0x12e027a20 <line:5:2, col:7>
+    | `-VarDecl 0x12e0279b8 <col:2, col:6> col:6 used i 'int'
+    |-ForStmt 0x12e028050 <line:7:2, line:12:2>
+    | |-BinaryOperator 0x12e027a78 <line:7:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x12e027a38 <col:7> 'int' lvalue Var 0x12e0279b8 'i' 'int'
+    | | `-IntegerLiteral 0x12e027a58 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x12e027af0 <col:14, col:18> 'int' '<'
+    | | |-ImplicitCastExpr 0x12e027ad8 <col:14> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x12e027a98 <col:14> 'int' lvalue Var 0x12e0279b8 'i' 'int'
+    | | `-IntegerLiteral 0x12e027ab8 <col:18> 'int' 32
+    | |-UnaryOperator 0x12e027b30 <col:22, col:23> 'int' postfix '++'
+    | | `-DeclRefExpr 0x12e027b10 <col:22> 'int' lvalue Var 0x12e0279b8 'i' 'int'
+    | `-CompoundStmt 0x12e028030 <col:27, line:12:2>
+    |   |-DeclStmt 0x12e027c98 <line:8:3, col:46>
+    |   | `-VarDecl 0x12e027b60 <col:3, col:45> col:18 used keycode 'unsigned short' cinit
+    |   |   `-ArraySubscriptExpr 0x12e027c78 <col:28, col:45> '<dependent type>' contains-errors lvalue
+    |   |     |-ImplicitCastExpr 0x12e027c48 <col:28, col:37> '<dependent type>' contains-errors <LValueToRValue>
+    |   |     | `-RecoveryExpr 0x12e027c00 <col:28, col:37> '<dependent type>' contains-errors lvalue
+    |   |     |   `-DeclRefExpr 0x12e027bc8 <col:28> 'struct ims_pcu_buttons *' contains-errors lvalue Var 0x12e027628 'buttons' 'struct ims_pcu_buttons *'
+    |   |     `-ImplicitCastExpr 0x12e027c60 <col:44> 'int' <LValueToRValue>
+    |   |       `-DeclRefExpr 0x12e027c28 <col:44> 'int' lvalue Var 0x12e0279b8 'i' 'int'
+    |   `-IfStmt 0x12e028010 <line:10:3, line:11:54>
+    |     |-BinaryOperator 0x12e027d28 <line:10:7, col:18> 'int' contains-errors '!='
+    |     | |-DeclRefExpr 0x12e027cb0 <col:7> 'unsigned short' contains-errors lvalue Var 0x12e027b60 'keycode' 'unsigned short'
+    |     | `-RecoveryExpr 0x12e027d08 <col:18> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x12e027fd8 <line:11:4, col:54> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x12e027ea0 <col:4> 'int ()' Function 0x12e027de8 'input_report_key' 'int ()'
+    |       |-DeclRefExpr 0x12e027ec0 <col:21> 'struct input_dev *' contains-errors lvalue Var 0x12e0278a8 'input' 'struct input_dev *'
+    |       |-DeclRefExpr 0x12e027ee0 <col:28> 'unsigned short' contains-errors lvalue Var 0x12e027b60 'keycode' 'unsigned short'
+    |       `-BinaryOperator 0x12e027fb8 <col:37, col:53> '<dependent type>' contains-errors '&'
+    |         |-RecoveryExpr 0x12e027f00 <col:37> '<dependent type>' contains-errors lvalue
+    |         `-ParenExpr 0x12e027f98 <col:44, col:53> 'unsigned long'
+    |           `-BinaryOperator 0x12e027f78 <col:45, col:52> 'unsigned long' '<<'
+    |             |-IntegerLiteral 0x12e027f20 <col:45> 'unsigned long' 1
+    |             `-ImplicitCastExpr 0x12e027f60 <col:52> 'int' <LValueToRValue>
+    |               `-DeclRefExpr 0x12e027f40 <col:52> 'int' lvalue Var 0x12e0279b8 'i' 'int'
+    `-CallExpr 0x12e0281f8 <line:14:2, col:18> 'int' contains-errors
+      |-ImplicitCastExpr 0x12e0281e0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x12e028168 <col:2> 'int ()' Function 0x12e0280b0 'input_sync' 'int ()'
+      `-ImplicitCastExpr 0x12e028220 <col:13> 'struct input_dev *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x12e028188 <col:13> 'struct input_dev *' contains-errors lvalue Var 0x12e0278a8 'input' 'struct input_dev *'

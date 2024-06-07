@@ -1,0 +1,28 @@
+`-FunctionDecl 0x13b9283a8  line:1:18 bpf_prog_inc_not_zero 'struct bpf_prog *(struct bpf_prog *)'
+  |-ParmVarDecl 0x13b928218 <col:40, col:57> col:57 used prog 'struct bpf_prog *'
+  `-CompoundStmt 0x13b941ed0 <line:2:1, line:11:1>
+    |-DeclStmt 0x13b928520 <line:3:2, col:12>
+    | `-VarDecl 0x13b9284b8 <col:2, col:6> col:6 used refold 'int'
+    |-BinaryOperator 0x13b941c00 <line:5:2, col:61> 'int' contains-errors '='
+    | |-DeclRefExpr 0x13b928538 <col:2> 'int' lvalue Var 0x13b9284b8 'refold' 'int'
+    | `-CallExpr 0x13b941bc8 <col:11, col:61> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x13b928680 <col:11> 'int ()' Function 0x13b9285c8 'atomic64_fetch_add_unless' 'int ()'
+    |   |-UnaryOperator 0x13b941b70 <col:37, col:49> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | `-CXXDependentScopeMemberExpr 0x13b941b28 <col:38, col:49> '<dependent type>' contains-errors lvalue ->refcnt
+    |   |   `-RecoveryExpr 0x13b941b00 <col:38, col:44> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x13b9286a0 <col:38> 'struct bpf_prog *' lvalue ParmVar 0x13b928218 'prog' 'struct bpf_prog *'
+    |   |-IntegerLiteral 0x13b941b88 <col:57> 'int' 1
+    |   `-IntegerLiteral 0x13b941ba8 <col:60> 'int' 0
+    |-IfStmt 0x13b941e68 <line:7:2, line:8:25>
+    | |-UnaryOperator 0x13b941c58 <line:7:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13b941c40 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x13b941c20 <col:7> 'int' lvalue Var 0x13b9284b8 'refold' 'int'
+    | `-ReturnStmt 0x13b941e58 <line:8:3, col:25>
+    |   `-CallExpr 0x13b941e30 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13b941d50 <col:10> 'int ()' Function 0x13b941c98 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x13b941e18 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x13b941e00 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x13b941de0 <col:19> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13b941ec0 <line:10:2, col:9>
+      `-ImplicitCastExpr 0x13b941ea8 <col:9> 'struct bpf_prog *' <LValueToRValue>
+        `-DeclRefExpr 0x13b941e88 <col:9> 'struct bpf_prog *' lvalue ParmVar 0x13b928218 'prog' 'struct bpf_prog *'

@@ -1,0 +1,41 @@
+`-FunctionDecl 0x13100df18  line:1:1 invalid dt_lite_iso8601 'int (int, int *, int)'
+  |-ParmVarDecl 0x13100dcd8 <col:17, col:21> col:21 used argc 'int'
+  |-ParmVarDecl 0x13100dda8 <col:27, col:34> col:34 invalid argv 'int *'
+  |-ParmVarDecl 0x13100de28 <col:40, col:46> col:46 invalid self 'int'
+  `-CompoundStmt 0x131027ac8 <line:2:1, line:11:1>
+    |-DeclStmt 0x13100e090 <line:3:5, col:15>
+    | `-VarDecl 0x13100dff0 <col:5, col:14> col:10 used n 'long' cinit
+    |   `-ImplicitCastExpr 0x13100e078 <col:14> 'long' <IntegralCast>
+    |     `-IntegerLiteral 0x13100e058 <col:14> 'int' 0
+    |-CallExpr 0x13100e2c8 <line:5:5, col:30> 'int'
+    | |-ImplicitCastExpr 0x13100e2b0 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x13100e200 <col:5> 'int ()' Function 0x13100e148 'rb_check_arity' 'int ()'
+    | |-ImplicitCastExpr 0x13100e300 <col:20> 'int' <LValueToRValue>
+    | | `-DeclRefExpr 0x13100e220 <col:20> 'int' lvalue ParmVar 0x13100dcd8 'argc' 'int'
+    | |-IntegerLiteral 0x13100e240 <col:26> 'int' 0
+    | `-IntegerLiteral 0x13100e260 <col:29> 'int' 1
+    |-IfStmt 0x131027598 <line:6:5, line:7:22>
+    | |-BinaryOperator 0x13100e370 <line:6:9, col:17> 'int' '>='
+    | | |-ImplicitCastExpr 0x13100e358 <col:9> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x13100e318 <col:9> 'int' lvalue ParmVar 0x13100dcd8 'argc' 'int'
+    | | `-IntegerLiteral 0x13100e338 <col:17> 'int' 1
+    | `-BinaryOperator 0x131027578 <line:7:2, col:22> 'long' contains-errors '='
+    |   |-DeclRefExpr 0x13100e390 <col:2> 'long' lvalue Var 0x13100dff0 'n' 'long'
+    |   `-CallExpr 0x131027550 <col:6, col:22> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1310274b8 <col:6> 'int ()' Function 0x131027400 'NUM2LONG' 'int ()'
+    |     `-ArraySubscriptExpr 0x131027530 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |       |-ImplicitCastExpr 0x131027518 <col:15> '<dependent type>' contains-errors <LValueToRValue>
+    |       | `-RecoveryExpr 0x1310274d8 <col:15> '<dependent type>' contains-errors lvalue
+    |       `-IntegerLiteral 0x1310274f8 <col:20> 'int' 0
+    `-ReturnStmt 0x131027ab8 <line:9:5, line:10:29>
+      `-CallExpr 0x131027a88 <line:9:12, line:10:29> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x131027698 <line:9:12> 'int ()' Function 0x1310275e0 'rb_str_append' 'int ()'
+        |-CallExpr 0x131027a50 <col:26, col:56> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x131027798 <col:26> 'int ()' Function 0x1310276e0 'strftimev' 'int ()'
+        | |-StringLiteral 0x131027800 <col:36> 'char[4]' lvalue "STR"
+        | |-RecoveryExpr 0x131027820 <col:43> '<dependent type>' contains-errors lvalue
+        | `-RecoveryExpr 0x131027a30 <col:49> '<dependent type>' contains-errors lvalue
+        `-CallExpr 0x1310279d0 <line:10:5, col:28> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x131027970 <col:5> 'int ()' Function 0x1310278b8 'iso8601_timediv' 'int ()'
+          |-RecoveryExpr 0x131027990 <col:21> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x1310279b0 <col:27> 'long' lvalue Var 0x13100dff0 'n' 'long'

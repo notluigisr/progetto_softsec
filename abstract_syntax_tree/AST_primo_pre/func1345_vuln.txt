@@ -1,0 +1,57 @@
+`-FunctionDecl 0x14602ab58  line:1:12 do_siocgstampns 'int (struct net *, struct socket *, unsigned int, struct compat_timespec)' static
+  |-ParmVarDecl 0x14600e248 <col:28, col:40> col:40 used net 'struct net *'
+  |-ParmVarDecl 0x14602a828 <col:45, col:60> col:60 used sock 'struct socket *'
+  |-ParmVarDecl 0x14602a8a8 <line:2:5, col:18> col:18 used cmd 'unsigned int'
+  |-ParmVarDecl 0x14602aa08 <col:23, col:46> col:46 invalid __user 'struct compat_timespec'
+  `-CompoundStmt 0x14602e780 <line:3:1, line:16:1>
+    |-DeclStmt 0x14602adf8 <line:5:2, col:21>
+    | |-RecordDecl 0x14602ac80 <col:2, col:9> col:9 struct timespec
+    | `-VarDecl 0x14602ad78 <col:2, col:18> col:18 invalid kts 'struct timespec'
+    |-DeclStmt 0x14602ae90 <line:6:2, col:9>
+    | `-VarDecl 0x14602ae28 <col:2, col:6> col:6 used err 'int'
+    |-CallExpr 0x14602b040 <line:8:2, col:18> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14602afc0 <col:2> 'int ()' Function 0x14602af08 'set_fs' 'int ()'
+    | `-RecoveryExpr 0x14602b020 <col:9> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x14602b330 <line:9:2, col:57> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14602b068 <col:2> 'int' lvalue Var 0x14602ae28 'err' 'int'
+    | `-CallExpr 0x14602b2a8 <col:8, col:57> 'int' contains-errors
+    |   |-ImplicitCastExpr 0x14602b290 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14602b168 <col:8> 'int ()' Function 0x14602b0b0 'sock_do_ioctl' 'int ()'
+    |   |-ImplicitCastExpr 0x14602b2e8 <col:22> 'struct net *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14602b188 <col:22> 'struct net *' lvalue ParmVar 0x14600e248 'net' 'struct net *'
+    |   |-ImplicitCastExpr 0x14602b300 <col:27> 'struct socket *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14602b1a8 <col:27> 'struct socket *' lvalue ParmVar 0x14602a828 'sock' 'struct socket *'
+    |   |-ImplicitCastExpr 0x14602b318 <col:33> 'unsigned int' <LValueToRValue>
+    |   | `-DeclRefExpr 0x14602b1c8 <col:33> 'unsigned int' lvalue ParmVar 0x14602a8a8 'cmd' 'unsigned int'
+    |   `-CStyleCastExpr 0x14602b238 <col:38, col:54> 'unsigned long' contains-errors <Dependent>
+    |     `-UnaryOperator 0x14602b208 <col:53, col:54> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-RecoveryExpr 0x14602b1e8 <col:54> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14602b3d0 <line:10:2, col:15> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14602b350 <col:2> 'int ()' Function 0x14602af08 'set_fs' 'int ()'
+    | `-RecoveryExpr 0x14602b3b0 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14602e718 <line:11:2, line:14:2>
+    | |-UnaryOperator 0x14602b430 <line:11:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14602b418 <col:7> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14602b3f8 <col:7> 'int' lvalue Var 0x14602ae28 'err' 'int'
+    | `-CompoundStmt 0x14602e6f8 <col:12, line:14:2>
+    |   |-BinaryOperator 0x14602b748 <line:12:3, col:41> 'int' contains-errors '='
+    |   | |-DeclRefExpr 0x14602b448 <col:3> 'int' lvalue Var 0x14602ae28 'err' 'int'
+    |   | `-CallExpr 0x14602b718 <col:9, col:41> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x14602b548 <col:9> 'int ()' Function 0x14602b490 'put_user' 'int ()'
+    |   |   |-CXXDependentScopeMemberExpr 0x14602b588 <col:18, col:22> '<dependent type>' contains-errors lvalue .tv_sec
+    |   |   | `-RecoveryExpr 0x14602b568 <col:18> '<dependent type>' contains-errors lvalue
+    |   |   `-UnaryOperator 0x14602b700 <col:30, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |     `-CXXDependentScopeMemberExpr 0x14602b6b8 <col:31, col:35> '<dependent type>' contains-errors lvalue ->tv_sec
+    |   |       `-RecoveryExpr 0x14602b698 <col:31> '<dependent type>' contains-errors lvalue
+    |   `-CompoundAssignOperator 0x14602e6c8 <line:13:3, col:46> 'int' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    |     |-DeclRefExpr 0x14602b768 <col:3> 'int' lvalue Var 0x14602ae28 'err' 'int'
+    |     `-CallExpr 0x14602e698 <col:10, col:46> '<dependent type>' contains-errors
+    |       |-DeclRefExpr 0x14602e4b8 <col:10> 'int ()' Function 0x14602e400 '__put_user' 'int ()'
+    |       |-CXXDependentScopeMemberExpr 0x14602e4f8 <col:21, col:25> '<dependent type>' contains-errors lvalue .tv_nsec
+    |       | `-RecoveryExpr 0x14602e4d8 <col:21> '<dependent type>' contains-errors lvalue
+    |       `-UnaryOperator 0x14602e680 <col:34, col:39> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |         `-CXXDependentScopeMemberExpr 0x14602e638 <col:35, col:39> '<dependent type>' contains-errors lvalue ->tv_nsec
+    |           `-RecoveryExpr 0x14602e618 <col:35> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x14602e770 <line:15:2, col:9>
+      `-ImplicitCastExpr 0x14602e758 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x14602e738 <col:9> 'int' lvalue Var 0x14602ae28 'err' 'int'

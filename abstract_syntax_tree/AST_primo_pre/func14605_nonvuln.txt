@@ -1,0 +1,39 @@
+`-FunctionDecl 0x1439281d8  line:1:19 verify_sec_ctx_len 'int (const void *)' static inline
+  |-ParmVarDecl 0x143928108 <col:38, col:50> col:50 used p 'const void *'
+  `-CompoundStmt 0x143941180 <line:2:1, line:15:1>
+    |-DeclStmt 0x143928508 <line:3:2, col:42>
+    | |-RecordDecl 0x1439282d0 <col:8, col:15> col:15 struct sadb_x_sec_ctx
+    | `-VarDecl 0x143928438 <col:2, col:41> col:31 used sec_ctx 'const struct sadb_x_sec_ctx *' cinit
+    |   `-ImplicitCastExpr 0x1439284d8 <col:41> 'const struct sadb_x_sec_ctx *' <BitCast>
+    |     `-ImplicitCastExpr 0x1439284c0 <col:41> 'const void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x1439284a0 <col:41> 'const void *' lvalue ParmVar 0x143928108 'p' 'const void *'
+    |-DeclStmt 0x143940c38 <line:4:2, col:35>
+    | `-VarDecl 0x143928538 <col:2, col:21> col:6 used len 'int' cinit
+    |   `-RecoveryExpr 0x143940c10 <col:12, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1439285a0 <col:12> 'const struct sadb_x_sec_ctx *' lvalue Var 0x143928438 'sec_ctx' 'const struct sadb_x_sec_ctx *'
+    |-IfStmt 0x143940da8 <line:6:2, line:7:11>
+    | |-BinaryOperator 0x143940ce0 <line:6:6, col:12> 'int' contains-errors '>'
+    | | |-DeclRefExpr 0x143940c50 <col:6> 'int' contains-errors lvalue Var 0x143928538 'len' 'int'
+    | | `-RecoveryExpr 0x143940cc0 <col:12> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x143940d98 <line:7:3, col:11>
+    |   `-UnaryOperator 0x143940d80 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x143940d68 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x143940d48 <col:11> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x143940fc8 <line:9:2, col:33> 'int' contains-errors '='
+    | |-DeclRefExpr 0x143940dc8 <col:2> 'int' contains-errors lvalue Var 0x143928538 'len' 'int'
+    | `-CallExpr 0x143940f88 <col:8, col:33> 'int'
+    |   |-ImplicitCastExpr 0x143940f70 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x143940f00 <col:8> 'int ()' Function 0x143940e48 'pfkey_sec_ctx_len' 'int ()'
+    |   `-ImplicitCastExpr 0x143940fb0 <col:26> 'const struct sadb_x_sec_ctx *' <LValueToRValue>
+    |     `-DeclRefExpr 0x143940f20 <col:26> 'const struct sadb_x_sec_ctx *' lvalue Var 0x143928438 'sec_ctx' 'const struct sadb_x_sec_ctx *'
+    |-IfStmt 0x143941130 <line:11:2, line:12:11>
+    | |-BinaryOperator 0x143941068 <line:11:6, col:33> 'int' contains-errors '!='
+    | | |-RecoveryExpr 0x143941020 <col:6, col:15> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x143940fe8 <col:6> 'const struct sadb_x_sec_ctx *' lvalue Var 0x143928438 'sec_ctx' 'const struct sadb_x_sec_ctx *'
+    | | `-DeclRefExpr 0x143941048 <col:33> 'int' contains-errors lvalue Var 0x143928538 'len' 'int'
+    | `-ReturnStmt 0x143941120 <line:12:3, col:11>
+    |   `-UnaryOperator 0x143941108 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x1439410f0 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x1439410d0 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x143941170 <line:14:2, col:9>
+      `-IntegerLiteral 0x143941150 <col:9> 'int' 0

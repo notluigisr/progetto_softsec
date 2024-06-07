@@ -1,0 +1,20 @@
+`-FunctionDecl 0x1381418d0  line:1:13 invalid nfs_set_open_stateid 'void (struct nfs4_state *, int *, int)' static
+  |-ParmVarDecl 0x138128648 <col:34, col:53> col:53 used state 'struct nfs4_state *'
+  |-ParmVarDecl 0x138128718 <col:60, col:74> col:74 invalid stateid 'int *'
+  |-ParmVarDecl 0x138128798 <col:83, col:87> col:87 used open_flags 'int'
+  `-CompoundStmt 0x138141ee8 <line:2:1, line:6:1>
+    |-CallExpr 0x138141b88 <line:3:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138141af0 <col:2> 'int ()' Function 0x138141a38 'write_seqlock' 'int ()'
+    | `-UnaryOperator 0x138141b70 <col:16, col:24> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x138141b48 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x138141b10 <col:17> 'struct nfs4_state *' lvalue ParmVar 0x138128648 'state' 'struct nfs4_state *'
+    |-CallExpr 0x138141d10 <line:4:2, col:56> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x138141c90 <col:2> 'int ()' Function 0x138141bd8 'nfs_set_open_stateid_locked' 'int ()'
+    | |-DeclRefExpr 0x138141cb0 <col:30> 'struct nfs4_state *' lvalue ParmVar 0x138128648 'state' 'struct nfs4_state *'
+    | |-RecoveryExpr 0x138141cd0 <col:37> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x138141cf0 <col:46> 'int' lvalue ParmVar 0x138128798 'open_flags' 'int'
+    `-CallExpr 0x138141ec0 <line:5:2, col:33> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x138141e28 <col:2> 'int ()' Function 0x138141d70 'write_sequnlock' 'int ()'
+      `-UnaryOperator 0x138141ea8 <col:18, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x138141e80 <col:19, col:26> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x138141e48 <col:19> 'struct nfs4_state *' lvalue ParmVar 0x138128648 'state' 'struct nfs4_state *'

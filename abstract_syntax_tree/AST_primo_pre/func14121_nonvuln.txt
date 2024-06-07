@@ -1,0 +1,22 @@
+`-FunctionDecl 0x12802a800  line:1:13 lockdep_set_quota_inode 'void (struct inode *, int)' static
+  |-ParmVarDecl 0x12800e248 <col:37, col:51> col:51 used inode 'struct inode *'
+  |-ParmVarDecl 0x12800e2c8 <col:58, col:62> col:62 used subclass 'int'
+  `-CompoundStmt 0x12802af48 <line:2:1, line:8:1>
+    |-DeclStmt 0x12802acf8 <line:3:2, col:44>
+    | |-RecordDecl 0x12802a900 <col:2, col:9> col:9 struct ext4_inode_info
+    | `-VarDecl 0x12802aa68 <col:2, col:43> col:26 used ei 'struct ext4_inode_info *' cinit
+    |   `-ImplicitCastExpr 0x12802acc8 <col:31, col:43> 'struct ext4_inode_info *' <IntegralToPointer>
+    |     `-CallExpr 0x12802ac88 <col:31, col:43> 'int'
+    |       |-ImplicitCastExpr 0x12802ac70 <col:31> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x12802ac00 <col:31> 'int ()' Function 0x12802ab48 'EXT4_I' 'int ()'
+    |       `-ImplicitCastExpr 0x12802acb0 <col:38> 'struct inode *' <LValueToRValue>
+    |         `-DeclRefExpr 0x12802ac20 <col:38> 'struct inode *' lvalue ParmVar 0x12800e248 'inode' 'struct inode *'
+    |-CStyleCastExpr 0x12802ad58 <line:6:2, col:9> 'void' <ToVoid>
+    | `-ImplicitCastExpr 0x12802ad40 <col:9> 'struct ext4_inode_info *' <LValueToRValue> part_of_explicit_cast
+    |   `-DeclRefExpr 0x12802ad10 <col:9> 'struct ext4_inode_info *' lvalue Var 0x12802aa68 'ei' 'struct ext4_inode_info *'
+    `-CallExpr 0x12802af18 <line:7:2, col:48> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12802ae60 <col:2> 'int ()' Function 0x12802ada8 'lockdep_set_subclass' 'int ()'
+      |-UnaryOperator 0x12802aee0 <col:23, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x12802aeb8 <col:24, col:28> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x12802ae80 <col:24> 'struct ext4_inode_info *' lvalue Var 0x12802aa68 'ei' 'struct ext4_inode_info *'
+      `-DeclRefExpr 0x12802aef8 <col:40> 'int' lvalue ParmVar 0x12800e2c8 'subclass' 'int'

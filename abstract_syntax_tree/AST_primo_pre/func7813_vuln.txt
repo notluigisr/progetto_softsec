@@ -1,0 +1,59 @@
+`-FunctionDecl 0x13e922898  line:1:12 invalid fuse_getattr 'int (const struct path *, struct kstat *, int, unsigned int)' static
+  |-ParmVarDecl 0x13f00e248 <col:25, col:44> col:44 used path 'const struct path *'
+  |-ParmVarDecl 0x13e922628 <col:50, col:64> col:64 used stat 'struct kstat *'
+  |-ParmVarDecl 0x13e9226c0 <line:2:4, col:8> col:8 invalid request_mask 'int'
+  |-ParmVarDecl 0x13e922740 <col:22, col:35> col:35 used flags 'unsigned int'
+  `-CompoundStmt 0x148808498 <line:3:1, line:18:1>
+    |-DeclStmt 0x13e922d50 <line:4:2, col:45>
+    | |-RecordDecl 0x13e922960 <col:2, col:9> col:9 struct inode
+    | `-VarDecl 0x13e922ac8 <col:2, col:44> col:16 used inode 'struct inode *' cinit
+    |   `-CallExpr 0x13e922d10 <col:24, col:44> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x13e922c90 <col:24> 'int ()' Function 0x13e922bd8 'd_inode' 'int ()'
+    |     `-RecoveryExpr 0x13e922ce8 <col:32, col:38> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x13e922cb0 <col:32> 'const struct path *' lvalue ParmVar 0x13f00e248 'path' 'const struct path *'
+    |-DeclStmt 0x13e923118 <line:5:2, col:45>
+    | |-RecordDecl 0x13e922d68 <col:2, col:9> col:9 struct fuse_conn
+    | `-VarDecl 0x13e922ed8 <col:2, col:44> col:20 used fc 'struct fuse_conn *' cinit
+    |   `-ImplicitCastExpr 0x13e9230e8 <col:25, col:44> 'struct fuse_conn *' contains-errors <IntegralToPointer>
+    |     `-CallExpr 0x13e9230a8 <col:25, col:44> 'int' contains-errors
+    |       |-ImplicitCastExpr 0x13e923090 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13e923020 <col:25> 'int ()' Function 0x13e922f68 'get_fuse_conn' 'int ()'
+    |       `-ImplicitCastExpr 0x13e9230d0 <col:39> 'struct inode *' contains-errors <LValueToRValue>
+    |         `-DeclRefExpr 0x13e923040 <col:39> 'struct inode *' contains-errors lvalue Var 0x13e922ac8 'inode' 'struct inode *'
+    |-IfStmt 0x148808220 <line:7:2, line:15:2>
+    | |-UnaryOperator 0x13e9232a8 <line:7:6, col:36> 'int' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x13e923268 <col:7, col:36> 'int' contains-errors
+    | |   |-ImplicitCastExpr 0x13e923250 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    | |   | `-DeclRefExpr 0x13e923210 <col:7> 'int ()' Function 0x13e923158 'fuse_allow_current_process' 'int ()'
+    | |   `-ImplicitCastExpr 0x13e923290 <col:34> 'struct fuse_conn *' contains-errors <LValueToRValue>
+    | |     `-DeclRefExpr 0x13e923230 <col:34> 'struct fuse_conn *' contains-errors lvalue Var 0x13e922ed8 'fc' 'struct fuse_conn *'
+    | `-CompoundStmt 0x148808200 <col:39, line:15:2>
+    |   |-IfStmt 0x13e923530 <line:8:3, line:13:3>
+    |   | |-UnaryOperator 0x13e9232f8 <line:8:7, col:8> '<dependent type>' contains-errors prefix '!' cannot overflow
+    |   | | `-ImplicitCastExpr 0x13e9232e0 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+    |   | |   `-RecoveryExpr 0x13e9232c0 <col:8> '<dependent type>' contains-errors lvalue
+    |   | `-CompoundStmt 0x13e923508 <col:22, line:13:3>
+    |   |   |-BinaryOperator 0x13e923390 <line:10:4, col:24> '<dependent type>' contains-errors '='
+    |   |   | |-RecoveryExpr 0x13e923348 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x13e923310 <col:4> 'struct kstat *' lvalue ParmVar 0x13e922628 'stat' 'struct kstat *'
+    |   |   | `-IntegerLiteral 0x13e923370 <col:24> 'int' 0
+    |   |   |-BinaryOperator 0x13e9234b8 <line:11:4, col:29> '<dependent type>' contains-errors '='
+    |   |   | |-RecoveryExpr 0x13e9233e8 <col:4, col:10> '<dependent type>' contains-errors lvalue
+    |   |   | | `-DeclRefExpr 0x13e9233b0 <col:4> 'struct kstat *' lvalue ParmVar 0x13e922628 'stat' 'struct kstat *'
+    |   |   | `-CXXDependentScopeMemberExpr 0x13e923470 <col:16, col:29> '<dependent type>' contains-errors lvalue ->s_dev
+    |   |   |   `-RecoveryExpr 0x13e923448 <col:16, col:23> '<dependent type>' contains-errors lvalue
+    |   |   |     `-DeclRefExpr 0x13e923410 <col:16> 'struct inode *' contains-errors lvalue Var 0x13e922ac8 'inode' 'struct inode *'
+    |   |   `-ReturnStmt 0x13e9234f8 <line:12:4, col:11>
+    |   |     `-IntegerLiteral 0x13e9234d8 <col:11> 'int' 0
+    |   `-ReturnStmt 0x13e9235e8 <line:14:3, col:11>
+    |     `-UnaryOperator 0x13e9235d0 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x13e9235b8 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x13e923598 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x148808488 <line:17:2, col:68>
+      `-CallExpr 0x148808440 <col:9, col:68> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x148808320 <col:9> 'int ()' Function 0x148808268 'fuse_update_get_attr' 'int ()'
+        |-DeclRefExpr 0x148808340 <col:30> 'struct inode *' contains-errors lvalue Var 0x13e922ac8 'inode' 'struct inode *'
+        |-RecoveryExpr 0x148808420 <col:37> '<dependent type>' contains-errors lvalue
+        |-DeclRefExpr 0x148808378 <col:43> 'struct kstat *' lvalue ParmVar 0x13e922628 'stat' 'struct kstat *'
+        |-RecoveryExpr 0x148808398 <col:49> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x1488083b8 <col:63> 'unsigned int' lvalue ParmVar 0x13e922740 'flags' 'unsigned int'

@@ -1,0 +1,58 @@
+`-FunctionDecl 0x138128758  line:1:12 kill_ok_by_cred 'int (struct task_struct *)' static
+  |-ParmVarDecl 0x138128648 <col:28, col:48> col:48 used t 'struct task_struct *'
+  `-CompoundStmt 0x138141900 <line:2:1, line:16:1>
+    |-DeclStmt 0x138140e08 <line:3:2, col:42>
+    | |-RecordDecl 0x138140a50 <col:8, col:15> col:15 struct cred
+    | `-VarDecl 0x138140bb8 <col:2, col:41> col:21 used cred 'const struct cred *' cinit
+    |   `-ImplicitCastExpr 0x138140dd8 <col:28, col:41> 'const struct cred *' <IntegralToPointer>
+    |     `-CallExpr 0x138140db8 <col:28, col:41> 'int'
+    |       `-ImplicitCastExpr 0x138140da0 <col:28> 'int (*)()' <FunctionToPointerDecay>
+    |         `-DeclRefExpr 0x138140d50 <col:28> 'int ()' Function 0x138140c98 'current_cred' 'int ()'
+    |-DeclStmt 0x1381410a0 <line:4:2, col:43>
+    | `-VarDecl 0x138140ea8 <col:2, col:42> col:21 used tcred 'const struct cred *' cinit
+    |   `-ImplicitCastExpr 0x138141088 <col:29, col:42> 'const struct cred *' <IntegralToPointer>
+    |     `-CallExpr 0x138141048 <col:29, col:42> 'int'
+    |       |-ImplicitCastExpr 0x138141030 <col:29> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x138140ff0 <col:29> 'int ()' Function 0x138140f38 '__task_cred' 'int ()'
+    |       `-ImplicitCastExpr 0x138141070 <col:41> 'struct task_struct *' <LValueToRValue>
+    |         `-DeclRefExpr 0x138141010 <col:41> 'struct task_struct *' lvalue ParmVar 0x138128648 't' 'struct task_struct *'
+    |-IfStmt 0x138141668 <line:6:2, line:10:10>
+    | |-BinaryOperator 0x138141618 <line:6:6, line:9:35> 'int' contains-errors '||'
+    | | |-BinaryOperator 0x1381414e8 <line:6:6, line:8:36> 'int' contains-errors '||'
+    | | | |-BinaryOperator 0x1381413b8 <line:6:6, line:7:35> 'int' contains-errors '||'
+    | | | | |-CallExpr 0x138141278 <line:6:6, col:36> '<dependent type>' contains-errors
+    | | | | | |-DeclRefExpr 0x138141198 <col:6> 'int ()' Function 0x1381410e0 'uid_eq' 'int ()'
+    | | | | | |-RecoveryExpr 0x1381411f0 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | | | | | `-DeclRefExpr 0x1381411b8 <col:13> 'const struct cred *' lvalue Var 0x138140bb8 'cred' 'const struct cred *'
+    | | | | | `-RecoveryExpr 0x138141250 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    | | | | |   `-DeclRefExpr 0x138141218 <col:25> 'const struct cred *' lvalue Var 0x138140ea8 'tcred' 'const struct cred *'
+    | | | | `-CallExpr 0x138141388 <line:7:6, col:35> '<dependent type>' contains-errors
+    | | | |   |-DeclRefExpr 0x1381412a8 <col:6> 'int ()' Function 0x1381410e0 'uid_eq' 'int ()'
+    | | | |   |-RecoveryExpr 0x138141300 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | | |   | `-DeclRefExpr 0x1381412c8 <col:13> 'const struct cred *' lvalue Var 0x138140bb8 'cred' 'const struct cred *'
+    | | | |   `-RecoveryExpr 0x138141360 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    | | | |     `-DeclRefExpr 0x138141328 <col:25> 'const struct cred *' lvalue Var 0x138140ea8 'tcred' 'const struct cred *'
+    | | | `-CallExpr 0x1381414b8 <line:8:6, col:36> '<dependent type>' contains-errors
+    | | |   |-DeclRefExpr 0x1381413d8 <col:6> 'int ()' Function 0x1381410e0 'uid_eq' 'int ()'
+    | | |   |-RecoveryExpr 0x138141430 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | | |   | `-DeclRefExpr 0x1381413f8 <col:13> 'const struct cred *' lvalue Var 0x138140bb8 'cred' 'const struct cred *'
+    | | |   `-RecoveryExpr 0x138141490 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    | | |     `-DeclRefExpr 0x138141458 <col:25> 'const struct cred *' lvalue Var 0x138140ea8 'tcred' 'const struct cred *'
+    | | `-CallExpr 0x1381415e8 <line:9:6, col:35> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x138141508 <col:6> 'int ()' Function 0x1381410e0 'uid_eq' 'int ()'
+    | |   |-RecoveryExpr 0x138141560 <col:13, col:19> '<dependent type>' contains-errors lvalue
+    | |   | `-DeclRefExpr 0x138141528 <col:13> 'const struct cred *' lvalue Var 0x138140bb8 'cred' 'const struct cred *'
+    | |   `-RecoveryExpr 0x1381415c0 <col:25, col:32> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x138141588 <col:25> 'const struct cred *' lvalue Var 0x138140ea8 'tcred' 'const struct cred *'
+    | `-ReturnStmt 0x138141658 <line:10:3, col:10>
+    |   `-IntegerLiteral 0x138141638 <col:10> 'int' 1
+    |-IfStmt 0x1381418b0 <line:12:2, line:13:10>
+    | |-CallExpr 0x138141850 <line:12:6, col:41> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x138141768 <col:6> 'int ()' Function 0x1381416b0 'ns_capable' 'int ()'
+    | | |-RecoveryExpr 0x1381417c0 <col:17, col:24> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x138141788 <col:17> 'const struct cred *' lvalue Var 0x138140ea8 'tcred' 'const struct cred *'
+    | | `-RecoveryExpr 0x138141830 <col:33> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1381418a0 <line:13:3, col:10>
+    |   `-IntegerLiteral 0x138141880 <col:10> 'int' 1
+    `-ReturnStmt 0x1381418f0 <line:15:2, col:9>
+      `-IntegerLiteral 0x1381418d0 <col:9> 'int' 0

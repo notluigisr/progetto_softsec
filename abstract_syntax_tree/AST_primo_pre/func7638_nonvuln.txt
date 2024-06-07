@@ -1,0 +1,38 @@
+`-FunctionDecl 0x139140a00  line:1:1 xfs_inode_item_unpin 'int (struct xfs_log_item *, int)'
+  |-ParmVarDecl 0x139128648 <line:2:2, col:23> col:23 used lip 'struct xfs_log_item *'
+  |-ParmVarDecl 0x1391286c8 <line:3:2, col:8> col:8 remove 'int'
+  `-CompoundStmt 0x1391417b0 <line:4:1, line:11:1>
+    |-DeclStmt 0x139140f08 <line:5:2, col:51>
+    | |-RecordDecl 0x139140b00 <col:2, col:9> col:9 struct xfs_inode
+    | `-VarDecl 0x139140c68 <col:2, col:42> col:20 used ip 'struct xfs_inode *' cinit
+    |   `-RecoveryExpr 0x139140ec8 <col:25, col:42> '<dependent type>' contains-errors lvalue
+    |     `-CallExpr 0x139140e88 <col:25, col:39> 'int'
+    |       |-ImplicitCastExpr 0x139140e70 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x139140e00 <col:25> 'int ()' Function 0x139140d48 'INODE_ITEM' 'int ()'
+    |       `-ImplicitCastExpr 0x139140eb0 <col:36> 'struct xfs_log_item *' <LValueToRValue>
+    |         `-DeclRefExpr 0x139140e20 <col:36> 'struct xfs_log_item *' lvalue ParmVar 0x139128648 'lip' 'struct xfs_log_item *'
+    |-CallExpr 0x1391410a8 <line:7:2, col:36> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139141000 <col:2> 'int ()' Function 0x139140f48 'trace_xfs_inode_unpin' 'int ()'
+    | |-DeclRefExpr 0x139141020 <col:24> 'struct xfs_inode *' contains-errors lvalue Var 0x139140c68 'ip' 'struct xfs_inode *'
+    | `-RecoveryExpr 0x139141088 <col:28> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x1391413b8 <line:8:2, col:41> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1391411b8 <col:2> 'int ()' Function 0x139141100 'ASSERT' 'int ()'
+    | `-BinaryOperator 0x139141398 <col:9, col:40> 'int' contains-errors '>'
+    |   |-CallExpr 0x139141350 <col:9, col:36> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x1391412b8 <col:9> 'int ()' Function 0x139141200 'atomic_read' 'int ()'
+    |   | `-UnaryOperator 0x139141338 <col:21, col:26> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   |   `-RecoveryExpr 0x139141310 <col:22, col:26> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x1391412d8 <col:22> 'struct xfs_inode *' contains-errors lvalue Var 0x139140c68 'ip' 'struct xfs_inode *'
+    |   `-IntegerLiteral 0x139141378 <col:40> 'int' 0
+    `-IfStmt 0x139141790 <line:9:2, line:10:46>
+      |-CallExpr 0x139141558 <line:9:6, col:41> '<dependent type>' contains-errors
+      | |-DeclRefExpr 0x1391414c0 <col:6> 'int ()' Function 0x139141408 'atomic_dec_and_test' 'int ()'
+      | `-UnaryOperator 0x139141540 <col:26, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |   `-RecoveryExpr 0x139141518 <col:27, col:31> '<dependent type>' contains-errors lvalue
+      |     `-DeclRefExpr 0x1391414e0 <col:27> 'struct xfs_inode *' contains-errors lvalue Var 0x139140c68 'ip' 'struct xfs_inode *'
+      `-CallExpr 0x139141760 <line:10:3, col:46> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x139141660 <col:3> 'int ()' Function 0x1391415a8 'wake_up_bit' 'int ()'
+        |-UnaryOperator 0x1391416e0 <col:15, col:20> '<dependent type>' contains-errors prefix '&' cannot overflow
+        | `-RecoveryExpr 0x1391416b8 <col:16, col:20> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x139141680 <col:16> 'struct xfs_inode *' contains-errors lvalue Var 0x139140c68 'ip' 'struct xfs_inode *'
+        `-RecoveryExpr 0x139141740 <col:29> '<dependent type>' contains-errors lvalue

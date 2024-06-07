@@ -1,0 +1,66 @@
+`-FunctionDecl 0x129944d48  line:1:12 cuse_channel_release 'int (struct inode *, struct file *)' static
+  |-ParmVarDecl 0x129928648 <col:33, col:47> col:47 used inode 'struct inode *'
+  |-ParmVarDecl 0x129944c28 <col:54, col:67> col:67 used file 'struct file *'
+  `-CompoundStmt 0x129947108 <line:2:1, line:23:1>
+    |-DeclStmt 0x129945098 <line:3:2, col:43>
+    | |-RecordDecl 0x129944e48 <col:2, col:9> col:9 struct fuse_dev
+    | `-VarDecl 0x129944fb8 <col:2, col:31> col:19 used fud 'struct fuse_dev *' cinit
+    |   `-RecoveryExpr 0x129945058 <col:25, col:31> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129945020 <col:25> 'struct file *' lvalue ParmVar 0x129944c28 'file' 'struct file *'
+    |-DeclStmt 0x129945470 <line:4:2, col:42>
+    | |-RecordDecl 0x1299450b0 <col:2, col:9> col:9 struct cuse_conn
+    | `-VarDecl 0x129945218 <col:2, col:41> col:20 used cc 'struct cuse_conn *' cinit
+    |   `-CallExpr 0x129945430 <col:25, col:41> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x1299453b0 <col:25> 'int ()' Function 0x1299452f8 'fc_to_cc' 'int ()'
+    |     `-RecoveryExpr 0x129945408 <col:34, col:39> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x1299453d0 <col:34> 'struct fuse_dev *' contains-errors lvalue Var 0x129944fb8 'fud' 'struct fuse_dev *'
+    |-DeclStmt 0x129945508 <line:5:2, col:8>
+    | `-VarDecl 0x1299454a0 <col:2, col:6> col:6 used rc 'int'
+    |-CallExpr 0x129945700 <line:8:2, col:23> 'int'
+    | |-ImplicitCastExpr 0x1299456e8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x129945600 <col:2> 'int ()' Function 0x129945548 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1299456d0 <col:13, col:14> 'int (*)()' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x129945678 <col:14> 'int ()' Function 0x129945548 'mutex_lock' 'int ()'
+    |-CallExpr 0x1299458a0 <line:9:2, col:25> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x129945808 <col:2> 'int ()' Function 0x129945750 'list_del_init' 'int ()'
+    | `-UnaryOperator 0x129945888 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x129945860 <col:17, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129945828 <col:17> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    |-CallExpr 0x129945a70 <line:10:2, col:25> 'int'
+    | |-ImplicitCastExpr 0x129945a58 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1299459a8 <col:2> 'int ()' Function 0x1299458f0 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x129945a40 <col:15, col:16> 'int (*)()' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x129945a20 <col:16> 'int ()' Function 0x129945548 'mutex_lock' 'int ()'
+    |-IfStmt 0x129946a88 <line:13:2, line:14:28>
+    | |-RecoveryExpr 0x129945ad0 <line:13:6, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x129945a98 <col:6> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    | `-CallExpr 0x129946a60 <line:14:3, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x129945bd8 <col:3> 'int ()' Function 0x129945b20 'device_unregister' 'int ()'
+    |   `-RecoveryExpr 0x129946a38 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x129946a00 <col:21> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    |-IfStmt 0x129946ea8 <line:15:2, line:18:2>
+    | |-RecoveryExpr 0x129946ae0 <line:15:6, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x129946aa8 <col:6> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    | `-CompoundStmt 0x129946e88 <col:16, line:18:2>
+    |   |-CallExpr 0x129946cd0 <line:16:3, col:44> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x129946be8 <col:3> 'int ()' Function 0x129946b30 'unregister_chrdev_region' 'int ()'
+    |   | |-CXXDependentScopeMemberExpr 0x129946c68 <col:28, col:38> '<dependent type>' contains-errors lvalue ->dev
+    |   | | `-RecoveryExpr 0x129946c40 <col:28, col:32> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x129946c08 <col:28> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    |   | `-IntegerLiteral 0x129946cb0 <col:43> 'int' 1
+    |   `-CallExpr 0x129946e60 <line:17:3, col:20> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x129946de0 <col:3> 'int ()' Function 0x129946d28 'cdev_del' 'int ()'
+    |     `-RecoveryExpr 0x129946e38 <col:12, col:16> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x129946e00 <col:12> 'struct cuse_conn *' contains-errors lvalue Var 0x129945218 'cc' 'struct cuse_conn *'
+    |-BinaryOperator 0x1299470a0 <line:20:2, col:35> 'int' '='
+    | |-DeclRefExpr 0x129946ec8 <col:2> 'int' lvalue Var 0x1299454a0 'rc' 'int'
+    | `-CallExpr 0x129947040 <col:7, col:35> 'int'
+    |   |-ImplicitCastExpr 0x129947028 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x129946fc8 <col:7> 'int ()' Function 0x129946f10 'fuse_dev_release' 'int ()'
+    |   |-ImplicitCastExpr 0x129947070 <col:24> 'struct inode *' <LValueToRValue>
+    |   | `-DeclRefExpr 0x129946fe8 <col:24> 'struct inode *' lvalue ParmVar 0x129928648 'inode' 'struct inode *'
+    |   `-ImplicitCastExpr 0x129947088 <col:31> 'struct file *' <LValueToRValue>
+    |     `-DeclRefExpr 0x129947008 <col:31> 'struct file *' lvalue ParmVar 0x129944c28 'file' 'struct file *'
+    `-ReturnStmt 0x1299470f8 <line:22:2, col:9>
+      `-ImplicitCastExpr 0x1299470e0 <col:9> 'int' <LValueToRValue>
+        `-DeclRefExpr 0x1299470c0 <col:9> 'int' lvalue Var 0x1299454a0 'rc' 'int'

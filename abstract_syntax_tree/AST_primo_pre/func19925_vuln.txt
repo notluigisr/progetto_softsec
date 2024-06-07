@@ -1,0 +1,25 @@
+`-FunctionDecl 0x13980e350  line:2:13 io_disable_sqo_submit 'void (struct io_ring_ctx *)' static
+  |-ParmVarDecl 0x13980e248 <col:35, col:55> col:55 used ctx 'struct io_ring_ctx *'
+  `-CompoundStmt 0x139826c98 <line:3:1, line:10:32>
+    |-CallExpr 0x139826808 <line:4:2, col:29> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x139826770 <col:2> 'int ()' Function 0x1398266b8 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x1398267f0 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x1398267c8 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x139826790 <col:14> 'struct io_ring_ctx *' lvalue ParmVar 0x13980e248 'ctx' 'struct io_ring_ctx *'
+    |-BinaryOperator 0x1398268b0 <line:5:2, col:18> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x139826868 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x139826830 <col:2> 'struct io_ring_ctx *' lvalue ParmVar 0x13980e248 'ctx' 'struct io_ring_ctx *'
+    | `-IntegerLiteral 0x139826890 <col:18> 'int' 1
+    |-CallExpr 0x139826a48 <line:6:2, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1398269b0 <col:2> 'int ()' Function 0x1398268f8 'mutex_unlock' 'int ()'
+    | `-UnaryOperator 0x139826a30 <col:15, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x139826a08 <col:16, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1398269d0 <col:16> 'struct io_ring_ctx *' lvalue ParmVar 0x13980e248 'ctx' 'struct io_ring_ctx *'
+    `-IfStmt 0x139826c78 <line:9:2, line:10:30>
+      |-RecoveryExpr 0x139826aa8 <line:9:6, col:11> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x139826a70 <col:6> 'struct io_ring_ctx *' lvalue ParmVar 0x13980e248 'ctx' 'struct io_ring_ctx *'
+      `-CallExpr 0x139826c38 <line:10:3, col:30> 'int'
+        |-ImplicitCastExpr 0x139826c20 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x139826bb0 <col:3> 'int ()' Function 0x139826af8 'io_ring_set_wakeup_flag' 'int ()'
+        `-ImplicitCastExpr 0x139826c60 <col:27> 'struct io_ring_ctx *' <LValueToRValue>
+          `-DeclRefExpr 0x139826bd0 <col:27> 'struct io_ring_ctx *' lvalue ParmVar 0x13980e248 'ctx' 'struct io_ring_ctx *'

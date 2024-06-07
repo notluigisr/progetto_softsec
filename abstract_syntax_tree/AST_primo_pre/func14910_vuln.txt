@@ -1,0 +1,33 @@
+`-FunctionDecl 0x14f03af50  line:1:13 sas_eh_finish_cmd 'void (struct scsi_cmnd *)' static
+  |-ParmVarDecl 0x14f03ae48 <col:31, col:49> col:49 used cmd 'struct scsi_cmnd *'
+  `-CompoundStmt 0x14f040db0 <line:2:1, line:11:1>
+    |-DeclStmt 0x14f040658 <line:3:2, col:67>
+    | |-RecordDecl 0x14f040248 <col:2, col:9> col:9 struct sas_ha_struct
+    | `-VarDecl 0x14f0403b8 <col:2, col:66> col:24 used sas_ha 'struct sas_ha_struct *' cinit
+    |   `-CallExpr 0x14f040618 <col:33, col:66> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14f040550 <col:33> 'int ()' Function 0x14f040498 'SHOST_TO_SAS_HA' 'int ()'
+    |     `-CXXDependentScopeMemberExpr 0x14f0405d0 <col:49, col:62> '<dependent type>' contains-errors lvalue ->host
+    |       `-RecoveryExpr 0x14f0405a8 <col:49, col:54> '<dependent type>' contains-errors lvalue
+    |         `-DeclRefExpr 0x14f040570 <col:49> 'struct scsi_cmnd *' lvalue ParmVar 0x14f03ae48 'cmd' 'struct scsi_cmnd *'
+    |-DeclStmt 0x14f040a18 <line:4:2, col:42>
+    | |-RecordDecl 0x14f040670 <col:2, col:9> col:9 struct sas_task
+    | `-VarDecl 0x14f0407d8 <col:2, col:41> col:19 used task 'struct sas_task *' cinit
+    |   `-ImplicitCastExpr 0x14f0409e8 <col:26, col:41> 'struct sas_task *' <IntegralToPointer>
+    |     `-CallExpr 0x14f0409a8 <col:26, col:41> 'int'
+    |       |-ImplicitCastExpr 0x14f040990 <col:26> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x14f040920 <col:26> 'int ()' Function 0x14f040868 'TO_SAS_TASK' 'int ()'
+    |       `-ImplicitCastExpr 0x14f0409d0 <col:38> 'struct scsi_cmnd *' <LValueToRValue>
+    |         `-DeclRefExpr 0x14f040940 <col:38> 'struct scsi_cmnd *' lvalue ParmVar 0x14f03ae48 'cmd' 'struct scsi_cmnd *'
+    |-CallExpr 0x14f040b88 <line:7:2, col:24> 'int'
+    | |-ImplicitCastExpr 0x14f040b70 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x14f040b10 <col:2> 'int ()' Function 0x14f040a58 'sas_end_task' 'int ()'
+    | |-ImplicitCastExpr 0x14f040bb8 <col:15> 'struct scsi_cmnd *' <LValueToRValue>
+    | | `-DeclRefExpr 0x14f040b30 <col:15> 'struct scsi_cmnd *' lvalue ParmVar 0x14f03ae48 'cmd' 'struct scsi_cmnd *'
+    | `-ImplicitCastExpr 0x14f040bd0 <col:20> 'struct sas_task *' <LValueToRValue>
+    |   `-DeclRefExpr 0x14f040b50 <col:20> 'struct sas_task *' lvalue Var 0x14f0407d8 'task' 'struct sas_task *'
+    `-CallExpr 0x14f040d80 <line:10:2, col:44> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x14f040cc8 <col:2> 'int ()' Function 0x14f040c10 'scsi_eh_finish_cmd' 'int ()'
+      |-DeclRefExpr 0x14f040ce8 <col:21> 'struct scsi_cmnd *' lvalue ParmVar 0x14f03ae48 'cmd' 'struct scsi_cmnd *'
+      `-UnaryOperator 0x14f040d68 <col:26, col:35> '<dependent type>' contains-errors prefix '&' cannot overflow
+        `-RecoveryExpr 0x14f040d40 <col:27, col:35> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x14f040d08 <col:27> 'struct sas_ha_struct *' contains-errors lvalue Var 0x14f0403b8 'sas_ha' 'struct sas_ha_struct *'

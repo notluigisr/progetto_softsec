@@ -1,0 +1,48 @@
+`-FunctionDecl 0x1351283a8  line:1:12 invalid wrap_nettle_hash_fast 'int (int, const void *, int, void *)' static
+  |-ParmVarDecl 0x1351280f0 <col:34, col:60> col:60 invalid algo 'int'
+  |-ParmVarDecl 0x1351281a8 <line:2:6, col:18> col:18 used text 'const void *'
+  |-ParmVarDecl 0x135128228 <col:24, col:31> col:31 invalid text_size 'int'
+  |-ParmVarDecl 0x1351282a8 <line:3:6, col:12> col:12 used digest 'void *'
+  `-CompoundStmt 0x135809260 <line:4:1, line:16:1>
+    |-DeclStmt 0x135808a28 <line:5:2, col:28>
+    | |-RecordDecl 0x135128470 <col:2, col:9> col:9 struct nettle_hash_ctx
+    | `-VarDecl 0x135128568 <col:2, col:25> col:25 referenced invalid ctx 'struct nettle_hash_ctx'
+    |-DeclStmt 0x135808ac0 <line:6:2, col:9>
+    | `-VarDecl 0x135808a58 <col:2, col:6> col:6 used ret 'int'
+    |-BinaryOperator 0x135808cf8 <line:8:2, col:28> 'int' contains-errors '='
+    | |-DeclRefExpr 0x135808ad8 <col:2> 'int' lvalue Var 0x135808a58 'ret' 'int'
+    | `-CallExpr 0x135808cc8 <col:8, col:28> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x135808c50 <col:8> 'int ()' Function 0x135808b98 '_ctx_init' 'int ()'
+    |   |-RecoveryExpr 0x135808c70 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-UnaryOperator 0x135808cb0 <col:24, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x135808c90 <col:25> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x135808f48 <line:9:2, line:10:31>
+    | |-BinaryOperator 0x135808d70 <line:9:6, col:12> 'int' '<'
+    | | |-ImplicitCastExpr 0x135808d58 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x135808d18 <col:6> 'int' lvalue Var 0x135808a58 'ret' 'int'
+    | | `-IntegerLiteral 0x135808d38 <col:12> 'int' 0
+    | `-ReturnStmt 0x135808f38 <line:10:3, col:31>
+    |   `-CallExpr 0x135808ef8 <col:10, col:31> 'int'
+    |     |-ImplicitCastExpr 0x135808ee0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x135808e70 <col:10> 'int ()' Function 0x135808db8 'gnutls_assert_val' 'int ()'
+    |     `-ImplicitCastExpr 0x135808f20 <col:28> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x135808e90 <col:28> 'int' lvalue Var 0x135808a58 'ret' 'int'
+    |-CallExpr 0x135809070 <line:12:2, col:34> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x135808fb0 <col:2, col:6> '<dependent type>' contains-errors lvalue .update
+    | | `-RecoveryExpr 0x135808f88 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x135808f68 <col:2> 'struct nettle_hash_ctx' lvalue Var 0x135128568 'ctx' 'struct nettle_hash_ctx'
+    | |-UnaryOperator 0x135809018 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x135808ff8 <col:14> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x135809030 <col:19> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x135809050 <col:30> 'const void *' lvalue ParmVar 0x1351281a8 'text' 'const void *'
+    |-CallExpr 0x1358091f8 <line:13:2, col:37> '<dependent type>' contains-errors
+    | |-CXXDependentScopeMemberExpr 0x1358090f0 <col:2, col:6> '<dependent type>' contains-errors lvalue .digest
+    | | `-RecoveryExpr 0x1358090c8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1358090a8 <col:2> 'struct nettle_hash_ctx' lvalue Var 0x135128568 'ctx' 'struct nettle_hash_ctx'
+    | |-UnaryOperator 0x135809158 <col:13, col:14> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x135809138 <col:14> '<dependent type>' contains-errors lvalue
+    | |-CXXDependentScopeMemberExpr 0x135809190 <col:19, col:23> '<dependent type>' contains-errors lvalue .length
+    | | `-RecoveryExpr 0x135809170 <col:19> '<dependent type>' contains-errors lvalue
+    | `-DeclRefExpr 0x1358091d8 <col:31> 'void *' lvalue ParmVar 0x1351282a8 'digest' 'void *'
+    `-ReturnStmt 0x135809250 <line:15:2, col:9>
+      `-IntegerLiteral 0x135809230 <col:9> 'int' 0

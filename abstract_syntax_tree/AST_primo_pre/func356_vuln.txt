@@ -1,0 +1,36 @@
+`-FunctionDecl 0x125940d88  line:1:1 invalid glue 'int (int (*)(), int)'
+  |-ParmVarDecl 0x125928180 <col:6, <invalid sloc>> col:6 invalid glue 'int (*)()'
+  |-ParmVarDecl 0x125928200 <col:53> col:53 _8 'int'
+  `-CompoundStmt 0x1259415d0 <line:5:1, line:21:1>
+    |-DeclStmt 0x125940f58 <line:6:5, col:12>
+    | |-VarDecl 0x125940e58 <col:5, col:9> col:9 used x 'int'
+    | `-VarDecl 0x125940ed8 <col:5, col:11> col:11 used y 'int'
+    `-ForStmt 0x125941598 <line:10:5, line:20:5>
+      |-BinaryOperator 0x125940fe0 <line:10:10, col:14> 'int' '='
+      | |-DeclRefExpr 0x125940fa0 <col:10> 'int' lvalue Var 0x125940ed8 'y' 'int'
+      | `-IntegerLiteral 0x125940fc0 <col:14> 'int' 0
+      |-<<<NULL>>>
+      |-BinaryOperator 0x125941078 <col:17, col:21> 'int' contains-errors '<'
+      | |-DeclRefExpr 0x125941000 <col:17> 'int' lvalue Var 0x125940ed8 'y' 'int'
+      | `-RecoveryExpr 0x125941058 <col:21> '<dependent type>' contains-errors lvalue
+      |-UnaryOperator 0x1259410b8 <col:32, col:33> 'int' postfix '++'
+      | `-DeclRefExpr 0x125941098 <col:32> 'int' lvalue Var 0x125940ed8 'y' 'int'
+      `-CompoundStmt 0x125941580 <col:37, line:20:5>
+        `-ForStmt 0x125941548 <line:11:9, line:17:9>
+          |-BinaryOperator 0x125941110 <line:11:14, col:18> 'int' '='
+          | |-DeclRefExpr 0x1259410d0 <col:14> 'int' lvalue Var 0x125940e58 'x' 'int'
+          | `-IntegerLiteral 0x1259410f0 <col:18> 'int' 0
+          |-<<<NULL>>>
+          |-BinaryOperator 0x1259411a8 <col:21, col:25> 'int' contains-errors '<'
+          | |-DeclRefExpr 0x125941130 <col:21> 'int' lvalue Var 0x125940e58 'x' 'int'
+          | `-RecoveryExpr 0x125941188 <col:25> '<dependent type>' contains-errors lvalue
+          |-UnaryOperator 0x1259411e8 <col:35, col:36> 'int' postfix '++'
+          | `-DeclRefExpr 0x1259411c8 <col:35> 'int' lvalue Var 0x125940e58 'x' 'int'
+          `-CompoundStmt 0x125941530 <col:40, line:17:9>
+            `-CallExpr 0x1259414c0 <line:13:13, col:28> '<dependent type>' contains-errors
+              |-DeclRefExpr 0x125941370 <col:13> 'int ()' Function 0x1259412b8 'ROP_OP' 'int ()'
+              |-UnaryOperator 0x125941458 <col:20, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+              | `-RecoveryExpr 0x125941438 <col:21> '<dependent type>' contains-errors lvalue
+              `-UnaryOperator 0x1259414a8 <col:24, col:25> '<dependent type>' contains-errors prefix '*' cannot overflow
+                `-ImplicitCastExpr 0x125941490 <col:25> '<dependent type>' contains-errors <LValueToRValue>
+                  `-RecoveryExpr 0x125941470 <col:25> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,60 @@
+`-FunctionDecl 0x15600e038  line:1:1 invalid recursive_revoke 'int (int *, int, int, int, int)'
+  |-ParmVarDecl 0x15600dd28 <col:18, col:23> col:23 referenced invalid acl 'int *'
+  |-ParmVarDecl 0x15600dda8 <line:2:6, col:10> col:10 invalid grantee 'int'
+  |-ParmVarDecl 0x15600de28 <line:3:6, col:14> col:14 referenced invalid revoke_privs 'int'
+  |-ParmVarDecl 0x15600dea8 <line:4:6, col:10> col:10 invalid ownerId 'int'
+  |-ParmVarDecl 0x15600df28 <line:5:6, col:19> col:19 invalid behavior 'int'
+  `-CompoundStmt 0x156029488 <line:6:1, line:60:1>
+    |-DeclStmt 0x15600e238 <line:9:2, line:10:8>
+    | |-VarDecl 0x15600e138 <line:9:2, col:8> col:8 used i 'int'
+    | `-VarDecl 0x15600e1b8 <col:2, line:10:5> col:5 used num 'int'
+    |-CallExpr 0x156027400 <line:12:2, col:15> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x15600e3b0 <col:2> 'int ()' Function 0x15600e2f8 'check_acl' 'int ()'
+    | `-RecoveryExpr 0x15600e3d0 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1560274b8 <line:15:2, line:16:10>
+    | |-BinaryOperator 0x156027468 <line:15:6, col:17> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x156027428 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x156027448 <col:17> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x1560274a8 <line:16:3, col:10>
+    |   `-RecoveryExpr 0x156027488 <col:10> '<dependent type>' contains-errors lvalue
+    |-CompoundAssignOperator 0x156027a10 <line:22:2, col:48> '<dependent type>' contains-errors '&=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x156027800 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1560277e0 <col:2> 'int' lvalue ParmVar 0x15600de28 'revoke_privs' 'int'
+    | `-UnaryOperator 0x1560279f8 <col:18, col:48> '<dependent type>' contains-errors prefix '~' cannot overflow
+    |   `-CallExpr 0x1560279d0 <col:19, col:48> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x156027908 <col:19> 'int ()' Function 0x156027850 'ACL_OPTION_TO_PRIVS' 'int ()'
+    |     `-RecoveryExpr 0x1560279b0 <col:39> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x156027b08 <line:23:2, line:24:10>
+    | |-BinaryOperator 0x156027ab8 <line:23:6, col:22> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x156027a40 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-RecoveryExpr 0x156027a98 <col:22> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x156027af8 <line:24:3, col:10>
+    |   `-RecoveryExpr 0x156027ad8 <col:10> '<dependent type>' contains-errors lvalue
+    |-LabelStmt 0x156027d00 <line:26:1, line:27:19> 'restart'
+    | `-BinaryOperator 0x156027c90 <col:2, col:19> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x156027b28 <col:2> 'int' lvalue Var 0x15600e1b8 'num' 'int'
+    |   `-CallExpr 0x156027c68 <col:8, col:19> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x156027c28 <col:8> 'int ()' Function 0x156027b70 'ACL_NUM' 'int ()'
+    |     `-RecoveryExpr 0x156027c48 <col:16> '<dependent type>' contains-errors lvalue
+    |-ForStmt 0x156029420 <line:29:2, line:57:2>
+    | |-BinaryOperator 0x156027ea8 <line:29:7, col:11> 'int' '='
+    | | |-DeclRefExpr 0x156027e68 <col:7> 'int' lvalue Var 0x15600e138 'i' 'int'
+    | | `-IntegerLiteral 0x156027e88 <col:11> 'int' 0
+    | |-<<<NULL>>>
+    | |-BinaryOperator 0x156027f38 <col:14, col:18> 'int' '<'
+    | | |-ImplicitCastExpr 0x156027f08 <col:14> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x156027ec8 <col:14> 'int' lvalue Var 0x15600e138 'i' 'int'
+    | | `-ImplicitCastExpr 0x156027f20 <col:18> 'int' <LValueToRValue>
+    | |   `-DeclRefExpr 0x156027ee8 <col:18> 'int' lvalue Var 0x15600e1b8 'num' 'int'
+    | |-UnaryOperator 0x156027f78 <col:23, col:24> 'int' postfix '++'
+    | | `-DeclRefExpr 0x156027f58 <col:23> 'int' lvalue Var 0x15600e138 'i' 'int'
+    | `-CompoundStmt 0x156029408 <line:30:2, line:57:2>
+    |   `-IfStmt 0x1560293e8 <line:31:3, line:56:3>
+    |     |-RecoveryExpr 0x156028130 <line:31:7, line:32:53> '_Bool' contains-errors
+    |     `-CompoundStmt 0x1560293c8 <line:33:3, line:56:3>
+    |       |-CallExpr 0x156029340 <line:52:4, col:13> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x156029300 <col:4> 'int ()' Function 0x156029248 'pfree' 'int ()'
+    |       | `-RecoveryExpr 0x156029320 <col:10> '<dependent type>' contains-errors lvalue
+    |       `-GotoStmt 0x1560293b0 <line:55:4, col:9> 'restart' 0x156027cb0
+    `-ReturnStmt 0x156029478 <line:59:2, col:9>
+      `-RecoveryExpr 0x156029458 <col:9> '<dependent type>' contains-errors lvalue

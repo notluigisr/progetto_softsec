@@ -1,0 +1,61 @@
+`-FunctionDecl 0x127826938  line:1:1 control_notify_input 'int (struct client *, struct window_pane *, struct evbuffer *)'
+  |-ParmVarDecl 0x12780e248 <col:22, col:37> col:37 used c 'struct client *'
+  |-ParmVarDecl 0x127826628 <col:40, col:60> col:60 used wp 'struct window_pane *'
+  |-ParmVarDecl 0x1278267f8 <line:2:5, col:22> col:22 used input 'struct evbuffer *'
+  `-CompoundStmt 0x127829b38 <line:3:1, line:28:1>
+    |-DeclStmt 0x127826ad8 <line:4:2, col:14>
+    | `-VarDecl 0x127826a70 <col:2, col:11> col:11 used buf 'char *'
+    |-UnaryExprOrTypeTraitExpr 0x127826b48 <line:5:2, col:11> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x127826b28 <col:11> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x127826c60 <line:6:2, col:26>
+    | `-VarDecl 0x127826bf8 <col:2, col:19> col:19 used message 'struct evbuffer *'
+    |-IfStmt 0x127826d60 <line:9:2, line:10:6>
+    | |-BinaryOperator 0x127826d30 <line:9:6, col:20> 'int' contains-errors '=='
+    | | |-RecoveryExpr 0x127826cb0 <col:6, col:9> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x127826c78 <col:6> 'struct client *' lvalue ParmVar 0x12780e248 'c' 'struct client *'
+    | | `-RecoveryExpr 0x127826d10 <col:20> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x127826d50 <line:10:6>
+    |-BinaryOperator 0x127826f90 <line:12:2, col:27> 'char *' '='
+    | |-DeclRefExpr 0x127826d80 <col:2> 'char *' lvalue Var 0x127826a70 'buf' 'char *'
+    | `-ImplicitCastExpr 0x127826f78 <col:8, col:27> 'char *' <IntegralToPointer>
+    |   `-CallExpr 0x127826f38 <col:8, col:27> 'int'
+    |     |-ImplicitCastExpr 0x127826f20 <col:8> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x127826eb0 <col:8> 'int ()' Function 0x127826df8 'EVBUFFER_DATA' 'int ()'
+    |     `-ImplicitCastExpr 0x127826f60 <col:22> 'struct evbuffer *' <LValueToRValue>
+    |       `-DeclRefExpr 0x127826ed0 <col:22> 'struct evbuffer *' lvalue ParmVar 0x1278267f8 'input' 'struct evbuffer *'
+    `-IfStmt 0x127829b18 <line:16:2, line:27:2>
+      |-BinaryOperator 0x1278273d0 <line:16:6, col:66> 'int' contains-errors '!='
+      | |-CallExpr 0x127827348 <col:6, col:61> '<dependent type>' contains-errors
+      | | |-DeclRefExpr 0x127827208 <col:6> 'int ()' Function 0x127827150 'winlink_find_by_window' 'int ()'
+      | | |-UnaryOperator 0x1278272d0 <col:29, col:42> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | | | `-CXXDependentScopeMemberExpr 0x127827288 <col:30, col:42> '<dependent type>' contains-errors lvalue ->windows
+      | | |   `-RecoveryExpr 0x127827260 <col:30, col:33> '<dependent type>' contains-errors lvalue
+      | | |     `-DeclRefExpr 0x127827228 <col:30> 'struct client *' lvalue ParmVar 0x12780e248 'c' 'struct client *'
+      | | `-RecoveryExpr 0x127827320 <col:51, col:55> '<dependent type>' contains-errors lvalue
+      | |   `-DeclRefExpr 0x1278272e8 <col:51> 'struct window_pane *' lvalue ParmVar 0x127826628 'wp' 'struct window_pane *'
+      | `-RecoveryExpr 0x1278273b0 <col:66> '<dependent type>' contains-errors lvalue
+      `-CompoundStmt 0x127829ae8 <col:72, line:27:2>
+        |-BinaryOperator 0x127827560 <line:17:3, col:26> 'struct evbuffer *' '='
+        | |-DeclRefExpr 0x1278273f0 <col:3> 'struct evbuffer *' lvalue Var 0x127826bf8 'message' 'struct evbuffer *'
+        | `-ImplicitCastExpr 0x127827548 <col:13, col:26> 'struct evbuffer *' <IntegralToPointer>
+        |   `-CallExpr 0x127827528 <col:13, col:26> 'int'
+        |     `-ImplicitCastExpr 0x127827510 <col:13> 'int (*)()' <FunctionToPointerDecay>
+        |       `-DeclRefExpr 0x1278274f0 <col:13> 'int ()' Function 0x127827438 'evbuffer_new' 'int ()'
+        |-CallExpr 0x1278295c0 <line:18:3, col:45> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x1278294b8 <col:3> 'int ()' Function 0x127829400 'evbuffer_add_printf' 'int ()'
+        | |-DeclRefExpr 0x1278294d8 <col:23> 'struct evbuffer *' lvalue Var 0x127826bf8 'message' 'struct evbuffer *'
+        | |-StringLiteral 0x127829540 <col:32> 'char[4]' lvalue "STR"
+        | `-RecoveryExpr 0x127829598 <col:39, col:43> '<dependent type>' contains-errors lvalue
+        |   `-DeclRefExpr 0x127829560 <col:39> 'struct window_pane *' lvalue ParmVar 0x127826628 'wp' 'struct window_pane *'
+        |-CallExpr 0x127829910 <line:25:3, col:34> 'int'
+        | |-ImplicitCastExpr 0x1278298f8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x127829898 <col:3> 'int ()' Function 0x1278297e0 'control_write_buffer' 'int ()'
+        | |-ImplicitCastExpr 0x127829940 <col:24> 'struct client *' <LValueToRValue>
+        | | `-DeclRefExpr 0x1278298b8 <col:24> 'struct client *' lvalue ParmVar 0x12780e248 'c' 'struct client *'
+        | `-ImplicitCastExpr 0x127829958 <col:27> 'struct evbuffer *' <LValueToRValue>
+        |   `-DeclRefExpr 0x1278298d8 <col:27> 'struct evbuffer *' lvalue Var 0x127826bf8 'message' 'struct evbuffer *'
+        `-CallExpr 0x127829aa8 <line:26:3, col:24> 'int'
+          |-ImplicitCastExpr 0x127829a90 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x127829a50 <col:3> 'int ()' Function 0x127829998 'evbuffer_free' 'int ()'
+          `-ImplicitCastExpr 0x127829ad0 <col:17> 'struct evbuffer *' <LValueToRValue>
+            `-DeclRefExpr 0x127829a70 <col:17> 'struct evbuffer *' lvalue Var 0x127826bf8 'message' 'struct evbuffer *'

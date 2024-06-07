@@ -1,0 +1,56 @@
+`-FunctionDecl 0x15c140f10  line:1:13 invalid process_blob 'void (struct rev_info *, struct blob *, int, struct strbuf *, const char *, void *)' static
+  |-ParmVarDecl 0x15c128648 <col:26, col:43> col:43 used revs 'struct rev_info *'
+  |-ParmVarDecl 0x15c140a28 <line:2:5, col:18> col:18 used blob 'struct blob *'
+  |-ParmVarDecl 0x15c140ac0 <line:3:5, col:20> col:20 referenced invalid show 'int'
+  |-ParmVarDecl 0x15c140c98 <line:4:5, col:20> col:20 used path 'struct strbuf *'
+  |-ParmVarDecl 0x15c140d18 <line:5:5, col:17> col:17 used name 'const char *'
+  |-ParmVarDecl 0x15c140d98 <line:6:5, col:11> col:11 used cb_data 'void *'
+  `-CompoundStmt 0x15c146d70 <line:7:1, line:23:1>
+    |-DeclStmt 0x15c141250 <line:8:2, col:36>
+    | |-RecordDecl 0x15c140fe8 <col:2, col:9> col:9 struct object
+    | `-VarDecl 0x15c141158 <col:2, col:30> col:17 used obj 'struct object *' cinit
+    |   `-UnaryOperator 0x15c141220 <col:23, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-RecoveryExpr 0x15c1411f8 <col:24, col:30> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x15c1411c0 <col:24> 'struct blob *' lvalue ParmVar 0x15c140a28 'blob' 'struct blob *'
+    |-UnaryExprOrTypeTraitExpr 0x15c1412c0 <line:9:2, col:9> 'unsigned long' contains-errors sizeof
+    | `-RecoveryExpr 0x15c1412a0 <col:9> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x15c141380 <line:11:2, line:12:3>
+    | |-UnaryOperator 0x15c141358 <line:11:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c141340 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x15c141318 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x15c1412e0 <col:7> 'struct rev_info *' lvalue ParmVar 0x15c128648 'revs' 'struct rev_info *'
+    | `-ReturnStmt 0x15c141370 <line:12:3>
+    |-IfStmt 0x15c141658 <line:13:2, line:14:12>
+    | |-UnaryOperator 0x15c1413d8 <line:13:6, col:7> 'int' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x15c1413c0 <col:7> 'struct object *' contains-errors <LValueToRValue>
+    | |   `-DeclRefExpr 0x15c1413a0 <col:7> 'struct object *' contains-errors lvalue Var 0x15c141158 'obj' 'struct object *'
+    | `-CallExpr 0x15c141618 <line:14:3, col:12> 'int'
+    |   |-ImplicitCastExpr 0x15c141600 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x15c141550 <col:3> 'int ()' Function 0x15c141498 'die' 'int ()'
+    |   `-ImplicitCastExpr 0x15c141640 <col:7> 'char *' <ArrayToPointerDecay>
+    |     `-StringLiteral 0x15c1415b0 <col:7> 'char[4]' lvalue "STR"
+    |-IfStmt 0x15c141758 <line:15:2, line:16:3>
+    | |-RecoveryExpr 0x15c141728 <line:15:6, col:40> '_Bool' contains-errors
+    | `-ReturnStmt 0x15c141748 <line:16:3>
+    |-CompoundAssignOperator 0x15c141840 <line:17:2, col:16> '<dependent type>' contains-errors '|=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-RecoveryExpr 0x15c1417b0 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15c141778 <col:2> 'struct object *' contains-errors lvalue Var 0x15c141158 'obj' 'struct object *'
+    | `-RecoveryExpr 0x15c141820 <col:16> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x15c146a38 <line:20:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x15c146a20 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x15c1419b0 <col:2> 'int ()' Function 0x15c1418f8 'strbuf_addstr' 'int ()'
+    | |-ImplicitCastExpr 0x15c146a68 <col:16> 'struct strbuf *' <LValueToRValue>
+    | | `-DeclRefExpr 0x15c1419d0 <col:16> 'struct strbuf *' lvalue ParmVar 0x15c140c98 'path' 'struct strbuf *'
+    | `-ImplicitCastExpr 0x15c146a80 <col:22> 'const char *' <LValueToRValue>
+    |   `-DeclRefExpr 0x15c146a00 <col:22> 'const char *' lvalue ParmVar 0x15c140d18 'name' 'const char *'
+    |-CallExpr 0x15c146b80 <line:21:2, col:30> '<dependent type>' contains-errors
+    | |-RecoveryExpr 0x15c146ab8 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15c146a98 <col:2> 'int' lvalue ParmVar 0x15c140ac0 'show' 'int'
+    | |-DeclRefExpr 0x15c146ae0 <col:7> 'struct object *' contains-errors lvalue Var 0x15c141158 'obj' 'struct object *'
+    | |-RecoveryExpr 0x15c146b38 <col:12, col:18> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x15c146b00 <col:12> 'struct strbuf *' lvalue ParmVar 0x15c140c98 'path' 'struct strbuf *'
+    | `-DeclRefExpr 0x15c146b60 <col:23> 'void *' lvalue ParmVar 0x15c140d98 'cb_data' 'void *'
+    `-CallExpr 0x15c146d40 <line:22:2, col:29> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x15c146c98 <col:2> 'int ()' Function 0x15c146be0 'strbuf_setlen' 'int ()'
+      |-DeclRefExpr 0x15c146cb8 <col:16> 'struct strbuf *' lvalue ParmVar 0x15c140c98 'path' 'struct strbuf *'
+      `-RecoveryExpr 0x15c146d20 <col:22> '<dependent type>' contains-errors lvalue

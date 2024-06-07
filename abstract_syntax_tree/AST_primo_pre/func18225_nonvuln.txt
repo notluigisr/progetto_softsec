@@ -1,0 +1,34 @@
+`-FunctionDecl 0x14c82bb58  line:1:20 invalid sctp_sf_do_no_pending_tsn 'int (struct net *, const struct sctp_endpoint *, const struct sctp_association *, const int, void *, int *)'
+  |-ParmVarDecl 0x14c80e268 <line:2:2, col:14> col:14 net 'struct net *'
+  |-ParmVarDecl 0x14c82b658 <line:3:2, col:30> col:30 ep 'const struct sctp_endpoint *'
+  |-ParmVarDecl 0x14c82b828 <line:4:2, col:33> col:33 used asoc 'const struct sctp_association *'
+  |-ParmVarDecl 0x14c82b8a8 <line:5:2, col:23> col:23 invalid type 'const int'
+  |-ParmVarDecl 0x14c82b928 <line:6:2, col:8> col:8 arg 'void *'
+  |-ParmVarDecl 0x14c82b9d8 <line:7:2, col:18> col:18 invalid commands 'int *'
+  `-CompoundStmt 0x14c82c598 <line:8:1, line:18:1>
+    |-DeclStmt 0x14c82be18 <line:9:2, col:29>
+    | |-RecordDecl 0x14c82bc30 <col:2, col:9> col:9 struct sctp_ulpevent
+    | `-VarDecl 0x14c82bd98 <col:2, col:24> col:24 used event 'struct sctp_ulpevent *'
+    |-BinaryOperator 0x14c82c0a8 <line:11:2, col:62> 'struct sctp_ulpevent *' contains-errors '='
+    | |-DeclRefExpr 0x14c82be30 <col:2> 'struct sctp_ulpevent *' lvalue Var 0x14c82bd98 'event' 'struct sctp_ulpevent *'
+    | `-CallExpr 0x14c82c078 <col:10, col:62> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14c82bfb0 <col:10> 'int ()' Function 0x14c82bef8 'sctp_ulpevent_make_sender_dry_event' 'int ()'
+    |   |-DeclRefExpr 0x14c82bfd0 <col:46> 'const struct sctp_association *' lvalue ParmVar 0x14c82b828 'asoc' 'const struct sctp_association *'
+    |   `-RecoveryExpr 0x14c82c058 <col:52> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x14c82c160 <line:12:2, line:13:10>
+    | |-UnaryOperator 0x14c82c100 <line:12:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14c82c0e8 <col:7> 'struct sctp_ulpevent *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14c82c0c8 <col:7> 'struct sctp_ulpevent *' lvalue Var 0x14c82bd98 'event' 'struct sctp_ulpevent *'
+    | `-ReturnStmt 0x14c82c150 <line:13:3, col:10>
+    |   `-RecoveryExpr 0x14c82c130 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x14c82c518 <line:15:2, col:68> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x14c82c260 <col:2> 'int ()' Function 0x14c82c1a8 'sctp_add_cmd_sf' 'int ()'
+    | |-RecoveryExpr 0x14c82c280 <col:18> '<dependent type>' contains-errors lvalue
+    | |-RecoveryExpr 0x14c82c4a0 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CallExpr 0x14c82c4d8 <col:48, col:67> 'int'
+    |   |-ImplicitCastExpr 0x14c82c4c0 <col:48> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x14c82c398 <col:48> 'int ()' Function 0x14c82c2e0 'SCTP_ULPEVENT' 'int ()'
+    |   `-ImplicitCastExpr 0x14c82c500 <col:62> 'struct sctp_ulpevent *' <LValueToRValue>
+    |     `-DeclRefExpr 0x14c82c3b8 <col:62> 'struct sctp_ulpevent *' lvalue Var 0x14c82bd98 'event' 'struct sctp_ulpevent *'
+    `-ReturnStmt 0x14c82c588 <line:17:2, col:9>
+      `-RecoveryExpr 0x14c82c568 <col:9> '<dependent type>' contains-errors lvalue

@@ -1,0 +1,62 @@
+`-FunctionDecl 0x13f80e350  line:1:13 ipv4_dst_destroy 'void (struct dst_entry *)' static
+  |-ParmVarDecl 0x13f80e248 <col:30, col:48> col:48 used dst 'struct dst_entry *'
+  `-CompoundStmt 0x13f82af88 <line:2:1, line:16:1>
+    |-DeclStmt 0x13f826ae8 <line:3:2, col:68>
+    | |-RecordDecl 0x13f826648 <col:2, col:9> col:9 struct dst_metrics
+    | `-VarDecl 0x13f8267b8 <col:2, col:67> col:22 used p 'struct dst_metrics *' cinit
+    |   `-CStyleCastExpr 0x13f826aa8 <col:26, col:67> 'struct dst_metrics *' <IntegralToPointer>
+    |     `-CallExpr 0x13f8269d8 <col:48, col:67> 'int'
+    |       |-ImplicitCastExpr 0x13f8269c0 <col:48> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x13f826950 <col:48> 'int ()' Function 0x13f826898 'DST_METRICS_PTR' 'int ()'
+    |       `-ImplicitCastExpr 0x13f826a00 <col:64> 'struct dst_entry *' <LValueToRValue>
+    |         `-DeclRefExpr 0x13f826970 <col:64> 'struct dst_entry *' lvalue ParmVar 0x13f80e248 'dst' 'struct dst_entry *'
+    |-DeclStmt 0x13f826dd0 <line:4:2, col:43>
+    | |-RecordDecl 0x13f826b00 <col:2, col:9> col:9 struct rtable
+    | `-VarDecl 0x13f826c68 <col:2, col:40> col:17 used rt 'struct rtable *' cinit
+    |   `-CStyleCastExpr 0x13f826d90 <col:22, col:40> 'struct rtable *' <BitCast>
+    |     `-ImplicitCastExpr 0x13f826d78 <col:40> 'struct dst_entry *' <LValueToRValue> part_of_explicit_cast
+    |       `-DeclRefExpr 0x13f826cd0 <col:40> 'struct dst_entry *' lvalue ParmVar 0x13f80e248 'dst' 'struct dst_entry *'
+    |-IfStmt 0x13f827208 <line:6:2, line:7:10>
+    | |-BinaryOperator 0x13f827070 <line:6:6, col:65> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x13f827050 <col:6, col:12> 'int' contains-errors '!='
+    | | | |-DeclRefExpr 0x13f826de8 <col:6> 'struct dst_metrics *' lvalue Var 0x13f8267b8 'p' 'struct dst_metrics *'
+    | | | `-UnaryOperator 0x13f827038 <col:11, col:12> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | |   `-RecoveryExpr 0x13f827018 <col:12> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x13f826fd0 <col:35, col:65> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x13f826f38 <col:35> 'int ()' Function 0x13f826e80 'atomic_dec_and_test' 'int ()'
+    | |   `-UnaryOperator 0x13f826fb8 <col:55, col:59> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |     `-RecoveryExpr 0x13f826f90 <col:56, col:59> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x13f826f58 <col:56> 'struct dst_metrics *' lvalue Var 0x13f8267b8 'p' 'struct dst_metrics *'
+    | `-CallExpr 0x13f8271c8 <line:7:3, col:10> 'int'
+    |   |-ImplicitCastExpr 0x13f8271b0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | `-DeclRefExpr 0x13f827170 <col:3> 'int ()' Function 0x13f8270b8 'kfree' 'int ()'
+    |   `-ImplicitCastExpr 0x13f8271f0 <col:9> 'struct dst_metrics *' <LValueToRValue>
+    |     `-DeclRefExpr 0x13f827190 <col:9> 'struct dst_metrics *' lvalue Var 0x13f8267b8 'p' 'struct dst_metrics *'
+    `-IfStmt 0x13f82af68 <line:9:2, line:15:2>
+      |-UnaryOperator 0x13f8273c8 <line:9:6, col:34> '<dependent type>' contains-errors prefix '!' cannot overflow
+      | `-CallExpr 0x13f8273a0 <col:7, col:34> '<dependent type>' contains-errors
+      |   |-DeclRefExpr 0x13f827308 <col:7> 'int ()' Function 0x13f827250 'list_empty' 'int ()'
+      |   `-UnaryOperator 0x13f827388 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+      |     `-RecoveryExpr 0x13f827360 <col:19, col:23> '<dependent type>' contains-errors lvalue
+      |       `-DeclRefExpr 0x13f827328 <col:19> 'struct rtable *' lvalue Var 0x13f826c68 'rt' 'struct rtable *'
+      `-CompoundStmt 0x13f82af38 <col:37, line:15:2>
+        |-DeclStmt 0x13f82aa40 <line:10:3, col:50>
+        | |-RecordDecl 0x13f8273e0 <col:3, col:10> col:10 struct uncached_list
+        | `-VarDecl 0x13f827548 <col:3, col:34> col:25 used ul 'struct uncached_list *' cinit
+        |   `-RecoveryExpr 0x13f82aa00 <col:30, col:34> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13f8275b0 <col:30> 'struct rtable *' lvalue Var 0x13f826c68 'rt' 'struct rtable *'
+        |-CallExpr 0x13f82abd0 <line:12:3, col:25> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13f82ab38 <col:3> 'int ()' Function 0x13f82aa80 'spin_lock_bh' 'int ()'
+        | `-UnaryOperator 0x13f82abb8 <col:16, col:21> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x13f82ab90 <col:17, col:21> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13f82ab58 <col:17> 'struct uncached_list *' contains-errors lvalue Var 0x13f827548 'ul' 'struct uncached_list *'
+        |-CallExpr 0x13f82ad70 <line:13:3, col:28> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x13f82acd8 <col:3> 'int ()' Function 0x13f82ac20 'list_del' 'int ()'
+        | `-UnaryOperator 0x13f82ad58 <col:12, col:17> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x13f82ad30 <col:13, col:17> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x13f82acf8 <col:13> 'struct rtable *' lvalue Var 0x13f826c68 'rt' 'struct rtable *'
+        `-CallExpr 0x13f82af10 <line:14:3, col:27> '<dependent type>' contains-errors
+          |-DeclRefExpr 0x13f82ae78 <col:3> 'int ()' Function 0x13f82adc0 'spin_unlock_bh' 'int ()'
+          `-UnaryOperator 0x13f82aef8 <col:18, col:23> '<dependent type>' contains-errors prefix '&' cannot overflow
+            `-RecoveryExpr 0x13f82aed0 <col:19, col:23> '<dependent type>' contains-errors lvalue
+              `-DeclRefExpr 0x13f82ae98 <col:19> 'struct uncached_list *' contains-errors lvalue Var 0x13f827548 'ul' 'struct uncached_list *'

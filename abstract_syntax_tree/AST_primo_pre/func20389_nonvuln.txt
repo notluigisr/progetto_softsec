@@ -1,0 +1,79 @@
+`-FunctionDecl 0x158028d48  line:1:1 xemaclite_send 'int (struct sk_buff *, struct net_device *)'
+  |-ParmVarDecl 0x158010848 <col:16, col:32> col:32 used orig_skb 'struct sk_buff *'
+  |-ParmVarDecl 0x158028c28 <col:42, col:61> col:61 used dev 'struct net_device *'
+  `-CompoundStmt 0x156014300 <line:2:1, line:30:1>
+    |-DeclStmt 0x158029248 <line:3:2, col:41>
+    | |-RecordDecl 0x158028e48 <col:2, col:9> col:9 struct net_local
+    | `-VarDecl 0x158028fb8 <col:2, col:40> col:20 used lp 'struct net_local *' cinit
+    |   `-ImplicitCastExpr 0x158029218 <col:25, col:40> 'struct net_local *' <IntegralToPointer>
+    |     `-CallExpr 0x1580291d8 <col:25, col:40> 'int'
+    |       |-ImplicitCastExpr 0x1580291c0 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x158029150 <col:25> 'int ()' Function 0x158029098 'netdev_priv' 'int ()'
+    |       `-ImplicitCastExpr 0x158029200 <col:37> 'struct net_device *' <LValueToRValue>
+    |         `-DeclRefExpr 0x158029170 <col:37> 'struct net_device *' lvalue ParmVar 0x158028c28 'dev' 'struct net_device *'
+    |-DeclStmt 0x158029350 <line:4:2, col:25>
+    | `-VarDecl 0x1580292e8 <col:2, col:18> col:18 used new_skb 'struct sk_buff *'
+    |-DeclStmt 0x1580293e8 <line:5:2, col:18>
+    | `-VarDecl 0x158029380 <col:2, col:15> col:15 used len 'unsigned int'
+    |-DeclStmt 0x158029480 <line:6:2, col:21>
+    | `-VarDecl 0x158029418 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-BinaryOperator 0x158029518 <line:8:2, col:18> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x158029498 <col:2> 'unsigned int' lvalue Var 0x158029380 'len' 'unsigned int'
+    | `-RecoveryExpr 0x1580294f0 <col:8, col:18> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x1580294b8 <col:8> 'struct sk_buff *' lvalue ParmVar 0x158010848 'orig_skb' 'struct sk_buff *'
+    |-BinaryOperator 0x158029590 <line:10:2, col:12> 'struct sk_buff *' '='
+    | |-DeclRefExpr 0x158029538 <col:2> 'struct sk_buff *' lvalue Var 0x1580292e8 'new_skb' 'struct sk_buff *'
+    | `-ImplicitCastExpr 0x158029578 <col:12> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x158029558 <col:12> 'struct sk_buff *' lvalue ParmVar 0x158010848 'orig_skb' 'struct sk_buff *'
+    |-CallExpr 0x158029748 <line:12:2, col:42> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x158029690 <col:2> 'int ()' Function 0x1580295d8 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x158029710 <col:20, col:25> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x1580296e8 <col:21, col:25> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1580296b0 <col:21> 'struct net_local *' lvalue Var 0x158028fb8 'lp' 'struct net_local *'
+    | `-DeclRefExpr 0x158029728 <col:37> 'unsigned long' lvalue Var 0x158029418 'flags' 'unsigned long'
+    |-IfStmt 0x156013ef0 <line:13:2, line:21:2>
+    | |-RecoveryExpr 0x1580298f0 <line:13:6, col:59> '_Bool' contains-errors
+    | `-CompoundStmt 0x156013eb8 <col:62, line:21:2>
+    |   |-CallExpr 0x158029a48 <line:15:3, col:23> 'int'
+    |   | |-ImplicitCastExpr 0x158029a30 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x1580299f0 <col:3> 'int ()' Function 0x158029938 'netif_stop_queue' 'int ()'
+    |   | `-ImplicitCastExpr 0x158029a70 <col:20> 'struct net_device *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x158029a10 <col:20> 'struct net_device *' lvalue ParmVar 0x158028c28 'dev' 'struct net_device *'
+    |   |-BinaryOperator 0x158029b08 <line:16:3, col:22> '<dependent type>' contains-errors '='
+    |   | |-RecoveryExpr 0x158029ac0 <col:3, col:7> '<dependent type>' contains-errors lvalue
+    |   | | `-DeclRefExpr 0x158029a88 <col:3> 'struct net_local *' lvalue Var 0x158028fb8 'lp' 'struct net_local *'
+    |   | `-DeclRefExpr 0x158029ae8 <col:22> 'struct sk_buff *' lvalue Var 0x1580292e8 'new_skb' 'struct sk_buff *'
+    |   |-CallExpr 0x156013c68 <line:18:3, col:27> 'int'
+    |   | |-ImplicitCastExpr 0x156013c50 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x156013c10 <col:3> 'int ()' Function 0x158029b50 'skb_tx_timestamp' 'int ()'
+    |   | `-ImplicitCastExpr 0x156013c90 <col:20> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x156013c30 <col:20> 'struct sk_buff *' lvalue Var 0x1580292e8 'new_skb' 'struct sk_buff *'
+    |   |-CallExpr 0x156013e40 <line:19:3, col:48> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x156013d88 <col:3> 'int ()' Function 0x156013cd0 'spin_unlock_irqrestore' 'int ()'
+    |   | |-UnaryOperator 0x156013e08 <col:26, col:31> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   | | `-RecoveryExpr 0x156013de0 <col:27, col:31> '<dependent type>' contains-errors lvalue
+    |   | |   `-DeclRefExpr 0x156013da8 <col:27> 'struct net_local *' lvalue Var 0x158028fb8 'lp' 'struct net_local *'
+    |   | `-DeclRefExpr 0x156013e20 <col:43> 'unsigned long' lvalue Var 0x158029418 'flags' 'unsigned long'
+    |   `-ReturnStmt 0x156013ea8 <line:20:3, col:10>
+    |     `-RecoveryExpr 0x156013e88 <col:10> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x156013fc8 <line:22:2, col:47> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x156013f10 <col:2> 'int ()' Function 0x156013cd0 'spin_unlock_irqrestore' 'int ()'
+    | |-UnaryOperator 0x156013f90 <col:25, col:30> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x156013f68 <col:26, col:30> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x156013f30 <col:26> 'struct net_local *' lvalue Var 0x158028fb8 'lp' 'struct net_local *'
+    | `-DeclRefExpr 0x156013fa8 <col:42> 'unsigned long' lvalue Var 0x158029418 'flags' 'unsigned long'
+    |-CallExpr 0x156014050 <line:24:2, col:26> 'int'
+    | |-ImplicitCastExpr 0x156014038 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x156013ff8 <col:2> 'int ()' Function 0x158029b50 'skb_tx_timestamp' 'int ()'
+    | `-ImplicitCastExpr 0x156014078 <col:19> 'struct sk_buff *' <LValueToRValue>
+    |   `-DeclRefExpr 0x156014018 <col:19> 'struct sk_buff *' lvalue Var 0x1580292e8 'new_skb' 'struct sk_buff *'
+    |-CompoundAssignOperator 0x156014158 <line:26:2, col:25> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+    | |-CXXDependentScopeMemberExpr 0x1560140f0 <col:2, col:13> '<dependent type>' contains-errors lvalue .tx_bytes
+    | | `-RecoveryExpr 0x1560140c8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x156014090 <col:2> 'struct net_device *' lvalue ParmVar 0x158028c28 'dev' 'struct net_device *'
+    | `-DeclRefExpr 0x156014138 <col:25> 'unsigned int' lvalue Var 0x158029380 'len' 'unsigned int'
+    `-CallExpr 0x1560142c0 <line:27:2, col:29> 'int'
+      |-ImplicitCastExpr 0x1560142a8 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x156014268 <col:2> 'int ()' Function 0x1560141b0 'dev_consume_skb_any' 'int ()'
+      `-ImplicitCastExpr 0x1560142e8 <col:22> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x156014288 <col:22> 'struct sk_buff *' lvalue Var 0x1580292e8 'new_skb' 'struct sk_buff *'

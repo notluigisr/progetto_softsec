@@ -1,0 +1,90 @@
+`-FunctionDecl 0x123103ff8  line:1:1 invalid scan_env_add_mem_entry 'int (int *)'
+  |-ParmVarDecl 0x123103f28 <col:24, col:33> col:33 referenced invalid env 'int *'
+  `-CompoundStmt 0x122841008 <line:2:1, line:38:1>
+    |-DeclStmt 0x123104248 <line:3:3, col:21>
+    | |-VarDecl 0x1231040c0 <col:3, col:7> col:7 used i 'int'
+    | |-VarDecl 0x123104140 <col:3, col:10> col:10 used need 'int'
+    | `-VarDecl 0x1231041c0 <col:3, col:16> col:16 used alloc 'int'
+    |-BinaryOperator 0x123104340 <line:6:3, col:25> 'int' contains-errors '='
+    | |-DeclRefExpr 0x123104278 <col:3> 'int' lvalue Var 0x123104140 'need' 'int'
+    | `-BinaryOperator 0x123104320 <col:10, col:25> '<dependent type>' contains-errors '+'
+    |   |-CXXDependentScopeMemberExpr 0x1231042b8 <col:10, col:15> '<dependent type>' contains-errors lvalue ->num_mem
+    |   | `-RecoveryExpr 0x123104298 <col:10> '<dependent type>' contains-errors lvalue
+    |   `-IntegerLiteral 0x123104300 <col:25> 'int' 1
+    |-IfStmt 0x123104518 <line:7:3, line:8:12>
+    | |-BinaryOperator 0x1231044b0 <line:7:7, col:48> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x123104450 <col:7, col:14> 'int' contains-errors '>'
+    | | | |-DeclRefExpr 0x123104360 <col:7> 'int' lvalue Var 0x123104140 'need' 'int'
+    | | | `-RecoveryExpr 0x123104430 <col:14> '<dependent type>' contains-errors lvalue
+    | | `-BinaryOperator 0x123104490 <col:31, col:48> 'int' contains-errors '!='
+    | |   |-RecoveryExpr 0x123104470 <col:31> '<dependent type>' contains-errors lvalue
+    | |   `-IntegerLiteral 0x1231043d0 <col:48> 'int' 0
+    | `-ReturnStmt 0x123104508 <line:8:5, col:12>
+    |   `-RecoveryExpr 0x1231044e8 <col:12> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x122840ec8 <line:10:3, line:34:3>
+    | |-BinaryOperator 0x1231045b0 <line:10:7, col:15> 'int' contains-errors '>='
+    | | |-DeclRefExpr 0x123104538 <col:7> 'int' lvalue Var 0x123104140 'need' 'int'
+    | | `-RecoveryExpr 0x123104590 <col:15> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x122840eb0 <col:36, line:34:3>
+    |   `-IfStmt 0x122840e90 <line:11:5, line:33:5>
+    |     |-BinaryOperator 0x122840268 <line:11:9, col:27> 'int' contains-errors '<='
+    |     | |-CXXDependentScopeMemberExpr 0x122840200 <col:9, col:14> '<dependent type>' contains-errors lvalue ->mem_alloc
+    |     | | `-RecoveryExpr 0x1231045d0 <col:9> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x122840248 <col:27> 'int' lvalue Var 0x123104140 'need' 'int'
+    |     `-CompoundStmt 0x122840e60 <col:33, line:33:5>
+    |       |-IfStmt 0x122840930 <line:12:7, line:20:7> has_else
+    |       | |-CallExpr 0x122840468 <line:12:11, col:39> '<dependent type>' contains-errors
+    |       | | |-DeclRefExpr 0x1228403e0 <col:11> 'int ()' Function 0x122840328 'IS_NULL' 'int ()'
+    |       | | `-CXXDependentScopeMemberExpr 0x122840420 <col:19, col:24> '<dependent type>' contains-errors lvalue ->mem_env_dynamic
+    |       | |   `-RecoveryExpr 0x122840400 <col:19> '<dependent type>' contains-errors lvalue
+    |       | |-CompoundStmt 0x1228407f8 <col:42, line:16:7>
+    |       | | |-BinaryOperator 0x122840508 <line:13:9, col:17> 'int' contains-errors '='
+    |       | | | |-DeclRefExpr 0x122840490 <col:9> 'int' lvalue Var 0x1231041c0 'alloc' 'int'
+    |       | | | `-RecoveryExpr 0x1228404e8 <col:17> '<dependent type>' contains-errors lvalue
+    |       | | `-CallExpr 0x1228407c0 <line:15:9, col:68> '<dependent type>' contains-errors
+    |       | |   |-DeclRefExpr 0x122840620 <col:9> 'int ()' Function 0x122840568 'xmemcpy' 'int ()'
+    |       | |   |-RecoveryExpr 0x1228407a0 <col:17> '<dependent type>' contains-errors lvalue
+    |       | |   |-CXXDependentScopeMemberExpr 0x122840678 <col:20, col:25> '<dependent type>' contains-errors lvalue ->mem_env_static
+    |       | |   | `-RecoveryExpr 0x122840658 <col:20> '<dependent type>' contains-errors lvalue
+    |       | |   `-UnaryExprOrTypeTraitExpr 0x122840748 <col:41, col:67> 'unsigned long' contains-errors sizeof
+    |       | |     `-ParenExpr 0x122840728 <col:47, col:67> '<dependent type>' contains-errors lvalue
+    |       | |       `-CXXDependentScopeMemberExpr 0x1228406e0 <col:48, col:53> '<dependent type>' contains-errors lvalue ->mem_env_static
+    |       | |         `-RecoveryExpr 0x1228406c0 <col:48> '<dependent type>' contains-errors lvalue
+    |       | `-CompoundStmt 0x122840918 <line:17:12, line:20:7>
+    |       |   `-BinaryOperator 0x1228408e0 <line:18:9, col:34> 'int' contains-errors '='
+    |       |     |-DeclRefExpr 0x122840818 <col:9> 'int' lvalue Var 0x1231041c0 'alloc' 'int'
+    |       |     `-BinaryOperator 0x1228408c0 <col:17, col:34> '<dependent type>' contains-errors '*'
+    |       |       |-CXXDependentScopeMemberExpr 0x122840858 <col:17, col:22> '<dependent type>' contains-errors lvalue ->mem_alloc
+    |       |       | `-RecoveryExpr 0x122840838 <col:17> '<dependent type>' contains-errors lvalue
+    |       |       `-IntegerLiteral 0x1228408a0 <col:34> 'int' 2
+    |       |-CallExpr 0x122840ac0 <line:21:7, col:33> '<dependent type>' contains-errors
+    |       | |-DeclRefExpr 0x122840a40 <col:7> 'int ()' Function 0x122840988 'CHECK_NULL_RETURN_MEMERR' 'int ()'
+    |       | `-RecoveryExpr 0x122840aa0 <col:32> '<dependent type>' contains-errors lvalue
+    |       |-ForStmt 0x122840cc8 <line:23:7, line:29:7>
+    |       | |-BinaryOperator 0x122840bb0 <line:23:12, col:31> 'int' contains-errors '='
+    |       | | |-DeclRefExpr 0x122840ae8 <col:12> 'int' lvalue Var 0x1231040c0 'i' 'int'
+    |       | | `-BinaryOperator 0x122840b90 <col:16, col:31> '<dependent type>' contains-errors '+'
+    |       | |   |-CXXDependentScopeMemberExpr 0x122840b28 <col:16, col:21> '<dependent type>' contains-errors lvalue ->num_mem
+    |       | |   | `-RecoveryExpr 0x122840b08 <col:16> '<dependent type>' contains-errors lvalue
+    |       | |   `-IntegerLiteral 0x122840b70 <col:31> 'int' 1
+    |       | |-<<<NULL>>>
+    |       | |-BinaryOperator 0x122840c40 <col:34, col:38> 'int' '<'
+    |       | | |-ImplicitCastExpr 0x122840c10 <col:34> 'int' <LValueToRValue>
+    |       | | | `-DeclRefExpr 0x122840bd0 <col:34> 'int' lvalue Var 0x1231040c0 'i' 'int'
+    |       | | `-ImplicitCastExpr 0x122840c28 <col:38> 'int' <LValueToRValue>
+    |       | |   `-DeclRefExpr 0x122840bf0 <col:38> 'int' lvalue Var 0x1231041c0 'alloc' 'int'
+    |       | |-UnaryOperator 0x122840c80 <col:45, col:46> 'int' postfix '++'
+    |       | | `-DeclRefExpr 0x122840c60 <col:45> 'int' lvalue Var 0x1231040c0 'i' 'int'
+    |       | `-CompoundStmt 0x122840cb8 <col:50, line:29:7>
+    |       `-BinaryOperator 0x122840e40 <line:32:7, col:24> '<dependent type>' contains-errors '='
+    |         |-CXXDependentScopeMemberExpr 0x122840dd8 <col:7, col:12> '<dependent type>' contains-errors lvalue ->mem_alloc
+    |         | `-RecoveryExpr 0x122840db0 <col:7> '<dependent type>' contains-errors lvalue
+    |         |   `-DeclRefExpr 0x122840d90 <col:7> 'int *' lvalue ParmVar 0x123103f28 'env' 'int *'
+    |         `-DeclRefExpr 0x122840e20 <col:24> 'int' lvalue Var 0x1231041c0 'alloc' 'int'
+    |-UnaryOperator 0x122840f78 <line:36:3, col:15> '<dependent type>' contains-errors postfix '++' cannot overflow
+    | `-CXXDependentScopeMemberExpr 0x122840f30 <col:3, col:8> '<dependent type>' contains-errors lvalue ->num_mem
+    |   `-RecoveryExpr 0x122840f08 <col:3> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x122840ee8 <col:3> 'int *' lvalue ParmVar 0x123103f28 'env' 'int *'
+    `-ReturnStmt 0x122840ff8 <line:37:3, col:15>
+      `-CXXDependentScopeMemberExpr 0x122840fb0 <col:10, col:15> '<dependent type>' contains-errors lvalue ->num_mem
+        `-RecoveryExpr 0x122840f90 <col:10> '<dependent type>' contains-errors lvalue

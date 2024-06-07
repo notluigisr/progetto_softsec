@@ -1,0 +1,73 @@
+`-FunctionDecl 0x12300e350  line:1:13 kvm_steal_time_set_preempted 'void (struct kvm_vcpu *)' static
+  |-ParmVarDecl 0x12300e248 <col:42, col:59> col:59 used vcpu 'struct kvm_vcpu *'
+  `-CompoundStmt 0x12380b190 <line:2:1, line:31:1>
+    |-DeclStmt 0x123026940 <line:3:2, col:53>
+    | |-RecordDecl 0x123026648 <col:2, col:9> col:9 struct gfn_to_hva_cache
+    | `-VarDecl 0x1230267b8 <col:2, col:48> col:27 used ghc 'struct gfn_to_hva_cache *' cinit
+    |   `-UnaryOperator 0x123026910 <col:33, col:48> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |     `-CXXDependentScopeMemberExpr 0x1230268c8 <col:34, col:48> '<dependent type>' contains-errors lvalue .cache
+    |       `-CXXDependentScopeMemberExpr 0x123026880 <col:34, col:45> '<dependent type>' contains-errors lvalue .st
+    |         `-RecoveryExpr 0x123026858 <col:34, col:40> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x123026820 <col:34> 'struct kvm_vcpu *' lvalue ParmVar 0x12300e248 'vcpu' 'struct kvm_vcpu *'
+    |-DeclStmt 0x123026ad8 <line:4:2, col:31>
+    | |-RecordDecl 0x123026958 <col:2, col:9> col:9 struct kvm_steal_time
+    | `-VarDecl 0x123026a58 <col:2, col:24> col:24 invalid __user 'struct kvm_steal_time'
+    |-DeclStmt 0x123026cd8 <line:5:2, col:28>
+    | |-RecordDecl 0x123026af0 <col:2, col:9> col:9 struct kvm_memslots
+    | `-VarDecl 0x123026c58 <col:2, col:23> col:23 used slots 'struct kvm_memslots *'
+    |-DeclStmt 0x123026da0 <line:6:2, col:48>
+    | `-VarDecl 0x123026d20 <col:2, col:18> col:18 invalid preempted 'const int' static
+    |-IfStmt 0x123026f10 <line:8:2, line:9:3>
+    | |-RecoveryExpr 0x123026ee0 <line:8:6, col:47> '_Bool' contains-errors
+    | `-ReturnStmt 0x123026f00 <line:9:3>
+    |-IfStmt 0x123027030 <line:11:2, line:12:3>
+    | |-CXXDependentScopeMemberExpr 0x123026fd8 <line:11:6, col:20> '<dependent type>' contains-errors lvalue .preempted
+    | | `-CXXDependentScopeMemberExpr 0x123026f90 <col:6, col:17> '<dependent type>' contains-errors lvalue .st
+    | |   `-RecoveryExpr 0x123026f68 <col:6, col:12> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x123026f30 <col:6> 'struct kvm_vcpu *' lvalue ParmVar 0x12300e248 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x123027020 <line:12:3>
+    |-IfStmt 0x123027390 <line:15:2, line:16:3>
+    | |-CallExpr 0x123027358 <line:15:6, col:43> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x123027160 <col:6> 'int ()' Function 0x1230270a8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x123027338 <col:15, col:41> 'int' contains-errors '!='
+    | |   |-CXXDependentScopeMemberExpr 0x1230272f0 <col:15, col:24> '<dependent type>' contains-errors lvalue ->mm
+    | |   | `-RecoveryExpr 0x1230272d0 <col:15> '<dependent type>' contains-errors lvalue
+    | |   `-CXXDependentScopeMemberExpr 0x123027240 <col:30, col:41> '<dependent type>' contains-errors lvalue ->mm
+    | |     `-RecoveryExpr 0x123027218 <col:30, col:36> '<dependent type>' contains-errors lvalue
+    | |       `-DeclRefExpr 0x1230271e0 <col:30> 'struct kvm_vcpu *' lvalue ParmVar 0x12300e248 'vcpu' 'struct kvm_vcpu *'
+    | `-ReturnStmt 0x123027380 <line:16:3>
+    |-BinaryOperator 0x123027558 <line:18:2, col:32> 'struct kvm_memslots *' contains-errors '='
+    | |-DeclRefExpr 0x1230273b0 <col:2> 'struct kvm_memslots *' lvalue Var 0x123026c58 'slots' 'struct kvm_memslots *'
+    | `-CallExpr 0x123027530 <col:10, col:32> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x1230274b0 <col:10> 'int ()' Function 0x1230273f8 'kvm_memslots' 'int ()'
+    |   `-RecoveryExpr 0x123027508 <col:23, col:29> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x1230274d0 <col:23> 'struct kvm_vcpu *' lvalue ParmVar 0x12300e248 'vcpu' 'struct kvm_vcpu *'
+    |-IfStmt 0x12380a910 <line:20:2, line:22:3>
+    | |-CallExpr 0x12380a8d8 <line:20:6, line:21:51> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x123027578 <line:20:6> 'int ()' Function 0x1230270a8 'unlikely' 'int ()'
+    | | `-BinaryOperator 0x12380a8b8 <col:15, line:21:44> 'int' contains-errors '||'
+    | |   |-BinaryOperator 0x12380a808 <line:20:15, line:21:33> 'int' contains-errors '||'
+    | |   | |-BinaryOperator 0x12380a660 <line:20:15, col:41> 'int' contains-errors '!='
+    | |   | | |-RecoveryExpr 0x1230275d0 <col:15, col:22> '<dependent type>' contains-errors lvalue
+    | |   | | | `-DeclRefExpr 0x123027598 <col:15> 'struct kvm_memslots *' lvalue Var 0x123026c58 'slots' 'struct kvm_memslots *'
+    | |   | | `-RecoveryExpr 0x12380a638 <col:36, col:41> '<dependent type>' contains-errors lvalue
+    | |   | |   `-DeclRefExpr 0x12380a600 <col:36> 'struct gfn_to_hva_cache *' contains-errors lvalue Var 0x1230267b8 'ghc' 'struct gfn_to_hva_cache *'
+    | |   | `-CallExpr 0x12380a7e0 <line:21:8, col:33> '<dependent type>' contains-errors
+    | |   |   |-DeclRefExpr 0x12380a760 <col:8> 'int ()' Function 0x12380a6a8 'kvm_is_error_hva' 'int ()'
+    | |   |   `-RecoveryExpr 0x12380a7b8 <col:25, col:30> '<dependent type>' contains-errors lvalue
+    | |   |     `-DeclRefExpr 0x12380a780 <col:25> 'struct gfn_to_hva_cache *' contains-errors lvalue Var 0x1230267b8 'ghc' 'struct gfn_to_hva_cache *'
+    | |   `-UnaryOperator 0x12380a8a0 <col:38, col:44> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | |     `-ImplicitCastExpr 0x12380a888 <col:39, col:44> '<dependent type>' contains-errors <LValueToRValue>
+    | |       `-RecoveryExpr 0x12380a860 <col:39, col:44> '<dependent type>' contains-errors lvalue
+    | |         `-DeclRefExpr 0x12380a828 <col:39> 'struct gfn_to_hva_cache *' contains-errors lvalue Var 0x1230267b8 'ghc' 'struct gfn_to_hva_cache *'
+    | `-ReturnStmt 0x12380a900 <line:22:3>
+    `-CallExpr 0x12380b158 <line:30:2, col:71> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x12380aef0 <col:2> 'int ()' Function 0x12380ae38 'mark_page_dirty_in_slot' 'int ()'
+      |-RecoveryExpr 0x12380af48 <col:26, col:32> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x12380af10 <col:26> 'struct kvm_vcpu *' lvalue ParmVar 0x12300e248 'vcpu' 'struct kvm_vcpu *'
+      |-RecoveryExpr 0x12380afa8 <col:37, col:42> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x12380af70 <col:37> 'struct gfn_to_hva_cache *' contains-errors lvalue Var 0x1230267b8 'ghc' 'struct gfn_to_hva_cache *'
+      `-CallExpr 0x12380b130 <col:51, col:70> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x12380b0b0 <col:51> 'int ()' Function 0x12380aff8 'gpa_to_gfn' 'int ()'
+        `-RecoveryExpr 0x12380b108 <col:62, col:67> '<dependent type>' contains-errors lvalue
+          `-DeclRefExpr 0x12380b0d0 <col:62> 'struct gfn_to_hva_cache *' contains-errors lvalue Var 0x1230267b8 'ghc' 'struct gfn_to_hva_cache *'

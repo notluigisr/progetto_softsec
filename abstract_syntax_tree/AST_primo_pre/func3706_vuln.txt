@@ -1,0 +1,95 @@
+`-FunctionDecl 0x14b008280  line:1:13 perf_syscall_exit 'void (void *, struct pt_regs *, long)' static
+  |-ParmVarDecl 0x14a00dcd8 <col:31, col:37> col:37 ignore 'void *'
+  |-ParmVarDecl 0x14a00e2c8 <col:45, col:61> col:61 used regs 'struct pt_regs *'
+  |-ParmVarDecl 0x14a00e348 <col:67, col:72> col:72 ret 'long'
+  `-CompoundStmt 0x14a027600 <line:2:1, line:36:1>
+    |-DeclStmt 0x14b008578 <line:3:2, col:35>
+    | |-RecordDecl 0x14b008388 <col:2, col:9> col:9 struct syscall_metadata
+    | `-VarDecl 0x14b0084f8 <col:2, col:27> col:27 used sys_data 'struct syscall_metadata *'
+    |-DeclStmt 0x14b008778 <line:4:2, col:32>
+    | |-RecordDecl 0x14b008590 <col:2, col:9> col:9 struct syscall_trace_exit
+    | `-VarDecl 0x14b0086f8 <col:2, col:29> col:29 used rec 'struct syscall_trace_exit *'
+    |-DeclStmt 0x14b008978 <line:5:2, col:25>
+    | |-RecordDecl 0x14b008790 <col:2, col:9> col:9 struct hlist_head
+    | `-VarDecl 0x14b0088f8 <col:2, col:21> col:21 used head 'struct hlist_head *'
+    |-DeclStmt 0x14b008a10 <line:6:2, col:16>
+    | `-VarDecl 0x14b0089a8 <col:2, col:6> col:6 used syscall_nr 'int'
+    |-DeclStmt 0x14b008aa8 <line:7:2, col:10>
+    | `-VarDecl 0x14b008a40 <col:2, col:6> col:6 used rctx 'int'
+    |-DeclStmt 0x14b008b40 <line:8:2, col:10>
+    | `-VarDecl 0x14b008ad8 <col:2, col:6> col:6 used size 'int'
+    |-BinaryOperator 0x14b008d98 <line:10:2, col:49> 'int' contains-errors '='
+    | |-DeclRefExpr 0x14b008b58 <col:2> 'int' lvalue Var 0x14b0089a8 'syscall_nr' 'int'
+    | `-CallExpr 0x14b008d68 <col:15, col:49> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14b008ca0 <col:15> 'int ()' Function 0x14b008be8 'trace_get_syscall_nr' 'int ()'
+    |   |-RecoveryExpr 0x14b008d48 <col:36> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x14b008cd8 <col:45> 'struct pt_regs *' lvalue ParmVar 0x14a00e2c8 'regs' 'struct pt_regs *'
+    |-IfStmt 0x14b008e40 <line:11:2, line:12:3>
+    | |-BinaryOperator 0x14b008e10 <line:11:6, col:19> 'int' '<'
+    | | |-ImplicitCastExpr 0x14b008df8 <col:6> 'int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x14b008db8 <col:6> 'int' lvalue Var 0x14b0089a8 'syscall_nr' 'int'
+    | | `-IntegerLiteral 0x14b008dd8 <col:19> 'int' 0
+    | `-ReturnStmt 0x14b008e30 <line:12:3>
+    |-IfStmt 0x14b009058 <line:13:2, line:14:3>
+    | |-UnaryOperator 0x14b009030 <line:13:6, col:54> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-CallExpr 0x14b009000 <col:7, col:54> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x14b008f40 <col:7> 'int ()' Function 0x14b008e88 'test_bit' 'int ()'
+    | |   |-DeclRefExpr 0x14b008f60 <col:16> 'int' lvalue Var 0x14b0089a8 'syscall_nr' 'int'
+    | |   `-RecoveryExpr 0x14b008fe0 <col:28> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x14b009048 <line:14:3>
+    |-BinaryOperator 0x14a026670 <line:16:2, col:42> 'struct syscall_metadata *' '='
+    | |-DeclRefExpr 0x14b009078 <col:2> 'struct syscall_metadata *' lvalue Var 0x14b0084f8 'sys_data' 'struct syscall_metadata *'
+    | `-ImplicitCastExpr 0x14a026658 <col:13, col:42> 'struct syscall_metadata *' <IntegralToPointer>
+    |   `-CallExpr 0x14a026618 <col:13, col:42> 'int'
+    |     |-ImplicitCastExpr 0x14a026600 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x14b009178 <col:13> 'int ()' Function 0x14b0090c0 'syscall_nr_to_meta' 'int ()'
+    |     `-ImplicitCastExpr 0x14a026640 <col:32> 'int' <LValueToRValue>
+    |       `-DeclRefExpr 0x14b009198 <col:32> 'int' lvalue Var 0x14b0089a8 'syscall_nr' 'int'
+    |-IfStmt 0x14a0266f0 <line:17:2, line:18:3>
+    | |-UnaryOperator 0x14a0266c8 <line:17:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a0266b0 <col:7> 'struct syscall_metadata *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a026690 <col:7> 'struct syscall_metadata *' lvalue Var 0x14b0084f8 'sys_data' 'struct syscall_metadata *'
+    | `-ReturnStmt 0x14a0266e0 <line:18:3>
+    |-BinaryOperator 0x14a026900 <line:20:2, col:55> 'struct hlist_head *' contains-errors '='
+    | |-DeclRefExpr 0x14a026710 <col:2> 'struct hlist_head *' lvalue Var 0x14b0088f8 'head' 'struct hlist_head *'
+    | `-CallExpr 0x14a0268d8 <col:9, col:55> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x14a026810 <col:9> 'int ()' Function 0x14a026758 'this_cpu_ptr' 'int ()'
+    |   `-CXXDependentScopeMemberExpr 0x14a026890 <col:22, col:44> '<dependent type>' contains-errors lvalue ->perf_events
+    |     `-RecoveryExpr 0x14a026868 <col:22, col:32> '<dependent type>' contains-errors lvalue
+    |       `-DeclRefExpr 0x14a026830 <col:22> 'struct syscall_metadata *' lvalue Var 0x14b0084f8 'sys_data' 'struct syscall_metadata *'
+    |-IfStmt 0x14a026aa8 <line:21:2, line:22:3>
+    | |-CallExpr 0x14a026a58 <line:21:6, col:22> 'int'
+    | | |-ImplicitCastExpr 0x14a026a40 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x14a026a00 <col:6> 'int ()' Function 0x14a026948 'hlist_empty' 'int ()'
+    | | `-ImplicitCastExpr 0x14a026a80 <col:18> 'struct hlist_head *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a026a20 <col:18> 'struct hlist_head *' lvalue Var 0x14b0088f8 'head' 'struct hlist_head *'
+    | `-ReturnStmt 0x14a026a98 <line:22:3>
+    |-BinaryOperator 0x14a027070 <line:28:2, line:29:50> 'struct syscall_trace_exit *' contains-errors '='
+    | |-DeclRefExpr 0x14a026cc0 <line:28:2> 'struct syscall_trace_exit *' lvalue Var 0x14b0086f8 'rec' 'struct syscall_trace_exit *'
+    | `-CStyleCastExpr 0x14a027048 <col:8, line:29:50> 'struct syscall_trace_exit *' contains-errors <Dependent>
+    |   `-CallExpr 0x14a026f78 <line:28:37, line:29:50> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x14a026dc0 <line:28:37> 'int ()' Function 0x14a026d08 'perf_trace_buf_prepare' 'int ()'
+    |     |-DeclRefExpr 0x14a026de0 <col:60> 'int' lvalue Var 0x14b008ad8 'size' 'int'
+    |     |-CXXDependentScopeMemberExpr 0x14a026ea8 <line:29:5, col:33> '<dependent type>' contains-errors lvalue .type
+    |     | `-CXXDependentScopeMemberExpr 0x14a026e60 <col:5, col:27> '<dependent type>' contains-errors lvalue ->event
+    |     |   `-RecoveryExpr 0x14a026e38 <col:5, col:15> '<dependent type>' contains-errors lvalue
+    |     |     `-DeclRefExpr 0x14a026e00 <col:5> 'struct syscall_metadata *' lvalue Var 0x14b0084f8 'sys_data' 'struct syscall_metadata *'
+    |     |-DeclRefExpr 0x14a026ef0 <col:39> 'struct pt_regs *' lvalue ParmVar 0x14a00e2c8 'regs' 'struct pt_regs *'
+    |     `-UnaryOperator 0x14a026f60 <col:45, col:46> 'int *' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x14a026f10 <col:46> 'int' lvalue Var 0x14b008a40 'rctx' 'int'
+    |-IfStmt 0x14a0270f0 <line:30:2, line:31:3>
+    | |-UnaryOperator 0x14a0270c8 <line:30:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x14a0270b0 <col:7> 'struct syscall_trace_exit *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x14a027090 <col:7> 'struct syscall_trace_exit *' lvalue Var 0x14b0086f8 'rec' 'struct syscall_trace_exit *'
+    | `-ReturnStmt 0x14a0270e0 <line:31:3>
+    |-BinaryOperator 0x14a027190 <line:33:2, col:12> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x14a027148 <col:2, col:7> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x14a027110 <col:2> 'struct syscall_trace_exit *' lvalue Var 0x14b0086f8 'rec' 'struct syscall_trace_exit *'
+    | `-DeclRefExpr 0x14a027170 <col:12> 'int' lvalue Var 0x14b0089a8 'syscall_nr' 'int'
+    `-BinaryOperator 0x14a0273e8 <line:34:2, col:51> '<dependent type>' contains-errors '='
+      |-RecoveryExpr 0x14a0271e8 <col:2, col:7> '<dependent type>' contains-errors lvalue
+      | `-DeclRefExpr 0x14a0271b0 <col:2> 'struct syscall_trace_exit *' lvalue Var 0x14b0086f8 'rec' 'struct syscall_trace_exit *'
+      `-CallExpr 0x14a0273b8 <col:13, col:51> '<dependent type>' contains-errors
+        |-DeclRefExpr 0x14a0272f0 <col:13> 'int ()' Function 0x14a027238 'syscall_get_return_value' 'int ()'
+        |-RecoveryExpr 0x14a027398 <col:38> '<dependent type>' contains-errors lvalue
+        `-DeclRefExpr 0x14a027328 <col:47> 'struct pt_regs *' lvalue ParmVar 0x14a00e2c8 'regs' 'struct pt_regs *'

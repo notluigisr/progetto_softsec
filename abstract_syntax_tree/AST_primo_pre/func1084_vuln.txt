@@ -1,0 +1,128 @@
+`-FunctionDecl 0x135945328  line:1:12 invalid dccp_error 'int (struct net *, struct nf_conn *, struct sk_buff *, unsigned int, enum ip_conntrack_info *, int, unsigned int)' static
+  |-ParmVarDecl 0x135928648 <col:23, col:35> col:35 used net 'struct net *'
+  |-ParmVarDecl 0x135944c28 <col:40, col:56> col:56 tmpl 'struct nf_conn *'
+  |-ParmVarDecl 0x135944df8 <line:2:9, col:25> col:25 used skb 'struct sk_buff *'
+  |-ParmVarDecl 0x135944e78 <col:30, col:43> col:43 used dataoff 'unsigned int'
+  |-ParmVarDecl 0x135945068 <line:3:9, col:33> col:33 ctinfo 'enum ip_conntrack_info *'
+  |-ParmVarDecl 0x135945100 <line:4:9, col:18> col:18 invalid pf 'int'
+  |-ParmVarDecl 0x135945180 <col:22, col:35> col:35 used hooknum 'unsigned int'
+  `-CompoundStmt 0x135949a90 <line:5:1, line:50:1>
+    |-DeclStmt 0x135945680 <line:6:2, col:26>
+    | |-RecordDecl 0x135945408 <col:2, col:9> col:9 struct dccp_hdr
+    | |-VarDecl 0x135945508 <col:2, col:18> col:18 invalid _dh 'struct dccp_hdr'
+    | `-VarDecl 0x1359455f8 <col:2, col:24> col:24 used dh 'struct dccp_hdr *'
+    |-DeclStmt 0x1359457b8 <line:7:2, col:44>
+    | `-VarDecl 0x1359456b0 <col:2, col:37> col:15 used dccp_len 'unsigned int' cinit
+    |   `-BinaryOperator 0x135945798 <col:26, col:37> '<dependent type>' contains-errors '-'
+    |     |-RecoveryExpr 0x135945750 <col:26, col:31> '<dependent type>' contains-errors lvalue
+    |     | `-DeclRefExpr 0x135945718 <col:26> 'struct sk_buff *' lvalue ParmVar 0x135944df8 'skb' 'struct sk_buff *'
+    |     `-DeclRefExpr 0x135945778 <col:37> 'unsigned int' lvalue ParmVar 0x135944e78 'dataoff' 'unsigned int'
+    |-DeclStmt 0x135945850 <line:8:2, col:20>
+    | `-VarDecl 0x1359457e8 <col:2, col:15> col:15 used cscov 'unsigned int'
+    |-DeclStmt 0x1359458e8 <line:9:2, col:17>
+    | `-VarDecl 0x135945880 <col:2, col:14> col:14 used msg 'const char *'
+    |-BinaryOperator 0x1359470d0 <line:11:2, col:56> 'struct dccp_hdr *' contains-errors '='
+    | |-DeclRefExpr 0x135945900 <col:2> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    | `-ImplicitCastExpr 0x1359470b8 <col:7, col:56> 'struct dccp_hdr *' contains-errors <IntegralToPointer>
+    |   `-CallExpr 0x135947048 <col:7, col:56> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x135947030 <col:7> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x135945a80 <col:7> 'int ()' Function 0x1359459c8 'skb_header_pointer' 'int ()'
+    |     |-ImplicitCastExpr 0x135947088 <col:26> 'struct sk_buff *' <LValueToRValue>
+    |     | `-DeclRefExpr 0x135945aa0 <col:26> 'struct sk_buff *' lvalue ParmVar 0x135944df8 'skb' 'struct sk_buff *'
+    |     |-ImplicitCastExpr 0x1359470a0 <col:31> 'unsigned int' <LValueToRValue>
+    |     | `-DeclRefExpr 0x135945ac0 <col:31> 'unsigned int' lvalue ParmVar 0x135944e78 'dataoff' 'unsigned int'
+    |     |-UnaryExprOrTypeTraitExpr 0x135945b20 <col:40, col:50> 'unsigned long' contains-errors sizeof
+    |     | `-ParenExpr 0x135945b00 <col:46, col:50> '<dependent type>' contains-errors lvalue
+    |     |   `-RecoveryExpr 0x135945ae0 <col:47> '<dependent type>' contains-errors lvalue
+    |     `-UnaryOperator 0x135945bc0 <col:53, col:54> 'struct dccp_hdr **' prefix '&' cannot overflow
+    |       `-DeclRefExpr 0x135945b40 <col:54> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    |-IfStmt 0x1359472e8 <line:12:2, line:15:2>
+    | |-BinaryOperator 0x135947168 <line:12:6, col:12> 'int' contains-errors '=='
+    | | |-DeclRefExpr 0x1359470f0 <col:6> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    | | `-RecoveryExpr 0x135947148 <col:12> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x1359472c8 <col:18, line:15:2>
+    |   |-BinaryOperator 0x135947240 <line:13:3, col:9> 'const char *' '='
+    |   | |-DeclRefExpr 0x135947188 <col:3> 'const char *' lvalue Var 0x135945880 'msg' 'const char *'
+    |   | `-ImplicitCastExpr 0x135947228 <col:9> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x135947210 <col:9> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x1359471f0 <col:9> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x1359472b0 <line:14:3, col:8> 'out_invalid' 0x135947260
+    |-IfStmt 0x1359475c8 <line:17:2, line:21:2>
+    | |-RecoveryExpr 0x1359474e0 <line:17:6, line:18:27> '_Bool' contains-errors
+    | `-CompoundStmt 0x1359475a8 <col:37, line:21:2>
+    |   |-BinaryOperator 0x135947570 <line:19:3, col:9> 'const char *' '='
+    |   | |-DeclRefExpr 0x135947500 <col:3> 'const char *' lvalue Var 0x135945880 'msg' 'const char *'
+    |   | `-ImplicitCastExpr 0x135947558 <col:9> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x135947540 <col:9> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x135947520 <col:9> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x135947590 <line:20:3, col:8> 'out_invalid' 0x135947260
+    |-BinaryOperator 0x135947640 <line:23:2, col:10> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x1359475e8 <col:2> 'unsigned int' lvalue Var 0x1359457e8 'cscov' 'unsigned int'
+    | `-ImplicitCastExpr 0x135947628 <col:10> 'unsigned int' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x135947608 <col:10> 'unsigned int' contains-errors lvalue Var 0x1359456b0 'dccp_len' 'unsigned int'
+    |-IfStmt 0x135947998 <line:24:2, line:30:2>
+    | |-RecoveryExpr 0x135947698 <line:24:6, col:10> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x135947660 <col:6> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    | `-CompoundStmt 0x135947978 <col:23, line:30:2>
+    |   |-BinaryOperator 0x1359477e0 <line:25:3, col:35> 'unsigned int' contains-errors '='
+    |   | |-DeclRefExpr 0x1359476c0 <col:3> 'unsigned int' lvalue Var 0x1359457e8 'cscov' 'unsigned int'
+    |   | `-BinaryOperator 0x1359477c0 <col:11, col:35> '<dependent type>' contains-errors '*'
+    |   |   |-ParenExpr 0x135947780 <col:11, col:31> '<dependent type>' contains-errors
+    |   |   | `-BinaryOperator 0x135947760 <col:12, col:30> '<dependent type>' contains-errors '-'
+    |   |   |   |-RecoveryExpr 0x135947718 <col:12, col:16> '<dependent type>' contains-errors lvalue
+    |   |   |   | `-DeclRefExpr 0x1359476e0 <col:12> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    |   |   |   `-IntegerLiteral 0x135947740 <col:30> 'int' 1
+    |   |   `-IntegerLiteral 0x1359477a0 <col:35> 'int' 4
+    |   `-IfStmt 0x135947958 <line:26:3, line:29:3>
+    |     |-BinaryOperator 0x135947870 <line:26:7, col:15> 'int' contains-errors '>'
+    |     | |-ImplicitCastExpr 0x135947840 <col:7> 'unsigned int' <LValueToRValue>
+    |     | | `-DeclRefExpr 0x135947800 <col:7> 'unsigned int' lvalue Var 0x1359457e8 'cscov' 'unsigned int'
+    |     | `-ImplicitCastExpr 0x135947858 <col:15> 'unsigned int' contains-errors <LValueToRValue>
+    |     |   `-DeclRefExpr 0x135947820 <col:15> 'unsigned int' contains-errors lvalue Var 0x1359456b0 'dccp_len' 'unsigned int'
+    |     `-CompoundStmt 0x135947938 <col:25, line:29:3>
+    |       |-BinaryOperator 0x135947900 <line:27:4, col:10> 'const char *' '='
+    |       | |-DeclRefExpr 0x135947890 <col:4> 'const char *' lvalue Var 0x135945880 'msg' 'const char *'
+    |       | `-ImplicitCastExpr 0x1359478e8 <col:10> 'const char *' <NoOp>
+    |       |   `-ImplicitCastExpr 0x1359478d0 <col:10> 'char *' <ArrayToPointerDecay>
+    |       |     `-StringLiteral 0x1359478b0 <col:10> 'char[4]' lvalue "STR"
+    |       `-GotoStmt 0x135947920 <line:28:4, col:9> 'out_invalid' 0x135947260
+    |-IfStmt 0x135947eb8 <line:32:2, line:37:2>
+    | |-BinaryOperator 0x135947dd0 <line:32:6, line:34:7> 'int' contains-errors '&&'
+    | | |-BinaryOperator 0x135947d40 <line:32:6, col:44> 'int' contains-errors '&&'
+    | | | |-CXXDependentScopeMemberExpr 0x135947a18 <col:6, col:14> '<dependent type>' contains-errors lvalue .sysctl_checksum
+    | | | | `-RecoveryExpr 0x1359479f0 <col:6, col:11> '<dependent type>' contains-errors lvalue
+    | | | |   `-DeclRefExpr 0x1359479b8 <col:6> 'struct net *' lvalue ParmVar 0x135928648 'net' 'struct net *'
+    | | | `-BinaryOperator 0x135947d20 <col:33, col:44> 'int' contains-errors '=='
+    | | |   |-DeclRefExpr 0x135947a60 <col:33> 'unsigned int' lvalue ParmVar 0x135945180 'hooknum' 'unsigned int'
+    | | |   `-RecoveryExpr 0x135947d00 <col:44> '<dependent type>' contains-errors lvalue
+    | | `-CallExpr 0x135947d80 <line:33:6, line:34:7> '<dependent type>' contains-errors
+    | |   |-DeclRefExpr 0x135947bb8 <line:33:6> 'int ()' Function 0x135947b00 'nf_checksum_partial' 'int ()'
+    | |   |-DeclRefExpr 0x135947bd8 <col:26> 'struct sk_buff *' lvalue ParmVar 0x135944df8 'skb' 'struct sk_buff *'
+    | |   |-DeclRefExpr 0x135947bf8 <col:31> 'unsigned int' lvalue ParmVar 0x135945180 'hooknum' 'unsigned int'
+    | |   |-DeclRefExpr 0x135947c18 <col:40> 'unsigned int' lvalue ParmVar 0x135944e78 'dataoff' 'unsigned int'
+    | |   |-DeclRefExpr 0x135947c38 <col:49> 'unsigned int' lvalue Var 0x1359457e8 'cscov' 'unsigned int'
+    | |   |-RecoveryExpr 0x135947d60 <col:56> '<dependent type>' contains-errors lvalue
+    | |   `-RecoveryExpr 0x135947c70 <line:34:5> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x135947e98 <col:10, line:37:2>
+    |   |-BinaryOperator 0x135947e60 <line:35:3, col:9> 'const char *' '='
+    |   | |-DeclRefExpr 0x135947df0 <col:3> 'const char *' lvalue Var 0x135945880 'msg' 'const char *'
+    |   | `-ImplicitCastExpr 0x135947e48 <col:9> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x135947e30 <col:9> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x135947e10 <col:9> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x135947e80 <line:36:3, col:8> 'out_invalid' 0x135947260
+    |-IfStmt 0x135949688 <line:39:2, line:42:2>
+    | |-BinaryOperator 0x135947f90 <line:39:6, col:24> 'int' contains-errors '>='
+    | | |-RecoveryExpr 0x135947f10 <col:6, col:10> '<dependent type>' contains-errors lvalue
+    | | | `-DeclRefExpr 0x135947ed8 <col:6> 'struct dccp_hdr *' lvalue Var 0x1359455f8 'dh' 'struct dccp_hdr *'
+    | | `-RecoveryExpr 0x135947f70 <col:24> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x135949668 <col:42, line:42:2>
+    |   |-BinaryOperator 0x135949630 <line:40:3, col:9> 'const char *' '='
+    |   | |-DeclRefExpr 0x135947fb0 <col:3> 'const char *' lvalue Var 0x135945880 'msg' 'const char *'
+    |   | `-ImplicitCastExpr 0x135949618 <col:9> 'const char *' <NoOp>
+    |   |   `-ImplicitCastExpr 0x135949600 <col:9> 'char *' <ArrayToPointerDecay>
+    |   |     `-StringLiteral 0x135947fd0 <col:9> 'char[4]' lvalue "STR"
+    |   `-GotoStmt 0x135949650 <line:41:3, col:8> 'out_invalid' 0x135947260
+    |-ReturnStmt 0x1359496e0 <line:44:2, col:9>
+    | `-RecoveryExpr 0x1359496c0 <col:9> '<dependent type>' contains-errors lvalue
+    `-LabelStmt 0x135949a70 <line:46:1, col:12> 'out_invalid'
+      `-NullStmt 0x135949a68 <col:12>

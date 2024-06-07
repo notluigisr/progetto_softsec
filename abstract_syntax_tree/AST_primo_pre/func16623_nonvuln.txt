@@ -1,0 +1,34 @@
+`-FunctionDecl 0x11d8083e8  line:1:12 __mem_open 'int (struct inode *, struct file *, unsigned int)' static
+  |-ParmVarDecl 0x11d128648 <col:23, col:37> col:37 used inode 'struct inode *'
+  |-ParmVarDecl 0x11d808228 <col:44, col:57> col:57 used file 'struct file *'
+  |-ParmVarDecl 0x11d8082a8 <col:63, col:76> col:76 used mode 'unsigned int'
+  `-CompoundStmt 0x11d808d30 <line:2:1, line:10:1>
+    |-DeclStmt 0x11d808928 <line:3:2, col:51>
+    | |-RecordDecl 0x11d8084f0 <col:2, col:9> col:9 struct mm_struct
+    | `-VarDecl 0x11d808658 <col:2, col:50> col:20 used mm 'struct mm_struct *' cinit
+    |   `-ImplicitCastExpr 0x11d8088f8 <col:25, col:50> 'struct mm_struct *' <IntegralToPointer>
+    |     `-CallExpr 0x11d808898 <col:25, col:50> 'int'
+    |       |-ImplicitCastExpr 0x11d808880 <col:25> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x11d8087f0 <col:25> 'int ()' Function 0x11d808738 'proc_mem_open' 'int ()'
+    |       |-ImplicitCastExpr 0x11d8088c8 <col:39> 'struct inode *' <LValueToRValue>
+    |       | `-DeclRefExpr 0x11d808810 <col:39> 'struct inode *' lvalue ParmVar 0x11d128648 'inode' 'struct inode *'
+    |       `-ImplicitCastExpr 0x11d8088e0 <col:46> 'unsigned int' <LValueToRValue>
+    |         `-DeclRefExpr 0x11d808830 <col:46> 'unsigned int' lvalue ParmVar 0x11d8082a8 'mode' 'unsigned int'
+    |-IfStmt 0x11d808c40 <line:5:2, line:6:20>
+    | |-CallExpr 0x11d808a78 <line:5:6, col:15> 'int'
+    | | |-ImplicitCastExpr 0x11d808a60 <col:6> 'int (*)()' <FunctionToPointerDecay>
+    | | | `-DeclRefExpr 0x11d808a20 <col:6> 'int ()' Function 0x11d808968 'IS_ERR' 'int ()'
+    | | `-ImplicitCastExpr 0x11d808aa0 <col:13> 'struct mm_struct *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x11d808a40 <col:13> 'struct mm_struct *' lvalue Var 0x11d808658 'mm' 'struct mm_struct *'
+    | `-ReturnStmt 0x11d808c30 <line:6:3, col:20>
+    |   `-CallExpr 0x11d808bf0 <col:10, col:20> 'int'
+    |     |-ImplicitCastExpr 0x11d808bd8 <col:10> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x11d808b98 <col:10> 'int ()' Function 0x11d808ae0 'PTR_ERR' 'int ()'
+    |     `-ImplicitCastExpr 0x11d808c18 <col:18> 'struct mm_struct *' <LValueToRValue>
+    |       `-DeclRefExpr 0x11d808bb8 <col:18> 'struct mm_struct *' lvalue Var 0x11d808658 'mm' 'struct mm_struct *'
+    |-BinaryOperator 0x11d808ce0 <line:8:2, col:23> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x11d808c98 <col:2, col:8> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x11d808c60 <col:2> 'struct file *' lvalue ParmVar 0x11d808228 'file' 'struct file *'
+    | `-DeclRefExpr 0x11d808cc0 <col:23> 'struct mm_struct *' lvalue Var 0x11d808658 'mm' 'struct mm_struct *'
+    `-ReturnStmt 0x11d808d20 <line:9:2, col:9>
+      `-IntegerLiteral 0x11d808d00 <col:9> 'int' 0

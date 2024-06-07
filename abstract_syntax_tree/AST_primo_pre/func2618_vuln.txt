@@ -1,0 +1,68 @@
+`-FunctionDecl 0x13d1281d8  line:1:1 testBackingParse 'int (const void *)'
+  |-ParmVarDecl 0x13d128108 <col:18, col:30> col:30 used args 'const void *'
+  `-CompoundStmt 0x13d1438a0 <line:2:1, line:43:1>
+    |-DeclStmt 0x13d128508 <line:3:5, col:51>
+    | |-RecordDecl 0x13d1282d0 <col:11, col:18> col:18 struct testBackingParseData
+    | `-VarDecl 0x13d128438 <col:5, col:47> col:40 used data 'const struct testBackingParseData *' cinit
+    |   `-ImplicitCastExpr 0x13d1284d8 <col:47> 'const struct testBackingParseData *' <BitCast>
+    |     `-ImplicitCastExpr 0x13d1284c0 <col:47> 'const void *' <LValueToRValue>
+    |       `-DeclRefExpr 0x13d1284a0 <col:47> 'const void *' lvalue ParmVar 0x13d128108 'args' 'const void *'
+    |-CallExpr 0x13d1286d0 <line:4:5, col:21> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d128650 <col:5> 'int ()' Function 0x13d128598 'g_auto' 'int ()'
+    | `-RecoveryExpr 0x13d1286b0 <col:12> '<dependent type>' contains-errors lvalue
+    |-CallExpr 0x13d140a80 <line:6:5, col:31> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x13d140a00 <col:5> 'int ()' Function 0x13d128738 'g_autoptr' 'int ()'
+    | `-RecoveryExpr 0x13d140a60 <col:15> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x13d140b40 <line:7:5, col:11>
+    | `-VarDecl 0x13d140ad8 <col:5, col:9> col:9 used rc 'int'
+    |-DeclStmt 0x13d141058 <line:8:5, col:23>
+    | `-VarDecl 0x13d140b70 <col:5, col:21> col:9 used erc 'int' cinit
+    |   `-RecoveryExpr 0x13d141030 <col:15, col:21> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x13d140bd8 <col:15> 'const struct testBackingParseData *' lvalue Var 0x13d128438 'data' 'const struct testBackingParseData *'
+    |-IfStmt 0x13d141178 <line:11:5, line:12:16>
+    | |-UnaryOperator 0x13d1410e8 <line:11:9, col:16> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13d1410d0 <col:10, col:16> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x13d1410a8 <col:10, col:16> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x13d141070 <col:10> 'const struct testBackingParseData *' lvalue Var 0x13d128438 'data' 'const struct testBackingParseData *'
+    | `-BinaryOperator 0x13d141158 <line:12:9, col:16> 'int' contains-errors '='
+    |   |-DeclRefExpr 0x13d141100 <col:9> 'int' contains-errors lvalue Var 0x13d140b70 'erc' 'int'
+    |   `-UnaryOperator 0x13d141140 <col:15, col:16> 'int' prefix '-'
+    |     `-IntegerLiteral 0x13d141120 <col:16> 'int' 1
+    |-IfStmt 0x13d1417e8 <line:14:5, line:17:5>
+    | |-RecoveryExpr 0x13d141500 <line:14:9, col:79> '_Bool' contains-errors
+    | `-CompoundStmt 0x13d1417c8 <col:84, line:17:5>
+    |   |-CallExpr 0x13d141740 <line:15:9, col:39> '<dependent type>' contains-errors
+    |   | |-DeclRefExpr 0x13d141600 <col:9> 'int ()' Function 0x13d141548 'fprintf' 'int ()'
+    |   | |-RecoveryExpr 0x13d141720 <col:17> '<dependent type>' contains-errors lvalue
+    |   | |-StringLiteral 0x13d141680 <col:25> 'char[4]' lvalue "STR"
+    |   | |-DeclRefExpr 0x13d1416a0 <col:32> 'int' contains-errors lvalue Var 0x13d140b70 'erc' 'int'
+    |   | `-DeclRefExpr 0x13d1416c0 <col:37> 'int' lvalue Var 0x13d140ad8 'rc' 'int'
+    |   `-ReturnStmt 0x13d1417b8 <line:16:9, col:17>
+    |     `-UnaryOperator 0x13d1417a0 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x13d141780 <col:17> 'int' 1
+    |-IfStmt 0x13d141970 <line:19:5, line:20:16>
+    | |-UnaryOperator 0x13d141928 <line:19:9, col:10> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x13d141910 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x13d1418f0 <col:10> '<dependent type>' contains-errors lvalue
+    | `-ReturnStmt 0x13d141960 <line:20:9, col:16>
+    |   `-IntegerLiteral 0x13d141940 <col:16> 'int' 0
+    |-IfStmt 0x13d143198 <line:22:5, line:26:5>
+    | |-RecoveryExpr 0x13d143030 <line:22:9, col:23> '_Bool' contains-errors
+    | `-CompoundStmt 0x13d143180 <col:31, line:26:5>
+    |   `-ReturnStmt 0x13d143170 <line:25:9, col:17>
+    |     `-UnaryOperator 0x13d143158 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x13d143138 <col:17> 'int' 1
+    |-IfStmt 0x13d1434f8 <line:28:5, line:32:5>
+    | |-RecoveryExpr 0x13d143438 <line:28:9, line:29:47> '_Bool' contains-errors
+    | `-CompoundStmt 0x13d1434e0 <col:50, line:32:5>
+    |   `-ReturnStmt 0x13d1434d0 <line:31:9, col:17>
+    |     `-UnaryOperator 0x13d1434b8 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x13d143498 <col:17> 'int' 1
+    |-IfStmt 0x13d143850 <line:34:5, line:40:5>
+    | |-RecoveryExpr 0x13d143678 <line:34:9, col:33> '_Bool' contains-errors
+    | `-CompoundStmt 0x13d143838 <col:36, line:40:5>
+    |   `-ReturnStmt 0x13d143828 <line:39:9, col:17>
+    |     `-UnaryOperator 0x13d143810 <col:16, col:17> 'int' prefix '-'
+    |       `-IntegerLiteral 0x13d1437f0 <col:17> 'int' 1
+    `-ReturnStmt 0x13d143890 <line:42:5, col:12>
+      `-IntegerLiteral 0x13d143870 <col:12> 'int' 0

@@ -1,0 +1,31 @@
+`-FunctionDecl 0x14900e350  line:1:6 exit_files 'void (struct task_struct *)'
+  |-ParmVarDecl 0x14900e248 <col:17, col:37> col:37 used tsk 'struct task_struct *'
+  `-CompoundStmt 0x149026ef0 <line:2:1, line:11:1>
+    |-DeclStmt 0x149026898 <line:3:2, col:42>
+    | |-RecordDecl 0x149026648 <col:2, col:9> col:9 struct files_struct
+    | `-VarDecl 0x1490267b8 <col:2, col:37> col:24 used files 'struct files_struct *' cinit
+    |   `-RecoveryExpr 0x149026858 <col:32, col:37> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x149026820 <col:32> 'struct task_struct *' lvalue ParmVar 0x14900e248 'tsk' 'struct task_struct *'
+    `-IfStmt 0x149026ed0 <line:5:2, line:10:2>
+      |-ImplicitCastExpr 0x1490268d0 <line:5:6> 'struct files_struct *' contains-errors <LValueToRValue>
+      | `-DeclRefExpr 0x1490268b0 <col:6> 'struct files_struct *' contains-errors lvalue Var 0x1490267b8 'files' 'struct files_struct *'
+      `-CompoundStmt 0x149026ea0 <col:13, line:10:2>
+        |-CallExpr 0x149026a98 <line:6:3, col:16> 'int'
+        | |-ImplicitCastExpr 0x149026a80 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x149026a10 <col:3> 'int ()' Function 0x149026958 'task_lock' 'int ()'
+        | `-ImplicitCastExpr 0x149026ac0 <col:13> 'struct task_struct *' <LValueToRValue>
+        |   `-DeclRefExpr 0x149026a30 <col:13> 'struct task_struct *' lvalue ParmVar 0x14900e248 'tsk' 'struct task_struct *'
+        |-BinaryOperator 0x149026b90 <line:7:3, col:16> '<dependent type>' contains-errors '='
+        | |-RecoveryExpr 0x149026b10 <col:3, col:8> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x149026ad8 <col:3> 'struct task_struct *' lvalue ParmVar 0x14900e248 'tsk' 'struct task_struct *'
+        | `-RecoveryExpr 0x149026b70 <col:16> '<dependent type>' contains-errors lvalue
+        |-CallExpr 0x149026ce8 <line:8:3, col:18> 'int'
+        | |-ImplicitCastExpr 0x149026cd0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+        | | `-DeclRefExpr 0x149026c90 <col:3> 'int ()' Function 0x149026bd8 'task_unlock' 'int ()'
+        | `-ImplicitCastExpr 0x149026d10 <col:15> 'struct task_struct *' <LValueToRValue>
+        |   `-DeclRefExpr 0x149026cb0 <col:15> 'struct task_struct *' lvalue ParmVar 0x14900e248 'tsk' 'struct task_struct *'
+        `-CallExpr 0x149026e60 <line:9:3, col:25> 'int' contains-errors
+          |-ImplicitCastExpr 0x149026e48 <col:3> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x149026e08 <col:3> 'int ()' Function 0x149026d50 'put_files_struct' 'int ()'
+          `-ImplicitCastExpr 0x149026e88 <col:20> 'struct files_struct *' contains-errors <LValueToRValue>
+            `-DeclRefExpr 0x149026e28 <col:20> 'struct files_struct *' contains-errors lvalue Var 0x1490267b8 'files' 'struct files_struct *'

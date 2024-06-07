@@ -1,0 +1,34 @@
+`-FunctionDecl 0x13500de88  line:1:1 invalid psutil_net_if_addrs 'int (int *, int *)'
+  |-ParmVarDecl 0x13500dd28 <col:21, col:31> col:31 invalid self 'int *'
+  |-ParmVarDecl 0x13500dda8 <col:37, col:47> col:47 invalid args 'int *'
+  `-CompoundStmt 0x134923e58 <col:53, line:87:1>
+    |-DeclStmt 0x13500e1c0 <line:2:5, col:33>
+    | |-RecordDecl 0x13500df40 <col:5, col:12> col:12 struct ifaddrs
+    | |-VarDecl 0x13500e0a8 <col:5, col:21> col:21 used ifaddr 'struct ifaddrs *'
+    | `-VarDecl 0x13500e138 <col:5, col:30> col:30 used ifa 'struct ifaddrs *'
+    |-DeclStmt 0x13500e258 <line:3:5, col:15>
+    | `-VarDecl 0x13500e1f0 <col:5, col:9> col:9 used family 'int'
+    |-IfStmt 0x135027940 <line:14:5, line:17:5>
+    | |-BinaryOperator 0x1350277a0 <line:14:9, col:33> 'int' '=='
+    | | |-CallExpr 0x135027740 <col:9, col:27> 'int'
+    | | | |-ImplicitCastExpr 0x135027728 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    | | | | `-DeclRefExpr 0x135027668 <col:9> 'int ()' Function 0x1350275b0 'getifaddrs' 'int ()'
+    | | | `-UnaryOperator 0x135027710 <col:20, col:21> 'struct ifaddrs **' prefix '&' cannot overflow
+    | | |   `-DeclRefExpr 0x135027688 <col:21> 'struct ifaddrs *' lvalue Var 0x13500e0a8 'ifaddr' 'struct ifaddrs *'
+    | | `-UnaryOperator 0x135027788 <col:32, col:33> 'int' prefix '-'
+    | |   `-IntegerLiteral 0x135027768 <col:33> 'int' 1
+    | `-CompoundStmt 0x135027928 <col:36, line:17:5>
+    |   `-GotoStmt 0x135027910 <line:16:9, col:14> 'error' 0x1350278c0
+    |-CallExpr 0x134923b60 <line:74:5, col:23> 'int'
+    | |-ImplicitCastExpr 0x134923b48 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x134923b08 <col:5> 'int ()' Function 0x134923a50 'freeifaddrs' 'int ()'
+    | `-ImplicitCastExpr 0x134923b88 <col:17> 'struct ifaddrs *' <LValueToRValue>
+    |   `-DeclRefExpr 0x134923b28 <col:17> 'struct ifaddrs *' lvalue Var 0x13500e0a8 'ifaddr' 'struct ifaddrs *'
+    `-LabelStmt 0x134923c98 <line:77:1, line:79:27> 'error'
+      `-IfStmt 0x134923c78 <line:78:5, line:79:27>
+        |-RecoveryExpr 0x134923bc0 <line:78:9, col:19> '_Bool' contains-errors
+        `-CallExpr 0x134923c38 <line:79:9, col:27> 'int'
+          |-ImplicitCastExpr 0x134923c20 <col:9> 'int (*)()' <FunctionToPointerDecay>
+          | `-DeclRefExpr 0x134923be0 <col:9> 'int ()' Function 0x134923a50 'freeifaddrs' 'int ()'
+          `-ImplicitCastExpr 0x134923c60 <col:21> 'struct ifaddrs *' <LValueToRValue>
+            `-DeclRefExpr 0x134923c00 <col:21> 'struct ifaddrs *' lvalue Var 0x13500e0a8 'ifaddr' 'struct ifaddrs *'

@@ -1,0 +1,29 @@
+`-FunctionDecl 0x150008b78  line:1:6 invalid ldb_dn_check_local 'int (struct ldb_module *, struct ldb_dn *)'
+  |-ParmVarDecl 0x158128668 <col:25, col:44> col:44 used module 'struct ldb_module *'
+  |-ParmVarDecl 0x150008a58 <col:52, col:67> col:67 used dn 'struct ldb_dn *'
+  `-CompoundStmt 0x150009380 <line:2:1, line:10:1>
+    |-DeclStmt 0x150009058 <line:3:2, col:62>
+    | |-RecordDecl 0x150008c30 <col:8, col:15> col:15 struct ldb_map_context
+    | `-VarDecl 0x150008d98 <col:2, col:61> col:32 used data 'const struct ldb_map_context *' cinit
+    |   `-ImplicitCastExpr 0x150009028 <col:39, col:61> 'const struct ldb_map_context *' <IntegralToPointer>
+    |     `-CallExpr 0x150008fe8 <col:39, col:61> 'int'
+    |       |-ImplicitCastExpr 0x150008fd0 <col:39> 'int (*)()' <FunctionToPointerDecay>
+    |       | `-DeclRefExpr 0x150008f60 <col:39> 'int ()' Function 0x150008ea8 'map_get_context' 'int ()'
+    |       `-ImplicitCastExpr 0x150009010 <col:55> 'struct ldb_module *' <LValueToRValue>
+    |         `-DeclRefExpr 0x150008f80 <col:55> 'struct ldb_module *' lvalue ParmVar 0x158128668 'module' 'struct ldb_module *'
+    |-IfStmt 0x150009160 <line:5:2, line:7:2>
+    | |-UnaryOperator 0x1500090e8 <line:5:6, col:13> '<dependent type>' contains-errors prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x1500090d0 <col:7, col:13> '<dependent type>' contains-errors <LValueToRValue>
+    | |   `-RecoveryExpr 0x1500090a8 <col:7, col:13> '<dependent type>' contains-errors lvalue
+    | |     `-DeclRefExpr 0x150009070 <col:7> 'const struct ldb_map_context *' lvalue Var 0x150008d98 'data' 'const struct ldb_map_context *'
+    | `-CompoundStmt 0x150009148 <col:28, line:7:2>
+    |   `-ReturnStmt 0x150009138 <line:6:3, col:10>
+    |     `-RecoveryExpr 0x150009118 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x150009370 <line:9:2, col:57>
+      `-BinaryOperator 0x150009350 <col:9, col:57> 'int' contains-errors '=='
+        |-CallExpr 0x150009300 <col:9, col:52> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x150009260 <col:9> 'int ()' Function 0x1500091a8 'ldb_dn_compare_base' 'int ()'
+        | |-RecoveryExpr 0x1500092b8 <col:29, col:35> '<dependent type>' contains-errors lvalue
+        | | `-DeclRefExpr 0x150009280 <col:29> 'const struct ldb_map_context *' lvalue Var 0x150008d98 'data' 'const struct ldb_map_context *'
+        | `-DeclRefExpr 0x1500092e0 <col:50> 'struct ldb_dn *' lvalue ParmVar 0x150008a58 'dn' 'struct ldb_dn *'
+        `-IntegerLiteral 0x150009330 <col:57> 'int' 0

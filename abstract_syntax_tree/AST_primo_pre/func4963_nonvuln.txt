@@ -1,0 +1,47 @@
+`-FunctionDecl 0x122826678  line:1:5 imap_account_match 'int (const struct Account *, const struct Account *)'
+  |-ParmVarDecl 0x12280e248 <col:24, col:46> col:46 used a1 'const struct Account *'
+  |-ParmVarDecl 0x12280e338 <col:50, col:72> col:72 used a2 'const struct Account *'
+  `-CompoundStmt 0x122827468 <line:2:1, line:9:1>
+    |-DeclStmt 0x122826b70 <line:3:3, col:71>
+    | |-RecordDecl 0x122826778 <col:3, col:10> col:10 struct ImapData
+    | `-VarDecl 0x1228268e8 <col:3, col:70> col:20 used a1_idata 'struct ImapData *' cinit
+    |   `-CallExpr 0x122826b28 <col:31, col:70> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122826a80 <col:31> 'int ()' Function 0x1228269c8 'imap_conn_find' 'int ()'
+    |     |-DeclRefExpr 0x122826aa0 <col:46> 'const struct Account *' lvalue ParmVar 0x12280e248 'a1' 'const struct Account *'
+    |     `-RecoveryExpr 0x122826b08 <col:50> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x122826d58 <line:4:3, col:71>
+    | `-VarDecl 0x122826c18 <col:3, col:70> col:20 used a2_idata 'struct ImapData *' cinit
+    |   `-CallExpr 0x122826d28 <col:31, col:70> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x122826c80 <col:31> 'int ()' Function 0x1228269c8 'imap_conn_find' 'int ()'
+    |     |-DeclRefExpr 0x122826ca0 <col:46> 'const struct Account *' lvalue ParmVar 0x12280e338 'a2' 'const struct Account *'
+    |     `-RecoveryExpr 0x122826d08 <col:50> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x122826fd8 <line:5:3, col:84>
+    | `-VarDecl 0x122826d98 <col:3, col:77> col:25 used a1_canon 'const struct Account *' cinit
+    |   `-ConditionalOperator 0x122826fa8 <col:36, col:77> '<dependent type>' contains-errors
+    |     |-BinaryOperator 0x122826f88 <col:36, col:48> 'int' contains-errors '=='
+    |     | |-DeclRefExpr 0x122826e00 <col:36> 'struct ImapData *' contains-errors lvalue Var 0x1228268e8 'a1_idata' 'struct ImapData *'
+    |     | `-RecoveryExpr 0x122826f68 <col:48> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x122826e58 <col:55> 'const struct Account *' lvalue ParmVar 0x12280e248 'a1' 'const struct Account *'
+    |     `-UnaryOperator 0x122826f20 <col:60, col:77> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x122826ed8 <col:61, col:77> '<dependent type>' contains-errors lvalue ->account
+    |         `-RecoveryExpr 0x122826eb0 <col:61, col:71> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x122826e78 <col:61> 'struct ImapData *' contains-errors lvalue Var 0x1228268e8 'a1_idata' 'struct ImapData *'
+    |-DeclStmt 0x122827258 <line:6:3, col:84>
+    | `-VarDecl 0x122827018 <col:3, col:77> col:25 used a2_canon 'const struct Account *' cinit
+    |   `-ConditionalOperator 0x122827228 <col:36, col:77> '<dependent type>' contains-errors
+    |     |-BinaryOperator 0x122827208 <col:36, col:48> 'int' contains-errors '=='
+    |     | |-DeclRefExpr 0x122827080 <col:36> 'struct ImapData *' contains-errors lvalue Var 0x122826c18 'a2_idata' 'struct ImapData *'
+    |     | `-RecoveryExpr 0x1228271e8 <col:48> '<dependent type>' contains-errors lvalue
+    |     |-DeclRefExpr 0x1228270d8 <col:55> 'const struct Account *' lvalue ParmVar 0x12280e338 'a2' 'const struct Account *'
+    |     `-UnaryOperator 0x1228271a0 <col:60, col:77> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |       `-CXXDependentScopeMemberExpr 0x122827158 <col:61, col:77> '<dependent type>' contains-errors lvalue ->account
+    |         `-RecoveryExpr 0x122827130 <col:61, col:71> '<dependent type>' contains-errors lvalue
+    |           `-DeclRefExpr 0x1228270f8 <col:61> 'struct ImapData *' contains-errors lvalue Var 0x122826c18 'a2_idata' 'struct ImapData *'
+    `-ReturnStmt 0x122827458 <line:8:3, col:47>
+      `-CallExpr 0x1228273f8 <col:10, col:47> 'int' contains-errors
+        |-ImplicitCastExpr 0x1228273e0 <col:10> 'int (*)()' <FunctionToPointerDecay>
+        | `-DeclRefExpr 0x122827350 <col:10> 'int ()' Function 0x122827298 'mutt_account_match' 'int ()'
+        |-ImplicitCastExpr 0x122827428 <col:29> 'const struct Account *' contains-errors <LValueToRValue>
+        | `-DeclRefExpr 0x122827370 <col:29> 'const struct Account *' contains-errors lvalue Var 0x122826d98 'a1_canon' 'const struct Account *'
+        `-ImplicitCastExpr 0x122827440 <col:39> 'const struct Account *' contains-errors <LValueToRValue>
+          `-DeclRefExpr 0x122827390 <col:39> 'const struct Account *' contains-errors lvalue Var 0x122827018 'a2_canon' 'const struct Account *'

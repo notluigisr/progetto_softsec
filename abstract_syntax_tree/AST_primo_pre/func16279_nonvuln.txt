@@ -1,0 +1,62 @@
+`-FunctionDecl 0x132027400  line:1:13 invalid lg4ff_set_leds 'void (struct hid_device *, int)' static
+  |-ParmVarDecl 0x13200e248 <col:28, col:47> col:47 used hid 'struct hid_device *'
+  |-ParmVarDecl 0x13200e2e0 <col:52, col:55> col:55 invalid leds 'int'
+  `-CompoundStmt 0x1320296c8 <line:2:1, line:31:1>
+    |-DeclStmt 0x1320276a8 <line:3:2, col:30>
+    | |-RecordDecl 0x1320274b8 <col:2, col:9> col:9 struct lg_drv_data
+    | `-VarDecl 0x132027628 <col:2, col:22> col:22 used drv_data 'struct lg_drv_data *'
+    |-DeclStmt 0x1320278a8 <line:4:2, col:34>
+    | |-RecordDecl 0x1320276c0 <col:2, col:9> col:9 struct lg4ff_device_entry
+    | `-VarDecl 0x132027828 <col:2, col:29> col:29 used entry 'struct lg4ff_device_entry *'
+    |-DeclStmt 0x132027940 <line:5:2, col:21>
+    | `-VarDecl 0x1320278d8 <col:2, col:16> col:16 used flags 'unsigned long'
+    |-BinaryOperator 0x132027bd0 <line:8:2, col:32> 'struct lg_drv_data *' '='
+    | |-DeclRefExpr 0x132027970 <col:2> 'struct lg_drv_data *' lvalue Var 0x132027628 'drv_data' 'struct lg_drv_data *'
+    | `-ImplicitCastExpr 0x132027bb8 <col:13, col:32> 'struct lg_drv_data *' <IntegralToPointer>
+    |   `-CallExpr 0x132027b78 <col:13, col:32> 'int'
+    |     |-ImplicitCastExpr 0x132027b60 <col:13> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x132027af0 <col:13> 'int ()' Function 0x132027a38 'hid_get_drvdata' 'int ()'
+    |     `-ImplicitCastExpr 0x132027ba0 <col:29> 'struct hid_device *' <LValueToRValue>
+    |       `-DeclRefExpr 0x132027b10 <col:29> 'struct hid_device *' lvalue ParmVar 0x13200e248 'hid' 'struct hid_device *'
+    |-IfStmt 0x132027e68 <line:9:2, line:12:2>
+    | |-UnaryOperator 0x132027c28 <line:9:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x132027c10 <col:7> 'struct lg_drv_data *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x132027bf0 <col:7> 'struct lg_drv_data *' lvalue Var 0x132027628 'drv_data' 'struct lg_drv_data *'
+    | `-CompoundStmt 0x132027e48 <col:17, line:12:2>
+    |   |-CallExpr 0x132027dd8 <line:10:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x132027dc0 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x132027d20 <col:3> 'int ()' Function 0x132027c68 'hid_err' 'int ()'
+    |   | |-ImplicitCastExpr 0x132027e08 <col:11> 'struct hid_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x132027d40 <col:11> 'struct hid_device *' lvalue ParmVar 0x13200e248 'hid' 'struct hid_device *'
+    |   | `-ImplicitCastExpr 0x132027e20 <col:16> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x132027da0 <col:16> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x132027e38 <line:11:3>
+    |-BinaryOperator 0x132027f08 <line:14:2, col:20> 'struct lg4ff_device_entry *' contains-errors '='
+    | |-DeclRefExpr 0x132027e88 <col:2> 'struct lg4ff_device_entry *' lvalue Var 0x132027828 'entry' 'struct lg4ff_device_entry *'
+    | `-RecoveryExpr 0x132027ee0 <col:10, col:20> '<dependent type>' contains-errors lvalue
+    |   `-DeclRefExpr 0x132027ea8 <col:10> 'struct lg_drv_data *' lvalue Var 0x132027628 'drv_data' 'struct lg_drv_data *'
+    |-IfStmt 0x132028080 <line:15:2, line:18:2>
+    | |-UnaryOperator 0x132027f60 <line:15:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x132027f48 <col:7> 'struct lg4ff_device_entry *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x132027f28 <col:7> 'struct lg4ff_device_entry *' lvalue Var 0x132027828 'entry' 'struct lg4ff_device_entry *'
+    | `-CompoundStmt 0x132028060 <col:14, line:18:2>
+    |   |-CallExpr 0x132027ff0 <line:16:3, col:21> 'int'
+    |   | |-ImplicitCastExpr 0x132027fd8 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x132027f78 <col:3> 'int ()' Function 0x132027c68 'hid_err' 'int ()'
+    |   | |-ImplicitCastExpr 0x132028020 <col:11> 'struct hid_device *' <LValueToRValue>
+    |   | | `-DeclRefExpr 0x132027f98 <col:11> 'struct hid_device *' lvalue ParmVar 0x13200e248 'hid' 'struct hid_device *'
+    |   | `-ImplicitCastExpr 0x132028038 <col:16> 'char *' <ArrayToPointerDecay>
+    |   |   `-StringLiteral 0x132027fb8 <col:16> 'char[4]' lvalue "STR"
+    |   `-ReturnStmt 0x132028050 <line:17:3>
+    |-CallExpr 0x132028380 <line:21:2, col:46> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1320282c8 <col:2> 'int ()' Function 0x132028210 'spin_lock_irqsave' 'int ()'
+    | |-UnaryOperator 0x132028348 <col:20, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | | `-RecoveryExpr 0x132028320 <col:21, col:28> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x1320282e8 <col:21> 'struct lg4ff_device_entry *' lvalue Var 0x132027828 'entry' 'struct lg4ff_device_entry *'
+    | `-DeclRefExpr 0x132028360 <col:41> 'unsigned long' lvalue Var 0x1320278d8 'flags' 'unsigned long'
+    `-CallExpr 0x132029698 <line:30:2, col:51> '<dependent type>' contains-errors
+      |-DeclRefExpr 0x1320295e0 <col:2> 'int ()' Function 0x132029528 'spin_unlock_irqrestore' 'int ()'
+      |-UnaryOperator 0x132029660 <col:25, col:33> '<dependent type>' contains-errors prefix '&' cannot overflow
+      | `-RecoveryExpr 0x132029638 <col:26, col:33> '<dependent type>' contains-errors lvalue
+      |   `-DeclRefExpr 0x132029600 <col:26> 'struct lg4ff_device_entry *' lvalue Var 0x132027828 'entry' 'struct lg4ff_device_entry *'
+      `-DeclRefExpr 0x132029678 <col:46> 'unsigned long' lvalue Var 0x1320278d8 'flags' 'unsigned long'

@@ -1,0 +1,64 @@
+`-FunctionDecl 0x139140c88  line:1:24 invalid xfrm_state_netlink 'struct sk_buff *(struct sk_buff *, struct xfrm_state *, int)' static
+  |-ParmVarDecl 0x139128218 <col:43, col:59> col:59 used in_skb 'struct sk_buff *'
+  |-ParmVarDecl 0x139140a28 <line:2:8, col:27> col:27 used x 'struct xfrm_state *'
+  |-ParmVarDecl 0x139140ac0 <col:30, col:34> col:34 invalid seq 'int'
+  `-CompoundStmt 0x13a808e58 <line:3:1, line:22:1>
+    |-DeclStmt 0x139140ec8 <line:4:2, col:28>
+    | |-RecordDecl 0x139140d48 <col:2, col:9> col:9 struct xfrm_dump_info
+    | `-VarDecl 0x139140e48 <col:2, col:24> col:24 referenced invalid info 'struct xfrm_dump_info'
+    |-DeclStmt 0x139140f70 <line:5:2, col:21>
+    | `-VarDecl 0x139140f08 <col:2, col:18> col:18 used skb 'struct sk_buff *'
+    |-BinaryOperator 0x139141210 <line:7:2, col:48> 'struct sk_buff *' contains-errors '='
+    | |-DeclRefExpr 0x139140f88 <col:2> 'struct sk_buff *' lvalue Var 0x139140f08 'skb' 'struct sk_buff *'
+    | `-CallExpr 0x1391411e0 <col:8, col:48> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x139141100 <col:8> 'int ()' Function 0x139141048 'nlmsg_new' 'int ()'
+    |   |-RecoveryExpr 0x1391411a0 <col:18> '<dependent type>' contains-errors lvalue
+    |   `-RecoveryExpr 0x1391411c0 <col:38> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x139141478 <line:8:2, line:9:25>
+    | |-UnaryOperator 0x139141268 <line:8:6, col:7> 'int' prefix '!' cannot overflow
+    | | `-ImplicitCastExpr 0x139141250 <col:7> 'struct sk_buff *' <LValueToRValue>
+    | |   `-DeclRefExpr 0x139141230 <col:7> 'struct sk_buff *' lvalue Var 0x139140f08 'skb' 'struct sk_buff *'
+    | `-ReturnStmt 0x139141468 <line:9:3, col:25>
+    |   `-CallExpr 0x139141440 <col:10, col:25> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x139141360 <col:10> 'int ()' Function 0x1391412a8 'ERR_PTR' 'int ()'
+    |     `-UnaryOperator 0x139141428 <col:18, col:19> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |       `-ImplicitCastExpr 0x139141410 <col:19> '<dependent type>' contains-errors <LValueToRValue>
+    |         `-RecoveryExpr 0x1391413f0 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x139141548 <line:11:2, col:16> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1391414e0 <col:2, col:7> '<dependent type>' contains-errors lvalue .in_skb
+    | | `-RecoveryExpr 0x1391414b8 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x139141498 <col:2> 'struct xfrm_dump_info' lvalue Var 0x139140e48 'info' 'struct xfrm_dump_info'
+    | `-DeclRefExpr 0x139141528 <col:16> 'struct sk_buff *' lvalue ParmVar 0x139128218 'in_skb' 'struct sk_buff *'
+    |-BinaryOperator 0x139141618 <line:12:2, col:17> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x1391415b0 <col:2, col:7> '<dependent type>' contains-errors lvalue .out_skb
+    | | `-RecoveryExpr 0x139141588 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x139141568 <col:2> 'struct xfrm_dump_info' lvalue Var 0x139140e48 'info' 'struct xfrm_dump_info'
+    | `-DeclRefExpr 0x1391415f8 <col:17> 'struct sk_buff *' lvalue Var 0x139140f08 'skb' 'struct sk_buff *'
+    |-BinaryOperator 0x1391416e8 <line:13:2, col:19> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x139141680 <col:2, col:7> '<dependent type>' contains-errors lvalue .nlmsg_seq
+    | | `-RecoveryExpr 0x139141658 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x139141638 <col:2> 'struct xfrm_dump_info' lvalue Var 0x139140e48 'info' 'struct xfrm_dump_info'
+    | `-RecoveryExpr 0x1391416c8 <col:19> '<dependent type>' contains-errors lvalue
+    |-BinaryOperator 0x1391417b8 <line:14:2, col:21> '<dependent type>' contains-errors '='
+    | |-CXXDependentScopeMemberExpr 0x139141750 <col:2, col:7> '<dependent type>' contains-errors lvalue .nlmsg_flags
+    | | `-RecoveryExpr 0x139141728 <col:2> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x139141708 <col:2> 'struct xfrm_dump_info' lvalue Var 0x139140e48 'info' 'struct xfrm_dump_info'
+    | `-IntegerLiteral 0x139141798 <col:21> 'int' 0
+    |-IfStmt 0x13a808df0 <line:16:2, line:19:2>
+    | |-CallExpr 0x139141950 <line:16:6, col:32> '<dependent type>' contains-errors
+    | | |-DeclRefExpr 0x1391418b8 <col:6> 'int ()' Function 0x139141800 'dump_one_state' 'int ()'
+    | | |-DeclRefExpr 0x1391418d8 <col:21> 'struct xfrm_state *' lvalue ParmVar 0x139140a28 'x' 'struct xfrm_state *'
+    | | |-IntegerLiteral 0x1391418f8 <col:24> 'int' 0
+    | | `-UnaryOperator 0x139141938 <col:27, col:28> '<dependent type>' contains-errors prefix '&' cannot overflow
+    | |   `-RecoveryExpr 0x139141918 <col:28> '<dependent type>' contains-errors lvalue
+    | `-CompoundStmt 0x13a808dd0 <col:35, line:19:2>
+    |   |-CallExpr 0x13a808d48 <line:17:3, col:16> 'int'
+    |   | |-ImplicitCastExpr 0x13a808d30 <col:3> 'int (*)()' <FunctionToPointerDecay>
+    |   | | `-DeclRefExpr 0x13a808cb8 <col:3> 'int ()' Function 0x13a808c00 'kfree_skb' 'int ()'
+    |   | `-ImplicitCastExpr 0x13a808d70 <col:13> 'struct sk_buff *' <LValueToRValue>
+    |   |   `-DeclRefExpr 0x13a808cd8 <col:13> 'struct sk_buff *' lvalue Var 0x139140f08 'skb' 'struct sk_buff *'
+    |   `-ReturnStmt 0x13a808dc0 <line:18:3, col:10>
+    |     `-RecoveryExpr 0x13a808da0 <col:10> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x13a808e48 <line:21:2, col:9>
+      `-ImplicitCastExpr 0x13a808e30 <col:9> 'struct sk_buff *' <LValueToRValue>
+        `-DeclRefExpr 0x13a808e10 <col:9> 'struct sk_buff *' lvalue Var 0x139140f08 'skb' 'struct sk_buff *'

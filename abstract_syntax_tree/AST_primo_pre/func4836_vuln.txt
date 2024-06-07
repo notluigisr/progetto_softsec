@@ -1,0 +1,58 @@
+`-FunctionDecl 0x14780df18  line:1:5 invalid utf8s_to_utf16s 'int (const int *, int, int *)'
+  |-ParmVarDecl 0x14780dcf0 <col:21, col:31> col:31 referenced invalid s 'const int *'
+  |-ParmVarDecl 0x14780dd70 <col:34, col:38> col:38 used len 'int'
+  |-ParmVarDecl 0x14780de28 <col:43, col:52> col:52 invalid pwcs 'int *'
+  `-CompoundStmt 0x147827fd8 <line:2:1, line:32:1>
+    |-DeclStmt 0x14780e070 <line:4:2, col:10>
+    | `-VarDecl 0x14780e008 <col:2, col:6> col:6 used size 'int'
+    `-WhileStmt 0x147827f98 <line:8:2, line:30:2>
+      |-BinaryOperator 0x14780e170 <line:8:9, col:21> 'int' contains-errors '&&'
+      | |-UnaryOperator 0x14780e0e0 <col:9, col:10> '<dependent type>' contains-errors prefix '*' cannot overflow
+      | | `-ImplicitCastExpr 0x14780e0c8 <col:10> '<dependent type>' contains-errors <LValueToRValue>
+      | |   `-RecoveryExpr 0x14780e0a8 <col:10> '<dependent type>' contains-errors lvalue
+      | `-BinaryOperator 0x14780e150 <col:15, col:21> 'int' '>'
+      |   |-ImplicitCastExpr 0x14780e138 <col:15> 'int' <LValueToRValue>
+      |   | `-DeclRefExpr 0x14780e0f8 <col:15> 'int' lvalue ParmVar 0x14780dd70 'len' 'int'
+      |   `-IntegerLiteral 0x14780e118 <col:21> 'int' 0
+      `-CompoundStmt 0x147827f80 <col:24, line:30:2>
+        `-IfStmt 0x147827f50 <line:9:3, line:29:3> has_else
+          |-BinaryOperator 0x14780e200 <line:9:7, col:12> '<dependent type>' contains-errors '&'
+          | |-UnaryOperator 0x14780e1c8 <col:7, col:8> '<dependent type>' contains-errors prefix '*' cannot overflow
+          | | `-ImplicitCastExpr 0x14780e1b0 <col:8> '<dependent type>' contains-errors <LValueToRValue>
+          | |   `-RecoveryExpr 0x14780e190 <col:8> '<dependent type>' contains-errors lvalue
+          | `-IntegerLiteral 0x14780e1e0 <col:12> 'int' 128
+          |-CompoundStmt 0x147827e78 <col:18, line:26:3>
+          | |-BinaryOperator 0x1478278f8 <line:10:4, col:35> 'int' contains-errors '='
+          | | |-DeclRefExpr 0x14780e220 <col:4> 'int' lvalue Var 0x14780e008 'size' 'int'
+          | | `-CallExpr 0x1478278c0 <col:11, col:35> '<dependent type>' contains-errors
+          | |   |-DeclRefExpr 0x14780e3a0 <col:11> 'int ()' Function 0x14780e2e8 'utf8_to_utf32' 'int ()'
+          | |   |-RecoveryExpr 0x14780e3c0 <col:25> '<dependent type>' contains-errors lvalue
+          | |   |-DeclRefExpr 0x14780e3e0 <col:28> 'int' lvalue ParmVar 0x14780dd70 'len' 'int'
+          | |   `-UnaryOperator 0x1478278a8 <col:33, col:34> '<dependent type>' contains-errors prefix '&' cannot overflow
+          | |     `-RecoveryExpr 0x147827888 <col:34> '<dependent type>' contains-errors lvalue
+          | |-IfStmt 0x147827a38 <line:11:4, line:12:13>
+          | | |-BinaryOperator 0x147827970 <line:11:8, col:15> 'int' '<'
+          | | | |-ImplicitCastExpr 0x147827958 <col:8> 'int' <LValueToRValue>
+          | | | | `-DeclRefExpr 0x147827918 <col:8> 'int' lvalue Var 0x14780e008 'size' 'int'
+          | | | `-IntegerLiteral 0x147827938 <col:15> 'int' 0
+          | | `-ReturnStmt 0x147827a28 <line:12:5, col:13>
+          | |   `-UnaryOperator 0x147827a10 <col:12, col:13> '<dependent type>' contains-errors prefix '-' cannot overflow
+          | |     `-ImplicitCastExpr 0x1478279f8 <col:13> '<dependent type>' contains-errors <LValueToRValue>
+          | |       `-RecoveryExpr 0x1478279d8 <col:13> '<dependent type>' contains-errors lvalue
+          | |-IfStmt 0x147827d28 <line:14:4, line:23:4> has_else
+          | | |-BinaryOperator 0x147827ae8 <line:14:8, col:13> 'int' contains-errors '>='
+          | | | |-RecoveryExpr 0x147827aa8 <col:8> '<dependent type>' contains-errors lvalue
+          | | | `-RecoveryExpr 0x147827ac8 <col:13> '<dependent type>' contains-errors lvalue
+          | | |-CompoundStmt 0x147827d08 <col:25, line:21:4>
+          | | `-CompoundStmt 0x147827d18 <col:11, line:23:4>
+          | |-CompoundAssignOperator 0x147827dc0 <line:24:4, col:9> '<dependent type>' contains-errors '+=' ComputeLHSTy='NULL TYPE' ComputeResultTy='NULL TYPE'
+          | | |-RecoveryExpr 0x147827d78 <col:4> '<dependent type>' contains-errors lvalue
+          | | | `-DeclRefExpr 0x147827d58 <col:4> 'const int *' lvalue ParmVar 0x14780dcf0 's' 'const int *'
+          | | `-DeclRefExpr 0x147827da0 <col:9> 'int' lvalue Var 0x14780e008 'size' 'int'
+          | `-CompoundAssignOperator 0x147827e48 <line:25:4, col:11> 'int' '-=' ComputeLHSTy='int' ComputeResultTy='int'
+          |   |-DeclRefExpr 0x147827df0 <col:4> 'int' lvalue ParmVar 0x14780dd70 'len' 'int'
+          |   `-ImplicitCastExpr 0x147827e30 <col:11> 'int' <LValueToRValue>
+          |     `-DeclRefExpr 0x147827e10 <col:11> 'int' lvalue Var 0x14780e008 'size' 'int'
+          `-CompoundStmt 0x147827f38 <line:26:10, line:29:3>
+            `-UnaryOperator 0x147827f20 <line:28:4, col:7> 'int' postfix '--'
+              `-DeclRefExpr 0x147827f00 <col:4> 'int' lvalue ParmVar 0x14780dd70 'len' 'int'

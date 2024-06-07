@@ -1,0 +1,41 @@
+`-FunctionDecl 0x1379281f8  line:1:7 invalid problem_data_save 'char *(int *)'
+  |-ParmVarDecl 0x137928128 <col:25, col:41> col:41 invalid pd 'int *'
+  `-CompoundStmt 0x137942350 <line:2:1, line:16:1>
+    |-CallExpr 0x137928468 <line:3:5, col:20> 'int'
+    | `-ImplicitCastExpr 0x137928450 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    |   `-DeclRefExpr 0x137928400 <col:5> 'int ()' Function 0x137928348 'load_abrt_conf' 'int ()'
+    |-DeclStmt 0x137941848 <line:5:5, col:90>
+    | |-RecordDecl 0x137928488 <col:5, col:12> col:12 struct dump_dir
+    | `-VarDecl 0x1379285f8 <col:5, col:89> col:22 used dd 'struct dump_dir *' cinit
+    |   `-CallExpr 0x137941800 <col:27, col:89> '<dependent type>' contains-errors
+    |     |-DeclRefExpr 0x137928740 <col:27> 'int ()' Function 0x137928688 'create_dump_dir_from_problem_data' 'int ()'
+    |     |-RecoveryExpr 0x137928760 <col:61> '<dependent type>' contains-errors lvalue
+    |     `-RecoveryExpr 0x1379287c8 <col:65> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x137941918 <line:7:5, col:28>
+    | `-VarDecl 0x137941878 <col:5, col:24> col:11 used problem_id 'char *' cinit
+    |   `-RecoveryExpr 0x1379418f8 <col:24> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x1379420e8 <line:8:5, line:12:5>
+    | |-ImplicitCastExpr 0x137941950 <line:8:9> 'struct dump_dir *' contains-errors <LValueToRValue>
+    | | `-DeclRefExpr 0x137941930 <col:9> 'struct dump_dir *' contains-errors lvalue Var 0x1379285f8 'dd' 'struct dump_dir *'
+    | `-CompoundStmt 0x1379420c8 <line:9:5, line:12:5>
+    |   |-BinaryOperator 0x137941f30 <line:10:9, col:44> 'char *' contains-errors '='
+    |   | |-DeclRefExpr 0x137941968 <col:9> 'char *' contains-errors lvalue Var 0x137941878 'problem_id' 'char *'
+    |   | `-CallExpr 0x137941f08 <col:22, col:44> '<dependent type>' contains-errors
+    |   |   |-DeclRefExpr 0x137941a68 <col:22> 'int ()' Function 0x1379419b0 'xstrdup' 'int ()'
+    |   |   `-RecoveryExpr 0x137941ee0 <col:30, col:34> '<dependent type>' contains-errors lvalue
+    |   |     `-DeclRefExpr 0x137941a88 <col:30> 'struct dump_dir *' contains-errors lvalue Var 0x1379285f8 'dd' 'struct dump_dir *'
+    |   `-CallExpr 0x137942088 <line:11:9, col:20> 'int' contains-errors
+    |     |-ImplicitCastExpr 0x137942070 <col:9> 'int (*)()' <FunctionToPointerDecay>
+    |     | `-DeclRefExpr 0x137942030 <col:9> 'int ()' Function 0x137941f78 'dd_close' 'int ()'
+    |     `-ImplicitCastExpr 0x1379420b0 <col:18> 'struct dump_dir *' contains-errors <LValueToRValue>
+    |       `-DeclRefExpr 0x137942050 <col:18> 'struct dump_dir *' contains-errors lvalue Var 0x1379285f8 'dd' 'struct dump_dir *'
+    |-CallExpr 0x1379422a8 <line:14:5, col:31> 'int' contains-errors
+    | |-ImplicitCastExpr 0x137942290 <col:5> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x1379421e8 <col:5> 'int ()' Function 0x137942130 'log_info' 'int ()'
+    | |-ImplicitCastExpr 0x1379422d8 <col:14> 'char *' <ArrayToPointerDecay>
+    | | `-StringLiteral 0x137942250 <col:14> 'char[4]' lvalue "STR"
+    | `-ImplicitCastExpr 0x1379422f0 <col:21> 'char *' contains-errors <LValueToRValue>
+    |   `-DeclRefExpr 0x137942270 <col:21> 'char *' contains-errors lvalue Var 0x137941878 'problem_id' 'char *'
+    `-ReturnStmt 0x137942340 <line:15:5, col:12>
+      `-ImplicitCastExpr 0x137942328 <col:12> 'char *' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x137942308 <col:12> 'char *' contains-errors lvalue Var 0x137941878 'problem_id' 'char *'

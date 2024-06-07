@@ -1,0 +1,42 @@
+`-FunctionDecl 0x145827558  line:1:17 invalid avdtp_discover_cmd 'int (struct avdtp *, int, void *, int)' static
+  |-ParmVarDecl 0x14580e268 <col:36, col:50> col:50 used session 'struct avdtp *'
+  |-ParmVarDecl 0x14580e2e8 <col:59, col:67> col:67 invalid transaction 'int'
+  |-ParmVarDecl 0x14580e368 <line:2:8, col:14> col:14 buf 'void *'
+  |-ParmVarDecl 0x145827400 <col:19, col:23> col:23 size 'int'
+  `-CompoundStmt 0x14582a058 <line:3:1, line:28:1>
+    |-DeclStmt 0x145827738 <line:4:2, col:34>
+    | |-VarDecl 0x145827638 <col:2, col:15> col:15 used rsp_size 'unsigned int'
+    | `-VarDecl 0x1458276b8 <col:2, col:25> col:25 used sep_count 'unsigned int'
+    |-DeclStmt 0x1458279d0 <line:5:2, col:28>
+    | |-RecordDecl 0x145827750 <col:2, col:9> col:9 struct seid_info
+    | |-VarDecl 0x1458278b8 <col:2, col:20> col:20 used seps 'struct seid_info *'
+    | `-VarDecl 0x145827948 <col:2, col:27> col:27 used p 'struct seid_info *'
+    |-BinaryOperator 0x145827c08 <line:8:2, col:41> 'unsigned int' contains-errors '='
+    | |-DeclRefExpr 0x1458279e8 <col:2> 'unsigned int' lvalue Var 0x1458276b8 'sep_count' 'unsigned int'
+    | `-CallExpr 0x145827be0 <col:14, col:41> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x145827b60 <col:14> 'int ()' Function 0x145827aa8 'queue_length' 'int ()'
+    |   `-RecoveryExpr 0x145827bb8 <col:27, col:36> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x145827b80 <col:27> 'struct avdtp *' lvalue ParmVar 0x14580e268 'session' 'struct avdtp *'
+    |-IfStmt 0x145827e80 <line:10:2, line:14:2>
+    | |-BinaryOperator 0x145827c98 <line:10:6, col:19> 'int' '=='
+    | | |-ImplicitCastExpr 0x145827c68 <col:6> 'unsigned int' <LValueToRValue>
+    | | | `-DeclRefExpr 0x145827c28 <col:6> 'unsigned int' lvalue Var 0x1458276b8 'sep_count' 'unsigned int'
+    | | `-ImplicitCastExpr 0x145827c80 <col:19> 'unsigned int' <IntegralCast>
+    | |   `-IntegerLiteral 0x145827c48 <col:19> 'int' 0
+    | `-CompoundStmt 0x145827e70 <col:22, line:14:2>
+    |-BinaryOperator 0x1458280c8 <line:19:2, col:6> 'struct seid_info *' '='
+    | |-DeclRefExpr 0x145828070 <col:2> 'struct seid_info *' lvalue Var 0x145827948 'p' 'struct seid_info *'
+    | `-ImplicitCastExpr 0x1458280b0 <col:6> 'struct seid_info *' <LValueToRValue>
+    |   `-DeclRefExpr 0x145828090 <col:6> 'struct seid_info *' lvalue Var 0x1458278b8 'seps' 'struct seid_info *'
+    |-CallExpr 0x145828350 <line:21:2, col:45> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x1458281c8 <col:2> 'int ()' Function 0x145828110 'queue_foreach' 'int ()'
+    | |-RecoveryExpr 0x145828220 <col:16, col:25> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x1458281e8 <col:16> 'struct avdtp *' lvalue ParmVar 0x14580e268 'session' 'struct avdtp *'
+    | |-RecoveryExpr 0x145828330 <col:32> '<dependent type>' contains-errors lvalue
+    | `-UnaryOperator 0x1458282e0 <col:43, col:44> 'struct seid_info **' prefix '&' cannot overflow
+    |   `-DeclRefExpr 0x145828260 <col:44> 'struct seid_info *' lvalue Var 0x145827948 'p' 'struct seid_info *'
+    `-CallExpr 0x14582a018 <line:25:2, col:13> 'int'
+      |-ImplicitCastExpr 0x14582a000 <col:2> 'int (*)()' <FunctionToPointerDecay>
+      | `-DeclRefExpr 0x145829f88 <col:2> 'int ()' Function 0x145829ed0 'g_free' 'int ()'
+      `-ImplicitCastExpr 0x14582a040 <col:9> 'struct seid_info *' <LValueToRValue>
+        `-DeclRefExpr 0x145829fa8 <col:9> 'struct seid_info *' lvalue Var 0x1458278b8 'seps' 'struct seid_info *'

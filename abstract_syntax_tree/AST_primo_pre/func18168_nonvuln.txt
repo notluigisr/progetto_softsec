@@ -1,0 +1,26 @@
+`-FunctionDecl 0x144026728  line:1:12 update_rmtp 'int (struct hrtimer *, struct timespec)' static
+  |-ParmVarDecl 0x14400e248 <col:24, col:40> col:40 used timer 'struct hrtimer *'
+  |-ParmVarDecl 0x144026600 <col:47, col:63> col:63 invalid __user 'struct timespec'
+  `-CompoundStmt 0x1440270e0 <line:2:1, line:15:1>
+    |-DeclStmt 0x1440268e8 <line:3:2, col:21>
+    | `-VarDecl 0x144026880 <col:2, col:18> col:18 referenced invalid rmt 'struct timespec'
+    |-IfStmt 0x144026bc0 <line:7:2, line:8:10>
+    | |-BinaryOperator 0x144026b70 <line:7:6, col:13> 'int' contains-errors '<='
+    | | |-RecoveryExpr 0x144026b50 <col:6> '<dependent type>' contains-errors lvalue
+    | | `-IntegerLiteral 0x144026b10 <col:13> 'int' 0
+    | `-ReturnStmt 0x144026bb0 <line:8:3, col:10>
+    |   `-IntegerLiteral 0x144026b90 <col:10> 'int' 0
+    |-BinaryOperator 0x144026dd0 <line:9:2, col:29> '<dependent type>' contains-errors '='
+    | |-RecoveryExpr 0x144026c00 <col:2> '<dependent type>' contains-errors lvalue
+    | | `-DeclRefExpr 0x144026be0 <col:2> 'struct timespec' lvalue Var 0x144026880 'rmt' 'struct timespec'
+    | `-CallExpr 0x144026da8 <col:8, col:29> '<dependent type>' contains-errors
+    |   |-DeclRefExpr 0x144026d08 <col:8> 'int ()' Function 0x144026c50 'ktime_to_timespec' 'int ()'
+    |   `-RecoveryExpr 0x144026d88 <col:26> '<dependent type>' contains-errors lvalue
+    |-IfStmt 0x144027090 <line:11:2, line:12:11>
+    | |-RecoveryExpr 0x144026fc8 <line:11:6, col:44> '_Bool' contains-errors
+    | `-ReturnStmt 0x144027080 <line:12:3, col:11>
+    |   `-UnaryOperator 0x144027068 <col:10, col:11> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x144027050 <col:11> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x144027030 <col:11> '<dependent type>' contains-errors lvalue
+    `-ReturnStmt 0x1440270d0 <line:14:2, col:9>
+      `-IntegerLiteral 0x1440270b0 <col:9> 'int' 1

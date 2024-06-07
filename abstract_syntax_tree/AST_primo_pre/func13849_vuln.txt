@@ -1,0 +1,39 @@
+`-FunctionDecl 0x12c049ad8  line:1:12 invalid perf_event_read_group 'int (struct perf_event *, int, char)' static
+  |-ParmVarDecl 0x12c01cc48 <col:34, col:53> col:53 used event 'struct perf_event *'
+  |-ParmVarDecl 0x12c01cce0 <line:2:8, col:12> col:12 invalid read_format 'int'
+  |-ParmVarDecl 0x12c01cd58 <col:25, col:30> col:30 __user 'char'
+  `-CompoundStmt 0x12f8087e8 <line:3:1, line:49:1>
+    |-DeclStmt 0x12c049d98 <line:4:2, col:55>
+    | |-VarDecl 0x12c049c28 <col:2, col:37> col:21 used leader 'struct perf_event *' cinit
+    | | `-RecoveryExpr 0x12c049cc8 <col:30, col:37> '<dependent type>' contains-errors lvalue
+    | |   `-DeclRefExpr 0x12c049c90 <col:30> 'struct perf_event *' lvalue ParmVar 0x12c01cc48 'event' 'struct perf_event *'
+    | `-VarDecl 0x12c049d18 <col:2, col:52> col:52 used sub 'struct perf_event *'
+    |-DeclStmt 0x12c04a028 <line:5:2, col:36>
+    | |-VarDecl 0x12c049dc8 <col:2, col:10> col:6 used n 'int' cinit
+    | | `-IntegerLiteral 0x12c049e30 <col:10> 'int' 0
+    | |-VarDecl 0x12c049e68 <col:2, col:20> col:13 used size 'int' cinit
+    | | `-IntegerLiteral 0x12c049ed0 <col:20> 'int' 0
+    | `-VarDecl 0x12c049f08 <col:2, col:30> col:23 used ret 'int' cinit
+    |   `-UnaryOperator 0x12c049ff0 <col:29, col:30> '<dependent type>' contains-errors prefix '-' cannot overflow
+    |     `-ImplicitCastExpr 0x12c049fd8 <col:30> '<dependent type>' contains-errors <LValueToRValue>
+    |       `-RecoveryExpr 0x12c049fb8 <col:30> '<dependent type>' contains-errors lvalue
+    |-DeclStmt 0x12c04a288 <line:6:2, col:46>
+    | |-RecordDecl 0x12c04a040 <col:2, col:9> col:9 struct perf_event_context
+    | `-VarDecl 0x12c04a1a8 <col:2, col:43> col:29 used ctx 'struct perf_event_context *' cinit
+    |   `-RecoveryExpr 0x12c04a248 <col:35, col:43> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c04a210 <col:35> 'struct perf_event *' contains-errors lvalue Var 0x12c049c28 'leader' 'struct perf_event *'
+    |-CallExpr 0x12c04a498 <line:10:2, col:24> '<dependent type>' contains-errors
+    | |-DeclRefExpr 0x12c04a400 <col:2> 'int ()' Function 0x12c04a348 'mutex_lock' 'int ()'
+    | `-UnaryOperator 0x12c04a480 <col:13, col:19> '<dependent type>' contains-errors prefix '&' cannot overflow
+    |   `-RecoveryExpr 0x12c04a458 <col:14, col:19> '<dependent type>' contains-errors lvalue
+    |     `-DeclRefExpr 0x12c04a420 <col:14> 'struct perf_event_context *' contains-errors lvalue Var 0x12c04a1a8 'ctx' 'struct perf_event_context *'
+    |-IfStmt 0x12f808570 <line:24:2, line:25:8>
+    | |-RecoveryExpr 0x12f8084e8 <line:24:6, col:36> '_Bool' contains-errors
+    | `-GotoStmt 0x12f808558 <line:25:3, col:8> 'unlock' 0x12f808508
+    |-BinaryOperator 0x12f8085e8 <line:27:2, col:8> 'int' contains-errors '='
+    | |-DeclRefExpr 0x12f808590 <col:2> 'int' contains-errors lvalue Var 0x12c049f08 'ret' 'int'
+    | `-ImplicitCastExpr 0x12f8085d0 <col:8> 'int' <LValueToRValue>
+    |   `-DeclRefExpr 0x12f8085b0 <col:8> 'int' lvalue Var 0x12c049e68 'size' 'int'
+    `-ReturnStmt 0x12f8087d8 <line:48:2, col:9>
+      `-ImplicitCastExpr 0x12f8087c0 <col:9> 'int' contains-errors <LValueToRValue>
+        `-DeclRefExpr 0x12f8087a0 <col:9> 'int' contains-errors lvalue Var 0x12c049f08 'ret' 'int'

@@ -1,0 +1,20 @@
+`-FunctionDecl 0x11f84a638  line:1:21 invalid inet_getid 'int (struct inet_peer *, int)' static inline
+  |-ParmVarDecl 0x11f82e868 <col:32, col:50> col:50 used p 'struct inet_peer *'
+  |-ParmVarDecl 0x11f82e8e8 <col:53, col:57> col:57 used more 'int'
+  `-CompoundStmt 0x11f84ab60 <line:2:1, line:6:1>
+    |-UnaryOperator 0x11f84a710 <line:3:2, col:6> 'int' postfix '++'
+    | `-DeclRefExpr 0x11f84a6f0 <col:2> 'int' lvalue ParmVar 0x11f82e8e8 'more' 'int'
+    |-CallExpr 0x11f84a908 <line:4:2, col:22> 'int'
+    | |-ImplicitCastExpr 0x11f84a8f0 <col:2> 'int (*)()' <FunctionToPointerDecay>
+    | | `-DeclRefExpr 0x11f84a880 <col:2> 'int ()' Function 0x11f84a7c8 'inet_peer_refcheck' 'int ()'
+    | `-ImplicitCastExpr 0x11f84a930 <col:21> 'struct inet_peer *' <LValueToRValue>
+    |   `-DeclRefExpr 0x11f84a8a0 <col:21> 'struct inet_peer *' lvalue ParmVar 0x11f82e868 'p' 'struct inet_peer *'
+    `-ReturnStmt 0x11f84ab50 <line:5:2, col:52>
+      `-BinaryOperator 0x11f84ab30 <col:9, col:52> '<dependent type>' contains-errors '-'
+        |-CallExpr 0x11f84aae0 <col:9, col:48> '<dependent type>' contains-errors
+        | |-DeclRefExpr 0x11f84aa28 <col:9> 'int ()' Function 0x11f84a970 'atomic_add_return' 'int ()'
+        | |-DeclRefExpr 0x11f84aa48 <col:27> 'int' lvalue ParmVar 0x11f82e8e8 'more' 'int'
+        | `-UnaryOperator 0x11f84aac8 <col:33, col:37> '<dependent type>' contains-errors prefix '&' cannot overflow
+        |   `-RecoveryExpr 0x11f84aaa0 <col:34, col:37> '<dependent type>' contains-errors lvalue
+        |     `-DeclRefExpr 0x11f84aa68 <col:34> 'struct inet_peer *' lvalue ParmVar 0x11f82e868 'p' 'struct inet_peer *'
+        `-DeclRefExpr 0x11f84ab10 <col:52> 'int' lvalue ParmVar 0x11f82e8e8 'more' 'int'
